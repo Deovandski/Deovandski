@@ -1,5 +1,4 @@
 ---
-import Base from '../layouts/Base.astro';
 import { loadTopGames } from '../lib/games';
 
 const games = loadTopGames();
@@ -8,54 +7,46 @@ const total = games.reduce((sum, g) => sum + g.hours, 0);
 const nf = new Intl.NumberFormat('en-US');
 ---
 
-<Base title="Gaming" description="Deovandski's top 10 favorite games and hours played.">
-  <h1>Top 10 games</h1>
-  <p class="lede">My favorites, ranked, with how many hours I've sunk into each. {nf.format(total)} hours in total.</p>
+<p class="lede">My top 10 favorites, ranked, with how many hours I've sunk into each. {nf.format(total)} hours in total.</p>
 
-  <ol class="ranking">
-    {
-      games.map((g) => (
-        <li style={`--share:${(g.hours / max).toFixed(3)}`}>
-          <span class="rank" aria-hidden="true">{g.rank}</span>
-          <div class="info">
-            <h2>
-              <span class="sr-only">Rank {g.rank}: </span>
-              {g.game}
-            </h2>
-            <div class="bar" aria-hidden="true">
-              <span />
-            </div>
+<ol class="ranking">
+  {
+    games.map((g) => (
+      <li style={`--share:${(g.hours / max).toFixed(3)}`}>
+        <span class="rank" aria-hidden="true">{g.rank}</span>
+        <div class="info">
+          <h3>
+            <span class="sr-only">Rank {g.rank}: </span>
+            {g.game}
+          </h3>
+          <div class="bar" aria-hidden="true">
+            <span />
           </div>
-          <p class="hours">
-            {nf.format(g.hours)}
-            <span>hours</span>
-          </p>
-        </li>
-      ))
-    }
-  </ol>
-</Base>
+        </div>
+        <p class="hours">
+          {nf.format(g.hours)}
+          <span>hours</span>
+        </p>
+      </li>
+    ))
+  }
+</ol>
 
 <style>
-  .lede { color: var(--muted); font-size: var(--step-1); line-height: 1.45; }
-  .ranking {
-    list-style: none;
-    margin: 2.5rem 0 0;
-    padding: 0;
-    max-width: 52rem;
-  }
+  .lede { margin-bottom: 1.5rem; }
+  .ranking { list-style: none; margin: 0; padding: 0; }
   .ranking li {
     display: grid;
-    grid-template-columns: 4.5rem minmax(0, 1fr) 6.5rem;
+    grid-template-columns: 3.5rem minmax(0, 1fr) 6rem;
     align-items: center;
-    gap: 1.25rem;
-    padding-block: 1.1rem;
+    gap: 1.1rem;
+    padding-block: 0.9rem;
     border-top: 1px solid rgba(190, 200, 209, 0.12);
   }
   .rank {
     font-family: var(--font-display);
     font-weight: 800;
-    font-size: var(--step-3);
+    font-size: var(--step-2);
     line-height: 1;
     color: var(--silver);
     text-align: right;
@@ -66,7 +57,7 @@ const nf = new Intl.NumberFormat('en-US');
   }
   .ranking li:nth-child(2) .rank,
   .ranking li:nth-child(3) .rank { color: #8fded7; }
-  .info h2 { font-size: var(--step-1); margin: 0 0 0.5rem; }
+  .info h3 { font-size: var(--step-0); margin: 0 0 0.45rem; }
   .bar {
     height: 6px;
     border-radius: 3px;
@@ -96,8 +87,8 @@ const nf = new Intl.NumberFormat('en-US');
     color: var(--muted);
   }
   @media (max-width: 560px) {
-    .ranking li { grid-template-columns: 2.75rem minmax(0, 1fr) 4.75rem; gap: 0.75rem; }
-    .rank { font-size: var(--step-2); }
-    .info h2 { font-size: var(--step-0); }
+    .ranking li { grid-template-columns: 2.25rem minmax(0, 1fr) 4.5rem; gap: 0.7rem; }
+    .rank { font-size: var(--step-1); }
+    .hours { font-size: var(--step-0); }
   }
 </style>

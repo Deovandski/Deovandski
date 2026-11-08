@@ -43,7 +43,9 @@
     margin: 0 0 0.25rem;
     color: var(--teal);
   }
-  .miku__sub { margin: 0 0 0.85rem; color: var(--text); }
+  .miku__title :global(.miku__jp) { white-space: nowrap; }
+  @media (max-width: 560px) { .miku__title { font-size: var(--step-1); } }
+  .miku__sub { margin: 0 0 0.85rem; color: var(--text); word-break: keep-all; }
   .miku__actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
   .miku button {
     font: inherit;
@@ -61,12 +63,13 @@
   import confetti from 'canvas-confetti';
 
   // month is 1-12. Add more dates here (e.g. her release-day birthday, 8/31).
-  const DATES = [
+  const DATES: { month: number; day: number; title: string; jp?: string; sub: string }[] = [
     {
       month: 3,
       day: 9,
-      title: 'Happy Miku Day! ミクの日',
-      sub: '3/9 reads as mi-ku. Thanks for all the music, Miku!',
+      title: 'Happy Miku Day!',
+      jp: 'ミクの日',
+      sub: '3/9 reads as mi-ku! Miku-chan (ミクちゃん) is a cornerstone of my life and is tattooed on my right forearm. She’s tied to the things that drive me: ambition, technology, collaboration and community.',
     },
     // { month: 8, day: 31, title: 'Happy birthday, Miku!', sub: 'Released August 31, 2007.' },
   ];
@@ -95,7 +98,15 @@
   }
 
   if (party && banner) {
-    banner.querySelector('.miku__title')!.textContent = party.title;
+    const titleEl = banner.querySelector('.miku__title')!;
+    titleEl.textContent = party.title;
+    if (party.jp) {
+      const jp = document.createElement('span');
+      jp.className = 'miku__jp';
+      jp.lang = 'ja';
+      jp.textContent = party.jp;
+      titleEl.append(' ', jp);
+    }
     banner.querySelector('.miku__sub')!.textContent = party.sub;
     banner.hidden = false;
     burst();

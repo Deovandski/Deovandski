@@ -7,10 +7,11 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 
 | What | File or folder |
 |---|---|
-| Home page text and links | `src/pages/index.astro` |
+| Home page tabs (Dev, Author, Influencer life) | `src/pages/index.astro` |
 | Blog posts | `content/blog/<post-name>/index.md` (copy `hello-github` as a template) |
 | Travel photos and map pins | `content/travel/` (see its README and COUNTRY_CODES.md) |
-| Top 10 games | `content/gaming/top10.md` |
+| Gamer Life tab (top 10 games) | `content/gaming/top10.md` |
+| Cat Dad Life tab (Peeta photos) | `content/peeta/` (see its README) |
 | Inspiration page | `src/pages/inspiration.astro` |
 | Miku Day dates and message | `src/components/MikuDay.astro` (`DATES` near the top) |
 | Colors and fonts | `src/styles/global.css` |
@@ -23,6 +24,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
+Link straight to a home tab with `#dev`, `#author`, `#influencer`, `#gamer` or `#cat`.
 Add `?miku` to any URL to preview the Miku Day confetti.
 
 ## One-time GitHub setup

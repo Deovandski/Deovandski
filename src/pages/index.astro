@@ -1,75 +1,71 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import GameRanking from '../components/GameRanking.astro';
 import logo from '../assets/logo.png';
+import { loadPeeta } from '../lib/peeta';
 
-const sections = [
+type Entry = { text: string; href: string; label: string };
+
+const dev: Entry[] = [
+  { text: 'I am the founder & CEO of my own company!', href: 'https://www.wizarddeosolutions.com/', label: 'Wizard Deo Solutions' },
+  { text: 'GitHub only has a fraction of my code because of NDAs…', href: 'https://github.com/Deovandski', label: 'github.com/Deovandski' },
   {
-    id: 'developer',
-    title: 'Software developer life',
-    items: [
-      {
-        text: 'I am the founder & CEO of my own company!',
-        href: 'https://www.wizarddeosolutions.com/',
-        label: 'Wizard Deo Solutions',
-      },
-      {
-        text: 'GitHub only has a fraction of my code because of NDAs…',
-        href: 'https://github.com/Deovandski',
-        label: 'github.com/Deovandski',
-      },
-      {
-        text: '…But on GitHub, I am proud of this little project I cooked up for Framework 16 users!',
-        href: 'https://deovandski.github.io/Deo-s-Framework16-LED-Matrix-Manager/',
-        label: "Deo's Framework 16 LED Matrix Manager",
-      },
-      {
-        text: "Haven't used StackOverflow in a long, long while… Times have changed. It's fun and weird!",
-        href: 'https://stackoverflow.com/users/4830578/deovandski',
-        label: 'My StackOverflow profile',
-      },
-      {
-        text: 'You might be able to glance at some of the X++ fun I had while I worked at Stoneridge Software. Got into the F&O world through them!',
-        href: 'https://stoneridgesoftware.com/author/deovandskis/',
-        label: 'My posts at Stoneridge Software',
-      },
-    ],
+    text: '…But on GitHub, I am proud of this little project I cooked up for Framework 16 users!',
+    href: 'https://deovandski.github.io/Deo-s-Framework16-LED-Matrix-Manager/',
+    label: "Deo's Framework 16 LED Matrix Manager",
   },
   {
-    id: 'author',
-    title: 'Author life',
-    items: [
-      {
-        text: 'Yep. As crazy as it sounds, I am also an author, and I did conventions and met a lot of people, from artists to directors and publishers… It feels surreal how much this project pushed me to grow and challenge myself! If you are curious, you can see my evolution throughout the project by reading the Light Novel Afterwords.',
-        href: 'http://husbandoutworld.com/',
-        label: 'HusbandOutWorld',
-      },
-      {
-        text: 'And given how much world lore I created, and that I am also a technical architect, I decided to put the peanut butter and raspberry jelly together and create a West March D&D Campaign with Claude to let people party about my world! If you find issues or have ideas, submit a PR or open an issue in the GitHub repo!',
-        href: 'https://deovandski.github.io/Vraki-West-March-Campaign-D-D/',
-        label: 'Vraki West March D&D Campaign',
-      },
-      {
-        text: 'The start of it all! Vraki writing system! It is such a cornerstone of myself, and what became my "author" side, that I had to preserve its history.',
-        href: 'https://deovandski.github.io/vraki-windows/',
-        label: 'Vraki writing system',
-      },
-    ],
+    text: "Haven't used StackOverflow in a long, long while… Times have changed. It's fun and weird!",
+    href: 'https://stackoverflow.com/users/4830578/deovandski',
+    label: 'My StackOverflow profile',
   },
   {
-    id: 'social',
-    title: 'Social media shenanigans',
-    intro: [
-      'I was very active back in the day, getting ~15 million views… Focus on <em>was</em>, for there’s nothing left of it. Only an empty YT, my locked-down Steam profile, and my LinkedIn, which remains active.',
-      'Will I ever come back? Likely not, because the ROI in knowledge and fun I was getting from being a social influencer towards the end of the journey was gone, and it had become hypervigilance and misery instead. I noticed I was being stalked too, so, like an infection, I cut it off at the root, healed, and moved on.',
-    ],
-    links: [
-      { href: 'https://www.youtube.com/channel/UCl57I3mRQhtGkesGWOA5Z-w', label: 'YouTube' },
-      { href: 'https://steamcommunity.com/id/deovandski', label: 'Steam' },
-      { href: 'https://www.linkedin.com/in/deovandski', label: 'LinkedIn' },
-    ],
+    text: 'You might be able to glance at some of the X++ fun I had while I worked at Stoneridge Software. Got into the F&O world through them!',
+    href: 'https://stoneridgesoftware.com/author/deovandskis/',
+    label: 'My posts at Stoneridge Software',
   },
 ];
+
+const author: Entry[] = [
+  {
+    text: 'Yep. As crazy as it sounds, I am also an author, and I did conventions and met a lot of people, from artists to directors and publishers… It feels surreal how much this project pushed me to grow and challenge myself! If you are curious, you can see my evolution throughout the project by reading the Light Novel Afterwords.',
+    href: 'http://husbandoutworld.com/',
+    label: 'HusbandOutWorld',
+  },
+  {
+    text: 'And given how much world lore I created, and that I am also a technical architect, I decided to put the peanut butter and raspberry jelly together and create a West March D&D Campaign with Claude to let people party about my world! If you find issues or have ideas, submit a PR or open an issue in the GitHub repo!',
+    href: 'https://deovandski.github.io/Vraki-West-March-Campaign-D-D/',
+    label: 'Vraki West March D&D Campaign',
+  },
+  {
+    text: 'The start of it all! Vraki writing system! It is such a cornerstone of myself, and what became my "author" side, that I had to preserve its history.',
+    href: 'https://deovandski.github.io/vraki-windows/',
+    label: 'Vraki writing system',
+  },
+];
+
+const influencerLinks = [
+  { href: 'https://www.youtube.com/channel/UCl57I3mRQhtGkesGWOA5Z-w', label: 'YouTube' },
+  { href: 'https://steamcommunity.com/id/deovandski', label: 'Steam' },
+  { href: 'https://www.linkedin.com/in/deovandski', label: 'LinkedIn' },
+];
+
+const tabs = [
+  { id: 'dev', icon: '💻', label: 'Dev Life' },
+  { id: 'author', icon: '✍️', label: 'Author Life' },
+  { id: 'influencer', icon: '📣', label: 'Influencer Life' },
+  { id: 'gamer', icon: '🎮', label: 'Gamer Life' },
+  { id: 'cat', icon: '🐱', label: 'Cat Dad Life' },
+];
+
+const peeta = loadPeeta();
+const catPhotos = await Promise.all(
+  peeta.photos.map(async (p) => ({
+    ...p,
+    full: (await getImage({ src: p.src, width: Math.min(1800, p.src.width), format: 'webp', quality: 80 })).src,
+  })),
+);
 ---
 
 <Base hideBrand>
@@ -86,37 +82,92 @@ const sections = [
     </div>
   </section>
 
-  {
-    sections.map((section) => (
-      <section class="chapter" id={section.id} aria-labelledby={`${section.id}-title`}>
-        <h2 id={`${section.id}-title`}>{section.title}</h2>
-        <div class="chapter__body">
-          {section.items && (
-            <ul class="entries">
-              {section.items.map((item) => (
-                <li>
-                  <p>{item.text}</p>
-                  <a class="entry-link" href={item.href}>
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          )}
-          {section.intro && section.intro.map((para) => <p set:html={para} />)}
-          {section.links && (
-            <ul class="pills">
-              {section.links.map((link) => (
-                <li>
-                  <a href={link.href}>{link.label}</a>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      </section>
-    ))
-  }
+  <div class="lives">
+    <div class="tabs" role="tablist" aria-label="Parts of my life">
+      {
+        tabs.map((t, i) => (
+          <button
+            type="button"
+            role="tab"
+            id={`tab-${t.id}`}
+            aria-controls={`panel-${t.id}`}
+            aria-selected={i === 0 ? 'true' : 'false'}
+            tabindex={i === 0 ? 0 : -1}
+            data-tab={t.id}
+          >
+            <span class="tabs__icon" aria-hidden="true">
+              {t.icon}
+            </span>
+            {t.label}
+          </button>
+        ))
+      }
+    </div>
+
+    <section class="panel" role="tabpanel" id="panel-dev" aria-labelledby="tab-dev" tabindex="0">
+      <ul class="entries">
+        {dev.map((item) => (<li><p>{item.text}</p><a class="entry-link" href={item.href}>{item.label}</a></li>))}
+      </ul>
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-author" aria-labelledby="tab-author" tabindex="0" hidden>
+      <ul class="entries">
+        {author.map((item) => (<li><p>{item.text}</p><a class="entry-link" href={item.href}>{item.label}</a></li>))}
+      </ul>
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-influencer" aria-labelledby="tab-influencer" tabindex="0" hidden>
+      <p>
+        I was very active back in the day, getting ~15 million views… Focus on <em>was</em>, for there’s nothing left of it.
+        Only an empty YT, my locked-down Steam profile, and my LinkedIn, which remains active.
+      </p>
+      <p>
+        Will I ever come back? Likely not, because the ROI in knowledge and fun I was getting from being a social influencer
+        towards the end of the journey was gone, and it had become hypervigilance and misery instead. I noticed I was being
+        stalked too, so, like an infection, I cut it off at the root, healed, and moved on.
+      </p>
+      <ul class="pills">
+        {influencerLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
+      </ul>
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-gamer" aria-labelledby="tab-gamer" tabindex="0" hidden>
+      <GameRanking />
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-cat" aria-labelledby="tab-cat" tabindex="0" hidden>
+      {peeta.intro.map((para) => <p>{para}</p>)}
+      {
+        catPhotos.length === 0 ? (
+          <p class="empty">Peeta's photos are on their way.</p>
+        ) : (
+          <ul class="cat-grid">
+            {catPhotos.map((p, i) => (
+              <li>
+                <button type="button" data-cat={i} data-full={p.full} data-alt={p.alt} aria-label={`Enlarge: ${p.alt}`}>
+                  <Image src={p.src} alt="" width={480} widths={[240, 480]} sizes="(max-width: 560px) 50vw, 240px" />
+                </button>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </section>
+  </div>
+
+  <noscript><style>.panel[hidden] { display: block; } .tabs { display: none; }</style></noscript>
+
+  <dialog class="viewer" aria-label="Photo of Peeta">
+    <figure>
+      <img alt="" />
+      <figcaption></figcaption>
+    </figure>
+    <div class="viewer__bar">
+      <button type="button" class="viewer__prev" aria-label="Previous photo">‹</button>
+      <button type="button" class="viewer__close">Close</button>
+      <button type="button" class="viewer__next" aria-label="Next photo">›</button>
+    </div>
+  </dialog>
 </Base>
 
 <style>
@@ -125,11 +176,9 @@ const sections = [
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
     gap: clamp(1.5rem, 4vw, 3.5rem);
     align-items: center;
-    padding-block: 1rem 4rem;
+    padding-block: 1rem 3rem;
   }
-  .hero__sign {
-    line-height: 0;
-  }
+  .hero__sign { line-height: 0; }
   .hero__sign img {
     width: 100%;
     border-radius: 18px;
@@ -144,50 +193,53 @@ const sections = [
     text-shadow: 0 0 28px rgba(57, 197, 187, 0.45);
     margin-bottom: 0.25em;
   }
-  .hero__lede {
-    font-size: var(--step-1);
-    line-height: 1.45;
-    color: var(--text);
-  }
+  .hero__lede { font-size: var(--step-1); line-height: 1.45; }
 
-  .chapter {
-    display: grid;
-    grid-template-columns: 16rem minmax(0, 1fr);
-    gap: 2.5rem;
-    padding-block: 2.75rem;
-    border-top: 1px solid rgba(190, 200, 209, 0.12);
+  .lives {
+    border: 1px solid rgba(57, 197, 187, 0.25);
+    border-radius: 22px;
+    background: rgba(14, 22, 54, 0.6);
+    backdrop-filter: blur(4px);
   }
-  .chapter h2 {
-    font-size: var(--step-1);
-    color: var(--silver);
-    position: sticky;
-    top: 6rem;
-    align-self: start;
+  .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 0.85rem;
+    border-bottom: 1px solid rgba(57, 197, 187, 0.2);
   }
-  .chapter__body { max-width: var(--measure); }
-
-  .entries {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 1.75rem;
-  }
-  .entries p { margin-bottom: 0.35rem; }
-  .entry-link {
+  .tabs button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
     font-family: var(--font-display);
     font-weight: 800;
     font-size: var(--step-0);
+    color: var(--silver);
+    background: rgba(7, 11, 31, 0.5);
+    border: 1px solid rgba(190, 200, 209, 0.18);
+    border-radius: 14px;
+    padding: 0.6rem 1rem;
+    cursor: pointer;
   }
+  .tabs button:hover { color: var(--text); border-color: rgba(57, 197, 187, 0.5); }
+  .tabs button[aria-selected='true'] {
+    color: var(--night);
+    background: var(--teal);
+    border-color: var(--teal);
+    box-shadow: 0 0 24px rgba(57, 197, 187, 0.4);
+  }
+  .tabs__icon { font-size: 1.1em; line-height: 1; }
 
-  .pills {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
-    margin: 1.25rem 0 0;
-    padding: 0;
-  }
+  .panel { padding: clamp(1.25rem, 3vw, 2.25rem); }
+  .panel:focus-visible { outline-offset: -4px; }
+  .panel > :last-child { margin-bottom: 0; }
+
+  .entries { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.6rem; max-width: var(--measure); }
+  .entries p { margin-bottom: 0.35rem; }
+  .entry-link { font-family: var(--font-display); font-weight: 800; }
+
+  .pills { list-style: none; display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 1.25rem 0 0; padding: 0; }
   .pills a {
     display: inline-block;
     padding: 0.35rem 1rem;
@@ -198,9 +250,127 @@ const sections = [
   }
   .pills a:hover { background: rgba(57, 197, 187, 0.14); }
 
+  .empty { color: var(--muted); }
+  .cat-grid {
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
+    gap: 0.75rem;
+  }
+  .cat-grid button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--night-3);
+    cursor: zoom-in;
+    line-height: 0;
+  }
+  .cat-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; }
+  .cat-grid button:hover img { filter: brightness(1.1); }
+
+  .viewer {
+    width: min(100% - 2rem, 56rem);
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    padding: 1rem;
+    color: var(--text);
+    background: var(--night-2);
+    border: 1px solid rgba(57, 197, 187, 0.45);
+    border-radius: 20px;
+  }
+  .viewer::backdrop { background: rgba(3, 5, 15, 0.85); }
+  .viewer figure { margin: 0; text-align: center; }
+  .viewer img { max-height: 70vh; width: auto; border-radius: 12px; }
+  .viewer figcaption { margin-top: 0.6rem; color: var(--silver); }
+  .viewer__bar { display: flex; justify-content: center; gap: 0.6rem; margin-top: 0.75rem; }
+  .viewer__bar button {
+    font: inherit;
+    font-weight: 700;
+    min-width: 2.75rem;
+    padding: 0.35rem 1rem;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--teal);
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  .viewer__bar button[hidden] { display: none; }
+
   @media (max-width: 820px) {
-    .hero { grid-template-columns: 1fr; padding-bottom: 2.5rem; }
-    .chapter { grid-template-columns: 1fr; gap: 1rem; padding-block: 2rem; }
-    .chapter h2 { position: static; }
+    .hero { grid-template-columns: 1fr; padding-bottom: 2rem; }
+  }
+  @media (max-width: 560px) {
+    .tabs { display: grid; grid-template-columns: 1fr 1fr; padding: 0.6rem; }
+    .tabs button { justify-content: center; padding: 0.55rem 0.5rem; font-size: var(--step--1); }
+    .tabs button:last-child:nth-child(odd) { grid-column: span 2; }
+    .cat-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
+
+<script>
+  // Tabs: click, arrow keys, and #dev / #author / ... links
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
+
+  function select(tab: HTMLButtonElement, focus = false, updateHash = true) {
+    for (const t of tabs) {
+      const on = t === tab;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')!)!.hidden = !on;
+    }
+    if (focus) tab.focus();
+    if (updateHash) history.replaceState(null, '', `#${tab.dataset.tab}`);
+  }
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => select(tab));
+    tab.addEventListener('keydown', (e) => {
+      const keys: Record<string, number> = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 };
+      if (!(e.key in keys)) return;
+      e.preventDefault();
+      select(tabs[(keys[e.key] + tabs.length) % tabs.length], true);
+    });
+  });
+
+  const fromHash = tabs.find((t) => `#${t.dataset.tab}` === location.hash);
+  if (fromHash) select(fromHash, false, false);
+
+  // Peeta photo viewer
+  const viewer = document.querySelector<HTMLDialogElement>('.viewer')!;
+  const img = viewer.querySelector('img')!;
+  const caption = viewer.querySelector('figcaption')!;
+  const photos = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-cat]'));
+  let index = 0;
+
+  function show(i: number) {
+    index = (i + photos.length) % photos.length;
+    const b = photos[index];
+    img.src = b.dataset.full!;
+    img.alt = b.dataset.alt!;
+    caption.textContent = b.dataset.alt!;
+  }
+  photos.forEach((b, i) =>
+    b.addEventListener('click', () => {
+      show(i);
+      viewer.showModal();
+    }),
+  );
+  const many = photos.length > 1;
+  viewer.querySelector<HTMLButtonElement>('.viewer__prev')!.hidden = !many;
+  viewer.querySelector<HTMLButtonElement>('.viewer__next')!.hidden = !many;
+  viewer.querySelector('.viewer__prev')!.addEventListener('click', () => show(index - 1));
+  viewer.querySelector('.viewer__next')!.addEventListener('click', () => show(index + 1));
+  viewer.querySelector('.viewer__close')!.addEventListener('click', () => viewer.close());
+  viewer.addEventListener('click', (e) => {
+    if (e.target === viewer) viewer.close();
+  });
+  viewer.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') show(index - 1);
+    if (e.key === 'ArrowRight') show(index + 1);
+  });
+</script>
