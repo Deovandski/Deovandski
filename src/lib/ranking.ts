@@ -1,7 +1,7 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-export type RankedItem = { rank: number; name: string; value: number | null; tag?: string };
+export type RankedItem = { rank: number; name: string; value: number | null; tag?: string; description?: string };
 
 /**
  * Reads a "| Rank | <item> | <value> |" Markdown table, e.g.
@@ -55,4 +55,41 @@ export function loadRanking(file: string, itemColumn: string, valueColumn: strin
 
 function cells(line: string): string[] {
   return line.replace(/^\|/, '').replace(/\|$/, '').split('|').map((c) => c.trim());
+}
+
+/**
+ * Reads a numbered Markdown list: "1. Title" followed by description lines,
+ * e.g. content/anime/top39.md.
+ */
+export function loadRankedList(file: string): RankedItem[] {
+  const lines = readFileSync(resolve(file), 'utf8').split(/\r?\n/);
+  const items: RankedItem[] = [];
+  const errors: string[] = [];
+  let current: RankedItem | null = null;
+  let desc: string[] = [];
+  const flush = () => {
+    if (current) {
+      current.description = desc.join(' ').trim() || undefined;
+      items.push(current);
+    }
+    desc = [];
+  };
+  for (const line of lines) {
+    const m = line.match(/^(\d+)\.\s+(.+)$/);
+    if (m) {
+      flush();
+      current = { rank: Number(m[1]), name: m[2].trim(), value: null };
+    } else if (current && line.trim()) {
+      desc.push(line.trim());
+    }
+  }
+  flush();
+  if (!items.length) errors.push('no entries found. Expected lines like "1. Title".');
+  const seen = new Set<number>();
+  for (const it of items) {
+    if (seen.has(it.rank)) errors.push(`rank ${it.rank} is used more than once.`);
+    seen.add(it.rank);
+  }
+  if (errors.length) throw new Error(`${file} has problems:\n- ${errors.join('\n- ')}`);
+  return items.sort((a, b) => a.rank - b.rank);
 }

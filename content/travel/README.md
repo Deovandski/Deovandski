@@ -4,9 +4,11 @@
 content/travel/
   <region>/
     <code>-<country>/
-      any-photo.jpg
-      another.png
-      _info.md        (optional)
+      any-photo.jpg     → a pin for the whole country
+      _info.md          (optional)
+      <code>-<state>/   → a pin for that state, province or prefecture
+        photo.jpg
+        _info.md        (optional)
 ```
 
 - **A pin appears only when a country folder has at least one photo.** Empty
@@ -14,6 +16,11 @@ content/travel/
 - Folder names: two-letter country code, a dash, then the name in lower case,
   e.g. `jp-japan`, `br-brazil`, `us-united-states`. The full list, with the
   exact folder path for every country, is in [COUNTRY_CODES.md](./COUNTRY_CODES.md).
+- States, provinces and prefectures: make a subfolder inside the country
+  folder, named with its code, e.g. `us-united-states/tx-texas/`,
+  `jp-japan/13-tokyo/`, `vn-vietnam/26-thua-thien-hue/`. Each gets its own pin.
+  Codes and exact folder names for the US, Canada, Brazil, Vietnam and Japan are
+  in [SUBDIVISION_CODES.md](./SUBDIVISION_CODES.md).
 - Region folders: `africa`, `antarctica`, `asia`, `europe`, `north-america`,
   `oceania`, `south-america`. They're for your own organizing and group the
   list under the map. The pin position comes from the country code.

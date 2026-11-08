@@ -1,14 +1,16 @@
 ---
 import { getImage } from 'astro:assets';
-import { loadCountries } from '../lib/travel';
+import { loadPlaces, type Place } from '../lib/travel';
 import { url } from '../lib/url';
 
-const countries = loadCountries();
+const places = loadPlaces();
 
 const data = await Promise.all(
-  countries.map(async (c) => ({
-    code: c.code,
-    name: c.name,
+  places.map(async (c) => ({
+    key: c.key,
+    country: c.country,
+    name: c.sub ? `${c.sub}, ${c.countryName}` : c.name,
+    pin: c.name,
     years: c.years ?? null,
     caption: c.caption ?? null,
     lat: c.lat,
@@ -25,39 +27,60 @@ const data = await Promise.all(
   })),
 );
 
-const byRegion = Object.entries(
-  countries.reduce<Record<string, typeof countries>>((acc, c) => {
-    (acc[c.regionName] ??= []).push(c);
-    return acc;
-  }, {}),
-);
+// region -> country -> { country-level place?, states[] }
+type CountryGroup = { code: string; name: string; self?: Place; subs: Place[] };
+const byRegion = new Map<string, Map<string, CountryGroup>>();
+for (const p of places) {
+  const region = byRegion.get(p.regionName) ?? new Map<string, CountryGroup>();
+  byRegion.set(p.regionName, region);
+  const group = region.get(p.country) ?? { code: p.country, name: p.countryName, subs: [] };
+  region.set(p.country, group);
+  if (p.sub) group.subs.push(p);
+  else group.self = p;
+}
+const countryCount = new Set(places.map((p) => p.country)).size;
+const photoCount = (p: Place) => `${p.photos.length} ${p.photos.length === 1 ? 'photo' : 'photos'}`;
 ---
 
 <p class="lede">
-    {
-      countries.length === 0
-        ? 'Photos are on their way. Each country gets a pin once its first picture is added.'
-        : `Where has Deo been? ${countries.length} ${countries.length === 1 ? 'country' : 'countries'} so far. Select a pin to see photos.`
-    }
-  </p>
+  {
+    places.length === 0
+      ? 'Photos are on their way. Each country, state or province gets a pin once its first picture is added.'
+      : `Where has Deo been? ${countryCount} ${countryCount === 1 ? 'country' : 'countries'} so far. Select a pin to see photos.`
+  }
+</p>
 
-  <div class="map" id="map" data-world={url('/world.json')} data-countries={JSON.stringify(data)} aria-label="World map of visited countries"></div>
+<div class="map" id="map" data-world={url('/world.json')} data-countries={JSON.stringify(data)} aria-label="World map of visited places"></div>
 
   {
-    countries.length > 0 && (
+    places.length > 0 && (
       <section class="list" aria-labelledby="list-title">
-        <h3 id="list-title">Countries by region</h3>
+        <h3 id="list-title">Places by region</h3>
         <div class="regions">
-          {byRegion.map(([region, list]) => (
+          {[...byRegion].map(([region, groups]) => (
             <div>
               <h4>{region}</h4>
               <ul>
-                {list.map((c) => (
-                  <li>
-                    <button type="button" data-open={c.code}>
-                      {c.name}
-                    </button>
-                    <span>{c.photos.length} {c.photos.length === 1 ? 'photo' : 'photos'}</span>
+                {[...groups.values()].map((g) => (
+                  <li class="country">
+                    <div class="row">
+                      {g.self ? (
+                        <button type="button" data-open={g.self.key}>{g.name}</button>
+                      ) : (
+                        <span class="country-name">{g.name}</span>
+                      )}
+                      {g.self && <span>{photoCount(g.self)}</span>}
+                    </div>
+                    {g.subs.length > 0 && (
+                      <ul class="subs">
+                        {g.subs.map((p) => (
+                          <li class="row">
+                            <button type="button" data-open={p.key}>{p.sub}</button>
+                            <span>{photoCount(p)}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </li>
                 ))}
               </ul>
@@ -149,8 +172,10 @@ const byRegion = Object.entries(
   .regions { display: grid; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); gap: 1.5rem 2.5rem; }
   .regions h4 { font-size: var(--step-0); color: var(--muted); margin-bottom: 0.4rem; }
   .regions ul { list-style: none; margin: 0; padding: 0; }
-  .regions li { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.25rem; }
-  .regions li span { color: var(--muted); font-size: var(--step--1); }
+  .regions .row { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.25rem; }
+  .regions .row > span { color: var(--muted); font-size: var(--step--1); }
+  .country-name { font-weight: 700; color: var(--silver); }
+  .subs { margin: 0 0 0.35rem 0.9rem !important; padding-left: 0.6rem !important; border-left: 1px solid rgba(57, 197, 187, 0.25); }
   .regions button {
     font: inherit;
     font-weight: 700;
@@ -246,11 +271,11 @@ const byRegion = Object.entries(
   import L from 'leaflet';
 
   type Photo = { full: string; thumb: string; w: number; h: number };
-  type Place = { code: string; name: string; years: string | null; caption: string | null; lat: number; lng: number; photos: Photo[] };
+  type Place = { key: string; country: string; name: string; pin: string; years: string | null; caption: string | null; lat: number; lng: number; photos: Photo[] };
 
   const el = document.getElementById('map')!;
   const places: Place[] = JSON.parse(el.dataset.countries || '[]');
-  const visited = new Set(places.map((p) => p.code));
+  const visited = new Set(places.map((p) => p.country));
   const panel = el.closest<HTMLElement>('[role="tabpanel"]');
   let map: L.Map | null = null;
   let markers: L.Marker[] = [];
@@ -302,8 +327,8 @@ const byRegion = Object.entries(
       const icon = L.divIcon({ className: '', html: '<div class="pin"></div>', iconSize: [22, 22], iconAnchor: [11, 11] });
       const m = L.marker([p.lat, p.lng], { icon, title: p.name, keyboard: true, alt: `${p.name}, ${p.photos.length} photos` })
         .addTo(map!)
-        .bindTooltip(p.name, { className: 'pin-label', direction: 'top', offset: [0, -12] });
-      m.on('click', () => openTrip(p.code));
+        .bindTooltip(p.pin, { className: 'pin-label', direction: 'top', offset: [0, -12] });
+      m.on('click', () => openTrip(p.key));
       return m;
     });
 
@@ -337,8 +362,8 @@ const byRegion = Object.entries(
     thumbs.querySelectorAll('button').forEach((b, j) => b.setAttribute('aria-current', String(j === index)));
   }
 
-  function openTrip(code: string) {
-    current = places.find((p) => p.code === code) ?? null;
+  function openTrip(key: string) {
+    current = places.find((p) => p.key === key) ?? null;
     if (!current) return;
     title.textContent = current.name;
     years.textContent = current.years ? `Visited ${current.years}` : '';
