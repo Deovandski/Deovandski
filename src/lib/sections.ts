@@ -48,7 +48,7 @@ function parseItem(body: string): SectionItem {
  * to the item above. Photos come from <photoDir>/<section-slug>/.
  */
 export function loadSections(file: string, photoDir: string): Sections {
-  const text = readFileSync(resolve(file), 'utf8');
+  const text = readFileSync(resolve(file), 'utf8').replace(/<!--[\s\S]*?-->/g, '');
   const [preamble, ...parts] = text.split(/^## +/m);
   const intro = preamble
     .split(/\r?\n/)

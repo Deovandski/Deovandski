@@ -7,31 +7,39 @@ interface Props {
   id: string; // prefix for heading ids, e.g. "tattoo"
   photoAlt: (sectionTitle: string) => string;
   layout?: 'rows' | 'cards';
+  slots?: number; // force this many photo boxes per section (e.g. 2 for Fishing/Camping)
+  empty?: string; // shown when the file has no sections yet
 }
 
-const { data, id, photoAlt, layout = 'rows' } = Astro.props;
-const { intro, sections: areas } = data;
+const { data, id, photoAlt, layout = 'rows', slots, empty } = Astro.props;
+const { intro, sections } = data;
+const areas = sections.map((a) => ({
+  ...a,
+  hasSlot: slots ? true : a.hasSlot,
+  missing: slots ? Math.max(0, slots - a.photos.length) : a.photos.length ? 0 : 1,
+}));
 ---
 
 {intro.map((para) => <p class="intro">{para}</p>)}
 
-<div class:list={['areas', `areas--${layout}`]}>
+{areas.length === 0 && empty && <p class="empty">{empty}</p>}
+
+<div class:list={['areas', `areas--${layout}`, { 'areas--pair': slots === 2 }]}>
   {
     areas.map((area) => (
       <section class:list={['area', { 'area--text': !area.hasSlot }]} aria-labelledby={`${id}-${area.slug}`}>
         {area.hasSlot && (
         <div class="area__photos">
-          {area.photos.length === 0 ? (
+          {area.photos.map((p) => (
+            <a href={p.src.src} class="photo">
+              <Image src={p.src} alt={photoAlt(area.title)} width={640} widths={[320, 640]} sizes="(max-width: 720px) 100vw, 320px" />
+            </a>
+          ))}
+          {Array.from({ length: area.missing }, () => (
             <div class="slot" aria-hidden="true">
               <span>Photo coming soon</span>
             </div>
-          ) : (
-            area.photos.map((p) => (
-              <a href={p.src.src} class="photo">
-                <Image src={p.src} alt={photoAlt(area.title)} width={640} widths={[320, 640]} sizes="(max-width: 720px) 100vw, 320px" />
-              </a>
-            ))
-          )}
+          ))}
         </div>
         )}
         <div class="area__text">
@@ -92,6 +100,12 @@ const { intro, sections: areas } = data;
     border-top: 1px solid rgba(190, 200, 209, 0.12);
   }
   .areas--cards .area { grid-template-columns: 1fr; gap: 0.85rem; padding: 0; border-top: 0; }
+  .areas:empty { display: none; }
+  .areas:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+  .areas--pair .area__photos { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
+  .areas--pair .slot { aspect-ratio: 1; font-size: 0.75rem; text-align: center; padding: 0.5rem; }
+  .areas--pair .photo img { aspect-ratio: 1; object-fit: cover; }
+  .empty { color: var(--muted); }
   .areas--cards .area h3 { font-size: var(--step-0); margin-bottom: 0.35rem; }
   .area__photos { display: grid; gap: 0.75rem; align-content: start; }
   .slot {

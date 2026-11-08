@@ -41,22 +41,24 @@ const influencerLinks: LinkItem[] = [
 ];
 
 const tabs = [
-  { id: 'dev', icon: '💻', label: 'Dev Life' },
-  { id: 'author', icon: '✍️', label: 'Author Life' },
-  { id: 'mentor', icon: '🔥', label: 'Mentor Life' },
-  { id: 'influencer', icon: '📣', label: 'Influencer Life' },
-  { id: 'traveler', icon: '🗺️', label: 'Traveler Life' },
-  { id: 'multilingual', icon: '🗣️', label: 'Multilingual Life' },
-  { id: 'tattoo', icon: '🖋️', label: 'Tattoo Life' },
-  { id: 'gym', icon: '🏋️', label: 'Gym Life' },
-  { id: 'miku', icon: '🎤', label: '初音ミク Life' },
-  { id: 'concert', icon: '🤘', label: 'Concert Life' },
-  { id: 'theater', icon: '🎭', label: 'Theater & Opera Life' },
-  { id: 'gamer', icon: '🎮', label: 'Gamer Life' },
-  { id: 'weeb', icon: '🍥', label: 'Weeb Life' },
-  { id: 'potato', icon: '🥔', label: 'Potato Life' },
-  { id: 'cat', icon: '🐱', label: 'Cat Dad Life' },
-  { id: 'sex', icon: '😘', label: 'Sex Life' },
+  { id: 'dev', icon: '💻', label: 'Dev' },
+  { id: 'author', icon: '✍️', label: 'Author' },
+  { id: 'mentor', icon: '🔥', label: 'Mentor' },
+  { id: 'influencer', icon: '📣', label: 'Influencer' },
+  { id: 'traveler', icon: '🗺️', label: 'Traveler' },
+  { id: 'fishing', icon: '🎣', label: 'Fishing' },
+  { id: 'camping', icon: '⛺', label: 'Camping' },
+  { id: 'multilingual', icon: '🗣️', label: 'Multilingual' },
+  { id: 'tattoo', icon: '🖋️', label: 'Tattoo' },
+  { id: 'gym', icon: '🏋️', label: 'Gym' },
+  { id: 'miku', icon: '🎤', label: '初音ミク' },
+  { id: 'concert', icon: '🤘', label: 'Concert' },
+  { id: 'theater', icon: '🎭', label: 'Theater & Opera' },
+  { id: 'gamer', icon: '🎮', label: 'Gamer' },
+  { id: 'weeb', icon: '🍥', label: 'Weeb' },
+  { id: 'potato', icon: '🥔', label: 'Potato' },
+  { id: 'cat', icon: '🐱', label: 'Cat Dad' },
+  { id: 'sex', icon: '😘', label: 'Sex' },
 ];
 
 const games = loadRanking('content/gaming/top39.md', 'Game', 'Hours');
@@ -66,6 +68,8 @@ const tattoos = loadSections('content/tattoos.md', 'content/tattoos');
 const mikuConcerts = loadSections('content/miku.md', 'content/miku');
 const concerts = loadSections('content/concerts.md', 'content/concerts');
 const theater = loadSections('content/theater.md', 'content/theater');
+const fishing = loadSections('content/fishing.md', 'content/fishing');
+const camping = loadSections('content/camping.md', 'content/camping');
 const nf = new Intl.NumberFormat('en-US');
 const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
@@ -99,7 +103,8 @@ const catPhotos = await Promise.all(
   </section>
 
   <div class="lives">
-    <div class="tabs" role="tablist" aria-label="Parts of my life">
+    <h2 class="lives__title" id="lives-title">The many lives of Deo</h2>
+    <div class="tabs" role="tablist" aria-labelledby="lives-title">
       {
         tabs.map((t, i) => (
           <button
@@ -191,6 +196,14 @@ const catPhotos = await Promise.all(
       <TravelerLife />
     </section>
 
+    <section class="panel" role="tabpanel" id="panel-fishing" aria-labelledby="tab-fishing" tabindex="0" hidden>
+      <Sections data={fishing} id="fishing" layout="cards" slots={2} empty="Fishing spots are on their way." photoAlt={(t) => `Fishing at ${t}`} />
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-camping" aria-labelledby="tab-camping" tabindex="0" hidden>
+      <Sections data={camping} id="camping" layout="cards" slots={2} empty="Campsites are on their way." photoAlt={(t) => `Camping at ${t}`} />
+    </section>
+
     <section class="panel" role="tabpanel" id="panel-multilingual" aria-labelledby="tab-multilingual" tabindex="0" hidden>
       <MultilingualLife />
     </section>
@@ -239,7 +252,7 @@ const catPhotos = await Promise.all(
     <section class="panel" role="tabpanel" id="panel-potato" aria-labelledby="tab-potato" tabindex="0" hidden>
       <Ranking items={screen}>
         <p class="ranking-lede">
-          My top 39 movies and TV shows. Anime gets its own tab, Weeb Life, because of how much it means to me.
+          My top 39 movies and TV shows. Anime gets its own tab, Weeb, because of how much it means to me.
         </p>
       </Ranking>
     </section>
@@ -325,6 +338,12 @@ const catPhotos = await Promise.all(
     border-radius: 22px;
     background: rgba(14, 22, 54, 0.6);
     backdrop-filter: blur(4px);
+  }
+  .lives__title {
+    margin: 0;
+    padding: 1.1rem 1.1rem 0;
+    font-size: var(--step-1);
+    color: var(--silver);
   }
   .tabs {
     display: flex;
@@ -455,9 +474,9 @@ const catPhotos = await Promise.all(
     .hero { grid-template-columns: 1fr; padding-bottom: 2rem; }
   }
   @media (max-width: 560px) {
-    .tabs { display: grid; grid-template-columns: 1fr 1fr; padding: 0.6rem; }
-    .tabs button { justify-content: center; padding: 0.55rem 0.4rem; font-size: 0.8rem; white-space: nowrap; gap: 0.35rem; }
-    .tabs button:last-child:nth-child(odd) { grid-column: span 2; }
+    .lives__title { padding: 0.9rem 0.8rem 0; }
+    .tabs { gap: 0.4rem; padding: 0.6rem; }
+    .tabs button { flex: 1 1 auto; max-width: calc(50% - 0.2rem); justify-content: center; padding: 0.5rem 0.65rem; font-size: 0.8rem; white-space: nowrap; gap: 0.35rem; }
     .cat-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>

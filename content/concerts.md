@@ -9,7 +9,7 @@ Edit and push; the Concert Life tab rebuilds from this file.
   The section then shows them.
 - Plain text under a heading is shown as that section's description.
 
-> Live bands and shows I've watched. Hatsune Miku and Vocaloid concerts are special to me, so they have their own tab: 初音ミク Life.
+> Live bands and shows I've watched. Hatsune Miku and Vocaloid concerts are special to me, so they have their own tab: 初音ミク.
 
 ## Rock & Metal
 
