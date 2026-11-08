@@ -1,0 +1,102 @@
+---
+import { Image } from 'astro:assets';
+import { loadTattoos } from '../lib/tattoos';
+
+const areas = loadTattoos();
+---
+
+<p>Ink with meaning, one area at a time.</p>
+
+<div class="areas">
+  {
+    areas.map((area) => (
+      <section class="area" aria-labelledby={`tattoo-${area.slug}`}>
+        <div class="area__photos">
+          {area.photos.length === 0 ? (
+            <div class="slot" aria-hidden="true">
+              <span>Photo coming soon</span>
+            </div>
+          ) : (
+            area.photos.map((p) => (
+              <a href={p.src.src} class="photo">
+                <Image src={p.src} alt={`Tattoo on my ${area.title.toLowerCase()}`} width={640} widths={[320, 640]} sizes="(max-width: 720px) 100vw, 320px" />
+              </a>
+            ))
+          )}
+        </div>
+        <div class="area__text">
+          <h3 id={`tattoo-${area.slug}`}>{area.title}</h3>
+          <ul>
+            {area.tattoos.map((t) => (
+              <li>
+                {t.symbol && (
+                  <span class="glyph" aria-hidden="true" lang={/[぀-ヿ一-鿿]/.test(t.symbol) ? 'ja' : undefined}>
+                    {t.symbol}
+                  </span>
+                )}
+                <div>
+                  <p class="name">
+                    {t.name}
+                    {t.symbol && <span class="sr-only"> ({t.symbol})</span>}
+                  </p>
+                  <p class="meaning">{t.meaning}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    ))
+  }
+</div>
+
+<style>
+  .areas { display: grid; gap: 0; margin-top: 1.5rem; }
+  .area {
+    display: grid;
+    grid-template-columns: 20rem minmax(0, 1fr);
+    gap: 2rem;
+    padding-block: 1.75rem;
+    border-top: 1px solid rgba(190, 200, 209, 0.12);
+  }
+  .area__photos { display: grid; gap: 0.75rem; align-content: start; }
+  .slot {
+    aspect-ratio: 4 / 3;
+    display: grid;
+    place-items: center;
+    border: 2px dashed rgba(57, 197, 187, 0.35);
+    border-radius: 14px;
+    color: var(--muted);
+    font-size: var(--step--1);
+    background: rgba(7, 11, 31, 0.4);
+  }
+  .photo { display: block; line-height: 0; }
+  .photo img { width: 100%; border-radius: 14px; }
+
+  .area h3 { font-size: var(--step-1); color: var(--teal); margin-bottom: 0.75rem; }
+  .area ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
+  .area li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 0.85rem; align-items: start; }
+  .area li:not(:has(.glyph)) { grid-template-columns: minmax(0, 1fr); }
+  .glyph {
+    display: grid;
+    place-items: center;
+    min-height: 3rem;
+    padding-inline: 0.2rem;
+    border-radius: 10px;
+    background: rgba(57, 197, 187, 0.1);
+    border: 1px solid rgba(57, 197, 187, 0.35);
+    color: var(--teal);
+    font-size: 1.6rem;
+    line-height: 1;
+    text-align: center;
+    word-break: keep-all;
+  }
+  .glyph:lang(ja) { font-size: 0.85rem; writing-mode: vertical-rl; padding-block: 0.35rem; }
+  .name { margin: 0; font-family: var(--font-display); font-weight: 800; }
+  .meaning { margin: 0.15rem 0 0; color: var(--silver); }
+
+  @media (max-width: 720px) {
+    .area { grid-template-columns: 1fr; gap: 1rem; }
+    .slot { aspect-ratio: 16 / 7; }
+  }
+</style>

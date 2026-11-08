@@ -13,6 +13,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Contact page (emails) | `src/pages/contact.astro` |
 | Traveler Life tab (map pins and photos) | `content/travel/` (see its README and COUNTRY_CODES.md) |
 | Multilingual Life tab (language equalizer) | `content/languages.md` |
+| Tattoo Life tab | `content/tattoos.md`, photos in `content/tattoos/<area>/` |
 | Gamer Life tab (top 39 games) | `content/gaming/top39.md` |
 | Weeb Life tab (top 39 anime) | `content/anime/top39.md` |
 | Cat Dad Life tab (Peeta photos) | `content/peeta/` (see its README) |
@@ -27,7 +28,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-Link straight to a home tab with `#dev`, `#author`, `#mentor`, `#influencer`, `#traveler`, `#multilingual`, `#gamer`, `#weeb` or `#cat`.
+Link straight to a home tab with `#dev`, `#author`, `#mentor`, `#influencer`, `#traveler`, `#multilingual`, `#tattoo`, `#gamer`, `#weeb` or `#cat`.
 Add `?miku` to any URL to preview the Miku Day confetti.
 
 ## One-time GitHub setup

@@ -5,6 +5,7 @@ import Ranking from '../components/Ranking.astro';
 import TravelerLife from '../components/TravelerLife.astro';
 import MentorLife from '../components/MentorLife.astro';
 import MultilingualLife from '../components/MultilingualLife.astro';
+import TattooLife from '../components/TattooLife.astro';
 import kingOfHues from '../assets/king-of-hues.jpg';
 import { loadPeeta } from '../lib/peeta';
 import { loadRanking } from '../lib/ranking';
@@ -43,6 +44,7 @@ const tabs = [
   { id: 'influencer', icon: '📣', label: 'Influencer Life' },
   { id: 'traveler', icon: '🗺️', label: 'Traveler Life' },
   { id: 'multilingual', icon: '🗣️', label: 'Multilingual Life' },
+  { id: 'tattoo', icon: '🖋️', label: 'Tattoo Life' },
   { id: 'gamer', icon: '🎮', label: 'Gamer Life' },
   { id: 'weeb', icon: '🍥', label: 'Weeb Life' },
   { id: 'cat', icon: '🐱', label: 'Cat Dad Life' },
@@ -177,6 +179,10 @@ const catPhotos = await Promise.all(
 
     <section class="panel" role="tabpanel" id="panel-multilingual" aria-labelledby="tab-multilingual" tabindex="0" hidden>
       <MultilingualLife />
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-tattoo" aria-labelledby="tab-tattoo" tabindex="0" hidden>
+      <TattooLife />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-gamer" aria-labelledby="tab-gamer" tabindex="0" hidden>
