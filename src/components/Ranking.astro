@@ -7,6 +7,9 @@ interface Props {
 }
 
 const { items, unit } = Astro.props;
+const TOP = 10;
+const top = items.slice(0, TOP);
+const rest = items.slice(TOP);
 const max = Math.max(1, ...items.map((g) => g.value));
 const nf = new Intl.NumberFormat('en-US');
 ---
@@ -15,7 +18,7 @@ const nf = new Intl.NumberFormat('en-US');
 
 <ol class="ranking">
   {
-    items.map((g) => (
+    top.map((g) => (
       <li style={`--share:${(g.value / max).toFixed(3)}`}>
         <span class="rank" aria-hidden="true">{g.rank}</span>
         <div class="info">
@@ -36,9 +39,48 @@ const nf = new Intl.NumberFormat('en-US');
   }
 </ol>
 
+{
+  rest.length > 0 && (
+    <details class="more-ranks">
+      <summary>See #{TOP + 1} to #{items.length}</summary>
+      <ol class="ranking ranking--compact" start={TOP + 1}>
+        {rest.map((g) => (
+      <li style={`--share:${(g.value / max).toFixed(3)}`}>
+        <span class="rank" aria-hidden="true">{g.rank}</span>
+        <div class="info">
+          <h3>
+            <span class="sr-only">Rank {g.rank}: </span>
+            {g.name}
+          </h3>
+          <div class="bar" aria-hidden="true">
+            <span />
+          </div>
+        </div>
+        <p class="hours">
+          {nf.format(g.value)}
+          <span>{unit}</span>
+        </p>
+      </li>
+        ))}
+      </ol>
+    </details>
+  )
+}
+
 <style>
   :global(.ranking-lede) { margin-bottom: 1.5rem; }
   .ranking { list-style: none; margin: 0; padding: 0; }
+  .more-ranks { margin-top: 0.5rem; border-top: 1px solid rgba(190, 200, 209, 0.12); }
+  .more-ranks summary {
+    cursor: pointer;
+    padding: 0.9rem 0;
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--teal);
+  }
+  .ranking--compact li { padding-block: 0.55rem; }
+  .ranking--compact .rank { font-size: var(--step-1); }
+  .ranking--compact .hours { font-size: var(--step-0); }
   .ranking li {
     display: grid;
     grid-template-columns: 3.5rem minmax(0, 1fr) 6.5rem;

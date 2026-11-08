@@ -3,7 +3,7 @@
 I'm Deovandski: founder & CEO of [Wizard Deo Solutions](https://www.wizarddeosolutions.com/),
 technical architect, and author of [HusbandOutWorld](http://husbandoutworld.com/).
 
-🌐 **My hub, blog, travel map, mantras, and top games & anime:** [deovandski.github.io/Deovandski](https://deovandski.github.io/Deovandski/)
+🌐 **My hub, travel map, mantras, and top 39 games & anime:** [deovandski.github.io/Deovandski](https://deovandski.github.io/Deovandski/)
 
 GitHub only has a fraction of my code because of NDAs, but here are a few I'm proud of:
 

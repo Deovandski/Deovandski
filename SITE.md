@@ -11,11 +11,10 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Mentor Life tab | `content/mentor.md` (plain Markdown) |
 | King of Hues photo | `src/assets/king-of-hues.jpg` |
 | Contact page (emails) | `src/pages/contact.astro` |
-| Blog posts | `content/blog/<post-name>/index.md` (copy `hello-github` as a template) |
 | Traveler Life tab (map pins and photos) | `content/travel/` (see its README and COUNTRY_CODES.md) |
 | Multilingual Life tab (language equalizer) | `content/languages.md` |
-| Gamer Life tab (top 10 games) | `content/gaming/top10.md` |
-| Weeb Life tab (top 20 anime) | `content/anime/top20.md` |
+| Gamer Life tab (top 39 games) | `content/gaming/top39.md` |
+| Weeb Life tab (top 39 anime) | `content/anime/top39.md` |
 | Cat Dad Life tab (Peeta photos) | `content/peeta/` (see its README) |
 | Miku Day dates and message | `src/components/MikuDay.astro` (`DATES` near the top) |
 | Colors and fonts | `src/styles/global.css` |

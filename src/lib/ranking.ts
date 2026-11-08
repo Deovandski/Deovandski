@@ -5,7 +5,7 @@ export type RankedItem = { rank: number; name: string; value: number };
 
 /**
  * Reads a "| Rank | <item> | <value> |" Markdown table, e.g.
- * content/gaming/top10.md (Game, Hours) or content/anime/top20.md (Anime, Episodes).
+ * content/gaming/top39.md (Game, Hours) or content/anime/top39.md (Anime, Episodes).
  * Throws a readable error listing every bad line so the build tells you what to fix.
  */
 export function loadRanking(file: string, itemColumn: string, valueColumn: string): RankedItem[] {

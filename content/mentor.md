@@ -41,13 +41,17 @@ You will eat that harvest, even when it tastes like shit. Nobody eats it for you
 
 ## Hard truths
 
-- Pain doesn't make you wiser. Time doesn't heal you. Information doesn't become behavior. **A lesson that never changes a decision was entertainment.**
+- Pain doesn't make you wiser, but it's a powerful fuel for growth. Time doesn't heal you. Information doesn't become behavior. **A lesson that never changes a decision was entertainment.**
 - Nobody can commit for you. People can open doors. **Nobody walks through them using your legs.**
-- Potential deserves no applause. A dream earns dignity when your behavior starts serving it.
-- Not every battle deserves you. Sometimes "persistence" is just fear of admitting the system is dead.
+- Potential deserves no applause, but I'll always give it encouragement and wisdom. A dream earns dignity when your behavior starts serving it.
+- Not every battle deserves you. Sometimes "persistence" is just fear of admitting the system is dead. **Let faith lead you to war for a better future, and know that losing faith is valid when people prove unworthy of your love.**
 - Love is not an exemption from standards. **Compassion can explain behavior without volunteering to absorb it.**
-- Peace is not passivity. Peace is maintained: boundaries, confrontation, recovery, honest decisions.
+- **Peace is not passivity.** Peace is maintained: boundaries, confrontation, recovery, honest decisions.
+- Spiritual bypassing is still bypassing. Hiding behind Buddhist quotes, "just let it go," or standing by idle while someone chooses self-destruction isn't peace; it's what Chögyam Trungpa called idiot compassion. **Say your piece, then walk away.**
 - Confidence is not noise. **It's preparation remembering what it has survived.** Past wins prove capability, not entitlement.
+- **If the evidence stabilizes and resistance drops, execute.** Intention without implementation is self-entertainment.
+- **A signal is not a steering wheel.** Feelings and hunches are telemetry: observe, classify, keep moving. When action becomes obvious and resistance drops to zero, check it against your values, then move.
+- **Full commitment is not eternal commitment.** I fight for living systems. I bury dead ones.
 
 ## The seven pillars
 
@@ -83,25 +87,11 @@ Engineer and artist. Founder and teammate. Traveler and home-builder. Intense bu
 
 </div>
 
-## The method
-
-> Dream violently. Plan soberly. Execute relentlessly. Update honestly.
-
-1. Imagine the result.
-2. Inspect reality.
-3. Name the obstacle.
-4. Build the system.
-5. Execute.
-6. Update from evidence.
-
-- **If the evidence stabilizes and resistance drops, execute.** Intention without implementation is self-entertainment.
-- **A signal is not a steering wheel.** Feelings and hunches are telemetry: observe, classify, keep moving. When action becomes obvious and resistance drops to zero, check it against your values, then move.
-- **Full commitment is not eternal commitment.** I fight for living systems. I bury dead ones.
-
 ## Rapid fire
 
 <div class="rapid">
 
+- Dream violently. Plan soberly. Execute relentlessly. Update honestly.
 - Movement creates information.
 - Repetition makes habits. Deliberate correction makes skill.
 - Pain is not proof of growth. Changed behavior is.
@@ -113,25 +103,11 @@ Engineer and artist. Founder and teammate. Traveler and home-builder. Intense bu
 
 </div>
 
-## Walk beside me or step aside
-
-If you're moving, walk beside me. I'll challenge you, back you, celebrate you, and expect the same in return. Need time? Say so. Stumble? Get up. Disagree? Engage. Path changed? Tell the truth.
-
-Manipulation, endless ambiguity, learned helplessness, refusing to act: you don't get unlimited access to me. I won't stop the mission to wrestle you into movement.
-
-> I'm not dying in the waiting room of someone else's stagnant life.
-
 <figure class="verse">
 <p lang="non">Deyr fé, deyja frændr, deyr sjalfr it sama;<br>en orðstírr deyr aldregi, hveim er sér góðan getr.</p>
 <p>Cattle die, kin die, you yourself die the same;<br>but a good name never dies for the one who earns it.</p>
 <figcaption>Hávamál, as sung in Wardruna’s Helvegen</figcaption>
 </figure>
-
-<!--
-  To add another closing verse, copy the <figure class="verse"> block above,
-  put your lines in the <p> tags (use <br> between lines, lang="ja" for
-  Japanese), and credit the song and artist in <figcaption>.
--->
 
 <details class="sources">
 <summary>Shoulders I stand on</summary>
@@ -144,6 +120,8 @@ Manipulation, endless ambiguity, learned helplessness, refusing to act: you don'
 - **Gabriele Oettingen**, mental contrasting and WOOP: wish, outcome, obstacle, plan. [WOOP](https://woopmylife.org/)
 - **K. Anders Ericsson, Ralf Krampe & Clemens Tesch-Römer** (1993), deliberate practice. Honest update: Brooke Macnamara and Megha Maitra's 2019 replication found practice matters, but much less than the original study claimed. [Replication](https://pmc.ncbi.nlm.nih.gov/articles/PMC6731745/)
 - **Carsten Wrosch and colleagues** (2003): letting go of unattainable goals and reengaging with new ones is linked to higher well-being. [Paper](https://www.cmu.edu/dietrich/psychology/pdf/scales/GAS_article.pdf)
+- **John Welwood**, Buddhist teacher and psychotherapist, coined "spiritual bypassing" in 1984: using spiritual ideas and practices to sidestep unresolved emotional issues and unfinished work. [Interview](http://www.johnwelwood.com/articles/TRIC_interview_uncut.pdf)
+- **Chögyam Trungpa**, Tibetan Buddhist teacher, coined "idiot compassion": kindness that avoids conflict. His student Pema Chödrön describes it as enabling. [Pema Chödrön](https://tricycle.org/?p=1701)
 - **Erik Erikson**, generativity: caring for what will outlive you. Its virtue is care. [Reference](https://link.springer.com/referenceworkentry/10.1007/978-0-387-79061-9_1218)
 - **John Wooden**, Pyramid of Success: poise and confidence sit near the top, built on every block beneath; competitive greatness is the peak. [Pyramid](https://coachwooden.com/pyramid-of-success)
 
