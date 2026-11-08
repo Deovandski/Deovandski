@@ -8,7 +8,8 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | What | File or folder |
 |---|---|
 | Home page tabs (Dev, Author, Influencer life) | `src/pages/index.astro` |
-| Philosophy Life tab (mantras, lessons) | `content/philosophy.md` |
+| Mentor Life tab | `content/mentor.md` (plain Markdown) |
+| King of Hues photo | `src/assets/king-of-hues.jpg` |
 | Blog posts | `content/blog/<post-name>/index.md` (copy `hello-github` as a template) |
 | Traveler Life tab (map pins and photos) | `content/travel/` (see its README and COUNTRY_CODES.md) |
 | Gamer Life tab (top 10 games) | `content/gaming/top10.md` |
@@ -25,7 +26,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-Link straight to a home tab with `#dev`, `#author`, `#philosophy`, `#influencer`, `#traveler`, `#gamer`, `#weeb` or `#cat`.
+Link straight to a home tab with `#dev`, `#author`, `#mentor`, `#influencer`, `#traveler`, `#gamer`, `#weeb` or `#cat`.
 Add `?miku` to any URL to preview the Miku Day confetti.
 
 ## One-time GitHub setup
