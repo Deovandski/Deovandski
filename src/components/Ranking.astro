@@ -3,14 +3,14 @@ import type { RankedItem } from '../lib/ranking';
 
 interface Props {
   items: RankedItem[];
-  unit: string; // shown under each number, e.g. "hours" or "episodes"
+  unit?: string; // shown under each number, e.g. "hours" or "episodes"
 }
 
 const { items, unit } = Astro.props;
 const TOP = 10;
 const top = items.slice(0, TOP);
 const rest = items.slice(TOP);
-const max = Math.max(1, ...items.map((g) => g.value));
+const max = Math.max(1, ...items.map((g) => g.value ?? 0));
 const nf = new Intl.NumberFormat('en-US');
 ---
 
@@ -19,21 +19,27 @@ const nf = new Intl.NumberFormat('en-US');
 <ol class="ranking">
   {
     top.map((g) => (
-      <li style={`--share:${(g.value / max).toFixed(3)}`}>
+      <li class:list={{ 'no-value': g.value === null }} style={`--share:${((g.value ?? 0) / max).toFixed(3)}`}>
         <span class="rank" aria-hidden="true">{g.rank}</span>
         <div class="info">
           <h3>
             <span class="sr-only">Rank {g.rank}: </span>
             {g.name}
           </h3>
-          <div class="bar" aria-hidden="true">
-            <span />
-          </div>
+          {g.value !== null && (
+            <div class="bar" aria-hidden="true">
+              <span />
+            </div>
+          )}
         </div>
-        <p class="hours">
-          {nf.format(g.value)}
-          <span>{unit}</span>
-        </p>
+        {g.value !== null ? (
+          <p class="hours">
+            {nf.format(g.value)}
+            <span>{unit}</span>
+          </p>
+        ) : (
+          <p class="tag">{g.tag}</p>
+        )}
       </li>
     ))
   }
@@ -45,21 +51,27 @@ const nf = new Intl.NumberFormat('en-US');
       <summary>See #{TOP + 1} to #{items.length}</summary>
       <ol class="ranking ranking--compact" start={TOP + 1}>
         {rest.map((g) => (
-      <li style={`--share:${(g.value / max).toFixed(3)}`}>
+      <li class:list={{ 'no-value': g.value === null }} style={`--share:${((g.value ?? 0) / max).toFixed(3)}`}>
         <span class="rank" aria-hidden="true">{g.rank}</span>
         <div class="info">
           <h3>
             <span class="sr-only">Rank {g.rank}: </span>
             {g.name}
           </h3>
-          <div class="bar" aria-hidden="true">
-            <span />
-          </div>
+          {g.value !== null && (
+            <div class="bar" aria-hidden="true">
+              <span />
+            </div>
+          )}
         </div>
-        <p class="hours">
-          {nf.format(g.value)}
-          <span>{unit}</span>
-        </p>
+        {g.value !== null ? (
+          <p class="hours">
+            {nf.format(g.value)}
+            <span>{unit}</span>
+          </p>
+        ) : (
+          <p class="tag">{g.tag}</p>
+        )}
       </li>
         ))}
       </ol>
@@ -103,6 +115,16 @@ const nf = new Intl.NumberFormat('en-US');
   }
   .ranking li:nth-child(2) .rank,
   .ranking li:nth-child(3) .rank { color: #8fded7; }
+  .no-value .info h3 { margin: 0; }
+  .tag {
+    margin: 0;
+    justify-self: end;
+    padding: 0.15rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid rgba(190, 200, 209, 0.25);
+    color: var(--silver);
+    font-size: var(--step--1);
+  }
   .info h3 { font-size: var(--step-0); margin: 0 0 0.45rem; }
   .bar {
     height: 6px;

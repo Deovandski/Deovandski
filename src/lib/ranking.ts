@@ -1,14 +1,14 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-export type RankedItem = { rank: number; name: string; value: number };
+export type RankedItem = { rank: number; name: string; value: number | null; tag?: string };
 
 /**
  * Reads a "| Rank | <item> | <value> |" Markdown table, e.g.
  * content/gaming/top39.md (Game, Hours) or content/anime/top39.md (Anime, Episodes).
  * Throws a readable error listing every bad line so the build tells you what to fix.
  */
-export function loadRanking(file: string, itemColumn: string, valueColumn: string): RankedItem[] {
+export function loadRanking(file: string, itemColumn: string, valueColumn: string | null, tagColumn?: string): RankedItem[] {
   const text = readFileSync(resolve(file), 'utf8');
   const rows = text
     .split(/\r?\n/)
@@ -21,9 +21,10 @@ export function loadRanking(file: string, itemColumn: string, valueColumn: strin
   const col = {
     rank: header.indexOf('rank'),
     name: header.indexOf(itemColumn.toLowerCase()),
-    value: header.indexOf(valueColumn.toLowerCase()),
+    value: valueColumn ? header.indexOf(valueColumn.toLowerCase()) : -2,
+    tag: tagColumn ? header.indexOf(tagColumn.toLowerCase()) : -2,
   };
-  const labels = { rank: 'Rank', name: itemColumn, value: valueColumn };
+  const labels = { rank: 'Rank', name: itemColumn, value: valueColumn, tag: tagColumn };
   for (const [key, idx] of Object.entries(col)) {
     if (idx === -1) throw new Error(`${file}: the table header needs a "${labels[key as keyof typeof labels]}" column.`);
   }
@@ -34,11 +35,12 @@ export function loadRanking(file: string, itemColumn: string, valueColumn: strin
     const c = cells(line);
     const rank = Number(c[col.rank]);
     const name = (c[col.name] ?? '').trim();
-    const value = Number((c[col.value] ?? '').replace(/[,_\s]/g, ''));
+    const value = col.value >= 0 ? Number((c[col.value] ?? '').replace(/[,_\s]/g, '')) : null;
+    const tag = col.tag >= 0 ? (c[col.tag] ?? '').trim() : undefined;
     if (!Number.isInteger(rank) || rank < 1) errors.push(`line ${n}: rank "${c[col.rank]}" must be a whole number from 1.`);
     if (!name) errors.push(`line ${n}: ${itemColumn.toLowerCase()} name is empty.`);
-    if (!Number.isFinite(value) || value < 0) errors.push(`line ${n}: ${valueColumn.toLowerCase()} "${c[col.value]}" must be a number.`);
-    items.push({ rank, name, value: Math.round(value) });
+    if (value !== null && (!Number.isFinite(value) || value < 0)) errors.push(`line ${n}: ${valueColumn!.toLowerCase()} "${c[col.value]}" must be a number.`);
+    items.push({ rank, name, value: value === null ? null : Math.round(value), tag });
   }
 
   const seen = new Set<number>();

@@ -1,0 +1,224 @@
+---
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import { Content as Story } from '../../content/gym/story.md';
+
+// ---- data: content/gym/weights.md ----
+const FILE = 'content/gym/weights.md';
+const raw = readFileSync(resolve(FILE), 'utf8');
+const goal = Number(raw.match(/^Goal:\s*(\d+)/m)?.[1] ?? 200);
+const points = raw
+  .split(/\r?\n/)
+  .filter((l) => /^\|\s*\d{4}\s*\|/.test(l))
+  .map((l) => {
+    const [year, weight] = l.replace(/^\||\|$/g, '').split('|').map((c) => Number(c.trim()));
+    if (!Number.isFinite(weight)) throw new Error(`${FILE}: "${l}" needs a numeric weight.`);
+    return { year, weight };
+  })
+  .sort((a, b) => a.year - b.year);
+if (points.length < 2) throw new Error(`${FILE}: add at least two years.`);
+
+// Photos named after the year, e.g. content/gym/photos/2016.jpg
+const photoModules = import.meta.glob<ImageMetadata>('/content/gym/photos/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}', {
+  eager: true,
+  import: 'default',
+});
+const photoByYear = new Map<number, ImageMetadata>();
+for (const [path, src] of Object.entries(photoModules)) {
+  const y = Number(path.split('/').pop()!.match(/^(\d{4})/)?.[1]);
+  if (y) photoByYear.set(y, src);
+}
+
+// ---- scales ----
+const W = 720, H = 400;
+const M = { l: 56, r: 28, t: 64, b: 44 };
+const minW = Math.floor((Math.min(goal, ...points.map((p) => p.weight)) - 15) / 10) * 10;
+const maxW = Math.ceil((Math.max(...points.map((p) => p.weight)) + 10) / 10) * 10;
+const y0 = points[0].year, y1 = points[points.length - 1].year;
+const x = (year: number) => M.l + ((year - y0) / (y1 - y0)) * (W - M.l - M.r);
+const y = (w: number) => M.t + ((maxW - w) / (maxW - minW)) * (H - M.t - M.b);
+const ticks: number[] = [];
+for (let t = Math.ceil(minW / 50) * 50; t <= maxW; t += 50) ticks.push(t);
+
+const line = points.map((p, i) => `${i ? 'L' : 'M'}${x(p.year).toFixed(1)},${y(p.weight).toFixed(1)}`).join(' ');
+
+// Label only the start, the lowest point and the latest point.
+const lowest = points.reduce((a, b) => (b.weight < a.weight ? b : a));
+const labeled = new Set([points[0].year, lowest.year, points[points.length - 1].year]);
+
+const PIN_R = 22;
+const pins = await Promise.all(
+  points.map(async (p) => {
+    const px = x(p.year), py = y(p.weight);
+    const above = py - 48 - PIN_R > 4;
+    const cy = above ? py - 48 : py + 48;
+    const photo = photoByYear.get(p.year);
+    const img = photo ? (await getImage({ src: photo, width: 120, height: 120, format: 'webp', fit: 'cover' })).src : null;
+    const full = photo ? (await getImage({ src: photo, width: 1200, format: 'webp' })).src : null;
+    return { ...p, px, py, cy, above, img, full };
+  }),
+);
+const nf = new Intl.NumberFormat('en-US');
+---
+
+<div class="gym">
+  <p class="goal-callout">Onward to {goal} lb!</p>
+
+  <figure class="chart">
+    <figcaption class="sr-only">
+      Weight by year: {points.map((p) => `${p.year}, ${p.weight} pounds`).join('; ')}. Goal: {goal} pounds.
+    </figcaption>
+    <div class="chart__scroll">
+      <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Weight trend from ${y0} to ${y1}, with a goal of ${goal} pounds`}>
+        <defs>
+          {pins.filter((p) => p.img).map((p) => (
+            <clipPath id={`pin-${p.year}`}>
+              <circle cx={p.px} cy={p.cy} r={PIN_R} />
+            </clipPath>
+          ))}
+        </defs>
+
+        {ticks.map((t) => (
+          <g class="grid">
+            <line x1={M.l} x2={W - M.r} y1={y(t)} y2={y(t)} />
+            <text x={M.l - 10} y={y(t)} dy="0.35em" text-anchor="end">{t}</text>
+          </g>
+        ))}
+
+        <g class="goal">
+          <line x1={M.l} x2={W - M.r} y1={y(goal)} y2={y(goal)} />
+          <text x={W - M.r} y={y(goal) - 8} text-anchor="end">Goal: {goal} lb</text>
+        </g>
+
+        {pins.map((p) => (
+          <g class="year">
+            <text x={p.px} y={H - M.b + 24} text-anchor="middle">{p.year}</text>
+          </g>
+        ))}
+
+        <path class="trend" d={line} />
+
+        {pins.map((p) => (
+          <g class:list={['pin', { empty: !p.img }]}>
+            <line x1={p.px} x2={p.px} y1={p.above ? p.cy + PIN_R : p.cy - PIN_R} y2={p.above ? p.py - 7 : p.py + 7} />
+            {p.img ? (
+              <a href={p.full} aria-label={`Photo from ${p.year}`}>
+                <image href={p.img} x={p.px - PIN_R} y={p.cy - PIN_R} width={PIN_R * 2} height={PIN_R * 2} clip-path={`url(#pin-${p.year})`} preserveAspectRatio="xMidYMid slice" />
+                <circle class="ring" cx={p.px} cy={p.cy} r={PIN_R} />
+              </a>
+            ) : (
+              <circle class="ring" cx={p.px} cy={p.cy} r={PIN_R - 4} />
+            )}
+          </g>
+        ))}
+
+        {pins.map((p) => (
+          <g class="pt" tabindex="0" data-tip={`${p.year}: ${nf.format(p.weight)} lb`} data-x={p.px} data-y={p.py}>
+            <circle class="hit" cx={p.px} cy={p.py} r="16" />
+            <circle class="dot" cx={p.px} cy={p.py} r="5" />
+            {labeled.has(p.year) && (
+              <text class="value" x={p.year === y1 ? p.px - 10 : p.px + 10} text-anchor={p.year === y1 ? 'end' : 'start'} y={p.py + (p.above ? 18 : -12)}>{p.weight} lb</text>
+            )}
+          </g>
+        ))}
+      </svg>
+      <div class="tip" role="status" hidden></div>
+    </div>
+    <details class="table-view">
+      <summary>Show as a table</summary>
+      <table>
+        <thead><tr><th scope="col">Year</th><th scope="col">Weight (lb)</th></tr></thead>
+        <tbody>
+          {points.map((p) => (<tr><td>{p.year}</td><td>{p.weight}</td></tr>))}
+        </tbody>
+      </table>
+    </details>
+  </figure>
+
+  <div class="story">
+    <Story />
+  </div>
+</div>
+
+<style>
+  .goal-callout {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    line-height: 1.1;
+    color: var(--teal);
+    text-shadow: 0 0 26px rgba(57, 197, 187, 0.4);
+    margin: 0 0 1rem;
+  }
+  .chart { margin: 0 0 2rem; max-width: 52rem; }
+  .chart__scroll { position: relative; overflow-x: auto; }
+  svg { display: block; width: 100%; min-width: 520px; height: auto; font-family: var(--font-body); }
+
+  .grid line { stroke: rgba(190, 200, 209, 0.12); stroke-width: 1; }
+  .grid text, .year text { fill: var(--muted); font-size: 13px; }
+  .goal line { stroke: var(--pink); stroke-width: 1.5; stroke-dasharray: 6 6; opacity: 0.8; }
+  .goal text { fill: var(--silver); font-size: 13px; font-weight: 700; }
+
+  .trend { fill: none; stroke: var(--teal); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  .dot { fill: var(--teal); stroke: var(--night-2); stroke-width: 2; }
+  .hit { fill: transparent; }
+  .pt { cursor: default; outline: none; }
+  .pt:hover .dot, .pt:focus-visible .dot { r: 7; }
+  .pt:focus-visible .hit { stroke: var(--teal); stroke-width: 2; }
+  .value { fill: var(--text); font-size: 13px; font-weight: 700; }
+
+  .pin line { stroke: rgba(57, 197, 187, 0.5); stroke-width: 1; }
+  .pin .ring { fill: none; stroke: var(--teal); stroke-width: 2; }
+  .pin.empty line { stroke-dasharray: 2 3; stroke: rgba(190, 200, 209, 0.25); }
+  .pin.empty .ring { stroke: rgba(190, 200, 209, 0.3); stroke-dasharray: 3 3; stroke-width: 1.5; }
+
+  .tip {
+    position: absolute;
+    transform: translate(-50%, calc(-100% - 12px));
+    padding: 0.3rem 0.6rem;
+    border-radius: 8px;
+    background: var(--night);
+    border: 1px solid rgba(57, 197, 187, 0.6);
+    color: var(--text);
+    font-size: var(--step--1);
+    font-weight: 700;
+    white-space: nowrap;
+    pointer-events: none;
+  }
+
+  .table-view { margin-top: 0.75rem; font-size: var(--step--1); color: var(--muted); }
+  .table-view summary { cursor: pointer; }
+  .table-view table { margin-top: 0.5rem; border-collapse: collapse; }
+  .table-view th, .table-view td { padding: 0.25rem 1.25rem 0.25rem 0; text-align: left; color: var(--silver); }
+
+  .story { max-width: var(--measure); }
+  .story :global(h2) { font-size: var(--step-1); color: var(--silver); margin: 1.75rem 0 0.5rem; }
+  .story :global(ul) { margin: 0 0 1rem; padding-left: 1.2rem; }
+  .story :global(li) { margin: 0.3rem 0; }
+  .story :global(li::marker) { color: var(--teal); }
+  .story :global(strong) { color: var(--teal); font-family: var(--font-display); font-size: var(--step-1); }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.gym').forEach((root) => {
+    const svg = root.querySelector('svg')!;
+    const tip = root.querySelector<HTMLElement>('.tip')!;
+    const show = (pt: SVGGElement) => {
+      const box = svg.getBoundingClientRect();
+      const scale = box.width / svg.viewBox.baseVal.width;
+      tip.textContent = pt.dataset.tip ?? '';
+      tip.style.left = `${Number(pt.dataset.x) * scale}px`;
+      tip.style.top = `${Number(pt.dataset.y) * scale}px`;
+      tip.hidden = false;
+    };
+    const hide = () => (tip.hidden = true);
+    root.querySelectorAll<SVGGElement>('.pt').forEach((pt) => {
+      pt.addEventListener('mouseenter', () => show(pt));
+      pt.addEventListener('focus', () => show(pt));
+      pt.addEventListener('mouseleave', hide);
+      pt.addEventListener('blur', hide);
+    });
+  });
+</script>
