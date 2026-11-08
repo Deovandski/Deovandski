@@ -44,7 +44,7 @@ You will eat that harvest, even when it tastes like shit. Nobody eats it for you
 - Pain doesn't make you wiser, but it's a powerful fuel for growth. Time doesn't heal you. Information doesn't become behavior. **A lesson that never changes a decision was entertainment.**
 - Nobody can commit for you. People can open doors. **Nobody walks through them using your legs.**
 - Potential deserves no applause, but I'll always give it encouragement and wisdom. A dream earns dignity when your behavior starts serving it.
-- Not every battle deserves you. Sometimes "persistence" is just fear of admitting the system is dead. **Let faith lead you to war for a better future, and know that losing faith is valid when people prove unworthy of your love.**
+- Not every battle deserves you. Sometimes "persistence" is just fear of admitting the system is dead. **Fight in faith for a better future. When people prove unworthy of your love, losing that faith isn't failure; it's clarity.**
 - Love is not an exemption from standards. **Compassion can explain behavior without volunteering to absorb it.**
 - **Peace is not passivity.** Peace is maintained: boundaries, confrontation, recovery, honest decisions.
 - Spiritual bypassing is still bypassing. Hiding behind Buddhist quotes, "just let it go," or standing by idle while someone chooses self-destruction isn't peace; it's what Chögyam Trungpa called idiot compassion. **Say your piece, then walk away.**
