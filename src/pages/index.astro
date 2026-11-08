@@ -61,6 +61,11 @@ const tabs = [
   { id: 'sex', icon: '😘', label: 'Sex' },
 ];
 
+// Alphabetical for visitors; 初音ミク sorts as "Hatsune Miku". Dev stays the tab that opens by default.
+const sortKey = (t: { id: string; label: string }) => (t.id === 'miku' ? 'Hatsune Miku' : t.label).toLowerCase();
+tabs.sort((a, b) => sortKey(a).localeCompare(sortKey(b)));
+const DEFAULT_TAB = 'dev';
+
 const games = loadRanking('content/gaming/top39.md', 'Game', 'Hours');
 const anime = loadRanking('content/anime/top39.md', 'Anime', 'Episodes');
 const screen = loadRanking('content/screen/top39.md', 'Title', null, 'Type');
@@ -103,7 +108,7 @@ const catPhotos = await Promise.all(
   </section>
 
   <div class="lives">
-    <h2 class="lives__title" id="lives-title">The many lives of Deo</h2>
+    <h2 class="lives__title" id="lives-title">The lives that fulfill Deo</h2>
     <div class="tabs" role="tablist" aria-labelledby="lives-title">
       {
         tabs.map((t, i) => (
@@ -112,8 +117,8 @@ const catPhotos = await Promise.all(
             role="tab"
             id={`tab-${t.id}`}
             aria-controls={`panel-${t.id}`}
-            aria-selected={i === 0 ? 'true' : 'false'}
-            tabindex={i === 0 ? 0 : -1}
+            aria-selected={t.id === DEFAULT_TAB ? 'true' : 'false'}
+            tabindex={t.id === DEFAULT_TAB ? 0 : -1}
             data-tab={t.id}
           >
             <span class="tabs__icon" aria-hidden="true">
@@ -221,8 +226,8 @@ const catPhotos = await Promise.all(
     </section>
 
     <section class="panel" role="tabpanel" id="panel-concert" aria-labelledby="tab-concert" tabindex="0" hidden>
-      <Sections data={{ intro: concerts.intro, sections: concerts.sections.filter((x) => !x.hasSlot) }} id="concert" layout="cards" photoAlt={(t) => `At ${t}`} />
-      <Sections data={{ intro: [], sections: concerts.sections.filter((x) => x.hasSlot) }} id="concert" photoAlt={(t) => `At ${t}`} />
+      <Sections data={{ intro: concerts.intro, sections: concerts.sections.filter((x) => !x.hasSlot) }} id="concert" layout="cards" avatarsDir="content/concerts/bands" photoAlt={(t) => `At ${t}`} />
+      <Sections data={{ intro: [], sections: concerts.sections.filter((x) => x.hasSlot) }} id="concert" avatarsDir="content/concerts/bands" photoAlt={(t) => `At ${t}`} />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-theater" aria-labelledby="tab-theater" tabindex="0" hidden>

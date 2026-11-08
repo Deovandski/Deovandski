@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import type { Sections } from '../lib/sections';
+import { imageFor, type Sections } from '../lib/sections';
 
 interface Props {
   data: Sections;
@@ -9,9 +9,18 @@ interface Props {
   layout?: 'rows' | 'cards';
   slots?: number; // force this many photo boxes per section (e.g. 2 for Fishing/Camping)
   empty?: string; // shown when the file has no sections yet
+  avatarsDir?: string; // show a round image (or initials) left of each item, from <dir>/<item-slug>.jpg
 }
 
-const { data, id, photoAlt, layout = 'rows', slots, empty } = Astro.props;
+const { data, id, photoAlt, layout = 'rows', slots, empty, avatarsDir } = Astro.props;
+const initials = (name: string) =>
+  name
+    .replace(/[^\p{L}\p{N} ]/gu, '')
+    .split(/\s+/)
+    .filter((w) => w && !/^(the|of|and|in|a)$/i.test(w))
+    .slice(0, 2)
+    .map((w) => w[0].toUpperCase())
+    .join('');
 const { intro, sections } = data;
 const areas = sections.map((a) => ({
   ...a,
@@ -48,7 +57,15 @@ const areas = sections.map((a) => ({
           {area.items.length > 0 && (
           <ul>
             {area.items.map((t) => (
-              <li>
+              <li class:list={{ 'has-avatar': !!avatarsDir }}>
+                {avatarsDir && (() => {
+                  const img = imageFor(avatarsDir, t.name);
+                  return img ? (
+                    <Image class="avatar" src={img} alt="" width={96} height={96} />
+                  ) : (
+                    <span class="avatar avatar--initials" aria-hidden="true">{initials(t.name)}</span>
+                  );
+                })()}
                 {t.symbol && (
                   <span class="glyph" aria-hidden="true" lang={/[぀-ヿ一-鿿]/.test(t.symbol) ? 'ja' : undefined}>
                     {t.symbol}
@@ -124,7 +141,24 @@ const areas = sections.map((a) => ({
   .area h3 { font-size: var(--step-1); color: var(--teal); margin-bottom: 0.75rem; }
   .area ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 1rem; }
   .area li { display: grid; grid-template-columns: 3rem minmax(0, 1fr); gap: 0.85rem; align-items: start; }
-  .area li:not(:has(.glyph)) { grid-template-columns: minmax(0, 1fr); }
+  .area li:not(:has(.glyph)):not(.has-avatar) { grid-template-columns: minmax(0, 1fr); }
+  .area li.has-avatar { grid-template-columns: 2.75rem minmax(0, 1fr); align-items: center; }
+  .avatar {
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(57, 197, 187, 0.5);
+  }
+  .avatar--initials {
+    display: grid;
+    place-items: center;
+    background: rgba(57, 197, 187, 0.1);
+    color: var(--teal);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 0.85rem;
+  }
   .glyph {
     display: grid;
     place-items: center;

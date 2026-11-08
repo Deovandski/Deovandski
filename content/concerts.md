@@ -8,6 +8,10 @@ Edit and push; the Concert Life tab rebuilds from this file.
   "&" becomes "and", e.g. `rock-and-metal/`) and drop your own pictures in it.
   The section then shows them.
 - Plain text under a heading is shown as that section's description.
+- Band images: drop a square-ish photo in `content/concerts/bands/`, named
+  after the band in lower case with dashes ("&" becomes "and"), e.g.
+  `ghost.jpg`, `munly-and-the-lupercalians.jpg`, `black-jacket-symphony.webp`.
+  It shows as a circle left of the name; until then the circle shows initials.
 
 > Live bands and shows I've watched. Hatsune Miku and Vocaloid concerts are special to me, so they have their own tab: 初音ミク.
 
@@ -56,6 +60,7 @@ Edit and push; the Concert Life tab rebuilds from this file.
 
 Three days at Red Eagle Campground in East Glacier, Montana, on Blackfeet Nation land, July 25 to 27, 2025. Alcohol-free, in respect of the hosts' wishes, with the Rocky Mountains as the backdrop.
 
+Also on the bill: Old Man's Child (their first US appearance), Chelsea Wolfe (solo acoustic set), Converge, Blood Incantation, Panopticon (playing Autumn Eternal), Emma Ruth Rundle, Hexvessel, Steve Von Till, Blackbraid, Inter Arma, Lilith, and more.
+
 - Wardruna: The headliner.
 - Munly & The Lupercalians
-- Also on the bill: Old Man's Child (their first US appearance), Chelsea Wolfe (solo acoustic set), Converge, Blood Incantation, Panopticon (playing Autumn Eternal), Emma Ruth Rundle, Hexvessel, Steve Von Till, Blackbraid, Inter Arma, Lilith, and more.

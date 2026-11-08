@@ -81,3 +81,10 @@ export function loadSections(file: string, photoDir: string): Sections {
 
   return { intro, sections };
 }
+
+/** A band/artist image at <dir>/<slug of name>.<ext>, e.g. content/concerts/bands/ghost.jpg */
+export function imageFor(dir: string, name: string): ImageMetadata | undefined {
+  const prefix = `/${dir}/${slugify(name)}.`;
+  const hit = Object.entries(photoModules).find(([path]) => path.startsWith(prefix));
+  return hit?.[1];
+}
