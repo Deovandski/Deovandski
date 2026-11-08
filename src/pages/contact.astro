@@ -1,0 +1,71 @@
+---
+import Base from '../layouts/Base.astro';
+
+const channels = [
+  {
+    label: 'Personal and HusbandOutWorld',
+    email: 'Deovandski@outlook.com',
+  },
+  {
+    label: 'Wizard Deo Solutions',
+    email: 'Deovandski@wizarddeosolutions.com',
+  },
+];
+---
+
+<Base title="Contact" description="How to reach Deovandski.">
+  <h1>Contact</h1>
+  <p class="lede">
+    Want to reach out? Find me on <a href="https://www.linkedin.com/in/deovandski/">LinkedIn</a> or send an email.
+    Please don't call or text me unless I know you.
+  </p>
+
+  <dl class="channels">
+    {
+      channels.map((c) => (
+        <div>
+          <dt>{c.label}</dt>
+          <dd>
+            <a href={`mailto:${c.email}`}>{c.email}</a>
+          </dd>
+        </div>
+      ))
+    }
+    <div>
+      <dt>Everything else</dt>
+      <dd><a href="https://www.linkedin.com/in/deovandski/">linkedin.com/in/deovandski</a></dd>
+    </div>
+  </dl>
+</Base>
+
+<style>
+  .lede {
+    font-size: var(--step-1);
+    line-height: 1.45;
+    max-width: 40rem;
+  }
+  .channels {
+    margin: 2.5rem 0 0;
+    max-width: 48rem;
+  }
+  .channels > div {
+    display: grid;
+    grid-template-columns: 16rem minmax(0, 1fr);
+    gap: 0.25rem 1.5rem;
+    align-items: baseline;
+    padding-block: 1.25rem;
+    border-top: 1px solid rgba(190, 200, 209, 0.12);
+  }
+  .channels > div:last-child { border-bottom: 1px solid rgba(190, 200, 209, 0.12); }
+  dt { color: var(--muted); }
+  dd {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: clamp(1.05rem, 2.6vw, 1.6rem);
+    overflow-wrap: anywhere;
+  }
+  @media (max-width: 640px) {
+    .channels > div { grid-template-columns: 1fr; }
+  }
+</style>

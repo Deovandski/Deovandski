@@ -10,6 +10,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Home page tabs (Dev, Author, Influencer life) | `src/pages/index.astro` |
 | Mentor Life tab | `content/mentor.md` (plain Markdown) |
 | King of Hues photo | `src/assets/king-of-hues.jpg` |
+| Contact page (emails) | `src/pages/contact.astro` |
 | Blog posts | `content/blog/<post-name>/index.md` (copy `hello-github` as a template) |
 | Traveler Life tab (map pins and photos) | `content/travel/` (see its README and COUNTRY_CODES.md) |
 | Gamer Life tab (top 10 games) | `content/gaming/top10.md` |
