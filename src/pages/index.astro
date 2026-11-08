@@ -7,6 +7,7 @@ import MentorLife from '../components/MentorLife.astro';
 import MultilingualLife from '../components/MultilingualLife.astro';
 import Sections from '../components/Sections.astro';
 import GymLife from '../components/GymLife.astro';
+import SexLife from '../components/SexLife.astro';
 import kingOfHues from '../assets/king-of-hues.jpg';
 import { loadPeeta } from '../lib/peeta';
 import { loadRanking } from '../lib/ranking';
@@ -50,10 +51,12 @@ const tabs = [
   { id: 'gym', icon: '🏋️', label: 'Gym Life' },
   { id: 'miku', icon: '🎤', label: '初音ミク Life' },
   { id: 'concert', icon: '🤘', label: 'Concert Life' },
+  { id: 'theater', icon: '🎭', label: 'Theater & Opera Life' },
   { id: 'gamer', icon: '🎮', label: 'Gamer Life' },
   { id: 'weeb', icon: '🍥', label: 'Weeb Life' },
   { id: 'potato', icon: '🥔', label: 'Potato Life' },
   { id: 'cat', icon: '🐱', label: 'Cat Dad Life' },
+  { id: 'sex', icon: '😘', label: 'Sex Life' },
 ];
 
 const games = loadRanking('content/gaming/top39.md', 'Game', 'Hours');
@@ -62,6 +65,7 @@ const screen = loadRanking('content/screen/top39.md', 'Title', null, 'Type');
 const tattoos = loadSections('content/tattoos.md', 'content/tattoos');
 const mikuConcerts = loadSections('content/miku.md', 'content/miku');
 const concerts = loadSections('content/concerts.md', 'content/concerts');
+const theater = loadSections('content/theater.md', 'content/theater');
 const nf = new Intl.NumberFormat('en-US');
 const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
@@ -204,7 +208,12 @@ const catPhotos = await Promise.all(
     </section>
 
     <section class="panel" role="tabpanel" id="panel-concert" aria-labelledby="tab-concert" tabindex="0" hidden>
-      <Sections data={concerts} id="concert" photoAlt={(t) => `At ${t}`} />
+      <Sections data={{ intro: concerts.intro, sections: concerts.sections.filter((x) => !x.hasSlot) }} id="concert" layout="cards" photoAlt={(t) => `At ${t}`} />
+      <Sections data={{ intro: [], sections: concerts.sections.filter((x) => x.hasSlot) }} id="concert" photoAlt={(t) => `At ${t}`} />
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-theater" aria-labelledby="tab-theater" tabindex="0" hidden>
+      <Sections data={theater} id="theater" layout="cards" photoAlt={(t) => `At ${t}`} />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-gamer" aria-labelledby="tab-gamer" tabindex="0" hidden>
@@ -252,6 +261,10 @@ const catPhotos = await Promise.all(
           </ul>
         )
       }
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-sex" aria-labelledby="tab-sex" tabindex="0" hidden>
+      <SexLife />
     </section>
   </div>
 

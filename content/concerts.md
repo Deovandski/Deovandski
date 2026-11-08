@@ -2,18 +2,55 @@
 
 Edit and push; the Concert Life tab rebuilds from this file.
 
-- Each `##` heading is a group of shows. If a folder `content/concerts/<heading>/`
-  exists (lower case, dashes), the section gets a photo box and shows its photos.
-- Each bullet is one band. Add a note after a colon, e.g. `- Ghost: Minneapolis, 2024`.
+- Each `##` heading is a genre (or a festival). Each bullet is one band or show;
+  add a note after a colon, e.g. `- Ghost: Minneapolis, 2024`.
+- Photos: create a folder `content/concerts/<heading>/` (lower case, dashes,
+  "&" becomes "and", e.g. `rock-and-metal/`) and drop your own pictures in it.
+  The section then shows them.
 - Plain text under a heading is shown as that section's description.
 
-> Live bands I've watched.
+> Live bands and shows I've watched. Hatsune Miku and Vocaloid concerts are special to me, so they have their own tab: 初音ミク Life.
 
-## Shows
+## Rock & Metal
+
+- Ghost
+- Evanescence
+- Disturbed
+- Sevendust
+- Alice Cooper
+
+## Tribute shows
+
+- Hairball
+- Black Jacket Symphony: AC/DC's Back in Black
+
+## Synthwave
+
+- Magic Sword
+- Dance With The Dead
+
+## Folk
+
+- Faun
+
+## Pop, indie & psychedelic
 
 - Artemas
+- Tame Impala
+
+## Country
+
 - Sturgill Simpson
-- Ghost
+
+## Orchestral: games & film
+
+- The Witcher in Concert
+- The Music of Studio Ghibli
+- Stardew Valley: Symphony of Seasons
+
+## Performance art
+
+- Blue Man Group: Charles Playhouse, Boston
 
 ## Fire in the Mountains 2025
 
