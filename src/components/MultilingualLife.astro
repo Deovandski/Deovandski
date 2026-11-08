@@ -1,0 +1,106 @@
+---
+import { loadLanguages } from '../lib/languages';
+
+const langs = loadLanguages();
+const SEGMENTS = 10;
+---
+
+<p>Fully bilingual in English and Portuguese, and working on the rest.</p>
+
+<ul class="eq" aria-label="Language levels">
+  {
+    langs.map((l, i) => (
+      <li class={`eq__col is-${l.color}`} style={`--i:${i}`}>
+        <div class="eq__bar" role="meter" aria-valuemin="0" aria-valuemax={SEGMENTS} aria-valuenow={l.level} aria-label={`${l.name}: ${l.level} of ${SEGMENTS}, ${l.note}`}>
+          {Array.from({ length: SEGMENTS }, (_, s) => (
+            <span class:list={['eq__seg', { on: s < l.level }]} style={`--s:${s}`} />
+          ))}
+        </div>
+        <p class="eq__name" lang={l.native === '日本語' ? 'ja' : undefined}>{l.native}</p>
+        <p class="eq__en" aria-hidden={l.native === l.name ? 'true' : undefined}>{l.native !== l.name ? l.name : '\u00a0'}</p>
+        <p class="eq__note">{l.note}</p>
+      </li>
+    ))
+  }
+</ul>
+
+<ul class="legend">
+  <li class="is-green">Fluent</li>
+  <li class="is-yellow">In progress</li>
+  <li class="is-red">Early days</li>
+</ul>
+
+<style>
+  .eq {
+    --green: #4ade80;
+    --yellow: #facc15;
+    --red: #f43f5e;
+    list-style: none;
+    margin: 1.75rem 0 0;
+    padding: 1.5rem 1.25rem 1.25rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(7rem, 1fr));
+    gap: 1.5rem;
+    max-width: 44rem;
+    border-radius: 16px;
+    background: rgba(7, 11, 31, 0.6);
+    border: 1px solid rgba(190, 200, 209, 0.12);
+  }
+  .eq__col { text-align: center; }
+  .is-green { --c: var(--green); }
+  .is-yellow { --c: var(--yellow); }
+  .is-red { --c: var(--red); }
+
+  .eq__bar {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 5px;
+    width: min(100%, 4.5rem);
+    margin: 0 auto 0.85rem;
+  }
+  .eq__seg {
+    height: 14px;
+    border-radius: 3px;
+    background: rgba(190, 200, 209, 0.08);
+  }
+  .eq__seg.on {
+    background: var(--c);
+    box-shadow: 0 0 10px color-mix(in srgb, var(--c) 60%, transparent);
+    animation: light 0.25s ease-out both;
+    animation-delay: calc(var(--i) * 90ms + var(--s) * 45ms);
+  }
+  @keyframes light {
+    from { opacity: 0; transform: scaleX(0.6); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .eq__name {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--step-1);
+    color: var(--text);
+  }
+  .eq__en, .eq__note { margin: 0.1rem 0 0; font-size: var(--step--1); color: var(--muted); }
+  .eq__note { color: var(--c); font-weight: 700; }
+
+  .legend {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin: 1rem 0 0;
+    padding: 0;
+    font-size: var(--step--1);
+    color: var(--muted);
+  }
+  .legend li { display: inline-flex; align-items: center; gap: 0.45rem; }
+  .legend li::before {
+    content: '';
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 3px;
+    background: var(--c);
+  }
+  .legend { --green: #4ade80; --yellow: #facc15; --red: #f43f5e; }
+</style>
