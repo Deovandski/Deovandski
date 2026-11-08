@@ -8,7 +8,7 @@ const photoModules = import.meta.glob<ImageMetadata>('/content/**/*.{jpg,jpeg,pn
   import: 'default',
 });
 
-export type SectionItem = { symbol?: string; vraki: boolean; name: string; meaning: string[] };
+export type SectionItem = { symbol?: string; vraki: boolean; name: string; meaning: string[]; tags: string[] };
 export type Section = {
   title: string;
   slug: string;
@@ -33,12 +33,18 @@ function parseItem(body: string): SectionItem {
   const rest = body.replace(/^\[vraki\]\s*/i, '');
   // Split at the first colon followed by a space; the meaning may contain more colons.
   const m = rest.match(/^(.*?):\s+(.*)$/);
-  const head = (m ? m[1] : rest).trim();
+  let head = (m ? m[1] : rest).trim();
   const meaning = m ? [m[2].trim()] : [];
+  // Tags in braces after the name: "- Wardruna {FITM 2025 Favs}"
+  const tags: string[] = [];
+  head = head.replace(/\s*\{([^}]+)\}/g, (_, t: string) => {
+    tags.push(t.trim());
+    return '';
+  }).trim();
   const sym = head.match(/^(\S+)\s+(.+)$/);
   // A leading token with no Latin letters or digits (a rune, kanji, etc.) is the symbol.
-  if (sym && !/[A-Za-z0-9]/.test(sym[1])) return { symbol: sym[1], vraki, name: sym[2], meaning };
-  return { vraki, name: head, meaning };
+  if (sym && !/[A-Za-z0-9]/.test(sym[1])) return { symbol: sym[1], vraki, name: sym[2], meaning, tags };
+  return { vraki, name: head, meaning, tags };
 }
 
 /**

@@ -226,8 +226,7 @@ const catPhotos = await Promise.all(
     </section>
 
     <section class="panel" role="tabpanel" id="panel-concert" aria-labelledby="tab-concert" tabindex="0" hidden>
-      <Sections data={{ intro: concerts.intro, sections: concerts.sections.filter((x) => !x.hasSlot) }} id="concert" layout="cards" avatarsDir="content/concerts/bands" photoAlt={(t) => `At ${t}`} />
-      <Sections data={{ intro: [], sections: concerts.sections.filter((x) => x.hasSlot) }} id="concert" avatarsDir="content/concerts/bands" photoAlt={(t) => `At ${t}`} />
+      <Sections data={concerts} id="concert" layout="cards" sortAlpha avatarsDir="content/concerts/bands" photoAlt={(t) => `At ${t}`} />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-theater" aria-labelledby="tab-theater" tabindex="0" hidden>

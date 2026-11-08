@@ -10,9 +10,11 @@ interface Props {
   slots?: number; // force this many photo boxes per section (e.g. 2 for Fishing/Camping)
   empty?: string; // shown when the file has no sections yet
   avatarsDir?: string; // show a round image (or initials) left of each item, from <dir>/<item-slug>.jpg
+  sortAlpha?: boolean; // sort sections and their items A-Z (ignoring a leading "The")
 }
 
-const { data, id, photoAlt, layout = 'rows', slots, empty, avatarsDir } = Astro.props;
+const { data, id, photoAlt, layout = 'rows', slots, empty, avatarsDir, sortAlpha } = Astro.props;
+const sortName = (n: string) => n.replace(/^the\s+/i, '').toLowerCase();
 const initials = (name: string) =>
   name
     .replace(/[^\p{L}\p{N} ]/gu, '')
@@ -22,7 +24,12 @@ const initials = (name: string) =>
     .map((w) => w[0].toUpperCase())
     .join('');
 const { intro, sections } = data;
-const areas = sections.map((a) => ({
+const ordered = sortAlpha
+  ? [...sections]
+      .sort((a, b) => sortName(a.title).localeCompare(sortName(b.title)))
+      .map((a) => ({ ...a, items: [...a.items].sort((x, y) => sortName(x.name).localeCompare(sortName(y.name))) }))
+  : sections;
+const areas = ordered.map((a) => ({
   ...a,
   hasSlot: slots ? true : a.hasSlot,
   missing: slots ? Math.max(0, slots - a.photos.length) : a.photos.length ? 0 : 1,
@@ -81,6 +88,7 @@ const areas = sections.map((a) => ({
                     {t.name}
                     {t.symbol && <span class="sr-only"> ({t.symbol})</span>}
                     {t.vraki && <span class="sr-only"> (written in Vraki)</span>}
+                    {t.tags.map((tag) => <span class="tag">{tag}</span>)}
                   </p>
                   {t.meaning.map((m) => <p class="meaning">{m}</p>)}
                 </div>
@@ -176,6 +184,19 @@ const areas = sections.map((a) => ({
   .glyph:lang(ja) { font-size: 0.85rem; writing-mode: vertical-rl; padding-block: 0.35rem; }
   .name { margin: 0; font-family: var(--font-display); font-weight: 800; }
   .meaning { margin: 0.15rem 0 0; color: var(--silver); }
+  .tag {
+    display: table;
+    margin: 0.2rem 0 0;
+    padding: 0.05rem 0.55rem;
+    border-radius: 999px;
+    background: rgba(225, 40, 133, 0.16);
+    border: 1px solid rgba(225, 40, 133, 0.55);
+    color: #f7a8cf;
+    font-family: var(--font-body);
+    font-size: 0.72rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
   .meaning + .meaning { margin-top: 0.6rem; }
   .intro { font-size: var(--step-1); line-height: 1.45; max-width: var(--measure); }
   .area-intro { color: var(--silver); max-width: var(--measure); margin-bottom: 1rem; }
