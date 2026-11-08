@@ -9,8 +9,14 @@ const photoModules = import.meta.glob<ImageMetadata>('/content/tattoos/**/*.{jpg
   import: 'default',
 });
 
-export type Tattoo = { symbol?: string; name: string; meaning: string };
-export type TattooArea = { title: string; slug: string; tattoos: Tattoo[]; photos: { src: ImageMetadata; file: string }[] };
+export type Tattoo = { symbol?: string; vraki: boolean; name: string; meaning: string[] };
+export type TattooArea = {
+  title: string;
+  slug: string;
+  intro: string[];
+  tattoos: Tattoo[];
+  photos: { src: ImageMetadata; file: string }[];
+};
 
 const slugify = (s: string) =>
   s
@@ -20,37 +26,56 @@ const slugify = (s: string) =>
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-|-$/g, '');
 
-/** Reads content/tattoos.md: "## Area" headings with "- [symbol] Name: meaning" bullets. */
-export function loadTattoos(): TattooArea[] {
-  const text = readFileSync(resolve(FILE), 'utf8');
-  const areas: TattooArea[] = [];
+function parseTattoo(body: string): Tattoo {
+  let rest = body;
+  const vraki = /^\[vraki\]\s*/i.test(rest);
+  rest = rest.replace(/^\[vraki\]\s*/i, '');
+  // Split at the first colon followed by a space; the meaning may contain more colons.
+  const m = rest.match(/^(.*?):\s+(.*)$/);
+  if (!m) throw new Error(`${FILE}: "${body}" needs a colon and a space between the name and the meaning.`);
+  const head = m[1].trim();
+  const meaning = [m[2].trim()];
+  const sym = head.match(/^(\S+)\s+(.+)$/);
+  // A leading token with no Latin letters (a rune, kanji, etc.) is the symbol.
+  if (sym && !/[A-Za-z]/.test(sym[1])) return { symbol: sym[1], vraki, name: sym[2], meaning };
+  return { vraki, name: head, meaning };
+}
 
-  for (const part of text.split(/^## +/m).slice(1)) {
+/** Reads content/tattoos.md (see the notes at the top of that file). */
+export function loadTattoos(): { intro: string[]; areas: TattooArea[] } {
+  const text = readFileSync(resolve(FILE), 'utf8');
+  const [preamble, ...parts] = text.split(/^## +/m);
+  const intro = preamble
+    .split(/\r?\n/)
+    .filter((l) => l.startsWith('>'))
+    .map((l) => l.replace(/^>\s?/, '').trim())
+    .filter(Boolean);
+
+  const areas = parts.map((part) => {
     const nl = part.indexOf('\n');
     const title = part.slice(0, nl).trim();
     const slug = slugify(title);
-    const tattoos = part
-      .slice(nl + 1)
-      .split(/\r?\n/)
-      .filter((l) => /^\s*[-*] +/.test(l))
-      .map((l) => {
-        const body = l.replace(/^\s*[-*] +/, '').trim();
-        const colon = body.indexOf(':');
-        if (colon === -1) throw new Error(`${FILE}: "${body}" needs a colon between the name and the meaning.`);
-        const head = body.slice(0, colon).trim();
-        const meaning = body.slice(colon + 1).trim();
-        // A leading token with no Latin letters (a rune, kanji, etc.) is the symbol.
-        const m = head.match(/^(\S+)\s+(.+)$/);
-        if (m && !/[A-Za-z]/.test(m[1])) return { symbol: m[1], name: m[2], meaning };
-        return { name: head, meaning };
-      });
+    const areaIntro: string[] = [];
+    const tattoos: Tattoo[] = [];
+
+    for (const line of part.slice(nl + 1).split(/\r?\n/)) {
+      if (!line.trim()) continue;
+      if (/^\s*[-*] +/.test(line) && !/^\s{2,}/.test(line)) {
+        tattoos.push(parseTattoo(line.replace(/^\s*[-*] +/, '').trim()));
+      } else if (/^\s{2,}\S/.test(line) && tattoos.length) {
+        tattoos[tattoos.length - 1].meaning.push(line.trim());
+      } else {
+        areaIntro.push(line.trim());
+      }
+    }
 
     const photos = Object.entries(photoModules)
       .filter(([path]) => path.startsWith(`/content/tattoos/${slug}/`))
       .map(([path, src]) => ({ src, file: path.split('/').pop()! }))
       .sort((a, b) => a.file.localeCompare(b.file, undefined, { numeric: true }));
 
-    areas.push({ title, slug, tattoos, photos });
-  }
-  return areas;
+    return { title, slug, intro: areaIntro, tattoos, photos };
+  });
+
+  return { intro, areas };
 }

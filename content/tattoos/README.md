@@ -4,6 +4,7 @@ Drop photos into the folder for each area and push:
 
 - `left-forearm/`
 - `right-forearm/`
+- `wrists/`
 - `chest/`
 
 Each area shows a "Photo coming soon" box until its folder has a photo.

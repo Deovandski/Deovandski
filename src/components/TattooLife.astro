@@ -2,10 +2,10 @@
 import { Image } from 'astro:assets';
 import { loadTattoos } from '../lib/tattoos';
 
-const areas = loadTattoos();
+const { intro, areas } = loadTattoos();
 ---
 
-<p>Ink with meaning, one area at a time.</p>
+{intro.map((para) => <p class="intro">{para}</p>)}
 
 <div class="areas">
   {
@@ -26,6 +26,7 @@ const areas = loadTattoos();
         </div>
         <div class="area__text">
           <h3 id={`tattoo-${area.slug}`}>{area.title}</h3>
+          {area.intro.map((para) => <p class="area-intro">{para}</p>)}
           <ul>
             {area.tattoos.map((t) => (
               <li>
@@ -35,11 +36,17 @@ const areas = loadTattoos();
                   </span>
                 )}
                 <div>
+                  {t.vraki && (
+                    <p class="vraki" aria-hidden="true">
+                      {t.name}
+                    </p>
+                  )}
                   <p class="name">
                     {t.name}
                     {t.symbol && <span class="sr-only"> ({t.symbol})</span>}
+                    {t.vraki && <span class="sr-only"> (written in Vraki)</span>}
                   </p>
-                  <p class="meaning">{t.meaning}</p>
+                  {t.meaning.map((m) => <p class="meaning">{m}</p>)}
                 </div>
               </li>
             ))}
@@ -51,6 +58,12 @@ const areas = loadTattoos();
 </div>
 
 <style>
+  @font-face {
+    font-family: 'Vraki';
+    src: url('../assets/fonts/VrakiHusbandOutWorldSeries-Rg.woff2') format('woff2');
+    font-display: swap;
+  }
+
   .areas { display: grid; gap: 0; margin-top: 1.5rem; }
   .area {
     display: grid;
@@ -94,6 +107,17 @@ const areas = loadTattoos();
   .glyph:lang(ja) { font-size: 0.85rem; writing-mode: vertical-rl; padding-block: 0.35rem; }
   .name { margin: 0; font-family: var(--font-display); font-weight: 800; }
   .meaning { margin: 0.15rem 0 0; color: var(--silver); }
+  .meaning + .meaning { margin-top: 0.6rem; }
+  .intro { font-size: var(--step-1); line-height: 1.45; max-width: var(--measure); }
+  .area-intro { color: var(--silver); max-width: var(--measure); margin-bottom: 1rem; }
+  .vraki {
+    margin: 0 0 0.35rem;
+    font-family: 'Vraki', var(--font-display);
+    font-size: 2.2rem;
+    line-height: 1.1;
+    color: var(--teal);
+    text-shadow: 0 0 14px rgba(57, 197, 187, 0.45);
+  }
 
   @media (max-width: 720px) {
     .area { grid-template-columns: 1fr; gap: 1rem; }
