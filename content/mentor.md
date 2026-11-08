@@ -34,7 +34,8 @@ You will eat that harvest, even when it tastes like shit. Nobody eats it for you
 - I don't let it happen. I make it happen.
 - I'm growing, and I will keep growing until the day I die.
 - Silence is the poison of the soul instead of communication, assuming you still have faith in the other person.
-- Never wrestle with pigs. You both get dirty, and the pig likes it. <span class="newest">Newest</span>
+- Never wrestle with pigs. You both get dirty, and the pig likes it. <span class="newest">New</span>
+- I'm not dying in the waiting room of someone else's stagnant life. <span class="newest">New</span>
 
 </div>
 
@@ -118,7 +119,7 @@ If you're moving, walk beside me. I'll challenge you, back you, celebrate you, a
 
 Manipulation, endless ambiguity, learned helplessness, refusing to act: you don't get unlimited access to me. I won't stop the mission to wrestle you into movement.
 
-> I am not dying in the waiting room of someone else's life.
+> I'm not dying in the waiting room of someone else's stagnant life.
 
 <figure class="verse">
 <p lang="non">Deyr fé, deyja frændr, deyr sjalfr it sama;<br>en orðstírr deyr aldregi, hveim er sér góðan getr.</p>
