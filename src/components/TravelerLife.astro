@@ -1,6 +1,5 @@
 ---
 import { getImage } from 'astro:assets';
-import Base from '../layouts/Base.astro';
 import { loadCountries } from '../lib/travel';
 import { url } from '../lib/url';
 
@@ -34,13 +33,11 @@ const byRegion = Object.entries(
 );
 ---
 
-<Base title="Where has Deo been?" description="A map of the countries Deovandski has visited, with photos.">
-  <h1>Where has Deo been?</h1>
-  <p class="lede">
+<p class="lede">
     {
       countries.length === 0
         ? 'Photos are on their way. Each country gets a pin once its first picture is added.'
-        : `${countries.length} ${countries.length === 1 ? 'country' : 'countries'} so far. Select a pin to see photos.`
+        : `Where has Deo been? ${countries.length} ${countries.length === 1 ? 'country' : 'countries'} so far. Select a pin to see photos.`
     }
   </p>
 
@@ -49,11 +46,11 @@ const byRegion = Object.entries(
   {
     countries.length > 0 && (
       <section class="list" aria-labelledby="list-title">
-        <h2 id="list-title">Countries by region</h2>
+        <h3 id="list-title">Countries by region</h3>
         <div class="regions">
           {byRegion.map(([region, list]) => (
             <div>
-              <h3>{region}</h3>
+              <h4>{region}</h4>
               <ul>
                 {list.map((c) => (
                   <li>
@@ -131,12 +128,12 @@ const byRegion = Object.entries(
 </style>
 
 <style>
-  .lede { color: var(--muted); font-size: var(--step-1); line-height: 1.45; }
+  .lede { margin-bottom: 0; }
   .map {
     height: min(70vh, 640px);
     min-height: 360px;
-    margin-top: 1.5rem;
-    border-radius: 20px;
+    margin-top: 1.25rem;
+    border-radius: 16px;
     border: 1px solid rgba(57, 197, 187, 0.25);
     background:
       radial-gradient(ellipse at 50% 40%, rgba(19, 122, 127, 0.18), transparent 70%),
@@ -144,10 +141,13 @@ const byRegion = Object.entries(
     overflow: hidden;
   }
 
+  @media (max-width: 560px) {
+    .map { height: 420px; min-height: 0; }
+  }
   .list { margin-top: 3rem; }
-  .list h2 { font-size: var(--step-1); color: var(--silver); }
+  .list > h3 { font-size: var(--step-1); color: var(--silver); }
   .regions { display: grid; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); gap: 1.5rem 2.5rem; }
-  .regions h3 { font-size: var(--step-0); color: var(--muted); margin-bottom: 0.4rem; }
+  .regions h4 { font-size: var(--step-0); color: var(--muted); margin-bottom: 0.4rem; }
   .regions ul { list-style: none; margin: 0; padding: 0; }
   .regions li { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.25rem; }
   .regions li span { color: var(--muted); font-size: var(--step--1); }
@@ -251,49 +251,67 @@ const byRegion = Object.entries(
   const el = document.getElementById('map')!;
   const places: Place[] = JSON.parse(el.dataset.countries || '[]');
   const visited = new Set(places.map((p) => p.code));
+  const panel = el.closest<HTMLElement>('[role="tabpanel"]');
+  let map: L.Map | null = null;
+  let markers: L.Marker[] = [];
 
-  const map = L.map(el, {
-    center: [25, 10],
-    zoom: 2,
-    minZoom: 1.5,
-    maxZoom: 6,
-    zoomSnap: 0.5,
-    worldCopyJump: false,
-    maxBounds: [[-75, -220], [88, 220]],
-    attributionControl: true,
+  // Leaflet needs a visible box to measure, so build the map the first time its tab opens.
+  function ensureMap() {
+    if (map) {
+      map.invalidateSize();
+      return;
+    }
+    buildMap();
+  }
+  document.addEventListener('tabchange', (e) => {
+    if ((e as CustomEvent<string>).detail === panel?.id) ensureMap();
   });
-  map.attributionControl.setPrefix('').addAttribution('Outlines: Natural Earth');
+  if (!panel || !panel.hidden) ensureMap();
 
-  fetch(el.dataset.world!)
-    .then((r) => r.json())
-    .then((geo) => {
-      L.geoJSON(geo, {
-        interactive: false,
-        style: (f) => {
-          const hit = f && visited.has(f.properties.code);
-          return {
-            color: hit ? '#39c5bb' : '#2a3766',
-            weight: hit ? 1.2 : 0.6,
-            fillColor: hit ? '#137a7f' : '#121b3d',
-            fillOpacity: hit ? 0.65 : 0.9,
-          };
-        },
-      }).addTo(map);
-      markers.forEach((m) => m.bringToFront?.());
+  function buildMap() {
+    map = L.map(el, {
+      center: [25, 10],
+      zoom: 2,
+      minZoom: 0,
+      maxZoom: 6,
+      zoomSnap: 0.25,
+      worldCopyJump: false,
+      maxBounds: [[-75, -220], [88, 220]],
+      attributionControl: true,
+    });
+    map.attributionControl.setPrefix('').addAttribution('Outlines: Natural Earth');
+
+    fetch(el.dataset.world!)
+      .then((r) => r.json())
+      .then((geo) => {
+        L.geoJSON(geo, {
+          interactive: false,
+          style: (f) => {
+            const hit = f && visited.has(f.properties.code);
+            return {
+              color: hit ? '#39c5bb' : '#2a3766',
+              weight: hit ? 1.2 : 0.6,
+              fillColor: hit ? '#137a7f' : '#121b3d',
+              fillOpacity: hit ? 0.65 : 0.9,
+            };
+          },
+        }).addTo(map!);
+      });
+
+    markers = places.map((p) => {
+      const icon = L.divIcon({ className: '', html: '<div class="pin"></div>', iconSize: [22, 22], iconAnchor: [11, 11] });
+      const m = L.marker([p.lat, p.lng], { icon, title: p.name, keyboard: true, alt: `${p.name}, ${p.photos.length} photos` })
+        .addTo(map!)
+        .bindTooltip(p.name, { className: 'pin-label', direction: 'top', offset: [0, -12] });
+      m.on('click', () => openTrip(p.code));
+      return m;
     });
 
-  const markers = places.map((p) => {
-    const icon = L.divIcon({ className: '', html: '<div class="pin"></div>', iconSize: [22, 22], iconAnchor: [11, 11] });
-    const m = L.marker([p.lat, p.lng], { icon, title: p.name, keyboard: true, alt: `${p.name}, ${p.photos.length} photos` })
-      .addTo(map)
-      .bindTooltip(p.name, { className: 'pin-label', direction: 'top', offset: [0, -12] });
-    m.on('click', () => openTrip(p.code));
-    return m;
-  });
-
-  if (places.length) {
-    const bounds = L.latLngBounds(places.map((p) => [p.lat, p.lng] as [number, number]));
-    if (places.length > 1) map.fitBounds(bounds.pad(0.6), { maxZoom: 4 });
+    if (places.length) {
+      const bounds = L.latLngBounds(places.map((p) => [p.lat, p.lng] as [number, number]));
+      if (places.length > 1) map.fitBounds(bounds.pad(0.25), { maxZoom: 4 });
+      else map.setView(bounds.getCenter(), 3);
+    }
   }
 
   // Gallery dialog

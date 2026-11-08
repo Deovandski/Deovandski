@@ -2,6 +2,8 @@
 import { Image, getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Ranking from '../components/Ranking.astro';
+import TravelerLife from '../components/TravelerLife.astro';
+import PhilosophyLife from '../components/PhilosophyLife.astro';
 import logo from '../assets/logo.png';
 import { loadPeeta } from '../lib/peeta';
 import { loadRanking } from '../lib/ranking';
@@ -55,7 +57,9 @@ const influencerLinks = [
 const tabs = [
   { id: 'dev', icon: '💻', label: 'Dev Life' },
   { id: 'author', icon: '✍️', label: 'Author Life' },
+  { id: 'philosophy', icon: '🧭', label: 'Philosophy Life' },
   { id: 'influencer', icon: '📣', label: 'Influencer Life' },
+  { id: 'traveler', icon: '🗺️', label: 'Traveler Life' },
   { id: 'gamer', icon: '🎮', label: 'Gamer Life' },
   { id: 'weeb', icon: '🍥', label: 'Weeb Life' },
   { id: 'cat', icon: '🐱', label: 'Cat Dad Life' },
@@ -112,6 +116,23 @@ const catPhotos = await Promise.all(
     </div>
 
     <section class="panel" role="tabpanel" id="panel-dev" aria-labelledby="tab-dev" tabindex="0">
+      <div class="dev-intro">
+        <p class="dev-headline">
+          Senior Software Engineer, Dynamics 365 F&amp;O Architect, and Founder &amp; CEO of Wizard Deo Solutions.
+        </p>
+        <p>
+          I specialize in enterprise architecture, integrations, cloud technologies, AI, and full stack development, with
+          experience spanning ERP systems, modern web and mobile applications, and multiple industries.
+        </p>
+        <p>
+          As an extroverted engineer, I thrive at the intersection of technology and people, whether that's architecting
+          solutions, mentoring developers, collaborating with stakeholders, or leading client discussions.
+        </p>
+        <ul class="pills">
+          <li><a href="https://www.wizarddeosolutions.com/">Wizard Deo Solutions</a></li>
+          <li><a href="https://www.linkedin.com/in/deovandski/">LinkedIn</a></li>
+        </ul>
+      </div>
       <ul class="entries">
         {dev.map((item) => (<li><p>{item.text}</p><a class="entry-link" href={item.href}>{item.label}</a></li>))}
       </ul>
@@ -121,6 +142,10 @@ const catPhotos = await Promise.all(
       <ul class="entries">
         {author.map((item) => (<li><p>{item.text}</p><a class="entry-link" href={item.href}>{item.label}</a></li>))}
       </ul>
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-philosophy" aria-labelledby="tab-philosophy" tabindex="0" hidden>
+      <PhilosophyLife />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-influencer" aria-labelledby="tab-influencer" tabindex="0" hidden>
@@ -136,6 +161,10 @@ const catPhotos = await Promise.all(
       <ul class="pills">
         {influencerLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
       </ul>
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-traveler" aria-labelledby="tab-traveler" tabindex="0" hidden>
+      <TravelerLife />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-gamer" aria-labelledby="tab-gamer" tabindex="0" hidden>
@@ -255,6 +284,20 @@ const catPhotos = await Promise.all(
   .panel:focus-visible { outline-offset: -4px; }
   .panel > :last-child { margin-bottom: 0; }
 
+  .dev-intro {
+    max-width: var(--measure);
+    padding-bottom: 1.75rem;
+    margin-bottom: 1.75rem;
+    border-bottom: 1px solid rgba(190, 200, 209, 0.12);
+  }
+  .dev-headline {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--step-1);
+    line-height: 1.3;
+    color: var(--teal);
+  }
+  .dev-intro .pills { margin-top: 0.5rem; }
   .entries { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.6rem; max-width: var(--measure); }
   .entries p { margin-bottom: 0.35rem; }
   .entry-link { font-family: var(--font-display); font-weight: 800; }
@@ -363,6 +406,7 @@ const catPhotos = await Promise.all(
       t.tabIndex = on ? 0 : -1;
       document.getElementById(t.getAttribute('aria-controls')!)!.hidden = !on;
     }
+    document.dispatchEvent(new CustomEvent('tabchange', { detail: tab.getAttribute('aria-controls') }));
     if (focus) tab.focus();
     if (updateHash) history.replaceState(null, '', `#${tab.dataset.tab}`);
   }
