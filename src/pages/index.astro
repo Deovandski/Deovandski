@@ -1,9 +1,10 @@
 ---
 import { Image, getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import GameRanking from '../components/GameRanking.astro';
+import Ranking from '../components/Ranking.astro';
 import logo from '../assets/logo.png';
 import { loadPeeta } from '../lib/peeta';
+import { loadRanking } from '../lib/ranking';
 
 type Entry = { text: string; href: string; label: string };
 
@@ -56,8 +57,14 @@ const tabs = [
   { id: 'author', icon: '✍️', label: 'Author Life' },
   { id: 'influencer', icon: '📣', label: 'Influencer Life' },
   { id: 'gamer', icon: '🎮', label: 'Gamer Life' },
+  { id: 'weeb', icon: '🍥', label: 'Weeb Life' },
   { id: 'cat', icon: '🐱', label: 'Cat Dad Life' },
 ];
+
+const games = loadRanking('content/gaming/top10.md', 'Game', 'Hours');
+const anime = loadRanking('content/anime/top20.md', 'Anime', 'Episodes');
+const nf = new Intl.NumberFormat('en-US');
+const totalHours = games.reduce((sum, g) => sum + g.value, 0);
 
 const peeta = loadPeeta();
 const catPhotos = await Promise.all(
@@ -132,7 +139,20 @@ const catPhotos = await Promise.all(
     </section>
 
     <section class="panel" role="tabpanel" id="panel-gamer" aria-labelledby="tab-gamer" tabindex="0" hidden>
-      <GameRanking />
+      <Ranking items={games} unit="hours">
+        <p class="ranking-lede">
+          My top 10 favorites, ranked, with how many hours I've sunk into each. {nf.format(totalHours)} hours in total.
+        </p>
+      </Ranking>
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-weeb" aria-labelledby="tab-weeb" tabindex="0" hidden>
+      <Ranking items={anime} unit="episodes">
+        <div class="weeb-head">
+          <p class="ranking-lede">My top 20 favorite anime, ranked, with how many episodes I've watched of each.</p>
+          <a class="mal" href="https://myanimelist.net/profile/Deovandski">My full list on MyAnimeList</a>
+        </div>
+      </Ranking>
     </section>
 
     <section class="panel" role="tabpanel" id="panel-cat" aria-labelledby="tab-cat" tabindex="0" hidden>
@@ -249,6 +269,26 @@ const catPhotos = await Promise.all(
     font-weight: 700;
   }
   .pills a:hover { background: rgba(57, 197, 187, 0.14); }
+
+  .weeb-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.5rem 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .weeb-head .ranking-lede { margin-bottom: 0; }
+  .mal {
+    display: inline-block;
+    padding: 0.35rem 1rem;
+    border: 1px solid rgba(57, 197, 187, 0.55);
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .mal:hover { background: rgba(57, 197, 187, 0.14); }
 
   .empty { color: var(--muted); }
   .cat-grid {
