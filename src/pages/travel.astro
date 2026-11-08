@@ -1,0 +1,363 @@
+---
+import { getImage } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import { loadCountries } from '../lib/travel';
+import { url } from '../lib/url';
+
+const countries = loadCountries();
+
+const data = await Promise.all(
+  countries.map(async (c) => ({
+    code: c.code,
+    name: c.name,
+    years: c.years ?? null,
+    caption: c.caption ?? null,
+    lat: c.lat,
+    lng: c.lng,
+    photos: await Promise.all(
+      c.photos.map(async (p) => {
+        const [full, thumb] = await Promise.all([
+          getImage({ src: p.src, width: Math.min(1800, p.src.width), format: 'webp', quality: 80 }),
+          getImage({ src: p.src, width: Math.min(360, p.src.width), format: 'webp', quality: 70 }),
+        ]);
+        return { full: full.src, thumb: thumb.src, w: full.attributes.width ?? p.src.width, h: full.attributes.height ?? p.src.height };
+      }),
+    ),
+  })),
+);
+
+const byRegion = Object.entries(
+  countries.reduce<Record<string, typeof countries>>((acc, c) => {
+    (acc[c.regionName] ??= []).push(c);
+    return acc;
+  }, {}),
+);
+---
+
+<Base title="Where has Deo been?" description="A map of the countries Deovandski has visited, with photos.">
+  <h1>Where has Deo been?</h1>
+  <p class="lede">
+    {
+      countries.length === 0
+        ? 'Photos are on their way. Each country gets a pin once its first picture is added.'
+        : `${countries.length} ${countries.length === 1 ? 'country' : 'countries'} so far. Select a pin to see photos.`
+    }
+  </p>
+
+  <div class="map" id="map" data-world={url('/world.json')} data-countries={JSON.stringify(data)} aria-label="World map of visited countries"></div>
+
+  {
+    countries.length > 0 && (
+      <section class="list" aria-labelledby="list-title">
+        <h2 id="list-title">Countries by region</h2>
+        <div class="regions">
+          {byRegion.map(([region, list]) => (
+            <div>
+              <h3>{region}</h3>
+              <ul>
+                {list.map((c) => (
+                  <li>
+                    <button type="button" data-open={c.code}>
+                      {c.name}
+                    </button>
+                    <span>{c.photos.length} {c.photos.length === 1 ? 'photo' : 'photos'}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+    )
+  }
+
+  <dialog class="trip" aria-labelledby="trip-title">
+    <div class="trip__head">
+      <div>
+        <h2 id="trip-title"></h2>
+        <p class="trip__years"></p>
+      </div>
+      <button type="button" class="trip__close" aria-label="Close photos">Close</button>
+    </div>
+    <p class="trip__caption"></p>
+    <figure class="trip__stage">
+      <button type="button" class="trip__nav trip__prev" aria-label="Previous photo">‹</button>
+      <img alt="" />
+      <button type="button" class="trip__nav trip__next" aria-label="Next photo">›</button>
+    </figure>
+    <ul class="trip__thumbs"></ul>
+  </dialog>
+</Base>
+
+<style is:global>
+  @import 'leaflet/dist/leaflet.css';
+
+  .leaflet-container {
+    background: transparent;
+    font-family: var(--font-body);
+  }
+  .leaflet-control-attribution {
+    background: rgba(7, 11, 31, 0.7) !important;
+    color: var(--muted) !important;
+  }
+  .leaflet-control-attribution a { color: var(--teal) !important; }
+  .leaflet-bar a {
+    background: var(--night-2) !important;
+    color: var(--text) !important;
+    border-color: var(--night-3) !important;
+  }
+  .pin {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--teal);
+    border: 3px solid var(--night);
+    box-shadow: 0 0 0 2px var(--teal), 0 0 18px 4px rgba(57, 197, 187, 0.7);
+    cursor: pointer;
+  }
+  .pin:hover,
+  .pin:focus-visible {
+    background: var(--pink);
+    box-shadow: 0 0 0 2px var(--pink), 0 0 18px 4px rgba(225, 40, 133, 0.7);
+  }
+  .leaflet-tooltip.pin-label {
+    background: var(--night-2);
+    color: var(--text);
+    border: 1px solid var(--teal);
+    font-family: var(--font-display);
+    font-weight: 800;
+  }
+  .leaflet-tooltip.pin-label::before { display: none; }
+</style>
+
+<style>
+  .lede { color: var(--muted); font-size: var(--step-1); line-height: 1.45; }
+  .map {
+    height: min(70vh, 640px);
+    min-height: 360px;
+    margin-top: 1.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(57, 197, 187, 0.25);
+    background:
+      radial-gradient(ellipse at 50% 40%, rgba(19, 122, 127, 0.18), transparent 70%),
+      rgba(7, 11, 31, 0.55);
+    overflow: hidden;
+  }
+
+  .list { margin-top: 3rem; }
+  .list h2 { font-size: var(--step-1); color: var(--silver); }
+  .regions { display: grid; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); gap: 1.5rem 2.5rem; }
+  .regions h3 { font-size: var(--step-0); color: var(--muted); margin-bottom: 0.4rem; }
+  .regions ul { list-style: none; margin: 0; padding: 0; }
+  .regions li { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.25rem; }
+  .regions li span { color: var(--muted); font-size: var(--step--1); }
+  .regions button {
+    font: inherit;
+    font-weight: 700;
+    color: var(--teal);
+    background: none;
+    border: 0;
+    padding: 0;
+    cursor: pointer;
+    text-align: left;
+  }
+  .regions button:hover { text-decoration: underline; }
+
+  .trip {
+    width: min(100% - 2rem, 60rem);
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    padding: 1.25rem 1.5rem 1.5rem;
+    color: var(--text);
+    background: var(--night-2);
+    border: 1px solid rgba(57, 197, 187, 0.45);
+    border-radius: 20px;
+    box-shadow: 0 0 60px rgba(57, 197, 187, 0.2);
+  }
+  .trip::backdrop { background: rgba(3, 5, 15, 0.8); backdrop-filter: blur(3px); }
+  .trip__head { display: flex; justify-content: space-between; align-items: start; gap: 1rem; }
+  .trip h2 { margin: 0; font-size: var(--step-2); color: var(--teal); }
+  .trip__years { margin: 0.2rem 0 0; color: var(--muted); }
+  .trip__years:empty, .trip__caption:empty { display: none; }
+  .trip__caption { margin: 0.75rem 0 0; }
+  .trip__close {
+    font: inherit;
+    font-weight: 700;
+    color: var(--text);
+    background: transparent;
+    border: 1px solid var(--teal);
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    cursor: pointer;
+  }
+  .trip__stage {
+    position: relative;
+    margin: 1rem 0 0;
+    display: grid;
+    place-items: center;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 14px;
+    min-height: 240px;
+  }
+  .trip__stage img {
+    max-height: 55vh;
+    width: auto;
+    border-radius: 14px;
+  }
+  .trip__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    border: 1px solid rgba(57, 197, 187, 0.6);
+    background: rgba(7, 11, 31, 0.75);
+    color: var(--text);
+    font-size: 1.6rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+  .trip__prev { left: 0.6rem; }
+  .trip__next { right: 0.6rem; }
+  .trip__nav[hidden],
+  .trip__thumbs[hidden] { display: none; }
+  .trip__thumbs {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+    margin: 0.85rem 0 0;
+    padding: 0 0 0.25rem;
+    overflow-x: auto;
+  }
+  .trip__thumbs :global(button) {
+    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    background: none;
+    cursor: pointer;
+    line-height: 0;
+  }
+  .trip__thumbs :global(button[aria-current='true']) { border-color: var(--teal); }
+  .trip__thumbs :global(img) { width: 96px; height: 64px; object-fit: cover; border-radius: 8px; }
+</style>
+
+<script>
+  import L from 'leaflet';
+
+  type Photo = { full: string; thumb: string; w: number; h: number };
+  type Place = { code: string; name: string; years: string | null; caption: string | null; lat: number; lng: number; photos: Photo[] };
+
+  const el = document.getElementById('map')!;
+  const places: Place[] = JSON.parse(el.dataset.countries || '[]');
+  const visited = new Set(places.map((p) => p.code));
+
+  const map = L.map(el, {
+    center: [25, 10],
+    zoom: 2,
+    minZoom: 1.5,
+    maxZoom: 6,
+    zoomSnap: 0.5,
+    worldCopyJump: false,
+    maxBounds: [[-75, -220], [88, 220]],
+    attributionControl: true,
+  });
+  map.attributionControl.setPrefix('').addAttribution('Outlines: Natural Earth');
+
+  fetch(el.dataset.world!)
+    .then((r) => r.json())
+    .then((geo) => {
+      L.geoJSON(geo, {
+        interactive: false,
+        style: (f) => {
+          const hit = f && visited.has(f.properties.code);
+          return {
+            color: hit ? '#39c5bb' : '#2a3766',
+            weight: hit ? 1.2 : 0.6,
+            fillColor: hit ? '#137a7f' : '#121b3d',
+            fillOpacity: hit ? 0.65 : 0.9,
+          };
+        },
+      }).addTo(map);
+      markers.forEach((m) => m.bringToFront?.());
+    });
+
+  const markers = places.map((p) => {
+    const icon = L.divIcon({ className: '', html: '<div class="pin"></div>', iconSize: [22, 22], iconAnchor: [11, 11] });
+    const m = L.marker([p.lat, p.lng], { icon, title: p.name, keyboard: true, alt: `${p.name}, ${p.photos.length} photos` })
+      .addTo(map)
+      .bindTooltip(p.name, { className: 'pin-label', direction: 'top', offset: [0, -12] });
+    m.on('click', () => openTrip(p.code));
+    return m;
+  });
+
+  if (places.length) {
+    const bounds = L.latLngBounds(places.map((p) => [p.lat, p.lng] as [number, number]));
+    if (places.length > 1) map.fitBounds(bounds.pad(0.6), { maxZoom: 4 });
+  }
+
+  // Gallery dialog
+  const dialog = document.querySelector<HTMLDialogElement>('.trip')!;
+  const title = dialog.querySelector('#trip-title')!;
+  const years = dialog.querySelector('.trip__years')!;
+  const caption = dialog.querySelector('.trip__caption')!;
+  const stage = dialog.querySelector<HTMLImageElement>('.trip__stage img')!;
+  const thumbs = dialog.querySelector('.trip__thumbs')!;
+  const prev = dialog.querySelector<HTMLButtonElement>('.trip__prev')!;
+  const next = dialog.querySelector<HTMLButtonElement>('.trip__next')!;
+  let current: Place | null = null;
+  let index = 0;
+
+  function show(i: number) {
+    if (!current) return;
+    index = (i + current.photos.length) % current.photos.length;
+    const p = current.photos[index];
+    stage.src = p.full;
+    stage.width = p.w;
+    stage.height = p.h;
+    stage.alt = `${current.name}, photo ${index + 1} of ${current.photos.length}`;
+    thumbs.querySelectorAll('button').forEach((b, j) => b.setAttribute('aria-current', String(j === index)));
+  }
+
+  function openTrip(code: string) {
+    current = places.find((p) => p.code === code) ?? null;
+    if (!current) return;
+    title.textContent = current.name;
+    years.textContent = current.years ? `Visited ${current.years}` : '';
+    caption.textContent = current.caption ?? '';
+    thumbs.innerHTML = '';
+    current.photos.forEach((p, i) => {
+      const li = document.createElement('li');
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', `Show photo ${i + 1}`);
+      const img = document.createElement('img');
+      img.src = p.thumb;
+      img.alt = '';
+      img.loading = 'lazy';
+      b.append(img);
+      b.addEventListener('click', () => show(i));
+      li.append(b);
+      thumbs.append(li);
+    });
+    const many = current.photos.length > 1;
+    prev.hidden = next.hidden = !many;
+    (thumbs as HTMLElement).hidden = !many;
+    show(0);
+    dialog.showModal();
+  }
+
+  prev.addEventListener('click', () => show(index - 1));
+  next.addEventListener('click', () => show(index + 1));
+  dialog.querySelector('.trip__close')!.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+  dialog.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') show(index - 1);
+    if (e.key === 'ArrowRight') show(index + 1);
+  });
+  document.querySelectorAll<HTMLButtonElement>('[data-open]').forEach((b) =>
+    b.addEventListener('click', () => openTrip(b.dataset.open!)),
+  );
+</script>

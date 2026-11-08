@@ -1,0 +1,156 @@
+---
+import '../styles/global.css';
+import { Image } from 'astro:assets';
+import logo from '../assets/logo.png';
+import Starfield from '../components/Starfield.astro';
+import MikuDay from '../components/MikuDay.astro';
+import { url } from '../lib/url';
+
+interface Props {
+  title?: string;
+  description?: string;
+  wide?: boolean;
+  hideBrand?: boolean;
+}
+
+const { title, description = "Deovandski's hub: software, books, travel and games.", wide = false, hideBrand = false } = Astro.props;
+const pageTitle = title ? `${title} | Deovandski` : "Deovandski's Blog";
+
+const nav = [
+  { href: '/', label: 'Home' },
+  { href: '/blog/', label: 'Blog' },
+  { href: '/travel/', label: 'Where has Deo been?' },
+  { href: '/gaming/', label: 'Gaming' },
+  { href: '/inspiration/', label: 'Inspiration' },
+];
+
+const here = Astro.url.pathname.replace(import.meta.env.BASE_URL.replace(/\/+$/, ''), '') || '/';
+const isCurrent = (href: string) => (href === '/' ? here === '/' || here === '' : here.startsWith(href.replace(/\/$/, '')));
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#070b1f" />
+    <link rel="icon" type="image/png" href={url('/favicon.png')} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+  </head>
+  <body>
+    <Starfield />
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header">
+      <div class="wrap site-header__row">
+        <a class:list={['brand', { 'brand--hidden': hideBrand }]} href={url('/')} aria-label="Deovandski, home">
+          <Image src={logo} alt="" width={160} height={68} loading="eager" />
+        </a>
+        <nav aria-label="Main">
+          <ul>
+            {
+              nav.map((item) => (
+                <li>
+                  <a href={url(item.href)} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+                    {item.label}
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main" class:list={['site-main', { wrap: !wide }]}>
+      <slot />
+    </main>
+
+    <footer class="site-footer wrap">
+      <p>
+        Made by Deovandski. Find me on <a href="https://www.linkedin.com/in/deovandski">LinkedIn</a> or
+        <a href="https://github.com/Deovandski">GitHub</a>.
+      </p>
+    </footer>
+
+    <MikuDay />
+  </body>
+</html>
+
+<style>
+  .skip {
+    position: absolute;
+    left: 1rem;
+    top: -3rem;
+    padding: 0.5rem 1rem;
+    background: var(--teal);
+    color: var(--night);
+    border-radius: 8px;
+    z-index: 100;
+  }
+  .skip:focus { top: 1rem; }
+
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(7, 11, 31, 0.72);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(57, 197, 187, 0.18);
+  }
+  .site-header__row {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding-block: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .brand { display: block; line-height: 0; }
+  .brand--hidden { display: none; }
+  .brand img {
+    width: 120px;
+    height: auto;
+    border-radius: 8px;
+  }
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    display: block;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-family: var(--font-display);
+    font-weight: 500;
+    color: var(--silver);
+    text-decoration: none;
+  }
+  nav a:hover { color: var(--text); background: rgba(57, 197, 187, 0.12); }
+  nav a[aria-current='page'] {
+    color: var(--night);
+    background: var(--teal);
+  }
+
+  .site-main { padding-block: 3rem 4rem; }
+
+  .site-footer {
+    padding-block: 2rem 3rem;
+    color: var(--muted);
+    font-size: var(--step--1);
+    border-top: 1px solid rgba(190, 200, 209, 0.12);
+  }
+  .site-footer p { margin: 0; }
+
+  @media (max-width: 640px) {
+    .site-header__row { gap: 0.5rem; }
+    .brand img { width: 96px; }
+    nav a { padding: 0.3rem 0.6rem; font-size: var(--step--1); }
+    .site-main { padding-block: 2rem 3rem; }
+  }
+</style>

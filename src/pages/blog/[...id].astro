@@ -1,0 +1,29 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { url } from '../../lib/url';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({ params: { id: post.id }, props: { post } }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' });
+---
+
+<Base title={post.data.title} description={post.data.description}>
+  <article class="prose">
+    <p class="back"><a href={url('/blog/')}>All posts</a></p>
+    <h1>{post.data.title}</h1>
+    <p class="meta"><time datetime={post.data.date.toISOString()}>{fmt.format(post.data.date)}</time></p>
+    <Content />
+  </article>
+</Base>
+
+<style>
+  .back { font-size: var(--step--1); }
+  .meta { color: var(--muted); }
+  h1 { font-size: var(--step-3); }
+</style>

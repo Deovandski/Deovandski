@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { url } from '../../lib/url';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf(),
+);
+const fmt = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' });
+---
+
+<Base title="Blog" description="Posts by Deovandski.">
+  <h1>Blog</h1>
+  {
+    posts.length === 0 ? (
+      <p class="empty">No posts yet. New writing will show up here.</p>
+    ) : (
+      <ol class="posts">
+        {posts.map((post) => (
+          <li>
+            <time datetime={post.data.date.toISOString()}>{fmt.format(post.data.date)}</time>
+            <h2>
+              <a href={url(`/blog/${post.id}/`)}>{post.data.title}</a>
+            </h2>
+            {post.data.description && <p>{post.data.description}</p>}
+          </li>
+        ))}
+      </ol>
+    )
+  }
+</Base>
+
+<style>
+  .empty { color: var(--muted); font-size: var(--step-1); }
+  .posts { list-style: none; margin: 2rem 0 0; padding: 0; display: grid; gap: 2.25rem; max-width: var(--measure); }
+  .posts time { color: var(--muted); font-size: var(--step--1); }
+  .posts h2 { font-size: var(--step-1); margin: 0.2rem 0 0.4rem; }
+  .posts h2 a { color: var(--text); text-decoration: none; }
+  .posts h2 a:hover { color: var(--teal); }
+</style>

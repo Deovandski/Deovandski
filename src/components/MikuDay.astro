@@ -1,0 +1,109 @@
+---
+/*
+ * Miku easter egg.
+ * Shows a banner and confetti on the dates below, using the visitor's own
+ * local date. Add ?miku to any URL to preview it on other days.
+ */
+---
+
+<div class="miku" hidden role="status" aria-live="polite">
+  <div class="miku__inner">
+    <p class="miku__title"></p>
+    <p class="miku__sub"></p>
+    <div class="miku__actions">
+      <button type="button" class="miku__again">More confetti</button>
+      <button type="button" class="miku__close" aria-label="Close the Miku Day banner">Close</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .miku {
+    position: fixed;
+    left: 50%;
+    bottom: 1.25rem;
+    transform: translateX(-50%);
+    z-index: 50;
+    width: min(100% - 2rem, 34rem);
+    border-radius: 18px;
+    padding: 1.1rem 1.3rem;
+    background:
+      linear-gradient(135deg, rgba(57, 197, 187, 0.22), rgba(225, 40, 133, 0.18)),
+      rgba(7, 11, 31, 0.92);
+    border: 1px solid rgba(57, 197, 187, 0.6);
+    box-shadow: 0 0 40px rgba(57, 197, 187, 0.35);
+    backdrop-filter: blur(6px);
+  }
+  .miku[hidden] { display: none; }
+  .miku__title {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--step-2);
+    line-height: 1.1;
+    margin: 0 0 0.25rem;
+    color: var(--teal);
+  }
+  .miku__sub { margin: 0 0 0.85rem; color: var(--text); }
+  .miku__actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
+  .miku button {
+    font: inherit;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    border: 1px solid var(--teal);
+  }
+  .miku__again { background: var(--teal); color: var(--night); }
+  .miku__close { background: transparent; color: var(--text); }
+</style>
+
+<script>
+  import confetti from 'canvas-confetti';
+
+  // month is 1-12. Add more dates here (e.g. her release-day birthday, 8/31).
+  const DATES = [
+    {
+      month: 3,
+      day: 9,
+      title: 'Happy Miku Day! ミクの日',
+      sub: '3/9 reads as mi-ku. Thanks for all the music, Miku!',
+    },
+    // { month: 8, day: 31, title: 'Happy birthday, Miku!', sub: 'Released August 31, 2007.' },
+  ];
+
+  const COLORS = ['#39c5bb', '#e12885', '#bec8d1', '#137a7f', '#ffffff'];
+
+  const now = new Date();
+  const forced = new URLSearchParams(location.search).has('miku');
+  const today = DATES.find((d) => d.month === now.getMonth() + 1 && d.day === now.getDate());
+  const party = today ?? (forced ? DATES[0] : undefined);
+
+  const banner = document.querySelector<HTMLElement>('.miku');
+  const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function burst() {
+    if (still) return;
+    const note = confetti.shapeFromText({ text: '♪', scalar: 2, color: '#39c5bb' });
+    const shapes: confetti.Shape[] = ['square', 'circle', note];
+    const end = Date.now() + 3000;
+    (function frame() {
+      confetti({ particleCount: 4, angle: 60, spread: 60, origin: { x: 0, y: 0.75 }, colors: COLORS, shapes, scalar: 1.1 });
+      confetti({ particleCount: 4, angle: 120, spread: 60, origin: { x: 1, y: 0.75 }, colors: COLORS, shapes, scalar: 1.1 });
+      if (Date.now() < end) requestAnimationFrame(frame);
+    })();
+    confetti({ particleCount: 140, spread: 100, startVelocity: 45, origin: { y: 0.4 }, colors: COLORS, shapes, scalar: 1.2 });
+  }
+
+  if (party && banner) {
+    banner.querySelector('.miku__title')!.textContent = party.title;
+    banner.querySelector('.miku__sub')!.textContent = party.sub;
+    banner.hidden = false;
+    burst();
+    banner.querySelector('.miku__again')?.addEventListener('click', burst);
+    banner.querySelector('.miku__close')?.addEventListener('click', () => {
+      banner.hidden = true;
+      confetti.reset();
+    });
+    if (still) banner.querySelector<HTMLElement>('.miku__again')!.hidden = true;
+  }
+</script>
