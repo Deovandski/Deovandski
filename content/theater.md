@@ -9,14 +9,20 @@ Edit and push; the Theater & Opera Life tab rebuilds from this file.
 
 > Ballet, musicals and opera I've seen live.
 
+## Acrobatic theather
+
+- Cirque do Soleil O
+
 ## Ballet
 
 - Giselle: Butler Ballet
 
 ## Musicals
 
+- Two Strangers (Carry a Cake Accross New York)
 - Hamilton
 - The Book of Mormon
+- Singin' in the Rain
 
 ## Opera
 
