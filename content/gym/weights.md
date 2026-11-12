@@ -1,6 +1,6 @@
 # Weight trend
 
-Edit and push; the chart in the Gym Life tab rebuilds from this table.
+Edit and push; the chart in the Gym Facet tab rebuilds from this table.
 Add a year, change a weight, or move the goal. To pin a photo to a point,
 drop it in content/gym/photos/ named after the year, e.g. 2016.jpg.
 

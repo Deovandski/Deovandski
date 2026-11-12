@@ -1,4 +1,4 @@
-<!-- Sex Life tab. Plain Markdown; edit and push. -->
+<!-- Sex Facet tab. Plain Markdown; edit and push. -->
 
 As a citizen of the world, I've experienced many cultures, and I developed my own moral compass from two facts: I'm mortal, and I'm curious. 
 

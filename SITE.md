@@ -7,7 +7,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 
 | What | File or folder |
 |---|---|
-| Home page tabs (Dev, Author, Influencer life) | `src/pages/index.astro` |
+| Home page tabs (Dev, Author, Influencer) | `src/pages/index.astro` |
 | Mentor tab | `content/mentor.md` (plain Markdown) |
 | King of Hues photo | `src/assets/king-of-hues.jpg` |
 | Contact page (emails) | `src/pages/contact.astro` |
@@ -24,7 +24,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Weeb tab (top 39 anime, with descriptions) | `content/anime/top39.md` (numbered list) |
 | Potato tab (top 39 movies/TV) | `content/screen/top39.md` |
 | Cat Dad tab (Peeta photos) | `content/peeta/` (see its README) |
-| Sex tab (and the first-click banner) | `content/sex.md`, `src/components/SexLife.astro` |
+| Sex tab (and the first-click banner) | `content/sex.md`, `src/components/SexFacet.astro` |
 | Miku Day dates and message | `src/components/MikuDay.astro` (`DATES` near the top) |
 | Colors and fonts | `src/styles/global.css` |
 | Logo | `src/assets/logo.png` |

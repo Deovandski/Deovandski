@@ -1,5 +1,5 @@
 <!--
-  Mentor Life tab. Plain Markdown; edit and push.
+  Mentor Facet tab. Plain Markdown; edit and push.
   The first line is the opening slam, ## = section, ### = pillar name,
   > = punch line, **bold** = highlighted phrase.
 -->

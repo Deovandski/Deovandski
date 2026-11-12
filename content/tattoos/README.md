@@ -1,4 +1,4 @@
-# Tattoo Life photos
+# Tattoo Facet photos
 
 Drop photos into the folder for each area and push:
 

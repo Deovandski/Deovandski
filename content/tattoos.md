@@ -1,6 +1,6 @@
-# Tattoo Life
+# Tattoo Facet
 
-Edit and push; the Tattoo Life tab rebuilds from this file.
+Edit and push; the Tattoo Facet tab rebuilds from this file.
 
 - Lines starting with `>` before the first area are the intro at the top of the tab.
 - Each `##` heading is a body area. Its photos go in `content/tattoos/<area>/`,
