@@ -1,5 +1,5 @@
 ---
-import { Image, getImage } from 'astro:assets';
+import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Ranking from '../components/Ranking.astro';
 import TravelerFacet from '../components/TravelerFacet.astro';
@@ -8,8 +8,10 @@ import MultilingualFacet from '../components/MultilingualFacet.astro';
 import Sections from '../components/Sections.astro';
 import GymFacet from '../components/GymFacet.astro';
 import SexFacet from '../components/SexFacet.astro';
+import GalleryGrid from '../components/Gallery.astro';
 import kingOfHues from '../assets/king-of-hues.jpg';
 import { loadPeeta } from '../lib/peeta';
+import { loadGallery } from '../lib/gallery';
 import { loadRanking, loadRankedList } from '../lib/ranking';
 import { loadSections } from '../lib/sections';
 
@@ -73,19 +75,13 @@ const tattoos = loadSections('content/tattoos.md', 'content/tattoos');
 const mikuConcerts = loadSections('content/miku.md', 'content/miku');
 const concerts = loadSections('content/concerts.md', 'content/concerts');
 const theater = loadSections('content/theater.md', 'content/theater');
-const fishing = loadSections('content/fishing.md', 'content/fishing');
+const fishing = loadGallery('content/fishing', 'Fishing');
 const camping = loadSections('content/camping.md', 'content/camping');
 const dnd = loadSections('content/dnd.md', 'content/dnd');
 const nf = new Intl.NumberFormat('en-US');
 const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
 const peeta = loadPeeta();
-const catPhotos = await Promise.all(
-  peeta.photos.map(async (p) => ({
-    ...p,
-    full: (await getImage({ src: p.src, width: Math.min(1800, p.src.width), format: 'webp', quality: 80 })).src,
-  })),
-);
 ---
 
 <Base>
@@ -205,7 +201,7 @@ const catPhotos = await Promise.all(
     </section>
 
     <section class="panel" role="tabpanel" id="panel-fishing" aria-labelledby="tab-fishing" tabindex="0" hidden>
-      <Sections data={fishing} id="fishing" layout="cards" slots={2} empty="Fishing spots are on their way." photoAlt={(t) => `Fishing at ${t}`} />
+      <GalleryGrid gallery={fishing} name="fishing" empty="Fishing photos are on their way." />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-dnd" aria-labelledby="tab-dnd" tabindex="0" hidden>
@@ -269,22 +265,7 @@ const catPhotos = await Promise.all(
     </section>
 
     <section class="panel" role="tabpanel" id="panel-cat" aria-labelledby="tab-cat" tabindex="0" hidden>
-      {peeta.intro.map((para) => <p>{para}</p>)}
-      {
-        catPhotos.length === 0 ? (
-          <p class="empty">Peeta's photos are on their way.</p>
-        ) : (
-          <ul class="cat-grid">
-            {catPhotos.map((p, i) => (
-              <li>
-                <button type="button" data-cat={i} data-full={p.full} data-alt={p.alt} aria-label={`Enlarge: ${p.alt}`}>
-                  <Image src={p.src} alt="" width={480} widths={[240, 480]} sizes="(max-width: 560px) 50vw, 240px" />
-                </button>
-              </li>
-            ))}
-          </ul>
-        )
-      }
+      <GalleryGrid gallery={peeta} name="cat" empty="Peeta's photos are on their way." />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-sex" aria-labelledby="tab-sex" tabindex="0" hidden>
@@ -294,7 +275,7 @@ const catPhotos = await Promise.all(
 
   <noscript><style>.panel[hidden] { display: block; } .tabs, .pick { display: none; }</style></noscript>
 
-  <dialog class="viewer" aria-label="Photo of Peeta">
+  <dialog class="viewer" aria-label="Photo">
     <figure>
       <img alt="" />
       <figcaption></figcaption>
@@ -433,28 +414,6 @@ const catPhotos = await Promise.all(
   .list-link:hover { background: rgba(57, 197, 187, 0.14); }
 
   .empty { color: var(--muted); }
-  .cat-grid {
-    list-style: none;
-    margin: 1.25rem 0 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(11rem, 1fr));
-    gap: 0.75rem;
-  }
-  .cat-grid button {
-    display: block;
-    width: 100%;
-    padding: 0;
-    border: 0;
-    border-radius: 14px;
-    overflow: hidden;
-    background: var(--night-3);
-    cursor: zoom-in;
-    line-height: 0;
-  }
-  .cat-grid img { width: 100%; aspect-ratio: 1; object-fit: cover; }
-  .cat-grid button:hover img { filter: brightness(1.1); }
-
   .viewer {
     width: min(100% - 2rem, 56rem);
     max-height: calc(100vh - 2rem);
@@ -495,7 +454,6 @@ const catPhotos = await Promise.all(
     .facets__title { padding: 0.9rem 0.8rem 0; }
     .tabs { gap: 0.4rem; padding: 0.6rem; }
     .tabs button { flex: 1 1 auto; max-width: calc(50% - 0.2rem); justify-content: center; padding: 0.5rem 0.65rem; font-size: 0.8rem; white-space: nowrap; gap: 0.35rem; }
-    .cat-grid { grid-template-columns: 1fr 1fr; }
   }
 </style>
 
@@ -532,11 +490,12 @@ const catPhotos = await Promise.all(
   const fromHash = tabs.find((t) => `#${t.dataset.tab}` === location.hash);
   if (fromHash) select(fromHash, false, false);
 
-  // Peeta photo viewer
+  // Photo viewer for the galleries (Cat Dad, Fishing): ‹ › move within the clicked gallery.
   const viewer = document.querySelector<HTMLDialogElement>('.viewer')!;
   const img = viewer.querySelector('img')!;
   const caption = viewer.querySelector('figcaption')!;
-  const photos = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-cat]'));
+  const allPhotos = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-gallery]'));
+  let photos: HTMLButtonElement[] = [];
   let index = 0;
 
   function show(i: number) {
@@ -546,15 +505,16 @@ const catPhotos = await Promise.all(
     img.alt = b.dataset.alt!;
     caption.textContent = b.dataset.alt!;
   }
-  photos.forEach((b, i) =>
+  allPhotos.forEach((b) =>
     b.addEventListener('click', () => {
-      show(i);
+      photos = allPhotos.filter((p) => p.dataset.gallery === b.dataset.gallery);
+      const many = photos.length > 1;
+      viewer.querySelector<HTMLButtonElement>('.viewer__prev')!.hidden = !many;
+      viewer.querySelector<HTMLButtonElement>('.viewer__next')!.hidden = !many;
+      show(photos.indexOf(b));
       viewer.showModal();
     }),
   );
-  const many = photos.length > 1;
-  viewer.querySelector<HTMLButtonElement>('.viewer__prev')!.hidden = !many;
-  viewer.querySelector<HTMLButtonElement>('.viewer__next')!.hidden = !many;
   viewer.querySelector('.viewer__prev')!.addEventListener('click', () => show(index - 1));
   viewer.querySelector('.viewer__next')!.addEventListener('click', () => show(index + 1));
   viewer.querySelector('.viewer__close')!.addEventListener('click', () => viewer.close());
