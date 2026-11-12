@@ -12,7 +12,7 @@ import GalleryGrid from '../components/Gallery.astro';
 import kingOfHues from '../assets/king-of-hues.jpg';
 import { loadPeeta } from '../lib/peeta';
 import { loadGallery } from '../lib/gallery';
-import { loadRanking, loadRankedList } from '../lib/ranking';
+import { loadRankedList } from '../lib/ranking';
 import { loadSections } from '../lib/sections';
 import { loadBotw } from '../lib/botw';
 
@@ -99,7 +99,8 @@ const tabs = [
   { id: 'theater', icon: '🎭', label: 'Theater & Opera' },
   { id: 'gamer', icon: '🎮', label: 'Gamer' },
   { id: 'anime', icon: '🍥', label: 'Anime' },
-  { id: 'potato', icon: '🥔', label: 'Potato' },
+  { id: 'tv', icon: '📺', label: 'TV Potato' },
+  { id: 'movie', icon: '🎬', label: 'Movie Potato' },
   { id: 'cat', icon: '🐱', label: 'Cat Dad' },
   { id: 'sex', icon: '😘', label: 'Sex' },
 ];
@@ -110,7 +111,8 @@ tabs.sort((a, b) => sortKey(a).localeCompare(sortKey(b)));
 
 const games = loadRankedList('content/gaming/top39.md', 'Hours');
 const anime = loadRankedList('content/anime/top39.md');
-const screen = loadRanking('content/screen/top39.md', 'Title', null, 'Type');
+const tvShows = loadRankedList('content/tv/top39.md');
+const movies = loadRankedList('content/movies/top39.md');
 const tattoos = loadSections('content/tattoos.md', 'content/tattoos');
 const mikuConcerts = loadSections('content/miku.md', 'content/miku');
 const concerts = loadSections('content/concerts.md', 'content/concerts');
@@ -339,11 +341,15 @@ const peeta = loadPeeta();
       </Ranking>
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-potato" aria-labelledby="tab-potato" tabindex="0" hidden>
-      <Ranking items={screen}>
-        <p class="ranking-lede">
-          My top 39 movies and TV shows. Anime gets its own tab because of how much it means to me.
-        </p>
+    <section class="panel" role="tabpanel" id="panel-tv" aria-labelledby="tab-tv" tabindex="0" hidden>
+      <Ranking items={tvShows}>
+        <p class="ranking-lede">My top 39 TV shows. Anime gets its own tab because of how much it means to me.</p>
+      </Ranking>
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-movie" aria-labelledby="tab-movie" tabindex="0" hidden>
+      <Ranking items={movies}>
+        <p class="ranking-lede">My top 39 movies.</p>
       </Ranking>
     </section>
 
@@ -611,8 +617,9 @@ const peeta = loadPeeta();
     });
   });
 
-  // Old links: #weeb is now #anime.
-  const hash = location.hash === '#weeb' ? '#anime' : location.hash;
+  // Old links: #weeb is now #anime, and #potato (before the TV/Movie split) opens TV Potato.
+  const renamed: Record<string, string> = { '#weeb': '#anime', '#potato': '#tv' };
+  const hash = renamed[location.hash] ?? location.hash;
   const fromHash = tabs.find((t) => `#${t.dataset.tab}` === hash);
   if (fromHash) select(fromHash, false, false);
 
