@@ -1,12 +1,8 @@
 <!--
   Mentor Facet tab. Plain Markdown; edit and push.
-  The first line is the opening slam, ## = section,
+  ## = section,
   > = punch line, **bold** = highlighted phrase.
 -->
-
-<p class="slam">Life is finite. Move.</p>
-
-You harvest what you plant.
 
 Everything you do is a seed. Everything you *don't* do is a seed too.
 
@@ -17,6 +13,7 @@ Everything you do is a seed. Everything you *don't* do is a seed too.
 - Dishonesty has a harvest.
 - Discipline has a harvest.
 - Courage has a harvest.
+- Movement has a harvest.
 
 </div>
 
