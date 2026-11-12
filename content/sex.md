@@ -4,7 +4,7 @@ As a citizen of the world, I've experienced many cultures, and I developed my ow
 
 If you came here expecting graphic details because I’m AuDHD and very transparent… no. I have boundaries. I’m transparent about myself, as truth is the best disinfectant against bullshit and toxic humans, but I respect others’ privacy.
 
-I hope they respect mine and don't upload the video that was taken during the night I enjoyed six girls at once. I was quite literally mentally overloaded that there was no mental bandwidth left; if that happens, the truth is here. I am human, and I will die someday, but at least I will die knowing I had the opportunity to experience something wilder than the stuff I wrote on #HusbandOutWorld.
+I hope they respect mine and don't upload the video that was taken during the night I enjoyed six girls at once. I was quite literally so mentally overloaded that there was no mental bandwidth left; if that happens, the truth is here. I am human, and I will die someday, but at least I will die knowing I had the opportunity to experience something wilder than the stuff I wrote on #HusbandOutWorld.
 
 ## If you want more context as to what was happening inside of me that led to the overswing in the rebound phase, read this excerpt from my Vol 4 afterword
 
