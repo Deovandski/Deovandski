@@ -18,7 +18,8 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | 初音ミク tab (Miku concerts) | `content/miku.md`, photos in `content/miku/<concert>/` |
 | Concert tab | `content/concerts.md`, photos in `content/concerts/<section>/` |
 | D&D tab (cards, 2 photos each) | `content/dnd.md` |
-| Fishing and Camping tabs (location cards, 2 photos each) | `content/fishing.md`, `content/camping.md` |
+| Fishing tab (photo gallery, like Cat Dad) | `content/fishing/` (see its README) |
+| Camping tab (location cards, 2 photos each) | `content/camping.md` |
 | Theater & Opera tab | `content/theater.md` |
 | Gamer tab (top 39 games) | `content/gaming/top39.md` |
 | Weeb tab (top 39 anime, with descriptions) | `content/anime/top39.md` (numbered list) |
