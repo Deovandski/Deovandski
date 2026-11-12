@@ -13,8 +13,6 @@ Edit and push; the Concert tab rebuilds from this file.
   the name; until then the circle shows initials.
 - Plain text under a heading is shown as that genre's description.
 
-> Live bands and shows I've watched. Hatsune Miku and Vocaloid concerts are special to me, so they have their own tab: 初音ミク. Bands tagged FITM 2025 Favs are my favorites from Fire in the Mountains 2025, on Blackfeet Nation land in Montana.
-
 ## Country
 
 - Sturgill Simpson
