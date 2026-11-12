@@ -103,3 +103,10 @@ img { max-width: 100%; height: auto; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Per-source visibility. <html data-src="..."> comes from ?src=... (see Base.astro).
+   Visitors from LinkedIn don't see the curiosity easter egg (Sex tab). Add more rules here as needed. */
+html[data-src='linkedin'] #tab-sex,
+html[data-src='linkedin'] #panel-sex {
+  display: none !important;
+}

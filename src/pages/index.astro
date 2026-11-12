@@ -501,7 +501,10 @@ const catPhotos = await Promise.all(
 
 <script>
   // Tabs: click, arrow keys, and #dev / #author / ... links
-  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
+  // Tabs hidden for this visitor (see "Per-source visibility" in global.css) are skipped entirely.
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[role="tab"]')).filter(
+    (t) => getComputedStyle(t).display !== 'none',
+  );
 
   function select(tab: HTMLButtonElement, focus = false, updateHash = true) {
     for (const t of tabs) {

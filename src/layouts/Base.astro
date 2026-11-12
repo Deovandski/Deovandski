@@ -36,6 +36,20 @@ const isCurrent = (href: string) => (href === '/' ? here === '/' || here === '' 
     <link rel="icon" type="image/png" href={url('/favicon.png')} />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
+    <script is:inline>
+      // Visitor source: ?src=LinkedIn (any case) sets <html data-src="linkedin"> for this tab's whole visit,
+      // so CSS can hide things per source (see "Per-source visibility" in global.css).
+      // Without ?src, a visitor arriving from linkedin.com / lnkd.in counts as LinkedIn too.
+      (function () {
+        var src = (new URLSearchParams(location.search).get('src') || '').trim().toLowerCase();
+        try {
+          if (src) sessionStorage.setItem('src', src);
+          else src = sessionStorage.getItem('src') || '';
+        } catch (e) {}
+        if (!src && /(^|\.)(linkedin\.com|lnkd\.in)$/i.test((function () { try { return new URL(document.referrer).hostname; } catch (e) { return ''; } })())) src = 'linkedin';
+        if (src) document.documentElement.dataset.src = src;
+      })();
+    </script>
   </head>
   <body>
     <Starfield />
