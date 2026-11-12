@@ -53,8 +53,9 @@ Add `?miku` to any URL to preview the Miku Day confetti.
 ## Visitor source (`?src=`)
 
 Links with `?src=LinkedIn` (any case) mark the visit as coming from LinkedIn, and so does
-arriving from linkedin.com or lnkd.in. The mark lasts for the browser tab's visit, so
-it survives clicking Home or Contact. LinkedIn visitors don't see the Sex tab.
+arriving from linkedin.com or lnkd.in. The mark carries over while the visitor clicks around
+the site (Home, Contact), but any URL opened directly without `?src` (typed, bookmarked, from
+another site) starts clean. LinkedIn visitors don't see the Sex tab.
 Per-source rules live at the bottom of `src/styles/global.css`; the value is on
 `<html data-src="...">`, so any other `?src=` value can get its own rules.
 Use `https://deovandski.github.io/Deovandski/?src=LinkedIn` on LinkedIn.
