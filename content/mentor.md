@@ -6,9 +6,7 @@
 
 <p class="slam">Life is finite. Move.</p>
 
-Build yourself deliberately. Act before possibility decays into fantasy. Tell the truth. Demand reciprocity. Bury dead systems. Steward what you love. Teach what you learn. Leave evidence that you were fully alive.
-
-## You harvest what you plant
+You harvest what you plant.
 
 Everything you do is a seed. Everything you *don't* do is a seed too.
 
@@ -43,7 +41,7 @@ You will eat that harvest, even when it tastes like shit. Nobody eats it for you
 
 - Pain doesn't make you wiser, but it's a powerful fuel for growth. Time doesn't heal you. Information doesn't become behavior. **A lesson that never changes a decision was entertainment.**
 - Nobody can commit for you. People can open doors. **Nobody walks through them using your legs.**
-- Potential deserves no applause, but I'll always give it encouragement and wisdom. A dream earns dignity when your behavior starts serving it.
+- Potential gets encouragement and wisdom from me, never applause. **Applause is for the first real step from potential to reality.** A dream earns dignity when your behavior starts serving it.
 - Not every battle deserves you. Sometimes "persistence" is just fear of admitting the system is dead. **Fight in faith for a better future. When people prove unworthy of your love, losing that faith isn't failure; it's clarity.**
 - Love is not an exemption from standards. **Compassion can explain behavior without volunteering to absorb it.**
 - **Peace is not passivity.** Peace is maintained: boundaries, confrontation, recovery, honest decisions.
