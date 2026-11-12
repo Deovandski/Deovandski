@@ -8,7 +8,8 @@
     "preview": "astro preview",
     "travel:codes": "node scripts/country-codes.mjs && node scripts/subdivision-codes.mjs",
     "prebuild": "node scripts/convert-heic.mjs",
-    "photos:fix-heic": "node scripts/convert-heic.mjs"
+    "photos:fix-heic": "node scripts/convert-heic.mjs",
+    "postbuild": "node scripts/llms.mjs"
   },
   "repository": {
     "type": "git",
