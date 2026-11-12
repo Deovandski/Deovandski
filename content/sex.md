@@ -4,9 +4,11 @@ As a citizen of the world, I've experienced many cultures, and I developed my ow
 
 If you came here expecting graphic details because I’m AuDHD and very transparent… no. I have boundaries. I’m transparent about myself, as truth is the best disinfectant against bullshit and toxic humans, but I respect others’ privacy.
 
-I hope they respect mine and don't upload the video that was taken during the night I enjoyed six girls at once. I was quite literally so mentally overloaded that there was no mental bandwidth left; if that happens, the truth is here. I am human, and I will die someday, but at least I will die knowing I had the opportunity to experience something wilder than the stuff I wrote on #HusbandOutWorld.
+I hope they respect mine, and the privacy of every woman involved, and never upload the video from the night I enjoyed six women at once. Alcohol was involved. I was so overloaded I couldn't think straight; we were all lost in booze and lust, and I let go of my old self along with any sense of what was real.
 
-## If you want more context as to what was happening inside of me that led to the overswing in the rebound phase, read this excerpt from my Vol 4 afterword
+If it ever surfaces, the truth is already here. I'm human, and I'll die someday, but I'll die knowing I lived something wilder than anything I wrote in #HusbandOutWorld.
+
+## Why the pendulum swung so hard: an excerpt from my Vol 4 afterword
 
 > —Since we are on this topic of newfound memories, to all the women I shared a bed with since my AuDHD unmasking, thank you for indulging my shadow side while I was on a rebound spree due to being mentally abused and starved emotionally and physically! For the way my brain works, that was necessary —alongside a lot of self-reflection—to re-stabilize myself and grow, although I do confess the pendulum swung hard, and I tested my very limits by going into the deepest, lustful desires of my ADHD driven soul, even jumping without hesitation into experiencing six women at once, flooding every sense into purely carnal surreality, continuously trying to please more than being pleased.
 >
