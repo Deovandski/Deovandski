@@ -13,4 +13,6 @@ GitHub only has a fraction of my code because of NDAs, but here are a few I'm pr
 
 Want to reach out? Find me on [LinkedIn](https://www.linkedin.com/in/deovandski).
 
+📋 **What I'm building on the site next:** my public [Kanban board](https://github.com/users/Deovandski/projects/2). Ideas and issues welcome!
+
 <sub>This repo also holds the source for my site. See [SITE.md](./SITE.md).</sub>
