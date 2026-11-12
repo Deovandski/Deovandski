@@ -29,6 +29,13 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Colors and fonts | `src/styles/global.css` |
 | Logo | `src/assets/logo.png` |
 
+## llms.txt (for AI tools)
+
+`npm run build` also writes `llms.txt` (an index of the tabs, per [llmstxt.org](https://llmstxt.org/))
+and `llms-full.txt` (every tab's text, as visitors see it) into the site root, the same idea as
+the #HusbandOutWorld site. They're generated from the built home page by `scripts/llms.mjs`,
+so they never go stale. The Sex tab is left out on purpose (`SKIP` at the top of that script).
+
 ## Local preview
 
 ```sh
