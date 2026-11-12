@@ -4,7 +4,7 @@ As a citizen of the world, I've experienced many cultures, and I developed my ow
 
 If you came here expecting graphic details because I’m AuDHD and very transparent… no. I have boundaries. I’m transparent about myself, as truth is the best disinfectant against bullshit and toxic humans, but I respect others’ privacy.
 
-I hope they respect mine, and the privacy of every woman involved, and never upload the video from the night I enjoyed six women at once. Alcohol was involved. I was so overloaded I couldn't think straight; we were all lost in booze and lust, and I let go of my old self along with any sense of what was real.
+I hope they respect mine, and the privacy of every woman involved, and never upload the video from the night I enjoyed six women at once. Alcohol was involved. I was so overloaded I couldn't think straight; we were all lost in booze and lust, and I let go of my old self along with any sense of what was real—I truly never thought I had that strong of a shadow side in me, yet here we are. It’s done, and I’ve reflected a lot on it.
 
 If it ever surfaces, the truth is already here. I'm human, and I'll die someday, but I'll die knowing I lived something wilder than anything I wrote in #HusbandOutWorld.
 
