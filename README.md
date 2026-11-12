@@ -9,7 +9,7 @@ GitHub only has a fraction of my code because of NDAs, but here are a few I'm pr
 
 - 💡 [Deo's Framework 16 LED Matrix Manager](https://deovandski.github.io/Deo-s-Framework16-LED-Matrix-Manager/)
 - 🎲 [Vraki West March D&D Campaign](https://deovandski.github.io/Vraki-West-March-Campaign-D-D/): issues and PRs welcome!
-- ✍️ [Vraki writing system](https://deovandski.github.io/vraki-windows/): where my author side started
+- ✍️ [Vraki Writing System](https://deovandski.github.io/vraki-windows/): where my author side started
 
 Want to reach out? Find me on [LinkedIn](https://www.linkedin.com/in/deovandski).
 
