@@ -93,6 +93,29 @@ const isCurrent = (href: string) => (href === '/' ? here === '/' || here === '' 
     </footer>
 
     <MikuDay />
+
+    <script>
+      // External links open in a new tab. "External" means another site: a different origin, or a
+      // path outside this site's base (deovandski.github.io/HusbandOutWorld/ is a different site).
+      // Covers links added later too (map popups, etc.) by checking again on click.
+      const base = new URL(import.meta.env.BASE_URL, location.origin).href;
+      const external = (a: HTMLAnchorElement) =>
+        /^https?:$/.test(a.protocol) && !(a.origin === location.origin && a.href.startsWith(base));
+      const mark = (a: HTMLAnchorElement) => {
+        if (!external(a)) return;
+        a.target = '_blank';
+        a.rel = 'noopener';
+      };
+      document.querySelectorAll<HTMLAnchorElement>('a[href]').forEach(mark);
+      document.addEventListener(
+        'click',
+        (e) => {
+          const a = (e.target as Element | null)?.closest?.('a[href]') as HTMLAnchorElement | null;
+          if (a) mark(a);
+        },
+        { capture: true },
+      );
+    </script>
   </body>
 </html>
 

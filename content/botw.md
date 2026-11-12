@@ -9,6 +9,6 @@ Edit and push; the BOTW tab rebuilds from this file.
 - Optional: lines under a pick (until the next number) are a short note about it.
 - Up to 39 picks; until there are any, the tab says they're on their way.
 
-> These fucking hacks always brings me joy with the BOTWs! Also, fucking invite me to the show to commiserate watching horrible VHS videos! I can make Churrasco.
+> These hacks always brings me joy with the BOTWs! If one of you ever stumbles here, fucking invite me to the show to commiserate watching horrible VHS videos! I'd love that! I can even make Churrasco.
 
 <!-- Your 39 picks go below this line. -->
