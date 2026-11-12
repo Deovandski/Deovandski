@@ -25,8 +25,8 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Theater & Opera tab (works like Concert) | `content/theater.md`, show images in `content/theater/shows/` |
 | Gamer tab (top 39 games, numbered list with optional `Hours:` lines) | `content/gaming/top39.md` |
 | Anime tab (top 39 anime, with descriptions) | `content/anime/top39.md` (numbered list) |
-| TV Potato tab (top 39 TV shows) | `content/tv/top39.md` (numbered list) |
-| Movie Potato tab (top 39 movies) | `content/movies/top39.md` (numbered list) |
+| Potato tab, TV shows side (top 39) | `content/tv/top39.md` (numbered list) |
+| Potato tab, Movies side (top 39) | `content/movies/top39.md` (numbered list) |
 | Cat Dad tab (Peeta photos) | `content/peeta/` (see its README) |
 | Sex tab (and the first-click banner) | `content/sex.md`, `src/components/SexFacet.astro` |
 | Miku Day dates and message | `src/components/MikuDay.astro` (`DATES` near the top) |
@@ -47,7 +47,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-No tab opens by default. Link straight to a home tab with `#dev`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#concert`, `#theater`, `#gamer`, `#anime`, `#tv`, `#movie`, `#cat` or `#sex`.
+No tab opens by default. Link straight to a home tab with `#dev`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#concert`, `#theater`, `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#cat` or `#sex`.
 Add `?miku` to any URL to preview the Miku Day confetti.
 
 ## Visitor source (`?src=`)

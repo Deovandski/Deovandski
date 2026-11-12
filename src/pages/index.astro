@@ -100,8 +100,7 @@ const tabs = [
   { id: 'theater', icon: '🎭', label: 'Theater & Opera' },
   { id: 'gamer', icon: '🎮', label: 'Gamer' },
   { id: 'anime', icon: '🍥', label: 'Anime' },
-  { id: 'tv', icon: '📺', label: 'TV Potato' },
-  { id: 'movie', icon: '🎬', label: 'Movie Potato' },
+  { id: 'potato', icon: '🥔', label: 'Potato' },
   { id: 'cat', icon: '🐱', label: 'Cat Dad' },
   { id: 'sex', icon: '😘', label: 'Sex' },
 ];
@@ -342,16 +341,21 @@ const peeta = loadPeeta();
       </Ranking>
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-tv" aria-labelledby="tab-tv" tabindex="0" hidden>
-      <Ranking items={tvShows}>
-        <p class="ranking-lede">My top 39 TV shows. Anime gets its own tab because of how much it means to me.</p>
-      </Ranking>
-    </section>
-
-    <section class="panel" role="tabpanel" id="panel-movie" aria-labelledby="tab-movie" tabindex="0" hidden>
-      <Ranking items={movies}>
-        <p class="ranking-lede">My top 39 movies.</p>
-      </Ranking>
+    <section class="panel" role="tabpanel" id="panel-potato" aria-labelledby="tab-potato" tabindex="0" hidden>
+      <div class="switch" role="tablist" aria-label="TV shows or movies">
+        <button type="button" role="tab" id="potato-tab-tv" aria-controls="potato-tv" aria-selected="true" data-potato="tv">📺 TV shows</button>
+        <button type="button" role="tab" id="potato-tab-movies" aria-controls="potato-movies" aria-selected="false" tabindex="-1" data-potato="movies">🎬 Movies</button>
+      </div>
+      <div id="potato-tv" role="tabpanel" aria-labelledby="potato-tab-tv">
+        <Ranking items={tvShows}>
+          <p class="ranking-lede">My top 39 TV shows. Anime gets its own tab because of how much it means to me.</p>
+        </Ranking>
+      </div>
+      <div id="potato-movies" role="tabpanel" aria-labelledby="potato-tab-movies" hidden>
+        <Ranking items={movies}>
+          <p class="ranking-lede">My top 39 movies.</p>
+        </Ranking>
+      </div>
     </section>
 
     <section class="panel" role="tabpanel" id="panel-cat" aria-labelledby="tab-cat" tabindex="0" hidden>
@@ -504,6 +508,32 @@ const peeta = loadPeeta();
   .list-link:hover { background: rgba(57, 197, 187, 0.14); }
 
   .empty { color: var(--muted); }
+  .switch {
+    display: inline-flex;
+    gap: 0.25rem;
+    padding: 0.25rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(57, 197, 187, 0.35);
+    border-radius: 999px;
+    background: rgba(7, 11, 31, 0.55);
+  }
+  .switch button {
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--step-0);
+    color: var(--silver);
+    background: transparent;
+    border: 0;
+    border-radius: 999px;
+    padding: 0.45rem 1.1rem;
+    cursor: pointer;
+  }
+  .switch button:hover { color: var(--text); }
+  .switch button[aria-selected='true'] {
+    color: var(--night);
+    background: var(--teal);
+    box-shadow: 0 0 18px rgba(57, 197, 187, 0.35);
+  }
   .botw-intro { max-width: var(--measure); }
   .botw-intro .ranking-lede { margin-bottom: 0; }
   .botw { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; counter-reset: botw; }
@@ -591,7 +621,7 @@ const peeta = loadPeeta();
 <script>
   // Tabs: click, arrow keys, and #dev / #author / ... links
   // Tabs hidden for this visitor (see "Per-source visibility" in global.css) are skipped entirely.
-  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[role="tab"]')).filter(
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('.tabs [role="tab"]')).filter(
     (t) => getComputedStyle(t).display !== 'none',
   );
 
@@ -618,11 +648,35 @@ const peeta = loadPeeta();
     });
   });
 
-  // Old links: #weeb is now #anime, and #potato (before the TV/Movie split) opens TV Potato.
-  const renamed: Record<string, string> = { '#weeb': '#anime', '#potato': '#tv' };
+  // Potato tab: TV shows | Movies switch. #potato opens TV shows, #potato-movies opens Movies.
+  const potatoButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-potato]'));
+  function potato(which: string, updateHash = true) {
+    for (const b of potatoButtons) {
+      const on = b.dataset.potato === which;
+      b.setAttribute('aria-selected', String(on));
+      b.tabIndex = on ? 0 : -1;
+      document.getElementById(b.getAttribute('aria-controls')!)!.hidden = !on;
+    }
+    if (updateHash) history.replaceState(null, '', which === 'movies' ? '#potato-movies' : '#potato');
+  }
+  potatoButtons.forEach((b, i) => {
+    b.addEventListener('click', () => potato(b.dataset.potato!));
+    b.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      e.stopPropagation();
+      const next = potatoButtons[(i + 1) % potatoButtons.length];
+      potato(next.dataset.potato!);
+      next.focus();
+    });
+  });
+
+  // Old links: #weeb is now #anime; #tv and #movie (the old TV/Movie Potato tabs) open the Potato switch.
+  const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies' };
   const hash = renamed[location.hash] ?? location.hash;
-  const fromHash = tabs.find((t) => `#${t.dataset.tab}` === hash);
+  const fromHash = tabs.find((t) => `#${t.dataset.tab}` === hash || (t.dataset.tab === 'potato' && hash === '#potato-movies'));
   if (fromHash) select(fromHash, false, false);
+  if (hash === '#potato-movies') potato('movies', false);
 
   // Photo viewer for the galleries (Cat Dad, Fishing): ‹ › move within the clicked gallery.
   const viewer = document.querySelector<HTMLDialogElement>('.viewer')!;
