@@ -1,6 +1,6 @@
-# Multilingual Life
+# Multilingual Facet
 
-Edit the table and push; the equalizer in the Multilingual Life tab rebuilds from it.
+Edit the table and push; the equalizer in the Multilingual Facet tab rebuilds from it.
 
 - Level: 1 to 10, how many bars light up.
 - Color: green, yellow or red.

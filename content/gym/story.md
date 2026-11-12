@@ -1,4 +1,4 @@
-<!-- Gym Life story. Plain Markdown; edit and push. -->
+<!-- Gym Facet story. Plain Markdown; edit and push. -->
 
 For years, the gym was a pressure valve. I went for stress relief, so it never gave me satisfaction: it was a tool for relief, not something I enjoyed. Part of that was my undiagnosed AuDHD, and not realizing how much masking I was doing every single day.
 

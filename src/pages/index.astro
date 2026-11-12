@@ -2,12 +2,12 @@
 import { Image, getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import Ranking from '../components/Ranking.astro';
-import TravelerLife from '../components/TravelerLife.astro';
-import MentorLife from '../components/MentorLife.astro';
-import MultilingualLife from '../components/MultilingualLife.astro';
+import TravelerFacet from '../components/TravelerFacet.astro';
+import MentorFacet from '../components/MentorFacet.astro';
+import MultilingualFacet from '../components/MultilingualFacet.astro';
 import Sections from '../components/Sections.astro';
-import GymLife from '../components/GymLife.astro';
-import SexLife from '../components/SexLife.astro';
+import GymFacet from '../components/GymFacet.astro';
+import SexFacet from '../components/SexFacet.astro';
 import kingOfHues from '../assets/king-of-hues.jpg';
 import { loadPeeta } from '../lib/peeta';
 import { loadRanking, loadRankedList } from '../lib/ranking';
@@ -109,9 +109,9 @@ const catPhotos = await Promise.all(
     </figure>
   </section>
 
-  <div class="lives">
-    <h2 class="lives__title" id="lives-title">The lives that fulfill Deo</h2>
-    <div class="tabs" role="tablist" aria-labelledby="lives-title">
+  <div class="facets">
+    <h2 class="facets__title" id="facets-title">The facets that fulfill Deo</h2>
+    <div class="tabs" role="tablist" aria-labelledby="facets-title">
       {
         tabs.map((t, i) => (
           <button
@@ -179,7 +179,7 @@ const catPhotos = await Promise.all(
     </section>
 
     <section class="panel" role="tabpanel" id="panel-mentor" aria-labelledby="tab-mentor" tabindex="0" hidden>
-      <MentorLife />
+      <MentorFacet />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-influencer" aria-labelledby="tab-influencer" tabindex="0" hidden>
@@ -200,7 +200,7 @@ const catPhotos = await Promise.all(
     </section>
 
     <section class="panel" role="tabpanel" id="panel-traveler" aria-labelledby="tab-traveler" tabindex="0" hidden>
-      <TravelerLife />
+      <TravelerFacet />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-fishing" aria-labelledby="tab-fishing" tabindex="0" hidden>
@@ -216,7 +216,7 @@ const catPhotos = await Promise.all(
     </section>
 
     <section class="panel" role="tabpanel" id="panel-multilingual" aria-labelledby="tab-multilingual" tabindex="0" hidden>
-      <MultilingualLife />
+      <MultilingualFacet />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-tattoo" aria-labelledby="tab-tattoo" tabindex="0" hidden>
@@ -224,7 +224,7 @@ const catPhotos = await Promise.all(
     </section>
 
     <section class="panel" role="tabpanel" id="panel-gym" aria-labelledby="tab-gym" tabindex="0" hidden>
-      <GymLife />
+      <GymFacet />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-miku" aria-labelledby="tab-miku" tabindex="0" hidden>
@@ -287,7 +287,7 @@ const catPhotos = await Promise.all(
     </section>
 
     <section class="panel" role="tabpanel" id="panel-sex" aria-labelledby="tab-sex" tabindex="0" hidden>
-      <SexLife />
+      <SexFacet />
     </section>
   </div>
 
@@ -343,13 +343,13 @@ const catPhotos = await Promise.all(
     margin-bottom: 0.25em;
   }
 
-  .lives {
+  .facets {
     border: 1px solid rgba(57, 197, 187, 0.25);
     border-radius: 22px;
     background: rgba(14, 22, 54, 0.6);
     backdrop-filter: blur(4px);
   }
-  .lives__title {
+  .facets__title {
     margin: 0;
     padding: 1.1rem 1.1rem 0;
     font-size: var(--step-1);
@@ -484,7 +484,7 @@ const catPhotos = await Promise.all(
     .hero { grid-template-columns: 1fr; padding-bottom: 2rem; }
   }
   @media (max-width: 560px) {
-    .lives__title { padding: 0.9rem 0.8rem 0; }
+    .facets__title { padding: 0.9rem 0.8rem 0; }
     .tabs { gap: 0.4rem; padding: 0.6rem; }
     .tabs button { flex: 1 1 auto; max-width: calc(50% - 0.2rem); justify-content: center; padding: 0.5rem 0.65rem; font-size: 0.8rem; white-space: nowrap; gap: 0.35rem; }
     .cat-grid { grid-template-columns: 1fr 1fr; }

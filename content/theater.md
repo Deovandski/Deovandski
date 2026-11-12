@@ -1,6 +1,6 @@
-# Theater & Opera Life
+# Theater & Opera Facet
 
-Edit and push; the Theater & Opera Life tab rebuilds from this file.
+Edit and push; the Theater & Opera Facet tab rebuilds from this file.
 
 - Each `##` heading is a kind of show. Each bullet is one show; add the
   company or venue after a colon.

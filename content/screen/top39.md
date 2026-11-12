@@ -1,6 +1,6 @@
 # My top 39 movies and TV shows
 
-Edit the table below and push. The site rebuilds the Potato Life tab from it.
+Edit the table below and push. The site rebuilds the Potato Facet tab from it.
 Anime has its own list in content/anime/top39.md.
 
 - Rank: 1 is the favorite. Use each number from 1 to 39 once.

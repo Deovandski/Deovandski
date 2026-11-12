@@ -1,6 +1,6 @@
-# 初音ミク Life
+# 初音ミク Facet
 
-Edit and push; the 初音ミク Life tab rebuilds from this file.
+Edit and push; the 初音ミク Facet tab rebuilds from this file.
 
 - Each `##` heading is one concert. Its photos go in `content/miku/<concert>/`,
   using the heading in lower case with dashes, e.g. `content/miku/magical-mirai-osaka-2014/`.

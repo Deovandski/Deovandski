@@ -1,7 +1,7 @@
-# Cat Dad Life (Peeta photos)
+# Cat Dad Facet (Peeta photos)
 
 Drop photos of Peeta straight into this folder and push. They appear in the
-"Cat Dad Life" tab on the home page.
+"Cat Dad Facet" tab on the home page.
 
 - Formats: `.jpg`, `.jpeg`, `.png`, `.webp`, `.avif` (export iPhone `.heic` as JPG).
 - Order: photos are shown in filename order. Number them to control it:

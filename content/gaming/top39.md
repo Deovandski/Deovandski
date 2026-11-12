@@ -1,6 +1,6 @@
 # My top 39 games
 
-Edit the table below and push. The site rebuilds the Gamer Life tab from it.
+Edit the table below and push. The site rebuilds the Gamer Facet tab from it.
 
 - Rank: 1 is the favorite. Use each number from 1 to 39 once.
 - Game: the title as you want it shown.
