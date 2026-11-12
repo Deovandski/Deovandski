@@ -11,6 +11,8 @@ const photoModules = import.meta.glob<ImageMetadata>('/content/**/*.{jpg,jpeg,pn
 export type SectionItem = { symbol?: string; vraki: boolean; name: string; meaning: string[]; tags: string[] };
 export type Section = {
   title: string;
+  kicker?: string; // "kicker: Campaign #1" line: small label above the title
+  subtitle?: string; // "subtitle: ..." line: shown under the title
   slug: string;
   intro: string[];
   items: SectionItem[];
@@ -68,9 +70,17 @@ export function loadSections(file: string, photoDir: string): Sections {
     const slug = slugify(title);
     const sectionIntro: string[] = [];
     const items: SectionItem[] = [];
+    let kicker: string | undefined;
+    let subtitle: string | undefined;
 
     for (const line of (nl === -1 ? '' : part.slice(nl + 1)).split(/\r?\n/)) {
       if (!line.trim()) continue;
+      const meta = line.match(/^(kicker|subtitle):\s*(.+)$/i);
+      if (meta && !items.length && !sectionIntro.length) {
+        if (meta[1].toLowerCase() === 'kicker') kicker = meta[2].trim();
+        else subtitle = meta[2].trim();
+        continue;
+      }
       if (/^[-*] +/.test(line)) items.push(parseItem(line.replace(/^[-*] +/, '').trim()));
       else if (/^\s{2,}\S/.test(line) && items.length) items[items.length - 1].meaning.push(line.trim());
       else sectionIntro.push(line.trim());
@@ -82,7 +92,7 @@ export function loadSections(file: string, photoDir: string): Sections {
       .map(([path, src]) => ({ src, file: path.split('/').pop()! }))
       .sort((a, b) => a.file.localeCompare(b.file, undefined, { numeric: true }));
 
-    return { title, slug, intro: sectionIntro, items, photos, hasSlot: photos.length > 0 || existsSync(resolve(`${photoDir}/${slug}`)) };
+    return { title, kicker, subtitle, slug, intro: sectionIntro, items, photos, hasSlot: photos.length > 0 || existsSync(resolve(`${photoDir}/${slug}`)) };
   });
 
   return { intro, sections };
