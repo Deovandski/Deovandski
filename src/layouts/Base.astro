@@ -37,16 +37,25 @@ const isCurrent = (href: string) => (href === '/' ? here === '/' || here === '' 
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <script is:inline>
-      // Visitor source: ?src=LinkedIn (any case) sets <html data-src="linkedin"> for this tab's whole visit,
-      // so CSS can hide things per source (see "Per-source visibility" in global.css).
-      // Without ?src, a visitor arriving from linkedin.com / lnkd.in counts as LinkedIn too.
+      // Visitor source: ?src=LinkedIn (any case) sets <html data-src="linkedin">, so CSS can hide things
+      // per source (see "Per-source visibility" in global.css). The URL decides:
+      // - ?src=... (any value, even empty) sets or clears it;
+      // - clicking around inside the site keeps the source you arrived with;
+      // - anything else without ?src (typed URL, bookmark, another site) starts clean,
+      //   except arriving from linkedin.com / lnkd.in, which counts as LinkedIn.
       (function () {
-        var src = (new URLSearchParams(location.search).get('src') || '').trim().toLowerCase();
+        var params = new URLSearchParams(location.search);
+        var ref = '';
+        try { ref = document.referrer ? new URL(document.referrer).hostname : ''; } catch (e) {}
+        var src;
+        if (params.has('src')) src = (params.get('src') || '').trim().toLowerCase();
+        else if (ref === location.hostname) {
+          try { src = sessionStorage.getItem('src') || ''; } catch (e) { src = ''; }
+        } else src = /(^|\.)(linkedin\.com|lnkd\.in)$/i.test(ref) ? 'linkedin' : '';
         try {
           if (src) sessionStorage.setItem('src', src);
-          else src = sessionStorage.getItem('src') || '';
+          else sessionStorage.removeItem('src');
         } catch (e) {}
-        if (!src && /(^|\.)(linkedin\.com|lnkd\.in)$/i.test((function () { try { return new URL(document.referrer).hostname; } catch (e) { return ''; } })())) src = 'linkedin';
         if (src) document.documentElement.dataset.src = src;
       })();
     </script>
