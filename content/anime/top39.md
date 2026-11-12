@@ -1,6 +1,6 @@
 # My top 39 anime
 
-Edit and push; the Weeb tab rebuilds from this list.
+Edit and push; the Anime tab rebuilds from this list.
 
 - Number each entry: `1. Title`. Write titles as `Romaji (English)`, e.g. `Shingeki no Kyojin (Attack on Titan)`;
   when both are the same (Bleach, Steins;Gate), write it once. Use each number from 1 to 39 once.
