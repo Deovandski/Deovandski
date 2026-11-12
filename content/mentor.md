@@ -8,6 +8,10 @@
 
 Build yourself deliberately. Act before possibility decays into fantasy. Tell the truth. Demand reciprocity. Bury dead systems. Steward what you love. Teach what you learn. Leave evidence that you were fully alive.
 
+## A note
+
+People have no idea how much misery I've been put through. They only see the end product, not the work I did on myself.
+
 ## You harvest what you plant
 
 Everything you do is a seed. Everything you *don't* do is a seed too.
