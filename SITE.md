@@ -23,8 +23,8 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Fishing tab (photo gallery, like Cat Dad) | `content/fishing/` (see its README) |
 | Camping tab (location cards, 2 photos each) | `content/camping.md` |
 | Theater & Opera tab (works like Concert) | `content/theater.md`, show images in `content/theater/shows/` |
-| Gamer tab (top 39 games) | `content/gaming/top39.md` |
-| Weeb tab (top 39 anime, with descriptions) | `content/anime/top39.md` (numbered list) |
+| Gamer tab (top 39 games, numbered list with optional `Hours:` lines) | `content/gaming/top39.md` |
+| Anime tab (top 39 anime, with descriptions) | `content/anime/top39.md` (numbered list) |
 | Potato tab (top 39 movies/TV) | `content/screen/top39.md` |
 | Cat Dad tab (Peeta photos) | `content/peeta/` (see its README) |
 | Sex tab (and the first-click banner) | `content/sex.md`, `src/components/SexFacet.astro` |
@@ -46,7 +46,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-No tab opens by default. Link straight to a home tab with `#dev`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#concert`, `#theater`, `#gamer`, `#weeb`, `#potato`, `#cat` or `#sex`.
+No tab opens by default. Link straight to a home tab with `#dev`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#concert`, `#theater`, `#gamer`, `#anime`, `#potato`, `#cat` or `#sex`.
 Add `?miku` to any URL to preview the Miku Day confetti.
 
 ## Visitor source (`?src=`)

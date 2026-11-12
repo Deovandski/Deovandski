@@ -98,7 +98,7 @@ const tabs = [
   { id: 'concert', icon: '🤘', label: 'Concert' },
   { id: 'theater', icon: '🎭', label: 'Theater & Opera' },
   { id: 'gamer', icon: '🎮', label: 'Gamer' },
-  { id: 'weeb', icon: '🍥', label: 'Weeb' },
+  { id: 'anime', icon: '🍥', label: 'Anime' },
   { id: 'potato', icon: '🥔', label: 'Potato' },
   { id: 'cat', icon: '🐱', label: 'Cat Dad' },
   { id: 'sex', icon: '😘', label: 'Sex' },
@@ -108,7 +108,7 @@ const tabs = [
 const sortKey = (t: { id: string; label: string }) => (t.id === 'miku' ? 'Hatsune Miku' : t.label).toLowerCase();
 tabs.sort((a, b) => sortKey(a).localeCompare(sortKey(b)));
 
-const games = loadRanking('content/gaming/top39.md', 'Game', 'Hours');
+const games = loadRankedList('content/gaming/top39.md', 'Hours');
 const anime = loadRankedList('content/anime/top39.md');
 const screen = loadRanking('content/screen/top39.md', 'Title', null, 'Type');
 const tattoos = loadSections('content/tattoos.md', 'content/tattoos');
@@ -330,7 +330,7 @@ const peeta = loadPeeta();
       </Ranking>
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-weeb" aria-labelledby="tab-weeb" tabindex="0" hidden>
+    <section class="panel" role="tabpanel" id="panel-anime" aria-labelledby="tab-anime" tabindex="0" hidden>
       <Ranking items={anime}>
         <div class="list-head">
           <p class="ranking-lede">My top 39 favorite anime, ranked, and what each one means to me.</p>
@@ -342,7 +342,7 @@ const peeta = loadPeeta();
     <section class="panel" role="tabpanel" id="panel-potato" aria-labelledby="tab-potato" tabindex="0" hidden>
       <Ranking items={screen}>
         <p class="ranking-lede">
-          My top 39 movies and TV shows. Anime gets its own tab, Weeb, because of how much it means to me.
+          My top 39 movies and TV shows. Anime gets its own tab because of how much it means to me.
         </p>
       </Ranking>
     </section>
@@ -611,7 +611,9 @@ const peeta = loadPeeta();
     });
   });
 
-  const fromHash = tabs.find((t) => `#${t.dataset.tab}` === location.hash);
+  // Old links: #weeb is now #anime.
+  const hash = location.hash === '#weeb' ? '#anime' : location.hash;
+  const fromHash = tabs.find((t) => `#${t.dataset.tab}` === hash);
   if (fromHash) select(fromHash, false, false);
 
   // Photo viewer for the galleries (Cat Dad, Fishing): ‹ › move within the clicked gallery.

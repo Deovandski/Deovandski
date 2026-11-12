@@ -59,9 +59,10 @@ function cells(line: string): string[] {
 
 /**
  * Reads a numbered Markdown list: "1. Title" followed by description lines,
- * e.g. content/anime/top39.md.
+ * e.g. content/anime/top39.md or content/gaming/top39.md.
+ * If valueLabel is given (e.g. "Hours"), a "Hours: 1,234" line under a title sets its number.
  */
-export function loadRankedList(file: string): RankedItem[] {
+export function loadRankedList(file: string, valueLabel?: string): RankedItem[] {
   const lines = readFileSync(resolve(file), 'utf8').split(/\r?\n/);
   const items: RankedItem[] = [];
   const errors: string[] = [];
@@ -80,7 +81,12 @@ export function loadRankedList(file: string): RankedItem[] {
       flush();
       current = { rank: Number(m[1]), name: m[2].trim(), value: null };
     } else if (current && line.trim()) {
-      desc.push(line.trim());
+      const v = valueLabel && line.trim().match(new RegExp(`^${valueLabel}:\\s*(.*)$`, 'i'));
+      if (v) {
+        const n = Number(v[1].replace(/[,_\s]/g, ''));
+        if (!Number.isFinite(n) || n < 0) errors.push(`"${current.name}": ${valueLabel.toLowerCase()} "${v[1]}" must be a number.`);
+        else current.value = Math.round(n);
+      } else desc.push(line.trim());
     }
   }
   flush();
