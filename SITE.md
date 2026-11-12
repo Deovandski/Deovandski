@@ -9,6 +9,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 |---|---|
 | Home page tabs (Dev, Author, Influencer) | `src/pages/index.astro` |
 | Mentor tab | `content/mentor.md` (plain Markdown) |
+| PM tab (public Kanban boards) | `boards` near the top of `src/pages/index.astro` |
 | King of Hues photo | `src/assets/king-of-hues.jpg` |
 | Contact page (emails) | `src/pages/contact.astro` |
 | Traveler tab (map pins and photos) | `content/travel/` (see its README, COUNTRY_CODES.md and SUBDIVISION_CODES.md) |
@@ -45,7 +46,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-No tab opens by default. Link straight to a home tab with `#dev`, `#author`, `#mentor`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#concert`, `#theater`, `#gamer`, `#weeb`, `#potato`, `#cat` or `#sex`.
+No tab opens by default. Link straight to a home tab with `#dev`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#concert`, `#theater`, `#gamer`, `#weeb`, `#potato`, `#cat` or `#sex`.
 Add `?miku` to any URL to preview the Miku Day confetti.
 
 ## Visitor source (`?src=`)

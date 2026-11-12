@@ -25,13 +25,49 @@ const devLinks: LinkItem[] = [
   { href: 'https://deovandski.github.io/Deo-s-Framework16-LED-Matrix-Manager/', label: 'Framework 16 LED Matrix Manager' },
   { href: 'https://stackoverflow.com/users/4830578/deovandski', label: 'StackOverflow' },
   { href: 'https://stoneridgesoftware.com/author/deovandskis/', label: 'My Stoneridge Software posts' },
-  { href: 'https://github.com/users/Deovandski/projects/2', label: 'This site’s Kanban board' },
 ];
 
 const authorLinks: LinkItem[] = [
   { href: 'https://husbandoutworld.com', label: '#HusbandOutWorld Series' },
   { href: 'https://deovandski.github.io/Vraki-West-March-Campaign-D-D/', label: 'Vraki West March D&D Campaign' },
   { href: 'https://deovandski.github.io/vraki-windows/', label: 'Vraki Writing System' },
+];
+
+// PM tab: my public GitHub Projects boards (https://github.com/Deovandski?tab=projects).
+const boards = [
+  {
+    title: "Deovandski's Blog",
+    about: 'This site: every facet, fix and idea, from backlog to merged.',
+    board: 'https://github.com/users/Deovandski/projects/2',
+    links: [{ href: 'https://github.com/Deovandski/Deovandski', label: 'Repo' }],
+  },
+  {
+    title: '#HusbandOutWorld Website',
+    about: 'The light novel series site: the full novel, the World Lore, and Public and Behind The Scenes layers.',
+    board: 'https://github.com/users/Deovandski/projects/4',
+    links: [
+      { href: 'https://www.husbandoutworld.com', label: 'Website' },
+      { href: 'https://github.com/Deovandski/HusbandOutWorld', label: 'Repo' },
+    ],
+  },
+  {
+    title: 'Vraki West March Campaign D&D',
+    about: 'A West Marches D&D 5e campaign set in the world of #HusbandOutWorld.',
+    board: 'https://github.com/users/Deovandski/projects/5',
+    links: [
+      { href: 'https://deovandski.github.io/Vraki-West-March-Campaign-D-D/', label: 'Website' },
+      { href: 'https://github.com/Deovandski/Vraki-West-March-Campaign-D-D', label: 'Repo' },
+    ],
+  },
+  {
+    title: 'Sinoi The Fisherman',
+    about: 'A touch-first pixel-art fishing game in the world of Vraki. Free, no ads, open source.',
+    board: 'https://github.com/users/Deovandski/projects/6',
+    links: [
+      { href: 'https://deovandski.github.io/Sinoi-the-fisherman/', label: 'Website' },
+      { href: 'https://github.com/Deovandski/Sinoi-the-fisherman', label: 'Repo' },
+    ],
+  },
 ];
 
 const STEAM = 'https://steamcommunity.com/id/deovandski';
@@ -48,6 +84,7 @@ const tabs = [
   { id: 'dev', icon: '💻', label: 'Dev' },
   { id: 'author', icon: '✍️', label: 'Author' },
   { id: 'mentor', icon: '🔥', label: 'Mentor' },
+  { id: 'pm', icon: '📋', label: 'PM' },
   { id: 'influencer', icon: '📣', label: 'Influencer' },
   { id: 'traveler', icon: '🗺️', label: 'Traveler' },
   { id: 'fishing', icon: '🎣', label: 'Fishing' },
@@ -177,6 +214,24 @@ const peeta = loadPeeta();
           {authorLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
         </ul>
       </div>
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-pm" aria-labelledby="tab-pm" tabindex="0" hidden>
+      <p class="ranking-lede">I run my own projects in the open. These are my public Kanban boards: what's next, what's in progress, and what shipped.</p>
+      <ul class="boards">
+        {
+          boards.map((b) => (
+            <li>
+              <h3>{b.title}</h3>
+              <p>{b.about}</p>
+              <ul class="pills">
+                <li><a href={b.board}>Kanban board</a></li>
+                {b.links.map((l) => (<li><a href={l.href}>{l.label}</a></li>))}
+              </ul>
+            </li>
+          ))
+        }
+      </ul>
     </section>
 
     <section class="panel" role="tabpanel" id="panel-mentor" aria-labelledby="tab-mentor" tabindex="0" hidden>
@@ -466,6 +521,23 @@ const peeta = loadPeeta();
   .botw__tape { font-size: 1.2rem; }
   .botw a { font-weight: 700; }
   .botw p { margin: 0.2rem 0 0; color: var(--silver); }
+  .boards {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+    gap: 1rem;
+  }
+  .boards > li {
+    padding: 1.1rem 1.2rem 1.25rem;
+    border: 1px solid rgba(57, 197, 187, 0.25);
+    border-radius: 16px;
+    background: rgba(7, 11, 31, 0.45);
+  }
+  .boards h3 { font-size: var(--step-0); color: var(--teal); margin: 0 0 0.4rem; }
+  .boards p { margin: 0; color: var(--silver); }
+  .boards .pills { margin-top: 0.9rem; }
   .viewer {
     width: min(100% - 2rem, 56rem);
     max-height: calc(100vh - 2rem);
