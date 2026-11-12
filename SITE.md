@@ -20,7 +20,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | D&D tab (cards, 2 photos each) | `content/dnd.md` |
 | Fishing tab (photo gallery, like Cat Dad) | `content/fishing/` (see its README) |
 | Camping tab (location cards, 2 photos each) | `content/camping.md` |
-| Theater & Opera tab | `content/theater.md` |
+| Theater & Opera tab (works like Concert) | `content/theater.md`, show images in `content/theater/shows/` |
 | Gamer tab (top 39 games) | `content/gaming/top39.md` |
 | Weeb tab (top 39 anime, with descriptions) | `content/anime/top39.md` (numbered list) |
 | Potato tab (top 39 movies/TV) | `content/screen/top39.md` |
