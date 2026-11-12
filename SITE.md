@@ -19,7 +19,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | 初音ミク tab (Miku concerts) | `content/miku.md`, photos in `content/miku/<concert>/` |
 | Concert tab | `content/concerts.md`, photos in `content/concerts/<section>/` |
 | BOTW tab (Best of the Worst picks) | `content/botw.md` |
-| D&D tab (cards, 2 photos each) | `content/dnd.md` |
+| D&D tab (one picture + story per campaign) | `content/dnd.md`, pictures in `content/dnd/<campaign>/` |
 | Fishing tab (photo gallery, like Cat Dad) | `content/fishing/` (see its README) |
 | Camping tab (location cards, 2 photos each) | `content/camping.md` |
 | Theater & Opera tab (works like Concert) | `content/theater.md`, show images in `content/theater/shows/` |
