@@ -29,7 +29,7 @@ const channels = [
       ))
     }
     <div>
-      <dt>Friends Only or emergencies. I strongly prefer text over calls.</dt>
+      <dt>Friends or emergencies.<small class="note">*I strongly prefer text over calls.</small></dt>
       <dd><a href="tel:+17014910010">(701) 491-0010</a></dd>
     </div>
     <div>
@@ -63,6 +63,7 @@ const channels = [
   }
   .channels > div:last-child { border-bottom: 1px solid rgba(190, 200, 209, 0.12); }
   dt { color: var(--muted); }
+  dt .note { display: block; margin-top: 0.15rem; font-size: 0.8em; }
   dd {
     margin: 0;
     font-family: var(--font-display);
