@@ -36,7 +36,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-Link straight to a home tab with `#dev`, `#author`, `#mentor`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#concert`, `#theater`, `#gamer`, `#weeb`, `#potato`, `#cat` or `#sex`.
+No tab opens by default. Link straight to a home tab with `#dev`, `#author`, `#mentor`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#concert`, `#theater`, `#gamer`, `#weeb`, `#potato`, `#cat` or `#sex`.
 Add `?miku` to any URL to preview the Miku Day confetti.
 
 ## One-time GitHub setup
