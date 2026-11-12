@@ -13,4 +13,10 @@ GitHub only has a fraction of my code because of NDAs, but here are a few I'm pr
 
 Want to reach out? Find me on [LinkedIn](https://www.linkedin.com/in/deovandski).
 
+📋 **What I'm building next**, in public Kanban boards (ideas and issues welcome!):
+[this site](https://github.com/users/Deovandski/projects/2) ·
+[#HusbandOutWorld website](https://github.com/users/Deovandski/projects/4) ·
+[Vraki West March D&D](https://github.com/users/Deovandski/projects/5) ·
+[Sinoi The Fisherman](https://github.com/users/Deovandski/projects/6)
+
 <sub>This repo also holds the source for my site. See [SITE.md](./SITE.md).</sub>
