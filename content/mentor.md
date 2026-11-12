@@ -8,10 +8,6 @@
 
 Build yourself deliberately. Act before possibility decays into fantasy. Tell the truth. Demand reciprocity. Bury dead systems. Steward what you love. Teach what you learn. Leave evidence that you were fully alive.
 
-## A note
-
-People have no idea how much misery I've been put through. They only see the end product, not the work I did on myself.
-
 ## You harvest what you plant
 
 Everything you do is a seed. Everything you *don't* do is a seed too.
@@ -26,7 +22,7 @@ Everything you do is a seed. Everything you *don't* do is a seed too.
 
 </div>
 
-You will eat that harvest, even when it tastes like shit. Nobody eats it for you.
+You will eat that harvest, even when it tastes like shit. Nobody eats it for you. And not every field is public. Most of mine I worked alone: therapy, pushing my boundaries, stripping away novelty, and driving myself harder than anyone else ever has. People see the harvest. **They have no idea how much misery went into the soil.**
 
 > You don't escape the field. You choose what to plant.
 
