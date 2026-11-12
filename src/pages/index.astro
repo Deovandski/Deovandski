@@ -14,6 +14,7 @@ import { loadPeeta } from '../lib/peeta';
 import { loadGallery } from '../lib/gallery';
 import { loadRanking, loadRankedList } from '../lib/ranking';
 import { loadSections } from '../lib/sections';
+import { loadBotw } from '../lib/botw';
 
 type LinkItem = { href: string; label: string };
 
@@ -51,6 +52,7 @@ const tabs = [
   { id: 'fishing', icon: '🎣', label: 'Fishing' },
   { id: 'dnd', icon: '🎲', label: 'D&D' },
   { id: 'camping', icon: '⛺', label: 'Camping' },
+  { id: 'botw', icon: '📼', label: 'BOTW' },
   { id: 'multilingual', icon: '🗣️', label: 'Multilingual' },
   { id: 'tattoo', icon: '🖋️', label: 'Tattoo' },
   { id: 'gym', icon: '🏋️', label: 'Gym' },
@@ -78,6 +80,7 @@ const theater = loadSections('content/theater.md', 'content/theater');
 const fishing = loadGallery('content/fishing', 'Fishing');
 const camping = loadSections('content/camping.md', 'content/camping');
 const dnd = loadSections('content/dnd.md', 'content/dnd');
+const botw = loadBotw();
 const nf = new Intl.NumberFormat('en-US');
 const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
@@ -206,6 +209,30 @@ const peeta = loadPeeta();
 
     <section class="panel" role="tabpanel" id="panel-dnd" aria-labelledby="tab-dnd" tabindex="0" hidden>
       <Sections data={dnd} id="dnd" layout="cards" slots={2} empty="D&D adventures are on their way." photoAlt={(t) => `D&D: ${t}`} />
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-botw" aria-labelledby="tab-botw" tabindex="0" hidden>
+      <div class="list-head">
+        <div class="botw-intro">{botw.intro.map((para) => <p class="ranking-lede">{para}</p>)}</div>
+        <a class="list-link" href="https://www.youtube.com/@RedLetterMedia">Red Letter Media on YouTube</a>
+      </div>
+      {
+        botw.episodes.length === 0 ? (
+          <p class="empty">My 39 favorite Best of the Worst episodes are on their way.</p>
+        ) : (
+          <ol class="botw">
+            {botw.episodes.map((e) => (
+              <li>
+                <span class="botw__tape" aria-hidden="true">📼</span>
+                <div>
+                  <a href={e.url}><span class="sr-only">#{e.rank}: </span>{e.title}</a>
+                  {e.description && <p>{e.description}</p>}
+                </div>
+              </li>
+            ))}
+          </ol>
+        )
+      }
     </section>
 
     <section class="panel" role="tabpanel" id="panel-camping" aria-labelledby="tab-camping" tabindex="0" hidden>
@@ -414,6 +441,30 @@ const peeta = loadPeeta();
   .list-link:hover { background: rgba(57, 197, 187, 0.14); }
 
   .empty { color: var(--muted); }
+  .botw-intro { max-width: var(--measure); }
+  .botw-intro .ranking-lede { margin-bottom: 0; }
+  .botw { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; counter-reset: botw; }
+  .botw li {
+    counter-increment: botw;
+    display: grid;
+    grid-template-columns: 2.25rem 1.6rem minmax(0, 1fr);
+    gap: 0.6rem;
+    align-items: baseline;
+    padding: 0.65rem 0.9rem;
+    border: 1px solid rgba(190, 200, 209, 0.12);
+    border-radius: 12px;
+    background: rgba(7, 11, 31, 0.4);
+  }
+  .botw li::before {
+    content: counter(botw);
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--teal);
+    text-align: right;
+  }
+  .botw__tape { font-size: 1.2rem; }
+  .botw a { font-weight: 700; }
+  .botw p { margin: 0.2rem 0 0; color: var(--silver); }
   .viewer {
     width: min(100% - 2rem, 56rem);
     max-height: calc(100vh - 2rem);

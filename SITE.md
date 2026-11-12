@@ -17,6 +17,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Gym tab (chart + story) | `content/gym/weights.md`, `content/gym/story.md`, photos in `content/gym/photos/<year>.jpg` |
 | 初音ミク tab (Miku concerts) | `content/miku.md`, photos in `content/miku/<concert>/` |
 | Concert tab | `content/concerts.md`, photos in `content/concerts/<section>/` |
+| BOTW tab (Best of the Worst picks) | `content/botw.md` |
 | D&D tab (cards, 2 photos each) | `content/dnd.md` |
 | Fishing tab (photo gallery, like Cat Dad) | `content/fishing/` (see its README) |
 | Camping tab (location cards, 2 photos each) | `content/camping.md` |
@@ -37,7 +38,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-No tab opens by default. Link straight to a home tab with `#dev`, `#author`, `#mentor`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#concert`, `#theater`, `#gamer`, `#weeb`, `#potato`, `#cat` or `#sex`.
+No tab opens by default. Link straight to a home tab with `#dev`, `#author`, `#mentor`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#concert`, `#theater`, `#gamer`, `#weeb`, `#potato`, `#cat` or `#sex`.
 Add `?miku` to any URL to preview the Miku Day confetti.
 
 ## Visitor source (`?src=`)
