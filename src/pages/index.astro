@@ -229,7 +229,7 @@ const catPhotos = await Promise.all(
     </section>
 
     <section class="panel" role="tabpanel" id="panel-miku" aria-labelledby="tab-miku" tabindex="0" hidden>
-      <Sections data={mikuConcerts} id="miku" layout="cards" photoAlt={(t) => `Me at ${t}`} />
+      <Sections data={mikuConcerts} id="miku" layout="cards" slots={2} titleAbove noDescription="Description coming soon." photoAlt={(t) => `Me at ${t}`} />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-concert" aria-labelledby="tab-concert" tabindex="0" hidden>

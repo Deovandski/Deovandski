@@ -11,9 +11,11 @@ interface Props {
   empty?: string; // shown when the file has no sections yet
   avatarsDir?: string; // show a round image (or initials) left of each item, from <dir>/<item-slug>.jpg
   sortAlpha?: boolean; // sort sections and their items A-Z (ignoring a leading "The")
+  titleAbove?: boolean; // put each section's title above its photos instead of below
+  noDescription?: string; // shown (muted) under a section that has no text yet
 }
 
-const { data, id, photoAlt, layout = 'rows', slots, empty, avatarsDir, sortAlpha } = Astro.props;
+const { data, id, photoAlt, layout = 'rows', slots, empty, avatarsDir, sortAlpha, titleAbove, noDescription } = Astro.props;
 const sortName = (n: string) => n.replace(/^the\s+/i, '').toLowerCase();
 const initials = (name: string) =>
   name
@@ -31,6 +33,7 @@ const ordered = sortAlpha
   : sections;
 const areas = ordered.map((a) => ({
   ...a,
+  photos: slots ? a.photos.slice(0, slots) : a.photos, // with slots, show exactly that many photos
   hasSlot: slots ? true : a.hasSlot,
   missing: slots ? Math.max(0, slots - a.photos.length) : a.photos.length ? 0 : 1,
 }));
@@ -43,7 +46,8 @@ const areas = ordered.map((a) => ({
 <div class:list={['areas', `areas--${layout}`, { 'areas--pair': slots === 2 }]}>
   {
     areas.map((area) => (
-      <section class:list={['area', { 'area--text': !area.hasSlot }]} aria-labelledby={`${id}-${area.slug}`}>
+      <section class:list={['area', { 'area--text': !area.hasSlot, 'area--title-above': titleAbove }]} aria-labelledby={`${id}-${area.slug}`}>
+        {titleAbove && <h3 id={`${id}-${area.slug}`}>{area.title}</h3>}
         {area.hasSlot && (
         <div class="area__photos">
           {area.photos.map((p) => (
@@ -59,8 +63,9 @@ const areas = ordered.map((a) => ({
         </div>
         )}
         <div class="area__text">
-          <h3 id={`${id}-${area.slug}`}>{area.title}</h3>
+          {!titleAbove && <h3 id={`${id}-${area.slug}`}>{area.title}</h3>}
           {area.intro.map((para) => <p class="area-intro">{para}</p>)}
+          {noDescription && area.intro.length === 0 && area.items.length === 0 && <p class="area-intro no-desc">{noDescription}</p>}
           {area.items.length > 0 && (
           <ul>
             {area.items.map((t) => (
@@ -132,6 +137,10 @@ const areas = ordered.map((a) => ({
   .areas--pair .photo img { aspect-ratio: 1; object-fit: cover; }
   .empty { color: var(--muted); }
   .areas--cards .area h3 { font-size: var(--step-0); margin-bottom: 0.35rem; }
+  .area--title-above h3 { margin-bottom: 0; }
+  /* Line up titles, photos and descriptions across a row of cards, even when a title wraps. */
+  .areas--cards .area--title-above { grid-row: span 3; grid-template-rows: subgrid; }
+  .no-desc { color: var(--muted); font-style: italic; }
   .area__photos { display: grid; gap: 0.75rem; align-content: start; }
   .slot {
     aspect-ratio: 4 / 3;
