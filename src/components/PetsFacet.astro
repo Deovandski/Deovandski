@@ -1,0 +1,128 @@
+---
+import { Image } from 'astro:assets';
+import GalleryGrid from './Gallery.astro';
+import { DEFAULT_PET, loadPets } from '../lib/pets';
+
+const pets = loadPets();
+---
+
+<div class="pets">
+  <div class="pets__picker" role="tablist" aria-label="Pick a pet">
+    {
+      pets.map((pet) => (
+        <button
+          type="button"
+          role="tab"
+          id={`pet-tab-${pet.id}`}
+          aria-controls={`pet-${pet.id}`}
+          aria-selected={pet.id === DEFAULT_PET ? 'true' : 'false'}
+          tabindex={pet.id === DEFAULT_PET ? 0 : -1}
+          data-pet={pet.id}
+        >
+          <span class="pets__avatar">
+            {pet.cover ? (
+              <Image src={pet.cover} alt="" width={176} height={176} />
+            ) : (
+              <span class="pets__initial" aria-hidden="true">{pet.name[0]}</span>
+            )}
+          </span>
+          <span class="pets__name">{pet.name}</span>
+          <span class="pets__count">{pet.gallery.photos.length ? `${pet.gallery.photos.length} photos` : 'Photos soon'}</span>
+        </button>
+      ))
+    }
+  </div>
+
+  {
+    pets.map((pet) => (
+      <div class="pets__panel" role="tabpanel" id={`pet-${pet.id}`} aria-labelledby={`pet-tab-${pet.id}`} hidden={pet.id !== DEFAULT_PET}>
+        <GalleryGrid gallery={pet.gallery} name={`pet-${pet.id}`} captions empty={`${pet.name}'s photos are on their way.`} />
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  /* Carousel-style picker: a row of round portraits, the selected one ringed in teal. */
+  .pets__picker {
+    display: flex;
+    justify-content: center;
+    gap: clamp(0.75rem, 3vw, 2rem);
+    padding: 0.25rem 0.25rem 1rem;
+    margin-bottom: 0.5rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    border-bottom: 1px solid rgba(57, 197, 187, 0.2);
+  }
+  .pets__picker button {
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+    display: grid;
+    justify-items: center;
+    gap: 0.35rem;
+    padding: 0.4rem 0.5rem;
+    font: inherit;
+    color: var(--silver);
+    background: transparent;
+    border: 0;
+    border-radius: 16px;
+    cursor: pointer;
+    opacity: 0.65;
+    transition: opacity 0.15s, transform 0.15s;
+  }
+  .pets__picker button:hover { opacity: 0.9; }
+  .pets__picker button[aria-selected='true'] { opacity: 1; transform: translateY(-2px); }
+  .pets__avatar {
+    display: grid;
+    place-items: center;
+    width: clamp(4.75rem, 18vw, 6.5rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    overflow: hidden;
+    background: rgba(57, 197, 187, 0.1);
+    border: 3px solid rgba(190, 200, 209, 0.25);
+  }
+  .pets__picker button[aria-selected='true'] .pets__avatar {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 4px rgba(57, 197, 187, 0.18), 0 0 26px rgba(57, 197, 187, 0.45);
+  }
+  .pets__avatar img { width: 100%; height: 100%; object-fit: cover; }
+  .pets__initial { font-family: var(--font-display); font-weight: 800; font-size: 2rem; color: var(--teal); }
+  .pets__name { font-family: var(--font-display); font-weight: 800; font-size: var(--step-0); color: var(--text); }
+  .pets__count { font-size: 0.75rem; color: var(--muted); }
+  .pets__panel[hidden] { display: none; }
+</style>
+
+<script>
+  // Pick a pet: click or arrow keys. #pets-<id> links open that pet directly (e.g. #pets-peeta).
+  const petTabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-pet]'));
+  function pickPet(id: string, focus = false) {
+    for (const t of petTabs) {
+      const on = t.dataset.pet === id;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')!)!.hidden = !on;
+      if (on) {
+        if (focus) t.focus();
+        t.scrollIntoView({ block: 'nearest', inline: 'center' });
+      }
+    }
+  }
+  petTabs.forEach((t, i) => {
+    t.addEventListener('click', () => pickPet(t.dataset.pet!));
+    t.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      e.stopPropagation();
+      const next = petTabs[(i + (e.key === 'ArrowRight' ? 1 : -1) + petTabs.length) % petTabs.length];
+      pickPet(next.dataset.pet!, true);
+    });
+  });
+  // #pets-<id> opens that pet; the old Cat Dad link (#cat) opens Peeta.
+  const petFromHash = (hash: string) => {
+    const id = hash === '#cat' ? 'peeta' : hash.match(/^#pets-(\w+)$/)?.[1];
+    if (id && petTabs.some((t) => t.dataset.pet === id)) pickPet(id);
+  };
+  petFromHash(location.hash);
+  window.addEventListener('hashchange', () => petFromHash(location.hash));
+</script>

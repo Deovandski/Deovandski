@@ -9,9 +9,9 @@ import Sections from '../components/Sections.astro';
 import GymFacet from '../components/GymFacet.astro';
 import SexFacet from '../components/SexFacet.astro';
 import DeathFacet from '../components/DeathFacet.astro';
+import PetsFacet from '../components/PetsFacet.astro';
 import GalleryGrid from '../components/Gallery.astro';
 import kingOfHues from '../assets/king-of-hues.jpg';
-import { loadPeeta } from '../lib/peeta';
 import { loadGallery } from '../lib/gallery';
 import { loadRankedList } from '../lib/ranking';
 import { loadSections } from '../lib/sections';
@@ -105,7 +105,7 @@ const tabs = [
   { id: 'gamer', icon: '🎮', label: 'Gamer' },
   { id: 'anime', icon: '🍥', label: 'Anime' },
   { id: 'potato', icon: '🥔', label: 'Potato' },
-  { id: 'cat', icon: '🐱', label: 'Cat Dad' },
+  { id: 'pets', icon: '🐾', label: 'Pets' },
   { id: 'sex', icon: '😘', label: 'Sex' },
 ];
 
@@ -129,7 +129,6 @@ const botw = loadBotw();
 const nf = new Intl.NumberFormat('en-US');
 const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
-const peeta = loadPeeta();
 ---
 
 <Base>
@@ -388,8 +387,8 @@ const peeta = loadPeeta();
       </div>
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-cat" aria-labelledby="tab-cat" tabindex="0" hidden>
-      <GalleryGrid gallery={peeta} name="cat" captions empty="Peeta's photos are on their way." />
+    <section class="panel" role="tabpanel" id="panel-pets" aria-labelledby="tab-pets" tabindex="0" hidden>
+      <PetsFacet />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-sex" aria-labelledby="tab-sex" tabindex="0" hidden>
@@ -705,11 +704,13 @@ const peeta = loadPeeta();
   });
 
   // Old links: #weeb is now #anime; #tv and #movie (the old TV/Movie Potato tabs) open the Potato switch.
-  const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies' };
+  const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies', '#cat': '#pets-peeta' };
   // Opens the tab a link like #death points to. Returns false if the hash isn't a tab.
   function openFromHash(rawHash: string): boolean {
     const hash = renamed[rawHash] ?? rawHash;
-    const tab = tabs.find((t) => `#${t.dataset.tab}` === hash || (t.dataset.tab === 'potato' && hash === '#potato-movies'));
+    const tab = tabs.find(
+      (t) => `#${t.dataset.tab}` === hash || (t.dataset.tab === 'potato' && hash === '#potato-movies') || (t.dataset.tab === 'pets' && hash.startsWith('#pets-')),
+    );
     if (!tab) return false;
     select(tab, false, false);
     if (hash === '#potato-movies') potato('movies', false);
@@ -724,7 +725,7 @@ const peeta = loadPeeta();
     }
   });
 
-  // Photo viewer for the galleries (Cat Dad, Fishing): ‹ › move within the clicked gallery.
+  // Photo viewer for the galleries (each pet on Pets, Fishing): ‹ › move within the clicked gallery.
   const viewer = document.querySelector<HTMLDialogElement>('.viewer')!;
   const img = viewer.querySelector('img')!;
   const caption = viewer.querySelector('figcaption')!;
