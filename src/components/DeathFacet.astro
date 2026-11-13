@@ -1,0 +1,191 @@
+---
+import { Content } from '../../content/death.md';
+
+// The death clock counts down to this moment: 3/9/2076 at 3:39:39 AM, Central time
+// (that date is in daylight saving time, so UTC-5).
+const TARGET = '2076-03-09T03:39:39-05:00';
+
+const units = [
+  { key: 'y', label: 'Years', width: 2 },
+  { key: 'd', label: 'Days', width: 3 },
+  { key: 'h', label: 'Hours', width: 2 },
+  { key: 'm', label: 'Min', width: 2 },
+  { key: 's', label: 'Sec', width: 2 },
+];
+---
+
+<div class="death">
+  <figure class="clock" data-target={TARGET}>
+    <div class="clock__face" role="timer" aria-label="Time left until March 9, 2076, 3:39:39 AM Central">
+      {
+        units.map((u, i) => (
+          <>
+            {i > 0 && <span class="clock__colon" aria-hidden="true">:</span>}
+            <div class="clock__unit">
+              <span class="clock__digits">
+                <span class="clock__ghost" aria-hidden="true">{'8'.repeat(u.width)}</span>
+                <span class="clock__value" data-unit={u.key} data-width={u.width}>{'-'.repeat(u.width)}</span>
+              </span>
+              <span class="clock__label">{u.label}</span>
+            </div>
+          </>
+        ))
+      }
+    </div>
+    <figcaption>Counting down to March 9, 2076, at 3:39:39 AM.</figcaption>
+  </figure>
+
+  <Content />
+</div>
+
+<style>
+  @font-face {
+    font-family: 'DSEG7 Classic';
+    src: url('../assets/fonts/DSEG7Classic-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+  }
+
+  .death { max-width: 52rem; }
+
+  /* Old red LED clock on a dark bezel */
+  .clock { margin: 0 0 2rem; }
+  .clock__face {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.4rem 0.5rem;
+    padding: 1.4rem 1.25rem 1.1rem;
+    border-radius: 18px;
+    background:
+      radial-gradient(120% 140% at 50% 0%, rgba(255, 40, 40, 0.08), transparent 60%),
+      linear-gradient(180deg, #160606 0%, #0b0303 100%);
+    border: 1px solid rgba(255, 70, 70, 0.35);
+    box-shadow:
+      inset 0 2px 12px rgba(0, 0, 0, 0.9),
+      inset 0 0 0 6px #1d0b0b,
+      0 0 40px rgba(255, 40, 40, 0.18);
+  }
+  .clock__unit { display: grid; justify-items: center; gap: 0.35rem; }
+  .clock__digits { position: relative; display: inline-block; line-height: 1; }
+  .clock__ghost,
+  .clock__value {
+    font-family: 'DSEG7 Classic', ui-monospace, monospace;
+    font-weight: 700;
+    font-size: clamp(1.9rem, 6.5vw, 3.6rem);
+    letter-spacing: 0.04em;
+  }
+  .clock__ghost { color: rgba(255, 50, 50, 0.08); }
+  .clock__value {
+    position: absolute;
+    inset: 0 0 auto auto;
+    color: #ff2b2b;
+    text-shadow: 0 0 6px rgba(255, 30, 30, 0.85), 0 0 22px rgba(255, 30, 30, 0.45);
+  }
+  .clock__colon {
+    font-family: 'DSEG7 Classic', ui-monospace, monospace;
+    font-size: clamp(1.9rem, 6.5vw, 3.6rem);
+    line-height: 1;
+    color: #ff2b2b;
+    text-shadow: 0 0 8px rgba(255, 30, 30, 0.7);
+    animation: blink 1s steps(1) infinite;
+  }
+  .clock__label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 120, 120, 0.75);
+  }
+  .clock figcaption { margin-top: 0.6rem; text-align: center; color: var(--muted); font-size: var(--step--1); }
+  @keyframes blink { 50% { opacity: 0.25; } }
+  @media (prefers-reduced-motion: reduce) { .clock__colon { animation: none; } }
+
+  .death :global(strong) { color: var(--teal); }
+  .death :global(h2) {
+    font-size: var(--step-2);
+    color: var(--text);
+    margin: 2.4em 0 0.6em;
+    padding-top: 1.1em;
+    border-top: 1px solid rgba(225, 40, 133, 0.35);
+  }
+  .death :global(.help) {
+    margin: 1.25rem 0;
+    padding: 0.9rem 1.1rem;
+    border-radius: 14px;
+    border: 1px solid rgba(57, 197, 187, 0.4);
+    background: rgba(57, 197, 187, 0.08);
+  }
+  .death :global(.help p) { margin: 0; }
+  .death :global(.verse) {
+    margin: 3rem 0 0;
+    padding-top: 1.75rem;
+    border-top: 1px solid rgba(190, 200, 209, 0.12);
+  }
+  .death :global(.verse p) { margin: 0 0 0.9rem; }
+  .death :global(.verse p:first-child) {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: var(--step-1);
+    line-height: 1.4;
+    color: var(--teal);
+  }
+  .death :global(.verse figcaption) { color: var(--muted); font-size: var(--step--1); }
+  .death :global(.sources) {
+    margin-top: 2.5rem;
+    padding: 1rem 1.25rem;
+    border: 1px solid rgba(190, 200, 209, 0.15);
+    border-radius: 14px;
+  }
+  .death :global(.sources summary) {
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--silver);
+  }
+  .death :global(.sources ul) { margin-top: 0.75rem; }
+  .death :global(.sources li) { font-size: var(--step--1); color: var(--muted); }
+  .death :global(.sources strong) { color: var(--text); }
+
+  @media (max-width: 560px) {
+    .clock__face { gap: 0.6rem 0.35rem; padding: 1.1rem 0.6rem 0.9rem; }
+    .clock__colon { display: none; }
+  }
+</style>
+
+<script>
+  // Calendar-accurate countdown: whole years first, then days, hours, minutes, seconds.
+  const clock = document.querySelector<HTMLElement>('.clock[data-target]');
+  if (clock) {
+    const target = new Date(clock.dataset.target!).getTime();
+    const cells = Object.fromEntries(
+      Array.from(clock.querySelectorAll<HTMLElement>('[data-unit]')).map((el) => [el.dataset.unit!, el]),
+    );
+    const pad = (n: number, w: number) => String(Math.max(0, n)).padStart(w, '0');
+
+    const tick = () => {
+      const now = new Date();
+      let years = 0;
+      const anniversary = (y: number) => {
+        const d = new Date(now);
+        d.setFullYear(now.getFullYear() + y);
+        return d.getTime();
+      };
+      while (anniversary(years + 1) <= target) years++;
+      let rest = Math.max(0, target - anniversary(years));
+      const day = 86_400_000;
+      const days = Math.floor(rest / day);
+      rest -= days * day;
+      const hours = Math.floor(rest / 3_600_000);
+      rest -= hours * 3_600_000;
+      const minutes = Math.floor(rest / 60_000);
+      rest -= minutes * 60_000;
+      const seconds = Math.floor(rest / 1000);
+      const values: Record<string, number> = { y: years, d: days, h: hours, m: minutes, s: seconds };
+      for (const [key, el] of Object.entries(cells)) el.textContent = pad(values[key], Number(el.dataset.width));
+    };
+    tick();
+    setInterval(tick, 1000);
+  }
+</script>

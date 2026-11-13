@@ -14,7 +14,7 @@
 - Silence is the poison of the soul instead of communication, assuming you still have faith in the other person.
 - Never wrestle with pigs. You both get dirty, and the pig likes it. <span class="newest">New</span>
 - I'm not dying in the waiting room of someone else's stagnant life. <span class="newest">New</span>
-- Action or inaction, it's all seed. Mistakes and lessons feed the next harvest. You eat what you grow, even when it tastes like shit. <span class="newest">New</span>
+- Action or inaction, it's all seed. Mistakes and lessons feed the next harvest. You eat what you grow, even when it tastes like shit! <span class="newest">New</span>
 
 </div>
 
@@ -32,9 +32,8 @@
 - Engineer and artist. Founder and teammate. Traveler and home-builder. Intense builder and quiet cat dad. **I refuse to amputate parts of myself to become easier to classify.**
 
 <figure class="verse">
-<p lang="non">Deyr fé, deyja frændr, deyr sjalfr it sama;<br>en orðstírr deyr aldregi, hveim er sér góðan getr.</p>
-<p>Cattle die, kin die, you yourself die the same;<br>but a good name never dies for the one who earns it.</p>
-<figcaption>Hávamál, as sung in Wardruna’s Helvegen</figcaption>
+<p>Everything on this page runs on one fact: I'm going to die, and so are you.</p>
+<p><strong><a href="#death">The clock is ticking on my 💀 Death tab.</a></strong></p>
 </figure>
 
 <details class="sources">
