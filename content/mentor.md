@@ -4,27 +4,11 @@
   > = punch line, **bold** = highlighted phrase.
 -->
 
-Everything you do is a seed. Everything you *don't* do is a seed too.
-
-<div class="harvest">
-
-- Avoidance has a harvest.
-- Indecision has a harvest.
-- Dishonesty has a harvest.
-- Discipline has a harvest.
-- Courage has a harvest.
-- Movement has a harvest.
-
-</div>
-
-You will eat that harvest, even when it tastes like shit. Nobody eats it for you. And not every field is public. Most of mine I worked alone: therapy, pushing my boundaries, stripping away novelty, and driving myself harder than anyone else ever has. People see the harvest. **They have no idea how much misery went into the soil.**
-
-> You don't escape the field. You choose what to plant.
-
 ## The mantras
 
 <div class="mantras">
 
+- Whatever you do, or don't, is a seed you will harvest. Mistakes and knowledge are the fertilizer for a stronger one.
 - Either full commit or eat shit.
 - I don't let it happen. I make it happen.
 - I'm growing, and I will keep growing until the day I die.
