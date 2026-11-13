@@ -22,14 +22,17 @@ function altFromFile(file: string, fallback: string) {
 }
 
 /**
- * A photo folder like content/peeta/ or content/fishing/: photos straight in the folder,
+ * A photo folder like content/pets/peeta/ or content/fishing/: photos straight in the folder,
  * in filename order (number them 01-, 02-, ...), each described by its filename, plus an
  * optional _intro.md shown above them.
  */
 export function loadGallery(dir: string, fallbackAlt: string): Gallery {
   const prefix = `/${dir.replace(/^\/|\/$/g, '')}/`;
   const photos = Object.entries(photoModules)
-    .filter(([path]) => path.startsWith(prefix) && !path.slice(prefix.length).includes('/'))
+    .filter(([path]) => {
+      const name = path.slice(prefix.length);
+      return path.startsWith(prefix) && !name.includes('/') && !name.startsWith('_'); // _cover.jpg etc. aren't gallery photos
+    })
     .map(([path, src]) => {
       const file = path.split('/').pop()!;
       return { src, file, alt: altFromFile(file, fallbackAlt) };

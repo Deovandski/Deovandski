@@ -23,14 +23,14 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Concert tab | `content/concerts.md`, photos in `content/concerts/<section>/` |
 | BOTW tab (Best of the Worst picks) | `content/botw.md` |
 | D&D tab (one picture + story per campaign) | `content/dnd.md`, pictures in `content/dnd/<campaign>/` |
-| Fishing tab (photo gallery, like Cat Dad) | `content/fishing/` (see its README) |
+| Fishing tab (photo gallery, like each pet on the Pets tab) | `content/fishing/` (see its README) |
 | Camping tab (location cards, 2 photos each) | `content/camping.md` |
 | Theater & Opera tab (works like Concert) | `content/theater.md`, show images in `content/theater/shows/` |
 | Gamer tab (top 39 games, numbered list with optional `Hours:` lines) | `content/gaming/top39.md` |
 | Anime tab (top 39 anime, with descriptions) | `content/anime/top39.md` (numbered list) |
 | Potato tab, TV shows side (top 39) | `content/tv/top39.md` (numbered list) |
 | Potato tab, Movies side (top 39) | `content/movies/top39.md` (numbered list) |
-| Cat Dad tab (Peeta photos) | `content/peeta/` (see its README) |
+| Pets tab (Bidu, Fluffy, Peeta: portrait picker + each pet's gallery) | `content/pets/<pet>/` (see `content/pets/README.md`); order in `src/lib/pets.ts` |
 | Sex tab (and the first-click banner) | `content/sex.md`, `src/components/SexFacet.astro` |
 | Miku Day dates and message | `src/components/MikuDay.astro` (`DATES` near the top) |
 | Colors and fonts | `src/styles/global.css` |
@@ -50,7 +50,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-No tab opens by default. Link straight to a home tab with `#death`, `#dev`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#drummer`, `#concert`, `#theater`, `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#cat` or `#sex`.
+No tab opens by default. Link straight to a home tab with `#death`, `#dev`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#drummer`, `#concert`, `#theater`, `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#sex`.
 Add `?miku` to any URL to preview the Miku Day confetti.
 Add `?deathclock=0` to preview the Death tab's clock at zero (blinking digits and the "update the clock" message).
 

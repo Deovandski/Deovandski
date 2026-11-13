@@ -1,6 +1,6 @@
 # Fishing photos
 
-Works exactly like the Cat Dad tab (`content/peeta/`). Drop fishing photos
+Works exactly like a pet's gallery on the Pets tab (`content/pets/peeta/`). Drop fishing photos
 straight into this folder and push; they appear in the Fishing tab.
 
 - Formats: `.jpg`, `.jpeg`, `.png`, `.webp`, `.avif` (iPhone `.heic` saved as
