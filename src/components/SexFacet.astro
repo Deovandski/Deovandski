@@ -3,12 +3,22 @@ import { Content } from '../../content/sex.md';
 import { url } from '../lib/url';
 ---
 
-<div class="ara" hidden role="status">
+<!-- Two banners: one when the Sex tab is the very first click, one when the visitor clicked something else first. -->
+<div class="ara" data-variant="first" hidden role="status">
   <img data-src={url('/ara-ara.webp')} alt="" width="159" height="229" />
   <div>
     <p class="ara__title">Ara ara~ That's the first thing you click?</p>
     <p>Don't worry. You're human and curious. I am not tracking IPs or any other metrics.</p>
     <p>You don't have to trust me, you can check <a href="https://github.com/Deovandski/Deovandski">the source code</a> yourself.</p>
+    <button type="button" class="ara__close">Close</button>
+  </div>
+</div>
+
+<div class="ara" data-variant="later" hidden role="status">
+  <img data-src={url('/yeah-yes.gif')} alt="" width="220" height="225" />
+  <div>
+    <p class="ara__title">You didn't fall for the UX trap I set!</p>
+    <p>I would have clicked this tab first, so we have different mindsets. Huehuehue.</p>
     <button type="button" class="ara__close">Close</button>
   </div>
 </div>
@@ -69,16 +79,30 @@ import { url } from '../lib/url';
 </style>
 
 <script>
-  // Show the banner only when the very first click on the page is the Sex Facet tab.
-  const banner = document.querySelector<HTMLElement>('.ara');
-  const onFirstClick = (e: MouseEvent) => {
-    const target = e.target as Element | null;
-    if (banner && target?.closest('#tab-sex')) {
-      const img = banner.querySelector<HTMLImageElement>('img');
-      if (img?.dataset.src) img.src = img.dataset.src;
-      banner.hidden = false;
-    }
+  // The first time the Sex tab is clicked, show a banner: "Ara ara~" if it was the very first click
+  // on the page, or the "you didn't fall for the UX trap" one if the visitor clicked something else first.
+  const banners = {
+    first: document.querySelector<HTMLElement>('.ara[data-variant="first"]'),
+    later: document.querySelector<HTMLElement>('.ara[data-variant="later"]'),
   };
-  document.addEventListener('click', onFirstClick, { capture: true, once: true });
-  banner?.querySelector('.ara__close')?.addEventListener('click', () => (banner.hidden = true));
+  let clicks = 0;
+  let shown = false;
+  document.addEventListener(
+    'click',
+    (e) => {
+      const target = e.target as Element | null;
+      if (!shown && target?.closest('#tab-sex')) {
+        const banner = clicks === 0 ? banners.first : banners.later;
+        const img = banner?.querySelector<HTMLImageElement>('img');
+        if (img?.dataset.src) img.src = img.dataset.src;
+        if (banner) banner.hidden = false;
+        shown = true;
+      }
+      clicks++;
+    },
+    { capture: true },
+  );
+  for (const banner of Object.values(banners)) {
+    banner?.querySelector('.ara__close')?.addEventListener('click', () => (banner.hidden = true));
+  }
 </script>
