@@ -97,6 +97,7 @@ const tabs = [
   { id: 'gym', icon: '🏋️', label: 'Gym' },
   { id: 'miku', icon: '🎤', label: '初音ミク' },
   { id: 'churrasco', icon: '🥩', label: 'Churrasco' },
+  { id: 'drummer', icon: '🥁', label: 'Drummer' },
   { id: 'concert', icon: '🤘', label: 'Concert' },
   { id: 'theater', icon: '🎭', label: 'Theater & Opera' },
   { id: 'gamer', icon: '🎮', label: 'Gamer' },
@@ -317,6 +318,12 @@ const peeta = loadPeeta();
 
     <section class="panel" role="tabpanel" id="panel-churrasco" aria-labelledby="tab-churrasco" tabindex="0" hidden>
       <Sections data={churrasco} id="churrasco" layout="cards" slots={1} titleAbove noDescription="Description coming soon." empty="Churrasco stories are on their way." photoAlt={(t) => `Churrasco: ${t}`} />
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-drummer" aria-labelledby="tab-drummer" tabindex="0" hidden>
+      <div class="story">
+        <p>This is a facet of my life that is on the backlog, as I am literally at max bandwidth having too much fun.</p>
+      </div>
     </section>
 
     <section class="panel" role="tabpanel" id="panel-concert" aria-labelledby="tab-concert" tabindex="0" hidden>

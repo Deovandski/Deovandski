@@ -18,6 +18,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Gym tab (chart + story) | `content/gym/weights.md`, `content/gym/story.md`, photos in `content/gym/photos/<year>.jpg` |
 | 初音ミク tab (Miku concerts) | `content/miku.md`, photos in `content/miku/<concert>/` |
 | Churrasco tab (one photo + description per panel, like 初音ミク) | `content/churrasco.md`, photos in `content/churrasco/<panel>/` |
+| Drummer tab (a backlog note for now) | `src/pages/index.astro` (`panel-drummer`) |
 | Concert tab | `content/concerts.md`, photos in `content/concerts/<section>/` |
 | BOTW tab (Best of the Worst picks) | `content/botw.md` |
 | D&D tab (one picture + story per campaign) | `content/dnd.md`, pictures in `content/dnd/<campaign>/` |
@@ -48,7 +49,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-No tab opens by default. Link straight to a home tab with `#dev`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#concert`, `#theater`, `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#cat` or `#sex`.
+No tab opens by default. Link straight to a home tab with `#dev`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#drummer`, `#concert`, `#theater`, `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#cat` or `#sex`.
 Add `?miku` to any URL to preview the Miku Day confetti.
 
 ## Visitor source (`?src=`)
