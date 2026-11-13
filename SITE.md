@@ -52,6 +52,7 @@ npm run dev          # http://localhost:4321
 
 No tab opens by default. Link straight to a home tab with `#death`, `#dev`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#drummer`, `#concert`, `#theater`, `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#cat` or `#sex`.
 Add `?miku` to any URL to preview the Miku Day confetti.
+Add `?deathclock=0` to preview the Death tab's clock at zero (blinking digits and the "update the clock" message).
 
 ## Visitor source (`?src=`)
 

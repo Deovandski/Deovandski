@@ -32,7 +32,10 @@ const units = [
         ))
       }
     </div>
-    <figcaption>Counting down to March 9, 2076, at 3:39:39 AM.</figcaption>
+    <figcaption class="clock__caption">Counting down to March 9, 2076, at 3:39:39 AM.</figcaption>
+    <p class="clock__expired" hidden role="status">
+      Deo might have hit the dust. If he is still kicking, tell his old ass to update the clock.
+    </p>
   </figure>
 
   <Content />
@@ -100,7 +103,28 @@ const units = [
   }
   .clock figcaption { margin-top: 0.6rem; text-align: center; color: var(--muted); font-size: var(--step--1); }
   @keyframes blink { 50% { opacity: 0.25; } }
-  @media (prefers-reduced-motion: reduce) { .clock__colon { animation: none; } }
+
+  /* Time's up: the digits blink and the message replaces the caption. */
+  .clock--expired .clock__value,
+  .clock--expired .clock__colon { animation: expired 1s steps(1) infinite; }
+  @keyframes expired { 50% { opacity: 0.12; } }
+  .clock__expired {
+    margin: 0.9rem auto 0;
+    max-width: 40rem;
+    text-align: center;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--step-1);
+    line-height: 1.35;
+    color: #ff4d4d;
+    text-shadow: 0 0 14px rgba(255, 40, 40, 0.45);
+  }
+  .clock__expired[hidden] { display: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .clock__colon,
+    .clock--expired .clock__value,
+    .clock--expired .clock__colon { animation: none; }
+  }
 
   .death :global(strong) { color: var(--teal); }
   .death :global(h2) {
@@ -156,15 +180,28 @@ const units = [
 
 <script>
   // Calendar-accurate countdown: whole years first, then days, hours, minutes, seconds.
+  // At zero the digits blink and the "update the clock" message shows.
+  // Preview the zero state on any day with ?deathclock=0 (like ?miku for Miku Day).
   const clock = document.querySelector<HTMLElement>('.clock[data-target]');
   if (clock) {
-    const target = new Date(clock.dataset.target!).getTime();
+    const preview = new URLSearchParams(location.search).get('deathclock') === '0';
+    const target = preview ? Date.now() - 1000 : new Date(clock.dataset.target!).getTime();
+    let timer = 0;
     const cells = Object.fromEntries(
       Array.from(clock.querySelectorAll<HTMLElement>('[data-unit]')).map((el) => [el.dataset.unit!, el]),
     );
     const pad = (n: number, w: number) => String(Math.max(0, n)).padStart(w, '0');
 
+    const expire = () => {
+      for (const el of Object.values(cells)) el.textContent = '0'.repeat(Number(el.dataset.width));
+      clock.classList.add('clock--expired');
+      clock.querySelector<HTMLElement>('.clock__caption')!.hidden = true;
+      clock.querySelector<HTMLElement>('.clock__expired')!.hidden = false;
+      window.clearInterval(timer);
+    };
+
     const tick = () => {
+      if (Date.now() >= target) return expire();
       const now = new Date();
       let years = 0;
       const anniversary = (y: number) => {
@@ -185,7 +222,7 @@ const units = [
       const values: Record<string, number> = { y: years, d: days, h: hours, m: minutes, s: seconds };
       for (const [key, el] of Object.entries(cells)) el.textContent = pad(values[key], Number(el.dataset.width));
     };
+    timer = window.setInterval(tick, 1000);
     tick();
-    setInterval(tick, 1000);
   }
 </script>

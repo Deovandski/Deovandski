@@ -4,7 +4,7 @@
   **bold** = highlighted phrase, > = punch line.
 -->
 
-This is roughly how much time I have left. I'm striving to make the most of every second of it.
+This is roughly how much time I have left. I'm striving to make the most of every second of it, rest included. Am I a machine? Maybe. But even machines have downtime, so I choose how I recharge and get the most out of that too. Or, as the kids call it nowadays, *Lifemaxxing*!
 
 **Death is the greatest equalizer.** It doesn't matter how highly you think of yourself, how much you hate me, what you have that I don't, whether you envy my successes or laugh at my failures: in the end, you'll rot away exactly like I will.
 
