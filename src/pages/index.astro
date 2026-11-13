@@ -96,6 +96,7 @@ const tabs = [
   { id: 'tattoo', icon: '🖋️', label: 'Tattoo' },
   { id: 'gym', icon: '🏋️', label: 'Gym' },
   { id: 'miku', icon: '🎤', label: '初音ミク' },
+  { id: 'churrasco', icon: '🥩', label: 'Churrasco' },
   { id: 'concert', icon: '🤘', label: 'Concert' },
   { id: 'theater', icon: '🎭', label: 'Theater & Opera' },
   { id: 'gamer', icon: '🎮', label: 'Gamer' },
@@ -115,6 +116,7 @@ const tvShows = loadRankedList('content/tv/top39.md');
 const movies = loadRankedList('content/movies/top39.md');
 const tattoos = loadSections('content/tattoos.md', 'content/tattoos');
 const mikuConcerts = loadSections('content/miku.md', 'content/miku');
+const churrasco = loadSections('content/churrasco.md', 'content/churrasco');
 const concerts = loadSections('content/concerts.md', 'content/concerts');
 const theater = loadSections('content/theater.md', 'content/theater');
 const fishing = loadGallery('content/fishing', 'Fishing');
@@ -311,6 +313,10 @@ const peeta = loadPeeta();
 
     <section class="panel" role="tabpanel" id="panel-miku" aria-labelledby="tab-miku" tabindex="0" hidden>
       <Sections data={mikuConcerts} id="miku" layout="cards" slots={2} titleAbove noDescription="Description coming soon." photoAlt={(t) => `Me at ${t}`} />
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-churrasco" aria-labelledby="tab-churrasco" tabindex="0" hidden>
+      <Sections data={churrasco} id="churrasco" layout="cards" slots={1} titleAbove noDescription="Description coming soon." empty="Churrasco stories are on their way." photoAlt={(t) => `Churrasco: ${t}`} />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-concert" aria-labelledby="tab-concert" tabindex="0" hidden>

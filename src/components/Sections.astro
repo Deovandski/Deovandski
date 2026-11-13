@@ -43,7 +43,7 @@ const areas = ordered.map((a) => ({
 
 {areas.length === 0 && empty && <p class="empty">{empty}</p>}
 
-<div class:list={['areas', `areas--${layout}`, { 'areas--pair': slots === 2 }]}>
+<div class:list={['areas', `areas--${layout}`, { 'areas--pair': slots === 2, 'areas--single': slots === 1 }]}>
   {
     areas.map((area) => (
       <section class:list={['area', { 'area--text': !area.hasSlot, 'area--title-above': titleAbove }]} aria-labelledby={`${id}-${area.slug}`}>
@@ -147,6 +147,7 @@ const areas = ordered.map((a) => ({
   .areas--pair .area__photos { grid-template-columns: 1fr 1fr; gap: 0.5rem; }
   .areas--pair .slot { aspect-ratio: 1; font-size: 0.75rem; text-align: center; padding: 0.5rem; }
   .areas--pair .photo img { aspect-ratio: 1; object-fit: cover; }
+  .areas--cards.areas--single .photo img { aspect-ratio: 4 / 3; object-fit: cover; }
   .empty { color: var(--muted); }
   .areas--cards .area h3 { font-size: var(--step-0); margin-bottom: 0.35rem; }
   .area--title-above h3 { margin-bottom: 0; }
