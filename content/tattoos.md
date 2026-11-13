@@ -23,6 +23,7 @@ Edit and push; the Tattoo Facet tab rebuilds from this file.
 ## Right forearm
 
 - 初音ミク Hatsune Miku: Miku's name in Japanese. Miku-chan (ミクちゃん) is a cornerstone of my life, tied to the things that drive me: ambition, technology, collaboration and community. She also stands for my passion, my drive, and the anxiety side of my personality.
+  For years, that anxiety felt life-or-death: a restless urgency I couldn't name because I was deeply unfulfilled, and later a constant hypervigilance while I chased external validation as an influencer. My AuDHD unmasking finally explained where it came from, and therapy that challenged me, not enabled me, helped me process it. Today it's no longer an alarm that runs me. It's fuel, and I choose where it goes: into building, growing, and the people worth it.
   The tattoo is mirrored. That used to bring me shame, until I realized it's a matter of perspective: under some conditions it looks perfect, and under others it doesn't. That gap became a lesson in mindset and in how you choose to see things.
 
 ## Wrists
