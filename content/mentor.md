@@ -31,6 +31,11 @@
 - **Full commitment is not eternal commitment.** If there's movement, I work with imperfection; if the system is stuck in limbo, I stop feeding it. When people prove unworthy of your love, losing faith isn't failure; it's clarity. I steward living systems and bury dead ones.
 - Engineer and artist. Founder and teammate. Traveler and home-builder. Intense builder and quiet cat dad. **I refuse to amputate parts of myself to become easier to classify.**
 
+<figure class="verse">
+<p>Everything on this page runs on one fact: I'm going to die, and so are you.</p>
+<p><strong><a href="#death">The clock is ticking on my 💀 Death tab.</a></strong></p>
+</figure>
+
 <details class="sources">
 <summary>Shoulders I stand on</summary>
 

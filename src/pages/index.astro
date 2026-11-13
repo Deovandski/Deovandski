@@ -462,6 +462,7 @@ const peeta = loadPeeta();
     color: var(--silver);
   }
   .tabs {
+    scroll-margin-top: 6rem; /* clear the sticky header when a tab link scrolls here */
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
@@ -705,10 +706,23 @@ const peeta = loadPeeta();
 
   // Old links: #weeb is now #anime; #tv and #movie (the old TV/Movie Potato tabs) open the Potato switch.
   const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies' };
-  const hash = renamed[location.hash] ?? location.hash;
-  const fromHash = tabs.find((t) => `#${t.dataset.tab}` === hash || (t.dataset.tab === 'potato' && hash === '#potato-movies'));
-  if (fromHash) select(fromHash, false, false);
-  if (hash === '#potato-movies') potato('movies', false);
+  // Opens the tab a link like #death points to. Returns false if the hash isn't a tab.
+  function openFromHash(rawHash: string): boolean {
+    const hash = renamed[rawHash] ?? rawHash;
+    const tab = tabs.find((t) => `#${t.dataset.tab}` === hash || (t.dataset.tab === 'potato' && hash === '#potato-movies'));
+    if (!tab) return false;
+    select(tab, false, false);
+    if (hash === '#potato-movies') potato('movies', false);
+    return true;
+  }
+  openFromHash(location.hash);
+
+  // Links between tabs (e.g. Mentor → "#death") switch tabs too, then bring the tab bar into view.
+  window.addEventListener('hashchange', () => {
+    if (openFromHash(location.hash)) {
+      document.querySelector('.tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
 
   // Photo viewer for the galleries (Cat Dad, Fishing): ‹ › move within the clicked gallery.
   const viewer = document.querySelector<HTMLDialogElement>('.viewer')!;
