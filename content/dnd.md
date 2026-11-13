@@ -25,7 +25,7 @@ A sentence or two about it.
 kicker: Campaign #1
 subtitle: The Scallywags of the Rusty Tankard
 
-Arr, feast yer eyes on the Rusty Tankard, a ship so overgrown with mushrooms ye could forage the deck for yer supper! Aboard her sails a crew o' fine scallywags: a penguin with a mushroom for a hat, hammerin' away at the planks; a blue-bearded wizard flailin' about while his own lightning crackles behind 'im; a rusty tin man creakin' by the rail; a grinnin' fish-man swingin' from the mast with a sack o' mushrooms; and a horned ape too busy with his bananas to lift a finger.
+Arr, feast yer eyes on the Rusty Tankard, a ship so overgrown with mushrooms ye could forage the deck for yer supper! Aboard her sails a crew o' fine scallywags: a hatless penguin who can kinda swing a hammer, patchin' the ship as best a flipper allows; a blue-bearded wizard bickerin' with a rusty tin man, the pair of 'em yellin' so loud the very air crackles like lightnin'; a grinnin' fish-man swingin' from the mast with a sack o' mushrooms; and a horned ape too busy with his bananas to lift a finger.
 
 Now then, matey: which o' these bilge rats be Deo? Make yer guess, and make it quick. See that spiky beast risin' from the waves? Aye. The whole crew met their final fate in the guts o' that giant turtle. Yo ho!
 
