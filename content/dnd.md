@@ -35,6 +35,6 @@ subtitle: Defenders of Ordo
 
 In an age when smokestacks rose beside the spires of sorcery, a company of adventurers was charged with the defense of Ordo, the Eternal City. Among their number was the Prince himself. The court records state that the King commissioned the company to protect the realm. Later historians, less charitable, contend that His Majesty assembled a band of imbeciles chiefly to keep the Prince occupied, and thereby to spare the royal family further injury to its pride. The truth, as is customary, has not survived intact.
 
-The company also counted the swordsman Takeo, the very same Takeo recorded in the chronicles of #HusbandOutWorld, portrayed by Deo, who, the record is careful to note, was not the Prince.
+The company also counted the swordsman Takeo, the very same Takeo recorded in the chronicles of #HusbandOutWorld, portrayed by Deo.
 
-The Defenders of Ordo did not fall to an army at the gates. They fell to one another. Their quarrels were fed by the charms of a spider-god of doll-like countenance, who lurked in the Rotten Unknown and wielded powers never fathomed. Thus the fellowship was undone from within, and its defenders passed into history.
+The Defenders of Ordo did not fall to an army at the gates. They fell to one another. Their quarrels were fed by the charms of a spider-god of doll-like countenance, who lurked in the Rotten Unknown and wielded powers never fathomed. Thus the fellowship was undone from within, and its defenders passed into history. Yet to this day, the people of Ordo still speak of the Prince who pleased himself into the ley lines, an episode upon which the court chroniclers have respectfully declined to elaborate.
