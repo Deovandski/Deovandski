@@ -38,10 +38,10 @@ You will eat that harvest, even when it tastes like shit. Nobody eats it for you
 
 - **Movement creates evidence.** Evidence updates the model; the mission continues, but the model stays editable. Refuse limbo, and prefer an honest no to a manipulative maybe.
 - Learn hard things. Enter rooms bigger than your competence. Never confuse experienced with finished. Repetition makes habits; deliberate correction makes skill. **Comfort may visit me. It will never become my god.**
-- Pain doesn't make you wiser, and it isn't proof of growth; changed behavior is. Time doesn't heal you. Information doesn't become behavior. **A lesson that never changes a decision was entertainment.**
+- Pain doesn't make you wiser, and it isn't proof of growth. Time doesn't heal you. Information doesn't become behavior. **Changed behavior is the only proof.**
 - Nobody can commit for you. People can open doors. **Nobody walks through them using your legs.**
-- Potential gets encouragement and wisdom from me, never applause. **Applause is for the first real step from potential to reality.** A dream earns dignity when your behavior starts serving it.
-- Dream violently. Plan soberly. Execute relentlessly. Update honestly. **If the evidence stabilizes and resistance drops, execute.** Intention without implementation is self-entertainment.
+- Potential earns encouragement and wisdom, not applause. **Stop looking outside for validation: the first real step from potential to reality is the applause.** A dream earns dignity when your behavior starts serving it.
+- Dream violently. Plan soberly. Execute relentlessly. Update honestly. If the evidence stabilizes and resistance drops, execute. **Unapplied lessons and unexecuted intentions are the same thing: self-entertainment.**
 - **A signal is not a steering wheel.** Feelings and hunches are telemetry: observe, classify, keep moving. When action becomes obvious and resistance drops to zero, check it against your values, then move.
 - Confidence is not noise. **It's preparation remembering what it has survived.** Past wins prove capability, not entitlement. Build boldly, measure honestly, correct without ego.
 - **Say what you mean. Do what you say. If your direction changes, own it.** I can work with truth; I won't build on fog. Don't control me, challenge me. Don't flatter me, engage me. Don't promise me, show me.
