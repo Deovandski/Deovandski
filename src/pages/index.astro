@@ -222,7 +222,18 @@ const peeta = loadPeeta();
     </section>
 
     <section class="panel" role="tabpanel" id="panel-pm" aria-labelledby="tab-pm" tabindex="0" hidden>
-      <p class="ranking-lede">I run my own projects in the open. These are my public Kanban boards: what's next, what's in progress, and what shipped.</p>
+      <div class="story">
+        <p>
+          Project management isn't my job title, yet it shows up in almost every facet of my life: work, a light novel series, a
+          D&amp;D campaign, a game, and this very site. I know JIRA deeply, and I run my personal projects with the same discipline
+          I bring to client work. Given how much PM'ing I already do, getting a PM certification is officially on my backlog.
+        </p>
+        <p>
+          Honestly, I think project management should be taught in high school. Breaking a big goal into small steps, being honest
+          about scope and deadlines, and tracking what's actually done are life skills, not just job skills.
+        </p>
+      </div>
+      <p class="ranking-lede pm-boards-lede">I run my own projects in the open. These are my public Kanban boards: what's next, what's in progress, and what shipped.</p>
       <ul class="boards">
         {
           boards.map((b) => (
@@ -571,6 +582,7 @@ const peeta = loadPeeta();
   .botw__tape { font-size: 1.2rem; }
   .botw a { font-weight: 700; }
   .botw p { margin: 0.2rem 0 0; color: var(--silver); }
+  .pm-boards-lede { margin-top: 1.75rem; }
   .boards {
     list-style: none;
     margin: 0;
