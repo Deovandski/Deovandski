@@ -20,23 +20,15 @@
 
 ## Hard truths
 
-- **Movement creates evidence.** Evidence updates the model; the mission continues, but the model stays editable. Refuse limbo, and prefer an honest no to a manipulative maybe.
-- Learn hard things. Enter rooms bigger than your competence. Never confuse experienced with finished. Repetition makes habits; deliberate correction makes skill. **Comfort may visit me. It will never become my god.**
-- Pain doesn't make you wiser, and it isn't proof of growth. Time doesn't heal you. Information doesn't become behavior. **Changed behavior is the only proof.**
-- Nobody can commit for you. People can open doors. **Nobody walks through them using your legs.**
-- Potential earns encouragement and wisdom, not applause. **Stop looking outside for validation: the first real step from potential to reality is the applause.** A dream earns dignity when your behavior starts serving it.
-- Dream violently. Plan soberly. Execute relentlessly. Update honestly. If the evidence stabilizes and resistance drops, execute. **Unapplied lessons and unexecuted intentions are the same thing: self-entertainment.**
-- **A signal is not a steering wheel.** Feelings and hunches are telemetry: observe, classify, keep moving. When action becomes obvious and resistance drops to zero, check it against your values, then move.
-- Confidence is not noise. **It's preparation remembering what it has survived.** Past wins prove capability, not entitlement. Build boldly, measure honestly, correct without ego.
-- **Say what you mean. Do what you say. If your direction changes, own it.** I can work with truth; I won't build on fog. Don't control me, challenge me. Don't flatter me, engage me. Don't promise me, show me.
-- **Peace is not passivity.** Peace is maintained: boundaries, confrontation, recovery, honest decisions. A boundary without enforcement is just a request.
-- Spiritual bypassing is still bypassing. Hiding behind Buddhist quotes, "just let it go," or standing by idle while someone chooses self-destruction isn't peace; it's what Chögyam Trungpa called idiot compassion. **Say your piece, then walk away.**
-- Love is not an exemption from standards. **Compassion can explain behavior without volunteering to absorb it.**
-- Access is earned and maintained through behavior. Curiosity opens the door; consistency earns access. Nobody gets root access because they asked. **I will meet you in the middle. I will not live there alone.**
-- Time, energy, attention and trust are finite capital. Stop subsidizing what keeps damaging you. **My attention is not public property.**
-- Not every battle deserves you. Sometimes "persistence" is just fear of admitting the system is dead. **Fight in faith for a better future. When people prove unworthy of your love, losing that faith isn't failure; it's clarity.**
-- **Full commitment is not eternal commitment.** If there's movement, I can work with imperfection. If the system only circles, I stop feeding it. I fight for living systems. I bury dead ones.
-- Build things worth maintaining. Leave systems healthier than you found them. **Achievement asks what I can win. Stewardship asks what I can keep alive.**
+- Movement creates evidence. Refuse limbo: prefer an honest no to a manipulative maybe. Feelings are telemetry. **When intuition and evidence point the same way, ignoring them is just fear dressed up as logic.** Move.
+- Learn hard things and enter rooms bigger than your competence. Pain isn't proof of growth, and time doesn't heal you; changed behavior is the only proof. **Comfort may visit me. It will never become my god.**
+- Dream violently. Plan soberly. Execute relentlessly. Update honestly. **Unapplied lessons and unexecuted intentions are the same thing: masturbatory self-entertainment.**
+- People can open doors, but nobody walks through them using your legs. Potential earns encouragement, not applause. **Sustained growth is what earns the praise.**
+- Confidence is not noise. **It's trusting yourself to do what's right when your core is shaken.** Build boldly, measure honestly, correct without ego.
+- **Say what you mean. Do what you say. If your direction changes, own it.** Don't control me, challenge me. Don't flatter me, engage me. Don't promise me, show me.
+- **Peace is not passivity.** A boundary without enforcement is a request. Compassion can explain behavior without absorbing it, and standing idle while someone self-destructs is idiot compassion, not peace. Say your piece, then walk away.
+- Access is earned through behavior, never granted because someone asked. Time, attention and trust are finite; my attention is not public property. **I will meet you in the middle. I will not live there alone.**
+- **Full commitment is not eternal commitment.** If there's movement, I work with imperfection; if the system is stuck in limbo, I stop feeding it. When people prove unworthy of your love, losing faith isn't failure; it's clarity. I steward living systems and bury dead ones.
 - Engineer and artist. Founder and teammate. Traveler and home-builder. Intense builder and quiet cat dad. **I refuse to amputate parts of myself to become easier to classify.**
 
 <figure class="verse">
