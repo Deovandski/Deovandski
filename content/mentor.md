@@ -8,13 +8,13 @@
 
 <div class="mantras">
 
-- Whatever you do, or don't, is a seed you will harvest. Mistakes and knowledge are the fertilizer for a stronger one.
 - Either full commit or eat shit.
 - I don't let it happen. I make it happen.
 - I'm growing, and I will keep growing until the day I die.
 - Silence is the poison of the soul instead of communication, assuming you still have faith in the other person.
 - Never wrestle with pigs. You both get dirty, and the pig likes it. <span class="newest">New</span>
 - I'm not dying in the waiting room of someone else's stagnant life. <span class="newest">New</span>
+- Action or inaction, it's all seed. Mistakes and lessons feed the next harvest. You eat what you grow, even when it tastes like shit. <span class="newest">New</span>
 
 </div>
 
