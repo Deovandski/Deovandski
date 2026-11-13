@@ -8,6 +8,7 @@ import MultilingualFacet from '../components/MultilingualFacet.astro';
 import Sections from '../components/Sections.astro';
 import GymFacet from '../components/GymFacet.astro';
 import SexFacet from '../components/SexFacet.astro';
+import DeathFacet from '../components/DeathFacet.astro';
 import GalleryGrid from '../components/Gallery.astro';
 import kingOfHues from '../assets/king-of-hues.jpg';
 import { loadPeeta } from '../lib/peeta';
@@ -82,6 +83,7 @@ const influencerLinks: LinkItem[] = [
 ];
 
 const tabs = [
+  { id: 'death', icon: '💀', label: 'Death' },
   { id: 'dev', icon: '💻', label: 'Dev' },
   { id: 'author', icon: '✍️', label: 'Author' },
   { id: 'mentor', icon: '🔥', label: 'Mentor' },
@@ -248,6 +250,10 @@ const peeta = loadPeeta();
           ))
         }
       </ul>
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-death" aria-labelledby="tab-death" tabindex="0" hidden>
+      <DeathFacet />
     </section>
 
     <section class="panel" role="tabpanel" id="panel-mentor" aria-labelledby="tab-mentor" tabindex="0" hidden>

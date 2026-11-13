@@ -14,7 +14,7 @@
 - Silence is the poison of the soul instead of communication, assuming you still have faith in the other person.
 - Never wrestle with pigs. You both get dirty, and the pig likes it. <span class="newest">New</span>
 - I'm not dying in the waiting room of someone else's stagnant life. <span class="newest">New</span>
-- Action or inaction, it's all seed. Mistakes and lessons feed the next harvest. You eat what you grow, even when it tastes like shit. <span class="newest">New</span>
+- Action or inaction, it's all seed. Mistakes and lessons feed the next harvest. You eat what you grow, even when it tastes like shit! <span class="newest">New</span>
 
 </div>
 
@@ -30,12 +30,6 @@
 - Access is earned through behavior, never granted because someone asked. Time, attention and trust are finite; my attention is not public property. **I will meet you in the middle. I will not live there alone.**
 - **Full commitment is not eternal commitment.** If there's movement, I work with imperfection; if the system is stuck in limbo, I stop feeding it. When people prove unworthy of your love, losing faith isn't failure; it's clarity. I steward living systems and bury dead ones.
 - Engineer and artist. Founder and teammate. Traveler and home-builder. Intense builder and quiet cat dad. **I refuse to amputate parts of myself to become easier to classify.**
-
-<figure class="verse">
-<p lang="non">Deyr fé, deyja frændr, deyr sjalfr it sama;<br>en orðstírr deyr aldregi, hveim er sér góðan getr.</p>
-<p>Cattle die, kin die, you yourself die the same;<br>but a good name never dies for the one who earns it.</p>
-<figcaption>Hávamál, as sung in Wardruna’s Helvegen</figcaption>
-</figure>
 
 <details class="sources">
 <summary>Shoulders I stand on</summary>
