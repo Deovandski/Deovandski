@@ -12,13 +12,14 @@ export type GalleryPhoto = { src: ImageMetadata; alt: string; file: string };
 export type Gallery = { photos: GalleryPhoto[]; intro: string[] };
 
 /**
- * "2024-10-13-I-wanna-play.jpg" -> "I wanna play", "2026-04-lord-peeta.jpeg" -> "Lord peeta",
- * "03-peeta_in-a-box.jpg" -> "Peeta in a box": a leading date (day or month) or number is dropped.
+ * "2024-10-13-I-wanna-play.jpg" -> "I wanna play", "2024-05-04-134837-rueiro.jpg" -> "Rueiro",
+ * "2026-04-lord-peeta.jpeg" -> "Lord peeta", "03-peeta_in-a-box.jpg" -> "Peeta in a box":
+ * a leading date (month, day, or day plus HHMMSS time) or number is dropped.
  */
 function altFromFile(file: string, fallback: string) {
   const words = file
     .replace(/\.[^.]+$/, '')
-    .replace(/^(?:\d{4}-\d{2}(?:-\d{2})?(?=[-_ ]|$)|\d+)[-_ ]*/, '')
+    .replace(/^(?:\d{4}-\d{2}(?:-\d{2}(?:-\d{6})?)?(?=[-_ ]|$)|\d+)[-_ ]*/, '')
     .replace(/[-_]+/g, ' ')
     .trim();
   return words ? words[0].toUpperCase() + words.slice(1) : fallback;
