@@ -8,6 +8,12 @@ This is roughly how much time I have left. I'm striving to make the most of ever
 
 **Death is the greatest equalizer.** It doesn't matter how highly you think of yourself, how much you hate me, what you have that I don't, whether you envy my successes or laugh at my failures: in the end, you'll rot away exactly like I will.
 
+When my time comes, my funeral shall play 3 songs:
+
+1. <span lang="ja">死のアリア</span> (Shi no Aria) - THE END
+2. Helvegen - Wardruna
+3. Helvegen II - Wardruna
+
 ## Take care of your mind
 
 Since we're on the subject: take care of your mental health. And if you've ever thought about ending it all... don't. I nearly did, back in 2016, during a period that far surpassed what my mind could take at the time. I called a crisis hotline. To the older lady who picked up the phone that night: I will forever be grateful. Like many people who walk away from that temptation, I'm so glad I didn't go through with it. I used it to build stronger immunity against depression, and much later I discovered that what I'd been fighting included the negative sides of AuDHD. **Now nothing short of death itself will stop me.**
