@@ -11,11 +11,14 @@ const photoModules = import.meta.glob<ImageMetadata>('/content/**/*.{jpg,jpeg,pn
 export type GalleryPhoto = { src: ImageMetadata; alt: string; file: string };
 export type Gallery = { photos: GalleryPhoto[]; intro: string[] };
 
-/** "03-peeta_in-a-box.jpg" -> "Peeta in a box" */
+/**
+ * "2024-10-13-I-wanna-play.jpg" -> "I wanna play", "2026-04-lord-peeta.jpeg" -> "Lord peeta",
+ * "03-peeta_in-a-box.jpg" -> "Peeta in a box": a leading date (day or month) or number is dropped.
+ */
 function altFromFile(file: string, fallback: string) {
   const words = file
     .replace(/\.[^.]+$/, '')
-    .replace(/^\d+[-_ ]*/, '')
+    .replace(/^(?:\d{4}-\d{2}(?:-\d{2})?(?=[-_ ]|$)|\d+)[-_ ]*/, '')
     .replace(/[-_]+/g, ' ')
     .trim();
   return words ? words[0].toUpperCase() + words.slice(1) : fallback;
@@ -23,7 +26,8 @@ function altFromFile(file: string, fallback: string) {
 
 /**
  * A photo folder like content/pets/peeta/ or content/fishing/: photos straight in the folder,
- * in filename order (number them 01-, 02-, ...), each described by its filename, plus an
+ * in filename order (start names with the date, 2024-10-13-..., or a number, 01-, 02-, ...),
+ * each described by its filename, plus an
  * optional _intro.md shown above them.
  */
 export function loadGallery(dir: string, fallbackAlt: string): Gallery {

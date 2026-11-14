@@ -17,8 +17,8 @@ import { url } from '../lib/url';
 <div class="ara" data-variant="later" hidden role="status">
   <img data-src={url('/yeah-yes.gif')} alt="" width="220" height="225" />
   <div>
-    <p class="ara__title">You didn't fall for the UX trap I set!</p>
-    <p>I would have clicked this tab first, so we have different mindsets. Huehuehue.</p>
+    <p class="ara__title">Huh. You didn't take the bait.</p>
+    <p>Zero tracking, zero metrics. I'll never know, so if you see me out in the wild, brag about it. 😉</p>
     <button type="button" class="ara__close">Close</button>
   </div>
 </div>
@@ -64,13 +64,20 @@ import { url } from '../lib/url';
   .sex { max-width: var(--measure); }
   .sex :global(strong) { color: var(--teal); }
   .sex :global(h2) { font-size: var(--step-1); color: var(--silver); margin: 2.25rem 0 0.75rem; }
-  .sex :global(blockquote) {
-    margin: 0 0 1.25rem;
-    padding: 0.25rem 0 0.25rem 1.1rem;
-    border-left: 4px solid var(--pink);
-    color: var(--silver);
-    font-style: italic;
+  .sex :global(.sex__cta) {
+    display: inline-block;
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    background: rgba(225, 40, 133, 0.18);
+    border: 1px solid var(--pink);
+    border-radius: 999px;
+    padding: 0.55rem 1.2rem;
+    box-shadow: 0 0 24px rgba(225, 40, 133, 0.2);
   }
+  .sex :global(.sex__cta)::after { content: ' →'; }
+  .sex :global(.sex__cta:hover),
+  .sex :global(.sex__cta:focus-visible) { background: rgba(225, 40, 133, 0.35); }
 
   @media (max-width: 560px) {
     .ara { grid-template-columns: 1fr; text-align: center; }
@@ -80,7 +87,7 @@ import { url } from '../lib/url';
 
 <script>
   // The first time the Sex tab is clicked, show a banner: "Ara ara~" if it was the very first click
-  // on the page, or the "you didn't fall for the UX trap" one if the visitor clicked something else first.
+  // on the page, or the "you didn't take the bait" one if the visitor clicked something else first.
   const banners = {
     first: document.querySelector<HTMLElement>('.ara[data-variant="first"]'),
     later: document.querySelector<HTMLElement>('.ara[data-variant="later"]'),
