@@ -26,6 +26,9 @@ const initials = (name: string) =>
     .map((w) => w[0].toUpperCase())
     .join('');
 const { intro, sections } = data;
+// Text is plain, except [label](https://…) becomes a link.
+const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+const inline = (t: string) => esc(t).replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, '<a href="$2">$1</a>');
 const ordered = sortAlpha
   ? [...sections]
       .sort((a, b) => sortName(a.title).localeCompare(sortName(b.title)))
@@ -39,7 +42,7 @@ const areas = ordered.map((a) => ({
 }));
 ---
 
-{intro.map((para) => <p class="intro">{para}</p>)}
+{intro.map((para) => <p class="intro" set:html={inline(para)} />)}
 
 {areas.length === 0 && empty && <p class="empty">{empty}</p>}
 
@@ -76,7 +79,7 @@ const areas = ordered.map((a) => ({
               {area.subtitle && <p class="subtitle">{area.subtitle}</p>}
             </hgroup>
           )}
-          {area.intro.map((para) => <p class="area-intro">{para}</p>)}
+          {area.intro.map((para) => <p class="area-intro" set:html={inline(para)} />)}
           {noDescription && area.intro.length === 0 && area.items.length === 0 && <p class="area-intro no-desc">{noDescription}</p>}
           {area.items.length > 0 && (
           <ul>
@@ -107,7 +110,7 @@ const areas = ordered.map((a) => ({
                     {t.vraki && <span class="sr-only"> (written in Vraki)</span>}
                     {t.tags.map((tag) => <span class="tag">{tag}</span>)}
                   </p>
-                  {t.meaning.map((m) => <p class="meaning">{m}</p>)}
+                  {t.meaning.map((m) => <p class="meaning" set:html={inline(m)} />)}
                 </div>
               </li>
             ))}
