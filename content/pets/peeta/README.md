@@ -9,7 +9,7 @@ Pets tab on the home page, under Peeta. See ../README.md for how the Pets tab wo
   If you only know the month, `2026-04-Lord-Peeta-of-Tuxford.jpeg` works too
   (it lands after that month's dated photos). When several photos share a day,
   add the time as HHMMSS so they stay in the order they were taken:
-  `2024-05-04-134837-Rueiro.jpg`, `2024-05-04-135318-MOAR-RUEIRIZE.jpg`.
+  `2024-05-04-134837-Rueiro.jpg`, `2024-05-04-135318-King-of-the-trail.jpg`.
 - Descriptions: the rest of the filename becomes the photo's caption on the grid,
   in the zoomed view and for screen readers. `2024-10-13-I-wanna-play.jpg` shows as
   "I wanna play", so name files after what's in them.
