@@ -22,7 +22,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | 初音ミク tab (Miku concerts) | `content/miku.md`, photos in `content/miku/<concert>/` |
 | Churrasco tab (one photo + description per panel, like 初音ミク) | `content/churrasco.md`, photos in `content/churrasco/<panel>/` |
 | Drummer tab (a backlog note for now) | `src/pages/index.astro` (`panel-drummer`) |
-| Concert tab | `content/concerts.md`, photos in `content/concerts/<section>/` |
+| Concert tab (Seen live, plus a Wishlist behind a switch) | `content/concerts.md` and `content/concerts-wishlist.md`, band images in `content/concerts/bands/` |
 | BOTW tab (Best of the Worst picks) | `content/botw.md` |
 | D&D tab (one picture + story per campaign) | `content/dnd.md`, pictures in `content/dnd/<campaign>/` |
 | Fishing tab (photo gallery, like each pet on the Pets tab) | `content/fishing/` (see its README) |
@@ -52,7 +52,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-No tab opens by default. Link straight to a home tab with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#drummer`, `#concert`, `#theater`, `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#sex`.
+No tab opens by default. Link straight to a home tab with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#drummer`, `#concert` (or `#concert-wishlist`), `#theater`, `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#sex`.
 Add `?miku` to any URL to preview the Miku Day confetti.
 Add `?deathclock=0` to preview the Death tab's clock at zero (blinking digits and the "update the clock" message).
 

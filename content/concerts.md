@@ -6,7 +6,10 @@ Edit and push; the Concert tab rebuilds from this file.
   after a colon, e.g. `- Ghost: Minneapolis, 2024`.
 - Genres and bands are sorted alphabetically on the site automatically, so
   the order here doesn't matter.
-- Tags go in braces after the name: `- Wardruna {FITM 2025 Favs}`.
+- Tags go in braces after the name: `- Wardruna {FITM 2025 Favs}`. A band can have
+  more than one: `- Evanescence {Evanescence 93X Family Reunion} {Another tag}`.
+- Bands I want to see live go in `content/concerts-wishlist.md` (the Wishlist side
+  of the Concert tab's switch). When you see one, move it here.
 - Band images: drop a square-ish photo in `content/concerts/bands/`, named
   after the band in lower case with dashes ("&" becomes "and"), e.g.
   `ghost.jpg`, `munly-and-the-lupercalians.jpg`. It shows as a circle left of
@@ -54,7 +57,10 @@ Edit and push; the Concert tab rebuilds from this file.
 - Blood Incantation {FITM 2025 Favs}
 - Chelsea Wolfe {FITM 2025 Favs}
 - Disturbed
-- Evanescence
+- Evanescence {Evanescence 93X Family Reunion}
+- Black Map {Evanescence 93X Family Reunion}
+- Dorothy {Evanescence 93X Family Reunion}
+- Poppy {Evanescence 93X Family Reunion}
 - Ghost
 - Majesties {FITM 2025 Favs}
 - Sevendust
