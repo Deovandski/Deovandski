@@ -17,8 +17,8 @@ import { url } from '../lib/url';
 <div class="ara" data-variant="later" hidden role="status">
   <img data-src={url('/yeah-yes.gif')} alt="" width="220" height="225" />
   <div>
-    <p class="ara__title">You didn't fall for the UX trap I set!</p>
-    <p>I do not track UX interactions or any kind of metrics on this website. If you see me out in the wild, let me know you didn't fall for the trap I set! 😉</p>
+    <p class="ara__title">Huh. You didn't take the bait.</p>
+    <p>Zero tracking, zero metrics. I'll never know, so if you see me out in the wild, brag about it. 😉</p>
     <button type="button" class="ara__close">Close</button>
   </div>
 </div>
@@ -87,7 +87,7 @@ import { url } from '../lib/url';
 
 <script>
   // The first time the Sex tab is clicked, show a banner: "Ara ara~" if it was the very first click
-  // on the page, or the "you didn't fall for the UX trap" one if the visitor clicked something else first.
+  // on the page, or the "you didn't take the bait" one if the visitor clicked something else first.
   const banners = {
     first: document.querySelector<HTMLElement>('.ara[data-variant="first"]'),
     later: document.querySelector<HTMLElement>('.ara[data-variant="later"]'),
