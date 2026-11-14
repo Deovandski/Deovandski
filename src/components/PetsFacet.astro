@@ -21,7 +21,7 @@ const pets = loadPets();
         >
           <span class="pets__avatar">
             {pet.cover ? (
-              <Image src={pet.cover} alt="" width={176} height={176} />
+              <Image src={pet.cover} alt="" width={176} height={176} style={pet.coverPosition ? `object-position: ${pet.coverPosition}` : undefined} />
             ) : (
               <span class="pets__initial" aria-hidden="true">{pet.name[0]}</span>
             )}

@@ -9,13 +9,16 @@ One folder per pet. The Pets tab shows them as a row of round portraits
 
 In each folder:
 
-- Drop photos straight in and push. They're shown in filename order, so number
-  them: `01-first-day-home.jpg`, `02-asleep-on-keyboard.jpg`, …
-- The filename becomes the photo's caption (on the grid, in the zoomed view and
-  for screen readers): `02-asleep-on-keyboard.jpg` shows as "Asleep on keyboard".
+- Drop photos straight in and push. They're shown in filename order, so start
+  each name with the day it was taken: `2022-04-02-first-day-home.jpg`,
+  `2024-10-13-I-wanna-play.jpg`, … (`2026-04-…` when you only know the month;
+  plain numbers like `01-…` still work too).
+- The rest of the filename becomes the photo's caption (on the grid, in the zoomed
+  view and for screen readers): `2024-10-13-I-wanna-play.jpg` shows as "I wanna play".
 - `_intro.md` is the text shown above that pet's photos.
-- Optional `_cover.jpg` (or .png/.webp) is the round portrait in the selector.
-  Without one, the pet's first photo is used.
+- The round portrait in the selector: set `cover` for that pet in `PETS`
+  (`src/lib/pets.ts`) to part of a photo's filename, or add a `_cover.jpg`
+  (or .png/.webp). Without either, the pet's first photo is used.
 - Formats: `.jpg`, `.jpeg`, `.png`, `.webp`, `.avif` (iPhone `.heic` saved as
   `.jpg` is converted automatically at build time). Full-size originals are fine.
 
