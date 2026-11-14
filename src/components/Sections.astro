@@ -223,14 +223,14 @@ const areas = ordered.map((a) => ({
     display: table;
     margin: 0.2rem 0 0;
     padding: 0.05rem 0.55rem;
-    border-radius: 999px;
+    border-radius: 0.7rem;
     background: rgba(225, 40, 133, 0.16);
     border: 1px solid rgba(225, 40, 133, 0.55);
     color: #f7a8cf;
     font-family: var(--font-body);
     font-size: 0.72rem;
     font-weight: 700;
-    white-space: nowrap;
+    max-width: 100%; /* long tags wrap inside the card instead of running off its edge */
   }
   .meaning + .meaning { margin-top: 0.6rem; }
   .intro { font-size: var(--step-1); line-height: 1.45; max-width: var(--measure); }
