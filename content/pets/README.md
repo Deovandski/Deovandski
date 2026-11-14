@@ -12,7 +12,8 @@ In each folder:
 - Drop photos straight in and push. They're shown in filename order, so start
   each name with the day it was taken: `2022-04-02-first-day-home.jpg`,
   `2024-10-13-I-wanna-play.jpg`, … (`2026-04-…` when you only know the month;
-  plain numbers like `01-…` still work too).
+  plain numbers like `01-…` still work too). Several photos on one day? Add the
+  time as HHMMSS: `2024-05-04-134837-Rueiro.jpg`.
 - The rest of the filename becomes the photo's caption (on the grid, in the zoomed
   view and for screen readers): `2024-10-13-I-wanna-play.jpg` shows as "I wanna play".
 - `_intro.md` is the text shown above that pet's photos.
