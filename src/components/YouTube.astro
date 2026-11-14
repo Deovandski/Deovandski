@@ -59,7 +59,8 @@ const { id, title } = Astro.props;
   .yt__play:hover .yt__icon { transform: scale(1.08); }
   .yt__label { font-family: var(--font-display); font-weight: 800; font-size: var(--step-0); }
   .yt__note { font-size: 0.75rem; color: var(--muted); }
-  .yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  /* :global because the iframe is added on click, after Astro scoped the styles. */
+  .yt :global(iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   .yt__link { margin: 0.5rem 0 0; font-size: var(--step--1); }
 </style>
 
