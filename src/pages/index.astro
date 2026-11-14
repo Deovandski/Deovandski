@@ -14,6 +14,7 @@ import GalleryGrid from '../components/Gallery.astro';
 import YouTube from '../components/YouTube.astro';
 import { Content as AviationText } from '../../content/aviation.md';
 import kingOfHues from '../assets/king-of-hues.jpg';
+import stickyNotes from '../../content/pm/2023-03-20-sticky-note-madness.jpg';
 import { loadGallery } from '../lib/gallery';
 import { loadRankedList } from '../lib/ranking';
 import { loadSections } from '../lib/sections';
@@ -238,6 +239,32 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
         <p>
           Honestly, I think project management should be taught in high school. Breaking a big goal into small steps, being honest
           about scope and deadlines, and tracking what's actually done are life skills, not just job skills.
+        </p>
+        <h3 class="pm-subhead">How I track my own life</h3>
+        <p>
+          At home, a whiteboard holds my major goals and anything that isn't tied to a date. If it is tied to a date, it goes on
+          the calendar: <a href="https://www.onecalendar.nl/">OneCalendar</a> merges my 5+ calendars into one master calendar,
+          shown as a widget front and center on my phone. As soon as I wake up, I have a rough idea of how the day will go, and I
+          plan around the hard commitments.
+        </p>
+        <p>
+          I also use sticky notes, but I'm actively trying to get away from them. My rule now: it goes on the calendar, on the
+          whiteboard, or on a board (GitHub Projects for open source, JIRA for work). Those keep the history of past and current
+          work, so I can see burndown and trends, and spot where I'm losing efficiency.
+        </p>
+        <figure class="pm-photo">
+          <Image
+            src={stickyNotes}
+            alt="Deo grinning and waving at his desk, with his monitors, keyboard and desk covered in dozens of green sticky notes"
+            widths={[480, 760, 1120]}
+            sizes="(max-width: 720px) 100vw, 560px"
+          />
+          <figcaption>Sticky note madness, March 2023.</figcaption>
+        </figure>
+        <p>
+          Because if I'm spending too much time on something, is it worth doing? And what can I do about it? That kind of data
+          helps me improve my workflows, my tools and my skill set. Being efficient with my time gives me more time for everything
+          else in life, including rest.
         </p>
       </div>
       <p class="ranking-lede pm-boards-lede">I run my own projects in the open. These are my public Kanban boards: what's next, what's in progress, and what shipped.</p>
@@ -617,6 +644,10 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
   .botw a { font-weight: 700; }
   .botw p { margin: 0.2rem 0 0; color: var(--silver); }
   .pm-boards-lede { margin-top: 1.75rem; }
+  .pm-subhead { font-size: var(--step-1); color: var(--teal); margin: 2rem 0 0.75rem; }
+  .pm-photo { margin: 1.5rem 0; max-width: 560px; }
+  .pm-photo img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(190, 200, 209, 0.15); }
+  .pm-photo figcaption { margin-top: 0.5rem; text-align: center; color: var(--muted); font-size: var(--step--1); }
   .boards {
     list-style: none;
     margin: 0;
