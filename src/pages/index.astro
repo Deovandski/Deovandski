@@ -11,6 +11,8 @@ import SexFacet from '../components/SexFacet.astro';
 import DeathFacet from '../components/DeathFacet.astro';
 import PetsFacet from '../components/PetsFacet.astro';
 import GalleryGrid from '../components/Gallery.astro';
+import YouTube from '../components/YouTube.astro';
+import { Content as AviationText } from '../../content/aviation.md';
 import kingOfHues from '../assets/king-of-hues.jpg';
 import { loadGallery } from '../lib/gallery';
 import { loadRankedList } from '../lib/ranking';
@@ -85,6 +87,8 @@ const influencerLinks: LinkItem[] = [
 const tabs = [
   { id: 'death', icon: '💀', label: 'Death' },
   { id: 'dev', icon: '💻', label: 'Dev' },
+  { id: 'family', icon: '👨‍👩‍👦', label: 'Family' },
+  { id: 'aviation', icon: '✈️', label: 'Aviation' },
   { id: 'author', icon: '✍️', label: 'Author' },
   { id: 'mentor', icon: '🔥', label: 'Mentor' },
   { id: 'pm', icon: '📋', label: 'PM' },
@@ -123,6 +127,7 @@ const churrasco = loadSections('content/churrasco.md', 'content/churrasco');
 const concerts = loadSections('content/concerts.md', 'content/concerts');
 const theater = loadSections('content/theater.md', 'content/theater');
 const fishing = loadGallery('content/fishing', 'Fishing');
+const family = loadGallery('content/family', 'Family');
 const camping = loadSections('content/camping.md', 'content/camping');
 const dnd = loadSections('content/dnd.md', 'content/dnd');
 const botw = loadBotw();
@@ -253,6 +258,19 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
     <section class="panel" role="tabpanel" id="panel-death" aria-labelledby="tab-death" tabindex="0" hidden>
       <DeathFacet />
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-family" aria-labelledby="tab-family" tabindex="0" hidden>
+      <div class="story">
+        <GalleryGrid gallery={family} name="family" captions empty="Family photos are on their way." />
+      </div>
+    </section>
+
+    <section class="panel" role="tabpanel" id="panel-aviation" aria-labelledby="tab-aviation" tabindex="0" hidden>
+      <div class="story">
+        <AviationText />
+        <YouTube id="QprnoS8PatE" title="A video I love" />
+      </div>
     </section>
 
     <section class="panel" role="tabpanel" id="panel-mentor" aria-labelledby="tab-mentor" tabindex="0" hidden>

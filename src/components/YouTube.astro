@@ -1,0 +1,78 @@
+---
+// Privacy-friendly YouTube embed: nothing loads from YouTube until the visitor clicks play,
+// then it uses youtube-nocookie.com. Keeps the site's "no tracking" promise.
+interface Props {
+  id: string; // the video id, e.g. "QprnoS8PatE" from https://youtu.be/QprnoS8PatE
+  title: string;
+}
+const { id, title } = Astro.props;
+---
+
+<div class="yt" data-yt={id} data-title={title}>
+  <button type="button" class="yt__play" aria-label={`Play video: ${title}`}>
+    <span class="yt__icon" aria-hidden="true">▶</span>
+    <span class="yt__label">{title}</span>
+    <span class="yt__note">Plays from YouTube when you click</span>
+  </button>
+</div>
+<p class="yt__link"><a href={`https://youtu.be/${id}`}>Watch on YouTube</a></p>
+
+<style>
+  .yt {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    max-width: 48rem;
+    border-radius: 16px;
+    overflow: hidden;
+    background:
+      radial-gradient(120% 120% at 50% 0%, rgba(57, 197, 187, 0.16), transparent 60%),
+      linear-gradient(180deg, #0d1638, #070b1f);
+    border: 1px solid rgba(57, 197, 187, 0.35);
+  }
+  .yt__play {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    font: inherit;
+    color: var(--text);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+  .yt__icon {
+    display: grid;
+    place-items: center;
+    width: 4.25rem;
+    height: 4.25rem;
+    padding-left: 0.3rem;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    color: var(--night);
+    background: var(--teal);
+    box-shadow: 0 0 30px rgba(57, 197, 187, 0.5);
+    transition: transform 0.15s;
+  }
+  .yt__play:hover .yt__icon { transform: scale(1.08); }
+  .yt__label { font-family: var(--font-display); font-weight: 800; font-size: var(--step-0); }
+  .yt__note { font-size: 0.75rem; color: var(--muted); }
+  .yt iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .yt__link { margin: 0.5rem 0 0; font-size: var(--step--1); }
+</style>
+
+<script>
+  for (const box of document.querySelectorAll<HTMLElement>('[data-yt]')) {
+    box.querySelector('.yt__play')?.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.src = `https://www.youtube-nocookie.com/embed/${box.dataset.yt}?autoplay=1&rel=0`;
+      iframe.title = box.dataset.title ?? 'YouTube video';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      box.replaceChildren(iframe);
+    });
+  }
+</script>
