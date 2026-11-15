@@ -2,9 +2,48 @@
 
 2016 nearly took everything I had worked so hard for, all because of someone else's screw-up. It felt like being a kid building a sandcastle while some asshole walks by and kicks it, then watching everything you built turn to nothing. It sucked. It nearly drove me to end it all (as I talk about on the [Death tab](#death)). Yet I survived the worst, pulled myself out of the misery, and rebuilt.
 
+<div class="gym-photos">
+<figure>
+
+![Deo in 2016 in a blue shirt and tie at an outdoor dinner](./photos/2016.jpg)
+
+<figcaption>2016</figcaption>
+</figure>
+<figure>
+
+![Deo in 2017 in a graduation cap and gown with a medal, raising a beer](./photos/2017.jpg)
+
+<figcaption>2017</figcaption>
+</figure>
+</div>
+
 That's how I lost nearly 80 lb in one year. I didn't know it then, but I was in pure survival mode. As I stabilized, the weight rebounded. And as you can see in the chart, I kept cycling between highs and lows, which actually maps to my mental health too: unfulfillment, then hyperfocus on something that acted like a band-aid, and once that ran out of fuel, the cycle started again. I was stuck, and I didn't know I was stuck. For someone striving to be self-aware, I truly couldn't see the box I had put around myself. In 2025, I was back at 260 lb, where it seemed to settle while I became a technical architect certified in F&O and Power Platform and kept making steady progress on my novel series, convention runs, and more.
 
+<div class="gym-photos">
+<figure>
+
+![Deo in 2024 on stage holding a book award certificate](./photos/2024.jpg)
+
+<figcaption>2024</figcaption>
+</figure>
+<figure>
+
+![Deo in 2025 lounging in a camp chair in a mountain lake](./photos/2025.jpg)
+
+<figcaption>2025</figcaption>
+</figure>
+</div>
+
 Then, as I wrote in my [Vol. 3 afterword](https://deovandski.github.io/HusbandOutWorld/about/afterwords/#vol-3-afterword-2026), someone became the catalyst for a quantum leap. Hypervigilance, mental abuse, misery, a pile of unresolved crap, and constant masking overloaded my OS until it hit a kernel panic: my nervous system was frying from the inside out. But this time, I didn't reach for the same "solution" as in 2016. I had collected enough experience and self-understanding to see it: I'm not just ADHD, or anxious, or GAD, as I wrote in my [Vol. 1 afterword](https://deovandski.github.io/HusbandOutWorld/about/afterwords/#vol-1-afterword-2022). I'm full-blown AuDHD, and I was in the middle of my true unmasking, after my soul had been drained of all empathy, love, and care, to the point that I questioned who I even was. I took the opportunity life handed me and turned it into massive growth, knowledge, and a healthier way of living, both mentally and physically.
+
+<div class="gym-photos gym-photos--single">
+<figure>
+
+![Deo in 2026 running a race with both arms raised](./photos/2026.jpg)
+
+<figcaption>2026</figcaption>
+</figure>
+</div>
 
 For years, the gym was a pressure valve. I went for stress relief, so it never satisfied me: it was a tool for relief, not something I enjoyed. Now, for the first time in my life, going to the gym feels as natural as brushing my teeth. I don't go to relieve stress anymore. I go because I actually enjoy it, with music in my ears on the elliptical or under the weights.
 
