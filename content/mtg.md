@@ -2,6 +2,11 @@
 
 Edit and push; the MTG tab rebuilds from this file.
 
+Wins: 1
+Losses: 5
+
+- `Wins:` and `Losses:` set the split-flap score card at the top of the tab.
+
 - Each `##` heading is one card (a deck, a tournament, a memorable game...).
 - The plain text under it is the short description.
 - Optional lines right under the heading: `kicker: ...` (small label

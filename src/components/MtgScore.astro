@@ -1,0 +1,63 @@
+---
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import SplitFlap from './reusable/SplitFlap.astro';
+
+// The Win vs Loss score card at the top of the MTG tab. Numbers come from content/mtg.md
+// ("Wins: 1" and "Losses: 5" lines near the top).
+const FILE = 'content/mtg.md';
+const text = readFileSync(resolve(FILE), 'utf8').replace(/<!--[\s\S]*?-->/g, '');
+const read = (key: string) => {
+  const m = text.match(new RegExp(`^${key}:\\s*(\\d+)\\s*$`, 'mi'));
+  if (!m) throw new Error(`${FILE}: add a "${key}: <number>" line for the score card.`);
+  return Number(m[1]);
+};
+const wins = read('Wins');
+const losses = read('Losses');
+const digits = Math.max(2, String(wins).length, String(losses).length);
+---
+
+<section class="mtg-score" aria-label={`Win vs loss: ${wins} wins, ${losses} losses`}>
+  <p class="mtg-score__title">Win vs Loss</p>
+  <div class="mtg-score__board">
+    <SplitFlap value={wins} digits={digits} label="Wins" size="lg" class="mtg-score__wins" />
+    <span class="mtg-score__vs" aria-hidden="true">vs</span>
+    <SplitFlap value={losses} digits={digits} label="Losses" size="lg" class="mtg-score__losses" />
+  </div>
+</section>
+
+<style>
+  .mtg-score {
+    display: grid;
+    justify-items: center;
+    gap: 0.9rem;
+    margin: 0 auto 2rem;
+    padding: 1.25rem 1rem 1.4rem;
+    max-width: 34rem;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #0d0f14 0%, #07080b 100%);
+    border: 1px solid rgba(190, 200, 209, 0.18);
+    box-shadow: inset 0 0 0 6px #12141a, 0 10px 30px rgba(0, 0, 0, 0.35);
+  }
+  .mtg-score__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--step-1);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--silver);
+  }
+  .mtg-score__board { display: flex; align-items: flex-start; justify-content: center; gap: clamp(0.8rem, 4vw, 2rem); }
+  .mtg-score__vs {
+    align-self: center;
+    margin-bottom: 1.4rem;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--step-1);
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+  .mtg-score :global(.mtg-score__wins) { --split-flap-label: var(--teal); }
+  .mtg-score :global(.mtg-score__losses) { --split-flap-label: var(--pink); }
+</style>

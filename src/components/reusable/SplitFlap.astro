@@ -1,0 +1,193 @@
+---
+/**
+ * SplitFlap: a split-flap (Solari board) display for a short value: a score, a count, a word.
+ *
+ * Reusable on purpose: no imports, no site CSS needed, and safe to use several times on a page.
+ * Copy this one file into any Astro project. See README.md in this folder.
+ *
+ *   <SplitFlap value={650} label="lb of beef grilled" />
+ *   <SplitFlap value={1} digits={2} label="Wins" />
+ *   <SplitFlap value="GATE 9" size="sm" />
+ *
+ * When it scrolls into view, every tile flips through the characters before it lands on its
+ * value, like an airport board. People who prefer reduced motion just see the value.
+ */
+interface Props {
+  /** What the board shows. Numbers are padded to `digits` with `pad`. */
+  value: string | number;
+  /** Minimum number of tiles. Shorter values are padded on the left. */
+  digits?: number;
+  /** Padding character for short values. Defaults to "0" for numbers and " " for text. */
+  pad?: string;
+  /** Small caption under the tiles (also read out by screen readers). */
+  label?: string;
+  /** Tile size. */
+  size?: 'sm' | 'md' | 'lg';
+  /** Thousands separator for numbers, e.g. "," shows 1,250. Off by default. */
+  separator?: string;
+  /** Set false to skip the flip animation. */
+  animate?: boolean;
+  /** Extra class for the outer element. */
+  class?: string;
+}
+
+const { value, digits = 0, label, size = 'md', separator = '', animate = true, class: className } = Astro.props;
+const isNumber = typeof value === 'number';
+const pad = Astro.props.pad ?? (isNumber ? '0' : ' ');
+let text = isNumber ? String(Math.trunc(value as number)) : String(value).toUpperCase();
+if (text.length < digits) text = pad.repeat(digits - text.length) + text;
+if (isNumber && separator) text = text.replace(/\B(?=(\d{3})+(?!\d))/g, separator);
+const chars = [...text];
+const spoken = `${label ? `${label}: ` : ''}${isNumber ? Number(value).toLocaleString('en-US') : value}`;
+---
+
+<figure class:list={['split-flap', `split-flap--${size}`, className]} data-split-flap={animate ? '' : undefined}>
+  <span class="split-flap__sr">{spoken}</span>
+  <span class="split-flap__tiles" aria-hidden="true">
+    {
+      chars.map((c) =>
+        /[0-9A-Z]/.test(c) ? (
+          <span class="split-flap__tile" data-final={c}>
+            <span class="split-flap__char">{c}</span>
+          </span>
+        ) : (
+          <span class:list={['split-flap__tile', { 'split-flap__tile--blank': c === ' ', 'split-flap__tile--mark': c !== ' ' }]}>
+            <span class="split-flap__char">{c === ' ' ? ' ' : c}</span>
+          </span>
+        ),
+      )
+    }
+  </span>
+  {label && <figcaption class="split-flap__label" aria-hidden="true">{label}</figcaption>}
+</figure>
+
+<style>
+  /* Everything is scoped and themed with custom properties, so it drops into any site.
+     Override from outside: .my-board { --split-flap-ink: gold; } */
+  .split-flap {
+    --split-flap-size: 3.4rem;
+    --split-flap-ink: #f4f1e8;
+    --split-flap-tile: #1b1d22;
+    --split-flap-tile-2: #111216;
+    --split-flap-hinge: rgba(0, 0, 0, 0.75);
+    --split-flap-label: #a9b0ba;
+    display: inline-grid;
+    justify-items: center;
+    gap: 0.55rem;
+    margin: 0;
+  }
+  .split-flap--sm { --split-flap-size: 2.2rem; }
+  .split-flap--lg { --split-flap-size: clamp(3.2rem, 9vw, 5rem); }
+
+  .split-flap__tiles { display: inline-flex; gap: calc(var(--split-flap-size) * 0.08); }
+  .split-flap__tile {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: calc(var(--split-flap-size) * 0.72);
+    height: var(--split-flap-size);
+    border-radius: calc(var(--split-flap-size) * 0.1);
+    background: linear-gradient(180deg, var(--split-flap-tile) 0 49.4%, var(--split-flap-tile-2) 50.6% 100%);
+    box-shadow:
+      inset 0 1px 0 rgba(255, 255, 255, 0.07),
+      inset 0 -2px 4px rgba(0, 0, 0, 0.5),
+      0 3px 8px rgba(0, 0, 0, 0.45);
+    perspective: 300px;
+    overflow: hidden;
+  }
+  /* The hinge across the middle, with the two little pins at the sides. */
+  .split-flap__tile::before {
+    content: '';
+    position: absolute;
+    inset: 50% 0 auto;
+    height: 2px;
+    transform: translateY(-1px);
+    background: var(--split-flap-hinge);
+    z-index: 2;
+  }
+  .split-flap__tile::after {
+    content: '';
+    position: absolute;
+    inset: calc(50% - 3px) -1px auto;
+    height: 6px;
+    background:
+      radial-gradient(circle at 2px 3px, #3a3d44 2px, transparent 2.5px) left / 6px 6px no-repeat,
+      radial-gradient(circle at 4px 3px, #3a3d44 2px, transparent 2.5px) right / 6px 6px no-repeat;
+    z-index: 3;
+  }
+  .split-flap__char {
+    font-family: 'Roboto Mono', 'SFMono-Regular', ui-monospace, Menlo, Consolas, monospace;
+    font-weight: 700;
+    font-size: calc(var(--split-flap-size) * 0.66);
+    line-height: 1;
+    color: var(--split-flap-ink);
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6);
+    transform-origin: 50% 50%;
+  }
+  .split-flap__tile--blank { opacity: 0.85; }
+  .split-flap__tile--mark { width: calc(var(--split-flap-size) * 0.42); }
+  .split-flap__tile.is-flipping .split-flap__char { animation: split-flap-flip 70ms ease-in; }
+  @keyframes split-flap-flip {
+    0% { transform: rotateX(0deg); }
+    50% { transform: rotateX(80deg); }
+    100% { transform: rotateX(0deg); }
+  }
+
+  .split-flap__label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--split-flap-label);
+    text-align: center;
+  }
+  .split-flap__sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+</style>
+
+<script>
+  // Flip every tile through the alphabet before it settles, the first time the board is seen.
+  // Each board is independent; any number can be on a page.
+  const DIGITS = '0123456789';
+  const ALPHA = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const run = (board: HTMLElement) => {
+    board.querySelectorAll<HTMLElement>('.split-flap__tile[data-final]').forEach((tile, i) => {
+      const final = tile.dataset.final!;
+      const set = DIGITS.includes(final) ? DIGITS : ALPHA;
+      const char = tile.querySelector<HTMLElement>('.split-flap__char')!;
+      // Digits roll up from 0; letters roll from a few letters before. Later tiles roll a bit longer.
+      const steps = (set === DIGITS ? set.indexOf(final) + 10 : 8) + i * 3;
+      let n = 0;
+      char.textContent = set[(set.indexOf(final) - steps + set.length * 10) % set.length];
+      const tickOnce = () => {
+        n++;
+        char.textContent = set[(set.indexOf(final) - steps + n + set.length * 10) % set.length];
+        tile.classList.remove('is-flipping');
+        void tile.offsetWidth;
+        tile.classList.add('is-flipping');
+        if (n < steps) window.setTimeout(tickOnce, 70);
+        else char.textContent = final;
+      };
+      window.setTimeout(tickOnce, 120);
+    });
+  };
+
+  if (!reduced && 'IntersectionObserver' in window) {
+    const seen = new IntersectionObserver((entries) => {
+      for (const e of entries) {
+        if (!e.isIntersecting) continue;
+        seen.unobserve(e.target);
+        run(e.target as HTMLElement);
+      }
+    }, { threshold: 0.6 });
+    document.querySelectorAll<HTMLElement>('[data-split-flap]').forEach((b) => seen.observe(b));
+  }
+</script>

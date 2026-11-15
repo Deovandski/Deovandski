@@ -12,7 +12,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Family tab (text + photos) | `content/family/_intro.md`, photos in `content/family/` (see its README) |
 | Aviation tab (text + YouTube video) | `content/aviation.md`; video id in `src/pages/index.astro` (`panel-aviation`) |
 | Mentor tab | `content/mentor.md` (plain Markdown) |
-| Death tab (countdown clock + text) | `content/death.md`; clock target in `src/components/DeathFacet.astro` (`TARGET`) |
+| Death tab (countdown clock + text) | `content/death.md`; clock target in `src/components/DeathFacet.astro` (`TARGET`); the clock itself is the reusable `src/components/reusable/LedClock.astro` |
 | PM tab (public Kanban boards) | `boards` near the top of `src/pages/index.astro` |
 | King of Hues photo | `src/assets/king-of-hues.jpg` |
 | Contact page (emails) | `src/pages/contact.astro` |
@@ -24,7 +24,8 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Churrasco tab (one photo + description per panel, like 初音ミク) | `content/churrasco.md`, photos in `content/churrasco/<panel>/` |
 | Drummer tab (a backlog note for now) | `src/pages/index.astro` (`panel-drummer`) |
 | Board Games tab (one picture + story per card, like D&D) | `content/boardgames.md`, pictures in `content/boardgames/<card>/` |
-| MTG tab (Magic: The Gathering; one picture + story per card, like D&D) | `content/mtg.md`, pictures in `content/mtg/<card>/` |
+| MTG tab (Magic: The Gathering; Win vs Loss split-flap score card, then one picture + story per card, like D&D) | `content/mtg.md` (`Wins:` and `Losses:` lines set the score card), pictures in `content/mtg/<card>/` |
+| Reusable components (split-flap board, LED clock), built to copy into other projects | `src/components/reusable/` (see its README and the rule in CLAUDE.md) |
 | Concert tab (Seen live, plus a Wishlist behind a switch) | `content/concerts.md` and `content/concerts-wishlist.md`, band images in `content/concerts/bands/` |
 | BOTW tab (Best of the Worst picks) | `content/botw.md` |
 | D&D tab (one picture + story per campaign) | `content/dnd.md`, pictures in `content/dnd/<campaign>/` |

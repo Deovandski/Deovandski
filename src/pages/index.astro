@@ -6,6 +6,7 @@ import TravelerFacet from '../components/TravelerFacet.astro';
 import MentorFacet from '../components/MentorFacet.astro';
 import MultilingualFacet from '../components/MultilingualFacet.astro';
 import Sections from '../components/Sections.astro';
+import MtgScore from '../components/MtgScore.astro';
 import GymFacet from '../components/GymFacet.astro';
 import SexFacet from '../components/SexFacet.astro';
 import DeathFacet from '../components/DeathFacet.astro';
@@ -505,6 +506,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-mtg" aria-labelledby="tab-mtg" tabindex="0" hidden>
+      <MtgScore />
       <Sections data={mtg} id="mtg" slots={1} empty="Magic: The Gathering decks and stories are on their way." photoAlt={(t) => `Magic: The Gathering: ${t}`} />
     </section>
 
