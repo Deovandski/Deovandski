@@ -1,9 +1,17 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import GalleryGrid from './Gallery.astro';
 import { DEFAULT_PET, loadPets } from '../lib/pets';
 
 const pets = loadPets();
+// Big picture above a pet's grid (PETS `hero`); clicking it opens the photo viewer like the grid does.
+const heroFull = Object.fromEntries(
+  await Promise.all(
+    pets
+      .filter((p) => p.hero)
+      .map(async (p) => [p.id, (await getImage({ src: p.hero!, width: Math.min(1800, p.hero!.width), format: 'webp', quality: 80 })).src]),
+  ),
+);
 ---
 
 <div class="pets">
@@ -36,13 +44,44 @@ const pets = loadPets();
   {
     pets.map((pet) => (
       <div class="pets__panel" role="tabpanel" id={`pet-${pet.id}`} aria-labelledby={`pet-tab-${pet.id}`} hidden={pet.id !== DEFAULT_PET}>
-        <GalleryGrid gallery={pet.gallery} name={`pet-${pet.id}`} captions empty={`${pet.name}'s photos are on their way.`} />
+        {pet.hero ? (
+          <>
+            {pet.gallery.intro.map((t) => <h3 class="pets__hero-title">{t}</h3>)}
+            <figure class="pets__hero">
+              <button type="button" data-gallery={`pet-${pet.id}-hero`} data-index="0" data-full={heroFull[pet.id]} data-alt={pet.heroAlt} aria-label={`Enlarge: ${pet.heroAlt}`}>
+                <Image src={pet.hero!} alt={pet.heroAlt ?? ''} widths={[480, 760, 1100]} sizes="(max-width: 720px) 90vw, 440px" />
+              </button>
+            </figure>
+            <GalleryGrid gallery={{ ...pet.gallery, intro: [] }} name={`pet-${pet.id}`} captions empty={`${pet.name}'s photos are on their way.`} />
+          </>
+        ) : (
+          <GalleryGrid gallery={pet.gallery} name={`pet-${pet.id}`} captions empty={`${pet.name}'s photos are on their way.`} />
+        )}
       </div>
     ))
   }
 </div>
 
 <style>
+  .pets__hero-title {
+    margin: 1.25rem 0 0.9rem;
+    text-align: center;
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: var(--step-2);
+    color: var(--teal);
+  }
+  .pets__hero { margin: 0 auto 2rem; max-width: 440px; }
+  .pets__hero button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 18px; }
+  .pets__hero :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    border: 2px solid rgba(57, 197, 187, 0.55);
+    box-shadow: 0 0 40px rgba(57, 197, 187, 0.18);
+  }
+
   /* Carousel-style picker: a row of round portraits, the selected one ringed in teal. */
   .pets__picker {
     display: flex;
