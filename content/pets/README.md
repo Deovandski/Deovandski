@@ -22,6 +22,7 @@ In each folder:
   (or .png/.webp). Without either, the pet's first photo is used.
 - Optional big picture above the grid: set `hero` the same way. `_intro.md` then shows as a
   centered title above it. Start its filename with `_` to keep it out of the grid.
+- Optional `_outro.md` is shown centered after the photos (Bidu's farewell line).
 - Formats: `.jpg`, `.jpeg`, `.png`, `.webp`, `.avif` (iPhone `.heic` saved as
   `.jpg` is converted automatically at build time). Full-size originals are fine.
 

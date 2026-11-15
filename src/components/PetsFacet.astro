@@ -57,6 +57,7 @@ const heroFull = Object.fromEntries(
         ) : (
           <GalleryGrid gallery={pet.gallery} name={`pet-${pet.id}`} captions empty={`${pet.name}'s photos are on their way.`} />
         )}
+        {pet.outro.map((t) => <p class="pets__outro">{t}</p>)}
       </div>
     ))
   }
@@ -72,6 +73,16 @@ const heroFull = Object.fromEntries(
     color: var(--teal);
   }
   .pets__hero { margin: 0 auto 2rem; max-width: 440px; }
+  .pets__outro {
+    margin: 2.25rem auto 0.5rem;
+    max-width: 36rem;
+    text-align: center;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: var(--step-1);
+    line-height: 1.4;
+    color: var(--silver);
+  }
   .pets__hero button { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 18px; }
   .pets__hero :global(img) {
     display: block;
