@@ -43,3 +43,14 @@ Ramen in Osaka, temples in Kyoto, and far too many arcades.
 
 `name` overrides the country name, `years` shows under the title, and the
 text below the `---` is shown as a caption.
+
+## Photo dates
+
+The gallery shows the date each photo was taken (MM/DD/YYYY), read at build time:
+
+1. From the photo's own metadata (EXIF "date taken").
+2. Otherwise from the filename: any `YYYYMMDD` run (`PXL_20231210_…`, `IMG_20231218_…`,
+   `20160522_…`, WhatsApp `IMG-20231113-WA0022`) or `YYYY-MM-DD`.
+3. Otherwise `--/--/----`.
+
+Metadata (including GPS) is only read, never stripped from the files here.

@@ -1,6 +1,7 @@
 ---
 import { getImage } from 'astro:assets';
 import { loadPlaces, type Place } from '../lib/travel';
+import { photoDate } from '../lib/photoDate';
 import { url } from '../lib/url';
 
 const places = loadPlaces();
@@ -17,11 +18,12 @@ const data = await Promise.all(
     lng: c.lng,
     photos: await Promise.all(
       c.photos.map(async (p) => {
-        const [full, thumb] = await Promise.all([
+        const [full, thumb, date] = await Promise.all([
           getImage({ src: p.src, width: Math.min(1800, p.src.width), format: 'webp', quality: 80 }),
           getImage({ src: p.src, width: Math.min(360, p.src.width), format: 'webp', quality: 70 }),
+          photoDate(p.path, p.file), // read from the original, before resizing drops the metadata
         ]);
-        return { full: full.src, thumb: thumb.src, w: full.attributes.width ?? p.src.width, h: full.attributes.height ?? p.src.height };
+        return { full: full.src, thumb: thumb.src, w: full.attributes.width ?? p.src.width, h: full.attributes.height ?? p.src.height, date };
       }),
     ),
   })),
@@ -40,6 +42,31 @@ for (const p of places) {
 }
 const countryCount = new Set(places.map((p) => p.country)).size;
 const photoCount = (p: Place) => `${p.photos.length} ${p.photos.length === 1 ? 'photo' : 'photos'}`;
+
+// Totals per region, plus a running total that adds up region by region in the order they're listed.
+const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
+type Tally = { countries: number; subs: number; photos: number };
+const tallyText = (t: Tally) =>
+  [
+    plural(t.countries, 'country', 'countries'),
+    t.subs > 0 ? plural(t.subs, 'state/province', 'states/provinces') : null,
+    plural(t.photos, 'photo', 'photos'),
+  ]
+    .filter(Boolean)
+    .join(' · ');
+const running: Tally = { countries: 0, subs: 0, photos: 0 };
+const regionTotals = new Map<string, { region: string; running: string }>();
+for (const [region, groups] of byRegion) {
+  const t: Tally = { countries: groups.size, subs: 0, photos: 0 };
+  for (const g of groups.values()) {
+    t.subs += g.subs.length;
+    t.photos += (g.self?.photos.length ?? 0) + g.subs.reduce((n, p) => n + p.photos.length, 0);
+  }
+  running.countries += t.countries;
+  running.subs += t.subs;
+  running.photos += t.photos;
+  regionTotals.set(region, { region: tallyText(t), running: tallyText(running) });
+}
 ---
 
 <p class="lede">
@@ -58,8 +85,9 @@ const photoCount = (p: Place) => `${p.photos.length} ${p.photos.length === 1 ? '
         <h3 id="list-title">Places by region</h3>
         <div class="regions">
           {[...byRegion].map(([region, groups]) => (
-            <div>
+            <div class="region">
               <h4>{region}</h4>
+              <p class="totals">{regionTotals.get(region)!.region}</p>
               <ul>
                 {[...groups.values()].map((g) => (
                   <li class="country">
@@ -84,6 +112,7 @@ const photoCount = (p: Place) => `${p.photos.length} ${p.photos.length === 1 ? '
                   </li>
                 ))}
               </ul>
+              <p class="totals totals--running"><span class="totals__label">Running total</span> {regionTotals.get(region)!.running}</p>
             </div>
           ))}
         </div>
@@ -105,6 +134,7 @@ const photoCount = (p: Place) => `${p.photos.length} ${p.photos.length === 1 ? '
       <img alt="" />
       <button type="button" class="trip__nav trip__next" aria-label="Next photo">›</button>
     </figure>
+    <p class="trip__date"><span class="sr-only">Taken </span><time></time><span class="sr-only trip__unknown" hidden>Date unknown</span></p>
     <ul class="trip__thumbs"></ul>
   </dialog>
 </Base>
@@ -170,7 +200,11 @@ const photoCount = (p: Place) => `${p.photos.length} ${p.photos.length === 1 ? '
   .list { margin-top: 3rem; }
   .list > h3 { font-size: var(--step-1); color: var(--silver); }
   .regions { display: grid; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); gap: 1.5rem 2.5rem; }
-  .regions h4 { font-size: var(--step-0); color: var(--muted); margin-bottom: 0.4rem; }
+  .regions h4 { font-size: var(--step-0); color: var(--muted); margin-bottom: 0.15rem; }
+  .region { display: flex; flex-direction: column; }
+  .totals { margin: 0 0 0.5rem; color: var(--muted); font-size: var(--step--1); }
+  .totals--running { margin: 0.6rem 0 0; padding-top: 0.5rem; border-top: 1px solid rgba(57, 197, 187, 0.25); color: var(--silver); }
+  .totals__label { color: var(--teal); font-weight: 700; }
   .regions ul { list-style: none; margin: 0; padding: 0; }
   .regions .row { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.25rem; }
   .regions .row > span { color: var(--muted); font-size: var(--step--1); }
@@ -247,6 +281,7 @@ const photoCount = (p: Place) => `${p.photos.length} ${p.photos.length === 1 ? '
   .trip__next { right: 0.6rem; }
   .trip__nav[hidden],
   .trip__thumbs[hidden] { display: none; }
+  .trip__date { margin: 0.5rem 0 0; text-align: center; color: var(--muted); font-size: var(--step--1); font-variant-numeric: tabular-nums; letter-spacing: 0.04em; }
   .trip__thumbs {
     list-style: none;
     display: flex;
@@ -270,7 +305,14 @@ const photoCount = (p: Place) => `${p.photos.length} ${p.photos.length === 1 ? '
 <script>
   import L from 'leaflet';
 
-  type Photo = { full: string; thumb: string; w: number; h: number };
+  type Photo = { full: string; thumb: string; w: number; h: number; date: string | null };
+
+  // How the gallery shows when a photo was taken: MM/DD/YYYY, or --/--/---- when unknown.
+  const formatPhotoDate = (iso: string | null) => {
+    if (!iso) return '--/--/----';
+    const [y, m, d] = iso.split('-');
+    return `${m}/${d}/${y}`;
+  };
   type Place = { key: string; country: string; name: string; pin: string; years: string | null; caption: string | null; lat: number; lng: number; photos: Photo[] };
 
   const el = document.getElementById('map')!;
@@ -346,6 +388,8 @@ const photoCount = (p: Place) => `${p.photos.length} ${p.photos.length === 1 ? '
   const caption = dialog.querySelector('.trip__caption')!;
   const stage = dialog.querySelector<HTMLImageElement>('.trip__stage img')!;
   const thumbs = dialog.querySelector('.trip__thumbs')!;
+  const dateEl = dialog.querySelector<HTMLTimeElement>('.trip__date time')!;
+  const unknownEl = dialog.querySelector<HTMLElement>('.trip__unknown')!;
   const prev = dialog.querySelector<HTMLButtonElement>('.trip__prev')!;
   const next = dialog.querySelector<HTMLButtonElement>('.trip__next')!;
   let current: Place | null = null;
@@ -359,6 +403,13 @@ const photoCount = (p: Place) => `${p.photos.length} ${p.photos.length === 1 ? '
     stage.width = p.w;
     stage.height = p.h;
     stage.alt = `${current.name}, photo ${index + 1} of ${current.photos.length}`;
+    dateEl.textContent = formatPhotoDate(p.date);
+    // Screen readers hear "Taken 12/10/2023", or "Taken Date unknown" instead of a row of dashes.
+    if (p.date) dateEl.dateTime = p.date;
+    else dateEl.removeAttribute('datetime');
+    if (p.date) dateEl.removeAttribute('aria-hidden');
+    else dateEl.setAttribute('aria-hidden', 'true');
+    unknownEl.hidden = !!p.date;
     thumbs.querySelectorAll('button').forEach((b, j) => b.setAttribute('aria-current', String(j === index)));
   }
 

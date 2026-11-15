@@ -27,7 +27,7 @@ export type Place = {
   lng: number;
   years?: string;
   caption?: string;
-  photos: { src: ImageMetadata; file: string }[];
+  photos: { src: ImageMetadata; file: string; path: string }[];
 };
 /** @deprecated use Place */
 export type Country = Place;
@@ -56,7 +56,7 @@ const photosIn = (dir: string, relDir: string) =>
   readdirSync(dir)
     .filter((f) => IMAGE.test(f))
     .sort()
-    .map((file) => ({ file, src: photoModules[`/${relDir}/${file}`] }))
+    .map((file) => ({ file, path: join(dir, file), src: photoModules[`/${relDir}/${file}`] }))
     .filter((p) => p.src);
 
 const cleanSubName = (n: string) => n.replace(/\s+(Prefecture|Province)$/i, '');
