@@ -2,7 +2,8 @@
 
 Edit and push; the chart in the Gym Facet tab rebuilds from this table.
 Add a year, change a weight, or move the goal. To pin a photo to a point,
-drop it in content/gym/photos/ named after the year, e.g. 2016.jpg.
+drop it in content/gym/photos/ named after the year, e.g. 2016.jpg (just the
+year: story-only photos like 2026_am1.jpg stay off the chart).
 The same photos can also go inside the story (content/gym/story.md): copy one of
 the `<div class="gym-photos">` blocks there and change the year.
 
