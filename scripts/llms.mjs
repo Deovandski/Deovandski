@@ -75,10 +75,10 @@ function toText(fragment) {
     .trim();
 }
 
-// Tab labels, in the order visitors see them.
-const tabs = [...html.matchAll(/<button[^>]*role="tab"[^>]*data-tab="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g)].map((m) => ({
+// Facet labels, in the order visitors see them in the facet tree (branch by branch).
+const tabs = [...html.matchAll(/<button[^>]*data-tab="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g)].map((m) => ({
   id: m[1],
-  label: decode(m[2].replace(/<span class="tabs__icon"[\s\S]*?<\/span>/, '').replace(/<[^>]+>/g, '')).trim(),
+  label: decode(m[2].replace(/<span class="tree__disc"[\s\S]*?<\/span>/, '').replace(/<[^>]+>/g, '')).trim(),
 }));
 
 // Panel bodies: from each panel's opening tag to the next panel (or the end of the tab container).

@@ -7,7 +7,8 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 
 | What | File or folder |
 |---|---|
-| Home page tabs (Dev, Author, Influencer) | `src/pages/index.astro` |
+| Home page facets (Dev, Author, Influencer) | `src/pages/index.astro` |
+| Facet tree (which branch each facet sits in, the order, branch blurbs) | `facets` and `branches` near the top of `src/pages/index.astro`; the build stops if a facet is missing, listed twice, or a branch has more than 6 |
 | Family tab (text + photos) | `content/family/_intro.md`, photos in `content/family/` (see its README) |
 | Aviation tab (text + YouTube video) | `content/aviation.md`; video id in `src/pages/index.astro` (`panel-aviation`) |
 | Mentor tab | `content/mentor.md` (plain Markdown) |
@@ -22,6 +23,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | 初音ミク tab (Miku concerts) | `content/miku.md`, photos in `content/miku/<concert>/` |
 | Churrasco tab (one photo + description per panel, like 初音ミク) | `content/churrasco.md`, photos in `content/churrasco/<panel>/` |
 | Drummer tab (a backlog note for now) | `src/pages/index.astro` (`panel-drummer`) |
+| Board Games tab (a backlog note for now) | `src/pages/index.astro` (`panel-boardgames`) |
 | Concert tab (Seen live, plus a Wishlist behind a switch) | `content/concerts.md` and `content/concerts-wishlist.md`, band images in `content/concerts/bands/` |
 | BOTW tab (Best of the Worst picks) | `content/botw.md` |
 | D&D tab (one picture + story per campaign) | `content/dnd.md`, pictures in `content/dnd/<campaign>/` |
@@ -33,7 +35,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Potato tab, TV shows side (top 39) | `content/tv/top39.md` (numbered list) |
 | Potato tab, Movies side (top 39) | `content/movies/top39.md` (numbered list) |
 | Pets tab (Bidu, Fluffy, Peeta: portrait picker + each pet's gallery) | `content/pets/<pet>/` (see `content/pets/README.md`); order in `src/lib/pets.ts` |
-| Sex tab (and the first-click banner) | `content/sex.md`, `src/components/SexFacet.astro` |
+| Sex tab (and the banner for when it's the first facet opened) | `content/sex.md`, `src/components/SexFacet.astro` |
 | Miku Day dates and message | `src/components/MikuDay.astro` (`DATES` near the top) |
 | Colors and fonts | `src/styles/global.css` |
 | Logo | `src/assets/logo.png` |
@@ -52,7 +54,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-No tab opens by default. Link straight to a home tab with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#drummer`, `#concert` (or `#concert-wishlist`), `#theater`, `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#sex`.
+No facet opens by default: visitors grow a branch of the facet tree, then pick a facet. Link straight to a facet (its branch grows too) with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#drummer`, `#boardgames`, `#concert` (or `#concert-wishlist`), `#theater`, `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#sex`.
 Add `?miku` to any URL to preview the Miku Day confetti.
 Add `?deathclock=0` to preview the Death tab's clock at zero (blinking digits and the "update the clock" message).
 

@@ -276,7 +276,7 @@ const photoCount = (p: Place) => `${p.photos.length} ${p.photos.length === 1 ? '
   const el = document.getElementById('map')!;
   const places: Place[] = JSON.parse(el.dataset.countries || '[]');
   const visited = new Set(places.map((p) => p.country));
-  const panel = el.closest<HTMLElement>('[role="tabpanel"]');
+  const panel = el.closest<HTMLElement>('.panel');
   let map: L.Map | null = null;
   let markers: L.Marker[] = [];
 
