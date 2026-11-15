@@ -7,6 +7,7 @@ import MentorFacet from '../components/MentorFacet.astro';
 import MultilingualFacet from '../components/MultilingualFacet.astro';
 import Sections from '../components/Sections.astro';
 import MtgScore from '../components/MtgScore.astro';
+import ChurrascoFacet from '../components/ChurrascoFacet.astro';
 import GymFacet from '../components/GymFacet.astro';
 import SexFacet from '../components/SexFacet.astro';
 import DeathFacet from '../components/DeathFacet.astro';
@@ -150,7 +151,6 @@ const tvShows = loadRankedList('content/tv/top39.md');
 const movies = loadRankedList('content/movies/top39.md');
 const tattoos = loadSections('content/tattoos.md', 'content/tattoos');
 const mikuConcerts = loadSections('content/miku.md', 'content/miku');
-const churrasco = loadSections('content/churrasco.md', 'content/churrasco');
 const concerts = loadSections('content/concerts.md', 'content/concerts');
 const concertWishlist = loadSections('content/concerts-wishlist.md', 'content/concerts');
 const theater = loadSections('content/theater.md', 'content/theater');
@@ -492,7 +492,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-churrasco" aria-labelledby="tab-churrasco" tabindex="0" hidden>
-      <Sections data={churrasco} id="churrasco" layout="cards" slots={1} titleAbove noDescription="Description coming soon." empty="Churrasco stories are on their way." photoAlt={(t) => `Churrasco: ${t}`} />
+      <ChurrascoFacet />
     </section>
 
     <section class="panel" role="region" id="panel-drummer" aria-labelledby="tab-drummer" tabindex="0" hidden>

@@ -1,0 +1,153 @@
+---
+/**
+ * OrgChart: a top-down organization chart. Each level is one row of people (or roles), joined to
+ * the row above by connector lines.
+ *
+ * Reusable on purpose: imports only Astro's Image, needs no site CSS, and themes with custom
+ * properties. Copy this one file into any Astro project. See README.md in this folder.
+ *
+ *   <OrgChart
+ *     title="The team"
+ *     levels={[
+ *       [{ title: 'Ada', subtitle: 'Lead', image: adaPhoto, imageAlt: 'Ada smiling' }],
+ *       [{ title: 'Grace', subtitle: 'Backend' }, { title: 'Linus', subtitle: 'Kernel' }],
+ *     ]}
+ *   />
+ *
+ * Nodes may carry a portrait (`image`, an imported image) and a short `text`.
+ */
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
+export type OrgNode = {
+  title: string;
+  subtitle?: string;
+  text?: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
+};
+
+interface Props {
+  /** Rows from the top down. Each row is a list of nodes shown side by side. */
+  levels: OrgNode[][];
+  /** Optional heading read by screen readers for the chart (shown if `showTitle`). */
+  title?: string;
+  showTitle?: boolean;
+  /** Allow simple **bold** and *italic* in `text`. Off by default (text is shown as written). */
+  inlineMarkdown?: boolean;
+  class?: string;
+}
+
+const { levels, title, showTitle = false, inlineMarkdown = false, class: className } = Astro.props;
+const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const fmt = (t: string) =>
+  inlineMarkdown ? esc(t).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\*(.+?)\*/g, '<em>$1</em>') : esc(t);
+---
+
+<figure class:list={['org-chart', className]}>
+  {title && <figcaption class:list={['org-chart__title', { 'org-chart__sr': !showTitle }]}>{title}</figcaption>}
+  <ol class="org-chart__levels">
+    {
+      levels.map((row, i) => (
+        <li class="org-chart__level" data-level={i}>
+          <ul class="org-chart__row">
+            {row.map((n) => (
+              <li class:list={['org-chart__node', { 'org-chart__node--top': i === 0 }]}>
+                {n.image && (
+                  <Image class="org-chart__photo" src={n.image} alt={n.imageAlt ?? ''} width={i === 0 ? 220 : 120} densities={[1, 2]} />
+                )}
+                <p class="org-chart__name">{n.title}</p>
+                {n.subtitle && <p class="org-chart__subtitle">{n.subtitle}</p>}
+                {n.text && <p class="org-chart__text" set:html={fmt(n.text)} />}
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))
+    }
+  </ol>
+</figure>
+
+<style>
+  /* Theme from outside: .my-chart :global(.org-chart) { --org-chart-line: gold; } */
+  .org-chart {
+    --org-chart-line: rgba(190, 200, 209, 0.45);
+    --org-chart-card: rgba(255, 255, 255, 0.04);
+    --org-chart-border: rgba(190, 200, 209, 0.25);
+    --org-chart-ink: inherit;
+    --org-chart-accent: inherit;
+    --org-chart-muted: rgba(127, 127, 127, 0.95);
+    --org-chart-font-title: inherit;
+    --org-chart-gap: 2.2rem;
+    margin: 0;
+    color: var(--org-chart-ink);
+  }
+  .org-chart__title { text-align: center; font-weight: 800; margin-bottom: 1rem; }
+  .org-chart__sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .org-chart__levels,
+  .org-chart__row { list-style: none; margin: 0; padding: 0; }
+  .org-chart__levels { display: grid; gap: var(--org-chart-gap); }
+  .org-chart__level { position: relative; }
+  /* Vertical connector from each row up to the row above. */
+  .org-chart__level + .org-chart__level::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: calc(var(--org-chart-gap) * -1);
+    height: var(--org-chart-gap);
+    border-left: 2px solid var(--org-chart-line);
+  }
+  .org-chart__row {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .org-chart__node {
+    flex: 0 1 18rem;
+    display: grid;
+    justify-items: center;
+    gap: 0.25rem;
+    padding: 1rem 1.1rem;
+    text-align: center;
+    border: 1px solid var(--org-chart-border);
+    border-radius: 14px;
+    background: var(--org-chart-card);
+  }
+  .org-chart__node--top { flex-basis: 20rem; }
+  .org-chart__photo {
+    display: block;
+    width: 7rem;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 0.5rem;
+    border: 2px solid var(--org-chart-border);
+  }
+  .org-chart__node--top .org-chart__photo { width: 11rem; }
+  .org-chart__name {
+    margin: 0;
+    font-family: var(--org-chart-font-title);
+    font-weight: 800;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    color: var(--org-chart-accent);
+  }
+  .org-chart__node--top .org-chart__name { font-size: 1.6rem; }
+  .org-chart__subtitle {
+    margin: 0;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--org-chart-muted);
+  }
+  .org-chart__text { margin: 0.35rem 0 0; font-size: 0.95rem; line-height: 1.5; }
+</style>
