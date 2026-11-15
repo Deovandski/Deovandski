@@ -1,0 +1,208 @@
+---
+/**
+ * LedClock: a countdown that looks like an old red LED clock (years, days, hours, minutes, seconds).
+ *
+ * Reusable on purpose: one file plus the font in ./fonts/, no site CSS needed, and safe to use
+ * several times on a page. Copy this file and the fonts/ folder into any Astro project.
+ * See README.md in this folder.
+ *
+ *   <LedClock
+ *     target="2076-03-09T03:39:39-05:00"
+ *     label="Time left until March 9, 2076, 3:39:39 AM Central"
+ *     caption="Counting down to March 9, 2076, at 3:39:39 AM."
+ *     expired="Time's up!"
+ *     preview="deathclock"
+ *   />
+ *
+ * At zero the digits blink and `expired` replaces the caption. With `preview="deathclock"`,
+ * adding ?deathclock=0 to the page URL shows the zero state on any day.
+ */
+interface Props {
+  /** The moment to count down to, as an ISO date with its UTC offset. */
+  target: string;
+  /** What screen readers announce for the clock. */
+  label: string;
+  /** Line under the clock. */
+  caption?: string;
+  /** Message shown instead of the caption once the clock hits zero. */
+  expired?: string;
+  /** Name of a URL parameter that previews the zero state when set to 0 (e.g. "deathclock"). */
+  preview?: string;
+  /** Extra class for the outer element. */
+  class?: string;
+}
+
+const { target, label, caption, expired, preview, class: className } = Astro.props;
+
+const units = [
+  { key: 'y', label: 'Years', width: 2 },
+  { key: 'd', label: 'Days', width: 3 },
+  { key: 'h', label: 'Hours', width: 2 },
+  { key: 'm', label: 'Min', width: 2 },
+  { key: 's', label: 'Sec', width: 2 },
+];
+---
+
+<figure class:list={['led-clock', className]} data-led-clock data-target={target} data-preview={preview}>
+  <div class="led-clock__face" role="timer" aria-label={label}>
+    {
+      units.map((u, i) => (
+        <>
+          {i > 0 && <span class="led-clock__colon" aria-hidden="true">:</span>}
+          <div class="led-clock__unit">
+            <span class="led-clock__digits">
+              <span class="led-clock__ghost" aria-hidden="true">{'8'.repeat(u.width)}</span>
+              <span class="led-clock__value" data-unit={u.key} data-width={u.width}>{'-'.repeat(u.width)}</span>
+            </span>
+            <span class="led-clock__label">{u.label}</span>
+          </div>
+        </>
+      ))
+    }
+  </div>
+  {caption && <figcaption class="led-clock__caption">{caption}</figcaption>}
+  {expired && <p class="led-clock__expired" hidden role="status">{expired}</p>}
+</figure>
+
+<style>
+  @font-face {
+    font-family: 'DSEG7 Classic';
+    src: url('./fonts/DSEG7Classic-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-display: swap;
+  }
+
+  /* Themed with custom properties: .my-clock { --led-clock-ink: #39ff14; } */
+  .led-clock {
+    --led-clock-ink: #ff2b2b;
+    --led-clock-glow: rgba(255, 30, 30, 0.85);
+    --led-clock-size: clamp(1.9rem, 6.5vw, 3.6rem);
+    margin: 0 0 2rem;
+  }
+  .led-clock__face {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.4rem 0.5rem;
+    padding: 1.4rem 1.25rem 1.1rem;
+    border-radius: 18px;
+    background:
+      radial-gradient(120% 140% at 50% 0%, rgba(255, 40, 40, 0.08), transparent 60%),
+      linear-gradient(180deg, #160606 0%, #0b0303 100%);
+    border: 1px solid rgba(255, 70, 70, 0.35);
+    box-shadow:
+      inset 0 2px 12px rgba(0, 0, 0, 0.9),
+      inset 0 0 0 6px #1d0b0b,
+      0 0 40px rgba(255, 40, 40, 0.18);
+  }
+  .led-clock__unit { display: grid; justify-items: center; gap: 0.35rem; }
+  .led-clock__digits { position: relative; display: inline-block; line-height: 1; }
+  .led-clock__ghost,
+  .led-clock__value {
+    font-family: 'DSEG7 Classic', ui-monospace, monospace;
+    font-weight: 700;
+    font-size: var(--led-clock-size);
+    letter-spacing: 0.04em;
+  }
+  .led-clock__ghost { color: rgba(255, 50, 50, 0.08); }
+  .led-clock__value {
+    position: absolute;
+    inset: 0 0 auto auto;
+    color: var(--led-clock-ink);
+    text-shadow: 0 0 6px var(--led-clock-glow), 0 0 22px rgba(255, 30, 30, 0.45);
+  }
+  .led-clock__colon {
+    font-family: 'DSEG7 Classic', ui-monospace, monospace;
+    font-size: var(--led-clock-size);
+    line-height: 1;
+    color: var(--led-clock-ink);
+    text-shadow: 0 0 8px rgba(255, 30, 30, 0.7);
+    animation: led-clock-blink 1s steps(1) infinite;
+  }
+  .led-clock__label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255, 120, 120, 0.75);
+  }
+  .led-clock__caption { margin-top: 0.6rem; text-align: center; color: var(--muted, #9aa3ad); font-size: var(--step--1, 0.85rem); }
+  @keyframes led-clock-blink { 50% { opacity: 0.25; } }
+
+  /* Time's up: the digits blink and the message replaces the caption. */
+  .led-clock--expired .led-clock__value,
+  .led-clock--expired .led-clock__colon { animation: led-clock-expired 1s steps(1) infinite; }
+  @keyframes led-clock-expired { 50% { opacity: 0.12; } }
+  .led-clock__expired {
+    margin: 0.9rem auto 0;
+    max-width: 40rem;
+    text-align: center;
+    font-family: var(--font-display, inherit);
+    font-weight: 800;
+    font-size: var(--step-1, 1.2rem);
+    line-height: 1.35;
+    color: #ff4d4d;
+    text-shadow: 0 0 14px rgba(255, 40, 40, 0.45);
+  }
+  .led-clock__expired[hidden] { display: none; }
+  @media (prefers-reduced-motion: reduce) {
+    .led-clock__colon,
+    .led-clock--expired .led-clock__value,
+    .led-clock--expired .led-clock__colon { animation: none; }
+  }
+  @media (max-width: 560px) {
+    .led-clock__face { gap: 0.6rem 0.35rem; padding: 1.1rem 0.6rem 0.9rem; }
+    .led-clock__colon { display: none; }
+  }
+</style>
+
+<script>
+  // Calendar-accurate countdown: whole years first, then days, hours, minutes, seconds.
+  // Every <LedClock> on the page runs on its own.
+  document.querySelectorAll<HTMLElement>('[data-led-clock]').forEach((clock) => {
+    const param = clock.dataset.preview;
+    const previewZero = !!param && new URLSearchParams(location.search).get(param) === '0';
+    const target = previewZero ? Date.now() - 1000 : new Date(clock.dataset.target!).getTime();
+    let timer = 0;
+    const cells = Object.fromEntries(
+      Array.from(clock.querySelectorAll<HTMLElement>('[data-unit]')).map((el) => [el.dataset.unit!, el]),
+    );
+    const pad = (n: number, w: number) => String(Math.max(0, n)).padStart(w, '0');
+
+    const expire = () => {
+      for (const el of Object.values(cells)) el.textContent = '0'.repeat(Number(el.dataset.width));
+      clock.classList.add('led-clock--expired');
+      const caption = clock.querySelector<HTMLElement>('.led-clock__caption');
+      const message = clock.querySelector<HTMLElement>('.led-clock__expired');
+      if (caption && message) caption.hidden = true;
+      if (message) message.hidden = false;
+      window.clearInterval(timer);
+    };
+
+    const tick = () => {
+      if (Date.now() >= target) return expire();
+      const now = new Date();
+      let years = 0;
+      const anniversary = (y: number) => {
+        const d = new Date(now);
+        d.setFullYear(now.getFullYear() + y);
+        return d.getTime();
+      };
+      while (anniversary(years + 1) <= target) years++;
+      let rest = Math.max(0, target - anniversary(years));
+      const day = 86_400_000;
+      const days = Math.floor(rest / day);
+      rest -= days * day;
+      const hours = Math.floor(rest / 3_600_000);
+      rest -= hours * 3_600_000;
+      const minutes = Math.floor(rest / 60_000);
+      rest -= minutes * 60_000;
+      const seconds = Math.floor(rest / 1000);
+      const values: Record<string, number> = { y: years, d: days, h: hours, m: minutes, s: seconds };
+      for (const [key, el] of Object.entries(cells)) el.textContent = pad(values[key], Number(el.dataset.width));
+    };
+    timer = window.setInterval(tick, 1000);
+    tick();
+  });
+</script>
