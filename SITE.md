@@ -9,7 +9,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 |---|---|
 | Home page facets (Dev, Author, Influencer) | `src/pages/index.astro` |
 | Facet tree (which branch each facet sits in, the order, branch blurbs) | `facets` and `branches` near the top of `src/pages/index.astro`; the build stops if a facet is missing, listed twice, or a branch has more than 6 |
-| Family tab (text + photos) | `content/family/_intro.md`, photos in `content/family/` (see its README) |
+| Family tab (header photos, text, Itaituba → Fargo map, photos) | `content/family/_intro.md`, header photos in `content/family/header/`, photos in `content/family/` (see its README); layout and map in `src/components/FamilyFacet.astro` |
 | Aviation tab (text + YouTube video) | `content/aviation.md`; video id in `src/pages/index.astro` (`panel-aviation`) |
 | Mentor tab | `content/mentor.md` (plain Markdown) |
 | Death tab (countdown clock + text) | `content/death.md`; clock target in `src/components/DeathFacet.astro` (`TARGET`); the clock itself is the reusable `src/components/reusable/LedClock.astro` |
@@ -25,7 +25,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Drummer tab (a backlog note for now) | `src/pages/index.astro` (`panel-drummer`) |
 | Board Games tab (one picture + story per card, like D&D) | `content/boardgames.md`, pictures in `content/boardgames/<card>/` |
 | MTG tab (Magic: The Gathering; Win vs Loss split-flap score card, then one picture + story per card, like D&D) | `content/mtg.md` (`Wins:` and `Losses:` lines set the score card), pictures in `content/mtg/<card>/` |
-| Reusable components (split-flap board, LED clock, icon meter, org chart), built to copy into other projects | `src/components/reusable/` (see its README and the rule in CLAUDE.md) |
+| Reusable components (split-flap board, LED clock, icon meter, org chart, route map), built to copy into other projects | `src/components/reusable/` (see its README and the rule in CLAUDE.md) |
 | Concert tab (Seen live, plus a Wishlist behind a switch) | `content/concerts.md` and `content/concerts-wishlist.md`, band images in `content/concerts/bands/` |
 | BOTW tab (Best of the Worst picks) | `content/botw.md` |
 | D&D tab (one picture + story per campaign) | `content/dnd.md`, pictures in `content/dnd/<campaign>/` |

@@ -11,6 +11,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [LedClock.astro](LedClock.astro) + [fonts/](fonts/) | Countdown in red LED digits: years, days, hours, minutes, seconds. It blinks and shows a message at zero. | Death tab |
 | [IconMeter.astro](IconMeter.astro) | A quantity shown as a row of icons, with the last one partly filled (650 lb ÷ 500 lb per cow = 1.3 cows). | Churrasco tab (cow-meter) |
 | [OrgChart.astro](OrgChart.astro) | A top-down organization chart. Each row of people or roles is joined to the row above, with optional portraits. | Churrasco tab (The Holy Order) |
+| [RouteMap.astro](RouteMap.astro) | A map that joins places with a curved great-circle line, kept inside the area you choose, with pinch and button zoom. Leaflet plus your own outline file: no API key, no tile server, no tracking. | Family tab (Itaituba → Fargo) |
 
 ## SplitFlap
 
@@ -109,6 +110,37 @@ The icons fill in the first time the meter scrolls into view. Theme it with `--i
 
 Theme it with `--org-chart-line`, `--org-chart-card`, `--org-chart-border`, `--org-chart-ink`,
 `--org-chart-accent`, `--org-chart-muted`, `--org-chart-font-title` and `--org-chart-gap`.
+
+## RouteMap
+
+```astro
+<RouteMap
+  outlines={url('/world.json')}
+  points={[
+    { name: 'Itaituba, Pará', lat: -4.2761, lng: -55.9836 },
+    { name: 'Fargo, North Dakota', lat: 46.8772, lng: -96.7898 },
+  ]}
+  bounds={[[-56, -128], [62, -32]]}
+  label="Map: from Itaituba, Pará, Brazil, to Fargo, North Dakota, USA"
+/>
+```
+
+| Prop | Default | |
+|---|---|---|
+| `outlines` | (required) | URL of a GeoJSON file of country or land outlines. This site serves Natural Earth at `/world.json` (`src/pages/world.json.ts`). |
+| `points` | (required) | The places in order, `{ name, lat, lng }`. Each pair is joined by a curved line. |
+| `bounds` | (required) | The area to show and stay inside: `[[south, west], [north, east]]`. You can't zoom out past it. |
+| `label` | (required) | What screen readers hear. The place names are listed for them too. |
+| `caption` | none | Line under the map. |
+| `height` | tall box | CSS height of the map. Set the width with the element around it. |
+| `attribution` | `"Outlines: Natural Earth"` | Credit in the corner. |
+| `class` | none | Extra class. |
+
+Needs `leaflet` from npm. The map builds itself the first time it's visible, so it works inside
+hidden tabs. Scroll-wheel zoom turns on only after a click, so it never takes over page scrolling;
+pinch and the +/− buttons always work. Theme it with `--route-map-sea`, `--route-map-land`,
+`--route-map-border`, `--route-map-line`, `--route-map-pin`, `--route-map-label-bg` and
+`--route-map-label-ink`.
 
 ## Copying a component into another repo
 
