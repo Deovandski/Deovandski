@@ -27,7 +27,8 @@ Wake up at 6am, drink coffee, poop, bathe, hit the gym, then head home to let Pe
 - Made the gym a place of zen for the body.
   - Made friends there.
   - It's a safe space for me to stim, like dancing or making hand motions when I'm jamming to a song.
-- Started going in the mornings, at 6:30am. I had no idea that would turn out to be the best time.
+- Started going in the mornings, at 6:30am.
+  - I had no idea that would turn out to be the best time. I always thought I was a 7pm gym type of guy, but I was proven wrong. Or, better said: the masked Deo who died was the one going at 7pm and hating anything gym-related in the morning.
 
 ## Now
 
