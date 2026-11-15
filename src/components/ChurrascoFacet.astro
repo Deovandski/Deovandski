@@ -1,0 +1,286 @@
+---
+import '@fontsource/unifrakturmaguntia';
+import '@fontsource/im-fell-english';
+import '@fontsource/im-fell-english/400-italic.css';
+import { Image } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+import church from '../../content/churrasco/church.json';
+import SplitFlap from './reusable/SplitFlap.astro';
+import IconMeter from './reusable/IconMeter.astro';
+import OrgChart, { type OrgNode } from './reusable/OrgChart.astro';
+
+// The Church of Churrasco. All text and numbers live in content/churrasco/church.json.
+const photos = import.meta.glob<ImageMetadata>('/content/churrasco/**/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}', {
+  eager: true,
+  import: 'default',
+});
+const photo = (stem: string) => Object.entries(photos).find(([p]) => p.split('/').pop()!.replace(/\.[^.]+$/, '') === stem)?.[1];
+
+// **bold** and *italic* only; everything else is shown as written.
+const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const md = (t: string) => esc(t).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\*(.+?)\*/g, '<em>$1</em>');
+
+const { decree, hierarchy, scripture, poundsGrilled, poundsPerCow } = church;
+const levels: OrgNode[][] = hierarchy.levels.map((l) => [
+  { title: l.title, subtitle: l.subtitle, text: l.text, image: l.image ? photo(l.image) : undefined, imageAlt: l.imageAlt },
+]);
+const steps = scripture.steps.map((s, i) => ({ ...s, n: i + 1, image: photo(`step-${i + 1}`) }));
+const roman = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
+---
+
+<div class="church">
+  <section class="church__counters" aria-label="Beef grilled so far">
+    <SplitFlap value={poundsGrilled} label="Pounds of beef grilled" size="lg" separator="," class="church__flap" />
+    <IconMeter
+      value={poundsGrilled}
+      per={poundsPerCow}
+      icon="🐄"
+      unit="cow has become food"
+      units="cows have become food"
+      label="Cow-meter"
+      note={`At about ${poundsPerCow} lb of take-home beef per cow.`}
+      class="church__cows"
+    />
+  </section>
+
+  <section class="parchment decree" aria-labelledby="church-decree">
+    <p class="parchment__cross" aria-hidden="true">✠</p>
+    <h3 class="parchment__title" id="church-decree">{decree.title}</h3>
+    <blockquote class="decree__text">
+      <p set:html={md(decree.text)} />
+      <footer>✠ {decree.signature} ✠</footer>
+    </blockquote>
+  </section>
+
+  <section class="parchment hierarchy" aria-labelledby="church-hierarchy">
+    <h3 class="parchment__title" id="church-hierarchy">{hierarchy.title}</h3>
+    <p class="parchment__intro">{hierarchy.intro}</p>
+    <OrgChart levels={levels} title={hierarchy.title} class="hierarchy__chart" />
+  </section>
+
+  <div class="church__export">
+    <button type="button" class="church__pdf" data-church-pdf>Export the Scripture to PDF ✠</button>
+    <p class="church__export-note">Opens your browser's print window. Pick "Save as PDF".</p>
+  </div>
+
+  <article class="parchment scripture" id="churrasco-scripture" aria-labelledby="church-scripture">
+    <header class="scripture__head">
+      <p class="parchment__cross" aria-hidden="true">✠</p>
+      <h3 class="parchment__title" id="church-scripture">{scripture.title}</h3>
+      <p class="scripture__subtitle">{scripture.subtitle}</p>
+    </header>
+    <ol class="scripture__steps">
+      {
+        steps.map((s) => (
+          <li class:list={['step', { 'step--no-photo': !s.image }]}>
+            <div class="step__body">
+              <h4 class="step__title">
+                <span class="step__num">{roman[s.n - 1] ?? s.n}.</span> {s.title}
+              </h4>
+              {s.text.map((p) => <p set:html={md(p)} />)}
+            </div>
+            {s.image ? (
+              <Image class="step__photo" src={s.image} alt={`Step ${s.n}: ${s.title}`} widths={[320, 640]} sizes="(max-width: 720px) 100vw, 280px" />
+            ) : (
+              <div class="step__slot" aria-hidden="true"><span>Photo coming soon</span></div>
+            )}
+          </li>
+        ))
+      }
+    </ol>
+    <p class="scripture__amen" aria-hidden="true">✠ Amen ✠</p>
+  </article>
+</div>
+
+<style>
+  .church { --ink: #3a2614; --rubric: #8e1b12; --parch: #f2e3bf; --parch-2: #e6d09d; display: grid; gap: 2rem; }
+
+  .church__counters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem 3rem;
+    padding: 1.4rem 1rem;
+    border-radius: 18px;
+    background: linear-gradient(180deg, #0d0f14 0%, #07080b 100%);
+    border: 1px solid rgba(190, 200, 209, 0.18);
+  }
+  .church__counters :global(.church__flap) { --split-flap-label: var(--teal); }
+  .church__counters :global(.church__cows) { --icon-meter-accent: var(--teal); --icon-meter-muted: var(--muted); }
+
+  /* Parchment pages in the style of an old tome. */
+  .parchment {
+    position: relative;
+    padding: clamp(1.4rem, 4vw, 2.6rem) clamp(1.1rem, 4vw, 2.8rem);
+    color: var(--ink);
+    font-family: 'IM Fell English', Georgia, 'Times New Roman', serif;
+    font-size: 1.12rem;
+    line-height: 1.6;
+    border-radius: 6px;
+    background:
+      radial-gradient(120% 90% at 50% 40%, transparent 55%, rgba(120, 72, 20, 0.35) 100%),
+      radial-gradient(circle at 18% 22%, rgba(160, 110, 40, 0.06) 0 5%, transparent 9%),
+      radial-gradient(circle at 82% 70%, rgba(160, 110, 40, 0.05) 0 4%, transparent 7%),
+      linear-gradient(180deg, var(--parch) 0%, var(--parch-2) 100%);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45), inset 0 0 0 6px rgba(120, 72, 20, 0.12);
+    outline: 2px solid rgba(90, 50, 15, 0.55);
+    outline-offset: -14px;
+  }
+  .parchment__cross { margin: 0; text-align: center; font-size: 2rem; line-height: 1; color: var(--rubric); }
+  .parchment__title {
+    margin: 0.2rem 0 0.8rem;
+    text-align: center;
+    font-family: 'UnifrakturMaguntia', 'Old English Text MT', serif;
+    font-weight: 400;
+    font-size: clamp(2rem, 6vw, 3rem);
+    line-height: 1.1;
+    color: var(--rubric);
+  }
+  .parchment__intro { text-align: center; font-style: italic; margin: 0 auto 1.5rem; max-width: 36rem; }
+  .parchment :global(strong) { color: var(--rubric); }
+
+  .decree__text { margin: 0 auto; max-width: 40rem; }
+  .decree__text p { margin: 0; font-size: clamp(1.2rem, 3vw, 1.45rem); line-height: 1.55; }
+  .decree__text p::first-letter {
+    float: left;
+    margin: 0.08em 0.12em 0 0;
+    font-family: 'UnifrakturMaguntia', serif;
+    font-size: 3.6em;
+    line-height: 0.8;
+    color: var(--rubric);
+  }
+  .decree__text footer { margin-top: 1.2rem; text-align: right; font-style: italic; color: var(--rubric); }
+
+  .hierarchy :global(.hierarchy__chart) {
+    --org-chart-line: rgba(90, 50, 15, 0.6);
+    --org-chart-card: rgba(255, 248, 225, 0.55);
+    --org-chart-border: rgba(90, 50, 15, 0.45);
+    --org-chart-accent: var(--rubric);
+    --org-chart-muted: #6b4a2a;
+    --org-chart-font-title: 'UnifrakturMaguntia', serif;
+  }
+  .hierarchy :global(.org-chart__name) { font-weight: 400; font-size: 1.6rem; }
+  .hierarchy :global(.org-chart__node--top .org-chart__name) { font-size: 2.1rem; }
+
+  .church__export { display: grid; justify-items: center; gap: 0.35rem; }
+  .church__pdf {
+    font: inherit;
+    font-weight: 800;
+    color: var(--text);
+    cursor: pointer;
+    padding: 0.65rem 1.4rem;
+    border-radius: 999px;
+    border: 1px solid #c9a55a;
+    background: linear-gradient(180deg, rgba(201, 165, 90, 0.3), rgba(142, 27, 18, 0.35));
+    box-shadow: 0 0 24px rgba(201, 165, 90, 0.2);
+  }
+  .church__pdf:hover,
+  .church__pdf:focus-visible { background: linear-gradient(180deg, rgba(201, 165, 90, 0.45), rgba(142, 27, 18, 0.5)); }
+  .church__export-note { margin: 0; color: var(--muted); font-size: var(--step--1); }
+
+  .scripture__head { text-align: center; margin-bottom: 1.5rem; }
+  .scripture__subtitle { margin: 0 auto; max-width: none; text-align: center; font-style: italic; }
+  .scripture__steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.6rem; }
+  .step {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 16rem;
+    gap: 1.2rem;
+    align-items: start;
+    padding-top: 1.4rem;
+    border-top: 1px solid rgba(90, 50, 15, 0.3);
+  }
+  .step__title {
+    margin: 0 0 0.5rem;
+    font-family: 'UnifrakturMaguntia', serif;
+    font-weight: 400;
+    font-size: 1.7rem;
+    line-height: 1.15;
+    color: var(--ink);
+  }
+  .step__num { color: var(--rubric); }
+  .step__body p { margin: 0 0 0.6rem; }
+  .step__photo,
+  .step__slot {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 6px;
+    border: 3px double rgba(90, 50, 15, 0.6);
+  }
+  .step__photo { display: block; height: auto; object-fit: cover; filter: sepia(0.15); }
+  .step__slot {
+    display: grid;
+    place-items: center;
+    background: rgba(120, 72, 20, 0.08);
+    color: #6b4a2a;
+    font-style: italic;
+    font-size: 0.95rem;
+  }
+  .scripture__amen {
+    margin: 1.8rem 0 0;
+    text-align: center;
+    font-family: 'UnifrakturMaguntia', serif;
+    font-size: 1.8rem;
+    color: var(--rubric);
+  }
+
+  @media (max-width: 720px) {
+    .step { grid-template-columns: minmax(0, 1fr); }
+    .step__photo, .step__slot { max-width: 22rem; }
+  }
+
+  /* Export: print only the Scripture, on plain paper. The script copies it into #church-print. */
+  @media print {
+    :global(html.printing-scripture), :global(html.printing-scripture body) { background: #fff !important; }
+    :global(html.printing-scripture body > *:not(#church-print)) { display: none !important; }
+    :global(#church-print) { padding: 0; }
+    :global(#church-print .parchment) {
+      box-shadow: none;
+      background: #fffaf0;
+      font-size: 11.5pt;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    :global(#church-print .step) { break-inside: avoid; grid-template-columns: minmax(0, 1fr) 5.5cm; }
+    :global(#church-print .step__slot) { display: none; }
+    :global(#church-print .step--no-photo) { grid-template-columns: minmax(0, 1fr); }
+  }
+  :global(#church-print) { display: none; }
+  @media print { :global(html.printing-scripture #church-print) { display: block; } }
+</style>
+
+<script>
+  // "Export to PDF": print just the Scripture. The browser's print window can save it as a PDF.
+  // A copy of the Scripture goes into #church-print (a direct child of <body>) so nothing else
+  // on the page takes up room in the printout.
+  document.querySelectorAll<HTMLButtonElement>('[data-church-pdf]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const church = btn.closest<HTMLElement>('.church');
+      const scripture = church?.querySelector<HTMLElement>('#churrasco-scripture');
+      if (!church || !scripture) return;
+      document.getElementById('church-print')?.remove();
+      const wrap = church.cloneNode(false) as HTMLElement; // keeps the class and Astro's style scope
+      wrap.id = 'church-print';
+      const copy = scripture.cloneNode(true) as HTMLElement;
+      copy.removeAttribute('id');
+      copy.querySelectorAll('img').forEach((img) => img.setAttribute('loading', 'eager'));
+      wrap.append(copy);
+      document.body.append(wrap);
+      const html = document.documentElement;
+      html.classList.add('printing-scripture');
+      window.addEventListener(
+        'afterprint',
+        () => {
+          html.classList.remove('printing-scripture');
+          wrap.remove();
+        },
+        { once: true },
+      );
+      // Give the copied photos a moment to be ready before the print window opens.
+      const imgs = Array.from(copy.querySelectorAll('img'));
+      Promise.all(imgs.map((i) => (i.complete ? null : new Promise((r) => i.addEventListener('load', r, { once: true }))))).then(() =>
+        window.print(),
+      );
+    });
+  });
+</script>

@@ -9,6 +9,8 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 |---|---|---|
 | [SplitFlap.astro](SplitFlap.astro) | Split-flap (Solari board) display for a number or short word. It flips into place the first time it scrolls into view. | MTG tab (Win vs Loss) |
 | [LedClock.astro](LedClock.astro) + [fonts/](fonts/) | Countdown in red LED digits: years, days, hours, minutes, seconds. It blinks and shows a message at zero. | Death tab |
+| [IconMeter.astro](IconMeter.astro) | A quantity shown as a row of icons, with the last one partly filled (650 lb ÷ 500 lb per cow = 1.3 cows). | Churrasco tab (cow-meter) |
+| [OrgChart.astro](OrgChart.astro) | A top-down organization chart. Each row of people or roles is joined to the row above, with optional portraits. | Churrasco tab (The Holy Order) |
 
 ## SplitFlap
 
@@ -63,6 +65,50 @@ import LedClock from './reusable/LedClock.astro';
 Theme it from outside with `--led-clock-ink`, `--led-clock-glow` and `--led-clock-size`. Copy the
 `fonts/` folder too: the clock needs DSEG7 Classic (SIL Open Font License, see
 [fonts/README.md](fonts/README.md)).
+
+## IconMeter
+
+```astro
+<IconMeter value={650} per={500} icon="🐄" unit="cow" units="cows" label="Cow-meter" />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `value` | (required) | The amount, e.g. pounds of beef. |
+| `per` | (required) | How much one icon stands for. |
+| `icon` | (required) | An emoji or single character. |
+| `unit` / `units` | (required) / `unit + "s"` | Names for the readout ("≈ 1.3 cows"). |
+| `label` | none | Small heading above the icons. |
+| `note` | none | Extra line under the readout. |
+| `decimals` | `1` | Decimal places in the readout. |
+| `maxIcons` | `40` | Most icons drawn; the readout still shows the full number. |
+| `class` | none | Extra class. |
+
+The icons fill in the first time the meter scrolls into view. Theme it with `--icon-meter-size`,
+`--icon-meter-ghost`, `--icon-meter-accent` and `--icon-meter-muted`.
+
+## OrgChart
+
+```astro
+<OrgChart
+  title="The team"
+  levels={[
+    [{ title: 'Ada', subtitle: 'Lead', text: 'Runs the show.', image: adaPhoto, imageAlt: 'Ada smiling' }],
+    [{ title: 'Grace', subtitle: 'Backend' }, { title: 'Linus', subtitle: 'Kernel' }],
+  ]}
+/>
+```
+
+| Prop | Default | |
+|---|---|---|
+| `levels` | (required) | Rows from the top down. Each row is a list of `{ title, subtitle?, text?, image?, imageAlt? }`. `image` is an imported image. |
+| `title` | none | Name of the chart, for screen readers (shown when `showTitle`). |
+| `showTitle` | `false` | Show the title above the chart. |
+| `inlineMarkdown` | `false` | Allow `**bold**` and `*italic*` in `text`. |
+| `class` | none | Extra class. |
+
+Theme it with `--org-chart-line`, `--org-chart-card`, `--org-chart-border`, `--org-chart-ink`,
+`--org-chart-accent`, `--org-chart-muted`, `--org-chart-font-title` and `--org-chart-gap`.
 
 ## Copying a component into another repo
 
