@@ -86,7 +86,8 @@ const influencerLinks: LinkItem[] = [
   { href: 'https://www.linkedin.com/in/deovandski', label: 'LinkedIn' },
 ];
 
-const tabs = [
+// Every facet (a tab of content). Where each one sits in the tree is decided by `branches` below.
+const facets = [
   { id: 'death', icon: '💀', label: 'Death' },
   { id: 'dev', icon: '💻', label: 'Dev' },
   { id: 'family', icon: '👨‍👩‍👦', label: 'Family' },
@@ -98,6 +99,7 @@ const tabs = [
   { id: 'traveler', icon: '🗺️', label: 'Traveler' },
   { id: 'fishing', icon: '🎣', label: 'Fishing' },
   { id: 'dnd', icon: '🎲', label: 'D&D' },
+  { id: 'boardgames', icon: '♟️', label: 'Board Games' },
   { id: 'camping', icon: '⛺', label: 'Camping' },
   { id: 'botw', icon: '📼', label: 'BOTW' },
   { id: 'multilingual', icon: '🗣️', label: 'Multilingual' },
@@ -115,9 +117,30 @@ const tabs = [
   { id: 'sex', icon: '😘', label: 'Sex' },
 ];
 
-// Alphabetical for visitors; 初音ミク sorts as "Hatsune Miku". No tab opens by default: visitors pick one.
-const sortKey = (t: { id: string; label: string }) => (t.id === 'miku' ? 'Hatsune Miku' : t.label).toLowerCase();
-tabs.sort((a, b) => sortKey(a).localeCompare(sortKey(b)));
+// The facet tree: Deo → branch → facet (two levels, no sub-facets). Order here is the order visitors see.
+// No facet opens by default: visitors grow a branch, then pick a facet.
+const branches = [
+  { id: 'philosophy', icon: '🧭', label: 'Philosophy', blurb: 'How Deo thinks: mortality, mentoring, discipline, desire and ink.', facets: ['death', 'mentor', 'gym', 'sex', 'tattoo'] },
+  { id: 'craft', icon: '💼', label: 'Craft', blurb: 'What Deo builds and ships.', facets: ['dev', 'pm'] },
+  { id: 'explorer', icon: '🌏', label: 'Explorer', blurb: 'Where Deo goes and the languages he speaks there.', facets: ['traveler', 'aviation', 'multilingual', 'camping', 'fishing'] },
+  { id: 'livearts', icon: '🎨', label: 'Live Arts', blurb: 'Stage, page and screen: drums, shows, stories, and the diva herself.', facets: ['drummer', 'concert', 'theater', 'author', 'influencer', 'miku'] },
+  { id: 'play', icon: '🕹️', label: 'Play', blurb: 'Games at the table and on the screen.', facets: ['gamer', 'dnd', 'boardgames'] },
+  { id: 'hearth', icon: '🏡', label: 'Hearth', blurb: 'Family, pets, the grill and the comfort shows, games and anime.', facets: ['family', 'pets', 'churrasco', 'potato', 'botw', 'anime'] },
+];
+
+// Every facet must sit in exactly one branch, and a branch holds at most 6 (one row of the tree).
+{
+  const placed = branches.flatMap((b) => b.facets);
+  const missing = facets.filter((f) => !placed.includes(f.id)).map((f) => f.id);
+  const unknown = placed.filter((id) => !facets.some((f) => f.id === id));
+  const twice = placed.filter((id, i) => placed.indexOf(id) !== i);
+  const tooBig = branches.filter((b) => b.facets.length > 6).map((b) => b.id);
+  if (missing.length || unknown.length || twice.length || tooBig.length) {
+    throw new Error(`Facet tree: missing ${missing}, unknown ${unknown}, listed twice ${twice}, over 6 facets ${tooBig}`);
+  }
+}
+const facetById = new Map(facets.map((f) => [f.id, f]));
+const tree = branches.map((b) => ({ ...b, items: b.facets.map((id) => facetById.get(id)!) }));
 
 const games = loadRankedList('content/gaming/top39.md', 'Hours');
 const anime = loadRankedList('content/anime/top39.md');
@@ -161,30 +184,76 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
   <div class="facets">
     <h2 class="facets__title" id="facets-title">The facets that fulfill Deo</h2>
-    <div class="tabs" role="tablist" aria-labelledby="facets-title">
-      {
-        tabs.map((t, i) => (
-          <button
-            type="button"
-            role="tab"
-            id={`tab-${t.id}`}
-            aria-controls={`panel-${t.id}`}
-            aria-selected="false"
-            tabindex={i === 0 ? 0 : -1}
-            data-tab={t.id}
-          >
-            <span class="tabs__icon" aria-hidden="true">
-              {t.icon}
-            </span>
-            {t.label}
-          </button>
-        ))
-      }
+    <p class="facets__lede">Pick a branch to grow it, then a facet to dive in. Tap Deo to fold the tree back up.</p>
+    <nav class="tree" aria-labelledby="facets-title">
+      <div class="tree__root">
+        <button type="button" class="tree__node tree__node--root" data-root aria-label="Deo: fold the tree back up">
+          <span class="tree__disc" aria-hidden="true">D</span>
+          <span class="tree__label">Deo</span>
+        </button>
+      </div>
+      <div class="wire wire--root" aria-hidden="true">
+        <span class="wire__drop"></span><span class="wire__bus"></span><span class="wire__hl"></span>
+      </div>
+      <div class="tree__grid">
+        {
+          tree.map((b) => (
+            <Fragment>
+              <div class="tree__branch" data-branch-cell={b.id}>
+                <button
+                  type="button"
+                  class="tree__node tree__node--branch"
+                  id={`branch-${b.id}`}
+                  data-branch={b.id}
+                  data-blurb={b.blurb}
+                  aria-expanded="false"
+                  aria-controls={`branch-group-${b.id}`}
+                >
+                  <span class="tree__disc" aria-hidden="true">{b.icon}</span>
+                  <span class="tree__label">{b.label}</span>
+                  <span class="tree__count" data-count>{b.items.length} facets</span>
+                  <svg class="tree__chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
+                </button>
+              </div>
+              <div class="tree__group" id={`branch-group-${b.id}`} data-group={b.id} role="group" aria-labelledby={`branch-${b.id}`} hidden>
+                <div class="wire" aria-hidden="true">
+                  <span class="wire__drop"></span><span class="wire__bus"></span><span class="wire__hl"></span>
+                </div>
+                <div class="tree__row">
+                  {b.items.map((t, i) => (
+                    <div class="tree__leaf" style={`--i:${i}`}>
+                      <button
+                        type="button"
+                        class="tree__node tree__node--facet"
+                        id={`tab-${t.id}`}
+                        data-tab={t.id}
+                        data-icon={t.icon}
+                        aria-controls={`panel-${t.id}`}
+                        aria-pressed="false"
+                      >
+                        <span class="tree__disc" aria-hidden="true">{t.icon}</span>
+                        <span class="tree__label">{t.label}</span>
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Fragment>
+          ))
+        }
+      </div>
+    </nav>
+
+    <div class="facet-head" id="facet-head" hidden>
+      <nav class="crumbs" aria-label="Breadcrumb"><ol></ol></nav>
+      <h3 class="facet-head__title" aria-live="polite"><span class="facet-head__icon" aria-hidden="true"></span> <span class="facet-head__label"></span></h3>
+      <p class="facet-head__blurb" hidden></p>
+      <div class="facet-head__chips" hidden></div>
     </div>
 
-    <p class="pick" id="pick-hint">Pick a tab above to dive in.</p>
+    <p class="pick" id="pick-hint">Pick a branch above to grow the tree.</p>
 
-    <section class="panel" role="tabpanel" id="panel-dev" aria-labelledby="tab-dev" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-dev" aria-labelledby="tab-dev" tabindex="0" hidden>
       <div class="story">
         <p class="dev-headline">
           Senior Software Engineer, Dynamics 365 F&amp;O Architect, and Founder &amp; CEO of Wizard Deo Solutions.
@@ -208,7 +277,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       </div>
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-author" aria-labelledby="tab-author" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-author" aria-labelledby="tab-author" tabindex="0" hidden>
       <div class="story">
         <p>
           Yep. As crazy as it sounds, I'm also an author! It all started with the Vraki Writing System, such a cornerstone
@@ -230,7 +299,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       </div>
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-pm" aria-labelledby="tab-pm" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-pm" aria-labelledby="tab-pm" tabindex="0" hidden>
       <div class="story">
         <p>
           Project management isn't my job title, yet it shows up in almost every facet of my life: work, a light novel series, a
@@ -285,28 +354,28 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       </ul>
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-death" aria-labelledby="tab-death" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-death" aria-labelledby="tab-death" tabindex="0" hidden>
       <DeathFacet />
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-family" aria-labelledby="tab-family" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-family" aria-labelledby="tab-family" tabindex="0" hidden>
       <div class="story">
         <GalleryGrid gallery={family} name="family" captions empty="Family photos are on their way." />
       </div>
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-aviation" aria-labelledby="tab-aviation" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-aviation" aria-labelledby="tab-aviation" tabindex="0" hidden>
       <div class="story">
         <AviationText />
         <YouTube id="QprnoS8PatE" title="Capt. Deovandski – Flight Experience Singapore" />
       </div>
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-mentor" aria-labelledby="tab-mentor" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-mentor" aria-labelledby="tab-mentor" tabindex="0" hidden>
       <MentorFacet />
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-influencer" aria-labelledby="tab-influencer" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-influencer" aria-labelledby="tab-influencer" tabindex="0" hidden>
       <div class="story">
       <p>
         I was very active back in the day, getting ~15 million views… Focus on <em>was</em>, for there’s nothing left of it.
@@ -363,19 +432,19 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       </div>
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-traveler" aria-labelledby="tab-traveler" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-traveler" aria-labelledby="tab-traveler" tabindex="0" hidden>
       <TravelerFacet />
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-fishing" aria-labelledby="tab-fishing" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-fishing" aria-labelledby="tab-fishing" tabindex="0" hidden>
       <GalleryGrid gallery={fishing} name="fishing" captions empty="Fishing photos are on their way." />
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-dnd" aria-labelledby="tab-dnd" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-dnd" aria-labelledby="tab-dnd" tabindex="0" hidden>
       <Sections data={dnd} id="dnd" slots={1} empty="D&D adventures are on their way." photoAlt={(t) => `Party art for D&D ${t}`} />
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-botw" aria-labelledby="tab-botw" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-botw" aria-labelledby="tab-botw" tabindex="0" hidden>
       <div class="list-head">
         <div class="botw-intro">{botw.intro.map((para) => <p class="ranking-lede">{para}</p>)}</div>
         <a class="list-link" href="https://www.youtube.com/@RedLetterMedia">Red Letter Media on YouTube</a>
@@ -399,37 +468,43 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       }
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-camping" aria-labelledby="tab-camping" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-camping" aria-labelledby="tab-camping" tabindex="0" hidden>
       <Sections data={camping} id="camping" layout="cards" slots={2} empty="Campsites are on their way." photoAlt={(t) => `Camping at ${t}`} />
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-multilingual" aria-labelledby="tab-multilingual" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-multilingual" aria-labelledby="tab-multilingual" tabindex="0" hidden>
       <MultilingualFacet />
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-tattoo" aria-labelledby="tab-tattoo" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-tattoo" aria-labelledby="tab-tattoo" tabindex="0" hidden>
       <Sections data={tattoos} id="tattoo" photoAlt={(t) => `Tattoo on my ${t.toLowerCase()}`} />
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-gym" aria-labelledby="tab-gym" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-gym" aria-labelledby="tab-gym" tabindex="0" hidden>
       <GymFacet />
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-miku" aria-labelledby="tab-miku" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-miku" aria-labelledby="tab-miku" tabindex="0" hidden>
       <Sections data={mikuConcerts} id="miku" layout="cards" slots={2} titleAbove noDescription="Description coming soon." photoAlt={(t) => `Me at ${t}`} />
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-churrasco" aria-labelledby="tab-churrasco" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-churrasco" aria-labelledby="tab-churrasco" tabindex="0" hidden>
       <Sections data={churrasco} id="churrasco" layout="cards" slots={1} titleAbove noDescription="Description coming soon." empty="Churrasco stories are on their way." photoAlt={(t) => `Churrasco: ${t}`} />
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-drummer" aria-labelledby="tab-drummer" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-drummer" aria-labelledby="tab-drummer" tabindex="0" hidden>
       <div class="story">
         <p>This is a facet of my life that is on the backlog, as I am literally at max bandwidth having too much fun.</p>
       </div>
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-concert" aria-labelledby="tab-concert" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-boardgames" aria-labelledby="tab-boardgames" tabindex="0" hidden>
+      <div class="story">
+        <p>This is a facet of my life that is on the backlog, as I am literally at max bandwidth having too much fun.</p>
+      </div>
+    </section>
+
+    <section class="panel" role="region" id="panel-concert" aria-labelledby="tab-concert" tabindex="0" hidden>
       <div class="switch" role="tablist" aria-label="Seen live or wishlist">
         <button type="button" role="tab" id="concert-tab-seen" aria-controls="concert-seen" aria-selected="true" data-switch-hash="#concert">🤘 Seen live</button>
         <button type="button" role="tab" id="concert-tab-wishlist" aria-controls="concert-wishlist" aria-selected="false" tabindex="-1" data-switch-hash="#concert-wishlist">📝 Wishlist</button>
@@ -442,11 +517,11 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       </div>
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-theater" aria-labelledby="tab-theater" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-theater" aria-labelledby="tab-theater" tabindex="0" hidden>
       <Sections data={theater} id="theater" layout="cards" sortAlpha avatarsDir="content/theater/shows" photoAlt={(t) => `At ${t}`} />
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-gamer" aria-labelledby="tab-gamer" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-gamer" aria-labelledby="tab-gamer" tabindex="0" hidden>
       <Ranking items={games} unit="hours">
         <div class="list-head">
           <p class="ranking-lede">
@@ -457,7 +532,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       </Ranking>
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-anime" aria-labelledby="tab-anime" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-anime" aria-labelledby="tab-anime" tabindex="0" hidden>
       <Ranking items={anime}>
         <div class="list-head">
           <p class="ranking-lede">My top 39 favorite anime, ranked, and what each one means to me.</p>
@@ -466,7 +541,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       </Ranking>
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-potato" aria-labelledby="tab-potato" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-potato" aria-labelledby="tab-potato" tabindex="0" hidden>
       <div class="switch" role="tablist" aria-label="TV shows or movies">
         <button type="button" role="tab" id="potato-tab-tv" aria-controls="potato-tv" aria-selected="true" data-switch-hash="#potato">📺 TV shows</button>
         <button type="button" role="tab" id="potato-tab-movies" aria-controls="potato-movies" aria-selected="false" tabindex="-1" data-switch-hash="#potato-movies">🎬 Movies</button>
@@ -483,16 +558,16 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       </div>
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-pets" aria-labelledby="tab-pets" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-pets" aria-labelledby="tab-pets" tabindex="0" hidden>
       <PetsFacet />
     </section>
 
-    <section class="panel" role="tabpanel" id="panel-sex" aria-labelledby="tab-sex" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-sex" aria-labelledby="tab-sex" tabindex="0" hidden>
       <SexFacet />
     </section>
   </div>
 
-  <noscript><style>.panel[hidden] { display: block; } .tabs, .pick { display: none; }</style></noscript>
+  <noscript><style>.panel[hidden] { display: block; } .tree, .facets__lede, .facet-head, .pick { display: none; }</style></noscript>
 
   <dialog class="viewer" aria-label="Photo">
     <figure>
@@ -556,39 +631,115 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     font-size: var(--step-1);
     color: var(--silver);
   }
-  .tabs {
-    scroll-margin-top: 6rem; /* clear the sticky header when a tab link scrolls here */
+  .facets__lede { margin: 0.35rem 0 0; padding: 0 1.1rem; color: var(--muted); font-size: var(--step--1); }
+
+  /* Facet tree. Desktop: Deo on top, branches fan out in a row, the open branch grows a row of facets below it,
+     joined by "wires" the script positions (12-column grid, every node spans 2 columns, rows centered).
+     Phone (≤ 640px): the same markup becomes a vertical accordion. */
+  .tree { scroll-margin-top: 6rem; padding: 1.25rem 1rem 1.5rem; --wire: rgba(154, 168, 187, 0.35); }
+  .tree__root { display: flex; justify-content: center; }
+  .tree__node {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    padding: 0.85rem;
-    border-bottom: 1px solid rgba(57, 197, 187, 0.2);
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    min-width: 44px;
+    padding: 4px;
+    background: none;
+    border: 0;
+    border-radius: 14px;
+    color: var(--silver);
+    font: inherit;
+    cursor: pointer;
   }
-  .tabs button {
+  .tree__node:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; }
+  .tree__disc {
+    width: 64px;
+    height: 64px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    line-height: 1;
+    background: var(--night-2);
+    border: 2px solid var(--night-3);
+    transition: border-color 0.2s, background-color 0.2s, box-shadow 0.2s;
+  }
+  .tree__node:hover .tree__disc { border-color: rgba(57, 197, 187, 0.6); }
+  .tree__node--root .tree__disc {
+    width: 72px;
+    height: 72px;
+    border-color: var(--teal);
+    color: var(--teal);
+    font-family: var(--font-display);
+    font-weight: 800;
+    font-size: 1.9rem;
+  }
+  .tree__node--facet .tree__disc { width: 56px; height: 56px; font-size: 1.5rem; }
+  .tree__label { font-family: var(--font-display); font-weight: 800; font-size: var(--step-0); line-height: 1.25; text-align: center; }
+  .tree__node--facet .tree__label { font-size: var(--step--1); }
+  .tree__count { color: var(--muted); font-size: var(--step--1); }
+  .tree__chev { display: none; }
+  .tree__node[aria-expanded='true'], .tree__node[aria-pressed='true'] { color: var(--text); }
+  .tree__node[aria-expanded='true'] .tree__disc { border-color: var(--teal); background-color: rgba(57, 197, 187, 0.14); }
+  .tree__node[aria-pressed='true'] .tree__disc {
+    border-color: var(--pink);
+    background-color: rgba(225, 40, 133, 0.18);
+    box-shadow: 0 0 20px rgba(225, 40, 133, 0.35);
+  }
+
+  .wire { position: relative; height: 40px; }
+  .wire span { position: absolute; display: block; }
+  .wire__drop { top: 0; width: 2px; height: 20px; background: var(--teal); transform-origin: 50% 0; animation: grow-y 0.2s ease-out both; }
+  .wire--root .wire__drop { background: var(--wire); }
+  .tree.is-open .wire--root .wire__drop { background: var(--teal); }
+  .wire__bus { top: 19px; height: 2px; background: var(--wire); animation: grow-x 0.3s 0.18s ease-out both; }
+  .wire__hl { top: 19px; height: 2px; background: var(--teal); animation: grow-x 0.3s 0.18s ease-out both; transition: left 0.25s ease, width 0.25s ease; }
+  .wire :global(.wire__tick) { position: absolute; display: block; top: 20px; width: 2px; height: 20px; background: var(--wire); transform-origin: 50% 0; animation: grow-y 0.2s 0.42s ease-out both; transition: background-color 0.2s; }
+  .wire :global(.wire__tick.is-on) { background: var(--teal); }
+
+  .tree__grid, .tree__row { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); }
+  .tree__branch { grid-row: 1; display: flex; justify-content: center; padding: 0 4px; }
+  .tree__group { grid-row: 2; grid-column: 1 / -1; margin-top: 0.5rem; }
+  .tree__group[hidden] { display: none; }
+  .tree__leaf { display: flex; justify-content: center; padding: 0 4px; animation: pop-in 0.32s calc(var(--i) * 60ms + 0.45s) ease-out both; }
+
+  @keyframes grow-y { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+  @keyframes grow-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  @keyframes pop-in { from { opacity: 0; transform: translateY(-10px) scale(0.92); } to { opacity: 1; transform: none; } }
+
+  .facet-head { scroll-margin-top: 6rem; padding: clamp(1.25rem, 3vw, 2.25rem) clamp(1.25rem, 3vw, 2.25rem) 0; border-top: 1px solid rgba(57, 197, 187, 0.2); }
+  .facet-head[hidden], .facet-head [hidden] { display: none; }
+  .crumbs ol { list-style: none; display: flex; flex-wrap: wrap; align-items: center; margin: 0; padding: 0; color: var(--muted); font-size: var(--step--1); }
+  .crumbs :global(li + li)::before { content: '›'; padding: 0 0.35rem; }
+  .crumbs :global(button) { min-height: 44px; padding: 0 0.25rem; background: none; border: 0; color: var(--muted); font: inherit; cursor: pointer; }
+  .crumbs :global(button:hover) { color: var(--text); text-decoration: underline; }
+  .crumbs :global(button:focus-visible) { outline: 2px solid var(--teal); outline-offset: 2px; border-radius: 6px; }
+  .crumbs :global([aria-current]) { color: var(--text); font-weight: 700; }
+  .facet-head__title { margin: 0.1rem 0 0; font-size: var(--step-2); color: var(--text); }
+  .facet-head__blurb { margin: 0.5rem 0 0; color: var(--muted); max-width: var(--measure); }
+  .facet-head__chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.1rem; padding-bottom: clamp(1.25rem, 3vw, 2.25rem); }
+  .facet-head__chips :global(button) {
     display: inline-flex;
     align-items: center;
     gap: 0.45rem;
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: var(--step-0);
-    color: var(--silver);
-    background: rgba(7, 11, 31, 0.5);
-    border: 1px solid rgba(190, 200, 209, 0.18);
-    border-radius: 14px;
-    padding: 0.6rem 1rem;
+    min-height: 44px;
+    padding: 0 1rem;
+    border: 1px solid rgba(57, 197, 187, 0.55);
+    border-radius: 999px;
+    background: none;
+    color: var(--text);
+    font: inherit;
+    font-weight: 700;
     cursor: pointer;
   }
-  .tabs button:hover { color: var(--text); border-color: rgba(57, 197, 187, 0.5); }
-  .tabs button[aria-selected='true'] {
-    color: var(--night);
-    background: var(--teal);
-    border-color: var(--teal);
-    box-shadow: 0 0 24px rgba(57, 197, 187, 0.4);
-  }
-  .tabs__icon { font-size: 1.1em; line-height: 1; }
+  .facet-head__chips :global(button:hover) { background: rgba(57, 197, 187, 0.14); }
+  .facet-head__chips :global(button:focus-visible) { outline: 2px solid var(--teal); outline-offset: 2px; }
 
   .panel { padding: clamp(1.25rem, 3vw, 2.25rem); }
-  .pick { margin: 0; padding: clamp(1.25rem, 3vw, 2.25rem); color: var(--muted); }
+  .pick { margin: 0; padding: clamp(1.25rem, 3vw, 2.25rem); color: var(--muted); border-top: 1px solid rgba(57, 197, 187, 0.2); }
   .pick[hidden] { display: none; }
   .panel:focus-visible { outline-offset: -4px; }
   .panel > :last-child { margin-bottom: 0; }
@@ -750,40 +901,268 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
   }
   @media (max-width: 560px) {
     .facets__title { padding: 0.9rem 0.8rem 0; }
-    .tabs { gap: 0.4rem; padding: 0.6rem; }
-    .tabs button { flex: 1 1 auto; max-width: calc(50% - 0.2rem); justify-content: center; padding: 0.5rem 0.65rem; font-size: 0.8rem; white-space: nowrap; gap: 0.35rem; }
+    .facets__lede { padding: 0 0.8rem; }
+  }
+  @media (max-width: 640px) {
+    .tree { padding: 0.9rem 0.75rem 1rem; }
+    .tree__root, .wire { display: none; }
+    .tree__grid { display: flex; flex-direction: column; gap: 0.5rem; }
+    .tree__branch { padding: 0; }
+    .tree__node--branch, .tree__node--facet {
+      flex-direction: row;
+      width: 100%;
+      gap: 0.7rem;
+      padding: 0 0.9rem;
+      background: rgba(7, 11, 31, 0.5);
+      border: 1px solid rgba(190, 200, 209, 0.18);
+      transition: background-color 0.2s, border-color 0.2s;
+    }
+    .tree__node--branch { min-height: 56px; }
+    .tree__node--facet { min-height: 44px; border-radius: 12px; }
+    .tree__node .tree__disc,
+    .tree__node--facet .tree__disc { width: 1.75rem; height: auto; border: 0; background: none !important; box-shadow: none !important; font-size: 1.35rem; }
+    .tree__node--facet .tree__disc { font-size: 1.15rem; }
+    .tree__label { flex: 1 1 auto; text-align: left; }
+    .tree__node--facet .tree__label { font-size: var(--step-0); font-family: var(--font-body); font-weight: 400; }
+    .tree__chev { display: block; flex: 0 0 18px; color: var(--muted); transition: transform 0.2s; }
+    .tree__node[aria-expanded='true'] { border-color: var(--teal); background: rgba(57, 197, 187, 0.12); }
+    .tree__node[aria-expanded='true'] .tree__chev { transform: rotate(180deg); }
+    .tree__node[aria-pressed='true'] { border-color: var(--pink); background: rgba(225, 40, 133, 0.18); }
+    .tree__group { margin: 0 0 0.25rem 1.6rem; padding: 0.35rem 0; border-left: 2px solid var(--teal); transform-origin: 50% 0; animation: grow-y 0.22s ease-out both; }
+    .tree__row { display: flex; flex-direction: column; gap: 0.3rem; }
+    .tree__leaf { position: relative; padding: 0 0 0 14px; animation-delay: calc(var(--i) * 50ms + 0.1s); }
+    .tree__leaf::before { content: ''; position: absolute; left: 0; top: 50%; width: 14px; height: 2px; background: var(--wire); }
+    .tree__leaf:has([aria-pressed='true'])::before { background: var(--pink); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tree *, .tree__group { animation: none !important; transition: none !important; }
   }
 </style>
 
 <script>
-  // Tabs: click, arrow keys, and #dev / #author / ... links
-  // Tabs hidden for this visitor (see "Per-source visibility" in global.css) are skipped entirely.
-  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('.tabs [role="tab"]')).filter(
-    (t) => getComputedStyle(t).display !== 'none',
-  );
+  // Facet tree: Deo → branch → facet. Growing a branch shows its facets; opening a facet shows its panel below.
+  // Facets hidden for this visitor (see "Per-source visibility" in global.css) drop out of the tree entirely,
+  // and the rows re-center around what's left.
+  type Wire = { el: HTMLElement; hl: HTMLElement; ticks: HTMLElement[]; p: number; cs: number[] };
+  type Branch = { id: string; button: HTMLButtonElement; cell: HTMLElement; group: HTMLElement; facets: HTMLButtonElement[]; wire: Wire };
 
-  function select(tab: HTMLButtonElement, focus = false, updateHash = true) {
-    for (const t of tabs) {
-      const on = t === tab;
-      t.setAttribute('aria-selected', String(on));
-      t.tabIndex = on ? 0 : -1;
-      document.getElementById(t.getAttribute('aria-controls')!)!.hidden = !on;
-    }
-    document.getElementById('pick-hint')!.hidden = true;
-    document.dispatchEvent(new CustomEvent('tabchange', { detail: tab.getAttribute('aria-controls') }));
-    if (focus) tab.focus();
-    if (updateHash) history.replaceState(null, '', `#${tab.dataset.tab}`);
+  const treeEl = document.querySelector<HTMLElement>('.tree')!;
+  const rootButton = treeEl.querySelector<HTMLButtonElement>('[data-root]')!;
+  const head = document.getElementById('facet-head')!;
+  const hint = document.getElementById('pick-hint')!;
+  const crumbList = head.querySelector('.crumbs ol')!;
+  const headIcon = head.querySelector('.facet-head__icon')!;
+  const headLabel = head.querySelector('.facet-head__label')!;
+  const headBlurb = head.querySelector<HTMLElement>('.facet-head__blurb')!;
+  const headChips = head.querySelector<HTMLElement>('.facet-head__chips')!;
+  const phone = window.matchMedia('(max-width: 640px)');
+  const panelOf = (f: HTMLButtonElement) => document.getElementById(f.getAttribute('aria-controls')!)!;
+  const labelOf = (b: HTMLButtonElement) => b.querySelector('.tree__label')!.textContent!.trim();
+  const iconOf = (b: HTMLButtonElement) => b.querySelector('.tree__disc')!.textContent!.trim();
+
+  // Each row sits on a 12-column grid, every node spanning 2 columns, centered: a row of K starts at column 6 − K + 1.
+  // Node centers are then plain percentages of the row width, which is what the wires are drawn with.
+  const rowLayout = (k: number) =>
+    Array.from({ length: k }, (_, j) => {
+      const col = 6 - k + 2 * j + 1;
+      return { col, center: (col / 12) * 100 };
+    });
+
+  function wireUp(el: HTMLElement, p: number, cs: number[]): Wire {
+    const [drop, bus, hl] = ['wire__drop', 'wire__bus', 'wire__hl'].map((c) => el.querySelector<HTMLElement>(`.${c}`)!);
+    const left = Math.min(p, ...cs);
+    const right = Math.max(p, ...cs);
+    drop.style.left = `calc(${p}% - 1px)`;
+    bus.style.left = `${left}%`;
+    bus.style.width = `${right - left}%`;
+    bus.style.transformOrigin = `${right > left ? ((p - left) / (right - left)) * 100 : 50}% 50%`; // grows out of the parent
+    el.querySelectorAll('.wire__tick').forEach((t) => t.remove());
+    const ticks = cs.map((c) => {
+      const t = document.createElement('span');
+      t.className = 'wire__tick';
+      t.style.left = `calc(${c}% - 1px)`;
+      el.append(t);
+      return t;
+    });
+    const wire = { el, hl, ticks, p, cs };
+    light(wire, -1);
+    return wire;
   }
 
-  tabs.forEach((tab, i) => {
-    tab.addEventListener('click', () => select(tab));
-    tab.addEventListener('keydown', (e) => {
-      const keys: Record<string, number> = { ArrowRight: i + 1, ArrowLeft: i - 1, Home: 0, End: tabs.length - 1 };
-      if (!(e.key in keys)) return;
-      e.preventDefault();
-      select(tabs[(keys[e.key] + tabs.length) % tabs.length], true);
-    });
+  // Lights the path from the parent to child i (or nothing for -1).
+  function light(w: Wire, i: number) {
+    w.ticks.forEach((t, j) => t.classList.toggle('is-on', j === i));
+    if (i < 0) {
+      w.hl.style.display = 'none';
+      return;
+    }
+    const c = w.cs[i];
+    w.hl.style.display = '';
+    w.hl.style.left = `${Math.min(w.p, c)}%`;
+    w.hl.style.width = `${Math.abs(c - w.p)}%`;
+    w.hl.style.transformOrigin = c >= w.p ? '0% 50%' : '100% 50%';
+  }
+
+  const branches: Branch[] = [];
+  for (const button of treeEl.querySelectorAll<HTMLButtonElement>('[data-branch]')) {
+    const cell = button.closest<HTMLElement>('.tree__branch')!;
+    const group = document.getElementById(button.getAttribute('aria-controls')!)!;
+    const facets: HTMLButtonElement[] = [];
+    for (const f of group.querySelectorAll<HTMLButtonElement>('[data-tab]')) {
+      if (getComputedStyle(f).display === 'none') f.closest('.tree__leaf')!.remove();
+      else facets.push(f);
+    }
+    if (!facets.length) {
+      cell.remove();
+      group.remove();
+      continue;
+    }
+    button.querySelector('[data-count]')!.textContent = `${facets.length} ${facets.length === 1 ? 'facet' : 'facets'}`;
+    branches.push({ id: button.dataset.branch!, button, cell, group, facets, wire: null! });
+  }
+  const branchLayout = rowLayout(branches.length);
+  branches.forEach((b, i) => {
+    b.cell.style.gridColumn = `${branchLayout[i].col} / span 2`;
+    const facetLayout = rowLayout(b.facets.length);
+    b.facets.forEach((f, j) => (f.closest<HTMLElement>('.tree__leaf')!.style.gridColumn = `${facetLayout[j].col} / span 2`));
+    b.wire = wireUp(b.group.querySelector<HTMLElement>('.wire')!, branchLayout[i].center, facetLayout.map((x) => x.center));
   });
+  const rootWire = wireUp(treeEl.querySelector<HTMLElement>('.wire--root')!, 50, branchLayout.map((x) => x.center));
+  const allFacets = branches.flatMap((b) => b.facets);
+  const branchOf = (f: HTMLButtonElement) => branches.find((b) => b.facets.includes(f))!;
+
+  let openBranch: Branch | null = null;
+  let openFacet: HTMLButtonElement | null = null;
+
+  function setBranch(b: Branch | null) {
+    for (const x of branches) {
+      x.button.setAttribute('aria-expanded', String(x === b));
+      x.group.hidden = x !== b; // un-hiding replays the wire and pop-in animations
+    }
+    treeEl.classList.toggle('is-open', !!b);
+    light(rootWire, b ? branches.indexOf(b) : -1);
+    openBranch = b;
+  }
+
+  function setFacet(f: HTMLButtonElement | null) {
+    for (const x of allFacets) {
+      x.setAttribute('aria-pressed', String(x === f));
+      panelOf(x).hidden = x !== f;
+    }
+    if (openBranch) light(openBranch.wire, f ? openBranch.facets.indexOf(f) : -1);
+    openFacet = f;
+  }
+
+  const clearHash = () => {
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  };
+
+  function crumb(text: string, onClick?: () => void) {
+    const li = document.createElement('li');
+    const el = document.createElement(onClick ? 'button' : 'span');
+    el.textContent = text;
+    if (onClick) {
+      (el as HTMLButtonElement).type = 'button';
+      el.addEventListener('click', onClick);
+    } else el.setAttribute('aria-current', 'location');
+    li.append(el);
+    crumbList.append(li);
+  }
+
+  // The header above the panel: breadcrumb, title, and (with only a branch open) its blurb and a chip per facet.
+  function renderHead() {
+    hint.hidden = !!openBranch;
+    head.hidden = !openBranch;
+    if (!openBranch) return;
+    const b = openBranch;
+    crumbList.replaceChildren();
+    crumb('Deo', () => collapse(true));
+    const branchText = `${iconOf(b.button)} ${labelOf(b.button)}`;
+    if (openFacet) {
+      crumb(branchText, () => backToBranch());
+      crumb(`${iconOf(openFacet)} ${labelOf(openFacet)}`);
+    } else crumb(branchText);
+    const node = openFacet ?? b.button;
+    headIcon.textContent = iconOf(node);
+    headLabel.textContent = labelOf(node);
+    headBlurb.hidden = headChips.hidden = !!openFacet;
+    headBlurb.textContent = openFacet ? '' : b.button.dataset.blurb ?? '';
+    headChips.replaceChildren(
+      ...(openFacet
+        ? []
+        : b.facets.map((f) => {
+            const chip = document.createElement('button');
+            chip.type = 'button';
+            chip.innerHTML = '<span aria-hidden="true"></span>';
+            chip.firstElementChild!.textContent = iconOf(f);
+            chip.append(labelOf(f));
+            chip.addEventListener('click', () => openFacetFrom(f, 'user'));
+            return chip;
+          })),
+    );
+  }
+
+  function collapse(focusRoot = false) {
+    setFacet(null);
+    setBranch(null);
+    renderHead();
+    clearHash();
+    if (focusRoot) (phone.matches ? branches[0]?.button : rootButton)?.focus();
+  }
+
+  function growBranch(b: Branch) {
+    if (openBranch === b) return collapse();
+    setFacet(null);
+    setBranch(b);
+    renderHead();
+    clearHash();
+  }
+
+  function backToBranch() {
+    const b = openBranch;
+    setFacet(null);
+    renderHead();
+    clearHash();
+    b?.button.focus();
+  }
+
+  // Opens a facet's panel. `source` says whether a visitor picked it ('user') or a link did ('hash');
+  // SexFacet only counts the visitor's own picks.
+  function openFacetFrom(f: HTMLButtonElement, source: 'user' | 'hash') {
+    const b = branchOf(f);
+    if (openBranch !== b) setBranch(b);
+    setFacet(f);
+    renderHead();
+    document.dispatchEvent(new CustomEvent('tabchange', { detail: panelOf(f).id }));
+    document.dispatchEvent(new CustomEvent('facetopen', { detail: { id: f.dataset.tab, source } }));
+    if (source === 'user') {
+      history.replaceState(null, '', `#${f.dataset.tab}`);
+      if (phone.matches) head.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
+  rootButton.addEventListener('click', () => collapse());
+  for (const b of branches) b.button.addEventListener('click', () => growBranch(b));
+  for (const f of allFacets) f.addEventListener('click', () => openFacetFrom(f, 'user'));
+
+  // Keyboard: arrows (and Home/End) move between siblings in a row, Enter/Space opens,
+  // Escape goes back up a level (facet → its branch, branch → Deo).
+  function onKey(e: KeyboardEvent, row: HTMLButtonElement[], up: () => void) {
+    const i = row.indexOf(e.currentTarget as HTMLButtonElement);
+    const moves: Record<string, number> = { ArrowRight: i + 1, ArrowDown: i + 1, ArrowLeft: i - 1, ArrowUp: i - 1, Home: 0, End: row.length - 1 };
+    if (e.key === 'Escape') {
+      e.preventDefault();
+      up();
+    } else if (e.key in moves) {
+      e.preventDefault();
+      row[(moves[e.key] + row.length) % row.length].focus();
+    }
+  }
+  const branchButtons = branches.map((b) => b.button);
+  for (const b of branches) {
+    b.button.addEventListener('keydown', (e) => onKey(e, branchButtons, () => collapse(true)));
+    for (const f of b.facets) f.addEventListener('keydown', (e) => onKey(e, b.facets, () => b.button.focus()));
+  }
 
   // In-tab switches (Potato: TV shows | Movies, Concert: Seen live | Wishlist). Each button carries the
   // link that opens it (data-switch-hash), e.g. #potato-movies or #concert-wishlist.
@@ -813,29 +1192,26 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
   // Old links: #weeb is now #anime; #tv and #movie (the old TV/Movie Potato tabs) open the Potato switch.
   const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies', '#cat': '#pets-peeta' };
-  // Opens the tab a link like #death points to. Returns false if the hash isn't a tab.
+  // Opens the facet a link like #death points to, growing its branch. Returns false if the hash isn't a facet.
   function openFromHash(rawHash: string): boolean {
     const hash = renamed[rawHash] ?? rawHash;
     const switchButton = switchButtons.find((b) => b.dataset.switchHash === hash);
-    const panelOf = (t: HTMLButtonElement) => document.getElementById(t.getAttribute('aria-controls')!)!;
-    const tab = tabs.find(
-      (t) =>
-        `#${t.dataset.tab}` === hash ||
-        (switchButton && panelOf(t).contains(switchButton)) ||
-        (t.dataset.tab === 'pets' && hash.startsWith('#pets-')),
+    const facet = allFacets.find(
+      (f) =>
+        `#${f.dataset.tab}` === hash ||
+        (switchButton && panelOf(f).contains(switchButton)) ||
+        (f.dataset.tab === 'pets' && hash.startsWith('#pets-')),
     );
-    if (!tab) return false;
-    select(tab, false, false);
+    if (!facet) return false;
+    openFacetFrom(facet, 'hash');
     if (switchButton) flip(switchButton, false);
     return true;
   }
   openFromHash(location.hash);
 
-  // Links between tabs (e.g. Mentor → "#death") switch tabs too, then bring the tab bar into view.
+  // Links between facets (e.g. Mentor → "#death") switch facets too, then bring the facet's header into view.
   window.addEventListener('hashchange', () => {
-    if (openFromHash(location.hash)) {
-      document.querySelector('.tabs')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    if (openFromHash(location.hash)) head.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 
   // Photo viewer for the galleries (each pet on Pets, Fishing): ‹ › move within the clicked gallery.

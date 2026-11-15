@@ -3,7 +3,7 @@ import { Content } from '../../content/sex.md';
 import { url } from '../lib/url';
 ---
 
-<!-- Two banners: one when the Sex tab is the very first click, one when the visitor clicked something else first. -->
+<!-- Two banners: one when Sex is the first facet the visitor opens, one when they opened another facet first. -->
 <div class="ara" data-variant="first" hidden role="status">
   <img data-src={url('/ara-ara.webp')} alt="" width="159" height="229" />
   <div>
@@ -86,29 +86,27 @@ import { url } from '../lib/url';
 </style>
 
 <script>
-  // The first time the Sex tab is clicked, show a banner: "Ara ara~" if it was the very first click
-  // on the page, or the "you didn't take the bait" one if the visitor clicked something else first.
+  // The first time the Sex facet is opened, show a banner: "Ara ara~" if it's the first facet the visitor opened,
+  // or the "you didn't take the bait" one if they opened another facet first. Only facets the visitor opens
+  // themselves count ('user'); growing or folding branches in the tree, other clicks on the page, and links
+  // (#sex on arrival, links between facets) don't. The tree announces each open with a `facetopen` event.
   const banners = {
     first: document.querySelector<HTMLElement>('.ara[data-variant="first"]'),
     later: document.querySelector<HTMLElement>('.ara[data-variant="later"]'),
   };
-  let clicks = 0;
+  let firstFacet: string | null = null;
   let shown = false;
-  document.addEventListener(
-    'click',
-    (e) => {
-      const target = e.target as Element | null;
-      if (!shown && target?.closest('#tab-sex')) {
-        const banner = clicks === 0 ? banners.first : banners.later;
-        const img = banner?.querySelector<HTMLImageElement>('img');
-        if (img?.dataset.src) img.src = img.dataset.src;
-        if (banner) banner.hidden = false;
-        shown = true;
-      }
-      clicks++;
-    },
-    { capture: true },
-  );
+  document.addEventListener('facetopen', (e) => {
+    const { id, source } = (e as CustomEvent<{ id: string; source: 'user' | 'hash' }>).detail;
+    if (source !== 'user') return;
+    firstFacet ??= id;
+    if (id !== 'sex' || shown) return;
+    const banner = firstFacet === 'sex' ? banners.first : banners.later;
+    const img = banner?.querySelector<HTMLImageElement>('img');
+    if (img?.dataset.src) img.src = img.dataset.src;
+    if (banner) banner.hidden = false;
+    shown = true;
+  });
   for (const banner of Object.values(banners)) {
     banner?.querySelector('.ara__close')?.addEventListener('click', () => (banner.hidden = true));
   }
