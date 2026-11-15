@@ -49,6 +49,21 @@ For years, the gym was a pressure valve. I went for stress relief, so it never s
 
 Wake up at 6am, drink coffee, poop, bathe, hit the gym, then head home to let Peeta run in the backyard while I shove food in my piehole before work. Practical and frictionless: part of my routine now, not something I have to force myself to do.
 
+<div class="gym-photos">
+<figure>
+
+![Deo taking a mirror selfie at the gym, with a 6:47 AM Monday clock overlay](./photos/2026_am1.jpg)
+
+<figcaption>Gym, 6:47am</figcaption>
+</figure>
+<figure>
+
+![Peeta, a black-and-white cat, running across the backyard grass](./photos/2026_am2.jpg)
+
+<figcaption>Peeta's backyard run</figcaption>
+</figure>
+</div>
+
 ## Steps I've taken
 
 - Increased my protein intake, aiming for at least 100 g a day.

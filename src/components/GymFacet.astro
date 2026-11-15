@@ -20,14 +20,15 @@ const points = raw
   .sort((a, b) => a.year - b.year);
 if (points.length < 2) throw new Error(`${FILE}: add at least two years.`);
 
-// Photos named after the year, e.g. content/gym/photos/2016.jpg
+// Photos named after the year, e.g. content/gym/photos/2016.jpg. Only a bare year counts, so
+// story-only photos like 2026_am1.jpg don't replace the chart's 2026 pin.
 const photoModules = import.meta.glob<ImageMetadata>('/content/gym/photos/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}', {
   eager: true,
   import: 'default',
 });
 const photoByYear = new Map<number, ImageMetadata>();
 for (const [path, src] of Object.entries(photoModules)) {
-  const y = Number(path.split('/').pop()!.match(/^(\d{4})/)?.[1]);
+  const y = Number(path.split('/').pop()!.match(/^(\d{4})\.[a-z]+$/i)?.[1]);
   if (y) photoByYear.set(y, src);
 }
 
