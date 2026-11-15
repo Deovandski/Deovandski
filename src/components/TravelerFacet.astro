@@ -40,10 +40,9 @@ for (const p of places) {
   if (p.sub) group.subs.push(p);
   else group.self = p;
 }
-const countryCount = new Set(places.map((p) => p.country)).size;
 const photoCount = (p: Place) => `${p.photos.length} ${p.photos.length === 1 ? 'photo' : 'photos'}`;
 
-// Totals per region, plus a running total that adds up region by region in the order they're listed.
+// Totals per region (under each region name) and the grand total (in the line above the map).
 const plural = (n: number, one: string, many: string) => `${n} ${n === 1 ? one : many}`;
 type Tally = { countries: number; subs: number; photos: number };
 const tallyText = (t: Tally) =>
@@ -54,26 +53,27 @@ const tallyText = (t: Tally) =>
   ]
     .filter(Boolean)
     .join(' · ');
-const running: Tally = { countries: 0, subs: 0, photos: 0 };
-const regionTotals = new Map<string, { region: string; running: string }>();
+const total: Tally = { countries: 0, subs: 0, photos: 0 };
+const regionTotals = new Map<string, string>();
 for (const [region, groups] of byRegion) {
   const t: Tally = { countries: groups.size, subs: 0, photos: 0 };
   for (const g of groups.values()) {
     t.subs += g.subs.length;
     t.photos += (g.self?.photos.length ?? 0) + g.subs.reduce((n, p) => n + p.photos.length, 0);
   }
-  running.countries += t.countries;
-  running.subs += t.subs;
-  running.photos += t.photos;
-  regionTotals.set(region, { region: tallyText(t), running: tallyText(running) });
+  total.countries += t.countries;
+  total.subs += t.subs;
+  total.photos += t.photos;
+  regionTotals.set(region, tallyText(t));
 }
+const grandTotal = tallyText(total);
 ---
 
 <p class="lede">
   {
     places.length === 0
       ? 'Photos are on their way. Each country, state or province gets a pin once its first picture is added.'
-      : `Where has Deo been? ${countryCount} ${countryCount === 1 ? 'country' : 'countries'} so far. Select a pin to see photos.`
+      : `Where Deo has been? ${grandTotal}`
   }
 </p>
 
@@ -87,7 +87,7 @@ for (const [region, groups] of byRegion) {
           {[...byRegion].map(([region, groups]) => (
             <div class="region">
               <h4>{region}</h4>
-              <p class="totals">{regionTotals.get(region)!.region}</p>
+              <p class="totals">{regionTotals.get(region)}</p>
               <ul>
                 {[...groups.values()].map((g) => (
                   <li class="country">
@@ -112,7 +112,6 @@ for (const [region, groups] of byRegion) {
                   </li>
                 ))}
               </ul>
-              <p class="totals totals--running"><span class="totals__label">Running total</span> {regionTotals.get(region)!.running}</p>
             </div>
           ))}
         </div>
@@ -203,8 +202,6 @@ for (const [region, groups] of byRegion) {
   .regions h4 { font-size: var(--step-0); color: var(--muted); margin-bottom: 0.15rem; }
   .region { display: flex; flex-direction: column; }
   .totals { margin: 0 0 0.5rem; color: var(--muted); font-size: var(--step--1); }
-  .totals--running { margin: 0.6rem 0 0; padding-top: 0.5rem; border-top: 1px solid rgba(57, 197, 187, 0.25); color: var(--silver); }
-  .totals__label { color: var(--teal); font-weight: 700; }
   .regions ul { list-style: none; margin: 0; padding: 0; }
   .regions .row { display: flex; justify-content: space-between; gap: 1rem; padding-block: 0.25rem; }
   .regions .row > span { color: var(--muted); font-size: var(--step--1); }
