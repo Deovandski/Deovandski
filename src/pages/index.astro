@@ -153,6 +153,7 @@ const churrasco = loadSections('content/churrasco.md', 'content/churrasco');
 const concerts = loadSections('content/concerts.md', 'content/concerts');
 const concertWishlist = loadSections('content/concerts-wishlist.md', 'content/concerts');
 const theater = loadSections('content/theater.md', 'content/theater');
+const theaterWishlist = loadSections('content/theater-wishlist.md', 'content/theater');
 const fishing = loadGallery('content/fishing', 'Fishing');
 const family = loadGallery('content/family', 'Family');
 const camping = loadSections('content/camping.md', 'content/camping');
@@ -521,7 +522,16 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-theater" aria-labelledby="tab-theater" tabindex="0" hidden>
-      <Sections data={theater} id="theater" layout="cards" sortAlpha avatarsDir="content/theater/shows" photoAlt={(t) => `At ${t}`} />
+      <div class="switch" role="tablist" aria-label="Seen live or wishlist">
+        <button type="button" role="tab" id="theater-tab-seen" aria-controls="theater-seen" aria-selected="true" data-switch-hash="#theater">🎭 Seen live</button>
+        <button type="button" role="tab" id="theater-tab-wishlist" aria-controls="theater-wishlist" aria-selected="false" tabindex="-1" data-switch-hash="#theater-wishlist">📝 Wishlist</button>
+      </div>
+      <div id="theater-seen" role="tabpanel" aria-labelledby="theater-tab-seen">
+        <Sections data={theater} id="theater" layout="cards" sortAlpha avatarsDir="content/theater/shows" photoAlt={(t) => `At ${t}`} />
+      </div>
+      <div id="theater-wishlist" role="tabpanel" aria-labelledby="theater-tab-wishlist" hidden>
+        <Sections data={theaterWishlist} id="theater-wish" layout="cards" sortAlpha avatarsDir="content/theater/shows" empty="The wishlist is on its way." photoAlt={(t) => `At ${t}`} />
+      </div>
     </section>
 
     <section class="panel" role="region" id="panel-gamer" aria-labelledby="tab-gamer" tabindex="0" hidden>
@@ -1151,7 +1161,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     for (const f of b.facets) f.addEventListener('keydown', (e) => onKey(e, b.facets, () => b.button.focus()));
   }
 
-  // In-tab switches (Potato: TV shows | Movies, Concert: Seen live | Wishlist). Each button carries the
+  // In-tab switches (Potato: TV shows | Movies, Concert and Theater & Opera: Seen live | Wishlist). Each button carries the
   // link that opens it (data-switch-hash), e.g. #potato-movies or #concert-wishlist.
   const switchButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-switch-hash]'));
   function flip(button: HTMLButtonElement, updateHash = true) {

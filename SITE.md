@@ -30,7 +30,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | D&D tab (one picture + story per campaign) | `content/dnd.md`, pictures in `content/dnd/<campaign>/` |
 | Fishing tab (photo gallery, like each pet on the Pets tab) | `content/fishing/` (see its README) |
 | Camping tab (location cards, 2 photos each) | `content/camping.md` |
-| Theater & Opera tab (works like Concert) | `content/theater.md`, show images in `content/theater/shows/` |
+| Theater & Opera tab (Seen live, plus a Wishlist behind a switch, like Concert) | `content/theater.md` and `content/theater-wishlist.md`, show images in `content/theater/shows/` |
 | Gamer tab (top 39 games, numbered list with optional `Hours:` lines) | `content/gaming/top39.md` |
 | Anime tab (top 39 anime, with descriptions) | `content/anime/top39.md` (numbered list) |
 | Potato tab, TV shows side (top 39) | `content/tv/top39.md` (numbered list) |
@@ -55,7 +55,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-No facet opens by default: visitors grow a branch of the facet tree, then pick a facet. Link straight to a facet (its branch grows too) with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#drummer`, `#boardgames`, `#mtg`, `#concert` (or `#concert-wishlist`), `#theater`, `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#sex`.
+No facet opens by default: visitors grow a branch of the facet tree, then pick a facet. Link straight to a facet (its branch grows too) with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#drummer`, `#boardgames`, `#mtg`, `#concert` (or `#concert-wishlist`), `#theater` (or `#theater-wishlist`), `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#sex`.
 Add `?miku` to any URL to preview the Miku Day confetti.
 Add `?deathclock=0` to preview the Death tab's clock at zero (blinking digits and the "update the clock" message).
 
