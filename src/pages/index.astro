@@ -15,6 +15,7 @@ import YouTube from '../components/YouTube.astro';
 import { Content as AviationText } from '../../content/aviation.md';
 import kingOfHues from '../assets/king-of-hues.jpg';
 import stickyNotes from '../../content/pm/2023-03-20-sticky-note-madness.jpg';
+import influencerShot from '../../content/influencer/Screenshot_20260803-210132.png';
 import { loadGallery } from '../lib/gallery';
 import { loadRankedList } from '../lib/ranking';
 import { loadSections } from '../lib/sections';
@@ -311,14 +312,37 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
         I was very active back in the day, getting ~15 million views… Focus on <em>was</em>, for there’s nothing left of it.
         Only an empty YT, my Steam and MyAnimeList profiles, and my LinkedIn, which remains active.
       </p>
+      <ul class="pills influencer-links">
+        {influencerLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
+      </ul>
+      <p>
+        And as to why? Read my <a href="https://deovandski.github.io/HusbandOutWorld/about/afterwords/#vol-4-afterword-2027">#HusbandOutWorld Vol 4 afterword</a>.
+      </p>
       <p>
         Will I ever come back? Likely not, because the ROI in knowledge and fun I was getting from being a social influencer
         towards the end of the journey was gone, and it had become hypervigilance and misery instead. I noticed I was being
-        stalked too, so, like an infection, I cut it off at the root, healed, and moved on.
+        stalked too, so I cut it off at the root like an infection, healed, and moved on.
       </p>
-      <ul class="pills">
-        {influencerLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
-      </ul>
+      <p>For historical purposes, here’s a screenshot of what it looked like:</p>
+      <figure class="influencer-shot">
+        <a href={influencerShot.src}>
+          <Image
+            src={influencerShot}
+            alt="Deo's old TikTok profile, @deovandski: 732 followers, 118.5K likes, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, above a grid of video thumbnails"
+            widths={[320, 640]}
+            sizes="(max-width: 720px) 70vw, 320px"
+          />
+        </a>
+        <figcaption>August 3, 2026</figcaption>
+      </figure>
+      <p>
+        If you got to see my shenanigans, I hope you found it entertaining. Now go outside, touch grass, and drag your dreams
+        from fantasy into reality like I am; truly recommended.
+      </p>
+      <p>
+        The algorithm is truly toxic, so much so that I don’t even have a fake/alt account. If you want to share memes with me,
+        share YouTube Shorts/videos on RCS.
+      </p>
       </div>
     </section>
 
@@ -648,6 +672,10 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
   .pm-photo { margin: 1.5rem 0; max-width: 560px; }
   .pm-photo img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(190, 200, 209, 0.15); }
   .pm-photo figcaption { margin-top: 0.5rem; text-align: center; color: var(--muted); font-size: var(--step--1); }
+  .influencer-links { margin: 0 0 1.25rem; }
+  .influencer-shot { margin: 1rem auto 1.5rem; max-width: 320px; }
+  .influencer-shot img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(190, 200, 209, 0.15); }
+  .influencer-shot figcaption { margin-top: 0.5rem; text-align: center; color: var(--muted); font-size: var(--step--1); }
   .boards {
     list-style: none;
     margin: 0;
