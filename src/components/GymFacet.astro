@@ -48,14 +48,16 @@ const line = points.map((p, i) => `${i ? 'L' : 'M'}${x(p.year).toFixed(1)},${y(p
 const lowest = points.reduce((a, b) => (b.weight < a.weight ? b : a));
 const labeled = new Set([points[0].year, lowest.year, points[points.length - 1].year]);
 
-const PIN_R = 22;
+// Portrait photo pins with rounded corners, in the photos' 3:4-ish shape.
+const PIN_W = 34, PIN_H = 44, PIN_RX = 6;
+const PIN_HALF = PIN_H / 2;
 const pins = await Promise.all(
   points.map(async (p) => {
     const px = x(p.year), py = y(p.weight);
-    const above = py - 48 - PIN_R > 4;
+    const above = py - 48 - PIN_HALF > 4;
     const cy = above ? py - 48 : py + 48;
     const photo = photoByYear.get(p.year);
-    const img = photo ? (await getImage({ src: photo, width: 120, height: 120, format: 'webp', fit: 'cover' })).src : null;
+    const img = photo ? (await getImage({ src: photo, width: 136, height: 176, format: 'webp', fit: 'cover' })).src : null;
     const full = photo ? (await getImage({ src: photo, width: 1200, format: 'webp' })).src : null;
     return { ...p, px, py, cy, above, img, full };
   }),
@@ -75,7 +77,7 @@ const nf = new Intl.NumberFormat('en-US');
         <defs>
           {pins.filter((p) => p.img).map((p) => (
             <clipPath id={`pin-${p.year}`}>
-              <circle cx={p.px} cy={p.cy} r={PIN_R} />
+              <rect x={p.px - PIN_W / 2} y={p.cy - PIN_HALF} width={PIN_W} height={PIN_H} rx={PIN_RX} />
             </clipPath>
           ))}
         </defs>
@@ -102,14 +104,14 @@ const nf = new Intl.NumberFormat('en-US');
 
         {pins.map((p) => (
           <g class:list={['pin', { empty: !p.img }]}>
-            <line x1={p.px} x2={p.px} y1={p.above ? p.cy + PIN_R : p.cy - PIN_R} y2={p.above ? p.py - 7 : p.py + 7} />
+            <line x1={p.px} x2={p.px} y1={p.above ? p.cy + PIN_HALF : p.cy - PIN_HALF} y2={p.above ? p.py - 7 : p.py + 7} />
             {p.img ? (
               <a href={p.full} aria-label={`Photo from ${p.year}`}>
-                <image href={p.img} x={p.px - PIN_R} y={p.cy - PIN_R} width={PIN_R * 2} height={PIN_R * 2} clip-path={`url(#pin-${p.year})`} preserveAspectRatio="xMidYMid slice" />
-                <circle class="ring" cx={p.px} cy={p.cy} r={PIN_R} />
+                <image href={p.img} x={p.px - PIN_W / 2} y={p.cy - PIN_HALF} width={PIN_W} height={PIN_H} clip-path={`url(#pin-${p.year})`} preserveAspectRatio="xMidYMid slice" />
+                <rect class="ring" x={p.px - PIN_W / 2} y={p.cy - PIN_HALF} width={PIN_W} height={PIN_H} rx={PIN_RX} />
               </a>
             ) : (
-              <circle class="ring" cx={p.px} cy={p.cy} r={PIN_R - 4} />
+              <rect class="ring" x={p.px - PIN_W / 2 + 4} y={p.cy - PIN_HALF + 4} width={PIN_W - 8} height={PIN_H - 8} rx={PIN_RX - 2} />
             )}
           </g>
         ))}
@@ -198,6 +200,14 @@ const nf = new Intl.NumberFormat('en-US');
   .story :global(ul) { margin: 0 0 1rem; padding-left: 1.2rem; }
   .story :global(li) { margin: 0.3rem 0; }
   .story :global(li::marker) { color: var(--teal); }
+  /* Side-by-side year photos inside the story (content/gym/story.md, <div class="gym-photos">). */
+  .story :global(.gym-photos) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.5rem auto 1.75rem; max-width: 34rem; }
+  /* A single photo is the same size as one photo of a pair, centered. */
+  .story :global(.gym-photos--single) { grid-template-columns: minmax(0, calc((100% - 1rem) / 2)); justify-content: center; }
+  .story :global(.gym-photos figure) { margin: 0; }
+  .story :global(.gym-photos p) { margin: 0; }
+  .story :global(.gym-photos img) { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(190, 200, 209, 0.15); }
+  .story :global(.gym-photos figcaption) { margin-top: 0.4rem; text-align: center; color: var(--muted); font-size: var(--step--1); font-weight: 700; }
   .story :global(strong) { color: var(--teal); font-family: var(--font-display); font-size: var(--step-1); }
 </style>
 
