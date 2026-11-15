@@ -8,6 +8,7 @@ import MultilingualFacet from '../components/MultilingualFacet.astro';
 import Sections from '../components/Sections.astro';
 import MtgScore from '../components/MtgScore.astro';
 import ChurrascoFacet from '../components/ChurrascoFacet.astro';
+import FamilyFacet from '../components/FamilyFacet.astro';
 import GymFacet from '../components/GymFacet.astro';
 import SexFacet from '../components/SexFacet.astro';
 import DeathFacet from '../components/DeathFacet.astro';
@@ -156,7 +157,6 @@ const concertWishlist = loadSections('content/concerts-wishlist.md', 'content/co
 const theater = loadSections('content/theater.md', 'content/theater');
 const theaterWishlist = loadSections('content/theater-wishlist.md', 'content/theater');
 const fishing = loadGallery('content/fishing', 'Fishing');
-const family = loadGallery('content/family', 'Family');
 const camping = loadSections('content/camping.md', 'content/camping');
 const dnd = loadSections('content/dnd.md', 'content/dnd');
 const boardgames = loadSections('content/boardgames.md', 'content/boardgames');
@@ -362,7 +362,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
     <section class="panel" role="region" id="panel-family" aria-labelledby="tab-family" tabindex="0" hidden>
       <div class="story">
-        <GalleryGrid gallery={family} name="family" captions empty="Family photos are on their way." />
+        <FamilyFacet />
       </div>
     </section>
 

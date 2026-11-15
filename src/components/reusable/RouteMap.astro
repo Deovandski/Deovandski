@@ -1,0 +1,219 @@
+---
+/**
+ * RouteMap: a small map that joins two or more places with a curved line (the great-circle path,
+ * like a flight route). Pinch or scroll to zoom; the map stays inside the area you give it.
+ *
+ * Reusable on purpose: it uses Leaflet (npm `leaflet`) and country outlines from a GeoJSON file
+ * you serve yourself, so there's no API key, no tile server and nothing that tracks visitors.
+ * Copy this one file into any Astro project that has `leaflet` installed. See README.md here.
+ *
+ *   <RouteMap
+ *     outlines={url('/world.json')}
+ *     points={[
+ *       { name: 'Itaituba, Pará', lat: -4.2761, lng: -55.9836 },
+ *       { name: 'Fargo, North Dakota', lat: 46.8772, lng: -96.7898 },
+ *     ]}
+ *     bounds={[[-58, -128], [62, -30]]}
+ *     label="Map: from Itaituba, Pará, Brazil, to Fargo, North Dakota, USA"
+ *   />
+ *
+ * The map is built the first time it's visible (so it works inside hidden tabs and dialogs).
+ */
+import 'leaflet/dist/leaflet.css';
+
+export type RoutePoint = { name: string; lat: number; lng: number };
+
+interface Props {
+  /** URL of a GeoJSON file of land/country outlines (e.g. Natural Earth). */
+  outlines: string;
+  /** The places, in order. Each consecutive pair is joined by a curved line. */
+  points: RoutePoint[];
+  /** The area the map shows and stays inside: [[south, west], [north, east]]. */
+  bounds: [[number, number], [number, number]];
+  /** What screen readers hear for the map. */
+  label: string;
+  /** Optional caption under the map. */
+  caption?: string;
+  /** Map height. Defaults to a tall box, good for north-south routes. */
+  height?: string;
+  /** Credit for the outlines, shown in the corner. */
+  attribution?: string;
+  class?: string;
+}
+
+const {
+  outlines,
+  points,
+  bounds,
+  label,
+  caption,
+  height = 'clamp(420px, 70vh, 640px)',
+  attribution = 'Outlines: Natural Earth',
+  class: className,
+} = Astro.props;
+---
+
+<figure class:list={['route-map', className]}>
+  <div
+    class="route-map__map"
+    style={`height: ${height}`}
+    role="img"
+    aria-label={label}
+    data-route-map
+    data-outlines={outlines}
+    data-points={JSON.stringify(points)}
+    data-bounds={JSON.stringify(bounds)}
+    data-attribution={attribution}
+  >
+  </div>
+  <ol class="route-map__sr">
+    {points.map((p) => <li>{p.name}</li>)}
+  </ol>
+  {caption && <figcaption class="route-map__caption">{caption}</figcaption>}
+</figure>
+
+<style>
+  /* Theme from outside: .x :global(.route-map) { --route-map-line: gold; } */
+  .route-map {
+    --route-map-sea: #0b1230;
+    --route-map-land: #16224a;
+    --route-map-border: #2a3766;
+    --route-map-line: #39c5bb;
+    --route-map-pin: #e12885;
+    --route-map-label-bg: #0b1230;
+    --route-map-label-ink: #e8ecf1;
+    margin: 0;
+  }
+  .route-map__map {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(190, 200, 209, 0.18);
+    background: var(--route-map-sea);
+  }
+  .route-map__map :global(.leaflet-container) { background: var(--route-map-sea); font: inherit; }
+  .route-map :global(.leaflet-container) { background: var(--route-map-sea); }
+  .route-map :global(.leaflet-control-attribution) {
+    background: rgba(11, 18, 48, 0.75) !important;
+    color: #9aa3ad !important;
+    font-size: 10px;
+  }
+  .route-map :global(.leaflet-bar a) { background: var(--route-map-label-bg); color: var(--route-map-label-ink); border-color: var(--route-map-border); }
+  .route-map :global(.route-map__pin) {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--route-map-pin);
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 4px rgba(225, 40, 133, 0.35), 0 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  .route-map :global(.route-map__label) {
+    background: var(--route-map-label-bg);
+    color: var(--route-map-label-ink);
+    border: 1px solid var(--route-map-line);
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 0.2rem 0.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  }
+  .route-map :global(.route-map__label::before) { display: none; }
+  .route-map :global(.route-map__line) { stroke-dasharray: 8 7; animation: route-map-march 1.2s linear infinite; }
+  @keyframes route-map-march { to { stroke-dashoffset: -15; } }
+  @media (prefers-reduced-motion: reduce) {
+    .route-map :global(.route-map__line) { animation: none; }
+  }
+  .route-map__caption { margin-top: 0.5rem; text-align: center; color: var(--muted, #9aa3ad); font-size: var(--step--1, 0.85rem); }
+  .route-map__sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+</style>
+
+<script>
+  import L from 'leaflet';
+
+  type Point = { name: string; lat: number; lng: number };
+
+  // Points along the great circle between a and b (what a plane would fly), as [lat, lng].
+  function greatCircle(a: Point, b: Point, steps = 64): [number, number][] {
+    const rad = Math.PI / 180;
+    const [φ1, λ1, φ2, λ2] = [a.lat * rad, a.lng * rad, b.lat * rad, b.lng * rad];
+    const d = 2 * Math.asin(Math.sqrt(Math.sin((φ2 - φ1) / 2) ** 2 + Math.cos(φ1) * Math.cos(φ2) * Math.sin((λ2 - λ1) / 2) ** 2));
+    if (d === 0) return [[a.lat, a.lng]];
+    const out: [number, number][] = [];
+    for (let i = 0; i <= steps; i++) {
+      const f = i / steps;
+      const A = Math.sin((1 - f) * d) / Math.sin(d);
+      const B = Math.sin(f * d) / Math.sin(d);
+      const x = A * Math.cos(φ1) * Math.cos(λ1) + B * Math.cos(φ2) * Math.cos(λ2);
+      const y = A * Math.cos(φ1) * Math.sin(λ1) + B * Math.cos(φ2) * Math.sin(λ2);
+      const z = A * Math.sin(φ1) + B * Math.sin(φ2);
+      out.push([Math.atan2(z, Math.hypot(x, y)) / rad, Math.atan2(y, x) / rad]);
+    }
+    return out;
+  }
+
+  function build(el: HTMLElement) {
+    const points: Point[] = JSON.parse(el.dataset.points || '[]');
+    const bounds = L.latLngBounds(JSON.parse(el.dataset.bounds || '[[-60,-180],[80,180]]'));
+    const css = getComputedStyle(el);
+    const v = (name: string, fallback: string) => css.getPropertyValue(name).trim() || fallback;
+
+    const map = L.map(el, {
+      zoomSnap: 0.25,
+      maxBounds: bounds.pad(0.05),
+      maxBoundsViscosity: 1,
+      worldCopyJump: false,
+      attributionControl: true,
+      scrollWheelZoom: false, // page scrolling stays page scrolling; use +/- or pinch
+      touchZoom: true,
+    });
+    map.attributionControl.setPrefix('').addAttribution(el.dataset.attribution || '');
+    map.fitBounds(bounds);
+    map.setMinZoom(map.getZoom()); // can't zoom out past the area, so there's nothing to pan to
+    map.setMaxZoom(map.getZoom() + 5);
+    // Scroll-zoom only after the map is clicked, so it never hijacks scrolling the page.
+    map.on('click', () => map.scrollWheelZoom.enable());
+    el.addEventListener('mouseleave', () => map.scrollWheelZoom.disable());
+
+    fetch(el.dataset.outlines!)
+      .then((r) => r.json())
+      .then((geo) => {
+        L.geoJSON(geo, {
+          interactive: false,
+          style: { color: v('--route-map-border', '#2a3766'), weight: 0.7, fillColor: v('--route-map-land', '#16224a'), fillOpacity: 1 },
+        }).addTo(map);
+        line.bringToFront();
+      })
+      .catch(() => {});
+
+    const path: [number, number][] = [];
+    for (let i = 0; i + 1 < points.length; i++) path.push(...greatCircle(points[i], points[i + 1]));
+    const glow = L.polyline(path, { color: v('--route-map-line', '#39c5bb'), weight: 9, opacity: 0.18, interactive: false }).addTo(map);
+    const line = L.polyline(path, { color: v('--route-map-line', '#39c5bb'), weight: 3, className: 'route-map__line', interactive: false }).addTo(map);
+    void glow;
+
+    points.forEach((p, i) => {
+      const icon = L.divIcon({ className: '', html: '<div class="route-map__pin"></div>', iconSize: [16, 16], iconAnchor: [8, 8] });
+      L.marker([p.lat, p.lng], { icon, keyboard: false, interactive: false })
+        .addTo(map)
+        .bindTooltip(p.name, { permanent: true, className: 'route-map__label', direction: i === 0 ? 'bottom' : 'top', offset: [0, i === 0 ? 10 : -10] });
+    });
+    return map;
+  }
+
+  // Build each map the first time it has a size (hidden tabs have none), and keep it sized after.
+  document.querySelectorAll<HTMLElement>('[data-route-map]').forEach((el) => {
+    let map: L.Map | null = null;
+    new ResizeObserver(() => {
+      if (!el.offsetWidth || !el.offsetHeight) return;
+      if (!map) map = build(el);
+      else map.invalidateSize();
+    }).observe(el);
+  });
+</script>
