@@ -13,6 +13,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [IconMeter.astro](IconMeter.astro) | A quantity shown as a row of icons, with the last one partly filled (650 lb ÷ 500 lb per cow = 1.3 cows). | Churrasco tab (cow-meter) |
 | [OrgChart.astro](OrgChart.astro) | A top-down organization chart. Each row of people or roles is joined to the row above, with optional portraits. | Churrasco tab (The Holy Order) |
 | [RouteMap.astro](RouteMap.astro) | A map that joins places with a curved great-circle line, kept inside the area you choose, with pinch and button zoom. Leaflet plus your own outline file: no API key, no tile server, no tracking. | Family tab (Itaituba → Fargo) |
+| [PhotoGrid.astro](PhotoGrid.astro) | A grid of square photo cards, each captioned with a short description or the date the photo was taken (`--/--/----` when unknown). Photos carry data attributes for one shared lightbox. | Pets, Fishing, Family (descriptions), Painting/Drawing (dates) |
 
 ## SplitFlap
 
@@ -166,6 +167,34 @@ hidden tabs. Scroll-wheel zoom turns on only after a click, so it never takes ov
 pinch and the +/− buttons always work. Theme it with `--route-map-sea`, `--route-map-land`,
 `--route-map-border`, `--route-map-line`, `--route-map-pin`, `--route-map-label-bg` and
 `--route-map-label-ink`.
+
+## PhotoGrid
+
+```astro
+---
+import PhotoGrid from './reusable/PhotoGrid.astro';
+---
+<PhotoGrid photos={[{ src: catJpg, alt: 'Peeta in a box' }]} name="cat" caption="text" empty="Photos are on their way." />
+<PhotoGrid photos={[{ src: paintingJpg, alt: 'Painting', date: '2013-01-15' }]} name="painting" caption="date" />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `photos` | (required) | `{ src, alt, date? }[]`: `src` an imported image, `alt` what's in it, `date` the ISO day it was taken (`null` = unknown). |
+| `name` | (required) | Groups the photos for the page's lightbox (`data-gallery`). |
+| `caption` | `"none"` | `"text"` shows `alt` above each photo; `"date"` shows the date as MM/DD/YYYY. |
+| `intro` | `[]` | Paragraphs shown above the grid. |
+| `empty` | none | Shown when there are no photos. |
+| `unknownDate` | `"--/--/----"` | What a `"date"` caption shows when the date isn't known. Screen readers hear "date unknown". |
+| `class` | none | Extra class, e.g. to theme it. |
+
+Each photo is a `<button>` with `data-gallery`, `data-index`, `data-full` (a large webp), `data-alt`
+and `data-caption`: the page brings its own lightbox (this site's is the `.viewer` dialog in
+`src/pages/index.astro`). Theme it from outside with `--photo-grid-card-border`,
+`--photo-grid-card-bg`, `--photo-grid-tile-bg`, `--photo-grid-caption`, `--photo-grid-empty` and
+`--photo-grid-min`. Extracted from this site's old `Gallery.astro`; it doesn't read dates itself,
+so pass them in (this site uses `src/lib/photoDate.ts`: EXIF, then the filename).
+
 
 ## Copying a component into another repo
 

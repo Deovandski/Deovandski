@@ -1,6 +1,6 @@
 ---
 import { Image, getImage } from 'astro:assets';
-import GalleryGrid from './Gallery.astro';
+import PhotoGrid from './reusable/PhotoGrid.astro';
 import { DEFAULT_PET, loadPets } from '../lib/pets';
 
 const pets = loadPets();
@@ -52,10 +52,10 @@ const heroFull = Object.fromEntries(
                 <Image src={pet.hero!} alt={pet.heroAlt ?? ''} widths={[480, 760, 1100]} sizes="(max-width: 720px) 90vw, 440px" />
               </button>
             </figure>
-            <GalleryGrid gallery={{ ...pet.gallery, intro: [] }} name={`pet-${pet.id}`} captions empty={`${pet.name}'s photos are on their way.`} />
+            <PhotoGrid photos={pet.gallery.photos} name={`pet-${pet.id}`} caption="text" empty={`${pet.name}'s photos are on their way.`} />
           </>
         ) : (
-          <GalleryGrid gallery={pet.gallery} name={`pet-${pet.id}`} captions empty={`${pet.name}'s photos are on their way.`} />
+          <PhotoGrid photos={pet.gallery.photos} intro={pet.gallery.intro} name={`pet-${pet.id}`} caption="text" empty={`${pet.name}'s photos are on their way.`} />
         )}
         {pet.outro.map((t) => <p class="pets__outro">{t}</p>)}
       </div>
