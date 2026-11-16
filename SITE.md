@@ -52,6 +52,29 @@ and `llms-full.txt` (every tab's text, as visitors see it) into the site root, t
 the #HusbandOutWorld site. They're generated from the built home page by `scripts/llms.mjs`,
 so they never go stale. The Lust tab is left out on purpose (`SKIP` at the top of that script).
 
+The same script also writes:
+
+- `facets/<id>.md`: one tab per file (`/facets/death.md`, `/facets/dev.md`, …). `llms.txt` links to
+  these, because `/#death` and the home page are the same URL to a fetcher, and readers drop the
+  home page's hidden tab panels.
+- `sitemap.xml`: every page plus the files above.
+
+Every page's head links to `llms.txt`, `llms-full.txt` and `sitemap.xml`. Mark anything that reads
+as noise in plain text (like the LED clock's digits) with `data-llms-skip`, and the script leaves it out.
+
+### Testing it (#147)
+
+```sh
+npm run build && ls dist/llms.txt dist/llms-full.txt dist/sitemap.xml dist/facets/
+curl -i https://deovandski.github.io/Deovandski/llms.txt          # 200, text/plain
+curl -i https://deovandski.github.io/Deovandski/facets/death.md   # 200
+```
+
+Then ask a couple of different AI assistants to read `/facets/death.md`. Some can't reach `*.github.io`
+at all, and search-based ones only see the site once Bing and Google have indexed it. Submit
+`sitemap.xml` in Bing Webmaster Tools and Google Search Console. A `robots.txt` can't point to it:
+on a project site, `robots.txt` lives at the domain root (`deovandski.github.io/robots.txt`).
+
 ## Local preview
 
 ```sh

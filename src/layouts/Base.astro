@@ -22,7 +22,9 @@ const nav = [
 ];
 
 const here = Astro.url.pathname.replace(import.meta.env.BASE_URL.replace(/\/+$/, ''), '') || '/';
-const isCurrent = (href: string) => (href === '/' ? here === '/' || here === '' : here.startsWith(href.replace(/\/$/, '')));
+// Pages are folders on GitHub Pages, so the canonical address ends in a slash (/Deovandski/, not /Deovandski).
+const canonicalPath = /\/$|\.[a-z0-9]+$/i.test(Astro.url.pathname) ? Astro.url.pathname : `${Astro.url.pathname}/`;
+const isCurrent =(href: string) => (href === '/' ? here === '/' || here === '' : here.startsWith(href.replace(/\/$/, '')));
 ---
 
 <!doctype html>
@@ -34,6 +36,11 @@ const isCurrent = (href: string) => (href === '/' ? here === '/' || here === '' 
     <meta name="description" content={description} />
     <meta name="theme-color" content="#070b1f" />
     <link rel="icon" type="image/png" href={url('/favicon.png')} />
+    <!-- For AI tools and crawlers: plain-text versions of the site (written by scripts/llms.mjs). -->
+    <link rel="alternate" type="text/markdown" href={url('/llms.txt')} title="llms.txt: index for AI tools" />
+    <link rel="alternate" type="text/markdown" href={url('/llms-full.txt')} title="Every tab as plain text" />
+    <link rel="sitemap" type="application/xml" href={url('/sitemap.xml')} />
+    {Astro.site && <link rel="canonical" href={new URL(canonicalPath, Astro.site).href} />}
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <script is:inline>

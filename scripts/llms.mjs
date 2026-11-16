@@ -1,7 +1,13 @@
-// Writes dist/llms.txt (an index for AI tools, per https://llmstxt.org/) and dist/llms-full.txt
-// (the text of every home tab as visitors see it). Runs after `astro build` (npm "postbuild").
+// Writes the files AI tools and search engines read. Runs after `astro build` (npm "postbuild").
 // Same idea as the #HusbandOutWorld site's llms.txt.
-import { readFileSync, writeFileSync } from 'node:fs';
+//   dist/llms.txt         an index of the home tabs, per https://llmstxt.org/
+//   dist/llms-full.txt    the text of every home tab, as visitors see it
+//   dist/facets/<id>.md   one tab per file, so each tab has its own URL. Links like /#death all
+//                         fetch the same home page, and readers drop its hidden panels.
+//   dist/sitemap.xml      every page and every file above, for search engines
+// Anything in the page marked data-llms-skip (like the LED clock's digits) is left out of the text.
+import { mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { join, relative, sep } from 'node:path';
 
 // Tabs left out of the AI files on purpose.
 const SKIP = new Set(['lust']);
@@ -45,10 +51,26 @@ function lists(html) {
   return html.replace(/⟦([^⟧]*)⟧/g, '\n- $1\n');
 }
 
+/** Removes every element whose opening tag has data-llms-skip, nested tags included. */
+function skipMarked(html) {
+  const open = /<([a-z][a-z0-9-]*)\b[^>]*\sdata-llms-skip\b[^>]*>/i;
+  let m;
+  while ((m = open.exec(html))) {
+    const tag = m[1].toLowerCase();
+    const re = new RegExp(`<(/?)${tag}\\b[^>]*>`, 'gi');
+    re.lastIndex = m.index + m[0].length;
+    let depth = 1;
+    let t;
+    while (depth > 0 && (t = re.exec(html))) depth += t[1] ? -1 : 1;
+    html = html.slice(0, m.index) + html.slice(t ? t.index + t[0].length : html.length);
+  }
+  return html;
+}
+
 /** HTML fragment -> readable plain text: headings and paragraphs on their own lines, one line per list item. */
 function toText(fragment) {
   return decode(
-    lists(fragment
+    lists(skipMarked(fragment)
       .replace(/<!--[\s\S]*?-->/g, '')
       .replace(/<(script|style|svg|noscript|template|dialog)\b[\s\S]*?<\/\1>/gi, '')
       .replace(/<(span|p|div)\b[^>]*aria-hidden="true"[^>]*>[\s\S]*?<\/\1>/gi, '') // decorative: ranks, initials, glyph copies
@@ -119,7 +141,9 @@ const index = [
   '',
   '## Facets (home page tabs)',
   '',
-  ...kept.map((t) => `- [${t.label}](${root}/#${t.id}): ${short(firstLine(t))}`),
+  'Each link is that tab as its own Markdown file. On the site, the same tab opens at /#<id>.',
+  '',
+  ...kept.map((t) => `- [${t.label}](${root}/facets/${t.id}.md): ${short(firstLine(t))}`),
   '',
   '## Related',
   '',
@@ -129,7 +153,55 @@ const index = [
 ];
 writeFileSync('dist/llms.txt', index.join('\n'));
 
-const full = [...intro, ...kept.flatMap((t) => [`## ${t.label}`, '', `URL: ${root}/#${t.id}`, '', toText(panels.get(t.id)), ''])];
+const texts = new Map(kept.map((t) => [t.id, toText(panels.get(t.id))]));
+
+const full = [...intro, ...kept.flatMap((t) => [`## ${t.label}`, '', `URL: ${root}/#${t.id}`, '', texts.get(t.id), ''])];
 writeFileSync('dist/llms-full.txt', full.join('\n'));
 
-console.log(`llms.txt: ${kept.length} tabs (${tabs.length - kept.length} skipped); llms-full.txt: ${full.join('\n').length} chars`);
+// One Markdown file per tab.
+mkdirSync('dist/facets', { recursive: true });
+for (const t of kept) {
+  const md = [
+    `# ${t.label}: Deovandski's Blog`,
+    '',
+    `> One facet (home page tab) of Deovandski's personal hub. On the site: ${root}/#${t.id}`,
+    `> Every facet: ${root}/llms.txt`,
+    '',
+    texts.get(t.id),
+    '',
+  ];
+  writeFileSync(`dist/facets/${t.id}.md`, md.join('\n'));
+}
+
+// sitemap.xml: every built page, plus the AI files. A project site's sitemap can't be named in a
+// robots.txt (that lives at the domain root), so submit it in Search Console and Bing Webmaster.
+const pages = [];
+(function walk(dir) {
+  for (const name of readdirSync(dir)) {
+    const p = join(dir, name);
+    if (statSync(p).isDirectory()) walk(p);
+    else if (name === 'index.html') pages.push(relative('dist', dir).split(sep).join('/'));
+  }
+})('dist');
+const urls = [
+  ...pages.sort().map((p) => `${root}/${p ? `${p}/` : ''}`),
+  `${root}/llms.txt`,
+  `${root}/llms-full.txt`,
+  ...kept.map((t) => `${root}/facets/${t.id}.md`),
+];
+const xmlEscape = (s) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+writeFileSync(
+  'dist/sitemap.xml',
+  [
+    '<?xml version="1.0" encoding="UTF-8"?>',
+    '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ...urls.map((u) => `  <url><loc>${xmlEscape(u)}</loc></url>`),
+    '</urlset>',
+    '',
+  ].join('\n'),
+);
+
+console.log(
+  `llms.txt: ${kept.length} tabs (${tabs.length - kept.length} skipped); llms-full.txt: ${full.join('\n').length} chars; ` +
+    `facets/: ${kept.length} files; sitemap.xml: ${urls.length} URLs`,
+);

@@ -16,6 +16,9 @@
  *
  * At zero the digits blink and `expired` replaces the caption. With `preview="deathclock"`,
  * adding ?deathclock=0 to the page URL shows the zero state on any day.
+ *
+ * The digit face carries data-llms-skip, so text extractors that honor it skip the "-- Years"
+ * placeholders. Give a caption, so the clock still reads as words in plain text.
  */
 interface Props {
   /** The moment to count down to, as an ISO date with its UTC offset. */
@@ -44,7 +47,8 @@ const units = [
 ---
 
 <figure class:list={['led-clock', className]} data-led-clock data-target={target} data-preview={preview}>
-  <div class="led-clock__face" role="timer" aria-label={label}>
+  <!-- data-llms-skip: text tools (like scripts/llms.mjs) leave the digits out; the caption says it in words. -->
+  <div class="led-clock__face" role="timer" aria-label={label} data-llms-skip>
     {
       units.map((u, i) => (
         <>
