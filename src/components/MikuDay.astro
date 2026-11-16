@@ -2,12 +2,21 @@
 /*
  * Miku easter egg.
  * Shows a banner and confetti on the dates below, using the visitor's own
- * local date. Add ?miku to any URL to preview it on other days.
+ * local date. Add ?miku to any URL to preview 3/9 on other days, or
+ * ?miku=0831 to preview a specific date (month and day, two digits each).
  */
+import { getImage } from 'astro:assets';
+import birthday from '../assets/miku-birthday-2016-08-31.jpg';
+
+// Pictures for the dates in DATES (below), keyed by name; sized for the banner.
+const images = {
+  birthday: (await getImage({ src: birthday, width: 800, format: 'webp', quality: 80 })).src,
+};
 ---
 
-<div class="miku" hidden role="status" aria-live="polite">
+<div class="miku" hidden role="status" aria-live="polite" data-images={JSON.stringify(images)}>
   <div class="miku__inner">
+    <img class="miku__img" alt="" hidden />
     <p class="miku__title"></p>
     <p class="miku__sub"></p>
     <div class="miku__actions">
@@ -35,6 +44,17 @@
     backdrop-filter: blur(6px);
   }
   .miku[hidden] { display: none; }
+  .miku__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 14rem;
+    object-fit: cover;
+    border-radius: 12px;
+    margin: 0 0 0.85rem;
+    border: 1px solid rgba(57, 197, 187, 0.45);
+  }
+  .miku__img[hidden] { display: none; }
   .miku__title {
     font-family: var(--font-display);
     font-weight: 800;
@@ -45,6 +65,7 @@
   }
   .miku__title :global(.miku__jp) { white-space: nowrap; }
   @media (max-width: 560px) { .miku__title { font-size: var(--step-1); } }
+  .miku__title:has(+ .miku__sub[hidden]) { margin-bottom: 0.85rem; }
   .miku__sub { margin: 0 0 0.85rem; color: var(--text); word-break: keep-all; }
   .miku__actions { display: flex; gap: 0.6rem; flex-wrap: wrap; }
   .miku button {
@@ -62,8 +83,9 @@
 <script>
   import confetti from 'canvas-confetti';
 
-  // month is 1-12. Add more dates here (e.g. her release-day birthday, 8/31).
-  const DATES: { month: number; day: number; title: string; jp?: string; sub: string }[] = [
+  // month is 1-12. `image` names a picture from `images` in the frontmatter; `sub` is optional.
+  type Party = { month: number; day: number; title: string; jp?: string; sub?: string; image?: string; imageAlt?: string };
+  const DATES: Party[] = [
     {
       month: 3,
       day: 9,
@@ -71,15 +93,25 @@
       jp: 'ミクの日',
       sub: '3/9 reads as mi-ku! Miku-chan (ミクちゃん) is a cornerstone of my life and is tattooed on my right forearm. She’s tied to the things that drive me: ambition, technology, collaboration and community.',
     },
-    // { month: 8, day: 31, title: 'Happy birthday, Miku!', sub: 'Released August 31, 2007.' },
+    {
+      month: 8,
+      day: 31,
+      title: 'Happy Bday',
+      jp: '初音ミク!🩵',
+      image: 'birthday',
+      imageAlt: "Hatsune Miku's birthday screen on Deo's TV: Miku with her arms up behind a strawberry cake, under a Magical Mirai 2014 towel",
+    },
   ];
 
   const COLORS = ['#39c5bb', '#e12885', '#bec8d1', '#137a7f', '#ffffff'];
 
   const now = new Date();
-  const forced = new URLSearchParams(location.search).has('miku');
-  const today = DATES.find((d) => d.month === now.getMonth() + 1 && d.day === now.getDate());
-  const party = today ?? (forced ? DATES[0] : undefined);
+  const param = new URLSearchParams(location.search).get('miku'); // null, '' (plain ?miku) or e.g. '0831'
+  const on = (d: Party, month: number, day: number) => d.month === month && d.day === day;
+  const today = DATES.find((d) => on(d, now.getMonth() + 1, now.getDate()));
+  const preview =
+    param === null ? undefined : DATES.find((d) => /^\d{4}$/.test(param) && on(d, Number(param.slice(0, 2)), Number(param.slice(2)))) ?? DATES[0];
+  const party = today ?? preview;
 
   const banner = document.querySelector<HTMLElement>('.miku');
   const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -107,7 +139,16 @@
       jp.textContent = party.jp;
       titleEl.append(' ', jp);
     }
-    banner.querySelector('.miku__sub')!.textContent = party.sub;
+    const sub = banner.querySelector<HTMLElement>('.miku__sub')!;
+    sub.textContent = party.sub ?? '';
+    sub.hidden = !party.sub;
+    const images: Record<string, string> = JSON.parse(banner.dataset.images || '{}');
+    const img = banner.querySelector<HTMLImageElement>('.miku__img')!;
+    if (party.image && images[party.image]) {
+      img.src = images[party.image];
+      img.alt = party.imageAlt ?? '';
+      img.hidden = false;
+    }
     banner.hidden = false;
     burst();
     banner.querySelector('.miku__again')?.addEventListener('click', burst);

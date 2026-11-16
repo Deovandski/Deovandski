@@ -39,7 +39,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Pets tab (Bidu, Fluffy, Peeta: portrait picker + each pet's gallery) | `content/pets/<pet>/` (see `content/pets/README.md`); order in `src/lib/pets.ts` |
 | Sex tab (and the banner for when it's the first facet opened) | `content/sex.md`, `src/components/SexFacet.astro` |
 | 10-facets easter egg (banner after a visitor opens 10 different facets) | `src/components/TenTabsEgg.astro`, GIF `public/tea-sip.gif` |
-| Miku Day dates and message | `src/components/MikuDay.astro` (`DATES` near the top) |
+| Miku Day (3/9) and Miku's birthday (8/31): dates, messages and pictures | `src/components/MikuDay.astro` (`DATES` in the script, pictures in `images` at the top), birthday photo `src/assets/miku-birthday-2016-08-31.jpg` |
 | Colors and fonts | `src/styles/global.css` |
 | Logo | `src/assets/logo.png` |
 
@@ -58,7 +58,7 @@ npm run dev          # http://localhost:4321
 ```
 
 No facet opens by default: visitors grow a branch of the facet tree, then pick a facet. Link straight to a facet (its branch grows too) with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#drummer`, `#boardgames`, `#mtg`, `#concert` (or `#concert-wishlist`), `#theater` (or `#theater-wishlist`), `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#sex`.
-Add `?miku` to any URL to preview the Miku Day confetti.
+Add `?miku` to any URL to preview the Miku Day confetti (3/9), or `?miku=0831` for Miku's birthday (8/31).
 Add `?deathclock=0` to preview the Death tab's clock at zero (blinking digits and the "update the clock" message).
 
 ## Visitor source (`?src=`)
