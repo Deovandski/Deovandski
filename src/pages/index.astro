@@ -13,13 +13,16 @@ import GymFacet from '../components/GymFacet.astro';
 import SexFacet from '../components/SexFacet.astro';
 import DeathFacet from '../components/DeathFacet.astro';
 import PetsFacet from '../components/PetsFacet.astro';
-import GalleryGrid from '../components/Gallery.astro';
+import PhotoGrid from '../components/reusable/PhotoGrid.astro';
 import YouTube from '../components/YouTube.astro';
 import { Content as AviationText } from '../../content/aviation.md';
 import kingOfHues from '../assets/king-of-hues.jpg';
 import stickyNotes from '../../content/pm/2023-03-20-sticky-note-madness.jpg';
 import influencerShot from '../../content/influencer/Screenshot_20260803-210132.png';
 import { loadGallery } from '../lib/gallery';
+import { photoDate } from '../lib/photoDate';
+import { resolve } from 'node:path';
+import { existsSync, readFileSync } from 'node:fs';
 import { loadRankedList } from '../lib/ranking';
 import { loadSections } from '../lib/sections';
 import { loadBotw } from '../lib/botw';
@@ -122,6 +125,8 @@ const facets = [
   { id: 'miku', icon: '🎤', label: '初音ミク' },
   { id: 'churrasco', icon: '🥩', label: 'Churrasco' },
   { id: 'drummer', icon: '🥁', label: 'Drummer' },
+  { id: 'painting', icon: '🖌️', label: 'Painting/Drawing' },
+  { id: 'cooking', icon: '🍳', label: 'Cooking' },
   { id: 'concert', icon: '🤘', label: 'Concert' },
   { id: 'theater', icon: '🎭', label: 'Theater & Opera' },
   { id: 'gamer', icon: '🎮', label: 'Gamer' },
@@ -135,11 +140,11 @@ const facets = [
 // No facet opens by default: visitors grow a branch, then pick a facet.
 const branches = [
   { id: 'philosophy', icon: '🧭', label: 'Philosophy', blurb: 'How Deo thinks: mortality, mentoring, discipline, desire and ink.', facets: ['death', 'mentor', 'gym', 'sex', 'tattoo'] },
-  { id: 'craft', icon: '💼', label: 'Craft', blurb: 'What Deo builds and ships.', facets: ['dev', 'pm'] },
+  { id: 'craft', icon: '💼', label: 'Craft', blurb: 'What Deo builds, writes, plays and paints.', facets: ['dev', 'pm', 'author', 'influencer', 'painting', 'drummer'] },
   { id: 'explorer', icon: '🌏', label: 'Explorer', blurb: 'Where Deo goes and the languages he speaks there.', facets: ['traveler', 'aviation', 'multilingual', 'camping', 'fishing'] },
-  { id: 'livearts', icon: '🎨', label: 'Live Arts', blurb: 'Stage, page and screen: drums, shows, stories, and the diva herself.', facets: ['drummer', 'concert', 'theater', 'author', 'influencer', 'miku'] },
+  { id: 'frontrow', icon: '🎟️', label: 'Front Row', blurb: 'What Deo watches: live shows, the diva herself, anime, and the movies and TV worth (or not worth) the time.', facets: ['concert', 'theater', 'miku', 'anime', 'botw', 'potato'] },
   { id: 'play', icon: '🕹️', label: 'Play', blurb: 'Games at the table and on the screen, cards included.', facets: ['gamer', 'dnd', 'boardgames', 'mtg'] },
-  { id: 'hearth', icon: '🏡', label: 'Hearth', blurb: 'Family, pets, the grill and the comfort shows, games and anime.', facets: ['family', 'pets', 'churrasco', 'potato', 'botw', 'anime'] },
+  { id: 'hearth', icon: '🏡', label: 'Hearth', blurb: 'Family, pets, the grill and the kitchen.', facets: ['family', 'pets', 'churrasco', 'cooking'] },
 ];
 
 // Every facet must sit in exactly one branch, and a branch holds at most 6 (one row of the tree).
@@ -167,10 +172,29 @@ const concertWishlist = loadSections('content/concerts-wishlist.md', 'content/co
 const theater = loadSections('content/theater.md', 'content/theater');
 const theaterWishlist = loadSections('content/theater-wishlist.md', 'content/theater');
 const fishing = loadGallery('content/fishing', 'Fishing');
+// Painting/Drawing: each picture captioned with the date it was taken (photo metadata, else filename).
+// Pictures with neither can get an approximate day in content/painting/_dates.md, shown as "Circa Q1 2013".
+// Oldest first so it reads as a progression; undated ones go last, in filename order.
+const circa = new Map(
+  [...(existsSync('content/painting/_dates.md') ? readFileSync('content/painting/_dates.md', 'utf8') : '')
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .matchAll(/^- +(.+?): *(\d{4})-(\d{2})-(\d{2}) *$/gm)].map((m) => [m[1].trim(), `${m[2]}-${m[3]}-${m[4]}`]),
+);
+const quarterOf = (iso: string) => `Circa Q${Math.ceil(Number(iso.slice(5, 7)) / 3)} ${iso.slice(0, 4)}`;
+const painting = (
+  await Promise.all(
+    loadGallery('content/painting', 'Painting or drawing').photos.map(async (p) => {
+      const date = await photoDate(resolve('content/painting', p.file), p.file);
+      const approx = date ? undefined : circa.get(p.file);
+      return { src: p.src, file: p.file, alt: 'Painting or drawing', date, dateLabel: approx && quarterOf(approx), sortKey: date ?? approx ?? '9999' };
+    }),
+  )
+).sort((a, b) => a.sortKey.localeCompare(b.sortKey) || a.file.localeCompare(b.file, undefined, { numeric: true }));
 const camping = loadSections('content/camping.md', 'content/camping');
 const dnd = loadSections('content/dnd.md', 'content/dnd');
 const boardgames = loadSections('content/boardgames.md', 'content/boardgames');
 const mtg = loadSections('content/mtg.md', 'content/mtg');
+const cooking = loadSections('content/cooking.md', 'content/cooking');
 const botw = loadBotw();
 const nf = new Intl.NumberFormat('en-US');
 const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
@@ -450,7 +474,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-fishing" aria-labelledby="tab-fishing" tabindex="0" hidden>
-      <GalleryGrid gallery={fishing} name="fishing" captions empty="Fishing photos are on their way." />
+      <PhotoGrid photos={fishing.photos} intro={fishing.intro} name="fishing" caption="text" empty="Fishing photos are on their way." />
     </section>
 
     <section class="panel" role="region" id="panel-dnd" aria-labelledby="tab-dnd" tabindex="0" hidden>
@@ -505,10 +529,24 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       <ChurrascoFacet />
     </section>
 
+    <section class="panel" role="region" id="panel-cooking" aria-labelledby="tab-cooking" tabindex="0" hidden>
+      <Sections data={cooking} id="cooking" slots={1} empty="Recipes and kitchen adventures are on their way." photoAlt={(t) => `Cooking: ${t}`} />
+    </section>
+
     <section class="panel" role="region" id="panel-drummer" aria-labelledby="tab-drummer" tabindex="0" hidden>
       <div class="story">
         <p>This is a facet of my life that is on the backlog, as I am literally at max bandwidth having too much fun.</p>
       </div>
+    </section>
+
+    <section class="panel" role="region" id="panel-painting" aria-labelledby="tab-painting" tabindex="0" hidden>
+      <div class="story">
+        <p>
+          Definitely I do not have enough dexterity to really get where I want, but fortunately I know the right people with
+          the skills to help transform my ideas into reality. Regardless, I still push myself to at least try!
+        </p>
+      </div>
+      <PhotoGrid photos={painting} name="painting" caption="date" empty="Paintings and drawings are on their way." />
     </section>
 
     <section class="panel" role="region" id="panel-boardgames" aria-labelledby="tab-boardgames" tabindex="0" hidden>
@@ -1237,7 +1275,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     const b = photos[index];
     img.src = b.dataset.full!;
     img.alt = b.dataset.alt!;
-    caption.textContent = b.dataset.alt!;
+    caption.textContent = b.dataset.caption ?? b.dataset.alt!; // PhotoGrid sets data-caption (e.g. the date taken)
   }
   allPhotos.forEach((b) =>
     b.addEventListener('click', () => {
