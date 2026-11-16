@@ -17,7 +17,7 @@
 </figure>
 </div>
 
-That's how I lost nearly 80 lb in one year. I didn't know it then, but I was in pure survival mode. As I stabilized, the weight rebounded. And as you can see in the chart, I kept cycling between highs and lows, which actually maps to my mental health too: unfulfillment, then hyperfocus on something that acted like a band-aid, and once that ran out of fuel, the cycle started again. I was stuck, and I didn't know I was stuck. For someone striving to be self-aware, I truly couldn't see the box I had put around myself. In 2025, I was back at 260 lb, where it seemed to settle while I became a technical architect certified in F&O and Power Platform and kept making steady progress on my novel series, convention runs, and more.
+That's how I lost nearly 80 lb in one year. I didn't know it then, but I was in pure survival mode. As I stabilized, the weight rebounded. And as you can see in the chart, I kept cycling between highs and lows, which actually maps to my mental health too: unfulfillment, then hyperfocus on something that acted like a band-aid, and once that ran out of fuel, the cycle started again. I was stuck, and I didn't know I was stuck. For someone striving to be self-aware, I truly couldn't see the box that had existed around me since I was a kid: the masking, trying to appear so-called normal. In 2025, I was back at 260 lb, where it seemed to settle while I became a technical architect certified in F&O and Power Platform and kept making steady progress on my novel series, convention runs, and more.
 
 <div class="gym-photos">
 <figure>
@@ -34,7 +34,7 @@ That's how I lost nearly 80 lb in one year. I didn't know it then, but I was in 
 </figure>
 </div>
 
-Then, as I wrote in my [Vol. 3 afterword](https://deovandski.github.io/HusbandOutWorld/about/afterwords/#vol-3-afterword-2026), someone became the catalyst for a quantum leap. Hypervigilance, mental abuse, misery, a pile of unresolved crap, and constant masking overloaded my OS until it hit a kernel panic: my nervous system was frying from the inside out. But this time, I didn't reach for the same "solution" as in 2016. I had collected enough experience and self-understanding to see it: I'm not just ADHD, or anxious, or GAD, as I wrote in my [Vol. 1 afterword](https://deovandski.github.io/HusbandOutWorld/about/afterwords/#vol-1-afterword-2022). I'm full-blown AuDHD, and I was in the middle of my true unmasking, after my soul had been drained of all empathy, love, and care, to the point that I questioned who I even was. I took the opportunity life handed me and turned it into massive growth, knowledge, and a healthier way of living, both mentally and physically.
+Then, as I wrote in my [Vol. 3 afterword](https://deovandski.github.io/HusbandOutWorld/about/afterwords/#vol-3-afterword-2026), someone became the catalyst for a quantum leap. Hypervigilance, mental abuse, misery, a pile of unresolved crap, and a major crack in my masking overloaded my OS until it hit a kernel panic: my nervous system was frying from the inside out. But this time, I didn't even think of the same "solution" as in 2016. I had collected enough experience and self-understanding to see it: I'm not just ADHD, or anxious, or GAD, as I wrote in my [Vol. 1 afterword](https://deovandski.github.io/HusbandOutWorld/about/afterwords/#vol-1-afterword-2022). It had fucking finally clicked! I'm full-blown AuDHD, and I was in the middle of my true unmasking, after my soul had been drained of all empathy, love, and care, to the point that I questioned who I even was. I took the opportunity life handed me and turned it into massive growth, knowledge, and a healthier way of living, both mentally and physically.
 
 <div class="gym-photos gym-photos--single">
 <figure>
@@ -47,7 +47,7 @@ Then, as I wrote in my [Vol. 3 afterword](https://deovandski.github.io/HusbandOu
 
 For years, the gym was a pressure valve. I went for stress relief, so it never satisfied me: it was a tool for relief, not something I enjoyed. Now, for the first time in my life, going to the gym feels as natural as brushing my teeth. I don't go to relieve stress anymore. I go because I actually enjoy it, with music in my ears on the elliptical or under the weights.
 
-Wake up at 6am, drink coffee, poop, bathe, hit the gym, then head home to let Peeta run in the backyard while I shove food in my piehole before work. Practical and frictionless: part of my routine now, not something I have to force myself to do.
+Wake up at 6am (or 5am, if Peeta's in the mood for belly rubs), drink coffee, poop, bathe, hit the gym, then head home to let Peeta run in the backyard while I shove food in my piehole before work. Practical and frictionless: part of my routine now, not something I have to force myself to do.
 
 <div class="gym-photos">
 <figure>

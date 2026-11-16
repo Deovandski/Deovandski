@@ -39,7 +39,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Potato tab, TV shows side (top 39) | `content/tv/top39.md` (numbered list) |
 | Potato tab, Movies side (top 39) | `content/movies/top39.md` (numbered list) |
 | Pets tab (Bidu, Fluffy, Peeta: portrait picker + each pet's gallery) | `content/pets/<pet>/` (see `content/pets/README.md`); order in `src/lib/pets.ts` |
-| Sex tab (and the banner for when it's the first facet opened) | `content/sex.md`, `src/components/SexFacet.astro` |
+| Lust tab (and the banner for when it's the first facet opened) | `content/lust.md`, `src/components/LustFacet.astro` |
 | Facet easter eggs (banners after a visitor opens 10 and 20 different facets) | `src/components/FacetMilestoneEggs.astro`, GIFs `public/tea-sip.gif` and `public/aiight.gif` |
 | Miku Day (3/9) and Miku's birthday (8/31): dates, messages and pictures | `src/components/MikuDay.astro` (`DATES` in the script, pictures in `images` at the top), birthday photo `src/assets/miku-birthday-2016-08-31.jpg` |
 | Colors and fonts | `src/styles/global.css` |
@@ -50,7 +50,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 `npm run build` also writes `llms.txt` (an index of the tabs, per [llmstxt.org](https://llmstxt.org/))
 and `llms-full.txt` (every tab's text, as visitors see it) into the site root, the same idea as
 the #HusbandOutWorld site. They're generated from the built home page by `scripts/llms.mjs`,
-so they never go stale. The Sex tab is left out on purpose (`SKIP` at the top of that script).
+so they never go stale. The Lust tab is left out on purpose (`SKIP` at the top of that script).
 
 ## Local preview
 
@@ -59,7 +59,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-No facet opens by default: visitors grow a branch of the facet tree, then pick a facet. Link straight to a facet (its branch grows too) with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#cooking`, `#drummer`, `#painting`, `#boardgames`, `#mtg`, `#concert` (or `#concert-wishlist`), `#theater` (or `#theater-wishlist`), `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#sex`.
+No facet opens by default: visitors grow a branch of the facet tree, then pick a facet. Link straight to a facet (its branch grows too) with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#cooking`, `#drummer`, `#painting`, `#boardgames`, `#mtg`, `#concert` (or `#concert-wishlist`), `#theater` (or `#theater-wishlist`), `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#lust` (old `#sex` links still work).
 Add `?miku` to any URL to preview the Miku Day confetti (3/9), or `?miku=0831` for Miku's birthday (8/31).
 Add `?deathclock=0` to preview the Death tab's clock at zero (blinking digits and the "update the clock" message).
 
@@ -68,7 +68,7 @@ Add `?deathclock=0` to preview the Death tab's clock at zero (blinking digits an
 Links with `?src=LinkedIn` (any case) mark the visit as coming from LinkedIn, and so does
 arriving from linkedin.com or lnkd.in. The mark carries over while the visitor clicks around
 the site (Home, Contact), but any URL opened directly without `?src` (typed, bookmarked, from
-another site) starts clean. LinkedIn visitors don't see the Sex tab.
+another site) starts clean. LinkedIn visitors don't see the Lust tab.
 Per-source rules live at the bottom of `src/styles/global.css`; the value is on
 `<html data-src="...">`, so any other `?src=` value can get its own rules.
 Use `https://deovandski.github.io/Deovandski/?src=LinkedIn` on LinkedIn.

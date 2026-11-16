@@ -38,6 +38,8 @@ const TARGET = '2076-03-09T03:39:39-05:00';
     background: rgba(57, 197, 187, 0.08);
   }
   .death :global(.help p) { margin: 0; }
+  /* A highlighted line in the text (<mark> in content/death.md): teal like the rest of the site. */
+  .death :global(mark) { background: var(--teal); color: var(--night); padding: 0.05em 0.3em; border-radius: 4px; font-weight: 700; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
   .death :global(.verse) {
     margin: 3rem 0 0;
     padding-top: 1.75rem;
