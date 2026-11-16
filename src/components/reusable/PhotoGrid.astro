@@ -12,6 +12,7 @@
  *   const photos = [
  *     { src: catJpg, alt: 'Peeta in a box' },
  *     { src: paintingJpg, alt: 'Painting', date: '2013-01-15' },  // date: ISO YYYY-MM-DD, or null if unknown
+ *     { src: sketchJpg, alt: 'Sketch', dateLabel: 'Circa Q1 2013' },  // an approximate date, shown as is
  *   ];
  *   ---
  *   <PhotoGrid photos={photos} name="cat" caption="text" empty="Photos are on their way." />
@@ -31,6 +32,7 @@ interface Photo {
   src: ImageMetadata;
   alt: string; // what's in the photo, for screen readers and the "text" caption
   date?: string | null; // ISO YYYY-MM-DD the photo was taken, for the "date" caption; null = unknown
+  dateLabel?: string; // shown instead of the date when it's only approximate, e.g. "Circa Q1 2013"
 }
 
 interface Props {
@@ -54,8 +56,8 @@ const formatDate = (iso?: string | null) => {
 
 const cards = await Promise.all(
   photos.map(async (p) => {
-    const dateText = formatDate(p.date);
-    const spokenDate = p.date ? dateText : 'date unknown';
+    const dateText = p.dateLabel ?? formatDate(p.date);
+    const spokenDate = p.dateLabel ?? (p.date ? dateText : 'date unknown');
     return {
       ...p,
       full: (await getImage({ src: p.src, width: Math.min(1800, p.src.width), format: 'webp', quality: 80 })).src,

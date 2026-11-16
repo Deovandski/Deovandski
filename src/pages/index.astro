@@ -22,6 +22,7 @@ import influencerShot from '../../content/influencer/Screenshot_20260803-210132.
 import { loadGallery } from '../lib/gallery';
 import { photoDate } from '../lib/photoDate';
 import { resolve } from 'node:path';
+import { existsSync, readFileSync } from 'node:fs';
 import { loadRankedList } from '../lib/ranking';
 import { loadSections } from '../lib/sections';
 import { loadBotw } from '../lib/botw';
@@ -125,6 +126,7 @@ const facets = [
   { id: 'churrasco', icon: '🥩', label: 'Churrasco' },
   { id: 'drummer', icon: '🥁', label: 'Drummer' },
   { id: 'painting', icon: '🖌️', label: 'Painting/Drawing' },
+  { id: 'cooking', icon: '🍳', label: 'Cooking' },
   { id: 'concert', icon: '🤘', label: 'Concert' },
   { id: 'theater', icon: '🎭', label: 'Theater & Opera' },
   { id: 'gamer', icon: '🎮', label: 'Gamer' },
@@ -142,7 +144,7 @@ const branches = [
   { id: 'explorer', icon: '🌏', label: 'Explorer', blurb: 'Where Deo goes and the languages he speaks there.', facets: ['traveler', 'aviation', 'multilingual', 'camping', 'fishing'] },
   { id: 'frontrow', icon: '🎟️', label: 'Front Row', blurb: 'What Deo watches: live shows, the diva herself, anime, and the movies and TV worth (or not worth) the time.', facets: ['concert', 'theater', 'miku', 'anime', 'botw', 'potato'] },
   { id: 'play', icon: '🕹️', label: 'Play', blurb: 'Games at the table and on the screen, cards included.', facets: ['gamer', 'dnd', 'boardgames', 'mtg'] },
-  { id: 'hearth', icon: '🏡', label: 'Hearth', blurb: 'Family, pets and the grill.', facets: ['family', 'pets', 'churrasco'] },
+  { id: 'hearth', icon: '🏡', label: 'Hearth', blurb: 'Family, pets, the grill and the kitchen.', facets: ['family', 'pets', 'churrasco', 'cooking'] },
 ];
 
 // Every facet must sit in exactly one branch, and a branch holds at most 6 (one row of the tree).
@@ -170,22 +172,29 @@ const concertWishlist = loadSections('content/concerts-wishlist.md', 'content/co
 const theater = loadSections('content/theater.md', 'content/theater');
 const theaterWishlist = loadSections('content/theater-wishlist.md', 'content/theater');
 const fishing = loadGallery('content/fishing', 'Fishing');
-// Painting/Drawing: each picture captioned with the date it was taken (photo metadata, else filename),
-// oldest first so it reads as a progression; undated ones go last, in filename order.
+// Painting/Drawing: each picture captioned with the date it was taken (photo metadata, else filename).
+// Pictures with neither can get an approximate day in content/painting/_dates.md, shown as "Circa Q1 2013".
+// Oldest first so it reads as a progression; undated ones go last, in filename order.
+const circa = new Map(
+  [...(existsSync('content/painting/_dates.md') ? readFileSync('content/painting/_dates.md', 'utf8') : '')
+    .replace(/<!--[\s\S]*?-->/g, '')
+    .matchAll(/^- +(.+?): *(\d{4})-(\d{2})-(\d{2}) *$/gm)].map((m) => [m[1].trim(), `${m[2]}-${m[3]}-${m[4]}`]),
+);
+const quarterOf = (iso: string) => `Circa Q${Math.ceil(Number(iso.slice(5, 7)) / 3)} ${iso.slice(0, 4)}`;
 const painting = (
   await Promise.all(
-    loadGallery('content/painting', 'Painting or drawing').photos.map(async (p) => ({
-      src: p.src,
-      file: p.file,
-      alt: 'Painting or drawing',
-      date: await photoDate(resolve('content/painting', p.file), p.file),
-    })),
+    loadGallery('content/painting', 'Painting or drawing').photos.map(async (p) => {
+      const date = await photoDate(resolve('content/painting', p.file), p.file);
+      const approx = date ? undefined : circa.get(p.file);
+      return { src: p.src, file: p.file, alt: 'Painting or drawing', date, dateLabel: approx && quarterOf(approx), sortKey: date ?? approx ?? '9999' };
+    }),
   )
-).sort((a, b) => (a.date ?? '9999').localeCompare(b.date ?? '9999') || a.file.localeCompare(b.file, undefined, { numeric: true }));
+).sort((a, b) => a.sortKey.localeCompare(b.sortKey) || a.file.localeCompare(b.file, undefined, { numeric: true }));
 const camping = loadSections('content/camping.md', 'content/camping');
 const dnd = loadSections('content/dnd.md', 'content/dnd');
 const boardgames = loadSections('content/boardgames.md', 'content/boardgames');
 const mtg = loadSections('content/mtg.md', 'content/mtg');
+const cooking = loadSections('content/cooking.md', 'content/cooking');
 const botw = loadBotw();
 const nf = new Intl.NumberFormat('en-US');
 const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
@@ -518,6 +527,10 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
     <section class="panel" role="region" id="panel-churrasco" aria-labelledby="tab-churrasco" tabindex="0" hidden>
       <ChurrascoFacet />
+    </section>
+
+    <section class="panel" role="region" id="panel-cooking" aria-labelledby="tab-cooking" tabindex="0" hidden>
+      <Sections data={cooking} id="cooking" slots={1} empty="Recipes and kitchen adventures are on their way." photoAlt={(t) => `Cooking: ${t}`} />
     </section>
 
     <section class="panel" role="region" id="panel-drummer" aria-labelledby="tab-drummer" tabindex="0" hidden>

@@ -180,7 +180,7 @@ import PhotoGrid from './reusable/PhotoGrid.astro';
 
 | Prop | Default | |
 |---|---|---|
-| `photos` | (required) | `{ src, alt, date? }[]`: `src` an imported image, `alt` what's in it, `date` the ISO day it was taken (`null` = unknown). |
+| `photos` | (required) | `{ src, alt, date?, dateLabel? }[]`: `src` an imported image, `alt` what's in it, `date` the ISO day it was taken (`null` = unknown), `dateLabel` text shown instead when the date is only approximate (e.g. `"Circa Q1 2013"`). |
 | `name` | (required) | Groups the photos for the page's lightbox (`data-gallery`). |
 | `caption` | `"none"` | `"text"` shows `alt` above each photo; `"date"` shows the date as MM/DD/YYYY. |
 | `intro` | `[]` | Paragraphs shown above the grid. |
