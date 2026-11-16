@@ -38,7 +38,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Potato tab, Movies side (top 39) | `content/movies/top39.md` (numbered list) |
 | Pets tab (Bidu, Fluffy, Peeta: portrait picker + each pet's gallery) | `content/pets/<pet>/` (see `content/pets/README.md`); order in `src/lib/pets.ts` |
 | Sex tab (and the banner for when it's the first facet opened) | `content/sex.md`, `src/components/SexFacet.astro` |
-| 10-facets easter egg (banner after a visitor opens 10 different facets) | `src/components/TenTabsEgg.astro`, GIF `public/tea-sip.gif` |
+| Facet easter eggs (banners after a visitor opens 10 and 20 different facets) | `src/components/FacetMilestoneEggs.astro`, GIFs `public/tea-sip.gif` and `public/aiight.gif` |
 | Miku Day (3/9) and Miku's birthday (8/31): dates, messages and pictures | `src/components/MikuDay.astro` (`DATES` in the script, pictures in `images` at the top), birthday photo `src/assets/miku-birthday-2016-08-31.jpg` |
 | Colors and fonts | `src/styles/global.css` |
 | Logo | `src/assets/logo.png` |

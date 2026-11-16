@@ -9,7 +9,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 |---|---|---|
 | [SplitFlap.astro](SplitFlap.astro) | Split-flap (Solari board) display for a number or short word. It flips into place the first time it scrolls into view. | MTG tab (Win vs Loss) |
 | [LedClock.astro](LedClock.astro) + [fonts/](fonts/) | Countdown in red LED digits: years, days, hours, minutes, seconds. It blinks and shows a message at zero. | Death tab |
-| [EasterEggBanner.astro](EasterEggBanner.astro) | A hidden banner (picture, title, message, Close) that your script shows when a visitor does something. In the page, or floating at the bottom of the screen. | Sex tab (Ara ara~ / didn't take the bait), the 10-facets easter egg |
+| [EasterEggBanner.astro](EasterEggBanner.astro) | A hidden banner (picture, title, message, Close) that your script shows when a visitor does something. In the page, or floating at the bottom of the screen. | Sex tab (Ara ara~ / didn't take the bait), the 10- and 20-facets easter eggs |
 | [IconMeter.astro](IconMeter.astro) | A quantity shown as a row of icons, with the last one partly filled (650 lb ÷ 500 lb per cow = 1.3 cows). | Churrasco tab (cow-meter) |
 | [OrgChart.astro](OrgChart.astro) | A top-down organization chart. Each row of people or roles is joined to the row above, with optional portraits. | Churrasco tab (The Holy Order) |
 | [RouteMap.astro](RouteMap.astro) | A map that joins places with a curved great-circle line, kept inside the area you choose, with pinch and button zoom. Leaflet plus your own outline file: no API key, no tile server, no tracking. | Family tab (Itaituba → Fargo) |

@@ -1,0 +1,44 @@
+---
+import { url } from '../lib/url';
+import EasterEggBanner from './reusable/EasterEggBanner.astro';
+
+// Easter eggs for curious visitors: when someone has opened this many *different* facets themselves
+// (clicks in the tree, not links), the matching banner pops up at the bottom of the screen, once per
+// page load. A newer banner replaces an older one that's still open. Nothing is stored or sent.
+// To add a milestone: add a banner below with name="facets-<n>" and put <n> in MILESTONES.
+const MILESTONES = [10, 20];
+---
+
+<EasterEggBanner name="facets-10" image={url('/tea-sip.gif')} imageWidth={480} imageHeight={270} title="Am I that really interesting?" floating>
+  <p>
+    Or are you here trying to find ammunition to do something? I'm not tracking anything, but if you want something from
+    me, just skip the masturbatory mind games and ask me straight, and save us both time.
+  </p>
+  <p>I hate triangulation and wishy-washy behavior. I do respect directness and clear communication.</p>
+</EasterEggBanner>
+
+<EasterEggBanner name="facets-20" image={url('/aiight.gif')} imageWidth={408} imageHeight={230} title="20 tabs? Aiight." floating>
+  <p>
+    Whatever your goal is, I hope you achieve it, unless it involves negative energy toward me or the people I care
+    about. If that's the case, go bother someone else.
+  </p>
+  <p>Or grow a spine and just reach out to me: see the <a href={url('/contact/')}>Contact</a> page.</p>
+</EasterEggBanner>
+
+<script define:vars={{ MILESTONES }}>
+  // Count the different facets the visitor opens by clicking (the tree's `facetopen` events with source 'user').
+  const opened = new Set();
+  const shown = new Set();
+  document.addEventListener('facetopen', (e) => {
+    const { id, source } = e.detail;
+    if (source !== 'user') return;
+    opened.add(id);
+    const n = opened.size;
+    if (!MILESTONES.includes(n) || shown.has(n)) return;
+    shown.add(n);
+    for (const m of MILESTONES) {
+      const egg = document.querySelector(`[data-egg="facets-${m}"]`);
+      if (egg) egg.hidden = m !== n; // show this milestone, close any earlier one
+    }
+  });
+</script>
