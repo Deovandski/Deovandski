@@ -14,6 +14,8 @@ In each folder:
   `2024-10-13-I-wanna-play.jpg`, … (`2026-04-…` when you only know the month;
   plain numbers like `01-…` still work too). Several photos on one day? Add the
   time as HHMMSS: `2024-05-04-134837-Rueiro.jpg`.
+- No date at all? Use month `00`, like `2016-00-01-lil-princess.jpg`: those go before
+  that year's dated photos, numbered in the order you want them.
 - The rest of the filename becomes the photo's caption (on the grid, in the zoomed
   view and for screen readers): `2024-10-13-I-wanna-play.jpg` shows as "I wanna play".
 - `_intro.md` is the text shown above that pet's photos.

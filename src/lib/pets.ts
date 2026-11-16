@@ -24,7 +24,14 @@ export const PETS: { id: string; name: string; cover?: string; coverPosition?: s
     hero: 'captain-bidu',
     heroAlt: 'Captain Bidu: Bidu wearing a blue military officer cap with a gold winged badge',
   },
-  { id: 'fluffy', name: 'Fluffy' },
+  {
+    id: 'fluffy',
+    name: 'Fluffy',
+    cover: 'princess-fluffy-of-guama',
+    coverPosition: '50% 22%',
+    hero: 'princess-fluffy-of-guama',
+    heroAlt: 'Princess Fluffy of Guamá: Fluffy in a pink princess dress and a jeweled tiara, sitting in the back seat of a car',
+  },
   {
     id: 'peeta',
     name: 'Peeta',
