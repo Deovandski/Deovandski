@@ -1,0 +1,115 @@
+---
+// Life hacks: the second side of the PM/Life hacks tab (#life-hacks). Deo's own words, numbered in his order.
+// Life hack #2 holds the calendar text that used to sit on the PM side; the PM side links here.
+---
+
+<p class="ranking-lede hacks-lede">The small systems that keep my days, and my brain, running.</p>
+
+<ol class="hacks">
+  <li id="hack-pm-your-life">
+    <span class="hack-rank" aria-hidden="true">1</span>
+    <div class="hack-body">
+      <h3><span class="sr-only">Life hack #1: </span>PM your life!</h3>
+      <p>
+        Treat your life like a project: break big goals into small steps, be honest about scope and deadlines, and track what's
+        actually done. It's how I run everything from client work to this website, and the <a href="#pm">PM side</a> of this tab
+        has the details.
+      </p>
+    </div>
+  </li>
+  <li id="hack-calendar-bound">
+    <span class="hack-rank" aria-hidden="true">2</span>
+    <div class="hack-body">
+      <h3><span class="sr-only">Life hack #2: </span>Calendar bound</h3>
+      <p>
+        If it's tied to a date, it goes on the calendar. <a href="https://www.onecalendar.nl/">OneCalendar</a> merges my 5+
+        calendars into one master calendar, shown as a widget front and center on my phone. As soon as I wake up, I have a rough
+        idea of how the day will go, and I plan around the hard commitments.
+      </p>
+    </div>
+  </li>
+  <li id="hack-shisa-kanko">
+    <span class="hack-rank" aria-hidden="true">3</span>
+    <div class="hack-body">
+      <h3>
+        <span class="sr-only">Life hack #3: </span>Shisa Kanko <span lang="ja" translate="no">(指差喚呼)</span>
+      </h3>
+      <p>
+        Shisa Kanko, "pointing and calling", comes from Japan's railways: you point at the thing you're checking and say it out
+        loud. Human brains are made to conserve energy, and everything that can become automatic eventually becomes automatic.
+      </p>
+      <p>
+        This is especially useful for ADHD-leaning brains, as a way to force monotropic focus on whatever needs a crosscheck. When
+        I want to confirm the garage is closed, I raise my hand toward it and say "garage closed". That works like a system-wide
+        interrupt to my many ongoing thought channels, so my brain actually stores that the garage is closed before I drive away.
+      </p>
+    </div>
+  </li>
+  <li id="hack-systematize-your-brain">
+    <span class="hack-rank" aria-hidden="true">4</span>
+    <div class="hack-body">
+      <h3><span class="sr-only">Life hack #4: </span>Systematize your brain</h3>
+      <p>
+        This one is especially powerful for AuDHD brains. It's a way to force the creation of an inner council, where the opposing
+        forces meet in the middle and help steer the boat together instead of fighting each other.
+      </p>
+      <p>
+        As a software developer, I began treating parts of my brain like an OS (as you can clearly see from how I decompose my
+        brain across this website). It puts structure and bounds around the immense energy that lives within me. That energy is a
+        well, and it can run dry if it isn't cared for. All this scaffolding is there to protect me from myself, and to protect me
+        from people who would abuse and steal from that same well without giving anything back.
+      </p>
+    </div>
+  </li>
+</ol>
+
+<style>
+  .hacks-lede {
+    margin-bottom: 1.25rem;
+  }
+  .hacks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+    max-width: 72ch;
+  }
+  .hacks li {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1rem;
+    align-items: start;
+    padding: 1.1rem 1.25rem;
+    border-radius: 16px;
+    border: 1px solid rgba(190, 200, 209, 0.15);
+    background: rgba(255, 255, 255, 0.03);
+  }
+  .hack-rank {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--teal, #39c5bb);
+    text-align: center;
+  }
+  .hacks h3 {
+    margin: 0.1rem 0 0.5rem;
+    font-size: var(--step-1, 1.25rem);
+  }
+  .hacks p {
+    margin: 0 0 0.75rem;
+  }
+  .hacks p:last-child {
+    margin-bottom: 0;
+  }
+  @media (max-width: 520px) {
+    .hacks li {
+      grid-template-columns: 2rem 1fr;
+      gap: 0.75rem;
+      padding: 1rem;
+    }
+    .hack-rank {
+      font-size: 1.6rem;
+    }
+  }
+</style>

@@ -8,6 +8,7 @@ import MultilingualFacet from '../components/MultilingualFacet.astro';
 import Sections from '../components/Sections.astro';
 import MtgScore from '../components/MtgScore.astro';
 import ChurrascoFacet from '../components/ChurrascoFacet.astro';
+import LifeHacksFacet from '../components/LifeHacksFacet.astro';
 import FamilyFacet from '../components/FamilyFacet.astro';
 import GymFacet from '../components/GymFacet.astro';
 import LustFacet from '../components/LustFacet.astro';
@@ -110,7 +111,7 @@ const facets = [
   { id: 'aviation', icon: '✈️', label: 'Aviation' },
   { id: 'author', icon: '✍️', label: 'Author' },
   { id: 'mentor', icon: '🔥', label: 'Mentor' },
-  { id: 'pm', icon: '📋', label: 'PM' },
+  { id: 'pm', icon: '📋', label: 'PM/Life hacks' },
   { id: 'influencer', icon: '📣', label: 'Influencer' },
   { id: 'traveler', icon: '🗺️', label: 'Traveler' },
   { id: 'fishing', icon: '🎣', label: 'Fishing' },
@@ -336,6 +337,11 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-pm" aria-labelledby="tab-pm" tabindex="0" hidden>
+      <div class="switch" role="tablist" aria-label="PM or life hacks">
+        <button type="button" role="tab" id="pm-tab-pm" aria-controls="pm-pm" aria-selected="true" data-switch-hash="#pm">📋 PM</button>
+        <button type="button" role="tab" id="pm-tab-hacks" aria-controls="pm-hacks" aria-selected="false" tabindex="-1" data-switch-hash="#life-hacks">💡 Life hacks</button>
+      </div>
+      <div id="pm-pm" role="tabpanel" aria-labelledby="pm-tab-pm">
       <div class="story">
         <p>
           Project management isn't my job title, yet it shows up in almost every facet of my life: work, a light novel series, a
@@ -349,9 +355,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
         <h3 class="pm-subhead">How I track my own life</h3>
         <p>
           At home, a whiteboard holds my major goals and anything that isn't tied to a date. If it is tied to a date, it goes on
-          the calendar: <a href="https://www.onecalendar.nl/">OneCalendar</a> merges my 5+ calendars into one master calendar,
-          shown as a widget front and center on my phone. As soon as I wake up, I have a rough idea of how the day will go, and I
-          plan around the hard commitments.
+          the calendar; how I keep 5+ calendars in one place is <a href="#life-hacks">Life hack #2: Calendar bound</a>.
         </p>
         <p>
           I also use sticky notes, but I'm actively trying to get away from them. My rule now: it goes on the calendar, on the
@@ -388,6 +392,10 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
           ))
         }
       </ul>
+      </div>
+      <div id="pm-hacks" role="tabpanel" aria-labelledby="pm-tab-hacks" hidden>
+        <LifeHacksFacet />
+      </div>
     </section>
 
     <section class="panel" role="region" id="panel-death" aria-labelledby="tab-death" tabindex="0" hidden>
@@ -1212,7 +1220,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     for (const f of b.facets) f.addEventListener('keydown', (e) => onKey(e, b.facets, () => b.button.focus()));
   }
 
-  // In-tab switches (Potato: TV shows | Movies, Concert and Theater & Opera: Seen live | Wishlist). Each button carries the
+  // In-tab switches (Potato: TV shows | Movies, PM/Life hacks: PM | Life hacks, Concert and Theater & Opera: Seen live | Wishlist). Each button carries the
   // link that opens it (data-switch-hash), e.g. #potato-movies or #concert-wishlist.
   const switchButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-switch-hash]'));
   function flip(button: HTMLButtonElement, updateHash = true) {
