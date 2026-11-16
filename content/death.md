@@ -18,7 +18,7 @@ When my time comes, my funeral shall play 3 songs:
 
 Since we're on the subject: take care of your mental health. And if you've ever thought about ending it all... don't. I nearly did, back in 2016, during a period that far surpassed what my mind could take at the time. I called a crisis hotline. To the older lady who picked up the phone that night: I will forever be grateful. The "Harry" you see in Vol. 1 is an alternate version of myself: the one who plunged that knife into his chest that night.
 
-Why share something so dark and personal? <mark>Simple: I hope this finds the right person at the right moment.</mark> I was privileged to have a great, supportive family, but not everyone has that, so this is my way of putting positive energy into this weird world. Take care of yourself. If you suspect you're on the spectrum and want someone who understands, or want to hear it from someone like me, feel free to [reach out](contact/). But if you're going through an active crisis, don't be afraid to ask for help.
+Why share something so dark and personal? <mark>Simple: I hope this finds the right person at the right moment.</mark> I was privileged to have a great, supportive family, but not everyone has that, so this is my way of putting positive energy into this weird world. Take care of yourself. If you suspect you're on the spectrum and want someone who understands, or want to hear it from someone like me, feel free to [reach out](contact/). But if you're going through an active crisis, don't be afraid to reach out for professional help.
 
 <div class="help">
 
