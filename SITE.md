@@ -13,7 +13,8 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Aviation tab (text + YouTube video) | `content/aviation.md`; video id in `src/pages/index.astro` (`panel-aviation`) |
 | Mentor tab | `content/mentor.md` (plain Markdown) |
 | Death tab (countdown clock + text) | `content/death.md`; clock target in `src/components/DeathFacet.astro` (`TARGET`); the clock itself is the reusable `src/components/reusable/LedClock.astro` |
-| PM tab (public Kanban boards) | `boards` near the top of `src/pages/index.astro` |
+| PM/Life hacks tab: PM side (public Kanban boards) | `boards` near the top of `src/pages/index.astro` |
+| PM/Life hacks tab: Life hacks side | `src/components/LifeHacksFacet.astro` |
 | King of Hues photo | `src/assets/king-of-hues.jpg` |
 | Contact page (emails) | `src/pages/contact.astro` |
 | Traveler tab (map pins and photos) | `content/travel/` (see its README, COUNTRY_CODES.md and SUBDIVISION_CODES.md) |
@@ -82,7 +83,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-No facet opens by default: visitors grow a branch of the facet tree, then pick a facet. Link straight to a facet (its branch grows too) with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#cooking`, `#drummer`, `#painting`, `#boardgames`, `#mtg`, `#concert` (or `#concert-wishlist`), `#theater` (or `#theater-wishlist`), `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#lust` (old `#sex` links still work).
+No facet opens by default: visitors grow a branch of the facet tree, then pick a facet. Link straight to a facet (its branch grows too) with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm` (or `#life-hacks`), `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#cooking`, `#drummer`, `#painting`, `#boardgames`, `#mtg`, `#concert` (or `#concert-wishlist`), `#theater` (or `#theater-wishlist`), `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#lust` (old `#sex` links still work).
 Add `?miku` to any URL to preview the Miku Day confetti (3/9), or `?miku=0831` for Miku's birthday (8/31).
 Add `?deathclock=0` to preview the Death tab's clock at zero (blinking digits and the "update the clock" message).
 
