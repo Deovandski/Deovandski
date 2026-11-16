@@ -47,7 +47,7 @@ Then, as I wrote in my [Vol. 3 afterword](https://deovandski.github.io/HusbandOu
 
 For years, the gym was a pressure valve. I went for stress relief, so it never satisfied me: it was a tool for relief, not something I enjoyed. Now, for the first time in my life, going to the gym feels as natural as brushing my teeth. I don't go to relieve stress anymore. I go because I actually enjoy it, with music in my ears on the elliptical or under the weights.
 
-Wake up at 6am (or 5am, if Peeta's in the mood for belly rubs), drink coffee, poop, bathe, hit the gym, then head home to let Peeta run in the backyard while I shove food in my piehole before work. Practical and frictionless: part of my routine now, not something I have to force myself to do.
+Wake up at 6am (or 5am; Peeta is the true alarm clock in the house), drink coffee, poop, bathe, hit the gym, then head home to let Peeta run in the backyard while I shove food in my piehole before work. Practical and frictionless: part of my routine now, not something I have to force myself to do.
 
 <div class="gym-photos">
 <figure>
