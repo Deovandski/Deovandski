@@ -5,7 +5,7 @@ import type { Gallery } from '../lib/gallery';
 interface Props {
   gallery: Gallery;
   name: string; // groups photos for the zoom viewer, e.g. "cat" or "fishing"
-  empty: string; // shown when the folder has no photos yet
+  empty?: string; // shown when the folder has no photos yet (nothing is shown without it)
   captions?: boolean; // show each photo's description (from its filename) above it on the grid
 }
 
@@ -21,7 +21,7 @@ const photos = await Promise.all(
 {gallery.intro.map((para) => <p>{para}</p>)}
 {
   photos.length === 0 ? (
-    <p class="empty">{empty}</p>
+    empty && <p class="empty">{empty}</p>
   ) : (
     <ul class="gallery-grid">
       {photos.map((p, i) => (

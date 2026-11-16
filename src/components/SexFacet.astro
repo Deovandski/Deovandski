@@ -1,66 +1,24 @@
 ---
 import { Content } from '../../content/sex.md';
 import { url } from '../lib/url';
+import EasterEggBanner from './reusable/EasterEggBanner.astro';
 ---
 
 <!-- Two banners: one when Sex is the first facet the visitor opens, one when they opened another facet first. -->
-<div class="ara" data-variant="first" hidden role="status">
-  <img data-src={url('/ara-ara.webp')} alt="" width="159" height="229" />
-  <div>
-    <p class="ara__title">Ara ara~ That's the first thing you click?</p>
-    <p>Don't worry. You're human and curious. I am not tracking IPs or any other metrics.</p>
-    <p>You don't have to trust me, you can check <a href="https://github.com/Deovandski/Deovandski">the source code</a> yourself.</p>
-    <button type="button" class="ara__close">Close</button>
-  </div>
-</div>
+<EasterEggBanner name="sex-first" image={url('/ara-ara.webp')} imageWidth={159} imageHeight={229} title="Ara ara~ That's the first thing you click?">
+  <p>Don't worry. You're human and curious. I am not tracking IPs or any other metrics.</p>
+  <p>You don't have to trust me, you can check <a href="https://github.com/Deovandski/Deovandski">the source code</a> yourself.</p>
+</EasterEggBanner>
 
-<div class="ara" data-variant="later" hidden role="status">
-  <img data-src={url('/yeah-yes.gif')} alt="" width="220" height="225" />
-  <div>
-    <p class="ara__title">Huh. You didn't take the bait.</p>
-    <p>Zero tracking, zero metrics. I'll never know, so if you see me out in the wild, brag about it. 😉</p>
-    <button type="button" class="ara__close">Close</button>
-  </div>
-</div>
+<EasterEggBanner name="sex-later" image={url('/yeah-yes.gif')} imageWidth={220} imageHeight={225} title="Huh. You didn't take the bait.">
+  <p>Zero tracking, zero metrics. I'll never know, so if you see me out in the wild, brag about it. 😉</p>
+</EasterEggBanner>
 
 <div class="sex">
   <Content />
 </div>
 
 <style>
-  .ara {
-    display: grid;
-    grid-template-columns: auto minmax(0, 1fr);
-    gap: 1.25rem;
-    align-items: center;
-    margin-bottom: 2rem;
-    padding: 1rem 1.25rem;
-    border-radius: 18px;
-    background: linear-gradient(135deg, rgba(225, 40, 133, 0.2), rgba(57, 197, 187, 0.12)), var(--night);
-    border: 1px solid rgba(225, 40, 133, 0.55);
-    box-shadow: 0 0 40px rgba(225, 40, 133, 0.25);
-  }
-  .ara[hidden] { display: none; }
-  .ara img { width: 110px; height: auto; border-radius: 12px; }
-  .ara p { margin: 0 0 0.4rem; }
-  .ara__title {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: var(--step-1);
-    color: var(--pink);
-  }
-  .ara__close {
-    margin-top: 0.4rem;
-    font: inherit;
-    font-weight: 700;
-    color: var(--text);
-    background: transparent;
-    border: 1px solid var(--pink);
-    border-radius: 999px;
-    padding: 0.3rem 0.9rem;
-    cursor: pointer;
-  }
-
   .sex { max-width: var(--measure); }
   .sex :global(strong) { color: var(--teal); }
   .sex :global(h2) { font-size: var(--step-1); color: var(--silver); margin: 2.25rem 0 0.75rem; }
@@ -79,10 +37,6 @@ import { url } from '../lib/url';
   .sex :global(.sex__cta:hover),
   .sex :global(.sex__cta:focus-visible) { background: rgba(225, 40, 133, 0.35); }
 
-  @media (max-width: 560px) {
-    .ara { grid-template-columns: 1fr; text-align: center; }
-    .ara img { margin: 0 auto; }
-  }
 </style>
 
 <script>
@@ -91,8 +45,8 @@ import { url } from '../lib/url';
   // themselves count ('user'); growing or folding branches in the tree, other clicks on the page, and links
   // (#sex on arrival, links between facets) don't. The tree announces each open with a `facetopen` event.
   const banners = {
-    first: document.querySelector<HTMLElement>('.ara[data-variant="first"]'),
-    later: document.querySelector<HTMLElement>('.ara[data-variant="later"]'),
+    first: document.querySelector<HTMLElement>('[data-egg="sex-first"]'),
+    later: document.querySelector<HTMLElement>('[data-egg="sex-later"]'),
   };
   let firstFacet: string | null = null;
   let shown = false;
@@ -102,12 +56,7 @@ import { url } from '../lib/url';
     firstFacet ??= id;
     if (id !== 'sex' || shown) return;
     const banner = firstFacet === 'sex' ? banners.first : banners.later;
-    const img = banner?.querySelector<HTMLImageElement>('img');
-    if (img?.dataset.src) img.src = img.dataset.src;
-    if (banner) banner.hidden = false;
+    if (banner) banner.hidden = false; // EasterEggBanner loads the picture and handles Close
     shown = true;
   });
-  for (const banner of Object.values(banners)) {
-    banner?.querySelector('.ara__close')?.addEventListener('click', () => (banner.hidden = true));
-  }
 </script>

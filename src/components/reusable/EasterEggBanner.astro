@@ -1,0 +1,160 @@
+---
+/**
+ * EasterEggBanner: a hidden banner with a picture (often a GIF), a title, a message and a Close
+ * button, for easter eggs that pop up when a visitor does something.
+ *
+ * Reusable on purpose: no imports, no site CSS needed, works several times on one page. Copy this
+ * one file into any Astro project. See README.md in this folder.
+ *
+ *   <EasterEggBanner name="ara-ara" image="/ara-ara.webp" imageWidth={159} imageHeight={229}
+ *     title="Ara ara~ That's the first thing you click?">
+ *     <p>Don't worry. You're human and curious.</p>
+ *   </EasterEggBanner>
+ *
+ * It starts hidden. Show it from your own script by name; the picture only downloads then:
+ *
+ *   document.querySelector('[data-egg="ara-ara"]').hidden = false;
+ *
+ * `floating` pins it to the bottom of the screen (for eggs that aren't tied to one section);
+ * it then also closes with Escape and moves keyboard focus to its Close button.
+ */
+interface Props {
+  /** Name your script uses to find and show it: data-egg="<name>". */
+  name: string;
+  /** Picture URL. Loaded only when the banner is shown. */
+  image: string;
+  imageWidth: number;
+  imageHeight: number;
+  /** Leave empty when the picture is decoration (the usual case). */
+  imageAlt?: string;
+  title: string;
+  /** Pin to the bottom of the screen instead of sitting in the page. */
+  floating?: boolean;
+  closeLabel?: string;
+  class?: string;
+}
+
+const { name, image, imageWidth, imageHeight, imageAlt = '', title, floating = false, closeLabel = 'Close', class: className } = Astro.props;
+const titleId = `egg-${name}-title`;
+---
+
+<div
+  class:list={['egg', { 'egg--floating': floating }, className]}
+  data-egg={name}
+  hidden
+  role={floating ? 'dialog' : 'status'}
+  aria-labelledby={floating ? titleId : undefined}
+>
+  <img class="egg__img" data-src={image} alt={imageAlt} width={imageWidth} height={imageHeight} />
+  <div class="egg__body">
+    <p class="egg__title" id={titleId}>{title}</p>
+    <slot />
+    <button type="button" class="egg__close">{closeLabel}</button>
+  </div>
+</div>
+
+<style>
+  /* Theme from outside: .x :global(.egg) { --egg-accent: gold; } */
+  .egg {
+    --egg-accent: var(--pink, #e12885);
+    --egg-accent-2: var(--teal, #39c5bb);
+    --egg-bg: var(--night, #0b1230);
+    --egg-ink: var(--text, #e8ecf1);
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 1.25rem;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding: 1rem 1.25rem;
+    border-radius: 18px;
+    color: var(--egg-ink);
+    background:
+      linear-gradient(135deg, color-mix(in srgb, var(--egg-accent) 20%, transparent), color-mix(in srgb, var(--egg-accent-2) 12%, transparent)),
+      var(--egg-bg);
+    border: 1px solid color-mix(in srgb, var(--egg-accent) 55%, transparent);
+    box-shadow: 0 0 40px color-mix(in srgb, var(--egg-accent) 25%, transparent);
+  }
+  .egg[hidden] { display: none; }
+  .egg__img { width: 110px; height: auto; border-radius: 12px; }
+  .egg__body :global(p) { margin: 0 0 0.4rem; }
+  .egg__title {
+    font-family: var(--font-display, inherit);
+    font-weight: 800;
+    font-size: var(--step-1, 1.25rem);
+    line-height: 1.25;
+    color: var(--egg-accent);
+  }
+  .egg__close {
+    margin-top: 0.4rem;
+    font: inherit;
+    font-weight: 700;
+    color: var(--egg-ink);
+    background: transparent;
+    border: 1px solid var(--egg-accent);
+    border-radius: 999px;
+    padding: 0.3rem 0.9rem;
+    cursor: pointer;
+  }
+  .egg__close:hover,
+  .egg__close:focus-visible { background: color-mix(in srgb, var(--egg-accent) 25%, transparent); }
+
+  .egg--floating {
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    bottom: 1rem;
+    transform: translateX(-50%);
+    width: min(44rem, calc(100vw - 2rem));
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    margin: 0;
+    box-shadow: 0 0 40px color-mix(in srgb, var(--egg-accent) 30%, transparent), 0 18px 50px rgba(0, 0, 0, 0.6);
+    animation: egg-rise 0.35s ease-out;
+  }
+  .egg--floating .egg__img { width: 180px; }
+  @keyframes egg-rise {
+    from { opacity: 0; transform: translate(-50%, 1rem); }
+    to { opacity: 1; transform: translate(-50%, 0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .egg--floating { animation: none; }
+  }
+  @media (max-width: 560px) {
+    .egg { grid-template-columns: 1fr; text-align: center; }
+    .egg__img,
+    .egg--floating .egg__img { margin: 0 auto; width: 140px; }
+  }
+</style>
+
+<script>
+  // Every banner: download its picture the first time it's shown, and hide it on Close.
+  // Floating ones also take keyboard focus when shown and close with Escape.
+  document.querySelectorAll<HTMLElement>('[data-egg]').forEach((egg) => {
+    const img = egg.querySelector<HTMLImageElement>('.egg__img');
+    const close = egg.querySelector<HTMLButtonElement>('.egg__close')!;
+    const floating = egg.classList.contains('egg--floating');
+    let returnTo: HTMLElement | null = null;
+
+    const onShow = () => {
+      if (img?.dataset.src && !img.getAttribute('src')) img.src = img.dataset.src;
+      if (floating) {
+        returnTo = document.activeElement as HTMLElement | null;
+        close.focus({ preventScroll: true });
+      }
+    };
+    new MutationObserver(() => {
+      if (!egg.hidden) onShow();
+    }).observe(egg, { attributes: true, attributeFilter: ['hidden'] });
+
+    const hide = () => {
+      egg.hidden = true;
+      if (floating && returnTo?.isConnected) returnTo.focus({ preventScroll: true });
+    };
+    close.addEventListener('click', hide);
+    if (floating) {
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !egg.hidden) hide();
+      });
+    }
+  });
+</script>
