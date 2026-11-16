@@ -4,7 +4,7 @@
 import { readFileSync, writeFileSync } from 'node:fs';
 
 // Tabs left out of the AI files on purpose.
-const SKIP = new Set(['sex']);
+const SKIP = new Set(['lust']);
 
 const site = (process.env.SITE_URL || 'https://deovandski.github.io').replace(/\/+$/, '');
 const base = (process.env.BASE_PATH || '/').replace(/\/+$/, '');

@@ -10,7 +10,7 @@ import MtgScore from '../components/MtgScore.astro';
 import ChurrascoFacet from '../components/ChurrascoFacet.astro';
 import FamilyFacet from '../components/FamilyFacet.astro';
 import GymFacet from '../components/GymFacet.astro';
-import SexFacet from '../components/SexFacet.astro';
+import LustFacet from '../components/LustFacet.astro';
 import DeathFacet from '../components/DeathFacet.astro';
 import PetsFacet from '../components/PetsFacet.astro';
 import PhotoGrid from '../components/reusable/PhotoGrid.astro';
@@ -133,13 +133,13 @@ const facets = [
   { id: 'anime', icon: '🍥', label: 'Anime' },
   { id: 'potato', icon: '🥔', label: 'Potato' },
   { id: 'pets', icon: '🐾', label: 'Pets' },
-  { id: 'sex', icon: '😘', label: 'Sex' },
+  { id: 'lust', icon: '❤️‍🔥', label: 'Lust' },
 ];
 
 // The facet tree: Deo → branch → facet (two levels, no sub-facets). Order here is the order visitors see.
 // No facet opens by default: visitors grow a branch, then pick a facet.
 const branches = [
-  { id: 'philosophy', icon: '🧭', label: 'Philosophy', blurb: 'How Deo thinks: mortality, mentoring, discipline, desire and ink.', facets: ['death', 'mentor', 'gym', 'sex', 'tattoo'] },
+  { id: 'philosophy', icon: '🧭', label: 'Philosophy', blurb: 'How Deo thinks: mortality, mentoring, discipline, desire and ink.', facets: ['death', 'mentor', 'gym', 'lust', 'tattoo'] },
   { id: 'craft', icon: '💼', label: 'Craft', blurb: 'What Deo builds, writes, plays and paints.', facets: ['dev', 'pm', 'author', 'influencer', 'painting', 'drummer'] },
   { id: 'explorer', icon: '🌏', label: 'Explorer', blurb: 'Where Deo goes and the languages he speaks there.', facets: ['traveler', 'aviation', 'multilingual', 'camping', 'fishing'] },
   { id: 'frontrow', icon: '🎟️', label: 'Front Row', blurb: 'What Deo watches: live shows, the diva herself, anime, and the movies and TV worth (or not worth) the time.', facets: ['concert', 'theater', 'miku', 'anime', 'botw', 'potato'] },
@@ -625,8 +625,8 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       <PetsFacet />
     </section>
 
-    <section class="panel" role="region" id="panel-sex" aria-labelledby="tab-sex" tabindex="0" hidden>
-      <SexFacet />
+    <section class="panel" role="region" id="panel-lust" aria-labelledby="tab-lust" tabindex="0" hidden>
+      <LustFacet />
     </section>
   </div>
 
@@ -1175,7 +1175,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
   }
 
   // Opens a facet's panel. `source` says whether a visitor picked it ('user') or a link did ('hash');
-  // SexFacet only counts the visitor's own picks.
+  // LustFacet only counts the visitor's own picks.
   function openFacetFrom(f: HTMLButtonElement, source: 'user' | 'hash') {
     const b = branchOf(f);
     if (openBranch !== b) setBranch(b);
@@ -1238,8 +1238,8 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     });
   }
 
-  // Old links: #weeb is now #anime; #tv and #movie (the old TV/Movie Potato tabs) open the Potato switch.
-  const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies', '#cat': '#pets-peeta' };
+  // Old links: #weeb is now #anime; #sex is now #lust; #tv and #movie (the old TV/Movie Potato tabs) open the Potato switch.
+  const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies', '#cat': '#pets-peeta', '#sex': '#lust' };
   // Opens the facet a link like #death points to, growing its branch. Returns false if the hash isn't a facet.
   function openFromHash(rawHash: string): boolean {
     const hash = renamed[rawHash] ?? rawHash;

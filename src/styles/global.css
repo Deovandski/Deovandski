@@ -105,8 +105,8 @@ img { max-width: 100%; height: auto; }
 }
 
 /* Per-source visibility. <html data-src="..."> comes from ?src=... (see Base.astro).
-   Visitors from LinkedIn don't see the curiosity easter egg (Sex tab). Add more rules here as needed. */
-html[data-src='linkedin'] #tab-sex,
-html[data-src='linkedin'] #panel-sex {
+   Visitors from LinkedIn don't see the curiosity easter egg (Lust tab). Add more rules here as needed. */
+html[data-src='linkedin'] #tab-lust,
+html[data-src='linkedin'] #panel-lust {
   display: none !important;
 }
