@@ -23,7 +23,7 @@ import { loadGallery } from '../lib/gallery';
 import { loadRankedList } from '../lib/ranking';
 import { loadSections } from '../lib/sections';
 import { loadBotw } from '../lib/botw';
-import TenTabsEgg from '../components/TenTabsEgg.astro';
+import FacetMilestoneEggs from '../components/FacetMilestoneEggs.astro';
 
 type LinkItem = { href: string; label: string };
 
@@ -605,7 +605,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       <button type="button" class="viewer__next" aria-label="Next photo">›</button>
     </div>
   </dialog>
-  <TenTabsEgg />
+  <FacetMilestoneEggs />
 </Base>
 
 <style>
