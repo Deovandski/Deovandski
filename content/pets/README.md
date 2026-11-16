@@ -18,8 +18,10 @@ In each folder:
   view and for screen readers): `2024-10-13-I-wanna-play.jpg` shows as "I wanna play".
 - `_intro.md` is the text shown above that pet's photos.
 - The round portrait in the selector: set `cover` for that pet in `PETS`
-  (`src/lib/pets.ts`) to part of a photo's filename, or add a `_cover.jpg`
+  (`src/lib/pets.ts`) to part of a filename in the folder, or add a `_cover.jpg`
   (or .png/.webp). Without either, the pet's first photo is used.
+- Optional big picture above the grid: set `hero` the same way. `_intro.md` then shows as a
+  centered title above it. Start its filename with `_` to keep it out of the grid.
 - Formats: `.jpg`, `.jpeg`, `.png`, `.webp`, `.avif` (iPhone `.heic` saved as
   `.jpg` is converted automatically at build time). Full-size originals are fine.
 
