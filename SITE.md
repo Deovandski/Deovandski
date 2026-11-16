@@ -23,8 +23,10 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | 初音ミク tab (Miku concerts) | `content/miku.md`, photos in `content/miku/<concert>/` |
 | Churrasco tab (the Church of Churrasco: pounds grilled, cow-meter, papal decree, Holy Order chart, and the Scripture with its PDF export) | `content/churrasco/church.json` (all text and numbers), Pope's portrait `content/churrasco/pope-deo.jpg`, step photos `content/churrasco/steps/step-<n>.jpg`; layout in `src/components/ChurrascoFacet.astro` |
 | Drummer tab (a backlog note for now) | `src/pages/index.astro` (`panel-drummer`) |
+| Painting/Drawing tab (intro text + picture grid captioned with the date taken) | pictures in `content/painting/` (see its README), approximate dates in `content/painting/_dates.md`; intro text in `src/pages/index.astro` (`panel-painting`) |
 | Board Games tab (one picture + story per card, like D&D) | `content/boardgames.md`, pictures in `content/boardgames/<card>/` |
 | MTG tab (Magic: The Gathering; Win vs Loss split-flap score card, then one picture + story per card, like D&D) | `content/mtg.md` (`Wins:` and `Losses:` lines set the score card), pictures in `content/mtg/<card>/` |
+| Cooking tab (one picture + story per card, like D&D) | `content/cooking.md`, pictures in `content/cooking/<card>/` |
 | Reusable components (split-flap board, LED clock, easter-egg banner, icon meter, org chart, route map), built to copy into other projects | `src/components/reusable/` (see its README and the rule in CLAUDE.md) |
 | Concert tab (Seen live, plus a Wishlist behind a switch) | `content/concerts.md` and `content/concerts-wishlist.md`, band images in `content/concerts/bands/` |
 | BOTW tab (Best of the Worst picks) | `content/botw.md` |
@@ -57,7 +59,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-No facet opens by default: visitors grow a branch of the facet tree, then pick a facet. Link straight to a facet (its branch grows too) with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#drummer`, `#boardgames`, `#mtg`, `#concert` (or `#concert-wishlist`), `#theater` (or `#theater-wishlist`), `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#sex`.
+No facet opens by default: visitors grow a branch of the facet tree, then pick a facet. Link straight to a facet (its branch grows too) with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm`, `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#cooking`, `#drummer`, `#painting`, `#boardgames`, `#mtg`, `#concert` (or `#concert-wishlist`), `#theater` (or `#theater-wishlist`), `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#sex`.
 Add `?miku` to any URL to preview the Miku Day confetti (3/9), or `?miku=0831` for Miku's birthday (8/31).
 Add `?deathclock=0` to preview the Death tab's clock at zero (blinking digits and the "update the clock" message).
 
