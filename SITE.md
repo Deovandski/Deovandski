@@ -15,6 +15,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Death tab (countdown clock + text) | `content/death.md`; clock target in `src/components/DeathFacet.astro` (`TARGET`); the clock itself is the reusable `src/components/reusable/LedClock.astro` |
 | PM/Life hacks tab: PM side (public Kanban boards) | `boards` near the top of `src/pages/index.astro` |
 | PM/Life hacks tab: Life hacks side | `src/components/LifeHacksFacet.astro` |
+| QR Code page (hidden: `/qr/`, or `#qr` on the home page) | `codes` at the top of `src/pages/qr.astro` (one QR code per row, stacked in order) |
 | King of Hues photo | `src/assets/king-of-hues.jpg` |
 | Contact page (emails) | `src/pages/contact.astro` |
 | Traveler tab (map pins and photos) | `content/travel/` (see its README, COUNTRY_CODES.md and SUBDIVISION_CODES.md) |

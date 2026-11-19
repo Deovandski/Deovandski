@@ -180,7 +180,9 @@ const pages = [];
   for (const name of readdirSync(dir)) {
     const p = join(dir, name);
     if (statSync(p).isDirectory()) walk(p);
-    else if (name === 'index.html') pages.push(relative('dist', dir).split(sep).join('/'));
+    // Hidden pages (Base's noindex, like /qr/) stay out of the sitemap.
+    else if (name === 'index.html' && !/<meta name="robots" content="noindex"/.test(readFileSync(p, 'utf8')))
+      pages.push(relative('dist', dir).split(sep).join('/'));
   }
 })('dist');
 const urls = [

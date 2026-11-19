@@ -1,0 +1,99 @@
+---
+/**
+ * QrCode: a QR code drawn as SVG at build time (no JavaScript in the browser), with an optional
+ * title above it and the encoded text below it.
+ *
+ * Usage:
+ *   ---
+ *   import QrCode from '../components/reusable/QrCode.astro';
+ *   ---
+ *   <QrCode value="https://deovandski.github.io/Deovandski/" title="Website" />
+ *   <QrCode value="mailto:someone@example.com" title="Email" label="QR code to email someone" showValue={false} />
+ *
+ * Props:
+ *   value      text to encode (a URL, mailto:, tel:, plain text…). Required.
+ *   title      heading shown above the code. Optional.
+ *   label      what screen readers hear for the code. Default: "QR code for <value>".
+ *   showValue  show the encoded text under the code (as a link when it's a URL). Default: true.
+ *   level      error correction: 'L' | 'M' | 'Q' | 'H'. Default: 'M'.
+ *   headingLevel  2 to 6, the heading tag used for title. Default: 2.
+ *
+ * Theming (CSS custom properties, set on the component or any parent):
+ *   --qr-dark   colour of the modules (default #000). Keep it dark: phones scan dark-on-light best.
+ *   --qr-light  colour of the tile behind the code (default #fff).
+ *   --qr-size   width of the code (default min(78vw, 320px)).
+ *   --qr-title-color, --qr-value-color  colours of the title and the text below.
+ *
+ * Self-contained: needs only the `qrcode` npm package. Works several times on one page.
+ * Nothing moves, so there's nothing to reduce for prefers-reduced-motion.
+ */
+import QRCode from 'qrcode';
+
+interface Props {
+  value: string;
+  title?: string;
+  label?: string;
+  showValue?: boolean;
+  level?: 'L' | 'M' | 'Q' | 'H';
+  headingLevel?: 2 | 3 | 4 | 5 | 6;
+}
+
+const { value, title, label, showValue = true, level = 'M', headingLevel = 2 } = Astro.props;
+const Heading = `h${headingLevel}`;
+
+// A transparent background means qrcode writes only the module path (the tile's CSS background shows
+// through), and drawing the modules in currentColor lets CSS pick both colours.
+const raw = await QRCode.toString(value, { type: 'svg', errorCorrectionLevel: level, margin: 0, color: { dark: '#000000ff', light: '#00000000' } });
+const svg = raw
+  .replace('stroke="#000000"', 'stroke="currentColor"')
+  .replace('<svg ', `<svg role="img" aria-label="${(label ?? `QR code for ${value}`).replace(/"/g, '&quot;')}" focusable="false" `);
+const isLink = /^(https?:|mailto:|tel:)/i.test(value);
+const shown = value.replace(/^(https?:\/\/|mailto:|tel:)/i, '').replace(/\/$/, '');
+---
+
+<figure class="qr">
+  {title && <Heading class="qr__title">{title}</Heading>}
+  <div class="qr__tile" set:html={svg} />
+  {
+    showValue && (
+      <figcaption class="qr__value">
+        {isLink ? <a href={value}>{shown}</a> : <span>{value}</span>}
+      </figcaption>
+    )
+  }
+</figure>
+
+<style>
+  .qr {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .qr__title {
+    margin: 0;
+    color: var(--qr-title-color, inherit);
+    text-align: center;
+  }
+  .qr__tile {
+    width: var(--qr-size, min(78vw, 320px));
+    padding: calc(var(--qr-size, min(78vw, 320px)) * 0.08);
+    box-sizing: content-box;
+    background: var(--qr-light, #fff);
+    color: var(--qr-dark, #000);
+    border-radius: 16px;
+    line-height: 0;
+  }
+  .qr__tile :global(svg) {
+    display: block;
+    width: 100%;
+    height: auto;
+    shape-rendering: crispEdges;
+  }
+  .qr__value {
+    color: var(--qr-value-color, inherit);
+    text-align: center;
+    overflow-wrap: anywhere;
+  }
+</style>

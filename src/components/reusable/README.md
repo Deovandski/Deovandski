@@ -14,6 +14,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [OrgChart.astro](OrgChart.astro) | A top-down organization chart. Each row of people or roles is joined to the row above, with optional portraits. | Churrasco tab (The Holy Order) |
 | [RouteMap.astro](RouteMap.astro) | A map that joins places with a curved great-circle line, kept inside the area you choose, with pinch and button zoom. Leaflet plus your own outline file: no API key, no tile server, no tracking. | Family tab (Itaituba → Fargo) |
 | [PhotoGrid.astro](PhotoGrid.astro) | A grid of square photo cards, each captioned with a short description or the date the photo was taken (`--/--/----` when unknown). Photos carry data attributes for one shared lightbox. | Pets, Fishing, Family (descriptions), Painting/Drawing (dates) |
+| [QrCode.astro](QrCode.astro) | A QR code drawn as SVG when the site builds (no JavaScript in the browser), with an optional title above it and the encoded link below it. | QR Code page (`/qr/`) |
 
 ## SplitFlap
 
@@ -202,3 +203,28 @@ so pass them in (this site uses `src/lib/photoDate.ts`: EXIF, then the filename)
 2. Add a row to that repo's list of reusable components saying where it was copied from (for
    example, "from Deovandski/Deovandski `src/components/reusable/`").
 3. Improvements go back to the source too, so the copies don't drift apart.
+
+## QrCode
+
+```astro
+---
+import QrCode from './reusable/QrCode.astro';
+---
+<QrCode value="https://deovandski.github.io/Deovandski/" title="Website" />
+<QrCode value="mailto:someone@example.com" title="Email" showValue={false} />
+```
+
+Needs the `qrcode` npm package (`npm install qrcode`). Phones scan dark-on-light codes best, so keep
+`--qr-dark` dark and `--qr-light` light.
+
+| Prop | Default | |
+|---|---|---|
+| `value` | (required) | Text to encode: a URL, `mailto:`, `tel:` or plain text. |
+| `title` | none | Heading above the code. |
+| `label` | `"QR code for <value>"` | What screen readers hear for the code. |
+| `showValue` | `true` | Show the encoded text under the code (a link when it's a URL, `mailto:` or `tel:`). |
+| `level` | `"M"` | Error correction: `"L"`, `"M"`, `"Q"` or `"H"`. |
+| `headingLevel` | `2` | Heading tag for the title, 2 to 6. |
+
+Theme with `--qr-dark` (modules, default `#000`), `--qr-light` (tile, default `#fff`), `--qr-size`
+(default `min(78vw, 320px)`), `--qr-title-color` and `--qr-value-color`.
