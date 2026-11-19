@@ -38,6 +38,16 @@ const isCurrent =(href: string) => (href === '/' ? here === '/' || here === '' :
     {noindex && <meta name="robots" content="noindex" />}
     <meta name="theme-color" content="#070b1f" />
     <link rel="icon" type="image/png" href={url('/favicon.png')} />
+    <!-- Installable app (PWA): manifest, home-screen icon, and the service worker that keeps the QR Code page offline (public/sw.js). -->
+    <link rel="manifest" href={url('/manifest.webmanifest')} />
+    <link rel="apple-touch-icon" href={url('/icons/apple-touch-icon.png')} />
+    <script is:inline define:vars={{ swUrl: url('/sw.js'), swScope: url('/') }}>
+      if ('serviceWorker' in navigator) {
+        addEventListener('load', function () {
+          navigator.serviceWorker.register(swUrl, { scope: swScope.replace(/\/?$/, '/') }).catch(function () {});
+        });
+      }
+    </script>
     <!-- For AI tools and crawlers: plain-text versions of the site (written by scripts/llms.mjs). -->
     <link rel="alternate" type="text/markdown" href={url('/llms.txt')} title="llms.txt: index for AI tools" />
     <link rel="alternate" type="text/markdown" href={url('/llms-full.txt')} title="Every tab as plain text" />
