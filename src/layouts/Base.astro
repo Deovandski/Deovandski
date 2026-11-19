@@ -11,9 +11,10 @@ interface Props {
   description?: string;
   wide?: boolean;
   hideBrand?: boolean;
+  noindex?: boolean; // hidden pages (like /qr/): kept out of search engines and sitemap.xml
 }
 
-const { title, description = "Deovandski's hub: software, books, travel and games.", wide = false, hideBrand = false } = Astro.props;
+const { title, description = "Deovandski's hub: software, books, travel and games.", wide = false, hideBrand = false, noindex = false } = Astro.props;
 const pageTitle = title ? `${title} | Deovandski` : "Deovandski's Blog";
 
 const nav = [
@@ -34,6 +35,7 @@ const isCurrent =(href: string) => (href === '/' ? here === '/' || here === '' :
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
     <meta name="theme-color" content="#070b1f" />
     <link rel="icon" type="image/png" href={url('/favicon.png')} />
     <!-- For AI tools and crawlers: plain-text versions of the site (written by scripts/llms.mjs). -->
