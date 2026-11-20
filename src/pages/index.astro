@@ -40,6 +40,8 @@ const devLinks: LinkItem[] = [
   { href: 'https://stoneridgesoftware.com/author/deovandskis/', label: 'My Stoneridge Software posts' },
 ];
 
+const musicianLinks: LinkItem[] = [{ href: 'https://suno.com/@deovandski', label: 'My Suno songs' }];
+
 const authorLinks: LinkItem[] = [
   { href: 'https://husbandoutworld.com', label: '#HusbandOutWorld Series' },
   { href: 'https://deovandski.github.io/Vraki-West-March-Campaign-D-D/', label: 'Vraki West March D&D Campaign' },
@@ -125,7 +127,7 @@ const facets = [
   { id: 'gym', icon: '🏋️', label: 'Gym' },
   { id: 'miku', icon: '🎤', label: '初音ミク' },
   { id: 'churrasco', icon: '🥩', label: 'Churrasco' },
-  { id: 'drummer', icon: '🥁', label: 'Drummer' },
+  { id: 'musician', icon: '🎶', label: 'Musician' },
   { id: 'painting', icon: '🖌️', label: 'Painting/Drawing' },
   { id: 'cooking', icon: '🍳', label: 'Cooking' },
   { id: 'concert', icon: '🤘', label: 'Concert' },
@@ -141,7 +143,7 @@ const facets = [
 // No facet opens by default: visitors grow a branch, then pick a facet.
 const branches = [
   { id: 'philosophy', icon: '🧭', label: 'Philosophy', blurb: 'How Deo thinks: mortality, mentoring, discipline, desire and ink.', facets: ['death', 'mentor', 'gym', 'lust', 'tattoo'] },
-  { id: 'craft', icon: '💼', label: 'Craft', blurb: 'What Deo builds, writes, plays and paints.', facets: ['dev', 'pm', 'author', 'influencer', 'painting', 'drummer'] },
+  { id: 'craft', icon: '💼', label: 'Craft', blurb: 'What Deo builds, writes, plays and paints.', facets: ['dev', 'pm', 'author', 'influencer', 'painting', 'musician'] },
   { id: 'explorer', icon: '🌏', label: 'Explorer', blurb: 'Where Deo goes and the languages he speaks there.', facets: ['traveler', 'aviation', 'multilingual', 'camping', 'fishing'] },
   { id: 'frontrow', icon: '🎟️', label: 'Front Row', blurb: 'What Deo watches: live shows, the diva herself, anime, and the movies and TV worth (or not worth) the time.', facets: ['concert', 'theater', 'miku', 'anime', 'botw', 'potato'] },
   { id: 'play', icon: '🕹️', label: 'Play', blurb: 'Games at the table and on the screen, cards included.', facets: ['gamer', 'dnd', 'boardgames', 'mtg'] },
@@ -541,9 +543,24 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       <Sections data={cooking} id="cooking" slots={1} empty="Recipes and kitchen adventures are on their way." photoAlt={(t) => `Cooking: ${t}`} />
     </section>
 
-    <section class="panel" role="region" id="panel-drummer" aria-labelledby="tab-drummer" tabindex="0" hidden>
+    <section class="panel" role="region" id="panel-musician" aria-labelledby="tab-musician" tabindex="0" hidden>
       <div class="story">
-        <p>This is a facet of my life that is on the backlog, as I am literally at max bandwidth having too much fun.</p>
+        <p>
+          I've always been fascinated by creating music. But not only am I tone deaf, I also struggle with reading sheet music,
+          and even with something as simple as <a href="https://www.image-line.com/fl-studio/">FL Studio</a> and
+          <a href="https://www.virtualdj.com/">VirtualDJ</a>. I remember messing with them a lot, but never making progress, or
+          just making utter terrible shit. All I've been able to do by myself is fade songs in and out, fix their EQ and such in
+          <a href="https://www.audacityteam.org/">Audacity</a>. Never true music creation.
+        </p>
+        <p>
+          I can keep a beat, though, which is why I want to get into drumming one day! Why not now? Because of priorities, and
+          there's only so much I can cook at one time... So it's planned out on my backlog! I want to play
+          <i>World's End Dancehall</i>, <i>Two-Faced Lovers</i> and <i>Sweet Devil</i> on drums!
+        </p>
+        <p>Meanwhile, I can use AI to turn random, interesting ideas into fun songs!</p>
+        <ul class="pills">
+          {musicianLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
+        </ul>
       </div>
     </section>
 
@@ -1246,8 +1263,8 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     });
   }
 
-  // Old links: #weeb is now #anime; #sex is now #lust; #tv and #movie (the old TV/Movie Potato tabs) open the Potato switch.
-  const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies', '#cat': '#pets-peeta', '#sex': '#lust' };
+  // Old links: #weeb is now #anime, #drummer is now #musician; #sex is now #lust; #tv and #movie (the old TV/Movie Potato tabs) open the Potato switch.
+  const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies', '#cat': '#pets-peeta', '#sex': '#lust', '#drummer': '#musician' };
   // Opens the facet a link like #death points to, growing its branch. Returns false if the hash isn't a facet.
   function openFromHash(rawHash: string): boolean {
     const hash = renamed[rawHash] ?? rawHash;

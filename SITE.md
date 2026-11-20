@@ -26,7 +26,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Gym tab (chart + story) | `content/gym/weights.md`, `content/gym/story.md`, photos in `content/gym/photos/<year>.jpg` |
 | 初音ミク tab (Miku concerts) | `content/miku.md`, photos in `content/miku/<concert>/` |
 | Churrasco tab (the Church of Churrasco: pounds grilled, cow-meter, papal decree, Holy Order chart, and the Scripture with its PDF export) | `content/churrasco/church.json` (all text and numbers), Pope's portrait `content/churrasco/pope-deo.jpg`, step photos `content/churrasco/steps/step-<n>.jpg`; layout in `src/components/ChurrascoFacet.astro` |
-| Drummer tab (a backlog note for now) | `src/pages/index.astro` (`panel-drummer`) |
+| Musician tab (text and the Suno button) | `src/pages/index.astro` (`panel-musician`, `musicianLinks`) |
 | Painting/Drawing tab (intro text + picture grid captioned with the date taken) | pictures in `content/painting/` (see its README), approximate dates in `content/painting/_dates.md`; intro text in `src/pages/index.astro` (`panel-painting`) |
 | Board Games tab (one picture + story per card, like D&D) | `content/boardgames.md`, pictures in `content/boardgames/<card>/` |
 | MTG tab (Magic: The Gathering; Win vs Loss split-flap score card, then one picture + story per card, like D&D) | `content/mtg.md` (`Wins:` and `Losses:` lines set the score card), pictures in `content/mtg/<card>/` |
@@ -86,7 +86,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-No facet opens by default: visitors grow a branch of the facet tree, then pick a facet. Link straight to a facet (its branch grows too) with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm` (or `#life-hacks`), `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#cooking`, `#drummer`, `#painting`, `#boardgames`, `#mtg`, `#concert` (or `#concert-wishlist`), `#theater` (or `#theater-wishlist`), `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#lust` (old `#sex` links still work).
+No facet opens by default: visitors grow a branch of the facet tree, then pick a facet. Link straight to a facet (its branch grows too) with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm` (or `#life-hacks`), `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#miku`, `#churrasco`, `#cooking`, `#musician` (old `#drummer` links still work), `#painting`, `#boardgames`, `#mtg`, `#concert` (or `#concert-wishlist`), `#theater` (or `#theater-wishlist`), `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#lust` (old `#sex` links still work).
 Add `?miku` to any URL to preview the Miku Day confetti (3/9), or `?miku=0831` for Miku's birthday (8/31).
 Add `?deathclock=0` to preview the Death tab's clock at zero (blinking digits and the "update the clock" message).
 
