@@ -1,19 +1,24 @@
 ---
 // Hidden QR Code page (/qr/, or #qr on the home page): just the header, the footer and QR codes,
 // for sharing contact info on the fly. Not in the menu, the facet tree, the sitemap or search results.
-// To add a code, add a row to `codes`; they stack top to bottom in this order.
+// Name and phone number sit above the codes (`contact`). To add a code, add a row to `codes`; they stack top to bottom in this order.
 import Base from '../layouts/Base.astro';
 import QrCode from '../components/reusable/QrCode.astro';
 
 // BASE_URL may lack its trailing slash (/Deovandski); the site's real address ends in one.
 const website = new URL(import.meta.env.BASE_URL.replace(/\/?$/, '/'), Astro.site).href;
 
+const contact = { nick: 'デオ', phone: '(701) 491-0010', tel: '+17014910010' };
+
 const codes = [{ title: 'Website', value: website }];
 ---
 
 <Base title="QR Code" description="QR codes for sharing Deovandski's contact info." noindex>
-  <h1 class="sr-only">QR Code</h1>
   <div class="qr-stack">
+    <header class="qr-contact">
+      <h1><span class="nowrap">Deovandski “<span lang="ja">{contact.nick}</span>”</span> <span class="nowrap">Skibinski Junior</span></h1>
+      <p><a href={`tel:${contact.tel}`}>{contact.phone}</a></p>
+    </header>
     {codes.map((c) => <QrCode title={c.title} value={c.value} label={`QR code for Deovandski's ${c.title.toLowerCase()}: ${c.value}`} />)}
   </div>
 </Base>
@@ -27,5 +32,21 @@ const codes = [{ title: 'Website', value: website }];
     padding: 1.5rem 0 2.5rem;
     --qr-title-color: var(--teal, #39c5bb);
     --qr-value-color: var(--muted, #9aa3b5);
+  }
+  .qr-contact {
+    text-align: center;
+  }
+  .qr-contact h1 {
+    margin: 0 0 0.5rem;
+    font-size: clamp(1.4rem, 5.5vw, 2.1rem);
+    line-height: 1.25;
+  }
+  .nowrap {
+    white-space: nowrap;
+  }
+  .qr-contact p {
+    margin: 0;
+    font-size: clamp(1.15rem, 4.5vw, 1.5rem);
+    font-variant-numeric: tabular-nums;
   }
 </style>
