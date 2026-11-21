@@ -26,6 +26,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Traveler tab (map pins and photos) | `content/travel/` (see its README, COUNTRY_CODES.md and SUBDIVISION_CODES.md) |
 | Multilingual tab (language equalizer) | `content/languages.md` |
 | Tattoo tab | `content/tattoos.md`, photos in `content/tattoos/<area>/` |
+| Tattoo tab practice skin (draw a tattoo) | `src/components/reusable/DrawingPad.astro`, placed under the tattoos in `panel-tattoo` in `src/pages/index.astro` |
 | Gym tab (chart + story) | `content/gym/weights.md`, `content/gym/story.md`, photos in `content/gym/photos/<year>.jpg` |
 | 初音ミク tab (Miku concerts) | `content/miku.md`, photos in `content/miku/<concert>/` |
 | Churrasco tab (the Church of Churrasco: pounds grilled (kilograms are worked out from the pounds), cow-meter, papal decree, Holy Order chart, and the Scripture with its PDF export) | `content/churrasco/church.json` (all text and numbers), Pope's portrait `content/churrasco/pope-deo.jpg`, step photos `content/churrasco/steps/step-<n>.jpg`; layout in `src/components/ChurrascoFacet.astro` |
