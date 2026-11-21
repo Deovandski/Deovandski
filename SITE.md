@@ -44,6 +44,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | BOTW tab (intro and the ranked picks with watch counts) | `content/botw.md` (refresh from a Google Takeout watch history with `scripts/botw-from-history.mjs`) |
 | BOTW tab VHS pile (hours watched, the dates the history covers) | `content/botw-stats.json` (written by the script's `--stats`), video lengths in `content/botw-durations.json`, pile component `src/components/reusable/VhsPile.astro` |
 | D&D tab (one picture + story per campaign) | `content/dnd.md`, pictures in `content/dnd/<campaign>/` |
+| D&D tab dice (the row of dice under the title) | `src/components/reusable/DiceTray.astro`, placed at the top of `panel-dnd` in `src/pages/index.astro` |
 | Fishing tab (photo gallery, like each pet on the Pets tab) | `content/fishing/` (see its README) |
 | Camping tab (location cards, 2 photos each) | `content/camping.md` |
 | Theater & Opera tab (Seen live, plus a Wishlist behind a switch, like Concert) | `content/theater.md` and `content/theater-wishlist.md`, show images in `content/theater/shows/` |
