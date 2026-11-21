@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import GimmickPlay from '../components/GimmickPlay.astro';
 import Ranking from '../components/Ranking.astro';
@@ -21,6 +21,8 @@ import { Content as AviationText } from '../../content/aviation.md';
 import kingOfHues from '../assets/king-of-hues.jpg';
 import stickyNotes from '../../content/pm/2023-03-20-sticky-note-madness.jpg';
 import influencerShot from '../../content/influencer/Screenshot_20260803-210132.png';
+// The screenshot links to a large webp copy (the photo viewer opens it), not the original PNG.
+const influencerFull = (await getImage({ src: influencerShot, width: Math.min(1800, influencerShot.width), format: 'webp', quality: 85 })).src;
 import { loadGallery } from '../lib/gallery';
 import { photoDate } from '../lib/photoDate';
 import { resolve } from 'node:path';
@@ -489,7 +491,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       </p>
       <p>For historical purposes, here’s a screenshot of what it looked like:</p>
       <figure class="influencer-shot">
-        <a href={influencerShot.src}>
+        <a href={influencerFull}>
           <Image
             src={influencerShot}
             alt="Deo's old TikTok profile, @deovandski: 732 followers, 118.5K likes, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, above a grid of video thumbnails"

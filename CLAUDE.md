@@ -47,4 +47,9 @@ npm install
 npm run build        # builds dist/ and llms.txt
 ```
 
+The build ends with `scripts/prune-originals.mjs`, which deletes the original photos Astro copies into
+`dist/_astro/` that no page uses. GitHub Pages refuses sites over 1 GB, and those originals were most of it.
+So never link or show an imported picture's original (`photo.src`). Use `<Image>` for the page and a
+`getImage()` webp copy (up to 1800px) for a link or the photo viewer's `data-full`. That copy is what ships.
+
 Check changes at desktop (1280px) and phone (412px) widths before opening a PR.
