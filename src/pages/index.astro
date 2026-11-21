@@ -22,6 +22,7 @@ import PetsFacet from '../components/PetsFacet.astro';
 import PhotoGrid from '../components/reusable/PhotoGrid.astro';
 import YouTube from '../components/YouTube.astro';
 import { Content as AviationText } from '../../content/aviation.md';
+import DrumKit from '../components/reusable/DrumKit.astro';
 import kingOfHues from '../assets/king-of-hues.jpg';
 import stickyNotes from '../../content/pm/2023-03-20-sticky-note-madness.jpg';
 import influencerShot from '../../content/influencer/Screenshot_20260803-210132.png';
@@ -618,6 +619,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
           {musicianLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
         </ul>
       </div>
+      <DrumKit label="Virtual drum kit" />
     </section>
 
     <section class="panel" role="region" id="panel-painting" aria-labelledby="tab-painting" tabindex="0" hidden>

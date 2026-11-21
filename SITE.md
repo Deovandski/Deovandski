@@ -31,6 +31,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | 初音ミク tab (Miku concerts) | `content/miku.md`, photos in `content/miku/<concert>/` |
 | Churrasco tab (the Church of Churrasco: pounds grilled (kilograms are worked out from the pounds), cow-meter, papal decree, Holy Order chart, and the Scripture with its PDF export) | `content/churrasco/church.json` (all text and numbers), Pope's portrait `content/churrasco/pope-deo.jpg`, step photos `content/churrasco/steps/step-<n>.jpg`; layout in `src/components/ChurrascoFacet.astro` |
 | Musician tab (text and the Suno button) | `src/pages/index.astro` (`panel-musician`, `musicianLinks`) |
+| Musician tab drum kit | `src/components/reusable/DrumKit.astro`, placed in `panel-musician` in `src/pages/index.astro` |
 | Painting/Drawing tab (intro text + picture grid captioned with the date taken) | pictures in `content/painting/` (see its README), approximate dates in `content/painting/_dates.md`; intro text in `src/pages/index.astro` (`panel-painting`) |
 | Board Games tab (one picture + story per card, like D&D) | `content/boardgames.md`, pictures in `content/boardgames/<card>/` |
 | Board Games tab Territory Snipping (the on-rails darts scene) | script, dialogue and settings in `content/territory-snipping.json` (every line is from HusbandOutWorld Vol 2); `src/components/reusable/IsoDarts.astro`, placed at the top of `panel-boardgames` |
