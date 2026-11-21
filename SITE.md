@@ -11,6 +11,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Facet tree (which branch each facet sits in, the order, branch blurbs) | `facets` and `branches` near the top of `src/pages/index.astro`; the build stops if a facet is missing, listed twice, or a branch has more than 6 |
 | Family tab (header photos, text, Itaituba → Fargo map, photos) | `content/family/_intro.md`, header photos in `content/family/header/`, photos in `content/family/` (see its README); layout and map in `src/components/FamilyFacet.astro` |
 | Aviation tab (text + YouTube video) | `content/aviation.md`; video id in `src/pages/index.astro` (`panel-aviation`) |
+| Aviation paper plane | `src/components/reusable/PaperPlane.astro`, placed in `panel-aviation` in `src/pages/index.astro` |
 | Mentor tab | `content/mentor.md` (plain Markdown) |
 | Death tab (countdown clock + text) | `content/death.md`; clock target in `src/components/DeathFacet.astro` (`TARGET`); the clock itself is the reusable `src/components/reusable/LedClock.astro` |
 | PM/Life hacks tab: PM side (public Kanban boards) | `boards` near the top of `src/pages/index.astro` |
