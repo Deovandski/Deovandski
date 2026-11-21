@@ -15,6 +15,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [RouteMap.astro](RouteMap.astro) | A map that joins places with a curved great-circle line, kept inside the area you choose, with pinch and button zoom. Leaflet plus your own outline file: no API key, no tile server, no tracking. | Family tab (Itaituba → Fargo) |
 | [PhotoGrid.astro](PhotoGrid.astro) | A grid of square photo cards, each captioned with a short description or the date the photo was taken (`--/--/----` when unknown). Photos carry data attributes for one shared lightbox. | Pets, Fishing, Family (descriptions), Painting/Drawing (dates) |
 | [QrCode.astro](QrCode.astro) | A QR code drawn as SVG when the site builds (no JavaScript in the browser), with an optional title above it and the encoded link below it. | QR Code page (`/qr/`) |
+| [VhsPile.astro](VhsPile.astro) | A pile of VHS tapes holding a number of hours of video. Visitors pick the recording speed (SP, LP, EP) and the tapes fall from the top and pile up; they shrink to fit, so it can show a couple of thousand. Canvas, no libraries. | BOTW tab (watch time) |
 
 ## SplitFlap
 
@@ -228,3 +229,30 @@ Needs the `qrcode` npm package (`npm install qrcode`). Phones scan dark-on-light
 
 Theme with `--qr-dark` (modules, default `#000`), `--qr-light` (tile, default `#fff`), `--qr-size`
 (default `min(78vw, 320px)`), `--qr-title-color` and `--qr-value-color`.
+
+## VhsPile
+
+```astro
+---
+import VhsPile from './reusable/VhsPile.astro';
+---
+<VhsPile hours={2331.6}>
+  <p>About 2,332 hours of Best of the Worst.</p>
+</VhsPile>
+<VhsPile hours={40} mode="LP" summary="{tapes} tapes in {name}" />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `hours` | (required) | Total hours of video. |
+| `modes` | T-120: SP 2 h, LP 4 h, EP 6 h | Recording speeds: `{ key, name, hours }`, with hours per tape. |
+| `mode` | the first one | Key of the speed picked at first. |
+| `label` | `"Recording speed"` | Legend of the speed picker. |
+| `summary` | `"That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per tape)."` | Line under the pile. `{tapes}`, `{mode}`, `{name}` and `{perTape}` are filled in; it's announced when the speed changes. |
+| `locale` | `"en-US"` | Number formatting. |
+| `class` | none | Extra class, e.g. to theme it. |
+| slot | none | Text under the pile, above the summary. |
+
+The tapes fall every time the pile comes into view (opening its tab counts). People who prefer reduced
+motion see the finished pile. Theme with `--vhs-pile-height` (default `clamp(220px, 38vw, 360px)`),
+`--vhs-pile-accent`, `--vhs-pile-text`, `--vhs-pile-muted`, `--vhs-pile-border` and `--vhs-pile-bg`.

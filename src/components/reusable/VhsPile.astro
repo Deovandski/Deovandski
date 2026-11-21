@@ -1,0 +1,449 @@
+---
+/**
+ * VhsPile: a pile of VHS tapes that holds a number of hours of video. Visitors pick the recording
+ * speed (SP, LP, EP), which sets how many hours fit on one tape, and so how many tapes are in the pile.
+ * When the pile comes into view, the tapes fall from the top of the box and pile up at the bottom.
+ * The tapes shrink to fit, so it can show a handful or a couple of thousand.
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
+ * Copy this one file into any Astro project. See README.md in this folder.
+ *
+ *   <VhsPile hours={2331.6} label="Recording speed">
+ *     About 2,332 hours of Best of the Worst.
+ *   </VhsPile>
+ *   <VhsPile hours={40} mode="LP" summary="{tapes} tapes in {name}" />
+ *
+ * Props:
+ *   hours    total hours of video. Required.
+ *   modes    recording speeds: { key, name, hours } with hours per tape. Default: a T-120 tape,
+ *            SP (Standard Play) 2 h, LP (Long Play) 4 h, EP (Extended Play) 6 h.
+ *   mode     key of the speed picked at first. Default: the first one.
+ *   label    legend of the speed picker (also read by screen readers). Default: "Recording speed".
+ *   summary  line under the pile; {tapes}, {mode}, {name} and {perTape} are filled in.
+ *            Default: "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per tape)."
+ *   locale   for number formatting. Default: "en-US".
+ *   Slot: text shown under the pile, above the summary (e.g. where the hours come from).
+ *
+ * Theming (CSS custom properties): --vhs-pile-height (default clamp(220px, 38vw, 360px)),
+ * --vhs-pile-accent (picked speed, default #39c5bb), --vhs-pile-text, --vhs-pile-muted,
+ * --vhs-pile-border, --vhs-pile-bg.
+ *
+ * Accessible: the speed picker is a group of radio buttons (arrow keys work), the picture has a text
+ * label, and the summary is announced when the speed changes. People who prefer reduced motion see
+ * the finished pile with no falling.
+ */
+interface Mode {
+  key: string;
+  name: string;
+  hours: number;
+}
+interface Props {
+  hours: number;
+  modes?: Mode[];
+  mode?: string;
+  label?: string;
+  summary?: string;
+  locale?: string;
+  class?: string;
+}
+
+const {
+  hours,
+  modes = [
+    { key: 'SP', name: 'Standard Play', hours: 2 },
+    { key: 'LP', name: 'Long Play', hours: 4 },
+    { key: 'EP', name: 'Extended Play', hours: 6 },
+  ],
+  mode = modes[0].key,
+  label = 'Recording speed',
+  summary = "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per tape).",
+  locale = 'en-US',
+  class: className,
+} = Astro.props;
+
+const uid = `vhs-pile-${Math.random().toString(36).slice(2, 8)}`;
+const nf = new Intl.NumberFormat(locale);
+const picked = modes.find((m) => m.key === mode) ?? modes[0];
+const tapesFor = (m: Mode) => Math.max(1, Math.ceil(hours / m.hours));
+const fill = (m: Mode) =>
+  summary
+    .replace('{tapes}', nf.format(tapesFor(m)))
+    .replace('{mode}', m.key)
+    .replace('{name}', m.name)
+    .replace('{perTape}', nf.format(m.hours));
+const pictureLabel = (m: Mode) => `A pile of ${nf.format(tapesFor(m))} VHS tapes`;
+---
+
+<figure
+  class:list={['vhs-pile', className]}
+  data-hours={hours}
+  data-modes={JSON.stringify(modes)}
+  data-summary={summary}
+  data-locale={locale}
+>
+  <fieldset class="vhs-pile__modes">
+    <legend>{label}</legend>
+    {
+      modes.map((m) => (
+        <label>
+          <input type="radio" name={uid} value={m.key} checked={m.key === picked.key} />
+          <span>
+            <b>{m.key}</b>
+            <small>{nf.format(m.hours)} h</small>
+          </span>
+          <span class="vhs-pile__sr">{m.name}</span>
+        </label>
+      ))
+    }
+  </fieldset>
+  <div class="vhs-pile__stage">
+    <canvas role="img" aria-label={pictureLabel(picked)}></canvas>
+  </div>
+  <figcaption>
+    <slot />
+    <p class="vhs-pile__summary" aria-live="polite">{fill(picked)}</p>
+  </figcaption>
+</figure>
+
+<style>
+  .vhs-pile {
+    margin: 0;
+    color: var(--vhs-pile-text, inherit);
+  }
+  .vhs-pile__modes {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0 0 0.75rem;
+    padding: 0;
+    border: 0;
+  }
+  .vhs-pile__modes legend {
+    float: left;
+    margin-right: 0.4rem;
+    padding: 0;
+    color: var(--vhs-pile-muted, #9aa3b5);
+    font-size: 0.9em;
+  }
+  @media (max-width: 480px) {
+    .vhs-pile__modes legend {
+      float: none;
+      width: 100%;
+      margin: 0 0 0.35rem;
+    }
+  }
+  .vhs-pile__modes label {
+    position: relative;
+    cursor: pointer;
+  }
+  .vhs-pile__modes input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    margin: 0;
+    cursor: pointer;
+  }
+  .vhs-pile__modes label > span:first-of-type {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.35rem;
+    padding: 0.35rem 0.8rem;
+    border: 1px solid var(--vhs-pile-border, rgba(190, 200, 209, 0.25));
+    border-radius: 999px;
+    font-variant-numeric: tabular-nums;
+  }
+  .vhs-pile__modes small {
+    color: var(--vhs-pile-muted, #9aa3b5);
+  }
+  .vhs-pile__modes input:checked + span {
+    border-color: var(--vhs-pile-accent, #39c5bb);
+    background: color-mix(in srgb, var(--vhs-pile-accent, #39c5bb) 18%, transparent);
+  }
+  .vhs-pile__modes input:checked + span b {
+    color: var(--vhs-pile-accent, #39c5bb);
+  }
+  .vhs-pile__modes input:focus-visible + span {
+    outline: 2px solid var(--vhs-pile-accent, #39c5bb);
+    outline-offset: 2px;
+  }
+  .vhs-pile__sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .vhs-pile__stage {
+    position: relative;
+    height: var(--vhs-pile-height, clamp(220px, 38vw, 360px));
+    border: 1px solid var(--vhs-pile-border, rgba(190, 200, 209, 0.15));
+    border-radius: 14px;
+    background: var(--vhs-pile-bg, linear-gradient(180deg, rgba(7, 11, 31, 0.2), rgba(7, 11, 31, 0.6)));
+    overflow: hidden;
+  }
+  .vhs-pile__stage canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .vhs-pile figcaption {
+    margin-top: 0.75rem;
+  }
+  .vhs-pile figcaption :global(p) {
+    margin: 0 0 0.35rem;
+  }
+  .vhs-pile__summary {
+    font-weight: 700;
+  }
+</style>
+
+<script>
+  // Every .vhs-pile on the page runs on its own: its own canvas, speed picker and animation.
+  type Mode = { key: string; name: string; hours: number };
+  type Tape = { x: number; y: number; rot: number; label: string; spawn: number; fall: number; startY: number };
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const LABELS = ['#f1ede4', '#e9d8a6', '#f2c14e', '#e76f51', '#7ec8e3', '#a7c957', '#d4a5f5'];
+  const ASPECT = 1.8; // a VHS cassette is about 187 x 103 mm
+
+  // Seeded random numbers, so a pile looks the same every time it's drawn at a given size.
+  function random(seed: number) {
+    let s = seed >>> 0 || 1;
+    return () => {
+      s ^= s << 13;
+      s ^= s >>> 17;
+      s ^= s << 5;
+      return (s >>> 0) / 4294967296;
+    };
+  }
+
+  // Lay out n tapes as a mound: rows from the bottom, each a little narrower than the one below.
+  // Finds the largest tape size that still fits them all.
+  function layout(n: number, W: number, H: number) {
+    const base = W * 0.96;
+    const pileH = H * 0.94;
+    const topShare = 0.3;
+    // A heap: wide at the bottom, rounding off toward the top.
+    const rowWidth = (i: number, rows: number) => base * (1 - (1 - topShare) * Math.pow(rows > 1 ? i / (rows - 1) : 0, 1.7));
+    const fits = (k: number) => {
+      const w = k * ASPECT;
+      const rows = Math.floor(pileH / k);
+      let total = 0;
+      for (let i = 0; i < rows && total < n; i++) total += Math.floor(rowWidth(i, rows) / w);
+      return total >= n;
+    };
+    let lo = 1;
+    let hi = Math.max(2, Math.min(H / 2, W / ASPECT / 2));
+    for (let i = 0; i < 28; i++) {
+      const mid = (lo + hi) / 2;
+      if (fits(mid)) lo = mid;
+      else hi = mid;
+    }
+    const h = lo;
+    const w = h * ASPECT;
+    const rows = Math.floor(pileH / h);
+    const rnd = random(n * 7919 + Math.round(W));
+    const spots: { x: number; y: number; rot: number; label: string }[] = [];
+    for (let i = 0; i < rows && spots.length < n; i++) {
+      const count = Math.min(Math.floor(rowWidth(i, rows) / w), n - spots.length);
+      const offset = i % 2 ? w * 0.3 : 0;
+      const start = (W - count * w) / 2 + offset - (i % 2 ? w * 0.15 : 0);
+      for (let j = 0; j < count; j++) {
+        spots.push({
+          x: start + j * w + (rnd() - 0.5) * w * 0.18,
+          y: H - (i + 1) * h + (rnd() - 0.5) * h * 0.14,
+          rot: (rnd() - 0.5) * 0.22,
+          label: LABELS[Math.floor(rnd() * LABELS.length)],
+        });
+      }
+    }
+    return { w, h, spots };
+  }
+
+  function drawTape(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, rot: number, label: string) {
+    ctx.save();
+    ctx.translate(x + w / 2, y + h / 2);
+    ctx.rotate(rot);
+    const bw = w * 0.94;
+    const bh = h * 0.9;
+    ctx.fillStyle = '#16161b';
+    if (h >= 8 && ctx.roundRect) {
+      ctx.beginPath();
+      ctx.roundRect(-bw / 2, -bh / 2, bw, bh, Math.min(3, h * 0.12));
+      ctx.fill();
+    } else {
+      ctx.fillRect(-bw / 2, -bh / 2, bw, bh);
+    }
+    // Label across the top and, when there's room, the window with the two reels.
+    ctx.fillStyle = label;
+    ctx.fillRect(-bw * 0.36, -bh * 0.38, bw * 0.72, bh * 0.3);
+    if (h >= 9) {
+      ctx.fillStyle = '#2c2f38';
+      ctx.fillRect(-bw * 0.3, bh * 0.02, bw * 0.6, bh * 0.28);
+      ctx.fillStyle = '#5b606e';
+      const r = bh * 0.1;
+      ctx.beginPath();
+      ctx.arc(-bw * 0.17, bh * 0.16, r, 0, Math.PI * 2);
+      ctx.arc(bw * 0.17, bh * 0.16, r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    if (h >= 6) {
+      ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+      ctx.lineWidth = 1;
+      ctx.strokeRect(-bw / 2 + 0.5, -bh / 2 + 0.5, bw - 1, bh - 1);
+    }
+    ctx.restore();
+  }
+
+  function setup(pile: HTMLElement) {
+    const modes: Mode[] = JSON.parse(pile.dataset.modes!);
+    const hours = Number(pile.dataset.hours);
+    const template = pile.dataset.summary!;
+    const nf = new Intl.NumberFormat(pile.dataset.locale || 'en-US');
+    const stage = pile.querySelector<HTMLElement>('.vhs-pile__stage')!;
+    const canvas = stage.querySelector('canvas')!;
+    const ctx = canvas.getContext('2d')!;
+    const summaryEl = pile.querySelector<HTMLElement>('.vhs-pile__summary')!;
+    const radios = Array.from(pile.querySelectorAll<HTMLInputElement>('.vhs-pile__modes input'));
+    const settled = document.createElement('canvas');
+    const sctx = settled.getContext('2d')!;
+
+    let mode = modes.find((m) => m.key === radios.find((r) => r.checked)?.value) ?? modes[0];
+    let W = 0;
+    let H = 0;
+    let dpr = 1;
+    let tapes: Tape[] = [];
+    let size = { w: 0, h: 0 };
+    let landed = 0;
+    let start = 0;
+    let frame = 0;
+    let visible = false;
+
+    const count = () => Math.max(1, Math.ceil(hours / mode.hours));
+
+    function measure() {
+      const r = stage.getBoundingClientRect();
+      if (!r.width || !r.height) return false;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = r.width;
+      H = r.height;
+      for (const c of [canvas, settled]) {
+        c.width = Math.round(W * dpr);
+        c.height = Math.round(H * dpr);
+      }
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      sctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      return true;
+    }
+
+    function plan() {
+      const n = count();
+      const { w, h, spots } = layout(n, W, H);
+      size = { w, h };
+      // Drop the whole pile in about 1.5 to 3.5 seconds, however many tapes there are.
+      const spread = Math.min(3500, 1300 + n * 1.6);
+      const rnd = random(n);
+      tapes = spots.map((s, i) => ({
+        ...s,
+        spawn: (i / n) * spread,
+        fall: 380 + rnd() * 260,
+        startY: -h - rnd() * H * 0.25,
+      }));
+    }
+
+    function drawFinal() {
+      ctx.clearRect(0, 0, W, H);
+      for (const t of tapes) drawTape(ctx, t.x, t.y, size.w, size.h, t.rot, t.label);
+    }
+
+    function tick(now: number) {
+      const elapsed = now - start;
+      // Tapes that have landed are drawn once onto a second canvas; only falling ones are redrawn.
+      while (landed < tapes.length && elapsed >= tapes[landed].spawn + tapes[landed].fall) {
+        const t = tapes[landed++];
+        drawTape(sctx, t.x, t.y, size.w, size.h, t.rot, t.label);
+      }
+      ctx.clearRect(0, 0, W, H);
+      ctx.drawImage(settled, 0, 0, W, H);
+      for (let i = landed; i < tapes.length; i++) {
+        const t = tapes[i];
+        const local = elapsed - t.spawn;
+        if (local < 0) break;
+        const p = Math.min(1, local / t.fall);
+        const y = t.startY + (t.y - t.startY) * p * p; // falls faster and faster, like gravity
+        drawTape(ctx, t.x, y, size.w, size.h, t.rot * p, t.label);
+      }
+      if (landed < tapes.length) frame = requestAnimationFrame(tick);
+      else frame = 0;
+    }
+
+    function play() {
+      cancelAnimationFrame(frame);
+      if (!measure()) return;
+      plan();
+      if (reduced) {
+        drawFinal();
+        return;
+      }
+      sctx.clearRect(0, 0, W, H);
+      landed = 0;
+      start = performance.now();
+      frame = requestAnimationFrame(tick);
+    }
+
+    function redrawStill() {
+      cancelAnimationFrame(frame);
+      frame = 0;
+      if (!measure()) return;
+      plan();
+      drawFinal();
+    }
+
+    function updateText() {
+      const n = count();
+      summaryEl.textContent = template
+        .replace('{tapes}', nf.format(n))
+        .replace('{mode}', mode.key)
+        .replace('{name}', mode.name)
+        .replace('{perTape}', nf.format(mode.hours));
+      canvas.setAttribute('aria-label', `A pile of ${nf.format(n)} VHS tapes`);
+    }
+
+    for (const r of radios) {
+      r.addEventListener('change', () => {
+        if (!r.checked) return;
+        mode = modes.find((m) => m.key === r.value) ?? mode;
+        updateText();
+        play();
+      });
+    }
+
+    // Falls every time the pile comes into view (opening its tab, scrolling to it).
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries) => {
+        for (const e of entries) {
+          if (e.isIntersecting && !visible) play();
+          visible = e.isIntersecting;
+        }
+      }).observe(stage);
+    } else {
+      play();
+    }
+
+    // A new width means new tape sizes: redraw the finished pile (or restart a fall in progress).
+    let lastW = 0;
+    new ResizeObserver(() => {
+      const w = stage.clientWidth;
+      if (!w || Math.abs(w - lastW) < 2) return;
+      const first = lastW === 0;
+      lastW = w;
+      if (first) return;
+      if (frame) play();
+      else redrawStill();
+    }).observe(stage);
+  }
+
+  document.querySelectorAll<HTMLElement>('.vhs-pile').forEach(setup);
+</script>
