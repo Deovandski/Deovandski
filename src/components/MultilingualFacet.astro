@@ -16,8 +16,19 @@ const SEGMENTS = 10;
             <span class:list={['eq__seg', { on: s < l.level }]} style={`--s:${s}`} />
           ))}
         </div>
-        <p class="eq__name" lang={l.native === '日本語' ? 'ja' : undefined}>{l.native}</p>
-        <p class="eq__en" aria-hidden={l.native === l.name ? 'true' : undefined}>{l.native !== l.name ? l.name : '\u00a0'}</p>
+        {
+          l.vraki ? (
+            <>
+              <p class="eq__name eq__name--vraki" translate="no" aria-hidden="true">{l.native}</p>
+              <p class="eq__en">{l.name}<span class="sr-only"> (written in Vraki)</span></p>
+            </>
+          ) : (
+            <>
+              <p class="eq__name" lang={l.native === '日本語' ? 'ja' : undefined}>{l.native}</p>
+              <p class="eq__en" aria-hidden={l.native === l.name ? 'true' : undefined}>{l.native !== l.name ? l.name : '\u00a0'}</p>
+            </>
+          )
+        }
         <p class="eq__note">{l.note}</p>
       </li>
     ))
@@ -31,6 +42,11 @@ const SEGMENTS = 10;
 </ul>
 
 <style>
+  @font-face {
+    font-family: 'Vraki';
+    src: url('../assets/fonts/VrakiHusbandOutWorldSeries-Rg.woff2') format('woff2');
+    font-display: swap;
+  }
   .eq {
     --green: #4ade80;
     --yellow: #facc15;
@@ -80,6 +96,13 @@ const SEGMENTS = 10;
     font-weight: 800;
     font-size: var(--step-1);
     color: var(--text);
+  }
+  /* Vraki: English letters in the Vraki typeface (src/assets/fonts, not MIT; never altered). */
+  .eq__name--vraki {
+    font-family: 'Vraki', var(--font-display);
+    font-weight: 400;
+    color: var(--teal);
+    text-shadow: 0 0 14px rgba(57, 197, 187, 0.45);
   }
   .eq__en, .eq__note { margin: 0.1rem 0 0; font-size: var(--step--1); color: var(--muted); }
   .eq__note { color: var(--c); font-weight: 700; }
