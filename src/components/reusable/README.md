@@ -26,6 +26,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [FireMeter.astro](FireMeter.astro) | A fireplace with bellows and a meter: each pump grows the fire, climbs the meter and shows a phrase for that level; maxing out "bonks" and resets. | Lust tab (ecchi-meter) |
 | [WhackAMole.astro](WhackAMole.astro) | Whack-a-mole in the corners of the screen: a character pops up, you whack it (click, tap or keys 1–4) before it hides, faster and faster for 30 s. | Miku tab (Whack-a-Miku) |
 | [DrawingPad.astro](DrawingPad.astro) | A surface to draw on with a pen: ink colours, needle sizes, eraser, clear and download. Ships as a tattoo practice skin; the surface, colours and sizes are props. | Tattoo tab |
+| [DrumKit.astro](DrumKit.astro) | A drum kit seen from above: tap or click (multi-touch) or use the keyboard. Sounds made with the Web Audio API, no samples. | Musician tab |
 
 ## SplitFlap
 
@@ -509,3 +510,25 @@ import DrawingPad from './reusable/DrawingPad.astro';
 Ink stays inside the surface, strokes are smoothed, and pen pressure widens the line. Tools: laser removal
 (eraser), fresh skin (clear) and download. Nothing is saved or sent anywhere. Theme with `--pad-accent`,
 `--pad-bg` and `--pad-text`.
+
+## DrumKit
+
+```astro
+---
+import DrumKit from './reusable/DrumKit.astro';
+---
+<DrumKit />
+<DrumKit label="Practice kit" keys={false} />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `label` | `"Drum kit"` | Name of the kit, for screen readers. |
+| `keys` | `true` | Show each piece's keyboard key on it. |
+| `class` | none | Extra class. |
+
+A kit seen from above: crash, ride, hi-hat (closed and open), two toms, snare, floor tom and kick. Hits
+fire on pointer down, so several fingers play at once. Sounds are synthesized with the Web Audio API
+(no sample files). Keys: A hi-hat, Q open hi-hat, S snare, D/F toms, G floor tom, X kick, W crash, E ride;
+they only play while the kit is visible. Theme with `--drum-shell`, `--drum-head`, `--drum-metal`,
+`--drum-bg` and `--drum-text`.

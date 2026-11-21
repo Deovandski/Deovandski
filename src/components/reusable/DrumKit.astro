@@ -1,0 +1,304 @@
+---
+/**
+ * DrumKit: a drum kit seen from above. Tap or click a piece to hit it, or use the keyboard. Every
+ * sound is made live with the Web Audio API (no sample files), and several fingers can play at once.
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
+ * Copy this one file into any Astro project. See README.md in this folder.
+ *
+ *   <DrumKit />
+ *   <DrumKit label="Practice kit" keys={false} />
+ *
+ * Props:
+ *   label  name of the kit, for screen readers. Default "Drum kit".
+ *   keys   show each piece's keyboard key on it. Default true.
+ *
+ * Keys: A hi-hat, Q open hi-hat, S snare, D tom 1, F tom 2, G floor tom, X kick, W crash, E ride.
+ *
+ * Theming (CSS custom properties): --drum-shell (default #c0392b), --drum-head (#f4f1ea),
+ * --drum-metal (#d4a63c), --drum-bg (#1a1d24), --drum-text.
+ *
+ * Accessible: every piece is a button with its name; it also plays from the keyboard. Reduced
+ * motion turns off the bounce.
+ */
+interface Props {
+  label?: string;
+  keys?: boolean;
+  class?: string;
+}
+const { label = 'Drum kit', keys = true, class: className } = Astro.props;
+
+// Position (% of the stage), size (% of stage width), kind (drum or cymbal), key.
+const pieces = [
+  { id: 'crash', name: 'Crash cymbal', x: 14, y: 20, d: 24, kind: 'cymbal', key: 'W' },
+  { id: 'ride', name: 'Ride cymbal', x: 86, y: 22, d: 26, kind: 'cymbal', key: 'E' },
+  { id: 'hihat', name: 'Hi-hat', x: 10, y: 56, d: 18, kind: 'cymbal', key: 'A' },
+  { id: 'openhat', name: 'Open hi-hat', x: 26, y: 46, d: 11, kind: 'cymbal', key: 'Q' },
+  { id: 'tom1', name: 'Tom 1', x: 40, y: 26, d: 16, kind: 'drum', key: 'D' },
+  { id: 'tom2', name: 'Tom 2', x: 60, y: 26, d: 17, kind: 'drum', key: 'F' },
+  { id: 'snare', name: 'Snare', x: 27, y: 75, d: 17, kind: 'drum', key: 'S' },
+  { id: 'floortom', name: 'Floor tom', x: 78, y: 72, d: 19, kind: 'drum', key: 'G' },
+  { id: 'kick', name: 'Kick drum', x: 52, y: 70, d: 23, kind: 'kick', key: 'X' },
+];
+---
+
+<div class:list={['drum-kit', className]} role="group" aria-label={label}>
+  <div class="drum-kit__stage">
+    {
+      pieces.map((p) => (
+        <button
+          type="button"
+          class:list={['drum-kit__piece', `drum-kit__piece--${p.kind}`]}
+          data-drum={p.id}
+          data-key={p.key}
+          style={`left:${p.x}%;top:${p.y}%;width:${p.d}%;`}
+          aria-label={`${p.name} (key ${p.key})`}
+        >
+          {keys && <span aria-hidden="true">{p.key}</span>}
+        </button>
+      ))
+    }
+  </div>
+  <p class="drum-kit__hint">Tap the kit, or play it with your keyboard: A S D F G, Q W E, X for the kick.</p>
+</div>
+
+<style>
+  .drum-kit {
+    --_shell: var(--drum-shell, #c0392b);
+    --_head: var(--drum-head, #f4f1ea);
+    --_metal: var(--drum-metal, #d4a63c);
+    color: var(--drum-text, inherit);
+    margin: 1.5rem 0;
+  }
+  .drum-kit__stage {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    aspect-ratio: 16 / 10;
+    margin: 0 auto;
+    border-radius: 18px;
+    background: radial-gradient(ellipse at 50% 60%, #2a2f3a 0%, var(--drum-bg, #1a1d24) 75%);
+    box-shadow: inset 0 4px 18px rgba(0, 0, 0, 0.6);
+    touch-action: manipulation;
+    user-select: none;
+  }
+  @media (max-width: 560px) {
+    .drum-kit__stage {
+      aspect-ratio: 5 / 4;
+    }
+  }
+  .drum-kit__piece {
+    position: absolute;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 800;
+    font-size: clamp(0.65rem, 1.8vw, 0.95rem);
+    color: rgba(0, 0, 0, 0.55);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: none;
+  }
+  .drum-kit__piece--drum,
+  .drum-kit__piece--kick {
+    background: radial-gradient(circle at 45% 40%, #ffffff 0%, var(--_head) 55%, #d9d3c5 100%);
+    border: clamp(4px, 1vw, 8px) solid var(--_shell);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5), inset 0 0 0 2px rgba(0, 0, 0, 0.15);
+  }
+  .drum-kit__piece--kick {
+    border-width: clamp(6px, 1.4vw, 12px);
+    background: radial-gradient(circle at 50% 50%, #3b3f4a 0 22%, #f4f1ea 23% 100%);
+  }
+  .drum-kit__piece--cymbal {
+    border: 0;
+    background: repeating-radial-gradient(circle at 50% 50%, #f3d27a 0 2px, var(--_metal) 2px 5px), var(--_metal);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.45), inset 0 0 0 2px rgba(120, 80, 10, 0.4);
+  }
+  .drum-kit__piece--cymbal::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 14%;
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background: #8a6416;
+  }
+  .drum-kit__piece span {
+    position: relative;
+    z-index: 1;
+  }
+  .drum-kit__piece:focus-visible {
+    outline: 3px solid #39c5bb;
+    outline-offset: 3px;
+  }
+  .drum-kit__piece.is-hit {
+    animation: drum-kit-hit 0.16s ease-out;
+  }
+  .drum-kit__piece--cymbal.is-hit {
+    animation: drum-kit-wobble 0.45s ease-out;
+  }
+  @keyframes drum-kit-hit {
+    0% { transform: translate(-50%, -50%) scale(1); filter: brightness(1); }
+    35% { transform: translate(-50%, -50%) scale(0.92); filter: brightness(1.25); }
+    100% { transform: translate(-50%, -50%) scale(1); filter: brightness(1); }
+  }
+  @keyframes drum-kit-wobble {
+    0% { transform: translate(-50%, -50%) rotate(0) scale(1); filter: brightness(1.35); }
+    30% { transform: translate(-50%, -50%) rotate(-7deg) scale(0.95); }
+    60% { transform: translate(-50%, -50%) rotate(4deg); }
+    100% { transform: translate(-50%, -50%) rotate(0) scale(1); filter: brightness(1); }
+  }
+  .drum-kit__hint {
+    text-align: center;
+    font-size: 0.9em;
+    opacity: 0.75;
+    margin: 0.6rem 0 0;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .drum-kit__piece.is-hit {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  // One shared audio engine for every kit on the page; it starts on the first hit (browsers require that).
+  let ctx: AudioContext | null = null;
+  let master: GainNode;
+  let noiseBuf: AudioBuffer;
+  function audio() {
+    if (!ctx) {
+      ctx = new AudioContext();
+      master = ctx.createGain();
+      master.gain.value = 0.8;
+      master.connect(ctx.destination);
+      noiseBuf = ctx.createBuffer(1, ctx.sampleRate * 2, ctx.sampleRate);
+      const d = noiseBuf.getChannelData(0);
+      for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+    }
+    if (ctx.state === 'suspended') void ctx.resume();
+    return ctx;
+  }
+
+  function env(g: GainNode, t: number, peak: number, decay: number) {
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(peak, t + 0.003);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + decay);
+  }
+  function noise(t: number, decay: number, peak: number, type: BiquadFilterType, freq: number, q = 0.7) {
+    const c = ctx!;
+    const src = c.createBufferSource();
+    src.buffer = noiseBuf;
+    const f = c.createBiquadFilter();
+    f.type = type;
+    f.frequency.value = freq;
+    f.Q.value = q;
+    const g = c.createGain();
+    env(g, t, peak, decay);
+    src.connect(f).connect(g).connect(master);
+    src.start(t);
+    src.stop(t + decay + 0.05);
+  }
+  function tone(t: number, from: number, to: number, decay: number, peak: number, type: OscillatorType = 'sine') {
+    const c = ctx!;
+    const o = c.createOscillator();
+    o.type = type;
+    o.frequency.setValueAtTime(from, t);
+    o.frequency.exponentialRampToValueAtTime(to, t + decay * 0.8);
+    const g = c.createGain();
+    env(g, t, peak, decay);
+    o.connect(g).connect(master);
+    o.start(t);
+    o.stop(t + decay + 0.05);
+  }
+  // Metallic shimmer: a few detuned square waves through a high-pass, like an 808 cymbal.
+  function metal(t: number, decay: number, peak: number) {
+    const c = ctx!;
+    const hp = c.createBiquadFilter();
+    hp.type = 'highpass';
+    hp.frequency.value = 7000;
+    const g = c.createGain();
+    env(g, t, peak, decay);
+    hp.connect(g).connect(master);
+    for (const ratio of [2, 3, 4.16, 5.43, 6.79, 8.21]) {
+      const o = c.createOscillator();
+      o.type = 'square';
+      o.frequency.value = 40 * ratio * 2.5;
+      o.connect(hp);
+      o.start(t);
+      o.stop(t + decay + 0.05);
+    }
+  }
+
+  const SOUNDS: Record<string, (t: number) => void> = {
+    kick: (t) => tone(t, 150, 45, 0.45, 1),
+    snare: (t) => {
+      noise(t, 0.2, 0.7, 'highpass', 1800);
+      tone(t, 220, 160, 0.12, 0.45, 'triangle');
+    },
+    hihat: (t) => {
+      metal(t, 0.06, 0.25);
+      noise(t, 0.05, 0.25, 'highpass', 8000);
+    },
+    openhat: (t) => {
+      metal(t, 0.35, 0.2);
+      noise(t, 0.35, 0.18, 'highpass', 8000);
+    },
+    tom1: (t) => tone(t, 300, 180, 0.3, 0.85),
+    tom2: (t) => tone(t, 230, 140, 0.35, 0.85),
+    floortom: (t) => tone(t, 150, 85, 0.5, 0.9),
+    crash: (t) => {
+      noise(t, 1.4, 0.35, 'highpass', 4000);
+      metal(t, 1.1, 0.12);
+    },
+    ride: (t) => {
+      metal(t, 0.6, 0.18);
+      noise(t, 0.4, 0.12, 'bandpass', 9000, 1.5);
+    },
+  };
+
+  function hit(btn: HTMLElement) {
+    const c = audio();
+    SOUNDS[btn.dataset.drum!]?.(c.currentTime + 0.001);
+    btn.classList.remove('is-hit');
+    void btn.offsetWidth;
+    btn.classList.add('is-hit');
+  }
+
+  document.querySelectorAll<HTMLElement>('.drum-kit').forEach((kit) => {
+    const pieces = Array.from(kit.querySelectorAll<HTMLButtonElement>('.drum-kit__piece'));
+    for (const p of pieces) {
+      // Pointer down (not click) so hits land the instant a finger touches; each finger is its own event.
+      p.addEventListener('pointerdown', (ev) => {
+        ev.preventDefault();
+        hit(p);
+      });
+      // Enter or Space on a focused piece (a click with no pointer).
+      p.addEventListener('click', (ev) => {
+        if (ev.detail === 0) hit(p);
+      });
+    }
+    kit.dataset.ready = '1';
+  });
+
+  // Keyboard play works anywhere on the page while a kit is visible, except while typing in a field.
+  document.addEventListener('keydown', (ev) => {
+    if (ev.repeat || ev.ctrlKey || ev.metaKey || ev.altKey) return;
+    const target = ev.target as HTMLElement;
+    if (target.closest('input, textarea, select, [contenteditable]')) return;
+    const key = ev.key.toUpperCase();
+    for (const kit of document.querySelectorAll<HTMLElement>('.drum-kit')) {
+      if (!kit.offsetParent) continue; // hidden (its tab isn't open)
+      const piece = kit.querySelector<HTMLElement>(`.drum-kit__piece[data-key="${key}"]`);
+      if (piece) {
+        hit(piece);
+        ev.preventDefault();
+      }
+      break;
+    }
+  });
+</script>
