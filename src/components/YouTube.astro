@@ -1,6 +1,8 @@
 ---
 // Privacy-friendly YouTube embed: nothing loads from YouTube until the visitor clicks play,
 // then it uses youtube-nocookie.com. Keeps the site's "no tracking" promise.
+// When the video's tab is closed (or it's hidden any other way), the video pauses on its own; coming
+// back shows it paused where it stopped. Scrolling away doesn't pause it.
 interface Props {
   id: string; // the video id, e.g. "QprnoS8PatE" from https://youtu.be/QprnoS8PatE
   title: string;
@@ -68,12 +70,27 @@ const { id, title } = Astro.props;
   for (const box of document.querySelectorAll<HTMLElement>('[data-yt]')) {
     box.querySelector('.yt__play')?.addEventListener('click', () => {
       const iframe = document.createElement('iframe');
-      iframe.src = `https://www.youtube-nocookie.com/embed/${box.dataset.yt}?autoplay=1&rel=0`;
+      // enablejsapi=1 lets the page tell the player to pause (below).
+      iframe.src = `https://www.youtube-nocookie.com/embed/${box.dataset.yt}?autoplay=1&rel=0&enablejsapi=1`;
       iframe.title = box.dataset.title ?? 'YouTube video';
       iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
       iframe.allowFullscreen = true;
       iframe.referrerPolicy = 'strict-origin-when-cross-origin';
       box.replaceChildren(iframe);
+      box.dataset.state = 'shown';
     });
+
+    // A hidden box (its tab closed or switched) measures 0 × 0: pause the player then.
+    new ResizeObserver(([entry]) => {
+      const iframe = box.querySelector('iframe');
+      if (!iframe) return;
+      const hidden = entry.contentRect.width === 0 && entry.contentRect.height === 0;
+      if (hidden && box.dataset.state === 'shown') {
+        iframe.contentWindow?.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), 'https://www.youtube-nocookie.com');
+        box.dataset.state = 'hidden';
+      } else if (!hidden && box.dataset.state === 'hidden') {
+        box.dataset.state = 'shown'; // back on screen, still paused until the visitor presses play
+      }
+    }).observe(box);
   }
 </script>
