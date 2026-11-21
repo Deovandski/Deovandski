@@ -25,22 +25,27 @@
  *            the element with [data-fasttab-summary].
  *   open     start expanded. Default false (collapsed, as F&O does for the less-used FastTabs).
  *   id       anchor: /page/#id opens this FastTab and scrolls to it.
+ *   keepSummary  keep the summary visible while open too (F&O hides it). Default false.
+ *   Any other attribute (data-*, aria-*) goes on the <details> element.
  *
  * Theming (CSS custom properties, all with fallbacks): --fasttab-accent (chevron and focus ring),
  * --fasttab-line (divider), --fasttab-muted (summary text), --fasttab-hover (header hover background).
  * Reduced motion: no chevron animation.
  */
-interface Props {
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends Omit<HTMLAttributes<'details'>, 'title'> {
   title: string;
   summary?: string;
   open?: boolean;
   id?: string;
+  keepSummary?: boolean;
   class?: string;
 }
-const { title, summary = '', open = false, id, class: className } = Astro.props;
+const { title, summary = '', open = false, id, keepSummary = false, class: className, ...rest } = Astro.props;
 ---
 
-<details class:list={['fasttab', className]} open={open} id={id}>
+<details class:list={['fasttab', className, { 'fasttab--keep-summary': keepSummary }]} open={open} id={id} {...rest}>
   <summary class="fasttab__header">
     <span class="fasttab__title">{title}</span>
     <span class="fasttab__summary" data-fasttab-summary>{summary}</span>
@@ -89,7 +94,7 @@ const { title, summary = '', open = false, id, class: className } = Astro.props;
     font-size: 0.9rem;
     color: var(--fasttab-muted, #9aa3b5);
   }
-  .fasttab[open] .fasttab__summary {
+  .fasttab[open]:not(.fasttab--keep-summary) .fasttab__summary {
     visibility: hidden; /* F&O shows summary fields only while collapsed */
   }
   .fasttab__chevron {

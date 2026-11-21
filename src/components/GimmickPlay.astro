@@ -1,0 +1,341 @@
+---
+// A tab's gimmick behind the ▶ Play button in the tab's title (index.astro's facet head). It sits at the top
+// of the tab's panel, hidden; Play shows it as an open FastTab right under the title. Closing it (Hide, the
+// FastTab's chevron, Esc) hides it again, which pauses the game. It starts closed on every visit, and
+// #<tab>-play opens the tab with it open.
+//
+// On a phone held upright, Play turns the game sideways: on Android it goes full screen and locks to
+// landscape; where a page can't lock the screen (iPhone), it asks to turn the phone and starts once it's
+// sideways, with "Play upright instead" and "Back to <tab>". Gimmicks marked `upright` in src/lib/gimmicks.ts
+// stay upright. Desktop and wide screens never change.
+//
+//   <GimmickPlay tab="aviation" />
+//   <GimmickPlay tab="gamer"><p slot="intro">How to play…</p></GimmickPlay>
+//
+// Talks to the page through document events: `gimmick:open` {tab, immersive}, `gimmick:close` {tab?,
+// returnFocus?} (no tab: close all), and it sends `gimmick:state` {tab, open, returnFocus}.
+import FastTab from './reusable/FastTab.astro';
+import Gimmick from './Gimmick.astro';
+import { gimmickForTab } from '../lib/gimmicks';
+
+interface Props {
+  tab: string;
+}
+const { tab } = Astro.props;
+const g = gimmickForTab(tab);
+if (!g) throw new Error(`GimmickPlay: no gimmick for the "${tab}" tab in src/lib/gimmicks.ts`);
+---
+
+<div class="gimmick-play" id={`gimmick-${tab}`} data-gimmick-tab={tab} data-upright={g.upright ? 'true' : undefined} hidden>
+  <FastTab title={g.title} open keepSummary class="gimmick-play__tab" data-gimmick-id={g.id} data-summary-base="">
+    {
+      Astro.slots.has('intro') && (
+        <div class="gimmick-play__intro">
+          <slot name="intro" />
+        </div>
+      )
+    }
+    <Gimmick id={g.id} />
+  </FastTab>
+  <button type="button" class="gimmick-play__exit" hidden>
+    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4l8 8M12 4l-8 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"></path></svg>
+    Exit
+  </button>
+  <div class="gimmick-play__turn" role="group" aria-label={`${g.title}: turn your phone sideways`} hidden>
+    <svg width="120" height="120" viewBox="0 0 140 140" aria-hidden="true">
+      <rect x="46" y="22" width="48" height="86" rx="9" fill="none" stroke="currentColor" stroke-opacity="0.55" stroke-width="3"></rect>
+      <rect x="27" y="56" width="86" height="48" rx="9" fill="none" stroke="var(--teal, #39c5bb)" stroke-width="3.5"></rect>
+      <path d="M108 30 A40 40 0 0 1 122 62" fill="none" stroke="var(--teal, #39c5bb)" stroke-width="3" stroke-linecap="round"></path>
+      <path d="M114 62 L122 64 L126 56" fill="none" stroke="var(--teal, #39c5bb)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+    <p class="gimmick-play__turn-title">{g.title}</p>
+    <p>Turn your phone sideways to play.</p>
+    <p class="gimmick-play__turn-fine">The game starts as soon as the phone is sideways.</p>
+    <button type="button" class="gimmick-play__upright">Play upright instead</button>
+    <button type="button" class="gimmick-play__back">Back to {g.tabName}</button>
+  </div>
+</div>
+
+<style>
+  .gimmick-play {
+    margin: 0 0 1.75rem;
+    border: 1px solid rgba(57, 197, 187, 0.45);
+    border-radius: 14px;
+    background: rgba(11, 17, 48, 0.85);
+    overflow: hidden;
+    --fasttab-accent: var(--teal, #39c5bb);
+    --fasttab-muted: var(--muted, #9aa3b5);
+    --fasttab-line: transparent;
+  }
+  .gimmick-play[hidden] {
+    display: none;
+  }
+  .gimmick-play :global(.fasttab__header) {
+    padding: 0.35rem 0.4rem 0.35rem 1.1rem;
+    min-height: 44px;
+    border-bottom: 1px solid rgba(190, 200, 209, 0.14);
+  }
+  .gimmick-play :global(.fasttab__body) {
+    padding: 1rem 1.1rem 1.25rem;
+  }
+  .gimmick-play__intro :global(p) {
+    margin: 0 0 0.75rem;
+  }
+  .gimmick-play__intro :global(h3) {
+    margin: 0 0 0.4rem;
+  }
+
+  /* Sideways on a phone: the game gets the whole screen. */
+  .gimmick-play.is-immersive {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background: var(--bg, #070b1f);
+    overflow: auto;
+    overscroll-behavior: contain;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  .gimmick-play.is-immersive :global(.fasttab__chevron) {
+    visibility: hidden;
+  }
+  .gimmick-play.is-immersive :global(.fasttab__header) {
+    min-height: 44px;
+    padding: 0.1rem 6.5rem 0.1rem 1rem; /* room for Exit */
+  }
+  /* Sideways the height is short: drop the intro text and the games' own headings, tighten the padding,
+     and fit the paper plane's canvas to the screen. The rest scroll if they still don't fit. */
+  .gimmick-play.is-immersive :global(.fasttab__body) {
+    padding: 0.5rem 1rem 1rem;
+  }
+  .gimmick-play.is-immersive .gimmick-play__intro,
+  .gimmick-play.is-immersive :global(:is(.paper-plane__title, .iso-darts__title, .iso-farm__title, .wam__title)) {
+    display: none;
+  }
+  .gimmick-play.is-immersive :global(.paper-plane__canvas) {
+    height: calc(100dvh - 10.5rem);
+    min-height: 180px;
+  }
+  .gimmick-play__exit {
+    position: absolute;
+    top: calc(env(safe-area-inset-top) + 0.35rem);
+    right: calc(env(safe-area-inset-right) + 0.5rem);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 44px;
+    padding: 0 0.9rem;
+    border: 0;
+    border-radius: 10px;
+    background: transparent;
+    color: var(--teal, #39c5bb);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .gimmick-play__exit[hidden] {
+    display: none;
+  }
+  .gimmick-play.is-waiting .gimmick-play__exit {
+    display: none; /* "Back to …" does the same while waiting */
+  }
+
+  /* Waiting for the phone to turn (where the page can't turn it). */
+  .gimmick-play.is-waiting .gimmick-play__tab {
+    display: none;
+  }
+  .gimmick-play__turn {
+    min-height: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: 2rem 1.75rem;
+    text-align: center;
+  }
+  .gimmick-play__turn[hidden] {
+    display: none;
+  }
+  .gimmick-play__turn p {
+    margin: 0;
+    font-size: 1.05rem;
+  }
+  .gimmick-play__turn .gimmick-play__turn-title {
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+  .gimmick-play__turn .gimmick-play__turn-fine {
+    font-size: 0.9rem;
+    color: var(--muted, #9aa3b5);
+  }
+  .gimmick-play__turn button {
+    width: min(100%, 18rem);
+    min-height: 48px;
+    border-radius: 999px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .gimmick-play__upright {
+    margin-top: 0.75rem;
+    border: 2px solid var(--teal, #39c5bb);
+    background: transparent;
+    color: var(--teal, #39c5bb);
+  }
+  .gimmick-play__back {
+    border: 0;
+    background: transparent;
+    color: var(--muted, #9aa3b5);
+  }
+  .gimmick-play button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+</style>
+
+<script>
+  import { refreshGimmickSummaries } from '../scripts/gimmickSummaries';
+
+  // A touch phone held upright: Play turns the game sideways there.
+  const phonePortrait = window.matchMedia('(pointer: coarse) and (orientation: portrait) and (max-width: 600px)');
+  const landscape = window.matchMedia('(orientation: landscape)');
+  const wrappers = Array.from(document.querySelectorAll<HTMLElement>('.gimmick-play'));
+  const byTab = (tab: string) => wrappers.find((w) => w.dataset.gimmickTab === tab);
+  const parts = (w: HTMLElement) => ({
+    details: w.querySelector<HTMLDetailsElement>('details.fasttab')!,
+    summary: w.querySelector<HTMLElement>('summary')!,
+    exit: w.querySelector<HTMLButtonElement>('.gimmick-play__exit')!,
+    turn: w.querySelector<HTMLElement>('.gimmick-play__turn')!,
+  });
+  // While sideways the wrapper moves to <body>: the panels use transforms, which would trap a fixed layer
+  // inside them instead of covering the screen. A placeholder keeps its spot in the tab.
+  const homes = new Map<HTMLElement, Comment>();
+  function toBody(w: HTMLElement) {
+    if (homes.has(w)) return;
+    const mark = document.createComment('gimmick-play');
+    w.before(mark);
+    homes.set(w, mark);
+    document.body.append(w);
+  }
+  function toTab(w: HTMLElement) {
+    const mark = homes.get(w);
+    if (!mark) return;
+    mark.replaceWith(w);
+    homes.delete(w);
+  }
+  const emit = (tab: string, open: boolean, returnFocus = false) =>
+    document.dispatchEvent(new CustomEvent('gimmick:state', { detail: { tab, open, returnFocus } }));
+
+  function setWaiting(w: HTMLElement, waiting: boolean) {
+    const { turn, summary } = parts(w);
+    w.classList.toggle('is-waiting', waiting);
+    turn.hidden = !waiting;
+    if (waiting) turn.querySelector('button')?.focus();
+    else summary.focus();
+  }
+
+  function leaveImmersive(w: HTMLElement) {
+    const { exit, turn } = parts(w);
+    w.classList.remove('is-immersive', 'is-waiting');
+    exit.hidden = turn.hidden = true;
+    toTab(w);
+    delete w.dataset.fallback;
+    if (document.fullscreenElement === w) {
+      delete w.dataset.fullscreen;
+      document.exitFullscreen().catch(() => {});
+    }
+    try {
+      screen.orientation?.unlock?.();
+    } catch {
+      /* not supported */
+    }
+  }
+
+  // Sideways: full screen + orientation lock where the browser allows it (Android); otherwise cover the
+  // screen and wait for the visitor to turn the phone (iPhone).
+  async function goSideways(w: HTMLElement) {
+    const { exit } = parts(w);
+    toBody(w);
+    w.classList.add('is-immersive');
+    exit.hidden = false;
+    const orientation = screen.orientation as ScreenOrientation & { lock?: (o: string) => Promise<void> };
+    if (typeof orientation?.lock === 'function' && typeof w.requestFullscreen === 'function') {
+      try {
+        await w.requestFullscreen({ navigationUI: 'hide' });
+        w.dataset.fullscreen = '1';
+        await orientation.lock('landscape');
+        return;
+      } catch {
+        if (document.fullscreenElement === w) {
+          delete w.dataset.fullscreen;
+          await document.exitFullscreen().catch(() => {});
+        }
+      }
+    }
+    w.dataset.fallback = '1';
+    setWaiting(w, !landscape.matches);
+  }
+
+  function open(w: HTMLElement, immersive: boolean) {
+    const { details, summary } = parts(w);
+    details.open = true;
+    w.hidden = false;
+    refreshGimmickSummaries();
+    emit(w.dataset.gimmickTab!, true);
+    if (immersive && w.dataset.upright !== 'true' && phonePortrait.matches) goSideways(w);
+    else summary.focus({ preventScroll: true });
+  }
+
+  function close(w: HTMLElement, returnFocus = false) {
+    if (w.hidden) return;
+    leaveImmersive(w);
+    w.hidden = true;
+    emit(w.dataset.gimmickTab!, false, returnFocus);
+  }
+
+  for (const w of wrappers) {
+    const { details, exit, turn } = parts(w);
+    // The FastTab's own header closes the whole thing (it reopens, hidden, for next time).
+    details.addEventListener('toggle', () => {
+      if (!details.open && !w.hidden) {
+        close(w, true);
+        details.open = true;
+      }
+    });
+    exit.addEventListener('click', () => close(w, true));
+    turn.querySelector('.gimmick-play__back')!.addEventListener('click', () => close(w, true));
+    turn.querySelector('.gimmick-play__upright')!.addEventListener('click', () => {
+      leaveImmersive(w);
+      parts(w).summary.focus();
+    });
+    w.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        e.stopPropagation();
+        close(w, true);
+      }
+    });
+  }
+
+  // The phone was turned: start the waiting game, or ask again if it's turned back upright.
+  landscape.addEventListener('change', () => {
+    for (const w of wrappers) if (!w.hidden && w.dataset.fallback) setWaiting(w, !landscape.matches);
+  });
+  // Leaving full screen (Exit, or the phone's back button) goes back to the tab.
+  document.addEventListener('fullscreenchange', () => {
+    for (const w of wrappers) if (w.dataset.fullscreen && document.fullscreenElement !== w) close(w, true);
+  });
+
+  document.addEventListener('gimmick:open', (e) => {
+    const { tab, immersive } = (e as CustomEvent).detail;
+    const w = byTab(tab);
+    if (w) open(w, !!immersive);
+  });
+  document.addEventListener('gimmick:close', (e) => {
+    const { tab, returnFocus } = (e as CustomEvent).detail ?? {};
+    for (const w of tab ? wrappers.filter((x) => x.dataset.gimmickTab === tab) : wrappers) close(w, !!returnFocus);
+  });
+</script>
