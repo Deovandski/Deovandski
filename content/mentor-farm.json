@@ -1,0 +1,75 @@
+{
+  "_about": "The Balls farm on the Mentor tab (a Colheita Feliz-style farming loop). Balls and the exchange rates come from #HusbandOutWorld (Vol 2: 50 pearls = 1 amethyst, 10 amethysts = 1 aquamarine, 10 aquamarines = 1 sapphire). The crops are invented for the game, not lore. 'cost' is what planting uses up, 'energy' is energy bars, 'seconds' is the growing time, and each outcome has a weight (chance relative to the others) and what it gives. Fertilizer: each shit put on a growing seed shifts weight from the bad outcomes (marked 'bad') to the good ones by 'fertilizer.shift' (up to 'fertilizer.max' shits per plant).",
+  "mantra": "Action or inaction, it's all seed. You eat what you grow, even when it tastes like shit!",
+  "plots": 6,
+  "energy": { "max": 10, "perSecond": 1 },
+  "fertilizer": { "shift": 0.06, "max": 5 },
+  "trades": [
+    { "give": "pearl", "count": 50, "get": "amethyst" },
+    { "give": "amethyst", "count": 10, "get": "aquamarine" },
+    { "give": "aquamarine", "count": 10, "get": "sapphire" }
+  ],
+  "seeds": [
+    {
+      "id": "pearl",
+      "ball": "Pearl",
+      "crop": "Pearl Radish",
+      "colors": { "main": "#f4f1ea", "accent": "#e2b33c", "leaf": "#5fa84a" },
+      "cost": {},
+      "energy": 0,
+      "seconds": 10,
+      "outcomes": [
+        { "weight": 60, "give": { "pearl": 1 } },
+        { "weight": 40, "give": { "shit": 1 }, "bad": true }
+      ]
+    },
+    {
+      "id": "amethyst",
+      "ball": "Amethyst",
+      "crop": "Amethyst Grapes",
+      "colors": { "main": "#9b59d0", "accent": "#e5c8ff", "leaf": "#4f8f3a" },
+      "cost": { "amethyst": 1 },
+      "energy": 1,
+      "seconds": 20,
+      "outcomes": [
+        { "weight": 58, "give": { "amethyst": 1 } },
+        { "weight": 10, "give": { "amethyst": 2 } },
+        { "weight": 15, "give": { "pearl": 1 }, "bad": true },
+        { "weight": 12, "give": { "aquamarine": 1 } },
+        { "weight": 5, "give": { "shit": 1 }, "bad": true }
+      ]
+    },
+    {
+      "id": "aquamarine",
+      "ball": "Aquamarine",
+      "crop": "Aquamarine Melon",
+      "colors": { "main": "#39c5bb", "accent": "#bff3ee", "leaf": "#3f8a45" },
+      "cost": { "aquamarine": 1 },
+      "energy": 1,
+      "seconds": 30,
+      "outcomes": [
+        { "weight": 58, "give": { "aquamarine": 1 } },
+        { "weight": 10, "give": { "aquamarine": 2 } },
+        { "weight": 15, "give": { "amethyst": 1 }, "bad": true },
+        { "weight": 12, "give": { "sapphire": 1 } },
+        { "weight": 5, "give": { "shit": 1 }, "bad": true }
+      ]
+    },
+    {
+      "id": "sapphire",
+      "ball": "Sapphire",
+      "crop": "Sapphire Rose",
+      "colors": { "main": "#2f5fd6", "accent": "#bcd3ff", "leaf": "#3b7d3a" },
+      "cost": { "sapphire": 1 },
+      "energy": 1,
+      "seconds": 60,
+      "outcomes": [
+        { "weight": 40, "give": { "sapphire": 1 } },
+        { "weight": 30, "give": { "sapphire": 2 } },
+        { "weight": 18, "give": { "sapphire": 3 } },
+        { "weight": 7, "give": { "sapphire": 4 } },
+        { "weight": 5, "give": { "shit": 1 }, "bad": true }
+      ]
+    }
+  ]
+}

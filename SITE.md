@@ -13,6 +13,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Aviation tab (text + YouTube video) | `content/aviation.md`; video id in `src/pages/index.astro` (`panel-aviation`) |
 | Aviation paper plane | `src/components/reusable/PaperPlane.astro`, placed in `panel-aviation` in `src/pages/index.astro` |
 | Mentor tab | `content/mentor.md` (plain Markdown) |
+| Mentor tab Balls farm (seeds, odds, trades, mantra) | `content/mentor-farm.json`; `src/components/reusable/IsoFarm.astro`, placed in `src/components/MentorFacet.astro` |
 | Death tab (countdown clock + text) | `content/death.md`; clock target in `src/components/DeathFacet.astro` (`TARGET`); the clock itself is the reusable `src/components/reusable/LedClock.astro` |
 | PM/Life hacks tab: PM side (public Kanban boards) | `boards` near the top of `src/pages/index.astro` |
 | PM/Life hacks tab: Life hacks side | `src/components/LifeHacksFacet.astro` |
