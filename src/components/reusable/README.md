@@ -28,6 +28,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [DrawingPad.astro](DrawingPad.astro) | A surface to draw on with a pen: ink colours, needle sizes, eraser, clear and download. Ships as a tattoo practice skin; the surface, colours and sizes are props. | Tattoo tab |
 | [DrumKit.astro](DrumKit.astro) | A drum kit seen from above: tap or click (multi-touch) or use the keyboard. Sounds made with the Web Audio API, no samples. | Musician tab |
 | [LedMatrix.astro](LedMatrix.astro) | A grid of round LEDs to draw on (click, drag, right-click erases, keyboard too), sized to fit the width. Starts with a stick figure and "Huehuehue" (or "Hue"). From the LED Matrix Manager site. | Painting tab |
+| [DiceTray.astro](DiceTray.astro) | A row of dice (d4 to d20), each tumbling in its own sunken pit when clicked, with a Roll all button and total. Miku colours by default. | D&D tab |
 
 ## SplitFlap
 
@@ -562,3 +563,24 @@ website's drawing demo (`site/index.html`, MIT).
 Click or tap toggles an LED, press-and-drag paints, right-click or Ctrl-click erases; arrow keys move a
 cursor and Space toggles. Clear and Reset buttons. Theme with `--led-on`, `--led-off`, `--led-glow`,
 `--led-bg` and `--led-accent`.
+
+## DiceTray
+
+```astro
+---
+import DiceTray from './reusable/DiceTray.astro';
+---
+<DiceTray />
+<DiceTray dice={[6, 6, 20]} label="Attack" rollAll={false} />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `dice` | `[4, 6, 8, 10, 12, 20]` | Sides of each die, in order. |
+| `label` | `"Dice"` | Name of the group, for screen readers. |
+| `rollAll` | `true` | Show a "Roll all" button and the total. |
+| `class` | none | Extra class, e.g. to theme it. |
+
+Each die tumbles in its own sunken pit and lands on a result; a natural max or 1 on a d20 gets a pop.
+Theme with `--dice-face` (default Miku teal `#39c5bb`), `--dice-edge`, `--dice-ink`, `--dice-crit`
+(Miku pink `#e12885`), `--dice-pit` and `--dice-text`. Reduced motion skips the tumble.

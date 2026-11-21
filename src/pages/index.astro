@@ -7,6 +7,7 @@ import DinoAmbush from '../components/reusable/DinoAmbush.astro';
 import TravelerFacet from '../components/TravelerFacet.astro';
 import MentorFacet from '../components/MentorFacet.astro';
 import MultilingualFacet from '../components/MultilingualFacet.astro';
+import DiceTray from '../components/reusable/DiceTray.astro';
 import Sections from '../components/Sections.astro';
 import MtgScore from '../components/MtgScore.astro';
 import ChurrascoFacet from '../components/ChurrascoFacet.astro';
@@ -524,6 +525,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-dnd" aria-labelledby="tab-dnd" tabindex="0" hidden>
+      <DiceTray label="Roll the dice" class="dnd-dice" />
       <Sections data={dnd} id="dnd" slots={1} empty="D&D adventures are on their way." photoAlt={(t) => `Party art for D&D ${t}`} />
     </section>
 
