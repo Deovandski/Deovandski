@@ -1,0 +1,139 @@
+---
+/**
+ * FastTab: a collapsible section in the style of Dynamics 365 Finance & Operations FastTabs.
+ * A full-width header with the title in bold on the left, short "summary fields" on the right
+ * (shown while it's collapsed, like F&O), and a chevron that flips when it opens. A thin divider
+ * separates each FastTab from the next.
+ *
+ * Built on <details>/<summary>, so it opens with a click, a tap, Enter or Space, screen readers hear
+ * "collapsed/expanded", and it works with no JavaScript. Hidden content is display:none, so anything
+ * inside that pauses when hidden (canvases, games) pauses while the FastTab is closed.
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use many times on a page.
+ *
+ *   <FastTab title="Paper plane" summary="Aviation tab" id="paper-plane">
+ *     <PaperPlane />
+ *   </FastTab>
+ *
+ *   <!-- Optional: "Expand all / Collapse all" buttons for every FastTab inside the same parent -->
+ *   <button type="button" data-fasttabs="open">Expand all</button>
+ *   <button type="button" data-fasttabs="close">Collapse all</button>
+ *
+ * Props:
+ *   title    the header text (required).
+ *   summary  text on the right of the header while collapsed. Scripts can change it later through
+ *            the element with [data-fasttab-summary].
+ *   open     start expanded. Default false (collapsed, as F&O does for the less-used FastTabs).
+ *   id       anchor: /page/#id opens this FastTab and scrolls to it.
+ *
+ * Theming (CSS custom properties, all with fallbacks): --fasttab-accent (chevron and focus ring),
+ * --fasttab-line (divider), --fasttab-muted (summary text), --fasttab-hover (header hover background).
+ * Reduced motion: no chevron animation.
+ */
+interface Props {
+  title: string;
+  summary?: string;
+  open?: boolean;
+  id?: string;
+  class?: string;
+}
+const { title, summary = '', open = false, id, class: className } = Astro.props;
+---
+
+<details class:list={['fasttab', className]} open={open} id={id}>
+  <summary class="fasttab__header">
+    <span class="fasttab__title">{title}</span>
+    <span class="fasttab__summary" data-fasttab-summary>{summary}</span>
+    <svg class="fasttab__chevron" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
+      <path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </summary>
+  <div class="fasttab__body">
+    <slot />
+  </div>
+</details>
+
+<style>
+  .fasttab {
+    border-bottom: 1px solid var(--fasttab-line, rgba(127, 127, 127, 0.35));
+  }
+  .fasttab__header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.85rem 0.5rem;
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+  }
+  .fasttab__header::-webkit-details-marker {
+    display: none;
+  }
+  .fasttab__header:hover {
+    background: var(--fasttab-hover, rgba(127, 127, 127, 0.08));
+  }
+  .fasttab__header:focus-visible {
+    outline: 2px solid var(--fasttab-accent, #39c5bb);
+    outline-offset: -2px;
+  }
+  .fasttab__title {
+    font-weight: 700;
+    font-size: 1.1rem;
+  }
+  .fasttab__summary {
+    margin-left: auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 0.9rem;
+    color: var(--fasttab-muted, #9aa3b5);
+  }
+  .fasttab[open] .fasttab__summary {
+    visibility: hidden; /* F&O shows summary fields only while collapsed */
+  }
+  .fasttab__chevron {
+    flex: none;
+    color: var(--fasttab-accent, #39c5bb);
+    transition: transform 0.2s ease;
+  }
+  .fasttab[open] .fasttab__chevron {
+    transform: rotate(180deg);
+  }
+  .fasttab__body {
+    padding: 0.25rem 0.5rem 1.25rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fasttab__chevron {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  // "Expand all / Collapse all": a button with data-fasttabs="open" or "close" toggles every FastTab
+  // inside the button's parent element's nearest container that holds FastTabs.
+  document.querySelectorAll<HTMLButtonElement>('[data-fasttabs]').forEach((btn) => {
+    if (btn.dataset.fasttabsReady) return;
+    btn.dataset.fasttabsReady = '1';
+    btn.addEventListener('click', () => {
+      let scope: HTMLElement | null = btn.parentElement;
+      while (scope && !scope.querySelector('.fasttab')) scope = scope.parentElement;
+      const open = btn.dataset.fasttabs === 'open';
+      scope?.querySelectorAll<HTMLDetailsElement>('details.fasttab').forEach((d) => (d.open = open));
+    });
+  });
+
+  // /page/#id opens that FastTab and scrolls to it.
+  function openFromHash() {
+    const id = decodeURIComponent(location.hash.slice(1));
+    if (!id) return;
+    const el = document.getElementById(id);
+    if (el instanceof HTMLDetailsElement && el.classList.contains('fasttab')) {
+      el.open = true;
+      el.scrollIntoView({ block: 'start' });
+    }
+  }
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
+</script>
