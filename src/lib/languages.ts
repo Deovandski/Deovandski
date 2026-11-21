@@ -1,7 +1,8 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-export type Language = { name: string; native: string; level: number; color: 'green' | 'yellow' | 'red'; note: string };
+// vraki: the native name is written in the Vraki script (a `[vraki]` prefix in the Native cell).
+export type Language = { name: string; native: string; level: number; color: 'green' | 'yellow' | 'red'; note: string; vraki: boolean };
 
 const FILE = 'content/languages.md';
 const COLORS = ['green', 'yellow', 'red'] as const;
@@ -31,7 +32,10 @@ export function loadLanguages(): Language[] {
     if (!r[c.name]) errors.push(`line ${n}: language is empty.`);
     if (!Number.isInteger(level) || level < 1 || level > 10) errors.push(`line ${n}: level "${r[c.level]}" must be 1 to 10.`);
     if (!COLORS.includes(color)) errors.push(`line ${n}: color "${r[c.color]}" must be green, yellow or red.`);
-    return { name: r[c.name], native: r[c.native] || r[c.name], level, color, note: r[c.note] ?? '' };
+    const rawNative = r[c.native] ?? '';
+    const vraki = /^\[vraki\]\s*/i.test(rawNative);
+    const native = rawNative.replace(/^\[vraki\]\s*/i, '');
+    return { name: r[c.name], native: native || r[c.name], level, color, note: r[c.note] ?? '', vraki };
   });
   if (errors.length) throw new Error(`${FILE} has problems:\n- ${errors.join('\n- ')}`);
   return langs;
