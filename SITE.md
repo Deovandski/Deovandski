@@ -52,6 +52,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Pets tab (Bidu, Fluffy, Peeta: portrait picker + each pet's gallery) | `content/pets/<pet>/` (see `content/pets/README.md`); order in `src/lib/pets.ts` |
 | Pets tab pixel pets (the handhelds next to each big picture) | drawings and device colours in `src/lib/pixelPets.ts`; `src/components/reusable/PixelPet.astro`, placed in `src/components/PetsFacet.astro` |
 | Lust tab (and the banner for when it's the first facet opened) | `content/lust.md`, `src/components/LustFacet.astro` |
+| Lust tab ecchi-meter (bellows, fire, phrases) | phrases and levels in `content/lust-meter.json`; `src/components/reusable/FireMeter.astro`, placed in `src/components/LustFacet.astro` |
 | Facet easter eggs (banners after a visitor opens 10 and 20 different facets) | `src/components/FacetMilestoneEggs.astro`, GIFs `public/tea-sip.gif` and `public/aiight.gif` |
 | Miku Day (3/9) and Miku's birthday (8/31): dates, messages and pictures | `src/components/MikuDay.astro` (`DATES` in the script, pictures in `images` at the top), birthday photo `src/assets/miku-birthday-2016-08-31.jpg` |
 | Colors and fonts | `src/styles/global.css` |
