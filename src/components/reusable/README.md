@@ -24,6 +24,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
 | [KitKot.astro](KitKot.astro) | A parody social app idle game on a phone: post for views, likes and followers on a slot-machine schedule (near misses, a hidden hot post type, fatigue, streaks, energy). "Under the hood" names each trick, with sources. | Influencer tab |
 | [FireMeter.astro](FireMeter.astro) | A fireplace with bellows and a meter: each pump grows the fire, climbs the meter and shows a phrase for that level; maxing out "bonks" and resets. | Lust tab (ecchi-meter) |
+| [WhackAMole.astro](WhackAMole.astro) | Whack-a-mole in the corners of the screen: a character pops up, you whack it (click, tap or keys 1–4) before it hides, faster and faster for 30 s. | Miku tab (Whack-a-Miku) |
 
 ## SplitFlap
 
@@ -458,3 +459,28 @@ import FireMeter from './reusable/FireMeter.astro';
 A fireplace, a pair of bellows and a thermometer-style meter. Each pump grows the fire and shows a random
 phrase from the current level; the fire cools when left alone. Theme with `--fire-accent`, `--fire-hot`,
 `--fire-text` and `--fire-bg`.
+
+## WhackAMole
+
+```astro
+---
+import WhackAMole from './reusable/WhackAMole.astro';
+import sprite from '../../assets/whack-a-miku/whack-a-miku.png';
+---
+<WhackAMole sprite={sprite} name="Miku" title="Whack-a-Miku" bonusDays={['03-09', '08-31']} />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `sprite` | (required) | The character, as an imported image. Pixel art is drawn crisp. |
+| `name` | `"mole"` | What to call it in the text ("You whacked 12 Mikus"). |
+| `title` | `"Whack-a-mole"` | Heading of the card. |
+| `seconds` | `30` | Length of a round. |
+| `bonusDays` | `[]` | Dates (`"MM-DD"`) when every whack counts double. |
+| `spriteAlt` | `"<name> popped up"` | Text for screen readers when it pops up. |
+| `class` | none | Extra class. |
+
+Press Start: the character pops up in the corners of the screen, staying about 1.4 s at first and 0.6 s by
+the end, more and more often. Click, tap, or keys 1 to 4 (top left, top right, bottom left, bottom right).
+Leaving the tab ends the round. Theme with `--wam-accent`, `--wam-pop`, `--wam-size`, `--wam-bg` and
+`--wam-text`. Reduced motion: no sliding or squashing, and pop-ups stay longer.

@@ -1,0 +1,341 @@
+---
+/**
+ * WhackAMole: press Start and a character pops up in the corners of the screen, stays a moment, then
+ * ducks away. Whack it (click, tap, or the number keys 1 to 4) before it goes. More appear, faster,
+ * as the round goes on; at the end you get your score.
+ *
+ * Reusable on purpose: imports only Astro's image helper type, no site CSS needed, safe to use
+ * several times on a page (one round plays at a time). See README.md in this folder.
+ *
+ *   ---
+ *   import sprite from '../assets/whack-a-miku/whack-a-miku.png';
+ *   ---
+ *   <WhackAMole sprite={sprite} name="Miku" title="Whack-a-Miku" />
+ *
+ * Props:
+ *   sprite     the character: an imported image (pixel art is drawn crisp).
+ *   name       what to call it in the text ("Whack 12 Mikus"). Default "mole".
+ *   title      heading of the card. Default "Whack-a-mole".
+ *   seconds    length of a round. Default 30.
+ *   bonusDays  dates ("MM-DD") when every whack counts double. Default none.
+ *   spriteAlt  text for screen readers when it pops up. Default "<name> popped up".
+ *
+ * Theming (CSS custom properties): --wam-accent (default #39c5bb), --wam-pop (#e12885),
+ * --wam-size (default clamp(70px, 14vw, 130px)), --wam-bg, --wam-text. The pop-ups move to <body>,
+ * so set --wam-size and --wam-pop on :root (or body) to change them.
+ *
+ * Accessible: Start and the pop-ups are buttons; number keys whack the corners (1 top left,
+ * 2 top right, 3 bottom left, 4 bottom right); each pop-up and the score are announced. Reduced
+ * motion: no sliding or squashing, and the pop-ups stay longer.
+ */
+import type { ImageMetadata } from 'astro';
+
+interface Props {
+  sprite: ImageMetadata;
+  name?: string;
+  title?: string;
+  seconds?: number;
+  bonusDays?: string[];
+  spriteAlt?: string;
+  class?: string;
+}
+const {
+  sprite,
+  name = 'mole',
+  title = 'Whack-a-mole',
+  seconds = 30,
+  bonusDays = [],
+  spriteAlt,
+  class: className,
+} = Astro.props;
+const corners = [
+  { id: 'tl', label: 'top left', key: '1' },
+  { id: 'tr', label: 'top right', key: '2' },
+  { id: 'bl', label: 'bottom left', key: '3' },
+  { id: 'br', label: 'bottom right', key: '4' },
+];
+---
+
+<div
+  class:list={['wam', className]}
+  data-name={name}
+  data-seconds={seconds}
+  data-bonus={bonusDays.join(',')}
+>
+  <div class="wam__card">
+    <img class="wam__preview" src={sprite.src} width={sprite.width} height={sprite.height} alt="" />
+    <div>
+      <h3 class="wam__title">{title}</h3>
+      <p class="wam__status" aria-live="polite">
+        {name}s will pop up in the corners of your screen. Whack them before they hide! Keys 1 to 4 work too.
+      </p>
+      <p class="wam__score" aria-hidden="true"></p>
+      <button type="button" class="wam__start">Start</button>
+    </div>
+  </div>
+  {
+    corners.map((c) => (
+      <button
+        type="button"
+        class={`wam__pop wam__pop--${c.id}`}
+        data-corner={c.id}
+        data-key={c.key}
+        aria-label={`Whack the ${name} (${c.label}, key ${c.key})`}
+        tabindex="-1"
+        hidden
+      >
+        <img src={sprite.src} width={sprite.width} height={sprite.height} alt={spriteAlt ?? `${name} popped up`} />
+      </button>
+    ))
+  }
+</div>
+
+<style>
+  .wam {
+    --_accent: var(--wam-accent, #39c5bb);
+    --_pop: var(--wam-pop, #e12885);
+    color: var(--wam-text, inherit);
+    margin: 0 0 1.75rem;
+  }
+  .wam__card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.2rem;
+    border-radius: 16px;
+    border: 1px solid color-mix(in srgb, var(--_accent) 40%, transparent);
+    background: var(--wam-bg, color-mix(in srgb, var(--_accent) 8%, transparent));
+  }
+  .wam__preview {
+    width: 72px;
+    height: auto;
+    image-rendering: pixelated;
+    flex: none;
+  }
+  .wam__title {
+    margin: 0 0 0.3rem;
+    color: var(--_accent);
+  }
+  .wam__status {
+    margin: 0 0 0.4rem;
+  }
+  .wam__score {
+    margin: 0 0 0.5rem;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  .wam__score:empty {
+    display: none;
+  }
+  .wam__start {
+    padding: 0.45rem 1.2rem;
+    border-radius: 999px;
+    border: 0;
+    background: var(--_accent);
+    color: #062523;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .wam__start:focus-visible,
+  .wam__pop:focus-visible {
+    outline: 3px solid var(--wam-pop, #e12885);
+    outline-offset: 3px;
+  }
+  /* Pop-ups live in the corners of the screen while a round runs. */
+  .wam__pop {
+    position: fixed;
+    z-index: 60;
+    width: var(--wam-size, clamp(70px, 14vw, 130px));
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    transition: transform 0.18s ease-out;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .wam__pop img {
+    display: block;
+    width: 100%;
+    height: auto;
+    image-rendering: pixelated;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.5));
+  }
+  .wam__pop--tl { top: 10px; left: 10px; transform: translateY(-120%); }
+  .wam__pop--tr { top: 10px; right: 10px; transform: translateY(-120%); }
+  .wam__pop--bl { bottom: 10px; left: 10px; transform: translateY(120%); }
+  .wam__pop--br { bottom: 10px; right: 10px; transform: translateY(120%); }
+  .wam__pop.is-up { transform: translateY(0); }
+  .wam__pop.is-hit img {
+    animation: wam-squash 0.25s ease-out forwards;
+  }
+  .wam__pop.is-hit::after {
+    content: attr(data-points);
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translateX(-50%);
+    color: var(--wam-pop, #e12885);
+    font-weight: 900;
+    font-size: 1.4rem;
+    text-shadow: 0 2px 0 #fff;
+    animation: wam-float 0.5s ease-out forwards;
+  }
+  @keyframes wam-squash {
+    0% { transform: scale(1, 1); }
+    40% { transform: scale(1.25, 0.6); }
+    100% { transform: scale(0.2, 0.1); opacity: 0; }
+  }
+  @keyframes wam-float {
+    from { opacity: 1; translate: 0 0; }
+    to { opacity: 0; translate: 0 -30px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wam__pop { transition: none; }
+    .wam__pop.is-hit img { animation: none; opacity: 0.3; }
+    .wam__pop.is-hit::after { animation: none; }
+  }
+</style>
+
+<script>
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let playing: HTMLElement | null = null; // one round at a time across the page
+
+  document.querySelectorAll<HTMLElement>('.wam').forEach((game) => {
+    const name = game.dataset.name || 'mole';
+    const seconds = Number(game.dataset.seconds) || 30;
+    const bonus = (game.dataset.bonus || '').split(',').filter(Boolean);
+    const status = game.querySelector<HTMLElement>('.wam__status')!;
+    const scoreEl = game.querySelector<HTMLElement>('.wam__score')!;
+    const start = game.querySelector<HTMLButtonElement>('.wam__start')!;
+    const pops = Array.from(game.querySelectorAll<HTMLButtonElement>('.wam__pop'));
+    // Pop-ups sit in the corners of the screen, so they move to <body>: a parent with a transform,
+    // filter or clipping (common around tabs and cards) would otherwise trap position: fixed.
+    const layer = document.createElement('div');
+    layer.className = 'wam-layer';
+    pops.forEach((p) => layer.appendChild(p));
+    document.body.appendChild(layer);
+
+    let score = 0;
+    let misses = 0;
+    let endsAt = 0;
+    let spawnTimer = 0;
+    let clock = 0;
+    const timers = new Map<HTMLButtonElement, number>();
+
+    const today = () => {
+      const d = new Date();
+      return `${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
+    };
+    const points = () => (bonus.includes(today()) ? 2 : 1);
+    const plural = (n: number) => `${n} ${name}${n === 1 ? '' : 's'}`;
+
+    function hide(p: HTMLButtonElement) {
+      p.classList.remove('is-up');
+      window.clearTimeout(timers.get(p));
+      timers.delete(p);
+      window.setTimeout(() => {
+        if (!p.classList.contains('is-up')) {
+          p.hidden = true;
+          p.classList.remove('is-hit');
+        }
+      }, reduced ? 0 : 200);
+    }
+
+    function popUp() {
+      if (!playing) return;
+      const free = pops.filter((p) => p.hidden);
+      if (free.length) {
+        const p = free[Math.floor(Math.random() * free.length)];
+        const progress = 1 - (endsAt - performance.now()) / (seconds * 1000);
+        p.hidden = false;
+        p.classList.remove('is-hit');
+        void p.offsetWidth;
+        p.classList.add('is-up');
+        // Starts at about 1.4 s on screen and drops toward 0.6 s; reduced motion gets more time.
+        const stay = (1400 - 800 * progress) * (reduced ? 1.6 : 1);
+        timers.set(
+          p,
+          window.setTimeout(() => {
+            misses++;
+            hide(p);
+          }, stay),
+        );
+        status.textContent = `${name} popped up ${p.getAttribute('aria-label')!.match(/\(([^,]+)/)![1]}!`;
+      }
+      // Pop-ups come more often as the round goes on (about every 1.1 s down to 0.45 s).
+      const progress = 1 - (endsAt - performance.now()) / (seconds * 1000);
+      spawnTimer = window.setTimeout(popUp, Math.max(450, 1100 - 650 * progress));
+    }
+
+    function whack(p: HTMLButtonElement) {
+      if (!playing || !p.classList.contains('is-up') || p.classList.contains('is-hit')) return;
+      const pts = points();
+      score += pts;
+      p.dataset.points = `+${pts}`;
+      p.classList.add('is-hit');
+      window.clearTimeout(timers.get(p));
+      timers.delete(p);
+      window.setTimeout(() => hide(p), reduced ? 150 : 260);
+      scoreEl.textContent = `Score: ${score}`;
+    }
+
+    function tick() {
+      // Its tab was closed (the card is no longer on the page): end the round.
+      if (!game.offsetParent) return finish();
+      const left = Math.max(0, Math.ceil((endsAt - performance.now()) / 1000));
+      start.textContent = `${left}s left`;
+      if (left <= 0) return finish();
+      clock = window.setTimeout(tick, 250);
+    }
+
+    function finish() {
+      window.clearTimeout(spawnTimer);
+      window.clearTimeout(clock);
+      pops.forEach(hide);
+      playing = null;
+      start.disabled = false;
+      start.textContent = 'Play again';
+      const verdict = score >= 25 ? 'Legendary reflexes!' : score >= 15 ? 'Nice whacking!' : score >= 6 ? 'Not bad!' : 'She got away…';
+      status.textContent = `Time! You whacked ${plural(score)} and missed ${misses}. ${verdict}`;
+      scoreEl.textContent = `Score: ${score}`;
+    }
+
+    start.addEventListener('click', () => {
+      if (playing) return;
+      playing = game;
+      score = 0;
+      misses = 0;
+      endsAt = performance.now() + seconds * 1000;
+      start.disabled = true;
+      scoreEl.textContent = 'Score: 0';
+      status.textContent = points() > 1 ? `Bonus day! Every ${name} counts double. Go!` : 'Go!';
+      tick();
+      spawnTimer = window.setTimeout(popUp, 600);
+    });
+
+    for (const p of pops) {
+      p.addEventListener('pointerdown', (ev) => {
+        ev.preventDefault();
+        whack(p);
+      });
+      p.addEventListener('click', (ev) => {
+        if (ev.detail === 0) whack(p);
+      });
+    }
+
+    document.addEventListener('keydown', (ev) => {
+      if (playing !== game || ev.repeat) return;
+      const p = pops.find((x) => x.dataset.key === ev.key);
+      if (p) {
+        whack(p);
+        ev.preventDefault();
+      }
+    });
+
+    // Leaving the page ends the round too (closing the tab is caught in tick()).
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden && playing === game) finish();
+    });
+  });
+</script>
