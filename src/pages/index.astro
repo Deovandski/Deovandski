@@ -28,6 +28,8 @@ import influencerShot from '../../content/influencer/Screenshot_20260803-210132.
 import { loadGallery } from '../lib/gallery';
 import { photoDate } from '../lib/photoDate';
 import { resolve } from 'node:path';
+import WhackAMole from '../components/reusable/WhackAMole.astro';
+import whackSprite from '../assets/whack-a-miku/whack-a-miku.png';
 import { existsSync, readFileSync } from 'node:fs';
 import { loadRankedList } from '../lib/ranking';
 import { loadSections } from '../lib/sections';
@@ -581,6 +583,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-miku" aria-labelledby="tab-miku" tabindex="0" hidden>
+      <WhackAMole sprite={whackSprite} name="Miku" title="Whack-a-Miku" bonusDays={["03-09", "08-31"]} spriteAlt="A pixel Miku popped up" />
       <Sections data={mikuConcerts} id="miku" layout="cards" slots={2} titleAbove noDescription="Description coming soon." photoAlt={(t) => `Me at ${t}`} />
     </section>
 

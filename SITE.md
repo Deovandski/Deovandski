@@ -55,6 +55,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Lust tab ecchi-meter (bellows, fire, phrases) | phrases and levels in `content/lust-meter.json`; `src/components/reusable/FireMeter.astro`, placed in `src/components/LustFacet.astro` |
 | Facet easter eggs (banners after a visitor opens 10 and 20 different facets) | `src/components/FacetMilestoneEggs.astro`, GIFs `public/tea-sip.gif` and `public/aiight.gif` |
 | Miku Day (3/9) and Miku's birthday (8/31): dates, messages and pictures | `src/components/MikuDay.astro` (`DATES` in the script, pictures in `images` at the top), birthday photo `src/assets/miku-birthday-2016-08-31.jpg` |
+| Miku tab Whack-a-Miku (the game card at the top) | `src/components/reusable/WhackAMole.astro`, sprite `src/assets/whack-a-miku/whack-a-miku.png` (Deo's original in `whack-a-miku-source.png`), placed in `panel-miku` in `src/pages/index.astro` |
 | Colors and fonts | `src/styles/global.css` |
 | Logo | `src/assets/logo.png` |
 
