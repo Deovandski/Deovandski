@@ -25,12 +25,18 @@ const levels: OrgNode[][] = hierarchy.levels.map((l) => [
   { title: l.title, subtitle: l.subtitle, text: l.text, image: l.image ? photo(l.image) : undefined, imageAlt: l.imageAlt },
 ]);
 const steps = scripture.steps.map((s, i) => ({ ...s, n: i + 1, image: photo(`step-${i + 1}`) }));
+// The church counts in pounds (content/churrasco/church.json); kilograms are worked out here and shown under them.
+const LB_TO_KG = 0.45359237;
+const kg = (lb: number) => Math.round(lb * LB_TO_KG);
 const roman = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI', 'XII'];
 ---
 
 <div class="church">
   <section class="church__counters" aria-label="Beef grilled so far">
-    <SplitFlap value={poundsGrilled} label="Pounds of beef grilled" size="lg" separator="," class="church__flap" />
+    <div class="church__weights">
+      <SplitFlap value={poundsGrilled} label="Pounds of beef grilled" size="lg" separator="," class="church__flap" />
+      <SplitFlap value={kg(poundsGrilled)} label="Kilograms of beef grilled" size="lg" separator="," class="church__flap" />
+    </div>
     <IconMeter
       value={poundsGrilled}
       per={poundsPerCow}
@@ -38,7 +44,7 @@ const roman = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI'
       unit="cow has become food"
       units="cows have become food"
       label="Cow-meter"
-      note={`At about ${poundsPerCow} lb of take-home beef per cow.`}
+      note={`At about ${poundsPerCow} lb (${kg(poundsPerCow)} kg) of take-home beef per cow.`}
       class="church__cows"
     />
   </section>
@@ -105,6 +111,12 @@ const roman = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII', 'IX', 'X', 'XI'
     border-radius: 18px;
     background: linear-gradient(180deg, #0d0f14 0%, #07080b 100%);
     border: 1px solid rgba(190, 200, 209, 0.18);
+  }
+  .church__weights {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
   }
   .church__counters :global(.church__flap) { --split-flap-label: var(--teal); }
   .church__counters :global(.church__cows) { --icon-meter-accent: var(--teal); --icon-meter-muted: var(--muted); }
