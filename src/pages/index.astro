@@ -1203,7 +1203,27 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     openFacet = f;
   }
 
+  // Phone back button (#208): while a tab is open there is exactly one history entry for it, on top of
+  // the tree's. Back from a tab returns to the tree (its branch still open); back again leaves the site,
+  // which closes the installed app. Switching tabs replaces the entry, so it never stacks up.
+  const FACET_ENTRY = 'deoFacet';
+  const onFacetEntry = () => history.state?.[FACET_ENTRY] === true;
+  let skipPop = false; // set when we go back ourselves, after already showing the tree
+  function rememberFacet(hash: string) {
+    if (onFacetEntry()) {
+      history.replaceState({ [FACET_ENTRY]: true }, '', hash);
+      return;
+    }
+    // A tab opened straight from a link has no tree entry under it: turn that entry into the tree first.
+    if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+    history.pushState({ [FACET_ENTRY]: true }, '', hash);
+  }
   const clearHash = () => {
+    if (onFacetEntry()) {
+      skipPop = true;
+      history.back(); // drop the tab's entry, so the next back leaves the site
+      return;
+    }
     if (location.hash) history.replaceState(null, '', location.pathname + location.search);
   };
 
@@ -1310,7 +1330,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     document.dispatchEvent(new CustomEvent('tabchange', { detail: panelOf(f).id }));
     document.dispatchEvent(new CustomEvent('facetopen', { detail: { id: f.dataset.tab, source } }));
     if (source === 'user') {
-      history.replaceState(null, '', `#${f.dataset.tab}`);
+      rememberFacet(`#${f.dataset.tab}`);
       if (phone.matches) head.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
@@ -1349,7 +1369,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       b.tabIndex = on ? 0 : -1;
       document.getElementById(b.getAttribute('aria-controls')!)!.hidden = !on;
     }
-    if (updateHash) history.replaceState(null, '', button.dataset.switchHash);
+    if (updateHash) history.replaceState(history.state, '', button.dataset.switchHash); // keeps the tab's back entry
   }
   for (const b of switchButtons) {
     b.addEventListener('click', () => flip(b));
@@ -1396,8 +1416,32 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
   openFromHash(location.hash);
 
   // Links between facets (e.g. Mentor → "#death") switch facets too, then bring the facet's header into view.
+  // A plain link would add a history entry of its own, so it's handled here and shares the tab's one entry.
+  document.addEventListener('click', (e) => {
+    const a = (e.target as HTMLElement).closest<HTMLAnchorElement>('a[href^="#"]');
+    if (!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey) return;
+    const hash = a.getAttribute('href')!;
+    if (hash.length < 2 || !openFromHash(hash)) return;
+    e.preventDefault();
+    rememberFacet(renamed[hash] ?? hash);
+    head.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
   window.addEventListener('hashchange', () => {
     if (openFromHash(location.hash)) head.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+  // Back from a tab: show the tree again, with the tab's branch still open.
+  window.addEventListener('popstate', () => {
+    if (skipPop) {
+      skipPop = false;
+      return;
+    }
+    if (location.hash || !openFacet) return; // forward to a tab is handled by hashchange
+    document.dispatchEvent(new CustomEvent('gimmick:close', { detail: {} }));
+    const b = openBranch;
+    setFacet(null);
+    renderHead();
+    (b?.button ?? treeEl).scrollIntoView({ behavior: 'smooth', block: 'center' });
+    b?.button.focus({ preventScroll: true });
   });
   // Photos open in the site-wide PhotoViewer (src/components/reusable/PhotoViewer.astro, in Base.astro).
 </script>
