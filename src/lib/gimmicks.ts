@@ -6,24 +6,25 @@
 // title    the FastTab header.
 // tab      the home page tab it plays on (`#<tab>-play` opens it straight away).
 // tabName  how the tab is called in text ("From the Aviation tab").
-// upright  true for gimmicks shaped for a phone held upright (they don't turn sideways on Play).
-export type GimmickInfo = { id: string; title: string; tab: string; tabName: string; upright?: boolean };
+// inline   true for gimmicks that open on phones exactly as on desktop, in the FastTab under the title
+//          (no full screen, no turning sideways). Leave it out and phones turn the gimmick sideways on Play.
+export type GimmickInfo = { id: string; title: string; tab: string; tabName: string; inline?: boolean };
 
 export const GIMMICKS: GimmickInfo[] = [
   { id: 'balls-farm', title: 'Balls farm', tab: 'mentor', tabName: 'Mentor' },
-  { id: 'dice-tray', title: 'Dice tray', tab: 'dnd', tabName: 'D&D' },
+  { id: 'dice-tray', title: 'Dice tray', tab: 'dnd', tabName: 'D&D', inline: true },
   { id: 'dino-ambush', title: 'Dino Ambush', tab: 'gamer', tabName: 'Gamer' },
   { id: 'drum-kit', title: 'Drum kit', tab: 'musician', tabName: 'Musician' },
   { id: 'ecchi-meter', title: 'Ecchi-meter', tab: 'lust', tabName: 'Lust' },
-  { id: 'kitkot', title: 'KitKot', tab: 'influencer', tabName: 'Influencer', upright: true },
+  { id: 'kitkot', title: 'KitKot', tab: 'influencer', tabName: 'Influencer', inline: true },
   { id: 'led-painting', title: 'LED painting', tab: 'painting', tabName: 'Painting' },
   { id: 'paper-plane', title: 'Paper plane', tab: 'aviation', tabName: 'Aviation' },
-  { id: 'pixel-pets', title: 'Pixel pets', tab: 'pets', tabName: 'Pets', upright: true },
+  { id: 'pixel-pets', title: 'Pixel pets', tab: 'pets', tabName: 'Pets' },
   { id: 'saturday-night-fever', title: 'Saturday Night Fever', tab: 'concert', tabName: 'Concert' },
   { id: 'tattoo-skin', title: 'Tattoo practice skin', tab: 'tattoo', tabName: 'Tattoo' },
   { id: 'territory-snipping', title: 'Territory Snipping', tab: 'boardgames', tabName: 'Board Games' },
   { id: 'vhs-pile', title: 'VHS pile', tab: 'botw', tabName: 'BOTW' },
-  { id: 'whack-a-miku', title: 'Whack-a-Miku', tab: 'miku', tabName: 'Miku' },
+  { id: 'whack-a-miku', title: 'Whack-a-Miku', tab: 'miku', tabName: 'Miku', inline: true },
 ];
 
 export const gimmickForTab = (tab: string) => GIMMICKS.find((g) => g.tab === tab);

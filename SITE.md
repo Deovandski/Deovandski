@@ -20,7 +20,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | PM/Life hacks tab: Life hacks side | `src/components/LifeHacksFacet.astro` |
 | QR Code page (hidden: `/qr/`, or `#qr` on the home page) | `src/pages/qr.astro`: `contact` (name and phone above the codes) and `codes` (one QR code per row, stacked in order) |
 | Gaming page (hidden: `/gaming/`, or `#gaming` on the home page): every gimmick in a FastTab | `src/pages/gaming.astro`, one FastTab per row of `src/lib/gimmicks.ts` (sorted A to Z); saved offline by `public/sw.js`; app shortcut in `src/pages/manifest.webmanifest.ts` |
-| Tab ▶ Play gimmicks (the Play button next to a tab's title, the FastTab it opens, phones turning sideways) | the list in `src/lib/gimmicks.ts` (which tab, the title, `upright`); each gimmick's props in `src/components/Gimmick.astro`; the button and FastTab in `src/components/GimmickPlay.astro`, placed at the top of each tab's panel in `src/pages/index.astro` (intro text goes in its `intro` slot) |
+| Tab ▶ Play gimmicks (the Play button next to a tab's title, the FastTab it opens, phones turning sideways) | the list in `src/lib/gimmicks.ts` (which tab, the title, `inline`); each gimmick's props in `src/components/Gimmick.astro`; the button and FastTab in `src/components/GimmickPlay.astro`, placed at the top of each tab's panel in `src/pages/index.astro` (intro text goes in its `intro` slot) |
 | Installable app (PWA): name, colours, home-screen shortcuts | `src/pages/manifest.webmanifest.ts`, icons in `public/icons/` |
 | What the app keeps on the phone for offline use (QR Code page, home page) | `public/sw.js` (change `VERSION` to start over) |
 | King of Hues photo | `src/assets/king-of-hues.jpg` |

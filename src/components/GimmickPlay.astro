@@ -6,8 +6,8 @@
 //
 // On a phone held upright, Play turns the game sideways: on Android it goes full screen and locks to
 // landscape; where a page can't lock the screen (iPhone), it asks to turn the phone and starts once it's
-// sideways, with "Play upright instead" and "Back to <tab>". Gimmicks marked `upright` in src/lib/gimmicks.ts
-// stay upright. Desktop and wide screens never change.
+// sideways, with "Play upright instead" and "Back to <tab>". Gimmicks marked `inline` in src/lib/gimmicks.ts
+// open on phones exactly as on desktop. Desktop and wide screens never change.
 //
 //   <GimmickPlay tab="aviation" />
 //   <GimmickPlay tab="gamer"><p slot="intro">How to play…</p></GimmickPlay>
@@ -26,7 +26,7 @@ const g = gimmickForTab(tab);
 if (!g) throw new Error(`GimmickPlay: no gimmick for the "${tab}" tab in src/lib/gimmicks.ts`);
 ---
 
-<div class="gimmick-play" id={`gimmick-${tab}`} data-gimmick-tab={tab} data-upright={g.upright ? 'true' : undefined} hidden>
+<div class="gimmick-play" id={`gimmick-${tab}`} data-gimmick-tab={tab} data-inline={g.inline ? 'true' : undefined} hidden>
   <FastTab title={g.title} open keepSummary class="gimmick-play__tab" data-gimmick-id={g.id} data-summary-base="">
     {
       Astro.slots.has('intro') && (
@@ -286,7 +286,7 @@ if (!g) throw new Error(`GimmickPlay: no gimmick for the "${tab}" tab in src/lib
     w.hidden = false;
     refreshGimmickSummaries();
     emit(w.dataset.gimmickTab!, true);
-    if (immersive && w.dataset.upright !== 'true' && phonePortrait.matches) goSideways(w);
+    if (immersive && w.dataset.inline !== 'true' && phonePortrait.matches) goSideways(w);
     else summary.focus({ preventScroll: true });
   }
 
