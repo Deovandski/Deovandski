@@ -8,6 +8,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | What | File or folder |
 |---|---|
 | Home page facets (Dev, Author, Influencer) | `src/pages/index.astro` |
+| Influencer tab KitKot game (the phone idle game) | `src/components/reusable/KitKot.astro` (odds and tricks are at the top of its script), placed under the screenshot in `panel-influencer` in `src/pages/index.astro` |
 | Facet tree (which branch each facet sits in, the order, branch blurbs) | `facets` and `branches` near the top of `src/pages/index.astro`; the build stops if a facet is missing, listed twice, or a branch has more than 6 |
 | Family tab (header photos, text, Itaituba → Fargo map, photos) | `content/family/_intro.md`, header photos in `content/family/header/`, photos in `content/family/` (see its README); layout and map in `src/components/FamilyFacet.astro` |
 | Aviation tab (text + YouTube video) | `content/aviation.md`; video id in `src/pages/index.astro` (`panel-aviation`) |

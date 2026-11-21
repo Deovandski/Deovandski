@@ -15,6 +15,7 @@ import territorySnipping from '../../content/territory-snipping.json';
 import LifeHacksFacet from '../components/LifeHacksFacet.astro';
 import FamilyFacet from '../components/FamilyFacet.astro';
 import GymFacet from '../components/GymFacet.astro';
+import KitKot from '../components/reusable/KitKot.astro';
 import LustFacet from '../components/LustFacet.astro';
 import DeathFacet from '../components/DeathFacet.astro';
 import PetsFacet from '../components/PetsFacet.astro';
@@ -492,6 +493,12 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
         </a>
         <figcaption>August 3, 2026</figcaption>
       </figure>
+      <h3 class="pm-subhead">KitKot: the game</h3>
+      <p>
+        Want a taste of the treadmill? Post away. Each post costs one energy bar, and one bar refills every second. Open
+        “Under the hood” to see which trick is working on you as it happens.
+      </p>
+      <KitKot name="Deovandski Skibinski Junior" handle="deovandski" bio="Author, x++ dev, chasing the algorithm" />
       <p>
         If you got to see my shenanigans, I hope you found it entertaining. Now go outside, touch grass, and drag your dreams
         from fantasy into reality like I am; truly recommended.

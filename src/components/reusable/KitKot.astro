@@ -1,0 +1,631 @@
+---
+/**
+ * KitKot: a quick-loop idle game on a phone screen that shows how the social media slot machine
+ * works. Each post costs one energy bar (one bar refills per second) and rolls for views, likes and
+ * followers on a variable schedule: usually a little, sometimes nothing, now and then a near miss,
+ * rarely a viral hit. One kind of post is secretly "hot"; spam one kind and the audience gets tired,
+ * then starts to leave. An "Under the hood" toggle names each trick as it happens, with sources.
+ * "KitKot" is a made-up parody app.
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
+ * Copy this one file into any Astro project. See README.md in this folder.
+ *
+ *   <KitKot name="Deovandski Skibinski Junior" handle="deovandski" />
+ *
+ * Props:
+ *   name, handle   the profile on the phone.
+ *   bio            line under the name. Default "Posting into the void".
+ *   start          { following, followers, likes, views } at the start. Default 39, 39, 39, 3900.
+ *   energyMax      energy bars. Default 10.
+ *
+ * Theming (CSS custom properties): --kk-accent (default #fe2c55), --kk-accent-2 (#25f4ee), --kk-bg.
+ *
+ * Accessible: every action is a button; big events (viral, near miss, losing followers, streaks)
+ * are announced, small ones aren't (so a screen reader isn't flooded). Reduced motion: no shaking
+ * or counting animations. Nothing is saved: the "career" lasts for the visit.
+ */
+interface Props {
+  name: string;
+  handle: string;
+  bio?: string;
+  start?: { following: number; followers: number; likes: number; views: number };
+  energyMax?: number;
+  class?: string;
+}
+const {
+  name,
+  handle,
+  bio = 'Posting into the void',
+  start = { following: 39, followers: 39, likes: 39, views: 3900 },
+  energyMax = 10,
+  class: className,
+} = Astro.props;
+const nf = new Intl.NumberFormat('en-US');
+const initials = name
+  .split(/\s+/)
+  .slice(0, 2)
+  .map((w) => w[0])
+  .join('');
+const posts = [
+  { id: 'clickbait', label: 'Post clickbait video', icon: '😱' },
+  { id: 'smart', label: 'Post intellectual video', icon: '🧠' },
+  { id: 'pics', label: 'Post pictures', icon: '📸' },
+  { id: 'random', label: 'Post random shit', icon: '💩' },
+];
+// What each trick is, shown in "Under the hood" and lit up when it fires.
+const tricks = [
+  {
+    id: 'variable',
+    name: 'Variable rewards',
+    text: 'Results are random: usually small, sometimes nothing, rarely huge. Unpredictable rewards are the hardest habit to quit (a variable-ratio schedule).',
+    source: 'Ferster & Skinner, Schedules of Reinforcement (1957)',
+  },
+  {
+    id: 'nearmiss',
+    name: 'Near miss',
+    text: '"Almost went viral!" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses.',
+    source: 'Clark et al., Neuron 61:481–490 (2009), and the studies it cites',
+  },
+  {
+    id: 'reward',
+    name: 'Reward learning',
+    text: 'People post more right after a batch of likes, spacing posts to chase the best rate of likes, like an animal in a Skinner box.',
+    source: 'Lindström et al., Nature Communications 12:1311 (2021)',
+  },
+  {
+    id: 'hot',
+    name: 'The algorithm',
+    text: 'One kind of post secretly pays better, and it changes without warning, so you keep trying everything.',
+    source: 'Same variable-reward idea, applied to what to post',
+  },
+  {
+    id: 'fatigue',
+    name: 'Diminishing returns',
+    text: 'Repeat yourself and each post pays less, then starts to cost you followers. The treadmill speeds up.',
+    source: 'Hedonic adaptation / audience fatigue',
+  },
+  {
+    id: 'streak',
+    name: 'Streaks and loss aversion',
+    text: 'A streak you could lose feels worse than one you never had. Losing hurts about twice as much as winning feels good.',
+    source: 'Kahneman & Tversky, Prospect Theory (1979)',
+  },
+  {
+    id: 'drip',
+    name: 'Notification drip',
+    text: 'Likes trickle in a few at a time after you post, so you keep checking.',
+    source: 'Schüll, Addiction by Design (2012), on how slot machines are tuned',
+  },
+  {
+    id: 'energy',
+    name: 'Energy timers',
+    text: 'A meter that refills over time makes you wait, then binge, and keeps you coming back.',
+    source: 'Common free-to-play design',
+  },
+];
+---
+
+<div
+  class:list={['kitkot', className]}
+  data-start={JSON.stringify(start)}
+  data-energy={energyMax}
+>
+  <div class="kitkot__phone">
+    <div class="kitkot__status" aria-hidden="true"><span>9:39</span><span>📶 🔋39%</span></div>
+    <div class="kitkot__screen">
+      <p class="kitkot__app" aria-hidden="true">Kit<span>Kot</span></p>
+      <div class="kitkot__avatar" aria-hidden="true">{initials}</div>
+      <p class="kitkot__name">{name}</p>
+      <p class="kitkot__handle">@{handle}</p>
+      <dl class="kitkot__stats">
+        <div><dt>Following</dt><dd data-stat="following">{nf.format(start.following)}</dd></div>
+        <div><dt>Followers</dt><dd data-stat="followers">{nf.format(start.followers)}</dd></div>
+        <div><dt>Likes</dt><dd data-stat="likes">{nf.format(start.likes)}</dd></div>
+        <div><dt>Views</dt><dd data-stat="views">{nf.format(start.views)}</dd></div>
+      </dl>
+      <p class="kitkot__bio">{bio}</p>
+      <div class="kitkot__meta">
+        <span class="kitkot__streak" aria-label="Posting streak">🔥 <b data-streak>0</b></span>
+        <span class="kitkot__goal" data-goal></span>
+      </div>
+      <div class="kitkot__energy" role="meter" aria-label="Energy" aria-valuemin="0" aria-valuemax={energyMax} aria-valuenow={energyMax}>
+        {Array.from({ length: energyMax }, () => <span class="is-full" />)}
+      </div>
+      <div class="kitkot__posts">
+        {
+          posts.map((p) => (
+            <button type="button" class="kitkot__post" data-post={p.id}>
+              <span aria-hidden="true">{p.icon}</span>
+              {p.label}
+            </button>
+          ))
+        }
+      </div>
+      <ol class="kitkot__feed" aria-hidden="true"></ol>
+      <button type="button" class="kitkot__grass">Log off and touch grass</button>
+    </div>
+  </div>
+  <div class="kitkot__side">
+    <p class="kitkot__live" aria-live="polite"></p>
+    <details class="kitkot__hood">
+      <summary>Under the hood: how it hooks you</summary>
+      <ul>
+        {
+          tricks.map((t) => (
+            <li data-trick={t.id}>
+              <b>{t.name}</b>
+              <span>{t.text}</span>
+              <small>{t.source}</small>
+            </li>
+          ))
+        }
+      </ul>
+    </details>
+  </div>
+</div>
+
+<style>
+  .kitkot {
+    --_a: var(--kk-accent, #fe2c55);
+    --_b: var(--kk-accent-2, #25f4ee);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 1.75rem 0;
+  }
+  .kitkot__phone {
+    width: min(100%, 330px);
+    border-radius: 34px;
+    padding: 10px;
+    background: #0b0b0d;
+    border: 2px solid #2a2a30;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.55);
+    color: #f1f1f1;
+  }
+  .kitkot__status {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 14px 6px;
+    font-size: 0.75rem;
+    opacity: 0.8;
+  }
+  .kitkot__screen {
+    position: relative;
+    border-radius: 24px;
+    padding: 0.8rem 0.9rem 1rem;
+    background: var(--kk-bg, #121214);
+    text-align: center;
+    overflow: hidden;
+  }
+  .kitkot__app {
+    margin: 0 0 0.5rem;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    text-shadow: -1.5px 0 var(--_b), 1.5px 0 var(--_a);
+  }
+  .kitkot__app span {
+    color: var(--_a);
+  }
+  .kitkot__avatar {
+    width: 72px;
+    height: 72px;
+    margin: 0 auto 0.4rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    font-weight: 900;
+    font-size: 1.4rem;
+    background: linear-gradient(135deg, var(--_b), var(--_a));
+    color: #121214;
+  }
+  .kitkot__name {
+    margin: 0;
+    font-weight: 800;
+  }
+  .kitkot__handle {
+    margin: 0 0 0.6rem;
+    font-size: 0.85rem;
+    opacity: 0.7;
+  }
+  .kitkot__stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 0 0.4rem;
+  }
+  .kitkot__stats div {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .kitkot__stats dt {
+    font-size: 0.7rem;
+    opacity: 0.7;
+  }
+  .kitkot__stats dd {
+    margin: 0;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+    transition: color 0.4s;
+  }
+  .kitkot__stats dd.is-up { color: var(--_b); }
+  .kitkot__stats dd.is-down { color: var(--_a); }
+  .kitkot__bio {
+    margin: 0 0 0.5rem;
+    font-size: 0.85rem;
+  }
+  .kitkot__meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+  }
+  .kitkot__streak.is-danger { color: var(--_a); animation: kitkot-pulse 0.8s ease-in-out infinite alternate; }
+  .kitkot__goal { opacity: 0.8; }
+  .kitkot__energy {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 3px;
+    margin-bottom: 0.7rem;
+  }
+  .kitkot__energy span {
+    height: 8px;
+    border-radius: 3px;
+    background: #2c2c32;
+  }
+  .kitkot__energy span.is-full {
+    background: linear-gradient(90deg, var(--_b), #7fffd4);
+  }
+  .kitkot__posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+  .kitkot__post {
+    display: grid;
+    gap: 0.25rem;
+    justify-items: center;
+    padding: 0.9rem 0.4rem;
+    border: 1px solid #2c2c32;
+    border-radius: 12px;
+    background: #1c1c20;
+    color: inherit;
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    cursor: pointer;
+  }
+  .kitkot__post span { font-size: 1.4rem; }
+  .kitkot__post:hover { border-color: var(--_b); }
+  .kitkot__post:focus-visible,
+  .kitkot__grass:focus-visible { outline: 2px solid var(--_b); outline-offset: 2px; }
+  .kitkot__post:disabled { opacity: 0.45; cursor: not-allowed; }
+  .kitkot__post.is-trending { border-color: var(--_a); box-shadow: 0 0 0 1px var(--_a) inset; }
+  .kitkot__post.is-trending::after { content: '🔥 Trending'; font-size: 0.65rem; color: var(--_a); }
+  .kitkot__feed {
+    list-style: none;
+    margin: 0.6rem 0 0;
+    padding: 0;
+    min-height: 6.2rem;
+    display: grid;
+    align-content: start;
+    gap: 4px;
+    text-align: left;
+    font-size: 0.78rem;
+  }
+  .kitkot__feed li {
+    padding: 0.35rem 0.55rem;
+    border-radius: 8px;
+    background: #1c1c20;
+    animation: kitkot-in 0.25s ease-out;
+  }
+  .kitkot__feed li.is-viral { background: linear-gradient(90deg, rgba(254, 44, 85, 0.35), rgba(37, 244, 238, 0.25)); font-weight: 800; }
+  .kitkot__feed li.is-bad { background: rgba(254, 44, 85, 0.18); }
+  .kitkot__feed li.is-near { background: rgba(255, 200, 0, 0.16); }
+  .kitkot__grass {
+    margin-top: 0.7rem;
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid #3a7d44;
+    background: transparent;
+    color: #9be3a6;
+    font: inherit;
+    font-size: 0.8rem;
+    cursor: pointer;
+  }
+  .kitkot.is-shake .kitkot__phone { animation: kitkot-shake 0.4s; }
+  .kitkot__side {
+    flex: 1 1 280px;
+    max-width: 30rem;
+  }
+  .kitkot__live {
+    min-height: 1.5em;
+    margin: 0 0 0.6rem;
+    font-weight: 700;
+  }
+  .kitkot__hood summary {
+    cursor: pointer;
+    font-weight: 700;
+  }
+  .kitkot__hood ul {
+    list-style: none;
+    margin: 0.6rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 0.5rem;
+  }
+  .kitkot__hood li {
+    display: grid;
+    gap: 0.15rem;
+    padding: 0.5rem 0.7rem;
+    border-radius: 10px;
+    border: 1px solid rgba(190, 200, 209, 0.15);
+    transition: border-color 0.3s, background 0.3s;
+  }
+  .kitkot__hood li.is-firing {
+    border-color: var(--_a);
+    background: rgba(254, 44, 85, 0.12);
+  }
+  .kitkot__hood small { opacity: 0.65; }
+  @keyframes kitkot-in { from { opacity: 0; transform: translateY(-6px); } }
+  @keyframes kitkot-pulse { to { opacity: 0.4; } }
+  @keyframes kitkot-shake {
+    20% { transform: translateX(-6px) rotate(-1deg); }
+    40% { transform: translateX(6px) rotate(1deg); }
+    60% { transform: translateX(-4px); }
+    80% { transform: translateX(3px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .kitkot__feed li, .kitkot.is-shake .kitkot__phone, .kitkot__streak.is-danger { animation: none; }
+  }
+</style>
+
+<script>
+  type Stats = { following: number; followers: number; likes: number; views: number };
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const nf = new Intl.NumberFormat('en-US');
+  const rnd = (a: number, b: number) => a + Math.random() * (b - a);
+  const pick = <T,>(list: T[]) => list[Math.floor(Math.random() * list.length)];
+
+  // How each kind of post behaves: views per post, likes per view, followers per like, viral odds.
+  const KINDS: Record<string, { views: [number, number]; likeRate: number; followRate: number; viral: number; name: string }> = {
+    clickbait: { views: [80, 420], likeRate: 0.05, followRate: 0.02, viral: 0.07, name: 'clickbait video' },
+    smart: { views: [20, 140], likeRate: 0.12, followRate: 0.09, viral: 0.015, name: 'intellectual video' },
+    pics: { views: [40, 220], likeRate: 0.1, followRate: 0.04, viral: 0.035, name: 'pictures' },
+    random: { views: [0, 600], likeRate: 0.07, followRate: 0.03, viral: 0.05, name: 'random shit' },
+  };
+  const NEAR = ['Almost went viral! 97% to the For You page.', 'So close! Your post was one share away from blowing up.', 'Your post was shown to 1 more person than last time! Keep going!', 'Trending… in your apartment.'];
+  const NOTHING = ['0 views. Shadowbanned?', 'Posted. Nobody cares. Yet.', '3 views. Two were you.', 'The algorithm has left you on read.'];
+
+  document.querySelectorAll<HTMLElement>('.kitkot').forEach((root) => {
+    const start: Stats = JSON.parse(root.dataset.start!);
+    const energyMax = Number(root.dataset.energy) || 10;
+    const s: Stats = { ...start };
+    const dd = (k: keyof Stats) => root.querySelector<HTMLElement>(`[data-stat="${k}"]`)!;
+    const bars = Array.from(root.querySelectorAll<HTMLElement>('.kitkot__energy span'));
+    const meter = root.querySelector<HTMLElement>('.kitkot__energy')!;
+    const buttons = Array.from(root.querySelectorAll<HTMLButtonElement>('.kitkot__post'));
+    const feed = root.querySelector<HTMLElement>('.kitkot__feed')!;
+    const live = root.querySelector<HTMLElement>('.kitkot__live')!;
+    const streakEl = root.querySelector<HTMLElement>('[data-streak]')!;
+    const streakBox = root.querySelector<HTMLElement>('.kitkot__streak')!;
+    const goalEl = root.querySelector<HTMLElement>('[data-goal]')!;
+    const hood = root.querySelector<HTMLDetailsElement>('.kitkot__hood')!;
+
+    let energy = energyMax;
+    let hot = pick(Object.keys(KINDS));
+    let hotUntil = performance.now() + rnd(15000, 35000);
+    const fatigue: Record<string, number> = { clickbait: 0, smart: 0, pics: 0, random: 0 };
+    let streak = 0;
+    let lastPost = 0;
+    let started = 0;
+    let posts = 0;
+
+    function setStat(k: keyof Stats, v: number) {
+      const before = s[k];
+      s[k] = Math.max(0, Math.round(v));
+      const el = dd(k);
+      el.textContent = nf.format(s[k]);
+      el.classList.toggle('is-up', s[k] > before);
+      el.classList.toggle('is-down', s[k] < before);
+      window.setTimeout(() => el.classList.remove('is-up', 'is-down'), 700);
+    }
+    function add(k: keyof Stats, n: number) {
+      setStat(k, s[k] + n);
+    }
+
+    // The goal post always moves: there's always a next milestone just out of reach.
+    function goal() {
+      const marks = [100, 250, 500, 1000, 2500, 5000, 10000, 25000, 50000, 100000, 1000000];
+      const next = marks.find((m) => m > s.followers) ?? s.followers * 2;
+      goalEl.textContent = `Only ${nf.format(next - s.followers)} to ${nf.format(next)}!`;
+    }
+
+    function note(text: string, kind = '') {
+      const li = document.createElement('li');
+      li.textContent = text;
+      if (kind) li.className = kind;
+      feed.prepend(li);
+      while (feed.children.length > 4) feed.lastElementChild!.remove();
+    }
+    function fire(trick: string) {
+      const li = hood.querySelector<HTMLElement>(`[data-trick="${trick}"]`);
+      if (!li) return;
+      li.classList.add('is-firing');
+      window.setTimeout(() => li.classList.remove('is-firing'), 1800);
+    }
+    function say(text: string) {
+      live.textContent = text;
+    }
+    function shake() {
+      if (reduced) return;
+      root.classList.remove('is-shake');
+      void root.offsetWidth;
+      root.classList.add('is-shake');
+    }
+
+    function renderEnergy() {
+      bars.forEach((b, i) => b.classList.toggle('is-full', i < energy));
+      meter.setAttribute('aria-valuenow', String(energy));
+      buttons.forEach((b) => (b.disabled = energy <= 0));
+    }
+
+    // Likes keep trickling in for a few seconds after a post.
+    function drip(total: number) {
+      let left = total;
+      const step = () => {
+        if (left <= 0) return;
+        const n = Math.max(1, Math.round(left * rnd(0.2, 0.5)));
+        left -= n;
+        add('likes', n);
+        note(`❤️ +${nf.format(n)} ${n === 1 ? 'like' : 'likes'}`);
+        fire('drip');
+        window.setTimeout(step, rnd(500, 1300));
+      };
+      window.setTimeout(step, rnd(400, 900));
+    }
+
+    function post(kind: string) {
+      if (energy <= 0) return;
+      const now = performance.now();
+      started ||= now;
+      posts++;
+      energy--;
+      renderEnergy();
+      fire('energy');
+
+      // Streak: keep posting at least every 30 seconds.
+      streak = now - lastPost < 30000 || !lastPost ? streak + 1 : 1;
+      lastPost = now;
+      streakEl.textContent = String(streak);
+      streakBox.classList.remove('is-danger');
+      if (streak > 1 && streak % 5 === 0) {
+        note(`🔥 ${streak}-post streak! Don't break it!`);
+        fire('streak');
+      }
+
+      // The hot kind changes every 15–35 seconds, without warning.
+      if (now > hotUntil) {
+        hot = pick(Object.keys(KINDS));
+        hotUntil = now + rnd(15000, 35000);
+      }
+      const k = KINDS[kind];
+      const tired = fatigue[kind];
+      fatigue[kind] = Math.min(1, tired + 0.14);
+      const boost = (kind === hot ? 2.4 : 1) * Math.pow(1 - tired, 2) * (1 + Math.log10(1 + s.followers) / 3);
+
+      // Overposting the same thing: the audience gets bored, then leaves.
+      if (tired > 0.7) {
+        const lost = Math.max(1, Math.round(s.followers * rnd(0.01, 0.04)));
+        add('followers', -lost);
+        add('views', Math.round(rnd(0, 12)));
+        note(`📉 -${lost} followers. "Not this again…"`, 'is-bad');
+        say(`You lost ${lost} followers. Your audience is tired of ${k.name}.`);
+        fire('fatigue');
+        shake();
+        goal();
+        return;
+      }
+      if (tired > 0.4) fire('fatigue');
+
+      const r = Math.random();
+      const viralOdds = k.viral * (kind === hot ? 2 : 1) * (1 - tired);
+      if (r < viralOdds) {
+        const views = Math.round(rnd(...k.views) * rnd(25, 60) * boost);
+        const likes = Math.round(views * k.likeRate * rnd(0.8, 1.4));
+        const follows = Math.round(likes * k.followRate * rnd(1, 2));
+        add('views', views);
+        add('followers', follows);
+        drip(likes);
+        note(`🚀 VIRAL! +${nf.format(views)} views, +${nf.format(follows)} followers`, 'is-viral');
+        say(`Your ${k.name} went viral: ${nf.format(views)} views and ${nf.format(follows)} new followers.`);
+        fire('variable');
+        fire('reward');
+        if (kind === hot) fire('hot');
+        shake();
+      } else if (r < viralOdds + 0.12) {
+        add('views', Math.round(rnd(0, 4)));
+        note(pick(NOTHING), 'is-bad');
+        fire('variable');
+      } else if (r < viralOdds + 0.12 + 0.26) {
+        // About 30% of the losses are near misses: the share that keeps people playing longest.
+        add('views', Math.round(rnd(...k.views) * 0.6 * boost));
+        note(`😩 ${pick(NEAR)}`, 'is-near');
+        say(pick(NEAR));
+        fire('nearmiss');
+      } else {
+        const views = Math.round(rnd(...k.views) * boost);
+        const likes = Math.round(views * k.likeRate * rnd(0.6, 1.2));
+        const follows = Math.round(likes * k.followRate * rnd(0.5, 1.5));
+        add('views', views);
+        add('followers', follows);
+        drip(likes);
+        note(`▶️ +${nf.format(views)} views${follows ? `, +${follows} ${follows === 1 ? 'follower' : 'followers'}` : ''}`);
+        fire('variable');
+        if (kind === hot) fire('hot');
+      }
+      goal();
+    }
+
+    for (const b of buttons) b.addEventListener('click', () => post(b.dataset.post!));
+
+    // Every second: one energy bar back, fatigue cools down, the streak warns before it dies, and now
+    // and then a fake "Trending" badge appears on a random button (not necessarily the hot one).
+    let warned = false;
+    window.setInterval(() => {
+      if (!root.offsetParent) return;
+      if (energy < energyMax) {
+        energy++;
+        renderEnergy();
+      }
+      for (const k of Object.keys(fatigue)) fatigue[k] = Math.max(0, fatigue[k] - 0.035);
+      const since = performance.now() - lastPost;
+      if (streak > 1 && since > 20000 && since < 30000 && !warned) {
+        warned = true;
+        streakBox.classList.add('is-danger');
+        note(`⚠️ Your ${streak}-post streak is about to die!`, 'is-bad');
+        say(`Your ${streak}-post streak is about to die. Post something!`);
+        fire('streak');
+      }
+      if (streak > 1 && since >= 30000) {
+        note(`💔 Streak lost. ${streak} posts, gone.`, 'is-bad');
+        say('You lost your streak.');
+        streak = 0;
+        streakEl.textContent = '0';
+        streakBox.classList.remove('is-danger');
+        fire('streak');
+      }
+      if (since < 20000) warned = false;
+      if (Math.random() < 0.06) {
+        buttons.forEach((b) => b.classList.remove('is-trending'));
+        pick(buttons).classList.add('is-trending');
+      }
+    }, 1000);
+
+    root.querySelector('.kitkot__grass')!.addEventListener('click', () => {
+      const mins = started ? (performance.now() - started) / 60000 : 0;
+      const time = mins >= 1 ? `${Math.floor(mins)} min ${Math.round((mins % 1) * 60)} s` : `${Math.round(mins * 60)} s`;
+      const gained = s.followers - start.followers;
+      say(
+        posts
+          ? `You spent ${time} and ${posts} posts chasing ${nf.format(Math.max(0, gained))} followers who don't exist. Now go outside.`
+          : `Good call. The best move is not to play. Now go outside.`,
+      );
+      Object.assign(s, start);
+      (Object.keys(start) as (keyof Stats)[]).forEach((k) => setStat(k, start[k]));
+      energy = energyMax;
+      streak = 0;
+      posts = 0;
+      started = 0;
+      lastPost = 0;
+      streakEl.textContent = '0';
+      feed.textContent = '';
+      renderEnergy();
+      goal();
+    });
+
+    goal();
+    renderEnergy();
+  });
+</script>

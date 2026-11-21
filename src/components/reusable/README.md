@@ -22,6 +22,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [IsoFarm.astro](IsoFarm.astro) | A Colheita Feliz-style farming loop: isometric plots, seeds with timers and random harvests, fertilizer, energy and a market. The whole economy is one config object; saves in the browser. | Mentor tab (the Balls farm) |
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
+| [KitKot.astro](KitKot.astro) | A parody social app idle game on a phone: post for views, likes and followers on a slot-machine schedule (near misses, a hidden hot post type, fatigue, streaks, energy). "Under the hood" names each trick, with sources. | Influencer tab |
 
 ## SplitFlap
 
@@ -407,3 +408,27 @@ An egg-shaped handheld with an LCD-style screen and four buttons: Feed, Pet, Pla
 happiness (4 hearts each) drop over real time, even while the page is closed (a heart every 4 and 5
 minutes), and poop appears every 3 minutes (up to 3; it makes the pet sad faster). A neglected pet looks
 sad but never dies. Saved in `localStorage` under `pixel-pet:<saveKey>`. Theme the screen with `--pet-lcd`.
+
+## KitKot
+
+```astro
+---
+import KitKot from './reusable/KitKot.astro';
+---
+<KitKot name="Deovandski Skibinski Junior" handle="deovandski" />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `name`, `handle` | (required) | The profile on the phone. |
+| `bio` | `"Posting into the void"` | Line under the name. |
+| `start` | `{ following: 39, followers: 39, likes: 39, views: 3900 }` | Numbers at the start. |
+| `energyMax` | `10` | Energy bars (1 per post, 1 back per second). |
+| `class` | none | Extra class. |
+
+A parody social app ("KitKot") on a phone: four post buttons roll for views, likes and followers on a
+variable schedule, with near misses (about 30% of the losses), a secretly "hot" post type that changes,
+audience fatigue that turns into losing followers, streaks that warn before they die, likes that drip in,
+a fake "Trending" badge and a moving follower goal. "Under the hood" explains each trick as it fires,
+with sources. "Log off and touch grass" shows how long you spent and resets. Nothing is saved. Theme with
+`--kk-accent`, `--kk-accent-2` and `--kk-bg`.
