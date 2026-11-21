@@ -5,3 +5,5 @@ dist/
 # Google Takeout exports (your whole watch history): never commit
 watch-history.json
 Takeout/
+watch-history.html
+search-history.html
