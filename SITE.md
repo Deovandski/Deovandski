@@ -44,6 +44,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Camping tab (location cards, 2 photos each) | `content/camping.md` |
 | Theater & Opera tab (Seen live, plus a Wishlist behind a switch, like Concert) | `content/theater.md` and `content/theater-wishlist.md`, show images in `content/theater/shows/` |
 | Gamer tab (top 39 games, numbered list with optional `Hours:` lines) | `content/gaming/top39.md` |
+| Gamer tab Dino Ambush (the reverse dino game above the ranking) | `src/components/reusable/DinoAmbush.astro`, placed in `panel-gamer` in `src/pages/index.astro` |
 | Anime tab (top 39 anime, with descriptions) | `content/anime/top39.md` (numbered list) |
 | Potato tab, TV shows side (top 39) | `content/tv/top39.md` (numbered list) |
 | Potato tab, Movies side (top 39) | `content/movies/top39.md` (numbered list) |

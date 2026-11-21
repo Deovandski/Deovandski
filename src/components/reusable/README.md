@@ -20,6 +20,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing the Saturday Night Fever routine under spotlights, a mirror ball and a light-up floor. | Concert tab |
 | [IsoDarts.astro](IsoDarts.astro) | An on-rails darts scene in an isometric room: scripted speech bubbles, then a timed round on a board of coloured territories (claim, cancel, smaller is worth more) with a swaying aim. | Board Games tab (Territory Snipping) |
 | [IsoFarm.astro](IsoFarm.astro) | A Colheita Feliz-style farming loop: isometric plots, seeds with timers and random harvests, fertilizer, energy and a market. The whole economy is one config object; saves in the browser. | Mentor tab (the Balls farm) |
+| [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
 
 ## SplitFlap
 
@@ -352,3 +353,28 @@ give, bad? }] }]`. The crop drawings are built in for the ids `pearl`, `amethyst
 `sapphire` (a radish, grapes, a melon and a rose); other ids get the rose. Crops keep growing while the
 page is closed; the outcome is rolled the moment a crop is ripe, and a bad one shows as a wilted plant.
 Theme with `--farm-accent`, `--farm-soil`, `--farm-grass` and `--farm-text`.
+
+## DinoAmbush
+
+```astro
+---
+import DinoAmbush from './reusable/DinoAmbush.astro';
+---
+<DinoAmbush />
+<DinoAmbush pool={40} win="Got it!" lose="Out of mana!" />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `pool` | `30` | Total mana a round can earn (one per second). |
+| `maxMana` | `10` | Mana that can be held at once. |
+| `win` | `"Winner Winner Chicken Dinner"` | Title when the dino goes down. |
+| `lose` | `"You fucking loser!"` | Title when the mana runs out. |
+| `class` | none | Extra class. |
+
+The endless-runner dino, reversed: the dino runs and dodges on its own (jumps ground obstacles, ducks
+high birds, can't jump again mid-air, fumbles now and then); you throw a cactus (2 mana), bird (3), rock
+(2, fast) or another dino charging from behind (5). It often clears two close obstacles with one big
+jump, so combos need timing. Once the round's mana is all earned, what's left leaks away. Keys 1 to 4. Win: a sad pixel dino. Lose: the dino
+flips you off. Pauses off screen. Theme with `--dino-color` (the dino, green by default), `--dino-accent`,
+`--dino-ink` and `--dino-bg`.
