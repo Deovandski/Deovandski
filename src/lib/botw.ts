@@ -1,12 +1,14 @@
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
-export type BotwEpisode = { rank: number; title: string; url: string; description?: string };
+export type BotwEpisode = { rank: number; title: string; url: string; watched?: number; description?: string };
 
 /**
  * Reads content/botw.md: "> intro" lines, then numbered entries:
  *   1. [Episode title](https://www.youtube.com/watch?v=...)
  *   2. https://youtu.be/...            (a bare link works too)
+ *   3. [Title](https://...) - watched 12 times   (optional: how many times Deo watched it)
+ * scripts/botw-from-history.mjs writes these lines from a Google Takeout watch history.
  * Lines under an entry (until the next number) are its description.
  */
 export function loadBotw(file = 'content/botw.md'): { intro: string[]; episodes: BotwEpisode[] } {
@@ -27,10 +29,13 @@ export function loadBotw(file = 'content/botw.md'): { intro: string[]; episodes:
     if (entry) {
       flush();
       const rank = Number(entry[1]);
-      const md = entry[2].match(/^\[(.+?)\]\((https?:\/\/[^)\s]+)\)\s*$/);
-      const bare = entry[2].match(/^(https?:\/\/\S+)$/);
-      if (md) episodes.push({ rank, title: md[1].trim(), url: md[2] });
-      else if (bare) episodes.push({ rank, title: `Best of the Worst #${rank}`, url: bare[1] });
+      const count = entry[2].match(/\s+-\s+watched\s+(\d+)\s+times?\s*$/i);
+      const body = count ? entry[2].slice(0, count.index) : entry[2];
+      const watched = count ? Number(count[1]) : undefined;
+      const md = body.match(/^\[(.+?)\]\((https?:\/\/[^)\s]+)\)\s*$/);
+      const bare = body.match(/^(https?:\/\/\S+)$/);
+      if (md) episodes.push({ rank, title: md[1].replace(/\\([[\]])/g, '$1').trim(), url: md[2], watched });
+      else if (bare) episodes.push({ rank, title: `Best of the Worst #${rank}`, url: bare[1], watched });
       else errors.push(`entry ${rank}: expected "[Title](https://...)" or a link, got "${entry[2]}".`);
     } else if (line.startsWith('>')) {
       intro.push(line.replace(/^>\s?/, ''));

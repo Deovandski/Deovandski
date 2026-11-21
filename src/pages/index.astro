@@ -507,17 +507,27 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
         botw.episodes.length === 0 ? (
           <p class="empty">My 39 favorite Best of the Worst episodes are on their way.</p>
         ) : (
-          <ol class="botw">
-            {botw.episodes.map((e) => (
-              <li>
-                <span class="botw__tape" aria-hidden="true">📼</span>
-                <div>
-                  <a href={e.url}><span class="sr-only">#{e.rank}: </span>{e.title}</a>
-                  {e.description && <p>{e.description}</p>}
-                </div>
-              </li>
-            ))}
-          </ol>
+          <>
+            {botw.episodes.some((e) => e.watched) && (
+              <p class="botw-note">Ranked by how many times I've watched each one, counted from my YouTube watch history.</p>
+            )}
+            <ol class="botw">
+              {botw.episodes.map((e) => (
+                <li class:list={{ 'botw--counted': !!e.watched }}>
+                  <span class="botw__tape" aria-hidden="true">📼</span>
+                  <div>
+                    <a href={e.url}><span class="sr-only">#{e.rank}: </span>{e.title}</a>
+                    {e.description && <p>{e.description}</p>}
+                  </div>
+                  {e.watched && (
+                    <p class="botw__count">
+                      {e.watched}× <span>watched</span>
+                    </p>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </>
         )
       }
     </section>
@@ -896,6 +906,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
   }
   .botw-intro { max-width: var(--measure); }
   .botw-intro .ranking-lede { margin-bottom: 0; }
+  .botw-intro .ranking-lede + .ranking-lede { margin-top: 0.75rem; }
   .botw { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; counter-reset: botw; }
   .botw li {
     counter-increment: botw;
@@ -914,6 +925,22 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     font-weight: 800;
     color: var(--teal);
     text-align: right;
+  }
+  .botw li.botw--counted { grid-template-columns: 2.25rem 1.6rem minmax(0, 1fr) auto; }
+  .botw-note { margin: 0 0 0.75rem; color: var(--muted); font-size: var(--step--1); }
+  .botw .botw__count {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: var(--teal);
+    white-space: nowrap;
+    text-align: right;
+  }
+  .botw .botw__count span { color: var(--muted); font-weight: 600; font-size: var(--step--1); }
+  @media (max-width: 560px) {
+    /* Phones: the count moves under the title so long titles keep their width. */
+    .botw li.botw--counted { grid-template-columns: 2.25rem 1.6rem minmax(0, 1fr); }
+    .botw .botw__count { grid-column: 3; text-align: left; margin-top: 0.15rem; }
   }
   .botw__tape { font-size: 1.2rem; }
   .botw a { font-weight: 700; }
