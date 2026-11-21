@@ -8,6 +8,7 @@ import { url } from '../lib/url';
 
 // Family tab: two header photos side by side, the text from content/family/_intro.md with the
 // Itaituba → Fargo map after its first paragraph, then the photos in content/family/.
+// In _intro.md, [text](https://…) is a link and a line like ![alt](name) shows content/family/inline/name.jpg.
 const gallery = loadGallery('content/family', 'Family photo');
 const [first, ...rest] = gallery.intro;
 
@@ -16,6 +17,27 @@ const headerModules = import.meta.glob<ImageMetadata>('/content/family/header/*.
   import: 'default',
 });
 const header = (name: string) => Object.entries(headerModules).find(([p]) => p.includes(`/${name}.`))?.[1];
+
+// Pictures placed between paragraphs: ![alt](name) → content/family/inline/name.*
+const inlineModules = import.meta.glob<ImageMetadata>('/content/family/inline/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}', {
+  eager: true,
+  import: 'default',
+});
+type Block = { kind: 'p'; html: string } | { kind: 'img'; src: ImageMetadata; alt: string };
+const escape = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+function block(text: string): Block {
+  const pic = /^!\[([^\]]*)\]\(([^)\s]+)\)$/.exec(text);
+  if (pic) {
+    const src = Object.entries(inlineModules).find(([p]) => p.includes(`/inline/${pic[2]}.`))?.[1];
+    if (!src) throw new Error(`content/family/_intro.md: no picture named "${pic[2]}" in content/family/inline/`);
+    return { kind: 'img', src, alt: pic[1] };
+  }
+  // [text](https://…) links; everything else is plain text.
+  const html = escape(text).replace(/\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/g, (_, t, u) => `<a href="${u}">${t}</a>`);
+  return { kind: 'p', html };
+}
+const firstBlock = first ? block(first) : null;
+const restBlocks = rest.map(block);
 const headers = [
   { src: header('familyHeader_1'), alt: 'An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon' },
   { src: header('familyHeader_2'), alt: 'Deo and his parents smiling at a race finish, showing their medals' },
@@ -32,7 +54,7 @@ const headers = [
   )
 }
 
-{first && <p>{first}</p>}
+{firstBlock?.kind === 'p' && <p set:html={firstBlock.html} />}
 
 <div class="family-map">
 <RouteMap
@@ -47,7 +69,17 @@ const headers = [
 />
 </div>
 
-{rest.map((p) => <p>{p}</p>)}
+{
+  restBlocks.map((b) =>
+    b.kind === 'p' ? (
+      <p set:html={b.html} />
+    ) : (
+      <figure class="family-inline">
+        <Image src={b.src} alt={b.alt} widths={[360, 720]} sizes="(max-width: 720px) 80vw, 360px" />
+      </figure>
+    ),
+  )
+}
 
 <PhotoGrid photos={gallery.photos} name="family" caption="text" />
 
@@ -64,6 +96,14 @@ const headers = [
     height: auto;
     aspect-ratio: 1237 / 1008;
     object-fit: cover;
+    border-radius: 16px;
+    border: 1px solid rgba(190, 200, 209, 0.15);
+  }
+  .family-inline { max-width: 22rem; margin: 1.5rem auto 1.75rem; }
+  .family-inline :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
     border-radius: 16px;
     border: 1px solid rgba(190, 200, 209, 0.15);
   }
