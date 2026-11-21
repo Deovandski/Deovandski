@@ -29,6 +29,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [DrumKit.astro](DrumKit.astro) | A drum kit seen from above: tap or click (multi-touch) or use the keyboard. Sounds made with the Web Audio API, no samples. | Musician tab |
 | [LedMatrix.astro](LedMatrix.astro) | A grid of round LEDs to draw on (click, drag, right-click erases, keyboard too), sized to fit the width. Starts with a stick figure and "Huehuehue" (or "Hue"). From the LED Matrix Manager site. | Painting tab |
 | [DiceTray.astro](DiceTray.astro) | A row of dice (d4 to d20), each tumbling in its own sunken pit when clicked, with a Roll all button and total. Miku colours by default. | D&D tab |
+| [FastTab.astro](FastTab.astro) | A collapsible section in the style of D365 F&O FastTabs: bold title, summary fields on the right while collapsed, a chevron, and optional Expand all / Collapse all buttons. Built on `<details>`, so it works without JavaScript. | Gaming page (one per gimmick) |
 
 ## SplitFlap
 
@@ -584,3 +585,29 @@ import DiceTray from './reusable/DiceTray.astro';
 Each die tumbles in its own sunken pit and lands on a result; a natural max or 1 on a d20 gets a pop.
 Theme with `--dice-face` (default Miku teal `#39c5bb`), `--dice-edge`, `--dice-ink`, `--dice-crit`
 (Miku pink `#e12885`), `--dice-pit` and `--dice-text`. Reduced motion skips the tumble.
+
+## FastTab
+
+```astro
+---
+import FastTab from './reusable/FastTab.astro';
+---
+<button type="button" data-fasttabs="open">Expand all</button>
+<button type="button" data-fasttabs="close">Collapse all</button>
+<FastTab title="Paper plane" summary="Aviation tab" id="paper-plane">
+  <PaperPlane />
+</FastTab>
+```
+
+| Prop | Default | |
+|---|---|---|
+| `title` | (required) | Header text, in bold. |
+| `summary` | `""` | Text on the right of the header while collapsed (F&O "summary fields"). Scripts can update it through `[data-fasttab-summary]`. |
+| `open` | `false` | Start expanded. |
+| `id` | none | Anchor: `/page/#id` opens this FastTab and scrolls to it. |
+| `class` | none | Extra class. |
+
+A button with `data-fasttabs="open"` or `"close"` opens or closes every FastTab in its container. Closed
+content is `display: none`, so games and canvases inside pause while their FastTab is closed. Theme with
+`--fasttab-accent`, `--fasttab-line`, `--fasttab-muted` and `--fasttab-hover`. Reduced motion: the chevron
+flips without animating.

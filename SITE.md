@@ -19,6 +19,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | PM/Life hacks tab: PM side (public Kanban boards) | `boards` near the top of `src/pages/index.astro` |
 | PM/Life hacks tab: Life hacks side | `src/components/LifeHacksFacet.astro` |
 | QR Code page (hidden: `/qr/`, or `#qr` on the home page) | `src/pages/qr.astro`: `contact` (name and phone above the codes) and `codes` (one QR code per row, stacked in order) |
+| Gaming page (hidden: `/gaming/`, or `#gaming` on the home page): every gimmick in a FastTab | `src/pages/gaming.astro`: `games` (one row per FastTab, sorted A to Z) and the component for each; saved offline by `public/sw.js`; app shortcut in `src/pages/manifest.webmanifest.ts` |
 | Installable app (PWA): name, colours, home-screen shortcuts | `src/pages/manifest.webmanifest.ts`, icons in `public/icons/` |
 | What the app keeps on the phone for offline use (QR Code page, home page) | `public/sw.js` (change `VERSION` to start over) |
 | King of Hues photo | `src/assets/king-of-hues.jpg` |

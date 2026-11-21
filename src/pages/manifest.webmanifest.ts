@@ -2,7 +2,7 @@ import type { APIRoute } from 'astro';
 
 // The web app manifest: what Android (and desktop Chrome) need to install the site as an app.
 // Every address starts with the base path (/Deovandski/ on GitHub Pages), so it's built here, not in public/.
-// Long-pressing the installed app's icon shows the shortcuts (QR Code → /qr/).
+// Long-pressing the installed app's icon shows the shortcuts (QR Code → /qr/, Gaming → /gaming/).
 export const GET: APIRoute = () => {
   const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   const manifest = {
@@ -27,6 +27,13 @@ export const GET: APIRoute = () => {
         description: 'QR codes for sharing contact info (works offline)',
         url: `${base}qr/`,
         icons: [{ src: `${base}icons/shortcut-qr-96.png`, sizes: '96x96', type: 'image/png' }],
+      },
+      {
+        name: 'Gaming',
+        short_name: 'Gaming',
+        description: 'Every game and toy from the tabs (works offline)',
+        url: `${base}gaming/`,
+        icons: [{ src: `${base}icons/shortcut-gaming-96.png`, sizes: '96x96', type: 'image/png' }],
       },
     ],
   };
