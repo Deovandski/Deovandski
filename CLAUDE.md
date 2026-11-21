@@ -24,6 +24,22 @@ a board, a gallery, a map, a picker.
 - **Extract when you touch it:** when you change one-off UI that fits this rule, pull it out into
   a reusable component in the same PR. That's how the Death tab clock became `LedClock`.
 
+## Pictures are clickable
+
+Every picture on the site opens bigger when pressed, in the one photo viewer
+(`src/components/reusable/PhotoViewer.astro`, already in `src/layouts/Base.astro`). Nothing to wire
+up: any `<img>` with alt text opens by itself, and so does a link straight to an image file.
+
+- **Give every content picture real alt text.** The alt is the viewer's caption. `alt=""` means
+  decorative, and those don't open.
+- **Dates:** the viewer shows a date under the caption when it knows one: `data-date="YYYY-MM-DD"`
+  (or `data-date-label="Circa 2013"`) on the picture, or a `YYYY-MM-DD` at the start of its file name.
+- **Bigger copy:** pass `data-full` with a large `getImage()` copy when the page only ships a small
+  size (as `FamilyFacet.astro` does). Otherwise the viewer uses the largest size in the srcset.
+- **Galleries** use `PhotoGrid` (its buttons carry `data-gallery`, so ‹ › step through the grid).
+- **Opt out** with `data-no-zoom` on a picture or its container (game sprites, decorations). Pictures in
+  links, buttons, the header, maps and games are already skipped.
+
 ## Building
 
 ```sh
