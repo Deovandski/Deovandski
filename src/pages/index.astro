@@ -27,6 +27,7 @@ import { resolve } from 'node:path';
 import { existsSync, readFileSync } from 'node:fs';
 import { loadRankedList } from '../lib/ranking';
 import { loadSections } from '../lib/sections';
+import StageDancer from '../components/reusable/StageDancer.astro';
 import { loadBotw } from '../lib/botw';
 import botwStats from '../../content/botw-stats.json';
 import VhsPile from '../components/reusable/VhsPile.astro';
@@ -622,6 +623,8 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-concert" aria-labelledby="tab-concert" tabindex="0" hidden>
+      <p class="ranking-lede">Saturday Night Fever, King of Hues edition.</p>
+      <StageDancer label="Chibi pixel Deo in his yellow king&apos;s robes and crown hat, dancing the Saturday Night Fever disco point under flashing stage lights." />
       <div class="switch" role="tablist" aria-label="Seen live or wishlist">
         <button type="button" role="tab" id="concert-tab-seen" aria-controls="concert-seen" aria-selected="true" data-switch-hash="#concert">🤘 Seen live</button>
         <button type="button" role="tab" id="concert-tab-wishlist" aria-controls="concert-wishlist" aria-selected="false" tabindex="-1" data-switch-hash="#concert-wishlist">📝 Wishlist</button>

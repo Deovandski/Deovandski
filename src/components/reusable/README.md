@@ -17,6 +17,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [QrCode.astro](QrCode.astro) | A QR code drawn as SVG when the site builds (no JavaScript in the browser), with an optional title above it and the encoded link below it. | QR Code page (`/qr/`) |
 | [VhsPile.astro](VhsPile.astro) | A pile of VHS tapes holding a number of hours of video. Visitors pick the recording speed (SP, LP, EP) and the tapes fall from the top and pile up; they shrink to fit, so it can show a couple of thousand. Canvas, no libraries. | BOTW tab (watch time) |
 | [PaperPlane.astro](PaperPlane.astro) | Fold a paper plane, then throw it: precision decides the distance | Aviation tab |
+| [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing the Saturday Night Fever routine under spotlights, a mirror ball and a light-up floor. | Concert tab |
 
 ## SplitFlap
 
@@ -276,3 +277,25 @@ Made for the Aviation tab (#187).
 
 Theming: `--plane-accent`, `--plane-text`. Keyboard: arrows move the corner and Enter creases; when
 throwing, up/down set the angle, left/right the power, Space throws.
+
+## StageDancer
+
+```astro
+---
+import StageDancer from './reusable/StageDancer.astro';
+---
+<StageDancer label="Chibi Deo dancing" />
+<StageDancer outfit={{ robe: '#d33', pattern: '#fff' }} bpm={120} />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `outfit` | yellow king's robes, blue pattern, black-and-gold crown hat | Colours: `{ hat, hatTrim, skin, beard, robe, pattern, hem, boots }`. |
+| `bpm` | `110` | Dance tempo; one pose per beat. |
+| `label` | (describes the scene) | What's on screen, for screen readers. |
+| `class` | none | Extra class. |
+
+A chibi pixel character drawn in code, dancing a 12-beat disco routine (the Saturday Night Fever point up
+and down, hip rolls, a turn and a finish) under sweeping spotlights, a mirror ball and a light-up floor.
+Buttons pause the dance and change the light colours. Lights change on the beat (under 3 a second).
+Reduced motion: a still point pose with steady lights. Theme with `--dancer-accent`.
