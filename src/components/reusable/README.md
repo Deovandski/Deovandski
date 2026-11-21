@@ -21,6 +21,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [IsoDarts.astro](IsoDarts.astro) | An on-rails darts scene in an isometric room: scripted speech bubbles, then a timed round on a board of coloured territories (claim, cancel, smaller is worth more) with a swaying aim. | Board Games tab (Territory Snipping) |
 | [IsoFarm.astro](IsoFarm.astro) | A Colheita Feliz-style farming loop: isometric plots, seeds with timers and random harvests, fertilizer, energy and a market. The whole economy is one config object; saves in the browser. | Mentor tab (the Balls farm) |
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
+| [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
 
 ## SplitFlap
 
@@ -378,3 +379,31 @@ high birds, can't jump again mid-air, fumbles now and then); you throw a cactus 
 jump, so combos need timing. Once the round's mana is all earned, what's left leaks away. Keys 1 to 4. Win: a sad pixel dino. Lose: the dino
 flips you off. Pauses off screen. Theme with `--dino-color` (the dino, green by default), `--dino-accent`,
 `--dino-ink` and `--dino-bg`.
+
+## PixelPet
+
+```astro
+---
+import PixelPet from './reusable/PixelPet.astro';
+---
+<PixelPet name="Bidu" saveKey="bidu" color="#2f6fd6" shapes={[
+  { t: 'ellipse', cx: 16, cy: 22, rx: 9, ry: 7, c: '#c8925a' },
+  { t: 'rect', x: 15, y: 15, w: 2, h: 1, c: '#222' },
+  { t: 'poly', pts: [[9, 10], [11, 5], [14, 9]], c: '#333' },
+  { t: 'px', pts: [[13, 12], [19, 12]], c: '#111' },
+]} />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `name` | (required) | The pet's name, used in the text. |
+| `shapes` | (required) | The drawing on a 32×32 grid: `ellipse` `{ cx, cy, rx, ry }`, `rect` `{ x, y, w, h }`, `poly` `{ pts }`, `px` `{ pts }`, each with a colour `c`. Later shapes paint over earlier ones; a black outline is added. |
+| `color` | `"#2f6fd6"` | The device's shell colour. |
+| `saveKey` | the name | Key to save progress under (one per pet). |
+| `outline` | `"#111"` | Outline colour, or `"none"`. |
+| `class` | none | Extra class. |
+
+An egg-shaped handheld with an LCD-style screen and four buttons: Feed, Pet, Play, Clean. Hunger and
+happiness (4 hearts each) drop over real time, even while the page is closed (a heart every 4 and 5
+minutes), and poop appears every 3 minutes (up to 3; it makes the pet sad faster). A neglected pet looks
+sad but never dies. Saved in `localStorage` under `pixel-pet:<saveKey>`. Theme the screen with `--pet-lcd`.

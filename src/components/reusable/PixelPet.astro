@@ -1,0 +1,407 @@
+---
+/**
+ * PixelPet: a little virtual pet in an egg-shaped handheld, drawn in chunky pixels on an LCD-style
+ * screen. Four buttons: Feed, Pet, Play and Clean (the poop). Hunger and happiness drop slowly over
+ * time, even while the page is closed, and poop shows up now and then. A neglected pet looks sad
+ * but never dies. Progress is saved in this browser only (localStorage).
+ *
+ * The pet is described as simple shapes on a 32 x 32 pixel grid (no image files); the component
+ * turns them into pixels and adds the black outline, for the old-school handheld look.
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
+ * Copy this one file into any Astro project. See README.md in this folder.
+ *
+ *   <PixelPet name="Bidu" saveKey="bidu" color="#2f6fd6" shapes={[
+ *     { t: 'ellipse', cx: 16, cy: 22, rx: 9, ry: 7, c: '#c8925a' },
+ *     { t: 'rect', x: 15, y: 15, w: 2, h: 1, c: '#222' },
+ *     { t: 'poly', pts: [[9, 10], [11, 5], [14, 9]], c: '#333' },
+ *     { t: 'px', pts: [[13, 12], [19, 12]], c: '#111' },
+ *   ]} />
+ *
+ * Props:
+ *   name     the pet's name (used in the text).
+ *   shapes   the drawing: ellipse { cx, cy, rx, ry }, rect { x, y, w, h }, poly { pts }, px { pts },
+ *            each with a colour `c`; later shapes paint over earlier ones. Coordinates 0-31.
+ *   color    the device's shell colour. Default #2f6fd6.
+ *   saveKey  name to save progress under (must be unique per pet). Default: the name.
+ *   outline  outline colour, or "none". Default #111.
+ *
+ * Theming (CSS custom properties): --pet-lcd (screen, default #c9d6ad), --pet-ink (#2b3a1f).
+ *
+ * Accessible: real buttons with text labels; the pet's state (hungry, happy, needs cleaning) is text
+ * and is announced after each action. No flashing; reduced motion keeps the pet still.
+ */
+type Shape =
+  | { t: 'ellipse'; cx: number; cy: number; rx: number; ry: number; c: string }
+  | { t: 'rect'; x: number; y: number; w: number; h: number; c: string }
+  | { t: 'poly'; pts: [number, number][]; c: string }
+  | { t: 'px'; pts: [number, number][]; c: string };
+interface Props {
+  name: string;
+  shapes: Shape[];
+  color?: string;
+  saveKey?: string;
+  outline?: string;
+  class?: string;
+}
+const { name, shapes, color = '#2f6fd6', saveKey, outline = '#111', class: className } = Astro.props;
+const actions = [
+  { id: 'feed', label: 'Feed', icon: '🍖' },
+  { id: 'pet', label: 'Pet', icon: '✋' },
+  { id: 'play', label: 'Play', icon: '⚽' },
+  { id: 'clean', label: 'Clean', icon: '🧹' },
+];
+---
+
+<div
+  class:list={['pixel-pet', className]}
+  style={`--pet-shell:${color}`}
+  data-name={name}
+  data-shapes={JSON.stringify(shapes)}
+  data-key={`pixel-pet:${saveKey ?? name.toLowerCase()}`}
+  data-outline={outline}
+>
+  <div class="pixel-pet__egg">
+    <div class="pixel-pet__bezel">
+      <canvas class="pixel-pet__screen" width="48" height="36" role="img" aria-label={`${name}, a pixel pet`}></canvas>
+    </div>
+    <div class="pixel-pet__buttons" role="group" aria-label={`Take care of ${name}`}>
+      {
+        actions.map((a) => (
+          <button type="button" data-act={a.id}>
+            <span aria-hidden="true">{a.icon}</span>
+            {a.label}
+          </button>
+        ))
+      }
+    </div>
+  </div>
+  <dl class="pixel-pet__stats">
+    <div><dt>Hunger</dt><dd data-stat="hunger"></dd></div>
+    <div><dt>Happy</dt><dd data-stat="happy"></dd></div>
+  </dl>
+  <p class="pixel-pet__mood" aria-live="polite"></p>
+  <p class="pixel-pet__note">Saved in this browser only.</p>
+</div>
+
+<style>
+  .pixel-pet {
+    --_shell: var(--pet-shell, #2f6fd6);
+    display: grid;
+    justify-items: center;
+    gap: 0.4rem;
+    width: 230px;
+    max-width: 100%;
+  }
+  .pixel-pet__egg {
+    position: relative;
+    width: 210px;
+    padding: 34px 22px 20px;
+    border-radius: 50% 50% 46% 46% / 56% 56% 44% 44%;
+    background:
+      radial-gradient(circle at 30% 22%, rgba(255, 255, 255, 0.45), transparent 32%),
+      radial-gradient(circle at 70% 85%, rgba(0, 0, 0, 0.28), transparent 45%),
+      var(--_shell);
+    box-shadow: inset 0 -6px 14px rgba(0, 0, 0, 0.35), 0 10px 22px rgba(0, 0, 0, 0.45);
+  }
+  .pixel-pet__bezel {
+    padding: 9px;
+    border-radius: 18px;
+    background: color-mix(in srgb, var(--_shell) 55%, #000);
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.5);
+  }
+  .pixel-pet__screen {
+    display: block;
+    width: 100%;
+    aspect-ratio: 48 / 36;
+    border-radius: 8px;
+    background: var(--pet-lcd, #c9d6ad);
+    image-rendering: pixelated;
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.15);
+  }
+  .pixel-pet__buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 6px;
+    margin-top: 12px;
+  }
+  .pixel-pet__buttons button {
+    display: grid;
+    justify-items: center;
+    gap: 1px;
+    padding: 5px 0 4px;
+    border: 0;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--_shell) 35%, #fff);
+    color: #1d1d1d;
+    font: inherit;
+    font-size: 0.62rem;
+    font-weight: 800;
+    cursor: pointer;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.35);
+  }
+  .pixel-pet__buttons button span {
+    font-size: 1rem;
+  }
+  .pixel-pet__buttons button:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.35);
+  }
+  .pixel-pet__buttons button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+  }
+  .pixel-pet__stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.2rem 0.9rem;
+    margin: 0.3rem 0 0;
+    font-size: 0.8rem;
+  }
+  .pixel-pet__stats div {
+    display: flex;
+    gap: 0.35rem;
+  }
+  .pixel-pet__stats dt {
+    font-weight: 700;
+  }
+  .pixel-pet__stats dd {
+    margin: 0;
+    color: #e12885;
+    letter-spacing: 1px;
+  }
+  .pixel-pet__mood {
+    margin: 0;
+    min-height: 1.4em;
+    text-align: center;
+    font-size: 0.85rem;
+  }
+  .pixel-pet__note {
+    margin: 0;
+    font-size: 0.7rem;
+    opacity: 0.6;
+  }
+</style>
+
+<script>
+  type Shape =
+    | { t: 'ellipse'; cx: number; cy: number; rx: number; ry: number; c: string }
+    | { t: 'rect'; x: number; y: number; w: number; h: number; c: string }
+    | { t: 'poly'; pts: [number, number][]; c: string }
+    | { t: 'px'; pts: [number, number][]; c: string };
+  type Save = { hunger: number; happy: number; poops: number; t: number };
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const MAX = 4;
+  // Real-time pace: a heart of hunger every 4 minutes, of happiness every 5, a poop every 3 (up to 3).
+  const HUNGER_MS = 4 * 60_000;
+  const HAPPY_MS = 5 * 60_000;
+  const POOP_MS = 3 * 60_000;
+
+  // Turns shapes into a 32x32 grid of colours, then outlines it.
+  function rasterize(shapes: Shape[], outline: string): (string | null)[][] {
+    const g: (string | null)[][] = Array.from({ length: 32 }, () => Array(32).fill(null));
+    const set = (x: number, y: number, c: string) => {
+      if (x >= 0 && y >= 0 && x < 32 && y < 32) g[y][x] = c;
+    };
+    const inPoly = (x: number, y: number, pts: [number, number][]) => {
+      let inside = false;
+      for (let i = 0, j = pts.length - 1; i < pts.length; j = i++) {
+        const [xi, yi] = pts[i];
+        const [xj, yj] = pts[j];
+        if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) inside = !inside;
+      }
+      return inside;
+    };
+    for (const s of shapes) {
+      if (s.t === 'rect') for (let y = s.y; y < s.y + s.h; y++) for (let x = s.x; x < s.x + s.w; x++) set(x, y, s.c);
+      if (s.t === 'px') for (const [x, y] of s.pts) set(x, y, s.c);
+      if (s.t === 'ellipse')
+        for (let y = 0; y < 32; y++)
+          for (let x = 0; x < 32; x++) if (((x + 0.5 - s.cx - 0.5) / (s.rx + 0.5)) ** 2 + ((y + 0.5 - s.cy - 0.5) / (s.ry + 0.5)) ** 2 <= 1) set(x, y, s.c);
+      if (s.t === 'poly') for (let y = 0; y < 32; y++) for (let x = 0; x < 32; x++) if (inPoly(x + 0.5, y + 0.5, s.pts)) set(x, y, s.c);
+    }
+    if (outline === 'none') return g;
+    const out = g.map((row) => row.slice());
+    for (let y = 0; y < 32; y++)
+      for (let x = 0; x < 32; x++) {
+        if (g[y][x]) continue;
+        const n = [g[y - 1]?.[x], g[y + 1]?.[x], g[y]?.[x - 1], g[y]?.[x + 1]];
+        if (n.some(Boolean)) out[y][x] = outline;
+      }
+    return out;
+  }
+
+  // Small extra sprites, drawn with the same chunky pixels.
+  const ICONS: Record<string, string[]> = {
+    poop: ['..k....', '.kbk...', '.kbbk..', 'kbbbbk.', 'kbbbbbk', '.kkkkk.'],
+    heart: ['.pp.pp.', 'ppppppp', 'ppppppp', '.ppppp.', '..ppp..', '...p...'],
+    bowl: ['.ooooo.', 'koooook', 'kwwwwwk', '.kwwwk.', '..kkk..'],
+    ball: ['.kkk.', 'kwrwk', 'krwrk', 'kwrwk', '.kkk.'],
+    tear: ['.c.', 'ccc', '.c.'],
+    bang: ['kk', 'kk', 'kk', '..', 'kk'],
+    spark: ['..y..', '.y.y.', 'y...y', '.y.y.', '..y..'],
+  };
+  const ICON_COLORS: Record<string, string> = { k: '#2b2b2b', b: '#7a4b22', p: '#e12885', o: '#c4703a', w: '#f2f2f2', r: '#d33', c: '#3a8fd8', y: '#f3c623' };
+
+  document.querySelectorAll<HTMLElement>('.pixel-pet').forEach((root) => {
+    const name = root.dataset.name || 'Pet';
+    const canvas = root.querySelector<HTMLCanvasElement>('.pixel-pet__screen')!;
+    const ctx = canvas.getContext('2d')!;
+    const mood = root.querySelector<HTMLElement>('.pixel-pet__mood')!;
+    const statEl = (k: string) => root.querySelector<HTMLElement>(`[data-stat="${k}"]`)!;
+    const sprite = rasterize(JSON.parse(root.dataset.shapes || '[]'), root.dataset.outline || '#111');
+    const key = root.dataset.key!;
+
+    // Load the save and catch up on the time that passed while the page was closed.
+    let st: Save = { hunger: 3, happy: 3, poops: 0, t: Date.now() };
+    try {
+      const raw = localStorage.getItem(key);
+      if (raw) st = { ...st, ...JSON.parse(raw) };
+    } catch {
+      /* storage blocked: the pet just won't remember */
+    }
+    let hungerClock = 0;
+    let happyClock = 0;
+    let poopClock = 0;
+    function elapse(ms: number) {
+      hungerClock += ms;
+      happyClock += ms * (st.poops ? 1.6 : 1); // poop on the floor makes it sadder, faster
+      poopClock += ms;
+      while (hungerClock >= HUNGER_MS) {
+        hungerClock -= HUNGER_MS;
+        st.hunger = Math.max(0, st.hunger - 1);
+      }
+      while (happyClock >= HAPPY_MS) {
+        happyClock -= HAPPY_MS;
+        st.happy = Math.max(0, st.happy - 1);
+      }
+      while (poopClock >= POOP_MS) {
+        poopClock -= POOP_MS;
+        st.poops = Math.min(3, st.poops + 1);
+      }
+    }
+    elapse(Math.max(0, Date.now() - st.t));
+    const save = () => {
+      st.t = Date.now();
+      try {
+        localStorage.setItem(key, JSON.stringify(st));
+      } catch {
+        /* ignore */
+      }
+    };
+
+    let action: { kind: string; until: number } | null = null;
+    let frame = 0;
+    let walk = 0;
+    let walkDir = 1;
+
+    const hearts = (n: number) => '♥'.repeat(n) + '♡'.repeat(MAX - n);
+    function describe() {
+      const bits = [];
+      if (st.hunger <= 1) bits.push(`${name} is hungry`);
+      if (st.happy <= 1) bits.push(`${name} feels lonely`);
+      if (st.poops) bits.push(`there's poop to clean`);
+      return bits.length ? bits.join(', ') + '.' : `${name} is content.`;
+    }
+    function renderStats() {
+      statEl('hunger').textContent = hearts(st.hunger);
+      statEl('hunger').setAttribute('aria-label', `${st.hunger} of ${MAX}`);
+      statEl('happy').textContent = hearts(st.happy);
+      statEl('happy').setAttribute('aria-label', `${st.happy} of ${MAX}`);
+    }
+
+    function blit(grid: (string | null)[][], ox: number, oy: number) {
+      for (let y = 0; y < grid.length; y++)
+        for (let x = 0; x < grid[y].length; x++) {
+          const c = grid[y][x];
+          if (!c) continue;
+          ctx.fillStyle = c;
+          ctx.fillRect(ox + x, oy + y, 1, 1);
+        }
+    }
+    function icon(nameOf: string, ox: number, oy: number) {
+      ICONS[nameOf].forEach((row, y) =>
+        [...row].forEach((ch, x) => {
+          if (ch === '.') return;
+          ctx.fillStyle = ICON_COLORS[ch] ?? '#222';
+          ctx.fillRect(ox + x, oy + y, 1, 1);
+        }),
+      );
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, 48, 36);
+      const now = performance.now();
+      if (action && now > action.until) action = null;
+      const sad = st.hunger <= 1 || st.happy <= 1;
+      let x = 8 + (reduced ? 0 : walk);
+      let y = 3;
+      if (!reduced) {
+        if (action?.kind === 'play') y -= Math.abs(Math.sin(frame * 1.2)) * 4;
+        else if (action?.kind === 'feed') y += frame % 2;
+        else if (!sad) y += frame % 2;
+      }
+      blit(sprite, Math.round(x), Math.round(y));
+      if (action?.kind === 'feed') icon('bowl', 33, 26);
+      if (action?.kind === 'pet') icon('heart', 34, 2 + (reduced ? 0 : -(frame % 3)));
+      if (action?.kind === 'play') icon('ball', 3 + ((frame * 3) % 38), 29);
+      if (action?.kind === 'clean') icon('spark', 38, 20);
+      if (sad && !action) {
+        icon('tear', Math.round(x) + 10, Math.round(y) + 15);
+        icon('bang', 43, 2);
+      }
+      for (let i = 0; i < st.poops; i++) icon('poop', 40 - i * 8 + (i ? 0 : 1), 29);
+    }
+
+    let lastTick = Date.now();
+    function tick() {
+      // Time keeps passing even while the tab is closed; the screen only redraws when it's visible.
+      const nowMs = Date.now();
+      elapse(nowMs - lastTick);
+      lastTick = nowMs;
+      if (!root.offsetParent) return;
+      frame++;
+      // Wanders a little from side to side when idle.
+      if (!action && !reduced && frame % 3 === 0) {
+        walk += walkDir;
+        if (Math.abs(walk) >= 4) walkDir *= -1;
+      }
+      draw();
+      renderStats();
+    }
+
+    function act(kind: string) {
+      action = { kind, until: performance.now() + 1800 };
+      if (kind === 'feed') {
+        st.hunger = Math.min(MAX, st.hunger + 1);
+        mood.textContent = st.hunger === MAX ? `${name} is stuffed! ${describe()}` : `Nom nom! ${describe()}`;
+      }
+      if (kind === 'pet') {
+        st.happy = Math.min(MAX, st.happy + 1);
+        mood.textContent = `${name} loves that. ${describe()}`;
+      }
+      if (kind === 'play') {
+        st.happy = Math.min(MAX, st.happy + 1);
+        st.hunger = Math.max(0, st.hunger - (Math.random() < 0.35 ? 1 : 0));
+        mood.textContent = `Play time! ${describe()}`;
+      }
+      if (kind === 'clean') {
+        const had = st.poops;
+        st.poops = 0;
+        mood.textContent = had ? `All clean. ${describe()}` : `Nothing to clean. ${describe()}`;
+      }
+      save();
+      draw();
+      renderStats();
+    }
+
+    root.querySelectorAll<HTMLButtonElement>('[data-act]').forEach((b) => b.addEventListener('click', () => act(b.dataset.act!)));
+    window.setInterval(tick, 500);
+    window.addEventListener('pagehide', save);
+    mood.textContent = describe();
+    draw();
+    renderStats();
+  });
+</script>
