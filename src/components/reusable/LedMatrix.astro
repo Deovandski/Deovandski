@@ -1,0 +1,356 @@
+---
+/**
+ * LedMatrix: a grid of round LEDs that visitors draw on. Click or tap an LED to toggle it; press and
+ * drag to paint (the first LED decides whether the drag turns LEDs on or off); right-click or
+ * Ctrl-click erases. Starts with a stick figure and a word ("Huehuehue", or "Hue" when the grid is
+ * too narrow for the whole word).
+ *
+ * Ported from Deo's Framework 16 LED Matrix Manager website (site/index.html, the `.module.left` /
+ * `.matrix` demo; MIT), made reusable: any size, any colours, several per page.
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
+ * Copy this one file into any Astro project. See README.md in this folder.
+ *
+ *   <LedMatrix />
+ *   <LedMatrix rows={12} text="Hi" shortText="Hi" figure={false} />
+ *   <LedMatrix pattern={['.#.', '###', '.#.']} />
+ *
+ * Props:
+ *   rows       number of rows. Default 20.
+ *   pitch      target LED spacing in px; the number of columns fits the width. Default 14 (10 on phones).
+ *   text       word drawn next to the figure. Default "Huehuehue".
+ *   shortText  word used when `text` doesn't fit. Default "Hue".
+ *   figure     draw the stick figure. Default true.
+ *   pattern    rows of "#" (on) and "." (off) to start with instead of figure + text.
+ *   label      what the matrix is, for screen readers.
+ *
+ * Theming (CSS custom properties): --led-on (default #fff), --led-off (#45484e), --led-glow,
+ * --led-bg, --led-accent (focus and buttons).
+ *
+ * Accessible: arrow keys move a cursor across the LEDs and Space or Enter toggles one; Clear and
+ * Reset are buttons. No flashing; reduced motion turns off the fade.
+ */
+interface Props {
+  rows?: number;
+  pitch?: number;
+  text?: string;
+  shortText?: string;
+  figure?: boolean;
+  pattern?: string[];
+  label?: string;
+  class?: string;
+}
+const {
+  rows = 20,
+  pitch = 14,
+  text = 'Huehuehue',
+  shortText = 'Hue',
+  figure = true,
+  pattern,
+  label = 'LED matrix. Click or drag to draw; arrow keys and Space work too.',
+  class: className,
+} = Astro.props;
+---
+
+<div
+  class:list={['led-matrix', className]}
+  data-rows={rows}
+  data-pitch={pitch}
+  data-text={text}
+  data-short={shortText}
+  data-figure={figure ? '1' : '0'}
+  data-pattern={pattern ? JSON.stringify(pattern) : ''}
+>
+  <div class="led-matrix__grid" role="application" aria-label={label} tabindex="0"></div>
+  <div class="led-matrix__tools">
+    <button type="button" data-act="clear">Clear</button>
+    <button type="button" data-act="reset">Reset</button>
+    <span class="led-matrix__hint">Click or drag to draw. Right-click erases.</span>
+  </div>
+  <p class="led-matrix__live" aria-live="polite"></p>
+</div>
+
+<style>
+  .led-matrix {
+    --_on: var(--led-on, #ffffff);
+    --_off: var(--led-off, #45484e);
+    --_accent: var(--led-accent, #39c5bb);
+    margin: 1.5rem 0;
+  }
+  .led-matrix__grid {
+    display: grid;
+    gap: var(--gap, 4px);
+    grid-template-columns: repeat(var(--cols, 40), var(--cell, 10px));
+    grid-auto-rows: var(--cell, 10px);
+    justify-content: center;
+    padding: 14px;
+    border-radius: 14px;
+    background: var(--led-bg, #1c1e22);
+    box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.6);
+    touch-action: none;
+    cursor: crosshair;
+    user-select: none;
+  }
+  .led-matrix__grid:focus-visible {
+    outline: 2px solid var(--_accent);
+    outline-offset: 3px;
+  }
+  .led-matrix__grid :global(i) {
+    border-radius: 50%;
+    background: var(--_off);
+    transition: background-color 0.25s, box-shadow 0.25s;
+  }
+  .led-matrix__grid :global(i.on) {
+    background: var(--_on);
+    box-shadow: var(--led-glow, 0 0 6px rgba(255, 255, 255, 0.75), 0 0 14px rgba(255, 255, 255, 0.25));
+  }
+  .led-matrix__grid :global(i.cursor) {
+    outline: 2px solid var(--_accent);
+    outline-offset: 1px;
+  }
+  .led-matrix__tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+  .led-matrix__tools button {
+    padding: 0.35rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--_accent);
+    background: transparent;
+    color: var(--_accent);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .led-matrix__tools button:hover,
+  .led-matrix__tools button:focus-visible {
+    background: color-mix(in srgb, var(--_accent) 18%, transparent);
+  }
+  .led-matrix__hint {
+    font-size: 0.85em;
+    opacity: 0.7;
+  }
+  .led-matrix__live {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .led-matrix__grid :global(i) {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  // A 5x7 pixel font for the letters the default art needs ("Huehuehue", "Hue", "Hi" and a few more).
+  // Unknown letters are drawn as a box.
+  const FONT: Record<string, string[]> = {
+    H: ['#...#', '#...#', '#...#', '#####', '#...#', '#...#', '#...#'],
+    I: ['#####', '..#..', '..#..', '..#..', '..#..', '..#..', '#####'],
+    D: ['####.', '#...#', '#...#', '#...#', '#...#', '#...#', '####.'],
+    E: ['#####', '#....', '#....', '####.', '#....', '#....', '#####'],
+    O: ['.###.', '#...#', '#...#', '#...#', '#...#', '#...#', '.###.'],
+    u: ['.....', '.....', '#...#', '#...#', '#...#', '#..##', '.##.#'],
+    e: ['.....', '.....', '.###.', '#...#', '#####', '#....', '.###.'],
+    i: ['..#..', '.....', '.##..', '..#..', '..#..', '..#..', '.###.'],
+    o: ['.....', '.....', '.###.', '#...#', '#...#', '#...#', '.###.'],
+    '!': ['..#..', '..#..', '..#..', '..#..', '..#..', '.....', '..#..'],
+    ' ': ['.....', '.....', '.....', '.....', '.....', '.....', '.....'],
+  };
+  const glyph = (c: string) => FONT[c] ?? FONT[c.toUpperCase()] ?? ['#####', '#...#', '#...#', '#...#', '#...#', '#...#', '#####'];
+
+  // A stick figure, 9 wide by 16 tall, waving.
+  const FIGURE = [
+    '...###...',
+    '..#...#..',
+    '..#...#..',
+    '..#...#..',
+    '...###..#',
+    '....#..#.',
+    '#...#.#..',
+    '.#..##...',
+    '..#.#....',
+    '...##....',
+    '....#....',
+    '....#....',
+    '...#.#...',
+    '..#...#..',
+    '.#.....#.',
+    '#.......#',
+  ];
+
+  function textWidth(word: string) {
+    return word.length * 6 - 1;
+  }
+
+  // Builds the starting picture for a grid of cols x rows: figure on the left, word centred beside it.
+  function defaultArt(cols: number, rows: number, text: string, short: string, figure: boolean): boolean[][] {
+    const on = Array.from({ length: rows }, () => Array<boolean>(cols).fill(false));
+    const put = (x: number, y: number) => {
+      if (x >= 0 && y >= 0 && x < cols && y < rows) on[y][x] = true;
+    };
+    // Full word with the figure, else the short word with it, else the short word alone.
+    let figW = figure ? 9 + 2 : 0;
+    let word = text;
+    if (textWidth(word) + figW + 2 > cols) word = short;
+    if (textWidth(word) + figW + 2 > cols) figW = 0;
+    if (!figW) figure = false;
+    const blockW = figW + textWidth(word);
+    let x0 = Math.max(1, Math.floor((cols - blockW) / 2));
+    if (figure) {
+      const fy = Math.max(0, Math.floor((rows - FIGURE.length) / 2));
+      FIGURE.forEach((line, y) => [...line].forEach((ch, x) => ch === '#' && put(x0 + x, fy + y)));
+      x0 += figW;
+    }
+    const ty = Math.max(0, Math.floor((rows - 7) / 2) + (figure ? 2 : 0));
+    [...word].forEach((c, i) => glyph(c).forEach((line, y) => [...line].forEach((ch, x) => ch === '#' && put(x0 + i * 6 + x, ty + y))));
+    return on;
+  }
+
+  function fromPattern(pattern: string[], cols: number, rows: number): boolean[][] {
+    const on = Array.from({ length: rows }, () => Array<boolean>(cols).fill(false));
+    const ox = Math.max(0, Math.floor((cols - Math.max(...pattern.map((l) => l.length))) / 2));
+    const oy = Math.max(0, Math.floor((rows - pattern.length) / 2));
+    pattern.forEach((line, y) => [...line].forEach((ch, x) => {
+      if (ch === '#' && y + oy < rows && x + ox < cols) on[y + oy][x + ox] = true;
+    }));
+    return on;
+  }
+
+  document.querySelectorAll<HTMLElement>('.led-matrix').forEach((root) => {
+    const grid = root.querySelector<HTMLElement>('.led-matrix__grid')!;
+    const live = root.querySelector<HTMLElement>('.led-matrix__live')!;
+    const rows = Number(root.dataset.rows) || 20;
+    const basePitch = Number(root.dataset.pitch) || 14;
+    const text = root.dataset.text || 'Huehuehue';
+    const short = root.dataset.short || 'Hue';
+    const figure = root.dataset.figure === '1';
+    const pattern: string[] | null = root.dataset.pattern ? JSON.parse(root.dataset.pattern) : null;
+
+    let cols = 0;
+    let cells: HTMLElement[] = [];
+    let drawn = false;
+    let cursor = 0;
+
+    const start = () => (pattern ? fromPattern(pattern, cols, rows) : defaultArt(cols, rows, text, short, figure));
+
+    // Fits as many columns as the width allows at the target spacing (a bit tighter on phones).
+    function layout() {
+      const width = root.clientWidth - 28;
+      if (width <= 0) return false;
+      const pitch = width < 520 ? Math.min(basePitch, 10) : basePitch;
+      const next = Math.max(12, Math.min(96, Math.floor(width / pitch)));
+      if (next === cols) return false;
+      cols = next;
+      const gap = Math.max(2, Math.round(pitch * 0.28));
+      grid.style.setProperty('--cols', String(cols));
+      grid.style.setProperty('--cell', `${pitch - gap}px`);
+      grid.style.setProperty('--gap', `${gap}px`);
+      return true;
+    }
+
+    function paint(on: boolean[][]) {
+      grid.textContent = '';
+      cells = [];
+      const frag = document.createDocumentFragment();
+      for (let y = 0; y < rows; y++) {
+        for (let x = 0; x < cols; x++) {
+          const i = document.createElement('i');
+          if (on[y][x]) i.className = 'on';
+          frag.appendChild(i);
+          cells.push(i);
+        }
+      }
+      grid.appendChild(frag);
+      cursor = Math.min(cursor, cells.length - 1);
+    }
+
+    const snapshot = () => Array.from({ length: rows }, (_, y) => Array.from({ length: cols }, (_, x) => cells[y * cols + x]?.classList.contains('on') ?? false));
+
+    function relayout() {
+      const keep = drawn ? snapshot() : null;
+      const oldCols = cols;
+      if (!layout()) return;
+      if (!keep) return paint(start());
+      // Keep what the visitor drew, cropped or padded to the new width.
+      paint(Array.from({ length: rows }, (_, y) => Array.from({ length: cols }, (_, x) => (x < oldCols ? keep[y][x] : false))));
+    }
+
+    // Drawing: pointer down picks paint or erase from the first LED, dragging continues (as in the original).
+    let painting = false;
+    let value = true;
+    // The LED nearest the pointer, so presses and drags that land in the gaps between LEDs still count.
+    const cellAt = (ev: PointerEvent) => {
+      const first = cells[0]?.getBoundingClientRect();
+      const second = cells[1]?.getBoundingClientRect();
+      if (!first || !second) return null;
+      const step = second.left - first.left;
+      const x = Math.floor((ev.clientX - first.left + (step - first.width) / 2) / step);
+      const y = Math.floor((ev.clientY - first.top + (step - first.height) / 2) / step);
+      if (x < 0 || y < 0 || x >= cols || y >= rows) return null;
+      return cells[y * cols + x];
+    };
+    grid.addEventListener('pointerdown', (ev) => {
+      const c = cellAt(ev);
+      if (!c) return;
+      drawn = true;
+      painting = true;
+      value = ev.button === 2 || ev.ctrlKey ? false : !c.classList.contains('on');
+      c.classList.toggle('on', value);
+      grid.setPointerCapture(ev.pointerId);
+      ev.preventDefault();
+    });
+    grid.addEventListener('pointermove', (ev) => {
+      if (!painting) return;
+      const c = cellAt(ev);
+      if (c) c.classList.toggle('on', value);
+    });
+    for (const n of ['pointerup', 'pointercancel']) grid.addEventListener(n, () => (painting = false));
+    grid.addEventListener('contextmenu', (ev) => ev.preventDefault());
+
+    // Keyboard: arrows move the cursor, Space or Enter toggles the LED under it.
+    const showCursor = () => {
+      cells.forEach((c) => c.classList.remove('cursor'));
+      cells[cursor]?.classList.add('cursor');
+    };
+    grid.addEventListener('focus', showCursor);
+    grid.addEventListener('blur', () => cells.forEach((c) => c.classList.remove('cursor')));
+    grid.addEventListener('keydown', (ev) => {
+      const x = cursor % cols;
+      const y = Math.floor(cursor / cols);
+      const moves: Record<string, [number, number]> = { ArrowLeft: [-1, 0], ArrowRight: [1, 0], ArrowUp: [0, -1], ArrowDown: [0, 1] };
+      if (moves[ev.key]) {
+        const [dx, dy] = moves[ev.key];
+        cursor = Math.max(0, Math.min(rows - 1, y + dy)) * cols + Math.max(0, Math.min(cols - 1, x + dx));
+        showCursor();
+        ev.preventDefault();
+      } else if (ev.key === ' ' || ev.key === 'Enter') {
+        drawn = true;
+        const on = cells[cursor].classList.toggle('on');
+        live.textContent = `Row ${y + 1}, column ${x + 1} ${on ? 'on' : 'off'}`;
+        ev.preventDefault();
+      }
+    });
+
+    root.querySelector('[data-act="clear"]')!.addEventListener('click', () => {
+      drawn = true;
+      cells.forEach((c) => c.classList.remove('on'));
+      live.textContent = 'Cleared';
+    });
+    root.querySelector('[data-act="reset"]')!.addEventListener('click', () => {
+      drawn = false;
+      paint(start());
+      live.textContent = 'Back to the starting picture';
+    });
+
+    // Hidden tabs have no width yet: lay out when it first gets one, and again when the width changes.
+    new ResizeObserver(() => relayout()).observe(root);
+  });
+</script>

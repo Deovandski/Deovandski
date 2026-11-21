@@ -19,6 +19,7 @@ import KitKot from '../components/reusable/KitKot.astro';
 import LustFacet from '../components/LustFacet.astro';
 import DeathFacet from '../components/DeathFacet.astro';
 import PetsFacet from '../components/PetsFacet.astro';
+import LedMatrix from '../components/reusable/LedMatrix.astro';
 import PhotoGrid from '../components/reusable/PhotoGrid.astro';
 import YouTube from '../components/YouTube.astro';
 import { Content as AviationText } from '../../content/aviation.md';
@@ -629,6 +630,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
           the skills to help transform my ideas into reality. Regardless, I still push myself to at least try!
         </p>
       </div>
+      <LedMatrix label="LED matrix to paint on. Click or drag to light LEDs; arrow keys and Space work too." />
       <PhotoGrid photos={painting} name="painting" caption="date" empty="Paintings and drawings are on their way." />
     </section>
 

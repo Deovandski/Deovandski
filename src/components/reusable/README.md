@@ -27,6 +27,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [WhackAMole.astro](WhackAMole.astro) | Whack-a-mole in the corners of the screen: a character pops up, you whack it (click, tap or keys 1–4) before it hides, faster and faster for 30 s. | Miku tab (Whack-a-Miku) |
 | [DrawingPad.astro](DrawingPad.astro) | A surface to draw on with a pen: ink colours, needle sizes, eraser, clear and download. Ships as a tattoo practice skin; the surface, colours and sizes are props. | Tattoo tab |
 | [DrumKit.astro](DrumKit.astro) | A drum kit seen from above: tap or click (multi-touch) or use the keyboard. Sounds made with the Web Audio API, no samples. | Musician tab |
+| [LedMatrix.astro](LedMatrix.astro) | A grid of round LEDs to draw on (click, drag, right-click erases, keyboard too), sized to fit the width. Starts with a stick figure and "Huehuehue" (or "Hue"). From the LED Matrix Manager site. | Painting tab |
 
 ## SplitFlap
 
@@ -532,3 +533,32 @@ fire on pointer down, so several fingers play at once. Sounds are synthesized wi
 (no sample files). Keys: A hi-hat, Q open hi-hat, S snare, D/F toms, G floor tom, X kick, W crash, E ride;
 they only play while the kit is visible. Theme with `--drum-shell`, `--drum-head`, `--drum-metal`,
 `--drum-bg` and `--drum-text`.
+
+## LedMatrix
+
+```astro
+---
+import LedMatrix from './reusable/LedMatrix.astro';
+---
+<LedMatrix />
+<LedMatrix rows={12} text="Hi" shortText="Hi" figure={false} />
+<LedMatrix pattern={['.#.', '###', '.#.']} />
+```
+
+Ported from the [Framework 16 LED Matrix Manager](https://github.com/Deovandski/Deo-s-Framework16-LED-Matrix-Manager)
+website's drawing demo (`site/index.html`, MIT).
+
+| Prop | Default | |
+|---|---|---|
+| `rows` | `20` | Number of rows. |
+| `pitch` | `14` | Target LED spacing in px (10 on phones); the columns fit the width. |
+| `text` | `"Huehuehue"` | Word drawn next to the figure. |
+| `shortText` | `"Hue"` | Word used when `text` doesn't fit. |
+| `figure` | `true` | Draw the stick figure. |
+| `pattern` | none | Rows of `#` (on) and `.` (off) to start with instead. |
+| `label` | (describes the controls) | What the matrix is, for screen readers. |
+| `class` | none | Extra class. |
+
+Click or tap toggles an LED, press-and-drag paints, right-click or Ctrl-click erases; arrow keys move a
+cursor and Space toggles. Clear and Reset buttons. Theme with `--led-on`, `--led-off`, `--led-glow`,
+`--led-bg` and `--led-accent`.
