@@ -1,9 +1,14 @@
 ---
 import { Content } from '../../content/mentor.md';
+import IsoFarm from './reusable/IsoFarm.astro';
+import farm from '../../content/mentor-farm.json';
 ---
 
 <div class="mentor">
   <Content />
+  <h2>You eat what you grow</h2>
+  <blockquote><p>{farm.mantra}</p></blockquote>
+  <IsoFarm config={farm} saveKey="balls-farm" title="The Balls farm" />
   <p class="more">More of my story in the light novel afterwords at <a href="https://husbandoutworld.com">husbandoutworld.com</a>.</p>
 </div>
 

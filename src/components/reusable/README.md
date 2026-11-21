@@ -19,6 +19,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [PaperPlane.astro](PaperPlane.astro) | Fold a paper plane, then throw it: precision decides the distance | Aviation tab |
 | [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing the Saturday Night Fever routine under spotlights, a mirror ball and a light-up floor. | Concert tab |
 | [IsoDarts.astro](IsoDarts.astro) | An on-rails darts scene in an isometric room: scripted speech bubbles, then a timed round on a board of coloured territories (claim, cancel, smaller is worth more) with a swaying aim. | Board Games tab (Territory Snipping) |
+| [IsoFarm.astro](IsoFarm.astro) | A Colheita Feliz-style farming loop: isometric plots, seeds with timers and random harvests, fertilizer, energy and a market. The whole economy is one config object; saves in the browser. | Mentor tab (the Balls farm) |
 
 ## SplitFlap
 
@@ -324,3 +325,30 @@ until the darts or time run out) and `end` (the score). The round board's territ
 one, a dart where the other player's dart is cancels both, and smaller territories are worth more (yellow
 centre 10, inner ring 5, middle 3, outer 1). The visitor's aim sways more with every throw; Space or
 Enter throws. Theme with `--darts-accent` and `--darts-text`.
+
+## IsoFarm
+
+```astro
+---
+import IsoFarm from './reusable/IsoFarm.astro';
+import farm from '../../content/mentor-farm.json';
+---
+<IsoFarm config={farm} saveKey="balls-farm" title="The Balls farm" />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `config` | (required) | The whole economy (below). |
+| `saveKey` | `"iso-farm"` | `localStorage` key; one per farm. |
+| `title` | `"Farm"` | Heading. |
+| `waste` | `"shit"` | Id of the bad harvest that doubles as fertilizer. |
+| `class` | none | Extra class. |
+
+`config`: `plots` (number of plots), `energy` `{ max, perSecond }`, `fertilizer` `{ shift, max }` (each
+waste put on a growing crop moves `shift` of the odds from bad outcomes to good ones, up to `max` per
+crop), `trades` `[{ give, count, get }]` (the market, and how the score values each currency), and
+`seeds` `[{ id, ball, crop, colors: { main, accent, leaf }, cost, energy, seconds, outcomes: [{ weight,
+give, bad? }] }]`. The crop drawings are built in for the ids `pearl`, `amethyst`, `aquamarine` and
+`sapphire` (a radish, grapes, a melon and a rose); other ids get the rose. Crops keep growing while the
+page is closed; the outcome is rolled the moment a crop is ripe, and a bad one shows as a wilted plant.
+Theme with `--farm-accent`, `--farm-soil`, `--farm-grass` and `--farm-text`.

@@ -1,0 +1,610 @@
+---
+/**
+ * IsoFarm: a small farming loop in the style of the old social farm games (Orkut's Colheita Feliz):
+ * isometric plots, seeds with timers, harvests with random outcomes, fertilizer that improves the
+ * odds, an energy bar, and a market that trades currency up. Everything (seeds, odds, crops, colours,
+ * trades) comes in as one config object, so the same component can run any economy. Progress is
+ * saved in this browser only (localStorage), and crops keep growing while the page is closed.
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page (give each
+ * its own saveKey). See README.md in this folder for the config shape.
+ *
+ *   ---
+ *   import farm from '../../content/mentor-farm.json';
+ *   ---
+ *   <IsoFarm config={farm} saveKey="balls-farm" title="The Balls farm" />
+ *
+ * Props:
+ *   config   seeds, plots, energy, fertilizer and trades (see README.md). Required.
+ *   saveKey  localStorage key. Default "iso-farm".
+ *   title    heading. Default "Farm".
+ *   waste    the id of the bad harvest that doubles as fertilizer. Default "shit".
+ *
+ * Theming (CSS custom properties): --farm-accent (default #39c5bb), --farm-soil (#7a5230),
+ * --farm-grass (#6dae4f), --farm-text.
+ *
+ * Accessible: plots, seeds, tools and trades are buttons; each plot says what it holds and how long
+ * it has left; harvests are announced. Reduced motion: no bobbing or sparkle.
+ */
+interface Props {
+  config: unknown;
+  saveKey?: string;
+  title?: string;
+  waste?: string;
+  class?: string;
+}
+const { config, saveKey = 'iso-farm', title = 'Farm', waste = 'shit', class: className } = Astro.props;
+const cfg = config as {
+  plots: number;
+  seeds: { id: string; ball: string; crop: string; colors: { main: string }; energy: number; seconds: number; cost: Record<string, number> }[];
+  trades: { give: string; count: number; get: string }[];
+};
+---
+
+<div class:list={['iso-farm', className]} data-config={JSON.stringify(config)} data-key={saveKey} data-waste={waste}>
+  <h3 class="iso-farm__title">{title}</h3>
+  <div class="iso-farm__top">
+    <dl class="iso-farm__bag" aria-label="What you have">
+      {
+        cfg.seeds.map((s) => (
+          <div>
+            <dt><span class="iso-farm__ball" style={`--c:${s.colors.main}`} aria-hidden="true" />{s.ball}</dt>
+            <dd data-count={s.id}>0</dd>
+          </div>
+        ))
+      }
+      <div>
+        <dt><span aria-hidden="true">💩</span> Shit</dt>
+        <dd data-count={waste}>0</dd>
+      </div>
+    </dl>
+    <div class="iso-farm__energy">
+      <span>Energy</span>
+      <div class="iso-farm__bars" role="meter" aria-label="Energy" aria-valuemin="0"></div>
+    </div>
+  </div>
+  <p class="iso-farm__score" aria-live="off"></p>
+
+  <svg class="iso-farm__board" viewBox="0 0 400 230" role="group" aria-label="Your plots">
+    <polygon class="iso-farm__ground" points="200,10 395,115 200,220 5,115" />
+  </svg>
+
+  <div class="iso-farm__tools">
+    <div class="iso-farm__seeds" role="radiogroup" aria-label="Seed to plant">
+      {
+        cfg.seeds.map((s, i) => (
+          <button type="button" role="radio" aria-checked={i === 0 ? 'true' : 'false'} data-seed={s.id} style={`--c:${s.colors.main}`}>
+            <span class="iso-farm__ball" aria-hidden="true" />
+            <b>{s.crop}</b>
+            <small>
+              {Object.keys(s.cost).length ? `1 ${s.ball.toLowerCase()}` : 'free'}
+              {s.energy ? ` · ${s.energy} energy` : ''} · {s.seconds >= 60 ? `${s.seconds / 60} min` : `${s.seconds} s`}
+            </small>
+          </button>
+        ))
+      }
+    </div>
+    <button type="button" class="iso-farm__fert" aria-pressed="false">💩 Fertilize (1 shit per use)</button>
+    <div class="iso-farm__market" role="group" aria-label="Market">
+      {
+        cfg.trades.map((t) => (
+          <button type="button" data-trade={`${t.give}:${t.count}:${t.get}`}>
+            {t.count} {t.give}s → 1 {t.get}
+          </button>
+        ))
+      }
+    </div>
+  </div>
+  <p class="iso-farm__live" aria-live="polite"></p>
+</div>
+
+<style>
+  .iso-farm {
+    --_accent: var(--farm-accent, #39c5bb);
+    color: var(--farm-text, inherit);
+    margin: 0 0 2.5rem;
+    padding: 1rem 1.1rem 1.1rem;
+    border-radius: 18px;
+    border: 1px solid color-mix(in srgb, var(--_accent) 35%, transparent);
+    background: color-mix(in srgb, var(--_accent) 6%, transparent);
+  }
+  .iso-farm__title {
+    margin: 0 0 0.6rem;
+    color: var(--_accent);
+  }
+  .iso-farm__top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.6rem 1rem;
+  }
+  .iso-farm__bag {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem 0.9rem;
+    margin: 0;
+  }
+  .iso-farm__bag div {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .iso-farm__bag dt {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+    opacity: 0.85;
+  }
+  .iso-farm__bag dd {
+    margin: 0;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  .iso-farm__ball {
+    display: inline-block;
+    width: 0.9em;
+    height: 0.9em;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fff 0 12%, var(--c) 45%);
+    box-shadow: 0 0 0 2px #c9a227; /* the golden metal crust balls have in the lore */
+  }
+  .iso-farm__energy {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  .iso-farm__bars {
+    display: flex;
+    gap: 2px;
+  }
+  .iso-farm__bars :global(i) {
+    width: 8px;
+    height: 14px;
+    border-radius: 2px;
+    background: rgba(190, 200, 209, 0.18);
+  }
+  .iso-farm__bars :global(i.on) {
+    background: linear-gradient(#ffe27a, #f3a61a);
+  }
+  .iso-farm__score {
+    margin: 0.4rem 0 0;
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .iso-farm__board {
+    display: block;
+    width: 100%;
+    max-width: 560px;
+    margin: 0.4rem auto 0;
+    overflow: visible;
+  }
+  .iso-farm__ground {
+    fill: var(--farm-grass, #6dae4f);
+    stroke: #3f6f2c;
+    stroke-width: 3;
+  }
+  .iso-farm__board :global(.plot) {
+    cursor: pointer;
+    outline: none;
+  }
+  .iso-farm__board :global(.plot .soil) {
+    fill: var(--farm-soil, #7a5230);
+    stroke: #4a3019;
+    stroke-width: 2;
+    transition: filter 0.2s;
+  }
+  .iso-farm__board :global(.plot .furrow) {
+    stroke: rgba(0, 0, 0, 0.18);
+    stroke-width: 2;
+  }
+  .iso-farm__board :global(.plot:hover .soil),
+  .iso-farm__board :global(.plot:focus-visible .soil) {
+    filter: brightness(1.25);
+  }
+  .iso-farm__board :global(.plot:focus-visible .soil) {
+    stroke: #fff;
+    stroke-width: 3;
+  }
+  .iso-farm__board :global(.plot .crop) {
+    transform-box: fill-box;
+    transform-origin: 50% 100%;
+  }
+  .iso-farm__board :global(.plot.is-ready .crop) {
+    animation: iso-farm-bob 1.4s ease-in-out infinite;
+  }
+  .iso-farm__board :global(.sparkle) {
+    animation: iso-farm-twinkle 1s ease-in-out infinite alternate;
+  }
+  .iso-farm__board :global(.timer) {
+    font: 800 13px system-ui, sans-serif;
+    pointer-events: none;
+    fill: #fff;
+    paint-order: stroke;
+    stroke: rgba(0, 0, 0, 0.6);
+    stroke-width: 3px;
+  }
+  @keyframes iso-farm-bob {
+    50% { transform: translateY(-3px); }
+  }
+  @keyframes iso-farm-twinkle {
+    from { opacity: 0.2; }
+    to { opacity: 1; }
+  }
+  .iso-farm__tools {
+    display: grid;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+  }
+  .iso-farm__seeds {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 0.4rem;
+  }
+  .iso-farm__seeds button,
+  .iso-farm__fert,
+  .iso-farm__market button {
+    border: 1px solid rgba(190, 200, 209, 0.3);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.04);
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+  .iso-farm__seeds button {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    column-gap: 0.45rem;
+    padding: 0.45rem 0.6rem;
+    text-align: left;
+  }
+  .iso-farm__seeds button .iso-farm__ball {
+    grid-row: span 2;
+    width: 1.2em;
+    height: 1.2em;
+  }
+  .iso-farm__seeds button b {
+    font-size: 0.85rem;
+  }
+  .iso-farm__seeds button small {
+    font-size: 0.72rem;
+    opacity: 0.75;
+  }
+  .iso-farm__seeds button[aria-checked='true'],
+  .iso-farm__fert[aria-pressed='true'] {
+    border-color: var(--_accent);
+    background: color-mix(in srgb, var(--_accent) 16%, transparent);
+  }
+  .iso-farm__fert,
+  .iso-farm__market button {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  .iso-farm__fert {
+    justify-self: start;
+  }
+  .iso-farm__market {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+  .iso-farm__market button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+  .iso-farm button:focus-visible {
+    outline: 2px solid var(--_accent);
+    outline-offset: 2px;
+  }
+  .iso-farm__live {
+    min-height: 1.4em;
+    margin: 0.5rem 0 0;
+    font-weight: 700;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .iso-farm__board :global(.plot.is-ready .crop),
+    .iso-farm__board :global(.sparkle) {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  type Outcome = { weight: number; give: Record<string, number>; bad?: boolean };
+  type Seed = {
+    id: string;
+    ball: string;
+    crop: string;
+    colors: { main: string; accent: string; leaf: string };
+    cost: Record<string, number>;
+    energy: number;
+    seconds: number;
+    outcomes: Outcome[];
+  };
+  type Config = {
+    plots: number;
+    energy: { max: number; perSecond: number };
+    fertilizer: { shift: number; max: number };
+    trades: { give: string; count: number; get: string }[];
+    seeds: Seed[];
+  };
+  type Plot = { seed: string; planted: number; fert: number; result?: number } | null;
+  type Save = { bag: Record<string, number>; plots: Plot[]; energy: number; t: number };
+
+  const SVG = 'http://www.w3.org/2000/svg';
+  const fmt = new Intl.NumberFormat('en-US');
+
+  // The crop drawings, by growth stage: 0 seedling, 1 growing, 2 ready (bloom), with quality 0-1 for
+  // how lush the bloom is, and a wilted brown plant when the harvest is going to be bad.
+  function cropSvg(seed: Seed, stage: number, quality: number, rotten: boolean) {
+    const { main, accent, leaf } = seed.colors;
+    if (stage === 0) return `<path d="M0 0 q-6 -8 -10 -6 q4 6 10 6 q6 -8 10 -6 q-4 6 -10 6z" fill="${leaf}"/>`;
+    const stem = `<path d="M0 0 v-18" stroke="${leaf}" stroke-width="3"/><path d="M0 -8 q-10 -8 -14 -4 q6 6 14 4z M0 -12 q10 -8 14 -4 q-6 6 -14 4z" fill="${leaf}"/>`;
+    if (stage === 1) return stem;
+    if (rotten)
+      return `<path d="M0 0 q-3 -10 -12 -14" stroke="#6b4f2a" stroke-width="3" fill="none"/><path d="M0 0 q3 -8 10 -10" stroke="#6b4f2a" stroke-width="3" fill="none"/><ellipse cx="-12" cy="-15" rx="6" ry="4" fill="#5a3d1e"/><path d="M-4 -2 q4 -6 8 0 q4 -4 6 2 h-16z" fill="#7a4b22"/>`;
+    const s = 1 + quality * 0.35;
+    const sparkle = quality > 0.25 ? `<g class="sparkle" fill="#fff6c2"><path d="M-16 -34 l2 5 5 2 -5 2 -2 5 -2 -5 -5 -2 5 -2z"/><path d="M15 -26 l1.5 4 4 1.5 -4 1.5 -1.5 4 -1.5 -4 -4 -1.5 4 -1.5z"/></g>` : '';
+    let fruit = '';
+    if (seed.id === 'pearl')
+      fruit = `<path d="M0 -6 q-4 -14 -14 -22 M0 -6 q2 -16 8 -24 M0 -6 q6 -12 16 -18" stroke="${leaf}" stroke-width="4" fill="none" stroke-linecap="round"/><ellipse cx="0" cy="-4" rx="${9 * s}" ry="${8 * s}" fill="${main}" stroke="#bfb8a8" stroke-width="1.5"/><path d="M-6 -6 a7 7 0 0 1 12 0" stroke="${accent}" stroke-width="2" fill="none"/><ellipse cx="-3" cy="-7" rx="2.5" ry="1.8" fill="#fff"/>`;
+    else if (seed.id === 'amethyst') {
+      const grapes = [[0, -26], [-6, -20], [6, -20], [-9, -13], [0, -13], [9, -13], [-5, -6], [5, -6], [0, 0]];
+      fruit = `${stem}<g transform="scale(${s}) translate(0 -2)">${grapes.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="5" fill="${main}" stroke="#5e2f8a" stroke-width="1.2"/><circle cx="${x - 1.5}" cy="${y - 1.5}" r="1.4" fill="${accent}"/>`).join('')}</g>`;
+    } else if (seed.id === 'aquamarine')
+      fruit = `${stem}<g transform="scale(${s})"><ellipse cx="0" cy="-8" rx="14" ry="10" fill="${main}" stroke="#1d7c74" stroke-width="1.5"/><path d="M-9 -15 q-3 7 0 14 M-3 -17 q-2 9 0 18 M3 -17 q2 9 0 18 M9 -15 q3 7 0 14" stroke="#1d7c74" stroke-width="1.5" fill="none" opacity="0.7"/><ellipse cx="-5" cy="-12" rx="4" ry="2" fill="${accent}" opacity="0.8"/></g>`;
+    else {
+      const petals = Array.from({ length: 6 }, (_, i) => {
+        const a = (i / 6) * Math.PI * 2;
+        return `<ellipse cx="${Math.cos(a) * 6}" cy="${-26 + Math.sin(a) * 6}" rx="6" ry="4.5" transform="rotate(${(a * 180) / Math.PI} ${Math.cos(a) * 6} ${-26 + Math.sin(a) * 6})" fill="${main}" stroke="#1b3a8a" stroke-width="1"/>`;
+      }).join('');
+      fruit = `<path d="M0 0 v-22" stroke="${leaf}" stroke-width="3"/><path d="M0 -10 q-10 -6 -14 -2 q6 6 14 2z" fill="${leaf}"/><g transform="translate(0 ${-26 * (s - 1)}) scale(${s}) translate(0 ${26 - 26 / s})">${petals}<circle cx="0" cy="-26" r="4.5" fill="#1b3a8a"/><circle cx="-1" cy="-27" r="1.5" fill="${accent}"/></g>`;
+    }
+    return fruit + sparkle;
+  }
+
+  document.querySelectorAll<HTMLElement>('.iso-farm').forEach((root) => {
+    const cfg: Config = JSON.parse(root.dataset.config!);
+    const key = root.dataset.key!;
+    const WASTE = root.dataset.waste || 'shit';
+    const board = root.querySelector<SVGSVGElement>('.iso-farm__board')!;
+    const live = root.querySelector<HTMLElement>('.iso-farm__live')!;
+    const score = root.querySelector<HTMLElement>('.iso-farm__score')!;
+    const barsEl = root.querySelector<HTMLElement>('.iso-farm__bars')!;
+    const fertBtn = root.querySelector<HTMLButtonElement>('.iso-farm__fert')!;
+    const seedBtns = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-seed]'));
+    const tradeBtns = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-trade]'));
+    const seedById = Object.fromEntries(cfg.seeds.map((s) => [s.id, s]));
+    // What each ball is worth in pearls, from the trade chain (for the score).
+    const value: Record<string, number> = { [cfg.seeds[0].id]: 1 };
+    for (const t of cfg.trades) value[t.get] = (value[t.give] ?? 1) * t.count;
+
+    let st: Save = { bag: {}, plots: Array(cfg.plots).fill(null), energy: cfg.energy.max, t: Date.now() };
+    try {
+      const raw = localStorage.getItem(key);
+      if (raw) st = { ...st, ...JSON.parse(raw) };
+    } catch {
+      /* storage blocked: the farm just won't remember */
+    }
+    st.plots.length = cfg.plots;
+    for (let i = 0; i < cfg.plots; i++) st.plots[i] ??= null;
+    st.energy = Math.min(cfg.energy.max, st.energy + Math.floor(((Date.now() - st.t) / 1000) * cfg.energy.perSecond));
+    const save = () => {
+      st.t = Date.now();
+      try {
+        localStorage.setItem(key, JSON.stringify(st));
+      } catch {
+        /* ignore */
+      }
+    };
+    const have = (k: string) => st.bag[k] ?? 0;
+    const give = (k: string, n: number) => (st.bag[k] = have(k) + n);
+
+    let seedChoice = cfg.seeds[0].id;
+    let fertilizing = false;
+
+    // Odds after fertilizer: each shit moves `shift` of the total weight from the bad outcomes to the good ones.
+    function roll(seed: Seed, fert: number) {
+      const total = seed.outcomes.reduce((a, o) => a + o.weight, 0);
+      const move = Math.min(fert, cfg.fertilizer.max) * cfg.fertilizer.shift * total;
+      const badW = seed.outcomes.filter((o) => o.bad).reduce((a, o) => a + o.weight, 0);
+      const goodW = total - badW;
+      const take = Math.min(move, badW * 0.9);
+      const weights = seed.outcomes.map((o) => (o.bad ? o.weight - (take * o.weight) / badW : o.weight + (take * o.weight) / goodW));
+      let r = Math.random() * weights.reduce((a, b) => a + b, 0);
+      for (let i = 0; i < weights.length; i++) {
+        r -= weights[i];
+        if (r <= 0) return i;
+      }
+      return weights.length - 1;
+    }
+
+    // Plot layout: an isometric grid (3 columns) filling the field; a and b are half a tile's width and height.
+    const cols = 3;
+    const rows = Math.ceil(cfg.plots / cols);
+    const a = Math.min(60, 300 / (cols + rows));
+    const b = a / 2;
+    const X0 = 200 - ((cols - rows) * a) / 2;
+    const Y0 = 115 - ((cols + rows - 2) * b) / 2;
+    const tile = (i: number) => {
+      const c = i % cols;
+      const r = Math.floor(i / cols);
+      return { cx: X0 + (c - r) * a, cy: Y0 + (c + r) * b };
+    };
+    const plotEls: SVGGElement[] = [];
+    const labels: SVGTextElement[] = [];
+    const labelLayer = document.createElementNS(SVG, 'g');
+    for (let i = 0; i < cfg.plots; i++) {
+      const { cx, cy } = tile(i);
+      const g = document.createElementNS(SVG, 'g');
+      g.setAttribute('class', 'plot');
+      g.setAttribute('role', 'button');
+      g.setAttribute('tabindex', '0');
+      g.setAttribute('transform', `translate(${cx} ${cy})`);
+      g.innerHTML = `<polygon class="soil" points="0,${-b + 2} ${a - 3},0 0,${b - 2} ${-a + 3},0"/><path class="furrow" d="M${-a / 2} ${-b / 2} L${a / 2} ${b / 2} M${-a / 4} ${-b * 0.75} L${a * 0.75} ${b / 4} M${-a * 0.75} ${-b / 4} L${a / 4} ${b * 0.75}"/><g class="crop-wrap" transform="scale(${(a / 48).toFixed(2)})"><g class="crop"></g></g>`;
+      g.addEventListener('click', () => use(i));
+      g.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          use(i);
+        }
+      });
+      board.appendChild(g);
+      plotEls.push(g);
+      // Timers and "Harvest!" go on a layer above every plot, so the plots in front never cover them.
+      const label = document.createElementNS(SVG, 'text');
+      label.setAttribute('class', 'timer');
+      label.setAttribute('text-anchor', 'middle');
+      label.setAttribute('x', String(cx));
+      label.setAttribute('y', String(cy + b * 0.55));
+      label.setAttribute('aria-hidden', 'true');
+      labelLayer.appendChild(label);
+      labels.push(label);
+    }
+    // Draw plots back to front so crops overlap correctly, then the labels on top.
+    plotEls
+      .map((g, i) => ({ g, d: tile(i).cy }))
+      .sort((x, y) => x.d - y.d)
+      .forEach(({ g }) => board.appendChild(g));
+    board.appendChild(labelLayer);
+
+    function plotState(p: Plot) {
+      if (!p) return { stage: -1, left: 0 };
+      const seed = seedById[p.seed];
+      const t = (Date.now() - p.planted) / 1000;
+      const left = Math.max(0, seed.seconds - t);
+      const stage = left <= 0 ? 2 : t / seed.seconds < 0.35 ? 0 : 1;
+      if (stage === 2 && p.result === undefined) {
+        p.result = roll(seed, p.fert); // decided the moment it's ripe (fertilizer counts until then)
+        save();
+      }
+      return { stage, left };
+    }
+
+    function render() {
+      for (let i = 0; i < cfg.plots; i++) {
+        const p = st.plots[i];
+        const g = plotEls[i];
+        const crop = g.querySelector('.crop')!;
+        const timer = labels[i];
+        const { stage, left } = plotState(p);
+        g.classList.toggle('is-ready', stage === 2);
+        if (!p) {
+          crop.innerHTML = '';
+          timer.textContent = '';
+          g.setAttribute('aria-label', `Plot ${i + 1}: empty. Plant ${seedById[seedChoice].crop}.`);
+          continue;
+        }
+        const seed = seedById[p.seed];
+        const out = p.result !== undefined ? seed.outcomes[p.result] : null;
+        const rotten = !!out && WASTE in out.give;
+        const best = Math.max(...seed.outcomes.map((o) => (o.bad ? 0 : Object.entries(o.give).reduce((a, [k, n]) => a + (value[k] ?? 0) * n, 0))));
+        const worth = out ? Object.entries(out.give).reduce((a, [k, n]) => a + (value[k] ?? 0) * n, 0) : 0;
+        const quality = out && !out.bad ? Math.min(1, worth / best + p.fert * 0.08) : 0;
+        crop.innerHTML = cropSvg(seed, stage, quality, rotten);
+        const fertTag = p.fert ? ` 💩×${p.fert}` : '';
+        timer.textContent = stage === 2 ? 'Harvest!' : `${Math.ceil(left)}s${fertTag}`;
+        g.setAttribute('aria-label', stage === 2 ? `Plot ${i + 1}: ${seed.crop}, ready to harvest${rotten ? ' (it wilted)' : ''}.` : `Plot ${i + 1}: ${seed.crop}, ready in ${Math.ceil(left)} seconds.${p.fert ? ` Fertilized ${p.fert} times.` : ''}`);
+      }
+      // Bag, energy, market, score.
+      root.querySelectorAll<HTMLElement>('[data-count]').forEach((dd) => (dd.textContent = fmt.format(have(dd.dataset.count!))));
+      barsEl.innerHTML = Array.from({ length: cfg.energy.max }, (_, i) => `<i class="${i < st.energy ? 'on' : ''}"></i>`).join('');
+      barsEl.setAttribute('aria-valuemax', String(cfg.energy.max));
+      barsEl.setAttribute('aria-valuenow', String(st.energy));
+      tradeBtns.forEach((b) => {
+        const [g, n] = b.dataset.trade!.split(':');
+        b.disabled = have(g) < Number(n);
+      });
+      fertBtn.disabled = have(WASTE) < 1 && !fertilizing;
+      const balls = cfg.seeds.reduce((a, s) => a + have(s.id) * (value[s.id] ?? 0), 0);
+      const shit = have(WASTE);
+      score.textContent = `Balls worth ${fmt.format(balls)} pearl${balls === 1 ? '' : 's'} vs ${fmt.format(shit)} shit. ${balls > shit ? 'More balls than shit. Keep it that way!' : 'Right now it tastes like shit. Keep planting.'}`;
+    }
+
+    function use(i: number) {
+      const p = st.plots[i];
+      if (!p) {
+        if (fertilizing) return (live.textContent = 'Fertilize a plot that has something growing.');
+        const seed = seedById[seedChoice];
+        for (const [k, n] of Object.entries(seed.cost)) if (have(k) < n) return (live.textContent = `You need ${n} ${seedById[k]?.ball.toLowerCase() ?? k} to plant ${seed.crop}. Trade up at the market.`);
+        if (st.energy < seed.energy) return (live.textContent = 'Not enough energy. It refills every second.');
+        for (const [k, n] of Object.entries(seed.cost)) give(k, -n);
+        st.energy -= seed.energy;
+        st.plots[i] = { seed: seed.id, planted: Date.now(), fert: 0 };
+        live.textContent = `Planted ${seed.crop}.`;
+      } else {
+        const { stage } = plotState(p);
+        const seed = seedById[p.seed];
+        if (stage === 2) {
+          const out = seed.outcomes[p.result!];
+          for (const [k, n] of Object.entries(out.give)) give(k, n);
+          const what = Object.entries(out.give)
+            .map(([k, n]) => (k === WASTE ? `${n} shit 💩` : `${n} ${seedById[k]?.ball.toLowerCase() ?? k}${n > 1 ? 's' : ''}`))
+            .join(', ');
+          live.textContent = WASTE in out.give ? `It wilted. You got ${what}. Fertilizer, at least.` : `Harvested ${seed.crop}: ${what}!`;
+          st.plots[i] = null;
+        } else if (fertilizing) {
+          if (have(WASTE) < 1) {
+            fertilizing = false;
+            fertBtn.setAttribute('aria-pressed', 'false');
+            live.textContent = 'Out of shit to fertilize with.';
+          } else if (p.fert >= cfg.fertilizer.max) {
+            live.textContent = `That one has all the fertilizer it can take (${cfg.fertilizer.max}).`;
+          } else {
+            give(WASTE, -1);
+            p.fert++;
+            live.textContent = `Fertilized ${seed.crop} (${p.fert}). Better odds!`;
+          }
+        } else {
+          live.textContent = `${seed.crop} is still growing.`;
+        }
+      }
+      save();
+      render();
+    }
+
+    seedBtns.forEach((b) =>
+      b.addEventListener('click', () => {
+        seedChoice = b.dataset.seed!;
+        fertilizing = false;
+        fertBtn.setAttribute('aria-pressed', 'false');
+        seedBtns.forEach((x) => x.setAttribute('aria-checked', String(x === b)));
+        render();
+      }),
+    );
+    fertBtn.addEventListener('click', () => {
+      fertilizing = !fertilizing;
+      fertBtn.setAttribute('aria-pressed', String(fertilizing));
+      live.textContent = fertilizing ? 'Tap a growing crop to fertilize it with 1 shit.' : '';
+      render();
+    });
+    tradeBtns.forEach((b) =>
+      b.addEventListener('click', () => {
+        const [g, n, get] = b.dataset.trade!.split(':');
+        if (have(g) < Number(n)) return;
+        give(g, -Number(n));
+        give(get, 1);
+        live.textContent = `Traded ${n} ${g}s for 1 ${get}.`;
+        save();
+        render();
+      }),
+    );
+
+    // Every second: energy refills and timers tick (only redrawn while the farm is on screen).
+    let acc = 0;
+    window.setInterval(() => {
+      acc += cfg.energy.perSecond;
+      while (acc >= 1) {
+        acc -= 1;
+        if (st.energy < cfg.energy.max) st.energy++;
+      }
+      if (root.offsetParent) render();
+    }, 1000);
+    window.addEventListener('pagehide', save);
+    render();
+  });
+</script>
