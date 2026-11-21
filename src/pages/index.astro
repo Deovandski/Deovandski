@@ -1,46 +1,34 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
-import PaperPlane from '../components/reusable/PaperPlane.astro';
+import GimmickPlay from '../components/GimmickPlay.astro';
 import Ranking from '../components/Ranking.astro';
-import DinoAmbush from '../components/reusable/DinoAmbush.astro';
 import TravelerFacet from '../components/TravelerFacet.astro';
 import MentorFacet from '../components/MentorFacet.astro';
 import MultilingualFacet from '../components/MultilingualFacet.astro';
-import DiceTray from '../components/reusable/DiceTray.astro';
 import Sections from '../components/Sections.astro';
 import MtgScore from '../components/MtgScore.astro';
 import ChurrascoFacet from '../components/ChurrascoFacet.astro';
-import IsoDarts from '../components/reusable/IsoDarts.astro';
-import territorySnipping from '../../content/territory-snipping.json';
 import LifeHacksFacet from '../components/LifeHacksFacet.astro';
 import FamilyFacet from '../components/FamilyFacet.astro';
 import GymFacet from '../components/GymFacet.astro';
-import KitKot from '../components/reusable/KitKot.astro';
 import LustFacet from '../components/LustFacet.astro';
 import DeathFacet from '../components/DeathFacet.astro';
 import PetsFacet from '../components/PetsFacet.astro';
-import LedMatrix from '../components/reusable/LedMatrix.astro';
 import PhotoGrid from '../components/reusable/PhotoGrid.astro';
 import YouTube from '../components/YouTube.astro';
 import { Content as AviationText } from '../../content/aviation.md';
-import DrumKit from '../components/reusable/DrumKit.astro';
 import kingOfHues from '../assets/king-of-hues.jpg';
 import stickyNotes from '../../content/pm/2023-03-20-sticky-note-madness.jpg';
 import influencerShot from '../../content/influencer/Screenshot_20260803-210132.png';
-import DrawingPad from '../components/reusable/DrawingPad.astro';
 import { loadGallery } from '../lib/gallery';
 import { photoDate } from '../lib/photoDate';
 import { resolve } from 'node:path';
-import WhackAMole from '../components/reusable/WhackAMole.astro';
-import whackSprite from '../assets/whack-a-miku/whack-a-miku.png';
 import { existsSync, readFileSync } from 'node:fs';
 import { loadRankedList } from '../lib/ranking';
 import { loadSections } from '../lib/sections';
-import StageDancer from '../components/reusable/StageDancer.astro';
 import { loadBotw } from '../lib/botw';
 import botwStats from '../../content/botw-stats.json';
-import VhsPile from '../components/reusable/VhsPile.astro';
 import FacetMilestoneEggs from '../components/FacetMilestoneEggs.astro';
 
 type LinkItem = { href: string; label: string };
@@ -315,7 +303,15 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
     <div class="facet-head" id="facet-head" hidden>
       <nav class="crumbs" aria-label="Breadcrumb"><ol></ol></nav>
-      <h3 class="facet-head__title" aria-live="polite"><span class="facet-head__icon" aria-hidden="true"></span> <span class="facet-head__label"></span></h3>
+      <div class="facet-head__row">
+        <h3 class="facet-head__title" aria-live="polite"><span class="facet-head__icon" aria-hidden="true"></span> <span class="facet-head__label"></span></h3>
+        <!-- ▶ Play: shown on tabs with a gimmick (src/lib/gimmicks.ts); opens it in a FastTab under the title (GimmickPlay.astro). -->
+        <button type="button" class="facet-head__play" aria-expanded="false" hidden>
+          <svg class="facet-head__play-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"></path></svg>
+          <svg class="facet-head__hide-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 10.5l5-5 5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          <span class="facet-head__play-label">Play</span>
+        </button>
+      </div>
       <p class="facet-head__blurb" hidden></p>
       <div class="facet-head__chips" hidden></div>
     </div>
@@ -441,18 +437,22 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-aviation" aria-labelledby="tab-aviation" tabindex="0" hidden>
+      <GimmickPlay tab="aviation" />
       <div class="story">
         <AviationText />
         <YouTube id="QprnoS8PatE" title="Capt. Deovandski – Flight Experience Singapore" />
-        <PaperPlane />
       </div>
     </section>
 
     <section class="panel" role="region" id="panel-mentor" aria-labelledby="tab-mentor" tabindex="0" hidden>
+      <GimmickPlay tab="mentor" />
       <MentorFacet />
     </section>
 
     <section class="panel" role="region" id="panel-influencer" aria-labelledby="tab-influencer" tabindex="0" hidden>
+      <GimmickPlay tab="influencer">
+        <p slot="intro">Want a taste of the treadmill? Post away. Each post costs one energy bar, and one bar refills every second. Open “Under the hood” to see which trick is working on you as it happens.</p>
+      </GimmickPlay>
       <div class="story">
       <p>
         I was very active back in the day, getting ~15 million views… Focus on <em>was</em>, for there’s nothing left of it.
@@ -499,12 +499,6 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
         </a>
         <figcaption>August 3, 2026</figcaption>
       </figure>
-      <h3 class="pm-subhead">KitKot: the game</h3>
-      <p>
-        Want a taste of the treadmill? Post away. Each post costs one energy bar, and one bar refills every second. Open
-        “Under the hood” to see which trick is working on you as it happens.
-      </p>
-      <KitKot name="Deovandski Skibinski Junior" handle="deovandski" bio="Author, x++ dev, chasing the algorithm" />
       <p>
         If you got to see my shenanigans, I hope you found it entertaining. Now go outside, touch grass, and drag your dreams
         from fantasy into reality like I am; truly recommended.
@@ -525,11 +519,12 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-dnd" aria-labelledby="tab-dnd" tabindex="0" hidden>
-      <DiceTray label="Roll the dice" class="dnd-dice" />
+      <GimmickPlay tab="dnd" />
       <Sections data={dnd} id="dnd" slots={1} empty="D&D adventures are on their way." photoAlt={(t) => `Party art for D&D ${t}`} />
     </section>
 
     <section class="panel" role="region" id="panel-botw" aria-labelledby="tab-botw" tabindex="0" hidden>
+      <GimmickPlay tab="botw" />
       <div class="list-head">
         <div class="botw-intro">{botw.intro.map((para) => <p class="ranking-lede" set:html={linkify(para)} />)}</div>
         <a class="list-link" href="https://www.youtube.com/@RedLetterMedia">Red Letter Media on YouTube</a>
@@ -539,14 +534,14 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
           <p class="empty">My 39 favorite Best of the Worst episodes are on their way.</p>
         ) : (
           <>
-            <VhsPile hours={botwStats.hours} summary="That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape)." class="botw-pile">
+            <div class="botw-pile">
               <p>
                 About <strong>{botwNumbers.hours} hours</strong> of Best of the Worst: {botwNumbers.views} views of {botwNumbers.videos}{' '}
                 episodes (Spotlight, Wheel of the Worst and Junka included), from my YouTube watch history from {botwNumbers.from} to{' '}
                 {botwNumbers.to}.
               </p>
               <p class="botw-pile__fine">Each view counts as the whole episode, start to finish.</p>
-            </VhsPile>
+            </div>
             {botw.episodes.some((e) => e.watched) && (
               <p class="botw-note">Ranked by how many times I've watched each one, counted from my YouTube watch history.</p>
             )}
@@ -580,10 +575,10 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-tattoo" aria-labelledby="tab-tattoo" tabindex="0" hidden>
+      <GimmickPlay tab="tattoo">
+        <p slot="intro">A practice skin, like the ones tattoo artists learn on. Pick a skin tone, an ink and a needle, and go.</p>
+      </GimmickPlay>
       <Sections data={tattoos} id="tattoo" photoAlt={(t) => `Tattoo on my ${t.toLowerCase()}`} />
-      <h3 class="pm-subhead">Your turn: grab the pen</h3>
-      <p class="ranking-lede">A practice skin, like the ones tattoo artists learn on. Pick a skin tone, an ink and a needle, and go.</p>
-      <DrawingPad label="Practice skin. Draw a tattoo on it with the tattoo pen." />
     </section>
 
     <section class="panel" role="region" id="panel-gym" aria-labelledby="tab-gym" tabindex="0" hidden>
@@ -591,7 +586,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-miku" aria-labelledby="tab-miku" tabindex="0" hidden>
-      <WhackAMole sprite={whackSprite} name="Miku" title="Whack-a-Miku" bonusDays={["03-09", "08-31"]} spriteAlt="A pixel Miku popped up" />
+      <GimmickPlay tab="miku" />
       <Sections data={mikuConcerts} id="miku" layout="cards" slots={2} titleAbove noDescription="Description coming soon." photoAlt={(t) => `Me at ${t}`} />
     </section>
 
@@ -604,6 +599,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-musician" aria-labelledby="tab-musician" tabindex="0" hidden>
+      <GimmickPlay tab="musician" />
       <div class="story">
         <p>
           I've always been fascinated by creating music. But not only am I tone deaf, I also struggle with reading sheet music,
@@ -622,23 +618,23 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
           {musicianLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
         </ul>
       </div>
-      <DrumKit label="Virtual drum kit" />
     </section>
 
     <section class="panel" role="region" id="panel-painting" aria-labelledby="tab-painting" tabindex="0" hidden>
+      <GimmickPlay tab="painting" />
       <div class="story">
         <p>
           Definitely I do not have enough dexterity to really get where I want, but fortunately I know the right people with
           the skills to help transform my ideas into reality. Regardless, I still push myself to at least try!
         </p>
       </div>
-      <LedMatrix label="LED matrix to paint on. Click or drag to light LEDs; arrow keys and Space work too." />
       <PhotoGrid photos={painting} name="painting" caption="date" empty="Paintings and drawings are on their way." />
     </section>
 
     <section class="panel" role="region" id="panel-boardgames" aria-labelledby="tab-boardgames" tabindex="0" hidden>
-      <p class="ranking-lede">From <a href="https://deovandski.github.io/HusbandOutWorld/lore/pastimes/#territory-snipping">#HusbandOutWorld</a>: play the round of Territory Snipping from Vol 2, as Harry, against Hiromi.</p>
-      <IsoDarts game={territorySnipping} title="Territory Snipping" />
+      <GimmickPlay tab="boardgames">
+        <p slot="intro">From <a href="https://deovandski.github.io/HusbandOutWorld/lore/pastimes/#territory-snipping">#HusbandOutWorld</a>: play the round of Territory Snipping from Vol 2, as Harry, against Hiromi.</p>
+      </GimmickPlay>
       <Sections data={boardgames} id="boardgames" slots={1} empty="Board game nights are on their way." photoAlt={(t) => `Board games: ${t}`} />
     </section>
 
@@ -648,8 +644,9 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-concert" aria-labelledby="tab-concert" tabindex="0" hidden>
-      <p class="ranking-lede">Saturday Night Fever, King of Hues edition.</p>
-      <StageDancer label="Chibi pixel Deo in his yellow king&apos;s robes and crown hat, dancing the Saturday Night Fever disco point under flashing stage lights." />
+      <GimmickPlay tab="concert">
+        <p slot="intro">Saturday Night Fever, King of Hues edition.</p>
+      </GimmickPlay>
       <div class="switch" role="tablist" aria-label="Seen live or wishlist">
         <button type="button" role="tab" id="concert-tab-seen" aria-controls="concert-seen" aria-selected="true" data-switch-hash="#concert">🤘 Seen live</button>
         <button type="button" role="tab" id="concert-tab-wishlist" aria-controls="concert-wishlist" aria-selected="false" tabindex="-1" data-switch-hash="#concert-wishlist">📝 Wishlist</button>
@@ -676,9 +673,9 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-gamer" aria-labelledby="tab-gamer" tabindex="0" hidden>
-      <h3 class="pm-subhead">Dino Ambush: you are the obstacles</h3>
-      <p class="ranking-lede">The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it&apos;s still in the air) and take it down before you run dry.</p>
-      <DinoAmbush />
+      <GimmickPlay tab="gamer">
+        <p slot="intro">You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it&apos;s still in the air) and take it down before you run dry.</p>
+      </GimmickPlay>
       <Ranking items={games} unit="hours">
         <div class="list-head">
           <p class="ranking-lede">
@@ -716,10 +713,12 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-pets" aria-labelledby="tab-pets" tabindex="0" hidden>
+      <GimmickPlay tab="pets" />
       <PetsFacet />
     </section>
 
     <section class="panel" role="region" id="panel-lust" aria-labelledby="tab-lust" tabindex="0" hidden>
+      <GimmickPlay tab="lust" />
       <LustFacet />
     </section>
   </div>
@@ -864,6 +863,28 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
   .crumbs :global(button:focus-visible) { outline: 2px solid var(--teal); outline-offset: 2px; border-radius: 6px; }
   .crumbs :global([aria-current]) { color: var(--text); font-weight: 700; }
   .facet-head__title { margin: 0.1rem 0 0; font-size: var(--step-2); color: var(--text); }
+  .facet-head__row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.1rem; }
+  .facet-head__play {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    margin-top: 0.1rem;
+    padding: 0 1.1rem 0 0.9rem;
+    border-radius: 999px;
+    border: 2px solid var(--teal);
+    background: transparent;
+    color: var(--teal);
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .facet-head__play:hover { background: rgba(57, 197, 187, 0.14); }
+  .facet-head__play:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  .facet-head__play[aria-expanded='true'] { background: var(--teal); color: var(--bg, #070b1f); }
+  .facet-head__play .facet-head__hide-icon, .facet-head__play[aria-expanded='true'] .facet-head__play-icon { display: none; }
+  .facet-head__play[aria-expanded='true'] .facet-head__hide-icon { display: inline; }
   .facet-head__blurb { margin: 0.5rem 0 0; color: var(--muted); max-width: var(--measure); }
   .facet-head__chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.1rem; padding-bottom: clamp(1.25rem, 3vw, 2.25rem); }
   .facet-head__chips :global(button) {
@@ -1116,6 +1137,8 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
   const headLabel = head.querySelector('.facet-head__label')!;
   const headBlurb = head.querySelector<HTMLElement>('.facet-head__blurb')!;
   const headChips = head.querySelector<HTMLElement>('.facet-head__chips')!;
+  const playButton = head.querySelector<HTMLButtonElement>('.facet-head__play')!;
+  const playLabel = playButton.querySelector('.facet-head__play-label')!;
   const phone = window.matchMedia('(max-width: 640px)');
   const panelOf = (f: HTMLButtonElement) => document.getElementById(f.getAttribute('aria-controls')!)!;
   const labelOf = (b: HTMLButtonElement) => b.querySelector('.tree__label')!.textContent!.trim();
@@ -1206,6 +1229,8 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
   }
 
   function setFacet(f: HTMLButtonElement | null) {
+    // Gimmicks start closed on every visit to a tab.
+    if (f !== openFacet) document.dispatchEvent(new CustomEvent('gimmick:close', { detail: {} }));
     for (const x of allFacets) {
       x.setAttribute('aria-pressed', String(x === f));
       panelOf(x).hidden = x !== f;
@@ -1247,6 +1272,14 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     headIcon.textContent = iconOf(node);
     headLabel.textContent = labelOf(node);
     headBlurb.hidden = headChips.hidden = !!openFacet;
+    // ▶ Play for a tab with a gimmick.
+    const gimmick = openFacet ? panelOf(openFacet).querySelector<HTMLElement>('.gimmick-play') : null;
+    playButton.hidden = !gimmick;
+    if (gimmick) {
+      playButton.dataset.tab = gimmick.dataset.gimmickTab;
+      playButton.setAttribute('aria-controls', gimmick.id);
+      setPlay(!gimmick.hidden);
+    }
     headBlurb.textContent = openFacet ? '' : b.button.dataset.blurb ?? '';
     headChips.replaceChildren(
       ...(openFacet
@@ -1262,6 +1295,22 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
           })),
     );
   }
+
+  function setPlay(open: boolean) {
+    playButton.setAttribute('aria-expanded', String(open));
+    playLabel.textContent = open ? 'Hide' : 'Play';
+  }
+  playButton.addEventListener('click', () => {
+    const tab = playButton.dataset.tab;
+    const open = playButton.getAttribute('aria-expanded') === 'true';
+    document.dispatchEvent(new CustomEvent(open ? 'gimmick:close' : 'gimmick:open', { detail: { tab, immersive: true, returnFocus: true } }));
+  });
+  document.addEventListener('gimmick:state', (e) => {
+    const { tab, open, returnFocus } = (e as CustomEvent).detail;
+    if (tab !== playButton.dataset.tab) return;
+    setPlay(open);
+    if (!open && returnFocus && !playButton.hidden) playButton.focus();
+  });
 
   function collapse(focusRoot = false) {
     setFacet(null);
@@ -1356,6 +1405,14 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
   // Opens the facet a link like #death points to, growing its branch. Returns false if the hash isn't a facet.
   function openFromHash(rawHash: string): boolean {
     const hash = renamed[rawHash] ?? rawHash;
+    // #aviation-play: the tab with its gimmick already open.
+    const play = /^#(.+)-play$/.exec(hash);
+    const playFacet = play && allFacets.find((f) => f.dataset.tab === play[1] && panelOf(f).querySelector('.gimmick-play'));
+    if (playFacet) {
+      openFacetFrom(playFacet, 'hash');
+      document.dispatchEvent(new CustomEvent('gimmick:open', { detail: { tab: playFacet.dataset.tab, immersive: false } }));
+      return true;
+    }
     const switchButton = switchButtons.find((b) => b.dataset.switchHash === hash);
     const facet = allFacets.find(
       (f) =>

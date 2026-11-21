@@ -2,8 +2,6 @@
 import { Content } from '../../content/lust.md';
 import { url } from '../lib/url';
 import EasterEggBanner from './reusable/EasterEggBanner.astro';
-import FireMeter from './reusable/FireMeter.astro';
-import ecchi from '../../content/lust-meter.json';
 ---
 
 <!-- Two banners: one when Lust is the first facet the visitor opens, one when they opened another facet first. -->
@@ -19,9 +17,6 @@ import ecchi from '../../content/lust-meter.json';
 <div class="lust">
   <Content />
 </div>
-
-<!-- The ecchi-meter: pump the bellows, feed the fire, watch the weeb meter climb. Phrases in content/lust-meter.json. -->
-<FireMeter stages={ecchi.stages} label={ecchi.label} button="Pump the bellows" />
 
 <style>
   .lust { max-width: var(--measure); }

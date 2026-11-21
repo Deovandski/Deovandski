@@ -3,52 +3,15 @@
 // in one place, one FastTab each, all collapsed and A to Z. Not in the menu, the facet tree, the sitemap
 // or search results; it opens from the installed app's "Gaming" shortcut and works offline (public/sw.js).
 // Each gimmick uses the same save as on its tab, so the pets, the farm and personal bests carry over.
-// To add a gimmick: add a row to `games` (the list sorts itself) and render it in the switch below.
+// To add a gimmick: see src/lib/gimmicks.ts (the list sorts itself).
 import Base from '../layouts/Base.astro';
 import FastTab from '../components/reusable/FastTab.astro';
-import DiceTray from '../components/reusable/DiceTray.astro';
-import DinoAmbush from '../components/reusable/DinoAmbush.astro';
-import DrawingPad from '../components/reusable/DrawingPad.astro';
-import DrumKit from '../components/reusable/DrumKit.astro';
-import FireMeter from '../components/reusable/FireMeter.astro';
-import IsoDarts from '../components/reusable/IsoDarts.astro';
-import IsoFarm from '../components/reusable/IsoFarm.astro';
-import KitKot from '../components/reusable/KitKot.astro';
-import LedMatrix from '../components/reusable/LedMatrix.astro';
-import PaperPlane from '../components/reusable/PaperPlane.astro';
-import PixelPet from '../components/reusable/PixelPet.astro';
-import StageDancer from '../components/reusable/StageDancer.astro';
-import VhsPile from '../components/reusable/VhsPile.astro';
-import WhackAMole from '../components/reusable/WhackAMole.astro';
-import whackSprite from '../assets/whack-a-miku/whack-a-miku.png';
-import farm from '../../content/mentor-farm.json';
-import ecchi from '../../content/lust-meter.json';
-import territorySnipping from '../../content/territory-snipping.json';
-import botwStats from '../../content/botw-stats.json';
-import { PIXEL_PETS } from '../lib/pixelPets';
-import { PETS } from '../lib/pets';
+import Gimmick from '../components/Gimmick.astro';
+import { GIMMICKS } from '../lib/gimmicks';
 import { url } from '../lib/url';
 
-// id: the FastTab's anchor (/gaming/#paper-plane). tab: the home page tab it comes from.
-const games = [
-  { id: 'balls-farm', title: 'Balls farm', tab: 'mentor', tabName: 'Mentor' },
-  { id: 'dice-tray', title: 'Dice tray', tab: 'dnd', tabName: 'D&D' },
-  { id: 'dino-ambush', title: 'Dino Ambush', tab: 'gamer', tabName: 'Gamer' },
-  { id: 'drum-kit', title: 'Drum kit', tab: 'musician', tabName: 'Musician' },
-  { id: 'ecchi-meter', title: 'Ecchi-meter', tab: 'lust', tabName: 'Lust' },
-  { id: 'kitkot', title: 'KitKot', tab: 'influencer', tabName: 'Influencer' },
-  { id: 'led-painting', title: 'LED painting', tab: 'painting', tabName: 'Painting' },
-  { id: 'paper-plane', title: 'Paper plane', tab: 'aviation', tabName: 'Aviation' },
-  { id: 'pixel-pets', title: 'Pixel pets', tab: 'pets', tabName: 'Pets' },
-  { id: 'saturday-night-fever', title: 'Saturday Night Fever', tab: 'concert', tabName: 'Concert' },
-  { id: 'tattoo-skin', title: 'Tattoo practice skin', tab: 'tattoo', tabName: 'Tattoo' },
-  { id: 'territory-snipping', title: 'Territory Snipping', tab: 'boardgames', tabName: 'Board Games' },
-  { id: 'vhs-pile', title: 'VHS pile', tab: 'botw', tabName: 'BOTW' },
-  { id: 'whack-a-miku', title: 'Whack-a-Miku', tab: 'miku', tabName: 'Miku' },
-].sort((a, b) => a.title.localeCompare(b.title, 'en', { sensitivity: 'base' }));
-
-const pixelPets = PETS.filter((p) => PIXEL_PETS[p.id]);
-const hours = Math.round(botwStats.hours).toLocaleString('en-US');
+// One FastTab per gimmick in src/lib/gimmicks.ts, A to Z. Its id is the anchor (/gaming/#paper-plane).
+const games = [...GIMMICKS].sort((a, b) => a.title.localeCompare(b.title, 'en', { sensitivity: 'base' }));
 ---
 
 <Base title="Gaming" description="Every game and toy from Deovandski's tabs in one place." noindex>
@@ -65,40 +28,8 @@ const hours = Math.round(botwStats.hours).toLocaleString('en-US');
     <div class="gaming__tabs">
       {
         games.map((g) => (
-          <FastTab title={g.title} summary={`${g.tabName} tab`} id={g.id}>
-            {g.id === 'balls-farm' && (
-              <>
-                <blockquote class="gaming__quote"><p>{farm.mantra}</p></blockquote>
-                <IsoFarm config={farm} saveKey="balls-farm" title="The Balls farm" />
-              </>
-            )}
-            {g.id === 'dice-tray' && <DiceTray label="Roll the dice" />}
-            {g.id === 'dino-ambush' && <DinoAmbush />}
-            {g.id === 'drum-kit' && <DrumKit label="Virtual drum kit" />}
-            {g.id === 'ecchi-meter' && <FireMeter stages={ecchi.stages} label={ecchi.label} button="Pump the bellows" />}
-            {g.id === 'kitkot' && <KitKot name="Deovandski Skibinski Junior" handle="deovandski" bio="Author, x++ dev, chasing the algorithm" />}
-            {g.id === 'led-painting' && <LedMatrix label="LED matrix to paint on. Click or drag to light LEDs; arrow keys and Space work too." />}
-            {g.id === 'paper-plane' && <PaperPlane />}
-            {g.id === 'pixel-pets' && (
-              <div class="gaming__pets">
-                {pixelPets.map((p) => (
-                  <PixelPet name={p.name} saveKey={p.id} color={PIXEL_PETS[p.id].color} shapes={PIXEL_PETS[p.id].shapes} />
-                ))}
-              </div>
-            )}
-            {g.id === 'saturday-night-fever' && (
-              <StageDancer label="Chibi pixel Deo in his yellow king&apos;s robes and crown hat, dancing the Saturday Night Fever disco point under flashing stage lights." />
-            )}
-            {g.id === 'tattoo-skin' && <DrawingPad label="Practice skin. Draw a tattoo on it with the tattoo pen." />}
-            {g.id === 'territory-snipping' && <IsoDarts game={territorySnipping} title="Territory Snipping" />}
-            {g.id === 'vhs-pile' && (
-              <VhsPile hours={botwStats.hours} summary="That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).">
-                <p>About <strong>{hours} hours</strong> of Best of the Worst from my YouTube watch history.</p>
-              </VhsPile>
-            )}
-            {g.id === 'whack-a-miku' && (
-              <WhackAMole sprite={whackSprite} name="Miku" title="Whack-a-Miku" bonusDays={['03-09', '08-31']} spriteAlt="A pixel Miku popped up" />
-            )}
+          <FastTab title={g.title} summary={`${g.tabName} tab`} id={g.id} data-gimmick-id={g.id} data-summary-base={`${g.tabName} tab`}>
+            <Gimmick id={g.id} />
             <p class="gaming__from">
               From the <a href={url(`/#${g.tab}`)}>{g.tabName} tab</a>.
             </p>
@@ -143,15 +74,6 @@ const hours = Math.round(botwStats.hours).toLocaleString('en-US');
     outline: 2px solid #fff;
     outline-offset: 2px;
   }
-  .gaming__pets {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-  }
-  .gaming__quote {
-    margin: 0 0 1rem;
-  }
   .gaming__from {
     margin: 1rem 0 0;
     font-size: 0.9rem;
@@ -160,31 +82,10 @@ const hours = Math.round(botwStats.hours).toLocaleString('en-US');
 </style>
 
 <script>
+  import { refreshGimmickSummaries } from '../scripts/gimmickSummaries';
+
   // Summary fields with live values, F&O style, from the saves the games already keep in this browser.
-  const read = (key: string) => {
-    try {
-      const raw = localStorage.getItem(key);
-      return raw === null ? null : raw;
-    } catch {
-      return null;
-    }
-  };
-  const setSummary = (id: string, text: string) => {
-    const el = document.querySelector<HTMLElement>(`#${id} [data-fasttab-summary]`);
-    if (el) el.textContent = text;
-  };
-  function refresh() {
-    const best = Number(read('paper-plane-best'));
-    if (best > 0) setSummary('paper-plane', `Aviation tab · Best ${best.toFixed(1)} m`);
-    try {
-      const farm = JSON.parse(read('balls-farm') ?? 'null');
-      const balls = farm ? Object.values(farm.bag ?? {}).reduce((a: number, n) => a + Number(n || 0), 0) : 0;
-      if (balls > 0) setSummary('balls-farm', `Mentor tab · ${balls} ${balls === 1 ? 'ball' : 'balls'} in the bag`);
-    } catch {
-      /* no farm yet */
-    }
-  }
-  refresh();
+  refreshGimmickSummaries();
   // Update when a FastTab closes (the summary shows again), after the game may have saved.
-  document.querySelectorAll('details.fasttab').forEach((d) => d.addEventListener('toggle', () => setTimeout(refresh, 50)));
+  document.querySelectorAll('details.fasttab').forEach((d) => d.addEventListener('toggle', () => setTimeout(refreshGimmickSummaries, 50)));
 </script>

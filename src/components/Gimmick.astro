@@ -1,0 +1,92 @@
+---
+// Renders one gimmick by its id from src/lib/gimmicks.ts, with the same props and saves wherever it shows:
+// in a tab's ▶ Play FastTab (GimmickPlay.astro) and on the hidden Gaming page.
+import DiceTray from './reusable/DiceTray.astro';
+import DinoAmbush from './reusable/DinoAmbush.astro';
+import DrawingPad from './reusable/DrawingPad.astro';
+import DrumKit from './reusable/DrumKit.astro';
+import FireMeter from './reusable/FireMeter.astro';
+import IsoDarts from './reusable/IsoDarts.astro';
+import IsoFarm from './reusable/IsoFarm.astro';
+import KitKot from './reusable/KitKot.astro';
+import LedMatrix from './reusable/LedMatrix.astro';
+import PaperPlane from './reusable/PaperPlane.astro';
+import PixelPet from './reusable/PixelPet.astro';
+import StageDancer from './reusable/StageDancer.astro';
+import VhsPile from './reusable/VhsPile.astro';
+import WhackAMole from './reusable/WhackAMole.astro';
+import whackSprite from '../assets/whack-a-miku/whack-a-miku.png';
+import farm from '../../content/mentor-farm.json';
+import ecchi from '../../content/lust-meter.json';
+import territorySnipping from '../../content/territory-snipping.json';
+import botwStats from '../../content/botw-stats.json';
+import { PIXEL_PETS } from '../lib/pixelPets';
+import { PETS } from '../lib/pets';
+
+interface Props {
+  id: string;
+}
+const { id } = Astro.props;
+const pixelPets = PETS.filter((p) => PIXEL_PETS[p.id]);
+const hours = Math.round(botwStats.hours).toLocaleString('en-US');
+---
+
+{
+  id === 'balls-farm' && (
+    <>
+      <blockquote class="gimmick__quote">
+        <p>{farm.mantra}</p>
+      </blockquote>
+      <IsoFarm config={farm} saveKey="balls-farm" title="The Balls farm" />
+    </>
+  )
+}
+{id === 'dice-tray' && <DiceTray label="Roll the dice" />}
+{id === 'dino-ambush' && <DinoAmbush />}
+{id === 'drum-kit' && <DrumKit label="Virtual drum kit" />}
+{id === 'ecchi-meter' && <FireMeter stages={ecchi.stages} label={ecchi.label} button="Pump the bellows" />}
+{id === 'kitkot' && <KitKot name="Deovandski Skibinski Junior" handle="deovandski" bio="Author, x++ dev, chasing the algorithm" />}
+{id === 'led-painting' && <LedMatrix label="LED matrix to paint on. Click or drag to light LEDs; arrow keys and Space work too." />}
+{id === 'paper-plane' && <PaperPlane />}
+{
+  id === 'pixel-pets' && (
+    <div class="gimmick__pets">
+      {pixelPets.map((p) => (
+        <PixelPet name={p.name} saveKey={p.id} color={PIXEL_PETS[p.id].color} shapes={PIXEL_PETS[p.id].shapes} />
+      ))}
+    </div>
+  )
+}
+{
+  id === 'saturday-night-fever' && (
+    <StageDancer label="Chibi pixel Deo in his yellow king&apos;s robes and crown hat, dancing the Saturday Night Fever disco point under flashing stage lights." />
+  )
+}
+{id === 'tattoo-skin' && <DrawingPad label="Practice skin. Draw a tattoo on it with the tattoo pen." />}
+{id === 'territory-snipping' && <IsoDarts game={territorySnipping} title="Territory Snipping" />}
+{
+  id === 'vhs-pile' && (
+    <VhsPile hours={botwStats.hours} summary="That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).">
+      <p>
+        About <strong>{hours} hours</strong> of Best of the Worst from my YouTube watch history.
+      </p>
+    </VhsPile>
+  )
+}
+{
+  id === 'whack-a-miku' && (
+    <WhackAMole sprite={whackSprite} name="Miku" title="Whack-a-Miku" bonusDays={['03-09', '08-31']} spriteAlt="A pixel Miku popped up" />
+  )
+}
+
+<style>
+  .gimmick__pets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  .gimmick__quote {
+    margin: 0 0 1rem;
+  }
+</style>

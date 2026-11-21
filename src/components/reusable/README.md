@@ -605,6 +605,8 @@ import FastTab from './reusable/FastTab.astro';
 | `summary` | `""` | Text on the right of the header while collapsed (F&O "summary fields"). Scripts can update it through `[data-fasttab-summary]`. |
 | `open` | `false` | Start expanded. |
 | `id` | none | Anchor: `/page/#id` opens this FastTab and scrolls to it. |
+| `keepSummary` | `false` | Keep the summary showing while open too (F&O hides it). |
+| other attributes | | `data-*`, `aria-*` and the like go on the `<details>` element. |
 | `class` | none | Extra class. |
 
 A button with `data-fasttabs="open"` or `"close"` opens or closes every FastTab in its container. Closed
