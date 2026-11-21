@@ -1,0 +1,379 @@
+---
+/**
+ * StageDancer: a chibi pixel character dancing a disco routine on a stage: the Saturday Night Fever
+ * "point" (arm up to the sky, then down across the body, hip out), hip rolls and a turn, under
+ * sweeping coloured spotlights, a mirror ball and a light-up floor. The character is drawn in code
+ * (no image files), and its colours are props, so it can be dressed differently.
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
+ * Copy this one file into any Astro project. See README.md in this folder.
+ *
+ *   <StageDancer label="Chibi Deo dancing" />
+ *   <StageDancer outfit={{ robe: '#d33', pattern: '#fff' }} bpm={120} />
+ *
+ * Props:
+ *   outfit  colours: { hat, hatTrim, skin, beard, robe, pattern, hem, boots }. Defaults: the yellow
+ *           king's robes with blue patterns and a black-and-gold crown hat.
+ *   bpm     dance tempo in beats per minute. Default 110 (one pose per beat).
+ *   label   what's on screen, for screen readers.
+ *
+ * Theming (CSS custom properties): --dancer-accent (default #39c5bb).
+ *
+ * Accessible: a text label describes the scene; buttons pause the dance and change the light colours.
+ * Lights change on the beat (under 3 changes a second, within WCAG's flash limit). Reduced motion
+ * shows a still point pose with steady lights.
+ */
+interface Props {
+  outfit?: Partial<Record<'hat' | 'hatTrim' | 'skin' | 'beard' | 'robe' | 'pattern' | 'hem' | 'boots', string>>;
+  bpm?: number;
+  label?: string;
+  class?: string;
+}
+const {
+  outfit = {},
+  bpm = 110,
+  label = 'A chibi pixel character in yellow king’s robes and a crown hat, dancing the Saturday Night Fever disco point under stage lights.',
+  class: className,
+} = Astro.props;
+const colors = {
+  hat: '#1c1a1d',
+  hatTrim: '#e2b33c',
+  skin: '#f0c8a8',
+  beard: '#3b2a20',
+  robe: '#f5c518',
+  pattern: '#2f5fbf',
+  hem: '#ffffff',
+  boots: '#f2b705',
+  ...outfit,
+};
+---
+
+<div class:list={['stage-dancer', className]} data-colors={JSON.stringify(colors)} data-bpm={bpm}>
+  <canvas class="stage-dancer__canvas" role="img" aria-label={label}></canvas>
+  <div class="stage-dancer__controls">
+    <button type="button" data-act="pause" aria-pressed="false">Pause</button>
+    <button type="button" data-act="lights">Change the lights</button>
+  </div>
+</div>
+
+<style>
+  .stage-dancer {
+    --_accent: var(--dancer-accent, #39c5bb);
+    margin: 0.5rem 0 1.5rem;
+  }
+  .stage-dancer__canvas {
+    display: block;
+    width: 100%;
+    height: clamp(260px, 38vw, 360px);
+    border-radius: 16px;
+    background: #07040d;
+    image-rendering: pixelated;
+  }
+  .stage-dancer__controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+  }
+  .stage-dancer__controls button {
+    padding: 0.35rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--_accent);
+    background: transparent;
+    color: var(--_accent);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .stage-dancer__controls button[aria-pressed='true'] {
+    background: color-mix(in srgb, var(--_accent) 18%, transparent);
+  }
+  .stage-dancer__controls button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+</style>
+
+<script>
+  type Colors = Record<'hat' | 'hatTrim' | 'skin' | 'beard' | 'robe' | 'pattern' | 'hem' | 'boots', string>;
+  // A pose: arm end points relative to the shoulders (elbow optional), hip shift, head lean, leg spread,
+  // whether the right hand points, and whether we see the back (the turn).
+  type Arm = { hand: [number, number]; elbow?: [number, number]; point?: boolean };
+  type Pose = { r: Arm; l: Arm; hip: number; lean: number; legs: number; back?: boolean; bob?: number };
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const GW = 40;
+  const GH = 54;
+
+  // The routine, one pose per beat: the famous point up and down (twice), hip rolls, a turn, a big finish.
+  const HIP_L: Arm = { elbow: [-5, 5], hand: [-1, 9] };
+  const POINT_UP: Pose = { r: { hand: [9, -11], point: true }, l: HIP_L, hip: 2, lean: -1, legs: 3 };
+  const POINT_DOWN: Pose = { r: { elbow: [2, 6], hand: [-8, 11], point: true }, l: HIP_L, hip: -2, lean: 1, legs: 2, bob: 1 };
+  const ROLL_L: Pose = { r: { elbow: [5, 4], hand: [1, -1] }, l: { elbow: [-5, 4], hand: [-1, -1] }, hip: -3, lean: -1, legs: 2 };
+  const ROLL_R: Pose = { ...ROLL_L, hip: 3, lean: 1, bob: 1 };
+  const TURN: Pose = { r: { hand: [9, 3] }, l: { hand: [-9, 3] }, hip: 0, lean: 0, legs: 1, back: true };
+  const FINISH: Pose = { r: { hand: [8, -13], point: true }, l: { hand: [-9, 6] }, hip: 3, lean: -1, legs: 4 };
+  const ROUTINE: Pose[] = [POINT_UP, POINT_DOWN, POINT_UP, POINT_DOWN, ROLL_L, ROLL_R, ROLL_L, ROLL_R, POINT_UP, POINT_DOWN, TURN, FINISH];
+
+  // Draws one pose into a GW x GH grid of colours, then outlines it in black.
+  function render(pose: Pose, c: Colors): (string | null)[][] {
+    const g: (string | null)[][] = Array.from({ length: GH }, () => Array(GW).fill(null));
+    const set = (x: number, y: number, col: string) => {
+      x = Math.round(x);
+      y = Math.round(y);
+      if (x >= 0 && y >= 0 && x < GW && y < GH) g[y][x] = col;
+    };
+    const rect = (x: number, y: number, w: number, h: number, col: string) => {
+      for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) set(x + i, y + j, col);
+    };
+    const ellipse = (cx: number, cy: number, rx: number, ry: number, col: string, from = -99, to = 99) => {
+      for (let y = Math.floor(cy - ry); y <= cy + ry; y++)
+        for (let x = Math.floor(cx - rx); x <= cx + rx; x++) {
+          if (y < from || y > to) continue;
+          if (((x - cx) / (rx + 0.4)) ** 2 + ((y - cy) / (ry + 0.4)) ** 2 <= 1) set(x, y, col);
+        }
+    };
+    const line = (x0: number, y0: number, x1: number, y1: number, w: number, col: string) => {
+      const n = Math.ceil(Math.hypot(x1 - x0, y1 - y0) * 2);
+      for (let i = 0; i <= n; i++) {
+        const x = x0 + ((x1 - x0) * i) / n;
+        const y = y0 + ((y1 - y0) * i) / n;
+        rect(x - w / 2, y - w / 2, w, w, col);
+      }
+    };
+    const bob = pose.bob ?? 0;
+    const cx = 20;
+    const hip = pose.hip;
+    // Legs and boots.
+    const legY = 41 + bob;
+    for (const side of [-1, 1]) {
+      const fx = cx + side * pose.legs + hip * 0.5;
+      line(cx + side * 2 + hip, legY, fx, 49, 3, c.robe);
+      rect(fx - 2, 49, 5, 3, c.boots);
+    }
+    // Robe: a trapezoid from the shoulders to a hem that swings with the hips, blue pattern, striped hem.
+    const top = 24 + bob;
+    const bottom = 44 + bob;
+    for (let y = top; y <= bottom; y++) {
+      const k = (y - top) / (bottom - top);
+      const half = 6 + k * 4.5;
+      const shift = hip * k;
+      for (let x = Math.round(cx - half + shift); x <= Math.round(cx + half + shift); x++) {
+        let col = c.robe;
+        if (y >= bottom - 2) col = (x + y) % 2 ? c.hem : c.pattern; // striped hem
+        else if ((x * 7 + y * 3) % 11 === 0 || (y === top + 6 && Math.abs(x - cx - shift) < 3)) col = c.pattern; // dragon and cloud dots
+        set(x, y, col);
+      }
+    }
+    // Arms: wide yellow sleeves with a hand; the pointing hand has a finger.
+    for (const [side, arm] of [[1, pose.r], [-1, pose.l]] as [number, Arm][]) {
+      const sx = cx + side * 6 + hip * 0.1;
+      const sy = top + 2;
+      const hx = sx + arm.hand[0];
+      const hy = sy + arm.hand[1];
+      if (arm.elbow) {
+        const ex = sx + arm.elbow[0];
+        const ey = sy + arm.elbow[1];
+        line(sx, sy, ex, ey, 4, c.robe);
+        line(ex, ey, hx, hy, 3, c.robe);
+      } else line(sx, sy, hx, hy, 4, c.robe);
+      rect(hx - 1, hy - 1, 3, 3, c.skin);
+      if (arm.point) {
+        const dx = Math.sign(arm.hand[0]) || 1;
+        const dy = Math.sign(arm.hand[1]) || -1;
+        set(hx + dx * 2, hy + dy * 2, c.skin);
+        set(hx + dx * 3, hy + dy * 3, c.skin);
+      }
+    }
+    // Big chibi head with the crown hat.
+    const hx = cx + pose.lean + hip * 0.2;
+    const hy = 14 + bob;
+    ellipse(hx, hy, 8, 8, c.skin);
+    if (pose.back) {
+      ellipse(hx, hy, 8, 8, c.beard, hy - 2, hy + 6); // the back of the head
+    } else {
+      // Short dark beard around the jaw, a moustache, eyes and brows.
+      ellipse(hx, hy + 1, 8, 7, c.beard, hy + 3, hy + 9);
+      rect(hx - 2, hy + 3, 5, 1, c.beard);
+      rect(hx - 1, hy + 5, 3, 1, '#b24a3a');
+      rect(hx - 4, hy, 2, 2, '#1b1b1b');
+      rect(hx + 3, hy, 2, 2, '#1b1b1b');
+      rect(hx - 5, hy - 2, 3, 1, c.beard);
+      rect(hx + 3, hy - 2, 3, 1, c.beard);
+    }
+    // Crown hat: black with gold trim and studs, a little gold top.
+    rect(hx - 7, hy - 10, 15, 5, c.hat);
+    rect(hx - 8, hy - 6, 17, 2, c.hatTrim);
+    rect(hx - 1, hy - 13, 3, 3, c.hatTrim);
+    for (let i = -6; i <= 6; i += 3) set(hx + i, hy - 8, c.hatTrim);
+    // Outline.
+    const out = g.map((row) => row.slice());
+    for (let y = 0; y < GH; y++)
+      for (let x = 0; x < GW; x++) {
+        if (g[y][x]) continue;
+        if (g[y - 1]?.[x] || g[y + 1]?.[x] || g[y][x - 1] || g[y][x + 1]) out[y][x] = '#0d0b10';
+      }
+    return out;
+  }
+
+  const PALETTES = [
+    ['#ff2d95', '#39c5bb', '#ffd23f'],
+    ['#7b2ff7', '#ff7a18', '#00e5ff'],
+    ['#00ff9c', '#ff3b3b', '#f8f8ff'],
+    ['#ff5ec4', '#5e9bff', '#ffe066'],
+  ];
+
+  document.querySelectorAll<HTMLElement>('.stage-dancer').forEach((root) => {
+    const canvas = root.querySelector<HTMLCanvasElement>('.stage-dancer__canvas')!;
+    const ctx = canvas.getContext('2d')!;
+    const colors: Colors = JSON.parse(root.dataset.colors!);
+    const beat = 60000 / (Number(root.dataset.bpm) || 110);
+    const frames = ROUTINE.map((p) => render(p, colors));
+    const pauseBtn = root.querySelector<HTMLButtonElement>('[data-act="pause"]')!;
+    const lightsBtn = root.querySelector<HTMLButtonElement>('[data-act="lights"]')!;
+    let W = 0;
+    let H = 0;
+    let palette = 0;
+    let paused = reduced;
+    let start = performance.now();
+    let pausedAt = start;
+    let running = false;
+
+    function size() {
+      const r = canvas.getBoundingClientRect();
+      if (!r.width) return false;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = r.width;
+      H = r.height;
+      canvas.width = Math.round(W * dpr);
+      canvas.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      return true;
+    }
+
+    function draw(now: number) {
+      const t = (paused ? pausedAt : now) - start;
+      const b = Math.floor(t / beat);
+      const pal = PALETTES[(palette + Math.floor(b / 8)) % PALETTES.length];
+      ctx.clearRect(0, 0, W, H);
+      // Light-up floor: tiles in perspective, changing colour on the beat (twice a second at most).
+      const floorTop = H * 0.62;
+      const rows = 5;
+      for (let r = 0; r < rows; r++) {
+        const y0 = floorTop + ((H - floorTop) * (r / rows) ** 1.3);
+        const y1 = floorTop + ((H - floorTop) * ((r + 1) / rows) ** 1.3);
+        const cols = 9;
+        const spread0 = 0.55 + 0.45 * (r / rows);
+        const spread1 = 0.55 + 0.45 * ((r + 1) / rows);
+        for (let k = 0; k < cols; k++) {
+          const lit = (k + r + b) % 3 === 0;
+          const x00 = W / 2 + (k / cols - 0.5) * W * spread0;
+          const x01 = W / 2 + ((k + 1) / cols - 0.5) * W * spread0;
+          const x10 = W / 2 + (k / cols - 0.5) * W * spread1;
+          const x11 = W / 2 + ((k + 1) / cols - 0.5) * W * spread1;
+          ctx.fillStyle = lit ? pal[(k + r) % 3] : '#1a1424';
+          ctx.globalAlpha = lit ? 0.75 : 1;
+          ctx.beginPath();
+          ctx.moveTo(x00 + 1, y0 + 1);
+          ctx.lineTo(x01 - 1, y0 + 1);
+          ctx.lineTo(x11 - 1, y1 - 1);
+          ctx.lineTo(x10 + 1, y1 - 1);
+          ctx.fill();
+        }
+      }
+      ctx.globalAlpha = 1;
+      // Spotlights sweeping from the top corners onto the dancer.
+      const sweep = reduced || paused ? 0 : Math.sin(t / 900) * W * 0.12;
+      for (const [i, sx] of [W * 0.08, W * 0.92, W * 0.5].entries()) {
+        const tx = W / 2 + (i === 2 ? 0 : sweep * (i ? -1 : 1));
+        const grad = ctx.createLinearGradient(sx, 0, tx, floorTop + 30);
+        grad.addColorStop(0, pal[i] + 'aa');
+        grad.addColorStop(1, pal[i] + '10');
+        ctx.fillStyle = grad;
+        ctx.beginPath();
+        ctx.moveTo(sx - 6, 0);
+        ctx.lineTo(sx + 6, 0);
+        ctx.lineTo(tx + 60, floorTop + 40);
+        ctx.lineTo(tx - 60, floorTop + 40);
+        ctx.fill();
+      }
+      // Mirror ball with glinting facets.
+      // Centred on wide stages; off to the side on narrow ones so the dancer's hat stays clear.
+      const mx = W < 520 ? W * 0.8 : W / 2;
+      const my = H * 0.11;
+      ctx.strokeStyle = '#777';
+      ctx.beginPath();
+      ctx.moveTo(mx, 0);
+      ctx.lineTo(mx, my - 16);
+      ctx.stroke();
+      ctx.fillStyle = '#cfd3da';
+      ctx.beginPath();
+      ctx.arc(mx, my, 16, 0, Math.PI * 2);
+      ctx.fill();
+      for (let i = 0; i < 18; i++) {
+        const a = i * 1.7 + (reduced || paused ? 0 : t / 700);
+        const fx = mx + Math.cos(a) * 11 * Math.abs(Math.sin(i));
+        const fy = my + Math.sin(i * 2.3) * 11;
+        ctx.fillStyle = (i + b) % 4 === 0 ? '#ffffff' : '#9aa1ab';
+        ctx.fillRect(fx - 2, fy - 2, 4, 4);
+      }
+      // The dancer, centred on the floor, scaled to the stage in whole pixels.
+      const frame = reduced ? frames[0] : frames[b % frames.length];
+      const p = Math.max(3, Math.floor((H * 0.62) / GH));
+      const ox = Math.round(W / 2 - (GW * p) / 2);
+      const oy = Math.round(floorTop + H * 0.18 - GH * p);
+      // A soft pool of light under the feet.
+      ctx.fillStyle = pal[0] + '40';
+      ctx.beginPath();
+      ctx.ellipse(W / 2, oy + 51 * p, 16 * p, 4 * p, 0, 0, Math.PI * 2);
+      ctx.fill();
+      for (let y = 0; y < GH; y++)
+        for (let x = 0; x < GW; x++) {
+          const col = frame[y][x];
+          if (!col) continue;
+          ctx.fillStyle = col;
+          ctx.fillRect(ox + x * p, oy + y * p, p, p);
+        }
+    }
+
+    function loop(now: number) {
+      if (!running) return;
+      if (root.offsetParent) draw(now);
+      if (!paused) requestAnimationFrame(loop);
+      else running = false;
+    }
+    function play() {
+      if (running || !size()) return;
+      running = true;
+      requestAnimationFrame(loop);
+    }
+
+    pauseBtn.addEventListener('click', () => {
+      paused = !paused;
+      pauseBtn.setAttribute('aria-pressed', String(paused));
+      pauseBtn.textContent = paused ? 'Dance' : 'Pause';
+      if (paused) pausedAt = performance.now();
+      else {
+        start += performance.now() - pausedAt;
+        play();
+      }
+    });
+    if (reduced) {
+      pauseBtn.textContent = 'Dance';
+      pauseBtn.setAttribute('aria-pressed', 'true');
+    }
+    lightsBtn.addEventListener('click', () => {
+      palette = (palette + 1) % PALETTES.length;
+      if (paused && size()) draw(performance.now());
+    });
+
+    new IntersectionObserver((entries) => {
+      if (!entries[0].isIntersecting) return;
+      if (paused) {
+        if (size()) draw(performance.now());
+      } else play();
+    }).observe(canvas);
+    new ResizeObserver(() => {
+      if (size()) draw(performance.now());
+    }).observe(canvas);
+  });
+</script>
