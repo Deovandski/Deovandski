@@ -23,6 +23,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
 | [KitKot.astro](KitKot.astro) | A parody social app idle game on a phone: post for views, likes and followers on a slot-machine schedule (near misses, a hidden hot post type, fatigue, streaks, energy). "Under the hood" names each trick, with sources. | Influencer tab |
+| [FireMeter.astro](FireMeter.astro) | A fireplace with bellows and a meter: each pump grows the fire, climbs the meter and shows a phrase for that level; maxing out "bonks" and resets. | Lust tab (ecchi-meter) |
 
 ## SplitFlap
 
@@ -432,3 +433,28 @@ audience fatigue that turns into losing followers, streaks that warn before they
 a fake "Trending" badge and a moving follower goal. "Under the hood" explains each trick as it fires,
 with sources. "Log off and touch grass" shows how long you spent and resets. Nothing is saved. Theme with
 `--kk-accent`, `--kk-accent-2` and `--kk-bg`.
+
+## FireMeter
+
+```astro
+---
+import FireMeter from './reusable/FireMeter.astro';
+---
+<FireMeter label="Ecchi-meter" stages={[
+  { name: 'Warm', phrases: ['Kyaa~! (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)'] },
+  { name: 'Hot', phrases: ['Ara ara~ (◕‿◕✿)'], bonk: 'BONK! Go to horny jail.' },
+]} />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `stages` | (required) | Levels from coldest to hottest: `{ name, phrases[], bonk? }`. The last stage's `bonk` shows when the meter maxes out, then the fire resets. |
+| `label` | `"Heat"` | Name of the meter. |
+| `button` | `"Pump the bellows"` | Text on the bellows button. |
+| `pump` | `7` | Heat added per pump (0–100). |
+| `cooling` | `5` | Heat lost per second. |
+| `class` | none | Extra class. |
+
+A fireplace, a pair of bellows and a thermometer-style meter. Each pump grows the fire and shows a random
+phrase from the current level; the fire cools when left alone. Theme with `--fire-accent`, `--fire-hot`,
+`--fire-text` and `--fire-bg`.

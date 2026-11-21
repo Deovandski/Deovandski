@@ -1,0 +1,372 @@
+---
+/**
+ * FireMeter: a fireplace with a pair of bellows and a meter beside it. Every pump of the bellows
+ * (click, tap, Space or Enter) makes the fire bigger and pushes the meter up; stop and it slowly dies
+ * down. Each level of the meter has its own phrases, shown one at random per pump; at the top a
+ * "bonk" message shows and the fire resets. Built as the Lust tab's ecchi-meter, but the levels and
+ * phrases are all props.
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
+ * Copy this one file into any Astro project. See README.md in this folder.
+ *
+ *   <FireMeter label="Ecchi-meter" stages={[
+ *     { name: 'Warm', phrases: ['Kyaa~!'] },
+ *     { name: 'Hot', phrases: ['Ara ara~'], bonk: 'BONK!' },
+ *   ]} />
+ *
+ * Props:
+ *   stages   levels from coldest to hottest: { name, phrases[], bonk? }. The last stage's `bonk` shows
+ *            when the meter maxes out. Required.
+ *   label    name of the meter. Default "Heat".
+ *   button   text on the bellows button. Default "Pump the bellows".
+ *   pump     heat added per pump (0-100 scale). Default 7.
+ *   cooling  heat lost per second. Default 5.
+ *
+ * Theming (CSS custom properties): --fire-accent (default #e12885), --fire-hot (#ff7a18),
+ * --fire-text, --fire-bg.
+ *
+ * Accessible: the bellows is a real button; the meter is a <meter> with its level as text; each new
+ * phrase is announced. Reduced motion: a calm flame, no shake.
+ */
+interface Stage {
+  name: string;
+  phrases: string[];
+  bonk?: string;
+}
+interface Props {
+  stages: Stage[];
+  label?: string;
+  button?: string;
+  pump?: number;
+  cooling?: number;
+  class?: string;
+}
+const { stages, label = 'Heat', button = 'Pump the bellows', pump = 7, cooling = 5, class: className } = Astro.props;
+---
+
+<div
+  class:list={['fire-meter', className]}
+  data-stages={JSON.stringify(stages)}
+  data-pump={pump}
+  data-cooling={cooling}
+  style="--heat: 0"
+>
+  <div class="fire-meter__scene">
+    <div class="fire-meter__hearth" aria-hidden="true">
+      <div class="fire-meter__flames">
+        <span class="fire-meter__flame fire-meter__flame--1"></span>
+        <span class="fire-meter__flame fire-meter__flame--2"></span>
+        <span class="fire-meter__flame fire-meter__flame--3"></span>
+        <span class="fire-meter__flame fire-meter__flame--core"></span>
+      </div>
+      <div class="fire-meter__logs"><span></span><span></span></div>
+    </div>
+    <button type="button" class="fire-meter__bellows" aria-describedby="">
+      <svg viewBox="0 0 120 70" aria-hidden="true">
+        <path class="fire-meter__nozzle" d="M2 35 L30 29 L30 41 Z" />
+        <path class="fire-meter__body" d="M30 18 Q75 2 112 20 L112 50 Q75 68 30 52 Z" />
+        <path class="fire-meter__folds" d="M48 14 L48 56 M64 10 L64 60 M80 10 L80 60 M96 13 L96 57" />
+        <rect class="fire-meter__handle" x="108" y="26" width="12" height="18" rx="4" />
+      </svg>
+      <span class="fire-meter__btn-text">{button}</span>
+    </button>
+    <div class="fire-meter__gauge">
+      <span class="fire-meter__gauge-label">{label}</span>
+      <div class="fire-meter__tube" aria-hidden="true"><span></span></div>
+      <meter class="fire-meter__meter" min="0" max="100" low="40" high="80" optimum="0" value="0" aria-label={label}></meter>
+      <span class="fire-meter__level">{stages[0]?.name}</span>
+    </div>
+  </div>
+  <p class="fire-meter__bubble" aria-live="polite"></p>
+</div>
+
+<style>
+  .fire-meter {
+    --_accent: var(--fire-accent, #e12885);
+    --_hot: var(--fire-hot, #ff7a18);
+    color: var(--fire-text, inherit);
+    margin: 1.75rem 0;
+  }
+  .fire-meter__scene {
+    display: grid;
+    grid-template-columns: minmax(140px, 220px) auto 70px;
+    align-items: end;
+    justify-content: center;
+    gap: 1.25rem;
+    padding: 1.25rem;
+    border-radius: 18px;
+    background: var(--fire-bg, radial-gradient(ellipse at 30% 100%, rgba(255, 122, 24, calc(0.08 + var(--heat) * 0.004)), transparent 70%), #15121a);
+    box-shadow: inset 0 3px 14px rgba(0, 0, 0, 0.6);
+  }
+  /* The hearth: a brick arch with logs; the flames grow with --heat (0 to 100). */
+  .fire-meter__hearth {
+    position: relative;
+    height: 200px;
+    border-radius: 110px 110px 6px 6px;
+    background:
+      linear-gradient(transparent 0 0),
+      repeating-linear-gradient(0deg, #3a2320 0 2px, transparent 2px 22px),
+      repeating-linear-gradient(90deg, #3a2320 0 2px, transparent 2px 40px),
+      #6b3a2e;
+    border: 10px solid #4a2a22;
+    overflow: hidden;
+    box-shadow: inset 0 0 calc(10px + var(--heat) * 0.5px) rgba(255, 140, 40, calc(var(--heat) * 0.008));
+  }
+  .fire-meter__hearth::before {
+    content: '';
+    position: absolute;
+    inset: 22% 14% 0;
+    border-radius: 80px 80px 0 0;
+    background: #120c0c;
+  }
+  .fire-meter__flames {
+    position: absolute;
+    left: 50%;
+    bottom: 26px;
+    width: 120px;
+    height: 150px;
+    transform: translateX(-50%) scale(calc(0.25 + var(--heat) * 0.0085));
+    transform-origin: 50% 100%;
+    transition: transform 0.25s ease-out;
+  }
+  .fire-meter__flame {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 60%;
+    height: 100%;
+    border-radius: 50% 50% 45% 45% / 70% 70% 30% 30%;
+    transform-origin: 50% 100%;
+    animation: fire-meter-flicker 0.9s ease-in-out infinite alternate;
+    mix-blend-mode: screen;
+  }
+  .fire-meter__flame--1 { background: radial-gradient(ellipse at 50% 85%, #ffd23f 0%, var(--_hot) 45%, rgba(225, 40, 133, 0) 75%); translate: -80% 0; }
+  .fire-meter__flame--2 { background: radial-gradient(ellipse at 50% 85%, #ffe27a 0%, #ff5e3a 50%, rgba(225, 40, 133, 0) 78%); translate: -20% 0; animation-delay: -0.3s; height: 115%; }
+  .fire-meter__flame--3 { background: radial-gradient(ellipse at 50% 85%, #ffd23f 0%, var(--_accent) 55%, rgba(225, 40, 133, 0) 78%); translate: -50% 0; animation-delay: -0.6s; height: 90%; }
+  .fire-meter__flame--core { background: radial-gradient(ellipse at 50% 90%, #fff6d0 0%, #ffd23f 40%, transparent 70%); translate: -50% 0; width: 40%; height: 55%; animation-duration: 0.6s; }
+  @keyframes fire-meter-flicker {
+    0% { transform: translateX(-50%) scale(1, 1) skewX(2deg); }
+    50% { transform: translateX(-50%) scale(0.92, 1.08) skewX(-3deg); }
+    100% { transform: translateX(-50%) scale(1.05, 0.95) skewX(1deg); }
+  }
+  .fire-meter__logs {
+    position: absolute;
+    left: 50%;
+    bottom: 12px;
+    width: 120px;
+    height: 24px;
+    transform: translateX(-50%);
+  }
+  .fire-meter__logs span {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 16px;
+    border-radius: 8px;
+    background: linear-gradient(#7a4a2a, #4a2c18);
+  }
+  .fire-meter__logs span:first-child { left: 0; transform: rotate(10deg); }
+  .fire-meter__logs span:last-child { right: 0; transform: rotate(-10deg); }
+  /* The bellows button. */
+  .fire-meter__bellows {
+    display: grid;
+    justify-items: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.75rem 0.6rem;
+    border: 1px solid color-mix(in srgb, var(--_accent) 50%, transparent);
+    border-radius: 14px;
+    background: color-mix(in srgb, var(--_accent) 12%, transparent);
+    color: inherit;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .fire-meter__bellows:focus-visible {
+    outline: 3px solid var(--_accent);
+    outline-offset: 3px;
+  }
+  .fire-meter__bellows svg {
+    width: 120px;
+    height: 70px;
+    overflow: visible;
+  }
+  .fire-meter__body { fill: #8b5a3c; stroke: #3d2416; stroke-width: 3; transform-origin: 30px 35px; }
+  .fire-meter__folds { stroke: #3d2416; stroke-width: 2; fill: none; opacity: 0.6; transform-origin: 30px 35px; }
+  .fire-meter__nozzle { fill: #b08d57; stroke: #5c4320; stroke-width: 2; }
+  .fire-meter__handle { fill: #5c3a24; }
+  .fire-meter__bellows.is-pumping .fire-meter__body,
+  .fire-meter__bellows.is-pumping .fire-meter__folds {
+    animation: fire-meter-squeeze 0.2s ease-out;
+  }
+  @keyframes fire-meter-squeeze {
+    40% { transform: scale(0.92, 0.6); }
+  }
+  /* The meter: a thermometer tube filled to --heat. */
+  .fire-meter__gauge {
+    display: grid;
+    justify-items: center;
+    gap: 0.4rem;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  .fire-meter__gauge-label {
+    font-weight: 800;
+    color: var(--_accent);
+  }
+  .fire-meter__tube {
+    position: relative;
+    width: 26px;
+    height: 160px;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 2px solid rgba(255, 255, 255, 0.25);
+    overflow: hidden;
+  }
+  .fire-meter__tube span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: calc(var(--heat) * 1%);
+    background: linear-gradient(0deg, #ffd23f, var(--_hot) 45%, var(--_accent));
+    transition: height 0.25s ease-out;
+  }
+  .fire-meter__meter {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .fire-meter__level {
+    font-weight: 700;
+    max-width: 70px;
+  }
+  .fire-meter__bubble {
+    min-height: 2.6em;
+    margin: 0.9rem auto 0;
+    max-width: 34rem;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  .fire-meter__bubble:not(:empty) {
+    padding: 0.6rem 1rem;
+    border-radius: 16px;
+    background: color-mix(in srgb, var(--_accent) 16%, transparent);
+    border: 1px solid color-mix(in srgb, var(--_accent) 45%, transparent);
+  }
+  .fire-meter.is-bonk .fire-meter__bubble {
+    font-size: 1.5rem;
+    background: var(--_accent);
+    color: #fff;
+    animation: fire-meter-bonk 0.5s ease-out;
+  }
+  @keyframes fire-meter-bonk {
+    0% { transform: scale(0.6) rotate(-6deg); }
+    50% { transform: scale(1.12) rotate(3deg); }
+    100% { transform: scale(1) rotate(0); }
+  }
+  @media (max-width: 560px) {
+    .fire-meter__scene {
+      grid-template-columns: 1fr 60px;
+      grid-template-areas: 'hearth gauge' 'bellows bellows';
+      align-items: center;
+    }
+    .fire-meter__hearth { grid-area: hearth; height: 170px; }
+    .fire-meter__gauge { grid-area: gauge; }
+    .fire-meter__bellows { grid-area: bellows; justify-self: center; }
+    .fire-meter__tube { height: 130px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .fire-meter__flame { animation: none; }
+    .fire-meter__bellows.is-pumping .fire-meter__body,
+    .fire-meter__bellows.is-pumping .fire-meter__folds,
+    .fire-meter.is-bonk .fire-meter__bubble { animation: none; }
+  }
+</style>
+
+<script>
+  type Stage = { name: string; phrases: string[]; bonk?: string };
+
+  document.querySelectorAll<HTMLElement>('.fire-meter').forEach((root) => {
+    const stages: Stage[] = JSON.parse(root.dataset.stages || '[]');
+    const pumpBy = Number(root.dataset.pump) || 7;
+    const cooling = Number(root.dataset.cooling) || 5;
+    const bellows = root.querySelector<HTMLButtonElement>('.fire-meter__bellows')!;
+    const meter = root.querySelector<HTMLMeterElement>('.fire-meter__meter')!;
+    const levelEl = root.querySelector<HTMLElement>('.fire-meter__level')!;
+    const bubble = root.querySelector<HTMLElement>('.fire-meter__bubble')!;
+    if (!stages.length) return;
+
+    let heat = 0;
+    let bonked = false;
+    let last = performance.now();
+    let lastPhrase = '';
+
+    const stageAt = (h: number) => stages[Math.min(stages.length - 1, Math.floor((h / 100) * stages.length))];
+    const pick = (list: string[]) => {
+      if (list.length < 2) return list[0] ?? '';
+      let p = lastPhrase;
+      while (p === lastPhrase) p = list[Math.floor(Math.random() * list.length)];
+      return p;
+    };
+
+    function render() {
+      root.style.setProperty('--heat', heat.toFixed(1));
+      meter.value = Math.round(heat);
+      const s = stageAt(heat);
+      levelEl.textContent = s.name;
+      meter.setAttribute('aria-valuetext', `${s.name}, ${Math.round(heat)} out of 100`);
+    }
+
+    // The fire cools a little every frame while it's lit; the loop stops once it's out.
+    let cooling_on = false;
+    function cool(now: number) {
+      const dt = Math.min(0.25, (now - last) / 1000);
+      last = now;
+      if (!bonked) {
+        heat = Math.max(0, heat - cooling * dt);
+        render();
+      }
+      if (heat > 0 || bonked) requestAnimationFrame(cool);
+      else cooling_on = false;
+    }
+    const startCooling = () => {
+      if (cooling_on) return;
+      cooling_on = true;
+      last = performance.now();
+      requestAnimationFrame(cool);
+    };
+
+    bellows.addEventListener('click', () => {
+      if (bonked) return;
+      bellows.classList.remove('is-pumping');
+      void bellows.offsetWidth;
+      bellows.classList.add('is-pumping');
+      heat = Math.min(100, heat + pumpBy);
+      render();
+      startCooling();
+      const top = stages[stages.length - 1];
+      if (heat >= 100 && top.bonk) {
+        // Maxed out: bonk, then the fire goes out and it starts over.
+        bonked = true;
+        root.classList.add('is-bonk');
+        bubble.textContent = top.bonk;
+        window.setTimeout(() => {
+          heat = 0;
+          bonked = false;
+          root.classList.remove('is-bonk');
+          bubble.textContent = '';
+          render();
+        }, 2600);
+        return;
+      }
+      lastPhrase = pick(stageAt(heat).phrases);
+      bubble.textContent = lastPhrase;
+    });
+    render();
+  });
+</script>

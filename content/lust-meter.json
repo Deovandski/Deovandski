@@ -1,0 +1,56 @@
+{
+  "_about": "The ecchi-meter on the Lust tab. Each stage shows one of its phrases at random on every pump of the bellows, from the coldest stage to the hottest. Innuendo only: nothing explicit, and nothing about minors or school-age tropes. Edit, add or reorder freely; the last stage's 'bonk' text shows when the meter maxes out, then the fire resets.",
+  "label": "Ecchi-meter",
+  "stages": [
+    {
+      "name": "Lukewarm",
+      "phrases": [
+        "Ohayo~ (｡•̀ᴗ-)✧",
+        "Senpai noticed me! (✿◠‿◠)",
+        "Is this a cozy fire? ٩(◕‿◕｡)۶",
+        "Hai hai~ ( ´ ▽ ` )ﾉ",
+        "Uwu, it's warm in here (・ω・)"
+      ]
+    },
+    {
+      "name": "Warm",
+      "phrases": [
+        "Kyaa~! (⁄ ⁄>⁄ ▽ ⁄<⁄ ⁄)",
+        "B-baka! It's not like I wanted you to stoke my fire! (≧ヘ≦ )",
+        "Doki doki~ ♡ (〃▽〃)",
+        "Notice me harder, senpai! (｡♥‿♥｡)",
+        "Is it getting hot, or is it just you? (๑˃ᴗ˂)ﻭ"
+      ]
+    },
+    {
+      "name": "Hot",
+      "phrases": [
+        "Ara ara~ (◕‿◕✿)",
+        "Nani?! So lewd! (⊙_⊙;)",
+        "Fufufu~ you like it hot, huh? ( ˘ ³˘)♥",
+        "My kokoro can't take this (/▽＼*)｡o○♡",
+        "Senpai, your bellows technique is... impressive (￣▽￣)ノ"
+      ]
+    },
+    {
+      "name": "Very hot",
+      "phrases": [
+        "Yamete kudasai~ (〃ω〃)",
+        "H-hentai! (*/ω＼*)",
+        "Nosebleed level: critical (￣ε￣＠)",
+        "This is a Christian fireplace! (╯°□°)╯",
+        "Too much heat! Not in front of the waifu pillow! (〃＞＿＜;〃)"
+      ]
+    },
+    {
+      "name": "Maximum",
+      "phrases": [
+        "Your FBI agent has entered the chat. ( ͡° ͜ʖ ͡°)",
+        "The doujinshi is writing itself ( ͡ʘ ͜ʖ ͡ʘ)",
+        "Down bad. Down horrendous. (⊙﹏⊙✿)",
+        "Smoke alarm: senpai, please (ノಠ益ಠ)ノ彡┻━┻"
+      ],
+      "bonk": "BONK! 🔨 Go to horny jail. (ﾉ´ｰ`)ﾉ"
+    }
+  ]
+}
