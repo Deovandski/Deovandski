@@ -9,6 +9,8 @@ import MultilingualFacet from '../components/MultilingualFacet.astro';
 import Sections from '../components/Sections.astro';
 import MtgScore from '../components/MtgScore.astro';
 import ChurrascoFacet from '../components/ChurrascoFacet.astro';
+import IsoDarts from '../components/reusable/IsoDarts.astro';
+import territorySnipping from '../../content/territory-snipping.json';
 import LifeHacksFacet from '../components/LifeHacksFacet.astro';
 import FamilyFacet from '../components/FamilyFacet.astro';
 import GymFacet from '../components/GymFacet.astro';
@@ -614,6 +616,8 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-boardgames" aria-labelledby="tab-boardgames" tabindex="0" hidden>
+      <p class="ranking-lede">From <a href="https://deovandski.github.io/HusbandOutWorld/lore/pastimes/#territory-snipping">#HusbandOutWorld</a>: play the round of Territory Snipping from Vol 2, as Harry, against Hiromi.</p>
+      <IsoDarts game={territorySnipping} title="Territory Snipping" />
       <Sections data={boardgames} id="boardgames" slots={1} empty="Board game nights are on their way." photoAlt={(t) => `Board games: ${t}`} />
     </section>
 
