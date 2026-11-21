@@ -280,10 +280,26 @@ if (!g) throw new Error(`GimmickPlay: no gimmick for the "${tab}" tab in src/lib
     setWaiting(w, !landscape.matches);
   }
 
+  // The phone's back button closes an open gimmick first (#208), where the browser offers CloseWatcher
+  // (Chrome and Firefox on Android). Elsewhere back closes the tab, which closes the gimmick too.
+  type Watcher = { destroy(): void; onclose: (() => void) | null };
+  const watchers = new Map<HTMLElement, Watcher>();
+  function watchBack(w: HTMLElement) {
+    const CW = (window as unknown as { CloseWatcher?: new () => Watcher }).CloseWatcher;
+    if (!CW || watchers.has(w)) return;
+    const watcher = new CW();
+    watcher.onclose = () => {
+      watchers.delete(w);
+      close(w, true);
+    };
+    watchers.set(w, watcher);
+  }
+
   function open(w: HTMLElement, immersive: boolean) {
     const { details, summary } = parts(w);
     details.open = true;
     w.hidden = false;
+    watchBack(w);
     refreshGimmickSummaries();
     emit(w.dataset.gimmickTab!, true);
     if (immersive && w.dataset.inline !== 'true' && phonePortrait.matches) goSideways(w);
@@ -292,6 +308,8 @@ if (!g) throw new Error(`GimmickPlay: no gimmick for the "${tab}" tab in src/lib
 
   function close(w: HTMLElement, returnFocus = false) {
     if (w.hidden) return;
+    watchers.get(w)?.destroy();
+    watchers.delete(w);
     leaveImmersive(w);
     w.hidden = true;
     emit(w.dataset.gimmickTab!, false, returnFocus);
