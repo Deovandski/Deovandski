@@ -16,6 +16,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [PhotoGrid.astro](PhotoGrid.astro) | A grid of square photo cards, each captioned with a short description or the date the photo was taken (`--/--/----` when unknown). Photos carry data attributes for one shared lightbox. | Pets, Fishing, Family (descriptions), Painting/Drawing (dates) |
 | [QrCode.astro](QrCode.astro) | A QR code drawn as SVG when the site builds (no JavaScript in the browser), with an optional title above it and the encoded link below it. | QR Code page (`/qr/`) |
 | [VhsPile.astro](VhsPile.astro) | A pile of VHS tapes holding a number of hours of video. Visitors pick the recording speed (SP, LP, EP) and the tapes fall from the top and pile up; they shrink to fit, so it can show a couple of thousand. Canvas, no libraries. | BOTW tab (watch time) |
+| [PaperPlane.astro](PaperPlane.astro) | Fold a paper plane, then throw it: precision decides the distance | Aviation tab |
 
 ## SplitFlap
 
@@ -256,3 +257,22 @@ import VhsPile from './reusable/VhsPile.astro';
 The tapes fall every time the pile comes into view (opening its tab counts). People who prefer reduced
 motion see the finished pile. Theme with `--vhs-pile-height` (default `clamp(220px, 38vw, 360px)`),
 `--vhs-pile-accent`, `--vhs-pile-text`, `--vhs-pile-muted`, `--vhs-pile-border` and `--vhs-pile-bg`.
+
+## PaperPlane
+
+Fold a paper plane in five real 2D folds, then throw it with a slingshot drag. Each fold is scored by
+how close the corner lands to its target; crisp folds glide further, sloppy ones wobble, and uneven
+left/right folds pull it up or down. The personal best is kept in this browser (`localStorage`).
+Made for the Aviation tab (#187).
+
+```astro
+<PaperPlane />
+```
+
+| Prop | Default | What it does |
+|---|---|---|
+| `title` | `"Fold it, throw it"` | Heading above the canvas |
+| `saveKey` | `"paper-plane-best"` | `localStorage` key for the personal best |
+
+Theming: `--plane-accent`, `--plane-text`. Keyboard: arrows move the corner and Enter creases; when
+throwing, up/down set the angle, left/right the power, Space throws.

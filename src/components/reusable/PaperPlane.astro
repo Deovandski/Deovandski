@@ -1,0 +1,635 @@
+---
+/**
+ * PaperPlane: fold a paper plane, then throw it. Purely 2D.
+ *
+ * 1. Fold: five folds of a classic dart. For each, drag the glowing corner onto the target dot. The
+ *    paper really folds along the crease your drag makes (so a sloppy fold stays sloppy), and each
+ *    fold is scored 0-100% by how close you landed: "Crisp!", "Good" or "Sloppy".
+ * 2. Throw: drag back from the plane like a slingshot to set the angle and power, then let go. The
+ *    flight is simple glide physics: crisp folds glide clean; sloppy ones wobble and lose lift;
+ *    uneven left/right folds pull it up or down. Too hard stalls and loops; too soft nose-dives.
+ * 3. The distance in metres and feet, with what helped or hurt (the sweet spot: a firm but not
+ *    all-out throw, aimed up but not too steep), and a personal best saved in this
+ *    browser only (localStorage).
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
+ * Copy this one file into any Astro project. See README.md in this folder.
+ *
+ *   <PaperPlane />
+ *   <PaperPlane saveKey="plane-best-2" title="Paper plane" />
+ *
+ * Props:
+ *   title    heading. Default "Fold it, throw it".
+ *   saveKey  localStorage key for the personal best. Default "paper-plane-best".
+ *
+ * Theming (CSS custom properties): --plane-accent (default #39c5bb), --plane-text.
+ *
+ * Accessible: keyboard path for everything. Folding: Tab to the canvas, arrow keys move the corner,
+ * Enter creases. Throwing: up/down set the angle, left/right the power, Space throws. Every step and
+ * result is text and announced. Reduced motion: the camera follows smoothly with no shake.
+ */
+interface Props {
+  title?: string;
+  saveKey?: string;
+  class?: string;
+}
+const { title = 'Fold it, throw it', saveKey = 'paper-plane-best', class: className } = Astro.props;
+---
+
+<div class:list={['paper-plane', className]} data-key={saveKey}>
+  <h3 class="paper-plane__title">{title}</h3>
+  <p class="paper-plane__step" aria-live="polite"></p>
+  <canvas class="paper-plane__canvas" tabindex="0" role="img" aria-label="Paper plane workspace"></canvas>
+  <div class="paper-plane__controls">
+    <button type="button" data-act="new">Fold a new one</button>
+    <button type="button" data-act="again" hidden>Throw again</button>
+    <span class="paper-plane__best"></span>
+  </div>
+  <p class="paper-plane__result" aria-live="polite"></p>
+</div>
+
+<style>
+  .paper-plane {
+    --_accent: var(--plane-accent, #39c5bb);
+    color: var(--plane-text, inherit);
+    margin: 1.5rem 0;
+  }
+  .paper-plane__title {
+    margin: 0 0 0.3rem;
+    color: var(--_accent);
+  }
+  .paper-plane__step {
+    margin: 0 0 0.5rem;
+    min-height: 2.9em; /* room for two lines, so the canvas doesn't jump between folds */
+    font-weight: 700;
+  }
+  .paper-plane__canvas {
+    display: block;
+    width: 100%;
+    height: clamp(280px, 40vw, 380px);
+    border-radius: 16px;
+    background: linear-gradient(#bfe3ff, #eaf6ff);
+    touch-action: none;
+    cursor: grab;
+  }
+  .paper-plane__canvas:focus-visible {
+    outline: 3px solid var(--_accent);
+    outline-offset: 3px;
+  }
+  .paper-plane__controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+    margin-top: 0.6rem;
+  }
+  .paper-plane__controls button {
+    padding: 0.4rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--_accent);
+    background: transparent;
+    color: var(--_accent);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .paper-plane__controls button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+  .paper-plane__best {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+  .paper-plane__result {
+    min-height: 1.4em;
+    margin: 0.5rem 0 0;
+  }
+</style>
+
+<script>
+  type V = { x: number; y: number };
+  type Layer = { pts: V[]; back: boolean };
+  type Fold = { handle: V; target: V; text: string };
+
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // The sheet (units), and the five folds of a classic dart: where the corner starts and where it should go.
+  const SW = 170;
+  const SH = 240;
+  const FOLDS: Fold[] = [
+    { handle: { x: -85, y: -120 }, target: { x: 0, y: -35 }, text: 'Fold 1 of 5: drag the top-left corner to the dot on the centre line.' },
+    { handle: { x: 85, y: -120 }, target: { x: 0, y: -35 }, text: 'Fold 2 of 5: now the top-right corner to the same dot.' },
+    { handle: { x: -85, y: -35 }, target: { x: 0, y: 0 }, text: 'Fold 3 of 5: drag the new left corner to the centre dot.' },
+    { handle: { x: 85, y: -35 }, target: { x: 0, y: 0 }, text: 'Fold 4 of 5: and the right corner to the same dot.' },
+    { handle: { x: -85, y: 120 }, target: { x: 85, y: 120 }, text: 'Fold 5 of 5: fold it in half: bottom-left corner onto the bottom-right one.' },
+  ];
+  const PX_PER_M = 30;
+  const G = 9.8 * PX_PER_M;
+
+  const sub = (a: V, b: V) => ({ x: a.x - b.x, y: a.y - b.y });
+  const dot = (a: V, b: V) => a.x * b.x + a.y * b.y;
+  const len = (a: V) => Math.hypot(a.x, a.y);
+
+  // Keeps the part of a polygon on one side of a line (n · p >= c when keepPositive).
+  function clip(pts: V[], n: V, c: number, keepPositive: boolean): V[] {
+    const out: V[] = [];
+    const inside = (p: V) => (keepPositive ? dot(n, p) - c >= -1e-6 : dot(n, p) - c <= 1e-6);
+    for (let i = 0; i < pts.length; i++) {
+      const a = pts[i];
+      const b = pts[(i + 1) % pts.length];
+      const ia = inside(a);
+      const ib = inside(b);
+      if (ia) out.push(a);
+      if (ia !== ib) {
+        const t = (c - dot(n, a)) / dot(n, sub(b, a));
+        out.push({ x: a.x + (b.x - a.x) * t, y: a.y + (b.y - a.y) * t });
+      }
+    }
+    return out.length >= 3 ? out : [];
+  }
+  // Folds every layer along the crease that carries `from` onto `to`: the side with `from` flips over.
+  function fold(layers: Layer[], from: V, to: V): Layer[] {
+    const d = sub(to, from);
+    const L = len(d);
+    if (L < 1) return layers;
+    const n = { x: d.x / L, y: d.y / L };
+    const m = { x: (from.x + to.x) / 2, y: (from.y + to.y) / 2 };
+    const c = dot(n, m);
+    const stay: Layer[] = [];
+    const moved: Layer[] = [];
+    for (const l of layers) {
+      const a = clip(l.pts, n, c, true);
+      const b = clip(l.pts, n, c, false);
+      if (a.length) stay.push({ pts: a, back: l.back });
+      if (b.length) {
+        const r = b.map((p) => {
+          const k = 2 * (dot(n, p) - c);
+          return { x: p.x - k * n.x, y: p.y - k * n.y };
+        });
+        moved.push({ pts: r.reverse(), back: !l.back });
+      }
+    }
+    return [...stay, ...moved.reverse()];
+  }
+
+  document.querySelectorAll<HTMLElement>('.paper-plane').forEach((root) => {
+    const canvas = root.querySelector<HTMLCanvasElement>('.paper-plane__canvas')!;
+    const ctx = canvas.getContext('2d')!;
+    const stepEl = root.querySelector<HTMLElement>('.paper-plane__step')!;
+    const resultEl = root.querySelector<HTMLElement>('.paper-plane__result')!;
+    const bestEl = root.querySelector<HTMLElement>('.paper-plane__best')!;
+    const btnNew = root.querySelector<HTMLButtonElement>('[data-act="new"]')!;
+    const btnAgain = root.querySelector<HTMLButtonElement>('[data-act="again"]')!;
+    const key = root.dataset.key!;
+    let best = 0;
+    try {
+      best = Number(localStorage.getItem(key)) || 0;
+    } catch {
+      /* ignore */
+    }
+
+    let W = 0;
+    let H = 0;
+    let phase: 'fold' | 'aim' | 'fly' | 'done' = 'fold';
+    let layers: Layer[] = [];
+    let foldIdx = 0;
+    let scores: number[] = [];
+    let errs: V[] = [];
+    let dragging = false;
+    let handle: V = { x: 0, y: 0 };
+    let pointer: V = { x: 0, y: 0 };
+    let stamp: { text: string; until: number } | null = null;
+    // Throwing.
+    let aim = { angle: 12, power: 0.6 };
+    let fly = { x: 0, y: 1.5 * PX_PER_M, vx: 0, vy: 0, t: 0, ang: 0 };
+    let trail: V[] = [];
+    let quality = 0;
+    let pull = 0;
+    let raf = 0;
+
+    function size() {
+      const r = canvas.getBoundingClientRect();
+      if (!r.width) return false;
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = r.width;
+      H = r.height;
+      canvas.width = Math.round(W * dpr);
+      canvas.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      return true;
+    }
+    // Sheet units to screen and back.
+    const scale = () => Math.min((H - 30) / SH, (W - 30) / SW);
+    const toScreen = (p: V) => ({ x: W / 2 + p.x * scale(), y: H / 2 + p.y * scale() });
+    const toSheet = (p: V) => ({ x: (p.x - W / 2) / scale(), y: (p.y - H / 2) / scale() });
+
+    function currentHandle(): V {
+      // The corner nearest where it should be (earlier folds may have moved it a little).
+      const ideal = FOLDS[foldIdx].handle;
+      let bestP = ideal;
+      let bestD = Infinity;
+      for (const l of layers)
+        for (const p of l.pts) {
+          const d = len(sub(p, ideal));
+          if (d < bestD) {
+            bestD = d;
+            bestP = p;
+          }
+        }
+      return { ...bestP };
+    }
+
+    function startFolding() {
+      layers = [{ pts: [{ x: -SW / 2, y: -SH / 2 }, { x: SW / 2, y: -SH / 2 }, { x: SW / 2, y: SH / 2 }, { x: -SW / 2, y: SH / 2 }], back: false }];
+      foldIdx = 0;
+      scores = [];
+      errs = [];
+      phase = 'fold';
+      handle = currentHandle();
+      pointer = { ...handle };
+      btnAgain.hidden = true;
+      resultEl.textContent = '';
+      stepEl.textContent = FOLDS[0].text;
+      canvas.style.cursor = 'grab';
+      draw();
+    }
+
+    function commitFold() {
+      const f = FOLDS[foldIdx];
+      const err = sub(pointer, f.target);
+      const q = Math.max(0, Math.min(1, 1 - len(err) / 36));
+      layers = fold(layers, handle, pointer);
+      scores.push(q);
+      errs.push(err);
+      const word = q > 0.85 ? 'Crisp!' : q > 0.6 ? 'Good' : 'Sloppy';
+      stamp = { text: `${word} ${Math.round(q * 100)}%`, until: performance.now() + 1100 };
+      foldIdx++;
+      if (foldIdx >= FOLDS.length) {
+        quality = scores.reduce((a, b) => a + b, 0) / scores.length;
+        // Uneven left and right folds make it pull up or down in flight.
+        pull = Math.max(-1, Math.min(1, (scores[0] - scores[1]) + (scores[2] - scores[3])));
+        stepEl.textContent = `${word} Folded! Precision ${Math.round(quality * 100)}%. Now drag back from the plane to aim, and let go to throw (or use the arrow keys and Space).`;
+        window.setTimeout(startAim, 900);
+      } else {
+        handle = currentHandle();
+        pointer = { ...handle };
+        stepEl.textContent = `${word} (${Math.round(q * 100)}%). ${FOLDS[foldIdx].text}`;
+      }
+      draw();
+    }
+
+    function drawSheet() {
+      const s = scale();
+      ctx.save();
+      ctx.translate(W / 2, H / 2);
+      ctx.scale(s, s);
+      const preview = phase === 'fold' && foldIdx < FOLDS.length && (dragging || len(sub(pointer, handle)) > 0.5) ? fold(layers, handle, pointer) : layers;
+      for (const l of preview) {
+        ctx.beginPath();
+        l.pts.forEach((p, i) => (i ? ctx.lineTo(p.x, p.y) : ctx.moveTo(p.x, p.y)));
+        ctx.closePath();
+        ctx.fillStyle = l.back ? '#e7e2d6' : '#fdfdfb';
+        ctx.fill();
+        ctx.strokeStyle = '#9aa0a8';
+        ctx.lineWidth = 1 / s;
+        ctx.stroke();
+      }
+      if (phase === 'fold' && foldIdx < FOLDS.length) {
+        const f = FOLDS[foldIdx];
+        // The ideal crease as a dashed guide, the target dot, and the corner to drag.
+        const m = { x: (f.handle.x + f.target.x) / 2, y: (f.handle.y + f.target.y) / 2 };
+        const d = sub(f.target, f.handle);
+        const nx = -d.y / len(d);
+        const ny = d.x / len(d);
+        ctx.setLineDash([6 / s, 5 / s]);
+        ctx.strokeStyle = '#39c5bb';
+        ctx.lineWidth = 2 / s;
+        ctx.beginPath();
+        ctx.moveTo(m.x - nx * 200, m.y - ny * 200);
+        ctx.lineTo(m.x + nx * 200, m.y + ny * 200);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.fillStyle = '#e12885';
+        ctx.beginPath();
+        ctx.arc(f.target.x, f.target.y, 5 / s * 1.4, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.strokeStyle = '#e12885';
+        ctx.lineWidth = 1.5 / s;
+        ctx.beginPath();
+        ctx.arc(f.target.x, f.target.y, 12 / s * 1.4, 0, Math.PI * 2);
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(57,197,187,0.9)';
+        ctx.beginPath();
+        ctx.arc(pointer.x, pointer.y, 9 / s * 1.3, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.restore();
+    }
+
+    function drawStamp(now: number) {
+      if (!stamp || now > stamp.until) return;
+      ctx.save();
+      ctx.translate(W - 90, 46);
+      ctx.rotate(-0.15);
+      ctx.strokeStyle = '#e12885';
+      ctx.fillStyle = '#e12885';
+      ctx.lineWidth = 3;
+      ctx.strokeRect(-72, -22, 144, 44);
+      ctx.font = '900 20px system-ui, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(stamp.text, 0, 1);
+      ctx.restore();
+    }
+
+    // The flight scene: sky, clouds, ground with distance marks, the best-distance flag, the plane.
+    const groundY = () => H - 40;
+    let camX = 0;
+    function drawFlight() {
+      const gy = groundY();
+      const sx = (x: number) => 70 + x - camX;
+      ctx.fillStyle = '#d8f0ff';
+      ctx.fillRect(0, 0, W, H);
+      for (let i = 0; i < 8; i++) {
+        const cx = ((i * 240 - camX * 0.3) % (W + 240) + W + 240) % (W + 240) - 120;
+        ctx.fillStyle = 'rgba(255,255,255,0.9)';
+        ctx.beginPath();
+        ctx.ellipse(cx, 40 + (i % 3) * 28, 46, 14, 0, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      ctx.fillStyle = '#7cc46a';
+      ctx.fillRect(0, gy, W, H - gy);
+      ctx.fillStyle = '#2d5a24';
+      ctx.font = '700 11px system-ui, sans-serif';
+      ctx.textAlign = 'center';
+      for (let m = 0; m <= 150; m += 5) {
+        const x = sx(m * PX_PER_M);
+        if (x < -20 || x > W + 20) continue;
+        ctx.fillRect(x - 1, gy, 2, m % 10 ? 6 : 10);
+        if (m % 10 === 0) ctx.fillText(`${m} m`, x, gy + 24);
+      }
+      if (best > 0) {
+        const bx = sx(best * PX_PER_M);
+        ctx.fillStyle = '#e12885';
+        ctx.fillRect(bx - 1, gy - 34, 2, 34);
+        ctx.fillRect(bx, gy - 34, 16, 10);
+        ctx.fillText('Best', bx + 8, gy - 38);
+      }
+      // A desk at the start, where it's thrown from.
+      ctx.fillStyle = '#8a5a32';
+      ctx.fillRect(sx(-40), gy - 30, 46, 6);
+      ctx.fillRect(sx(-36), gy - 24, 5, 24);
+      ctx.fillRect(sx(-2), gy - 24, 5, 24);
+      // Trail and plane.
+      ctx.strokeStyle = 'rgba(0,0,0,0.18)';
+      ctx.setLineDash([4, 6]);
+      ctx.beginPath();
+      trail.forEach((p, i) => (i ? ctx.lineTo(sx(p.x), gy - p.y) : ctx.moveTo(sx(p.x), gy - p.y)));
+      ctx.stroke();
+      ctx.setLineDash([]);
+      const px = sx(fly.x);
+      const py = gy - fly.y;
+      ctx.save();
+      ctx.translate(px, py);
+      ctx.rotate(-fly.ang);
+      ctx.fillStyle = '#fdfdfb';
+      ctx.strokeStyle = '#6b7078';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath();
+      ctx.moveTo(18, 0);
+      ctx.lineTo(-14, -7);
+      ctx.lineTo(-10, 0);
+      ctx.lineTo(-14, 5);
+      ctx.closePath();
+      ctx.fill();
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(18, 0);
+      ctx.lineTo(-10, 0);
+      ctx.stroke();
+      ctx.restore();
+      // Aiming: a rubber band and a dotted preview of the first moments of flight.
+      if (phase === 'aim') {
+        const a = (aim.angle * Math.PI) / 180;
+        const v = 120 + aim.power * 500;
+        ctx.strokeStyle = aim.power > 0.88 ? '#d33' : '#e12885';
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(px, py);
+        ctx.lineTo(px - Math.cos(a) * aim.power * 90, py + Math.sin(a) * aim.power * 90);
+        ctx.stroke();
+        ctx.fillStyle = 'rgba(0,0,0,0.35)';
+        for (let t = 0.05; t < 0.6; t += 0.05) {
+          ctx.beginPath();
+          ctx.arc(px + Math.cos(a) * v * t, py - (Math.sin(a) * v * t - 0.5 * G * 0.4 * t * t), 2, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.fillStyle = '#1b2a3a';
+        ctx.font = '700 13px system-ui, sans-serif';
+        ctx.textAlign = 'left';
+        ctx.fillText(`Angle ${Math.round(aim.angle)}°   Power ${Math.round(aim.power * 100)}%`, 12, 22);
+      }
+    }
+
+    function draw(now = performance.now()) {
+      if (!W) return;
+      ctx.clearRect(0, 0, W, H);
+      if (phase === 'fold') {
+        ctx.fillStyle = '#e9eef3';
+        ctx.fillRect(0, 0, W, H);
+        drawSheet();
+      } else drawFlight();
+      drawStamp(now);
+      if (stamp && now < stamp.until) requestAnimationFrame((t) => draw(t));
+    }
+
+    function startAim() {
+      phase = 'aim';
+      fly = { x: 0, y: 1.5 * PX_PER_M, vx: 0, vy: 0, t: 0, ang: (aim.angle * Math.PI) / 180 };
+      trail = [];
+      camX = 0;
+      canvas.style.cursor = 'grab';
+      draw();
+    }
+
+    // Flight: a simple glider. The nose eases toward its trim glide angle; speed follows gravity and
+    // drag. Crisp folds mean less drag (a better glide ratio) and less wobble. Climb too steeply and
+    // it stalls and drops; throw too hard and it loops and loses its speed.
+    const VEQ = 240; // glide speed, px/s
+    const TAU = 1.4; // how fast the nose settles, s
+    let ev = { stalled: false, looped: false };
+    function launch() {
+      if (phase !== 'aim') return;
+      phase = 'fly';
+      stepEl.textContent = 'Wheee!';
+      const a0 = (aim.angle * Math.PI) / 180;
+      const LD = 2 + 5 * quality;
+      const trim = -Math.atan(1 / LD) + pull * 0.12;
+      const kD = (G * Math.sin(Math.atan(1 / LD))) / (VEQ * VEQ);
+      let g = a0;
+      let v = 120 + aim.power * 500;
+      let stall = false;
+      let loopT = aim.power > 0.88 ? 0.7 : 0;
+      ev = { stalled: false, looped: loopT > 0 };
+      fly.t = 0;
+      let last = performance.now();
+      const step = (now: number) => {
+        const dt = Math.min(0.033, (now - last) / 1000);
+        last = now;
+        for (let i = 0; i < 8; i++) {
+          const h = dt / 8;
+          fly.t += h;
+          let ge: number;
+          if (loopT > 0) {
+            g += ((2 * Math.PI) / 0.7) * h;
+            v -= v * 0.9 * h;
+            loopT -= h;
+            if (loopT <= 0) g = a0;
+            ge = g;
+          } else {
+            if (v < 0.7 * VEQ && g > -0.3) stall = ev.stalled = true;
+            if (stall && v > 1.3 * VEQ) stall = false;
+            const target = stall ? (-65 * Math.PI) / 180 : trim;
+            g += ((target - g) / TAU) * h;
+            ge = g + Math.sin(fly.t * 9) * (1 - quality) * 0.35;
+            v += (-G * Math.sin(ge) - kD * v * v * (stall ? 4 : 1)) * h;
+          }
+          fly.x += v * Math.cos(ge) * h;
+          fly.y += v * Math.sin(ge) * h;
+          fly.ang = ge;
+          if (fly.y <= 0) break;
+        }
+        trail.push({ x: fly.x, y: fly.y });
+        const target = Math.max(0, fly.x - W * 0.35);
+        camX += (target - camX) * (reduced ? 0.08 : 0.2);
+        draw(now);
+        if (fly.y <= 0 || fly.t > 25) return land();
+        raf = requestAnimationFrame(step);
+      };
+      raf = requestAnimationFrame(step);
+    }
+
+    function land() {
+      phase = 'done';
+      fly.y = Math.max(0, fly.y);
+      const m = Math.max(0, fly.x / PX_PER_M);
+      const ft = m * 3.28084;
+      const newBest = m > best;
+      if (newBest) {
+        best = m;
+        try {
+          localStorage.setItem(key, best.toFixed(2));
+        } catch {
+          /* ignore */
+        }
+      }
+      const tips = [];
+      if (quality < 0.6) tips.push('sloppy folds made it wobble and drag');
+      else if (quality > 0.85) tips.push('crisp folds helped it glide');
+      if (Math.abs(pull) > 0.3) tips.push(`uneven left and right folds pulled it ${pull > 0 ? 'up' : 'down'}`);
+      if (ev.looped) tips.push('thrown too hard, so it looped and lost its speed');
+      else if (aim.power < 0.35) tips.push('thrown too softly');
+      if (ev.stalled) tips.push('it climbed too steeply and stalled');
+      if (aim.angle < 0) tips.push('aimed at the floor');
+      resultEl.textContent = `${m.toFixed(1)} m (${ft.toFixed(0)} ft).${newBest ? ' New personal best!' : ''} Fold precision ${Math.round(quality * 100)}%${tips.length ? ': ' + tips.join(', ') + '.' : '.'}`;
+      stepEl.textContent = 'Landed!';
+      bestEl.textContent = best ? `Personal best: ${best.toFixed(1)} m` : '';
+      btnAgain.hidden = false;
+      draw();
+    }
+
+    // Pointer: drag the corner while folding; drag back from the plane while aiming.
+    const local = (ev: PointerEvent) => {
+      const r = canvas.getBoundingClientRect();
+      return { x: ev.clientX - r.left, y: ev.clientY - r.top };
+    };
+    canvas.addEventListener('pointerdown', (ev) => {
+      const p = local(ev);
+      if (phase === 'fold') {
+        if (foldIdx >= FOLDS.length) return;
+        const hs = toScreen(handle);
+        if (Math.hypot(p.x - hs.x, p.y - hs.y) > 34) return;
+        dragging = true;
+      } else if (phase === 'aim') dragging = true;
+      else return;
+      canvas.setPointerCapture(ev.pointerId);
+      canvas.style.cursor = 'grabbing';
+      ev.preventDefault();
+    });
+    canvas.addEventListener('pointermove', (ev) => {
+      if (!dragging) return;
+      const p = local(ev);
+      if (phase === 'fold') {
+        pointer = toSheet(p);
+      } else if (phase === 'aim') {
+        const gy = groundY();
+        const px = 70 + fly.x - camX;
+        const py = gy - fly.y;
+        const dx = px - p.x;
+        const dy = p.y - py;
+        aim.angle = Math.max(-20, Math.min(70, (Math.atan2(dy, dx) * 180) / Math.PI));
+        aim.power = Math.max(0.05, Math.min(1, Math.hypot(dx, dy) / 140));
+        fly.ang = (aim.angle * Math.PI) / 180;
+      }
+      draw();
+    });
+    const release = () => {
+      if (!dragging) return;
+      dragging = false;
+      canvas.style.cursor = 'grab';
+      if (phase === 'fold') commitFold();
+      else if (phase === 'aim') launch();
+    };
+    canvas.addEventListener('pointerup', release);
+    canvas.addEventListener('pointercancel', () => (dragging = false));
+
+    // Keyboard path.
+    canvas.addEventListener('keydown', (ev) => {
+      const k = ev.key;
+      if (phase === 'fold' && foldIdx < FOLDS.length) {
+        const moves: Record<string, V> = { ArrowLeft: { x: -3, y: 0 }, ArrowRight: { x: 3, y: 0 }, ArrowUp: { x: 0, y: -3 }, ArrowDown: { x: 0, y: 3 } };
+        if (moves[k]) {
+          pointer = { x: pointer.x + moves[k].x, y: pointer.y + moves[k].y };
+          ev.preventDefault();
+          draw();
+        } else if (k === 'Enter' || k === ' ') {
+          ev.preventDefault();
+          commitFold();
+        }
+      } else if (phase === 'aim') {
+        if (k === 'ArrowUp') aim.angle = Math.min(70, aim.angle + 2);
+        else if (k === 'ArrowDown') aim.angle = Math.max(-20, aim.angle - 2);
+        else if (k === 'ArrowRight') aim.power = Math.min(1, aim.power + 0.05);
+        else if (k === 'ArrowLeft') aim.power = Math.max(0.05, aim.power - 0.05);
+        else if (k === ' ' || k === 'Enter') {
+          ev.preventDefault();
+          return launch();
+        } else return;
+        ev.preventDefault();
+        fly.ang = (aim.angle * Math.PI) / 180;
+        stepEl.textContent = `Angle ${Math.round(aim.angle)}°, power ${Math.round(aim.power * 100)}%. Space to throw.`;
+        draw();
+      }
+    });
+
+    btnNew.addEventListener('click', () => {
+      cancelAnimationFrame(raf);
+      startFolding();
+      canvas.focus();
+    });
+    btnAgain.addEventListener('click', () => {
+      cancelAnimationFrame(raf);
+      resultEl.textContent = '';
+      stepEl.textContent = 'Same plane. Drag back to aim and let go to throw.';
+      btnAgain.hidden = true;
+      startAim();
+      canvas.focus();
+    });
+
+    bestEl.textContent = best ? `Personal best: ${best.toFixed(1)} m` : '';
+    new ResizeObserver(() => {
+      if (size()) draw();
+    }).observe(canvas);
+    startFolding();
+  });
+</script>

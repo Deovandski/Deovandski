@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
+import PaperPlane from '../components/reusable/PaperPlane.astro';
 import Ranking from '../components/Ranking.astro';
 import TravelerFacet from '../components/TravelerFacet.astro';
 import MentorFacet from '../components/MentorFacet.astro';
@@ -432,6 +433,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       <div class="story">
         <AviationText />
         <YouTube id="QprnoS8PatE" title="Capt. Deovandski – Flight Experience Singapore" />
+        <PaperPlane />
       </div>
     </section>
 
