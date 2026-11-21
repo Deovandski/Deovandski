@@ -1,7 +1,7 @@
 // Ranks Deo's most-watched Best of the Worst videos from a Google Takeout watch history, for the BOTW tab.
 //
 //   node scripts/botw-from-history.mjs path/to/watch-history.json [--top 39] [--all]
-//   node scripts/botw-from-history.mjs path/to/watch-history.html [--top 39] [--all]
+//   node scripts/botw-from-history.mjs path/to/watch-history.html [--top 39] [--all] [--stats content/botw-stats.json]
 //
 // Get the file from takeout.google.com: only "YouTube and YouTube Music" → history. Takeout's default
 // format is HTML (watch-history.html); JSON works too. It's in Takeout/YouTube and YouTube Music/history/.
@@ -13,7 +13,11 @@
 // history is one time you watched it. Prints numbered lines ready for content/botw.md:
 //   1. [Best of the Worst: Example](https://www.youtube.com/watch?v=...) - watched 12 times
 // --all prints every match with its count (to check what was counted) instead of the top list.
-import { readFileSync } from 'node:fs';
+// --stats <file> also writes the numbers behind the VHS pile on the tab: the dates the history covers
+// (first to last entry), views, videos, and watch time. Watch time is each video's length (from
+// content/botw-durations.json) times the times it was watched, as if every view ran start to finish.
+// A video missing from that file is listed, and counts as 0 until its length is added.
+import { readFileSync, writeFileSync, existsSync } from 'node:fs';
 
 const args = process.argv.slice(2);
 const file = args.find((a) => !a.startsWith('--'));
@@ -24,6 +28,8 @@ if (!file) {
 const topAt = args.indexOf('--top');
 const TOP = topAt >= 0 ? Number(args[topAt + 1]) : 39;
 const ALL = args.includes('--all');
+const statsAt = args.indexOf('--stats');
+const STATS = statsAt >= 0 ? args[statsAt + 1] : null;
 
 const FAMILY = /best of the worst|wheel of the worst|spotlight|junka|black spine/i;
 const CHANNEL = /red\s*letter\s*media/i;
@@ -52,13 +58,25 @@ function fromHtml(html) {
       title: `Watched ${decode(m[2])}`,
       titleUrl: decode(m[1]),
       subtitles: m[3] ? [{ name: decode(m[3]) }] : [],
-      time: Number.isNaN(when.getTime()) ? '' : when.toISOString(),
+      time: Number.isNaN(when.getTime()) ? '' : localStamp(when),
     });
   }
   return items;
 }
+
+// The date and time as written in the export (the viewer's own time zone), sortable as text.
+function localStamp(d) {
+  const p = (n) => String(n).padStart(2, '0');
+  return `${d.getFullYear()}-${p(d.getMonth() + 1)}-${p(d.getDate())}T${p(d.getHours())}:${p(d.getMinutes())}:${p(d.getSeconds())}`;
+}
 const byId = new Map();
+let first = '';
+let last = '';
 for (const item of history) {
+  if (item.time) {
+    if (!first || item.time < first) first = item.time;
+    if (!last || item.time > last) last = item.time;
+  }
   if (!item.titleUrl || !item.title) continue; // removed or private videos have no link
   const channel = item.subtitles?.[0]?.name ?? '';
   const title = item.title.replace(/^Watched\s+/, '').trim();
@@ -89,3 +107,21 @@ list.forEach((v, i) => {
   console.log(`${i + 1}. [${md(v.title)}](${url}) - watched ${v.count} ${v.count === 1 ? 'time' : 'times'}`);
 });
 console.error(`${byId.size} Best of the Worst family videos found; printed ${list.length}.`);
+
+if (STATS) {
+  const durFile = 'content/botw-durations.json';
+  const durations = existsSync(durFile) ? JSON.parse(readFileSync(durFile, 'utf8')) : {};
+  const missing = ranked.filter((v) => typeof durations[v.id] !== 'number');
+  const seconds = ranked.reduce((sum, v) => sum + v.count * (durations[v.id] ?? 0), 0);
+  const stats = {
+    _about: 'Written by scripts/botw-from-history.mjs --stats. Watch time = each video length x times watched.',
+    from: first.slice(0, 10),
+    to: last.slice(0, 10),
+    videos: ranked.length,
+    views: ranked.reduce((sum, v) => sum + v.count, 0),
+    hours: Math.round(seconds / 360) / 10,
+  };
+  writeFileSync(STATS, JSON.stringify(stats, null, 2) + '\n');
+  console.error(`Wrote ${STATS}: ${stats.views} views of ${stats.videos} videos, ${stats.hours} hours, ${stats.from} to ${stats.to}.`);
+  if (missing.length) console.error(`No length in ${durFile} for: ${missing.map((v) => v.id).join(', ')}`);
+}

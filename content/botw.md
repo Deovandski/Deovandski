@@ -9,7 +9,9 @@ Edit and push; the BOTW tab rebuilds from this file.
 - Optional: how many times you watched it, at the end of the line: `1. [Title](https://...) - watched 12 times`.
   The tab then shows the count and a note that the ranking comes from your YouTube watch history.
   To refresh the ranking from a new Google Takeout export, run
-  `node scripts/botw-from-history.mjs path/to/watch-history.json` (never commit that file).
+  `node scripts/botw-from-history.mjs path/to/watch-history.html --stats content/botw-stats.json`
+  (never commit that file). `--stats` also refreshes the VHS pile's hours and dates; video lengths
+  come from `content/botw-durations.json`.
 - Optional: lines under a pick (until the next number) are a short note about it.
 - Up to 39 picks; until there are any, the tab says they're on their way.
 
@@ -18,7 +20,7 @@ Edit and push; the BOTW tab rebuilds from this file.
 > Having these guys on in the background while I code is rather soothing. A strange thing for my autism to get hooked on, but it clearly works. Same thing with the Skyrim soundtrack and rain in the background whenever I focus on [#HusbandOutWorld](https://husbandoutworld.com) stuff.
 
 <!-- Your 39 picks go below this line. -->
-<!-- Ranked from Deo's YouTube watch history (Google Takeout, Dec 2019 to Nov 2026) with scripts/botw-from-history.mjs. -->
+<!-- Ranked from Deo's YouTube watch history (Google Takeout, Dec 15, 2019 to Nov 20, 2026) with scripts/botw-from-history.mjs. -->
 
 1. [Best of the Worst: Black Spine Junka 3](https://www.youtube.com/watch?v=JVtcfjF6geQ) - watched 43 times
 2. [Best of the Worst: Christmas 2020](https://www.youtube.com/watch?v=nQxOLpkRWzw) - watched 42 times
