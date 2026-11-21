@@ -4,6 +4,7 @@ import { Image } from 'astro:assets';
 import logo from '../assets/logo.png';
 import Starfield from '../components/Starfield.astro';
 import MikuDay from '../components/MikuDay.astro';
+import PhotoViewer from '../components/reusable/PhotoViewer.astro';
 import { url } from '../lib/url';
 
 interface Props {
@@ -135,6 +136,8 @@ const isCurrent =(href: string) => (href === '/' ? here === '/' || here === '' :
         { capture: true },
       );
     </script>
+    <!-- Every picture opens bigger here (the site's "pictures are clickable" rule; see CLAUDE.md). -->
+    <PhotoViewer />
   </body>
 </html>
 

@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import type { ImageMetadata } from 'astro';
 import PhotoGrid from './reusable/PhotoGrid.astro';
 import RouteMap from './reusable/RouteMap.astro';
@@ -18,12 +18,15 @@ const headerModules = import.meta.glob<ImageMetadata>('/content/family/header/*.
 });
 const header = (name: string) => Object.entries(headerModules).find(([p]) => p.includes(`/${name}.`))?.[1];
 
+// A large copy of each picture for the photo viewer (every picture on the site opens bigger).
+const fullOf = async (src: ImageMetadata) => (await getImage({ src, width: Math.min(1800, src.width), format: 'webp', quality: 80 })).src;
+
 // Pictures placed between paragraphs: ![alt](name) → content/family/inline/name.*
 const inlineModules = import.meta.glob<ImageMetadata>('/content/family/inline/*.{jpg,jpeg,png,webp,avif,JPG,JPEG,PNG,WEBP,AVIF}', {
   eager: true,
   import: 'default',
 });
-type Block = { kind: 'p'; html: string } | { kind: 'img'; src: ImageMetadata; alt: string };
+type Block = { kind: 'p'; html: string } | { kind: 'img'; src: ImageMetadata; alt: string; full?: string };
 const escape = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 function block(text: string): Block {
   const pic = /^!\[([^\]]*)\]\(([^)\s]+)\)$/.exec(text);
@@ -37,18 +40,24 @@ function block(text: string): Block {
   return { kind: 'p', html };
 }
 const firstBlock = first ? block(first) : null;
-const restBlocks = rest.map(block);
+const restBlocks = await Promise.all(
+  rest.map(async (t) => {
+    const b = block(t);
+    return b.kind === 'img' ? { ...b, full: await fullOf(b.src) } : b;
+  }),
+);
 const headers = [
   { src: header('familyHeader_1'), alt: 'An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon' },
   { src: header('familyHeader_2'), alt: 'Deo and his parents smiling at a race finish, showing their medals' },
 ].filter((h): h is { src: ImageMetadata; alt: string } => !!h.src);
+const headerFull = await Promise.all(headers.map((h) => fullOf(h.src)));
 ---
 
 {
   headers.length > 0 && (
     <div class="family-header">
-      {headers.map((h) => (
-        <Image src={h.src} alt={h.alt} widths={[400, 800]} sizes="(max-width: 720px) 50vw, 360px" loading="eager" />
+      {headers.map((h, i) => (
+        <Image src={h.src} alt={h.alt} widths={[400, 800]} sizes="(max-width: 720px) 50vw, 360px" loading="eager" data-full={headerFull[i]} />
       ))}
     </div>
   )
@@ -75,7 +84,7 @@ const headers = [
       <p set:html={b.html} />
     ) : (
       <figure class="family-inline">
-        <Image src={b.src} alt={b.alt} widths={[360, 720]} sizes="(max-width: 720px) 80vw, 360px" />
+        <Image src={b.src} alt={b.alt} widths={[360, 720]} sizes="(max-width: 720px) 80vw, 360px" data-full={b.full} />
       </figure>
     ),
   )

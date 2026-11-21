@@ -18,9 +18,9 @@
  *   <PhotoGrid photos={photos} name="cat" caption="text" empty="Photos are on their way." />
  *   <PhotoGrid photos={photos} name="painting" caption="date" />
  *
- * Opening a photo bigger is left to the page: each photo is a <button> carrying
- * data-gallery (= name), data-index, data-full (a large webp), data-alt and data-caption,
- * so one lightbox script can serve every grid on the page.
+ * Opening a photo bigger: each photo is a <button> carrying data-gallery (= name), data-index,
+ * data-full (a large webp), data-alt and, when known, data-date / data-date-label, which is what
+ * PhotoViewer.astro (in the layout) reads; ‹ › there step through the grid.
  *
  * Theme it with --photo-grid-card-border, --photo-grid-card-bg, --photo-grid-tile-bg,
  * --photo-grid-caption, --photo-grid-empty and --photo-grid-min (the narrowest a card may get).
@@ -63,7 +63,6 @@ const cards = await Promise.all(
       full: (await getImage({ src: p.src, width: Math.min(1800, p.src.width), format: 'webp', quality: 80 })).src,
       label: caption === 'date' ? `${p.alt}, ${spokenDate}` : p.alt,
       dateText,
-      viewerCaption: caption === 'date' ? dateText : p.alt,
     };
   }),
 );
@@ -98,7 +97,8 @@ const cards = await Promise.all(
             data-index={i}
             data-full={p.full}
             data-alt={p.alt}
-            data-caption={p.viewerCaption}
+            data-date={p.date ?? undefined}
+            data-date-label={p.dateLabel}
             aria-label={`Enlarge: ${p.label}`}
           >
             <Image src={p.src} alt="" width={480} widths={[240, 480]} sizes="(max-width: 560px) 50vw, 240px" />

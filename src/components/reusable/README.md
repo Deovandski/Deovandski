@@ -30,6 +30,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [LedMatrix.astro](LedMatrix.astro) | A grid of round LEDs to draw on (click, drag, right-click erases, keyboard too), sized to fit the width. Starts with a stick figure and "Huehuehue" (or "Hue"). From the LED Matrix Manager site. | Painting tab |
 | [DiceTray.astro](DiceTray.astro) | A row of dice (d4 to d20), each tumbling in its own sunken pit when clicked, with a Roll all button and total. Miku colours by default. | D&D tab |
 | [FastTab.astro](FastTab.astro) | A collapsible section in the style of D365 F&O FastTabs: bold title, summary fields on the right while collapsed, a chevron, and optional Expand all / Collapse all buttons. Built on `<details>`, so it works without JavaScript. | Gaming page (one per gimmick) |
+| [PhotoViewer.astro](PhotoViewer.astro) | The one photo viewer (lightbox) for a page: every content picture, gallery button and link to an image file opens in it, with its caption and date; ‹ › between pictures. Put it once in the layout. | Every page (in `Base.astro`) |
 
 ## SplitFlap
 
@@ -613,3 +614,31 @@ A button with `data-fasttabs="open"` or `"close"` opens or closes every FastTab 
 content is `display: none`, so games and canvases inside pause while their FastTab is closed. Theme with
 `--fasttab-accent`, `--fasttab-line`, `--fasttab-muted` and `--fasttab-hover`. Reduced motion: the chevron
 flips without animating.
+
+## PhotoViewer
+
+```astro
+---
+import PhotoViewer from './reusable/PhotoViewer.astro';
+---
+<!-- once, at the end of the layout's <body> -->
+<PhotoViewer />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `label` | `"Photo"` | The dialog's name for screen readers. |
+
+What opens in it, with no extra markup:
+- **gallery buttons** (`data-gallery`, `data-full`, `data-alt`, `data-date`: what PhotoGrid makes); ‹ › step through the same gallery;
+- **any `<img>` with alt text**; ‹ › step through the other visible pictures on the page, or in the nearest `[data-zoom-group]`;
+- **links straight to an image file**.
+
+It skips decorative pictures (`alt=""`), pictures inside links or buttons, the header and nav, maps,
+games, pictures under 64px, and anything in `[data-no-zoom]`. `data-zoom` forces a picture on.
+
+The caption is the alt text, then the date: `data-date="YYYY-MM-DD"` or `data-date-label`, else a
+`YYYY-MM-DD` at the start of the file name. The picture shown is `data-full`, else the largest srcset
+size. Theme with `--photo-viewer-accent`, `--photo-viewer-bg`, `--photo-viewer-text`,
+`--photo-viewer-muted` and `--photo-viewer-backdrop`. Keyboard: Tab to a picture, then Enter or Space;
+← → move between pictures; Esc closes and returns focus.
