@@ -18,6 +18,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [VhsPile.astro](VhsPile.astro) | A pile of VHS tapes holding a number of hours of video. Visitors pick the recording speed (SP, LP, EP) and the tapes fall from the top and pile up; they shrink to fit, so it can show a couple of thousand. Canvas, no libraries. | BOTW tab (watch time) |
 | [PaperPlane.astro](PaperPlane.astro) | Fold a paper plane, then throw it: precision decides the distance | Aviation tab |
 | [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing the Saturday Night Fever routine under spotlights, a mirror ball and a light-up floor. | Concert tab |
+| [IsoDarts.astro](IsoDarts.astro) | An on-rails darts scene in an isometric room: scripted speech bubbles, then a timed round on a board of coloured territories (claim, cancel, smaller is worth more) with a swaying aim. | Board Games tab (Territory Snipping) |
 
 ## SplitFlap
 
@@ -299,3 +300,27 @@ A chibi pixel character drawn in code, dancing a 12-beat disco routine (the Satu
 and down, hip rolls, a turn and a finish) under sweeping spotlights, a mirror ball and a light-up floor.
 Buttons pause the dance and change the light colours. Lights change on the beat (under 3 a second).
 Reduced motion: a still point pose with steady lights. Theme with `--dancer-accent`.
+
+## IsoDarts
+
+```astro
+---
+import IsoDarts from './reusable/IsoDarts.astro';
+import game from '../../content/territory-snipping.json';
+---
+<IsoDarts game={game} title="Territory Snipping" />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `game` | (required) | `players` (`you` and `rival`: `{ name, color, feather }`), `dartsPerPlayer`, `roundSeconds` and `script`: `[{ who: 'you' \| 'rival', text, do? }]`. |
+| `title` | `"Darts"` | Heading of the scene. |
+| `class` | none | Extra class. |
+
+An on-rails darts scene in an isometric room: speech bubbles walk through the script, and `do` triggers a
+step after a line: `warmup` (the rival's first dart falls, the second lands on green), `practice` (one
+throw that flies low), `hiromiMiss` (the rival aims at green, hits purple), `round` (both throw at once
+until the darts or time run out) and `end` (the score). The round board's territories: a dart claims
+one, a dart where the other player's dart is cancels both, and smaller territories are worth more (yellow
+centre 10, inner ring 5, middle 3, outer 1). The visitor's aim sways more with every throw; Space or
+Enter throws. Theme with `--darts-accent` and `--darts-text`.

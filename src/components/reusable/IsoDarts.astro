@@ -1,0 +1,537 @@
+---
+/**
+ * IsoDarts: an "on-rails" darts scene in an isometric room. A script of speech bubbles walks the
+ * visitor through the game; some lines trigger a step (a warm-up throw, a practice throw, the timed
+ * round where both players throw at once, the ending). The board is round, split into coloured
+ * territories: land a dart on one to claim it, land where the other player's dart is and both
+ * cancel, smaller territories are worth more. The visitor's aim sways (and sways more with every
+ * throw); the rival throws on their own. Built for Territory Snipping from #HusbandOutWorld Vol 2.
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
+ * Copy this one file into any Astro project. See README.md in this folder.
+ *
+ *   ---
+ *   import game from '../../content/territory-snipping.json';
+ *   ---
+ *   <IsoDarts game={game} title="Territory Snipping" />
+ *
+ * Props:
+ *   game   { players: { you, rival } ({ name, color, feather }), dartsPerPlayer, roundSeconds,
+ *          script: [{ who: 'you' | 'rival', text, do? }] } where `do` is warmup, practice,
+ *          hiromiMiss (the rival aims at green and misses), round or end. Required.
+ *   title  heading of the scene. Default "Darts".
+ *
+ * Theming (CSS custom properties): --darts-accent (default #39c5bb), --darts-text.
+ *
+ * Accessible: Next and Throw are buttons (Space or Enter throws); every line and every dart's
+ * result is text and announced. Reduced motion: no sway (the aim drifts slowly instead) and no spin.
+ */
+interface Props {
+  game: unknown;
+  title?: string;
+  class?: string;
+}
+const { game, title = 'Darts', class: className } = Astro.props;
+---
+
+<div class:list={['iso-darts', className]} data-game={JSON.stringify(game)}>
+  <h3 class="iso-darts__title">{title}</h3>
+  <div class="iso-darts__stage">
+    <svg class="iso-darts__scene" viewBox="0 0 480 300" role="img" aria-label="An isometric tavern corner with a round, coloured dartboard on the wall">
+      <defs>
+        <pattern id="iso-darts-planks" width="24" height="12" patternUnits="userSpaceOnUse" patternTransform="matrix(0.866 0.5 -0.866 0.5 0 0)">
+          <rect width="24" height="12" fill="#6b4524" />
+          <path d="M0 11.5 H24 M12 0 V12" stroke="#4e311a" stroke-width="1" />
+        </pattern>
+      </defs>
+      <!-- floor, left wall, right wall -->
+      <polygon points="240,400 20,273 240,146 460,273" fill="url(#iso-darts-planks)" />
+      <polygon points="20,273 20,-100 240,-227 240,146" fill="#3d2a22" />
+      <polygon points="240,146 240,-227 460,-100 460,273" fill="#4a3329" />
+      <path d="M240 146 V-227" stroke="#2a1c16" stroke-width="2" />
+      <!-- a bar table with two jars, bottom left -->
+      <g transform="translate(100 250)">
+        <polygon points="0,0 60,-35 110,-6 50,29" fill="#8a5a32" stroke="#4e311a" stroke-width="2" />
+        <polygon points="50,29 110,-6 110,2 50,37" fill="#5e3c20" />
+        <polygon points="0,0 50,29 50,37 0,8" fill="#6e4726" />
+        <rect x="38" y="-28" width="10" height="16" rx="3" fill="#d9a441" opacity="0.85" />
+        <rect x="62" y="-20" width="12" height="18" rx="3" fill="#d9a441" opacity="0.85" />
+      </g>
+      <!-- the board on the right wall: board space is a circle of radius 100 centred at 0,0 -->
+      <g class="iso-darts__wall" transform="matrix(0.62 0.36 0 0.72 350 110)">
+        <circle r="110" fill="#2b1d16" />
+        <g class="iso-darts__board"></g>
+        <g class="iso-darts__darts"></g>
+        <g class="iso-darts__reticle" visibility="hidden">
+          <circle r="9" fill="none" stroke="#fff" stroke-width="2.5" />
+          <path d="M-14 0 H-5 M5 0 H14 M0 -14 V-5 M0 5 V14" stroke="#fff" stroke-width="2.5" />
+        </g>
+      </g>
+    </svg>
+    <div class="iso-darts__bubble" data-who="rival">
+      <b class="iso-darts__who"></b>
+      <p class="iso-darts__line"></p>
+    </div>
+    <div class="iso-darts__hud" hidden>
+      <span class="iso-darts__clock"></span>
+      <span class="iso-darts__tally"></span>
+    </div>
+  </div>
+  <div class="iso-darts__controls">
+    <button type="button" class="iso-darts__next">Next</button>
+    <button type="button" class="iso-darts__throw" hidden>Throw!</button>
+    <button type="button" class="iso-darts__restart" hidden>Play again</button>
+  </div>
+  <p class="iso-darts__live" aria-live="polite"></p>
+  <dl class="iso-darts__legend" aria-label="What each territory is worth"></dl>
+</div>
+
+<style>
+  .iso-darts {
+    --_accent: var(--darts-accent, #39c5bb);
+    color: var(--darts-text, inherit);
+    margin: 0 0 2rem;
+  }
+  .iso-darts__title {
+    margin: 0 0 0.6rem;
+    color: var(--_accent);
+  }
+  .iso-darts__stage {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #1b1310;
+  }
+  .iso-darts__scene {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .iso-darts__scene.is-spinning {
+    animation: iso-darts-spin 2.4s ease-in-out;
+  }
+  @keyframes iso-darts-spin {
+    25% { transform: rotate(6deg) scale(1.04); filter: blur(1px); }
+    50% { transform: rotate(-8deg) scale(1.08); filter: blur(2px); }
+    75% { transform: rotate(5deg) scale(1.03); filter: blur(1px); }
+  }
+  .iso-darts__bubble {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    max-width: min(62%, 300px);
+    padding: 0.5rem 0.75rem;
+    border-radius: 14px;
+    background: rgba(255, 252, 240, 0.95);
+    color: #2a1c16;
+    font-size: clamp(0.72rem, 1.8vw, 0.9rem);
+    line-height: 1.35;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  }
+  .iso-darts__bubble[data-who='you'] {
+    left: auto;
+    right: 10px;
+    top: auto;
+    bottom: 10px;
+  }
+  .iso-darts__who {
+    display: inline-block;
+    padding: 0 0.4rem;
+    border-radius: 6px;
+    font-size: 0.8em;
+    color: #2a1c16;
+    background: var(--who, #f2c12e);
+  }
+  .iso-darts__line {
+    margin: 0.2rem 0 0;
+  }
+  .iso-darts__hud {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    display: grid;
+    gap: 0.15rem;
+    padding: 0.35rem 0.6rem;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+  }
+  .iso-darts__hud[hidden] {
+    display: none;
+  }
+  .iso-darts__controls {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.6rem;
+  }
+  .iso-darts__controls button {
+    padding: 0.45rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid var(--_accent);
+    background: transparent;
+    color: var(--_accent);
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .iso-darts__throw {
+    background: var(--_accent) !important;
+    color: #062523 !important;
+  }
+  .iso-darts__controls button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+  .iso-darts__live {
+    min-height: 1.4em;
+    margin: 0.4rem 0 0;
+    font-weight: 700;
+  }
+  .iso-darts__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1rem;
+    margin: 0.3rem 0 0;
+    font-size: 0.8rem;
+    opacity: 0.85;
+  }
+  .iso-darts__legend :global(div) {
+    display: flex;
+    gap: 0.3rem;
+  }
+  .iso-darts__legend :global(dt)::after {
+    content: ':';
+  }
+  .iso-darts__legend :global(dd) {
+    margin: 0;
+    font-weight: 700;
+  }
+  @media (max-width: 560px) {
+    /* Phones: the speech bubble sits under the scene so it never covers the board. */
+    .iso-darts__bubble,
+    .iso-darts__bubble[data-who='you'] {
+      position: static;
+      max-width: none;
+      margin: 0.5rem;
+    }
+    .iso-darts__stage {
+      display: flex;
+      flex-direction: column;
+    }
+    .iso-darts__hud {
+      bottom: auto;
+      top: 8px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .iso-darts__scene.is-spinning {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  type Player = { name: string; color: string; feather: string };
+  type Step = { who: 'you' | 'rival'; text: string; do?: string };
+  type Game = { players: { you: Player; rival: Player }; dartsPerPlayer: number; roundSeconds: number; script: Step[] };
+  type Zone = { id: number; color: string; name: string; value: number; r0: number; r1: number; a0: number; a1: number };
+  type Dart = { x: number; y: number; who: 'you' | 'rival'; zone: number | null; el?: SVGGElement };
+
+  const SVG = 'http://www.w3.org/2000/svg';
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // The board: a circle split into coloured territories, like a baseball field spun into a full
+  // circle. The tiny yellow centre is worth the most; the bigger the territory, the less it's worth.
+  const RINGS = [
+    { r0: 0, r1: 11, n: 1, colors: [['#f2c12e', 'yellow']], value: 10 },
+    { r0: 11, r1: 32, n: 4, colors: [['#e8833a', 'orange'], ['#8e4fc7', 'purple'], ['#e8833a', 'orange'], ['#8e4fc7', 'purple']], value: 5 },
+    { r0: 32, r1: 62, n: 8, colors: [['#3f9e4a', 'green'], ['#3a7bd5', 'blue'], ['#3f9e4a', 'green'], ['#c8443a', 'red'], ['#3f9e4a', 'green'], ['#3a7bd5', 'blue'], ['#3f9e4a', 'green'], ['#c8443a', 'red']], value: 3 },
+    { r0: 62, r1: 100, n: 8, colors: [['#8e4fc7', 'purple'], ['#3f9e4a', 'green'], ['#e8833a', 'orange'], ['#3f9e4a', 'green'], ['#8e4fc7', 'purple'], ['#3f9e4a', 'green'], ['#e8833a', 'orange'], ['#3f9e4a', 'green']], value: 1 },
+  ];
+  const ZONES: Zone[] = [];
+  RINGS.forEach((ring) => {
+    for (let i = 0; i < ring.n; i++) {
+      const step = (Math.PI * 2) / ring.n;
+      const off = ring.n === 4 ? -Math.PI / 4 : -Math.PI / 2;
+      ZONES.push({ id: ZONES.length, color: ring.colors[i][0], name: ring.colors[i][1], value: ring.value, r0: ring.r0, r1: ring.r1, a0: off + i * step, a1: off + (i + 1) * step });
+    }
+  });
+  function zoneAt(x: number, y: number) {
+    const r = Math.hypot(x, y);
+    if (r > 100) return null;
+    let a = Math.atan2(y, x);
+    for (const z of ZONES) {
+      if (r < z.r0 || r >= z.r1) continue;
+      if (z.r0 === 0) return z;
+      let aa = a;
+      while (aa < z.a0) aa += Math.PI * 2;
+      while (aa >= z.a0 + Math.PI * 2) aa -= Math.PI * 2;
+      if (aa < z.a1) return z;
+    }
+    return null;
+  }
+  function wedge(z: Zone) {
+    if (z.r0 === 0) return `<circle r="${z.r1}" fill="${z.color}" stroke="#2b1d16" stroke-width="1.5"/>`;
+    const p = (r: number, a: number) => `${(r * Math.cos(a)).toFixed(2)} ${(r * Math.sin(a)).toFixed(2)}`;
+    const large = z.a1 - z.a0 > Math.PI ? 1 : 0;
+    return `<path d="M${p(z.r0, z.a0)} L${p(z.r1, z.a0)} A${z.r1} ${z.r1} 0 ${large} 1 ${p(z.r1, z.a1)} L${p(z.r0, z.a1)} A${z.r0} ${z.r0} 0 ${large} 0 ${p(z.r0, z.a0)}Z" fill="${z.color}" stroke="#2b1d16" stroke-width="1.5"/>`;
+  }
+  const center = (z: Zone) => {
+    if (z.r0 === 0) return { x: 0, y: 0 };
+    const a = (z.a0 + z.a1) / 2;
+    const r = (z.r0 + z.r1) / 2;
+    return { x: r * Math.cos(a), y: r * Math.sin(a) };
+  };
+  const gauss = () => (Math.random() + Math.random() + Math.random() - 1.5) / 1.5;
+
+  document.querySelectorAll<HTMLElement>('.iso-darts').forEach((root) => {
+    const game: Game = JSON.parse(root.dataset.game!);
+    const scene = root.querySelector<SVGSVGElement>('.iso-darts__scene')!;
+    const boardG = root.querySelector<SVGGElement>('.iso-darts__board')!;
+    const dartsG = root.querySelector<SVGGElement>('.iso-darts__darts')!;
+    const reticle = root.querySelector<SVGGElement>('.iso-darts__reticle')!;
+    const bubble = root.querySelector<HTMLElement>('.iso-darts__bubble')!;
+    const whoEl = root.querySelector<HTMLElement>('.iso-darts__who')!;
+    const lineEl = root.querySelector<HTMLElement>('.iso-darts__line')!;
+    const hud = root.querySelector<HTMLElement>('.iso-darts__hud')!;
+    const clock = root.querySelector<HTMLElement>('.iso-darts__clock')!;
+    const tally = root.querySelector<HTMLElement>('.iso-darts__tally')!;
+    const next = root.querySelector<HTMLButtonElement>('.iso-darts__next')!;
+    const throwBtn = root.querySelector<HTMLButtonElement>('.iso-darts__throw')!;
+    const restart = root.querySelector<HTMLButtonElement>('.iso-darts__restart')!;
+    const live = root.querySelector<HTMLElement>('.iso-darts__live')!;
+    const legend = root.querySelector<HTMLElement>('.iso-darts__legend')!;
+    const P = game.players;
+
+    boardG.innerHTML = ZONES.map(wedge).join('');
+    legend.innerHTML = RINGS.map((r) => `<div><dt>${r.n === 1 ? 'Yellow centre' : r.r1 <= 32 ? 'Inner ring' : r.r1 <= 62 ? 'Middle ring' : 'Outer ring'}</dt><dd>${r.value} pt${r.value > 1 ? 's' : ''}</dd></div>`).join('');
+
+    let step = -1;
+    let darts: Dart[] = [];
+    let mode: 'talk' | 'practice' | 'round' | 'done' = 'talk';
+    let left = { you: 0, rival: 0 };
+    let sway = 10;
+    let t0 = 0;
+    let endsAt = 0;
+    let rivalTimer = 0;
+    let aim = { x: 0, y: 0 };
+    let raf = 0;
+
+    function drawDart(d: Dart) {
+      const pl = P[d.who];
+      const g = document.createElementNS(SVG, 'g');
+      g.setAttribute('transform', `translate(${d.x.toFixed(1)} ${d.y.toFixed(1)})`);
+      g.innerHTML = `<line x1="0" y1="0" x2="10" y2="-10" stroke="#ccc" stroke-width="2.5"/><path d="M8 -8 l8 -2 l-2 8z" fill="${pl.feather}" stroke="${pl.color}" stroke-width="2"/><circle r="2.5" fill="${pl.color}"/>`;
+      dartsG.appendChild(g);
+      d.el = g;
+    }
+    // A dart lands: claim the territory, or cancel against the other player's dart there.
+    function land(who: 'you' | 'rival', x: number, y: number, quiet = false) {
+      const z = zoneAt(x, y);
+      if (!z) {
+        if (!quiet) live.textContent = `${P[who].name}'s dart bounced off the wall.`;
+        return;
+      }
+      const other = darts.find((d) => d.zone === z.id && d.who !== who);
+      if (other) {
+        other.el?.remove();
+        darts = darts.filter((d) => d !== other);
+        if (!quiet) live.textContent = `Cancelled! Both darts on the ${z.name} territory are out.`;
+        // A quick puff where they cancelled.
+        const puff = document.createElementNS(SVG, 'circle');
+        puff.setAttribute('cx', String(x));
+        puff.setAttribute('cy', String(y));
+        puff.setAttribute('r', '6');
+        puff.setAttribute('fill', '#fff');
+        puff.setAttribute('opacity', '0.8');
+        dartsG.appendChild(puff);
+        window.setTimeout(() => puff.remove(), 350);
+        return;
+      }
+      const d: Dart = { x, y, who, zone: z.id };
+      darts.push(d);
+      drawDart(d);
+      if (!quiet) live.textContent = `${P[who].name} snipes a ${z.name} territory (${z.value} pt${z.value > 1 ? 's' : ''}).`;
+      renderTally();
+    }
+    function scores() {
+      const s = { you: 0, rival: 0 };
+      const owned = new Map<number, 'you' | 'rival'>();
+      for (const d of darts) if (d.zone !== null) owned.set(d.zone, d.who);
+      owned.forEach((who, id) => (s[who] += ZONES[id].value));
+      return s;
+    }
+    function renderTally() {
+      const s = scores();
+      tally.textContent = `${P.you.name} ${s.you} · ${P.rival.name} ${s.rival}`;
+    }
+
+    function say(s: Step) {
+      bubble.dataset.who = s.who;
+      whoEl.textContent = P[s.who].name;
+      whoEl.style.setProperty('--who', s.who === 'you' ? '#f4a3a8' : P.rival.color);
+      lineEl.textContent = s.text;
+      live.textContent = `${P[s.who].name}: ${s.text}`;
+    }
+
+    // The aim drifts in a figure-eight that grows with every throw (Harry has had a lot to drink).
+    function moveAim(now: number) {
+      const t = (now - t0) / 1000;
+      const amp = reduced ? Math.min(sway, 30) : sway;
+      const speed = reduced ? 0.35 : 1;
+      aim = { x: Math.sin(t * 1.7 * speed) * amp * 2.2 + Math.sin(t * 0.6) * amp * 0.6, y: Math.sin(t * 2.3 * speed + 1) * amp * 1.6 };
+      reticle.setAttribute('transform', `translate(${aim.x.toFixed(1)} ${aim.y.toFixed(1)})`);
+      if (mode === 'round') {
+        const secs = Math.max(0, Math.ceil((endsAt - now) / 1000));
+        clock.textContent = `⏱ ${secs}s · darts: ${P.you.name} ${left.you}, ${P.rival.name} ${left.rival}`;
+        if (now >= endsAt || (left.you === 0 && left.rival === 0)) return finishRound();
+      }
+      if (mode === 'practice' || mode === 'round') raf = requestAnimationFrame(moveAim);
+    }
+
+    function startAim() {
+      reticle.setAttribute('visibility', 'visible');
+      throwBtn.hidden = false;
+      next.hidden = true;
+      t0 = performance.now();
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(moveAim);
+      throwBtn.focus();
+    }
+    function stopAim() {
+      cancelAnimationFrame(raf);
+      reticle.setAttribute('visibility', 'hidden');
+      throwBtn.hidden = true;
+      next.hidden = false;
+    }
+
+    function throwDart() {
+      if (mode === 'practice') {
+        // As in the book: the first one flies low and lodges below the board.
+        land('you', aim.x * 0.3, 112 + Math.random() * 10);
+        live.textContent = 'Your dart flies low and lodges in the wall below the board.';
+        mode = 'talk';
+        stopAim();
+        return;
+      }
+      if (mode !== 'round' || left.you <= 0) return;
+      left.you--;
+      land('you', aim.x + gauss() * 6, aim.y + gauss() * 6);
+      sway += 3.5;
+      if (left.you === 0) throwBtn.disabled = true;
+    }
+
+    // Hiromi throws on his own, fast and sweaty, going for the valuable territories.
+    function rivalThrow() {
+      if (mode !== 'round' || left.rival <= 0) return;
+      left.rival--;
+      const targets = ZONES.filter((z) => !darts.some((d) => d.zone === z.id && d.who === 'rival'));
+      const weights = targets.map((z) => z.value * (darts.some((d) => d.zone === z.id && d.who === 'you') ? 1.6 : 1));
+      let r = Math.random() * weights.reduce((a, b) => a + b, 0);
+      let pick = targets[0];
+      for (let i = 0; i < targets.length; i++) {
+        r -= weights[i];
+        if (r <= 0) {
+          pick = targets[i];
+          break;
+        }
+      }
+      const c = center(pick);
+      land('rival', c.x + gauss() * 26, c.y + gauss() * 26);
+      rivalTimer = window.setTimeout(rivalThrow, 900 + Math.random() * 900);
+    }
+
+    function finishRound() {
+      mode = 'talk';
+      window.clearTimeout(rivalTimer);
+      stopAim();
+      throwBtn.disabled = false;
+      live.textContent = 'Time! The room starts to move too much…';
+      if (!reduced) {
+        scene.classList.remove('is-spinning');
+        void scene.getBoundingClientRect();
+        scene.classList.add('is-spinning');
+      }
+    }
+
+    const actions: Record<string, () => void> = {
+      warmup: () => {
+        // First dart clings, then falls to the ground; the second lands on a green near the centre.
+        land('rival', 40, 104, true);
+        window.setTimeout(() => {
+          const g = dartsG.lastElementChild;
+          g?.remove();
+          darts = darts.filter((d) => d.el !== g);
+          land('rival', 18, -40, true);
+          live.textContent = 'His first dart clings, then falls. The second lands on a green territory near the centre.';
+        }, 600);
+      },
+      practice: () => {
+        mode = 'practice';
+        sway = 18;
+        live.textContent = 'Your turn: press Throw (or Space) when the aim is where you want it.';
+        startAim();
+      },
+      hiromiMiss: () => {
+        land('rival', 20, -85, true);
+        live.textContent = 'He aims for the same green, and lands far above it, on purple.';
+      },
+      round: () => {
+        // Clear the practice darts; both players throw at once until the darts or the time run out.
+        darts.forEach((d) => d.el?.remove());
+        darts = [];
+        mode = 'round';
+        left = { you: game.dartsPerPlayer, rival: game.dartsPerPlayer };
+        sway = 12;
+        hud.hidden = false;
+        endsAt = performance.now() + game.roundSeconds * 1000;
+        renderTally();
+        startAim();
+        rivalTimer = window.setTimeout(rivalThrow, 500);
+      },
+      end: () => {
+        const s = scores();
+        const verdict = s.you > s.rival ? `${P.you.name} wins, somehow!` : s.you === s.rival ? 'A draw!' : `${P.rival.name} wins.`;
+        live.textContent = `Final score: ${P.you.name} ${s.you}, ${P.rival.name} ${s.rival}. ${verdict}`;
+        tally.textContent = `Final: ${P.you.name} ${s.you} · ${P.rival.name} ${s.rival} · ${verdict}`;
+        next.hidden = true;
+        restart.hidden = false;
+        mode = 'done';
+      },
+    };
+
+    function advance() {
+      if (mode === 'practice' || mode === 'round') return;
+      step++;
+      const s = game.script[step];
+      if (!s) return;
+      say(s);
+      if (s.do && actions[s.do]) actions[s.do]();
+      if (step >= game.script.length - 1 && s.do !== 'end') next.hidden = true;
+    }
+
+    next.addEventListener('click', advance);
+    throwBtn.addEventListener('click', throwDart);
+    root.addEventListener('keydown', (ev) => {
+      if ((ev.key === ' ' || ev.key === 'Enter') && (mode === 'practice' || mode === 'round') && ev.target !== throwBtn) {
+        ev.preventDefault();
+        throwDart();
+      }
+    });
+    restart.addEventListener('click', () => {
+      darts.forEach((d) => d.el?.remove());
+      darts = [];
+      hud.hidden = true;
+      restart.hidden = true;
+      next.hidden = false;
+      step = -1;
+      mode = 'talk';
+      advance();
+      next.focus();
+    });
+    advance();
+  });
+</script>
