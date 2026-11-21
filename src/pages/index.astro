@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import PaperPlane from '../components/reusable/PaperPlane.astro';
 import Ranking from '../components/Ranking.astro';
+import DinoAmbush from '../components/reusable/DinoAmbush.astro';
 import TravelerFacet from '../components/TravelerFacet.astro';
 import MentorFacet from '../components/MentorFacet.astro';
 import MultilingualFacet from '../components/MultilingualFacet.astro';
@@ -655,6 +656,9 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-gamer" aria-labelledby="tab-gamer" tabindex="0" hidden>
+      <h3 class="pm-subhead">Dino Ambush: you are the obstacles</h3>
+      <p class="ranking-lede">The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it&apos;s still in the air) and take it down before you run dry.</p>
+      <DinoAmbush />
       <Ranking items={games} unit="hours">
         <div class="list-head">
           <p class="ranking-lede">
