@@ -25,6 +25,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [KitKot.astro](KitKot.astro) | A parody social app idle game on a phone: post for views, likes and followers on a slot-machine schedule (near misses, a hidden hot post type, fatigue, streaks, energy). "Under the hood" names each trick, with sources. | Influencer tab |
 | [FireMeter.astro](FireMeter.astro) | A fireplace with bellows and a meter: each pump grows the fire, climbs the meter and shows a phrase for that level; maxing out "bonks" and resets. | Lust tab (ecchi-meter) |
 | [WhackAMole.astro](WhackAMole.astro) | Whack-a-mole in the corners of the screen: a character pops up, you whack it (click, tap or keys 1–4) before it hides, faster and faster for 30 s. | Miku tab (Whack-a-Miku) |
+| [DrawingPad.astro](DrawingPad.astro) | A surface to draw on with a pen: ink colours, needle sizes, eraser, clear and download. Ships as a tattoo practice skin; the surface, colours and sizes are props. | Tattoo tab |
 
 ## SplitFlap
 
@@ -484,3 +485,27 @@ Press Start: the character pops up in the corners of the screen, staying about 1
 the end, more and more often. Click, tap, or keys 1 to 4 (top left, top right, bottom left, bottom right).
 Leaving the tab ends the round. Theme with `--wam-accent`, `--wam-pop`, `--wam-size`, `--wam-bg` and
 `--wam-text`. Reduced motion: no sliding or squashing, and pop-ups stay longer.
+
+## DrawingPad
+
+```astro
+---
+import DrawingPad from './reusable/DrawingPad.astro';
+---
+<DrawingPad />
+<DrawingPad surface="paper" tones={[]} inks={['#222', '#c00']} label="Sketch pad" />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `surface` | `"skin"` | `"skin"` (a forearm-shaped practice skin) or `"paper"` (a rounded sheet). |
+| `tones` | five skin tones | Surface colours to pick from; the first is used at the start. `[]` hides the picker. |
+| `inks` | black, red, blue, green, purple | Ink colours. |
+| `needles` | fine line, bold line, shading | `{ name, size, alpha }`: line width in px and how see-through the ink is. |
+| `label` | (describes the pad) | What the pad is, for screen readers. |
+| `fileName` | `"tattoo-practice.png"` | Name of the downloaded PNG. |
+| `class` | none | Extra class. |
+
+Ink stays inside the surface, strokes are smoothed, and pen pressure widens the line. Tools: laser removal
+(eraser), fresh skin (clear) and download. Nothing is saved or sent anywhere. Theme with `--pad-accent`,
+`--pad-bg` and `--pad-text`.

@@ -25,6 +25,7 @@ import { Content as AviationText } from '../../content/aviation.md';
 import kingOfHues from '../assets/king-of-hues.jpg';
 import stickyNotes from '../../content/pm/2023-03-20-sticky-note-madness.jpg';
 import influencerShot from '../../content/influencer/Screenshot_20260803-210132.png';
+import DrawingPad from '../components/reusable/DrawingPad.astro';
 import { loadGallery } from '../lib/gallery';
 import { photoDate } from '../lib/photoDate';
 import { resolve } from 'node:path';
@@ -576,6 +577,9 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
     <section class="panel" role="region" id="panel-tattoo" aria-labelledby="tab-tattoo" tabindex="0" hidden>
       <Sections data={tattoos} id="tattoo" photoAlt={(t) => `Tattoo on my ${t.toLowerCase()}`} />
+      <h3 class="pm-subhead">Your turn: grab the pen</h3>
+      <p class="ranking-lede">A practice skin, like the ones tattoo artists learn on. Pick a skin tone, an ink and a needle, and go.</p>
+      <DrawingPad label="Practice skin. Draw a tattoo on it with the tattoo pen." />
     </section>
 
     <section class="panel" role="region" id="panel-gym" aria-labelledby="tab-gym" tabindex="0" hidden>

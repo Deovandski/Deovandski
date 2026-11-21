@@ -1,0 +1,433 @@
+---
+/**
+ * DrawingPad: a surface to draw on with a pen, pick ink colours and needle sizes, erase, start over
+ * and download the result. Built as a tattoo practice skin, but the surface, colours and sizes are
+ * all props, so it works as a plain sketch pad too.
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
+ * Copy this one file into any Astro project. See README.md in this folder.
+ *
+ *   <DrawingPad />
+ *   <DrawingPad surface="paper" tones={[]} inks={['#222', '#c00']} label="Sketch pad" />
+ *
+ * Props:
+ *   surface   "skin" (a forearm-shaped practice skin) or "paper" (a plain rounded sheet). Default "skin".
+ *   tones     surface colours to pick from (the first is used at the start). Default: five skin tones.
+ *   inks      ink colours. Default black, red, blue, green, purple.
+ *   needles   { name, size, alpha }: line widths in px and how see-through the ink is.
+ *             Default fine line, bold line, shading.
+ *   label     what the pad is, for screen readers.
+ *   fileName  name of the downloaded PNG. Default "tattoo-practice.png".
+ *
+ * Theming (CSS custom properties): --pad-accent (default #39c5bb), --pad-bg, --pad-text.
+ *
+ * Accessible: every tool is a button with a name and its state; the canvas has a text label. Works
+ * with mouse, touch and pen (Pointer Events; pen pressure changes the line width). Nothing is saved
+ * or sent anywhere.
+ */
+interface Needle {
+  name: string;
+  size: number;
+  alpha: number;
+}
+interface Props {
+  surface?: 'skin' | 'paper';
+  tones?: string[];
+  inks?: string[];
+  needles?: Needle[];
+  label?: string;
+  fileName?: string;
+  class?: string;
+}
+const {
+  surface = 'skin',
+  tones = ['#f6d7c3', '#e8b896', '#c68e64', '#8d5a3b', '#5a3a29'],
+  inks = ['#141414', '#b3121b', '#1f4fb8', '#1d7a3e', '#6b2fa0'],
+  needles = [
+    { name: 'Fine line', size: 2.5, alpha: 1 },
+    { name: 'Bold line', size: 7, alpha: 1 },
+    { name: 'Shading', size: 22, alpha: 0.18 },
+  ],
+  label = 'Practice skin. Draw on it with the tattoo pen.',
+  fileName = 'tattoo-practice.png',
+  class: className,
+} = Astro.props;
+const inkNames: Record<string, string> = {
+  '#141414': 'Black',
+  '#b3121b': 'Red',
+  '#1f4fb8': 'Blue',
+  '#1d7a3e': 'Green',
+  '#6b2fa0': 'Purple',
+};
+---
+
+<div
+  class:list={['drawing-pad', className]}
+  data-surface={surface}
+  data-tone={tones[0] ?? '#ffffff'}
+  data-file={fileName}
+>
+  <div class="drawing-pad__tools" role="toolbar" aria-label="Tattoo tools">
+    {
+      tones.length > 0 && (
+        <div class="drawing-pad__group" role="group" aria-label="Skin tone">
+          {tones.map((t, i) => (
+            <button type="button" class="drawing-pad__swatch" data-tone={t} style={`--c:${t}`} aria-label={`Skin tone ${i + 1}`} aria-pressed={i === 0 ? 'true' : 'false'} />
+          ))}
+        </div>
+      )
+    }
+    <div class="drawing-pad__group" role="group" aria-label="Ink">
+      {
+        inks.map((c, i) => (
+          <button type="button" class="drawing-pad__swatch drawing-pad__swatch--ink" data-ink={c} style={`--c:${c}`} aria-label={`${inkNames[c] ?? c} ink`} aria-pressed={i === 0 ? 'true' : 'false'} />
+        ))
+      }
+    </div>
+    <div class="drawing-pad__group" role="group" aria-label="Needle">
+      {
+        needles.map((n, i) => (
+          <button type="button" class="drawing-pad__btn" data-size={n.size} data-alpha={n.alpha} aria-pressed={i === 0 ? 'true' : 'false'}>
+            {n.name}
+          </button>
+        ))
+      }
+      <button type="button" class="drawing-pad__btn" data-erase aria-pressed="false">Laser removal</button>
+    </div>
+    <div class="drawing-pad__group">
+      <button type="button" class="drawing-pad__btn" data-act="fresh">Fresh skin</button>
+      <button type="button" class="drawing-pad__btn" data-act="save">Download</button>
+    </div>
+  </div>
+  <div class="drawing-pad__stage">
+    <canvas class="drawing-pad__surface" aria-hidden="true"></canvas>
+    <canvas class="drawing-pad__ink" role="img" aria-label={label}></canvas>
+  </div>
+  <p class="drawing-pad__live" aria-live="polite"></p>
+</div>
+
+<style>
+  .drawing-pad {
+    --_accent: var(--pad-accent, #39c5bb);
+    color: var(--pad-text, inherit);
+    margin: 1.5rem 0;
+  }
+  .drawing-pad__tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .drawing-pad__group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+  }
+  .drawing-pad__swatch {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.35);
+    background: var(--c);
+    cursor: pointer;
+    padding: 0;
+  }
+  .drawing-pad__swatch[aria-pressed='true'] {
+    border-color: var(--_accent);
+    box-shadow: 0 0 0 2px var(--_accent);
+  }
+  .drawing-pad__btn {
+    padding: 0.35rem 0.8rem;
+    border-radius: 999px;
+    border: 1px solid rgba(190, 200, 209, 0.3);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 0.9em;
+    cursor: pointer;
+  }
+  .drawing-pad__btn[aria-pressed='true'] {
+    border-color: var(--_accent);
+    color: var(--_accent);
+    background: color-mix(in srgb, var(--_accent) 15%, transparent);
+  }
+  .drawing-pad__swatch:focus-visible,
+  .drawing-pad__btn:focus-visible {
+    outline: 2px solid var(--_accent);
+    outline-offset: 2px;
+  }
+  .drawing-pad__stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 460px;
+    border-radius: 16px;
+    background: var(--pad-bg, #20232b);
+    box-shadow: inset 0 3px 14px rgba(0, 0, 0, 0.55);
+    overflow: hidden;
+  }
+  .drawing-pad__stage canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .drawing-pad__ink {
+    touch-action: none;
+    /* A little tattoo machine for a cursor (the tip is the hotspot). */
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M2 26l3-8 14-14 5 5-14 14z' fill='%23333' stroke='%23fff' stroke-width='1.5'/%3E%3Cpath d='M2 26l3-8 5 5z' fill='%2339c5bb'/%3E%3C/svg%3E") 2 26, crosshair;
+  }
+  .drawing-pad__live {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  @media (max-width: 560px) {
+    .drawing-pad__stage {
+      aspect-ratio: 4 / 5;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.drawing-pad').forEach((pad) => {
+    const stage = pad.querySelector<HTMLElement>('.drawing-pad__stage')!;
+    const skin = pad.querySelector<HTMLCanvasElement>('.drawing-pad__surface')!;
+    const ink = pad.querySelector<HTMLCanvasElement>('.drawing-pad__ink')!;
+    const live = pad.querySelector<HTMLElement>('.drawing-pad__live')!;
+    const sctx = skin.getContext('2d')!;
+    const ictx = ink.getContext('2d')!;
+    const kind = pad.dataset.surface;
+
+    let tone = pad.dataset.tone!;
+    let color = pad.querySelector<HTMLElement>('[data-ink]')?.dataset.ink ?? '#141414';
+    const firstNeedle = pad.querySelector<HTMLElement>('[data-size]')!;
+    let size = Number(firstNeedle.dataset.size);
+    let alpha = Number(firstNeedle.dataset.alpha);
+    let erasing = false;
+    let W = 0;
+    let H = 0;
+    let dpr = 1;
+    let shape: Path2D | null = null;
+
+    // The drawable area: a forearm-shaped patch (wider at the elbow end) or a plain rounded sheet.
+    function makeShape() {
+      const p = new Path2D();
+      const m = Math.min(W, H) * 0.06;
+      if (kind === 'paper') {
+        p.roundRect(m, m, W - 2 * m, H - 2 * m, 18);
+        return p;
+      }
+      const tall = H > W;
+      if (tall) {
+        const top = m, bottom = H - m, cx = W / 2;
+        const wTop = W * 0.36, wBottom = W * 0.44;
+        p.moveTo(cx - wTop, top + 30);
+        p.quadraticCurveTo(cx, top - 10, cx + wTop, top + 30);
+        p.bezierCurveTo(cx + wTop * 1.05, H * 0.45, cx + wBottom, H * 0.7, cx + wBottom, bottom - 30);
+        p.quadraticCurveTo(cx, bottom + 12, cx - wBottom, bottom - 30);
+        p.bezierCurveTo(cx - wBottom, H * 0.7, cx - wTop * 1.05, H * 0.45, cx - wTop, top + 30);
+      } else {
+        const left = m, right = W - m, cy = H / 2;
+        const hLeft = H * 0.3, hRight = H * 0.4;
+        p.moveTo(left + 30, cy - hLeft);
+        p.bezierCurveTo(W * 0.45, cy - hLeft * 1.05, W * 0.7, cy - hRight, right - 30, cy - hRight);
+        p.quadraticCurveTo(right + 12, cy, right - 30, cy + hRight);
+        p.bezierCurveTo(W * 0.7, cy + hRight, W * 0.45, cy + hLeft * 1.05, left + 30, cy + hLeft);
+        p.quadraticCurveTo(left - 10, cy, left + 30, cy - hLeft);
+      }
+      p.closePath();
+      return p;
+    }
+
+    function drawSkin() {
+      sctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      sctx.clearRect(0, 0, W, H);
+      shape = makeShape();
+      sctx.save();
+      sctx.shadowColor = 'rgba(0,0,0,0.45)';
+      sctx.shadowBlur = 18;
+      sctx.shadowOffsetY = 6;
+      sctx.fillStyle = tone;
+      sctx.fill(shape);
+      sctx.restore();
+      // A soft highlight down the middle so it reads as a rounded, rubbery patch.
+      sctx.save();
+      sctx.clip(shape);
+      const g = H > W ? sctx.createLinearGradient(0, 0, W, 0) : sctx.createLinearGradient(0, 0, 0, H);
+      g.addColorStop(0, 'rgba(0,0,0,0.18)');
+      g.addColorStop(0.45, 'rgba(255,255,255,0.14)');
+      g.addColorStop(1, 'rgba(0,0,0,0.22)');
+      sctx.fillStyle = g;
+      sctx.fillRect(0, 0, W, H);
+      sctx.restore();
+    }
+
+    function resize() {
+      const r = stage.getBoundingClientRect();
+      if (!r.width || !r.height) return;
+      if (Math.abs(r.width - W) < 1 && Math.abs(r.height - H) < 1) return;
+      // Keep what's been drawn when the size changes.
+      const old = document.createElement('canvas');
+      old.width = ink.width;
+      old.height = ink.height;
+      if (ink.width) old.getContext('2d')!.drawImage(ink, 0, 0);
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = r.width;
+      H = r.height;
+      for (const c of [skin, ink]) {
+        c.width = Math.round(W * dpr);
+        c.height = Math.round(H * dpr);
+      }
+      drawSkin();
+      ictx.setTransform(1, 0, 0, 1, 0, 0);
+      if (old.width) ictx.drawImage(old, 0, 0, ink.width, ink.height);
+      ictx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    // Strokes: smoothed with midpoint curves, clipped to the skin, pen pressure widens the line.
+    // Each stroke is drawn at full strength on a "wet" layer and shown over a snapshot of the ink at the
+    // needle's opacity, so shading is one even wash instead of dark overlapping dots.
+    const wet = document.createElement('canvas');
+    const wctx = wet.getContext('2d')!;
+    const base = document.createElement('canvas');
+    const bctx = base.getContext('2d')!;
+    let drawing = false;
+    const pos = (ev: PointerEvent) => {
+      const r = ink.getBoundingClientRect();
+      return { x: ev.clientX - r.left, y: ev.clientY - r.top };
+    };
+    function compose() {
+      ictx.save();
+      ictx.setTransform(1, 0, 0, 1, 0, 0);
+      ictx.globalCompositeOperation = 'source-over';
+      ictx.globalAlpha = 1;
+      ictx.clearRect(0, 0, ink.width, ink.height);
+      ictx.drawImage(base, 0, 0);
+      if (erasing) {
+        ictx.globalCompositeOperation = 'destination-out';
+      } else {
+        ictx.globalAlpha = alpha;
+      }
+      ictx.drawImage(wet, 0, 0);
+      ictx.restore();
+    }
+    // The whole stroke is redrawn as one smooth path each time, so lines stay seamless.
+    let points: { x: number; y: number }[] = [];
+    let width = 0;
+    function stroke(ev: PointerEvent, p: { x: number; y: number }) {
+      if (!shape) return;
+      const pressure = ev.pointerType === 'pen' && ev.pressure > 0 ? 0.4 + ev.pressure * 1.2 : 1;
+      const target = (erasing ? Math.max(size, 16) : size) * pressure;
+      width = width ? width * 0.8 + target * 0.2 : target;
+      points.push(p);
+      wctx.save();
+      wctx.setTransform(1, 0, 0, 1, 0, 0);
+      wctx.clearRect(0, 0, wet.width, wet.height);
+      wctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      wctx.clip(shape);
+      wctx.strokeStyle = erasing ? '#000' : color;
+      wctx.lineWidth = width;
+      wctx.lineCap = 'round';
+      wctx.lineJoin = 'round';
+      wctx.beginPath();
+      wctx.moveTo(points[0].x, points[0].y);
+      for (let i = 1; i < points.length - 1; i++) {
+        const mx = (points[i].x + points[i + 1].x) / 2;
+        const my = (points[i].y + points[i + 1].y) / 2;
+        wctx.quadraticCurveTo(points[i].x, points[i].y, mx, my);
+      }
+      const end = points[points.length - 1];
+      wctx.lineTo(end.x, end.y);
+      wctx.stroke();
+      wctx.restore();
+      compose();
+    }
+    ink.addEventListener('pointerdown', (ev) => {
+      drawing = true;
+      ink.setPointerCapture(ev.pointerId);
+      for (const c of [wet, base]) {
+        c.width = ink.width;
+        c.height = ink.height;
+      }
+      bctx.drawImage(ink, 0, 0);
+      points = [];
+      width = 0;
+      const start = pos(ev);
+      stroke(ev, start);
+      // A dot for a single tap.
+      stroke(ev, { x: start.x + 0.01, y: start.y + 0.01 });
+      ev.preventDefault();
+    });
+    ink.addEventListener('pointermove', (ev) => {
+      if (!drawing) return;
+      for (const e of ev.getCoalescedEvents?.() ?? [ev]) stroke(e, pos(e));
+    });
+    for (const n of ['pointerup', 'pointercancel', 'pointerleave']) {
+      ink.addEventListener(n, () => {
+        drawing = false;
+        points = [];
+      });
+    }
+
+    // Tools: one choice pressed per group.
+    const press = (group: string, btn: HTMLElement) => {
+      pad.querySelectorAll<HTMLElement>(group).forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+    };
+    pad.querySelectorAll<HTMLElement>('[data-tone]').forEach((b) => {
+      if (b === pad) return;
+      b.addEventListener('click', () => {
+        tone = b.dataset.tone!;
+        press('.drawing-pad__swatch[data-tone]', b);
+        drawSkin();
+        live.textContent = b.getAttribute('aria-label') ?? '';
+      });
+    });
+    pad.querySelectorAll<HTMLElement>('[data-ink]').forEach((b) =>
+      b.addEventListener('click', () => {
+        color = b.dataset.ink!;
+        erasing = false;
+        press('[data-ink]', b);
+        pad.querySelector('[data-erase]')!.setAttribute('aria-pressed', 'false');
+        live.textContent = b.getAttribute('aria-label') ?? '';
+      }),
+    );
+    const needleBtns = '[data-size], [data-erase]';
+    pad.querySelectorAll<HTMLElement>(needleBtns).forEach((b) =>
+      b.addEventListener('click', () => {
+        erasing = b.hasAttribute('data-erase');
+        if (!erasing) {
+          size = Number(b.dataset.size);
+          alpha = Number(b.dataset.alpha);
+        }
+        press(needleBtns, b);
+        live.textContent = b.textContent ?? '';
+      }),
+    );
+    pad.querySelector('[data-act="fresh"]')!.addEventListener('click', () => {
+      ictx.save();
+      ictx.setTransform(1, 0, 0, 1, 0, 0);
+      ictx.clearRect(0, 0, ink.width, ink.height);
+      ictx.restore();
+      live.textContent = 'Fresh skin';
+    });
+    pad.querySelector('[data-act="save"]')!.addEventListener('click', () => {
+      const out = document.createElement('canvas');
+      out.width = ink.width;
+      out.height = ink.height;
+      const o = out.getContext('2d')!;
+      o.drawImage(skin, 0, 0);
+      o.drawImage(ink, 0, 0);
+      const a = document.createElement('a');
+      a.href = out.toDataURL('image/png');
+      a.download = pad.dataset.file || 'drawing.png';
+      a.click();
+    });
+
+    new ResizeObserver(resize).observe(stage);
+  });
+</script>
