@@ -4,7 +4,7 @@
   "description": "Deovandski personal site",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node scripts/prune-originals.mjs",
     "preview": "astro preview",
     "travel:codes": "node scripts/country-codes.mjs && node scripts/subdivision-codes.mjs",
     "prebuild": "node scripts/convert-heic.mjs",
