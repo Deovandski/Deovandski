@@ -199,6 +199,13 @@ const boardgames = loadSections('content/boardgames.md', 'content/boardgames');
 const mtg = loadSections('content/mtg.md', 'content/mtg');
 const cooking = loadSections('content/cooking.md', 'content/cooking');
 const botw = loadBotw();
+// BOTW intro lines may hold Markdown links: [text](https://...) or a facet link like [Churrasco](#churrasco).
+const linkify = (t: string) =>
+  t
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/\[([^\]]+)\]\(((?:https?:\/\/|#)[^)\s]+)\)/g, '<a href="$2">$1</a>');
 const nf = new Intl.NumberFormat('en-US');
 const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
@@ -493,7 +500,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
     <section class="panel" role="region" id="panel-botw" aria-labelledby="tab-botw" tabindex="0" hidden>
       <div class="list-head">
-        <div class="botw-intro">{botw.intro.map((para) => <p class="ranking-lede">{para}</p>)}</div>
+        <div class="botw-intro">{botw.intro.map((para) => <p class="ranking-lede" set:html={linkify(para)} />)}</div>
         <a class="list-link" href="https://www.youtube.com/@RedLetterMedia">Red Letter Media on YouTube</a>
       </div>
       {
