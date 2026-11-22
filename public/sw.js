@@ -1,7 +1,7 @@
-// Service worker: lets the installed app (and the site in Chrome) open the QR Code and Gaming pages with no signal.
+// Service worker: lets the installed app (and the site in Chrome) open the QR Code and Playground pages with no signal.
 //
 // What it saves on the phone:
-//   - the QR Code and Gaming pages with everything they load (CSS, scripts, images such as the header
+//   - the QR Code and Playground pages with everything they load (CSS, scripts, images such as the header
 //     logo and the Whack-a-Miku sprite), and the home page
 //     with its CSS and scripts only, read from their HTML when the worker installs;
 //   - afterwards, any CSS, script or font the site loads (small, and the file names change with
@@ -9,19 +9,19 @@
 // What it never saves: photos from the galleries or anything from other websites, so it can't fill
 // the phone's storage.
 //
-// Pages: the QR Code and Gaming pages open from the saved copy at once and are refreshed in the background.
+// Pages: the QR Code and Playground pages open from the saved copy at once and are refreshed in the background.
 // Other pages come from the network; if there's no answer within 4 seconds (or no signal), the
 // saved copy is used when there is one.
 //
 // Change VERSION to throw away everything saved and start over.
-const VERSION = 'v2';
+const VERSION = 'v3';
 const CACHE = `deovandski-${VERSION}`;
 const SCOPE = new URL(self.registration.scope);
 const QR = new URL('qr/', SCOPE).href;
-const GAMING = new URL('gaming/', SCOPE).href;
-const OFFLINE = [QR, GAMING]; // pages that must work offline
+const PLAYGROUND = new URL('playground/', SCOPE).href;
+const OFFLINE = [QR, PLAYGROUND]; // pages that must work offline
 const PAGES = [SCOPE.href, ...OFFLINE];
-const EXTRA = ['manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/shortcut-qr-96.png', 'icons/shortcut-gaming-96.png', 'favicon.png'].map(
+const EXTRA = ['manifest.webmanifest', 'icons/icon-192.png', 'icons/icon-512.png', 'icons/shortcut-qr-96.png', 'icons/shortcut-playground-96.png', 'favicon.png'].map(
   (p) => new URL(p, SCOPE).href,
 );
 

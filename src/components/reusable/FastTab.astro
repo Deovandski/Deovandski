@@ -20,7 +20,9 @@
  *   <button type="button" data-fasttabs="close">Collapse all</button>
  *
  * Props:
- *   title    the header text (required).
+ *   title    the header text (required). For a header with a link in it, also pass the same words in a
+ *            `title` slot with the link: <Fragment slot="title">Paper plane (<a href="/#aviation">Aviation</a>)</Fragment>.
+ *            Clicking the link follows it; clicking anywhere else on the header opens or closes the FastTab.
  *   summary  text on the right of the header while collapsed. Scripts can change it later through
  *            the element with [data-fasttab-summary].
  *   open     start expanded. Default false (collapsed, as F&O does for the less-used FastTabs).
@@ -47,7 +49,7 @@ const { title, summary = '', open = false, id, keepSummary = false, class: class
 
 <details class:list={['fasttab', className, { 'fasttab--keep-summary': keepSummary }]} open={open} id={id} {...rest}>
   <summary class="fasttab__header">
-    <span class="fasttab__title">{title}</span>
+    <span class="fasttab__title"><slot name="title">{title}</slot></span>
     <span class="fasttab__summary" data-fasttab-summary>{summary}</span>
     <svg class="fasttab__chevron" viewBox="0 0 16 16" width="16" height="16" aria-hidden="true">
       <path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -84,6 +86,9 @@ const { title, summary = '', open = false, id, keepSummary = false, class: class
   .fasttab__title {
     font-weight: 700;
     font-size: 1.1rem;
+  }
+  .fasttab__title :global(a) {
+    color: var(--fasttab-accent, #39c5bb);
   }
   .fasttab__summary {
     margin-left: auto;

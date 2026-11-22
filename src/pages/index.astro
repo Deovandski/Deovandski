@@ -1411,8 +1411,8 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
   }
   // #qr is the hidden QR Code page's short link: deovandski.github.io/Deovandski/#qr → /qr/.
   if (location.hash.toLowerCase() === '#qr') location.replace(`${import.meta.env.BASE_URL.replace(/\/?$/, '/')}qr/`);
-  // #gaming does the same for the hidden Gaming page: …/#gaming → /gaming/.
-  if (location.hash.toLowerCase() === '#gaming') location.replace(`${import.meta.env.BASE_URL.replace(/\/?$/, '/')}gaming/`);
+  // #playground (and the older #gaming) do the same for the Playground page: …/#playground → /playground/.
+  if (['#playground', '#gaming'].includes(location.hash.toLowerCase())) location.replace(`${import.meta.env.BASE_URL.replace(/\/?$/, '/')}playground/`);
   openFromHash(location.hash);
 
   // Links between facets (e.g. Mentor → "#death") switch facets too, then bring the facet's header into view.

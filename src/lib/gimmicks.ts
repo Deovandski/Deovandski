@@ -1,8 +1,8 @@
 // Every interactive gimmick on the site, in one list. The home page reads it for each tab's ▶ Play button
-// (src/components/GimmickPlay.astro), and the hidden Gaming page (/gaming/) lists them all as FastTabs.
+// (src/components/GimmickPlay.astro), and the Playground page (/playground/) lists them all as FastTabs.
 // To add one: a row here, its component in src/components/Gimmick.astro, and <GimmickPlay tab="…" /> in its panel.
 //
-// id       the gimmick's anchor and save-free name (/gaming/#paper-plane).
+// id       the gimmick's anchor and save-free name (/playground/#paper-plane).
 // title    the FastTab header.
 // tab      the home page tab it plays on (`#<tab>-play` opens it straight away).
 // tabName  how the tab is called in text ("From the Aviation tab").
