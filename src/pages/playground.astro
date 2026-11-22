@@ -1,0 +1,92 @@
+---
+// Playground (/playground/, in the top nav next to Contact; /gaming/ and #gaming still land here): every
+// interactive gimmick from the tabs in one place, one FastTab each, all collapsed and A to Z by name. Each
+// FastTab reads "Name (Tab facet)", the tab linking to it. It opens from the installed app's "Playground"
+// shortcut and works offline (public/sw.js). Deo also uses it for UX prototypes and ideas.
+// Each gimmick uses the same save as on its tab, so the pets, the farm and personal bests carry over.
+// To add a gimmick: see src/lib/gimmicks.ts (the list sorts itself).
+import Base from '../layouts/Base.astro';
+import FastTab from '../components/reusable/FastTab.astro';
+import Gimmick from '../components/Gimmick.astro';
+import { GIMMICKS } from '../lib/gimmicks';
+import { url } from '../lib/url';
+
+// One FastTab per gimmick in src/lib/gimmicks.ts, A to Z by name. Its id is the anchor (/playground/#paper-plane).
+const games = [...GIMMICKS].sort((a, b) => a.title.localeCompare(b.title, 'en', { sensitivity: 'base' }));
+---
+
+<Base title="Playground" description="Every game and toy from Deovandski's tabs in one place, plus UX prototypes and ideas.">
+  <div class="gaming">
+    <header class="gaming__head">
+      <h1>Playground</h1>
+      <p class="gaming__lede">If you're just here for the interactive stuff, then you're in the right spot. Deo also uses this page as a dumping ground for UX prototypes, ideas, etc.</p>
+      <p>Open one to play. They save in this browser only, the same saves as on their tabs, and this page works offline once the app is installed.</p>
+      <div class="gaming__toolbar">
+        <button type="button" data-fasttabs="open">Expand all</button>
+        <button type="button" data-fasttabs="close">Collapse all</button>
+      </div>
+    </header>
+
+    <div class="gaming__tabs">
+      {
+        games.map((g) => (
+          <FastTab title={`${g.title} (${g.tabName} facet)`} id={g.id} data-gimmick-id={g.id} data-summary-base="">
+            <Fragment slot="title">
+              {g.title} (<a href={url(`/#${g.tab}`)}>{g.tabName}</a> facet)
+            </Fragment>
+            <Gimmick id={g.id} />
+          </FastTab>
+        ))
+      }
+    </div>
+  </div>
+</Base>
+
+<style>
+  .gaming {
+    padding: 1rem 0 2.5rem;
+    --fasttab-accent: var(--teal, #39c5bb);
+    --fasttab-muted: var(--muted, #9aa3b5);
+  }
+  .gaming__head h1 {
+    margin: 0 0 0.4rem;
+  }
+  .gaming__head p {
+    margin: 0 0 0.8rem;
+    color: var(--muted, #9aa3b5);
+  }
+  .gaming__head .gaming__lede {
+    color: var(--text, #e6edf3);
+    font-size: 1.05rem;
+  }
+  .gaming__toolbar {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(127, 127, 127, 0.35);
+  }
+  .gaming__toolbar button {
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--teal, #39c5bb);
+    background: transparent;
+    color: var(--teal, #39c5bb);
+    font: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  .gaming__toolbar button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
+</style>
+
+<script>
+  import { refreshGimmickSummaries } from '../scripts/gimmickSummaries';
+
+  // Summary fields with live values, F&O style, from the saves the games already keep in this browser.
+  refreshGimmickSummaries();
+  // Update when a FastTab closes (the summary shows again), after the game may have saved.
+  document.querySelectorAll('details.fasttab').forEach((d) => d.addEventListener('toggle', () => setTimeout(refreshGimmickSummaries, 50)));
+</script>

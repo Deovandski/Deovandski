@@ -29,7 +29,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [DrumKit.astro](DrumKit.astro) | A drum kit seen from above: tap or click (multi-touch) or use the keyboard. Sounds made with the Web Audio API, no samples. | Musician tab |
 | [LedMatrix.astro](LedMatrix.astro) | A grid of round LEDs to draw on (click, drag, right-click erases, keyboard too), sized to fit the width. Starts with a stick figure and "Huehuehue" (or "Hue"). From the LED Matrix Manager site. | Painting tab |
 | [DiceTray.astro](DiceTray.astro) | A row of dice (d4 to d20), each tumbling in its own sunken pit when clicked, with a Roll all button and total. Miku colours by default. | D&D tab |
-| [FastTab.astro](FastTab.astro) | A collapsible section in the style of D365 F&O FastTabs: bold title, summary fields on the right while collapsed, a chevron, and optional Expand all / Collapse all buttons. Built on `<details>`, so it works without JavaScript. | Gaming page (one per gimmick) |
+| [FastTab.astro](FastTab.astro) | A collapsible section in the style of D365 F&O FastTabs: bold title, summary fields on the right while collapsed, a chevron, and optional Expand all / Collapse all buttons. Built on `<details>`, so it works without JavaScript. | Playground page (one per gimmick, titled "Name (Tab facet)" through the `title` slot) |
 | [PhotoViewer.astro](PhotoViewer.astro) | The one photo viewer (lightbox) for a page: every content picture, gallery button and link to an image file opens in it, with its caption and date; ‹ › between pictures. Put it once in the layout. | Every page (in `Base.astro`) |
 
 ## SplitFlap
@@ -602,7 +602,7 @@ import FastTab from './reusable/FastTab.astro';
 
 | Prop | Default | |
 |---|---|---|
-| `title` | (required) | Header text, in bold. |
+| `title` | (required) | Header text, in bold. For a header with a link in it, also pass the same words in the `title` slot with the link (`<Fragment slot="title">Paper plane (<a href="…">Aviation</a>)</Fragment>`); clicking the link follows it, anywhere else opens or closes the FastTab. |
 | `summary` | `""` | Text on the right of the header while collapsed (F&O "summary fields"). Scripts can update it through `[data-fasttab-summary]`. |
 | `open` | `false` | Start expanded. |
 | `id` | none | Anchor: `/page/#id` opens this FastTab and scrolls to it. |

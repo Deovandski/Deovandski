@@ -21,6 +21,7 @@ const pageTitle = title ? `${title} | Deovandski` : "Deovandski's Blog";
 const nav = [
   { href: '/', label: 'Home' },
   { href: '/contact/', label: 'Contact' },
+  { href: '/playground/', label: 'Playground' },
 ];
 
 const here = Astro.url.pathname.replace(import.meta.env.BASE_URL.replace(/\/+$/, ''), '') || '/';

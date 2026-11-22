@@ -1,6 +1,6 @@
 // Live "summary fields" for gimmick FastTabs (F&O style), read from the saves the games already keep in
 // this browser. Every FastTab that shows a gimmick carries data-gimmick-id; its data-summary-base is the
-// fixed part ("Mentor tab" on the Gaming page, nothing on a tab), and the live value is added after it.
+// fixed part (nothing today; a page can set one), and the live value is added after it.
 const read = (key: string): string | null => {
   try {
     return localStorage.getItem(key);
