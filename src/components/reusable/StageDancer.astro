@@ -1,9 +1,18 @@
 ---
 /**
- * StageDancer: a chibi pixel character dancing a disco routine on a stage: the Saturday Night Fever
- * "point" (arm up to the sky, then down across the body, hip out), hip rolls and a turn, under
- * sweeping coloured spotlights, a mirror ball and a light-up floor. The character is drawn in code
- * (no image files), and its colours are props, so it can be dressed differently.
+ * StageDancer: a chibi pixel character dancing disco routines on a stage, under sweeping coloured
+ * spotlights, a mirror ball and a light-up floor. Four routines to pick from (#1 to #4):
+ *   #1 The point: the Saturday Night Fever "point" (arm up to the sky, then down across the body), hip
+ *      rolls and a turn.
+ *   #2 The line dance: the "Night Fever" line dance as the 1978-79 disco books wrote it up: back three
+ *      and clap, forward three and clap, a turn each way, a snap kick, the skate, the point with merengue
+ *      hips, a hand roll, the funky chicken and a pivot.
+ *   #3 The hustle: a four-count street hustle with hip bumps and rope arms.
+ *   #4 Toe stand & point: up on the toes, one finger pointing straight up, a lean and a kick.
+ * A fever meter on the right fills while it dances, faster when you tap the stage on the beat, and at the
+ * top hits FEVER! (the whole floor lights up). An optional 8-bit disco loop (original music, synthesized
+ * with Web Audio, no files) plays in time with the dance. The character is drawn in code (no image files),
+ * and its colours are props, so it can be dressed differently.
  *
  * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
  * Copy this one file into any Astro project. See README.md in this folder.
@@ -19,9 +28,12 @@
  *
  * Theming (CSS custom properties): --dancer-accent (default #39c5bb).
  *
- * Accessible: a text label describes the scene; buttons pause the dance and change the light colours.
- * Lights change on the beat (under 3 changes a second, within WCAG's flash limit). Reduced motion
- * shows a still point pose with steady lights.
+ * Accessible: a text label describes the scene; buttons pick the routine, pause the dance, change the
+ * light colours and turn the music on or off; the fever meter is a role="meter" with its value, and Space or
+ * Enter on the stage taps the beat. Lights change on the beat (under 3 changes a second, within WCAG's flash
+ * limit), and FEVER! only brightens the floor, it doesn't strobe. Reduced motion shows a still point pose
+ * with steady lights. The music is off until the visitor turns it on, and stops when the dance pauses or
+ * the stage is hidden.
  */
 interface Props {
   outfit?: Partial<Record<'hat' | 'hatTrim' | 'skin' | 'beard' | 'robe' | 'pattern' | 'hem' | 'boots', string>>;
@@ -49,10 +61,25 @@ const colors = {
 ---
 
 <div class:list={['stage-dancer', className]} data-colors={JSON.stringify(colors)} data-bpm={bpm}>
-  <canvas class="stage-dancer__canvas" role="img" aria-label={label}></canvas>
+  <div class="stage-dancer__routines" role="group" aria-label="Pick a routine">
+    <button type="button" data-routine="0" aria-pressed="true">#1 The point</button>
+    <button type="button" data-routine="1" aria-pressed="false">#2 Line dance</button>
+    <button type="button" data-routine="2" aria-pressed="false">#3 Hustle</button>
+    <button type="button" data-routine="3" aria-pressed="false">#4 Toe stand</button>
+  </div>
+  <div class="stage-dancer__stage">
+    <canvas class="stage-dancer__canvas" role="img" aria-label={label} tabindex="0"></canvas>
+    <div class="stage-dancer__fever" role="meter" aria-label="Fever" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <span class="stage-dancer__fever-fill"></span>
+      <span class="stage-dancer__fever-label" aria-hidden="true">Fever</span>
+    </div>
+    <p class="stage-dancer__hint" aria-hidden="true">Tap the stage on the beat</p>
+  </div>
+  <p class="stage-dancer__status" aria-live="polite"></p>
   <div class="stage-dancer__controls">
     <button type="button" data-act="pause" aria-pressed="false">Pause</button>
     <button type="button" data-act="lights">Change the lights</button>
+    <button type="button" data-act="music" aria-pressed="false">Music: off</button>
   </div>
 </div>
 
@@ -61,9 +88,76 @@ const colors = {
     --_accent: var(--dancer-accent, #39c5bb);
     margin: 0.5rem 0 1.5rem;
   }
+  .stage-dancer__routines {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+  .stage-dancer__stage {
+    position: relative;
+  }
+  .stage-dancer__fever {
+    position: absolute;
+    top: 12%;
+    right: 12px;
+    bottom: 12%;
+    width: 22px;
+    border-radius: 11px;
+    border: 2px solid rgba(255, 255, 255, 0.55);
+    background: rgba(0, 0, 0, 0.45);
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .stage-dancer__fever-fill {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: var(--fever, 0%);
+    background: linear-gradient(to top, #39c5bb, #ffd23f 55%, #ff2d95);
+    transition: height 0.25s ease-out;
+  }
+  .stage-dancer__fever-label {
+    position: absolute;
+    left: 50%;
+    bottom: 6px;
+    transform: translateX(-50%) rotate(-90deg);
+    transform-origin: center;
+    font-size: 0.6rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    color: #fff;
+    text-shadow: 0 1px 2px #000;
+    white-space: nowrap;
+  }
+  .stage-dancer.is-fever .stage-dancer__fever {
+    border-color: #ffd23f;
+    box-shadow: 0 0 14px #ff2d95;
+  }
+  .stage-dancer__hint {
+    position: absolute;
+    left: 12px;
+    bottom: 8px;
+    margin: 0;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+  }
+  .stage-dancer__status {
+    min-height: 1.3em;
+    margin: 0.35rem 0 0;
+    font-weight: 700;
+    color: var(--_accent);
+  }
+  .stage-dancer__canvas:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+  }
   .stage-dancer__canvas {
     display: block;
     width: 100%;
+    cursor: pointer;
     height: clamp(260px, 38vw, 360px);
     border-radius: 16px;
     background: #07040d;
@@ -71,10 +165,13 @@ const colors = {
   }
   .stage-dancer__controls {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 0.5rem;
   }
+  .stage-dancer__routines button,
   .stage-dancer__controls button {
+    min-height: 2.5rem;
     padding: 0.35rem 1rem;
     border-radius: 999px;
     border: 1px solid var(--_accent);
@@ -84,9 +181,11 @@ const colors = {
     font-weight: 700;
     cursor: pointer;
   }
+  .stage-dancer__routines button[aria-pressed='true'],
   .stage-dancer__controls button[aria-pressed='true'] {
     background: color-mix(in srgb, var(--_accent) 18%, transparent);
   }
+  .stage-dancer__routines button:focus-visible,
   .stage-dancer__controls button:focus-visible {
     outline: 2px solid #fff;
     outline-offset: 2px;
@@ -98,7 +197,8 @@ const colors = {
   // A pose: arm end points relative to the shoulders (elbow optional), hip shift, head lean, leg spread,
   // whether the right hand points, and whether we see the back (the turn).
   type Arm = { hand: [number, number]; elbow?: [number, number]; point?: boolean };
-  type Pose = { r: Arm; l: Arm; hip: number; lean: number; legs: number; back?: boolean; bob?: number };
+  // kick: which leg (1 right, -1 left) swings out and up; toe: up on the toes (the body rises).
+  type Pose = { r: Arm; l: Arm; hip: number; lean: number; legs: number; back?: boolean; bob?: number; kick?: 1 | -1; toe?: boolean };
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const GW = 40;
@@ -113,6 +213,51 @@ const colors = {
   const TURN: Pose = { r: { hand: [9, 3] }, l: { hand: [-9, 3] }, hip: 0, lean: 0, legs: 1, back: true };
   const FINISH: Pose = { r: { hand: [8, -13], point: true }, l: { hand: [-9, 6] }, hip: 3, lean: -1, legs: 4 };
   const ROUTINE: Pose[] = [POINT_UP, POINT_DOWN, POINT_UP, POINT_DOWN, ROLL_L, ROLL_R, ROLL_L, ROLL_R, POINT_UP, POINT_DOWN, TURN, FINISH];
+
+  // #2 The line dance, from the disco books' write-up: walk back 3 and clap, walk forward 3 and clap,
+  // a turn each way, snap kick, the skate, the point with merengue hips, a hand roll, the funky chicken,
+  // and the pivot (toe points, then a turn with the knee up).
+  const SWING_L: Arm = { hand: [-3, 9] };
+  const SWING_R: Arm = { hand: [3, 9] };
+  const WALK_A: Pose = { r: { hand: [4, 7] }, l: { hand: [-2, 9] }, hip: 1, lean: 0, legs: 2, bob: 1 };
+  const WALK_B: Pose = { r: { hand: [2, 9] }, l: { hand: [-4, 7] }, hip: -1, lean: 0, legs: 2 };
+  const CLAP: Pose = { r: { elbow: [3, 6], hand: [-5, 5] }, l: { elbow: [-3, 6], hand: [5, 5] }, hip: 0, lean: 0, legs: 2 };
+  const SPIN_SIDE: Pose = { r: { hand: [8, 1] }, l: { hand: [-6, 6] }, hip: 2, lean: 1, legs: 1 };
+  const KICK: Pose = { r: { hand: [6, 6] }, l: { hand: [-6, 6] }, hip: -1, lean: 0, legs: 2, kick: 1 };
+  const SKATE_L: Pose = { r: SWING_R, l: SWING_L, hip: -3, lean: -1, legs: 1 };
+  const SKATE_R: Pose = { ...SKATE_L, hip: 3, lean: 1, bob: 1 };
+  const MERENGUE_R: Pose = { ...POINT_UP, hip: 3 };
+  const HANDS_IN: Pose = { r: { elbow: [3, 7], hand: [-3, 7] }, l: { elbow: [-3, 7], hand: [3, 7] }, hip: -3, lean: 0, legs: 2, bob: 1 };
+  const CHICKEN: Pose = { r: { elbow: [7, 3], hand: [1, 5] }, l: { elbow: [-7, 3], hand: [-1, 5] }, hip: 0, lean: 0, legs: 1, bob: 1 };
+  const CHICKEN_UP: Pose = { r: { elbow: [7, 0], hand: [1, 5] }, l: { elbow: [-7, 0], hand: [-1, 5] }, hip: 0, lean: 0, legs: 1 };
+  const TOE_FWD: Pose = { r: SWING_R, l: SWING_L, hip: 0, lean: 0, legs: 2, kick: 1 };
+  const KNEE_UP: Pose = { r: { hand: [8, 2] }, l: { hand: [-8, 2] }, hip: -1, lean: 0, legs: 1, kick: 1, back: true };
+  const LINE_DANCE: Pose[] = [
+    WALK_A, WALK_B, WALK_A, CLAP, WALK_B, WALK_A, WALK_B, CLAP,
+    SPIN_SIDE, TURN, SPIN_SIDE, CLAP,
+    KICK, WALK_A, KICK, WALK_B,
+    SKATE_L, SKATE_R, SKATE_L, SKATE_R,
+    MERENGUE_R, HANDS_IN, MERENGUE_R, HANDS_IN,
+    ROLL_L, ROLL_R, CHICKEN, CHICKEN_UP,
+    TOE_FWD, WALK_B, KNEE_UP, FINISH,
+  ];
+
+  // #3 The hustle: a four-count street hustle, stepping side to side with hip bumps and rope arms.
+  const BUMP_R: Pose = { r: { elbow: [4, 5], hand: [6, 1] }, l: { elbow: [-5, 5], hand: [-2, 8] }, hip: 4, lean: 1, legs: 3 };
+  const BUMP_L: Pose = { r: { elbow: [5, 5], hand: [2, 8] }, l: { elbow: [-4, 5], hand: [-6, 1] }, hip: -4, lean: -1, legs: 3 };
+  const ROPE_UP: Pose = { r: { hand: [7, -9] }, l: { elbow: [-5, 4], hand: [-1, 2] }, hip: 2, lean: -1, legs: 2, bob: 1 };
+  const ROPE_DOWN: Pose = { r: { elbow: [6, 1], hand: [3, -4] }, l: { elbow: [-5, 4], hand: [-1, 2] }, hip: -2, lean: 1, legs: 2 };
+  const HUSTLE: Pose[] = [BUMP_R, BUMP_L, BUMP_R, CLAP, BUMP_L, BUMP_R, BUMP_L, CLAP, ROPE_UP, ROPE_DOWN, ROPE_UP, ROPE_DOWN, ROLL_L, ROLL_R, TURN, POINT_UP];
+
+  // #4 Toe stand & point: hand on the hip, up on the toes with one finger straight up, a lean, a kick, a turn.
+  const HAND_HIP: Pose = { r: { elbow: [5, 5], hand: [1, 9] }, l: HIP_L, hip: 2, lean: 0, legs: 2 };
+  const TOE_POINT: Pose = { r: { hand: [2, -15], point: true }, l: { hand: [-5, 10] }, hip: 1, lean: 1, legs: 1, toe: true };
+  const LEAN: Pose = { r: { hand: [7, 4] }, l: { hand: [-7, 6] }, hip: -3, lean: -2, legs: 2 };
+  const SIDE_KICK: Pose = { r: { hand: [5, 7] }, l: { hand: [-8, -2] }, hip: -2, lean: -1, legs: 1, kick: 1 };
+  const TOE_STAND: Pose[] = [HAND_HIP, HAND_HIP, TOE_POINT, TOE_POINT, LEAN, SIDE_KICK, TURN, TOE_POINT];
+
+  const ROUTINES: Pose[][] = [ROUTINE, LINE_DANCE, HUSTLE, TOE_STAND];
+  const ROUTINE_NAMES = ['The point', 'The line dance', 'The hustle', 'Toe stand & point'];
 
   // Draws one pose into a GW x GH grid of colours, then outlines it in black.
   function render(pose: Pose, c: Colors): (string | null)[][] {
@@ -140,15 +285,18 @@ const colors = {
         rect(x - w / 2, y - w / 2, w, w, col);
       }
     };
-    const bob = pose.bob ?? 0;
+    const bob = (pose.bob ?? 0) - (pose.toe ? 2 : 0);
     const cx = 20;
     const hip = pose.hip;
     // Legs and boots.
     const legY = 41 + bob;
     for (const side of [-1, 1]) {
-      const fx = cx + side * pose.legs + hip * 0.5;
-      line(cx + side * 2 + hip, legY, fx, 49, 3, c.robe);
-      rect(fx - 2, 49, 5, 3, c.boots);
+      const kicking = pose.kick === side;
+      const fx = cx + side * (kicking ? pose.legs + 6 : pose.legs) + hip * 0.5;
+      const fy = kicking ? 45 + bob : 49 - (pose.toe ? 2 : 0);
+      line(cx + side * 2 + hip, legY, fx, fy, 3, c.robe);
+      if (pose.toe && !kicking) rect(fx - 1, fy, 3, 4, c.boots); // on tiptoe: a narrow boot standing up
+      else rect(fx - 2, fy, 5, 3, c.boots);
     }
     // Robe: a trapezoid from the shoulders to a hem that swings with the hips, blue pattern, striped hem.
     const top = 24 + bob;
@@ -227,9 +375,22 @@ const colors = {
     const ctx = canvas.getContext('2d')!;
     const colors: Colors = JSON.parse(root.dataset.colors!);
     const beat = 60000 / (Number(root.dataset.bpm) || 110);
-    const frames = ROUTINE.map((p) => render(p, colors));
+    const frames = ROUTINES.map((r) => r.map((p) => render(p, colors)));
     const pauseBtn = root.querySelector<HTMLButtonElement>('[data-act="pause"]')!;
     const lightsBtn = root.querySelector<HTMLButtonElement>('[data-act="lights"]')!;
+    const musicBtn = root.querySelector<HTMLButtonElement>('[data-act="music"]')!;
+    const routineBtns = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-routine]'));
+    const meter = root.querySelector<HTMLElement>('.stage-dancer__fever')!;
+    const status = root.querySelector<HTMLElement>('.stage-dancer__status')!;
+    let routine = 0;
+    // Fever: 0-100. Dancing fills it a little every beat, an on-beat tap fills it more. At 100: FEVER!
+    let fever = 0;
+    let feverUntil = -1; // the beat FEVER! lasts until
+    let lastBeat = -1;
+    let flash: { text: string; until: number } | null = null;
+    // On screen? A closed <details> (a FastTab) keeps its content laid out in Chrome (content-visibility),
+    // so offsetParent alone isn't enough; checkVisibility() sees through that.
+    const visible = () => (typeof root.checkVisibility === 'function' ? root.checkVisibility() : !!root.offsetParent);
     let W = 0;
     let H = 0;
     let palette = 0;
@@ -265,7 +426,7 @@ const colors = {
         const spread0 = 0.55 + 0.45 * (r / rows);
         const spread1 = 0.55 + 0.45 * ((r + 1) / rows);
         for (let k = 0; k < cols; k++) {
-          const lit = (k + r + b) % 3 === 0;
+          const lit = b < feverUntil || (k + r + b) % 3 === 0;
           const x00 = W / 2 + (k / cols - 0.5) * W * spread0;
           const x01 = W / 2 + ((k + 1) / cols - 0.5) * W * spread0;
           const x10 = W / 2 + (k / cols - 0.5) * W * spread1;
@@ -317,7 +478,8 @@ const colors = {
         ctx.fillRect(fx - 2, fy - 2, 4, 4);
       }
       // The dancer, centred on the floor, scaled to the stage in whole pixels.
-      const frame = reduced ? frames[0] : frames[b % frames.length];
+      const set = frames[routine];
+      const frame = reduced ? frames[0][0] : set[b % set.length];
       const p = Math.max(3, Math.floor((H * 0.62) / GH));
       const ox = Math.round(W / 2 - (GW * p) / 2);
       const oy = Math.round(floorTop + H * 0.18 - GH * p);
@@ -333,11 +495,168 @@ const colors = {
           ctx.fillStyle = col;
           ctx.fillRect(ox + x * p, oy + y * p, p, p);
         }
+      // "On beat!" / "FEVER!" call-outs, top left.
+      const call = b < feverUntil ? 'FEVER!' : flash && now < flash.until ? flash.text : '';
+      if (call) {
+        ctx.font = `900 ${Math.max(16, Math.round(H * 0.07))}px system-ui, sans-serif`;
+        ctx.textAlign = 'left';
+        ctx.fillStyle = b < feverUntil ? pal[(b % 3)] : '#ffffff';
+        ctx.fillText(call, 14, Math.max(26, H * 0.12));
+      }
+      if (!paused) beatTick(b);
     }
+
+    // Once per beat while dancing: the fever meter fills a little; FEVER! runs its course.
+    function beatTick(b: number) {
+      if (b === lastBeat) return;
+      lastBeat = b;
+      if (b < feverUntil) return;
+      if (feverUntil > 0 && b === feverUntil) {
+        feverUntil = -1;
+        setFever(60);
+        return;
+      }
+      setFever(fever + (music.on ? 2.5 : 1.5));
+    }
+    function setFever(v: number) {
+      fever = Math.max(0, Math.min(100, v));
+      meter.style.setProperty('--fever', `${fever}%`);
+      meter.setAttribute('aria-valuenow', String(Math.round(fever)));
+      if (fever >= 100 && feverUntil < 0) {
+        feverUntil = lastBeat + 8;
+        root.classList.add('is-fever');
+        status.textContent = 'FEVER! The whole floor lights up.';
+      } else if (fever < 100) {
+        root.classList.remove('is-fever');
+      }
+    }
+    // Tapping the stage (or Space/Enter on it): on the beat fills the meter, off the beat drains it a bit.
+    function tap() {
+      if (paused) return;
+      const t = performance.now() - start;
+      const phase = (t % beat) / beat;
+      const onBeat = phase < 0.2 || phase > 0.8;
+      flash = { text: onBeat ? 'On beat!' : 'Off beat', until: performance.now() + 400 };
+      setFever(fever + (onBeat ? 7 : -3));
+    }
+    canvas.addEventListener('pointerdown', tap);
+    canvas.addEventListener('keydown', (e) => {
+      if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        tap();
+      }
+    });
+
+    // The music: an original 8-bit disco loop (not any existing song), synthesized with Web Audio and kept
+    // in time with the dance. Four bars (Am, F, G, Em): four-on-the-floor kick, offbeat hi-hats, a clap on
+    // 2 and 4, an octave-bouncing bass and a square-wave lead, one note per eighth (null = rest).
+    const BASS_ROOTS = [45, 41, 43, 40];
+    const LEAD = [
+      [69, null, 72, null, 76, 74, null, 72],
+      [65, null, 69, null, 72, 69, null, 67],
+      [67, null, 71, null, 74, 72, null, 71],
+      [64, null, 67, null, 71, 69, 67, null],
+    ];
+    const music = { on: false, ctx: null as AudioContext | null, timer: 0, next: 0, noise: null as AudioBuffer | null };
+    const hz = (m: number) => 440 * 2 ** ((m - 69) / 12);
+    function tone(type: OscillatorType, freq: number, at: number, len: number, gain: number) {
+      const a = music.ctx!;
+      const o = a.createOscillator();
+      const g = a.createGain();
+      o.type = type;
+      o.frequency.value = freq;
+      g.gain.setValueAtTime(gain, at);
+      g.gain.exponentialRampToValueAtTime(0.001, at + len);
+      o.connect(g).connect(a.destination);
+      o.start(at);
+      o.stop(at + len + 0.02);
+    }
+    function hit(at: number, len: number, gain: number, filter: BiquadFilterType, freq: number) {
+      const a = music.ctx!;
+      const src = a.createBufferSource();
+      src.buffer = music.noise;
+      const f = a.createBiquadFilter();
+      f.type = filter;
+      f.frequency.value = freq;
+      const g = a.createGain();
+      g.gain.setValueAtTime(gain, at);
+      g.gain.exponentialRampToValueAtTime(0.001, at + len);
+      src.connect(f).connect(g).connect(a.destination);
+      src.start(at);
+      src.stop(at + len + 0.02);
+    }
+    function kick(at: number) {
+      const a = music.ctx!;
+      const o = a.createOscillator();
+      const g = a.createGain();
+      o.frequency.setValueAtTime(140, at);
+      o.frequency.exponentialRampToValueAtTime(42, at + 0.12);
+      g.gain.setValueAtTime(0.5, at);
+      g.gain.exponentialRampToValueAtTime(0.001, at + 0.16);
+      o.connect(g).connect(a.destination);
+      o.start(at);
+      o.stop(at + 0.18);
+    }
+    function playStep(step: number, at: number) {
+      const sixteenth = beat / 4000;
+      const bar = Math.floor(step / 16) % 4;
+      const inBar = step % 16;
+      if (inBar % 4 === 0) kick(at);
+      if (inBar % 4 === 2) hit(at, 0.04, 0.12, 'highpass', 7000);
+      if (inBar === 4 || inBar === 12) hit(at, 0.12, 0.18, 'bandpass', 1800);
+      if (inBar % 2 === 0) {
+        const eighth = inBar / 2;
+        tone('square', hz(BASS_ROOTS[bar] + (eighth % 2 ? 12 : 0)), at, sixteenth * 1.8, 0.07);
+        const note = LEAD[bar][eighth];
+        if (note !== null) tone('square', hz(note), at, sixteenth * 1.9, 0.05);
+      }
+    }
+    // Schedules the next 150 ms of sixteenths, lined up with the dance's beats.
+    function schedule() {
+      const a = music.ctx;
+      if (!a || !music.on) return;
+      if (!visible()) return setMusic(false); // the stage was hidden (tab or FastTab closed): music off
+      if (paused) return;
+      const step = beat / 4;
+      const perfZero = performance.now() - a.currentTime * 1000;
+      const now = performance.now();
+      if (music.next < now) music.next = start + Math.ceil((now - start) / step) * step;
+      while (music.next < now + 150) {
+        playStep(Math.round((music.next - start) / step), (music.next - perfZero) / 1000);
+        music.next += step;
+      }
+    }
+    function setMusic(on: boolean) {
+      music.on = on;
+      musicBtn.setAttribute('aria-pressed', String(on));
+      musicBtn.textContent = on ? 'Music: on' : 'Music: off';
+      clearInterval(music.timer);
+      if (!on) return;
+      if (!music.ctx) {
+        music.ctx = new AudioContext();
+        const len = music.ctx.sampleRate * 0.3;
+        music.noise = music.ctx.createBuffer(1, len, music.ctx.sampleRate);
+        const d = music.noise.getChannelData(0);
+        for (let i = 0; i < len; i++) d[i] = Math.random() * 2 - 1;
+      }
+      music.ctx.resume();
+      music.next = 0;
+      music.timer = window.setInterval(schedule, 25);
+    }
+    musicBtn.addEventListener('click', () => setMusic(!music.on));
+
+    routineBtns.forEach((btn) =>
+      btn.addEventListener('click', () => {
+        routine = Number(btn.dataset.routine);
+        routineBtns.forEach((x) => x.setAttribute('aria-pressed', String(x === btn)));
+        status.textContent = `Routine #${routine + 1}: ${ROUTINE_NAMES[routine]}.`;
+        if (paused && size()) draw(performance.now());
+      }),
+    );
 
     function loop(now: number) {
       if (!running) return;
-      if (root.offsetParent) draw(now);
+      if (visible()) draw(now);
       if (!paused) requestAnimationFrame(loop);
       else running = false;
     }

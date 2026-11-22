@@ -17,7 +17,7 @@ used several times on one page. See the componentization rule in [CLAUDE.md](../
 | [QrCode.astro](QrCode.astro) | A QR code drawn as SVG when the site builds (no JavaScript in the browser), with an optional title above it and the encoded link below it. | QR Code page (`/qr/`) |
 | [VhsPile.astro](VhsPile.astro) | A pile of VHS tapes holding a number of hours of video. Visitors pick the recording speed (SP, LP, EP) and the tapes fall from the top and pile up; they shrink to fit, so it can show a couple of thousand. Canvas, no libraries. | BOTW tab (watch time) |
 | [PaperPlane.astro](PaperPlane.astro) | Fold a paper plane, then throw it: precision decides the distance | Aviation tab |
-| [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing the Saturday Night Fever routine under spotlights, a mirror ball and a light-up floor. | Concert tab |
+| [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing four disco routines (#1 the point, #2 the Night Fever line dance, #3 the hustle, #4 toe stand & point) under spotlights, a mirror ball and a light-up floor, with a fever meter you fill by tapping on the beat and an optional original 8-bit disco loop. | Concert tab, Playground |
 | [IsoDarts.astro](IsoDarts.astro) | An on-rails darts scene in an isometric room: scripted speech bubbles, then a timed round on a board of coloured territories (claim, cancel, smaller is worth more) with a swaying aim. | Board Games tab (Territory Snipping) |
 | [IsoFarm.astro](IsoFarm.astro) | A Colheita Feliz-style farming loop: isometric plots, seeds with timers and random harvests, fertilizer, energy and a market. The whole economy is one config object; saves in the browser. | Mentor tab (the Balls farm) |
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
@@ -312,6 +312,15 @@ A chibi pixel character drawn in code, dancing a 12-beat disco routine (the Satu
 and down, hip rolls, a turn and a finish) under sweeping spotlights, a mirror ball and a light-up floor.
 Buttons pause the dance and change the light colours. Lights change on the beat (under 3 a second).
 Reduced motion: a still point pose with steady lights. Theme with `--dancer-accent`.
+
+Routines (buttons #1 to #4): **#1 The point** (the Saturday Night Fever point, hip rolls, a turn); **#2 The line
+dance** (the "Night Fever" line dance as the 1978-79 disco books describe it: back three and clap, forward three
+and clap, a turn each way, snap kick, the skate, the point with merengue hips, hand roll, funky chicken, pivot);
+**#3 The hustle** (side-to-side hip bumps and rope arms); **#4 Toe stand & point** (up on the toes, finger
+straight up, a lean, a kick). A **fever meter** on the right fills a little every beat and more when you tap the
+stage (or press Space/Enter on it) on the beat; at 100 it hits **FEVER!** and the whole floor lights up for
+8 beats. **Music: on** plays an original 8-bit disco loop (Web Audio, no files; not any existing song) in time
+with the dance; it stops when the dance pauses or the stage is hidden.
 
 ## IsoDarts
 
