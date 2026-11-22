@@ -9,12 +9,13 @@
 // What it never saves: photos from the galleries or anything from other websites, so it can't fill
 // the phone's storage.
 //
-// Pages: the QR Code and Playground pages open from the saved copy at once and are refreshed in the background.
-// Other pages come from the network; if there's no answer within 4 seconds (or no signal), the
-// saved copy is used when there is one.
+// Pages: every page (the QR Code and Playground ones too) comes from the network first, so a new deploy
+// shows on the first visit; if there's no answer within 4 seconds (or no signal), the saved copy is used.
+// (The QR Code and Playground pages used to open from the saved copy first, which showed the old version
+// after a deploy: #220.)
 //
 // Change VERSION to throw away everything saved and start over.
-const VERSION = 'v3';
+const VERSION = 'v4';
 const CACHE = `deovandski-${VERSION}`;
 const SCOPE = new URL(self.registration.scope);
 const QR = new URL('qr/', SCOPE).href;
@@ -75,7 +76,10 @@ const pageKey = (url) => url.origin + url.pathname;
 
 async function networkFirst(request, key) {
   const cache = await caches.open(CACHE);
-  const network = fetch(request).then((res) => {
+  // no-cache: always ask the server whether the page changed (a cheap 304 when it hasn't), instead of
+  // reusing the browser's own copy, which GitHub Pages lets it keep for up to 10 minutes. (A page request
+  // can't be copied with new options, so it's fetched again by its address.)
+  const network = fetch(request.url, { cache: 'no-cache', credentials: 'same-origin' }).then((res) => {
     if (res.ok) cache.put(key, res.clone());
     return res;
   });
@@ -89,22 +93,6 @@ async function networkFirst(request, key) {
   return (await cache.match(key)) ?? network;
 }
 
-async function savedFirst(request, key, event) {
-  const cache = await caches.open(CACHE);
-  const saved = await cache.match(key);
-  const refresh = fetch(request)
-    .then((res) => {
-      if (res.ok) return cache.put(key, res.clone()).then(() => res);
-      return res;
-    })
-    .catch(() => saved);
-  if (saved) {
-    event.waitUntil(refresh);
-    return saved;
-  }
-  return refresh;
-}
-
 self.addEventListener('fetch', (event) => {
   const { request } = event;
   if (request.method !== 'GET') return;
@@ -113,7 +101,7 @@ self.addEventListener('fetch', (event) => {
 
   if (request.mode === 'navigate') {
     const key = pageKey(url);
-    event.respondWith(OFFLINE.includes(key) ? savedFirst(request, key, event) : networkFirst(request, key));
+    event.respondWith(networkFirst(request, key));
     return;
   }
 

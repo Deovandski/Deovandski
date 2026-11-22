@@ -24,6 +24,13 @@ a board, a gallery, a map, a picker.
 - **Extract when you touch it:** when you change one-off UI that fits this rule, pull it out into
   a reusable component in the same PR. That's how the Death tab clock became `LedClock`.
 
+## One copy of each game
+
+Every game or toy (a "gimmick") exists once: its component in `src/components/reusable/`, one entry in
+`src/lib/gimmicks.ts`, and its props in one place, `src/components/Gimmick.astro`. Every page that shows it
+(the tab's ▶ Play FastTab through `GimmickPlay.astro`, the Playground) renders that same entry, so a change
+shows everywhere at once. Don't copy a game, its props or its data into a page; a copy needs Deo's OK.
+
 ## Pictures are clickable
 
 Every picture on the site opens bigger when pressed, in the one photo viewer
