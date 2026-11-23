@@ -1,0 +1,6 @@
+{
+ "_about": "The site's languages besides English, in the order of the Settings menu's Language list. A language is built only if content/i18n/<code>/ exists. Read by scripts/i18n.mjs and src/components/SettingsDialog.astro. A language is offered to search engines (hreflang, sitemap) and to the browser-language auto-select once a page is index_coverage translated.",
+ "languages": ["zh", "ja", "pt", "es", "ar", "ko", "ms", "th", "de", "vi", "it", "fr", "hi", "id"],
+ "index_coverage": 0.9,
+ "request_url": "https://github.com/Deovandski/Deovandski/issues/87"
+}

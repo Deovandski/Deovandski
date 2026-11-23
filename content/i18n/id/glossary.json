@@ -1,0 +1,47 @@
+{
+ "_about": "How names and recurring terms are written in this language on Deovandski's site, so they are always spelled the same. Names are written by sound, never translated (the author's rule). #HusbandOutWorld names come from HusbandOutWorld's content/i18n/id/glossary.json, which is the source: the names below are copied from it for the ones this site uses. Correct a series name there and here together, and look up any other series name there. Add this site's own names here the first time you translate them.",
+ "rule": "Series names follow HusbandOutWorld's rule for this language: Story names stay exactly as in English, as in Portuguese, Spanish and Malay. That includes coined world terms written as names: creatures, plants, items, nari gels, spells, factions, guilds, places, ranks and coins (Wood People, Sand Worms, Fost Stone, Nari Refresher, Red Winga, Sapphire, Pearl, Buhraies Plains, Nari Caverns, Bone Wood). Plain words around them are translated into Indonesian (nari gel stays, 'soul energy' becomes 'energi jiwa'), following Indonesian word order (Kerajaan Sanbi, Pengawal Forway). Exception: the currency balls is written bola (no plural marking; bola-bola only for emphasis); the rank follows it (bola Sapphire, bola Pearl). Faction names like Beer Balls stay as they are. Standard Indonesian (KBBI/EYD spelling). Many of these translations were adapted from the Malay ones, so the two read alike, but the wording is Indonesian, not Malaysian (Anda/kamu, bisa, karena, kota, desa).",
+ "site_rules": [
+  "Real people and pets stay in Latin letters: Deovandski, Deo, and every family member, friend and pet named on the site (Peeta, Bidu, Fluffy).",
+  "Brand, company and product names stay as they are (Wizard Deo Solutions, Microsoft, Dynamics 365 F&O, GitHub, LinkedIn).",
+  "Titles in the top-39 lists (games, anime, TV, movies), concerts and theater (Deo's answer on #87): use the official title in this language. Movies and TV shows use their official local title; if none exists, keep the English one. Anime keeps the 'Romaji (local title)' structure; in Japanese, show the official Japanese title.",
+  "Anything marked translate=\"no\" (Vraki-typeface text, names in a logo, code) stays as it is.",
+  "Every tab is translated, Lust, Tattoo and Mentor included (Deo's answer on #87)."
+ ],
+ "keep_as_is": [
+  "Deovandski",
+  "Deovandski Skibinski Junior",
+  "Deo",
+  "Peeta",
+  "Bidu",
+  "Fluffy",
+  "Mitsukiven",
+  "Feiourm",
+  "A Husband Out of This World",
+  "#HusbandOutWorld",
+  "Wizard Deo Solutions",
+  "GitHub",
+  "LinkedIn",
+  "llms.txt",
+  "llms-full.txt"
+ ],
+ "names": {
+  "Vraki": "Vraki",
+  "Harry": "Harry",
+  "Hiromi": "Hiromi",
+  "Sinoi": "Sinoi",
+  "Sora": "Sora",
+  "Takeo": "Takeo",
+  "Sanbi": "Sanbi"
+ },
+ "terms": {
+  "balls (currency)": "bola",
+  "Vraki script": "tulisan Vraki",
+  "Behind The Scenes": "Di Balik Layar",
+  "World Lore": "Lore Dunia",
+  "Afterword": "Kata Penutup",
+  "Settings": "Pengaturan",
+  "Language": "Bahasa",
+  "Vraki typeface": "fon Vraki"
+ }
+}

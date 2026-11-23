@@ -98,6 +98,18 @@ at all, and search-based ones only see the site once Bing and Google have indexe
 the build also writes a `robots.txt` that points to it. It only does that when the site is at a domain root,
 because `robots.txt` must live there.
 
+## Translations and Settings (#87)
+
+The site is also built in 14 languages at `/zh/`, `/ja/`, `/pt/`, `/es/`, `/ar/`, `/ko/`, `/ms/`, `/th/`, `/de/`, `/vi/`,
+`/it/`, `/fr/`, `/hi/` and `/id/`. Translations live in `content/i18n/<lang>/` and are written ahead of time;
+`scripts/i18n.mjs` adds them to the built pages. Text not translated yet shows in English. The rules for translating are in
+CLAUDE.md ("Translations").
+
+- **Settings** (the gear, top right): Language, "Want a language added?" (opens #87) and Vraki mode.
+- **Multilingual tab:** each language column opens the site in that language (Vraki turns on Vraki mode). The current one
+  has a cyan box.
+- **See where each language stands:** `node scripts/i18n.mjs status` after a build (the deploy's summary shows it too).
+
 ## Local preview
 
 ```sh

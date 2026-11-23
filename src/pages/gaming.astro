@@ -11,9 +11,10 @@ const to = `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}playground/`;
     <title>Moved to Playground</title>
     <meta name="robots" content="noindex" />
     <link rel="canonical" href={to} />
-    <meta http-equiv="refresh" content={`0; url=${to}`} />
-    <script is:inline define:vars={{ to }}>
-      location.replace(to + location.hash);
+    <!-- Relative, so /ja/gaming/ lands on /ja/playground/ (#87). -->
+    <meta http-equiv="refresh" content="0; url=../playground/" />
+    <script is:inline>
+      location.replace('../playground/' + location.hash);
     </script>
   </head>
   <body>
