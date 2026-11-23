@@ -9,7 +9,8 @@
     "travel:codes": "node scripts/country-codes.mjs && node scripts/subdivision-codes.mjs",
     "prebuild": "node scripts/convert-heic.mjs",
     "photos:fix-heic": "node scripts/convert-heic.mjs",
-    "postbuild": "node scripts/llms.mjs"
+    "postbuild": "node scripts/llms.mjs && node scripts/i18n.mjs build",
+    "i18n": "node scripts/i18n.mjs"
   },
   "repository": {
     "type": "git",
@@ -37,5 +38,8 @@
     "world-countries": "^5.1.0"
   },
   "private": true,
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "linkedom": "^0.18.15"
+  }
 }

@@ -1,0 +1,51 @@
+{
+ "_about": "How names and recurring terms are written in this language on Deovandski's site, so they are always spelled the same. Names are written by sound, never translated (the author's rule). #HusbandOutWorld names come from HusbandOutWorld's content/i18n/zh/glossary.json, which is the source: the names below are copied from it for the ones this site uses. Correct a series name there and here together, and look up any other series name there. Add this site's own names here the first time you translate them.",
+ "rule": "Series names follow HusbandOutWorld's rule for this language: Story names in Chinese characters chosen for sound (standard transliteration characters; feminine characters such as 丽/娅/莉 for women). This covers coined world terms too: creatures, plants, items, nari gels, spells, factions, guilds, places, ranks and coins (Wood People = 伍德皮普尔, Sapphire = 萨菲尔, Bleed Out = 布利德奥特). Multi-part personal names join with ·; one-word compound terms are written together. Japanese-origin names (Hiromi, Takeo, Yosuke…) use their usual kanji. Plain words are translated (Soul Tree = 索尔树, Nari Stones = 纳里石). The currency balls is 球 (萨菲尔球, 珀尔球), matching Japanese ボール; the unit timehunk stays in Latin letters. Real people (Deovandski, Mitsukiven, Feiourm), the title and pets named in the afterwords (Peeta, Fluffy, Maddog) stay in Latin letters.",
+ "site_rules": [
+  "Real people and pets stay in Latin letters: Deovandski, Deo, and every family member, friend and pet named on the site (Peeta, Bidu, Fluffy).",
+  "Brand, company and product names stay as they are (Wizard Deo Solutions, Microsoft, Dynamics 365 F&O, GitHub, LinkedIn).",
+  "Titles in the top-39 lists (games, anime, TV, movies), concerts and theater (Deo's answer on #87): use the official title in this language. Movies and TV shows use their official local title; if none exists, keep the English one. Anime keeps the 'Romaji (local title)' structure; in Japanese, show the official Japanese title.",
+  "Anything marked translate=\"no\" (Vraki-typeface text, names in a logo, code) stays as it is.",
+  "Every tab is translated, Lust, Tattoo and Mentor included (Deo's answer on #87)."
+ ],
+ "keep_as_is": [
+  "Deovandski",
+  "Deovandski Skibinski Junior",
+  "Deo",
+  "Peeta",
+  "Bidu",
+  "Fluffy",
+  "Mitsukiven",
+  "Feiourm",
+  "A Husband Out of This World",
+  "#HusbandOutWorld",
+  "Wizard Deo Solutions",
+  "GitHub",
+  "LinkedIn",
+  "llms.txt",
+  "llms-full.txt"
+ ],
+ "names": {
+  "Vraki": "弗拉基",
+  "Harry": "哈利",
+  "Hiromi": "弘美",
+  "Sinoi": "西诺伊",
+  "Sora": "索拉",
+  "Takeo": "武雄",
+  "Sanbi": "桑比",
+  "Sapphire": "萨菲尔",
+  "Pearl": "珀尔",
+  "Amethyst": "阿米西斯特",
+  "Aquamarine": "阿夸马林"
+ },
+ "terms": {
+  "balls (currency)": "球",
+  "Vraki script": "弗拉基文字",
+  "Behind The Scenes": "幕后",
+  "World Lore": "世界观",
+  "Afterword": "后记",
+  "Settings": "设置",
+  "Language": "语言",
+  "Vraki typeface": "弗拉基字体"
+ }
+}

@@ -1,0 +1,51 @@
+{
+ "_about": "How names and recurring terms are written in this language on Deovandski's site, so they are always spelled the same. Names are written by sound, never translated (the author's rule). #HusbandOutWorld names come from HusbandOutWorld's content/i18n/th/glossary.json, which is the source: the names below are copied from it for the ones this site uses. Correct a series name there and here together, and look up any other series name there. Add this site's own names here the first time you translate them.",
+ "rule": "Series names follow HusbandOutWorld's rule for this language: Story names in Thai script, by sound, with no spaces inside a single coined name (ทรังก์พีเพิล, แบล็กแซฟไฟร์) and a space between a person's given name and family or title parts (แฮร์รี ซันบี, จูลินา ฟอร์เวย์ ซักส์มายบอลส์). This covers coined world terms written as names too: creatures, plants, nari gels, spells, factions, guilds and ranks (Bleed Out = บลีดเอาต์, Red Winga = เรดวิงกา, Sapphire = แซฟไฟร์). A few descriptive place and object names whose plain meaning matters are translated (Nari Stones = หินนาริ, Black Honey = น้ำผึ้งดำ, Goodbye Cliff = «หน้าผาลาก่อน», Blood Book = คัมภีร์เลือด). The currency balls is บอล (บอลแซฟไฟร์, บอลเพิร์ล). Thai uses no full stops: sentences are separated by a space. The unit timehunk is ไทม์ฮังก์; A.G. and B.G. stay in Latin letters. Real people (Deovandski, Mitsukiven, Feiourm), the title and pets named in the afterwords (Peeta) stay in Latin letters. 'Sanbi shit!' (the Sanbi oath) is always วิญญาณเฒ่าแห่งซันบีเอ๊ย! ('Old Sanbi soul!'), the author's rule.",
+ "site_rules": [
+  "Real people and pets stay in Latin letters: Deovandski, Deo, and every family member, friend and pet named on the site (Peeta, Bidu, Fluffy).",
+  "Brand, company and product names stay as they are (Wizard Deo Solutions, Microsoft, Dynamics 365 F&O, GitHub, LinkedIn).",
+  "Titles in the top-39 lists (games, anime, TV, movies), concerts and theater (Deo's answer on #87): use the official title in this language. Movies and TV shows use their official local title; if none exists, keep the English one. Anime keeps the 'Romaji (local title)' structure; in Japanese, show the official Japanese title.",
+  "Anything marked translate=\"no\" (Vraki-typeface text, names in a logo, code) stays as it is.",
+  "Every tab is translated, Lust, Tattoo and Mentor included (Deo's answer on #87)."
+ ],
+ "keep_as_is": [
+  "Deovandski",
+  "Deovandski Skibinski Junior",
+  "Deo",
+  "Peeta",
+  "Bidu",
+  "Fluffy",
+  "Mitsukiven",
+  "Feiourm",
+  "A Husband Out of This World",
+  "#HusbandOutWorld",
+  "Wizard Deo Solutions",
+  "GitHub",
+  "LinkedIn",
+  "llms.txt",
+  "llms-full.txt"
+ ],
+ "names": {
+  "Vraki": "วรากี",
+  "Harry": "แฮร์รี",
+  "Hiromi": "ฮิโรมิ",
+  "Sinoi": "ซีนอย",
+  "Sora": "โซระ",
+  "Takeo": "ทาเคโอะ",
+  "Sanbi": "ซันบี",
+  "Sapphire": "แซฟไฟร์",
+  "Pearl": "เพิร์ล",
+  "Amethyst": "อเมทิสต์",
+  "Aquamarine": "อความารีน"
+ },
+ "terms": {
+  "balls (currency)": "บอล",
+  "Vraki script": "อักษรวรากี",
+  "Behind The Scenes": "เบื้องหลัง",
+  "World Lore": "ตำนานโลก",
+  "Afterword": "ปัจฉิมลิขิต",
+  "Settings": "การตั้งค่า",
+  "Language": "ภาษา",
+  "Vraki typeface": "ฟอนต์วรากี"
+ }
+}

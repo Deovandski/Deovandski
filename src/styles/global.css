@@ -110,3 +110,34 @@ html[data-src='linkedin'] #tab-lust,
 html[data-src='linkedin'] #panel-lust {
   display: none !important;
 }
+
+/* ---------------------------------------------------------------- Vraki (#87)
+   The Vraki typeface (src/assets/fonts; not MIT, never altered). It spells English letter for letter.
+   One @font-face for the whole site: the Multilingual tab uses it too. The browser only downloads it when
+   something on the page is shown in it. */
+@font-face {
+  font-family: 'Vraki';
+  src: url('../assets/fonts/VrakiHusbandOutWorldSeries-Rg.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* Vraki mode (Settings, English pages only): the page reads in the Vraki script, as on husbandoutworld.com.
+   The header, the Settings menu, form controls, buttons, code and anything marked translate="no",
+   aria-hidden or .keep-latin stay readable, so the mode can always be turned off again. */
+html.vraki :is(main, .site-footer) :not(button, button *, input, select, textarea, option, code, pre, kbd, svg, svg *, canvas,
+    [translate='no'], [translate='no'] *, [aria-hidden='true'], [aria-hidden='true'] *, .keep-latin, .keep-latin *) {
+  font-family: 'Vraki', var(--font-body) !important;
+  letter-spacing: 0.02em;
+}
+
+/* ---------------------------------------------------------------- right to left (Arabic)
+   scripts/i18n.mjs sets <html dir="rtl"> on /ar/. Flex and grid layouts mirror by themselves; fix anything
+   placed with left/right here. Text still in English inside an Arabic page is marked dir="ltr". */
+html[dir='rtl'] body { text-align: right; }
+html[dir='rtl'] .skip { left: auto; right: 1rem; }
+
+/* Chinese, Japanese, Korean, Thai, Hindi and Arabic use the system's fonts (no big font downloads). */
+html:is([lang|='zh'], [lang|='ja'], [lang|='ko'], [lang|='th'], [lang|='hi'], [lang|='ar']) {
+  --font-body: system-ui, sans-serif;
+  --font-display: system-ui, sans-serif;
+}

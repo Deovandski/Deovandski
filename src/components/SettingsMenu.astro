@@ -1,0 +1,99 @@
+---
+// The gear (top right of the header) and the Settings menu it opens: Language, "Want a language added?" and
+// Vraki mode (#87). Copied from Deovandski-repo-template's Gear.astro + SettingsDialog.astro and adapted; Vraki mode
+// works like husbandoutworld.com's. The behaviour is in src/scripts/settings.ts, and the inline script in
+// Base.astro applies the saved choices before the page paints.
+// The Language list comes from content/i18n/<code>/meta.json, in the order of content/i18n/config.json.
+import config from '../../content/i18n/config.json';
+
+interface LanguageMeta { name: string; html_lang?: string }
+const metas = import.meta.glob<LanguageMeta>('../../content/i18n/*/meta.json', { eager: true, import: 'default' });
+const byCode = new Map(Object.entries(metas).map(([p, m]) => [p.split('/').at(-2)!, m]));
+const languages = config.languages.filter((c) => byCode.has(c)).map((code) => ({ code, ...byCode.get(code)! }));
+---
+
+<button class="gear" id="gear" type="button" aria-haspopup="dialog" aria-controls="site-settings" aria-label="Settings" title="Settings">
+  <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M19.4 13a7.6 7.6 0 0 0 0-2l2.1-1.6a.5.5 0 0 0 .1-.6l-2-3.5a.5.5 0 0 0-.6-.2l-2.5 1a7.5 7.5 0 0 0-1.7-1l-.4-2.6a.5.5 0 0 0-.5-.5h-4a.5.5 0 0 0-.5.4l-.4 2.7c-.6.2-1.2.6-1.7 1l-2.5-1a.5.5 0 0 0-.6.2l-2 3.5a.5.5 0 0 0 .1.6L4.6 11a7.6 7.6 0 0 0 0 2l-2.1 1.6a.5.5 0 0 0-.1.6l2 3.5c.1.2.4.3.6.2l2.5-1c.5.4 1.1.8 1.7 1l.4 2.6c0 .3.2.5.5.5h4c.3 0 .5-.2.5-.4l.4-2.7c.6-.2 1.2-.6 1.7-1l2.5 1c.2.1.5 0 .6-.2l2-3.5a.5.5 0 0 0-.1-.6L19.4 13ZM12 15.5a3.5 3.5 0 1 1 0-7 3.5 3.5 0 0 1 0 7Z"/></svg>
+</button>
+
+<dialog id="site-settings" class="site-settings keep-latin" aria-labelledby="site-settings-title">
+  <form method="dialog">
+    <h2 id="site-settings-title">Settings</h2>
+    <label class="setting"><span>Language</span>
+      <select data-setting="lang" translate="no">
+        <option value="en" lang="en">English</option>
+        {languages.map((l) => <option value={l.code} lang={l.html_lang ?? l.code}>{l.name}</option>)}
+      </select>
+    </label>
+    <p class="setting-link"><a href={config.request_url} rel="noopener">Want a language added?</a></p>
+    <label class="setting setting--check">
+      <span>Vraki mode <small>(read everything in the Vraki script)</small> <small class="vraki-note">Vraki mode works with the English text only.</small></span>
+      <input data-setting="vraki" type="checkbox" />
+    </label>
+    <div class="done"><button value="close">Done</button></div>
+  </form>
+</dialog>
+
+<style>
+  .gear {
+    margin-inline-start: auto;
+    display: inline-grid;
+    place-items: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 999px;
+    border: 1px solid rgba(57, 197, 187, 0.35);
+    background: rgba(57, 197, 187, 0.08);
+    color: var(--silver);
+    cursor: pointer;
+  }
+  .gear:hover, .gear:focus-visible { color: var(--night); background: var(--teal); }
+  .gear svg { transition: transform 0.4s ease; }
+  .gear:hover svg { transform: rotate(60deg); }
+
+  .site-settings {
+    width: min(26rem, calc(100vw - 2rem));
+    padding: 1.25rem 1.4rem;
+    border-radius: 16px;
+    border: 1px solid rgba(57, 197, 187, 0.35);
+    background: var(--night-2);
+    color: var(--text);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 24px rgba(57, 197, 187, 0.15);
+  }
+  .site-settings::backdrop { background: rgba(7, 11, 31, 0.7); backdrop-filter: blur(3px); }
+  .site-settings h2 { margin: 0 0 1rem; font-size: var(--step-1); }
+  .setting { display: grid; gap: 0.35rem; margin: 0 0 0.9rem; }
+  .setting span { font-weight: 700; }
+  .setting small { display: block; font-weight: 400; color: var(--muted); }
+  .setting--check { grid-template-columns: 1fr auto; align-items: center; gap: 1rem; }
+  .setting--check input { width: 1.3rem; height: 1.3rem; accent-color: var(--teal); }
+  .setting select {
+    font: inherit;
+    padding: 0.45rem 0.6rem;
+    border-radius: 10px;
+    border: 1px solid rgba(190, 200, 209, 0.3);
+    background: var(--night);
+    color: var(--text);
+  }
+  .setting-link { margin: -0.4rem 0 1rem; font-size: var(--step--1); }
+  .setting-link a { color: var(--teal); }
+  .vraki-note { display: none !important; }
+  :global(html[data-lang]) .vraki-note { display: block !important; }
+  .done { display: flex; justify-content: flex-end; }
+  .done button {
+    font: inherit;
+    font-weight: 700;
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    border: 0;
+    background: var(--teal);
+    color: var(--night);
+    cursor: pointer;
+  }
+  @media (max-width: 640px) {
+    .gear { width: 2.1rem; height: 2.1rem; flex: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gear svg { transition: none; }
+  }
+</style>

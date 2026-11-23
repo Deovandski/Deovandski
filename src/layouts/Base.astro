@@ -5,6 +5,7 @@ import logo from '../assets/logo.png';
 import Starfield from '../components/Starfield.astro';
 import MikuDay from '../components/MikuDay.astro';
 import PhotoViewer from '../components/reusable/PhotoViewer.astro';
+import SettingsMenu from '../components/SettingsMenu.astro';
 import { url } from '../lib/url';
 
 interface Props {
@@ -31,7 +32,7 @@ const isCurrent =(href: string) => (href === '/' ? here === '/' || here === '' :
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-base={import.meta.env.BASE_URL.replace(/\/+$/, '')} data-store="deovandski-site">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -57,6 +58,21 @@ const isCurrent =(href: string) => (href === '/' ? here === '/' || here === '' :
     {Astro.site && <link rel="canonical" href={new URL(canonicalPath, Astro.site).href} />}
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
+    <script is:inline>
+      // Before first paint (#87): Vraki mode, and on a first visit the browser's language, once that language's
+      // version of this page is 90% translated (scripts/i18n.mjs lists those in <html data-langs>).
+      // The saved choices live under <html data-store>, the same key src/scripts/settings.ts writes.
+      try {
+        var d = document.documentElement, s = JSON.parse(localStorage.getItem(d.dataset.store) || '{}');
+        if (s.vraki && !d.dataset.lang) d.classList.add('vraki');
+        if (!d.dataset.lang) {
+          var ok = (d.dataset.langs || '').split(' '), w = s.lang, n = navigator.languages || [navigator.language || ''];
+          for (var i = 0; i < n.length && !w; i++) { var c = String(n[i]).toLowerCase().split('-')[0]; if (c === 'en' || ok.indexOf(c) >= 0) w = c; }
+          var b = d.dataset.base || '';
+          if (w && w !== 'en' && ok.indexOf(w) >= 0) location.replace(b + '/' + w + location.pathname.slice(b.length) + location.search + location.hash);
+        }
+      } catch (e) { /* private mode: no saved settings */ }
+    </script>
     <script is:inline>
       // Visitor source: ?src=LinkedIn (any case) sets <html data-src="linkedin">, so CSS can hide things
       // per source (see "Per-source visibility" in global.css). The URL decides:
@@ -102,6 +118,7 @@ const isCurrent =(href: string) => (href === '/' ? here === '/' || here === '' :
             }
           </ul>
         </nav>
+        <SettingsMenu />
       </div>
     </header>
 
@@ -136,6 +153,9 @@ const isCurrent =(href: string) => (href === '/' ? here === '/' || here === '' :
         },
         { capture: true },
       );
+    </script>
+    <script>
+      import '../scripts/settings.ts';
     </script>
     <!-- Every picture opens bigger here (the site's "pictures are clickable" rule; see CLAUDE.md). -->
     <PhotoViewer />
@@ -203,6 +223,17 @@ const isCurrent =(href: string) => (href === '/' ? here === '/' || here === '' :
 
   .site-main { padding-block: 3rem 4rem; }
 
+  /* The notice on translated pages (written by scripts/i18n.mjs from content/i18n/<lang>/meta.json). */
+  :global(.i18n-banner) {
+    padding: 0.55rem 1rem;
+    text-align: center;
+    font-size: var(--step--1);
+    color: var(--silver);
+    background: rgba(57, 197, 187, 0.1);
+    border-bottom: 1px solid rgba(57, 197, 187, 0.25);
+  }
+  :global(.i18n-banner a) { color: var(--teal); font-weight: 700; margin-inline-start: 0.4rem; }
+
   .site-footer {
     padding-block: 2rem 3rem;
     color: var(--muted);
@@ -212,9 +243,11 @@ const isCurrent =(href: string) => (href === '/' ? here === '/' || here === '' :
   .site-footer p { margin: 0; }
 
   @media (max-width: 640px) {
-    .site-header__row { gap: 0.5rem; }
-    .brand img { width: 96px; }
-    nav a { padding: 0.3rem 0.6rem; font-size: var(--step--1); }
+    /* Logo, menu and gear stay on one row; long menu words (some languages) wrap inside the menu instead. */
+    .site-header__row { gap: 0.4rem; flex-wrap: nowrap; }
+    nav { flex: 1 1 auto; min-width: 0; }
+    .brand img { width: 84px; }
+    nav a { padding: 0.3rem 0.45rem; font-size: var(--step--1); }
     .site-main { padding-block: 2rem 3rem; }
   }
 </style>

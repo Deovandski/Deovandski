@@ -1,0 +1,52 @@
+{
+ "_about": "How names and recurring terms are written in this language on Deovandski's site, so they are always spelled the same. Names are written by sound, never translated (the author's rule). #HusbandOutWorld names come from HusbandOutWorld's content/i18n/ar/glossary.json, which is the source: the names below are copied from it for the ones this site uses. Correct a series name there and here together, and look up any other series name there. Add this site's own names here the first time you translate them.",
+ "rule": "Series names follow HusbandOutWorld's rule for this language: Story names in Arabic letters, by sound (ف for v, غ for hard g, ج for soft g/j as in Itagiba). This covers coined world terms too: creatures, plants, items, nari gels, spells, factions, guilds, places, ranks and coins (Wood People = وود بيبول, Sapphire = سافاير, Bleed Out = بليد آوت). Parts of names are separated by spaces (هاري سانبي, أروكيا لونغ بريدج); hyphenated surnames are written as separate words (تاف هامر). Arabic has no o/u distinction, so where two coined names would look the same (Sunnolow / Sunnulow) the Latin spelling follows in brackets in lists. Plain words are translated (Nari Stones = أحجار ناري, Black Honey = العسل الأسود). The currency balls is كرات (one كرة; Sapphire Ball = كرة سافاير); the unit timehunk stays in Latin letters, as do A.G./B.G. Real people (Deovandski, Mitsukiven, Feiourm), the title, Webtoons and pets named in the afterwords (Peeta, Fluffy, Maddog) stay in Latin letters. Text runs right to left; numbers, URLs and file names stay as they are.",
+ "site_rules": [
+  "Real people and pets stay in Latin letters: Deovandski, Deo, and every family member, friend and pet named on the site (Peeta, Bidu, Fluffy).",
+  "Brand, company and product names stay as they are (Wizard Deo Solutions, Microsoft, Dynamics 365 F&O, GitHub, LinkedIn).",
+  "Titles in the top-39 lists (games, anime, TV, movies), concerts and theater (Deo's answer on #87): use the official title in this language. Movies and TV shows use their official local title; if none exists, keep the English one. Anime keeps the 'Romaji (local title)' structure; in Japanese, show the official Japanese title.",
+  "Anything marked translate=\"no\" (Vraki-typeface text, names in a logo, code) stays as it is.",
+  "Every tab is translated, Lust, Tattoo and Mentor included (Deo's answer on #87)."
+ ],
+ "keep_as_is": [
+  "Deovandski",
+  "Deovandski Skibinski Junior",
+  "Deo",
+  "Peeta",
+  "Bidu",
+  "Fluffy",
+  "Mitsukiven",
+  "Feiourm",
+  "A Husband Out of This World",
+  "#HusbandOutWorld",
+  "Wizard Deo Solutions",
+  "GitHub",
+  "LinkedIn",
+  "llms.txt",
+  "llms-full.txt"
+ ],
+ "names": {
+  "Vraki": "فراكي",
+  "Harry": "هاري",
+  "Hiromi": "هيرومي",
+  "Sinoi": "سينوي",
+  "Sora": "سورا",
+  "Takeo": "تاكيو",
+  "Sanbi": "سانبي",
+  "Sapphire": "سافاير",
+  "Pearl": "بيرل",
+  "Amethyst": "أميثيست",
+  "Aquamarine": "أكوامارين"
+ },
+ "terms": {
+  "balls (currency)": "كرات (sing. كرة)",
+  "Territory Snipe": "تيريتوري سنيبينغ",
+  "Vraki script": "خط فراكي",
+  "Behind The Scenes": "خلف الكواليس",
+  "World Lore": "عالم القصة",
+  "Afterword": "كلمة ختامية",
+  "Settings": "الإعدادات",
+  "Language": "اللغة",
+  "Vraki typeface": "خط فراكي الطباعي"
+ }
+}

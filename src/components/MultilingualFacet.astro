@@ -1,35 +1,62 @@
 ---
+import { existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 import { loadLanguages } from '../lib/languages';
 
 const langs = loadLanguages();
 const SEGMENTS = 10;
+const base = import.meta.env.BASE_URL.replace(/\/+$/, '');
+
+// Each column opens the site in that language (#87): English and the languages in content/i18n/, plus Vraki,
+// which turns on Vraki mode (the English page in the Vraki script). The current one gets a cyan box.
+const SITE_CODES: Record<string, string> = {
+  English: 'en', Vraki: 'vraki', Portuguese: 'pt', Spanish: 'es', Japanese: 'ja', Chinese: 'zh', Arabic: 'ar', Korean: 'ko',
+  Malay: 'ms', Thai: 'th', German: 'de', Vietnamese: 'vi', Italian: 'it', French: 'fr', Hindi: 'hi', Indonesian: 'id',
+};
+const siteCode = (name: string) => {
+  const c = SITE_CODES[name];
+  return c && (c === 'en' || c === 'vraki' || existsSync(resolve('content/i18n', c, 'meta.json'))) ? c : undefined;
+};
+const hrefFor = (c: string) => (c === 'en' ? `${base}/#multilingual` : `${base}/${c}/#multilingual`);
 ---
 
 <p>Fully bilingual in English and Portuguese, and working on the rest.</p>
+<p class="eq__hint">Pick a language to read this site in it.</p>
 
 <ul class="eq" aria-label="Language levels">
   {
     langs.map((l, i) => (
-      <li class={`eq__col is-${l.color}`} style={`--i:${i}`}>
-        <div class="eq__bar" role="meter" aria-valuemin="0" aria-valuemax={SEGMENTS} aria-valuenow={l.level} aria-label={`${l.name}: ${l.level} of ${SEGMENTS}, ${l.note}`}>
-          {Array.from({ length: SEGMENTS }, (_, s) => (
-            <span class:list={['eq__seg', { on: s < l.level }]} style={`--s:${s}`} />
-          ))}
-        </div>
-        {
-          l.vraki ? (
+      <li class={`eq__col is-${l.color}`} style={`--i:${i}`} data-code={siteCode(l.name)}>
+        {(() => {
+          const code = siteCode(l.name);
+          const body = (
             <>
-              <p class="eq__name eq__name--vraki" translate="no" aria-hidden="true">{l.native}</p>
-              <p class="eq__en">{l.name}<span class="sr-only"> (written in Vraki)</span></p>
+              <div class="eq__bar" role="meter" aria-valuemin="0" aria-valuemax={SEGMENTS} aria-valuenow={l.level} aria-label={`${l.name}: ${l.level} of ${SEGMENTS}, ${l.note}`}>
+                {Array.from({ length: SEGMENTS }, (_, s) => (
+                  <span class:list={['eq__seg', { on: s < l.level }]} style={`--s:${s}`} />
+                ))}
+              </div>
+              {
+                l.vraki ? (
+                  <>
+                    <p class="eq__name eq__name--vraki" translate="no" aria-hidden="true">{l.native}</p>
+                    <p class="eq__en">{l.name}<span class="sr-only"> (written in Vraki)</span></p>
+                  </>
+                ) : (
+                  <>
+                    <p class="eq__name" lang={l.native === '日本語' ? 'ja' : undefined}>{l.native}</p>
+                    <p class="eq__en" aria-hidden={l.native === l.name ? 'true' : undefined}>{l.native !== l.name ? l.name : '\u00a0'}</p>
+                  </>
+                )
+              }
+              <p class="eq__note">{l.note}</p>
             </>
-          ) : (
-            <>
-              <p class="eq__name" lang={l.native === '日本語' ? 'ja' : undefined}>{l.native}</p>
-              <p class="eq__en" aria-hidden={l.native === l.name ? 'true' : undefined}>{l.native !== l.name ? l.name : '\u00a0'}</p>
-            </>
-          )
-        }
-        <p class="eq__note">{l.note}</p>
+          );
+          if (!code) return <div class="eq__box">{body}</div>;
+          if (code === 'vraki')
+            return <a class="eq__box eq__pick" href={hrefFor('en')} hreflang="en" role="button" data-vraki-switch data-code="vraki" title="Vraki mode: the English page in the Vraki script">{body}</a>;
+          return <a class="eq__box eq__pick" href={hrefFor(code)} hreflang={code} data-lang-switch={code} data-code={code}>{body}</a>;
+        })()}
       </li>
     ))
   }
@@ -41,12 +68,23 @@ const SEGMENTS = 10;
   <li class="is-red">Early days</li>
 </ul>
 
+<script>
+  // Mark the language the page is shown in (English, a translation, or Vraki mode) for screen readers.
+  // The cyan box itself is CSS (below), so it's right before this runs.
+  const mark = () => {
+    const d = document.documentElement;
+    const now = d.classList.contains('vraki') ? 'vraki' : d.dataset.lang || 'en';
+    document.querySelectorAll<HTMLElement>('.eq__pick').forEach((el) => {
+      if (el.dataset.code === now) el.setAttribute('aria-current', 'true');
+      else el.removeAttribute('aria-current');
+    });
+  };
+  mark();
+  document.addEventListener('vraki-change', mark);
+</script>
+
 <style>
-  @font-face {
-    font-family: 'Vraki';
-    src: url('../assets/fonts/VrakiHusbandOutWorldSeries-Rg.woff2') format('woff2');
-    font-display: swap;
-  }
+  /* The Vraki @font-face is in src/styles/global.css (one copy for the whole site). */
   .eq {
     --green: #4ade80;
     --yellow: #facc15;
@@ -63,6 +101,36 @@ const SEGMENTS = 10;
     border: 1px solid rgba(190, 200, 209, 0.12);
   }
   .eq__col { text-align: center; }
+  .eq__hint { margin: 0.4rem 0 0; color: var(--muted); font-size: var(--step--1); }
+  .eq__box { display: block; height: 100%; padding: 0.6rem 0.35rem 0.5rem; border-radius: 12px; border: 2px solid transparent; }
+  .eq__pick {
+    width: 100%;
+    font: inherit;
+    color: inherit;
+    text-align: center;
+    text-decoration: none;
+    background: none;
+    cursor: pointer;
+    transition: border-color 0.2s, background-color 0.2s;
+  }
+  .eq__pick:hover, .eq__pick:focus-visible { border-color: rgba(57, 197, 187, 0.45); background: rgba(57, 197, 187, 0.06); }
+  /* The language the site is shown in right now: a cyan box (Deo's answer on #87). */
+  :global(html:not([data-lang]):not(.vraki)) .eq__pick[data-code='en'],
+  :global(html.vraki) .eq__pick[data-code='vraki'],
+  :global(html[data-lang='zh']) .eq__pick[data-code='zh'], :global(html[data-lang='ja']) .eq__pick[data-code='ja'],
+  :global(html[data-lang='pt']) .eq__pick[data-code='pt'], :global(html[data-lang='es']) .eq__pick[data-code='es'],
+  :global(html[data-lang='ar']) .eq__pick[data-code='ar'], :global(html[data-lang='ko']) .eq__pick[data-code='ko'],
+  :global(html[data-lang='ms']) .eq__pick[data-code='ms'], :global(html[data-lang='th']) .eq__pick[data-code='th'],
+  :global(html[data-lang='de']) .eq__pick[data-code='de'], :global(html[data-lang='vi']) .eq__pick[data-code='vi'],
+  :global(html[data-lang='it']) .eq__pick[data-code='it'], :global(html[data-lang='fr']) .eq__pick[data-code='fr'],
+  :global(html[data-lang='hi']) .eq__pick[data-code='hi'], :global(html[data-lang='id']) .eq__pick[data-code='id'] {
+    border-color: var(--teal);
+    background: rgba(57, 197, 187, 0.1);
+    box-shadow: 0 0 16px rgba(57, 197, 187, 0.35);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .eq__pick { transition: none; }
+  }
   .is-green { --c: var(--green); }
   .is-yellow { --c: var(--yellow); }
   .is-red { --c: var(--red); }
