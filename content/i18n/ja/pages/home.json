@@ -279,10 +279,6 @@
   "en": "Blog",
   "t": "ブログ"
  },
- "0bf9322efcf3": {
-  "en": "Final score: {you} {youScore}, {rival} {rivalScore}. {verdict}",
-  "t": "最終スコア：{you} {youScore}、{rival} {rivalScore}。{verdict}"
- },
  "0c146d79c604": {
   "en": "Enlarge: FML! Forgot setup autopay",
   "t": "拡大: 最悪！ 自動引き落としを設定し忘れた"
@@ -558,10 +554,6 @@
  "19c9c9ed8477": {
   "en": "Opera",
   "t": "オペラ"
- },
- "19e17a057b61": {
-  "en": "Your turn: press Throw (or Space) when the aim is where you want it.",
-  "t": "あなたの番：狙いが定まったら「投げる！」（またはスペース）を押せ。"
  },
  "1a1f232c7b93": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder TV show 9 ",
@@ -938,10 +930,6 @@
  "27b48cf9ae90": {
   "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
   "t": "{mode} モードで録画すると VHS テープ {tapes} 本分（T-120 テープ 1 本あたり {perTape} 時間）。"
- },
- "27bbcef16995": {
-  "en": "Hiromi",
-  "t": "ヒロミ"
  },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
@@ -1351,10 +1339,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 8: </span> Placeholder movie 8 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 8: </span> 仮の映画 8"
  },
- "38d4249ff036": {
-  "en": "⏱ {seconds}s · darts: {you} {youLeft}, {rival} {rivalLeft}",
-  "t": "⏱ {seconds}s · ダーツ：{you} {youLeft}、{rival} {rivalLeft}"
- },
  "38e1d26af274": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer"
@@ -1551,10 +1535,6 @@
   "en": "Captain Bidu final resting place",
   "t": "キャプテン Bidu の最後の眠りの地"
  },
- "40e405b6605c": {
-  "en": "I haven’t heard of that, but yeah, I prefer targeting the yellow ones, as those are worth more if you snipe all territories.",
-  "t": "そんなのは聞いたことないが、まあ、俺は黄色を狙うのが好きだな。全部のテリトリーを狙い撃ちすれば、そっちのほうが得点が高いから"
- },
  "40f6fcda8a97": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder movie 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 9: </span> 仮の映画 9"
@@ -1566,14 +1546,6 @@
  "4158753b0709": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder movie 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 10: </span> 仮の映画 10"
- },
- "42766efba402": {
-  "en": "Middle ring",
-  "t": "中間の輪"
- },
- "42ae6cb3cd8f": {
-  "en": "Time! The room starts to move too much…",
-  "t": "時間切れ！部屋が動きすぎ始めた…"
  },
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
@@ -1767,14 +1739,6 @@
   "en": "Not bad!",
   "t": "悪くない！"
  },
- "4c660686dc07": {
-  "en": "His first dart clings, then falls. The second lands on a green territory near the centre.",
-  "t": "最初のダーツは引っかかって落ちた。2本目は中心近くの緑の領地に着地。"
- },
- "4c9a82ce72ca": {
-  "en": "blue",
-  "t": "青"
- },
  "4cd5ee6da386": {
   "en": "Red Letter Media on YouTube",
   "t": "YouTube の Red Letter Media"
@@ -1786,10 +1750,6 @@
  "4d1568414852": {
   "en": "Two Strangers (Carry a Cake Across New York)",
   "t": "Two Strangers (Carry a Cake Across New York)"
- },
- "4d2751b25828": {
-  "en": "Kinda? Was the board always this big and colored? I thought it was rounded too— OH YEAH! The center is worth more, right?",
-  "t": "なんとなく？ ボードってこんなに大きくてカラフルでしたっけ？ 丸いと思ってたんですけど——そうだ！ 真ん中のほうが得点が高いんですよね？"
  },
  "4d3bce11bac3": {
   "en": "Language levels",
@@ -1934,10 +1894,6 @@
  "50c9e8d5fc98": {
   "en": "D",
   "t": "D"
- },
- "50ccc5e2e037": {
-  "en": "He aims for the same green, and lands far above it, on purple.",
-  "t": "同じ緑を狙ったが、ずっと上の紫に着地した。"
  },
  "50db544157bb": {
   "en": "Off beat",
@@ -2531,10 +2487,6 @@
   "en": "Enlarge: Gimme attention",
   "t": "拡大: かまって"
  },
- "69b0b68def54": {
-  "en": "SEE? It’s all about mindset! You know what, Harry? You’re cool! So why not play a bit of territory snipping to celebrate?",
-  "t": "だろ？ 全部考え方次第なんだよ！ なあ、ハリー？ お前、いい奴だな！ だから、祝いにテリトリー・スナイプでも一勝負しようぜ？"
- },
  "69ce5d37a5a7": {
   "en": "Enlarge: Still tired",
   "t": "拡大: まだ疲れてる"
@@ -2614,10 +2566,6 @@
  "6c48581a0b47": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder movie 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 30: </span> 仮の映画 30"
- },
- "6c4f692b2d93": {
-  "en": "{player} snipes a {colour} territory ({points}).",
-  "t": "{player} が{colour}のテリトリーを狙い撃ち（{points}）。"
  },
  "6c84173deb3d": {
   "en": "Vraki<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (written in Vraki)</span>",
@@ -2855,10 +2803,6 @@
   "en": "Enlarge: Close to 12 years old but still kicking",
   "t": "拡大: もうすぐ 12 歳だけどまだまだ元気"
  },
- "76262d314611": {
-  "en": "Territory Snipping: turn your phone sideways",
-  "t": "テリトリー・スナイプ：スマホを横向きに"
- },
  "762cf7076b06": {
   "en": "CR",
   "t": "CR"
@@ -2939,10 +2883,6 @@
   "en": "Pause",
   "t": "一時停止"
  },
- "78988010b890": {
-  "en": "red",
-  "t": "赤"
- },
  "78ca112f9500": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder game 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 33: </span> 仮のゲーム 33"
@@ -2998,10 +2938,6 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
- },
- "7a8cb7243b93": {
-  "en": "{n} pt",
-  "t": "{n} 点"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -3267,10 +3203,6 @@
   "en": "Harvest!",
   "t": "収穫！"
  },
- "85a1ecacad2c": {
-  "en": "That’s the spirit! … You played this before, right?",
-  "t": "その意気だ！…これ、やったことあるよな？"
- },
  "85af7ed7a344": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Placeholder movie 18 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 18: </span> 仮の映画 18"
@@ -3298,10 +3230,6 @@
  "8657af8238d1": {
   "en": "Hairball",
   "t": "Hairball"
- },
- "868657e908ac": {
-  "en": "Harry",
-  "t": "ハリー"
  },
  "8686eb8cf046": {
   "en": "Circa Q2 2013",
@@ -3434,10 +3362,6 @@
  "8bc3246a22fe": {
   "en": "Tattoo on my chest",
   "t": "俺の胸のタトゥー"
- },
- "8bf12a38bad0": {
-  "en": "Throw!",
-  "t": "投げる！"
  },
  "8c11a9f1eca9": {
   "en": "Ride cymbal (key E)",
@@ -3615,10 +3539,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder game 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 30: </span> 仮のゲーム 30"
  },
- "935f6cd89f4a": {
-  "en": "A draw!",
-  "t": "引き分け！"
- },
  "9384a918b850": {
   "en": "Or grow a spine and just reach out to me: see the <a href=\"/contact/\">Contact</a> page.",
   "t": "あるいは腹をくくって、俺に直接連絡してくれ：<a href=\"/contact/\">連絡先</a>ページを見て。"
@@ -3707,10 +3627,6 @@
   "en": "Fluent",
   "t": "流暢"
  },
- "96de5543d183": {
-  "en": "yellow",
-  "t": "黄色"
- },
  "96dedce974cf": {
   "en": "Enlarge: Failing to learn English",
   "t": "拡大: 英語の勉強に挫折中"
@@ -3738,10 +3654,6 @@
  "9790b0b19467": {
   "en": " 1 amethyst  · 1 energy · 20 s ",
   "t": "アメジスト 1 · エネルギー 1 · 20 秒"
- },
- "97ad0a52c978": {
-  "en": "From <a href=\"https://www.husbandoutworld.com/lore/pastimes/#territory-snipping\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld</a>: play the round of Territory Snipping from Vol 2, as Harry, against Hiromi.",
-  "t": "<a href=\"https://www.husbandoutworld.com/lore/pastimes/#territory-snipping\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld</a> より：第 2 巻のテリトリー・スナイプの一勝負を、ハリーとしてヒロミ相手にプレイしよう。"
  },
  "97c202217634": {
   "en": "17 photos",
@@ -3779,10 +3691,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 34: </span> Placeholder game 34 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 34: </span> 仮のゲーム 34"
  },
- "992fb4c6838e": {
-  "en": "{you} wins, somehow!",
-  "t": "{you} が勝った、なんとか！"
- },
  "998896860e5d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder TV show 27 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 27: </span> 仮のドラマ 27"
@@ -3810,10 +3718,6 @@
  "9bb732a1e053": {
   "en": "Glad I don't pay rent",
   "t": "家賃を払わなくていいのは助かる"
- },
- "9bdcbc1f38da": {
-  "en": "You’re coolio too!",
-  "t": "あなたもイケてますよ！"
  },
  "9c202ecc19a4": {
   "en": "Am I that really interesting?",
@@ -4087,10 +3991,6 @@
   "en": "Musicals",
   "t": "ミュージカル"
  },
- "a691267c5647": {
-  "en": "{rival} wins.",
-  "t": "{rival} の勝ち。"
- },
  "a694aafb9d11": {
   "en": "Deo's hand holding a cup of chimarrão with its metal straw, a black cat curled up on a striped blanket behind it",
   "t": "金属のストローが刺さったシマハオンのカップを持つ Deo の手。後ろでは黒猫が縞模様の毛布の上で丸くなっている"
@@ -4110,10 +4010,6 @@
  "a74615c9d0f5": {
   "en": "The hustle",
   "t": "ハッスル"
- },
- "a75be8f0bded": {
-  "en": "Cancelled! Both darts on the {colour} territory are out.",
-  "t": "キャンセル！{colour}のテリトリーのダーツは両方アウト。"
  },
  "a75e8688b4fb": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24",
@@ -4355,10 +4251,6 @@
   "en": "Losses: 5",
   "t": "負け：5"
  },
- "afaed75406bd": {
-  "en": "purple",
-  "t": "紫"
- },
  "affabe3f4188": {
   "en": "Campaign #1",
   "t": "キャンペーン #1"
@@ -4422,10 +4314,6 @@
  "b297cb01e994": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022"
- },
- "b2b52c2fc7c2": {
-  "en": "Snipe all territories? That’s—different—I think. Can—can you explain?",
-  "t": "全部のテリトリーを狙い撃ち？ それって——違いますね——たぶんせ——説明してもらえますか？"
  },
  "b31013feefa3": {
   "en": "4 photos",
@@ -4559,10 +4447,6 @@
   "en": "{m} m ({ft} ft).",
   "t": "{m} m（{ft} ft）。"
  },
- "b8c8d91c4ad6": {
-  "en": "Yellow centre",
-  "t": "黄色の中心"
- },
  "b90b25305207": {
   "en": "Very hot",
   "t": "すごく熱い"
@@ -4583,10 +4467,6 @@
   "en": "Back to Painting",
   "t": "絵画に戻る"
  },
- "b98ab59bdc99": {
-  "en": "{n} pts",
-  "t": "{n} 点"
- },
  "b9a2ffa6496c": {
   "en": "Let's go",
   "t": "行こう"
@@ -4594,10 +4474,6 @@
  "b9af5469788b": {
   "en": "The clock is ticking on my 💀 Death tab.",
   "t": "時計は俺の 💀 死タブで刻まれている。"
- },
- "b9f8e7d16bef": {
-  "en": "{player}'s dart bounced off the wall.",
-  "t": "{player} のダーツが壁に跳ね返った。"
  },
  "ba01865809b3": {
   "en": "Back to Concert",
@@ -4627,10 +4503,6 @@
   "en": "Pitty",
   "t": "Pitty"
  },
- "bc38448e90c1": {
-  "en": "Aw, my chitin ass! Anyways, the goal is to land on the same color region to score a point. If you land on a region with someone else’s dart, you two cancel each other out. Ehh—right? Right—right. The smaller the region, the more it’s worth when sniping it. That makes sense?",
-  "t": "あーあ、俺のキチン質のケツめ！ とにかく、目的は同じ色の区域に当てて点を取ることだ。誰か他の奴のダーツがある区域に当てたら、お互いに打ち消し合う。えっと——だよな？ そう——そうだ。区域が小さいほど、狙い撃ちしたときの価値が高い。わかったか？"
- },
  "bc4359231d61": {
   "en": "Gym",
   "t": "ジム"
@@ -4638,14 +4510,6 @@
  "bc5a47b54ae3": {
   "en": "Who's cooler",
   "t": "どっちがクール？"
- },
- "bc74f4f071a5": {
-  "en": "green",
-  "t": "緑"
- },
- "bc981983e7f5": {
-  "en": "Next",
-  "t": "次へ"
  },
  "bd7210aa5ccc": {
   "en": " 10 amethysts → 1 aquamarine ",
@@ -4662,10 +4526,6 @@
  "be7869041e41": {
   "en": "MyAnimeList",
   "t": "MyAnimeList"
- },
- "be909c082346": {
-  "en": "Territory Snipping",
-  "t": "テリトリー・スナイプ"
  },
  "bea68df61c69": {
   "en": "Beef grilled so far",
@@ -4746,10 +4606,6 @@
  "c12140a0ffb4": {
   "en": "日本語",
   "t": "日本語"
- },
- "c1218408e29a": {
-  "en": "Just a hunk—that was me warming up! Now try to throw on a green section or anywhere else.",
-  "t": "ちょっと待ってくれ——今のはウォームアップだ！さあ、緑の区画か、他のどこでもいいから投げてみろ"
  },
  "c155ff628d91": {
   "en": "Laser removal",
@@ -4879,17 +4735,9 @@
   "en": "Peeta's backyard run",
   "t": "裏庭を走る Peeta"
  },
- "c7abd16eb68f": {
-  "en": "Brotha—you suck at this—Harry?",
-  "t": "兄弟——お前これ下手だな——ハリー？"
- },
  "c7c4bc97cb6b": {
   "en": "Solen Zara",
   "t": "Solen Zara"
- },
- "c852360f55c1": {
-  "en": "—Yea? So I play next?",
-  "t": "——はい？ じゃあ、次は俺の番ですか？"
  },
  "c886f4fa5cd8": {
   "en": "Praise the source of the beef thou art eating. Thank the soul that was given for thy enjoyment and for thy nourishment.",
@@ -4967,10 +4815,6 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye"
  },
- "cbbc9c6fec55": {
-  "en": "Back to Board Games",
-  "t": "ボードゲームに戻る"
- },
  "cbe35333fcf5": {
   "en": "\nAnd as to why? Read my <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld Vol 4 afterword</a>.\n",
   "t": "理由は？ 俺の<a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld 第 4 巻のあとがき</a>を読んでくれ。"
@@ -4978,10 +4822,6 @@
  "cc463043bf6a": {
   "en": "Roll all",
   "t": "全部振る"
- },
- "cc60a1651cdd": {
-  "en": "Final: {you} {youScore} · {rival} {rivalScore} · {verdict}",
-  "t": "最終：{you} {youScore} · {rival} {rivalScore} · {verdict}"
  },
  "cc9c3f91bf15": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">✋</span> Pet ",
@@ -5050,10 +4890,6 @@
  "ce2c178cd497": {
   "en": "Fold precision {n}%.",
   "t": "折り精度 {n}%。"
- },
- "ce3c494a5e85": {
-  "en": "Aiight!",
-  "t": "よっしゃ！"
  },
  "ce70caaad427": {
   "en": "1 photo",
@@ -5143,10 +4979,6 @@
   "en": "Churrasco",
   "t": "シュハスコ"
  },
- "d1d827cb044b": {
-  "en": "What each territory is worth",
-  "t": "各テリトリーの得点"
- },
  "d20bc2c58ea9": {
   "en": "Deo might have hit the dust. If he is still kicking, tell his old ass to update the clock.",
   "t": "Deo はもうくたばっているかもしれない。まだピンピンしているなら、あのジジイに時計を更新しろと言ってくれ。"
@@ -5154,10 +4986,6 @@
  "d223b6c1c738": {
   "en": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>",
   "t": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>"
- },
- "d26d358f777a": {
-  "en": "Your dart flies low and lodges in the wall below the board.",
-  "t": "ダーツが低く飛んでボードの下の壁に刺さった。"
  },
  "d28817938afa": {
   "en": "Colorado",
@@ -5715,10 +5543,6 @@
   "en": "Likes",
   "t": "いいね"
  },
- "ea35482e6295": {
-  "en": "Good try! Good try! C’mon! Try again!",
-  "t": "いい線いってる！ いい線いってる！ ほら！ もう一回！"
- },
  "ea3ddf6727a8": {
   "en": "Do Better!",
   "t": "Do Better!"
@@ -5839,10 +5663,6 @@
   "en": "Enlarge: Painting or drawing, 01/23/2013",
   "t": "拡大: 絵画またはスケッチ, 2013年1月23日"
  },
- "ef0ebbb77298": {
-  "en": "orange",
-  "t": "オレンジ"
- },
  "efe6cabcbaa1": {
   "en": "Since we’re on the subject: take care of your mental health. And if you’ve ever thought about ending it all… don’t. I nearly did, back in 2016, during a period that far surpassed what my mind could take at the time. I called a crisis hotline. To the older lady who picked up the phone that night: I will forever be grateful. The “Harry” you see in Vol. 1 is an alternate version of myself: the one who plunged that knife into his chest that night.",
   "t": "話のついでに：心の健康を大切にしてほしい。もし全部終わらせようと考えたことがあるなら……やめてくれ。俺も 2016 年、もう少しでやるところだった。当時の俺の心が耐えられる限界をはるかに超えた時期だった。俺は危機ホットラインに電話した。あの夜、電話に出てくれた年配の女性へ：一生感謝します。第 1 巻に出てくる「ハリー」は、俺のもう一つの姿だ。あの夜、自分の胸にナイフを突き立てた俺だ。"
@@ -5886,10 +5706,6 @@
  "f237b4210ce4": {
   "en": "Enlarge: Whatcha doing",
   "t": "拡大: 何してるの？"
- },
- "f290164d1315": {
-  "en": "Outer ring",
-  "t": "外側の輪"
  },
  "f2a63e1c444a": {
   "en": "Photogenic",
@@ -6095,10 +5911,6 @@
   "en": "Enlarge: When the catnip hits just right",
   "t": "拡大: マタタビが効いてきたとき"
  },
- "fb23c9ff0d27": {
-  "en": "Inner ring",
-  "t": "内側の輪"
- },
  "fb4d13ed6962": {
   "en": "Enlarge: Sleep first",
   "t": "拡大: まずは寝る"
@@ -6170,10 +5982,6 @@
  "fe9050f8f41a": {
   "en": "Practice skin. Draw a tattoo on it with the tattoo pen.",
   "t": "練習用スキン。タトゥーペンでタトゥーを描いてみよう。"
- },
- "feddfb10fb8d": {
-  "en": "We all play at the same time. GO!",
-  "t": "全員同時にやるんだ。行け！"
  },
  "feea42718962": {
   "en": "Enlarge: Walk time or more like I stay in the stroller",

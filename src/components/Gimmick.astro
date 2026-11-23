@@ -6,7 +6,6 @@ import DinoAmbush from './reusable/DinoAmbush.astro';
 import DrawingPad from './reusable/DrawingPad.astro';
 import DrumKit from './reusable/DrumKit.astro';
 import FireMeter from './reusable/FireMeter.astro';
-import IsoDarts from './reusable/IsoDarts.astro';
 import IsoFarm from './reusable/IsoFarm.astro';
 import KitKot from './reusable/KitKot.astro';
 import LedMatrix from './reusable/LedMatrix.astro';
@@ -18,7 +17,6 @@ import WhackAMole from './reusable/WhackAMole.astro';
 import whackSprite from '../assets/whack-a-miku/whack-a-miku.png';
 import farm from '../../content/mentor-farm.json';
 import ecchi from '../../content/lust-meter.json';
-import territorySnipping from '../../content/territory-snipping.json';
 import botwStats from '../../content/botw-stats.json';
 import { PIXEL_PETS } from '../lib/pixelPets';
 import { PETS } from '../lib/pets';
@@ -63,7 +61,6 @@ const hours = Math.round(botwStats.hours).toLocaleString('en-US');
   )
 }
 {id === 'tattoo-skin' && <DrawingPad label="Practice skin. Draw a tattoo on it with the tattoo pen." />}
-{id === 'territory-snipping' && <IsoDarts game={territorySnipping} title="Territory Snipping" />}
 {
   id === 'vhs-pile' && (
     <VhsPile hours={botwStats.hours} summary="That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).">

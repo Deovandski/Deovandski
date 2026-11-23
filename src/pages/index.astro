@@ -637,9 +637,6 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </section>
 
     <section class="panel" role="region" id="panel-boardgames" aria-labelledby="tab-boardgames" tabindex="0" hidden>
-      <GimmickPlay tab="boardgames">
-        <p slot="intro">From <a href="https://www.husbandoutworld.com/lore/pastimes/#territory-snipping">#HusbandOutWorld</a>: play the round of Territory Snipping from Vol 2, as Harry, against Hiromi.</p>
-      </GimmickPlay>
       <Sections data={boardgames} id="boardgames" slots={1} empty="Board game nights are on their way." photoAlt={(t) => `Board games: ${t}`} />
     </section>
 
