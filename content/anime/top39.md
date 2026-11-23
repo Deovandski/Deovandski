@@ -92,7 +92,7 @@ Besides the relationship and the bonding, the merchant life and bartering are re
 My entry point to the more morbid and twisted stuff like When They Cry, so it has a special place in my mind.
 
 29. Higurashi no Naku Koro ni (When They Cry)
-I watched the remake. Spoiler warning, but goddamn, can these two just fucking rub clits and get over this shit? ...huehuehuehue. Okay, shitposting aside, the scene with the rake is so fucking insane it still haunts me years later. I slept fine, but it was an assault on the senses... Well done.
+I watched the remake. Spoiler warning, but goddamn, can these two just lock themselves in a room and fight it out already? ...huehuehuehue. Okay, shitposting aside, the scene with the rake is so fucking insane it still haunts me years later. I slept fine, but it was an assault on the senses... Well done.
 
 30. Chuunibyou demo Koi ga Shitai! (Love, Chunibyo & Other Delusions!)
 So damn cute! It reminded me of going through adolescence, which means it does a really good job of capturing how weird and fascinating it is to grow into early adulthood. Also, I absolutely love Satone, because I love clingy girls!
@@ -113,7 +113,7 @@ The later seasons kind of derailed it, but that first season got me hooked, and 
 Shoutout to Unlimited Blade Works, and especially Heaven's Feel. Grounded world rules, and each branch of the story is truly unique.
 
 36. Seikon no Qwaser (The Qwaser of Stigmata)
-I watched this in the same time frame as Yosuga no Sora. Interesting world rules, and definitely a fetish for sucking tits. It made me curious about being physically intimate with a commanding, forward girl... Results are in! It's fun, given I'm usually the more dominant type.
+I watched this in the same time frame as Yosuga no Sora. Interesting world rules, and definitely the author knew what he liked... It made me curious about being physically intimate with a commanding, forward girl... Results are in! It's fun, given I'm usually the more dominant type.
 
 37. Nichijou (My Ordinary Life) & Non Non Biyori
 The complete opposite of some of the other stuff I watched, but I have fond memories of them. So cute and chill!
