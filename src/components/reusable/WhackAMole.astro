@@ -54,6 +54,23 @@ const corners = [
   { id: 'bl', label: 'bottom left', key: '3' },
   { id: 'br', label: 'bottom right', key: '4' },
 ];
+// What the script writes. It lives in the page so the site's translations reach it.
+const strings: Record<string, string> = {
+  name,
+  names: '{name}s',
+  popped: '{name} popped up {corner}!',
+  score: 'Score: {n}',
+  left: '{n}s left',
+  again: 'Play again',
+  legendary: 'Legendary reflexes!',
+  nice: 'Nice whacking!',
+  notBad: 'Not bad!',
+  gotAway: 'She got away…',
+  time: 'Time! You whacked {hits} {names} and missed {misses}. {verdict}',
+  timeOne: 'Time! You whacked {hits} {name} and missed {misses}. {verdict}',
+  bonus: 'Bonus day! Every {name} counts double. Go!',
+  go: 'Go!',
+};
 ---
 
 <div
@@ -62,6 +79,7 @@ const corners = [
   data-seconds={seconds}
   data-bonus={bonusDays.join(',')}
 >
+  <div class="wam__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <div class="wam__card">
     <img class="wam__preview" src={sprite.src} width={sprite.width} height={sprite.height} alt="" />
     <div>
@@ -202,7 +220,10 @@ const corners = [
   let playing: HTMLElement | null = null; // one round at a time across the page
 
   document.querySelectorAll<HTMLElement>('.wam').forEach((game) => {
-    const name = game.dataset.name || 'mole';
+    // The page's (possibly translated) words; {name} slots are filled in here.
+    const msg = (key: string, vars: Record<string, string | number> = {}) =>
+      (game.querySelector(`.wam__strings [data-k="${key}"]`)?.textContent ?? key).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
+    const name = msg('name') || game.dataset.name || 'mole';
     const seconds = Number(game.dataset.seconds) || 30;
     const bonus = (game.dataset.bonus || '').split(',').filter(Boolean);
     const status = game.querySelector<HTMLElement>('.wam__status')!;
@@ -228,7 +249,6 @@ const corners = [
       return `${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}`;
     };
     const points = () => (bonus.includes(today()) ? 2 : 1);
-    const plural = (n: number) => `${n} ${name}${n === 1 ? '' : 's'}`;
 
     function hide(p: HTMLButtonElement) {
       p.classList.remove('is-up');
@@ -261,7 +281,7 @@ const corners = [
             hide(p);
           }, stay),
         );
-        status.textContent = `${name} popped up ${p.getAttribute('aria-label')!.match(/\(([^,]+)/)![1]}!`;
+        status.textContent = msg('popped', { name, corner: p.getAttribute('aria-label')?.match(/[(（]([^,，、)）]+)/)?.[1] ?? '' });
       }
       // Pop-ups come more often as the round goes on (about every 1.1 s down to 0.45 s).
       const progress = 1 - (endsAt - performance.now()) / (seconds * 1000);
@@ -277,14 +297,14 @@ const corners = [
       window.clearTimeout(timers.get(p));
       timers.delete(p);
       window.setTimeout(() => hide(p), reduced ? 150 : 260);
-      scoreEl.textContent = `Score: ${score}`;
+      scoreEl.textContent = msg('score', { n: score });
     }
 
     function tick() {
       // Its tab was closed (the card is no longer on the page): end the round.
       if (!game.offsetParent) return finish();
       const left = Math.max(0, Math.ceil((endsAt - performance.now()) / 1000));
-      start.textContent = `${left}s left`;
+      start.textContent = msg('left', { n: left });
       if (left <= 0) return finish();
       clock = window.setTimeout(tick, 250);
     }
@@ -295,10 +315,10 @@ const corners = [
       pops.forEach(hide);
       playing = null;
       start.disabled = false;
-      start.textContent = 'Play again';
-      const verdict = score >= 25 ? 'Legendary reflexes!' : score >= 15 ? 'Nice whacking!' : score >= 6 ? 'Not bad!' : 'She got away…';
-      status.textContent = `Time! You whacked ${plural(score)} and missed ${misses}. ${verdict}`;
-      scoreEl.textContent = `Score: ${score}`;
+      start.textContent = msg('again');
+      const verdict = msg(score >= 25 ? 'legendary' : score >= 15 ? 'nice' : score >= 6 ? 'notBad' : 'gotAway');
+      status.textContent = msg(score === 1 ? 'timeOne' : 'time', { hits: score, name, names: msg('names', { name }), misses, verdict });
+      scoreEl.textContent = msg('score', { n: score });
     }
 
     start.addEventListener('click', () => {
@@ -308,8 +328,8 @@ const corners = [
       misses = 0;
       endsAt = performance.now() + seconds * 1000;
       start.disabled = true;
-      scoreEl.textContent = 'Score: 0';
-      status.textContent = points() > 1 ? `Bonus day! Every ${name} counts double. Go!` : 'Go!';
+      scoreEl.textContent = msg('score', { n: 0 });
+      status.textContent = points() > 1 ? msg('bonus', { name }) : msg('go');
       tick();
       spawnTimer = window.setTimeout(popUp, 600);
     });

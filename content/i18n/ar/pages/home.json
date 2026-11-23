@@ -1,0 +1,790 @@
+{
+ "00f42f627fce": {
+  "en": "Your post was shown to 1 more person than last time! Keep going!",
+  "t": "ظهر منشورك لشخص واحد أكثر من المرة الماضية! استمر!"
+ },
+ "02b13b00cdc9": {
+  "en": "FEVER! The whole floor lights up.",
+  "t": "حمّى! الأرضية كلها تضيء."
+ },
+ "046fa1a6bc47": {
+  "en": "Nothing to clean.",
+  "t": "لا شيء للتنظيف."
+ },
+ "0a3c15792056": {
+  "en": "pictures",
+  "t": "صور"
+ },
+ "0bf9322efcf3": {
+  "en": "Final score: {you} {youScore}, {rival} {rivalScore}. {verdict}",
+  "t": "النتيجة النهائية: {you} {youScore}، {rival} {rivalScore}. {verdict}"
+ },
+ "0c1d9293305f": {
+  "en": "thrown too hard, so it looped and lost its speed",
+  "t": "رُمي بقوة كبيرة فدار وفقد سرعته"
+ },
+ "0faaf0fb0bb0": {
+  "en": "More balls than shit. Keep it that way!",
+  "t": "كرات أكثر من الخراء. حافظ على ذلك!"
+ },
+ "13a29a85064f": {
+  "en": "Plot {plot}: empty. Plant {crop}.",
+  "t": "القطعة {plot}: فارغة. ازرع {crop}."
+ },
+ "149d7ab31b5c": {
+  "en": "Go!",
+  "t": "انطلق!"
+ },
+ "1825a9d5984b": {
+  "en": "Fold 1 of 5: drag the top-left corner to the dot on the centre line.",
+  "t": "طية 1 من 5: اسحب الزاوية العلوية اليسرى إلى النقطة على الخط الوسط."
+ },
+ "19e17a057b61": {
+  "en": "Your turn: press Throw (or Space) when the aim is where you want it.",
+  "t": "دورك: اضغط «ارمِ!» (أو مفتاح المسافة) عندما يكون التصويب حيث تريد."
+ },
+ "1b9f359ce480": {
+  "en": "Dance",
+  "t": "ارقص"
+ },
+ "1e69f9e7e667": {
+  "en": "📉 -{n} followers. \"Not this again…\"",
+  "t": "📉 -{n} متابع. \"ليس هذا مجددًا…\""
+ },
+ "20cd7e840557": {
+  "en": "Fertilized {crop} ({n}). Better odds!",
+  "t": "سمّدت {crop} ({n}). فرص أفضل!"
+ },
+ "2104ba8031ca": {
+  "en": "You lost {n} followers. Your audience is tired of {kind}.",
+  "t": "فقدت {n} متابع. جمهورك ملّ من {kind}."
+ },
+ "2108fcbf3093": {
+  "en": "Good call. The best move is not to play. Now go outside.",
+  "t": "قرار جيد. أفضل حركة هي عدم اللعب. اخرج الآن."
+ },
+ "22e02026aa78": {
+  "en": "Crisp!",
+  "t": "متقن!"
+ },
+ "2438453caeb0": {
+  "en": "there's poop to clean",
+  "t": "هناك براز للتنظيف"
+ },
+ "244d46168deb": {
+  "en": "a cactus",
+  "t": "صبار"
+ },
+ "25270ee78057": {
+  "en": "Balls worth {balls} pearls vs {shit} shit.",
+  "t": "كرات بقيمة {balls} بيرل مقابل {shit} خراء."
+ },
+ "2583d0fe0cc8": {
+  "en": "{name} feels lonely",
+  "t": "{name} يشعر بالوحدة"
+ },
+ "26deb96c0c06": {
+  "en": "Toe stand &amp; point",
+  "t": "الوقوف على الأصابع والإشارة"
+ },
+ "278cc325dfd3": {
+  "en": "Trending… in your apartment.",
+  "t": "رائج… في شقتك."
+ },
+ "27b48cf9ae90": {
+  "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
+  "t": "أي {tapes} شريط VHS مسجّل بوضع {mode} ({perTape} ساعات لكل شريط T-120)."
+ },
+ "27bbcef16995": {
+  "en": "Hiromi",
+  "t": "هيرومي"
+ },
+ "2a0a84854369": {
+  "en": "uneven left and right folds pulled it up",
+  "t": "الطي غير المتساوي يسارًا ويمينًا سحبه لأعلى"
+ },
+ "2b5ecdaf34f0": {
+  "en": "aquamarines",
+  "t": "أكوامارين"
+ },
+ "2c1e5036b725": {
+  "en": "{n} balls in the bag",
+  "t": "{n} كرات في الحقيبة"
+ },
+ "2f2bbafed371": {
+  "en": "Posted. Nobody cares. Yet.",
+  "t": "نُشر. لا أحد يهتم. بعد."
+ },
+ "31071d58e994": {
+  "en": "a bird",
+  "t": "طائر"
+ },
+ "318f9434e024": {
+  "en": "{crop} is still growing.",
+  "t": "{crop} ما زال ينمو."
+ },
+ "31b5e865a21e": {
+  "en": "{name} loves that.",
+  "t": "{name} يحب ذلك."
+ },
+ "31fae22769c6": {
+  "en": "Time! You whacked {hits} {names} and missed {misses}. {verdict}",
+  "t": "الوقت! ضربت {hits} {names} وأفلت {misses}. {verdict}"
+ },
+ "331a84a2e901": {
+  "en": "{name} popped up {corner}!",
+  "t": "ظهرت {name} ({corner})!"
+ },
+ "38d4249ff036": {
+  "en": "⏱ {seconds}s · darts: {you} {youLeft}, {rival} {rivalLeft}",
+  "t": "⏱ {seconds}s · سهام: {you} {youLeft}، {rival} {rivalLeft}"
+ },
+ "39091a099ef5": {
+  "en": "Plot {plot}: {crop}, ready in {seconds} seconds.",
+  "t": "القطعة {plot}: {crop}، جاهزة خلال {seconds} ثانية."
+ },
+ "3ffa6ae98146": {
+  "en": "The line dance",
+  "t": "رقصة الصف"
+ },
+ "40e405b6605c": {
+  "en": "I haven’t heard of that, but yeah, I prefer targeting the yellow ones, as those are worth more if you snipe all territories.",
+  "t": "لم أسمع بذلك، لكن نعم، أفضّل استهداف المناطق الصفراء، فهي تساوي أكثر إن قنصت كل المناطق."
+ },
+ "42766efba402": {
+  "en": "Middle ring",
+  "t": "الحلقة الوسطى"
+ },
+ "42ae6cb3cd8f": {
+  "en": "Time! The room starts to move too much…",
+  "t": "الوقت! الغرفة بدأت تتحرك كثيرًا…"
+ },
+ "4322655424cd": {
+  "en": "Routine #{n}: {routine}.",
+  "t": "روتين #{n}: {routine}."
+ },
+ "43eb964be6dd": {
+  "en": "FEVER!",
+  "t": "حمّى!"
+ },
+ "4787267d603e": {
+  "en": "You lost your streak.",
+  "t": "فقدت سلسلتك."
+ },
+ "4a2ded82016c": {
+  "en": "Planted {crop}.",
+  "t": "زرعت {crop}."
+ },
+ "4b482e2ae4e2": {
+  "en": "⚠️ Your {n}-post streak is about to die!",
+  "t": "⚠️ سلسلتك من {n} منشور على وشك الموت!"
+ },
+ "4c1c703b94bd": {
+  "en": "The point",
+  "t": "الإشارة"
+ },
+ "4c1f1c138390": {
+  "en": "Not bad!",
+  "t": "ليس سيئًا!"
+ },
+ "4c660686dc07": {
+  "en": "His first dart clings, then falls. The second lands on a green territory near the centre.",
+  "t": "سهمه الأول تعلق ثم سقط. الثاني هبط على إقليم أخضر قرب المركز."
+ },
+ "4c9a82ce72ca": {
+  "en": "blue",
+  "t": "أزرق"
+ },
+ "4d2751b25828": {
+  "en": "Kinda? Was the board always this big and colored? I thought it was rounded too— OH YEAH! The center is worth more, right?",
+  "t": "نوعًا ما؟ هل كانت اللوحة دائمًا بهذا الحجم والألوان؟ ظننت أنها مستديرة أيضًا— أوه نعم! المركز يساوي أكثر، صحيح؟"
+ },
+ "4d5fb4549070": {
+  "en": "Angle {angle}°, power {power}%. Space to throw.",
+  "t": "زاوية {angle}°، قوة {power}%. Space للرمي."
+ },
+ "4ddc5d84096c": {
+  "en": "pearl",
+  "t": "بيرل"
+ },
+ "50ccc5e2e037": {
+  "en": "He aims for the same green, and lands far above it, on purple.",
+  "t": "يصوب على نفس الأخضر ويهبط بعيدًا فوقه على البنفسجي."
+ },
+ "50db544157bb": {
+  "en": "Off beat",
+  "t": "خارج الإيقاع"
+ },
+ "511ce74bedd3": {
+  "en": "Fold 3 of 5: drag the new left corner to the centre dot.",
+  "t": "طية 3 من 5: اسحب الزاوية اليسرى الجديدة إلى النقطة الوسطى."
+ },
+ "512377a8dafe": {
+  "en": "You threw {thing}.",
+  "t": "رميت {thing}."
+ },
+ "52a662e91e85": {
+  "en": "Right now it tastes like shit. Keep planting.",
+  "t": "الآن طعمه مثل الخراء. استمر في الزراعة."
+ },
+ "54834f8e5fe6": {
+  "en": "You spent {time} and {posts} posts chasing {n} followers who don't exist. Now go outside.",
+  "t": "أنفقت {time} و{posts} منشور في مطاردة {n} متابع غير موجود. اخرج الآن."
+ },
+ "576766d387ec": {
+  "en": "Play again",
+  "t": "العب مجددًا"
+ },
+ "595380aaecec": {
+  "en": "amethysts",
+  "t": "أميثيست"
+ },
+ "5db2a98f777b": {
+  "en": "You need {n} {ball} to plant {crop}. Trade up at the market.",
+  "t": "تحتاج {n} {ball} لزراعة {crop}. تبادل في السوق."
+ },
+ "5e20a863dd1e": {
+  "en": "Nom nom!",
+  "t": "Nom nom!"
+ },
+ "5f0128979edd": {
+  "en": "0 views. Shadowbanned?",
+  "t": "0 مشاهدات. حظر خفي؟"
+ },
+ "60fa9414860a": {
+  "en": "aimed at the floor",
+  "t": "صُوب نحو الأرض"
+ },
+ "61dedcf053ff": {
+  "en": "Good",
+  "t": "جيد"
+ },
+ "64791c7db8b4": {
+  "en": "On beat!",
+  "t": "على الإيقاع!"
+ },
+ "648e31fe0ec2": {
+  "en": "{word} Folded! Precision {n}%. Now drag back from the plane to aim, and let go to throw (or use the arrow keys and Space).",
+  "t": "{word} مطوي! الدقة {n}%. الآن اسحب للخلف من الطائرة للتصويب واترك لترمي (أو استخدم الأسهم وSpace)."
+ },
+ "65be7475750d": {
+  "en": "{min} min {sec} s",
+  "t": "{min} دقيقة {sec} ثانية"
+ },
+ "660d7f656e76": {
+  "en": "The dino dodged it.",
+  "t": "الديناصور تفاداه."
+ },
+ "68507370f897": {
+  "en": "🚀 VIRAL! +{views} views, +{follows} followers",
+  "t": "🚀 فيروسي! +{views} مشاهدة، +{follows} متابع"
+ },
+ "6893ddca41ed": {
+  "en": "Only {n} to {goal}!",
+  "t": "فقط {n} إلى {goal}!"
+ },
+ "69b0b68def54": {
+  "en": "SEE? It’s all about mindset! You know what, Harry? You’re cool! So why not play a bit of territory snipping to celebrate?",
+  "t": "أترى؟ الأمر كله يتعلق بالعقلية! أتعرف يا هاري؟ أنت رائع! فلماذا لا نلعب قليلًا من التيريتوري سنيبينغ لنحتفل؟"
+ },
+ "6aa9ec501cfb": {
+  "en": "{sec} s",
+  "t": "{sec} ثانية"
+ },
+ "6c4f692b2d93": {
+  "en": "{player} snipes a {colour} territory ({points}).",
+  "t": "{player} قنص منطقة اللون {colour} ({points})."
+ },
+ "6cae7ad96e0d": {
+  "en": "sapphires",
+  "t": "سافاير"
+ },
+ "6daea1f3952f": {
+  "en": "Play time!",
+  "t": "وقت اللعب!"
+ },
+ "7052c90bfbaf": {
+  "en": "Balls worth {balls} pearl vs {shit} shit.",
+  "t": "كرات بقيمة {balls} بيرل مقابل {shit} خراء."
+ },
+ "73b886d405a7": {
+  "en": "{name} is hungry",
+  "t": "{name} جائع"
+ },
+ "74a8c36c9678": {
+  "en": "You fucking loser! The dino survived and flips you off.",
+  "t": "يا لك من خاسر لعين! نجا الديناصور ورفع لك إصبعه الأوسط."
+ },
+ "7503eb978cf4": {
+  "en": "Plot {plot}: {crop}, ready to harvest (it wilted).",
+  "t": "القطعة {plot}: {crop}، جاهزة للحصاد (ذبُلت)."
+ },
+ "7675cf606b31": {
+  "en": "intellectual video",
+  "t": "فيديو فكري"
+ },
+ "76d4694d0853": {
+  "en": "❤️ +{n} like",
+  "t": "❤️ +{n} إعجاب"
+ },
+ "77003d07271f": {
+  "en": "Best",
+  "t": "الأفضل"
+ },
+ "781961bc81c2": {
+  "en": "Pause",
+  "t": "إيقاف مؤقت"
+ },
+ "78988010b890": {
+  "en": "red",
+  "t": "أحمر"
+ },
+ "78fadeed7303": {
+  "en": "{n} ball in the bag",
+  "t": "{n} كرة في الحقيبة"
+ },
+ "7a5a08b6baea": {
+  "en": "3 views. Two were you.",
+  "t": "3 مشاهدات. اثنتان أنت."
+ },
+ "7a8cb7243b93": {
+  "en": "{n} pt",
+  "t": "{n} نقطة"
+ },
+ "7ac1384e8f1a": {
+  "en": "crisp folds helped it glide",
+  "t": "الطي الدقيق ساعده على الانزلاق"
+ },
+ "7f09aca0998e": {
+  "en": "clickbait video",
+  "t": "فيديو طُعم"
+ },
+ "857aacdbee63": {
+  "en": "Harvest!",
+  "t": "احصد!"
+ },
+ "85a1ecacad2c": {
+  "en": "That’s the spirit! … You played this before, right?",
+  "t": "هذه هي الروح! … لعبت هذا من قبل، صحيح؟"
+ },
+ "868657e908ac": {
+  "en": "Harry",
+  "t": "هاري"
+ },
+ "868d15508a8a": {
+  "en": "{name} is stuffed!",
+  "t": "{name} ممتلئ!"
+ },
+ "8827c825266b": {
+  "en": "uneven left and right folds pulled it down",
+  "t": "الطي غير المتساوي يسارًا ويمينًا سحبه لأسفل"
+ },
+ "88abbb44e60f": {
+  "en": "random shit",
+  "t": "هراء عشوائي"
+ },
+ "89a35bbdf744": {
+  "en": "Your {n}-post streak is about to die. Post something!",
+  "t": "سلسلتك من {n} منشور على وشك الموت. انشر شيئًا!"
+ },
+ "8a12d5626fe3": {
+  "en": "Trending",
+  "t": "رائج"
+ },
+ "8b1aa1d275e3": {
+  "en": "All clean.",
+  "t": "نظيف تمامًا."
+ },
+ "8e4e0408b8f6": {
+  "en": "pearls",
+  "t": "بيرل"
+ },
+ "8eb5eb869df6": {
+  "en": "thrown too softly",
+  "t": "رُمي بضعف"
+ },
+ "935f6cd89f4a": {
+  "en": "A draw!",
+  "t": "تعادل!"
+ },
+ "955b7068c35b": {
+  "en": "Row {row}, column {col} on",
+  "t": "صف {row}، عمود {col} تشغيل"
+ },
+ "956ec36375d4": {
+  "en": "Best {n} m",
+  "t": "الأفضل {n} m"
+ },
+ "96de5543d183": {
+  "en": "yellow",
+  "t": "أصفر"
+ },
+ "972a61c6393a": {
+  "en": "{name} is content.",
+  "t": "{name} راضٍ."
+ },
+ "992fb4c6838e": {
+  "en": "{you} wins, somehow!",
+  "t": "{you} يفوز، بطريقة ما!"
+ },
+ "9bdcbc1f38da": {
+  "en": "You’re coolio too!",
+  "t": "أنت رائع أيضًا يا صاح!"
+ },
+ "9cf7bc8b3812": {
+  "en": "Your {kind} went viral: {views} views and {follows} new followers.",
+  "t": "{kind} الخاص بك أصبح فيروسيًا: {views} مشاهدة و{follows} متابع جديد."
+ },
+ "9d6c79478e4e": {
+  "en": "Legendary reflexes!",
+  "t": "ردود فعل أسطورية!"
+ },
+ "9dbfccdd9baa": {
+  "en": "🔥 {n}-post streak! Don't break it!",
+  "t": "🔥 سلسلة {n} منشور! لا تكسرها!"
+ },
+ "9f8030cb22e8": {
+  "en": "The algorithm has left you on read.",
+  "t": "الخوارزمية قرأت رسالتك ولم ترد."
+ },
+ "9f8d43df802f": {
+  "en": "Wheee!",
+  "t": "Wheee!"
+ },
+ "a03e9007dd84": {
+  "en": "You fucking loser!",
+  "t": "يا لك من خاسر لعين!"
+ },
+ "a44c1fbbccc0": {
+  "en": "Traded {n} {give} for 1 {get}.",
+  "t": "بادلت {n} {give} مقابل 1 {get}."
+ },
+ "a5654a379120": {
+  "en": "Cleared",
+  "t": "ممسوح"
+ },
+ "a691267c5647": {
+  "en": "{rival} wins.",
+  "t": "{rival} يفوز."
+ },
+ "a74615c9d0f5": {
+  "en": "The hustle",
+  "t": "الهاسل"
+ },
+ "a75be8f0bded": {
+  "en": "Cancelled! Both darts on the {colour} territory are out.",
+  "t": "ملغى! السهمان في منطقة اللون {colour} خرجا."
+ },
+ "a844766240b7": {
+  "en": "a rock",
+  "t": "صخرة"
+ },
+ "a8b5fc4f044d": {
+  "en": "Fertilized {n} times.",
+  "t": "سُمّد {n} مرات."
+ },
+ "ab42dc3d0e5c": {
+  "en": "another dino",
+  "t": "ديناصور آخر"
+ },
+ "abc4c339d728": {
+  "en": "It wilted. You got {what}. Fertilizer, at least.",
+  "t": "ذبُلت. حصلت على {what}. على الأقل سماد."
+ },
+ "abfa242a93fa": {
+  "en": "💔 Streak lost. {n} posts, gone.",
+  "t": "💔 السلسلة ضاعت. {n} منشور، ذهبت."
+ },
+ "adde1258fbad": {
+  "en": "Personal best: {n} m",
+  "t": "أفضل شخصي: {n} m"
+ },
+ "ae4d8a00b6ce": {
+  "en": "▶️ +{views} views",
+  "t": "▶️ +{views} مشاهدة"
+ },
+ "aed6b9811801": {
+  "en": "So close! Your post was one share away from blowing up.",
+  "t": "قريب جدًا! منشورك كان على بعد مشاركة واحدة من الانفجار."
+ },
+ "af429fb22354": {
+  "en": "Nice whacking!",
+  "t": "ضربة جيدة!"
+ },
+ "afaed75406bd": {
+  "en": "purple",
+  "t": "بنفسجي"
+ },
+ "b2b52c2fc7c2": {
+  "en": "Snipe all territories? That’s—different—I think. Can—can you explain?",
+  "t": "قنص كل المناطق؟ هذا—مختلف—أظن. هل—هل يمكنك أن تشرح؟"
+ },
+ "b45d00ec07a3": {
+  "en": "Bonus day! Every {name} counts double. Go!",
+  "t": "يوم المكافأة! كل {name} يحسب ضعفًا. انطلق!"
+ },
+ "b6df21551d66": {
+  "en": "sloppy folds made it wobble and drag",
+  "t": "الطي المهمل جعله يهتز ويجر"
+ },
+ "b783ecde91e7": {
+  "en": "Plot {plot}: {crop}, ready to harvest.",
+  "t": "القطعة {plot}: {crop}، جاهزة للحصاد."
+ },
+ "b8a13eba61b4": {
+  "en": "{m} m ({ft} ft).",
+  "t": "{m} m ({ft} ft)."
+ },
+ "b8c8d91c4ad6": {
+  "en": "Yellow centre",
+  "t": "المركز الأصفر"
+ },
+ "b98ab59bdc99": {
+  "en": "{n} pts",
+  "t": "{n} نقاط"
+ },
+ "b9f8e7d16bef": {
+  "en": "{player}'s dart bounced off the wall.",
+  "t": "سهم {player} ارتد عن الجدار."
+ },
+ "bbc97dc5386e": {
+  "en": "it climbed too steeply and stalled",
+  "t": "صعد بزاوية حادة جدًا ففقد قوة الرفع"
+ },
+ "bc38448e90c1": {
+  "en": "Aw, my chitin ass! Anyways, the goal is to land on the same color region to score a point. If you land on a region with someone else’s dart, you two cancel each other out. Ehh—right? Right—right. The smaller the region, the more it’s worth when sniping it. That makes sense?",
+  "t": "آه، يا مؤخرتي الكيتينية! على أي حال، الهدف أن تهبط في منطقة اللون نفسه لتسجل نقطة. وإن هبطت في منطقة فيها سهم شخص آخر، يلغي كل منكما الآخر. إيه—صحيح؟ صحيح—صحيح. كلما صغرت المنطقة، زادت قيمتها حين تقنصها. هل هذا مفهوم؟"
+ },
+ "bc74f4f071a5": {
+  "en": "green",
+  "t": "أخضر"
+ },
+ "beaf88b8f9bb": {
+  "en": "Music: off",
+  "t": "الموسيقى: إيقاف"
+ },
+ "bec764a9d2b7": {
+  "en": "Fold 2 of 5: now the top-right corner to the same dot.",
+  "t": "طية 2 من 5: الآن الزاوية العلوية اليمنى إلى نفس النقطة."
+ },
+ "bfc2ec349cc6": {
+  "en": "{n} shit 💩",
+  "t": "{n} خراء 💩"
+ },
+ "c1070741a87a": {
+  "en": "{name}s",
+  "t": "{name}"
+ },
+ "c1218408e29a": {
+  "en": "Just a hunk—that was me warming up! Now try to throw on a green section or anywhere else.",
+  "t": "لحظة واحدة—كنت أُحمّي يدي فحسب! والآن حاول أن ترمي على قسم أخضر أو في أي مكان آخر."
+ },
+ "c2032d98f6ff": {
+  "en": "natural {n}!",
+  "t": "{n} طبيعي!"
+ },
+ "c327716d8241": {
+  "en": "Angle {angle}°   Power {power}%",
+  "t": "زاوية {angle}°   قوة {power}%"
+ },
+ "c46451ea184b": {
+  "en": "That one has all the fertilizer it can take ({max}).",
+  "t": "تلك أخذت كل السماد الممكن ({max})."
+ },
+ "c574501fd8fe": {
+  "en": "Roll d{sides} (last roll {result})",
+  "t": "ارمِ d{sides} (آخر رمية {result})"
+ },
+ "c6e2f87cd267": {
+  "en": "sapphire",
+  "t": "سافاير"
+ },
+ "c75ac3fad137": {
+  "en": "{n}s left",
+  "t": "متبقٍ {n} ث"
+ },
+ "c7abd16eb68f": {
+  "en": "Brotha—you suck at this—Harry?",
+  "t": "يا أخي—أنت سيئ في هذا—هاري؟"
+ },
+ "c852360f55c1": {
+  "en": "—Yea? So I play next?",
+  "t": "—نعم؟ إذن ألعب أنا بعد ذلك؟"
+ },
+ "c9db75e9dd40": {
+  "en": "Harvested {crop}: {what}!",
+  "t": "حصدت {crop}: {what}!"
+ },
+ "ca2c4b70322c": {
+  "en": "{level}, {n} out of 100",
+  "t": "{level}، {n} من 100"
+ },
+ "cc60a1651cdd": {
+  "en": "Final: {you} {youScore} · {rival} {rivalScore} · {verdict}",
+  "t": "النهائي: {you} {youScore} · {rival} {rivalScore} · {verdict}"
+ },
+ "ccd479b39669": {
+  "en": "Out of shit to fertilize with.",
+  "t": "نفد الخراء للتسميد."
+ },
+ "cd719473682b": {
+  "en": "Winner Winner Chicken Dinner! You took the dino down.",
+  "t": "Winner Winner Chicken Dinner! أسقطت الديناصور."
+ },
+ "ce00926930a4": {
+  "en": "New personal best!",
+  "t": "رقم شخصي جديد!"
+ },
+ "ce2c178cd497": {
+  "en": "Fold precision {n}%.",
+  "t": "دقة الطي {n}%."
+ },
+ "ce3c494a5e85": {
+  "en": "Aiight!",
+  "t": "حسنًا!"
+ },
+ "cf32e9152179": {
+  "en": "❤️ +{n} likes",
+  "t": "❤️ +{n} إعجاب"
+ },
+ "d0683718593c": {
+  "en": "Sloppy",
+  "t": "مهمل"
+ },
+ "d0799417b93a": {
+  "en": "Score: {n}",
+  "t": "النقاط: {n}"
+ },
+ "d26d358f777a": {
+  "en": "Your dart flies low and lodges in the wall below the board.",
+  "t": "سهمك طار منخفضًا وغرز في الجدار تحت اللوحة."
+ },
+ "d397cf31a23a": {
+  "en": "Same plane. Drag back to aim and let go to throw.",
+  "t": "نفس الطائرة. اسحب للخلف للتصويب واترك للرمي."
+ },
+ "d3c3cff3fcea": {
+  "en": "Almost went viral! 97% to the For You page.",
+  "t": "كاد يصبح فيروسيًا! 97% إلى صفحة For You."
+ },
+ "d62a14276f7a": {
+  "en": "Fold 4 of 5: and the right corner to the same dot.",
+  "t": "طية 4 من 5: والزاوية اليمنى إلى نفس النقطة."
+ },
+ "d74cdcf6827c": {
+  "en": "Landed!",
+  "t": "هبط!"
+ },
+ "d7f186ff8a7c": {
+  "en": "leaking away: use it!",
+  "t": "يتسرب: استخدمه!"
+ },
+ "df568bac40e4": {
+  "en": "A pile of {n} VHS tapes",
+  "t": "كومة من {n} أشرطة VHS"
+ },
+ "e24b1fcf7aa8": {
+  "en": "Fresh skin",
+  "t": "جلد جديد"
+ },
+ "e45f65625355": {
+  "en": "amethyst",
+  "t": "أميثيست"
+ },
+ "e5100c3c7795": {
+  "en": "Fold precision {n}%: {tips}.",
+  "t": "دقة الطي {n}%: {tips}."
+ },
+ "e53060217b21": {
+  "en": "Not enough energy. It refills every second.",
+  "t": "طاقة غير كافية. تُعاد كل ثانية."
+ },
+ "e76e281ed9f1": {
+  "en": "Back to the starting picture",
+  "t": "العودة إلى الصورة الابتدائية"
+ },
+ "ea35482e6295": {
+  "en": "Good try! Good try! C’mon! Try again!",
+  "t": "محاولة جيدة! محاولة جيدة! هيا! حاول مرة أخرى!"
+ },
+ "ea52ac390158": {
+  "en": "▶️ +{views} views, +{follows} followers",
+  "t": "▶️ +{views} مشاهدة، +{follows} متابع"
+ },
+ "ea61674580d7": {
+  "en": "Total: {sum}",
+  "t": "المجموع: {sum}"
+ },
+ "eab75ee3a0a6": {
+  "en": "Winner Winner Chicken Dinner",
+  "t": "Winner Winner Chicken Dinner"
+ },
+ "ed74b38312d6": {
+  "en": "She got away…",
+  "t": "هربت…"
+ },
+ "ee83a7441ce6": {
+  "en": "Time! You whacked {hits} {name} and missed {misses}. {verdict}",
+  "t": "الوقت! ضربت {hits} {name} وأفلت {misses}. {verdict}"
+ },
+ "ef0ebbb77298": {
+  "en": "orange",
+  "t": "برتقالي"
+ },
+ "f0c3ff890745": {
+  "en": "{n} of {max}",
+  "t": "{n} من {max}"
+ },
+ "f290164d1315": {
+  "en": "Outer ring",
+  "t": "الحلقة الخارجية"
+ },
+ "f364840671b5": {
+  "en": "aquamarine",
+  "t": "أكوامارين"
+ },
+ "f36fdd3e82bb": {
+  "en": "Mana is building. Throw something at the dino!",
+  "t": "المانا تتراكم. ارمِ شيئًا على الديناصور!"
+ },
+ "f4853c881e96": {
+  "en": "{n} more to earn",
+  "t": "{n} أخرى للكسب"
+ },
+ "f6842ab3afca": {
+  "en": "Miku",
+  "t": "ميكو"
+ },
+ "f917eb40cc44": {
+  "en": "Tap a growing crop to fertilize it with 1 shit.",
+  "t": "اضغط على محصول ينمو لتسميده بـ 1 خراء."
+ },
+ "f96e7bc80d25": {
+  "en": "Fertilize a plot that has something growing.",
+  "t": "سمّد قطعة فيها شيء ينمو."
+ },
+ "f98f1fe356b4": {
+  "en": "Fold 5 of 5: fold it in half: bottom-left corner onto the bottom-right one.",
+  "t": "طية 5 من 5: اطوها نصفين: الزاوية السفلية اليسرى على السفلية اليمنى."
+ },
+ "f9a7ce310699": {
+  "en": "▶️ +{views} views, +{follows} follower",
+  "t": "▶️ +{views} مشاهدة، +{follows} متابع"
+ },
+ "fb1415fda4ff": {
+  "en": "Music: on",
+  "t": "الموسيقى: تشغيل"
+ },
+ "fb23c9ff0d27": {
+  "en": "Inner ring",
+  "t": "الحلقة الداخلية"
+ },
+ "fe732cbff74e": {
+  "en": "Row {row}, column {col} off",
+  "t": "صف {row}، عمود {col} إيقاف"
+ },
+ "feddfb10fb8d": {
+  "en": "We all play at the same time. GO!",
+  "t": "نلعب كلنا في الوقت نفسه. انطلق!"
+ }
+}

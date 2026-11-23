@@ -15,6 +15,10 @@
   "en": "Enlarge: Third year since adoption",
   "t": "Perbesar: Tahun ketiga sejak diadopsi"
  },
+ "00f42f627fce": {
+  "en": "Your post was shown to 1 more person than last time! Keep going!",
+  "t": "Post kamu ditampilkan ke 1 orang lebih dari terakhir kali! Lanjutkan!"
+ },
  "010a0d803f20": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Made in Abyss ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 6: </span> Made in Abyss"
@@ -67,6 +71,10 @@
   "en": "S",
   "t": "S"
  },
+ "02b13b00cdc9": {
+  "en": "FEVER! The whole floor lights up.",
+  "t": "DEMAM! Seluruh lantai menyala."
+ },
  "02e70a6e6368": {
   "en": "Enlarge: Sleepy",
   "t": "Perbesar: Ngantuk"
@@ -87,6 +95,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#38: </span>Best of the Worst: Bad Movie Scavenger Hunt",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#38: </span>Best of the Worst: Bad Movie Scavenger Hunt"
  },
+ "03c0dc4c92b5": {
+  "en": "Nani?! So lewd! (⊙_⊙;)",
+  "t": "Nani?! Mesum banget! (⊙_⊙;)"
+ },
  "03dc9c3a151f": {
   "en": "AC/DC's Back in Black",
   "t": "AC/DC's Back in Black"
@@ -94,6 +106,10 @@
  "0455df4b7952": {
   "en": "Can I haz",
   "t": "Boleh minta"
+ },
+ "046fa1a6bc47": {
+  "en": "Nothing to clean.",
+  "t": "Tidak ada yang perlu dibersihkan."
  },
  "0480691e0de6": {
   "en": "Ink",
@@ -134,6 +150,10 @@
  "065eb98108d3": {
   "en": "They love churrasco most of all and spread the word far and wide, yet have not truly learned the ways of the art. Great is their zeal; long is their path.",
   "t": "Mereka mencintai churrasco di atas segalanya dan menyebarkan kabarnya ke mana-mana, tapi belum benar-benar mempelajari jalan seninya. Besar semangat mereka; panjang jalan mereka."
+ },
+ "0661a99c3159": {
+  "en": "Nosebleed level: critical (￣ε￣＠)",
+  "t": "Level mimisan: kritis (￣ε￣＠)"
  },
  "067ff8ef9ba2": {
   "en": "\nSenior Software Engineer, Dynamics 365 F&amp;O Architect, and Founder &amp; CEO of Wizard Deo Solutions.\n",
@@ -223,6 +243,10 @@
   "en": "The shared template for all my repos: AI disclosure, language support, website compilation, and more.",
   "t": "Template bersama untuk semua repo-ku: pengungkapan penggunaan AI, dukungan bahasa, kompilasi situs, dan lainnya."
  },
+ "0a3c15792056": {
+  "en": "pictures",
+  "t": "foto"
+ },
  "0a4020c7d439": {
   "en": "I created it",
   "t": "Aku yang menciptakannya"
@@ -255,9 +279,17 @@
   "en": "Blog",
   "t": "Blog"
  },
+ "0bf9322efcf3": {
+  "en": "Final score: {you} {youScore}, {rival} {rivalScore}. {verdict}",
+  "t": "Skor akhir: {you} {youScore}, {rival} {rivalScore}. {verdict}"
+ },
  "0c146d79c604": {
   "en": "Enlarge: FML! Forgot setup autopay",
   "t": "Perbesar: FML! Lupa mengatur pembayaran otomatis"
+ },
+ "0c1d9293305f": {
+  "en": "thrown too hard, so it looped and lost its speed",
+  "t": "dilempar terlalu keras, jadi berputar dan kehilangan kecepatan"
  },
  "0c1eafce7883": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 5: </span> Placeholder movie 5 ",
@@ -339,6 +371,10 @@
   "en": "Losses",
   "t": "Kalah"
  },
+ "0faaf0fb0bb0": {
+  "en": "More balls than shit. Keep it that way!",
+  "t": "Lebih banyak bola daripada tai. Pertahankan!"
+ },
  "0fd5b6c2935a": {
   "en": "16 photos",
   "t": "16 foto"
@@ -399,6 +435,10 @@
   "en": "Vatican City",
   "t": "Vatikan"
  },
+ "13a29a85064f": {
+  "en": "Plot {plot}: empty. Plant {crop}.",
+  "t": "Petak {plot}: kosong. Tanam {crop}."
+ },
  "13aeaa847300": {
   "en": "Goodnight Texas",
   "t": "Goodnight Texas"
@@ -422,6 +462,10 @@
  "148bcf6b6644": {
   "en": "Deo's old TikTok profile, @deovandski: 732 followers, 118.5K likes, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, above a grid of video thumbnails",
   "t": "Profil TikTok lama Deo, @deovandski: 732 pengikut, 118,5 rb suka, bio \"Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev\", di atas kisi thumbnail video"
+ },
+ "149d7ab31b5c": {
+  "en": "Go!",
+  "t": "Ayo!"
  },
  "15014b3b3615": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> To LOVE-Ru ",
@@ -467,6 +511,14 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Placeholder movie 22 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 22: </span> Film sementara 22"
  },
+ "181527f3010f": {
+  "en": "H-hentai! (*/ω＼*)",
+  "t": "H-hentai! (*/ω＼*)"
+ },
+ "1825a9d5984b": {
+  "en": "Fold 1 of 5: drag the top-left corner to the dot on the centre line.",
+  "t": "Lipat 1 dari 5: seret sudut kiri atas ke titik di garis tengah."
+ },
  "182b4b1df21d": {
   "en": "Enlarge: Much tasty",
   "t": "Perbesar: Enak banget"
@@ -507,6 +559,10 @@
   "en": "Opera",
   "t": "Opera"
  },
+ "19e17a057b61": {
+  "en": "Your turn: press Throw (or Space) when the aim is where you want it.",
+  "t": "Giliranmu: tekan Lempar! (atau Spasi) saat bidikan ada di tempat yang kamu mau."
+ },
  "1a1f232c7b93": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder TV show 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 9: </span> Acara TV sementara 9"
@@ -535,6 +591,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 21: </span> Placeholder game 21 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 21: </span> Gim sementara 21"
  },
+ "1b4c1d90da83": {
+  "en": "Your FBI agent has entered the chat. ( ͡° ͜ʖ ͡°)",
+  "t": "Agen FBI-mu telah masuk ke obrolan. ( ͡° ͜ʖ ͡°)"
+ },
  "1b522f8cf164": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 20: </span> Placeholder TV show 20 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 20: </span> Acara TV sementara 20"
@@ -542,6 +602,10 @@
  "1b89ab190390": {
   "en": " Bold line ",
   "t": "Garis tebal"
+ },
+ "1b9f359ce480": {
+  "en": "Dance",
+  "t": "Menari"
  },
  "1bccc30e6635": {
   "en": "Enlarge: Huehuehue",
@@ -586,6 +650,10 @@
  "1e10d56dd24a": {
   "en": "Enlarge: Painting or drawing, 01/15/2013",
   "t": "Perbesar: Lukisan atau gambar, 15/01/2013"
+ },
+ "1e69f9e7e667": {
+  "en": "📉 -{n} followers. \"Not this again…\"",
+  "t": "📉 -{n} pengikut. \"Ini lagi…\""
  },
  "1eab2e778967": {
   "en": "Mana",
@@ -675,6 +743,10 @@
   "en": "In an age when smokestacks rose beside the spires of sorcery, a company of adventurers was charged with the defense of Ordo, the Eternal City. Among their number was the Prince himself. The court records state that the King commissioned the company to protect the realm. Later historians, less charitable, contend that His Majesty assembled a band of imbeciles chiefly to keep the Prince occupied, and thereby to spare the royal family further injury to its pride. The truth, as is customary, has not survived intact.",
   "t": "Di zaman ketika cerobong asap menjulang di samping menara-menara sihir, sekelompok petualang ditugaskan mempertahankan Ordo, Kota Abadi. Di antara mereka ada Pangeran sendiri. Catatan istana menyebut bahwa Raja menugaskan kelompok itu untuk melindungi kerajaan. Sejarawan belakangan, yang kurang murah hati, berpendapat Sang Raja mengumpulkan segerombolan orang bodoh terutama agar Pangeran sibuk, sehingga keluarga kerajaan terhindar dari luka harga diri lebih lanjut. Kebenarannya, seperti biasa, tidak bertahan utuh."
  },
+ "20cd7e840557": {
+  "en": "Fertilized {crop} ({n}). Better odds!",
+  "t": "{crop} dipupuk ({n}). Peluang lebih baik!"
+ },
  "20da8de5a068": {
   "en": "When I retire, I’ll definitely train longer, because keeping healthy muscle mass into old age is a cornerstone of actively enjoying life until my last breath.",
   "t": "Saat pensiun nanti, aku pasti akan berlatih lebih lama, karena menjaga massa otot yang sehat sampai tua adalah fondasi untuk menikmati hidup secara aktif sampai napas terakhir."
@@ -682,6 +754,18 @@
  "20f5e11071c1": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 11: </span> Youjo Senki (Saga of Tanya the Evil) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 11: </span> Youjo Senki (Saga of Tanya the Evil)"
+ },
+ "2104ba8031ca": {
+  "en": "You lost {n} followers. Your audience is tired of {kind}.",
+  "t": "Kamu kehilangan {n} pengikut. Penontonmu bosan dengan {kind}."
+ },
+ "2108fcbf3093": {
+  "en": "Good call. The best move is not to play. Now go outside.",
+  "t": "Pilihan bagus. Langkah terbaik adalah tidak bermain. Sekarang keluar."
+ },
+ "214117303b84": {
+  "en": "Is this a cozy fire? ٩(◕‿◕｡)۶",
+  "t": "Ini api unggun yang nyaman? ٩(◕‿◕｡)۶"
  },
  "21bcdb7e16a8": {
   "en": "World &amp; fusion",
@@ -702,6 +786,10 @@
  "229377a6b713": {
   "en": "You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it's still in the air) and take it down before you run dry.",
   "t": "Kamulah rintangannya. Dino berlari. Kamu melempar benda ke arahnya. Mana terkumpul setiap detik mulai sekarang; atur waktu lemparanmu (tangkap dia saat masih di udara) dan jatuhkan dia sebelum manamu habis."
+ },
+ "22e02026aa78": {
+  "en": "Crisp!",
+  "t": "Rapi!"
  },
  "22f164766765": {
   "en": "Arragoa",
@@ -726,6 +814,14 @@
  "23aa58622740": {
   "en": "\nAbout <strong data-astro-cid-j7pv25f6=\"\">2,332 hours</strong> of Best of the Worst: 1,966 views of 157 \nepisodes (Spotlight, Wheel of the Worst and Junka included), from my YouTube watch history from Dec 15, 2019 to  Nov 20, 2026.\n",
   "t": "Sekitar <strong data-astro-cid-j7pv25f6=\"\">2.332 jam</strong> Best of the Worst: 1.966 tayangan dari 157 episode (termasuk Spotlight, Wheel of the Worst, dan Junka), dari riwayat tontonan YouTube-ku sejak 15 Des 2019 hingga 20 Nov 2026."
+ },
+ "2438453caeb0": {
+  "en": "there's poop to clean",
+  "t": "ada kotoran untuk dibersihkan"
+ },
+ "244d46168deb": {
+  "en": "a cactus",
+  "t": "sebuah kaktus"
  },
  "247ce5d5d915": {
   "en": "North America",
@@ -759,6 +855,10 @@
   "en": "Ecchi in the shape of an anime. I absolutely loved the creativity in pushing the envelope as far as possible! Yami is my favorite girl, even though IRL that type of girl tends to be toxic as fuck. Avoidant girls, especially fearful avoidants, are complete energy vampires.",
   "t": "Ecchi dalam wujud anime. Aku sangat suka kreativitasnya mendorong batas sejauh mungkin! Yami gadis favoritku, meskipun di dunia nyata gadis tipe begitu cenderung toksik banget. Gadis yang menghindar, terutama yang cemas-menghindar, benar-benar vampir energi."
  },
+ "25270ee78057": {
+  "en": "Balls worth {balls} pearls vs {shit} shit.",
+  "t": "Bola senilai {balls} pearls vs {shit} tai."
+ },
  "2555abc1fb60": {
   "en": "#1 The point",
   "t": "#1 Menunjuk"
@@ -770,6 +870,10 @@
  "2580fef1e7d3": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#32: </span>Best of the Worst: Pocket Ninjas, Cyclone, and Dangerous Men",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#32: </span>Best of the Worst: Pocket Ninjas, Cyclone, and Dangerous Men"
+ },
+ "2583d0fe0cc8": {
+  "en": "{name} feels lonely",
+  "t": "{name} merasa kesepian"
  },
  "259034821da9": {
   "en": "Sabaton",
@@ -803,6 +907,10 @@
   "en": "From Itaituba, Pará, to Fargo, North Dakota.",
   "t": "Dari Itaituba, Pará, ke Fargo, North Dakota."
  },
+ "26deb96c0c06": {
+  "en": "Toe stand &amp; point",
+  "t": "Berdiri jinjit &amp; menunjuk"
+ },
  "26eb9b95ab72": {
   "en": " 10 aquamarines → 1 sapphire ",
   "t": "10 aquamarine → 1 sapphire"
@@ -822,6 +930,18 @@
  "278311fdb680": {
   "en": "Sapphire Rose",
   "t": "Mawar Sapphire"
+ },
+ "278cc325dfd3": {
+  "en": "Trending… in your apartment.",
+  "t": "Trending… di apartemenmu."
+ },
+ "27b48cf9ae90": {
+  "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
+  "t": "Itu {tapes} kaset VHS yang direkam dalam {mode} ({perTape} jam per kaset T-120)."
+ },
+ "27bbcef16995": {
+  "en": "Hiromi",
+  "t": "Hiromi"
  },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
@@ -867,6 +987,10 @@
   "en": "Brooks &amp; Dunn",
   "t": "Brooks &amp; Dunn"
  },
+ "2a0a84854369": {
+  "en": "uneven left and right folds pulled it up",
+  "t": "lipatan kiri dan kanan tidak rata menariknya ke atas"
+ },
  "2a1d013e0fe2": {
   "en": "<strong>Hávamál</strong>, verse 76 (Old Norse, Viking Age): cattle die, kin die, you die the same; a good name never dies. Sung in Wardruna’s <em>Helvegen</em>.",
   "t": "<strong>Hávamál</strong>, bait 76 (Norse Kuno, Zaman Viking): ternak mati, kerabat mati, kamu pun mati; nama baik tak pernah mati. Dinyanyikan dalam <em>Helvegen</em> milik Wardruna."
@@ -887,6 +1011,10 @@
   "en": "ᛁ",
   "t": "ᛁ"
  },
+ "2b5ecdaf34f0": {
+  "en": "aquamarines",
+  "t": "aquamarines"
+ },
  "2b7b561c1de1": {
   "en": "Enlarge: MUCH FAST",
   "t": "Perbesar: CEPAT BANGET"
@@ -894,6 +1022,10 @@
  "2be2f97117d7": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#12: </span>Best of the Worst: Bad Movie Scavenger Hunt Too",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#12: </span>Best of the Worst: Bad Movie Scavenger Hunt Too"
+ },
+ "2c1e5036b725": {
+  "en": "{n} balls in the bag",
+  "t": "{n} bola di tas"
  },
  "2c6f37232fe8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Nanatsu no Taizai (The Seven Deadly Sins) ",
@@ -959,6 +1091,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#37: </span>Best of the Worst: Clash in the College",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#37: </span>Best of the Worst: Clash in the College"
  },
+ "2f2bbafed371": {
+  "en": "Posted. Nobody cares. Yet.",
+  "t": "Sudah diposting. Nggak ada yang peduli. Untuk sekarang."
+ },
  "2f30886d3179": {
   "en": "Huehuehue",
   "t": "Huehuehue"
@@ -1011,6 +1147,10 @@
   "en": " 1 aquamarine  · 1 energy · 30 s ",
   "t": "1 aquamarine · 1 energi · 30 dtk"
  },
+ "31071d58e994": {
+  "en": "a bird",
+  "t": "seekor burung"
+ },
  "31242629ea0e": {
   "en": "The small systems that keep my days, and my brain, running.",
   "t": "Sistem-sistem kecil yang menjaga hari-hariku, dan otakku, tetap berjalan."
@@ -1031,9 +1171,21 @@
   "en": "Long nose",
   "t": "Hidung panjang"
  },
+ "318f9434e024": {
+  "en": "{crop} is still growing.",
+  "t": "{crop} masih tumbuh."
+ },
+ "31b5e865a21e": {
+  "en": "{name} loves that.",
+  "t": "{name} suka itu."
+ },
  "31b9d2eef058": {
   "en": "Illinois",
   "t": "Illinois"
+ },
+ "31fae22769c6": {
+  "en": "Time! You whacked {hits} {names} and missed {misses}. {verdict}",
+  "t": "Waktu! Kamu memukul {hits} {names} dan melewatkan {misses}. {verdict}"
  },
  "32477dd234fb": {
   "en": "Confidence is not noise. <strong>It’s trusting yourself to do what’s right when your core is shaken.</strong> Build boldly, measure honestly, correct without ego.",
@@ -1046,6 +1198,10 @@
  "3286fdce39d6": {
   "en": "Wake up at 6am (or 5am; Peeta is the true alarm clock in the house), drink coffee, poop, bathe, hit the gym, then head home to let Peeta run in the backyard while I shove food in my piehole before work. Practical and frictionless: part of my routine now, not something I have to force myself to do.",
   "t": "Bangun jam 6 pagi (atau 5 pagi; Peeta adalah alarm sebenarnya di rumah), minum kopi, buang air besar, mandi, ke gym, lalu pulang untuk membiarkan Peeta berlari di halaman belakang sementara aku menjejalkan makanan ke mulut sebelum kerja. Praktis dan tanpa hambatan: sekarang bagian dari rutinitasku, bukan sesuatu yang harus kupaksakan."
+ },
+ "331a84a2e901": {
+  "en": "{name} popped up {corner}!",
+  "t": "{name} muncul ({corner})!"
  },
  "334709fe4f0e": {
   "en": "Win vs Loss",
@@ -1074,6 +1230,10 @@
  "33c1a5c84a89": {
   "en": "Mickey D's",
   "t": "Mekdi"
+ },
+ "33dde2208759": {
+  "en": "Smoke alarm: senpai, please (ノಠ益ಠ)ノ彡┻━┻",
+  "t": "Alarm asap: senpai, tolong (ノಠ益ಠ)ノ彡┻━┻"
  },
  "33f13fdb8928": {
   "en": "Purple ink",
@@ -1191,9 +1351,17 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 8: </span> Placeholder movie 8 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 8: </span> Film sementara 8"
  },
+ "38d4249ff036": {
+  "en": "⏱ {seconds}s · darts: {you} {youLeft}, {rival} {rivalLeft}",
+  "t": "⏱ {seconds}s · dart: {you} {youLeft}, {rival} {rivalLeft}"
+ },
  "38e1d26af274": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer"
+ },
+ "39091a099ef5": {
+  "en": "Plot {plot}: {crop}, ready in {seconds} seconds.",
+  "t": "Petak {plot}: {crop}, siap dalam {seconds} detik."
  },
  "39210f2abeb2": {
   "en": "Enlarge: Ember.js dev assistant",
@@ -1359,6 +1527,10 @@
   "en": "Yep. That anime tickled something deep and turbulent that I didn't understand back then: my ecchi/hentai energy. I truly understand it now, and I have no shame about it, since it's something I set out to explore to feel more fulfilled.",
   "t": "Yap. Anime itu menggelitik sesuatu yang dalam dan bergejolak yang dulu tidak kupahami: energi ecchi/hentai-ku. Sekarang aku benar-benar memahaminya, dan aku sama sekali tidak malu, karena itu sesuatu yang memang ingin kujelajahi supaya merasa lebih utuh."
  },
+ "3ffa6ae98146": {
+  "en": "The line dance",
+  "t": "Line dance"
+ },
  "400f83d8e1be": {
   "en": "Back to Influencer",
   "t": "Kembali ke Influencer"
@@ -1379,6 +1551,10 @@
   "en": "Captain Bidu final resting place",
   "t": "Tempat peristirahatan terakhir Kapten Bidu"
  },
+ "40e405b6605c": {
+  "en": "I haven’t heard of that, but yeah, I prefer targeting the yellow ones, as those are worth more if you snipe all territories.",
+  "t": "Aku belum pernah dengar itu, tapi iya, aku lebih suka membidik yang kuning, karena nilainya lebih tinggi kalau kau menembak semua wilayah."
+ },
  "40f6fcda8a97": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder movie 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 9: </span> Film sementara 9"
@@ -1391,9 +1567,21 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder movie 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 10: </span> Film sementara 10"
  },
+ "42766efba402": {
+  "en": "Middle ring",
+  "t": "Cincin tengah"
+ },
+ "42ae6cb3cd8f": {
+  "en": "Time! The room starts to move too much…",
+  "t": "Waktu! Ruangan mulai bergerak terlalu banyak…"
+ },
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
   "t": "Foto lama seorang anak kecil dan dua pria di tambang emas terbuka bertanah merah di Amazon, Brasil"
+ },
+ "4322655424cd": {
+  "en": "Routine #{n}: {routine}.",
+  "t": "Rutin #{n}: {routine}."
  },
  "435b659ef5e1": {
   "en": "🎬 Movies",
@@ -1407,9 +1595,17 @@
   "en": "Energy",
   "t": "Energi"
  },
+ "43eb964be6dd": {
+  "en": "FEVER!",
+  "t": "DEMAM!"
+ },
  "4450ba4816bd": {
   "en": "Step 3: Prepare the Altar and Anoint the Meat",
   "t": "Langkah 3: Siapkan Altar dan Urapi Dagingnya"
+ },
+ "447f1e0ff0ce": {
+  "en": "Doki doki~ ♡ (〃▽〃)",
+  "t": "Doki doki~ ♡ (〃▽〃)"
  },
  "44c57abd888a": {
   "en": "Reset",
@@ -1458,6 +1654,10 @@
  "46e80e47b684": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested"
+ },
+ "4787267d603e": {
+  "en": "You lost your streak.",
+  "t": "Kamu kehilangan rentetanmu."
  },
  "47b8db828f85": {
   "en": "\nWill I ever come back? Likely not, because the ROI in knowledge and fun I was getting from being a social influencer\n        towards the end of the journey was gone, and it had become hypervigilance and misery instead. I noticed I was being\n        stalked too, so I cut it off at the root like an infection, healed, and moved on. I'm no longer trackable on the fly,\n        and the daily push to engage and produce content is gone for good.\n",
@@ -1515,6 +1715,10 @@
   "en": "More of my story in the light novel afterwords at <a href=\"https://www.husbandoutworld.com/\" data-astro-cid-raeu6x2e=\"\">husbandoutworld.com</a>.",
   "t": "Lebih banyak kisahku di kata penutup light novel di <a href=\"https://www.husbandoutworld.com/\" data-astro-cid-raeu6x2e=\"\">husbandoutworld.com</a>."
  },
+ "4a2ded82016c": {
+  "en": "Planted {crop}.",
+  "t": "{crop} ditanam."
+ },
  "4a315297f8a7": {
   "en": "BJ",
   "t": "BJ"
@@ -1530,6 +1734,10 @@
  "4ad51e59a5be": {
   "en": " Fine line ",
   "t": "Garis tipis"
+ },
+ "4b482e2ae4e2": {
+  "en": "⚠️ Your {n}-post streak is about to die!",
+  "t": "⚠️ Rentetan {n} post-mu hampir mati!"
  },
  "4b92cc9c5bdf": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 37: </span> Nichijou (My Ordinary Life) &amp; Non Non Biyori ",
@@ -1551,6 +1759,22 @@
   "en": "PM/Life hacks",
   "t": "PM/Trik hidup"
  },
+ "4c1c703b94bd": {
+  "en": "The point",
+  "t": "Menunjuk"
+ },
+ "4c1f1c138390": {
+  "en": "Not bad!",
+  "t": "Lumayan!"
+ },
+ "4c660686dc07": {
+  "en": "His first dart clings, then falls. The second lands on a green territory near the centre.",
+  "t": "Dart pertamanya menempel, lalu jatuh. Yang kedua mendarat di wilayah hijau dekat pusat."
+ },
+ "4c9a82ce72ca": {
+  "en": "blue",
+  "t": "biru"
+ },
  "4cd5ee6da386": {
   "en": "Red Letter Media on YouTube",
   "t": "Red Letter Media di YouTube"
@@ -1563,6 +1787,10 @@
   "en": "Two Strangers (Carry a Cake Across New York)",
   "t": "Two Strangers (Carry a Cake Across New York)"
  },
+ "4d2751b25828": {
+  "en": "Kinda? Was the board always this big and colored? I thought it was rounded too— OH YEAH! The center is worth more, right?",
+  "t": "Agak? Apa papannya dari dulu sebesar dan seberwarna ini? Kukira bentuknya bundar juga— OH IYA! Bagian tengahnya nilainya lebih tinggi, kan?"
+ },
  "4d3bce11bac3": {
   "en": "Language levels",
   "t": "Tingkat bahasa"
@@ -1570,6 +1798,10 @@
  "4d528de842ee": {
   "en": "Enlarge: Painting or drawing, 02/05/2013",
   "t": "Perbesar: Lukisan atau gambar, 05/02/2013"
+ },
+ "4d5fb4549070": {
+  "en": "Angle {angle}°, power {power}%. Space to throw.",
+  "t": "Sudut {angle}°, daya {power}%. Spasi untuk melempar."
  },
  "4d62aea0b07c": {
   "en": "Fargo, North Dakota",
@@ -1582,6 +1814,10 @@
  "4dd3d53fb92c": {
   "en": "If thou hast farofa for churrasco, thou mayest use it to enhance the taste, but eat it not with every bite. Like the ginger beside the sushi, farofa is taken every few bites to refresh thy taste buds.",
   "t": "Kalau kau punya farofa untuk churrasco, kau boleh memakainya untuk menambah rasa, tapi jangan memakannya di setiap suapan. Seperti jahe di samping sushi, farofa diambil setiap beberapa suap untuk menyegarkan lidahmu."
+ },
+ "4ddc5d84096c": {
+  "en": "pearl",
+  "t": "pearl"
  },
  "4de4bc93aa7d": {
   "en": "Chappell Roan",
@@ -1695,6 +1931,14 @@
   "en": "D",
   "t": "D"
  },
+ "50ccc5e2e037": {
+  "en": "He aims for the same green, and lands far above it, on purple.",
+  "t": "Dia bidik hijau yang sama, dan mendarat jauh di atasnya, di ungu."
+ },
+ "50db544157bb": {
+  "en": "Off beat",
+  "t": "Meleset dari ketukan"
+ },
  "51162daf4d1b": {
   "en": "#4 Toe stand",
   "t": "#4 Berdiri jinjit"
@@ -1702,6 +1946,14 @@
  "511993d3c997": {
   "en": "P",
   "t": "P"
+ },
+ "511ce74bedd3": {
+  "en": "Fold 3 of 5: drag the new left corner to the centre dot.",
+  "t": "Lipat 3 dari 5: seret sudut kiri baru ke titik tengah."
+ },
+ "512377a8dafe": {
+  "en": "You threw {thing}.",
+  "t": "Kamu melempar {thing}."
  },
  "5162a45af33b": {
   "en": "\nI can keep a beat, though, which is why I want to get into drumming one day! Why not now? Because of priorities, and\n          there's only so much I can cook at one time... So it's planned out on my backlog! I want to play\n<i data-astro-cid-j7pv25f6=\"\">World's End Dancehall</i>, <i data-astro-cid-j7pv25f6=\"\">Two-Faced Lovers</i> and <i data-astro-cid-j7pv25f6=\"\">Sweet Devil</i> on drums!\n",
@@ -1730,6 +1982,10 @@
  "5284e1a74198": {
   "en": "Tell me I am pretty",
   "t": "Bilang aku cantik"
+ },
+ "52a662e91e85": {
+  "en": "Right now it tastes like shit. Keep planting.",
+  "t": "Sekarang rasanya kayak tai. Terus tanam."
  },
  "52ae98a540c4": {
   "en": "Early days",
@@ -1762,6 +2018,10 @@
  "54573bfa55e3": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder TV show 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 15: </span> Acara TV sementara 15"
+ },
+ "54834f8e5fe6": {
+  "en": "You spent {time} and {posts} posts chasing {n} followers who don't exist. Now go outside.",
+  "t": "Kamu menghabiskan {time} dan {posts} post mengejar {n} pengikut yang tidak ada. Sekarang keluar sana."
  },
  "54893e8b2375": {
   "en": "Enlarge: And back to tired",
@@ -1859,6 +2119,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 14: </span> Placeholder game 14 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 14: </span> Gim sementara 14"
  },
+ "595380aaecec": {
+  "en": "amethysts",
+  "t": "amethysts"
+ },
  "595b1dfe4cd3": {
   "en": "\nProject management isn't my job title, yet it shows up in almost every facet of my life: work, a light novel series, a\n          D&amp;D campaign, a game, and this very site. I know JIRA deeply, and I run my personal projects with the same discipline\n          I bring to client work. Given how much PM'ing I already do, getting a PM certification is officially on my backlog.\n",
   "t": "Manajemen proyek bukan jabatanku, tapi muncul di hampir setiap sisi hidupku: pekerjaan, seri light novel, kampanye D&amp;D, gim, dan situs ini sendiri. Aku paham JIRA luar dalam, dan aku menjalankan proyek pribadiku dengan disiplin yang sama seperti pekerjaan untuk klien. Mengingat sebanyak apa urusan PM yang sudah kulakukan, sertifikasi PM resmi masuk ke backlog-ku."
@@ -1874,6 +2138,10 @@
  "59eb6fb6ed21": {
   "en": "Hávamál, as sung in Wardruna’s Helvegen",
   "t": "Hávamál, seperti dinyanyikan dalam Helvegen milik Wardruna"
+ },
+ "5a4a4998e7b7": {
+  "en": "Kyaa~! (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)",
+  "t": "Kyaa~! (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)"
  },
  "5a5ea639ef03": {
   "en": "Change the lights",
@@ -1902,6 +2170,10 @@
  "5b0af452c330": {
   "en": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Aquamarine",
   "t": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Aquamarine"
+ },
+ "5b4dfc520699": {
+  "en": "Notice me harder, senpai! (｡♥‿♥｡)",
+  "t": "Perhatikan aku lebih lagi, senpai! (｡♥‿♥｡)"
  },
  "5b596595aba4": {
   "en": "Weight (lb)",
@@ -1967,6 +2239,14 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#15: </span>Best of the Worst: A*P*E, Easy Kill, and Honorable Men",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#15: </span>Best of the Worst: A*P*E, Easy Kill, and Honorable Men"
  },
+ "5db2a98f777b": {
+  "en": "You need {n} {ball} to plant {crop}. Trade up at the market.",
+  "t": "Kamu butuh {n} {ball} untuk tanam {crop}. Tukar di pasar."
+ },
+ "5e20a863dd1e": {
+  "en": "Nom nom!",
+  "t": "Nom nom!"
+ },
  "5e749e984aef": {
   "en": "Saturday Night Fever",
   "t": "Saturday Night Fever"
@@ -1982,6 +2262,14 @@
  "5ef1da7aa7f2": {
   "en": "Quite the stretch",
   "t": "Peregangan yang luar biasa"
+ },
+ "5f0128979edd": {
+  "en": "0 views. Shadowbanned?",
+  "t": "0 tayangan. Kena shadowban?"
+ },
+ "5f0f15ed8dfe": {
+  "en": "Fufufu~ you like it hot, huh? ( ˘ ³˘)♥",
+  "t": "Fufufu~ kamu suka yang panas, ya? ( ˘ ³˘)♥"
  },
  "5f2959c22b38": {
   "en": "6 photos",
@@ -2019,6 +2307,10 @@
   "en": "Not many people have heard of this isekai, but honestly, it's a top dog in the genre for really getting into the weeds of its world building and trying to figure out how everything works.",
   "t": "Tidak banyak yang pernah dengar isekai ini, tapi jujur, ini jagoan di genrenya karena benar-benar mendalami detail pembangunan dunianya dan mencoba memahami cara kerja semuanya."
  },
+ "60fa9414860a": {
+  "en": "aimed at the floor",
+  "t": "dibidik ke lantai"
+ },
  "6118946bae36": {
   "en": "\nBecause if I'm spending too much time on something, is it worth doing? And what can I do about it? That kind of data\n          helps me improve my workflows, my tools and my skill set. Being efficient with my time gives me more time for everything\n          else in life, including rest.\n",
   "t": "Soalnya kalau aku menghabiskan terlalu banyak waktu untuk sesuatu, apakah itu layak dikerjakan? Dan apa yang bisa kulakukan? Data semacam itu membantuku memperbaiki alur kerja, alat, dan keterampilanku. Efisien dengan waktu memberiku lebih banyak waktu untuk hal lain dalam hidup, termasuk istirahat."
@@ -2050,6 +2342,10 @@
  "618e487541ea": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman"
+ },
+ "61dedcf053ff": {
+  "en": "Good",
+  "t": "Baik"
  },
  "61e0a3485bee": {
   "en": "Black Map<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">Evanescence 93X Family Reunion</span>",
@@ -2087,6 +2383,10 @@
   "en": "ᚷ",
   "t": "ᚷ"
  },
+ "63e49827e493": {
+  "en": "Warm",
+  "t": "Hangat"
+ },
  "643fa1b2225e": {
   "en": "Enlarge: Long nose",
   "t": "Perbesar: Hidung panjang"
@@ -2094,6 +2394,14 @@
  "6442934ecfbd": {
   "en": "\nThis one is especially powerful for AuDHD brains. It's a way to force the creation of an inner council, where the opposing\n        forces meet in the middle and help steer the boat together instead of fighting each other.\n",
   "t": "Yang ini sangat ampuh untuk otak AuDHD (autisme + ADHD). Ini cara memaksa terbentuknya dewan batin, tempat kekuatan-kekuatan yang berlawanan bertemu di tengah dan membantu mengemudikan perahu bersama, alih-alih saling bertarung."
+ },
+ "64791c7db8b4": {
+  "en": "On beat!",
+  "t": "Pas ketukan!"
+ },
+ "648e31fe0ec2": {
+  "en": "{word} Folded! Precision {n}%. Now drag back from the plane to aim, and let go to throw (or use the arrow keys and Space).",
+  "t": "{word} Dilipat! Presisi {n}%. Sekarang seret ke belakang dari pesawat untuk membidik, dan lepaskan untuk melempar (atau gunakan panah dan Spasi)."
  },
  "649df08a448e": {
   "en": "English",
@@ -2110,6 +2418,14 @@
  "65bae07f748d": {
   "en": "Enlarge: Lindenwood Park",
   "t": "Perbesar: Lindenwood Park"
+ },
+ "65be7475750d": {
+  "en": "{min} min {sec} s",
+  "t": "{min} min {sec} s"
+ },
+ "660d7f656e76": {
+  "en": "The dino dodged it.",
+  "t": "Dino itu menghindarinya."
  },
  "661e7e812a13": {
   "en": "Near miss",
@@ -2175,6 +2491,18 @@
   "en": "It's rare for me to watch something, get hungry, go find the ingredients and immediately try to recreate a dish from the show. That beef stew was divine!",
   "t": "Jarang sekali aku menonton sesuatu, jadi lapar, pergi mencari bahan-bahannya, lalu langsung mencoba membuat ulang hidangan dari acaranya. Semur daging sapi itu luar biasa!"
  },
+ "68430bb95fe2": {
+  "en": "Is it getting hot, or is it just you? (๑˃ᴗ˂)ﻭ",
+  "t": "Makin panas, atau cuma kamu? (๑˃ᴗ˂)ﻭ"
+ },
+ "68507370f897": {
+  "en": "🚀 VIRAL! +{views} views, +{follows} followers",
+  "t": "🚀 VIRAL! +{views} tayangan, +{follows} pengikut"
+ },
+ "6893ddca41ed": {
+  "en": "Only {n} to {goal}!",
+  "t": "Hanya {n} ke {goal}!"
+ },
  "68a953aaf559": {
   "en": "\nAs a software developer, I began treating parts of my brain like an OS (as you can clearly see from how I decompose my\n        brain across this website). It puts structure and bounds around the immense energy that lives within me. That energy is a\n        well, and it can run dry if it isn't cared for. All this scaffolding is there to protect me from myself, and to protect me\n        from people who would abuse and steal from that same well without giving anything back.\n",
   "t": "Sebagai developer perangkat lunak, aku mulai memperlakukan bagian-bagian otakku seperti sistem operasi (seperti yang jelas terlihat dari caraku membedah otakku di situs ini). Ini memberi struktur dan batas pada energi besar yang hidup di dalam diriku. Energi itu seperti sumur, dan bisa kering kalau tidak dirawat. Semua perancah ini ada untuk melindungiku dari diriku sendiri, dan dari orang-orang yang akan menyalahgunakan dan mencuri dari sumur yang sama tanpa memberi apa pun kembali."
@@ -2198,6 +2526,10 @@
  "696c1696aee1": {
   "en": "Enlarge: Gimme attention",
   "t": "Perbesar: Perhatikan aku"
+ },
+ "69b0b68def54": {
+  "en": "SEE? It’s all about mindset! You know what, Harry? You’re cool! So why not play a bit of territory snipping to celebrate?",
+  "t": "LIHAT? Semuanya soal pola pikir! Tahu tidak, Harry? Kau keren! Jadi bagaimana kalau kita main territory snipping sedikit untuk merayakannya?"
  },
  "69ce5d37a5a7": {
   "en": "Enlarge: Still tired",
@@ -2239,6 +2571,10 @@
   "en": "Disturbed",
   "t": "Disturbed"
  },
+ "6aa9ec501cfb": {
+  "en": "{sec} s",
+  "t": "{sec} s"
+ },
  "6abde3b42ab3": {
   "en": "d10",
   "t": "d10"
@@ -2275,6 +2611,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder movie 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 30: </span> Film sementara 30"
  },
+ "6c4f692b2d93": {
+  "en": "{player} snipes a {colour} territory ({points}).",
+  "t": "{player} menembak wilayah {colour} ({points})."
+ },
  "6c84173deb3d": {
   "en": "Vraki<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (written in Vraki)</span>",
   "t": "Vraki<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (ditulis dalam Vraki)</span>"
@@ -2282,6 +2622,10 @@
  "6c9a005a2b28": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10"
+ },
+ "6cae7ad96e0d": {
+  "en": "sapphires",
+  "t": "sapphires"
  },
  "6caf0ae17685": {
   "en": "Step 5: Judge the Meat",
@@ -2314,6 +2658,10 @@
  "6da2d12faf76": {
   "en": "Campsites are on their way.",
   "t": "Tempat berkemah sedang dalam perjalanan."
+ },
+ "6daea1f3952f": {
+  "en": "Play time!",
+  "t": "Waktu bermain!"
  },
  "6dcd4ce23d88": {
   "en": "A",
@@ -2367,6 +2715,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#36: </span>Best of the Worst: Wheel of the Worst #20",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#36: </span>Best of the Worst: Wheel of the Worst #20"
  },
+ "7052c90bfbaf": {
+  "en": "Balls worth {balls} pearl vs {shit} shit.",
+  "t": "Bola senilai {balls} pearl vs {shit} tai."
+ },
  "7058849d4ff0": {
   "en": "ML",
   "t": "ML"
@@ -2390,6 +2742,10 @@
  "715bf27b9eb6": {
   "en": "Throw at the dino",
   "t": "Lempar ke dino"
+ },
+ "717fce44a310": {
+  "en": "Too much heat! Not in front of the waifu pillow! (〃＞＿＜;〃)",
+  "t": "Terlalu panas! Jangan di depan bantal waifu! (〃＞＿＜;〃)"
  },
  "719ea396ad92": {
   "en": "Clear",
@@ -2443,6 +2799,10 @@
   "en": "Madama Butterfly",
   "t": "Madama Butterfly"
  },
+ "73b886d405a7": {
+  "en": "{name} is hungry",
+  "t": "{name} lapar"
+ },
  "740587c66df0": {
   "en": "If thou art a <strong>Cardinal of the Touch</strong>, thou shalt know when the meat is done by touch alone. Otherwise, use the thermometer.",
   "t": "Kalau kau seorang <strong>Kardinal Sentuhan</strong>, kau akan tahu kapan daging matang hanya dengan sentuhan. Kalau tidak, pakai termometer."
@@ -2455,9 +2815,17 @@
   "en": "Access is earned through behavior, never granted because someone asked. Time, attention and trust are finite; my attention is not public property. <strong>I will meet you in the middle. I will not live there alone.</strong>",
   "t": "Akses diperoleh lewat perilaku, tidak pernah diberikan hanya karena seseorang meminta. Waktu, perhatian, dan kepercayaan itu terbatas; perhatianku bukan milik umum. <strong>Aku akan menemuimu di tengah. Aku tidak akan tinggal di sana sendirian.</strong>"
  },
+ "74a8c36c9678": {
+  "en": "You fucking loser! The dino survived and flips you off.",
+  "t": "Kamu pecundang sialan! Dino itu selamat dan tunjuk jari tengah."
+ },
  "74d56098aec1": {
   "en": "Like many people who walk away from that temptation, I’m so glad I didn’t go through with it. I used it to build stronger immunity against depression and my internal cycles, and in 2026 I discovered that much of what I’d been fighting was the negative side of AuDHD: the masking itself was corroding my soul and draining its energy every single day. <strong>Now nothing short of a bullet to my head, or death itself coming to my door and whisking me away to whatever comes next, will stop me from pursuing a fulfilling life.</strong>",
   "t": "Seperti banyak orang yang berpaling dari godaan itu, aku sangat bersyukur tidak melanjutkannya. Aku memakainya untuk membangun kekebalan yang lebih kuat terhadap depresi dan siklus batinku, dan di tahun 2026 aku menemukan bahwa banyak yang selama ini kulawan adalah sisi negatif AuDHD: masking itu sendiri menggerogoti jiwaku dan menguras energinya setiap hari. <strong>Sekarang tidak ada yang bisa menghentikanku mengejar hidup yang utuh, kecuali peluru di kepala, atau kematian sendiri yang mengetuk pintuku dan membawaku ke apa pun yang ada setelahnya.</strong>"
+ },
+ "7503eb978cf4": {
+  "en": "Plot {plot}: {crop}, ready to harvest (it wilted).",
+  "t": "Petak {plot}: {crop}, siap panen (layu)."
  },
  "7558e57c2846": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Spy x Family ",
@@ -2495,6 +2863,10 @@
   "en": "Yet the Church holds that churrasco must be a treat for the masses, and so we commend the <strong>New York strip</strong>, the <strong>ribeye</strong>, or the <strong>top sirloin</strong> (if thou preferest lean), cut <strong>1 to 1½ inches</strong> thick. At 2 inches or more the salt loses much of its power, and the longer time upon the fire harms the taste.",
   "t": "Namun Gereja berpegang bahwa churrasco haruslah nikmat bagi orang banyak, maka kami merekomendasikan <strong>New York strip</strong>, <strong>ribeye</strong>, atau <strong>top sirloin</strong> (kalau kau lebih suka yang tanpa lemak), dipotong setebal <strong>2,5 sampai 4 cm</strong>. Pada ketebalan 5 cm atau lebih, garam kehilangan banyak kekuatannya, dan waktu yang lebih lama di atas api merusak rasanya."
  },
+ "7675cf606b31": {
+  "en": "intellectual video",
+  "t": "video intelektual"
+ },
  "767bbbc08de1": {
   "en": "Enlarge: First day home",
   "t": "Perbesar: Hari pertama di rumah"
@@ -2514,6 +2886,14 @@
  "76d40b8a2b7d": {
   "en": "Clark et al., Neuron 61:481–490 (2009), and the studies it cites",
   "t": "Clark et al., Neuron 61:481–490 (2009), and the studies it cites"
+ },
+ "76d4694d0853": {
+  "en": "❤️ +{n} like",
+  "t": "❤️ +{n} suka"
+ },
+ "77003d07271f": {
+  "en": "Best",
+  "t": "Terbaik"
  },
  "7707f6812879": {
   "en": "SP",
@@ -2555,6 +2935,10 @@
   "en": "Pause",
   "t": "Jeda"
  },
+ "78988010b890": {
+  "en": "red",
+  "t": "merah"
+ },
  "78ca112f9500": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder game 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 33: </span> Gim sementara 33"
@@ -2566,6 +2950,10 @@
  "78eaabf4a629": {
   "en": "Followers",
   "t": "Pengikut"
+ },
+ "78fadeed7303": {
+  "en": "{n} ball in the bag",
+  "t": "{n} bola di tas"
  },
  "7958bacf5b59": {
   "en": "Back to Lust",
@@ -2599,13 +2987,25 @@
   "en": "Green ink",
   "t": "Tinta hijau"
  },
+ "7a5a08b6baea": {
+  "en": "3 views. Two were you.",
+  "t": "3 tayangan. Dua di antaranya kamu."
+ },
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
  },
+ "7a8cb7243b93": {
+  "en": "{n} pt",
+  "t": "{n} poin"
+ },
  "7a991ab38eae": {
   "en": "I farted",
   "t": "Aku kentut"
+ },
+ "7ac1384e8f1a": {
+  "en": "crisp folds helped it glide",
+  "t": "lipatan rapi membantu meluncur"
  },
  "7ad407636c69": {
   "en": "The Balls farm",
@@ -2726,6 +3126,10 @@
  "7ed97d0b96e7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Monogatari ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 17: </span> Monogatari"
+ },
+ "7f09aca0998e": {
+  "en": "clickbait video",
+  "t": "video clickbait"
  },
  "7f5ef6b994bc": {
   "en": "Posting streak",
@@ -2851,6 +3255,14 @@
   "en": "Bidu, a pixel pet",
   "t": "Bidu, hewan piksel"
  },
+ "857aacdbee63": {
+  "en": "Harvest!",
+  "t": "Panen!"
+ },
+ "85a1ecacad2c": {
+  "en": "That’s the spirit! … You played this before, right?",
+  "t": "Itu baru semangat! … Kau pernah main ini, kan?"
+ },
  "85af7ed7a344": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Placeholder movie 18 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 18: </span> Film sementara 18"
@@ -2879,9 +3291,17 @@
   "en": "Hairball",
   "t": "Hairball"
  },
+ "868657e908ac": {
+  "en": "Harry",
+  "t": "Harry"
+ },
  "8686eb8cf046": {
   "en": "Circa Q2 2013",
   "t": "Sekitar K2 2013"
+ },
+ "868d15508a8a": {
+  "en": "{name} is stuffed!",
+  "t": "{name} kenyang!"
  },
  "86a34eb02a30": {
   "en": "初音ミク",
@@ -2923,6 +3343,10 @@
   "en": "Author, x++ dev, chasing the algorithm",
   "t": "Penulis, dev x++, mengejar algoritma"
  },
+ "8827c825266b": {
+  "en": "uneven left and right folds pulled it down",
+  "t": "lipatan kiri dan kanan tidak rata menariknya ke bawah"
+ },
  "8834e2d0bd9b": {
   "en": "Throw Cactus, costs 2 mana (key 1)",
   "t": "Lempar Kaktus, butuh 2 mana (tombol 1)"
@@ -2935,6 +3359,10 @@
   "en": "Enlarge: Painting or drawing, 02/23/2013",
   "t": "Perbesar: Lukisan atau gambar, 23/02/2013"
  },
+ "88abbb44e60f": {
+  "en": "random shit",
+  "t": "sampah acak"
+ },
  "88afb817527f": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#24: </span>Best of the Worst: Junka 4",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#24: </span>Best of the Worst: Junka 4"
@@ -2946,6 +3374,10 @@
  "88d9ce2626ca": {
   "en": "Ara ara~ That's the first thing you click?",
   "t": "Ara ara~ Itu hal pertama yang kamu klik?"
+ },
+ "89a35bbdf744": {
+  "en": "Your {n}-post streak is about to die. Post something!",
+  "t": "Rentetan {n} post-mu hampir mati. Posting sesuatu!"
  },
  "89ad4a4f762e": {
   "en": "Onward to 200 lb!",
@@ -2967,6 +3399,10 @@
   "en": "Standard Play",
   "t": "Standard Play"
  },
+ "8a12d5626fe3": {
+  "en": "Trending",
+  "t": "Trending"
+ },
  "8ab725154ab3": {
   "en": "2016 nearly took everything I had worked so hard for, all because of someone else’s screw-up. It felt like being a kid building a sandcastle while some asshole walks by and kicks it, then watching everything you built turn to nothing. It sucked. It nearly drove me to end it all (as I talk about on the <a href=\"#death\">Death tab</a>). Yet I survived the worst, pulled myself out of the misery, and rebuilt.",
   "t": "Tahun 2016 hampir merenggut semua yang sudah kukerjakan dengan susah payah, semuanya karena kesalahan bodoh orang lain. Rasanya seperti anak kecil membangun istana pasir lalu ada bajingan lewat dan menendangnya, kemudian melihat semua yang kamu bangun lenyap. Rasanya busuk. Itu hampir membuatku mengakhiri semuanya (seperti yang kuceritakan di <a href=\"#death\">tab Kematian</a>). Tapi aku selamat dari yang terburuk, menarik diriku keluar dari penderitaan, dan membangun kembali."
@@ -2974,6 +3410,10 @@
  "8af0e417fed8": {
   "en": "Enlarge: Car rides!",
   "t": "Perbesar: Naik mobil!"
+ },
+ "8b1aa1d275e3": {
+  "en": "All clean.",
+  "t": "Semua bersih."
  },
  "8b3ee45765e5": {
   "en": "Explorer",
@@ -2998,6 +3438,10 @@
  "8c6954624ffd": {
   "en": "Love it. Even the ecchi. Everything has a purpose, and I have nothing to complain about. If I had watched Mushoku Tensei before writing #HusbandOutWorld, I might not have written my story at all, because it's good enough to quench a lot of the thirst I had while consuming one isekai after another.",
   "t": "Suka banget. Bahkan ecchinya. Semuanya punya tujuan, dan tidak ada yang bisa kukeluhkan. Kalau aku menonton Mushoku Tensei sebelum menulis #HusbandOutWorld, mungkin aku tidak menulis ceritaku sama sekali, karena ia cukup bagus untuk memuaskan banyak dahaga yang kurasakan saat melahap isekai satu demi satu."
+ },
+ "8c948d7947e0": {
+  "en": "Hot",
+  "t": "Panas"
  },
  "8cb66acad3e8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 28: </span> Placeholder TV show 28 ",
@@ -3035,6 +3479,10 @@
   "en": "Much tired",
   "t": "Capek banget"
  },
+ "8e4e0408b8f6": {
+  "en": "pearls",
+  "t": "pearls"
+ },
  "8e81ceb925cb": {
   "en": "Lindström et al., Nature Communications 12:1311 (2021)",
   "t": "Lindström et al., Nature Communications 12:1311 (2021)"
@@ -3042,6 +3490,10 @@
  "8eaf38bbe8e6": {
   "en": "I am holding a grudge until I get what I want",
   "t": "Aku ngambek sampai dapat yang kumau"
+ },
+ "8eb5eb869df6": {
+  "en": "thrown too softly",
+  "t": "dilempar terlalu lembut"
  },
  "8ebb0c834491": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 24: </span> Placeholder movie 24 ",
@@ -3107,6 +3559,10 @@
   "en": "Step 6: The Farofa",
   "t": "Langkah 6: Farofa"
  },
+ "91a8efff2e31": {
+  "en": "Uwu, it's warm in here (・ω・)",
+  "t": "Uwu, di sini hangat (・ω・)"
+ },
  "9211aa0fcdb1": {
   "en": "Sturgill Simpson",
   "t": "Sturgill Simpson"
@@ -3139,6 +3595,10 @@
   "en": "\nIf it's tied to a date, it goes on the calendar. <a href=\"https://www.onecalendar.nl/\" data-astro-cid-xtzphevd=\"\">OneCalendar</a> merges my 5+\n        calendars into one master calendar, shown as a widget front and center on my phone. As soon as I wake up, I have a rough\n        idea of how the day will go, and I plan around the hard commitments.\n",
   "t": "Kalau terikat tanggal, masuk ke kalender. <a href=\"https://www.onecalendar.nl/\" data-astro-cid-xtzphevd=\"\">OneCalendar</a> menggabungkan lebih dari 5 kalenderku menjadi satu kalender utama, yang tampil sebagai widget di layar depan ponselku. Begitu bangun, aku sudah punya gambaran kasar soal hari itu, dan aku merencanakan semuanya di sekitar komitmen yang pasti."
  },
+ "92bf22c6b6a7": {
+  "en": "Yamete kudasai~ (〃ω〃)",
+  "t": "Yamete kudasai~ (〃ω〃)"
+ },
  "92f7c08c741a": {
   "en": "Don't worry. You're human and curious. I am not tracking IPs or any other metrics.",
   "t": "Tenang saja. Kamu manusia dan penasaran. Aku tidak melacak IP atau metrik lain apa pun."
@@ -3146,6 +3606,10 @@
  "93390080acb7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder game 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 30: </span> Gim sementara 30"
+ },
+ "935f6cd89f4a": {
+  "en": "A draw!",
+  "t": "Seri!"
  },
  "9384a918b850": {
   "en": "Or grow a spine and just reach out to me: see the <a href=\"/contact/\">Contact</a> page.",
@@ -3191,6 +3655,14 @@
   "en": "Nordic rune commonly associated with joy, harmony, fulfillment, and well-being.",
   "t": "Rune Nordik yang umumnya dikaitkan dengan sukacita, harmoni, kepuasan, dan kesejahteraan."
  },
+ "955b7068c35b": {
+  "en": "Row {row}, column {col} on",
+  "t": "Baris {row}, kolom {col} menyala"
+ },
+ "956ec36375d4": {
+  "en": "Best {n} m",
+  "t": "Terbaik {n} m"
+ },
  "958fe78dbd3b": {
   "en": "Skin tone 4",
   "t": "Warna kulit 4"
@@ -3227,6 +3699,10 @@
   "en": "Fluent",
   "t": "Fasih"
  },
+ "96de5543d183": {
+  "en": "yellow",
+  "t": "kuning"
+ },
  "96dedce974cf": {
   "en": "Enlarge: Failing to learn English",
   "t": "Perbesar: Gagal belajar bahasa Inggris"
@@ -3234,6 +3710,10 @@
  "96f997bcecb3": {
   "en": "Years",
   "t": "Tahun"
+ },
+ "972a61c6393a": {
+  "en": "{name} is content.",
+  "t": "{name} senang."
  },
  "974c2c9d8398": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 24: </span> Akira ",
@@ -3291,6 +3771,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 34: </span> Placeholder game 34 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 34: </span> Gim sementara 34"
  },
+ "992fb4c6838e": {
+  "en": "{you} wins, somehow!",
+  "t": "{you} menang, entah bagaimana!"
+ },
  "998896860e5d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder TV show 27 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 27: </span> Acara TV sementara 27"
@@ -3319,6 +3803,10 @@
   "en": "Glad I don't pay rent",
   "t": "Untung aku tidak bayar sewa"
  },
+ "9bdcbc1f38da": {
+  "en": "You’re coolio too!",
+  "t": "Kau juga keren abis!"
+ },
  "9c202ecc19a4": {
   "en": "Am I that really interesting?",
   "t": "Apa aku memang semenarik itu?"
@@ -3339,13 +3827,25 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 7: </span> Placeholder movie 7 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 7: </span> Film sementara 7"
  },
+ "9cf7bc8b3812": {
+  "en": "Your {kind} went viral: {views} views and {follows} new followers.",
+  "t": "Post-mu ({kind}) viral: {views} tayangan dan {follows} pengikut baru."
+ },
  "9d520a7744f2": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 31: </span> Placeholder TV show 31 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 31: </span> Acara TV sementara 31"
  },
+ "9d6c79478e4e": {
+  "en": "Legendary reflexes!",
+  "t": "Refleks legendaris!"
+ },
  "9db746ec5820": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#16: </span>Best of the Worst: Jack-O, Rock n' Roll Nightmare, and Shark Exorcist",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#16: </span>Best of the Worst: Jack-O, Rock n' Roll Nightmare, and Shark Exorcist"
+ },
+ "9dbfccdd9baa": {
+  "en": "🔥 {n}-post streak! Don't break it!",
+  "t": "🔥 {n} post berturut-turut! Jangan putus!"
  },
  "9dc024086c5d": {
   "en": "Third year since adoption",
@@ -3395,6 +3895,14 @@
   "en": "Succulent Chinese meal",
   "t": "Hidangan Tionghoa yang menggugah selera"
  },
+ "9f8030cb22e8": {
+  "en": "The algorithm has left you on read.",
+  "t": "Algoritma cuma nge-read kamu."
+ },
+ "9f8d43df802f": {
+  "en": "Wheee!",
+  "t": "Wheee!"
+ },
  "9fab49a7a7bd": {
   "en": "Dream violently. Plan soberly. Execute relentlessly. Update honestly. <strong>Unapplied lessons and unexecuted intentions are the same thing: masturbatory self-entertainment.</strong>",
   "t": "Bermimpilah dengan liar. Rencanakan dengan tenang. Eksekusi tanpa henti. Perbarui dengan jujur. <strong>Pelajaran yang tidak diterapkan dan niat yang tidak dijalankan sama saja: hiburan diri yang masturbatoris.</strong>"
@@ -3410,6 +3918,10 @@
  "9fd28a27c202": {
   "en": "Bday girl",
   "t": "Yang ulang tahun"
+ },
+ "a03e9007dd84": {
+  "en": "You fucking loser!",
+  "t": "Kamu pecundang sialan!"
  },
  "a0425f907558": {
   "en": "Amapá",
@@ -3515,6 +4027,10 @@
   "en": "My top 39 movies.",
   "t": "39 film favoritku."
  },
+ "a44c1fbbccc0": {
+  "en": "Traded {n} {give} for 1 {get}.",
+  "t": "{n} {give} ditukar dengan 1 {get}."
+ },
  "a4769e37e0e6": {
   "en": "\nThis is especially useful for ADHD-leaning brains, as a way to force monotropic focus on whatever needs a crosscheck. When\n        I want to confirm the garage is closed, I raise my hand toward it and say \"garage closed\". That works like a system-wide\n        interrupt to my many ongoing thought channels, so my brain actually stores that the garage is closed before I drive away.\n",
   "t": "Ini sangat berguna untuk otak yang cenderung ADHD, sebagai cara memaksa fokus monotropik pada hal yang perlu dicek ulang. Kalau aku mau memastikan garasi sudah tertutup, aku mengangkat tangan ke arahnya dan bilang \"garasi tertutup\". Itu bekerja seperti interupsi sistem untuk banyak saluran pikiranku yang sedang berjalan, supaya otakku benar-benar menyimpan bahwa garasi sudah tertutup sebelum aku pergi menyetir."
@@ -3523,13 +4039,25 @@
   "en": "Download",
   "t": "Unduh"
  },
+ "a4c146b7a21c": {
+  "en": "Senpai, your bellows technique is... impressive (￣▽￣)ノ",
+  "t": "Senpai, teknik ububanmu... mengesankan (￣▽￣)ノ"
+ },
  "a54d8d9fd7e6": {
   "en": "7 countries · 4 states/provinces · 94 photos",
   "t": "7 negara · 4 negara bagian/provinsi · 94 foto"
  },
+ "a55f327e9475": {
+  "en": "Ohayo~ (｡•̀ᴗ-)✧",
+  "t": "Ohayo~ (｡•̀ᴗ-)✧"
+ },
  "a56047e7faaf": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 21: </span> Toaru Kagaku no Railgun (A Certain Scientific Railgun) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 21: </span> Toaru Kagaku no Railgun (A Certain Scientific Railgun)"
+ },
+ "a5654a379120": {
+  "en": "Cleared",
+  "t": "Dibersihkan"
  },
  "a585b304fc23": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 12: </span> Ishuzoku Reviewers (Interspecies Reviewers) ",
@@ -3551,6 +4079,10 @@
   "en": "Musicals",
   "t": "Musikal"
  },
+ "a691267c5647": {
+  "en": "{rival} wins.",
+  "t": "{rival} menang."
+ },
  "a694aafb9d11": {
   "en": "Deo's hand holding a cup of chimarrão with its metal straw, a black cat curled up on a striped blanket behind it",
   "t": "Tangan Deo memegang wadah chimarrão dengan sedotan logamnya, dan seekor kucing hitam meringkuk di atas selimut bergaris di belakangnya"
@@ -3566,6 +4098,14 @@
  "a740c7319559": {
   "en": "Tattoo",
   "t": "Tato"
+ },
+ "a74615c9d0f5": {
+  "en": "The hustle",
+  "t": "Hustle"
+ },
+ "a75be8f0bded": {
+  "en": "Cancelled! Both darts on the {colour} territory are out.",
+  "t": "Dibatalkan! Kedua dart di wilayah {colour} keluar."
  },
  "a75e8688b4fb": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24",
@@ -3595,6 +4135,10 @@
   "en": "Enlarge: Succulent Chinese meal",
   "t": "Perbesar: Hidangan Tionghoa yang menggugah selera"
  },
+ "a844766240b7": {
+  "en": "a rock",
+  "t": "sebuah batu"
+ },
  "a8648a021360": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 12: </span> Placeholder game 12 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 12: </span> Gim sementara 12"
@@ -3607,9 +4151,17 @@
   "en": "Enlarge: Painting or drawing, 01/18/2013",
   "t": "Perbesar: Lukisan atau gambar, 18/01/2013"
  },
+ "a8b5fc4f044d": {
+  "en": "Fertilized {n} times.",
+  "t": "Dipupuk {n} kali."
+ },
  "a8c6776818cf": {
   "en": "KitKot: turn your phone sideways",
   "t": "KitKot: putar ponselmu ke posisi menyamping"
+ },
+ "a8df2fec28d8": {
+  "en": "Maximum",
+  "t": "Maksimum"
  },
  "a8f0e0050abb": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 34: </span> Placeholder movie 34 ",
@@ -3659,6 +4211,14 @@
   "en": "August 3, 2026",
   "t": "3 Agustus 2026"
  },
+ "aaf4de45da01": {
+  "en": "This is a Christian fireplace! (╯°□°)╯",
+  "t": "Ini perapian Kristen! (╯°□°)╯"
+ },
+ "ab42dc3d0e5c": {
+  "en": "another dino",
+  "t": "dino lain"
+ },
  "ab6674b31a84": {
   "en": "Bishops of the Thermometer",
   "t": "Uskup Termometer"
@@ -3667,9 +4227,17 @@
   "en": "Having these guys on in the background while I code is rather soothing. A strange thing for my autism to get hooked on, but it clearly works. Same thing with the Skyrim soundtrack and rain in the background whenever I focus on <a href=\"https://www.husbandoutworld.com/\">#HusbandOutWorld</a> stuff.",
   "t": "Menyetel mereka sebagai latar saat aku ngoding cukup menenangkan. Hal aneh untuk bikin autismeku ketagihan, tapi jelas berhasil. Sama juga dengan soundtrack Skyrim dan suara hujan saat aku fokus pada urusan <a href=\"https://www.husbandoutworld.com/\">#HusbandOutWorld</a>."
  },
+ "abc4c339d728": {
+  "en": "It wilted. You got {what}. Fertilizer, at least.",
+  "t": "Layu. Kamu dapat {what}. Setidaknya pupuk."
+ },
  "abcd3b5a4dc4": {
   "en": "Pick a branch above to grow the tree.",
   "t": "Pilih salah satu cabang di atas untuk menumbuhkan pohonnya."
+ },
+ "abfa242a93fa": {
+  "en": "💔 Streak lost. {n} posts, gone.",
+  "t": "💔 Rentetan putus. {n} post, lenyap."
  },
  "ac0fb6c41287": {
   "en": "Paper plane workspace",
@@ -3723,6 +4291,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 37: </span> Placeholder game 37 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 37: </span> Gim sementara 37"
  },
+ "adde1258fbad": {
+  "en": "Personal best: {n} m",
+  "t": "Rekor pribadi: {n} m"
+ },
  "ade7e6d0292a": {
   "en": "8 photos",
   "t": "8 foto"
@@ -3738,6 +4310,10 @@
  "ae3e542098c8": {
   "en": "#2 Line dance",
   "t": "#2 Line dance"
+ },
+ "ae4d8a00b6ce": {
+  "en": "▶️ +{views} views",
+  "t": "▶️ +{views} tayangan"
  },
  "ae4f281df5a5": {
   "en": "B",
@@ -3755,13 +4331,25 @@
   "en": "Step 1: Procure the Sacred Salt",
   "t": "Langkah 1: Dapatkan Garam Suci"
  },
+ "aed6b9811801": {
+  "en": "So close! Your post was one share away from blowing up.",
+  "t": "Begitu dekat! Post kamu tinggal satu share lagi untuk meledak."
+ },
  "af38615beb76": {
   "en": "The facets that fulfill Deo",
   "t": "Sisi-sisi yang membuat Deo utuh"
  },
+ "af429fb22354": {
+  "en": "Nice whacking!",
+  "t": "Pukulan bagus!"
+ },
  "af4807998713": {
   "en": "Losses: 5",
   "t": "Kalah: 5"
+ },
+ "afaed75406bd": {
+  "en": "purple",
+  "t": "ungu"
  },
  "affabe3f4188": {
   "en": "Campaign #1",
@@ -3827,6 +4415,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022"
  },
+ "b2b52c2fc7c2": {
+  "en": "Snipe all territories? That’s—different—I think. Can—can you explain?",
+  "t": "Menembak semua wilayah? Itu—beda—kurasa. Bisa—bisa kau jelaskan?"
+ },
  "b31013feefa3": {
   "en": "4 photos",
   "t": "4 foto"
@@ -3854,6 +4446,10 @@
  "b455a1c08a71": {
   "en": "I love how alive the characters are and how creative the shenanigans get, even though I absolutely hate people who \"play hard to get\". As we say in Portuguese: \"Quem faz cu doce só atrai formiga e vagabundo\" (whoever plays hard to get only attracts ants and bums).",
   "t": "Aku suka betapa hidupnya para tokohnya dan betapa kreatifnya tingkah mereka, meskipun aku benci banget orang yang \"jual mahal\". Seperti kata kami dalam bahasa Portugis: \"Quem faz cu doce só atrai formiga e vagabundo\" (yang jual mahal cuma menarik semut dan gelandangan)."
+ },
+ "b45d00ec07a3": {
+  "en": "Bonus day! Every {name} counts double. Go!",
+  "t": "Hari bonus! Setiap {name} dihitung dua kali. Ayo!"
  },
  "b474078a4afb": {
   "en": "A private pilot license is still in my queue! In the meantime, I want to build a home cockpit simulator once I buy a house. In Singapore, I got to fly a full-scale replica of a Boeing 737-800NG cockpit, and it became a core memory. It took me back to my early teens, when I rode in the cockpit jump seat of an Airbus A320-233 taking off from Santos Dumont Airport (SDU) in Rio de Janeiro, Brazil.",
@@ -3899,6 +4495,10 @@
   "en": "Preheat the grill to <strong>350°F</strong>. Let the meat thaw for 10 minutes before thou tappest on the salt, and spread the salt evenly, by hand as is preferred.",
   "t": "Panaskan panggangan sampai <strong>175 °C (350 °F)</strong>. Biarkan daging mencair selama 10 menit sebelum kau menaburkan garam, dan ratakan garamnya, sebaiknya dengan tangan."
  },
+ "b67933f00f5e": {
+  "en": "My kokoro can't take this (/▽＼*)｡o○♡",
+  "t": "Kokoro-ku nggak kuat (/▽＼*)｡o○♡"
+ },
  "b6bd42e4e730": {
   "en": "In progress",
   "t": "Sedang berjalan"
@@ -3911,6 +4511,10 @@
   "en": "Enlarge: Stroller time",
   "t": "Perbesar: Waktunya kereta dorong"
  },
+ "b6df21551d66": {
+  "en": "sloppy folds made it wobble and drag",
+  "t": "lipatan asal-asalan membuatnya goyang dan menyeret"
+ },
  "b70db6384e32": {
   "en": "It sits on my heart chakra, equally spaced from my left and right forearms, because I'm always listening to the two driving forces within me. I use them alongside my intuition to take the best path forward, for myself and for the ones I care about and am responsible for.",
   "t": "Letaknya di cakra jantungku, sama jauhnya dari lengan bawah kiri dan kananku, karena aku selalu mendengarkan dua kekuatan pendorong dalam diriku. Aku memakai keduanya bersama intuisiku untuk mengambil jalan terbaik, untuk diriku dan untuk orang-orang yang kusayangi dan menjadi tanggung jawabku."
@@ -3918,6 +4522,10 @@
  "b73f78fc271e": {
   "en": "Giselle",
   "t": "Giselle"
+ },
+ "b783ecde91e7": {
+  "en": "Plot {plot}: {crop}, ready to harvest.",
+  "t": "Petak {plot}: {crop}, siap panen."
  },
  "b7896305f027": {
   "en": "D&amp;D",
@@ -3939,9 +4547,25 @@
   "en": "The Holy Order",
   "t": "Ordo Suci"
  },
+ "b8a13eba61b4": {
+  "en": "{m} m ({ft} ft).",
+  "t": "{m} m ({ft} ft)."
+ },
+ "b8c8d91c4ad6": {
+  "en": "Yellow centre",
+  "t": "Pusat kuning"
+ },
+ "b90b25305207": {
+  "en": "Very hot",
+  "t": "Panas banget"
+ },
  "b90f9b301b75": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 3: </span> Placeholder game 3 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 3: </span> Gim sementara 3"
+ },
+ "b9169f3f4913": {
+  "en": "Hai hai~ ( ´ ▽ ` )ﾉ",
+  "t": "Hai hai~ ( ´ ▽ ` )ﾉ"
  },
  "b93191caeb10": {
   "en": "Nevada",
@@ -3951,6 +4575,10 @@
   "en": "Back to Painting",
   "t": "Kembali ke Lukisan"
  },
+ "b98ab59bdc99": {
+  "en": "{n} pts",
+  "t": "{n} poin"
+ },
  "b9a2ffa6496c": {
   "en": "Let's go",
   "t": "Ayo"
@@ -3958,6 +4586,10 @@
  "b9af5469788b": {
   "en": "The clock is ticking on my 💀 Death tab.",
   "t": "Jamnya terus berdetak di 💀 tab Kematian milikku."
+ },
+ "b9f8e7d16bef": {
+  "en": "{player}'s dart bounced off the wall.",
+  "t": "Dart {player} memantul dari dinding."
  },
  "ba01865809b3": {
   "en": "Back to Concert",
@@ -3975,6 +4607,10 @@
   "en": "Whack-a-Miku: turn your phone sideways",
   "t": "Whack-a-Miku: putar ponselmu ke posisi menyamping"
  },
+ "bbc97dc5386e": {
+  "en": "it climbed too steeply and stalled",
+  "t": "naik terlalu curam dan kehilangan daya angkat"
+ },
  "bbfb183d2a3d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Mahou Shoujo Madoka Magica (Puella Magi Madoka Magica) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 33: </span> Mahou Shoujo Madoka Magica (Puella Magi Madoka Magica)"
@@ -3983,6 +4619,10 @@
   "en": "Pitty",
   "t": "Pitty"
  },
+ "bc38448e90c1": {
+  "en": "Aw, my chitin ass! Anyways, the goal is to land on the same color region to score a point. If you land on a region with someone else’s dart, you two cancel each other out. Ehh—right? Right—right. The smaller the region, the more it’s worth when sniping it. That makes sense?",
+  "t": "Aw, pantat kitinku! Omong-omong, tujuannya adalah mendarat di wilayah warna yang sama untuk mencetak poin. Kalau kau mendarat di wilayah yang sudah ada dart orang lain, kalian berdua saling membatalkan. Ehh—kan? Iya—iya. Semakin kecil wilayahnya, semakin tinggi nilainya kalau berhasil ditembak. Masuk akal?"
+ },
  "bc4359231d61": {
   "en": "Gym",
   "t": "Gym"
@@ -3990,6 +4630,10 @@
  "bc5a47b54ae3": {
   "en": "Who's cooler",
   "t": "Siapa yang lebih keren"
+ },
+ "bc74f4f071a5": {
+  "en": "green",
+  "t": "hijau"
  },
  "bc981983e7f5": {
   "en": "Next",
@@ -4023,6 +4667,10 @@
   "en": "Music: off",
   "t": "Musik: mati"
  },
+ "bec764a9d2b7": {
+  "en": "Fold 2 of 5: now the top-right corner to the same dot.",
+  "t": "Lipat 2 dari 5: sekarang sudut kanan atas ke titik yang sama."
+ },
  "bf44c9857b69": {
   "en": "Ghost",
   "t": "Ghost"
@@ -4038,6 +4686,10 @@
  "bfc1086b2a80": {
   "en": "Enlarge: Lil princess",
   "t": "Perbesar: Putri kecil"
+ },
+ "bfc2ec349cc6": {
+  "en": "{n} shit 💩",
+  "t": "{n} tai 💩"
  },
  "bfd8da8e6a8f": {
   "en": "Diminishing returns",
@@ -4067,6 +4719,10 @@
   "en": "The true churrasco is <strong>picanha</strong> roasted on the <em>espeto</em>, the sword-like skewer, upon a <em>churrasqueira giratória</em>, the wall-style grill that turns the meat without rest.",
   "t": "Churrasco sejati adalah <strong>picanha</strong> yang dipanggang di <em>espeto</em>, tusukan berbentuk pedang, di atas <em>churrasqueira giratória</em>, panggangan dinding yang memutar daging tanpa henti."
  },
+ "c1070741a87a": {
+  "en": "{name}s",
+  "t": "{name}"
+ },
  "c10a97a8ce8a": {
   "en": "Tattoo practice skin: turn your phone sideways",
   "t": "Kulit latihan tato: putar ponselmu ke posisi menyamping"
@@ -4082,6 +4738,10 @@
  "c12140a0ffb4": {
   "en": "日本語",
   "t": "日本語"
+ },
+ "c1218408e29a": {
+  "en": "Just a hunk—that was me warming up! Now try to throw on a green section or anywhere else.",
+  "t": "Cuma sebentar—tadi aku pemanasan! Sekarang coba lempar ke bagian hijau atau di mana saja."
  },
  "c155ff628d91": {
   "en": "Laser removal",
@@ -4099,6 +4759,10 @@
   "en": "When my time comes, my funeral shall play 3 songs:",
   "t": "Saat waktuku tiba, pemakamanku akan memutar 3 lagu:"
  },
+ "c2032d98f6ff": {
+  "en": "natural {n}!",
+  "t": "{n} natural!"
+ },
  "c234408a9708": {
   "en": "Enlarge: Painting or drawing, 04/16/2013",
   "t": "Perbesar: Lukisan atau gambar, 16/04/2013"
@@ -4114,6 +4778,10 @@
  "c3156e00d3c2": {
   "en": "Q",
   "t": "Q"
+ },
+ "c327716d8241": {
+  "en": "Angle {angle}°   Power {power}%",
+  "t": "Sudut {angle}°   Daya {power}%"
  },
  "c379a5b7a656": {
   "en": "Hi-hat (key A)",
@@ -4131,9 +4799,17 @@
   "en": "Movement creates evidence. Refuse limbo: prefer an honest no to a manipulative maybe. Feelings are telemetry. <strong>When intuition and evidence point the same way, ignoring them is just fear dressed up as logic.</strong> Move.",
   "t": "Gerakan menghasilkan bukti. Tolak keadaan menggantung: lebih baik \"tidak\" yang jujur daripada \"mungkin\" yang manipulatif. Perasaan adalah telemetri. <strong>Saat intuisi dan bukti menunjuk ke arah yang sama, mengabaikannya hanyalah ketakutan yang berpura-pura jadi logika.</strong> Bergeraklah."
  },
+ "c46451ea184b": {
+  "en": "That one has all the fertilizer it can take ({max}).",
+  "t": "Yang itu sudah punya semua pupuk yang bisa diambil ({max})."
+ },
  "c4ca875cd015": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 19: </span> Mob Psycho 100 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 19: </span> Mob Psycho 100"
+ },
+ "c574501fd8fe": {
+  "en": "Roll d{sides} (last roll {result})",
+  "t": "Lempar d{sides} (lemparan terakhir {result})"
  },
  "c579d488d93d": {
   "en": "Pope Deo in green and gold papal robes and mitre, holding a golden staff, seated on a throne of swords before a churrasco grill full of skewers",
@@ -4159,6 +4835,10 @@
   "en": "Back to Gamer",
   "t": "Kembali ke Gamer"
  },
+ "c6e2f87cd267": {
+  "en": "sapphire",
+  "t": "sapphire"
+ },
  "c6e3b5b58c7b": {
   "en": "Rueiro",
   "t": "Rueiro"
@@ -4175,6 +4855,10 @@
   "en": "Lord Peeta of Tuxford",
   "t": "Lord Peeta dari Tuxford"
  },
+ "c75ac3fad137": {
+  "en": "{n}s left",
+  "t": "{n} detik lagi"
+ },
  "c75e945c17ea": {
   "en": "Dice tray: turn your phone sideways",
   "t": "Nampan dadu: putar ponselmu ke posisi menyamping"
@@ -4187,9 +4871,17 @@
   "en": "Peeta's backyard run",
   "t": "Lari pagi Peeta di halaman belakang"
  },
+ "c7abd16eb68f": {
+  "en": "Brotha—you suck at this—Harry?",
+  "t": "Bro—kau payah dalam hal ini—Harry?"
+ },
  "c7c4bc97cb6b": {
   "en": "Solen Zara",
   "t": "Solen Zara"
+ },
+ "c852360f55c1": {
+  "en": "—Yea? So I play next?",
+  "t": "—Iya? Jadi aku main berikutnya?"
  },
  "c886f4fa5cd8": {
   "en": "Praise the source of the beef thou art eating. Thank the soul that was given for thy enjoyment and for thy nourishment.",
@@ -4207,9 +4899,17 @@
   "en": "A practice skin, like the ones tattoo artists learn on. Pick a skin tone, an ink and a needle, and go.",
   "t": "Kulit latihan, seperti yang dipakai seniman tato untuk belajar. Pilih warna kulit, tinta, dan jarum, lalu mulai."
  },
+ "c9db75e9dd40": {
+  "en": "Harvested {crop}: {what}!",
+  "t": "{crop} dipanen: {what}!"
+ },
  "ca23f2af91b8": {
   "en": "My parents and I are always there for each other, but we don't enable each other. We challenge each other to grow and do better.",
   "t": "Orang tuaku dan aku selalu ada satu sama lain, tapi kami tidak saling memanjakan. Kami saling menantang untuk tumbuh dan menjadi lebih baik."
+ },
+ "ca2c4b70322c": {
+  "en": "{level}, {n} out of 100",
+  "t": "{level}, {n} dari 100"
  },
  "ca307bd9aaa4": {
   "en": "Action or inaction, it's all seed. You eat what you grow, even when it tastes like shit!",
@@ -4271,6 +4971,10 @@
   "en": "Roll all",
   "t": "Lempar semua"
  },
+ "cc60a1651cdd": {
+  "en": "Final: {you} {youScore} · {rival} {rivalScore} · {verdict}",
+  "t": "Akhir: {you} {youScore} · {rival} {rivalScore} · {verdict}"
+ },
  "cc9c3f91bf15": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">✋</span> Pet ",
   "t": "<span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">✋</span> Elus"
@@ -4287,6 +4991,10 @@
   "en": "Enlarge: One of his jobs",
   "t": "Perbesar: Salah satu pekerjaannya"
  },
+ "ccd479b39669": {
+  "en": "Out of shit to fertilize with.",
+  "t": "Tai habis, nggak ada buat pupuk."
+ },
  "cd1007480585": {
   "en": "Roll d8",
   "t": "Lempar d8"
@@ -4298,6 +5006,10 @@
  "cd6dc61c751f": {
   "en": "Enlarge: Can I haz",
   "t": "Perbesar: Boleh minta"
+ },
+ "cd719473682b": {
+  "en": "Winner Winner Chicken Dinner! You took the dino down.",
+  "t": "Winner Winner Chicken Dinner! Kamu menjatuhkan dino itu."
  },
  "cd7216b44ce3": {
   "en": "SR",
@@ -4311,6 +5023,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 36: </span> Placeholder game 36 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 36: </span> Gim sementara 36"
  },
+ "ce00926930a4": {
+  "en": "New personal best!",
+  "t": "Rekor pribadi baru!"
+ },
  "ce10f9c7847c": {
   "en": "Drum kit: turn your phone sideways",
   "t": "Drum kit: putar ponselmu ke posisi menyamping"
@@ -4323,6 +5039,14 @@
   "en": "EIHWAR",
   "t": "EIHWAR"
  },
+ "ce2c178cd497": {
+  "en": "Fold precision {n}%.",
+  "t": "Presisi lipatan {n}%."
+ },
+ "ce3c494a5e85": {
+  "en": "Aiight!",
+  "t": "Oke!"
+ },
  "ce70caaad427": {
   "en": "1 photo",
   "t": "1 foto"
@@ -4334,6 +5058,10 @@
  "ced1373b37da": {
   "en": "<strong>Horace</strong>, <em>Odes</em> 1.4 (23 BC): pale Death knocks with an impartial foot at the cottages of the poor and the palaces of kings. <a href=\"https://en.wikisource.org/wiki/The_works_of_Horace/First_Book_of_Odes\">Text</a>",
   "t": "<strong>Horatius</strong>, <em>Odes</em> 1.4 (23 SM): Maut yang pucat mengetuk dengan kaki yang adil pondok orang miskin dan istana raja-raja. <a href=\"https://en.wikisource.org/wiki/The_works_of_Horace/First_Book_of_Odes\">Teks</a>"
+ },
+ "cf32e9152179": {
+  "en": "❤️ +{n} likes",
+  "t": "❤️ +{n} suka"
  },
  "cf386e583151": {
   "en": "California",
@@ -4358,6 +5086,14 @@
  "d05793556c53": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 36: </span> Placeholder movie 36 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 36: </span> Film sementara 36"
+ },
+ "d0683718593c": {
+  "en": "Sloppy",
+  "t": "Asal-asalan"
+ },
+ "d0799417b93a": {
+  "en": "Score: {n}",
+  "t": "Skor: {n}"
  },
  "d0897adc8053": {
   "en": "Arr, feast yer eyes on the Rusty Tankard, a ship so overgrown with mushrooms ye could forage the deck for yer supper! Aboard her sails a crew o' fine scallywags: a hatless penguin who can kinda swing a hammer, patchin' the ship as best a flipper allows; a blue-bearded wizard bickerin' with a rusty tin man, the pair of 'em yellin' so loud the very air crackles like lightnin'; a grinnin' fish-man swingin' from the mast with a sack o' mushrooms; and a horned ape too busy with his bananas to lift a finger.",
@@ -4411,6 +5147,10 @@
   "en": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>",
   "t": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>"
  },
+ "d26d358f777a": {
+  "en": "Your dart flies low and lodges in the wall below the board.",
+  "t": "Dartmu terbang rendah dan tertancap di dinding di bawah papan."
+ },
  "d28817938afa": {
   "en": "Colorado",
   "t": "Colorado"
@@ -4439,9 +5179,17 @@
   "en": "Cirque du Soleil O",
   "t": "Cirque du Soleil O"
  },
+ "d397cf31a23a": {
+  "en": "Same plane. Drag back to aim and let go to throw.",
+  "t": "Pesawat sama. Seret ke belakang untuk membidik dan lepaskan untuk melempar."
+ },
  "d3a2460e932b": {
   "en": "TS",
   "t": "TS"
+ },
+ "d3c3cff3fcea": {
+  "en": "Almost went viral! 97% to the For You page.",
+  "t": "Hampir viral! 97% ke halaman For You."
  },
  "d3f579415886": {
   "en": "Whack the Miku (top right, key 2)",
@@ -4479,6 +5227,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 12: </span> Placeholder TV show 12 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 12: </span> Acara TV sementara 12"
  },
+ "d62a14276f7a": {
+  "en": "Fold 4 of 5: and the right corner to the same dot.",
+  "t": "Lipat 4 dari 5: dan sudut kanan ke titik yang sama."
+ },
  "d68ddfb67933": {
   "en": "Chilling",
   "t": "Santai"
@@ -4507,6 +5259,14 @@
   "en": "Enlarge: Play time",
   "t": "Perbesar: Waktunya main"
  },
+ "d749ff2455cb": {
+  "en": "Down bad. Down horrendous. (⊙﹏⊙✿)",
+  "t": "Parah. Parah banget. (⊙﹏⊙✿)"
+ },
+ "d74cdcf6827c": {
+  "en": "Landed!",
+  "t": "Mendarat!"
+ },
  "d7688c620ff7": {
   "en": "Back to Tattoo",
   "t": "Kembali ke Tato"
@@ -4526,6 +5286,10 @@
  "d7ca17ddc2fe": {
   "en": "If you’re struggling right now, you don’t have to carry it alone. I didn’t. In the US, call or text <strong>988</strong>, or chat at <a href=\"https://988lifeline.org/\">988lifeline.org</a>. Anywhere else, <a href=\"https://findahelpline.com/\">findahelpline.com</a> lists free, confidential helplines in your country.",
   "t": "Kalau kamu sedang berjuang sekarang, kamu tidak harus menanggungnya sendirian. Aku pun tidak. Di AS, telepon atau kirim SMS ke <strong>988</strong>, atau mengobrol di <a href=\"https://988lifeline.org/\">988lifeline.org</a>. Di tempat lain, <a href=\"https://findahelpline.com/\">findahelpline.com</a> mendaftar layanan bantuan gratis dan rahasia di negaramu."
+ },
+ "d7f186ff8a7c": {
+  "en": "leaking away: use it!",
+  "t": "makin habis: pakai!"
  },
  "d7f43bc5a045": {
   "en": "Screw it",
@@ -4611,6 +5375,10 @@
   "en": "Balls farm: turn your phone sideways",
   "t": "Kebun bola: putar ponselmu ke posisi menyamping"
  },
+ "db796663cdf7": {
+  "en": "B-baka! It's not like I wanted you to stoke my fire! (≧ヘ≦ )",
+  "t": "B-baka! Bukannya aku mau kamu mengobarkan apiku! (≧ヘ≦ )"
+ },
  "dba7601ff7be": {
   "en": "Symphony of Seasons",
   "t": "Symphony of Seasons"
@@ -4691,9 +5459,17 @@
   "en": "Get thyself churrasco salt: iodized, in big rocky chunks, and imported from Brazil if thou canst. Heathens have tried to cheap out with Himalayan salt and paid the price with a ruined steak.",
   "t": "Dapatkan garam churrasco: beryodium, dalam bongkahan besar seperti batu, dan diimpor dari Brasil kalau kau bisa. Para bidah pernah mencoba berhemat dengan garam Himalaya dan membayarnya dengan steak yang rusak."
  },
+ "dec492e278f3": {
+  "en": "Ara ara~ (◕‿◕✿)",
+  "t": "Ara ara~ (◕‿◕✿)"
+ },
  "df1ba38790aa": {
   "en": "Sleeping beauty",
   "t": "Putri tidur"
+ },
+ "df568bac40e4": {
+  "en": "A pile of {n} VHS tapes",
+  "t": "Tumpukan {n} kaset VHS"
  },
  "df59735e1f2b": {
   "en": "SS",
@@ -4714,6 +5490,10 @@
  "e0184adedf91": {
   "en": "E",
   "t": "E"
+ },
+ "e09a88958081": {
+  "en": "The doujinshi is writing itself ( ͡ʘ ͜ʖ ͡ʘ)",
+  "t": "Doujinshi-nya menulis dirinya sendiri ( ͡ʘ ͜ʖ ͡ʘ)"
  },
  "e0cfa25651b0": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Shingeki no Kyojin (Attack on Titan) ",
@@ -4795,6 +5575,10 @@
   "en": "Throw Bird, costs 3 mana (key 2)",
   "t": "Lempar Burung, butuh 3 mana (tombol 2)"
  },
+ "e45f65625355": {
+  "en": "amethyst",
+  "t": "amethyst"
+ },
  "e491b6f48726": {
   "en": "Ranked by how many times I've watched each one, counted from my YouTube watch history.",
   "t": "Diurutkan berdasarkan berapa kali aku menonton masing-masing, dihitung dari riwayat tontonan YouTube-ku."
@@ -4802,6 +5586,14 @@
  "e50edec7cb62": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Placeholder TV show 26 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 26: </span> Acara TV sementara 26"
+ },
+ "e5100c3c7795": {
+  "en": "Fold precision {n}%: {tips}.",
+  "t": "Presisi lipatan {n}%: {tips}."
+ },
+ "e53060217b21": {
+  "en": "Not enough energy. It refills every second.",
+  "t": "Energi tidak cukup. Terisi lagi setiap detik."
  },
  "e57dfe809709": {
   "en": "Whack the Miku (bottom right, key 4)",
@@ -4863,6 +5655,10 @@
   "en": "Miku's name in Japanese. Miku-chan (ミクちゃん) is a cornerstone of my life, tied to the things that drive me: ambition, technology, collaboration and community. She also stands for my passion, my drive, and the anxiety side of my personality.",
   "t": "Nama Miku dalam bahasa Jepang. Miku-chan (ミクちゃん) adalah fondasi hidupku, terikat pada hal-hal yang mendorongku: ambisi, teknologi, kolaborasi, dan komunitas. Dia juga melambangkan gairahku, dorongan dalam diriku, dan sisi cemas dari kepribadianku."
  },
+ "e76e281ed9f1": {
+  "en": "Back to the starting picture",
+  "t": "Kembali ke gambar awal"
+ },
  "e7d965113795": {
   "en": "Kilograms of beef grilled: 295",
   "t": "Kilogram daging sapi yang dipanggang: 295"
@@ -4911,6 +5707,10 @@
   "en": "Likes",
   "t": "Suka"
  },
+ "ea35482e6295": {
+  "en": "Good try! Good try! C’mon! Try again!",
+  "t": "Usaha bagus! Usaha bagus! Ayo! Coba lagi!"
+ },
  "ea3ddf6727a8": {
   "en": "Do Better!",
   "t": "Do Better!"
@@ -4918,6 +5718,14 @@
  "ea421daf7959": {
   "en": "Back at Moderno High School in Macapá, someone handed me a DVD with \"Bleach S1 pt-br sub\" written on it in Sharpie. I was so curious I nearly ran from school to my mother's store, did what I had to do on the server and in the store, then sat down in the back office, dropped the DVD into the tray and hit play. The first line of the opening song, Orange Range's \"Asterisk\", got burned into my brain as a core memory. It's 2026, and I still remember that moment extremely vividly.",
   "t": "Dulu di SMA Moderno di Macapá, seseorang memberiku DVD bertuliskan \"Bleach S1 pt-br sub\" dengan spidol. Aku begitu penasaran sampai hampir berlari dari sekolah ke toko ibuku, mengerjakan yang harus kukerjakan di server dan di toko, lalu duduk di kantor belakang, memasukkan DVD ke baki dan menekan play. Baris pertama lagu pembukanya, \"Asterisk\" dari Orange Range, terpatri di otakku sebagai kenangan inti. Sekarang 2026, dan aku masih ingat momen itu dengan sangat jelas."
+ },
+ "ea52ac390158": {
+  "en": "▶️ +{views} views, +{follows} followers",
+  "t": "▶️ +{views} tayangan, +{follows} pengikut"
+ },
+ "ea61674580d7": {
+  "en": "Total: {sum}",
+  "t": "Total: {sum}"
  },
  "ea862af722b1": {
   "en": "1.3 cows have become food",
@@ -4934,6 +5742,10 @@
  "eaa40e2587dc": {
   "en": "Distrito Federal",
   "t": "Distrito Federal"
+ },
+ "eab75ee3a0a6": {
+  "en": "Winner Winner Chicken Dinner",
+  "t": "Winner Winner Chicken Dinner"
  },
  "eaf7064f092b": {
   "en": "Snack!",
@@ -4991,9 +5803,21 @@
   "en": "Enlarge: Learning English",
   "t": "Perbesar: Belajar bahasa Inggris"
  },
+ "ed74b38312d6": {
+  "en": "She got away…",
+  "t": "Dia lolos…"
+ },
+ "ed8d6e99dc88": {
+  "en": "BONK! 🔨 Go to horny jail. (ﾉ´ｰ`)ﾉ",
+  "t": "BONK! 🔨 Masuk penjara mesum. (ﾉ´ｰ`)ﾉ"
+ },
  "ee6997287a58": {
   "en": "Fully bilingual in English and Portuguese, and working on the rest.",
   "t": "Dwibahasa penuh dalam bahasa Inggris dan Portugis, dan sedang menggarap yang lain."
+ },
+ "ee83a7441ce6": {
+  "en": "Time! You whacked {hits} {name} and missed {misses}. {verdict}",
+  "t": "Waktu! Kamu memukul {hits} {name} dan melewatkan {misses}. {verdict}"
  },
  "ee9f4373eeab": {
   "en": "Keeper of the Sacred Salt and of the secret ways of the Touch.",
@@ -5007,6 +5831,10 @@
   "en": "Enlarge: Painting or drawing, 01/23/2013",
   "t": "Perbesar: Lukisan atau gambar, 23/01/2013"
  },
+ "ef0ebbb77298": {
+  "en": "orange",
+  "t": "oranye"
+ },
  "efe6cabcbaa1": {
   "en": "Since we’re on the subject: take care of your mental health. And if you’ve ever thought about ending it all… don’t. I nearly did, back in 2016, during a period that far surpassed what my mind could take at the time. I called a crisis hotline. To the older lady who picked up the phone that night: I will forever be grateful. The “Harry” you see in Vol. 1 is an alternate version of myself: the one who plunged that knife into his chest that night.",
   "t": "Karena kita sedang membahasnya: rawat kesehatan mentalmu. Dan kalau kamu pernah berpikir untuk mengakhiri semuanya… jangan. Aku nyaris melakukannya, di tahun 2016, dalam masa yang jauh melampaui apa yang sanggup ditanggung pikiranku saat itu. Aku menelepon layanan krisis. Untuk ibu tua yang mengangkat telepon malam itu: aku akan berterima kasih selamanya. \"Harry\" yang kamu lihat di Vol. 1 adalah versi alternatif diriku: dia yang menancapkan pisau itu ke dadanya malam itu."
@@ -5014,6 +5842,10 @@
  "f0be548d03b3": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 31: </span> Placeholder game 31 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 31: </span> Gim sementara 31"
+ },
+ "f0c3ff890745": {
+  "en": "{n} of {max}",
+  "t": "{n} dari {max}"
  },
  "f0f48a551e02": {
   "en": "A pixel dinosaur running along the ground. Throw obstacles at it.",
@@ -5047,6 +5879,10 @@
   "en": "Enlarge: Whatcha doing",
   "t": "Perbesar: Lagi ngapain"
  },
+ "f290164d1315": {
+  "en": "Outer ring",
+  "t": "Cincin luar"
+ },
  "f2a63e1c444a": {
   "en": "Photogenic",
   "t": "Fotogenik"
@@ -5071,9 +5907,17 @@
   "en": "2 mana · 3",
   "t": "2 mana · 3"
  },
+ "f364840671b5": {
+  "en": "aquamarine",
+  "t": "aquamarine"
+ },
  "f3648e2b0a68": {
   "en": "Ōsaka",
   "t": "Osaka"
+ },
+ "f36fdd3e82bb": {
+  "en": "Mana is building. Throw something at the dino!",
+  "t": "Mana sedang menumpuk. Lempar sesuatu ke dino!"
  },
  "f3734a1b78c0": {
   "en": "Hypno cat",
@@ -5086,6 +5930,10 @@
  "f42120fee221": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Placeholder TV show 23 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 23: </span> Acara TV sementara 23"
+ },
+ "f4853c881e96": {
+  "en": "{n} more to earn",
+  "t": "{n} lagi untuk didapat"
  },
  "f4b3775718fe": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Placeholder movie 16 ",
@@ -5118,6 +5966,10 @@
  "f67bc6dad74f": {
   "en": "Dev",
   "t": "Dev"
+ },
+ "f6842ab3afca": {
+  "en": "Miku",
+  "t": "Miku"
  },
  "f69192726c6c": {
   "en": "\nThis website fulfills my need to share the joy and growth, and it gives me something I can pull up on the fly to show\n        the folks I’m talking with, without triggering hypervigilance. And just like the reason I went with self-publishing\n        instead of traditional publishing: I can do whatever the fuck I want here, and nobody gives a shit…\n",
@@ -5171,6 +6023,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder game 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 15: </span> Gim sementara 15"
  },
+ "f917eb40cc44": {
+  "en": "Tap a growing crop to fertilize it with 1 shit.",
+  "t": "Ketuk tanaman yang sedang tumbuh untuk memupuknya dengan 1 tai."
+ },
  "f91a835703fa": {
   "en": "Paper plane: turn your phone sideways",
   "t": "Pesawat kertas: putar ponselmu ke posisi menyamping"
@@ -5187,9 +6043,21 @@
   "en": "Nordic rune associated with ice, stillness, focus, containment, and preservation.",
   "t": "Rune Nordik yang dikaitkan dengan es, ketenangan, fokus, pengendalian, dan pelestarian."
  },
+ "f96e7bc80d25": {
+  "en": "Fertilize a plot that has something growing.",
+  "t": "Pupuk petak yang ada sesuatu tumbuh."
+ },
+ "f98f1fe356b4": {
+  "en": "Fold 5 of 5: fold it in half: bottom-left corner onto the bottom-right one.",
+  "t": "Lipat 5 dari 5: lipat menjadi dua: sudut kiri bawah ke sudut kanan bawah."
+ },
  "f9a36fc66f7b": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Ookami to Koushinryou (Spice and Wolf) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 27: </span> Ookami to Koushinryou (Spice and Wolf)"
+ },
+ "f9a7ce310699": {
+  "en": "▶️ +{views} views, +{follows} follower",
+  "t": "▶️ +{views} tayangan, +{follows} pengikut"
  },
  "fa0082d99ac8": {
   "en": "PM or life hacks",
@@ -5211,9 +6079,17 @@
   "en": "Supreme Pontiff of the Grill",
   "t": "Pontifeks Agung Panggangan"
  },
+ "fb1415fda4ff": {
+  "en": "Music: on",
+  "t": "Musik: nyala"
+ },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",
   "t": "Perbesar: Saat catnip-nya pas banget"
+ },
+ "fb23c9ff0d27": {
+  "en": "Inner ring",
+  "t": "Cincin dalam"
  },
  "fb4d13ed6962": {
   "en": "Enlarge: Sleep first",
@@ -5271,6 +6147,10 @@
   "en": "Drum kit",
   "t": "Drum kit"
  },
+ "fe732cbff74e": {
+  "en": "Row {row}, column {col} off",
+  "t": "Baris {row}, kolom {col} mati"
+ },
  "fe7e2953e947": {
   "en": "Bird",
   "t": "Burung"
@@ -5283,6 +6163,10 @@
   "en": "Practice skin. Draw a tattoo on it with the tattoo pen.",
   "t": "Kulit latihan. Gambar tato di atasnya dengan pena tato."
  },
+ "feddfb10fb8d": {
+  "en": "We all play at the same time. GO!",
+  "t": "Kita semua main bersamaan. AYO!"
+ },
  "feea42718962": {
   "en": "Enlarge: Walk time or more like I stay in the stroller",
   "t": "Perbesar: Waktunya jalan-jalan, atau lebih tepatnya aku tetap di kereta dorong"
@@ -5294,6 +6178,10 @@
  "ff635d8e1290": {
   "en": "Hear ye, hear ye! All are welcome unto the Holy Church of Churrasco, save those who eateth their steak <strong>well done</strong>. Such heathens shall burn in the most fiery of fires, in the deepest pits of Vegetation Hell.",
   "t": "Dengarlah, dengarlah! Semua disambut di Gereja Suci Churrasco, kecuali mereka yang memakan steaknya <strong>well done</strong>. Para bidah itu akan terbakar dalam api paling membara, di lubang terdalam Neraka Sayuran."
+ },
+ "ff77bf2aced8": {
+  "en": "Senpai noticed me! (✿◠‿◠)",
+  "t": "Senpai memperhatikanku! (✿◠‿◠)"
  },
  "ff8d3b2fc78a": {
   "en": "Ready for a walk",

@@ -18,6 +18,9 @@
  * Theming (CSS custom properties): --dice-face (default Miku teal #39c5bb), --dice-edge (#1f8f87),
  * --dice-ink (#0b2b2a), --dice-crit (Miku pink #e12885), --dice-pit (#22262e), --dice-text.
  *
+ * Words the script writes (the totals, the last roll) are in a hidden .dice-tray__strings block, so a
+ * translated copy of the page translates them too.
+ *
  * Accessible: each die is a button ("Roll d20"), results are announced, and people who prefer
  * reduced motion see the result at once, with no tumble.
  */
@@ -39,9 +42,16 @@ const shapes: Record<number, string> = {
   20: '50,3 91,26 91,74 50,97 9,74 9,26',
 };
 const shape = (s: number) => shapes[s] ?? '50,3 91,26 91,74 50,97 9,74 9,26';
+// What the script writes. It lives in the page so the site's translations reach it.
+const strings: Record<string, string> = {
+  rolled: 'Roll d{sides} (last roll {result})',
+  total: 'Total: {sum}',
+  natural: 'natural {n}!',
+};
 ---
 
 <div class:list={['dice-tray', className]} role="group" aria-label={label}>
+  <div class="dice-tray__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <div class="dice-tray__row">
     {
       dice.map((s) => (
@@ -219,6 +229,9 @@ const shape = (s: number) => shapes[s] ?? '50,3 91,26 91,74 50,97 9,74 9,26';
     const live = tray.querySelector<HTMLElement>('.dice-tray__live')!;
     const total = tray.querySelector<HTMLElement>('.dice-tray__total');
     const dice = Array.from(tray.querySelectorAll<HTMLButtonElement>('.dice-tray__die'));
+    // The page's (possibly translated) words; {name} slots are filled in here.
+    const msg = (key: string, vars: Record<string, string | number> = {}) =>
+      (tray.querySelector(`.dice-tray__strings [data-k="${key}"]`)?.textContent ?? key).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
 
     // Rolls one die; resolves with its result once it has landed.
     const throwDie = (die: HTMLButtonElement) =>
@@ -233,7 +246,7 @@ const shape = (s: number) => shapes[s] ?? '50,3 91,26 91,74 50,97 9,74 9,26';
           void die.offsetWidth;
           if (sides >= 20 && result === sides) die.classList.add('is-crit');
           if (sides >= 20 && result === 1) die.classList.add('is-fumble');
-          die.setAttribute('aria-label', `Roll d${sides} (last roll ${result})`);
+          die.setAttribute('aria-label', msg('rolled', { sides, result }));
           done(result);
         };
         if (reduced) return land();
@@ -249,7 +262,7 @@ const shape = (s: number) => shapes[s] ?? '50,3 91,26 91,74 50,97 9,74 9,26';
       });
 
     const say = (sides: number, r: number) =>
-      `d${sides}: ${r}${sides >= 20 && r === sides ? ', natural ' + sides + '!' : sides >= 20 && r === 1 ? ', natural 1!' : ''}`;
+      `d${sides}: ${r}${sides >= 20 && (r === sides || r === 1) ? ', ' + msg('natural', { n: r }) : ''}`;
 
     for (const die of dice) {
       die.addEventListener('click', async () => {
@@ -264,8 +277,8 @@ const shape = (s: number) => shapes[s] ?? '50,3 91,26 91,74 50,97 9,74 9,26';
     tray.querySelector<HTMLButtonElement>('.dice-tray__roll-all')?.addEventListener('click', async () => {
       const results = await Promise.all(dice.map(throwDie));
       const sum = results.reduce((a, b) => a + b, 0);
-      if (total) total.textContent = `Total: ${sum}`;
-      live.textContent = `${results.map((r, i) => say(Number(dice[i].dataset.sides), r)).join(', ')}. Total ${sum}.`;
+      if (total) total.textContent = msg('total', { sum });
+      live.textContent = `${results.map((r, i) => say(Number(dice[i].dataset.sides), r)).join(', ')}. ${msg('total', { sum })}.`;
     });
   });
 </script>

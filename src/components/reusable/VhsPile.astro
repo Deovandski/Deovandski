@@ -72,15 +72,17 @@ const fill = (m: Mode) =>
     .replace('{name}', m.name)
     .replace('{perTape}', nf.format(m.hours));
 const pictureLabel = (m: Mode) => `A pile of ${nf.format(tapesFor(m))} VHS tapes`;
+// What the script writes when the speed changes. It lives in the page so the site's translations reach it.
+const strings: Record<string, string> = { summary, pile: 'A pile of {n} VHS tapes' };
 ---
 
 <figure
   class:list={['vhs-pile', className]}
   data-hours={hours}
   data-modes={JSON.stringify(modes)}
-  data-summary={summary}
   data-locale={locale}
 >
+  <div class="vhs-pile__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <fieldset class="vhs-pile__modes">
     <legend>{label}</legend>
     {
@@ -300,13 +302,19 @@ const pictureLabel = (m: Mode) => `A pile of ${nf.format(tapesFor(m))} VHS tapes
   function setup(pile: HTMLElement) {
     const modes: Mode[] = JSON.parse(pile.dataset.modes!);
     const hours = Number(pile.dataset.hours);
-    const template = pile.dataset.summary!;
-    const nf = new Intl.NumberFormat(pile.dataset.locale || 'en-US');
+    // The page's (possibly translated) words.
+    const t = (key: string) => pile.querySelector(`.vhs-pile__strings [data-k="${key}"]`)?.textContent ?? '';
+    const template = t('summary');
+    // A translated copy of the page sets <html lang>; its numbers follow that language.
+    const pageLang = document.documentElement.lang;
+    const nf = new Intl.NumberFormat(pageLang && pageLang !== 'en' ? pageLang : pile.dataset.locale || 'en-US');
     const stage = pile.querySelector<HTMLElement>('.vhs-pile__stage')!;
     const canvas = stage.querySelector('canvas')!;
     const ctx = canvas.getContext('2d')!;
     const summaryEl = pile.querySelector<HTMLElement>('.vhs-pile__summary')!;
     const radios = Array.from(pile.querySelectorAll<HTMLInputElement>('.vhs-pile__modes input'));
+    // The speed's full name as the page shows it (translated on a translated page).
+    const modeName = () => radios.find((r) => r.checked)?.parentElement?.querySelector('.vhs-pile__sr')?.textContent ?? mode.name;
     const settled = document.createElement('canvas');
     const sctx = settled.getContext('2d')!;
 
@@ -406,9 +414,9 @@ const pictureLabel = (m: Mode) => `A pile of ${nf.format(tapesFor(m))} VHS tapes
       summaryEl.textContent = template
         .replace('{tapes}', nf.format(n))
         .replace('{mode}', mode.key)
-        .replace('{name}', mode.name)
+        .replace('{name}', modeName())
         .replace('{perTape}', nf.format(mode.hours));
-      canvas.setAttribute('aria-label', `A pile of ${nf.format(n)} VHS tapes`);
+      canvas.setAttribute('aria-label', t('pile').replace('{n}', nf.format(n)));
     }
 
     for (const r of radios) {

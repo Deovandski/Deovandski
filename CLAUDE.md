@@ -80,7 +80,9 @@ top of [scripts/i18n.mjs](scripts/i18n.mjs).
   French (France), standard Indonesian, standard Hindi. Arabic is right to left (`dir="rtl"`): fix anything placed with
   left/right in the right-to-left block of `src/styles/global.css`.
 - **Anything that must not be translated** gets `translate="no"`: Vraki-typeface text, names in a logo, code.
-- **Text a script writes at run time** (game messages, counters) isn't in the built page, so it stays English for now.
+- **Text a script writes at run time** (game messages, counters) must be in the built page to be translated. Each reusable
+  game keeps its words in a hidden `<div class="<name>__strings" hidden data-llms-skip>` of `<span data-k="key">` elements
+  (with `{name}` slots) and reads them with a small `msg(key, vars)` helper; do the same for new script text (#234).
 - **The banner** on translated pages comes from `content/i18n/<lang>/meta.json`: "AI-Translated to <language> from
   Original work by Deovandski", with a one-click English link.
 - A language is offered to search engines (`hreflang`, the sitemap) and to the browser-language auto-select only once a

@@ -39,9 +39,40 @@ const cfg = config as {
   seeds: { id: string; ball: string; crop: string; colors: { main: string }; energy: number; seconds: number; cost: Record<string, number> }[];
   trades: { give: string; count: number; get: string }[];
 };
+// What the script writes. It lives in the page so the site's translations reach it.
+const ball = (b: string) => b.toLowerCase();
+const strings: Record<string, string> = {
+  ...Object.fromEntries(cfg.seeds.flatMap((s) => [[`crop_${s.id}`, s.crop], [`one_${s.id}`, ball(s.ball)], [`many_${s.id}`, `${ball(s.ball)}s`]])),
+  harvest: 'Harvest!',
+  empty: 'Plot {plot}: empty. Plant {crop}.',
+  ready: 'Plot {plot}: {crop}, ready to harvest.',
+  wilted: 'Plot {plot}: {crop}, ready to harvest (it wilted).',
+  growing: 'Plot {plot}: {crop}, ready in {seconds} seconds.',
+  fertTimes: 'Fertilized {n} times.',
+  worthOne: 'Balls worth {balls} pearl vs {shit} shit.',
+  worthMany: 'Balls worth {balls} pearls vs {shit} shit.',
+  ahead: 'More balls than shit. Keep it that way!',
+  behind: 'Right now it tastes like shit. Keep planting.',
+  fertEmpty: 'Fertilize a plot that has something growing.',
+  need: 'You need {n} {ball} to plant {crop}. Trade up at the market.',
+  energy: 'Not enough energy. It refills every second.',
+  planted: 'Planted {crop}.',
+  wiltedGot: 'It wilted. You got {what}. Fertilizer, at least.',
+  harvested: 'Harvested {crop}: {what}!',
+  waste: '{n} shit 💩',
+  noWaste: 'Out of shit to fertilize with.',
+  full: 'That one has all the fertilizer it can take ({max}).',
+  fertilized: 'Fertilized {crop} ({n}). Better odds!',
+  still: '{crop} is still growing.',
+  fertHow: 'Tap a growing crop to fertilize it with 1 shit.',
+  traded: 'Traded {n} {give} for 1 {get}.',
+  bagOne: '{n} ball in the bag',
+  bagMany: '{n} balls in the bag',
+};
 ---
 
 <div class:list={['iso-farm', className]} data-config={JSON.stringify(config)} data-key={saveKey} data-waste={waste}>
+  <div class="iso-farm__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <h3 class="iso-farm__title">{title}</h3>
   <div class="iso-farm__top">
     <dl class="iso-farm__bag" aria-label="What you have">
@@ -336,7 +367,8 @@ const cfg = config as {
   type Save = { bag: Record<string, number>; plots: Plot[]; energy: number; t: number };
 
   const SVG = 'http://www.w3.org/2000/svg';
-  const fmt = new Intl.NumberFormat('en-US');
+  // Numbers in the page's language (a translated copy of the page sets <html lang>).
+  const fmt = new Intl.NumberFormat(document.documentElement.lang || 'en-US');
 
   // The crop drawings, by growth stage: 0 seedling, 1 growing, 2 ready (bloom), with quality 0-1 for
   // how lush the bloom is, and a wilted brown plant when the harvest is going to be bad.
@@ -373,6 +405,11 @@ const cfg = config as {
     const WASTE = root.dataset.waste || 'shit';
     const board = root.querySelector<SVGSVGElement>('.iso-farm__board')!;
     const live = root.querySelector<HTMLElement>('.iso-farm__live')!;
+    // The page's (possibly translated) words; {name} slots are filled in here.
+    const tr = (key: string, vars: Record<string, string | number> = {}) =>
+      (root.querySelector(`.iso-farm__strings [data-k="${key}"]`)?.textContent ?? key).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
+    const cropName = (id: string) => tr(`crop_${id}`);
+    const balls = (id: string, n: number) => (seedById[id] ? tr(`${n === 1 ? 'one' : 'many'}_${id}`) : id);
     const score = root.querySelector<HTMLElement>('.iso-farm__score')!;
     const barsEl = root.querySelector<HTMLElement>('.iso-farm__bars')!;
     const fertBtn = root.querySelector<HTMLButtonElement>('.iso-farm__fert')!;
@@ -496,7 +533,7 @@ const cfg = config as {
         if (!p) {
           crop.innerHTML = '';
           timer.textContent = '';
-          g.setAttribute('aria-label', `Plot ${i + 1}: empty. Plant ${seedById[seedChoice].crop}.`);
+          g.setAttribute('aria-label', tr('empty', { plot: i + 1, crop: cropName(seedChoice) }));
           continue;
         }
         const seed = seedById[p.seed];
@@ -507,8 +544,13 @@ const cfg = config as {
         const quality = out && !out.bad ? Math.min(1, worth / best + p.fert * 0.08) : 0;
         crop.innerHTML = cropSvg(seed, stage, quality, rotten);
         const fertTag = p.fert ? ` 💩×${p.fert}` : '';
-        timer.textContent = stage === 2 ? 'Harvest!' : `${Math.ceil(left)}s${fertTag}`;
-        g.setAttribute('aria-label', stage === 2 ? `Plot ${i + 1}: ${seed.crop}, ready to harvest${rotten ? ' (it wilted)' : ''}.` : `Plot ${i + 1}: ${seed.crop}, ready in ${Math.ceil(left)} seconds.${p.fert ? ` Fertilized ${p.fert} times.` : ''}`);
+        timer.textContent = stage === 2 ? tr('harvest') : `${Math.ceil(left)}s${fertTag}`;
+        g.setAttribute(
+          'aria-label',
+          stage === 2
+            ? tr(rotten ? 'wilted' : 'ready', { plot: i + 1, crop: cropName(seed.id) })
+            : tr('growing', { plot: i + 1, crop: cropName(seed.id), seconds: Math.ceil(left) }) + (p.fert ? ' ' + tr('fertTimes', { n: p.fert }) : ''),
+        );
       }
       // Bag, energy, market, score.
       root.querySelectorAll<HTMLElement>('[data-count]').forEach((dd) => (dd.textContent = fmt.format(have(dd.dataset.count!))));
@@ -520,22 +562,22 @@ const cfg = config as {
         b.disabled = have(g) < Number(n);
       });
       fertBtn.disabled = have(WASTE) < 1 && !fertilizing;
-      const balls = cfg.seeds.reduce((a, s) => a + have(s.id) * (value[s.id] ?? 0), 0);
+      const worth = cfg.seeds.reduce((a, s) => a + have(s.id) * (value[s.id] ?? 0), 0);
       const shit = have(WASTE);
-      score.textContent = `Balls worth ${fmt.format(balls)} pearl${balls === 1 ? '' : 's'} vs ${fmt.format(shit)} shit. ${balls > shit ? 'More balls than shit. Keep it that way!' : 'Right now it tastes like shit. Keep planting.'}`;
+      score.textContent = `${tr(worth === 1 ? 'worthOne' : 'worthMany', { balls: fmt.format(worth), shit: fmt.format(shit) })} ${tr(worth > shit ? 'ahead' : 'behind')}`;
     }
 
     function use(i: number) {
       const p = st.plots[i];
       if (!p) {
-        if (fertilizing) return (live.textContent = 'Fertilize a plot that has something growing.');
+        if (fertilizing) return (live.textContent = tr('fertEmpty'));
         const seed = seedById[seedChoice];
-        for (const [k, n] of Object.entries(seed.cost)) if (have(k) < n) return (live.textContent = `You need ${n} ${seedById[k]?.ball.toLowerCase() ?? k} to plant ${seed.crop}. Trade up at the market.`);
-        if (st.energy < seed.energy) return (live.textContent = 'Not enough energy. It refills every second.');
+        for (const [k, n] of Object.entries(seed.cost)) if (have(k) < n) return (live.textContent = tr('need', { n, ball: balls(k, n), crop: cropName(seed.id) }));
+        if (st.energy < seed.energy) return (live.textContent = tr('energy'));
         for (const [k, n] of Object.entries(seed.cost)) give(k, -n);
         st.energy -= seed.energy;
         st.plots[i] = { seed: seed.id, planted: Date.now(), fert: 0 };
-        live.textContent = `Planted ${seed.crop}.`;
+        live.textContent = tr('planted', { crop: cropName(seed.id) });
       } else {
         const { stage } = plotState(p);
         const seed = seedById[p.seed];
@@ -543,24 +585,24 @@ const cfg = config as {
           const out = seed.outcomes[p.result!];
           for (const [k, n] of Object.entries(out.give)) give(k, n);
           const what = Object.entries(out.give)
-            .map(([k, n]) => (k === WASTE ? `${n} shit 💩` : `${n} ${seedById[k]?.ball.toLowerCase() ?? k}${n > 1 ? 's' : ''}`))
+            .map(([k, n]) => (k === WASTE ? tr('waste', { n }) : `${n} ${balls(k, n)}`))
             .join(', ');
-          live.textContent = WASTE in out.give ? `It wilted. You got ${what}. Fertilizer, at least.` : `Harvested ${seed.crop}: ${what}!`;
+          live.textContent = WASTE in out.give ? tr('wiltedGot', { what }) : tr('harvested', { crop: cropName(seed.id), what });
           st.plots[i] = null;
         } else if (fertilizing) {
           if (have(WASTE) < 1) {
             fertilizing = false;
             fertBtn.setAttribute('aria-pressed', 'false');
-            live.textContent = 'Out of shit to fertilize with.';
+            live.textContent = tr('noWaste');
           } else if (p.fert >= cfg.fertilizer.max) {
-            live.textContent = `That one has all the fertilizer it can take (${cfg.fertilizer.max}).`;
+            live.textContent = tr('full', { max: cfg.fertilizer.max });
           } else {
             give(WASTE, -1);
             p.fert++;
-            live.textContent = `Fertilized ${seed.crop} (${p.fert}). Better odds!`;
+            live.textContent = tr('fertilized', { crop: cropName(seed.id), n: p.fert });
           }
         } else {
-          live.textContent = `${seed.crop} is still growing.`;
+          live.textContent = tr('still', { crop: cropName(seed.id) });
         }
       }
       save();
@@ -579,7 +621,7 @@ const cfg = config as {
     fertBtn.addEventListener('click', () => {
       fertilizing = !fertilizing;
       fertBtn.setAttribute('aria-pressed', String(fertilizing));
-      live.textContent = fertilizing ? 'Tap a growing crop to fertilize it with 1 shit.' : '';
+      live.textContent = fertilizing ? tr('fertHow') : '';
       render();
     });
     tradeBtns.forEach((b) =>
@@ -588,7 +630,7 @@ const cfg = config as {
         if (have(g) < Number(n)) return;
         give(g, -Number(n));
         give(get, 1);
-        live.textContent = `Traded ${n} ${g}s for 1 ${get}.`;
+        live.textContent = tr('traded', { n, give: balls(g, Number(n)), get: balls(get, 1) });
         save();
         render();
       }),

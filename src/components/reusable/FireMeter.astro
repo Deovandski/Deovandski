@@ -25,6 +25,9 @@
  * Theming (CSS custom properties): --fire-accent (default #e12885), --fire-hot (#ff7a18),
  * --fire-text, --fire-bg.
  *
+ * The stages and the meter's spoken value are written into a hidden .fire-meter__strings block (not a
+ * JSON attribute), so a translated copy of the page translates them too.
+ *
  * Accessible: the bellows is a real button; the meter is a <meter> with its level as text; each new
  * phrase is announced. Reduced motion: a calm flame, no shake.
  */
@@ -46,11 +49,22 @@ const { stages, label = 'Heat', button = 'Pump the bellows', pump = 7, cooling =
 
 <div
   class:list={['fire-meter', className]}
-  data-stages={JSON.stringify(stages)}
   data-pump={pump}
   data-cooling={cooling}
   style="--heat: 0"
 >
+  <div class="fire-meter__strings" hidden data-llms-skip>
+    <span data-k="value">{'{level}, {n} out of 100'}</span>
+    {
+      stages.map((s) => (
+        <div data-stage>
+          <span data-k="name">{s.name}</span>
+          {s.phrases.map((p) => <span data-k="phrase">{p}</span>)}
+          {s.bonk && <span data-k="bonk">{s.bonk}</span>}
+        </div>
+      ))
+    }
+  </div>
   <div class="fire-meter__scene">
     <div class="fire-meter__hearth" aria-hidden="true">
       <div class="fire-meter__flames">
@@ -292,7 +306,14 @@ const { stages, label = 'Heat', button = 'Pump the bellows', pump = 7, cooling =
   type Stage = { name: string; phrases: string[]; bonk?: string };
 
   document.querySelectorAll<HTMLElement>('.fire-meter').forEach((root) => {
-    const stages: Stage[] = JSON.parse(root.dataset.stages || '[]');
+    // Read from the page, so a translated copy of the page shows translated stages.
+    const text = (el: Element | null) => el?.textContent ?? '';
+    const stages: Stage[] = Array.from(root.querySelectorAll('.fire-meter__strings [data-stage]')).map((el) => ({
+      name: text(el.querySelector('[data-k="name"]')),
+      phrases: Array.from(el.querySelectorAll('[data-k="phrase"]'), text),
+      bonk: el.querySelector('[data-k="bonk"]') ? text(el.querySelector('[data-k="bonk"]')) : undefined,
+    }));
+    const valueText = text(root.querySelector('.fire-meter__strings [data-k="value"]'));
     const pumpBy = Number(root.dataset.pump) || 7;
     const cooling = Number(root.dataset.cooling) || 5;
     const bellows = root.querySelector<HTMLButtonElement>('.fire-meter__bellows')!;
@@ -319,7 +340,7 @@ const { stages, label = 'Heat', button = 'Pump the bellows', pump = 7, cooling =
       meter.value = Math.round(heat);
       const s = stageAt(heat);
       levelEl.textContent = s.name;
-      meter.setAttribute('aria-valuetext', `${s.name}, ${Math.round(heat)} out of 100`);
+      meter.setAttribute('aria-valuetext', valueText.replace('{level}', s.name).replace('{n}', String(Math.round(heat))));
     }
 
     // The fire cools a little every frame while it's lit; the loop stops once it's out.

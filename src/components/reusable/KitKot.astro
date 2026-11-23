@@ -103,6 +103,41 @@ const tricks = [
     source: 'Common free-to-play design',
   },
 ];
+// What the script writes. It lives in the page so the site's translations reach it.
+const strings: Record<string, string> = {
+  near0: 'Almost went viral! 97% to the For You page.',
+  near1: 'So close! Your post was one share away from blowing up.',
+  near2: 'Your post was shown to 1 more person than last time! Keep going!',
+  near3: 'Trending… in your apartment.',
+  nothing0: '0 views. Shadowbanned?',
+  nothing1: 'Posted. Nobody cares. Yet.',
+  nothing2: '3 views. Two were you.',
+  nothing3: 'The algorithm has left you on read.',
+  goal: 'Only {n} to {goal}!',
+  like: '❤️ +{n} like',
+  likes: '❤️ +{n} likes',
+  streak: "🔥 {n}-post streak! Don't break it!",
+  lostNote: '📉 -{n} followers. "Not this again…"',
+  lostSay: 'You lost {n} followers. Your audience is tired of {kind}.',
+  viralNote: '🚀 VIRAL! +{views} views, +{follows} followers',
+  viralSay: 'Your {kind} went viral: {views} views and {follows} new followers.',
+  views: '▶️ +{views} views',
+  viewsFollower: '▶️ +{views} views, +{follows} follower',
+  viewsFollowers: '▶️ +{views} views, +{follows} followers',
+  trending: 'Trending',
+  dyingNote: '⚠️ Your {n}-post streak is about to die!',
+  dyingSay: 'Your {n}-post streak is about to die. Post something!',
+  goneNote: '💔 Streak lost. {n} posts, gone.',
+  goneSay: 'You lost your streak.',
+  minSec: '{min} min {sec} s',
+  sec: '{sec} s',
+  spent: "You spent {time} and {posts} posts chasing {n} followers who don't exist. Now go outside.",
+  noPlay: 'Good call. The best move is not to play. Now go outside.',
+  clickbait: 'clickbait video',
+  smart: 'intellectual video',
+  pics: 'pictures',
+  random: 'random shit',
+};
 ---
 
 <div
@@ -110,6 +145,7 @@ const tricks = [
   data-start={JSON.stringify(start)}
   data-energy={energyMax}
 >
+  <div class="kitkot__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <div class="kitkot__phone">
     <div class="kitkot__status" aria-hidden="true"><span>9:39</span><span>📶 🔋39%</span></div>
     <div class="kitkot__screen">
@@ -302,7 +338,7 @@ const tricks = [
   .kitkot__grass:focus-visible { outline: 2px solid var(--_b); outline-offset: 2px; }
   .kitkot__post:disabled { opacity: 0.45; cursor: not-allowed; }
   .kitkot__post.is-trending { border-color: var(--_a); box-shadow: 0 0 0 1px var(--_a) inset; }
-  .kitkot__post.is-trending::after { content: '🔥 Trending'; font-size: 0.65rem; color: var(--_a); }
+  .kitkot__post.is-trending::after { content: '🔥 ' attr(data-badge); font-size: 0.65rem; color: var(--_a); }
   .kitkot__feed {
     list-style: none;
     margin: 0.6rem 0 0;
@@ -384,7 +420,8 @@ const tricks = [
 <script>
   type Stats = { following: number; followers: number; likes: number; views: number };
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const nf = new Intl.NumberFormat('en-US');
+  // Numbers in the page's language (a translated copy of the page sets <html lang>).
+  const nf = new Intl.NumberFormat(document.documentElement.lang || 'en-US');
   const rnd = (a: number, b: number) => a + Math.random() * (b - a);
   const pick = <T,>(list: T[]) => list[Math.floor(Math.random() * list.length)];
 
@@ -395,8 +432,6 @@ const tricks = [
     pics: { views: [40, 220], likeRate: 0.1, followRate: 0.04, viral: 0.035, name: 'pictures' },
     random: { views: [0, 600], likeRate: 0.07, followRate: 0.03, viral: 0.05, name: 'random shit' },
   };
-  const NEAR = ['Almost went viral! 97% to the For You page.', 'So close! Your post was one share away from blowing up.', 'Your post was shown to 1 more person than last time! Keep going!', 'Trending… in your apartment.'];
-  const NOTHING = ['0 views. Shadowbanned?', 'Posted. Nobody cares. Yet.', '3 views. Two were you.', 'The algorithm has left you on read.'];
 
   document.querySelectorAll<HTMLElement>('.kitkot').forEach((root) => {
     const start: Stats = JSON.parse(root.dataset.start!);
@@ -411,6 +446,11 @@ const tricks = [
     const streakEl = root.querySelector<HTMLElement>('[data-streak]')!;
     const streakBox = root.querySelector<HTMLElement>('.kitkot__streak')!;
     const goalEl = root.querySelector<HTMLElement>('[data-goal]')!;
+    // The page's (possibly translated) words; {name} slots are filled in here.
+    const msg = (key: string, vars: Record<string, string | number> = {}) =>
+      (root.querySelector(`.kitkot__strings [data-k="${key}"]`)?.textContent ?? key).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
+    const NEAR = [0, 1, 2, 3].map((i) => msg(`near${i}`));
+    const NOTHING = [0, 1, 2, 3].map((i) => msg(`nothing${i}`));
     const hood = root.querySelector<HTMLDetailsElement>('.kitkot__hood')!;
 
     let energy = energyMax;
@@ -439,7 +479,7 @@ const tricks = [
     function goal() {
       const marks = [100, 250, 500, 1000, 2500, 5000, 10000, 25000, 50000, 100000, 1000000];
       const next = marks.find((m) => m > s.followers) ?? s.followers * 2;
-      goalEl.textContent = `Only ${nf.format(next - s.followers)} to ${nf.format(next)}!`;
+      goalEl.textContent = msg('goal', { n: nf.format(next - s.followers), goal: nf.format(next) });
     }
 
     function note(text: string, kind = '') {
@@ -479,7 +519,7 @@ const tricks = [
         const n = Math.max(1, Math.round(left * rnd(0.2, 0.5)));
         left -= n;
         add('likes', n);
-        note(`❤️ +${nf.format(n)} ${n === 1 ? 'like' : 'likes'}`);
+        note(msg(n === 1 ? 'like' : 'likes', { n: nf.format(n) }));
         fire('drip');
         window.setTimeout(step, rnd(500, 1300));
       };
@@ -501,7 +541,7 @@ const tricks = [
       streakEl.textContent = String(streak);
       streakBox.classList.remove('is-danger');
       if (streak > 1 && streak % 5 === 0) {
-        note(`🔥 ${streak}-post streak! Don't break it!`);
+        note(msg('streak', { n: streak }));
         fire('streak');
       }
 
@@ -520,8 +560,8 @@ const tricks = [
         const lost = Math.max(1, Math.round(s.followers * rnd(0.01, 0.04)));
         add('followers', -lost);
         add('views', Math.round(rnd(0, 12)));
-        note(`📉 -${lost} followers. "Not this again…"`, 'is-bad');
-        say(`You lost ${lost} followers. Your audience is tired of ${k.name}.`);
+        note(msg('lostNote', { n: lost }), 'is-bad');
+        say(msg('lostSay', { n: lost, kind: msg(kind) }));
         fire('fatigue');
         shake();
         goal();
@@ -538,8 +578,8 @@ const tricks = [
         add('views', views);
         add('followers', follows);
         drip(likes);
-        note(`🚀 VIRAL! +${nf.format(views)} views, +${nf.format(follows)} followers`, 'is-viral');
-        say(`Your ${k.name} went viral: ${nf.format(views)} views and ${nf.format(follows)} new followers.`);
+        note(msg('viralNote', { views: nf.format(views), follows: nf.format(follows) }), 'is-viral');
+        say(msg('viralSay', { kind: msg(kind), views: nf.format(views), follows: nf.format(follows) }));
         fire('variable');
         fire('reward');
         if (kind === hot) fire('hot');
@@ -561,7 +601,7 @@ const tricks = [
         add('views', views);
         add('followers', follows);
         drip(likes);
-        note(`▶️ +${nf.format(views)} views${follows ? `, +${follows} ${follows === 1 ? 'follower' : 'followers'}` : ''}`);
+        note(msg(!follows ? 'views' : follows === 1 ? 'viewsFollower' : 'viewsFollowers', { views: nf.format(views), follows }));
         fire('variable');
         if (kind === hot) fire('hot');
       }
@@ -584,13 +624,13 @@ const tricks = [
       if (streak > 1 && since > 20000 && since < 30000 && !warned) {
         warned = true;
         streakBox.classList.add('is-danger');
-        note(`⚠️ Your ${streak}-post streak is about to die!`, 'is-bad');
-        say(`Your ${streak}-post streak is about to die. Post something!`);
+        note(msg('dyingNote', { n: streak }), 'is-bad');
+        say(msg('dyingSay', { n: streak }));
         fire('streak');
       }
       if (streak > 1 && since >= 30000) {
-        note(`💔 Streak lost. ${streak} posts, gone.`, 'is-bad');
-        say('You lost your streak.');
+        note(msg('goneNote', { n: streak }), 'is-bad');
+        say(msg('goneSay'));
         streak = 0;
         streakEl.textContent = '0';
         streakBox.classList.remove('is-danger');
@@ -599,18 +639,20 @@ const tricks = [
       if (since < 20000) warned = false;
       if (Math.random() < 0.06) {
         buttons.forEach((b) => b.classList.remove('is-trending'));
-        pick(buttons).classList.add('is-trending');
+        const hotBtn = pick(buttons);
+        hotBtn.dataset.badge = msg('trending');
+        hotBtn.classList.add('is-trending');
       }
     }, 1000);
 
     root.querySelector('.kitkot__grass')!.addEventListener('click', () => {
       const mins = started ? (performance.now() - started) / 60000 : 0;
-      const time = mins >= 1 ? `${Math.floor(mins)} min ${Math.round((mins % 1) * 60)} s` : `${Math.round(mins * 60)} s`;
+      const time = mins >= 1 ? msg('minSec', { min: Math.floor(mins), sec: Math.round((mins % 1) * 60) }) : msg('sec', { sec: Math.round(mins * 60) });
       const gained = s.followers - start.followers;
       say(
         posts
-          ? `You spent ${time} and ${posts} posts chasing ${nf.format(Math.max(0, gained))} followers who don't exist. Now go outside.`
-          : `Good call. The best move is not to play. Now go outside.`,
+          ? msg('spent', { time, posts, n: nf.format(Math.max(0, gained)) })
+          : msg('noPlay'),
       );
       Object.assign(s, start);
       (Object.keys(start) as (keyof Stats)[]).forEach((k) => setStat(k, start[k]));

@@ -15,6 +15,10 @@
   "en": "Enlarge: Third year since adoption",
   "t": "Ingrandisci: Terzo anno dall’adozione"
  },
+ "00f42f627fce": {
+  "en": "Your post was shown to 1 more person than last time! Keep going!",
+  "t": "Il tuo post è stato mostrato a 1 persona in più dell’ultima volta! Continua!"
+ },
  "010a0d803f20": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Made in Abyss ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 6: </span> Made in Abyss"
@@ -67,6 +71,10 @@
   "en": "S",
   "t": "S"
  },
+ "02b13b00cdc9": {
+  "en": "FEVER! The whole floor lights up.",
+  "t": "FEBBRE! Tutta la pista si illumina."
+ },
  "02e70a6e6368": {
   "en": "Enlarge: Sleepy",
   "t": "Ingrandisci: Assonnato"
@@ -87,6 +95,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#38: </span>Best of the Worst: Bad Movie Scavenger Hunt",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#38: </span>Best of the Worst: Bad Movie Scavenger Hunt"
  },
+ "03c0dc4c92b5": {
+  "en": "Nani?! So lewd! (⊙_⊙;)",
+  "t": "Nani?! Che porcellino! (⊙_⊙;)"
+ },
  "03dc9c3a151f": {
   "en": "AC/DC's Back in Black",
   "t": "AC/DC's Back in Black"
@@ -94,6 +106,10 @@
  "0455df4b7952": {
   "en": "Can I haz",
   "t": "Posso averlo"
+ },
+ "046fa1a6bc47": {
+  "en": "Nothing to clean.",
+  "t": "Niente da pulire."
  },
  "0480691e0de6": {
   "en": "Ink",
@@ -134,6 +150,10 @@
  "065eb98108d3": {
   "en": "They love churrasco most of all and spread the word far and wide, yet have not truly learned the ways of the art. Great is their zeal; long is their path.",
   "t": "Amano il churrasco sopra ogni cosa e diffondono la parola in lungo e in largo, ma non hanno ancora davvero appreso le vie dell’arte. Grande è il loro zelo; lungo è il loro cammino."
+ },
+ "0661a99c3159": {
+  "en": "Nosebleed level: critical (￣ε￣＠)",
+  "t": "Livello di sangue dal naso: critico (￣ε￣＠)"
  },
  "067ff8ef9ba2": {
   "en": "\nSenior Software Engineer, Dynamics 365 F&amp;O Architect, and Founder &amp; CEO of Wizard Deo Solutions.\n",
@@ -223,6 +243,10 @@
   "en": "The shared template for all my repos: AI disclosure, language support, website compilation, and more.",
   "t": "Il modello condiviso per tutti i miei repo: trasparenza sull’uso dell’IA, supporto alle lingue, compilazione del sito e altro."
  },
+ "0a3c15792056": {
+  "en": "pictures",
+  "t": "foto"
+ },
  "0a4020c7d439": {
   "en": "I created it",
   "t": "L’ho creato io"
@@ -255,9 +279,17 @@
   "en": "Blog",
   "t": "Blog"
  },
+ "0bf9322efcf3": {
+  "en": "Final score: {you} {youScore}, {rival} {rivalScore}. {verdict}",
+  "t": "Punteggio finale: {you} {youScore}, {rival} {rivalScore}. {verdict}"
+ },
  "0c146d79c604": {
   "en": "Enlarge: FML! Forgot setup autopay",
   "t": "Ingrandisci: FML! Ho dimenticato di impostare il pagamento automatico"
+ },
+ "0c1d9293305f": {
+  "en": "thrown too hard, so it looped and lost its speed",
+  "t": "lanciato troppo forte, ha fatto un loop e ha perso velocità"
  },
  "0c1eafce7883": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 5: </span> Placeholder movie 5 ",
@@ -339,6 +371,10 @@
   "en": "Losses",
   "t": "Sconfitte"
  },
+ "0faaf0fb0bb0": {
+  "en": "More balls than shit. Keep it that way!",
+  "t": "Più palle che merda. Continua così!"
+ },
  "0fd5b6c2935a": {
   "en": "16 photos",
   "t": "16 foto"
@@ -399,6 +435,10 @@
   "en": "Vatican City",
   "t": "Città del Vaticano"
  },
+ "13a29a85064f": {
+  "en": "Plot {plot}: empty. Plant {crop}.",
+  "t": "Aiuola {plot}: vuota. Pianta {crop}."
+ },
  "13aeaa847300": {
   "en": "Goodnight Texas",
   "t": "Goodnight Texas"
@@ -422,6 +462,10 @@
  "148bcf6b6644": {
   "en": "Deo's old TikTok profile, @deovandski: 732 followers, 118.5K likes, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, above a grid of video thumbnails",
   "t": "Il vecchio profilo TikTok di Deo, @deovandski: 732 follower, 118,5 mila mi piace, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, sopra una griglia di miniature di video"
+ },
+ "149d7ab31b5c": {
+  "en": "Go!",
+  "t": "Vai!"
  },
  "15014b3b3615": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> To LOVE-Ru ",
@@ -467,6 +511,14 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Placeholder movie 22 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 22: </span> Film segnaposto 22"
  },
+ "181527f3010f": {
+  "en": "H-hentai! (*/ω＼*)",
+  "t": "H-hentai! (*/ω＼*)"
+ },
+ "1825a9d5984b": {
+  "en": "Fold 1 of 5: drag the top-left corner to the dot on the centre line.",
+  "t": "Piegatura 1 di 5: trascina l’angolo in alto a sinistra al punto sulla linea centrale."
+ },
  "182b4b1df21d": {
   "en": "Enlarge: Much tasty",
   "t": "Ingrandisci: Buonissimo"
@@ -507,6 +559,10 @@
   "en": "Opera",
   "t": "Opera"
  },
+ "19e17a057b61": {
+  "en": "Your turn: press Throw (or Space) when the aim is where you want it.",
+  "t": "Tocca a te: premi Lancia! (o Spazio) quando la mira è dove vuoi."
+ },
  "1a1f232c7b93": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder TV show 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 9: </span> Serie segnaposto 9"
@@ -535,6 +591,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 21: </span> Placeholder game 21 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 21: </span> Gioco segnaposto 21"
  },
+ "1b4c1d90da83": {
+  "en": "Your FBI agent has entered the chat. ( ͡° ͜ʖ ͡°)",
+  "t": "Il tuo agente dell’FBI è entrato in chat. ( ͡° ͜ʖ ͡°)"
+ },
  "1b522f8cf164": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 20: </span> Placeholder TV show 20 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 20: </span> Serie segnaposto 20"
@@ -542,6 +602,10 @@
  "1b89ab190390": {
   "en": " Bold line ",
   "t": "Linea spessa"
+ },
+ "1b9f359ce480": {
+  "en": "Dance",
+  "t": "Balla"
  },
  "1bccc30e6635": {
   "en": "Enlarge: Huehuehue",
@@ -586,6 +650,10 @@
  "1e10d56dd24a": {
   "en": "Enlarge: Painting or drawing, 01/15/2013",
   "t": "Ingrandisci: Dipinto o disegno, 15/01/2013"
+ },
+ "1e69f9e7e667": {
+  "en": "📉 -{n} followers. \"Not this again…\"",
+  "t": "📉 -{n} follower. “Non di nuovo…”"
  },
  "1eab2e778967": {
   "en": "Mana",
@@ -675,6 +743,10 @@
   "en": "In an age when smokestacks rose beside the spires of sorcery, a company of adventurers was charged with the defense of Ordo, the Eternal City. Among their number was the Prince himself. The court records state that the King commissioned the company to protect the realm. Later historians, less charitable, contend that His Majesty assembled a band of imbeciles chiefly to keep the Prince occupied, and thereby to spare the royal family further injury to its pride. The truth, as is customary, has not survived intact.",
   "t": "In un’epoca in cui le ciminiere si ergevano accanto alle guglie della stregoneria, una compagnia di avventurieri fu incaricata della difesa di Ordo, la Città Eterna. Tra loro c’era il Principe in persona. I registri di corte affermano che il Re incaricò la compagnia di proteggere il reame. Storici successivi, meno caritatevoli, sostengono che Sua Maestà radunò una banda di imbecilli soprattutto per tenere occupato il Principe, e risparmiare così alla famiglia reale ulteriori ferite all’orgoglio. La verità, come d’uso, non è sopravvissuta intatta."
  },
+ "20cd7e840557": {
+  "en": "Fertilized {crop} ({n}). Better odds!",
+  "t": "Hai concimato {crop} ({n}). Più probabilità!"
+ },
  "20da8de5a068": {
   "en": "When I retire, I’ll definitely train longer, because keeping healthy muscle mass into old age is a cornerstone of actively enjoying life until my last breath.",
   "t": "Quando andrò in pensione, mi allenerò sicuramente più a lungo, perché mantenere una massa muscolare sana in vecchiaia è una pietra angolare per godersi attivamente la vita fino all’ultimo respiro."
@@ -682,6 +754,18 @@
  "20f5e11071c1": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 11: </span> Youjo Senki (Saga of Tanya the Evil) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 11: </span> Youjo Senki (Saga of Tanya the Evil)"
+ },
+ "2104ba8031ca": {
+  "en": "You lost {n} followers. Your audience is tired of {kind}.",
+  "t": "Hai perso {n} follower. Il tuo pubblico è stanco di {kind}."
+ },
+ "2108fcbf3093": {
+  "en": "Good call. The best move is not to play. Now go outside.",
+  "t": "Buona scelta. La mossa migliore è non giocare. Ora esci."
+ },
+ "214117303b84": {
+  "en": "Is this a cozy fire? ٩(◕‿◕｡)۶",
+  "t": "È un fuocherello accogliente? ٩(◕‿◕｡)۶"
  },
  "21bcdb7e16a8": {
   "en": "World &amp; fusion",
@@ -702,6 +786,10 @@
  "229377a6b713": {
   "en": "You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it's still in the air) and take it down before you run dry.",
   "t": "Gli ostacoli sei tu. Il dino corre. Tu gli lanci contro delle cose. Il mana si accumula ogni secondo da adesso; scegli bene il momento dei lanci (prendilo mentre è ancora in aria) e buttalo giù prima di restare a secco."
+ },
+ "22e02026aa78": {
+  "en": "Crisp!",
+  "t": "Perfetto!"
  },
  "22f164766765": {
   "en": "Arragoa",
@@ -726,6 +814,14 @@
  "23aa58622740": {
   "en": "\nAbout <strong data-astro-cid-j7pv25f6=\"\">2,332 hours</strong> of Best of the Worst: 1,966 views of 157 \nepisodes (Spotlight, Wheel of the Worst and Junka included), from my YouTube watch history from Dec 15, 2019 to  Nov 20, 2026.\n",
   "t": "Circa <strong data-astro-cid-j7pv25f6=\"\">2.332 ore</strong> di Best of the Worst: 1.966 visualizzazioni di 157 episodi (Spotlight, Wheel of the Worst e Junka inclusi), dalla mia cronologia di YouTube dal 15 dic. 2019 al 20 nov. 2026."
+ },
+ "2438453caeb0": {
+  "en": "there's poop to clean",
+  "t": "c’è cacca da pulire"
+ },
+ "244d46168deb": {
+  "en": "a cactus",
+  "t": "un cactus"
  },
  "247ce5d5d915": {
   "en": "North America",
@@ -759,6 +855,10 @@
   "en": "Ecchi in the shape of an anime. I absolutely loved the creativity in pushing the envelope as far as possible! Yami is my favorite girl, even though IRL that type of girl tends to be toxic as fuck. Avoidant girls, especially fearful avoidants, are complete energy vampires.",
   "t": "Ecchi in forma di anime. Ho adorato la creatività nel spingersi oltre i limiti il più possibile! Yami è la mia ragazza preferita, anche se nella vita reale quel tipo di ragazza tende a essere tossica da morire. Le ragazze evitanti, soprattutto le evitanti timorose, sono vere vampire di energia."
  },
+ "25270ee78057": {
+  "en": "Balls worth {balls} pearls vs {shit} shit.",
+  "t": "Palle per un valore di {balls} pearls contro {shit} merda."
+ },
  "2555abc1fb60": {
   "en": "#1 The point",
   "t": "#1 Il dito puntato"
@@ -770,6 +870,10 @@
  "2580fef1e7d3": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#32: </span>Best of the Worst: Pocket Ninjas, Cyclone, and Dangerous Men",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#32: </span>Best of the Worst: Pocket Ninjas, Cyclone, and Dangerous Men"
+ },
+ "2583d0fe0cc8": {
+  "en": "{name} feels lonely",
+  "t": "{name} vuole compagnia"
  },
  "259034821da9": {
   "en": "Sabaton",
@@ -803,6 +907,10 @@
   "en": "From Itaituba, Pará, to Fargo, North Dakota.",
   "t": "Da Itaituba, Pará, a Fargo, Dakota del Nord."
  },
+ "26deb96c0c06": {
+  "en": "Toe stand &amp; point",
+  "t": "Sulle punte e dito puntato"
+ },
  "26eb9b95ab72": {
   "en": " 10 aquamarines → 1 sapphire ",
   "t": "10 aquamarine → 1 sapphire"
@@ -822,6 +930,18 @@
  "278311fdb680": {
   "en": "Sapphire Rose",
   "t": "Rosa Sapphire"
+ },
+ "278cc325dfd3": {
+  "en": "Trending… in your apartment.",
+  "t": "In tendenza… nel tuo appartamento."
+ },
+ "27b48cf9ae90": {
+  "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
+  "t": "Cioè {tapes} videocassette VHS registrate in {mode} ({perTape} ore per cassetta T-120)."
+ },
+ "27bbcef16995": {
+  "en": "Hiromi",
+  "t": "Hiromi"
  },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
@@ -867,6 +987,10 @@
   "en": "Brooks &amp; Dunn",
   "t": "Brooks &amp; Dunn"
  },
+ "2a0a84854369": {
+  "en": "uneven left and right folds pulled it up",
+  "t": "piegature sinistra e destra disuguali l’hanno tirato su"
+ },
  "2a1d013e0fe2": {
   "en": "<strong>Hávamál</strong>, verse 76 (Old Norse, Viking Age): cattle die, kin die, you die the same; a good name never dies. Sung in Wardruna’s <em>Helvegen</em>.",
   "t": "<strong>Hávamál</strong>, strofa 76 (norreno antico, epoca vichinga): muore il bestiame, muoiono i parenti, muori anche tu; un buon nome non muore mai. Cantato in <em>Helvegen</em> dei Wardruna."
@@ -887,6 +1011,10 @@
   "en": "ᛁ",
   "t": "ᛁ"
  },
+ "2b5ecdaf34f0": {
+  "en": "aquamarines",
+  "t": "aquamarines"
+ },
  "2b7b561c1de1": {
   "en": "Enlarge: MUCH FAST",
   "t": "Ingrandisci: VELOCISSIMO"
@@ -894,6 +1022,10 @@
  "2be2f97117d7": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#12: </span>Best of the Worst: Bad Movie Scavenger Hunt Too",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#12: </span>Best of the Worst: Bad Movie Scavenger Hunt Too"
+ },
+ "2c1e5036b725": {
+  "en": "{n} balls in the bag",
+  "t": "{n} palle nella borsa"
  },
  "2c6f37232fe8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Nanatsu no Taizai (The Seven Deadly Sins) ",
@@ -959,6 +1091,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#37: </span>Best of the Worst: Clash in the College",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#37: </span>Best of the Worst: Clash in the College"
  },
+ "2f2bbafed371": {
+  "en": "Posted. Nobody cares. Yet.",
+  "t": "Pubblicato. A nessuno importa. Ancora."
+ },
  "2f30886d3179": {
   "en": "Huehuehue",
   "t": "Huehuehue"
@@ -1011,6 +1147,10 @@
   "en": " 1 aquamarine  · 1 energy · 30 s ",
   "t": "1 aquamarine · 1 energia · 30 s"
  },
+ "31071d58e994": {
+  "en": "a bird",
+  "t": "un uccello"
+ },
  "31242629ea0e": {
   "en": "The small systems that keep my days, and my brain, running.",
   "t": "I piccoli sistemi che tengono in moto le mie giornate, e il mio cervello."
@@ -1031,9 +1171,21 @@
   "en": "Long nose",
   "t": "Naso lungo"
  },
+ "318f9434e024": {
+  "en": "{crop} is still growing.",
+  "t": "{crop} sta ancora crescendo."
+ },
+ "31b5e865a21e": {
+  "en": "{name} loves that.",
+  "t": "{name} lo adora."
+ },
  "31b9d2eef058": {
   "en": "Illinois",
   "t": "Illinois"
+ },
+ "31fae22769c6": {
+  "en": "Time! You whacked {hits} {names} and missed {misses}. {verdict}",
+  "t": "Tempo! Hai colpito {hits} {names} e mancato {misses}. {verdict}"
  },
  "32477dd234fb": {
   "en": "Confidence is not noise. <strong>It’s trusting yourself to do what’s right when your core is shaken.</strong> Build boldly, measure honestly, correct without ego.",
@@ -1046,6 +1198,10 @@
  "3286fdce39d6": {
   "en": "Wake up at 6am (or 5am; Peeta is the true alarm clock in the house), drink coffee, poop, bathe, hit the gym, then head home to let Peeta run in the backyard while I shove food in my piehole before work. Practical and frictionless: part of my routine now, not something I have to force myself to do.",
   "t": "Sveglia alle 6 (o alle 5; Peeta è la vera sveglia di casa), caffè, cacca, doccia, palestra, poi a casa per lasciare Peeta correre in giardino mentre mi ingozzo prima del lavoro. Pratico e senza attriti: ora fa parte della mia routine, non è qualcosa a cui devo costringermi."
+ },
+ "331a84a2e901": {
+  "en": "{name} popped up {corner}!",
+  "t": "{name} è spuntata ({corner})!"
  },
  "334709fe4f0e": {
   "en": "Win vs Loss",
@@ -1074,6 +1230,10 @@
  "33c1a5c84a89": {
   "en": "Mickey D's",
   "t": "Il Mc"
+ },
+ "33dde2208759": {
+  "en": "Smoke alarm: senpai, please (ノಠ益ಠ)ノ彡┻━┻",
+  "t": "Allarme fumo: senpai, ti prego (ノಠ益ಠ)ノ彡┻━┻"
  },
  "33f13fdb8928": {
   "en": "Purple ink",
@@ -1191,9 +1351,17 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 8: </span> Placeholder movie 8 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 8: </span> Film segnaposto 8"
  },
+ "38d4249ff036": {
+  "en": "⏱ {seconds}s · darts: {you} {youLeft}, {rival} {rivalLeft}",
+  "t": "⏱ {seconds}s · dardi: {you} {youLeft}, {rival} {rivalLeft}"
+ },
  "38e1d26af274": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer"
+ },
+ "39091a099ef5": {
+  "en": "Plot {plot}: {crop}, ready in {seconds} seconds.",
+  "t": "Aiuola {plot}: {crop}, pronto tra {seconds} secondi."
  },
  "39210f2abeb2": {
   "en": "Enlarge: Ember.js dev assistant",
@@ -1359,6 +1527,10 @@
   "en": "Yep. That anime tickled something deep and turbulent that I didn't understand back then: my ecchi/hentai energy. I truly understand it now, and I have no shame about it, since it's something I set out to explore to feel more fulfilled.",
   "t": "Già. Quell’anime ha solleticato qualcosa di profondo e turbolento che allora non capivo: la mia energia ecchi/hentai. Ora la capisco davvero, e non me ne vergogno affatto, perché è qualcosa che ho deciso di esplorare per sentirmi più realizzato."
  },
+ "3ffa6ae98146": {
+  "en": "The line dance",
+  "t": "Il ballo in linea"
+ },
  "400f83d8e1be": {
   "en": "Back to Influencer",
   "t": "Torna a Influencer"
@@ -1379,6 +1551,10 @@
   "en": "Captain Bidu final resting place",
   "t": "L’ultima dimora del Capitano Bidu"
  },
+ "40e405b6605c": {
+  "en": "I haven’t heard of that, but yeah, I prefer targeting the yellow ones, as those are worth more if you snipe all territories.",
+  "t": "Non l'ho mai sentita questa, ma sì, io preferisco mirare a quelli gialli, perché valgono di più se conquisti tutti i territori."
+ },
  "40f6fcda8a97": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder movie 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 9: </span> Film segnaposto 9"
@@ -1391,9 +1567,21 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder movie 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 10: </span> Film segnaposto 10"
  },
+ "42766efba402": {
+  "en": "Middle ring",
+  "t": "Anello medio"
+ },
+ "42ae6cb3cd8f": {
+  "en": "Time! The room starts to move too much…",
+  "t": "Tempo! La stanza inizia a muoversi troppo…"
+ },
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
   "t": "Una vecchia foto di un bambino piccolo e due uomini in una miniera d’oro a cielo aperto di terra rossa, nell’Amazzonia brasiliana"
+ },
+ "4322655424cd": {
+  "en": "Routine #{n}: {routine}.",
+  "t": "Routine #{n}: {routine}."
  },
  "435b659ef5e1": {
   "en": "🎬 Movies",
@@ -1407,9 +1595,17 @@
   "en": "Energy",
   "t": "Energia"
  },
+ "43eb964be6dd": {
+  "en": "FEVER!",
+  "t": "FEBBRE!"
+ },
  "4450ba4816bd": {
   "en": "Step 3: Prepare the Altar and Anoint the Meat",
   "t": "Passo 3: Prepara l’Altare e Ungi la Carne"
+ },
+ "447f1e0ff0ce": {
+  "en": "Doki doki~ ♡ (〃▽〃)",
+  "t": "Doki doki~ ♡ (〃▽〃)"
  },
  "44c57abd888a": {
   "en": "Reset",
@@ -1458,6 +1654,10 @@
  "46e80e47b684": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested"
+ },
+ "4787267d603e": {
+  "en": "You lost your streak.",
+  "t": "Hai perso la serie."
  },
  "47b8db828f85": {
   "en": "\nWill I ever come back? Likely not, because the ROI in knowledge and fun I was getting from being a social influencer\n        towards the end of the journey was gone, and it had become hypervigilance and misery instead. I noticed I was being\n        stalked too, so I cut it off at the root like an infection, healed, and moved on. I'm no longer trackable on the fly,\n        and the daily push to engage and produce content is gone for good.\n",
@@ -1515,6 +1715,10 @@
   "en": "More of my story in the light novel afterwords at <a href=\"https://www.husbandoutworld.com/\" data-astro-cid-raeu6x2e=\"\">husbandoutworld.com</a>.",
   "t": "Altro della mia storia nelle postfazioni delle light novel su <a href=\"https://www.husbandoutworld.com/\" data-astro-cid-raeu6x2e=\"\">husbandoutworld.com</a>."
  },
+ "4a2ded82016c": {
+  "en": "Planted {crop}.",
+  "t": "Piantato {crop}."
+ },
  "4a315297f8a7": {
   "en": "BJ",
   "t": "BJ"
@@ -1530,6 +1734,10 @@
  "4ad51e59a5be": {
   "en": " Fine line ",
   "t": "Linea sottile"
+ },
+ "4b482e2ae4e2": {
+  "en": "⚠️ Your {n}-post streak is about to die!",
+  "t": "⚠️ La tua serie di {n} post sta per morire!"
  },
  "4b92cc9c5bdf": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 37: </span> Nichijou (My Ordinary Life) &amp; Non Non Biyori ",
@@ -1551,6 +1759,22 @@
   "en": "PM/Life hacks",
   "t": "PM/Trucchi di vita"
  },
+ "4c1c703b94bd": {
+  "en": "The point",
+  "t": "Il dito puntato"
+ },
+ "4c1f1c138390": {
+  "en": "Not bad!",
+  "t": "Niente male!"
+ },
+ "4c660686dc07": {
+  "en": "His first dart clings, then falls. The second lands on a green territory near the centre.",
+  "t": "Il suo primo dardo si aggrappa, poi cade. Il secondo atterra su un territorio verde vicino al centro."
+ },
+ "4c9a82ce72ca": {
+  "en": "blue",
+  "t": "blu"
+ },
  "4cd5ee6da386": {
   "en": "Red Letter Media on YouTube",
   "t": "Red Letter Media su YouTube"
@@ -1563,6 +1787,10 @@
   "en": "Two Strangers (Carry a Cake Across New York)",
   "t": "Two Strangers (Carry a Cake Across New York)"
  },
+ "4d2751b25828": {
+  "en": "Kinda? Was the board always this big and colored? I thought it was rounded too— OH YEAH! The center is worth more, right?",
+  "t": "Più o meno? Il bersaglio è sempre stato così grande e colorato? Pensavo fosse anche rotondo— OH SÌ! Il centro vale di più, giusto?"
+ },
  "4d3bce11bac3": {
   "en": "Language levels",
   "t": "Livelli di lingua"
@@ -1570,6 +1798,10 @@
  "4d528de842ee": {
   "en": "Enlarge: Painting or drawing, 02/05/2013",
   "t": "Ingrandisci: Dipinto o disegno, 05/02/2013"
+ },
+ "4d5fb4549070": {
+  "en": "Angle {angle}°, power {power}%. Space to throw.",
+  "t": "Angolo {angle}°, potenza {power}%. Spazio per lanciare."
  },
  "4d62aea0b07c": {
   "en": "Fargo, North Dakota",
@@ -1582,6 +1814,10 @@
  "4dd3d53fb92c": {
   "en": "If thou hast farofa for churrasco, thou mayest use it to enhance the taste, but eat it not with every bite. Like the ginger beside the sushi, farofa is taken every few bites to refresh thy taste buds.",
   "t": "Se hai la farofa per il churrasco, puoi usarla per esaltare il gusto, ma non mangiarla a ogni boccone. Come lo zenzero accanto al sushi, la farofa si prende ogni tanto per rinfrescare le papille."
+ },
+ "4ddc5d84096c": {
+  "en": "pearl",
+  "t": "pearl"
  },
  "4de4bc93aa7d": {
   "en": "Chappell Roan",
@@ -1695,6 +1931,14 @@
   "en": "D",
   "t": "D"
  },
+ "50ccc5e2e037": {
+  "en": "He aims for the same green, and lands far above it, on purple.",
+  "t": "Mira allo stesso verde e atterra molto più in alto, sul viola."
+ },
+ "50db544157bb": {
+  "en": "Off beat",
+  "t": "Fuori tempo"
+ },
  "51162daf4d1b": {
   "en": "#4 Toe stand",
   "t": "#4 Sulle punte"
@@ -1702,6 +1946,14 @@
  "511993d3c997": {
   "en": "P",
   "t": "P"
+ },
+ "511ce74bedd3": {
+  "en": "Fold 3 of 5: drag the new left corner to the centre dot.",
+  "t": "Piegatura 3 di 5: trascina il nuovo angolo sinistro al punto centrale."
+ },
+ "512377a8dafe": {
+  "en": "You threw {thing}.",
+  "t": "Hai lanciato {thing}."
  },
  "5162a45af33b": {
   "en": "\nI can keep a beat, though, which is why I want to get into drumming one day! Why not now? Because of priorities, and\n          there's only so much I can cook at one time... So it's planned out on my backlog! I want to play\n<i data-astro-cid-j7pv25f6=\"\">World's End Dancehall</i>, <i data-astro-cid-j7pv25f6=\"\">Two-Faced Lovers</i> and <i data-astro-cid-j7pv25f6=\"\">Sweet Devil</i> on drums!\n",
@@ -1730,6 +1982,10 @@
  "5284e1a74198": {
   "en": "Tell me I am pretty",
   "t": "Dimmi che sono bello"
+ },
+ "52a662e91e85": {
+  "en": "Right now it tastes like shit. Keep planting.",
+  "t": "Adesso sa di merda. Continua a piantare."
  },
  "52ae98a540c4": {
   "en": "Early days",
@@ -1762,6 +2018,10 @@
  "54573bfa55e3": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder TV show 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 15: </span> Serie segnaposto 15"
+ },
+ "54834f8e5fe6": {
+  "en": "You spent {time} and {posts} posts chasing {n} followers who don't exist. Now go outside.",
+  "t": "Hai speso {time} e {posts} post a inseguire {n} follower che non esistono. Ora esci."
  },
  "54893e8b2375": {
   "en": "Enlarge: And back to tired",
@@ -1859,6 +2119,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 14: </span> Placeholder game 14 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 14: </span> Gioco segnaposto 14"
  },
+ "595380aaecec": {
+  "en": "amethysts",
+  "t": "amethysts"
+ },
  "595b1dfe4cd3": {
   "en": "\nProject management isn't my job title, yet it shows up in almost every facet of my life: work, a light novel series, a\n          D&amp;D campaign, a game, and this very site. I know JIRA deeply, and I run my personal projects with the same discipline\n          I bring to client work. Given how much PM'ing I already do, getting a PM certification is officially on my backlog.\n",
   "t": "La gestione dei progetti non è il mio ruolo, eppure compare in quasi ogni sfaccettatura della mia vita: il lavoro, una serie di light novel, una campagna di D&amp;D, un gioco e questo stesso sito. Conosco JIRA a fondo e porto avanti i miei progetti personali con la stessa disciplina che metto nel lavoro per i clienti. Con tutto il PM che faccio già, prendere una certificazione di project management è ufficialmente nel mio backlog."
@@ -1874,6 +2138,10 @@
  "59eb6fb6ed21": {
   "en": "Hávamál, as sung in Wardruna’s Helvegen",
   "t": "Hávamál, come cantato in Helvegen dei Wardruna"
+ },
+ "5a4a4998e7b7": {
+  "en": "Kyaa~! (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)",
+  "t": "Kyaa~! (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)"
  },
  "5a5ea639ef03": {
   "en": "Change the lights",
@@ -1902,6 +2170,10 @@
  "5b0af452c330": {
   "en": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Aquamarine",
   "t": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Aquamarine"
+ },
+ "5b4dfc520699": {
+  "en": "Notice me harder, senpai! (｡♥‿♥｡)",
+  "t": "Notami di più, senpai! (｡♥‿♥｡)"
  },
  "5b596595aba4": {
   "en": "Weight (lb)",
@@ -1967,6 +2239,14 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#15: </span>Best of the Worst: A*P*E, Easy Kill, and Honorable Men",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#15: </span>Best of the Worst: A*P*E, Easy Kill, and Honorable Men"
  },
+ "5db2a98f777b": {
+  "en": "You need {n} {ball} to plant {crop}. Trade up at the market.",
+  "t": "Ti servono {n} {ball} per piantare {crop}. Scambia al mercato."
+ },
+ "5e20a863dd1e": {
+  "en": "Nom nom!",
+  "t": "Nom nom!"
+ },
  "5e749e984aef": {
   "en": "Saturday Night Fever",
   "t": "Saturday Night Fever"
@@ -1982,6 +2262,14 @@
  "5ef1da7aa7f2": {
   "en": "Quite the stretch",
   "t": "Che stiracchiata"
+ },
+ "5f0128979edd": {
+  "en": "0 views. Shadowbanned?",
+  "t": "0 visualizzazioni. Shadowban?"
+ },
+ "5f0f15ed8dfe": {
+  "en": "Fufufu~ you like it hot, huh? ( ˘ ³˘)♥",
+  "t": "Fufufu~ ti piace caldo, eh? ( ˘ ³˘)♥"
  },
  "5f2959c22b38": {
   "en": "6 photos",
@@ -2019,6 +2307,10 @@
   "en": "Not many people have heard of this isekai, but honestly, it's a top dog in the genre for really getting into the weeds of its world building and trying to figure out how everything works.",
   "t": "Pochi hanno sentito parlare di questo isekai, ma onestamente è un pezzo grosso del genere per come entra davvero nei dettagli del suo mondo e cerca di capire come funziona tutto."
  },
+ "60fa9414860a": {
+  "en": "aimed at the floor",
+  "t": "mirato al pavimento"
+ },
  "6118946bae36": {
   "en": "\nBecause if I'm spending too much time on something, is it worth doing? And what can I do about it? That kind of data\n          helps me improve my workflows, my tools and my skill set. Being efficient with my time gives me more time for everything\n          else in life, including rest.\n",
   "t": "Perché se sto passando troppo tempo su qualcosa, vale la pena farlo? E cosa posso fare al riguardo? Questo tipo di dati mi aiuta a migliorare i miei flussi di lavoro, i miei strumenti e le mie competenze. Essere efficiente col mio tempo mi lascia più tempo per tutto il resto della vita, riposo compreso."
@@ -2050,6 +2342,10 @@
  "618e487541ea": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman"
+ },
+ "61dedcf053ff": {
+  "en": "Good",
+  "t": "Buono"
  },
  "61e0a3485bee": {
   "en": "Black Map<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">Evanescence 93X Family Reunion</span>",
@@ -2087,6 +2383,10 @@
   "en": "ᚷ",
   "t": "ᚷ"
  },
+ "63e49827e493": {
+  "en": "Warm",
+  "t": "Caldo"
+ },
  "643fa1b2225e": {
   "en": "Enlarge: Long nose",
   "t": "Ingrandisci: Naso lungo"
@@ -2094,6 +2394,14 @@
  "6442934ecfbd": {
   "en": "\nThis one is especially powerful for AuDHD brains. It's a way to force the creation of an inner council, where the opposing\n        forces meet in the middle and help steer the boat together instead of fighting each other.\n",
   "t": "Questo è particolarmente potente per i cervelli AuDHD (autismo + ADHD). È un modo per forzare la creazione di un consiglio interiore, dove le forze opposte si incontrano a metà strada e aiutano a guidare la barca insieme invece di combattersi."
+ },
+ "64791c7db8b4": {
+  "en": "On beat!",
+  "t": "A tempo!"
+ },
+ "648e31fe0ec2": {
+  "en": "{word} Folded! Precision {n}%. Now drag back from the plane to aim, and let go to throw (or use the arrow keys and Space).",
+  "t": "{word} Piegato! Precisione {n}%. Ora trascina indietro dall’aereo per mirare e lascia andare per lanciare (o usa le frecce e Spazio)."
  },
  "649df08a448e": {
   "en": "English",
@@ -2110,6 +2418,14 @@
  "65bae07f748d": {
   "en": "Enlarge: Lindenwood Park",
   "t": "Ingrandisci: Lindenwood Park"
+ },
+ "65be7475750d": {
+  "en": "{min} min {sec} s",
+  "t": "{min} min {sec} s"
+ },
+ "660d7f656e76": {
+  "en": "The dino dodged it.",
+  "t": "Il dino l’ha schivato."
  },
  "661e7e812a13": {
   "en": "Near miss",
@@ -2175,6 +2491,18 @@
   "en": "It's rare for me to watch something, get hungry, go find the ingredients and immediately try to recreate a dish from the show. That beef stew was divine!",
   "t": "È raro che io guardi qualcosa, mi venga fame, vada a cercare gli ingredienti e provi subito a rifare un piatto della serie. Quello spezzatino di manzo era divino!"
  },
+ "68430bb95fe2": {
+  "en": "Is it getting hot, or is it just you? (๑˃ᴗ˂)ﻭ",
+  "t": "Fa caldo o sei solo tu? (๑˃ᴗ˂)ﻭ"
+ },
+ "68507370f897": {
+  "en": "🚀 VIRAL! +{views} views, +{follows} followers",
+  "t": "🚀 VIRALE! +{views} visualizzazioni, +{follows} follower"
+ },
+ "6893ddca41ed": {
+  "en": "Only {n} to {goal}!",
+  "t": "Ne mancano solo {n} per {goal}!"
+ },
  "68a953aaf559": {
   "en": "\nAs a software developer, I began treating parts of my brain like an OS (as you can clearly see from how I decompose my\n        brain across this website). It puts structure and bounds around the immense energy that lives within me. That energy is a\n        well, and it can run dry if it isn't cared for. All this scaffolding is there to protect me from myself, and to protect me\n        from people who would abuse and steal from that same well without giving anything back.\n",
   "t": "Da sviluppatore software, ho cominciato a trattare parti del mio cervello come un sistema operativo (come si vede chiaramente da come scompongo il mio cervello in questo sito). Questo dà struttura e confini all’immensa energia che vive dentro di me. Quell’energia è un pozzo, e può prosciugarsi se non viene curata. Tutta questa impalcatura serve a proteggermi da me stesso, e dalle persone che abuserebbero di quello stesso pozzo e ci ruberebbero senza dare niente in cambio."
@@ -2198,6 +2526,10 @@
  "696c1696aee1": {
   "en": "Enlarge: Gimme attention",
   "t": "Ingrandisci: Dammi attenzioni"
+ },
+ "69b0b68def54": {
+  "en": "SEE? It’s all about mindset! You know what, Harry? You’re cool! So why not play a bit of territory snipping to celebrate?",
+  "t": "VISTO? È tutta una questione di mentalità! Sai una cosa, Harry? Sei forte! Allora perché non giochiamo un po' a caccia ai territori per festeggiare?"
  },
  "69ce5d37a5a7": {
   "en": "Enlarge: Still tired",
@@ -2239,6 +2571,10 @@
   "en": "Disturbed",
   "t": "Disturbed"
  },
+ "6aa9ec501cfb": {
+  "en": "{sec} s",
+  "t": "{sec} s"
+ },
  "6abde3b42ab3": {
   "en": "d10",
   "t": "d10"
@@ -2275,6 +2611,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder movie 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 30: </span> Film segnaposto 30"
  },
+ "6c4f692b2d93": {
+  "en": "{player} snipes a {colour} territory ({points}).",
+  "t": "{player} conquista un territorio {colour} ({points})."
+ },
  "6c84173deb3d": {
   "en": "Vraki<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (written in Vraki)</span>",
   "t": "Vraki<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (scritto in Vraki)</span>"
@@ -2282,6 +2622,10 @@
  "6c9a005a2b28": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10"
+ },
+ "6cae7ad96e0d": {
+  "en": "sapphires",
+  "t": "sapphires"
  },
  "6caf0ae17685": {
   "en": "Step 5: Judge the Meat",
@@ -2314,6 +2658,10 @@
  "6da2d12faf76": {
   "en": "Campsites are on their way.",
   "t": "I campeggi stanno arrivando."
+ },
+ "6daea1f3952f": {
+  "en": "Play time!",
+  "t": "Ora di giocare!"
  },
  "6dcd4ce23d88": {
   "en": "A",
@@ -2367,6 +2715,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#36: </span>Best of the Worst: Wheel of the Worst #20",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#36: </span>Best of the Worst: Wheel of the Worst #20"
  },
+ "7052c90bfbaf": {
+  "en": "Balls worth {balls} pearl vs {shit} shit.",
+  "t": "Palle per un valore di {balls} pearl contro {shit} merda."
+ },
  "7058849d4ff0": {
   "en": "ML",
   "t": "ML"
@@ -2390,6 +2742,10 @@
  "715bf27b9eb6": {
   "en": "Throw at the dino",
   "t": "Lancia contro il dino"
+ },
+ "717fce44a310": {
+  "en": "Too much heat! Not in front of the waifu pillow! (〃＞＿＜;〃)",
+  "t": "Troppo caldo! Non davanti al cuscino della waifu! (〃＞＿＜;〃)"
  },
  "719ea396ad92": {
   "en": "Clear",
@@ -2443,6 +2799,10 @@
   "en": "Madama Butterfly",
   "t": "Madama Butterfly"
  },
+ "73b886d405a7": {
+  "en": "{name} is hungry",
+  "t": "{name} ha fame"
+ },
  "740587c66df0": {
   "en": "If thou art a <strong>Cardinal of the Touch</strong>, thou shalt know when the meat is done by touch alone. Otherwise, use the thermometer.",
   "t": "Se sei un <strong>Cardinale del Tatto</strong>, saprai quando la carne è pronta col solo tatto. Altrimenti, usa il termometro."
@@ -2455,9 +2815,17 @@
   "en": "Access is earned through behavior, never granted because someone asked. Time, attention and trust are finite; my attention is not public property. <strong>I will meet you in the middle. I will not live there alone.</strong>",
   "t": "L’accesso si guadagna con il comportamento, non viene mai concesso perché qualcuno l’ha chiesto. Tempo, attenzione e fiducia sono limitati; la mia attenzione non è proprietà pubblica. <strong>Ti verrò incontro a metà strada. Non ci vivrò da solo.</strong>"
  },
+ "74a8c36c9678": {
+  "en": "You fucking loser! The dino survived and flips you off.",
+  "t": "Perdente di merda! Il dino è sopravvissuto e ti fa il dito medio."
+ },
  "74d56098aec1": {
   "en": "Like many people who walk away from that temptation, I’m so glad I didn’t go through with it. I used it to build stronger immunity against depression and my internal cycles, and in 2026 I discovered that much of what I’d been fighting was the negative side of AuDHD: the masking itself was corroding my soul and draining its energy every single day. <strong>Now nothing short of a bullet to my head, or death itself coming to my door and whisking me away to whatever comes next, will stop me from pursuing a fulfilling life.</strong>",
   "t": "Come tante persone che voltano le spalle a quella tentazione, sono felicissimo di non essere andato fino in fondo. L’ho usata per costruirmi un’immunità più forte contro la depressione e i miei cicli interiori, e nel 2026 ho scoperto che molto di quello che stavo combattendo era il lato negativo dell’AuDHD: il masking stesso mi stava corrodendo l’anima e prosciugandone l’energia ogni santo giorno. <strong>Ora nient’altro che una pallottola in testa, o la morte in persona che bussa alla mia porta e mi porta via verso qualunque cosa venga dopo, mi impedirà di inseguire una vita piena.</strong>"
+ },
+ "7503eb978cf4": {
+  "en": "Plot {plot}: {crop}, ready to harvest (it wilted).",
+  "t": "Aiuola {plot}: {crop}, pronto da raccogliere (è appassito)."
  },
  "7558e57c2846": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Spy x Family ",
@@ -2495,6 +2863,10 @@
   "en": "Yet the Church holds that churrasco must be a treat for the masses, and so we commend the <strong>New York strip</strong>, the <strong>ribeye</strong>, or the <strong>top sirloin</strong> (if thou preferest lean), cut <strong>1 to 1½ inches</strong> thick. At 2 inches or more the salt loses much of its power, and the longer time upon the fire harms the taste.",
   "t": "Eppure la Chiesa sostiene che il churrasco debba essere un piacere per le masse, e per questo raccomandiamo il <strong>controfiletto (New York strip)</strong>, la <strong>costata (ribeye)</strong> o lo <strong>scamone (top sirloin)</strong> (se preferisci il magro), tagliati con uno spessore di <strong>2,5-4 cm</strong>. Da 5 cm in su il sale perde gran parte del suo potere, e il tempo più lungo sul fuoco rovina il gusto."
  },
+ "7675cf606b31": {
+  "en": "intellectual video",
+  "t": "video intellettuale"
+ },
  "767bbbc08de1": {
   "en": "Enlarge: First day home",
   "t": "Ingrandisci: Primo giorno a casa"
@@ -2514,6 +2886,14 @@
  "76d40b8a2b7d": {
   "en": "Clark et al., Neuron 61:481–490 (2009), and the studies it cites",
   "t": "Clark et al., Neuron 61:481–490 (2009), and the studies it cites"
+ },
+ "76d4694d0853": {
+  "en": "❤️ +{n} like",
+  "t": "❤️ +{n} mi piace"
+ },
+ "77003d07271f": {
+  "en": "Best",
+  "t": "Migliore"
  },
  "7707f6812879": {
   "en": "SP",
@@ -2555,6 +2935,10 @@
   "en": "Pause",
   "t": "Pausa"
  },
+ "78988010b890": {
+  "en": "red",
+  "t": "rosso"
+ },
  "78ca112f9500": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder game 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 33: </span> Gioco segnaposto 33"
@@ -2566,6 +2950,10 @@
  "78eaabf4a629": {
   "en": "Followers",
   "t": "Follower"
+ },
+ "78fadeed7303": {
+  "en": "{n} ball in the bag",
+  "t": "{n} palla nella borsa"
  },
  "7958bacf5b59": {
   "en": "Back to Lust",
@@ -2599,13 +2987,25 @@
   "en": "Green ink",
   "t": "Inchiostro verde"
  },
+ "7a5a08b6baea": {
+  "en": "3 views. Two were you.",
+  "t": "3 visualizzazioni. Due eri tu."
+ },
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
  },
+ "7a8cb7243b93": {
+  "en": "{n} pt",
+  "t": "{n} pt"
+ },
  "7a991ab38eae": {
   "en": "I farted",
   "t": "Ho fatto una puzzetta"
+ },
+ "7ac1384e8f1a": {
+  "en": "crisp folds helped it glide",
+  "t": "piegature precise l’hanno aiutato a planare"
  },
  "7ad407636c69": {
   "en": "The Balls farm",
@@ -2726,6 +3126,10 @@
  "7ed97d0b96e7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Monogatari ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 17: </span> Monogatari"
+ },
+ "7f09aca0998e": {
+  "en": "clickbait video",
+  "t": "video clickbait"
  },
  "7f5ef6b994bc": {
   "en": "Posting streak",
@@ -2851,6 +3255,14 @@
   "en": "Bidu, a pixel pet",
   "t": "Bidu, un animale in pixel"
  },
+ "857aacdbee63": {
+  "en": "Harvest!",
+  "t": "Raccogli!"
+ },
+ "85a1ecacad2c": {
+  "en": "That’s the spirit! … You played this before, right?",
+  "t": "Questo è lo spirito giusto! … Ci hai già giocato, vero?"
+ },
  "85af7ed7a344": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Placeholder movie 18 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 18: </span> Film segnaposto 18"
@@ -2879,9 +3291,17 @@
   "en": "Hairball",
   "t": "Hairball"
  },
+ "868657e908ac": {
+  "en": "Harry",
+  "t": "Harry"
+ },
  "8686eb8cf046": {
   "en": "Circa Q2 2013",
   "t": "Circa 2º trim. 2013"
+ },
+ "868d15508a8a": {
+  "en": "{name} is stuffed!",
+  "t": "{name} non ce la fa più!"
  },
  "86a34eb02a30": {
   "en": "初音ミク",
@@ -2923,6 +3343,10 @@
   "en": "Author, x++ dev, chasing the algorithm",
   "t": "Autore, dev x++, a caccia dell’algoritmo"
  },
+ "8827c825266b": {
+  "en": "uneven left and right folds pulled it down",
+  "t": "piegature sinistra e destra disuguali l’hanno tirato giù"
+ },
  "8834e2d0bd9b": {
   "en": "Throw Cactus, costs 2 mana (key 1)",
   "t": "Lancia Cactus, costa 2 di mana (tasto 1)"
@@ -2935,6 +3359,10 @@
   "en": "Enlarge: Painting or drawing, 02/23/2013",
   "t": "Ingrandisci: Dipinto o disegno, 23/02/2013"
  },
+ "88abbb44e60f": {
+  "en": "random shit",
+  "t": "merda a caso"
+ },
  "88afb817527f": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#24: </span>Best of the Worst: Junka 4",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#24: </span>Best of the Worst: Junka 4"
@@ -2946,6 +3374,10 @@
  "88d9ce2626ca": {
   "en": "Ara ara~ That's the first thing you click?",
   "t": "Ara ara~ È la prima cosa su cui clicchi?"
+ },
+ "89a35bbdf744": {
+  "en": "Your {n}-post streak is about to die. Post something!",
+  "t": "La tua serie di {n} post sta per morire. Pubblica qualcosa!"
  },
  "89ad4a4f762e": {
   "en": "Onward to 200 lb!",
@@ -2967,6 +3399,10 @@
   "en": "Standard Play",
   "t": "Standard Play"
  },
+ "8a12d5626fe3": {
+  "en": "Trending",
+  "t": "In tendenza"
+ },
  "8ab725154ab3": {
   "en": "2016 nearly took everything I had worked so hard for, all because of someone else’s screw-up. It felt like being a kid building a sandcastle while some asshole walks by and kicks it, then watching everything you built turn to nothing. It sucked. It nearly drove me to end it all (as I talk about on the <a href=\"#death\">Death tab</a>). Yet I survived the worst, pulled myself out of the misery, and rebuilt.",
   "t": "Il 2016 mi ha quasi portato via tutto ciò per cui avevo lavorato tanto, e tutto per la cazzata di qualcun altro. È stato come essere un bambino che costruisce un castello di sabbia mentre passa uno stronzo e gli dà un calcio, e poi vedere tutto quello che hai costruito ridursi a niente. Faceva schifo. Mi ha quasi spinto a farla finita (come racconto nella <a href=\"#death\">scheda Morte</a>). Eppure sono sopravvissuto al peggio, mi sono tirato fuori dalla miseria e ho ricostruito."
@@ -2974,6 +3410,10 @@
  "8af0e417fed8": {
   "en": "Enlarge: Car rides!",
   "t": "Ingrandisci: Giri in macchina!"
+ },
+ "8b1aa1d275e3": {
+  "en": "All clean.",
+  "t": "Tutto pulito."
  },
  "8b3ee45765e5": {
   "en": "Explorer",
@@ -2998,6 +3438,10 @@
  "8c6954624ffd": {
   "en": "Love it. Even the ecchi. Everything has a purpose, and I have nothing to complain about. If I had watched Mushoku Tensei before writing #HusbandOutWorld, I might not have written my story at all, because it's good enough to quench a lot of the thirst I had while consuming one isekai after another.",
   "t": "Lo adoro. Anche l’ecchi. Tutto ha uno scopo, e non ho niente da ridire. Se avessi visto Mushoku Tensei prima di scrivere #HusbandOutWorld, forse non avrei nemmeno scritto la mia storia, perché è abbastanza bello da spegnere gran parte della sete che avevo mentre divoravo un isekai dopo l’altro."
+ },
+ "8c948d7947e0": {
+  "en": "Hot",
+  "t": "Rovente"
  },
  "8cb66acad3e8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 28: </span> Placeholder TV show 28 ",
@@ -3035,6 +3479,10 @@
   "en": "Much tired",
   "t": "Stanchissima"
  },
+ "8e4e0408b8f6": {
+  "en": "pearls",
+  "t": "pearls"
+ },
  "8e81ceb925cb": {
   "en": "Lindström et al., Nature Communications 12:1311 (2021)",
   "t": "Lindström et al., Nature Communications 12:1311 (2021)"
@@ -3042,6 +3490,10 @@
  "8eaf38bbe8e6": {
   "en": "I am holding a grudge until I get what I want",
   "t": "Tengo il muso finché non ottengo quello che voglio"
+ },
+ "8eb5eb869df6": {
+  "en": "thrown too softly",
+  "t": "lanciato troppo piano"
  },
  "8ebb0c834491": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 24: </span> Placeholder movie 24 ",
@@ -3107,6 +3559,10 @@
   "en": "Step 6: The Farofa",
   "t": "Passo 6: La Farofa"
  },
+ "91a8efff2e31": {
+  "en": "Uwu, it's warm in here (・ω・)",
+  "t": "Uwu, fa caldo qui dentro (・ω・)"
+ },
  "9211aa0fcdb1": {
   "en": "Sturgill Simpson",
   "t": "Sturgill Simpson"
@@ -3139,6 +3595,10 @@
   "en": "\nIf it's tied to a date, it goes on the calendar. <a href=\"https://www.onecalendar.nl/\" data-astro-cid-xtzphevd=\"\">OneCalendar</a> merges my 5+\n        calendars into one master calendar, shown as a widget front and center on my phone. As soon as I wake up, I have a rough\n        idea of how the day will go, and I plan around the hard commitments.\n",
   "t": "Se è legato a una data, va nel calendario. <a href=\"https://www.onecalendar.nl/\" data-astro-cid-xtzphevd=\"\">OneCalendar</a> unisce i miei più di 5 calendari in un calendario principale, che sta come widget in bella vista sul mio telefono. Appena mi sveglio, ho già un’idea di come andrà la giornata e mi organizzo attorno agli impegni fissi."
  },
+ "92bf22c6b6a7": {
+  "en": "Yamete kudasai~ (〃ω〃)",
+  "t": "Yamete kudasai~ (〃ω〃)"
+ },
  "92f7c08c741a": {
   "en": "Don't worry. You're human and curious. I am not tracking IPs or any other metrics.",
   "t": "Tranquillo. Sei umano e curioso. Non traccio IP né altre metriche."
@@ -3146,6 +3606,10 @@
  "93390080acb7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder game 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 30: </span> Gioco segnaposto 30"
+ },
+ "935f6cd89f4a": {
+  "en": "A draw!",
+  "t": "Pareggio!"
  },
  "9384a918b850": {
   "en": "Or grow a spine and just reach out to me: see the <a href=\"/contact/\">Contact</a> page.",
@@ -3191,6 +3655,14 @@
   "en": "Nordic rune commonly associated with joy, harmony, fulfillment, and well-being.",
   "t": "Runa nordica spesso associata a gioia, armonia, realizzazione e benessere."
  },
+ "955b7068c35b": {
+  "en": "Row {row}, column {col} on",
+  "t": "Riga {row}, colonna {col} accesa"
+ },
+ "956ec36375d4": {
+  "en": "Best {n} m",
+  "t": "Migliore {n} m"
+ },
  "958fe78dbd3b": {
   "en": "Skin tone 4",
   "t": "Tonalità della pelle 4"
@@ -3227,6 +3699,10 @@
   "en": "Fluent",
   "t": "Fluente"
  },
+ "96de5543d183": {
+  "en": "yellow",
+  "t": "giallo"
+ },
  "96dedce974cf": {
   "en": "Enlarge: Failing to learn English",
   "t": "Ingrandisci: Fallire nell’imparare l’inglese"
@@ -3234,6 +3710,10 @@
  "96f997bcecb3": {
   "en": "Years",
   "t": "Anni"
+ },
+ "972a61c6393a": {
+  "en": "{name} is content.",
+  "t": "{name} è felice."
  },
  "974c2c9d8398": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 24: </span> Akira ",
@@ -3291,6 +3771,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 34: </span> Placeholder game 34 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 34: </span> Gioco segnaposto 34"
  },
+ "992fb4c6838e": {
+  "en": "{you} wins, somehow!",
+  "t": "{you} vince, in qualche modo!"
+ },
  "998896860e5d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder TV show 27 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 27: </span> Serie segnaposto 27"
@@ -3319,6 +3803,10 @@
   "en": "Glad I don't pay rent",
   "t": "Meno male che non pago l’affitto"
  },
+ "9bdcbc1f38da": {
+  "en": "You’re coolio too!",
+  "t": "Anche tu sei un figo pazzesco!"
+ },
  "9c202ecc19a4": {
   "en": "Am I that really interesting?",
   "t": "Sono davvero così interessante?"
@@ -3339,13 +3827,25 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 7: </span> Placeholder movie 7 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 7: </span> Film segnaposto 7"
  },
+ "9cf7bc8b3812": {
+  "en": "Your {kind} went viral: {views} views and {follows} new followers.",
+  "t": "Il tuo post ({kind}) è diventato virale: {views} visualizzazioni e {follows} nuovi follower."
+ },
  "9d520a7744f2": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 31: </span> Placeholder TV show 31 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 31: </span> Serie segnaposto 31"
  },
+ "9d6c79478e4e": {
+  "en": "Legendary reflexes!",
+  "t": "Riflessi leggendari!"
+ },
  "9db746ec5820": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#16: </span>Best of the Worst: Jack-O, Rock n' Roll Nightmare, and Shark Exorcist",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#16: </span>Best of the Worst: Jack-O, Rock n' Roll Nightmare, and Shark Exorcist"
+ },
+ "9dbfccdd9baa": {
+  "en": "🔥 {n}-post streak! Don't break it!",
+  "t": "🔥 serie di {n} post! Non spezzarla!"
  },
  "9dc024086c5d": {
   "en": "Third year since adoption",
@@ -3395,6 +3895,14 @@
   "en": "Succulent Chinese meal",
   "t": "Un succulento pasto cinese"
  },
+ "9f8030cb22e8": {
+  "en": "The algorithm has left you on read.",
+  "t": "L’algoritmo ti ha lasciato in visualizzato."
+ },
+ "9f8d43df802f": {
+  "en": "Wheee!",
+  "t": "Wheee!"
+ },
  "9fab49a7a7bd": {
   "en": "Dream violently. Plan soberly. Execute relentlessly. Update honestly. <strong>Unapplied lessons and unexecuted intentions are the same thing: masturbatory self-entertainment.</strong>",
   "t": "Sogna con violenza. Pianifica con sobrietà. Esegui senza sosta. Aggiorna con onestà. <strong>Lezioni non applicate e intenzioni non eseguite sono la stessa cosa: autointrattenimento masturbatorio.</strong>"
@@ -3410,6 +3918,10 @@
  "9fd28a27c202": {
   "en": "Bday girl",
   "t": "La festeggiata"
+ },
+ "a03e9007dd84": {
+  "en": "You fucking loser!",
+  "t": "Perdente di merda!"
  },
  "a0425f907558": {
   "en": "Amapá",
@@ -3515,6 +4027,10 @@
   "en": "My top 39 movies.",
   "t": "I miei 39 film preferiti."
  },
+ "a44c1fbbccc0": {
+  "en": "Traded {n} {give} for 1 {get}.",
+  "t": "Scambiati {n} {give} per 1 {get}."
+ },
  "a4769e37e0e6": {
   "en": "\nThis is especially useful for ADHD-leaning brains, as a way to force monotropic focus on whatever needs a crosscheck. When\n        I want to confirm the garage is closed, I raise my hand toward it and say \"garage closed\". That works like a system-wide\n        interrupt to my many ongoing thought channels, so my brain actually stores that the garage is closed before I drive away.\n",
   "t": "È particolarmente utile per i cervelli con tendenza all’ADHD, come modo per forzare un’attenzione monotropica su ciò che va ricontrollato. Quando voglio essere sicuro che il garage sia chiuso, alzo la mano verso di esso e dico \"garage chiuso\". Funziona come un interrupt di sistema per i miei tanti canali di pensiero aperti, così il mio cervello registra davvero che il garage è chiuso prima che io parta in macchina."
@@ -3523,13 +4039,25 @@
   "en": "Download",
   "t": "Scarica"
  },
+ "a4c146b7a21c": {
+  "en": "Senpai, your bellows technique is... impressive (￣▽￣)ノ",
+  "t": "Senpai, la tua tecnica col mantice è... notevole (￣▽￣)ノ"
+ },
  "a54d8d9fd7e6": {
   "en": "7 countries · 4 states/provinces · 94 photos",
   "t": "7 paesi · 4 stati/province · 94 foto"
  },
+ "a55f327e9475": {
+  "en": "Ohayo~ (｡•̀ᴗ-)✧",
+  "t": "Ohayo~ (｡•̀ᴗ-)✧"
+ },
  "a56047e7faaf": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 21: </span> Toaru Kagaku no Railgun (A Certain Scientific Railgun) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 21: </span> Toaru Kagaku no Railgun (A Certain Scientific Railgun)"
+ },
+ "a5654a379120": {
+  "en": "Cleared",
+  "t": "Cancellato"
  },
  "a585b304fc23": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 12: </span> Ishuzoku Reviewers (Interspecies Reviewers) ",
@@ -3551,6 +4079,10 @@
   "en": "Musicals",
   "t": "Musical"
  },
+ "a691267c5647": {
+  "en": "{rival} wins.",
+  "t": "{rival} vince."
+ },
  "a694aafb9d11": {
   "en": "Deo's hand holding a cup of chimarrão with its metal straw, a black cat curled up on a striped blanket behind it",
   "t": "La mano di Deo che regge una zucca di chimarrão con la cannuccia di metallo, e dietro un gatto nero acciambellato su una coperta a righe"
@@ -3566,6 +4098,14 @@
  "a740c7319559": {
   "en": "Tattoo",
   "t": "Tatuaggio"
+ },
+ "a74615c9d0f5": {
+  "en": "The hustle",
+  "t": "L’hustle"
+ },
+ "a75be8f0bded": {
+  "en": "Cancelled! Both darts on the {colour} territory are out.",
+  "t": "Annullato! Entrambi i dardi sul territorio {colour} sono fuori."
  },
  "a75e8688b4fb": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24",
@@ -3595,6 +4135,10 @@
   "en": "Enlarge: Succulent Chinese meal",
   "t": "Ingrandisci: Un succulento pasto cinese"
  },
+ "a844766240b7": {
+  "en": "a rock",
+  "t": "una pietra"
+ },
  "a8648a021360": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 12: </span> Placeholder game 12 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 12: </span> Gioco segnaposto 12"
@@ -3607,9 +4151,17 @@
   "en": "Enlarge: Painting or drawing, 01/18/2013",
   "t": "Ingrandisci: Dipinto o disegno, 18/01/2013"
  },
+ "a8b5fc4f044d": {
+  "en": "Fertilized {n} times.",
+  "t": "Concimato {n} volte."
+ },
  "a8c6776818cf": {
   "en": "KitKot: turn your phone sideways",
   "t": "KitKot: gira il telefono in orizzontale"
+ },
+ "a8df2fec28d8": {
+  "en": "Maximum",
+  "t": "Massimo"
  },
  "a8f0e0050abb": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 34: </span> Placeholder movie 34 ",
@@ -3659,6 +4211,14 @@
   "en": "August 3, 2026",
   "t": "3 agosto 2026"
  },
+ "aaf4de45da01": {
+  "en": "This is a Christian fireplace! (╯°□°)╯",
+  "t": "Questo è un camino cristiano! (╯°□°)╯"
+ },
+ "ab42dc3d0e5c": {
+  "en": "another dino",
+  "t": "un altro dino"
+ },
  "ab6674b31a84": {
   "en": "Bishops of the Thermometer",
   "t": "Vescovi del Termometro"
@@ -3667,9 +4227,17 @@
   "en": "Having these guys on in the background while I code is rather soothing. A strange thing for my autism to get hooked on, but it clearly works. Same thing with the Skyrim soundtrack and rain in the background whenever I focus on <a href=\"https://www.husbandoutworld.com/\">#HusbandOutWorld</a> stuff.",
   "t": "Tenere questi tizi in sottofondo mentre programmo è piuttosto rilassante. Una cosa strana a cui il mio autismo si è agganciato, ma chiaramente funziona. Lo stesso vale per la colonna sonora di Skyrim e la pioggia in sottofondo quando mi concentro sulle cose di <a href=\"https://www.husbandoutworld.com/\">#HusbandOutWorld</a>."
  },
+ "abc4c339d728": {
+  "en": "It wilted. You got {what}. Fertilizer, at least.",
+  "t": "È appassito. Hai ottenuto {what}. Almeno è concime."
+ },
  "abcd3b5a4dc4": {
   "en": "Pick a branch above to grow the tree.",
   "t": "Scegli un ramo qui sopra per far crescere l’albero."
+ },
+ "abfa242a93fa": {
+  "en": "💔 Streak lost. {n} posts, gone.",
+  "t": "💔 Serie persa. {n} post, andati."
  },
  "ac0fb6c41287": {
   "en": "Paper plane workspace",
@@ -3723,6 +4291,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 37: </span> Placeholder game 37 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 37: </span> Gioco segnaposto 37"
  },
+ "adde1258fbad": {
+  "en": "Personal best: {n} m",
+  "t": "Record personale: {n} m"
+ },
  "ade7e6d0292a": {
   "en": "8 photos",
   "t": "8 foto"
@@ -3738,6 +4310,10 @@
  "ae3e542098c8": {
   "en": "#2 Line dance",
   "t": "#2 Ballo in linea"
+ },
+ "ae4d8a00b6ce": {
+  "en": "▶️ +{views} views",
+  "t": "▶️ +{views} visualizzazioni"
  },
  "ae4f281df5a5": {
   "en": "B",
@@ -3755,13 +4331,25 @@
   "en": "Step 1: Procure the Sacred Salt",
   "t": "Passo 1: Procurati il Sale Sacro"
  },
+ "aed6b9811801": {
+  "en": "So close! Your post was one share away from blowing up.",
+  "t": "Così vicino! Il tuo post era a un share dall’esplodere."
+ },
  "af38615beb76": {
   "en": "The facets that fulfill Deo",
   "t": "Le sfaccettature che realizzano Deo"
  },
+ "af429fb22354": {
+  "en": "Nice whacking!",
+  "t": "Bel colpo!"
+ },
  "af4807998713": {
   "en": "Losses: 5",
   "t": "Sconfitte: 5"
+ },
+ "afaed75406bd": {
+  "en": "purple",
+  "t": "viola"
  },
  "affabe3f4188": {
   "en": "Campaign #1",
@@ -3827,6 +4415,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022"
  },
+ "b2b52c2fc7c2": {
+  "en": "Snipe all territories? That’s—different—I think. Can—can you explain?",
+  "t": "Conquistare tutti i territori? È—diverso—credo. Puoi—puoi spiegarmelo?"
+ },
  "b31013feefa3": {
   "en": "4 photos",
   "t": "4 foto"
@@ -3854,6 +4446,10 @@
  "b455a1c08a71": {
   "en": "I love how alive the characters are and how creative the shenanigans get, even though I absolutely hate people who \"play hard to get\". As we say in Portuguese: \"Quem faz cu doce só atrai formiga e vagabundo\" (whoever plays hard to get only attracts ants and bums).",
   "t": "Adoro quanto siano vivi i personaggi e quanto diventino creative le buffonate, anche se odio profondamente chi \"fa il prezioso\". Come diciamo in portoghese: \"Quem faz cu doce só atrai formiga e vagabundo\" (chi fa il prezioso attira solo formiche e fannulloni)."
+ },
+ "b45d00ec07a3": {
+  "en": "Bonus day! Every {name} counts double. Go!",
+  "t": "Giorno bonus! Ogni {name} conta il doppio. Vai!"
  },
  "b474078a4afb": {
   "en": "A private pilot license is still in my queue! In the meantime, I want to build a home cockpit simulator once I buy a house. In Singapore, I got to fly a full-scale replica of a Boeing 737-800NG cockpit, and it became a core memory. It took me back to my early teens, when I rode in the cockpit jump seat of an Airbus A320-233 taking off from Santos Dumont Airport (SDU) in Rio de Janeiro, Brazil.",
@@ -3899,6 +4495,10 @@
   "en": "Preheat the grill to <strong>350°F</strong>. Let the meat thaw for 10 minutes before thou tappest on the salt, and spread the salt evenly, by hand as is preferred.",
   "t": "Preriscalda la griglia a <strong>175 °C (350 °F)</strong>. Lascia scongelare la carne per 10 minuti prima di spargerci il sale, e distribuisci il sale in modo uniforme, preferibilmente a mano."
  },
+ "b67933f00f5e": {
+  "en": "My kokoro can't take this (/▽＼*)｡o○♡",
+  "t": "Il mio kokoro non regge (/▽＼*)｡o○♡"
+ },
  "b6bd42e4e730": {
   "en": "In progress",
   "t": "In corso"
@@ -3911,6 +4511,10 @@
   "en": "Enlarge: Stroller time",
   "t": "Ingrandisci: Ora del passeggino"
  },
+ "b6df21551d66": {
+  "en": "sloppy folds made it wobble and drag",
+  "t": "piegature sciatte l’hanno fatto ondeggiare e trascinare"
+ },
  "b70db6384e32": {
   "en": "It sits on my heart chakra, equally spaced from my left and right forearms, because I'm always listening to the two driving forces within me. I use them alongside my intuition to take the best path forward, for myself and for the ones I care about and am responsible for.",
   "t": "Si trova sul mio chakra del cuore, alla stessa distanza dai miei avambracci sinistro e destro, perché ascolto sempre le due forze che mi muovono dentro. Le uso insieme al mio intuito per prendere la strada migliore, per me e per le persone a cui tengo e di cui sono responsabile."
@@ -3918,6 +4522,10 @@
  "b73f78fc271e": {
   "en": "Giselle",
   "t": "Giselle"
+ },
+ "b783ecde91e7": {
+  "en": "Plot {plot}: {crop}, ready to harvest.",
+  "t": "Aiuola {plot}: {crop}, pronto da raccogliere."
  },
  "b7896305f027": {
   "en": "D&amp;D",
@@ -3939,9 +4547,25 @@
   "en": "The Holy Order",
   "t": "Il Santo Ordine"
  },
+ "b8a13eba61b4": {
+  "en": "{m} m ({ft} ft).",
+  "t": "{m} m ({ft} ft)."
+ },
+ "b8c8d91c4ad6": {
+  "en": "Yellow centre",
+  "t": "Centro giallo"
+ },
+ "b90b25305207": {
+  "en": "Very hot",
+  "t": "Caldissimo"
+ },
  "b90f9b301b75": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 3: </span> Placeholder game 3 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 3: </span> Gioco segnaposto 3"
+ },
+ "b9169f3f4913": {
+  "en": "Hai hai~ ( ´ ▽ ` )ﾉ",
+  "t": "Hai hai~ ( ´ ▽ ` )ﾉ"
  },
  "b93191caeb10": {
   "en": "Nevada",
@@ -3951,6 +4575,10 @@
   "en": "Back to Painting",
   "t": "Torna a Pittura"
  },
+ "b98ab59bdc99": {
+  "en": "{n} pts",
+  "t": "{n} pts"
+ },
  "b9a2ffa6496c": {
   "en": "Let's go",
   "t": "Andiamo"
@@ -3958,6 +4586,10 @@
  "b9af5469788b": {
   "en": "The clock is ticking on my 💀 Death tab.",
   "t": "L’orologio corre nella mia 💀 scheda Morte."
+ },
+ "b9f8e7d16bef": {
+  "en": "{player}'s dart bounced off the wall.",
+  "t": "Il dardo di {player} è rimbalzato sul muro."
  },
  "ba01865809b3": {
   "en": "Back to Concert",
@@ -3975,6 +4607,10 @@
   "en": "Whack-a-Miku: turn your phone sideways",
   "t": "Whack-a-Miku: gira il telefono in orizzontale"
  },
+ "bbc97dc5386e": {
+  "en": "it climbed too steeply and stalled",
+  "t": "è salito troppo ripido ed è andato in stallo"
+ },
  "bbfb183d2a3d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Mahou Shoujo Madoka Magica (Puella Magi Madoka Magica) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 33: </span> Mahou Shoujo Madoka Magica (Puella Magi Madoka Magica)"
@@ -3983,6 +4619,10 @@
   "en": "Pitty",
   "t": "Pitty"
  },
+ "bc38448e90c1": {
+  "en": "Aw, my chitin ass! Anyways, the goal is to land on the same color region to score a point. If you land on a region with someone else’s dart, you two cancel each other out. Ehh—right? Right—right. The smaller the region, the more it’s worth when sniping it. That makes sense?",
+  "t": "Ahh, il mio culo di chitina! Comunque, lo scopo è centrare la regione dello stesso colore per fare punto. Se atterri su una regione con la freccetta di qualcun altro, vi annullate a vicenda. Ehh—giusto? Giusto—giusto. Più piccola è la regione, più vale quando la conquisti. Ha senso?"
+ },
  "bc4359231d61": {
   "en": "Gym",
   "t": "Palestra"
@@ -3990,6 +4630,10 @@
  "bc5a47b54ae3": {
   "en": "Who's cooler",
   "t": "Chi è più figo"
+ },
+ "bc74f4f071a5": {
+  "en": "green",
+  "t": "verde"
  },
  "bc981983e7f5": {
   "en": "Next",
@@ -4023,6 +4667,10 @@
   "en": "Music: off",
   "t": "Musica: spenta"
  },
+ "bec764a9d2b7": {
+  "en": "Fold 2 of 5: now the top-right corner to the same dot.",
+  "t": "Piegatura 2 di 5: ora l’angolo in alto a destra allo stesso punto."
+ },
  "bf44c9857b69": {
   "en": "Ghost",
   "t": "Ghost"
@@ -4038,6 +4686,10 @@
  "bfc1086b2a80": {
   "en": "Enlarge: Lil princess",
   "t": "Ingrandisci: Piccola principessa"
+ },
+ "bfc2ec349cc6": {
+  "en": "{n} shit 💩",
+  "t": "{n} merda 💩"
  },
  "bfd8da8e6a8f": {
   "en": "Diminishing returns",
@@ -4067,6 +4719,10 @@
   "en": "The true churrasco is <strong>picanha</strong> roasted on the <em>espeto</em>, the sword-like skewer, upon a <em>churrasqueira giratória</em>, the wall-style grill that turns the meat without rest.",
   "t": "Il vero churrasco è la <strong>picanha</strong> arrostita sullo <em>espeto</em>, lo spiedo a forma di spada, su una <em>churrasqueira giratória</em>, la griglia a parete che fa girare la carne senza sosta."
  },
+ "c1070741a87a": {
+  "en": "{name}s",
+  "t": "{name}"
+ },
  "c10a97a8ce8a": {
   "en": "Tattoo practice skin: turn your phone sideways",
   "t": "Pelle da allenamento per tatuaggi: gira il telefono in orizzontale"
@@ -4082,6 +4738,10 @@
  "c12140a0ffb4": {
   "en": "日本語",
   "t": "日本語"
+ },
+ "c1218408e29a": {
+  "en": "Just a hunk—that was me warming up! Now try to throw on a green section or anywhere else.",
+  "t": "Solo un hunk—mi stavo scaldando! Adesso prova a lanciare su una sezione verde o da qualsiasi altra parte."
  },
  "c155ff628d91": {
   "en": "Laser removal",
@@ -4099,6 +4759,10 @@
   "en": "When my time comes, my funeral shall play 3 songs:",
   "t": "Quando arriverà la mia ora, al mio funerale suoneranno 3 canzoni:"
  },
+ "c2032d98f6ff": {
+  "en": "natural {n}!",
+  "t": "{n} naturale!"
+ },
  "c234408a9708": {
   "en": "Enlarge: Painting or drawing, 04/16/2013",
   "t": "Ingrandisci: Dipinto o disegno, 16/04/2013"
@@ -4114,6 +4778,10 @@
  "c3156e00d3c2": {
   "en": "Q",
   "t": "Q"
+ },
+ "c327716d8241": {
+  "en": "Angle {angle}°   Power {power}%",
+  "t": "Angolo {angle}°   Potenza {power}%"
  },
  "c379a5b7a656": {
   "en": "Hi-hat (key A)",
@@ -4131,9 +4799,17 @@
   "en": "Movement creates evidence. Refuse limbo: prefer an honest no to a manipulative maybe. Feelings are telemetry. <strong>When intuition and evidence point the same way, ignoring them is just fear dressed up as logic.</strong> Move.",
   "t": "Il movimento crea prove. Rifiuta il limbo: preferisci un no onesto a un forse manipolatorio. I sentimenti sono telemetria. <strong>Quando intuito e prove puntano nella stessa direzione, ignorarli è solo paura travestita da logica.</strong> Muoviti."
  },
+ "c46451ea184b": {
+  "en": "That one has all the fertilizer it can take ({max}).",
+  "t": "Quella ha già tutto il concime che può reggere ({max})."
+ },
  "c4ca875cd015": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 19: </span> Mob Psycho 100 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 19: </span> Mob Psycho 100"
+ },
+ "c574501fd8fe": {
+  "en": "Roll d{sides} (last roll {result})",
+  "t": "Tira d{sides} (ultimo risultato {result})"
  },
  "c579d488d93d": {
   "en": "Pope Deo in green and gold papal robes and mitre, holding a golden staff, seated on a throne of swords before a churrasco grill full of skewers",
@@ -4159,6 +4835,10 @@
   "en": "Back to Gamer",
   "t": "Torna a Gamer"
  },
+ "c6e2f87cd267": {
+  "en": "sapphire",
+  "t": "sapphire"
+ },
  "c6e3b5b58c7b": {
   "en": "Rueiro",
   "t": "Rueiro"
@@ -4175,6 +4855,10 @@
   "en": "Lord Peeta of Tuxford",
   "t": "Lord Peeta di Tuxford"
  },
+ "c75ac3fad137": {
+  "en": "{n}s left",
+  "t": "Ancora {n} s"
+ },
  "c75e945c17ea": {
   "en": "Dice tray: turn your phone sideways",
   "t": "Vassoio dei dadi: gira il telefono in orizzontale"
@@ -4187,9 +4871,17 @@
   "en": "Peeta's backyard run",
   "t": "La corsa di Peeta in giardino"
  },
+ "c7abd16eb68f": {
+  "en": "Brotha—you suck at this—Harry?",
+  "t": "Fratello—fai schifo a questo gioco—Harry?"
+ },
  "c7c4bc97cb6b": {
   "en": "Solen Zara",
   "t": "Solen Zara"
+ },
+ "c852360f55c1": {
+  "en": "—Yea? So I play next?",
+  "t": "—Sì? Quindi tocca a me?"
  },
  "c886f4fa5cd8": {
   "en": "Praise the source of the beef thou art eating. Thank the soul that was given for thy enjoyment and for thy nourishment.",
@@ -4207,9 +4899,17 @@
   "en": "A practice skin, like the ones tattoo artists learn on. Pick a skin tone, an ink and a needle, and go.",
   "t": "Una pelle da allenamento, come quelle su cui imparano i tatuatori. Scegli un tono di pelle, un inchiostro e un ago, e via."
  },
+ "c9db75e9dd40": {
+  "en": "Harvested {crop}: {what}!",
+  "t": "Raccolto {crop}: {what}!"
+ },
  "ca23f2af91b8": {
   "en": "My parents and I are always there for each other, but we don't enable each other. We challenge each other to grow and do better.",
   "t": "I miei genitori e io ci siamo sempre l’uno per l’altro, ma non ci assecondiamo. Ci sfidiamo a crescere e a fare meglio."
+ },
+ "ca2c4b70322c": {
+  "en": "{level}, {n} out of 100",
+  "t": "{level}, {n} su 100"
  },
  "ca307bd9aaa4": {
   "en": "Action or inaction, it's all seed. You eat what you grow, even when it tastes like shit!",
@@ -4271,6 +4971,10 @@
   "en": "Roll all",
   "t": "Tira tutti"
  },
+ "cc60a1651cdd": {
+  "en": "Final: {you} {youScore} · {rival} {rivalScore} · {verdict}",
+  "t": "Finale: {you} {youScore} · {rival} {rivalScore} · {verdict}"
+ },
  "cc9c3f91bf15": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">✋</span> Pet ",
   "t": "<span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">✋</span> Accarezza"
@@ -4287,6 +4991,10 @@
   "en": "Enlarge: One of his jobs",
   "t": "Ingrandisci: Uno dei suoi lavori"
  },
+ "ccd479b39669": {
+  "en": "Out of shit to fertilize with.",
+  "t": "Niente più merda per concimare."
+ },
  "cd1007480585": {
   "en": "Roll d8",
   "t": "Tira d8"
@@ -4298,6 +5006,10 @@
  "cd6dc61c751f": {
   "en": "Enlarge: Can I haz",
   "t": "Ingrandisci: Posso averlo"
+ },
+ "cd719473682b": {
+  "en": "Winner Winner Chicken Dinner! You took the dino down.",
+  "t": "Winner Winner Chicken Dinner! Hai abbattuto il dino."
  },
  "cd7216b44ce3": {
   "en": "SR",
@@ -4311,6 +5023,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 36: </span> Placeholder game 36 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 36: </span> Gioco segnaposto 36"
  },
+ "ce00926930a4": {
+  "en": "New personal best!",
+  "t": "Nuovo record personale!"
+ },
  "ce10f9c7847c": {
   "en": "Drum kit: turn your phone sideways",
   "t": "Batteria: gira il telefono in orizzontale"
@@ -4323,6 +5039,14 @@
   "en": "EIHWAR",
   "t": "EIHWAR"
  },
+ "ce2c178cd497": {
+  "en": "Fold precision {n}%.",
+  "t": "Precisione della piegatura {n}%."
+ },
+ "ce3c494a5e85": {
+  "en": "Aiight!",
+  "t": "Va bene!"
+ },
  "ce70caaad427": {
   "en": "1 photo",
   "t": "1 foto"
@@ -4334,6 +5058,10 @@
  "ced1373b37da": {
   "en": "<strong>Horace</strong>, <em>Odes</em> 1.4 (23 BC): pale Death knocks with an impartial foot at the cottages of the poor and the palaces of kings. <a href=\"https://en.wikisource.org/wiki/The_works_of_Horace/First_Book_of_Odes\">Text</a>",
   "t": "<strong>Orazio</strong>, <em>Odi</em> 1.4 (23 a.C.): la pallida Morte bussa con piede imparziale alle capanne dei poveri e alle regge dei re. <a href=\"https://en.wikisource.org/wiki/The_works_of_Horace/First_Book_of_Odes\">Testo</a>"
+ },
+ "cf32e9152179": {
+  "en": "❤️ +{n} likes",
+  "t": "❤️ +{n} mi piace"
  },
  "cf386e583151": {
   "en": "California",
@@ -4358,6 +5086,14 @@
  "d05793556c53": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 36: </span> Placeholder movie 36 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 36: </span> Film segnaposto 36"
+ },
+ "d0683718593c": {
+  "en": "Sloppy",
+  "t": "Sciatto"
+ },
+ "d0799417b93a": {
+  "en": "Score: {n}",
+  "t": "Punteggio: {n}"
  },
  "d0897adc8053": {
   "en": "Arr, feast yer eyes on the Rusty Tankard, a ship so overgrown with mushrooms ye could forage the deck for yer supper! Aboard her sails a crew o' fine scallywags: a hatless penguin who can kinda swing a hammer, patchin' the ship as best a flipper allows; a blue-bearded wizard bickerin' with a rusty tin man, the pair of 'em yellin' so loud the very air crackles like lightnin'; a grinnin' fish-man swingin' from the mast with a sack o' mushrooms; and a horned ape too busy with his bananas to lift a finger.",
@@ -4411,6 +5147,10 @@
   "en": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>",
   "t": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>"
  },
+ "d26d358f777a": {
+  "en": "Your dart flies low and lodges in the wall below the board.",
+  "t": "Il tuo dardo vola basso e si conficca nel muro sotto la tavola."
+ },
  "d28817938afa": {
   "en": "Colorado",
   "t": "Colorado"
@@ -4439,9 +5179,17 @@
   "en": "Cirque du Soleil O",
   "t": "Cirque du Soleil O"
  },
+ "d397cf31a23a": {
+  "en": "Same plane. Drag back to aim and let go to throw.",
+  "t": "Stesso aereo. Trascina indietro per mirare e lascia andare per lanciare."
+ },
  "d3a2460e932b": {
   "en": "TS",
   "t": "TS"
+ },
+ "d3c3cff3fcea": {
+  "en": "Almost went viral! 97% to the For You page.",
+  "t": "Quasi virale! 97% verso la pagina Per te."
  },
  "d3f579415886": {
   "en": "Whack the Miku (top right, key 2)",
@@ -4479,6 +5227,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 12: </span> Placeholder TV show 12 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 12: </span> Serie segnaposto 12"
  },
+ "d62a14276f7a": {
+  "en": "Fold 4 of 5: and the right corner to the same dot.",
+  "t": "Piegatura 4 di 5: e l’angolo destro allo stesso punto."
+ },
  "d68ddfb67933": {
   "en": "Chilling",
   "t": "Relax"
@@ -4507,6 +5259,14 @@
   "en": "Enlarge: Play time",
   "t": "Ingrandisci: Ora di giocare"
  },
+ "d749ff2455cb": {
+  "en": "Down bad. Down horrendous. (⊙﹏⊙✿)",
+  "t": "In astinenza. In astinenza tremenda. (⊙﹏⊙✿)"
+ },
+ "d74cdcf6827c": {
+  "en": "Landed!",
+  "t": "Atterrato!"
+ },
  "d7688c620ff7": {
   "en": "Back to Tattoo",
   "t": "Torna a Tatuaggio"
@@ -4526,6 +5286,10 @@
  "d7ca17ddc2fe": {
   "en": "If you’re struggling right now, you don’t have to carry it alone. I didn’t. In the US, call or text <strong>988</strong>, or chat at <a href=\"https://988lifeline.org/\">988lifeline.org</a>. Anywhere else, <a href=\"https://findahelpline.com/\">findahelpline.com</a> lists free, confidential helplines in your country.",
   "t": "Se stai soffrendo in questo momento, non devi portare tutto da solo. Io non l’ho fatto. Negli Stati Uniti chiama o scrivi al <strong>988</strong>, oppure chatta su <a href=\"https://988lifeline.org/\">988lifeline.org</a>. Ovunque altro, <a href=\"https://findahelpline.com/\">findahelpline.com</a> elenca linee di ascolto gratuite e riservate nel tuo paese."
+ },
+ "d7f186ff8a7c": {
+  "en": "leaking away: use it!",
+  "t": "sta sparendo: usalo!"
  },
  "d7f43bc5a045": {
   "en": "Screw it",
@@ -4611,6 +5375,10 @@
   "en": "Balls farm: turn your phone sideways",
   "t": "Fattoria delle palle: gira il telefono in orizzontale"
  },
+ "db796663cdf7": {
+  "en": "B-baka! It's not like I wanted you to stoke my fire! (≧ヘ≦ )",
+  "t": "B-baka! Non è che volessi che attizzassi il mio fuoco! (≧ヘ≦ )"
+ },
  "dba7601ff7be": {
   "en": "Symphony of Seasons",
   "t": "Symphony of Seasons"
@@ -4691,9 +5459,17 @@
   "en": "Get thyself churrasco salt: iodized, in big rocky chunks, and imported from Brazil if thou canst. Heathens have tried to cheap out with Himalayan salt and paid the price with a ruined steak.",
   "t": "Procurati il sale da churrasco: iodato, in grossi pezzi come sassi, e importato dal Brasile se puoi. Gli eretici hanno provato a risparmiare col sale dell’Himalaya e l’hanno pagata con una bistecca rovinata."
  },
+ "dec492e278f3": {
+  "en": "Ara ara~ (◕‿◕✿)",
+  "t": "Ara ara~ (◕‿◕✿)"
+ },
  "df1ba38790aa": {
   "en": "Sleeping beauty",
   "t": "La bella addormentata"
+ },
+ "df568bac40e4": {
+  "en": "A pile of {n} VHS tapes",
+  "t": "Una pila di {n} videocassette VHS"
  },
  "df59735e1f2b": {
   "en": "SS",
@@ -4714,6 +5490,10 @@
  "e0184adedf91": {
   "en": "E",
   "t": "E"
+ },
+ "e09a88958081": {
+  "en": "The doujinshi is writing itself ( ͡ʘ ͜ʖ ͡ʘ)",
+  "t": "Il doujinshi si scrive da solo ( ͡ʘ ͜ʖ ͡ʘ)"
  },
  "e0cfa25651b0": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Shingeki no Kyojin (Attack on Titan) ",
@@ -4795,6 +5575,10 @@
   "en": "Throw Bird, costs 3 mana (key 2)",
   "t": "Lancia Uccello, costa 3 di mana (tasto 2)"
  },
+ "e45f65625355": {
+  "en": "amethyst",
+  "t": "amethyst"
+ },
  "e491b6f48726": {
   "en": "Ranked by how many times I've watched each one, counted from my YouTube watch history.",
   "t": "In ordine di quante volte ho visto ciascuno, contate dalla mia cronologia di YouTube."
@@ -4802,6 +5586,14 @@
  "e50edec7cb62": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Placeholder TV show 26 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 26: </span> Serie segnaposto 26"
+ },
+ "e5100c3c7795": {
+  "en": "Fold precision {n}%: {tips}.",
+  "t": "Precisione della piegatura {n}%: {tips}."
+ },
+ "e53060217b21": {
+  "en": "Not enough energy. It refills every second.",
+  "t": "Energia insufficiente. Si ricarica ogni secondo."
  },
  "e57dfe809709": {
   "en": "Whack the Miku (bottom right, key 4)",
@@ -4863,6 +5655,10 @@
   "en": "Miku's name in Japanese. Miku-chan (ミクちゃん) is a cornerstone of my life, tied to the things that drive me: ambition, technology, collaboration and community. She also stands for my passion, my drive, and the anxiety side of my personality.",
   "t": "Il nome di Miku in giapponese. Miku-chan (ミクちゃん) è una pietra angolare della mia vita, legata a ciò che mi spinge: ambizione, tecnologia, collaborazione e comunità. Rappresenta anche la mia passione, la mia spinta e il lato ansioso della mia personalità."
  },
+ "e76e281ed9f1": {
+  "en": "Back to the starting picture",
+  "t": "Torna all’immagine iniziale"
+ },
  "e7d965113795": {
   "en": "Kilograms of beef grilled: 295",
   "t": "Chili di manzo grigliato: 295"
@@ -4911,6 +5707,10 @@
   "en": "Likes",
   "t": "Mi piace"
  },
+ "ea35482e6295": {
+  "en": "Good try! Good try! C’mon! Try again!",
+  "t": "Bel tentativo! Bel tentativo! Dai! Riprova!"
+ },
  "ea3ddf6727a8": {
   "en": "Do Better!",
   "t": "Do Better!"
@@ -4918,6 +5718,14 @@
  "ea421daf7959": {
   "en": "Back at Moderno High School in Macapá, someone handed me a DVD with \"Bleach S1 pt-br sub\" written on it in Sharpie. I was so curious I nearly ran from school to my mother's store, did what I had to do on the server and in the store, then sat down in the back office, dropped the DVD into the tray and hit play. The first line of the opening song, Orange Range's \"Asterisk\", got burned into my brain as a core memory. It's 2026, and I still remember that moment extremely vividly.",
   "t": "Alla scuola Moderno di Macapá, qualcuno mi passò un DVD con \"Bleach S1 pt-br sub\" scritto sopra col pennarello indelebile. Ero così curioso che quasi corsi da scuola al negozio di mia madre, feci quello che dovevo fare sul server e in negozio, poi mi sedetti nell’ufficio sul retro, misi il DVD nel cassetto e premetti play. Il primo verso della sigla d’apertura, \"Asterisk\" degli Orange Range, mi si è stampato nel cervello come un ricordo fondamentale. È il 2026, e ricordo ancora quel momento in modo vividissimo."
+ },
+ "ea52ac390158": {
+  "en": "▶️ +{views} views, +{follows} followers",
+  "t": "▶️ +{views} visualizzazioni, +{follows} follower"
+ },
+ "ea61674580d7": {
+  "en": "Total: {sum}",
+  "t": "Totale: {sum}"
  },
  "ea862af722b1": {
   "en": "1.3 cows have become food",
@@ -4934,6 +5742,10 @@
  "eaa40e2587dc": {
   "en": "Distrito Federal",
   "t": "Distrito Federal"
+ },
+ "eab75ee3a0a6": {
+  "en": "Winner Winner Chicken Dinner",
+  "t": "Winner Winner Chicken Dinner"
  },
  "eaf7064f092b": {
   "en": "Snack!",
@@ -4991,9 +5803,21 @@
   "en": "Enlarge: Learning English",
   "t": "Ingrandisci: Imparare l’inglese"
  },
+ "ed74b38312d6": {
+  "en": "She got away…",
+  "t": "È scappata…"
+ },
+ "ed8d6e99dc88": {
+  "en": "BONK! 🔨 Go to horny jail. (ﾉ´ｰ`)ﾉ",
+  "t": "BONK! 🔨 Fila nella prigione dei porcelli. (ﾉ´ｰ`)ﾉ"
+ },
  "ee6997287a58": {
   "en": "Fully bilingual in English and Portuguese, and working on the rest.",
   "t": "Perfettamente bilingue in inglese e portoghese, e ci sto lavorando per il resto."
+ },
+ "ee83a7441ce6": {
+  "en": "Time! You whacked {hits} {name} and missed {misses}. {verdict}",
+  "t": "Tempo! Hai colpito {hits} {name} e mancato {misses}. {verdict}"
  },
  "ee9f4373eeab": {
   "en": "Keeper of the Sacred Salt and of the secret ways of the Touch.",
@@ -5007,6 +5831,10 @@
   "en": "Enlarge: Painting or drawing, 01/23/2013",
   "t": "Ingrandisci: Dipinto o disegno, 23/01/2013"
  },
+ "ef0ebbb77298": {
+  "en": "orange",
+  "t": "arancione"
+ },
  "efe6cabcbaa1": {
   "en": "Since we’re on the subject: take care of your mental health. And if you’ve ever thought about ending it all… don’t. I nearly did, back in 2016, during a period that far surpassed what my mind could take at the time. I called a crisis hotline. To the older lady who picked up the phone that night: I will forever be grateful. The “Harry” you see in Vol. 1 is an alternate version of myself: the one who plunged that knife into his chest that night.",
   "t": "Visto che siamo in tema: prenditi cura della tua salute mentale. E se hai mai pensato di farla finita… non farlo. Io ci sono andato vicino, nel 2016, in un periodo che superava di gran lunga quello che la mia mente poteva reggere allora. Ho chiamato una linea di ascolto per le crisi. Alla signora anziana che ha risposto quella notte: ti sarò eternamente grato. L’“Harry” che vedi nel Vol. 1 è una versione alternativa di me stesso: quella che quella notte si è piantata il coltello nel petto."
@@ -5014,6 +5842,10 @@
  "f0be548d03b3": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 31: </span> Placeholder game 31 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 31: </span> Gioco segnaposto 31"
+ },
+ "f0c3ff890745": {
+  "en": "{n} of {max}",
+  "t": "{n} di {max}"
  },
  "f0f48a551e02": {
   "en": "A pixel dinosaur running along the ground. Throw obstacles at it.",
@@ -5047,6 +5879,10 @@
   "en": "Enlarge: Whatcha doing",
   "t": "Ingrandisci: Che stai facendo"
  },
+ "f290164d1315": {
+  "en": "Outer ring",
+  "t": "Anello esterno"
+ },
  "f2a63e1c444a": {
   "en": "Photogenic",
   "t": "Fotogenico"
@@ -5071,9 +5907,17 @@
   "en": "2 mana · 3",
   "t": "2 di mana · 3"
  },
+ "f364840671b5": {
+  "en": "aquamarine",
+  "t": "aquamarine"
+ },
  "f3648e2b0a68": {
   "en": "Ōsaka",
   "t": "Osaka"
+ },
+ "f36fdd3e82bb": {
+  "en": "Mana is building. Throw something at the dino!",
+  "t": "Il mana si sta accumulando. Lancia qualcosa al dino!"
  },
  "f3734a1b78c0": {
   "en": "Hypno cat",
@@ -5086,6 +5930,10 @@
  "f42120fee221": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Placeholder TV show 23 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 23: </span> Serie segnaposto 23"
+ },
+ "f4853c881e96": {
+  "en": "{n} more to earn",
+  "t": "{n} in più da guadagnare"
  },
  "f4b3775718fe": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Placeholder movie 16 ",
@@ -5118,6 +5966,10 @@
  "f67bc6dad74f": {
   "en": "Dev",
   "t": "Dev"
+ },
+ "f6842ab3afca": {
+  "en": "Miku",
+  "t": "Miku"
  },
  "f69192726c6c": {
   "en": "\nThis website fulfills my need to share the joy and growth, and it gives me something I can pull up on the fly to show\n        the folks I’m talking with, without triggering hypervigilance. And just like the reason I went with self-publishing\n        instead of traditional publishing: I can do whatever the fuck I want here, and nobody gives a shit…\n",
@@ -5171,6 +6023,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder game 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 15: </span> Gioco segnaposto 15"
  },
+ "f917eb40cc44": {
+  "en": "Tap a growing crop to fertilize it with 1 shit.",
+  "t": "Tocca una coltura in crescita per concimarla con 1 merda."
+ },
  "f91a835703fa": {
   "en": "Paper plane: turn your phone sideways",
   "t": "Aeroplanino di carta: gira il telefono in orizzontale"
@@ -5187,9 +6043,21 @@
   "en": "Nordic rune associated with ice, stillness, focus, containment, and preservation.",
   "t": "Runa nordica associata a ghiaccio, immobilità, concentrazione, contenimento e conservazione."
  },
+ "f96e7bc80d25": {
+  "en": "Fertilize a plot that has something growing.",
+  "t": "Concima un’aiuola dove sta crescendo qualcosa."
+ },
+ "f98f1fe356b4": {
+  "en": "Fold 5 of 5: fold it in half: bottom-left corner onto the bottom-right one.",
+  "t": "Piegatura 5 di 5: piegalo a metà: angolo in basso a sinistra sull’angolo in basso a destra."
+ },
  "f9a36fc66f7b": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Ookami to Koushinryou (Spice and Wolf) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 27: </span> Ookami to Koushinryou (Spice and Wolf)"
+ },
+ "f9a7ce310699": {
+  "en": "▶️ +{views} views, +{follows} follower",
+  "t": "▶️ +{views} visualizzazioni, +{follows} follower"
  },
  "fa0082d99ac8": {
   "en": "PM or life hacks",
@@ -5211,9 +6079,17 @@
   "en": "Supreme Pontiff of the Grill",
   "t": "Sommo Pontefice della Griglia"
  },
+ "fb1415fda4ff": {
+  "en": "Music: on",
+  "t": "Musica: accesa"
+ },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",
   "t": "Ingrandisci: Quando l’erba gatta fa proprio effetto"
+ },
+ "fb23c9ff0d27": {
+  "en": "Inner ring",
+  "t": "Anello interno"
  },
  "fb4d13ed6962": {
   "en": "Enlarge: Sleep first",
@@ -5271,6 +6147,10 @@
   "en": "Drum kit",
   "t": "Batteria"
  },
+ "fe732cbff74e": {
+  "en": "Row {row}, column {col} off",
+  "t": "Riga {row}, colonna {col} spenta"
+ },
  "fe7e2953e947": {
   "en": "Bird",
   "t": "Uccello"
@@ -5283,6 +6163,10 @@
   "en": "Practice skin. Draw a tattoo on it with the tattoo pen.",
   "t": "Pelle da allenamento. Disegnaci sopra un tatuaggio con la macchinetta."
  },
+ "feddfb10fb8d": {
+  "en": "We all play at the same time. GO!",
+  "t": "Giochiamo tutti nello stesso momento. VAI!"
+ },
  "feea42718962": {
   "en": "Enlarge: Walk time or more like I stay in the stroller",
   "t": "Ingrandisci: Ora della passeggiata, o meglio io resto nel passeggino"
@@ -5294,6 +6178,10 @@
  "ff635d8e1290": {
   "en": "Hear ye, hear ye! All are welcome unto the Holy Church of Churrasco, save those who eateth their steak <strong>well done</strong>. Such heathens shall burn in the most fiery of fires, in the deepest pits of Vegetation Hell.",
   "t": "Udite, udite! Tutti sono i benvenuti nella Santa Chiesa del Churrasco, tranne coloro che mangiano la bistecca <strong>ben cotta</strong>. Tali eretici bruceranno nel più ardente dei fuochi, nei più profondi abissi dell’Inferno Vegetale."
+ },
+ "ff77bf2aced8": {
+  "en": "Senpai noticed me! (✿◠‿◠)",
+  "t": "Senpai mi ha notato! (✿◠‿◠)"
  },
  "ff8d3b2fc78a": {
   "en": "Ready for a walk",

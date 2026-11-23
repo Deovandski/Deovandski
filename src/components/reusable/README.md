@@ -5,6 +5,11 @@ single `.astro` file (plus a folder for any font or image it needs). It takes ev
 imports nothing from this site, and themes itself with CSS custom properties. It also works when
 used several times on one page. See the componentization rule in [CLAUDE.md](../../../CLAUDE.md).
 
+Words a component's script writes while it runs (game messages, scores, labels it swaps) live in the page, in a
+hidden `<div class="<name>__strings" hidden data-llms-skip>` of `<span data-k="key">English with {slots}</span>`.
+The script reads them with a small `msg(key, vars)` helper, so a translated copy of the page translates them too,
+and a project without translations just shows the English.
+
 | Component | What it is | Used on |
 |---|---|---|
 | [SplitFlap.astro](SplitFlap.astro) | Split-flap (Solari board) display for a number or short word. It flips into place the first time it scrolls into view. | MTG tab (Win vs Loss) |

@@ -34,9 +34,42 @@ interface Props {
   class?: string;
 }
 const { title = 'Fold it, throw it', saveKey = 'paper-plane-best', class: className } = Astro.props;
+// What the script writes (and draws on the canvas). It lives in the page so the site's translations reach it.
+const strings: Record<string, string> = {
+  fold0: 'Fold 1 of 5: drag the top-left corner to the dot on the centre line.',
+  fold1: 'Fold 2 of 5: now the top-right corner to the same dot.',
+  fold2: 'Fold 3 of 5: drag the new left corner to the centre dot.',
+  fold3: 'Fold 4 of 5: and the right corner to the same dot.',
+  fold4: 'Fold 5 of 5: fold it in half: bottom-left corner onto the bottom-right one.',
+  crisp: 'Crisp!',
+  good: 'Good',
+  sloppy: 'Sloppy',
+  folded: '{word} Folded! Precision {n}%. Now drag back from the plane to aim, and let go to throw (or use the arrow keys and Space).',
+  best: 'Best',
+  gauge: 'Angle {angle}°   Power {power}%',
+  wheee: 'Wheee!',
+  tipSloppy: 'sloppy folds made it wobble and drag',
+  tipCrisp: 'crisp folds helped it glide',
+  tipUp: 'uneven left and right folds pulled it up',
+  tipDown: 'uneven left and right folds pulled it down',
+  tipHard: 'thrown too hard, so it looped and lost its speed',
+  tipSoft: 'thrown too softly',
+  tipStall: 'it climbed too steeply and stalled',
+  tipFloor: 'aimed at the floor',
+  distance: '{m} m ({ft} ft).',
+  newBest: 'New personal best!',
+  precision: 'Fold precision {n}%.',
+  precisionTips: 'Fold precision {n}%: {tips}.',
+  landed: 'Landed!',
+  personalBest: 'Personal best: {n} m',
+  aimKeys: 'Angle {angle}°, power {power}%. Space to throw.',
+  again: 'Same plane. Drag back to aim and let go to throw.',
+  summary: 'Best {n} m',
+};
 ---
 
 <div class:list={['paper-plane', className]} data-key={saveKey}>
+  <div class="paper-plane__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <h3 class="paper-plane__title">{title}</h3>
   <p class="paper-plane__step" aria-live="polite"></p>
   <canvas class="paper-plane__canvas" tabindex="0" role="img" aria-label="Paper plane workspace"></canvas>
@@ -176,6 +209,10 @@ const { title = 'Fold it, throw it', saveKey = 'paper-plane-best', class: classN
     const canvas = root.querySelector<HTMLCanvasElement>('.paper-plane__canvas')!;
     const ctx = canvas.getContext('2d')!;
     const stepEl = root.querySelector<HTMLElement>('.paper-plane__step')!;
+    // The page's (possibly translated) words; {name} slots are filled in here.
+    const msg = (key: string, vars: Record<string, string | number> = {}) =>
+      (root.querySelector(`.paper-plane__strings [data-k="${key}"]`)?.textContent ?? key).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
+    FOLDS.forEach((f, i) => (f.text = msg(`fold${i}`)));
     const resultEl = root.querySelector<HTMLElement>('.paper-plane__result')!;
     const bestEl = root.querySelector<HTMLElement>('.paper-plane__best')!;
     const btnNew = root.querySelector<HTMLButtonElement>('[data-act="new"]')!;
@@ -261,14 +298,14 @@ const { title = 'Fold it, throw it', saveKey = 'paper-plane-best', class: classN
       layers = fold(layers, handle, pointer);
       scores.push(q);
       errs.push(err);
-      const word = q > 0.85 ? 'Crisp!' : q > 0.6 ? 'Good' : 'Sloppy';
+      const word = msg(q > 0.85 ? 'crisp' : q > 0.6 ? 'good' : 'sloppy');
       stamp = { text: `${word} ${Math.round(q * 100)}%`, until: performance.now() + 1100 };
       foldIdx++;
       if (foldIdx >= FOLDS.length) {
         quality = scores.reduce((a, b) => a + b, 0) / scores.length;
         // Uneven left and right folds make it pull up or down in flight.
         pull = Math.max(-1, Math.min(1, (scores[0] - scores[1]) + (scores[2] - scores[3])));
-        stepEl.textContent = `${word} Folded! Precision ${Math.round(quality * 100)}%. Now drag back from the plane to aim, and let go to throw (or use the arrow keys and Space).`;
+        stepEl.textContent = msg('folded', { word, n: Math.round(quality * 100) });
         window.setTimeout(startAim, 900);
       } else {
         handle = currentHandle();
@@ -373,7 +410,7 @@ const { title = 'Fold it, throw it', saveKey = 'paper-plane-best', class: classN
         ctx.fillStyle = '#e12885';
         ctx.fillRect(bx - 1, gy - 34, 2, 34);
         ctx.fillRect(bx, gy - 34, 16, 10);
-        ctx.fillText('Best', bx + 8, gy - 38);
+        ctx.fillText(msg('best'), bx + 8, gy - 38);
       }
       // A desk at the start, where it's thrown from.
       ctx.fillStyle = '#8a5a32';
@@ -427,7 +464,7 @@ const { title = 'Fold it, throw it', saveKey = 'paper-plane-best', class: classN
         ctx.fillStyle = '#1b2a3a';
         ctx.font = '700 13px system-ui, sans-serif';
         ctx.textAlign = 'left';
-        ctx.fillText(`Angle ${Math.round(aim.angle)}°   Power ${Math.round(aim.power * 100)}%`, 12, 22);
+        ctx.fillText(msg('gauge', { angle: Math.round(aim.angle), power: Math.round(aim.power * 100) }), 12, 22);
       }
     }
 
@@ -461,7 +498,7 @@ const { title = 'Fold it, throw it', saveKey = 'paper-plane-best', class: classN
     function launch() {
       if (phase !== 'aim') return;
       phase = 'fly';
-      stepEl.textContent = 'Wheee!';
+      stepEl.textContent = msg('wheee');
       const a0 = (aim.angle * Math.PI) / 180;
       const LD = 2 + 5 * quality;
       const trim = -Math.atan(1 / LD) + pull * 0.12;
@@ -524,16 +561,22 @@ const { title = 'Fold it, throw it', saveKey = 'paper-plane-best', class: classN
         }
       }
       const tips = [];
-      if (quality < 0.6) tips.push('sloppy folds made it wobble and drag');
-      else if (quality > 0.85) tips.push('crisp folds helped it glide');
-      if (Math.abs(pull) > 0.3) tips.push(`uneven left and right folds pulled it ${pull > 0 ? 'up' : 'down'}`);
-      if (ev.looped) tips.push('thrown too hard, so it looped and lost its speed');
-      else if (aim.power < 0.35) tips.push('thrown too softly');
-      if (ev.stalled) tips.push('it climbed too steeply and stalled');
-      if (aim.angle < 0) tips.push('aimed at the floor');
-      resultEl.textContent = `${m.toFixed(1)} m (${ft.toFixed(0)} ft).${newBest ? ' New personal best!' : ''} Fold precision ${Math.round(quality * 100)}%${tips.length ? ': ' + tips.join(', ') + '.' : '.'}`;
-      stepEl.textContent = 'Landed!';
-      bestEl.textContent = best ? `Personal best: ${best.toFixed(1)} m` : '';
+      if (quality < 0.6) tips.push(msg('tipSloppy'));
+      else if (quality > 0.85) tips.push(msg('tipCrisp'));
+      if (Math.abs(pull) > 0.3) tips.push(msg(pull > 0 ? 'tipUp' : 'tipDown'));
+      if (ev.looped) tips.push(msg('tipHard'));
+      else if (aim.power < 0.35) tips.push(msg('tipSoft'));
+      if (ev.stalled) tips.push(msg('tipStall'));
+      if (aim.angle < 0) tips.push(msg('tipFloor'));
+      resultEl.textContent = [
+        msg('distance', { m: m.toFixed(1), ft: ft.toFixed(0) }),
+        newBest ? msg('newBest') : '',
+        msg(tips.length ? 'precisionTips' : 'precision', { n: Math.round(quality * 100), tips: tips.join(', ') }),
+      ]
+        .filter(Boolean)
+        .join(' ');
+      stepEl.textContent = msg('landed');
+      bestEl.textContent = best ? msg('personalBest', { n: best.toFixed(1) }) : '';
       btnAgain.hidden = false;
       draw();
     }
@@ -607,7 +650,7 @@ const { title = 'Fold it, throw it', saveKey = 'paper-plane-best', class: classN
         } else return;
         ev.preventDefault();
         fly.ang = (aim.angle * Math.PI) / 180;
-        stepEl.textContent = `Angle ${Math.round(aim.angle)}°, power ${Math.round(aim.power * 100)}%. Space to throw.`;
+        stepEl.textContent = msg('aimKeys', { angle: Math.round(aim.angle), power: Math.round(aim.power * 100) });
         draw();
       }
     });
@@ -620,13 +663,13 @@ const { title = 'Fold it, throw it', saveKey = 'paper-plane-best', class: classN
     btnAgain.addEventListener('click', () => {
       cancelAnimationFrame(raf);
       resultEl.textContent = '';
-      stepEl.textContent = 'Same plane. Drag back to aim and let go to throw.';
+      stepEl.textContent = msg('again');
       btnAgain.hidden = true;
       startAim();
       canvas.focus();
     });
 
-    bestEl.textContent = best ? `Personal best: ${best.toFixed(1)} m` : '';
+    bestEl.textContent = best ? msg('personalBest', { n: best.toFixed(1) }) : '';
     new ResizeObserver(() => {
       if (size()) draw();
     }).observe(canvas);

@@ -23,6 +23,9 @@
  * Theming (CSS custom properties): --dino-color (the dino, default green #4f8a3c), --dino-accent
  * (#39c5bb), --dino-ink (ground and text, #535353), --dino-bg (#f7f7f7).
  *
+ * Words the script shows (the throws, the result) are written into a hidden .dino-ambush__strings
+ * block, so a translated copy of the page translates them too.
+ *
  * Accessible: the skills are buttons with their mana cost (keys 1 to 4 too); what happens is
  * announced (throws, dodges, the result). The game pauses when it's off screen or its tab closes.
  * Reduced motion slows the game down instead of removing it.
@@ -41,9 +44,26 @@ const skills = [
   { id: 'rock', label: 'Rock', icon: '🪨', cost: 2, key: '3' },
   { id: 'dino', label: 'Another dino', icon: '🦖', cost: 5, key: '4' },
 ];
+// What the script writes while you play. It lives in the page so the site's translations reach it.
+const strings: Record<string, string> = {
+  toEarn: '{n} more to earn',
+  leaking: 'leaking away: use it!',
+  threw: 'You threw {thing}.',
+  cactus: 'a cactus',
+  bird: 'a bird',
+  rock: 'a rock',
+  dino: 'another dino',
+  win,
+  lose,
+  wonLive: `${win}! You took the dino down.`,
+  lostLive: `${lose} The dino survived and flips you off.`,
+  dodged: 'The dino dodged it.',
+  building: 'Mana is building. Throw something at the dino!',
+};
 ---
 
-<div class:list={['dino-ambush', className]} data-pool={pool} data-max={maxMana} data-win={win} data-lose={lose}>
+<div class:list={['dino-ambush', className]} data-pool={pool} data-max={maxMana}>
+  <div class="dino-ambush__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <div class="dino-ambush__stage">
     <canvas class="dino-ambush__canvas" role="img" aria-label="A pixel dinosaur running along the ground. Throw obstacles at it."></canvas>
     <div class="dino-ambush__result" hidden>
@@ -270,9 +290,11 @@ const skills = [
   type Ob = { kind: Kind; x: number; y: number; w: number; h: number; vx: number; high?: boolean; seen: boolean; plan?: number; plan2?: number };
 
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const NAMES: Record<Kind, string> = { cactus: 'a cactus', bird: 'a bird', rock: 'a rock', dino: 'another dino' };
 
   document.querySelectorAll<HTMLElement>('.dino-ambush').forEach((root) => {
+    // The page's (possibly translated) words; {name} slots are filled in here.
+    const msg = (key: string, vars: Record<string, string | number> = {}) =>
+      (root.querySelector(`.dino-ambush__strings [data-k="${key}"]`)?.textContent ?? key).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
     const POOL = Number(root.dataset.pool) || 30;
     const MAX = Number(root.dataset.max) || 10;
     const canvas = root.querySelector<HTMLCanvasElement>('.dino-ambush__canvas')!;
@@ -337,7 +359,7 @@ const skills = [
     function renderMana() {
       pips.forEach((p, i) => p.classList.toggle('on', i < mana));
       manaNum.textContent = String(mana);
-      poolEl.textContent = earned < POOL ? `${POOL - earned} more to earn` : 'leaking away: use it!';
+      poolEl.textContent = earned < POOL ? msg('toEarn', { n: POOL - earned }) : msg('leaking');
       buttons.forEach((b) => (b.disabled = state !== 'play' || mana < Number(b.dataset.cost)));
     }
 
@@ -356,7 +378,7 @@ const skills = [
         obs.push({ kind, x: W + 10, y: high ? 12 * s : 2 * s, w: 9 * s, h: 6 * s, vx: -speed * 1.15, high, seen: false });
       }
       if (kind === 'dino') obs.push({ kind, x: -20 * s, y: 0, w: 16 * s, h: 16 * s, vx: speed * 0.75, seen: false });
-      live.textContent = `You threw ${NAMES[kind]}.`;
+      live.textContent = msg('threw', { thing: msg(kind) });
       renderMana();
     }
 
@@ -420,9 +442,9 @@ const skills = [
 
     function finish(kind: 'won' | 'lost') {
       state = kind;
-      title.textContent = kind === 'won' ? root.dataset.win! : root.dataset.lose!;
+      title.textContent = msg(kind === 'won' ? 'win' : 'lose');
       result.hidden = false;
-      live.textContent = kind === 'won' ? `${root.dataset.win}! You took the dino down.` : `${root.dataset.lose} The dino survived and flips you off.`;
+      live.textContent = msg(kind === 'won' ? 'wonLive' : 'lostLive');
       renderMana();
     }
 
@@ -454,7 +476,7 @@ const skills = [
         }
         const before = obs.length;
         obs = obs.filter((o) => o.x > -40 * P && o.x < W + 60);
-        if (obs.length < before) live.textContent = 'The dino dodged it.';
+        if (obs.length < before) live.textContent = msg('dodged');
         // Lost: the pool is spent, there's not enough mana for anything, and nothing is left in flight.
         const cheapest = Math.min(...buttons.map((b) => Number(b.dataset.cost)));
         if (earned >= POOL && mana < cheapest && obs.length === 0) finish('lost');
@@ -516,7 +538,7 @@ const skills = [
       dino.vy = 0;
       dino.duck = 0;
       result.hidden = true;
-      live.textContent = 'Mana is building. Throw something at the dino!';
+      live.textContent = msg('building');
       renderMana();
     }
 
