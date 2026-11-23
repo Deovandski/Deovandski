@@ -88,14 +88,15 @@ as noise in plain text (like the LED clock's digits) with `data-llms-skip`, and 
 
 ```sh
 npm run build && ls dist/llms.txt dist/llms-full.txt dist/sitemap.xml dist/facets/
-curl -i https://deovandski.github.io/Deovandski/llms.txt          # 200, text/plain
-curl -i https://deovandski.github.io/Deovandski/facets/death.md   # 200
+curl -i https://deovandski.com/llms.txt          # 200, text/plain
+curl -i https://deovandski.com/facets/death.md   # 200
 ```
 
 Then ask a couple of different AI assistants to read `/facets/death.md`. Some can't reach `*.github.io`
 at all, and search-based ones only see the site once Bing and Google have indexed it. Submit
-`sitemap.xml` in Bing Webmaster Tools and Google Search Console. A `robots.txt` can't point to it:
-on a project site, `robots.txt` lives at the domain root (`deovandski.github.io/robots.txt`).
+`sitemap.xml` in Bing Webmaster Tools and Google Search Console. Since the move to deovandski.com (#222),
+the build also writes a `robots.txt` that points to it. It only does that when the site is at a domain root,
+because `robots.txt` must live there.
 
 ## Local preview
 
@@ -116,7 +117,7 @@ the site (Home, Contact), but any URL opened directly without `?src` (typed, boo
 another site) starts clean. LinkedIn visitors don't see the Lust tab.
 Per-source rules live at the bottom of `src/styles/global.css`; the value is on
 `<html data-src="...">`, so any other `?src=` value can get its own rules.
-Use `https://deovandski.github.io/Deovandski/?src=LinkedIn` on LinkedIn.
+Use `https://deovandski.com/?src=LinkedIn` on LinkedIn.
 
 ## One-time GitHub setup
 

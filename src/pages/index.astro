@@ -47,10 +47,10 @@ const devLinks: LinkItem[] = [
 const musicianLinks: LinkItem[] = [{ href: 'https://suno.com/@deovandski', label: 'My Suno songs' }];
 
 const authorLinks: LinkItem[] = [
-  { href: 'https://husbandoutworld.com', label: '#HusbandOutWorld Series' },
+  { href: 'https://www.husbandoutworld.com/', label: '#HusbandOutWorld Series' },
   { href: 'https://deovandski.github.io/Vraki-West-March-Campaign-D-D/', label: 'Vraki West March D&D Campaign' },
   { href: 'https://deovandski.github.io/vraki-windows/', label: 'Vraki Writing System' },
-  { href: 'https://deovandski.github.io/HusbandOutWorld/blog/', label: 'Blog' },
+  { href: 'https://www.husbandoutworld.com/blog/', label: 'Blog' },
 ];
 
 // PM tab: my public GitHub Projects boards (https://github.com/Deovandski?tab=projects).
@@ -464,7 +464,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
         {influencerLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
       </ul>
       <p>
-        And as to why? Read my <a href="https://deovandski.github.io/HusbandOutWorld/about/afterwords/#vol-4-afterword-2027">#HusbandOutWorld Vol 4 afterword</a>.
+        And as to why? Read my <a href="https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027">#HusbandOutWorld Vol 4 afterword</a>.
       </p>
       <p class="influencer-q">But wait… why build this website, then? Doesn’t that go against what you wrote in Vol 4?</p>
       <p>
@@ -635,7 +635,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
     <section class="panel" role="region" id="panel-boardgames" aria-labelledby="tab-boardgames" tabindex="0" hidden>
       <GimmickPlay tab="boardgames">
-        <p slot="intro">From <a href="https://deovandski.github.io/HusbandOutWorld/lore/pastimes/#territory-snipping">#HusbandOutWorld</a>: play the round of Territory Snipping from Vol 2, as Harry, against Hiromi.</p>
+        <p slot="intro">From <a href="https://www.husbandoutworld.com/lore/pastimes/#territory-snipping">#HusbandOutWorld</a>: play the round of Territory Snipping from Vol 2, as Harry, against Hiromi.</p>
       </GimmickPlay>
       <Sections data={boardgames} id="boardgames" slots={1} empty="Board game nights are on their way." photoAlt={(t) => `Board games: ${t}`} />
     </section>
@@ -1409,7 +1409,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     if (switchButton) flip(switchButton, false);
     return true;
   }
-  // #qr is the hidden QR Code page's short link: deovandski.github.io/Deovandski/#qr → /qr/.
+  // #qr is the hidden QR Code page's short link: deovandski.com/#qr → /qr/.
   if (location.hash.toLowerCase() === '#qr') location.replace(`${import.meta.env.BASE_URL.replace(/\/?$/, '/')}qr/`);
   // #playground (and the older #gaming) do the same for the Playground page: …/#playground → /playground/.
   if (['#playground', '#gaming'].includes(location.hash.toLowerCase())) location.replace(`${import.meta.env.BASE_URL.replace(/\/?$/, '/')}playground/`);

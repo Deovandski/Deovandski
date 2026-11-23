@@ -226,7 +226,7 @@ so pass them in (this site uses `src/lib/photoDate.ts`: EXIF, then the filename)
 ---
 import QrCode from './reusable/QrCode.astro';
 ---
-<QrCode value="https://deovandski.github.io/Deovandski/" title="Website" />
+<QrCode value="https://deovandski.com/" title="Website" />
 <QrCode value="mailto:someone@example.com" title="Email" showValue={false} />
 ```
 
