@@ -23,6 +23,9 @@
  *
  * Theming (CSS custom properties): --darts-accent (default #39c5bb), --darts-text.
  *
+ * The player names, the script's lines and every message the game writes are in a hidden
+ * .iso-darts__strings block, so a translated copy of the page translates them too.
+ *
  * Accessible: Next and Throw are buttons (Space or Enter throws); every line and every dart's
  * result is text and announced. Reduced motion: no sway (the aim drifts slowly instead) and no spin.
  */
@@ -32,9 +35,43 @@ interface Props {
   class?: string;
 }
 const { game, title = 'Darts', class: className } = Astro.props;
+const g = game as { players: Record<'you' | 'rival', { name: string }>; script: { text: string }[] };
+// What the script writes. It lives in the page so the site's translations reach it.
+const strings: Record<string, string> = {
+  you: g.players.you.name,
+  rival: g.players.rival.name,
+  ...Object.fromEntries(g.script.map((s, i) => [`line${i}`, s.text])),
+  ringCentre: 'Yellow centre',
+  ringInner: 'Inner ring',
+  ringMiddle: 'Middle ring',
+  ringOuter: 'Outer ring',
+  pt: '{n} pt',
+  pts: '{n} pts',
+  yellow: 'yellow',
+  orange: 'orange',
+  purple: 'purple',
+  green: 'green',
+  blue: 'blue',
+  red: 'red',
+  bounced: "{player}'s dart bounced off the wall.",
+  cancelled: 'Cancelled! Both darts on the {colour} territory are out.',
+  snipes: '{player} snipes a {colour} territory ({points}).',
+  clock: '⏱ {seconds}s · darts: {you} {youLeft}, {rival} {rivalLeft}',
+  low: 'Your dart flies low and lodges in the wall below the board.',
+  time: 'Time! The room starts to move too much…',
+  warmup: 'His first dart clings, then falls. The second lands on a green territory near the centre.',
+  yourTurn: 'Your turn: press Throw (or Space) when the aim is where you want it.',
+  miss: 'He aims for the same green, and lands far above it, on purple.',
+  youWin: '{you} wins, somehow!',
+  rivalWins: '{rival} wins.',
+  draw: 'A draw!',
+  finalLive: 'Final score: {you} {youScore}, {rival} {rivalScore}. {verdict}',
+  finalTally: 'Final: {you} {youScore} · {rival} {rivalScore} · {verdict}',
+};
 ---
 
 <div class:list={['iso-darts', className]} data-game={JSON.stringify(game)}>
+  <div class="iso-darts__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <h3 class="iso-darts__title">{title}</h3>
   <div class="iso-darts__stage">
     <svg class="iso-darts__scene" viewBox="0 0 480 300" role="img" aria-label="An isometric tavern corner with a round, coloured dartboard on the wall">
@@ -289,6 +326,13 @@ const { game, title = 'Darts', class: className } = Astro.props;
 
   document.querySelectorAll<HTMLElement>('.iso-darts').forEach((root) => {
     const game: Game = JSON.parse(root.dataset.game!);
+    // The page's (possibly translated) words; {name} slots are filled in here.
+    const msg = (key: string, vars: Record<string, string | number> = {}) =>
+      (root.querySelector(`.iso-darts__strings [data-k="${key}"]`)?.textContent ?? key).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
+    game.players.you.name = msg('you');
+    game.players.rival.name = msg('rival');
+    game.script.forEach((s, i) => (s.text = msg(`line${i}`)));
+    const pts = (n: number) => msg(n === 1 ? 'pt' : 'pts', { n });
     const scene = root.querySelector<SVGSVGElement>('.iso-darts__scene')!;
     const boardG = root.querySelector<SVGGElement>('.iso-darts__board')!;
     const dartsG = root.querySelector<SVGGElement>('.iso-darts__darts')!;
@@ -307,7 +351,7 @@ const { game, title = 'Darts', class: className } = Astro.props;
     const P = game.players;
 
     boardG.innerHTML = ZONES.map(wedge).join('');
-    legend.innerHTML = RINGS.map((r) => `<div><dt>${r.n === 1 ? 'Yellow centre' : r.r1 <= 32 ? 'Inner ring' : r.r1 <= 62 ? 'Middle ring' : 'Outer ring'}</dt><dd>${r.value} pt${r.value > 1 ? 's' : ''}</dd></div>`).join('');
+    legend.innerHTML = RINGS.map((r) => `<div><dt>${msg(r.n === 1 ? 'ringCentre' : r.r1 <= 32 ? 'ringInner' : r.r1 <= 62 ? 'ringMiddle' : 'ringOuter')}</dt><dd>${pts(r.value)}</dd></div>`).join('');
 
     let step = -1;
     let darts: Dart[] = [];
@@ -332,14 +376,14 @@ const { game, title = 'Darts', class: className } = Astro.props;
     function land(who: 'you' | 'rival', x: number, y: number, quiet = false) {
       const z = zoneAt(x, y);
       if (!z) {
-        if (!quiet) live.textContent = `${P[who].name}'s dart bounced off the wall.`;
+        if (!quiet) live.textContent = msg('bounced', { player: P[who].name });
         return;
       }
       const other = darts.find((d) => d.zone === z.id && d.who !== who);
       if (other) {
         other.el?.remove();
         darts = darts.filter((d) => d !== other);
-        if (!quiet) live.textContent = `Cancelled! Both darts on the ${z.name} territory are out.`;
+        if (!quiet) live.textContent = msg('cancelled', { colour: msg(z.name) });
         // A quick puff where they cancelled.
         const puff = document.createElementNS(SVG, 'circle');
         puff.setAttribute('cx', String(x));
@@ -354,7 +398,7 @@ const { game, title = 'Darts', class: className } = Astro.props;
       const d: Dart = { x, y, who, zone: z.id };
       darts.push(d);
       drawDart(d);
-      if (!quiet) live.textContent = `${P[who].name} snipes a ${z.name} territory (${z.value} pt${z.value > 1 ? 's' : ''}).`;
+      if (!quiet) live.textContent = msg('snipes', { player: P[who].name, colour: msg(z.name), points: pts(z.value) });
       renderTally();
     }
     function scores() {
@@ -386,7 +430,7 @@ const { game, title = 'Darts', class: className } = Astro.props;
       reticle.setAttribute('transform', `translate(${aim.x.toFixed(1)} ${aim.y.toFixed(1)})`);
       if (mode === 'round') {
         const secs = Math.max(0, Math.ceil((endsAt - now) / 1000));
-        clock.textContent = `⏱ ${secs}s · darts: ${P.you.name} ${left.you}, ${P.rival.name} ${left.rival}`;
+        clock.textContent = msg('clock', { seconds: secs, you: P.you.name, youLeft: left.you, rival: P.rival.name, rivalLeft: left.rival });
         if (now >= endsAt || (left.you === 0 && left.rival === 0)) return finishRound();
       }
       if (mode === 'practice' || mode === 'round') raf = requestAnimationFrame(moveAim);
@@ -412,7 +456,7 @@ const { game, title = 'Darts', class: className } = Astro.props;
       if (mode === 'practice') {
         // As in the book: the first one flies low and lodges below the board.
         land('you', aim.x * 0.3, 112 + Math.random() * 10);
-        live.textContent = 'Your dart flies low and lodges in the wall below the board.';
+        live.textContent = msg('low');
         mode = 'talk';
         stopAim();
         return;
@@ -449,7 +493,7 @@ const { game, title = 'Darts', class: className } = Astro.props;
       window.clearTimeout(rivalTimer);
       stopAim();
       throwBtn.disabled = false;
-      live.textContent = 'Time! The room starts to move too much…';
+      live.textContent = msg('time');
       if (!reduced) {
         scene.classList.remove('is-spinning');
         void scene.getBoundingClientRect();
@@ -466,18 +510,18 @@ const { game, title = 'Darts', class: className } = Astro.props;
           g?.remove();
           darts = darts.filter((d) => d.el !== g);
           land('rival', 18, -40, true);
-          live.textContent = 'His first dart clings, then falls. The second lands on a green territory near the centre.';
+          live.textContent = msg('warmup');
         }, 600);
       },
       practice: () => {
         mode = 'practice';
         sway = 18;
-        live.textContent = 'Your turn: press Throw (or Space) when the aim is where you want it.';
+        live.textContent = msg('yourTurn');
         startAim();
       },
       hiromiMiss: () => {
         land('rival', 20, -85, true);
-        live.textContent = 'He aims for the same green, and lands far above it, on purple.';
+        live.textContent = msg('miss');
       },
       round: () => {
         // Clear the practice darts; both players throw at once until the darts or the time run out.
@@ -494,9 +538,10 @@ const { game, title = 'Darts', class: className } = Astro.props;
       },
       end: () => {
         const s = scores();
-        const verdict = s.you > s.rival ? `${P.you.name} wins, somehow!` : s.you === s.rival ? 'A draw!' : `${P.rival.name} wins.`;
-        live.textContent = `Final score: ${P.you.name} ${s.you}, ${P.rival.name} ${s.rival}. ${verdict}`;
-        tally.textContent = `Final: ${P.you.name} ${s.you} · ${P.rival.name} ${s.rival} · ${verdict}`;
+        const verdict = s.you > s.rival ? msg('youWin', { you: P.you.name }) : s.you === s.rival ? msg('draw') : msg('rivalWins', { rival: P.rival.name });
+        const v = { you: P.you.name, youScore: s.you, rival: P.rival.name, rivalScore: s.rival, verdict };
+        live.textContent = msg('finalLive', v);
+        tally.textContent = msg('finalTally', v);
         next.hidden = true;
         restart.hidden = false;
         mode = 'done';

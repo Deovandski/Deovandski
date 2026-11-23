@@ -1,0 +1,790 @@
+{
+ "00f42f627fce": {
+  "en": "Your post was shown to 1 more person than last time! Keep going!",
+  "t": "你的帖子比上次多展示给了 1 个人！继续！"
+ },
+ "02b13b00cdc9": {
+  "en": "FEVER! The whole floor lights up.",
+  "t": "狂热！整个舞池都亮了。"
+ },
+ "046fa1a6bc47": {
+  "en": "Nothing to clean.",
+  "t": "没什么好清理的。"
+ },
+ "0a3c15792056": {
+  "en": "pictures",
+  "t": "图片"
+ },
+ "0bf9322efcf3": {
+  "en": "Final score: {you} {youScore}, {rival} {rivalScore}. {verdict}",
+  "t": "最终得分：{you} {youScore}，{rival} {rivalScore}。{verdict}"
+ },
+ "0c1d9293305f": {
+  "en": "thrown too hard, so it looped and lost its speed",
+  "t": "扔太猛，绕圈还丢了速度"
+ },
+ "0faaf0fb0bb0": {
+  "en": "More balls than shit. Keep it that way!",
+  "t": "球比屎多。保持住！"
+ },
+ "13a29a85064f": {
+  "en": "Plot {plot}: empty. Plant {crop}.",
+  "t": "地块 {plot}：空。种 {crop}。"
+ },
+ "149d7ab31b5c": {
+  "en": "Go!",
+  "t": "上！"
+ },
+ "1825a9d5984b": {
+  "en": "Fold 1 of 5: drag the top-left corner to the dot on the centre line.",
+  "t": "第 1/5 折：把左上角拖到中线点上。"
+ },
+ "19e17a057b61": {
+  "en": "Your turn: press Throw (or Space) when the aim is where you want it.",
+  "t": "轮到你了：瞄准好后按“扔！”（或空格键）。"
+ },
+ "1b9f359ce480": {
+  "en": "Dance",
+  "t": "跳舞"
+ },
+ "1e69f9e7e667": {
+  "en": "📉 -{n} followers. \"Not this again…\"",
+  "t": "📉 -{n} 粉丝。“又来了…”"
+ },
+ "20cd7e840557": {
+  "en": "Fertilized {crop} ({n}). Better odds!",
+  "t": "给 {crop} 施了肥（{n}）。几率更好！"
+ },
+ "2104ba8031ca": {
+  "en": "You lost {n} followers. Your audience is tired of {kind}.",
+  "t": "你丢了 {n} 粉丝。观众对 {kind} 腻了。"
+ },
+ "2108fcbf3093": {
+  "en": "Good call. The best move is not to play. Now go outside.",
+  "t": "好选择。最好的招就是不玩。现在出去走走。"
+ },
+ "22e02026aa78": {
+  "en": "Crisp!",
+  "t": "漂亮！"
+ },
+ "2438453caeb0": {
+  "en": "there's poop to clean",
+  "t": "有便便要清理"
+ },
+ "244d46168deb": {
+  "en": "a cactus",
+  "t": "一棵仙人掌"
+ },
+ "25270ee78057": {
+  "en": "Balls worth {balls} pearls vs {shit} shit.",
+  "t": "球值 {balls} 珀尔，对比 {shit} 坨屎。"
+ },
+ "2583d0fe0cc8": {
+  "en": "{name} feels lonely",
+  "t": "{name} 觉得孤单"
+ },
+ "26deb96c0c06": {
+  "en": "Toe stand &amp; point",
+  "t": "踮脚指天"
+ },
+ "278cc325dfd3": {
+  "en": "Trending… in your apartment.",
+  "t": "热门…在你的公寓里。"
+ },
+ "27b48cf9ae90": {
+  "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
+  "t": "也就是用 {mode} 模式录制的 {tapes} 盘 VHS 录像带（每盘 T-120 录 {perTape} 小时）。"
+ },
+ "27bbcef16995": {
+  "en": "Hiromi",
+  "t": "弘美"
+ },
+ "2a0a84854369": {
+  "en": "uneven left and right folds pulled it up",
+  "t": "左右折得不对称把它往上拉"
+ },
+ "2b5ecdaf34f0": {
+  "en": "aquamarines",
+  "t": "阿夸马林"
+ },
+ "2c1e5036b725": {
+  "en": "{n} balls in the bag",
+  "t": "袋中有 {n} 个球"
+ },
+ "2f2bbafed371": {
+  "en": "Posted. Nobody cares. Yet.",
+  "t": "已发布。没人在乎。暂时。"
+ },
+ "31071d58e994": {
+  "en": "a bird",
+  "t": "一只鸟"
+ },
+ "318f9434e024": {
+  "en": "{crop} is still growing.",
+  "t": "{crop} 还在长。"
+ },
+ "31b5e865a21e": {
+  "en": "{name} loves that.",
+  "t": "{name} 超喜欢。"
+ },
+ "31fae22769c6": {
+  "en": "Time! You whacked {hits} {names} and missed {misses}. {verdict}",
+  "t": "时间到！你打中了 {hits} 个 {names}，漏了 {misses} 个。{verdict}"
+ },
+ "331a84a2e901": {
+  "en": "{name} popped up {corner}!",
+  "t": "{name} 冒出来了（{corner}）！"
+ },
+ "38d4249ff036": {
+  "en": "⏱ {seconds}s · darts: {you} {youLeft}, {rival} {rivalLeft}",
+  "t": "⏱ {seconds}s · 飞镖：{you} {youLeft}，{rival} {rivalLeft}"
+ },
+ "39091a099ef5": {
+  "en": "Plot {plot}: {crop}, ready in {seconds} seconds.",
+  "t": "地块 {plot}：{crop}，{seconds} 秒后可收获。"
+ },
+ "3ffa6ae98146": {
+  "en": "The line dance",
+  "t": "排舞"
+ },
+ "40e405b6605c": {
+  "en": "I haven’t heard of that, but yeah, I prefer targeting the yellow ones, as those are worth more if you snipe all territories.",
+  "t": "我没听说过那种玩法，不过是啊，我更喜欢瞄准黄色的那些，因为如果你狙击了所有领地，那些的分更高。"
+ },
+ "42766efba402": {
+  "en": "Middle ring",
+  "t": "中环"
+ },
+ "42ae6cb3cd8f": {
+  "en": "Time! The room starts to move too much…",
+  "t": "时间到！房间开始晃得太厉害了…"
+ },
+ "4322655424cd": {
+  "en": "Routine #{n}: {routine}.",
+  "t": "套路 #{n}：{routine}。"
+ },
+ "43eb964be6dd": {
+  "en": "FEVER!",
+  "t": "狂热！"
+ },
+ "4787267d603e": {
+  "en": "You lost your streak.",
+  "t": "你断连了。"
+ },
+ "4a2ded82016c": {
+  "en": "Planted {crop}.",
+  "t": "种下了 {crop}。"
+ },
+ "4b482e2ae4e2": {
+  "en": "⚠️ Your {n}-post streak is about to die!",
+  "t": "⚠️ 你的 {n} 连发快断了！"
+ },
+ "4c1c703b94bd": {
+  "en": "The point",
+  "t": "指天"
+ },
+ "4c1f1c138390": {
+  "en": "Not bad!",
+  "t": "不错！"
+ },
+ "4c660686dc07": {
+  "en": "His first dart clings, then falls. The second lands on a green territory near the centre.",
+  "t": "他的第一支飞镖先卡住，然后掉了。第二支落在中心附近的绿色领地上。"
+ },
+ "4c9a82ce72ca": {
+  "en": "blue",
+  "t": "蓝色"
+ },
+ "4d2751b25828": {
+  "en": "Kinda? Was the board always this big and colored? I thought it was rounded too— OH YEAH! The center is worth more, right?",
+  "t": "算是吧？这块板一直都这么大、这么多颜色吗？我还以为它是圆的——噢对了！中心的分更高，对吧？"
+ },
+ "4d5fb4549070": {
+  "en": "Angle {angle}°, power {power}%. Space to throw.",
+  "t": "角度 {angle}°，力度 {power}%。空格发射。"
+ },
+ "4ddc5d84096c": {
+  "en": "pearl",
+  "t": "珀尔"
+ },
+ "50ccc5e2e037": {
+  "en": "He aims for the same green, and lands far above it, on purple.",
+  "t": "他瞄准同一个绿色，结果落在上面很远的紫色上。"
+ },
+ "50db544157bb": {
+  "en": "Off beat",
+  "t": "没踩点"
+ },
+ "511ce74bedd3": {
+  "en": "Fold 3 of 5: drag the new left corner to the centre dot.",
+  "t": "第 3/5 折：把新的左角拖到中心点。"
+ },
+ "512377a8dafe": {
+  "en": "You threw {thing}.",
+  "t": "你扔了 {thing}。"
+ },
+ "52a662e91e85": {
+  "en": "Right now it tastes like shit. Keep planting.",
+  "t": "现在尝起来像屎。继续种。"
+ },
+ "54834f8e5fe6": {
+  "en": "You spent {time} and {posts} posts chasing {n} followers who don't exist. Now go outside.",
+  "t": "你花了 {time} 和 {posts} 帖去追 {n} 个不存在的粉丝。现在出去走走。"
+ },
+ "576766d387ec": {
+  "en": "Play again",
+  "t": "再玩一次"
+ },
+ "595380aaecec": {
+  "en": "amethysts",
+  "t": "阿米西斯特"
+ },
+ "5db2a98f777b": {
+  "en": "You need {n} {ball} to plant {crop}. Trade up at the market.",
+  "t": "你需要 {n} {ball} 才能种 {crop}。去市场交易。"
+ },
+ "5e20a863dd1e": {
+  "en": "Nom nom!",
+  "t": "Nom nom！"
+ },
+ "5f0128979edd": {
+  "en": "0 views. Shadowbanned?",
+  "t": "0 浏览。被限流了？"
+ },
+ "60fa9414860a": {
+  "en": "aimed at the floor",
+  "t": "瞄准了地板"
+ },
+ "61dedcf053ff": {
+  "en": "Good",
+  "t": "好"
+ },
+ "64791c7db8b4": {
+  "en": "On beat!",
+  "t": "踩点！"
+ },
+ "648e31fe0ec2": {
+  "en": "{word} Folded! Precision {n}%. Now drag back from the plane to aim, and let go to throw (or use the arrow keys and Space).",
+  "t": "{word} 折好了！精度 {n}%。现在从飞机往后拖瞄准，松手发射（或用方向键和空格）。"
+ },
+ "65be7475750d": {
+  "en": "{min} min {sec} s",
+  "t": "{min} 分 {sec} 秒"
+ },
+ "660d7f656e76": {
+  "en": "The dino dodged it.",
+  "t": "恐龙躲开了。"
+ },
+ "68507370f897": {
+  "en": "🚀 VIRAL! +{views} views, +{follows} followers",
+  "t": "🚀 爆了！+{views} 浏览，+{follows} 粉丝"
+ },
+ "6893ddca41ed": {
+  "en": "Only {n} to {goal}!",
+  "t": "只差 {n} 到 {goal}！"
+ },
+ "69b0b68def54": {
+  "en": "SEE? It’s all about mindset! You know what, Harry? You’re cool! So why not play a bit of territory snipping to celebrate?",
+  "t": "看到没？关键在于心态！你知道吗，哈利？你很酷！那为什么不来玩一会儿领地狙击庆祝一下？"
+ },
+ "6aa9ec501cfb": {
+  "en": "{sec} s",
+  "t": "{sec} 秒"
+ },
+ "6c4f692b2d93": {
+  "en": "{player} snipes a {colour} territory ({points}).",
+  "t": "{player} 狙击了{colour}领地（{points}）。"
+ },
+ "6cae7ad96e0d": {
+  "en": "sapphires",
+  "t": "萨菲尔"
+ },
+ "6daea1f3952f": {
+  "en": "Play time!",
+  "t": "该玩了！"
+ },
+ "7052c90bfbaf": {
+  "en": "Balls worth {balls} pearl vs {shit} shit.",
+  "t": "球值 {balls} 珀尔，对比 {shit} 坨屎。"
+ },
+ "73b886d405a7": {
+  "en": "{name} is hungry",
+  "t": "{name} 饿了"
+ },
+ "74a8c36c9678": {
+  "en": "You fucking loser! The dino survived and flips you off.",
+  "t": "你这个该死的失败者！恐龙活下来了还对你竖中指。"
+ },
+ "7503eb978cf4": {
+  "en": "Plot {plot}: {crop}, ready to harvest (it wilted).",
+  "t": "地块 {plot}：{crop}，可以收获（枯萎了）。"
+ },
+ "7675cf606b31": {
+  "en": "intellectual video",
+  "t": "知识类视频"
+ },
+ "76d4694d0853": {
+  "en": "❤️ +{n} like",
+  "t": "❤️ +{n} 赞"
+ },
+ "77003d07271f": {
+  "en": "Best",
+  "t": "最佳"
+ },
+ "781961bc81c2": {
+  "en": "Pause",
+  "t": "暂停"
+ },
+ "78988010b890": {
+  "en": "red",
+  "t": "红色"
+ },
+ "78fadeed7303": {
+  "en": "{n} ball in the bag",
+  "t": "袋中有 {n} 个球"
+ },
+ "7a5a08b6baea": {
+  "en": "3 views. Two were you.",
+  "t": "3 浏览。两个是你自己。"
+ },
+ "7a8cb7243b93": {
+  "en": "{n} pt",
+  "t": "{n} 分"
+ },
+ "7ac1384e8f1a": {
+  "en": "crisp folds helped it glide",
+  "t": "整齐的折痕帮它滑翔"
+ },
+ "7f09aca0998e": {
+  "en": "clickbait video",
+  "t": "标题党视频"
+ },
+ "857aacdbee63": {
+  "en": "Harvest!",
+  "t": "收获！"
+ },
+ "85a1ecacad2c": {
+  "en": "That’s the spirit! … You played this before, right?",
+  "t": "就是这股劲儿！…你以前玩过这个，对吧？"
+ },
+ "868657e908ac": {
+  "en": "Harry",
+  "t": "哈利"
+ },
+ "868d15508a8a": {
+  "en": "{name} is stuffed!",
+  "t": "{name} 吃撑了！"
+ },
+ "8827c825266b": {
+  "en": "uneven left and right folds pulled it down",
+  "t": "左右折得不对称把它往下拉"
+ },
+ "88abbb44e60f": {
+  "en": "random shit",
+  "t": "随便什么破玩意"
+ },
+ "89a35bbdf744": {
+  "en": "Your {n}-post streak is about to die. Post something!",
+  "t": "你的 {n} 连发快断了。发点什么！"
+ },
+ "8a12d5626fe3": {
+  "en": "Trending",
+  "t": "热门"
+ },
+ "8b1aa1d275e3": {
+  "en": "All clean.",
+  "t": "全干净了。"
+ },
+ "8e4e0408b8f6": {
+  "en": "pearls",
+  "t": "珀尔"
+ },
+ "8eb5eb869df6": {
+  "en": "thrown too softly",
+  "t": "扔太轻"
+ },
+ "935f6cd89f4a": {
+  "en": "A draw!",
+  "t": "平局！"
+ },
+ "955b7068c35b": {
+  "en": "Row {row}, column {col} on",
+  "t": "第 {row} 行，第 {col} 列 开"
+ },
+ "956ec36375d4": {
+  "en": "Best {n} m",
+  "t": "最佳 {n} m"
+ },
+ "96de5543d183": {
+  "en": "yellow",
+  "t": "黄色"
+ },
+ "972a61c6393a": {
+  "en": "{name} is content.",
+  "t": "{name} 很满足。"
+ },
+ "992fb4c6838e": {
+  "en": "{you} wins, somehow!",
+  "t": "{you} 居然赢了！"
+ },
+ "9bdcbc1f38da": {
+  "en": "You’re coolio too!",
+  "t": "你也超酷的！"
+ },
+ "9cf7bc8b3812": {
+  "en": "Your {kind} went viral: {views} views and {follows} new followers.",
+  "t": "你的 {kind} 火了：{views} 浏览和 {follows} 新粉丝。"
+ },
+ "9d6c79478e4e": {
+  "en": "Legendary reflexes!",
+  "t": "传说级反应！"
+ },
+ "9dbfccdd9baa": {
+  "en": "🔥 {n}-post streak! Don't break it!",
+  "t": "🔥 连发 {n} 帖！别断！"
+ },
+ "9f8030cb22e8": {
+  "en": "The algorithm has left you on read.",
+  "t": "算法把你已读不回了。"
+ },
+ "9f8d43df802f": {
+  "en": "Wheee!",
+  "t": "Wheee！"
+ },
+ "a03e9007dd84": {
+  "en": "You fucking loser!",
+  "t": "你这个该死的失败者！"
+ },
+ "a44c1fbbccc0": {
+  "en": "Traded {n} {give} for 1 {get}.",
+  "t": "用 {n} {give} 换了 1 {get}。"
+ },
+ "a5654a379120": {
+  "en": "Cleared",
+  "t": "已清除"
+ },
+ "a691267c5647": {
+  "en": "{rival} wins.",
+  "t": "{rival} 赢了。"
+ },
+ "a74615c9d0f5": {
+  "en": "The hustle",
+  "t": "Hustle 舞"
+ },
+ "a75be8f0bded": {
+  "en": "Cancelled! Both darts on the {colour} territory are out.",
+  "t": "取消！{colour}领地上的两支飞镖都出局了。"
+ },
+ "a844766240b7": {
+  "en": "a rock",
+  "t": "一块石头"
+ },
+ "a8b5fc4f044d": {
+  "en": "Fertilized {n} times.",
+  "t": "已施肥 {n} 次。"
+ },
+ "ab42dc3d0e5c": {
+  "en": "another dino",
+  "t": "另一只恐龙"
+ },
+ "abc4c339d728": {
+  "en": "It wilted. You got {what}. Fertilizer, at least.",
+  "t": "枯萎了。你得到了 {what}。至少有肥料。"
+ },
+ "abfa242a93fa": {
+  "en": "💔 Streak lost. {n} posts, gone.",
+  "t": "💔 连发断了。{n} 帖，没了。"
+ },
+ "adde1258fbad": {
+  "en": "Personal best: {n} m",
+  "t": "个人纪录：{n} m"
+ },
+ "ae4d8a00b6ce": {
+  "en": "▶️ +{views} views",
+  "t": "▶️ +{views} 浏览"
+ },
+ "aed6b9811801": {
+  "en": "So close! Your post was one share away from blowing up.",
+  "t": "好近！你的帖子只差一次分享就爆了。"
+ },
+ "af429fb22354": {
+  "en": "Nice whacking!",
+  "t": "打得漂亮！"
+ },
+ "afaed75406bd": {
+  "en": "purple",
+  "t": "紫色"
+ },
+ "b2b52c2fc7c2": {
+  "en": "Snipe all territories? That’s—different—I think. Can—can you explain?",
+  "t": "狙击所有领地？那——不一样——我想。你——你能解释一下吗？"
+ },
+ "b45d00ec07a3": {
+  "en": "Bonus day! Every {name} counts double. Go!",
+  "t": "奖励日！每个 {name} 算双倍。上！"
+ },
+ "b6df21551d66": {
+  "en": "sloppy folds made it wobble and drag",
+  "t": "潦草的折痕让它晃悠还拖底"
+ },
+ "b783ecde91e7": {
+  "en": "Plot {plot}: {crop}, ready to harvest.",
+  "t": "地块 {plot}：{crop}，可以收获。"
+ },
+ "b8a13eba61b4": {
+  "en": "{m} m ({ft} ft).",
+  "t": "{m} m（{ft} ft）。"
+ },
+ "b8c8d91c4ad6": {
+  "en": "Yellow centre",
+  "t": "黄色中心"
+ },
+ "b98ab59bdc99": {
+  "en": "{n} pts",
+  "t": "{n} 分"
+ },
+ "b9f8e7d16bef": {
+  "en": "{player}'s dart bounced off the wall.",
+  "t": "{player} 的飞镖从墙上弹开了。"
+ },
+ "bbc97dc5386e": {
+  "en": "it climbed too steeply and stalled",
+  "t": "爬升太陡失速了"
+ },
+ "bc38448e90c1": {
+  "en": "Aw, my chitin ass! Anyways, the goal is to land on the same color region to score a point. If you land on a region with someone else’s dart, you two cancel each other out. Ehh—right? Right—right. The smaller the region, the more it’s worth when sniping it. That makes sense?",
+  "t": "噢，我的几丁质屁股！总之，目标是落在同一个颜色的区域来得分。如果你落在一个有别人飞镖的区域，你们俩就互相抵消。呃——对吧？对——对。区域越小，狙击它的时候分值就越高。明白了吗？"
+ },
+ "bc74f4f071a5": {
+  "en": "green",
+  "t": "绿色"
+ },
+ "beaf88b8f9bb": {
+  "en": "Music: off",
+  "t": "音乐：关"
+ },
+ "bec764a9d2b7": {
+  "en": "Fold 2 of 5: now the top-right corner to the same dot.",
+  "t": "第 2/5 折：现在把右上角拖到同一点。"
+ },
+ "bfc2ec349cc6": {
+  "en": "{n} shit 💩",
+  "t": "{n} 坨屎 💩"
+ },
+ "c1070741a87a": {
+  "en": "{name}s",
+  "t": "{name}"
+ },
+ "c1218408e29a": {
+  "en": "Just a hunk—that was me warming up! Now try to throw on a green section or anywhere else.",
+  "t": "就等一下——刚才是我在热身！现在试着扔到绿色区域或者其他任何地方。"
+ },
+ "c2032d98f6ff": {
+  "en": "natural {n}!",
+  "t": "天然 {n}！"
+ },
+ "c327716d8241": {
+  "en": "Angle {angle}°   Power {power}%",
+  "t": "角度 {angle}°   力度 {power}%"
+ },
+ "c46451ea184b": {
+  "en": "That one has all the fertilizer it can take ({max}).",
+  "t": "那个已经施满了（{max}）。"
+ },
+ "c574501fd8fe": {
+  "en": "Roll d{sides} (last roll {result})",
+  "t": "掷 d{sides}（上次结果 {result}）"
+ },
+ "c6e2f87cd267": {
+  "en": "sapphire",
+  "t": "萨菲尔"
+ },
+ "c75ac3fad137": {
+  "en": "{n}s left",
+  "t": "还剩 {n} 秒"
+ },
+ "c7abd16eb68f": {
+  "en": "Brotha—you suck at this—Harry?",
+  "t": "兄弟——你玩得太烂了——哈利？"
+ },
+ "c852360f55c1": {
+  "en": "—Yea? So I play next?",
+  "t": "——明白？那下一个我来扔？"
+ },
+ "c9db75e9dd40": {
+  "en": "Harvested {crop}: {what}!",
+  "t": "收获了 {crop}：{what}！"
+ },
+ "ca2c4b70322c": {
+  "en": "{level}, {n} out of 100",
+  "t": "{level}，{n}/100"
+ },
+ "cc60a1651cdd": {
+  "en": "Final: {you} {youScore} · {rival} {rivalScore} · {verdict}",
+  "t": "最终：{you} {youScore} · {rival} {rivalScore} · {verdict}"
+ },
+ "ccd479b39669": {
+  "en": "Out of shit to fertilize with.",
+  "t": "没有屎可以施肥了。"
+ },
+ "cd719473682b": {
+  "en": "Winner Winner Chicken Dinner! You took the dino down.",
+  "t": "大吉大利，今晚吃鸡！你打倒了恐龙。"
+ },
+ "ce00926930a4": {
+  "en": "New personal best!",
+  "t": "新个人纪录！"
+ },
+ "ce2c178cd497": {
+  "en": "Fold precision {n}%.",
+  "t": "折纸精度 {n}%。"
+ },
+ "ce3c494a5e85": {
+  "en": "Aiight!",
+  "t": "好嘞！"
+ },
+ "cf32e9152179": {
+  "en": "❤️ +{n} likes",
+  "t": "❤️ +{n} 赞"
+ },
+ "d0683718593c": {
+  "en": "Sloppy",
+  "t": "潦草"
+ },
+ "d0799417b93a": {
+  "en": "Score: {n}",
+  "t": "得分：{n}"
+ },
+ "d26d358f777a": {
+  "en": "Your dart flies low and lodges in the wall below the board.",
+  "t": "你的飞镖飞得太低，扎在了板子下方的墙上。"
+ },
+ "d397cf31a23a": {
+  "en": "Same plane. Drag back to aim and let go to throw.",
+  "t": "同一架飞机。往后拖瞄准，松手发射。"
+ },
+ "d3c3cff3fcea": {
+  "en": "Almost went viral! 97% to the For You page.",
+  "t": "差点就火了！离 For You 页还差 3%。"
+ },
+ "d62a14276f7a": {
+  "en": "Fold 4 of 5: and the right corner to the same dot.",
+  "t": "第 4/5 折：右角也拖到同一点。"
+ },
+ "d74cdcf6827c": {
+  "en": "Landed!",
+  "t": "着陆了！"
+ },
+ "d7f186ff8a7c": {
+  "en": "leaking away: use it!",
+  "t": "正在流失：快用！"
+ },
+ "df568bac40e4": {
+  "en": "A pile of {n} VHS tapes",
+  "t": "一堆 {n} 盒 VHS 录像带"
+ },
+ "e24b1fcf7aa8": {
+  "en": "Fresh skin",
+  "t": "换张新皮"
+ },
+ "e45f65625355": {
+  "en": "amethyst",
+  "t": "阿米西斯特"
+ },
+ "e5100c3c7795": {
+  "en": "Fold precision {n}%: {tips}.",
+  "t": "折纸精度 {n}%：{tips}。"
+ },
+ "e53060217b21": {
+  "en": "Not enough energy. It refills every second.",
+  "t": "能量不足。每秒回复。"
+ },
+ "e76e281ed9f1": {
+  "en": "Back to the starting picture",
+  "t": "回到起始图"
+ },
+ "ea35482e6295": {
+  "en": "Good try! Good try! C’mon! Try again!",
+  "t": "扔得好！扔得好！来吧！再试一次！"
+ },
+ "ea52ac390158": {
+  "en": "▶️ +{views} views, +{follows} followers",
+  "t": "▶️ +{views} 浏览，+{follows} 粉丝"
+ },
+ "ea61674580d7": {
+  "en": "Total: {sum}",
+  "t": "总计：{sum}"
+ },
+ "eab75ee3a0a6": {
+  "en": "Winner Winner Chicken Dinner",
+  "t": "大吉大利，今晚吃鸡"
+ },
+ "ed74b38312d6": {
+  "en": "She got away…",
+  "t": "她跑了…"
+ },
+ "ee83a7441ce6": {
+  "en": "Time! You whacked {hits} {name} and missed {misses}. {verdict}",
+  "t": "时间到！你打中了 {hits} 个 {name}，漏了 {misses} 个。{verdict}"
+ },
+ "ef0ebbb77298": {
+  "en": "orange",
+  "t": "橙色"
+ },
+ "f0c3ff890745": {
+  "en": "{n} of {max}",
+  "t": "{n}/{max}"
+ },
+ "f290164d1315": {
+  "en": "Outer ring",
+  "t": "外环"
+ },
+ "f364840671b5": {
+  "en": "aquamarine",
+  "t": "阿夸马林"
+ },
+ "f36fdd3e82bb": {
+  "en": "Mana is building. Throw something at the dino!",
+  "t": "法力正在积蓄。朝恐龙扔点东西！"
+ },
+ "f4853c881e96": {
+  "en": "{n} more to earn",
+  "t": "还差 {n} 个才能获得"
+ },
+ "f6842ab3afca": {
+  "en": "Miku",
+  "t": "初音未来"
+ },
+ "f917eb40cc44": {
+  "en": "Tap a growing crop to fertilize it with 1 shit.",
+  "t": "点一下正在长的作物，用 1 坨屎施肥。"
+ },
+ "f96e7bc80d25": {
+  "en": "Fertilize a plot that has something growing.",
+  "t": "给有东西在长的地块施肥。"
+ },
+ "f98f1fe356b4": {
+  "en": "Fold 5 of 5: fold it in half: bottom-left corner onto the bottom-right one.",
+  "t": "第 5/5 折：对折：左下角叠到右下角。"
+ },
+ "f9a7ce310699": {
+  "en": "▶️ +{views} views, +{follows} follower",
+  "t": "▶️ +{views} 浏览，+{follows} 粉丝"
+ },
+ "fb1415fda4ff": {
+  "en": "Music: on",
+  "t": "音乐：开"
+ },
+ "fb23c9ff0d27": {
+  "en": "Inner ring",
+  "t": "内环"
+ },
+ "fe732cbff74e": {
+  "en": "Row {row}, column {col} off",
+  "t": "第 {row} 行，第 {col} 列 关"
+ },
+ "feddfb10fb8d": {
+  "en": "We all play at the same time. GO!",
+  "t": "我们所有人同时玩。开始！"
+ }
+}

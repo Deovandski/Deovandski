@@ -13,7 +13,8 @@
 //   show up in `todo`.
 // - Anything with translate="no" (or inside it) is left alone: Vraki-typeface text, names in a logo, code.
 //   <textarea>, <pre>, <code>, <script>, <style> and <svg> are never translated.
-// - Text a script writes at run time (game messages and the like) isn't in the built page, so it stays English.
+// - Text a script writes at run time (game messages and the like) is translated only if it's in the built page: the
+//   reusable games keep theirs in a hidden `.<name>__strings` block of `<span data-k>` elements and read it from there.
 //
 // Store layout (content/i18n/)
 //   config.json              the language order, the 90% rule and the "Want a language added?" link

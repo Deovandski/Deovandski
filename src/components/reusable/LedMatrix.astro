@@ -50,6 +50,13 @@ const {
   label = 'LED matrix. Click or drag to draw; arrow keys and Space work too.',
   class: className,
 } = Astro.props;
+// What the script writes. It lives in the page so the site's translations reach it.
+const strings: Record<string, string> = {
+  on: 'Row {row}, column {col} on',
+  off: 'Row {row}, column {col} off',
+  cleared: 'Cleared',
+  reset: 'Back to the starting picture',
+};
 ---
 
 <div
@@ -61,6 +68,7 @@ const {
   data-figure={figure ? '1' : '0'}
   data-pattern={pattern ? JSON.stringify(pattern) : ''}
 >
+  <div class="led-matrix__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <div class="led-matrix__grid" role="application" aria-label={label} tabindex="0"></div>
   <div class="led-matrix__tools">
     <button type="button" data-act="clear">Clear</button>
@@ -227,6 +235,9 @@ const {
   document.querySelectorAll<HTMLElement>('.led-matrix').forEach((root) => {
     const grid = root.querySelector<HTMLElement>('.led-matrix__grid')!;
     const live = root.querySelector<HTMLElement>('.led-matrix__live')!;
+    // The page's (possibly translated) words; {name} slots are filled in here.
+    const msg = (key: string, vars: Record<string, string | number> = {}) =>
+      (root.querySelector(`.led-matrix__strings [data-k="${key}"]`)?.textContent ?? key).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
     const rows = Number(root.dataset.rows) || 20;
     const basePitch = Number(root.dataset.pitch) || 14;
     const text = root.dataset.text || 'Huehuehue';
@@ -334,7 +345,7 @@ const {
       } else if (ev.key === ' ' || ev.key === 'Enter') {
         drawn = true;
         const on = cells[cursor].classList.toggle('on');
-        live.textContent = `Row ${y + 1}, column ${x + 1} ${on ? 'on' : 'off'}`;
+        live.textContent = msg(on ? 'on' : 'off', { row: y + 1, col: x + 1 });
         ev.preventDefault();
       }
     });
@@ -342,12 +353,12 @@ const {
     root.querySelector('[data-act="clear"]')!.addEventListener('click', () => {
       drawn = true;
       cells.forEach((c) => c.classList.remove('on'));
-      live.textContent = 'Cleared';
+      live.textContent = msg('cleared');
     });
     root.querySelector('[data-act="reset"]')!.addEventListener('click', () => {
       drawn = false;
       paint(start());
-      live.textContent = 'Back to the starting picture';
+      live.textContent = msg('reset');
     });
 
     // Hidden tabs have no width yet: lay out when it first gets one, and again when the width changes.

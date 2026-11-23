@@ -1,0 +1,790 @@
+{
+ "00f42f627fce": {
+  "en": "Your post was shown to 1 more person than last time! Keep going!",
+  "t": "तुम्हारा पोस्ट पिछली बार से 1 और व्यक्ति को दिखा! जारी रखो!"
+ },
+ "02b13b00cdc9": {
+  "en": "FEVER! The whole floor lights up.",
+  "t": "फ़ीवर! पूरा फ़र्श जगमगा उठा।"
+ },
+ "046fa1a6bc47": {
+  "en": "Nothing to clean.",
+  "t": "साफ करने को कुछ नहीं।"
+ },
+ "0a3c15792056": {
+  "en": "pictures",
+  "t": "तस्वीरें"
+ },
+ "0bf9322efcf3": {
+  "en": "Final score: {you} {youScore}, {rival} {rivalScore}. {verdict}",
+  "t": "अंतिम स्कोर: {you} {youScore}, {rival} {rivalScore}। {verdict}"
+ },
+ "0c1d9293305f": {
+  "en": "thrown too hard, so it looped and lost its speed",
+  "t": "बहुत जोर से फेंका, लूप किया और स्पीड खोई"
+ },
+ "0faaf0fb0bb0": {
+  "en": "More balls than shit. Keep it that way!",
+  "t": "टट्टी से ज़्यादा गेंदें। ऐसे ही रखो!"
+ },
+ "13a29a85064f": {
+  "en": "Plot {plot}: empty. Plant {crop}.",
+  "t": "प्लॉट {plot}: खाली। {crop} लगाओ।"
+ },
+ "149d7ab31b5c": {
+  "en": "Go!",
+  "t": "जाओ!"
+ },
+ "1825a9d5984b": {
+  "en": "Fold 1 of 5: drag the top-left corner to the dot on the centre line.",
+  "t": "मोड़ 1/5: ऊपरी-बाएँ कोने को मध्य रेखा के बिंदु तक खींचो।"
+ },
+ "19e17a057b61": {
+  "en": "Your turn: press Throw (or Space) when the aim is where you want it.",
+  "t": "तुम्हारी बारी: जब निशाना सही जगह हो तब \"फेंको!\" (या स्पेस) दबाओ।"
+ },
+ "1b9f359ce480": {
+  "en": "Dance",
+  "t": "नृत्य"
+ },
+ "1e69f9e7e667": {
+  "en": "📉 -{n} followers. \"Not this again…\"",
+  "t": "📉 -{n} फॉलोअर्स। \"फिर से नहीं…\""
+ },
+ "20cd7e840557": {
+  "en": "Fertilized {crop} ({n}). Better odds!",
+  "t": "{crop} को खाद दी ({n})। बेहतर मौका!"
+ },
+ "2104ba8031ca": {
+  "en": "You lost {n} followers. Your audience is tired of {kind}.",
+  "t": "तुमने {n} फॉलोअर्स खोए। दर्शक {kind} से थक गए।"
+ },
+ "2108fcbf3093": {
+  "en": "Good call. The best move is not to play. Now go outside.",
+  "t": "अच्छा फैसला। सबसे अच्छा कदम खेलना नहीं है। अब बाहर जाओ।"
+ },
+ "22e02026aa78": {
+  "en": "Crisp!",
+  "t": "एकदम सही!"
+ },
+ "2438453caeb0": {
+  "en": "there's poop to clean",
+  "t": "साफ करने के लिए पूप है"
+ },
+ "244d46168deb": {
+  "en": "a cactus",
+  "t": "एक कैक्टस"
+ },
+ "25270ee78057": {
+  "en": "Balls worth {balls} pearls vs {shit} shit.",
+  "t": "गेंदों की कीमत {balls} पर्ल बनाम {shit} टट्टी।"
+ },
+ "2583d0fe0cc8": {
+  "en": "{name} feels lonely",
+  "t": "{name} अकेला महसूस करता है"
+ },
+ "26deb96c0c06": {
+  "en": "Toe stand &amp; point",
+  "t": "पंजों पर खड़े होकर पॉइंट"
+ },
+ "278cc325dfd3": {
+  "en": "Trending… in your apartment.",
+  "t": "ट्रेंडिंग… तुम्हारे अपार्टमेंट में।"
+ },
+ "27b48cf9ae90": {
+  "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
+  "t": "यानी {mode} में रिकॉर्ड की गईं {tapes} VHS टेप (हर T-120 टेप में {perTape} घंटे)।"
+ },
+ "27bbcef16995": {
+  "en": "Hiromi",
+  "t": "हिरोमी"
+ },
+ "2a0a84854369": {
+  "en": "uneven left and right folds pulled it up",
+  "t": "असमान बाएँ-दाएँ मोड़ों ने ऊपर खींचा"
+ },
+ "2b5ecdaf34f0": {
+  "en": "aquamarines",
+  "t": "एक्वामरीन"
+ },
+ "2c1e5036b725": {
+  "en": "{n} balls in the bag",
+  "t": "बैग में {n} गेंदें"
+ },
+ "2f2bbafed371": {
+  "en": "Posted. Nobody cares. Yet.",
+  "t": "पोस्ट किया। किसी को फर्क नहीं पड़ता। अभी।"
+ },
+ "31071d58e994": {
+  "en": "a bird",
+  "t": "एक पक्षी"
+ },
+ "318f9434e024": {
+  "en": "{crop} is still growing.",
+  "t": "{crop} अभी भी उग रहा है।"
+ },
+ "31b5e865a21e": {
+  "en": "{name} loves that.",
+  "t": "{name} उसे पसंद करता है।"
+ },
+ "31fae22769c6": {
+  "en": "Time! You whacked {hits} {names} and missed {misses}. {verdict}",
+  "t": "समय! तुमने {hits} {names} मारे और {misses} छूटे। {verdict}"
+ },
+ "331a84a2e901": {
+  "en": "{name} popped up {corner}!",
+  "t": "{name} निकल आई ({corner})!"
+ },
+ "38d4249ff036": {
+  "en": "⏱ {seconds}s · darts: {you} {youLeft}, {rival} {rivalLeft}",
+  "t": "⏱ {seconds}s · डार्ट: {you} {youLeft}, {rival} {rivalLeft}"
+ },
+ "39091a099ef5": {
+  "en": "Plot {plot}: {crop}, ready in {seconds} seconds.",
+  "t": "प्लॉट {plot}: {crop}, {seconds} सेकंड में तैयार।"
+ },
+ "3ffa6ae98146": {
+  "en": "The line dance",
+  "t": "लाइन डांस"
+ },
+ "40e405b6605c": {
+  "en": "I haven’t heard of that, but yeah, I prefer targeting the yellow ones, as those are worth more if you snipe all territories.",
+  "t": "मैंने उसके बारे में नहीं सुना, पर हाँ, मुझे पीले वाले पर निशाना लगाना पसंद है, क्योंकि अगर तुम सारे इलाक़े छीन लो तो वे ज़्यादा क़ीमती होते हैं।"
+ },
+ "42766efba402": {
+  "en": "Middle ring",
+  "t": "मध्य रिंग"
+ },
+ "42ae6cb3cd8f": {
+  "en": "Time! The room starts to move too much…",
+  "t": "समय! कमरा बहुत ज्यादा हिलने लगा…"
+ },
+ "4322655424cd": {
+  "en": "Routine #{n}: {routine}.",
+  "t": "रूटीन #{n}: {routine}।"
+ },
+ "43eb964be6dd": {
+  "en": "FEVER!",
+  "t": "फ़ीवर!"
+ },
+ "4787267d603e": {
+  "en": "You lost your streak.",
+  "t": "तुमने स्ट्रीक खो दी।"
+ },
+ "4a2ded82016c": {
+  "en": "Planted {crop}.",
+  "t": "{crop} लगाया।"
+ },
+ "4b482e2ae4e2": {
+  "en": "⚠️ Your {n}-post streak is about to die!",
+  "t": "⚠️ तुम्हारी {n}-पोस्ट स्ट्रीक मरने वाली है!"
+ },
+ "4c1c703b94bd": {
+  "en": "The point",
+  "t": "पॉइंट"
+ },
+ "4c1f1c138390": {
+  "en": "Not bad!",
+  "t": "बुरा नहीं!"
+ },
+ "4c660686dc07": {
+  "en": "His first dart clings, then falls. The second lands on a green territory near the centre.",
+  "t": "उसका पहला डार्ट चिपका, फिर गिरा। दूसरा केंद्र के पास हरे क्षेत्र पर गिरा।"
+ },
+ "4c9a82ce72ca": {
+  "en": "blue",
+  "t": "नीला"
+ },
+ "4d2751b25828": {
+  "en": "Kinda? Was the board always this big and colored? I thought it was rounded too— OH YEAH! The center is worth more, right?",
+  "t": "कुछ-कुछ? क्या बोर्ड हमेशा इतना बड़ा और रंगीन होता था? मुझे लगा था वह गोल भी होता है— अरे हाँ! बीच वाला ज़्यादा क़ीमती होता है, है न?"
+ },
+ "4d5fb4549070": {
+  "en": "Angle {angle}°, power {power}%. Space to throw.",
+  "t": "कोण {angle}°, पावर {power}%. स्पेस से फेंको।"
+ },
+ "4ddc5d84096c": {
+  "en": "pearl",
+  "t": "पर्ल"
+ },
+ "50ccc5e2e037": {
+  "en": "He aims for the same green, and lands far above it, on purple.",
+  "t": "वही हरा निशाना लगाया और उससे बहुत ऊपर बैंगनी पर गिरा।"
+ },
+ "50db544157bb": {
+  "en": "Off beat",
+  "t": "बीट से बाहर"
+ },
+ "511ce74bedd3": {
+  "en": "Fold 3 of 5: drag the new left corner to the centre dot.",
+  "t": "मोड़ 3/5: नया बायाँ कोना मध्य बिंदु तक खींचो।"
+ },
+ "512377a8dafe": {
+  "en": "You threw {thing}.",
+  "t": "तुमने {thing} फेंका।"
+ },
+ "52a662e91e85": {
+  "en": "Right now it tastes like shit. Keep planting.",
+  "t": "अभी इसका स्वाद टट्टी जैसा है। लगाते रहो।"
+ },
+ "54834f8e5fe6": {
+  "en": "You spent {time} and {posts} posts chasing {n} followers who don't exist. Now go outside.",
+  "t": "तुमने {time} और {posts} पोस्ट खर्च करके {n} फॉलोअर्स का पीछा किया जो मौजूद नहीं। अब बाहर जाओ।"
+ },
+ "576766d387ec": {
+  "en": "Play again",
+  "t": "फिर से खेलें"
+ },
+ "595380aaecec": {
+  "en": "amethysts",
+  "t": "एमेथिस्ट"
+ },
+ "5db2a98f777b": {
+  "en": "You need {n} {ball} to plant {crop}. Trade up at the market.",
+  "t": "{crop} लगाने के लिए {n} {ball} चाहिए। बाजार में बदलो।"
+ },
+ "5e20a863dd1e": {
+  "en": "Nom nom!",
+  "t": "Nom nom!"
+ },
+ "5f0128979edd": {
+  "en": "0 views. Shadowbanned?",
+  "t": "0 व्यू। शैडोबैन?"
+ },
+ "60fa9414860a": {
+  "en": "aimed at the floor",
+  "t": "फर्श पर निशाना"
+ },
+ "61dedcf053ff": {
+  "en": "Good",
+  "t": "अच्छा"
+ },
+ "64791c7db8b4": {
+  "en": "On beat!",
+  "t": "बीट पर!"
+ },
+ "648e31fe0ec2": {
+  "en": "{word} Folded! Precision {n}%. Now drag back from the plane to aim, and let go to throw (or use the arrow keys and Space).",
+  "t": "{word} मोड़ा! सटीकता {n}%. अब विमान से पीछे खींचकर निशाना लगाओ और छोड़कर फेंको (या तीर कुंजी और स्पेस)।"
+ },
+ "65be7475750d": {
+  "en": "{min} min {sec} s",
+  "t": "{min} मिनट {sec} सेकंड"
+ },
+ "660d7f656e76": {
+  "en": "The dino dodged it.",
+  "t": "डायनो ने बचा लिया।"
+ },
+ "68507370f897": {
+  "en": "🚀 VIRAL! +{views} views, +{follows} followers",
+  "t": "🚀 वायरल! +{views} व्यू, +{follows} फॉलोअर्स"
+ },
+ "6893ddca41ed": {
+  "en": "Only {n} to {goal}!",
+  "t": "सिर्फ {n} बाकी {goal} तक!"
+ },
+ "69b0b68def54": {
+  "en": "SEE? It’s all about mindset! You know what, Harry? You’re cool! So why not play a bit of territory snipping to celebrate?",
+  "t": "देखा? सब सोच का खेल है! पता है क्या, हैरी? तुम मस्त हो! तो जश्न के लिए थोड़ी टेरिटरी स्निपिंग क्यों न खेलें?"
+ },
+ "6aa9ec501cfb": {
+  "en": "{sec} s",
+  "t": "{sec} सेकंड"
+ },
+ "6c4f692b2d93": {
+  "en": "{player} snipes a {colour} territory ({points}).",
+  "t": "{player} ने {colour} इलाक़ा छीन लिया ({points})।"
+ },
+ "6cae7ad96e0d": {
+  "en": "sapphires",
+  "t": "सफ़ायर"
+ },
+ "6daea1f3952f": {
+  "en": "Play time!",
+  "t": "खेलने का समय!"
+ },
+ "7052c90bfbaf": {
+  "en": "Balls worth {balls} pearl vs {shit} shit.",
+  "t": "गेंदों की कीमत {balls} पर्ल बनाम {shit} टट्टी।"
+ },
+ "73b886d405a7": {
+  "en": "{name} is hungry",
+  "t": "{name} भूखा है"
+ },
+ "74a8c36c9678": {
+  "en": "You fucking loser! The dino survived and flips you off.",
+  "t": "हारे हुए कमीने! डायनो बच गया और तुम्हें मिडिल फिंगर दिखा रहा है।"
+ },
+ "7503eb978cf4": {
+  "en": "Plot {plot}: {crop}, ready to harvest (it wilted).",
+  "t": "प्लॉट {plot}: {crop}, कटाई के लिए तैयार (मुरझा गया)।"
+ },
+ "7675cf606b31": {
+  "en": "intellectual video",
+  "t": "बौद्धिक वीडियो"
+ },
+ "76d4694d0853": {
+  "en": "❤️ +{n} like",
+  "t": "❤️ +{n} लाइक"
+ },
+ "77003d07271f": {
+  "en": "Best",
+  "t": "सर्वश्रेष्ठ"
+ },
+ "781961bc81c2": {
+  "en": "Pause",
+  "t": "रोकें"
+ },
+ "78988010b890": {
+  "en": "red",
+  "t": "लाल"
+ },
+ "78fadeed7303": {
+  "en": "{n} ball in the bag",
+  "t": "बैग में {n} गेंद"
+ },
+ "7a5a08b6baea": {
+  "en": "3 views. Two were you.",
+  "t": "3 व्यू। दो तुम थे।"
+ },
+ "7a8cb7243b93": {
+  "en": "{n} pt",
+  "t": "{n} अंक"
+ },
+ "7ac1384e8f1a": {
+  "en": "crisp folds helped it glide",
+  "t": "साफ मोड़ों से ग्लाइड किया"
+ },
+ "7f09aca0998e": {
+  "en": "clickbait video",
+  "t": "क्लिकबेट वीडियो"
+ },
+ "857aacdbee63": {
+  "en": "Harvest!",
+  "t": "कटाई!"
+ },
+ "85a1ecacad2c": {
+  "en": "That’s the spirit! … You played this before, right?",
+  "t": "यह हुई न बात! … तुमने यह पहले खेला है, है न?"
+ },
+ "868657e908ac": {
+  "en": "Harry",
+  "t": "हैरी"
+ },
+ "868d15508a8a": {
+  "en": "{name} is stuffed!",
+  "t": "{name} भरा हुआ है!"
+ },
+ "8827c825266b": {
+  "en": "uneven left and right folds pulled it down",
+  "t": "असमान बाएँ-दाएँ मोड़ों ने नीचे खींचा"
+ },
+ "88abbb44e60f": {
+  "en": "random shit",
+  "t": "रैंडम बकवास"
+ },
+ "89a35bbdf744": {
+  "en": "Your {n}-post streak is about to die. Post something!",
+  "t": "तुम्हारी {n}-पोस्ट स्ट्रीक मरने वाली है। कुछ पोस्ट करो!"
+ },
+ "8a12d5626fe3": {
+  "en": "Trending",
+  "t": "ट्रेंडिंग"
+ },
+ "8b1aa1d275e3": {
+  "en": "All clean.",
+  "t": "सब साफ।"
+ },
+ "8e4e0408b8f6": {
+  "en": "pearls",
+  "t": "पर्ल"
+ },
+ "8eb5eb869df6": {
+  "en": "thrown too softly",
+  "t": "बहुत धीरे फेंका"
+ },
+ "935f6cd89f4a": {
+  "en": "A draw!",
+  "t": "बराबरी!"
+ },
+ "955b7068c35b": {
+  "en": "Row {row}, column {col} on",
+  "t": "पंक्ति {row}, कॉलम {col} ऑन"
+ },
+ "956ec36375d4": {
+  "en": "Best {n} m",
+  "t": "सर्वश्रेष्ठ {n} m"
+ },
+ "96de5543d183": {
+  "en": "yellow",
+  "t": "पीला"
+ },
+ "972a61c6393a": {
+  "en": "{name} is content.",
+  "t": "{name} संतुष्ट है।"
+ },
+ "992fb4c6838e": {
+  "en": "{you} wins, somehow!",
+  "t": "{you} किसी तरह जीत गया!"
+ },
+ "9bdcbc1f38da": {
+  "en": "You’re coolio too!",
+  "t": "तुम भी मस्तमौला हो!"
+ },
+ "9cf7bc8b3812": {
+  "en": "Your {kind} went viral: {views} views and {follows} new followers.",
+  "t": "तुम्हारा {kind} वायरल हो गया: {views} व्यू और {follows} नए फॉलोअर्स।"
+ },
+ "9d6c79478e4e": {
+  "en": "Legendary reflexes!",
+  "t": "पौराणिक रिफ्लेक्स!"
+ },
+ "9dbfccdd9baa": {
+  "en": "🔥 {n}-post streak! Don't break it!",
+  "t": "🔥 {n}-पोस्ट स्ट्रीक! मत तोड़ो!"
+ },
+ "9f8030cb22e8": {
+  "en": "The algorithm has left you on read.",
+  "t": "एल्गोरिदम ने तुम्हें रीड पर छोड़ दिया।"
+ },
+ "9f8d43df802f": {
+  "en": "Wheee!",
+  "t": "Wheee!"
+ },
+ "a03e9007dd84": {
+  "en": "You fucking loser!",
+  "t": "हारे हुए कमीने!"
+ },
+ "a44c1fbbccc0": {
+  "en": "Traded {n} {give} for 1 {get}.",
+  "t": "{n} {give} देकर 1 {get} लिया।"
+ },
+ "a5654a379120": {
+  "en": "Cleared",
+  "t": "साफ"
+ },
+ "a691267c5647": {
+  "en": "{rival} wins.",
+  "t": "{rival} जीत गया।"
+ },
+ "a74615c9d0f5": {
+  "en": "The hustle",
+  "t": "हसल"
+ },
+ "a75be8f0bded": {
+  "en": "Cancelled! Both darts on the {colour} territory are out.",
+  "t": "रद्द! {colour} इलाक़े पर दोनों डार्ट बाहर।"
+ },
+ "a844766240b7": {
+  "en": "a rock",
+  "t": "एक पत्थर"
+ },
+ "a8b5fc4f044d": {
+  "en": "Fertilized {n} times.",
+  "t": "{n} बार खाद दी गई।"
+ },
+ "ab42dc3d0e5c": {
+  "en": "another dino",
+  "t": "एक और डायनो"
+ },
+ "abc4c339d728": {
+  "en": "It wilted. You got {what}. Fertilizer, at least.",
+  "t": "मुरझा गया। तुम्हें {what} मिला। कम से कम खाद।"
+ },
+ "abfa242a93fa": {
+  "en": "💔 Streak lost. {n} posts, gone.",
+  "t": "💔 स्ट्रीक टूट गई। {n} पोस्ट, चली गईं।"
+ },
+ "adde1258fbad": {
+  "en": "Personal best: {n} m",
+  "t": "व्यक्तिगत सर्वश्रेष्ठ: {n} m"
+ },
+ "ae4d8a00b6ce": {
+  "en": "▶️ +{views} views",
+  "t": "▶️ +{views} व्यू"
+ },
+ "aed6b9811801": {
+  "en": "So close! Your post was one share away from blowing up.",
+  "t": "इतना करीब! तुम्हारा पोस्ट बस एक शेयर से वायरल होने से चूक गया।"
+ },
+ "af429fb22354": {
+  "en": "Nice whacking!",
+  "t": "अच्छी मार!"
+ },
+ "afaed75406bd": {
+  "en": "purple",
+  "t": "बैंगनी"
+ },
+ "b2b52c2fc7c2": {
+  "en": "Snipe all territories? That’s—different—I think. Can—can you explain?",
+  "t": "सारे इलाक़े छीन लो? यह तो—अलग है—मुझे लगता है। क्या—क्या तुम समझा सकते हो?"
+ },
+ "b45d00ec07a3": {
+  "en": "Bonus day! Every {name} counts double. Go!",
+  "t": "बोनस दिन! हर {name} दोगुना गिना। जाओ!"
+ },
+ "b6df21551d66": {
+  "en": "sloppy folds made it wobble and drag",
+  "t": "बेढंगे मोड़ों से हिला और घसीटा"
+ },
+ "b783ecde91e7": {
+  "en": "Plot {plot}: {crop}, ready to harvest.",
+  "t": "प्लॉट {plot}: {crop}, कटाई के लिए तैयार।"
+ },
+ "b8a13eba61b4": {
+  "en": "{m} m ({ft} ft).",
+  "t": "{m} m ({ft} ft)।"
+ },
+ "b8c8d91c4ad6": {
+  "en": "Yellow centre",
+  "t": "पीला केंद्र"
+ },
+ "b98ab59bdc99": {
+  "en": "{n} pts",
+  "t": "{n} अंक"
+ },
+ "b9f8e7d16bef": {
+  "en": "{player}'s dart bounced off the wall.",
+  "t": "{player} का डार्ट दीवार से टकराकर लौट गया।"
+ },
+ "bbc97dc5386e": {
+  "en": "it climbed too steeply and stalled",
+  "t": "बहुत तेज चढ़ा और स्टॉल हुआ"
+ },
+ "bc38448e90c1": {
+  "en": "Aw, my chitin ass! Anyways, the goal is to land on the same color region to score a point. If you land on a region with someone else’s dart, you two cancel each other out. Ehh—right? Right—right. The smaller the region, the more it’s worth when sniping it. That makes sense?",
+  "t": "आउ, मेरा काइटिन पिछवाड़ा! ख़ैर, लक्ष्य है कि एक ही रंग के हिस्से पर गिराकर एक अंक बनाओ। अगर तुम किसी ऐसे हिस्से पर गिराओ जहाँ किसी और का डार्ट हो, तो तुम दोनों एक-दूसरे को काट देते हो। एह्ह—है न? है—है। हिस्सा जितना छोटा, उसे छीनने पर वह उतना ही क़ीमती। समझ आया?"
+ },
+ "bc74f4f071a5": {
+  "en": "green",
+  "t": "हरा"
+ },
+ "beaf88b8f9bb": {
+  "en": "Music: off",
+  "t": "संगीत: ऑफ"
+ },
+ "bec764a9d2b7": {
+  "en": "Fold 2 of 5: now the top-right corner to the same dot.",
+  "t": "मोड़ 2/5: अब ऊपरी-दाएँ कोने को उसी बिंदु तक।"
+ },
+ "bfc2ec349cc6": {
+  "en": "{n} shit 💩",
+  "t": "{n} टट्टी 💩"
+ },
+ "c1070741a87a": {
+  "en": "{name}s",
+  "t": "{name}"
+ },
+ "c1218408e29a": {
+  "en": "Just a hunk—that was me warming up! Now try to throw on a green section or anywhere else.",
+  "t": "बस एक हंक—वह तो मेरा वॉर्म-अप था! अब हरे हिस्से पर या कहीं और फेंकने की कोशिश करो।"
+ },
+ "c2032d98f6ff": {
+  "en": "natural {n}!",
+  "t": "नैचुरल {n}!"
+ },
+ "c327716d8241": {
+  "en": "Angle {angle}°   Power {power}%",
+  "t": "कोण {angle}°   पावर {power}%"
+ },
+ "c46451ea184b": {
+  "en": "That one has all the fertilizer it can take ({max}).",
+  "t": "उसमें पहले से अधिकतम खाद ({max}) है।"
+ },
+ "c574501fd8fe": {
+  "en": "Roll d{sides} (last roll {result})",
+  "t": "d{sides} फेंकें (आखिरी रोल {result})"
+ },
+ "c6e2f87cd267": {
+  "en": "sapphire",
+  "t": "सफ़ायर"
+ },
+ "c75ac3fad137": {
+  "en": "{n}s left",
+  "t": "{n} सेकंड बाकी"
+ },
+ "c7abd16eb68f": {
+  "en": "Brotha—you suck at this—Harry?",
+  "t": "भाई—तुम इसमें बेकार हो—हैरी?"
+ },
+ "c852360f55c1": {
+  "en": "—Yea? So I play next?",
+  "t": "—हाँ? तो अगली बारी मेरी?"
+ },
+ "c9db75e9dd40": {
+  "en": "Harvested {crop}: {what}!",
+  "t": "{crop} काटी: {what}!"
+ },
+ "ca2c4b70322c": {
+  "en": "{level}, {n} out of 100",
+  "t": "{level}, 100 में से {n}"
+ },
+ "cc60a1651cdd": {
+  "en": "Final: {you} {youScore} · {rival} {rivalScore} · {verdict}",
+  "t": "अंतिम: {you} {youScore} · {rival} {rivalScore} · {verdict}"
+ },
+ "ccd479b39669": {
+  "en": "Out of shit to fertilize with.",
+  "t": "खाद के लिए टट्टी खत्म।"
+ },
+ "cd719473682b": {
+  "en": "Winner Winner Chicken Dinner! You took the dino down.",
+  "t": "Winner Winner Chicken Dinner! तुमने डायनो को गिरा दिया।"
+ },
+ "ce00926930a4": {
+  "en": "New personal best!",
+  "t": "नया व्यक्तिगत रिकॉर्ड!"
+ },
+ "ce2c178cd497": {
+  "en": "Fold precision {n}%.",
+  "t": "मोड़ की सटीकता {n}%।"
+ },
+ "ce3c494a5e85": {
+  "en": "Aiight!",
+  "t": "चलो ठीक!"
+ },
+ "cf32e9152179": {
+  "en": "❤️ +{n} likes",
+  "t": "❤️ +{n} लाइक"
+ },
+ "d0683718593c": {
+  "en": "Sloppy",
+  "t": "बेढंगा"
+ },
+ "d0799417b93a": {
+  "en": "Score: {n}",
+  "t": "स्कोर: {n}"
+ },
+ "d26d358f777a": {
+  "en": "Your dart flies low and lodges in the wall below the board.",
+  "t": "तुम्हारा डार्ट नीचे उड़ा और बोर्ड के नीचे दीवार में धँस गया।"
+ },
+ "d397cf31a23a": {
+  "en": "Same plane. Drag back to aim and let go to throw.",
+  "t": "वही विमान। पीछे खींचकर निशाना लगाओ और छोड़कर फेंको।"
+ },
+ "d3c3cff3fcea": {
+  "en": "Almost went viral! 97% to the For You page.",
+  "t": "लगभग वायरल! For You पेज तक 97%।"
+ },
+ "d62a14276f7a": {
+  "en": "Fold 4 of 5: and the right corner to the same dot.",
+  "t": "मोड़ 4/5: और दायाँ कोना उसी बिंदु तक।"
+ },
+ "d74cdcf6827c": {
+  "en": "Landed!",
+  "t": "उतरा!"
+ },
+ "d7f186ff8a7c": {
+  "en": "leaking away: use it!",
+  "t": "रिस रहा है: इस्तेमाल करो!"
+ },
+ "df568bac40e4": {
+  "en": "A pile of {n} VHS tapes",
+  "t": "{n} VHS टेप का ढेर"
+ },
+ "e24b1fcf7aa8": {
+  "en": "Fresh skin",
+  "t": "नई त्वचा"
+ },
+ "e45f65625355": {
+  "en": "amethyst",
+  "t": "एमेथिस्ट"
+ },
+ "e5100c3c7795": {
+  "en": "Fold precision {n}%: {tips}.",
+  "t": "मोड़ की सटीकता {n}%: {tips}।"
+ },
+ "e53060217b21": {
+  "en": "Not enough energy. It refills every second.",
+  "t": "ऊर्जा कम। हर सेकंड भरती है।"
+ },
+ "e76e281ed9f1": {
+  "en": "Back to the starting picture",
+  "t": "शुरुआती तस्वीर पर वापस"
+ },
+ "ea35482e6295": {
+  "en": "Good try! Good try! C’mon! Try again!",
+  "t": "अच्छी कोशिश! अच्छी कोशिश! चलो! फिर कोशिश करो!"
+ },
+ "ea52ac390158": {
+  "en": "▶️ +{views} views, +{follows} followers",
+  "t": "▶️ +{views} व्यू, +{follows} फॉलोअर्स"
+ },
+ "ea61674580d7": {
+  "en": "Total: {sum}",
+  "t": "कुल: {sum}"
+ },
+ "eab75ee3a0a6": {
+  "en": "Winner Winner Chicken Dinner",
+  "t": "Winner Winner Chicken Dinner"
+ },
+ "ed74b38312d6": {
+  "en": "She got away…",
+  "t": "वह बच गई…"
+ },
+ "ee83a7441ce6": {
+  "en": "Time! You whacked {hits} {name} and missed {misses}. {verdict}",
+  "t": "समय! तुमने {hits} {name} मारे और {misses} छूटे। {verdict}"
+ },
+ "ef0ebbb77298": {
+  "en": "orange",
+  "t": "नारंगी"
+ },
+ "f0c3ff890745": {
+  "en": "{n} of {max}",
+  "t": "{max} में से {n}"
+ },
+ "f290164d1315": {
+  "en": "Outer ring",
+  "t": "बाहरी रिंग"
+ },
+ "f364840671b5": {
+  "en": "aquamarine",
+  "t": "एक्वामरीन"
+ },
+ "f36fdd3e82bb": {
+  "en": "Mana is building. Throw something at the dino!",
+  "t": "मना बन रहा है। डायनो पर कुछ फेंको!"
+ },
+ "f4853c881e96": {
+  "en": "{n} more to earn",
+  "t": "पाने के लिए और {n}"
+ },
+ "f6842ab3afca": {
+  "en": "Miku",
+  "t": "मिकू"
+ },
+ "f917eb40cc44": {
+  "en": "Tap a growing crop to fertilize it with 1 shit.",
+  "t": "उगती फसल पर टैप करके 1 टट्टी से खाद दो।"
+ },
+ "f96e7bc80d25": {
+  "en": "Fertilize a plot that has something growing.",
+  "t": "जिस प्लॉट में कुछ उग रहा हो उसे खाद दो।"
+ },
+ "f98f1fe356b4": {
+  "en": "Fold 5 of 5: fold it in half: bottom-left corner onto the bottom-right one.",
+  "t": "मोड़ 5/5: आधा मोड़ो: निचला-बायाँ कोना निचले-दाएँ पर।"
+ },
+ "f9a7ce310699": {
+  "en": "▶️ +{views} views, +{follows} follower",
+  "t": "▶️ +{views} व्यू, +{follows} फॉलोअर"
+ },
+ "fb1415fda4ff": {
+  "en": "Music: on",
+  "t": "संगीत: ऑन"
+ },
+ "fb23c9ff0d27": {
+  "en": "Inner ring",
+  "t": "भीतरी रिंग"
+ },
+ "fe732cbff74e": {
+  "en": "Row {row}, column {col} off",
+  "t": "पंक्ति {row}, कॉलम {col} ऑफ"
+ },
+ "feddfb10fb8d": {
+  "en": "We all play at the same time. GO!",
+  "t": "हम सब एक साथ खेलते हैं। चलो!"
+ }
+}

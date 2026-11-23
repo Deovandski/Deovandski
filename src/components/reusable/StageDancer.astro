@@ -58,9 +58,26 @@ const colors = {
   boots: '#f2b705',
   ...outfit,
 };
+// What the script writes (and draws on the stage). It lives in the page so the site's translations reach it.
+const strings: Record<string, string> = {
+  routine0: 'The point',
+  routine1: 'The line dance',
+  routine2: 'The hustle',
+  routine3: 'Toe stand & point',
+  routine: 'Routine #{n}: {routine}.',
+  onBeat: 'On beat!',
+  offBeat: 'Off beat',
+  fever: 'FEVER!',
+  feverLive: 'FEVER! The whole floor lights up.',
+  musicOn: 'Music: on',
+  musicOff: 'Music: off',
+  dance: 'Dance',
+  pause: 'Pause',
+};
 ---
 
 <div class:list={['stage-dancer', className]} data-colors={JSON.stringify(colors)} data-bpm={bpm}>
+  <div class="stage-dancer__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <div class="stage-dancer__routines" role="group" aria-label="Pick a routine">
     <button type="button" data-routine="0" aria-pressed="true">#1 The point</button>
     <button type="button" data-routine="1" aria-pressed="false">#2 Line dance</button>
@@ -257,7 +274,6 @@ const colors = {
   const TOE_STAND: Pose[] = [HAND_HIP, HAND_HIP, TOE_POINT, TOE_POINT, LEAN, SIDE_KICK, TURN, TOE_POINT];
 
   const ROUTINES: Pose[][] = [ROUTINE, LINE_DANCE, HUSTLE, TOE_STAND];
-  const ROUTINE_NAMES = ['The point', 'The line dance', 'The hustle', 'Toe stand & point'];
 
   // Draws one pose into a GW x GH grid of colours, then outlines it in black.
   function render(pose: Pose, c: Colors): (string | null)[][] {
@@ -371,6 +387,9 @@ const colors = {
   ];
 
   document.querySelectorAll<HTMLElement>('.stage-dancer').forEach((root) => {
+    // The page's (possibly translated) words; {name} slots are filled in here.
+    const msg = (key: string, vars: Record<string, string | number> = {}) =>
+      (root.querySelector(`.stage-dancer__strings [data-k="${key}"]`)?.textContent ?? key).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
     const canvas = root.querySelector<HTMLCanvasElement>('.stage-dancer__canvas')!;
     const ctx = canvas.getContext('2d')!;
     const colors: Colors = JSON.parse(root.dataset.colors!);
@@ -496,7 +515,7 @@ const colors = {
           ctx.fillRect(ox + x * p, oy + y * p, p, p);
         }
       // "On beat!" / "FEVER!" call-outs, top left.
-      const call = b < feverUntil ? 'FEVER!' : flash && now < flash.until ? flash.text : '';
+      const call = b < feverUntil ? msg('fever') : flash && now < flash.until ? flash.text : '';
       if (call) {
         ctx.font = `900 ${Math.max(16, Math.round(H * 0.07))}px system-ui, sans-serif`;
         ctx.textAlign = 'left';
@@ -525,7 +544,7 @@ const colors = {
       if (fever >= 100 && feverUntil < 0) {
         feverUntil = lastBeat + 8;
         root.classList.add('is-fever');
-        status.textContent = 'FEVER! The whole floor lights up.';
+        status.textContent = msg('feverLive');
       } else if (fever < 100) {
         root.classList.remove('is-fever');
       }
@@ -536,7 +555,7 @@ const colors = {
       const t = performance.now() - start;
       const phase = (t % beat) / beat;
       const onBeat = phase < 0.2 || phase > 0.8;
-      flash = { text: onBeat ? 'On beat!' : 'Off beat', until: performance.now() + 400 };
+      flash = { text: msg(onBeat ? 'onBeat' : 'offBeat'), until: performance.now() + 400 };
       setFever(fever + (onBeat ? 7 : -3));
     }
     canvas.addEventListener('pointerdown', tap);
@@ -629,7 +648,7 @@ const colors = {
     function setMusic(on: boolean) {
       music.on = on;
       musicBtn.setAttribute('aria-pressed', String(on));
-      musicBtn.textContent = on ? 'Music: on' : 'Music: off';
+      musicBtn.textContent = msg(on ? 'musicOn' : 'musicOff');
       clearInterval(music.timer);
       if (!on) return;
       if (!music.ctx) {
@@ -649,7 +668,7 @@ const colors = {
       btn.addEventListener('click', () => {
         routine = Number(btn.dataset.routine);
         routineBtns.forEach((x) => x.setAttribute('aria-pressed', String(x === btn)));
-        status.textContent = `Routine #${routine + 1}: ${ROUTINE_NAMES[routine]}.`;
+        status.textContent = msg('routine', { n: routine + 1, routine: msg(`routine${routine}`) });
         if (paused && size()) draw(performance.now());
       }),
     );
@@ -669,7 +688,7 @@ const colors = {
     pauseBtn.addEventListener('click', () => {
       paused = !paused;
       pauseBtn.setAttribute('aria-pressed', String(paused));
-      pauseBtn.textContent = paused ? 'Dance' : 'Pause';
+      pauseBtn.textContent = msg(paused ? 'dance' : 'pause');
       if (paused) pausedAt = performance.now();
       else {
         start += performance.now() - pausedAt;
@@ -677,7 +696,7 @@ const colors = {
       }
     });
     if (reduced) {
-      pauseBtn.textContent = 'Dance';
+      pauseBtn.textContent = msg('dance');
       pauseBtn.setAttribute('aria-pressed', 'true');
     }
     lightsBtn.addEventListener('click', () => {

@@ -38,6 +38,7 @@ const { label = 'Photo' } = Astro.props;
 ---
 
 <dialog class="photo-viewer" aria-label={label}>
+  <span class="photo-viewer__strings" hidden data-llms-skip data-k="enlarge">Enlarge: {'{alt}'}</span>
   <figure class="photo-viewer__figure">
     <img class="photo-viewer__img" alt="" />
     <figcaption class="photo-viewer__caption">
@@ -237,7 +238,7 @@ const { label = 'Photo' } = Astro.props;
         img.dataset.photoViewer = '';
         img.tabIndex = 0;
         img.setAttribute('role', 'button');
-        img.setAttribute('aria-label', `Enlarge: ${img.alt}`);
+        img.setAttribute('aria-label', (dialog?.querySelector('[data-k="enlarge"]')?.textContent ?? 'Enlarge: {alt}').replace('{alt}', img.alt));
       });
       root.querySelectorAll<HTMLAnchorElement>('a[href]:not([data-photo-viewer])').forEach((a) => {
         if (imageLink(a)) a.dataset.photoViewer = '';

@@ -51,6 +51,20 @@ const actions = [
   { id: 'play', label: 'Play', icon: '⚽' },
   { id: 'clean', label: 'Clean', icon: '🧹' },
 ];
+// What the script writes. It lives in the page so the site's translations reach it.
+const strings: Record<string, string> = {
+  hungry: '{name} is hungry',
+  lonely: '{name} feels lonely',
+  poop: "there's poop to clean",
+  content: '{name} is content.',
+  outOf: '{n} of {max}',
+  stuffed: '{name} is stuffed!',
+  nom: 'Nom nom!',
+  loves: '{name} loves that.',
+  play: 'Play time!',
+  clean: 'All clean.',
+  nothing: 'Nothing to clean.',
+};
 ---
 
 <div
@@ -61,6 +75,7 @@ const actions = [
   data-key={`pixel-pet:${saveKey ?? name.toLowerCase()}`}
   data-outline={outline}
 >
+  <div class="pixel-pet__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <div class="pixel-pet__egg">
     <div class="pixel-pet__bezel">
       <canvas class="pixel-pet__screen" width="48" height="36" role="img" aria-label={`${name}, a pixel pet`}></canvas>
@@ -247,6 +262,9 @@ const actions = [
 
   document.querySelectorAll<HTMLElement>('.pixel-pet').forEach((root) => {
     const name = root.dataset.name || 'Pet';
+    // The page's (possibly translated) words; {name} slots are filled in here.
+    const msg = (key: string, vars: Record<string, string | number> = {}) =>
+      (root.querySelector(`.pixel-pet__strings [data-k="${key}"]`)?.textContent ?? key).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
     const canvas = root.querySelector<HTMLCanvasElement>('.pixel-pet__screen')!;
     const ctx = canvas.getContext('2d')!;
     const mood = root.querySelector<HTMLElement>('.pixel-pet__mood')!;
@@ -300,16 +318,16 @@ const actions = [
     const hearts = (n: number) => '♥'.repeat(n) + '♡'.repeat(MAX - n);
     function describe() {
       const bits = [];
-      if (st.hunger <= 1) bits.push(`${name} is hungry`);
-      if (st.happy <= 1) bits.push(`${name} feels lonely`);
-      if (st.poops) bits.push(`there's poop to clean`);
-      return bits.length ? bits.join(', ') + '.' : `${name} is content.`;
+      if (st.hunger <= 1) bits.push(msg('hungry', { name }));
+      if (st.happy <= 1) bits.push(msg('lonely', { name }));
+      if (st.poops) bits.push(msg('poop'));
+      return bits.length ? bits.join(', ') + '.' : msg('content', { name });
     }
     function renderStats() {
       statEl('hunger').textContent = hearts(st.hunger);
-      statEl('hunger').setAttribute('aria-label', `${st.hunger} of ${MAX}`);
+      statEl('hunger').setAttribute('aria-label', msg('outOf', { n: st.hunger, max: MAX }));
       statEl('happy').textContent = hearts(st.happy);
-      statEl('happy').setAttribute('aria-label', `${st.happy} of ${MAX}`);
+      statEl('happy').setAttribute('aria-label', msg('outOf', { n: st.happy, max: MAX }));
     }
 
     function blit(grid: (string | null)[][], ox: number, oy: number) {
@@ -376,21 +394,21 @@ const actions = [
       action = { kind, until: performance.now() + 1800 };
       if (kind === 'feed') {
         st.hunger = Math.min(MAX, st.hunger + 1);
-        mood.textContent = st.hunger === MAX ? `${name} is stuffed! ${describe()}` : `Nom nom! ${describe()}`;
+        mood.textContent = `${msg(st.hunger === MAX ? 'stuffed' : 'nom', { name })} ${describe()}`;
       }
       if (kind === 'pet') {
         st.happy = Math.min(MAX, st.happy + 1);
-        mood.textContent = `${name} loves that. ${describe()}`;
+        mood.textContent = `${msg('loves', { name })} ${describe()}`;
       }
       if (kind === 'play') {
         st.happy = Math.min(MAX, st.happy + 1);
         st.hunger = Math.max(0, st.hunger - (Math.random() < 0.35 ? 1 : 0));
-        mood.textContent = `Play time! ${describe()}`;
+        mood.textContent = `${msg('play')} ${describe()}`;
       }
       if (kind === 'clean') {
         const had = st.poops;
         st.poops = 0;
-        mood.textContent = had ? `All clean. ${describe()}` : `Nothing to clean. ${describe()}`;
+        mood.textContent = `${msg(had ? 'clean' : 'nothing')} ${describe()}`;
       }
       save();
       draw();

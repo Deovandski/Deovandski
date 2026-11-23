@@ -408,12 +408,14 @@ const inkNames: Record<string, string> = {
         live.textContent = b.textContent ?? '';
       }),
     );
-    pad.querySelector('[data-act="fresh"]')!.addEventListener('click', () => {
+    const freshBtn = pad.querySelector<HTMLElement>('[data-act="fresh"]')!;
+    freshBtn.addEventListener('click', () => {
       ictx.save();
       ictx.setTransform(1, 0, 0, 1, 0, 0);
       ictx.clearRect(0, 0, ink.width, ink.height);
       ictx.restore();
-      live.textContent = 'Fresh skin';
+      // The button's own words, so a translated page announces them in its language.
+      live.textContent = freshBtn.textContent?.trim() ?? '';
     });
     pad.querySelector('[data-act="save"]')!.addEventListener('click', () => {
       const out = document.createElement('canvas');

@@ -9,16 +9,20 @@ const read = (key: string): string | null => {
   }
 };
 
-const live: Record<string, () => string | null> = {
-  'paper-plane': () => {
+// The words come from the game's own hidden strings (translated on a translated page), English otherwise.
+const word = (el: HTMLElement, key: string, fallback: string, n: string | number) =>
+  (el.querySelector(`[data-k="${key}"]`)?.textContent ?? fallback).replace('{n}', String(n));
+
+const live: Record<string, (el: HTMLElement) => string | null> = {
+  'paper-plane': (el) => {
     const best = Number(read('paper-plane-best'));
-    return best > 0 ? `Best ${best.toFixed(1)} m` : null;
+    return best > 0 ? word(el, 'summary', 'Best {n} m', best.toFixed(1)) : null;
   },
-  'balls-farm': () => {
+  'balls-farm': (el) => {
     try {
       const farm = JSON.parse(read('balls-farm') ?? 'null');
       const balls = farm ? Object.values(farm.bag ?? {}).reduce((a: number, n) => a + Number(n || 0), 0) : 0;
-      return balls > 0 ? `${balls} ${balls === 1 ? 'ball' : 'balls'} in the bag` : null;
+      return balls > 0 ? (balls === 1 ? word(el, 'bagOne', '{n} ball in the bag', 1) : word(el, 'bagMany', '{n} balls in the bag', balls)) : null;
     } catch {
       return null;
     }
@@ -30,7 +34,7 @@ export function refreshGimmickSummaries() {
     const out = el.querySelector<HTMLElement>('[data-fasttab-summary]');
     if (!out) return;
     const base = el.dataset.summaryBase ?? '';
-    const value = live[el.dataset.gimmickId!]?.() ?? null;
+    const value = live[el.dataset.gimmickId!]?.(el) ?? null;
     out.textContent = [base, value].filter(Boolean).join(' · ');
   });
 }
