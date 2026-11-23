@@ -117,7 +117,7 @@ const isCurrent =(href: string) => (href === '/' ? here === '/' || here === '' :
 
     <script>
       // External links open in a new tab. "External" means another site: a different origin, or a
-      // path outside this site's base (deovandski.github.io/HusbandOutWorld/ is a different site).
+      // path outside this site's base (another repo on deovandski.github.io/<repo>/ is a different site).
       // Covers links added later too (map popups, etc.) by checking again on click.
       const base = new URL(import.meta.env.BASE_URL, location.origin).href;
       const external = (a: HTMLAnchorElement) =>

@@ -1,14 +1,14 @@
 ## Howdy! 👋 I'm Deo, the King of Hues
 
 **Senior Software Engineer, Dynamics 365 F&O Architect, and Founder & CEO of [Wizard Deo Solutions](https://www.wizarddeosolutions.com/)**,
-and author of the [#HusbandOutWorld](https://husbandoutworld.com/) light novel series.
+and author of the [#HusbandOutWorld](https://www.husbandoutworld.com/) light novel series.
 
 I specialize in enterprise architecture, integrations, cloud, AI, and full-stack development, across ERP systems,
 modern web and mobile apps, and many industries. As an extroverted engineer, I thrive where technology meets people:
 architecting solutions, mentoring developers, and leading client discussions. I take life as seriously as I laugh at it (huehuehue).
 
 🌐 **Everything else lives on my site:** dev, author, mentor, traveler, gamer, anime, D&D, Miku, cat dad and more facets of my life at
-[deovandski.github.io/Deovandski](https://deovandski.github.io/Deovandski/)
+[deovandski.com](https://deovandski.com/)
 
 GitHub only has a fraction of my code because of NDAs, but here are a few I'm proud of:
 

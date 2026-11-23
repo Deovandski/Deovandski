@@ -5,6 +5,7 @@
 //   dist/facets/<id>.md   one tab per file, so each tab has its own URL. Links like /#death all
 //                         fetch the same home page, and readers drop its hidden panels.
 //   dist/sitemap.xml      every page and every file above, for search engines
+//   dist/robots.txt       points search engines to the sitemap (only when the site is at a domain root)
 // Anything in the page marked data-llms-skip (like the LED clock's digits) is left out of the text.
 import { mkdirSync, readdirSync, readFileSync, statSync, writeFileSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
@@ -12,7 +13,7 @@ import { join, relative, sep } from 'node:path';
 // Tabs left out of the AI files on purpose.
 const SKIP = new Set(['lust']);
 
-const site = (process.env.SITE_URL || 'https://deovandski.github.io').replace(/\/+$/, '');
+const site = (process.env.SITE_URL || 'https://deovandski.com').replace(/\/+$/, '');
 const base = (process.env.BASE_PATH || '/').replace(/\/+$/, '');
 const root = `${site}${base}`;
 
@@ -173,8 +174,7 @@ for (const t of kept) {
   writeFileSync(`dist/facets/${t.id}.md`, md.join('\n'));
 }
 
-// sitemap.xml: every built page, plus the AI files. A project site's sitemap can't be named in a
-// robots.txt (that lives at the domain root), so submit it in Search Console and Bing Webmaster.
+// sitemap.xml: every built page, plus the AI files. Also submit it in Search Console and Bing Webmaster.
 const pages = [];
 (function walk(dir) {
   for (const name of readdirSync(dir)) {
@@ -202,6 +202,10 @@ writeFileSync(
     '',
   ].join('\n'),
 );
+
+// robots.txt lives at the domain root, so it's only written when the site is there (deovandski.com).
+// On deovandski.github.io/Deovandski/ it would sit at the wrong address and do nothing.
+if (base === '') writeFileSync('dist/robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${root}/sitemap.xml\n`);
 
 console.log(
   `llms.txt: ${kept.length} tabs (${tabs.length - kept.length} skipped); llms-full.txt: ${full.join('\n').length} chars; ` +
