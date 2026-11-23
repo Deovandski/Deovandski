@@ -270,7 +270,7 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
                 >
                   <span class="tree__disc" aria-hidden="true">{b.icon}</span>
                   <span class="tree__label">{b.label}</span>
-                  <span class="tree__count" data-count>{b.items.length} facets</span>
+                  <span class="tree__count" data-count>{b.items.length === 1 ? '1 facet' : `${b.items.length} facets`}</span>
                   <svg class="tree__chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
                 </button>
               </div>
@@ -319,6 +319,9 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     </div>
 
     <p class="pick" id="pick-hint">Pick a branch above to grow the tree.</p>
+    <!-- Read by the tree script when a branch ends up with one facet; in the page so it gets translated (#87).
+         i18n-shared keeps its translation in _shared.json. -->
+    <span hidden class="i18n-shared" data-count-one>1 facet</span>
 
     <section class="panel" role="region" id="panel-dev" aria-labelledby="tab-dev" tabindex="0" hidden>
       <div class="story">
@@ -1165,7 +1168,10 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       group.remove();
       continue;
     }
-    button.querySelector('[data-count]')!.textContent = `${facets.length} ${facets.length === 1 ? 'facet' : 'facets'}`;
+    // Only the number changes, so the built (and translated, #87) word stays. "1 facet" comes from the page too.
+    const count = button.querySelector<HTMLElement>('[data-count]')!;
+    if (facets.length === 1) count.textContent = document.querySelector('[data-count-one]')?.textContent ?? '1 facet';
+    else count.textContent = count.textContent!.replace(/\d+/, String(facets.length));
     branches.push({ id: button.dataset.branch!, button, cell, group, facets, wire: null! });
   }
   const branchLayout = rowLayout(branches.length);
