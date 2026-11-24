@@ -35,7 +35,10 @@ marks the game's hours with an asterisk (*).
 
 - Assassin's Creed series: 200
 - Diablo III: 250
+- Far Cry series: 130
 
 ## PlayStation + Xbox
 
+- Destroy All Humans series: 120
 - Dynasty Warriors and Empires series: 100
+- Kingdom Hearts series: 100

@@ -91,6 +91,10 @@
   "en": "My full list on MyAnimeList",
   "t": "MyAnimeList पर मेरी पूरी सूची"
  },
+ "02911252007c": {
+  "en": "2,505 h",
+  "t": "2,505 घं."
+ },
  "02aa629c8b16": {
   "en": "S",
   "t": "S"
@@ -159,13 +163,13 @@
   "en": "Nothing to clean.",
   "t": "साफ करने को कुछ नहीं।"
  },
+ "047a39a28384": {
+  "en": "3 years and 352 days",
+  "t": "3 साल और 352 दिन"
+ },
  "0480691e0de6": {
   "en": "Ink",
   "t": "स्याही"
- },
- "049b1f5d7742": {
-  "en": "1 year and 247 days",
-  "t": "1 साल और 247 दिन"
  },
  "04e3fd08d714": {
   "en": "Description coming soon.",
@@ -174,6 +178,10 @@
  "04fb71b0bf3d": {
   "en": "\nYep. As crazy as it sounds, I'm also an author! It all started with the Vraki Writing System, such a cornerstone\n          of who I am, and of what became my \"author\" side, that I had to preserve its history.\n",
   "t": "हाँ। सुनने में जितना पागलपन लगे, मैं लेखक भी हूँ! यह सब व्राकी लेखन प्रणाली से शुरू हुआ, जो मेरी पहचान की और आगे चलकर मेरे \"लेखक\" पहलू की ऐसी नींव है कि मुझे इसका इतिहास संजोकर रखना पड़ा।"
+ },
+ "052cbbb13bce": {
+  "en": "55 days",
+  "t": "55 दिन"
  },
  "052fd9e524e5": {
   "en": "The algorithm",
@@ -351,6 +359,10 @@
   "en": "The Music of Studio Ghibli",
   "t": "The Music of Studio Ghibli"
  },
+ "0afa54bba544": {
+  "en": " 169 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "169 घं.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">अनुमानित</span>"
+ },
  "0afbd329b621": {
   "en": "People can open doors, but nobody walks through them using your legs. Potential earns encouragement, not applause. <strong>Sustained growth is what earns the praise.</strong>",
   "t": "लोग दरवाज़े खोल सकते हैं, पर कोई तुम्हारी टाँगों से उनमें से नहीं गुज़रता। संभावना प्रोत्साहन की हक़दार है, तालियों की नहीं। <strong>लगातार विकास ही तारीफ़ कमाता है।</strong>"
@@ -459,10 +471,6 @@
   "en": "Framework 16 LED Matrix Manager",
   "t": "Framework 16 LED Matrix Manager"
  },
- "0e67ee4cff18": {
-  "en": " 5,385 h ",
-  "t": "5,385 घं."
- },
  "0e814bdf1998": {
   "en": "45 h",
   "t": "45 घं."
@@ -566,6 +574,10 @@
  "113e369e1f04": {
   "en": "What you have",
   "t": "तुम्हारे पास क्या है"
+ },
+ "113f0f6915ab": {
+  "en": "104 days",
+  "t": "104 दिन"
  },
  "11414723e940": {
   "en": "169 h",
@@ -699,6 +711,10 @@
   "en": "Enlarge: Breakfast",
   "t": "बड़ा करें: नाश्ता"
  },
+ "172eb905d24b": {
+  "en": " 227 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "227 घं.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">अनुमानित</span>"
+ },
  "1761d9bdb3a0": {
   "en": "ROSALÍA",
   "t": "ROSALÍA"
@@ -791,6 +807,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder TV show 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 9: </span> अस्थायी टीवी शो 9"
  },
+ "1a2d88c5387b": {
+  "en": "Destroy All Humans series",
+  "t": "Destroy All Humans सीरीज़"
+ },
  "1a30f309ad8a": {
   "en": "The Scallywags of the Rusty Tankard",
   "t": "ज़ंग लगे प्याले के बदमाश"
@@ -814,6 +834,10 @@
  "1b0a2d74e6ea": {
   "en": "#HusbandOutWorld Series",
   "t": "#HusbandOutWorld सीरीज़"
+ },
+ "1b25d112e205": {
+  "en": " 763 h ",
+  "t": "763 घं."
  },
  "1b4c1d90da83": {
   "en": "Your FBI agent has entered the chat. ( ͡° ͜ʖ ͡°)",
@@ -1019,6 +1043,10 @@
   "en": "Enlarge: Gossipy old lady",
   "t": "बड़ा करें: गपशपिया बुढ़िया"
  },
+ "21f23dcd8cfa": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,588 h</strong>  ·  7 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,588 घं.</strong>  ·  7 गेम  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 5%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 10%</span>"
+ },
  "21fd26294c5c": {
   "en": "Rusty's Retirement",
   "t": "Rusty's Retirement"
@@ -1039,9 +1067,17 @@
   "en": "30 h",
   "t": "30 घं."
  },
+ "227e31d0cde4": {
+  "en": "The games on the list add up to 1,447 days of nonstop play, 24 hours a day. Each square is one of those days.",
+  "t": "सूची के गेम मिलाकर 1,447 दिन लगातार खेलने के बराबर हैं, दिन के 24 घंटे। हर चौकोर उनमें से एक दिन है।"
+ },
  "229377a6b713": {
   "en": "You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it's still in the air) and take it down before you run dry.",
   "t": "बाधाएँ तुम हो। डायनो दौड़ता है। तुम उस पर चीज़ें फेंकते हो। अब से हर सेकंड मान बढ़ता है; अपने वार का समय साधो (जब वह हवा में हो तभी पकड़ो) और मान ख़त्म होने से पहले उसे गिरा दो।"
+ },
+ "22db4557409d": {
+  "en": " Xbox + PlayStation  ·  estimated ",
+  "t": "Xbox + PlayStation  ·  अनुमानित"
  },
  "22e02026aa78": {
   "en": "Crisp!",
@@ -1191,10 +1227,6 @@
   "en": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna",
   "t": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna"
  },
- "26fadd02e644": {
-  "en": "94 days",
-  "t": "94 दिन"
- },
  "273285456a27": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 19: </span> Placeholder movie 19 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 19: </span> अस्थायी फ़िल्म 19"
@@ -1223,17 +1255,9 @@
   "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
   "t": "यानी {mode} में रिकॉर्ड की गईं {tapes} VHS टेप (हर T-120 टेप में {perTape} घंटे)।"
  },
- "27c95af95a7e": {
-  "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,385 h ",
-  "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPG और ओपन वर्ल्ड: 5,385 घं."
- },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 10: </span> अस्थायी टीवी शो 10"
- },
- "27dd6cefd440": {
-  "en": "KINGDOM HEARTS III",
-  "t": "KINGDOM HEARTS III"
  },
  "27ff191d72e4": {
   "en": "Deo",
@@ -1250,10 +1274,6 @@
  "283c1ebce40b": {
   "en": "Close to 12 years old but still kicking",
   "t": "लगभग 12 साल का, पर अब भी दमदार"
- },
- "284507d08d18": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,588 h</strong>  ·  7 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,588 घं.</strong>  ·  7 गेम  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 5%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 11%</span>"
  },
  "2888f01fb635": {
   "en": "Morning by the river",
@@ -1290,10 +1310,6 @@
  "29733f231324": {
   "en": "Under the hood: how it hooks you",
   "t": "अंदर की बात: यह तुम्हें कैसे फँसाता है"
- },
- "297457a86258": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">633 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">633 घं.</strong>  ·  5 गेम  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 2%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 4%</span>"
  },
  "2984ff90b404": {
   "en": "Bad Bunny",
@@ -1366,10 +1382,6 @@
  "2c1e5036b725": {
   "en": "{n} balls in the bag",
   "t": "बैग में {n} गेंदें"
- },
- "2c27ec2a32c3": {
-  "en": "71 days",
-  "t": "71 दिन"
  },
  "2c6f37232fe8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Nanatsu no Taizai (The Seven Deadly Sins) ",
@@ -1478,6 +1490,10 @@
  "2f9714995b86": {
   "en": " An exploded sphere of my hours by category: Idle &amp; clickers 57%, RPGs &amp; open worlds 16%, City, colony &amp; strategy 5%, Survival &amp; crafting 5%, Factory &amp; automation 5%, Space &amp; flight 4%, Cozy &amp; life sims 3%, Other 7% ",
   "t": "श्रेणी के अनुसार मेरे घंटों का बिखरा हुआ गोला: आइडल और क्लिकर 57%, RPG और ओपन वर्ल्ड 16%, शहर, कॉलोनी और रणनीति 5%, सर्वाइवल और क्राफ़्टिंग 5%, फ़ैक्टरी और ऑटोमेशन 5%, अंतरिक्ष और उड़ान 4%, सुकूनभरे और लाइफ़ सिम 3%, Other 7%"
+ },
+ "2fa2880f7c93": {
+  "en": "Far Cry series",
+  "t": "Far Cry सीरीज़"
  },
  "2fa582319006": {
   "en": "One of my favorite isekai, and one of the OGs from before the torrent of copycats trying to milk the market dry.",
@@ -1763,10 +1779,6 @@
   "en": "King of the trail",
   "t": "पगडंडी का राजा"
  },
- "3869de54b01c": {
-  "en": "224 days",
-  "t": "224 दिन"
- },
  "3878d567f539": {
   "en": "A streak you could lose feels worse than one you never had. Losing hurts about twice as much as winning feels good.",
   "t": "जो स्ट्रीक खो सकती हो वह उस स्ट्रीक से बुरी लगती है जो कभी थी ही नहीं। खोने का दर्द जीतने की ख़ुशी से लगभग दोगुना होता है।"
@@ -1867,6 +1879,10 @@
   "en": "Fluffy",
   "t": "Fluffy"
  },
+ "3af62880aa05": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">763 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">763 घं.</strong>  ·  5 गेम  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 2%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 5%</span>"
+ },
  "3b044501691d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Placeholder TV show 16 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 16: </span> अस्थायी टीवी शो 16"
@@ -1882,10 +1898,6 @@
  "3b419aac7299": {
   "en": "\nTreat your life like a project: break big goals into small steps, be honest about scope and deadlines, and track what's\n        actually done. It's how I run everything from client work to this website, and the <a href=\"#pm\" data-astro-cid-xtzphevd=\"\">PM side</a> of this tab\n        has the details.\n",
   "t": "अपनी ज़िंदगी को एक प्रोजेक्ट की तरह लो: बड़े लक्ष्यों को छोटे कदमों में बाँटो, दायरे और डेडलाइन के बारे में ईमानदार रहो, और जो सच में पूरा हुआ उसका हिसाब रखो। क्लाइंट के काम से लेकर इस वेबसाइट तक, मैं सब कुछ ऐसे ही चलाता हूँ, और इस टैब के <a href=\"#pm\" data-astro-cid-xtzphevd=\"\">PM हिस्से</a> में पूरी जानकारी है।"
- },
- "3b71b89ab488": {
-  "en": " 633 h ",
-  "t": "633 घं."
  },
  "3b9b88d1447d": {
   "en": " <span class=\"shelf__dot\" style=\"background: #0ca30c\" data-astro-cid-nqpad2wp=\"\"></span> Cozy &amp; life sims: 904 h ",
@@ -1982,10 +1994,6 @@
  "3eda298502f3": {
   "en": "My parents fought tooth and nail to give me a chance in life that they never had, and with blood, sweat and tears, I took full advantage of it, while also pursuing my own opportunities to make myself fulfilled. Once I become a citizen, it'll be my turn to make sure they have a good retirement.",
   "t": "मेरे माता-पिता ने जी-जान से लड़कर मुझे ज़िंदगी में वह मौक़ा दिया जो उन्हें कभी नहीं मिला, और खून, पसीने और आँसुओं से मैंने उसका पूरा फ़ायदा उठाया, साथ ही खुद को पूरा करने के लिए अपने मौक़े भी तलाशे। जब मैं नागरिक बन जाऊँगा, तो मेरी बारी होगी कि उन्हें एक अच्छा रिटायरमेंट मिले।"
- },
- "3ef10729a2c1": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,590 h</strong>  ·  12 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,590 घं.</strong>  ·  12 गेम  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 5%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 11%</span>"
  },
  "3ef5b5e97c0e": {
   "en": "Back to Musician",
@@ -2135,10 +2143,6 @@
   "en": "Folk",
   "t": "फ़ोक"
  },
- "45043cda7136": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">5,385 h</strong>  ·  28 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">5,385 घं.</strong>  ·  28 गेम  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 16%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 36%</span>"
- },
  "4534c6829b3a": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Death Note ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 18: </span> Death Note"
@@ -2166,6 +2170,10 @@
  "46b00befa084": {
   "en": "\"Almost went viral!\" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses.",
   "t": "\"बस वायरल होते-होते रह गया!\" फिर भी हार है, और सीधी हार से बुरी लगती है, फिर भी लोगों को खेलते रहने पर मजबूर करती है। ज़िद तब चरम पर होती है जब लगभग 30% हारें बाल-बाल चूकी हुई हों।"
+ },
+ "46e758ae6dd6": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">5,485 h</strong>  ·  28 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">5,485 घं.</strong>  ·  28 गेम  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 16%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 36%</span>"
  },
  "46e80e47b684": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested",
@@ -2223,6 +2231,10 @@
   "en": "Besides the relationship and the bonding, the merchant life and bartering are really well developed! I took inspiration from it while working on the world lore for #HusbandOutWorld.",
   "t": "रिश्ते और जुड़ाव के अलावा, व्यापारी जीवन और अदला-बदली बहुत अच्छे से गढ़े गए हैं! #HusbandOutWorld की दुनिया पर काम करते हुए मैंने इससे प्रेरणा ली।"
  },
+ "48ea93ab322b": {
+  "en": "1 year and 262 days",
+  "t": "1 साल और 262 दिन"
+ },
  "48ef76f8bb0c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Chuunibyou demo Koi ga Shitai! (Love, Chunibyo &amp; Other Delusions!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 30: </span> Chuunibyou demo Koi ga Shitai! (Love, Chunibyo &amp; Other Delusions!)"
@@ -2275,10 +2287,6 @@
   "en": "Enlarge: Quite the stretch",
   "t": "बड़ा करें: क्या अंगड़ाई है"
  },
- "4ace96fd9450": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">19,668 h</strong>  ·  23 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">57% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">not counted in my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">19,668 घं.</strong>  ·  23 गेम  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 57%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों में नहीं गिने गए</span>"
- },
  "4ad51e59a5be": {
   "en": " Fine line ",
   "t": "पतली रेखा"
@@ -2326,10 +2334,6 @@
  "4c1f1c138390": {
   "en": "Not bad!",
   "t": "बुरा नहीं!"
- },
- "4c269467e961": {
-  "en": "3 years and 337 days",
-  "t": "3 साल और 337 दिन"
  },
  "4cbc599953b9": {
   "en": " Rhythm &amp; music ",
@@ -2879,10 +2883,6 @@
   "en": "Pixel pets: turn your phone sideways",
   "t": "पिक्सेल पालतू: अपना फ़ोन आड़ा करो"
  },
- "5a986c8fd343": {
-  "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,255 h ",
-  "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,255 घं."
- },
  "5abf683efa95": {
   "en": "Cities: Skylines",
   "t": "Cities: Skylines"
@@ -3343,6 +3343,10 @@
   "en": "Blue ink",
   "t": "नीली स्याही"
  },
+ "68e213e32da4": {
+  "en": " 1,123 h ",
+  "t": "1,123 घं."
+ },
  "69031c87a9c1": {
   "en": "BLACKTAIL",
   "t": "BLACKTAIL"
@@ -3475,6 +3479,10 @@
   "en": "Step 5: Judge the Meat",
   "t": "चरण 5: मांस का न्याय करो"
  },
+ "6cdaa5edd01d": {
+  "en": "105 days",
+  "t": "105 दिन"
+ },
  "6cf305e84794": {
   "en": "Counting down to March 9, 2076, at 3:39:39 AM.",
   "t": "9 मार्च 2076, सुबह 3:39:39 तक की उलटी गिनती।"
@@ -3542,6 +3550,10 @@
  "6e979f426b67": {
   "en": "MB",
   "t": "MB"
+ },
+ "6ee470473403": {
+  "en": " 5,485 h ",
+  "t": "5,485 घं."
  },
  "6eef3154b469": {
   "en": "Misaki is hands down my favorite character in the entire series! And this is my favorite series in the \"A Certain...\" world.",
@@ -3930,10 +3942,6 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
- },
- "7a69b6b4ecc2": {
-  "en": " My hours by category as planets around a sun: RPGs &amp; open worlds 37%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 15% ",
-  "t": "श्रेणी के अनुसार मेरे घंटे, सूरज के चारों ओर ग्रहों के रूप में: RPG और ओपन वर्ल्ड 37%, शहर, कॉलोनी और रणनीति 11%, सर्वाइवल और क्राफ़्टिंग 11%, फ़ैक्टरी और ऑटोमेशन 11%, अंतरिक्ष और उड़ान 9%, सुकूनभरे और लाइफ़ सिम 6%, Other 15%"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -4503,6 +4511,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 28: </span> Placeholder TV show 28 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 28: </span> अस्थायी टीवी शो 28"
  },
+ "8cc334f36d7b": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,123 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,123 घं.</strong>  ·  19 गेम  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 3%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 7%</span>"
+ },
  "8ce8b5330b49": {
   "en": "So damn cute! It reminded me of going through adolescence, which means it does a really good job of capturing how weird and fascinating it is to grow into early adulthood. Also, I absolutely love Satone, because I love clingy girls!",
   "t": "कितना प्यारा, यार! इसने मुझे किशोरावस्था से गुज़रने की याद दिलाई, यानी यह बहुत अच्छे से पकड़ता है कि शुरुआती वयस्कता में ढलना कितना अजीब और मोहक होता है। साथ ही, मुझे सातोने बहुत पसंद है, क्योंकि मुझे चिपकू लड़कियाँ पसंद हैं!"
@@ -4818,6 +4830,10 @@
  "963dd210cc93": {
   "en": "Tokyo",
   "t": "टोक्यो"
+ },
+ "9640fb09e011": {
+  "en": "227 h",
+  "t": "227 घं."
  },
  "964ce7905a2f": {
   "en": " Survival &amp; crafting ",
@@ -5443,6 +5459,10 @@
   "en": "Portuguese: 10 of 10, Fully bilingual",
   "t": "पुर्तगाली: 10 में से 10, पूरी तरह द्विभाषी"
  },
+ "a92641e98a51": {
+  "en": "37 days",
+  "t": "37 दिन"
+ },
  "a94147d8bac2": {
   "en": "#3 Hustle",
   "t": "#3 हसल"
@@ -5667,6 +5687,10 @@
   "en": "{name}: {hours}",
   "t": "{name}: {hours}"
  },
+ "af692ad68205": {
+  "en": "Kingdom Hearts series",
+  "t": "Kingdom Hearts सीरीज़"
+ },
  "affabe3f4188": {
   "en": "Campaign #1",
   "t": "कैंपेन #1"
@@ -5698,10 +5722,6 @@
  "b0d3216d6a9a": {
   "en": "18 photos",
   "t": "18 तस्वीरें"
- },
- "b1010b9a779b": {
-  "en": "37% of my hours",
-  "t": "मेरे घंटों का 37%"
  },
  "b115fa0f703f": {
   "en": "Every Miku concert I've been to, from Mikunopolis in 2011 onward.",
@@ -5759,6 +5779,10 @@
   "en": "Deo in 2017 in a graduation cap and gown with a medal, raising a beer",
   "t": "2017 में Deo, ग्रेजुएशन कैप और गाउन में मेडल पहने, बीयर उठाते हुए"
  },
+ "b263869d547b": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,505 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> अन्य: 2,505 घं."
+ },
  "b29157b87cd1": {
   "en": "Bands I still want to see live.",
   "t": "बैंड जिन्हें मैं अब भी लाइव देखना चाहता हूँ।"
@@ -5778,6 +5802,10 @@
  "b31fda1376bc": {
   "en": "Loading Screen Simulator",
   "t": "Loading Screen Simulator"
+ },
+ "b3295119ec76": {
+  "en": "17% of my hours",
+  "t": "मेरे घंटों का 17%"
  },
  "b337c292eb41": {
   "en": "Memorable characters, a story that moves, people who grow, a plot that thickens, and interesting world building. For how long it is, it's mostly sensible.",
@@ -5838,10 +5866,6 @@
  "b4d44ddf3308": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#35: </span>Best of the Worst: Blood Debts, The Tomb, and Undefeatable",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#35: </span>Best of the Worst: Blood Debts, The Tomb, and Undefeatable"
- },
- "b4e9509331e4": {
-  "en": "The games on the list add up to 612 days of nonstop play, 24 hours a day. Each square is one of those days.",
-  "t": "सूची के गेम मिलाकर 612 दिन लगातार खेलने के बराबर हैं, दिन के 24 घंटे। हर चौकोर उनमें से एक दिन है।"
  },
  "b51db5d42168": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 36: </span> Seikon no Qwaser (The Qwaser of Stigmata) ",
@@ -5906,6 +5930,10 @@
  "b73f78fc271e": {
   "en": "Giselle",
   "t": "Giselle"
+ },
+ "b77e495819ea": {
+  "en": "36% of my hours",
+  "t": "मेरे घंटों का 36%"
  },
  "b783ecde91e7": {
   "en": "Plot {plot}: {crop}, ready to harvest.",
@@ -6027,10 +6055,6 @@
   "en": "Little Witch Academia: Chamber of Time",
   "t": "Little Witch Academia: Chamber of Time"
  },
- "bc93696c8d0c": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,003 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,003 घं.</strong>  ·  19 गेम  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 3%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 7%</span>"
- },
  "bca97bae09e1": {
   "en": " Xbox  ·  estimated ",
   "t": "Xbox  ·  अनुमानित"
@@ -6051,10 +6075,6 @@
   "en": "Idle & clickers",
   "t": "आइडल और क्लिकर"
  },
- "bdf48be07582": {
-  "en": "Far Cry 5",
-  "t": "Far Cry 5"
- },
  "be31a86c982d": {
   "en": "Happy",
   "t": "ख़ुशी"
@@ -6062,10 +6082,6 @@
  "be60b2fd09b2": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Placeholder TV show 18 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 18: </span> अस्थायी टीवी शो 18"
- },
- "be7536a3d320": {
-  "en": "The games on the list add up to 1,432 days of nonstop play, 24 hours a day. Each square is one of those days.",
-  "t": "सूची के गेम मिलाकर 1,432 दिन लगातार खेलने के बराबर हैं, दिन के 24 घंटे। हर चौकोर उनमें से एक दिन है।"
  },
  "be7869041e41": {
   "en": "MyAnimeList",
@@ -6331,6 +6347,10 @@
   "en": "Lord Peeta of Tuxford",
   "t": "टक्सफ़ोर्ड के लॉर्ड Peeta"
  },
+ "c74b315a4fcf": {
+  "en": "The games on the list add up to 627 days of nonstop play, 24 hours a day. Each square is one of those days.",
+  "t": "सूची के गेम मिलाकर 627 दिन लगातार खेलने के बराबर हैं, दिन के 24 घंटे। हर चौकोर उनमें से एक दिन है।"
+ },
  "c75ac3fad137": {
   "en": "{n}s left",
   "t": "{n} सेकंड बाकी"
@@ -6342,6 +6362,10 @@
  "c766e665183d": {
   "en": "Breadcrumb",
   "t": "ब्रेडक्रंब"
+ },
+ "c794b70221ac": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,590 h</strong>  ·  12 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,590 घं.</strong>  ·  12 गेम  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 5%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 10%</span>"
  },
  "c7a20b354d97": {
   "en": "Peeta's backyard run",
@@ -6362,10 +6386,6 @@
  "c8b4c761e082": {
   "en": " 1,302 h ",
   "t": "1,302 घं."
- },
- "c8eb359c95bd": {
-  "en": " 1,003 h ",
-  "t": "1,003 घं."
  },
  "c92499e3e7ab": {
   "en": "8 games",
@@ -6443,10 +6463,6 @@
   "en": "21 h",
   "t": "21 घं."
  },
- "cb4f8f79b3d7": {
-  "en": "93 days",
-  "t": "93 दिन"
- },
  "cb617c0ab9ee": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Placeholder TV show 6 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 6: </span> अस्थायी टीवी शो 6"
@@ -6462,6 +6478,10 @@
  "cb85d1d31c87": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye"
+ },
+ "cb8697b472aa": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">19,668 h</strong>  ·  23 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">56% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">not counted in my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">19,668 घं.</strong>  ·  23 गेम  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 56%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों में नहीं गिने गए</span>"
  },
  "cbb766f08e22": {
   "en": " CK ",
@@ -6554,10 +6574,6 @@
  "ce2c178cd497": {
   "en": "Fold precision {n}%.",
   "t": "मोड़ की सटीकता {n}%।"
- },
- "ce55a3607861": {
-  "en": "15% of my hours",
-  "t": "मेरे घंटों का 15%"
  },
  "ce70caaad427": {
   "en": "1 photo",
@@ -6674,10 +6690,6 @@
  "d185b1fb283b": {
   "en": "5 games",
   "t": "5 गेम"
- },
- "d1a1eb0d4455": {
-  "en": "69 h",
-  "t": "69 घं."
  },
  "d1a7128069a4": {
   "en": "Churrasco",
@@ -6907,10 +6919,6 @@
   "en": "4,854 h",
   "t": "4,854 घं."
  },
- "d8a9279df0b5": {
-  "en": "Destroy All Humans!",
-  "t": "Destroy All Humans!"
- },
  "d8bfbca86c7d": {
   "en": "Chest",
   "t": "सीना"
@@ -6971,10 +6979,6 @@
   "en": "27 h",
   "t": "27 घं."
  },
- "d9afe40bb960": {
-  "en": "97 h",
-  "t": "97 घं."
- },
  "d9c4aa395b07": {
   "en": "Enlarge: Captain Bidu: Bidu wearing a blue military officer cap with a gold winged badge",
   "t": "बड़ा करें: कैप्टन Bidu: सुनहरे पंखों वाले बैज के साथ नीली सैन्य अफ़सर टोपी पहने Bidu"
@@ -7010,6 +7014,10 @@
  "dac190ecc27e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 13: </span> Placeholder movie 13 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 13: </span> अस्थायी फ़िल्म 13"
+ },
+ "dadda6e583a9": {
+  "en": "1,903 h",
+  "t": "1,903 घं."
  },
  "db11895b10d7": {
   "en": "28 games",
@@ -7066,6 +7074,10 @@
  "dcf43b46333c": {
   "en": "Why share something so dark and personal? <mark>Simple: I hope this finds the right person at the right moment.</mark> I was privileged to have a great, supportive family, but not everyone has that, so this is my way of putting positive energy into this weird world. Take care of yourself. If you suspect you’re on the spectrum and want someone who understands, or want to hear it from someone like me, feel free to <a href=\"contact/\">reach out</a>. But if you’re going through an active crisis, don’t be afraid to reach out for professional help.",
   "t": "इतनी अँधेरी और निजी बात क्यों साझा करना? <mark>सीधी-सी बात: मुझे उम्मीद है कि यह सही इंसान तक सही पल में पहुँचे।</mark> मुझे एक बेहतरीन, साथ देने वाला परिवार मिला, यह मेरा सौभाग्य था, पर हर किसी के पास यह नहीं होता, तो यह इस अजीब दुनिया में सकारात्मक ऊर्जा डालने का मेरा तरीका है। अपना ख़याल रखो। अगर तुम्हें शक है कि तुम स्पेक्ट्रम पर हो और कोई समझने वाला चाहिए, या मेरे जैसे किसी से सुनना चाहते हो, तो बेझिझक <a href=\"contact/\">संपर्क करो</a>। लेकिन अगर तुम अभी किसी संकट से गुज़र रहे हो, तो पेशेवर मदद लेने से डरना मत।"
+ },
+ "dd157245b11b": {
+  "en": "229 days",
+  "t": "229 दिन"
  },
  "dd24cb3de070": {
   "en": "Magic Sword",
@@ -7135,6 +7147,10 @@
   "en": "Ara ara~ (◕‿◕✿)",
   "t": "आरा आरा~ (◕‿◕✿)"
  },
+ "deebfe37f4b4": {
+  "en": " An exploded sphere of my hours by category: RPGs &amp; open worlds 36%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 17% ",
+  "t": "श्रेणी के अनुसार मेरे घंटों का बिखरा हुआ गोला: RPG और ओपन वर्ल्ड 36%, शहर, कॉलोनी और रणनीति 11%, सर्वाइवल और क्राफ़्टिंग 11%, फ़ैक्टरी और ऑटोमेशन 11%, अंतरिक्ष और उड़ान 9%, सुकूनभरे और लाइफ़ सिम 6%, अन्य 17%"
+ },
  "defaac58f76f": {
   "en": "Dua Lipa",
   "t": "Dua Lipa"
@@ -7158,10 +7174,6 @@
  "df59735e1f2b": {
   "en": "SS",
   "t": "SS"
- },
- "df9d095c1748": {
-  "en": " An exploded sphere of my hours by category: RPGs &amp; open worlds 37%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 15% ",
-  "t": "श्रेणी के अनुसार मेरे घंटों का बिखरा हुआ गोला: RPG और ओपन वर्ल्ड 37%, शहर, कॉलोनी और रणनीति 11%, सर्वाइवल और क्राफ़्टिंग 11%, फ़ैक्टरी और ऑटोमेशन 11%, अंतरिक्ष और उड़ान 9%, सुकूनभरे और लाइफ़ सिम 6%, Other 15%"
  },
  "dfc22bef9169": {
   "en": "Dragon Cliff 龙崖",
@@ -7219,6 +7231,10 @@
   "en": "Tattoo on my right forearm",
   "t": "मेरे दाएँ अग्रबाहु पर टैटू"
  },
+ "e1945edb1373": {
+  "en": "228 days",
+  "t": "228 दिन"
+ },
  "e19d5e782319": {
   "en": "The company also counted the swordsman Takeo, the very same Takeo recorded in the chronicles of #HusbandOutWorld, portrayed by Deo.",
   "t": "दल में तलवारबाज़ ताकेओ भी था, वही ताकेओ जो #HusbandOutWorld के इतिहास में दर्ज है, जिसका किरदार Deo ने निभाया।"
@@ -7274,10 +7290,6 @@
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
   "t": "चिड़िया फेंको, 3 मान लगता है (कुंजी 2)"
- },
- "e4443be6531e": {
-  "en": "2,255 h",
-  "t": "2,255 घं."
  },
  "e45f65625355": {
   "en": "amethyst",
@@ -7374,6 +7386,10 @@
  "e738cd88f444": {
   "en": "Enlarge: So fancy",
   "t": "बड़ा करें: कितना शाही"
+ },
+ "e73a48613932": {
+  "en": " 130 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "130 घं.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">अनुमानित</span>"
  },
  "e74a1afd48ee": {
   "en": "Step 2: Choose Thy Cut",
@@ -7558,6 +7574,10 @@
  "ee83a7441ce6": {
   "en": "Time! You whacked {hits} {name} and missed {misses}. {verdict}",
   "t": "समय! तुमने {hits} {name} मारे और {misses} छूटे। {verdict}"
+ },
+ "ee9c39d39625": {
+  "en": " My hours by category as planets around a sun: RPGs &amp; open worlds 36%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 17% ",
+  "t": "श्रेणी के अनुसार मेरे घंटे, सूरज के चारों ओर ग्रहों के रूप में: RPG और ओपन वर्ल्ड 36%, शहर, कॉलोनी और रणनीति 11%, सर्वाइवल और क्राफ़्टिंग 11%, फ़ैक्टरी और ऑटोमेशन 11%, अंतरिक्ष और उड़ान 9%, सुकूनभरे और लाइफ़ सिम 6%, अन्य 17%"
  },
  "ee9f4373eeab": {
   "en": "Keeper of the Sacred Salt and of the secret ways of the Touch.",
@@ -7899,6 +7919,10 @@
   "en": "Supreme Pontiff of the Grill",
   "t": "ग्रिल के सर्वोच्च धर्माध्यक्ष"
  },
+ "facf5c8faa76": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,485 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPG और ओपन वर्ल्ड: 5,485 घं."
+ },
  "fb1415fda4ff": {
   "en": "Music: on",
   "t": "संगीत: ऑन"
@@ -8019,6 +8043,10 @@
   "en": "Hear ye, hear ye! All are welcome unto the Holy Church of Churrasco, save those who eateth their steak <strong>well done</strong>. Such heathens shall burn in the most fiery of fires, in the deepest pits of Vegetation Hell.",
   "t": "सुनो, सुनो! शुहास्कू के पवित्र चर्च में सबका स्वागत है, सिवाय उनके जो अपना स्टेक <strong>वेल डन</strong> खाते हैं। ऐसे विधर्मी सब्ज़ी नरक के सबसे गहरे गड्ढों में, सबसे प्रचंड आग में जलेंगे।"
  },
+ "ff69348dd260": {
+  "en": "130 h",
+  "t": "130 घं."
+ },
  "ff77bf2aced8": {
   "en": "Senpai noticed me! (✿◠‿◠)",
   "t": "सेनपाई ने मुझे नोटिस किया! (✿◠‿◠)"
@@ -8042,10 +8070,6 @@
  "ffbcb9739951": {
   "en": "Cactus",
   "t": "कैक्टस"
- },
- "ffc2e69c952b": {
-  "en": "1,803 h",
-  "t": "1,803 घं."
  },
  "fff4a50e8428": {
   "en": "Đà Nẵng",

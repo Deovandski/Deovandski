@@ -91,6 +91,10 @@
   "en": "My full list on MyAnimeList",
   "t": "Danh sách đầy đủ của tôi trên MyAnimeList"
  },
+ "02911252007c": {
+  "en": "2,505 h",
+  "t": "2,505 h"
+ },
  "02aa629c8b16": {
   "en": "S",
   "t": "S"
@@ -159,13 +163,13 @@
   "en": "Nothing to clean.",
   "t": "Không có gì để dọn."
  },
+ "047a39a28384": {
+  "en": "3 years and 352 days",
+  "t": "3 năm 352 ngày"
+ },
  "0480691e0de6": {
   "en": "Ink",
   "t": "Mực"
- },
- "049b1f5d7742": {
-  "en": "1 year and 247 days",
-  "t": "1 năm 247 ngày"
  },
  "04e3fd08d714": {
   "en": "Description coming soon.",
@@ -174,6 +178,10 @@
  "04fb71b0bf3d": {
   "en": "\nYep. As crazy as it sounds, I'm also an author! It all started with the Vraki Writing System, such a cornerstone\n          of who I am, and of what became my \"author\" side, that I had to preserve its history.\n",
   "t": "Đúng vậy. Nghe điên rồ thế nào thì tôi cũng là một tác giả! Mọi thứ bắt đầu từ Hệ thống chữ viết Vraki, một nền tảng quan trọng đến mức định hình con người tôi và cả phần \"tác giả\" trong tôi, nên tôi phải giữ gìn lịch sử của nó."
+ },
+ "052cbbb13bce": {
+  "en": "55 days",
+  "t": "55 ngày"
  },
  "052fd9e524e5": {
   "en": "The algorithm",
@@ -351,6 +359,10 @@
   "en": "The Music of Studio Ghibli",
   "t": "The Music of Studio Ghibli"
  },
+ "0afa54bba544": {
+  "en": " 169 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "169 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ước tính</span>"
+ },
  "0afbd329b621": {
   "en": "People can open doors, but nobody walks through them using your legs. Potential earns encouragement, not applause. <strong>Sustained growth is what earns the praise.</strong>",
   "t": "Người khác có thể mở cửa, nhưng không ai bước qua bằng đôi chân của bạn. Tiềm năng xứng đáng được động viên, không phải vỗ tay. <strong>Sự trưởng thành bền bỉ mới xứng đáng được khen ngợi.</strong>"
@@ -459,10 +471,6 @@
   "en": "Framework 16 LED Matrix Manager",
   "t": "Framework 16 LED Matrix Manager"
  },
- "0e67ee4cff18": {
-  "en": " 5,385 h ",
-  "t": "5,385 h"
- },
  "0e814bdf1998": {
   "en": "45 h",
   "t": "45 h"
@@ -566,6 +574,10 @@
  "113e369e1f04": {
   "en": "What you have",
   "t": "Những gì bạn có"
+ },
+ "113f0f6915ab": {
+  "en": "104 days",
+  "t": "104 ngày"
  },
  "11414723e940": {
   "en": "169 h",
@@ -699,6 +711,10 @@
   "en": "Enlarge: Breakfast",
   "t": "Phóng to: Bữa sáng"
  },
+ "172eb905d24b": {
+  "en": " 227 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "227 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ước tính</span>"
+ },
  "1761d9bdb3a0": {
   "en": "ROSALÍA",
   "t": "ROSALÍA"
@@ -791,6 +807,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder TV show 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 9: </span> Phim bộ tạm 9"
  },
+ "1a2d88c5387b": {
+  "en": "Destroy All Humans series",
+  "t": "Loạt Destroy All Humans"
+ },
  "1a30f309ad8a": {
   "en": "The Scallywags of the Rusty Tankard",
   "t": "Lũ Lưu Manh của Rusty Tankard"
@@ -814,6 +834,10 @@
  "1b0a2d74e6ea": {
   "en": "#HusbandOutWorld Series",
   "t": "Bộ truyện #HusbandOutWorld"
+ },
+ "1b25d112e205": {
+  "en": " 763 h ",
+  "t": "763 h"
  },
  "1b4c1d90da83": {
   "en": "Your FBI agent has entered the chat. ( ͡° ͜ʖ ͡°)",
@@ -1019,6 +1043,10 @@
   "en": "Enlarge: Gossipy old lady",
   "t": "Phóng to: Bà già nhiều chuyện"
  },
+ "21f23dcd8cfa": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,588 h</strong>  ·  7 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,588 h</strong>  ·  7 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% số giờ của tôi</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% số giờ của tôi</span>"
+ },
  "21fd26294c5c": {
   "en": "Rusty's Retirement",
   "t": "Rusty's Retirement"
@@ -1039,9 +1067,17 @@
   "en": "30 h",
   "t": "30 h"
  },
+ "227e31d0cde4": {
+  "en": "The games on the list add up to 1,447 days of nonstop play, 24 hours a day. Each square is one of those days.",
+  "t": "Các game trong danh sách cộng lại bằng 1,447 ngày chơi không nghỉ, 24 giờ mỗi ngày. Mỗi ô là một ngày trong số đó."
+ },
  "229377a6b713": {
   "en": "You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it's still in the air) and take it down before you run dry.",
   "t": "Bạn là chướng ngại vật. Khủng long chạy. Bạn ném đồ vào nó. Mana tăng mỗi giây kể từ bây giờ; canh thời điểm ném (bắt lúc nó còn đang trên không) và hạ nó trước khi bạn cạn mana."
+ },
+ "22db4557409d": {
+  "en": " Xbox + PlayStation  ·  estimated ",
+  "t": "Xbox + PlayStation  ·  ước tính"
  },
  "22e02026aa78": {
   "en": "Crisp!",
@@ -1191,10 +1227,6 @@
   "en": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna",
   "t": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna"
  },
- "26fadd02e644": {
-  "en": "94 days",
-  "t": "94 ngày"
- },
  "273285456a27": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 19: </span> Placeholder movie 19 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 19: </span> Phim tạm 19"
@@ -1223,17 +1255,9 @@
   "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
   "t": "Tức là {tapes} cuộn băng VHS ghi ở chế độ {mode} ({perTape} giờ mỗi băng T-120)."
  },
- "27c95af95a7e": {
-  "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,385 h ",
-  "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPG &amp; thế giới mở: 5,385 h"
- },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 10: </span> Phim bộ tạm 10"
- },
- "27dd6cefd440": {
-  "en": "KINGDOM HEARTS III",
-  "t": "KINGDOM HEARTS III"
  },
  "27ff191d72e4": {
   "en": "Deo",
@@ -1250,10 +1274,6 @@
  "283c1ebce40b": {
   "en": "Close to 12 years old but still kicking",
   "t": "Gần 12 tuổi rồi mà vẫn khỏe re"
- },
- "284507d08d18": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,588 h</strong>  ·  7 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,588 h</strong>  ·  7 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% số giờ của tôi</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% số giờ của tôi</span>"
  },
  "2888f01fb635": {
   "en": "Morning by the river",
@@ -1290,10 +1310,6 @@
  "29733f231324": {
   "en": "Under the hood: how it hooks you",
   "t": "Hậu trường: nó móc bạn như thế nào"
- },
- "297457a86258": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">633 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">633 h</strong>  ·  5 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% số giờ của tôi</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% số giờ của tôi</span>"
  },
  "2984ff90b404": {
   "en": "Bad Bunny",
@@ -1366,10 +1382,6 @@
  "2c1e5036b725": {
   "en": "{n} balls in the bag",
   "t": "{n} bi trong túi"
- },
- "2c27ec2a32c3": {
-  "en": "71 days",
-  "t": "71 ngày"
  },
  "2c6f37232fe8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Nanatsu no Taizai (The Seven Deadly Sins) ",
@@ -1478,6 +1490,10 @@
  "2f9714995b86": {
   "en": " An exploded sphere of my hours by category: Idle &amp; clickers 57%, RPGs &amp; open worlds 16%, City, colony &amp; strategy 5%, Survival &amp; crafting 5%, Factory &amp; automation 5%, Space &amp; flight 4%, Cozy &amp; life sims 3%, Other 7% ",
   "t": "Khối cầu tách mảnh theo số giờ của tôi cho từng thể loại: Idle &amp; clicker 57%, RPG &amp; thế giới mở 16%, Thành phố, thuộc địa &amp; chiến thuật 5%, Sinh tồn &amp; chế tạo 5%, Nhà máy &amp; tự động hóa 5%, Không gian &amp; bay 4%, Thư giãn &amp; mô phỏng đời sống 3%, Other 7%"
+ },
+ "2fa2880f7c93": {
+  "en": "Far Cry series",
+  "t": "Loạt Far Cry"
  },
  "2fa582319006": {
   "en": "One of my favorite isekai, and one of the OGs from before the torrent of copycats trying to milk the market dry.",
@@ -1763,10 +1779,6 @@
   "en": "King of the trail",
   "t": "Vua của con đường mòn"
  },
- "3869de54b01c": {
-  "en": "224 days",
-  "t": "224 ngày"
- },
  "3878d567f539": {
   "en": "A streak you could lose feels worse than one you never had. Losing hurts about twice as much as winning feels good.",
   "t": "Một chuỗi bạn có thể mất khiến bạn khó chịu hơn một chuỗi bạn chưa từng có. Mất mát đau khoảng gấp đôi niềm vui khi thắng."
@@ -1867,6 +1879,10 @@
   "en": "Fluffy",
   "t": "Fluffy"
  },
+ "3af62880aa05": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">763 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">763 h</strong>  ·  5 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% số giờ của tôi</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% số giờ của tôi</span>"
+ },
  "3b044501691d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Placeholder TV show 16 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 16: </span> Phim bộ tạm 16"
@@ -1882,10 +1898,6 @@
  "3b419aac7299": {
   "en": "\nTreat your life like a project: break big goals into small steps, be honest about scope and deadlines, and track what's\n        actually done. It's how I run everything from client work to this website, and the <a href=\"#pm\" data-astro-cid-xtzphevd=\"\">PM side</a> of this tab\n        has the details.\n",
   "t": "Hãy đối xử với cuộc đời như một dự án: chia mục tiêu lớn thành các bước nhỏ, trung thực về phạm vi và thời hạn, và theo dõi những gì thật sự đã xong. Đó là cách tôi điều hành mọi thứ, từ việc cho khách hàng đến trang web này, và <a href=\"#pm\" data-astro-cid-xtzphevd=\"\">phần Quản lý dự án</a> của thẻ này có chi tiết."
- },
- "3b71b89ab488": {
-  "en": " 633 h ",
-  "t": "633 h"
  },
  "3b9b88d1447d": {
   "en": " <span class=\"shelf__dot\" style=\"background: #0ca30c\" data-astro-cid-nqpad2wp=\"\"></span> Cozy &amp; life sims: 904 h ",
@@ -1982,10 +1994,6 @@
  "3eda298502f3": {
   "en": "My parents fought tooth and nail to give me a chance in life that they never had, and with blood, sweat and tears, I took full advantage of it, while also pursuing my own opportunities to make myself fulfilled. Once I become a citizen, it'll be my turn to make sure they have a good retirement.",
   "t": "Bố mẹ tôi đã chiến đấu bằng cả răng và móng vuốt để cho tôi một cơ hội trong đời mà họ chưa từng có, và bằng máu, mồ hôi và nước mắt, tôi đã tận dụng nó trọn vẹn, đồng thời theo đuổi những cơ hội riêng để thấy mình trọn vẹn. Khi tôi trở thành công dân, sẽ đến lượt tôi đảm bảo họ có một tuổi già an nhàn."
- },
- "3ef10729a2c1": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,590 h</strong>  ·  12 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,590 h</strong>  ·  12 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% số giờ của tôi</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% số giờ của tôi</span>"
  },
  "3ef5b5e97c0e": {
   "en": "Back to Musician",
@@ -2135,10 +2143,6 @@
   "en": "Folk",
   "t": "Folk"
  },
- "45043cda7136": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">5,385 h</strong>  ·  28 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">5,385 h</strong>  ·  28 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% số giờ của tôi</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% số giờ của tôi</span>"
- },
  "4534c6829b3a": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Death Note ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 18: </span> Death Note"
@@ -2166,6 +2170,10 @@
  "46b00befa084": {
   "en": "\"Almost went viral!\" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses.",
   "t": "\"Suýt viral!\" vẫn là thua, và còn khó chịu hơn thua hẳn, nhưng nó khiến người ta muốn chơi tiếp. Sự kiên trì đạt đỉnh khi khoảng 30% số lần thua là suýt trúng."
+ },
+ "46e758ae6dd6": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">5,485 h</strong>  ·  28 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">5,485 h</strong>  ·  28 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% số giờ của tôi</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% số giờ của tôi</span>"
  },
  "46e80e47b684": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested",
@@ -2223,6 +2231,10 @@
   "en": "Besides the relationship and the bonding, the merchant life and bartering are really well developed! I took inspiration from it while working on the world lore for #HusbandOutWorld.",
   "t": "Ngoài mối quan hệ và sự gắn bó, cuộc sống thương nhân và việc mặc cả được phát triển rất tốt! Tôi đã lấy cảm hứng từ nó khi xây dựng thế giới quan cho #HusbandOutWorld."
  },
+ "48ea93ab322b": {
+  "en": "1 year and 262 days",
+  "t": "1 năm 262 ngày"
+ },
  "48ef76f8bb0c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Chuunibyou demo Koi ga Shitai! (Love, Chunibyo &amp; Other Delusions!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 30: </span> Chuunibyou demo Koi ga Shitai! (Love, Chunibyo &amp; Other Delusions!)"
@@ -2275,10 +2287,6 @@
   "en": "Enlarge: Quite the stretch",
   "t": "Phóng to: Vươn vai ra trò"
  },
- "4ace96fd9450": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">19,668 h</strong>  ·  23 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">57% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">not counted in my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">19,668 h</strong>  ·  23 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">57% số giờ của tôi</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">không tính vào số giờ của tôi</span>"
- },
  "4ad51e59a5be": {
   "en": " Fine line ",
   "t": "Nét mảnh"
@@ -2326,10 +2334,6 @@
  "4c1f1c138390": {
   "en": "Not bad!",
   "t": "Không tệ!"
- },
- "4c269467e961": {
-  "en": "3 years and 337 days",
-  "t": "3 năm 337 ngày"
  },
  "4cbc599953b9": {
   "en": " Rhythm &amp; music ",
@@ -2879,10 +2883,6 @@
   "en": "Pixel pets: turn your phone sideways",
   "t": "Thú cưng pixel: xoay ngang điện thoại"
  },
- "5a986c8fd343": {
-  "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,255 h ",
-  "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,255 h"
- },
  "5abf683efa95": {
   "en": "Cities: Skylines",
   "t": "Cities: Skylines"
@@ -3343,6 +3343,10 @@
   "en": "Blue ink",
   "t": "Mực xanh dương"
  },
+ "68e213e32da4": {
+  "en": " 1,123 h ",
+  "t": "1,123 h"
+ },
  "69031c87a9c1": {
   "en": "BLACKTAIL",
   "t": "BLACKTAIL"
@@ -3475,6 +3479,10 @@
   "en": "Step 5: Judge the Meat",
   "t": "Bước 5: Phán xét Thịt"
  },
+ "6cdaa5edd01d": {
+  "en": "105 days",
+  "t": "105 ngày"
+ },
  "6cf305e84794": {
   "en": "Counting down to March 9, 2076, at 3:39:39 AM.",
   "t": "Đếm ngược đến 3:39:39 sáng ngày 9 tháng 3 năm 2076."
@@ -3542,6 +3550,10 @@
  "6e979f426b67": {
   "en": "MB",
   "t": "MB"
+ },
+ "6ee470473403": {
+  "en": " 5,485 h ",
+  "t": "5,485 h"
  },
  "6eef3154b469": {
   "en": "Misaki is hands down my favorite character in the entire series! And this is my favorite series in the \"A Certain...\" world.",
@@ -3930,10 +3942,6 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
- },
- "7a69b6b4ecc2": {
-  "en": " My hours by category as planets around a sun: RPGs &amp; open worlds 37%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 15% ",
-  "t": "Số giờ của tôi theo thể loại thành các hành tinh quanh mặt trời: RPG &amp; thế giới mở 37%, Thành phố, thuộc địa &amp; chiến thuật 11%, Sinh tồn &amp; chế tạo 11%, Nhà máy &amp; tự động hóa 11%, Không gian &amp; bay 9%, Thư giãn &amp; mô phỏng đời sống 6%, Other 15%"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -4503,6 +4511,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 28: </span> Placeholder TV show 28 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 28: </span> Phim bộ tạm 28"
  },
+ "8cc334f36d7b": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,123 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,123 h</strong>  ·  19 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% số giờ của tôi</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% số giờ của tôi</span>"
+ },
  "8ce8b5330b49": {
   "en": "So damn cute! It reminded me of going through adolescence, which means it does a really good job of capturing how weird and fascinating it is to grow into early adulthood. Also, I absolutely love Satone, because I love clingy girls!",
   "t": "Dễ thương chết đi được! Nó làm tôi nhớ lại thời tuổi dậy thì, nghĩa là nó nắm bắt rất tốt sự kỳ lạ và cuốn hút của việc lớn lên bước vào tuổi trưởng thành. Mà tôi cực kỳ mê Satone, vì tôi thích những cô gái bám dính!"
@@ -4818,6 +4830,10 @@
  "963dd210cc93": {
   "en": "Tokyo",
   "t": "Tokyo"
+ },
+ "9640fb09e011": {
+  "en": "227 h",
+  "t": "227 h"
  },
  "964ce7905a2f": {
   "en": " Survival &amp; crafting ",
@@ -5443,6 +5459,10 @@
   "en": "Portuguese: 10 of 10, Fully bilingual",
   "t": "Tiếng Bồ Đào Nha: 10 trên 10, Song ngữ hoàn toàn"
  },
+ "a92641e98a51": {
+  "en": "37 days",
+  "t": "37 ngày"
+ },
  "a94147d8bac2": {
   "en": "#3 Hustle",
   "t": "#3 Hustle"
@@ -5667,6 +5687,10 @@
   "en": "{name}: {hours}",
   "t": "{name}: {hours}"
  },
+ "af692ad68205": {
+  "en": "Kingdom Hearts series",
+  "t": "Loạt Kingdom Hearts"
+ },
  "affabe3f4188": {
   "en": "Campaign #1",
   "t": "Chiến dịch #1"
@@ -5698,10 +5722,6 @@
  "b0d3216d6a9a": {
   "en": "18 photos",
   "t": "18 ảnh"
- },
- "b1010b9a779b": {
-  "en": "37% of my hours",
-  "t": "37% số giờ của tôi"
  },
  "b115fa0f703f": {
   "en": "Every Miku concert I've been to, from Mikunopolis in 2011 onward.",
@@ -5759,6 +5779,10 @@
   "en": "Deo in 2017 in a graduation cap and gown with a medal, raising a beer",
   "t": "Deo năm 2017 mặc áo choàng và đội mũ tốt nghiệp, đeo huy chương, nâng cốc bia"
  },
+ "b263869d547b": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,505 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Khác: 2,505 h"
+ },
  "b29157b87cd1": {
   "en": "Bands I still want to see live.",
   "t": "Những ban nhạc tôi vẫn muốn xem trực tiếp."
@@ -5778,6 +5802,10 @@
  "b31fda1376bc": {
   "en": "Loading Screen Simulator",
   "t": "Loading Screen Simulator"
+ },
+ "b3295119ec76": {
+  "en": "17% of my hours",
+  "t": "17% số giờ của tôi"
  },
  "b337c292eb41": {
   "en": "Memorable characters, a story that moves, people who grow, a plot that thickens, and interesting world building. For how long it is, it's mostly sensible.",
@@ -5838,10 +5866,6 @@
  "b4d44ddf3308": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#35: </span>Best of the Worst: Blood Debts, The Tomb, and Undefeatable",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#35: </span>Best of the Worst: Blood Debts, The Tomb, and Undefeatable"
- },
- "b4e9509331e4": {
-  "en": "The games on the list add up to 612 days of nonstop play, 24 hours a day. Each square is one of those days.",
-  "t": "Các game trong danh sách cộng lại bằng 612 ngày chơi không nghỉ, 24 giờ mỗi ngày. Mỗi ô là một ngày trong số đó."
  },
  "b51db5d42168": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 36: </span> Seikon no Qwaser (The Qwaser of Stigmata) ",
@@ -5906,6 +5930,10 @@
  "b73f78fc271e": {
   "en": "Giselle",
   "t": "Giselle"
+ },
+ "b77e495819ea": {
+  "en": "36% of my hours",
+  "t": "36% số giờ của tôi"
  },
  "b783ecde91e7": {
   "en": "Plot {plot}: {crop}, ready to harvest.",
@@ -6027,10 +6055,6 @@
   "en": "Little Witch Academia: Chamber of Time",
   "t": "Little Witch Academia: Chamber of Time"
  },
- "bc93696c8d0c": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,003 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,003 h</strong>  ·  19 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% số giờ của tôi</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% số giờ của tôi</span>"
- },
  "bca97bae09e1": {
   "en": " Xbox  ·  estimated ",
   "t": "Xbox  ·  ước tính"
@@ -6051,10 +6075,6 @@
   "en": "Idle & clickers",
   "t": "Idle & clicker"
  },
- "bdf48be07582": {
-  "en": "Far Cry 5",
-  "t": "Far Cry 5"
- },
  "be31a86c982d": {
   "en": "Happy",
   "t": "Vui"
@@ -6062,10 +6082,6 @@
  "be60b2fd09b2": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Placeholder TV show 18 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 18: </span> Phim bộ tạm 18"
- },
- "be7536a3d320": {
-  "en": "The games on the list add up to 1,432 days of nonstop play, 24 hours a day. Each square is one of those days.",
-  "t": "Các game trong danh sách cộng lại bằng 1,432 ngày chơi không nghỉ, 24 giờ mỗi ngày. Mỗi ô là một ngày trong số đó."
  },
  "be7869041e41": {
   "en": "MyAnimeList",
@@ -6331,6 +6347,10 @@
   "en": "Lord Peeta of Tuxford",
   "t": "Lãnh chúa Peeta xứ Tuxford"
  },
+ "c74b315a4fcf": {
+  "en": "The games on the list add up to 627 days of nonstop play, 24 hours a day. Each square is one of those days.",
+  "t": "Các game trong danh sách cộng lại bằng 627 ngày chơi không nghỉ, 24 giờ mỗi ngày. Mỗi ô là một ngày trong số đó."
+ },
  "c75ac3fad137": {
   "en": "{n}s left",
   "t": "Còn {n} giây"
@@ -6342,6 +6362,10 @@
  "c766e665183d": {
   "en": "Breadcrumb",
   "t": "Đường dẫn"
+ },
+ "c794b70221ac": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,590 h</strong>  ·  12 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,590 h</strong>  ·  12 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% số giờ của tôi</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% số giờ của tôi</span>"
  },
  "c7a20b354d97": {
   "en": "Peeta's backyard run",
@@ -6362,10 +6386,6 @@
  "c8b4c761e082": {
   "en": " 1,302 h ",
   "t": "1,302 h"
- },
- "c8eb359c95bd": {
-  "en": " 1,003 h ",
-  "t": "1,003 h"
  },
  "c92499e3e7ab": {
   "en": "8 games",
@@ -6443,10 +6463,6 @@
   "en": "21 h",
   "t": "21 h"
  },
- "cb4f8f79b3d7": {
-  "en": "93 days",
-  "t": "93 ngày"
- },
  "cb617c0ab9ee": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Placeholder TV show 6 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 6: </span> Phim bộ tạm 6"
@@ -6462,6 +6478,10 @@
  "cb85d1d31c87": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye"
+ },
+ "cb8697b472aa": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">19,668 h</strong>  ·  23 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">56% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">not counted in my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">19,668 h</strong>  ·  23 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">56% số giờ của tôi</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">không tính vào số giờ của tôi</span>"
  },
  "cbb766f08e22": {
   "en": " CK ",
@@ -6554,10 +6574,6 @@
  "ce2c178cd497": {
   "en": "Fold precision {n}%.",
   "t": "Độ chính xác khi gấp {n}%."
- },
- "ce55a3607861": {
-  "en": "15% of my hours",
-  "t": "15% số giờ của tôi"
  },
  "ce70caaad427": {
   "en": "1 photo",
@@ -6674,10 +6690,6 @@
  "d185b1fb283b": {
   "en": "5 games",
   "t": "5 game"
- },
- "d1a1eb0d4455": {
-  "en": "69 h",
-  "t": "69 h"
  },
  "d1a7128069a4": {
   "en": "Churrasco",
@@ -6907,10 +6919,6 @@
   "en": "4,854 h",
   "t": "4,854 h"
  },
- "d8a9279df0b5": {
-  "en": "Destroy All Humans!",
-  "t": "Destroy All Humans!"
- },
  "d8bfbca86c7d": {
   "en": "Chest",
   "t": "Ngực"
@@ -6971,10 +6979,6 @@
   "en": "27 h",
   "t": "27 h"
  },
- "d9afe40bb960": {
-  "en": "97 h",
-  "t": "97 h"
- },
  "d9c4aa395b07": {
   "en": "Enlarge: Captain Bidu: Bidu wearing a blue military officer cap with a gold winged badge",
   "t": "Phóng to: Thuyền trưởng Bidu: Bidu đội mũ sĩ quan quân đội màu xanh có huy hiệu đôi cánh vàng"
@@ -7010,6 +7014,10 @@
  "dac190ecc27e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 13: </span> Placeholder movie 13 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 13: </span> Phim tạm 13"
+ },
+ "dadda6e583a9": {
+  "en": "1,903 h",
+  "t": "1,903 h"
  },
  "db11895b10d7": {
   "en": "28 games",
@@ -7066,6 +7074,10 @@
  "dcf43b46333c": {
   "en": "Why share something so dark and personal? <mark>Simple: I hope this finds the right person at the right moment.</mark> I was privileged to have a great, supportive family, but not everyone has that, so this is my way of putting positive energy into this weird world. Take care of yourself. If you suspect you’re on the spectrum and want someone who understands, or want to hear it from someone like me, feel free to <a href=\"contact/\">reach out</a>. But if you’re going through an active crisis, don’t be afraid to reach out for professional help.",
   "t": "Tại sao lại chia sẻ điều u tối và riêng tư như vậy? <mark>Đơn giản: tôi mong nó đến được đúng người vào đúng lúc.</mark> Tôi may mắn có một gia đình tuyệt vời luôn ủng hộ, nhưng không phải ai cũng có được điều đó, nên đây là cách tôi gửi năng lượng tích cực vào thế giới kỳ lạ này. Hãy giữ gìn bản thân. Nếu bạn nghi mình thuộc phổ tự kỷ và muốn có người hiểu, hoặc muốn nghe điều đó từ một người như tôi, cứ thoải mái <a href=\"contact/\">liên hệ</a>. Nhưng nếu bạn đang trải qua khủng hoảng ngay lúc này, đừng ngại tìm đến sự giúp đỡ chuyên môn."
+ },
+ "dd157245b11b": {
+  "en": "229 days",
+  "t": "229 ngày"
  },
  "dd24cb3de070": {
   "en": "Magic Sword",
@@ -7135,6 +7147,10 @@
   "en": "Ara ara~ (◕‿◕✿)",
   "t": "Ara ara~ (◕‿◕✿)"
  },
+ "deebfe37f4b4": {
+  "en": " An exploded sphere of my hours by category: RPGs &amp; open worlds 36%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 17% ",
+  "t": "Khối cầu tách mảnh theo số giờ của tôi cho từng thể loại: RPG &amp; thế giới mở 36%, Thành phố, thuộc địa &amp; chiến thuật 11%, Sinh tồn &amp; chế tạo 11%, Nhà máy &amp; tự động hóa 11%, Không gian &amp; bay 9%, Thư giãn &amp; mô phỏng đời sống 6%, Khác 17%"
+ },
  "defaac58f76f": {
   "en": "Dua Lipa",
   "t": "Dua Lipa"
@@ -7158,10 +7174,6 @@
  "df59735e1f2b": {
   "en": "SS",
   "t": "SS"
- },
- "df9d095c1748": {
-  "en": " An exploded sphere of my hours by category: RPGs &amp; open worlds 37%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 15% ",
-  "t": "Khối cầu tách mảnh theo số giờ của tôi cho từng thể loại: RPG &amp; thế giới mở 37%, Thành phố, thuộc địa &amp; chiến thuật 11%, Sinh tồn &amp; chế tạo 11%, Nhà máy &amp; tự động hóa 11%, Không gian &amp; bay 9%, Thư giãn &amp; mô phỏng đời sống 6%, Other 15%"
  },
  "dfc22bef9169": {
   "en": "Dragon Cliff 龙崖",
@@ -7219,6 +7231,10 @@
   "en": "Tattoo on my right forearm",
   "t": "Hình xăm trên cẳng tay phải của tôi"
  },
+ "e1945edb1373": {
+  "en": "228 days",
+  "t": "228 ngày"
+ },
  "e19d5e782319": {
   "en": "The company also counted the swordsman Takeo, the very same Takeo recorded in the chronicles of #HusbandOutWorld, portrayed by Deo.",
   "t": "Đoàn còn có kiếm sĩ Takeo, chính là Takeo được ghi lại trong biên niên sử của #HusbandOutWorld, do Deo nhập vai."
@@ -7274,10 +7290,6 @@
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
   "t": "Ném Chim, tốn 3 mana (phím 2)"
- },
- "e4443be6531e": {
-  "en": "2,255 h",
-  "t": "2,255 h"
  },
  "e45f65625355": {
   "en": "amethyst",
@@ -7374,6 +7386,10 @@
  "e738cd88f444": {
   "en": "Enlarge: So fancy",
   "t": "Phóng to: Sang chảnh ghê"
+ },
+ "e73a48613932": {
+  "en": " 130 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "130 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ước tính</span>"
  },
  "e74a1afd48ee": {
   "en": "Step 2: Choose Thy Cut",
@@ -7558,6 +7574,10 @@
  "ee83a7441ce6": {
   "en": "Time! You whacked {hits} {name} and missed {misses}. {verdict}",
   "t": "Hết giờ! Bạn đánh trúng {hits} {name} và trượt {misses}. {verdict}"
+ },
+ "ee9c39d39625": {
+  "en": " My hours by category as planets around a sun: RPGs &amp; open worlds 36%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 17% ",
+  "t": "Số giờ của tôi theo thể loại thành các hành tinh quanh mặt trời: RPG &amp; thế giới mở 36%, Thành phố, thuộc địa &amp; chiến thuật 11%, Sinh tồn &amp; chế tạo 11%, Nhà máy &amp; tự động hóa 11%, Không gian &amp; bay 9%, Thư giãn &amp; mô phỏng đời sống 6%, Khác 17%"
  },
  "ee9f4373eeab": {
   "en": "Keeper of the Sacred Salt and of the secret ways of the Touch.",
@@ -7899,6 +7919,10 @@
   "en": "Supreme Pontiff of the Grill",
   "t": "Giáo hoàng Tối cao của Lò nướng"
  },
+ "facf5c8faa76": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,485 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPG &amp; thế giới mở: 5,485 h"
+ },
  "fb1415fda4ff": {
   "en": "Music: on",
   "t": "Nhạc: bật"
@@ -8019,6 +8043,10 @@
   "en": "Hear ye, hear ye! All are welcome unto the Holy Church of Churrasco, save those who eateth their steak <strong>well done</strong>. Such heathens shall burn in the most fiery of fires, in the deepest pits of Vegetation Hell.",
   "t": "Hãy nghe đây, hãy nghe đây! Hết thảy đều được chào đón vào Thánh Giáo hội Churrasco, trừ những kẻ ăn bít tết <strong>chín kỹ</strong>. Những kẻ ngoại đạo ấy sẽ bị thiêu trong ngọn lửa dữ dội nhất, dưới đáy sâu nhất của Địa ngục Rau củ."
  },
+ "ff69348dd260": {
+  "en": "130 h",
+  "t": "130 h"
+ },
  "ff77bf2aced8": {
   "en": "Senpai noticed me! (✿◠‿◠)",
   "t": "Senpai để ý đến tôi rồi! (✿◠‿◠)"
@@ -8042,10 +8070,6 @@
  "ffbcb9739951": {
   "en": "Cactus",
   "t": "Xương rồng"
- },
- "ffc2e69c952b": {
-  "en": "1,803 h",
-  "t": "1,803 h"
  },
  "fff4a50e8428": {
   "en": "Đà Nẵng",

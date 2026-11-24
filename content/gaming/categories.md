@@ -127,7 +127,7 @@ Hours here are mostly the game running in the background.
 - Grand Theft Auto series | Grand Theft Auto III | Grand Theft Auto IV | Grand Theft Auto IV: The Complete Edition | Grand Theft Auto: San Andreas | Grand Theft Auto V | Grand Theft Auto V Legacy | Grand Theft Auto V (Xbox One)
 - Grim Dawn
 - Hogwarts Legacy
-- KINGDOM HEARTS III
+- Kingdom Hearts series | KINGDOM HEARTS III
 - Like a Dragon: Pirate Yakuza in Hawaii
 - Little Witch Academia: Chamber of Time
 - Mass Effect Legendary Edition
@@ -146,7 +146,7 @@ Hours here are mostly the game running in the background.
 
 - A Plague Tale series | A Plague Tale: Innocence | A Plague Tale: Requiem
 - BLACKTAIL
-- Destroy All Humans!
+- Destroy All Humans series | Destroy All Humans! | Destroy All Humans! Path of the Furon
 - Dynasty Warriors and Empires series | DW6 Empires
 - Ghostbusters: The Video Game Remastered
 - Hellblade: Senua's Sacrifice
@@ -175,7 +175,7 @@ Hours here are mostly the game running in the background.
 
 - Borderlands series | Borderlands 2 | Borderlands 3 | Borderlands GOTY Enhanced
 - Dead Island 2
-- Far Cry 5
+- Far Cry series | Far Cry 5 | Far Cry 4 | FAR CRY PRIMAL
 - Left 4 Dead 2
 - PAYDAY 2
 
