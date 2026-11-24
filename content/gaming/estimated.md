@@ -4,7 +4,7 @@ Games from before Steam and Xbox tracked playtime, with hours I estimated myself
 tab adds them to the tracked hours, shows a chip for each heading below (the platform), and
 marks the game's hours with an asterisk (*).
 
-- Each `##` heading is a platform, shown as the chip (PlayStation, PC).
+- Each `##` heading is a platform, shown as the chip (PlayStation, PC, Xbox).
 - Each bullet is a game and its hours: `- Grand Theft Auto IV: 130`. The name has to match one
   of the names on the game's line in `categories.md` (the line can list several with `|`), and
   that line decides its category. A game missing from `categories.md` isn't shown.
@@ -25,3 +25,7 @@ marks the game's hours with an asterisk (*).
 - Diablo II: 200
 - Ragnarok Online: 150
 - Perfect World: 75
+
+## Xbox
+
+- Diablo III: 250

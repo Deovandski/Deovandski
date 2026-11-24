@@ -563,6 +563,10 @@
   "en": "Terraria",
   "t": "테라리아"
  },
+ "123cde674354": {
+  "en": "Diablo III",
+  "t": "디아블로 III"
+ },
  "12778aec0f70": {
   "en": "Wins: 1",
   "t": "승: 1"
@@ -1043,6 +1047,10 @@
   "en": "there's poop to clean",
   "t": "치울 똥이 있어"
  },
+ "244646106913": {
+  "en": "Show all 37",
+  "t": "37개 모두 보기"
+ },
  "244d46168deb": {
   "en": "a cactus",
   "t": "선인장"
@@ -1402,6 +1410,10 @@
  "2ef504cf4abc": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#37: </span>Best of the Worst: Clash in the College",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#37: </span>Best of the Worst: Clash in the College"
+ },
+ "2f00a6c215b5": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">5,185 h</strong>  ·  37 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">15% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">5,185 시간</strong>  ·  게임 37개  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">내 시간의 15%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">내 시간의 36%</span>"
  },
  "2f2bbafed371": {
   "en": "Posted. Nobody cares. Yet.",
@@ -2439,10 +2451,6 @@
   "en": "You threw {thing}.",
   "t": "{thing}을(를) 던졌어."
  },
- "514f2eb993bc": {
-  "en": "Show all 36",
-  "t": "36개 모두 보기"
- },
  "5162a45af33b": {
   "en": "\nI can keep a beat, though, which is why I want to get into drumming one day! Why not now? Because of priorities, and\n          there's only so much I can cook at one time... So it's planned out on my backlog! I want to play\n<i data-astro-cid-j7pv25f6=\"\">World's End Dancehall</i>, <i data-astro-cid-j7pv25f6=\"\">Two-Faced Lovers</i> and <i data-astro-cid-j7pv25f6=\"\">Sweet Devil</i> on drums!\n",
   "t": "그래도 박자는 맞출 수 있어서, 언젠가 드럼을 배우고 싶어! 왜 지금은 아니냐고? 우선순위 때문이고, 한 번에 요리할 수 있는 양엔 한계가 있으니까... 그래서 백로그에 계획해 뒀어! 드럼으로 <i data-astro-cid-j7pv25f6=\"\">World's End Dancehall</i>, <i data-astro-cid-j7pv25f6=\"\">Two-Faced Lovers</i>, <i data-astro-cid-j7pv25f6=\"\">Sweet Devil</i>을 치고 싶어!"
@@ -2470,6 +2478,10 @@
  "521cb68c2c31": {
   "en": "Ceará",
   "t": "Ceará"
+ },
+ "524e41421d4e": {
+  "en": " 250 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "250 시간  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">추정</span>"
  },
  "5284e1a74198": {
   "en": "Tell me I am pretty",
@@ -4662,10 +4674,6 @@
  "97c202217634": {
   "en": "17 photos",
   "t": "사진 17장"
- },
- "97c65149006c": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">4,935 h</strong>  ·  36 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">15% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">35% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">4,935 시간</strong>  ·  게임 36개  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">내 시간의 15%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">내 시간의 35%</span>"
  },
  "980d61e4994b": {
   "en": "Schüll, Addiction by Design (2012), on how slot machines are tuned",
@@ -7459,6 +7467,10 @@
   "en": "A Plague Tale: Requiem",
   "t": "플래그 테일: 레퀴엠"
  },
+ "f72402eb475f": {
+  "en": " 5,185 h ",
+  "t": "5,185 시간"
+ },
  "f741561b264b": {
   "en": "The Defenders of Ordo did not fall to an army at the gates. They fell to one another. Their quarrels were fed by the charms of a spider-god of doll-like countenance, who lurked in the Rotten Unknown and wielded powers never fathomed. Thus the fellowship was undone from within, and its defenders passed into history. Yet to this day, the people of Ordo still speak of the Prince who pleased himself into the ley lines, an episode upon which the court chroniclers have respectfully declined to elaborate.",
   "t": "오르도의 수호자들은 성문 앞의 군대에 쓰러진 게 아니었다. 서로에게 쓰러졌다. 그들의 다툼은 인형 같은 얼굴을 한 거미 여신의 매혹으로 부추겨졌으니, 그녀는 '썩은 미지(Rotten Unknown)'에 숨어 아무도 헤아리지 못한 힘을 휘둘렀다. 그렇게 동료들은 안에서부터 무너졌고, 수호자들은 역사 속으로 사라졌다. 그럼에도 오늘날까지 오르도 사람들은 스스로를 즐겁게 하다가 레이 라인(ley line) 속으로 사라진 왕자 이야기를 한다. 궁정 연대기 작가들은 이 일화에 대해 정중히 자세한 언급을 삼가고 있다."
@@ -7482,10 +7494,6 @@
  "f88380a61053": {
   "en": "Enlarge: Artsy Bidu",
   "t": "확대: 예술가 Bidu"
- },
- "f886e6daf6f7": {
-  "en": " 4,935 h ",
-  "t": "4,935 시간"
  },
  "f8be939ad7c2": {
   "en": "6 h",
