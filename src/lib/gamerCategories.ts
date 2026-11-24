@@ -86,17 +86,21 @@ export function loadGamer(
       return zero ? { name: names[0], value: 0, chips: [] } : undefined;
     }
     if (s && x) {
-      merged++;
+      // The same game on both stores counts once in "games played"; a series names different games.
+      if (!/\bseries$/i.test(names[0])) merged++;
       if (same) doubleCounted += Math.min(s, x);
     }
     estimatedMin += e;
     if (e && !s && !x) estimatedOnly++;
     const tracked = s && x && same ? Math.max(s, x) : s + x;
     // A chip for each source that adds at least an hour.
+    // A heading can name several platforms: "## PlayStation + Xbox".
     const chips = [
-      ...(Math.round(s / 60) ? ['Steam'] : []),
-      ...(Math.round(x / 60) ? ['Xbox'] : []),
-      ...new Set(est.map((g) => g.platform)),
+      ...new Set([
+        ...(Math.round(s / 60) ? ['Steam'] : []),
+        ...(Math.round(x / 60) ? ['Xbox'] : []),
+        ...est.flatMap((g) => g.platform.split('+').map((p) => p.trim())),
+      ]),
     ];
     return { name: names[0], value: Math.round((tracked + e) / 60), chips, estimated: e > 0 };
   };

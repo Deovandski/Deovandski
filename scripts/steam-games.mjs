@@ -14,7 +14,7 @@
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { checkCategories } from './gamer-check.mjs';
+import { checkCategories, checkSeries } from './gamer-check.mjs';
 
 const src = process.argv[2];
 if (!src) {
@@ -47,3 +47,4 @@ const total = out.games.reduce((s, g) => s + g.minutes, 0);
 console.log(`Saved content/gaming/steam-games.json: ${out.games.length} games, ${hours(total).toLocaleString('en-US')} hours, exported ${out.exported}.`);
 
 checkCategories();
+checkSeries();

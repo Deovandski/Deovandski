@@ -4,10 +4,14 @@ Games from before Steam and Xbox tracked playtime, with hours I estimated myself
 tab adds them to the tracked hours, shows a chip for each heading below (the platform), and
 marks the game's hours with an asterisk (*).
 
-- Each `##` heading is a platform, shown as the chip (PlayStation, PC).
+- Each `##` heading is a platform, shown as the chip (PlayStation, PC, Xbox). A heading can name
+  several with `+` (`## PlayStation + Xbox`): those games get every one of those chips.
 - Each bullet is a game and its hours: `- Grand Theft Auto IV: 130`. The name has to match one
   of the names on the game's line in `categories.md` (the line can list several with `|`), and
   that line decides its category. A game missing from `categories.md` isn't shown.
+- A series line in `categories.md` (`- Assassin's Creed series | Assassin's Creed Origins`) adds the
+  hours of every game it names, tracked or estimated; an estimate under the series' own name adds
+  hours for the games of the series that have none.
 
 ## PlayStation
 
@@ -16,6 +20,7 @@ marks the game's hours with an asterisk (*).
 - Grand Theft Auto III: 20
 - FINAL FANTASY XII: 130
 - Hatsune Miku: Project DIVA series: 40
+- Ratchet & Clank series: 220
 
 ## PC
 
@@ -25,3 +30,12 @@ marks the game's hours with an asterisk (*).
 - Diablo II: 200
 - Ragnarok Online: 150
 - Perfect World: 75
+
+## Xbox
+
+- Assassin's Creed series: 200
+- Diablo III: 250
+
+## PlayStation + Xbox
+
+- Dynasty Warriors and Empires series: 100
