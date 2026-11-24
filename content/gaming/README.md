@@ -42,8 +42,10 @@ It takes about 10 minutes.
    Run it again until both lists say everything matches (or only shows what you chose to leave out).
 4. **Check it:** `npm run build`, then open the Gamer tab: the new totals, the category bars and
    "Show all" on a couple of cards.
-5. **Open a PR** with both files. Translations of any new categories or notes come in the next
-   translation batch (see CLAUDE.md); game names stay as written.
+5. **Open a PR** with both files. New hours and the new date change most of the tab's text, so
+   it shows in English on the translated pages until the next translation batch (see CLAUDE.md).
+   That batch is usually done in the same PR. Game names use their official local title where one
+   exists (mostly in Chinese, Japanese and Korean). Otherwise they keep the Steam name.
 
 Done for the year. Claude can do steps 3 to 5 for you: send it the downloaded file (never the key).
 
