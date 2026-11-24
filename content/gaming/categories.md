@@ -118,6 +118,7 @@ Hours here are mostly the game running in the background.
 - CrossCode
 - Cyberpunk 2077
 - Diablo II
+- Diablo III | Diablo III: Reaper of Souls – Ultimate Evil Edition
 - Divinity: Original Sin 2
 - Eastward
 - Fallout 4
