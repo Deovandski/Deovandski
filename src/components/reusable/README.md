@@ -139,7 +139,7 @@ Theme it with `--egg-accent`, `--egg-accent-2`, `--egg-bg` and `--egg-ink`.
 
 | Prop | Default | |
 |---|---|---|
-| `categories` | (required) | `[{ id, name, note?, excludable?, items: [{ name, value, chips?, estimated? }] }]`. Sorted by total, items by value. `chips` are small labels after the name, like `['Steam', 'Xbox']`; `estimated: true` marks the value for a footnote. |
+| `categories` | (required) | `[{ id, name, note?, excludable?, items: [{ name, value, chips?, estimated? }] }]`. Sorted by total, items by value. `chips` are small labels on a line under the name, like `['Steam', 'Xbox']`; `estimated: true` marks the value for a footnote. |
 | `id` | `"hbc"` | Prefix for element ids (the rollup links jump to `#<id>-<category id>`). Unique per page. |
 | `total` | sum of every item | The big number, e.g. hours including things no category lists. |
 | `totalLabel` | `"hours"` | Words under the total. |

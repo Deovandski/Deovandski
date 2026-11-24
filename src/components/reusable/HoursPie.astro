@@ -190,11 +190,15 @@ const details = categories.map((c) => ({
               <li>
                 <span class="pie__item-name">
                   <span>{r.name}</span>
-                  {r.chips.map((chip) => (
-                    <span class="pie__chip" style={chipColors[chip] ? `--_chip: ${chipColors[chip]}` : undefined}>
-                      {chip}
+                  {r.chips.length > 0 && (
+                    <span class="pie__chips">
+                      {r.chips.map((chip) => (
+                        <span class="pie__chip" style={chipColors[chip] ? `--_chip: ${chipColors[chip]}` : undefined}>
+                          {chip}
+                        </span>
+                      ))}
                     </span>
-                  ))}
+                  )}
                   {r.sub && <span class="pie__sub">{r.sub}</span>}
                 </span>
                 <span class="pie__item-hours">
@@ -417,10 +421,16 @@ const details = categories.map((c) => ({
     font-weight: 400;
     font-size: 0.8rem;
   }
+  /* Chips always get their own line under the name. */
+  .pie__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-top: 0.2rem;
+  }
   .pie__chip {
     --_c: var(--_chip, var(--_accent));
     display: inline-block;
-    margin-inline-start: 0.4rem;
     padding: 0 0.45rem;
     border-radius: 0.7rem;
     border: 1px solid color-mix(in srgb, var(--_c) 60%, transparent);

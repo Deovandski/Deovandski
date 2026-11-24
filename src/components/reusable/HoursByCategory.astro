@@ -29,7 +29,7 @@
  * switch picks one. The root carries `data-hours-scope`, `data-excluded` while the switch is off,
  * and fires `hours:excluded` when it flips, so views can follow it. `excludedByDefault` starts it off.
  *
- * Items can carry chips after their name (`chips: ['Steam', 'Xbox']`), coloured per label with
+ * Items can carry chips on a line under their name (`chips: ['Steam', 'Xbox']`), coloured per label with
  * the `chipColors` prop, and `estimated: true` puts an asterisk after the value for a footnote.
  *
  * Theming (CSS custom properties, with fallbacks): --hbc-accent, --hbc-chip, --hbc-excluded, --hbc-surface,
@@ -38,7 +38,7 @@
 interface Item {
   name: string;
   value: number;
-  /** Small labels after the name, e.g. where the hours come from ("Steam", "Xbox"). */
+  /** Small labels on a line under the name, e.g. where the hours come from ("Steam", "Xbox"). */
   chips?: string[];
   /** Marks the value with estimatedMark (an asterisk), for a footnote. */
   estimated?: boolean;
@@ -292,11 +292,15 @@ const rows = sorted.map((c) => {
                 <span class="hbc__item-main">
                   <span class="hbc__item-head">
                     <span class="hbc__item-name">{i.name}</span>
-                    {i.chips?.map((chip) => (
-                      <span class="hbc__chip" style={chipColors[chip] ? `--_chip: ${chipColors[chip]}` : undefined}>
-                        {chip}
+                    {i.chips && i.chips.length > 0 && (
+                      <span class="hbc__chips">
+                        {i.chips.map((chip) => (
+                          <span class="hbc__chip" style={chipColors[chip] ? `--_chip: ${chipColors[chip]}` : undefined}>
+                            {chip}
+                          </span>
+                        ))}
                       </span>
-                    ))}
+                    )}
                   </span>
                   <span class="hbc__item-track" aria-hidden="true">
                     <span class="hbc__item-bar" style={`width: ${i.bar}%`} />
@@ -658,11 +662,19 @@ const rows = sorted.map((c) => {
     font-weight: 700;
   }
   .hbc__item-head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
     line-height: 1.25;
+  }
+  /* Chips always get their own line under the name (#255). */
+  .hbc__chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
   }
   .hbc__chip {
     display: inline-block;
-    margin-inline-start: 0.4rem;
     padding: 0 0.45rem;
     border-radius: 0.7rem;
     border: 1px solid color-mix(in srgb, var(--_chip) 60%, transparent);
