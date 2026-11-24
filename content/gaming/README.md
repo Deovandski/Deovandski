@@ -8,7 +8,7 @@ those hours come from: Steam, Xbox, or (estimated by me) PlayStation and PC.
 | `categories.md` | The intro, the categories and which games go in each. Edit it by hand. |
 | `steam-games.json` | Every game I own on Steam and its minutes played, plus the day it was exported. Written by the script below; don't edit it by hand. |
 | `xbox-games.json` | Every Xbox game with minutes played, from the last Xbox pull (November 2026). Written by `scripts/xbox-games.mjs`; don't edit it by hand. See "Xbox hours" below. |
-| `estimated.md` | Hours I estimated for games from before playtime tracking (PlayStation, PC). Edit it by hand; no refresh needed. Each game also needs its line in `categories.md`. These games get an asterisk and the tab's footnote. |
+| `estimated.md` | Hours I estimated for games from before playtime tracking (PlayStation, PC, and Xbox games Xbox kept no hours for). Edit it by hand; no refresh needed. Each game also needs its line in `categories.md`. These games get an asterisk and the tab's footnote. |
 
 The site works out everything else: each category's hours, the totals, the order, and the
 "Count idle games" switch (for categories marked `{idle}`).
@@ -93,6 +93,9 @@ What to watch for in `categories.md`:
   Mark those `{same}` and the larger number is used instead (Avowed).
 - When the two stores name a game differently, list both names with `|`, shown name first
   (`- Grand Theft Auto V | Grand Theft Auto V Legacy | Grand Theft Auto V (Xbox One)`).
+- A **series** is one line naming every game in it, with the series name first
+  (`- Hades series | Hades | Hades II`): its hours are all of theirs added up, and an estimate under
+  the series name in `estimated.md` adds the games that have no tracked hours.
 
 ## Editing categories
 
