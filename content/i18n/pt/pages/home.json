@@ -163,10 +163,6 @@
   "en": "Ink",
   "t": "Tinta"
  },
- "049b1f5d7742": {
-  "en": "1 year and 247 days",
-  "t": "1 ano e 247 dias"
- },
  "04e3fd08d714": {
   "en": "Description coming soon.",
   "t": "Descrição em breve."
@@ -247,6 +243,10 @@
   "en": "CD",
   "t": "CD"
  },
+ "0769eae50b31": {
+  "en": "The games on the list add up to 1,442 days of nonstop play, 24 hours a day. Each square is one of those days.",
+  "t": "Os jogos da lista somam 1,442 dias jogando sem parar, 24 horas por dia. Cada quadrado é um desses dias."
+ },
  "07813f7ab23c": {
   "en": "SKALD",
   "t": "SKALD"
@@ -322,6 +322,10 @@
  "09c6230f374b": {
   "en": "The shared template for all my repos: AI disclosure, language support, website compilation, and more.",
   "t": "O modelo compartilhado de todos os meus repositórios: divulgação de uso de IA, suporte a idiomas, compilação do site e mais."
+ },
+ "09e6b0bc6229": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,435 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; mundos abertos: 5,435 h"
  },
  "0a26223ff3d6": {
   "en": " AO ",
@@ -458,10 +462,6 @@
  "0e39786b50dd": {
   "en": "Framework 16 LED Matrix Manager",
   "t": "Framework 16 LED Matrix Manager"
- },
- "0e67ee4cff18": {
-  "en": " 5,385 h ",
-  "t": "5,385 h"
  },
  "0e814bdf1998": {
   "en": "45 h",
@@ -791,6 +791,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder TV show 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 9: </span> Série provisória 9"
  },
+ "1a2d88c5387b": {
+  "en": "Destroy All Humans series",
+  "t": "Série Destroy All Humans"
+ },
  "1a30f309ad8a": {
   "en": "The Scallywags of the Rusty Tankard",
   "t": "Os Malandros do Rusty Tankard"
@@ -894,6 +898,10 @@
  "1e69f9e7e667": {
   "en": "📉 -{n} followers. \"Not this again…\"",
   "t": "📉 -{n} seguidores. \"De novo isso não…\""
+ },
+ "1e98d9e9411b": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,445 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Outros: 2,445 h"
  },
  "1eab2e778967": {
   "en": "Mana",
@@ -1019,6 +1027,10 @@
   "en": "Enlarge: Gossipy old lady",
   "t": "Ampliar: Velhinha fofoqueira"
  },
+ "21f23dcd8cfa": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,588 h</strong>  ·  7 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,588 h</strong>  ·  7 jogos  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% das minhas horas</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% das minhas horas</span>"
+ },
  "21fd26294c5c": {
   "en": "Rusty's Retirement",
   "t": "Rusty's Retirement"
@@ -1042,6 +1054,10 @@
  "229377a6b713": {
   "en": "You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it's still in the air) and take it down before you run dry.",
   "t": "Você é os obstáculos. O dino corre. Você joga coisas nele. A mana se acumula a cada segundo a partir de agora; acerte o tempo dos arremessos (pegue-o enquanto ainda está no ar) e derrube-o antes de ficar sem."
+ },
+ "22db4557409d": {
+  "en": " Xbox + PlayStation  ·  estimated ",
+  "t": "Xbox + PlayStation  ·  estimadas"
  },
  "22e02026aa78": {
   "en": "Crisp!",
@@ -1191,10 +1207,6 @@
   "en": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna",
   "t": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna"
  },
- "26fadd02e644": {
-  "en": "94 days",
-  "t": "94 dias"
- },
  "273285456a27": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 19: </span> Placeholder movie 19 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 19: </span> Filme provisório 19"
@@ -1223,17 +1235,9 @@
   "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
   "t": "São {tapes} fitas VHS gravadas em {mode} ({perTape} horas por fita T-120)."
  },
- "27c95af95a7e": {
-  "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,385 h ",
-  "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; mundos abertos: 5,385 h"
- },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 10: </span> Série provisória 10"
- },
- "27dd6cefd440": {
-  "en": "KINGDOM HEARTS III",
-  "t": "KINGDOM HEARTS III"
  },
  "27ff191d72e4": {
   "en": "Deo",
@@ -1250,10 +1254,6 @@
  "283c1ebce40b": {
   "en": "Close to 12 years old but still kicking",
   "t": "Quase 12 anos, mas ainda firme e forte"
- },
- "284507d08d18": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,588 h</strong>  ·  7 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,588 h</strong>  ·  7 jogos  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% das minhas horas</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% das minhas horas</span>"
  },
  "2888f01fb635": {
   "en": "Morning by the river",
@@ -1290,10 +1290,6 @@
  "29733f231324": {
   "en": "Under the hood: how it hooks you",
   "t": "Por dentro: como ele prende você"
- },
- "297457a86258": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">633 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">633 h</strong>  ·  5 jogos  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% das minhas horas</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% das minhas horas</span>"
  },
  "2984ff90b404": {
   "en": "Bad Bunny",
@@ -1478,6 +1474,10 @@
  "2f9714995b86": {
   "en": " An exploded sphere of my hours by category: Idle &amp; clickers 57%, RPGs &amp; open worlds 16%, City, colony &amp; strategy 5%, Survival &amp; crafting 5%, Factory &amp; automation 5%, Space &amp; flight 4%, Cozy &amp; life sims 3%, Other 7% ",
   "t": "Uma esfera explodida das minhas horas por categoria: Idle &amp; clickers 57%, RPGs &amp; mundos abertos 16%, Cidade, colônia &amp; estratégia 5%, Sobrevivência &amp; criação 5%, Fábrica &amp; automação 5%, Espaço &amp; voo 4%, Aconchegantes &amp; simuladores de vida 3%, Other 7%"
+ },
+ "2fa2880f7c93": {
+  "en": "Far Cry series",
+  "t": "Série Far Cry"
  },
  "2fa582319006": {
   "en": "One of my favorite isekai, and one of the OGs from before the torrent of copycats trying to milk the market dry.",
@@ -1763,10 +1763,6 @@
   "en": "King of the trail",
   "t": "Rei da trilha"
  },
- "3869de54b01c": {
-  "en": "224 days",
-  "t": "224 dias"
- },
  "3878d567f539": {
   "en": "A streak you could lose feels worse than one you never had. Losing hurts about twice as much as winning feels good.",
   "t": "Uma sequência que você pode perder dói mais do que uma que você nunca teve. Perder dói mais ou menos o dobro do que ganhar faz bem."
@@ -1818,6 +1814,10 @@
  "39a96d67f200": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder movie 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 15: </span> Filme provisório 15"
+ },
+ "39aff3e438c9": {
+  "en": "119 h",
+  "t": "119 h"
  },
  "39b90d97a21e": {
   "en": "My Stoneridge Software posts",
@@ -1882,10 +1882,6 @@
  "3b419aac7299": {
   "en": "\nTreat your life like a project: break big goals into small steps, be honest about scope and deadlines, and track what's\n        actually done. It's how I run everything from client work to this website, and the <a href=\"#pm\" data-astro-cid-xtzphevd=\"\">PM side</a> of this tab\n        has the details.\n",
   "t": "Trate a sua vida como um projeto: quebre objetivos grandes em passos pequenos, seja honesto sobre escopo e prazos e acompanhe o que está realmente feito. É assim que eu toco tudo, do trabalho com clientes a este site, e o <a href=\"#pm\" data-astro-cid-xtzphevd=\"\">lado GP</a> desta aba tem os detalhes."
- },
- "3b71b89ab488": {
-  "en": " 633 h ",
-  "t": "633 h"
  },
  "3b9b88d1447d": {
   "en": " <span class=\"shelf__dot\" style=\"background: #0ca30c\" data-astro-cid-nqpad2wp=\"\"></span> Cozy &amp; life sims: 904 h ",
@@ -1982,10 +1978,6 @@
  "3eda298502f3": {
   "en": "My parents fought tooth and nail to give me a chance in life that they never had, and with blood, sweat and tears, I took full advantage of it, while also pursuing my own opportunities to make myself fulfilled. Once I become a citizen, it'll be my turn to make sure they have a good retirement.",
   "t": "Meus pais lutaram com unhas e dentes para me dar uma chance na vida que eles nunca tiveram, e com sangue, suor e lágrimas eu aproveitei ao máximo, enquanto também corria atrás das minhas próprias oportunidades de me realizar. Quando eu me tornar cidadão, vai ser a minha vez de garantir que eles tenham uma boa aposentadoria."
- },
- "3ef10729a2c1": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,590 h</strong>  ·  12 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,590 h</strong>  ·  12 jogos  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% das minhas horas</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% das minhas horas</span>"
  },
  "3ef5b5e97c0e": {
   "en": "Back to Musician",
@@ -2135,10 +2127,6 @@
   "en": "Folk",
   "t": "Folk"
  },
- "45043cda7136": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">5,385 h</strong>  ·  28 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">5,385 h</strong>  ·  28 jogos  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% das minhas horas</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% das minhas horas</span>"
- },
  "4534c6829b3a": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Death Note ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 18: </span> Death Note"
@@ -2275,10 +2263,6 @@
   "en": "Enlarge: Quite the stretch",
   "t": "Ampliar: Que espreguiçada"
  },
- "4ace96fd9450": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">19,668 h</strong>  ·  23 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">57% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">not counted in my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">19,668 h</strong>  ·  23 jogos  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">57% das minhas horas</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">fora das minhas horas</span>"
- },
  "4ad51e59a5be": {
   "en": " Fine line ",
   "t": "Traço fino"
@@ -2326,10 +2310,6 @@
  "4c1f1c138390": {
   "en": "Not bad!",
   "t": "Nada mal!"
- },
- "4c269467e961": {
-  "en": "3 years and 337 days",
-  "t": "3 anos e 337 dias"
  },
  "4cbc599953b9": {
   "en": " Rhythm &amp; music ",
@@ -2863,6 +2843,10 @@
   "en": "Hávamál, as sung in Wardruna’s Helvegen",
   "t": "Hávamál, como cantado em Helvegen, do Wardruna"
  },
+ "59f21d6a9014": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">703 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">703 h</strong>  ·  5 jogos  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% das minhas horas</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% das minhas horas</span>"
+ },
  "5a4a4998e7b7": {
   "en": "Kyaa~! (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)",
   "t": "Kyaa~! (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)"
@@ -2878,10 +2862,6 @@
  "5a8514f4560c": {
   "en": "Pixel pets: turn your phone sideways",
   "t": "Pets de pixel: vire o celular de lado"
- },
- "5a986c8fd343": {
-  "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,255 h ",
-  "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,255 h"
  },
  "5abf683efa95": {
   "en": "Cities: Skylines",
@@ -3343,6 +3323,10 @@
   "en": "Blue ink",
   "t": "Tinta azul"
  },
+ "68e213e32da4": {
+  "en": " 1,123 h ",
+  "t": "1,123 h"
+ },
  "69031c87a9c1": {
   "en": "BLACKTAIL",
   "t": "BLACKTAIL"
@@ -3350,6 +3334,10 @@
  "691a77cd21a3": {
   "en": "vs",
   "t": "x"
+ },
+ "692a3808fec3": {
+  "en": "1,853 h",
+  "t": "1,853 h"
  },
  "693037f17162": {
   "en": "54 h",
@@ -3867,6 +3855,10 @@
   "en": "LEGO Star Wars: The Skywalker Saga",
   "t": "LEGO Star Wars: The Skywalker Saga"
  },
+ "78bfea9b54f6": {
+  "en": "226 days",
+  "t": "226 dias"
+ },
  "78cc6006e09c": {
   "en": "Gym, 6:47am",
   "t": "Academia, 6h47"
@@ -3930,10 +3922,6 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
- },
- "7a69b6b4ecc2": {
-  "en": " My hours by category as planets around a sun: RPGs &amp; open worlds 37%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 15% ",
-  "t": "Minhas horas por categoria como planetas em volta de um sol: RPGs &amp; mundos abertos 37%, Cidade, colônia &amp; estratégia 11%, Sobrevivência &amp; criação 11%, Fábrica &amp; automação 11%, Espaço &amp; voo 9%, Aconchegantes &amp; simuladores de vida 6%, Other 15%"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -4503,6 +4491,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 28: </span> Placeholder TV show 28 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 28: </span> Série provisória 28"
  },
+ "8cc334f36d7b": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,123 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,123 h</strong>  ·  19 jogos  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% das minhas horas</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% das minhas horas</span>"
+ },
  "8ce8b5330b49": {
   "en": "So damn cute! It reminded me of going through adolescence, which means it does a really good job of capturing how weird and fascinating it is to grow into early adulthood. Also, I absolutely love Satone, because I love clingy girls!",
   "t": "Fofo pra caramba! Me lembrou de passar pela adolescência, o que quer dizer que ele faz um ótimo trabalho em capturar o quanto é estranho e fascinante crescer rumo ao começo da vida adulta. E eu amo demais a Satone, porque eu amo garotas grudentas!"
@@ -4594,6 +4586,10 @@
  "8ffa16d4ad7d": {
   "en": "Enlarge: More mango!",
   "t": "Ampliar: Mais manga!"
+ },
+ "9026efb4c546": {
+  "en": " My hours by category as planets around a sun: RPGs &amp; open worlds 36%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 16% ",
+  "t": "Minhas horas por categoria como planetas em volta de um sol: RPGs &amp; mundos abertos 36%, Cidade, colônia &amp; estratégia 11%, Sobrevivência &amp; criação 11%, Fábrica &amp; automação 11%, Espaço &amp; voo 9%, Aconchegantes &amp; simuladores de vida 6%, Outros 16%"
  },
  "9049b3f8b99c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder TV show 30 ",
@@ -5615,6 +5611,10 @@
   "en": "Enlarge: King of the trail",
   "t": "Ampliar: Rei da trilha"
  },
+ "ae28c214b195": {
+  "en": "102 days",
+  "t": "102 dias"
+ },
  "ae2caea4bb1f": {
   "en": "KC",
   "t": "KC"
@@ -5667,6 +5667,10 @@
   "en": "{name}: {hours}",
   "t": "{name}: {hours}"
  },
+ "af692ad68205": {
+  "en": "Kingdom Hearts series",
+  "t": "Série Kingdom Hearts"
+ },
  "affabe3f4188": {
   "en": "Campaign #1",
   "t": "Campanha nº 1"
@@ -5682,6 +5686,10 @@
  "b00afaa17097": {
   "en": "22 h",
   "t": "22 h"
+ },
+ "b03a2e5199b5": {
+  "en": " 167 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "167 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimadas</span>"
  },
  "b03ecac4eefe": {
   "en": "Guess what I'm gonna do",
@@ -5699,10 +5707,6 @@
   "en": "18 photos",
   "t": "18 fotos"
  },
- "b1010b9a779b": {
-  "en": "37% of my hours",
-  "t": "37% das minhas horas"
- },
  "b115fa0f703f": {
   "en": "Every Miku concert I've been to, from Mikunopolis in 2011 onward.",
   "t": "Todos os shows da Miku a que eu já fui, do Mikunopolis em 2011 em diante."
@@ -5710,6 +5714,10 @@
  "b13596cd2774": {
   "en": "15 h",
   "t": "15 h"
+ },
+ "b13692d8aa4c": {
+  "en": "The games on the list add up to 622 days of nonstop play, 24 hours a day. Each square is one of those days.",
+  "t": "Os jogos da lista somam 622 dias jogando sem parar, 24 horas por dia. Cada quadrado é um desses dias."
  },
  "b1643e5fd670": {
   "en": "Hover a square to see which game that day went to. Press a category to light up only its days.",
@@ -5839,10 +5847,6 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#35: </span>Best of the Worst: Blood Debts, The Tomb, and Undefeatable",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#35: </span>Best of the Worst: Blood Debts, The Tomb, and Undefeatable"
  },
- "b4e9509331e4": {
-  "en": "The games on the list add up to 612 days of nonstop play, 24 hours a day. Each square is one of those days.",
-  "t": "Os jogos da lista somam 612 dias jogando sem parar, 24 horas por dia. Cada quadrado é um desses dias."
- },
  "b51db5d42168": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 36: </span> Seikon no Qwaser (The Qwaser of Stigmata) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 36: </span> Seikon no Qwaser (The Qwaser of Stigmata)"
@@ -5906,6 +5910,10 @@
  "b73f78fc271e": {
   "en": "Giselle",
   "t": "Giselle"
+ },
+ "b77e495819ea": {
+  "en": "36% of my hours",
+  "t": "36% das minhas horas"
  },
  "b783ecde91e7": {
   "en": "Plot {plot}: {crop}, ready to harvest.",
@@ -5979,6 +5987,10 @@
   "en": " LW ",
   "t": "LW"
  },
+ "ba792f3c0d1b": {
+  "en": " 119 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "119 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimadas</span>"
+ },
  "ba7ecfd006a1": {
   "en": "<span class=\"iso-farm__ball\" style=\"--c:#2f5fd6\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Sapphire",
   "t": "<span class=\"iso-farm__ball\" style=\"--c:#2f5fd6\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Sapphire"
@@ -5990,6 +6002,10 @@
  "bb0bc553b8e8": {
   "en": "Whack-a-Miku: turn your phone sideways",
   "t": "Whack-a-Miku: vire o celular de lado"
+ },
+ "bb395b5f1d5e": {
+  "en": "101 days",
+  "t": "101 dias"
  },
  "bb78e60fc990": {
   "en": "56 h",
@@ -6027,10 +6043,6 @@
   "en": "Little Witch Academia: Chamber of Time",
   "t": "Little Witch Academia: Chamber of Time"
  },
- "bc93696c8d0c": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,003 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,003 h</strong>  ·  19 jogos  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% das minhas horas</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% das minhas horas</span>"
- },
  "bca97bae09e1": {
   "en": " Xbox  ·  estimated ",
   "t": "Xbox  ·  estimadas"
@@ -6051,10 +6063,6 @@
   "en": "Idle & clickers",
   "t": "Idle & clickers"
  },
- "bdf48be07582": {
-  "en": "Far Cry 5",
-  "t": "Far Cry 5"
- },
  "be31a86c982d": {
   "en": "Happy",
   "t": "Feliz"
@@ -6062,10 +6070,6 @@
  "be60b2fd09b2": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Placeholder TV show 18 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 18: </span> Série provisória 18"
- },
- "be7536a3d320": {
-  "en": "The games on the list add up to 1,432 days of nonstop play, 24 hours a day. Each square is one of those days.",
-  "t": "Os jogos da lista somam 1,432 dias jogando sem parar, 24 horas por dia. Cada quadrado é um desses dias."
  },
  "be7869041e41": {
   "en": "MyAnimeList",
@@ -6343,6 +6347,10 @@
   "en": "Breadcrumb",
   "t": "Navegação estrutural"
  },
+ "c794b70221ac": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,590 h</strong>  ·  12 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,590 h</strong>  ·  12 jogos  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% das minhas horas</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% das minhas horas</span>"
+ },
  "c7a20b354d97": {
   "en": "Peeta's backyard run",
   "t": "A corrida do Peeta no quintal"
@@ -6362,10 +6370,6 @@
  "c8b4c761e082": {
   "en": " 1,302 h ",
   "t": "1,302 h"
- },
- "c8eb359c95bd": {
-  "en": " 1,003 h ",
-  "t": "1,003 h"
  },
  "c92499e3e7ab": {
   "en": "8 games",
@@ -6443,10 +6447,6 @@
   "en": "21 h",
   "t": "21 h"
  },
- "cb4f8f79b3d7": {
-  "en": "93 days",
-  "t": "93 dias"
- },
  "cb617c0ab9ee": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Placeholder TV show 6 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 6: </span> Série provisória 6"
@@ -6463,6 +6463,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye"
  },
+ "cb8697b472aa": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">19,668 h</strong>  ·  23 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">56% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">not counted in my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">19,668 h</strong>  ·  23 jogos  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">56% das minhas horas</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">fora das minhas horas</span>"
+ },
  "cbb766f08e22": {
   "en": " CK ",
   "t": "CK"
@@ -6470,6 +6474,10 @@
  "cbbe4ab96942": {
   "en": "FS",
   "t": "FS"
+ },
+ "cbcc2e942975": {
+  "en": " An exploded sphere of my hours by category: RPGs &amp; open worlds 36%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 16% ",
+  "t": "Uma esfera explodida das minhas horas por categoria: RPGs &amp; mundos abertos 36%, Cidade, colônia &amp; estratégia 11%, Sobrevivência &amp; criação 11%, Fábrica &amp; automação 11%, Espaço &amp; voo 9%, Aconchegantes &amp; simuladores de vida 6%, Outros 16%"
  },
  "cbe35333fcf5": {
   "en": "\nAnd as to why? Read my <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld Vol 4 afterword</a>.\n",
@@ -6555,10 +6563,6 @@
   "en": "Fold precision {n}%.",
   "t": "Precisão da dobra {n}%."
  },
- "ce55a3607861": {
-  "en": "15% of my hours",
-  "t": "15% das minhas horas"
- },
  "ce70caaad427": {
   "en": "1 photo",
   "t": "1 foto"
@@ -6574,6 +6578,10 @@
  "ced1373b37da": {
   "en": "<strong>Horace</strong>, <em>Odes</em> 1.4 (23 BC): pale Death knocks with an impartial foot at the cottages of the poor and the palaces of kings. <a href=\"https://en.wikisource.org/wiki/The_works_of_Horace/First_Book_of_Odes\">Text</a>",
   "t": "<strong>Horácio</strong>, <em>Odes</em> 1.4 (23 a.C.): a pálida Morte bate com pé imparcial nas choupanas dos pobres e nos palácios dos reis. <a href=\"https://en.wikisource.org/wiki/The_works_of_Horace/First_Book_of_Odes\">Texto</a>"
+ },
+ "cedfe5a37cd5": {
+  "en": "2,445 h",
+  "t": "2,445 h"
  },
  "cf32e9152179": {
   "en": "❤️ +{n} likes",
@@ -6675,10 +6683,6 @@
   "en": "5 games",
   "t": "5 jogos"
  },
- "d1a1eb0d4455": {
-  "en": "69 h",
-  "t": "69 h"
- },
  "d1a7128069a4": {
   "en": "Churrasco",
   "t": "Churrasco"
@@ -6730,6 +6734,10 @@
  "d360ff4964fa": {
   "en": "Cirque du Soleil O",
   "t": "Cirque du Soleil O"
+ },
+ "d38a691b674d": {
+  "en": "1 year and 257 days",
+  "t": "1 ano e 257 dias"
  },
  "d397cf31a23a": {
   "en": "Same plane. Drag back to aim and let go to throw.",
@@ -6795,9 +6803,17 @@
   "en": "Country",
   "t": "Country"
  },
+ "d556a0f664fb": {
+  "en": "3 years and 347 days",
+  "t": "3 anos e 347 dias"
+ },
  "d5580b73bfb2": {
   "en": "Grounded",
   "t": "Grounded"
+ },
+ "d56ba0c1e6ff": {
+  "en": " 703 h ",
+  "t": "703 h"
  },
  "d58f3caf048d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 12: </span> Placeholder TV show 12 ",
@@ -6806,6 +6822,10 @@
  "d62a14276f7a": {
   "en": "Fold 4 of 5: and the right corner to the same dot.",
   "t": "Dobra 4 de 5: e o canto direito até o mesmo ponto."
+ },
+ "d65fa9d72f1f": {
+  "en": "167 h",
+  "t": "167 h"
  },
  "d68ddfb67933": {
   "en": "Chilling",
@@ -6907,10 +6927,6 @@
   "en": "4,854 h",
   "t": "4,854 h"
  },
- "d8a9279df0b5": {
-  "en": "Destroy All Humans!",
-  "t": "Destroy All Humans!"
- },
  "d8bfbca86c7d": {
   "en": "Chest",
   "t": "Peito"
@@ -6970,10 +6986,6 @@
  "d9afab734277": {
   "en": "27 h",
   "t": "27 h"
- },
- "d9afe40bb960": {
-  "en": "97 h",
-  "t": "97 h"
  },
  "d9c4aa395b07": {
   "en": "Enlarge: Captain Bidu: Bidu wearing a blue military officer cap with a gold winged badge",
@@ -7159,10 +7171,6 @@
   "en": "SS",
   "t": "SS"
  },
- "df9d095c1748": {
-  "en": " An exploded sphere of my hours by category: RPGs &amp; open worlds 37%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 15% ",
-  "t": "Uma esfera explodida das minhas horas por categoria: RPGs &amp; mundos abertos 37%, Cidade, colônia &amp; estratégia 11%, Sobrevivência &amp; criação 11%, Fábrica &amp; automação 11%, Espaço &amp; voo 9%, Aconchegantes &amp; simuladores de vida 6%, Other 15%"
- },
  "dfc22bef9169": {
   "en": "Dragon Cliff 龙崖",
   "t": "Dragon Cliff 龙崖"
@@ -7275,10 +7283,6 @@
   "en": "Throw Bird, costs 3 mana (key 2)",
   "t": "Jogar Pássaro, custa 3 de mana (tecla 2)"
  },
- "e4443be6531e": {
-  "en": "2,255 h",
-  "t": "2,255 h"
- },
  "e45f65625355": {
   "en": "amethyst",
   "t": "amethyst"
@@ -7374,6 +7378,10 @@
  "e738cd88f444": {
   "en": "Enlarge: So fancy",
   "t": "Ampliar: Chiquérrimo"
+ },
+ "e73a48613932": {
+  "en": " 130 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "130 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimadas</span>"
  },
  "e74a1afd48ee": {
   "en": "Step 2: Choose Thy Cut",
@@ -7482,6 +7490,10 @@
  "eaf7064f092b": {
   "en": "Snack!",
   "t": "Petisco!"
+ },
+ "eb023f0dcb33": {
+  "en": " 5,435 h ",
+  "t": "5,435 h"
  },
  "eb1429b3f176": {
   "en": "Each view counts as the whole episode, start to finish.",
@@ -7722,6 +7734,10 @@
  "f4e25be12fd0": {
   "en": "3,385 h",
   "t": "3,385 h"
+ },
+ "f4e26370c856": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">5,435 h</strong>  ·  28 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">5,435 h</strong>  ·  28 jogos  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% das minhas horas</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% das minhas horas</span>"
  },
  "f4fc4b8224f9": {
   "en": "Reward learning",
@@ -8019,6 +8035,10 @@
   "en": "Hear ye, hear ye! All are welcome unto the Holy Church of Churrasco, save those who eateth their steak <strong>well done</strong>. Such heathens shall burn in the most fiery of fires, in the deepest pits of Vegetation Hell.",
   "t": "Ouvi, ouvi! Todos são bem-vindos à Santa Igreja do Churrasco, salvo aqueles que comem o seu bife <strong>bem passado</strong>. Tais hereges arderão no mais ardente dos fogos, nas profundezas do Inferno Vegetal."
  },
+ "ff69348dd260": {
+  "en": "130 h",
+  "t": "130 h"
+ },
  "ff77bf2aced8": {
   "en": "Senpai noticed me! (✿◠‿◠)",
   "t": "O senpai me notou! (✿◠‿◠)"
@@ -8042,10 +8062,6 @@
  "ffbcb9739951": {
   "en": "Cactus",
   "t": "Cacto"
- },
- "ffc2e69c952b": {
-  "en": "1,803 h",
-  "t": "1,803 h"
  },
  "fff4a50e8428": {
   "en": "Đà Nẵng",

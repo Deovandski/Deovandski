@@ -163,10 +163,6 @@
   "en": "Ink",
   "t": "الحبر"
  },
- "049b1f5d7742": {
-  "en": "1 year and 247 days",
-  "t": "سنة واحدة و247 يومًا"
- },
  "04e3fd08d714": {
   "en": "Description coming soon.",
   "t": "الوصف قريبًا."
@@ -247,6 +243,10 @@
   "en": "CD",
   "t": "CD"
  },
+ "0769eae50b31": {
+  "en": "The games on the list add up to 1,442 days of nonstop play, 24 hours a day. Each square is one of those days.",
+  "t": "ألعاب القائمة مجتمعةً تساوي 1,442 يومًا من اللعب المتواصل، 24 ساعة في اليوم. كل مربع يوم من تلك الأيام."
+ },
  "07813f7ab23c": {
   "en": "SKALD",
   "t": "SKALD"
@@ -322,6 +322,10 @@
  "09c6230f374b": {
   "en": "The shared template for all my repos: AI disclosure, language support, website compilation, and more.",
   "t": "القالب المشترك لكل مستودعاتي: الإفصاح عن استخدام الذكاء الاصطناعي، ودعم اللغات، وبناء الموقع، وغير ذلك."
+ },
+ "09e6b0bc6229": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,435 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> تقمّص الأدوار والعوالم المفتوحة: 5,435 س"
  },
  "0a26223ff3d6": {
   "en": " AO ",
@@ -458,10 +462,6 @@
  "0e39786b50dd": {
   "en": "Framework 16 LED Matrix Manager",
   "t": "Framework 16 LED Matrix Manager"
- },
- "0e67ee4cff18": {
-  "en": " 5,385 h ",
-  "t": "5,385 س"
  },
  "0e814bdf1998": {
   "en": "45 h",
@@ -791,6 +791,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder TV show 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 9: </span> مسلسل مؤقت 9"
  },
+ "1a2d88c5387b": {
+  "en": "Destroy All Humans series",
+  "t": "سلسلة Destroy All Humans"
+ },
  "1a30f309ad8a": {
   "en": "The Scallywags of the Rusty Tankard",
   "t": "أوغاد «الكأس الصدئة»"
@@ -894,6 +898,10 @@
  "1e69f9e7e667": {
   "en": "📉 -{n} followers. \"Not this again…\"",
   "t": "📉 -{n} متابع. \"ليس هذا مجددًا…\""
+ },
+ "1e98d9e9411b": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,445 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> أخرى: 2,445 س"
  },
  "1eab2e778967": {
   "en": "Mana",
@@ -1019,6 +1027,10 @@
   "en": "Enlarge: Gossipy old lady",
   "t": "تكبير: عجوز ثرثارة"
  },
+ "21f23dcd8cfa": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,588 h</strong>  ·  7 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,588 س</strong>  ·  7 ألعاب  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% من ساعاتي</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% من ساعاتي</span>"
+ },
  "21fd26294c5c": {
   "en": "Rusty's Retirement",
   "t": "Rusty's Retirement"
@@ -1042,6 +1054,10 @@
  "229377a6b713": {
   "en": "You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it's still in the air) and take it down before you run dry.",
   "t": "أنت العوائق. الديناصور يركض. وأنت ترمي عليه الأشياء. تتراكم المانا كل ثانية من الآن فصاعدًا؛ وقّت رمياتك (أمسكه وهو ما زال في الهواء) وأسقطه قبل أن تنفد منك."
+ },
+ "22db4557409d": {
+  "en": " Xbox + PlayStation  ·  estimated ",
+  "t": "Xbox + PlayStation  ·  تقديري"
  },
  "22e02026aa78": {
   "en": "Crisp!",
@@ -1191,10 +1207,6 @@
   "en": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna",
   "t": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna"
  },
- "26fadd02e644": {
-  "en": "94 days",
-  "t": "94 يومًا"
- },
  "273285456a27": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 19: </span> Placeholder movie 19 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 19: </span> فيلم مؤقت 19"
@@ -1223,17 +1235,9 @@
   "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
   "t": "أي {tapes} شريط VHS مسجّل بوضع {mode} ({perTape} س لكل شريط T-120)."
  },
- "27c95af95a7e": {
-  "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,385 h ",
-  "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> تقمّص الأدوار والعوالم المفتوحة: 5,385 س"
- },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 10: </span> مسلسل مؤقت 10"
- },
- "27dd6cefd440": {
-  "en": "KINGDOM HEARTS III",
-  "t": "KINGDOM HEARTS III"
  },
  "27ff191d72e4": {
   "en": "Deo",
@@ -1250,10 +1254,6 @@
  "283c1ebce40b": {
   "en": "Close to 12 years old but still kicking",
   "t": "قارب 12 عامًا لكنه ما زال صامدًا"
- },
- "284507d08d18": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,588 h</strong>  ·  7 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,588 س</strong>  ·  7 ألعاب  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% من ساعاتي</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% من ساعاتي</span>"
  },
  "2888f01fb635": {
   "en": "Morning by the river",
@@ -1290,10 +1290,6 @@
  "29733f231324": {
   "en": "Under the hood: how it hooks you",
   "t": "تحت الغطاء: كيف يصطادك"
- },
- "297457a86258": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">633 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">633 س</strong>  ·  5 ألعاب  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% من ساعاتي</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% من ساعاتي</span>"
  },
  "2984ff90b404": {
   "en": "Bad Bunny",
@@ -1478,6 +1474,10 @@
  "2f9714995b86": {
   "en": " An exploded sphere of my hours by category: Idle &amp; clickers 57%, RPGs &amp; open worlds 16%, City, colony &amp; strategy 5%, Survival &amp; crafting 5%, Factory &amp; automation 5%, Space &amp; flight 4%, Cozy &amp; life sims 3%, Other 7% ",
   "t": "كرة مفكّكة لساعاتي حسب الفئة: ألعاب الخمول والنقر 57%، تقمّص الأدوار والعوالم المفتوحة 16%، المدن والمستعمرات والاستراتيجية 5%، البقاء والصناعة 5%، المصانع والأتمتة 5%، الفضاء والطيران 4%، الألعاب الهادئة ومحاكاة الحياة 3%، Other 7%"
+ },
+ "2fa2880f7c93": {
+  "en": "Far Cry series",
+  "t": "سلسلة Far Cry"
  },
  "2fa582319006": {
   "en": "One of my favorite isekai, and one of the OGs from before the torrent of copycats trying to milk the market dry.",
@@ -1763,10 +1763,6 @@
   "en": "King of the trail",
   "t": "ملك الدرب"
  },
- "3869de54b01c": {
-  "en": "224 days",
-  "t": "224 يومًا"
- },
  "3878d567f539": {
   "en": "A streak you could lose feels worse than one you never had. Losing hurts about twice as much as winning feels good.",
   "t": "سلسلة قد تخسرها تؤلم أكثر من سلسلة لم تملكها قط. ألم الخسارة يعادل تقريبًا ضعف لذة الفوز."
@@ -1818,6 +1814,10 @@
  "39a96d67f200": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder movie 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 15: </span> فيلم مؤقت 15"
+ },
+ "39aff3e438c9": {
+  "en": "119 h",
+  "t": "119 س"
  },
  "39b90d97a21e": {
   "en": "My Stoneridge Software posts",
@@ -1882,10 +1882,6 @@
  "3b419aac7299": {
   "en": "\nTreat your life like a project: break big goals into small steps, be honest about scope and deadlines, and track what's\n        actually done. It's how I run everything from client work to this website, and the <a href=\"#pm\" data-astro-cid-xtzphevd=\"\">PM side</a> of this tab\n        has the details.\n",
   "t": "عامل حياتك كمشروع: قسّم الأهداف الكبيرة إلى خطوات صغيرة، وكن صادقًا بشأن النطاق والمواعيد، وتتبّع ما أُنجز فعلًا. هكذا أدير كل شيء، من عمل العملاء إلى هذا الموقع، و<a href=\"#pm\" data-astro-cid-xtzphevd=\"\">جانب إدارة المشاريع</a> في هذا التبويب فيه التفاصيل."
- },
- "3b71b89ab488": {
-  "en": " 633 h ",
-  "t": "633 س"
  },
  "3b9b88d1447d": {
   "en": " <span class=\"shelf__dot\" style=\"background: #0ca30c\" data-astro-cid-nqpad2wp=\"\"></span> Cozy &amp; life sims: 904 h ",
@@ -1982,10 +1978,6 @@
  "3eda298502f3": {
   "en": "My parents fought tooth and nail to give me a chance in life that they never had, and with blood, sweat and tears, I took full advantage of it, while also pursuing my own opportunities to make myself fulfilled. Once I become a citizen, it'll be my turn to make sure they have a good retirement.",
   "t": "قاتل والداي بكل ما أوتيا من قوة ليمنحاني فرصة في الحياة لم يحظيا بها قط، وبالدم والعرق والدموع استفدت منها إلى أقصى حد، بينما سعيت أيضًا وراء فرصي الخاصة لأُشبع نفسي. حين أصبح مواطنًا، سيأتي دوري لأضمن لهما تقاعدًا كريمًا."
- },
- "3ef10729a2c1": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,590 h</strong>  ·  12 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,590 س</strong>  ·  12 لعبة  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% من ساعاتي</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% من ساعاتي</span>"
  },
  "3ef5b5e97c0e": {
   "en": "Back to Musician",
@@ -2135,10 +2127,6 @@
   "en": "Folk",
   "t": "الفولك"
  },
- "45043cda7136": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">5,385 h</strong>  ·  28 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">5,385 س</strong>  ·  28 لعبة  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% من ساعاتي</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% من ساعاتي</span>"
- },
  "4534c6829b3a": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Death Note ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 18: </span> Death Note (مذكرة الموت)"
@@ -2275,10 +2263,6 @@
   "en": "Enlarge: Quite the stretch",
   "t": "تكبير: يا لها من تمطّطة"
  },
- "4ace96fd9450": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">19,668 h</strong>  ·  23 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">57% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">not counted in my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">19,668 س</strong>  ·  23 لعبة  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">57% من ساعاتي</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">غير محتسبة في ساعاتي</span>"
- },
  "4ad51e59a5be": {
   "en": " Fine line ",
   "t": "خط رفيع"
@@ -2326,10 +2310,6 @@
  "4c1f1c138390": {
   "en": "Not bad!",
   "t": "ليس سيئًا!"
- },
- "4c269467e961": {
-  "en": "3 years and 337 days",
-  "t": "3 سنوات و337 يومًا"
  },
  "4cbc599953b9": {
   "en": " Rhythm &amp; music ",
@@ -2863,6 +2843,10 @@
   "en": "Hávamál, as sung in Wardruna’s Helvegen",
   "t": "«هافامال» (Hávamál)، كما تُغنّى في أغنية «Helvegen» لفرقة Wardruna"
  },
+ "59f21d6a9014": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">703 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">703 س</strong>  ·  5 ألعاب  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% من ساعاتي</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% من ساعاتي</span>"
+ },
  "5a4a4998e7b7": {
   "en": "Kyaa~! (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)",
   "t": "كيااا~! (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)"
@@ -2878,10 +2862,6 @@
  "5a8514f4560c": {
   "en": "Pixel pets: turn your phone sideways",
   "t": "حيوانات بكسلية أليفة: أدِر هاتفك جانبيًا"
- },
- "5a986c8fd343": {
-  "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,255 h ",
-  "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,255 س"
  },
  "5abf683efa95": {
   "en": "Cities: Skylines",
@@ -3343,6 +3323,10 @@
   "en": "Blue ink",
   "t": "حبر أزرق"
  },
+ "68e213e32da4": {
+  "en": " 1,123 h ",
+  "t": "1,123 س"
+ },
  "69031c87a9c1": {
   "en": "BLACKTAIL",
   "t": "BLACKTAIL"
@@ -3350,6 +3334,10 @@
  "691a77cd21a3": {
   "en": "vs",
   "t": "مقابل"
+ },
+ "692a3808fec3": {
+  "en": "1,853 h",
+  "t": "1,853 س"
  },
  "693037f17162": {
   "en": "54 h",
@@ -3867,6 +3855,10 @@
   "en": "LEGO Star Wars: The Skywalker Saga",
   "t": "LEGO Star Wars: The Skywalker Saga"
  },
+ "78bfea9b54f6": {
+  "en": "226 days",
+  "t": "226 يومًا"
+ },
  "78cc6006e09c": {
   "en": "Gym, 6:47am",
   "t": "النادي الرياضي، 6:47 صباحًا"
@@ -3930,10 +3922,6 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
- },
- "7a69b6b4ecc2": {
-  "en": " My hours by category as planets around a sun: RPGs &amp; open worlds 37%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 15% ",
-  "t": "ساعاتي حسب الفئة على شكل كواكب حول شمس: تقمّص الأدوار والعوالم المفتوحة 37%، المدن والمستعمرات والاستراتيجية 11%، البقاء والصناعة 11%، المصانع والأتمتة 11%، الفضاء والطيران 9%، الألعاب الهادئة ومحاكاة الحياة 6%، Other 15%"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -4503,6 +4491,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 28: </span> Placeholder TV show 28 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 28: </span> مسلسل مؤقت 28"
  },
+ "8cc334f36d7b": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,123 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,123 س</strong>  ·  19 لعبة  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% من ساعاتي</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% من ساعاتي</span>"
+ },
  "8ce8b5330b49": {
   "en": "So damn cute! It reminded me of going through adolescence, which means it does a really good job of capturing how weird and fascinating it is to grow into early adulthood. Also, I absolutely love Satone, because I love clingy girls!",
   "t": "لطيف جدًا بحق الجحيم! ذكّرني بمرحلة المراهقة، أي أنه ينجح حقًا في التقاط كم هو غريب ومدهش أن تنمو نحو بدايات النضج. كما أنني أحب ساتوني تمامًا، لأنني أحب الفتيات المتعلقات!"
@@ -4594,6 +4586,10 @@
  "8ffa16d4ad7d": {
   "en": "Enlarge: More mango!",
   "t": "تكبير: مانجو أكثر!"
+ },
+ "9026efb4c546": {
+  "en": " My hours by category as planets around a sun: RPGs &amp; open worlds 36%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 16% ",
+  "t": "ساعاتي حسب الفئة على شكل كواكب حول شمس: تقمّص الأدوار والعوالم المفتوحة 36%، المدن والمستعمرات والاستراتيجية 11%، البقاء والصناعة 11%، المصانع والأتمتة 11%، الفضاء والطيران 9%، الألعاب الهادئة ومحاكاة الحياة 6%، أخرى 16%"
  },
  "9049b3f8b99c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder TV show 30 ",
@@ -5615,6 +5611,10 @@
   "en": "Enlarge: King of the trail",
   "t": "تكبير: ملك الدرب"
  },
+ "ae28c214b195": {
+  "en": "102 days",
+  "t": "102 يومًا"
+ },
  "ae2caea4bb1f": {
   "en": "KC",
   "t": "KC"
@@ -5667,6 +5667,10 @@
   "en": "{name}: {hours}",
   "t": "{name}: {hours}"
  },
+ "af692ad68205": {
+  "en": "Kingdom Hearts series",
+  "t": "سلسلة Kingdom Hearts"
+ },
  "affabe3f4188": {
   "en": "Campaign #1",
   "t": "الحملة رقم 1"
@@ -5682,6 +5686,10 @@
  "b00afaa17097": {
   "en": "22 h",
   "t": "22 س"
+ },
+ "b03a2e5199b5": {
+  "en": " 167 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "167 س  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">تقديري</span>"
  },
  "b03ecac4eefe": {
   "en": "Guess what I'm gonna do",
@@ -5699,10 +5707,6 @@
   "en": "18 photos",
   "t": "18 صورة"
  },
- "b1010b9a779b": {
-  "en": "37% of my hours",
-  "t": "37% من ساعاتي"
- },
  "b115fa0f703f": {
   "en": "Every Miku concert I've been to, from Mikunopolis in 2011 onward.",
   "t": "كل حفلات ميكو التي حضرتها، من Mikunopolis عام 2011 فصاعدًا."
@@ -5710,6 +5714,10 @@
  "b13596cd2774": {
   "en": "15 h",
   "t": "15 س"
+ },
+ "b13692d8aa4c": {
+  "en": "The games on the list add up to 622 days of nonstop play, 24 hours a day. Each square is one of those days.",
+  "t": "ألعاب القائمة مجتمعةً تساوي 622 يومًا من اللعب المتواصل، 24 ساعة في اليوم. كل مربع يوم من تلك الأيام."
  },
  "b1643e5fd670": {
   "en": "Hover a square to see which game that day went to. Press a category to light up only its days.",
@@ -5839,10 +5847,6 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#35: </span>Best of the Worst: Blood Debts, The Tomb, and Undefeatable",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#35: </span>Best of the Worst: Blood Debts, The Tomb, and Undefeatable"
  },
- "b4e9509331e4": {
-  "en": "The games on the list add up to 612 days of nonstop play, 24 hours a day. Each square is one of those days.",
-  "t": "ألعاب القائمة مجتمعةً تساوي 612 يومًا من اللعب المتواصل، 24 ساعة في اليوم. كل مربع يوم من تلك الأيام."
- },
  "b51db5d42168": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 36: </span> Seikon no Qwaser (The Qwaser of Stigmata) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 36: </span> Seikon no Qwaser (The Qwaser of Stigmata)"
@@ -5906,6 +5910,10 @@
  "b73f78fc271e": {
   "en": "Giselle",
   "t": "Giselle"
+ },
+ "b77e495819ea": {
+  "en": "36% of my hours",
+  "t": "36% من ساعاتي"
  },
  "b783ecde91e7": {
   "en": "Plot {plot}: {crop}, ready to harvest.",
@@ -5979,6 +5987,10 @@
   "en": " LW ",
   "t": "LW"
  },
+ "ba792f3c0d1b": {
+  "en": " 119 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "119 س  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">تقديري</span>"
+ },
  "ba7ecfd006a1": {
   "en": "<span class=\"iso-farm__ball\" style=\"--c:#2f5fd6\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Sapphire",
   "t": "<span class=\"iso-farm__ball\" style=\"--c:#2f5fd6\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>سافاير"
@@ -5990,6 +6002,10 @@
  "bb0bc553b8e8": {
   "en": "Whack-a-Miku: turn your phone sideways",
   "t": "اضرب الميكو: أدِر هاتفك جانبيًا"
+ },
+ "bb395b5f1d5e": {
+  "en": "101 days",
+  "t": "101 يومًا"
  },
  "bb78e60fc990": {
   "en": "56 h",
@@ -6027,10 +6043,6 @@
   "en": "Little Witch Academia: Chamber of Time",
   "t": "Little Witch Academia: Chamber of Time"
  },
- "bc93696c8d0c": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,003 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,003 س</strong>  ·  19 لعبة  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% من ساعاتي</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% من ساعاتي</span>"
- },
  "bca97bae09e1": {
   "en": " Xbox  ·  estimated ",
   "t": "Xbox  ·  تقديري"
@@ -6051,10 +6063,6 @@
   "en": "Idle & clickers",
   "t": "ألعاب الخمول والنقر"
  },
- "bdf48be07582": {
-  "en": "Far Cry 5",
-  "t": "Far Cry 5"
- },
  "be31a86c982d": {
   "en": "Happy",
   "t": "السعادة"
@@ -6062,10 +6070,6 @@
  "be60b2fd09b2": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Placeholder TV show 18 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 18: </span> مسلسل مؤقت 18"
- },
- "be7536a3d320": {
-  "en": "The games on the list add up to 1,432 days of nonstop play, 24 hours a day. Each square is one of those days.",
-  "t": "ألعاب القائمة مجتمعةً تساوي 1,432 يومًا من اللعب المتواصل، 24 ساعة في اليوم. كل مربع يوم من تلك الأيام."
  },
  "be7869041e41": {
   "en": "MyAnimeList",
@@ -6343,6 +6347,10 @@
   "en": "Breadcrumb",
   "t": "مسار التنقل"
  },
+ "c794b70221ac": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,590 h</strong>  ·  12 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,590 س</strong>  ·  12 لعبة  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% من ساعاتي</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% من ساعاتي</span>"
+ },
  "c7a20b354d97": {
   "en": "Peeta's backyard run",
   "t": "ركضة Peeta في الفناء الخلفي"
@@ -6362,10 +6370,6 @@
  "c8b4c761e082": {
   "en": " 1,302 h ",
   "t": "1,302 س"
- },
- "c8eb359c95bd": {
-  "en": " 1,003 h ",
-  "t": "1,003 س"
  },
  "c92499e3e7ab": {
   "en": "8 games",
@@ -6443,10 +6447,6 @@
   "en": "21 h",
   "t": "21 س"
  },
- "cb4f8f79b3d7": {
-  "en": "93 days",
-  "t": "93 يومًا"
- },
  "cb617c0ab9ee": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Placeholder TV show 6 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 6: </span> مسلسل مؤقت 6"
@@ -6463,6 +6463,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye"
  },
+ "cb8697b472aa": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">19,668 h</strong>  ·  23 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">56% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">not counted in my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">19,668 س</strong>  ·  23 لعبة  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">56% من ساعاتي</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">غير محتسبة في ساعاتي</span>"
+ },
  "cbb766f08e22": {
   "en": " CK ",
   "t": "CK"
@@ -6470,6 +6474,10 @@
  "cbbe4ab96942": {
   "en": "FS",
   "t": "FS"
+ },
+ "cbcc2e942975": {
+  "en": " An exploded sphere of my hours by category: RPGs &amp; open worlds 36%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 16% ",
+  "t": "كرة مفكّكة لساعاتي حسب الفئة: تقمّص الأدوار والعوالم المفتوحة 36%، المدن والمستعمرات والاستراتيجية 11%، البقاء والصناعة 11%، المصانع والأتمتة 11%، الفضاء والطيران 9%، الألعاب الهادئة ومحاكاة الحياة 6%، أخرى 16%"
  },
  "cbe35333fcf5": {
   "en": "\nAnd as to why? Read my <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld Vol 4 afterword</a>.\n",
@@ -6555,10 +6563,6 @@
   "en": "Fold precision {n}%.",
   "t": "دقة الطي {n}%."
  },
- "ce55a3607861": {
-  "en": "15% of my hours",
-  "t": "15% من ساعاتي"
- },
  "ce70caaad427": {
   "en": "1 photo",
   "t": "صورة واحدة"
@@ -6574,6 +6578,10 @@
  "ced1373b37da": {
   "en": "<strong>Horace</strong>, <em>Odes</em> 1.4 (23 BC): pale Death knocks with an impartial foot at the cottages of the poor and the palaces of kings. <a href=\"https://en.wikisource.org/wiki/The_works_of_Horace/First_Book_of_Odes\">Text</a>",
   "t": "<strong>هوراس</strong>، <em>«الأناشيد»</em> 1.4 (23 ق.م): الموت الشاحب يطرق بقدم لا تحابي أكواخ الفقراء وقصور الملوك. <a href=\"https://en.wikisource.org/wiki/The_works_of_Horace/First_Book_of_Odes\">النص</a>"
+ },
+ "cedfe5a37cd5": {
+  "en": "2,445 h",
+  "t": "2,445 س"
  },
  "cf32e9152179": {
   "en": "❤️ +{n} likes",
@@ -6675,10 +6683,6 @@
   "en": "5 games",
   "t": "5 ألعاب"
  },
- "d1a1eb0d4455": {
-  "en": "69 h",
-  "t": "69 س"
- },
  "d1a7128069a4": {
   "en": "Churrasco",
   "t": "الشوراسكو"
@@ -6730,6 +6734,10 @@
  "d360ff4964fa": {
   "en": "Cirque du Soleil O",
   "t": "Cirque du Soleil O"
+ },
+ "d38a691b674d": {
+  "en": "1 year and 257 days",
+  "t": "سنة واحدة و257 يومًا"
  },
  "d397cf31a23a": {
   "en": "Same plane. Drag back to aim and let go to throw.",
@@ -6795,9 +6803,17 @@
   "en": "Country",
   "t": "الكانتري"
  },
+ "d556a0f664fb": {
+  "en": "3 years and 347 days",
+  "t": "3 سنوات و347 يومًا"
+ },
  "d5580b73bfb2": {
   "en": "Grounded",
   "t": "Grounded"
+ },
+ "d56ba0c1e6ff": {
+  "en": " 703 h ",
+  "t": "703 س"
  },
  "d58f3caf048d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 12: </span> Placeholder TV show 12 ",
@@ -6806,6 +6822,10 @@
  "d62a14276f7a": {
   "en": "Fold 4 of 5: and the right corner to the same dot.",
   "t": "طية 4 من 5: والزاوية اليمنى إلى نفس النقطة."
+ },
+ "d65fa9d72f1f": {
+  "en": "167 h",
+  "t": "167 س"
  },
  "d68ddfb67933": {
   "en": "Chilling",
@@ -6907,10 +6927,6 @@
   "en": "4,854 h",
   "t": "4,854 س"
  },
- "d8a9279df0b5": {
-  "en": "Destroy All Humans!",
-  "t": "Destroy All Humans!"
- },
  "d8bfbca86c7d": {
   "en": "Chest",
   "t": "الصدر"
@@ -6970,10 +6986,6 @@
  "d9afab734277": {
   "en": "27 h",
   "t": "27 س"
- },
- "d9afe40bb960": {
-  "en": "97 h",
-  "t": "97 س"
  },
  "d9c4aa395b07": {
   "en": "Enlarge: Captain Bidu: Bidu wearing a blue military officer cap with a gold winged badge",
@@ -7159,10 +7171,6 @@
   "en": "SS",
   "t": "SS"
  },
- "df9d095c1748": {
-  "en": " An exploded sphere of my hours by category: RPGs &amp; open worlds 37%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 15% ",
-  "t": "كرة مفكّكة لساعاتي حسب الفئة: تقمّص الأدوار والعوالم المفتوحة 37%، المدن والمستعمرات والاستراتيجية 11%، البقاء والصناعة 11%، المصانع والأتمتة 11%، الفضاء والطيران 9%، الألعاب الهادئة ومحاكاة الحياة 6%، Other 15%"
- },
  "dfc22bef9169": {
   "en": "Dragon Cliff 龙崖",
   "t": "Dragon Cliff 龙崖"
@@ -7275,10 +7283,6 @@
   "en": "Throw Bird, costs 3 mana (key 2)",
   "t": "ارمِ طائرًا، يكلّف 3 مانا (المفتاح 2)"
  },
- "e4443be6531e": {
-  "en": "2,255 h",
-  "t": "2,255 س"
- },
  "e45f65625355": {
   "en": "amethyst",
   "t": "أميثيست"
@@ -7374,6 +7378,10 @@
  "e738cd88f444": {
   "en": "Enlarge: So fancy",
   "t": "تكبير: فخم جدًا"
+ },
+ "e73a48613932": {
+  "en": " 130 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "130 س  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">تقديري</span>"
  },
  "e74a1afd48ee": {
   "en": "Step 2: Choose Thy Cut",
@@ -7482,6 +7490,10 @@
  "eaf7064f092b": {
   "en": "Snack!",
   "t": "وجبة خفيفة!"
+ },
+ "eb023f0dcb33": {
+  "en": " 5,435 h ",
+  "t": "5,435 س"
  },
  "eb1429b3f176": {
   "en": "Each view counts as the whole episode, start to finish.",
@@ -7722,6 +7734,10 @@
  "f4e25be12fd0": {
   "en": "3,385 h",
   "t": "3,385 س"
+ },
+ "f4e26370c856": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">5,435 h</strong>  ·  28 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">5,435 س</strong>  ·  28 لعبة  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% من ساعاتي</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% من ساعاتي</span>"
  },
  "f4fc4b8224f9": {
   "en": "Reward learning",
@@ -8019,6 +8035,10 @@
   "en": "Hear ye, hear ye! All are welcome unto the Holy Church of Churrasco, save those who eateth their steak <strong>well done</strong>. Such heathens shall burn in the most fiery of fires, in the deepest pits of Vegetation Hell.",
   "t": "اسمعوا، اسمعوا! الجميع مرحَّب بهم في كنيسة الشوراسكو المقدسة، إلا الذين يأكلون شرائح لحمهم <strong>مستوية جيدًا</strong>. فأولئك الوثنيون سيحترقون في أشد النيران لهيبًا، في أعمق حُفر جحيم الخضار."
  },
+ "ff69348dd260": {
+  "en": "130 h",
+  "t": "130 س"
+ },
  "ff77bf2aced8": {
   "en": "Senpai noticed me! (✿◠‿◠)",
   "t": "لاحظني السينباي! (✿◠‿◠)"
@@ -8042,10 +8062,6 @@
  "ffbcb9739951": {
   "en": "Cactus",
   "t": "صبّارة"
- },
- "ffc2e69c952b": {
-  "en": "1,803 h",
-  "t": "1,803 س"
  },
  "fff4a50e8428": {
   "en": "Đà Nẵng",
