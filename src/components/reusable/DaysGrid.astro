@@ -1,0 +1,358 @@
+---
+/**
+ * DaysGrid: hours turned into days. Every square is one day (24 hours) of nonstop play, coloured by
+ * category and handed out to items in order, so the whole grid reads as "this much of my life".
+ * A white outline marks the end of each full year. Built for the Gamer tab (#252).
+ *
+ *   <DaysGrid
+ *     id="games-days"
+ *     categories={[
+ *       { id: 'rpg', name: 'RPGs', color: '#3987e5', value: 4935, items: [{ name: 'Skyrim', value: 372 }] },
+ *     ]}
+ *   />
+ *
+ * The squares are drawn by the script to fit the width (so a phone gets fewer per row); every word
+ * it shows is in the page (the strings below and the name lists), so translated pages need nothing
+ * extra. Hover or tap a square to see its item; press a category to light up only its days. Inside
+ * an element with `data-hours-scope` (HoursByCategory's root) it follows `data-excluded` and the
+ * `hours:excluded` event; elsewhere, `excluded` sets it. Without JavaScript the headline and the
+ * category list still show.
+ *
+ * Reusable on purpose: no imports, safe to use several times on a page. Theming: --days-text,
+ * --days-muted, --days-border, --days-surface, --days-mark (the year outline).
+ */
+interface Item {
+  name: string;
+  value: number;
+}
+interface Category {
+  id: string;
+  name: string;
+  color: string;
+  value: number;
+  excludable?: boolean;
+  items: Item[];
+}
+interface Props {
+  categories: Category[];
+  id?: string;
+  excluded?: boolean;
+  /** {span} is "1 year and 215 days". */
+  headline?: string;
+  /** {days} is the number of days. */
+  subline?: string;
+  year?: string;
+  years?: string;
+  day?: string;
+  days?: string;
+  /** Joins years and days: "1 year and 215 days". */
+  and?: string;
+  /** Under the grid while nothing is hovered. */
+  hint?: string;
+  /** {n} the day, {item} and {category}. */
+  caption?: string;
+  /** Shown on each year mark; {n} is the year. */
+  yearMark?: string;
+  /** Read by screen readers for the grid; {span}. */
+  label?: string;
+  locale?: string;
+  class?: string;
+}
+const {
+  categories,
+  id = 'days',
+  excluded = false,
+  headline = '{span}',
+  subline = 'That adds up to {days} days of nonstop play, 24 hours a day. Each square is one of those days.',
+  year = '{n} year',
+  years = '{n} years',
+  day = '{n} day',
+  days: daysWord = '{n} days',
+  and = '{a} and {b}',
+  hint = 'Hover a square to see which item that day went to. Press a category to light up only its days.',
+  caption = 'Day {n}: {item} ({category})',
+  yearMark = 'Year {n}',
+  label = '{span} of play, one square per day, coloured by category',
+  locale = 'en-US',
+  class: className,
+} = Astro.props;
+
+const nf = new Intl.NumberFormat(locale);
+const fill = (t: string, v: Record<string, string | number>) => t.replace(/\{(\w+)\}/g, (m, k) => (k in v ? String(v[k]) : m));
+const hasExcludable = categories.some((c) => c.excludable);
+// Squares per item, handed out in order; what's left of one item's day carries to the next.
+function squares(list: Category[]) {
+  const runs: [number, number, number][] = []; // [category index, item index, squares]
+  let carry = 0;
+  list.forEach((c) => {
+    const ci = categories.indexOf(c);
+    c.items.forEach((it, ii) => {
+      carry += it.value / 24;
+      const n = Math.floor(carry);
+      carry -= n;
+      if (n) runs.push([ci, ii, n]);
+    });
+  });
+  return runs;
+}
+const span = (n: number) => {
+  const y = Math.floor(n / 365), d = n % 365;
+  const ys = fill(y === 1 ? year : years, { n: nf.format(y) });
+  const ds = fill(d === 1 ? day : daysWord, { n: nf.format(d) });
+  return y && d ? fill(and, { a: ys, b: ds }) : y ? ys : ds;
+};
+const states = [{ key: 'on', runs: squares(categories) }];
+if (hasExcludable) states.push({ key: 'off', runs: squares(categories.filter((c) => !c.excludable)) });
+const view = states.map((s) => {
+  const total = s.runs.reduce((t, r) => t + r[2], 0);
+  return { ...s, total, span: span(total), sub: fill(subline, { days: nf.format(total) }), aria: fill(label, { span: span(total) }) };
+});
+const legendFor = (key: string) =>
+  categories
+    .filter((c) => key === 'on' || !c.excludable)
+    .map((c, i) => ({ ...c, ci: categories.indexOf(c), days: view.find((v) => v.key === key)!.runs.filter((r) => r[0] === categories.indexOf(c)).reduce((t, r) => t + r[2], 0) }));
+---
+
+<div class:list={['days', className]} id={id} data-days-grid data-state={excluded && hasExcludable ? 'off' : 'on'} data-runs={JSON.stringify(Object.fromEntries(view.map((v) => [v.key, v.runs])))} data-colors={JSON.stringify(categories.map((c) => c.color))}>
+  {
+    view.map((v) => (
+      <div class={`days__head days__${v.key}`}>
+        <p class="days__headline">{fill(headline, { span: v.span })}</p>
+        <p class="days__sub">{v.sub}</p>
+      </div>
+    ))
+  }
+  <div class="days__scroll">
+    {view.map((v) => <svg class={`days__grid days__${v.key}`} role="img" aria-label={v.aria} data-grid={v.key} />)}
+  </div>
+  <p class="days__caption" aria-live="polite" data-caption>{hint}</p>
+  {
+    view.map((v) => (
+      <div class={`days__legend days__${v.key}`}>
+        {legendFor(v.key).map((c) => (
+          <button type="button" class="days__cat" aria-pressed="false" data-ci={c.ci}>
+            <span class="days__swatch" style={`background: ${c.color}`} />
+            <span class="days__cat-name">{c.name}</span>
+            <span class="days__cat-days">{fill(c.days === 1 ? day : daysWord, { n: nf.format(c.days) })}</span>
+          </button>
+        ))}
+      </div>
+    ))
+  }
+  <div class="days__strings" hidden data-llms-skip>
+    <span data-k="hint">{hint}</span>
+    <span data-k="caption">{caption}</span>
+    <span data-k="year">{yearMark}</span>
+    {
+      categories.map((c, ci) => (
+        <ol data-cat-names={ci}>
+          <li data-cat-name>{c.name}</li>
+          {c.items.map((it) => (
+            <li>{it.name}</li>
+          ))}
+        </ol>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  const NS = 'http://www.w3.org/2000/svg';
+  function initDaysGrid() {
+    document.querySelectorAll<HTMLElement>('[data-days-grid]').forEach((root) => {
+      if (root.dataset.daysReady) return;
+      root.dataset.daysReady = '1';
+      const runs: Record<string, [number, number, number][]> = JSON.parse(root.dataset.runs || '{}');
+      const colors: string[] = JSON.parse(root.dataset.colors || '[]');
+      const msg = (k: string, v: Record<string, string | number> = {}) =>
+        (root.querySelector(`[data-k="${k}"]`)?.textContent ?? '').replace(/\{(\w+)\}/g, (m, key) => (key in v ? String(v[key]) : m));
+      const names = [...root.querySelectorAll<HTMLElement>('[data-cat-names]')].map((ol) => [...ol.querySelectorAll('li')].map((li) => li.textContent ?? ''));
+      const cap = root.querySelector<HTMLElement>('[data-caption]')!;
+      let focus: number | null = null;
+      const draw = () => {
+        const key = root.dataset.state || 'on';
+        const svg = root.querySelector<SVGSVGElement>(`[data-grid="${key}"]`);
+        if (!svg) return;
+        const width = svg.parentElement!.clientWidth || 900;
+        const step = width < 500 ? 11 : 16;
+        const size = step - 3;
+        const cols = Math.max(12, Math.floor(width / step));
+        const total = runs[key].reduce((t, r) => t + r[2], 0);
+        const rows = Math.ceil(total / cols);
+        svg.setAttribute('viewBox', `0 -14 ${cols * step} ${rows * step + 14}`);
+        svg.setAttribute('width', String(cols * step));
+        svg.setAttribute('height', String(rows * step + 14));
+        svg.replaceChildren();
+        let i = 0;
+        const fmt = new Intl.NumberFormat(document.documentElement.lang || 'en');
+        for (const [ci, ii, n] of runs[key]) {
+          for (let k = 0; k < n; k++, i++) {
+            const r = document.createElementNS(NS, 'rect');
+            r.setAttribute('x', String((i % cols) * step));
+            r.setAttribute('y', String(Math.floor(i / cols) * step));
+            r.setAttribute('width', String(size));
+            r.setAttribute('height', String(size));
+            r.setAttribute('rx', '3');
+            r.setAttribute('fill', colors[ci]);
+            r.dataset.ci = String(ci);
+            r.dataset.ii = String(ii);
+            r.dataset.n = String(i + 1);
+            if ((i + 1) % 365 === 0) {
+              r.setAttribute('class', 'days__year');
+              const t = document.createElementNS(NS, 'text');
+              t.setAttribute('x', String((i % cols) * step + size / 2));
+              t.setAttribute('y', String(Math.floor(i / cols) * step - 3));
+              t.setAttribute('class', 'days__year-label');
+              t.textContent = msg('year', { n: fmt.format((i + 1) / 365) });
+              svg.append(r, t);
+            } else svg.append(r);
+          }
+        }
+        svg.classList.toggle('is-focus', focus !== null);
+        svg.querySelectorAll('rect').forEach((r) => r.classList.toggle('is-lit', r.dataset.ci === String(focus)));
+      };
+      const describe = (t: EventTarget | null) => {
+        const r = t as SVGRectElement;
+        if (!r || r.tagName !== 'rect') return;
+        const ci = +r.dataset.ci!, ii = +r.dataset.ii!;
+        cap.textContent = msg('caption', { n: new Intl.NumberFormat(document.documentElement.lang || 'en').format(+r.dataset.n!), item: names[ci][ii + 1], category: names[ci][0] });
+      };
+      root.querySelectorAll<SVGSVGElement>('[data-grid]').forEach((svg) => {
+        svg.addEventListener('pointerover', (e) => describe(e.target));
+        svg.addEventListener('pointerdown', (e) => describe(e.target));
+        svg.addEventListener('pointerleave', () => (cap.textContent = msg('hint')));
+      });
+      root.querySelectorAll<HTMLButtonElement>('.days__cat').forEach((b) =>
+        b.addEventListener('click', () => {
+          const ci = +b.dataset.ci!;
+          focus = focus === ci ? null : ci;
+          root.querySelectorAll<HTMLButtonElement>('.days__cat').forEach((x) => x.setAttribute('aria-pressed', String(+x.dataset.ci! === focus)));
+          draw();
+        }),
+      );
+      const scope = root.closest<HTMLElement>('[data-hours-scope]');
+      const sync = () => {
+        if (scope) root.dataset.state = scope.hasAttribute('data-excluded') && runs.off ? 'off' : 'on';
+        focus = null;
+        root.querySelectorAll<HTMLButtonElement>('.days__cat').forEach((x) => x.setAttribute('aria-pressed', 'false'));
+        draw();
+      };
+      scope?.addEventListener('hours:excluded', sync);
+      // Draw when it first shows, and again when its width changes.
+      let lastW = 0;
+      new ResizeObserver(() => {
+        const w = root.clientWidth;
+        if (w && w !== lastW) {
+          lastW = w;
+          draw();
+        }
+      }).observe(root);
+      sync();
+    });
+  }
+  initDaysGrid();
+  document.addEventListener('astro:page-load', initDaysGrid);
+</script>
+
+<style>
+  .days {
+    --_text: var(--days-text, #e6edf3);
+    --_muted: var(--days-muted, #9aa8bb);
+    --_border: var(--days-border, #18224a);
+    --_surface: var(--days-surface, #0e1636);
+    --_mark: var(--days-mark, #ffffff);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: var(--_text);
+  }
+  .days[data-state='on'] .days__off,
+  .days[data-state='off'] .days__on {
+    display: none;
+  }
+  .days__headline {
+    margin: 0;
+    font-family: var(--days-heading-font, inherit);
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    font-weight: 700;
+  }
+  .days__sub,
+  .days__caption {
+    margin: 0.25rem 0 0;
+    color: var(--_muted);
+    font-size: 0.9rem;
+  }
+  .days__caption {
+    min-height: 1.4em;
+    color: var(--_text);
+  }
+  .days__scroll {
+    max-height: 30rem;
+    overflow-y: auto;
+  }
+  .days__grid {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+  .days__grid :global(rect) {
+    transition: opacity 0.2s;
+  }
+  .days__grid.is-focus :global(rect:not(.is-lit)) {
+    opacity: 0.15;
+  }
+  .days__grid :global(.days__year) {
+    stroke: var(--_mark);
+    stroke-width: 2;
+  }
+  .days__grid :global(.days__year-label) {
+    fill: var(--_mark);
+    font-size: 11px;
+    font-weight: 700;
+    text-anchor: middle;
+    pointer-events: none;
+  }
+  .days__legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .days__cat {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 0.9rem;
+    border-radius: 22px;
+    border: 1px solid var(--_border);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+  .days__cat[aria-pressed='true'] {
+    background: var(--_surface);
+    border-color: currentColor;
+  }
+  .days__cat:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+  .days__swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+  }
+  .days__cat-name {
+    font-weight: 600;
+  }
+  .days__cat-days {
+    color: var(--_muted);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .days__grid :global(rect) {
+      transition: none;
+    }
+  }
+</style>

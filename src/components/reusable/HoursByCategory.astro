@@ -25,6 +25,10 @@
  * translated copy of the page translates every word. Without JavaScript every item shows and the
  * switch stays hidden. Bars don't animate for people who prefer reduced motion.
  *
+ * Other views of the rollup (a pie, a sphere…) go in named slots listed in `views`; a "See it as"
+ * switch picks one. The root carries `data-hours-scope`, `data-excluded` while the switch is off,
+ * and fires `hours:excluded` when it flips, so views can follow it. `excludedByDefault` starts it off.
+ *
  * Items can carry chips after their name (`chips: ['Steam', 'Xbox']`), coloured per label with
  * the `chipColors` prop, and `estimated: true` puts an asterisk after the value for a footnote.
  *
@@ -81,6 +85,15 @@ interface Props {
   /** After an estimated item's value, and what screen readers say for it. */
   estimatedMark?: string;
   estimatedLabel?: string;
+  /** Start with the excludable categories switched off (the switch unchecked). */
+  excludedByDefault?: boolean;
+  /**
+   * Other ways to see the rollup, offered beside the bars: one named slot per view
+   * (`<Fragment slot="pie">…</Fragment>`), shown by a "See it as" switch.
+   */
+  views?: { id: string; label: string }[];
+  viewsLabel?: string;
+  barsLabel?: string;
   /** BCP 47 locale for the numbers. */
   locale?: string;
   class?: string;
@@ -106,6 +119,10 @@ const {
   chipColors = {},
   estimatedMark = '*',
   estimatedLabel = 'estimated',
+  excludedByDefault = false,
+  views = [],
+  viewsLabel = 'See it as',
+  barsLabel = 'Bars',
   locale = 'en-US',
   class: className,
 } = Astro.props;
@@ -135,6 +152,8 @@ const hasExcludable = excludedSum > 0;
 const maxOn = Math.max(1, ...sorted.map(sum));
 const maxOff = Math.max(1, ...sorted.filter((c) => !c.excludable).map(sum));
 
+const viewPanels = await Promise.all(views.map(async (v) => ({ ...v, html: Astro.slots.has(v.id) ? await Astro.slots.render(v.id) : '' })));
+
 const rows = sorted.map((c) => {
   const h = sum(c);
   const top = c.items[0]?.value || 1;
@@ -159,7 +178,7 @@ const rows = sorted.map((c) => {
 });
 ---
 
-<div class:list={['hbc', className]} data-hbc>
+<div class:list={['hbc', className]} data-hbc data-hours-scope data-excluded={excludedByDefault && hasExcludable ? '' : undefined}>
   <section class="hbc__totals" aria-labelledby={`${id}-totals`}>
     <h3 class="hbc__sr" id={`${id}-totals`}>{totalLabel}</h3>
     <div class="hbc__stats">
@@ -181,7 +200,7 @@ const rows = sorted.map((c) => {
       {
         hasExcludable && (
           <label class="hbc__switch" data-hbc-toggle hidden>
-            <input type="checkbox" checked />
+            <input type="checkbox" checked={!excludedByDefault} />
             <span>{fill(excludeLabel, { value: nf.format(excludedSum), unit })}</span>
           </label>
         )
@@ -190,6 +209,22 @@ const rows = sorted.map((c) => {
 
     <div class="hbc__rollup">
       <h3 class="hbc__rollup-title">{rollupTitle}</h3>
+      {
+        viewPanels.length > 0 && (
+          <div class="hbc__views" role="group" aria-label={viewsLabel} data-hbc-views hidden>
+            <span class="hbc__views-label" aria-hidden="true">{viewsLabel}</span>
+            <button type="button" class="hbc__view-btn" aria-pressed="true" data-hbc-view-btn="bars">
+              {barsLabel}
+            </button>
+            {viewPanels.map((v) => (
+              <button type="button" class="hbc__view-btn" aria-pressed="false" data-hbc-view-btn={v.id}>
+                {v.label}
+              </button>
+            ))}
+          </div>
+        )
+      }
+      <div data-hbc-view="bars">
       <ul class="hbc__rows">
         {
           rows.map((c) => (
@@ -214,6 +249,8 @@ const rows = sorted.map((c) => {
           ))
         }
       </ul>
+      </div>
+      {viewPanels.map((v) => <div class="hbc__view" data-hbc-view={v.id} hidden set:html={v.html} />)}
     </div>
   </section>
 
@@ -298,7 +335,26 @@ const rows = sorted.map((c) => {
       const box = toggle?.querySelector<HTMLInputElement>('input');
       if (toggle && box) {
         toggle.hidden = false;
-        box.addEventListener('change', () => root.toggleAttribute('data-excluded', !box.checked));
+        box.addEventListener('change', () => {
+          root.toggleAttribute('data-excluded', !box.checked);
+          // Views inside (pie, sphere…) listen for this; see README.md.
+          root.dispatchEvent(new CustomEvent('hours:excluded', { detail: { excluded: !box.checked } }));
+        });
+      }
+      const switcher = root.querySelector<HTMLElement>('[data-hbc-views]');
+      if (switcher) {
+        switcher.hidden = false;
+        const btns = [...switcher.querySelectorAll<HTMLButtonElement>('[data-hbc-view-btn]')];
+        btns.forEach((btn) =>
+          btn.addEventListener('click', () => {
+            const id = btn.dataset.hbcViewBtn;
+            btns.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+            root.querySelectorAll<HTMLElement>('[data-hbc-view]').forEach((p) => {
+              p.hidden = p.dataset.hbcView !== id;
+              if (!p.hidden) p.dispatchEvent(new CustomEvent('hours:shown', { bubbles: false }));
+            });
+          }),
+        );
       }
       root.querySelectorAll<HTMLElement>('[data-hbc-card]').forEach((card) => {
         const btn = card.querySelector<HTMLButtonElement>('[data-hbc-more]');
@@ -406,6 +462,43 @@ const rows = sorted.map((c) => {
     display: flex;
     flex-direction: column;
     gap: 0.6rem;
+  }
+  .hbc__views {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .hbc__views[hidden],
+  .hbc__view[hidden],
+  [data-hbc-view][hidden] {
+    display: none;
+  }
+  .hbc__views-label {
+    color: var(--_muted);
+    font-size: 0.875rem;
+    margin-inline-end: 0.25rem;
+  }
+  .hbc__view-btn {
+    min-height: 44px;
+    padding: 0 1rem;
+    border-radius: 22px;
+    border: 1px solid var(--_border);
+    background: transparent;
+    color: var(--_text);
+    font: inherit;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .hbc__view-btn[aria-pressed='true'] {
+    background: var(--_accent);
+    border-color: var(--_accent);
+    color: var(--_surface);
+  }
+  .hbc__view-btn:focus-visible {
+    outline: 2px solid var(--_accent);
+    outline-offset: 2px;
   }
   .hbc__rollup-title {
     margin: 0;

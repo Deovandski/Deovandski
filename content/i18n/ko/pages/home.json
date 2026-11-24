@@ -15,6 +15,10 @@
   "en": "EP",
   "t": "EP"
  },
+ "00cad34ec61e": {
+  "en": "Each moon is a game, sized by its hours.",
+  "t": "위성 하나가 게임이고, 크기가 시간입니다."
+ },
  "00f2a5f37536": {
   "en": "Enlarge: Third year since adoption",
   "t": "확대: 입양 3주년"
@@ -39,6 +43,10 @@
   "en": "76 h",
   "t": "76 시간"
  },
+ "014bcd654c60": {
+  "en": "Links",
+  "t": "링크"
+ },
  "017acba7f57e": {
   "en": "The light novel series site: the full novel, the World Lore, and Public and Behind The Scenes layers.",
   "t": "라이트노벨 시리즈 사이트: 소설 전체, 세계관, 그리고 공개와 비하인드 두 층."
@@ -46,6 +54,10 @@
  "019336fad507": {
   "en": "2 countries · 22 states/provinces · 167 photos",
   "t": "2개국 · 22개 주/도 · 사진 167장"
+ },
+ "01a119163f5d": {
+  "en": "Every cartridge is a game, as wide as its hours. Hover one to pull it out; press it to keep it out. Dashed ones are estimated.",
+  "t": "카트리지 하나가 게임이고, 너비가 시간입니다. 마우스를 올리면 꺼내지고, 누르면 꺼낸 채로 둡니다. 점선은 추정치예요."
  },
  "01a7e714fe24": {
   "en": "6 facets",
@@ -115,6 +127,14 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#38: </span>Best of the Worst: Bad Movie Scavenger Hunt",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#38: </span>Best of the Worst: Bad Movie Scavenger Hunt"
  },
+ "039bd8dc47b0": {
+  "en": "Press a slice or a row to see its games.",
+  "t": "조각이나 줄을 누르면 그 게임들을 볼 수 있어요."
+ },
+ "03b8411a444a": {
+  "en": "75 h",
+  "t": "75 시간"
+ },
  "03c0dc4c92b5": {
   "en": "Nani?! So lewd! (⊙_⊙;)",
   "t": "나니?! 너무 야해! (⊙_⊙;)"
@@ -127,6 +147,10 @@
   "en": "331 h",
   "t": "331 시간"
  },
+ "0446c388357c": {
+  "en": " Sphere ",
+  "t": "구"
+ },
  "0455df4b7952": {
   "en": "Can I haz",
   "t": "나 이거 가져도 돼?"
@@ -138,6 +162,10 @@
  "0480691e0de6": {
   "en": "Ink",
   "t": "잉크"
+ },
+ "049b1f5d7742": {
+  "en": "1 year and 247 days",
+  "t": "1년 247일"
  },
  "04e3fd08d714": {
   "en": "Description coming soon.",
@@ -206,6 +234,10 @@
  "06ee9ade85e4": {
   "en": "Hellblade: Senua's Sacrifice",
   "t": "Hellblade: Senua's Sacrifice"
+ },
+ "070c241ff4e1": {
+  "en": "450 h",
+  "t": "450 시간"
  },
  "07255da4105f": {
   "en": "Grill for about <strong>7 minutes</strong>, then flip. Then grill for another <strong>7 minutes</strong>.",
@@ -339,9 +371,17 @@
   "en": "Blog",
   "t": "블로그"
  },
+ "0bb27395d153": {
+  "en": "231 h",
+  "t": "231 시간"
+ },
  "0bdcc8f4a8b0": {
   "en": " HM ",
   "t": "HM"
+ },
+ "0c053e564d90": {
+  "en": "+ 7 more games",
+  "t": "+ 게임 7개 더"
  },
  "0c146d79c604": {
   "en": "Enlarge: FML! Forgot setup autopay",
@@ -547,6 +587,10 @@
   "en": "Terraria",
   "t": "테라리아"
  },
+ "125b32e61096": {
+  "en": "Space & flight",
+  "t": "우주 & 비행"
+ },
  "12778aec0f70": {
   "en": "Wins: 1",
   "t": "승: 1"
@@ -730,6 +774,10 @@
  "1995e83b0e4d": {
   "en": "Part of me wondered about ranking it higher, but it's tough, since a lot of anime have a closer, more special meaning to me. The animation gets a standing ovation, and so do the story and plot development!",
   "t": "좀 더 높은 순위를 줄까도 생각했지만, 어려워. 내게 더 가깝고 특별한 의미가 있는 애니가 많거든. 작화는 기립박수감이고, 스토리와 플롯 전개도 마찬가지야!"
+ },
+ "19b39470c29c": {
+  "en": "1 game",
+  "t": "게임 1개"
  },
  "19c34e493647": {
   "en": "Wunjo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚹ)</span>",
@@ -975,6 +1023,10 @@
   "en": "Rusty's Retirement",
   "t": "Rusty's Retirement"
  },
+ "220802d836b4": {
+  "en": "Third party trackers",
+  "t": "서드파티 트래커"
+ },
  "220cedd6c50c": {
   "en": "✠ Amen ✠",
   "t": "✠ 아멘 ✠"
@@ -1038,6 +1090,10 @@
  "24b33396d9b8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 1: </span> Placeholder TV show 1 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 1: </span> 임시 TV 프로그램 1"
+ },
+ "24b78170cf4e": {
+  "en": "316 h",
+  "t": "316 시간"
  },
  "24be61285e09": {
   "en": "Views",
@@ -1135,6 +1191,10 @@
   "en": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna",
   "t": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna"
  },
+ "26fadd02e644": {
+  "en": "94 days",
+  "t": "94일"
+ },
  "273285456a27": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 19: </span> Placeholder movie 19 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 19: </span> 임시 영화 19"
@@ -1162,6 +1222,10 @@
  "27b48cf9ae90": {
   "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
   "t": "{mode}로 녹화하면 VHS 테이프 {tapes}개 분량이야(T-120 테이프 하나당 {perTape}시간)."
+ },
+ "27c95af95a7e": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,385 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPG &amp; 오픈 월드: 5,385 시간"
  },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
@@ -1207,6 +1271,10 @@
   "en": "Tap the stage on the beat",
   "t": "박자에 맞춰 무대를 탭해"
  },
+ "290c68caa39c": {
+  "en": "Year {n}",
+  "t": "{n}년째"
+ },
  "2915cfcae6ff": {
   "en": "Enlarge: Khajiit has wares if you have coin",
   "t": "확대: 카짓은 물건이 있다네, 돈만 있다면"
@@ -1214,6 +1282,10 @@
  "291e6f1f5baa": {
   "en": "Whack the Miku (top left, key 1)",
   "t": "미쿠 때리기 (왼쪽 위, 1번 키)"
+ },
+ "292006d299a0": {
+  "en": " Steam + Xbox   ",
+  "t": "Steam + Xbox"
  },
  "29733f231324": {
   "en": "Under the hood: how it hooks you",
@@ -1279,6 +1351,10 @@
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">904 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">6% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">904 시간</strong>  ·  게임 19개  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">내 시간의 3%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">내 시간의 6%</span>"
  },
+ "2bd97ed68b1c": {
+  "en": "18 games",
+  "t": "게임 18개"
+ },
  "2bdc8069faed": {
   "en": "Eastward",
   "t": "Eastward"
@@ -1290,6 +1366,10 @@
  "2c1e5036b725": {
   "en": "{n} balls in the bag",
   "t": "가방에 볼 {n}개"
+ },
+ "2c27ec2a32c3": {
+  "en": "71 days",
+  "t": "71일"
  },
  "2c6f37232fe8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Nanatsu no Taizai (The Seven Deadly Sins) ",
@@ -1318,6 +1398,10 @@
  "2d19585e07c5": {
   "en": " LB ",
   "t": "LB"
+ },
+ "2d4daa0f09e7": {
+  "en": "Each planet is a category, sized by its hours. Press one to fly in.",
+  "t": "행성 하나가 카테고리이고, 크기가 시간입니다. 누르면 가까이 날아갑니다."
  },
  "2d8bdb9ce539": {
   "en": "\nAt home, a whiteboard holds my major goals and anything that isn't tied to a date. If it is tied to a date, it goes on\n          the calendar; how I keep 5+ calendars in one place is <a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">Life hack #2: Calendar bound</a>.\n",
@@ -1390,6 +1474,10 @@
  "2f717ffad4e1": {
   "en": "Arkansas",
   "t": "아칸소"
+ },
+ "2f9714995b86": {
+  "en": " An exploded sphere of my hours by category: Idle &amp; clickers 57%, RPGs &amp; open worlds 16%, City, colony &amp; strategy 5%, Survival &amp; crafting 5%, Factory &amp; automation 5%, Space &amp; flight 4%, Cozy &amp; life sims 3%, Other 7% ",
+  "t": "카테고리별 플레이 시간을 쪼갠 구: 방치형 &amp; 클리커 57%, RPG &amp; 오픈 월드 16%, 도시, 식민지 &amp; 전략 5%, 생존 &amp; 제작 5%, 공장 &amp; 자동화 5%, 우주 &amp; 비행 4%, 힐링 &amp; 생활 시뮬레이션 3%, Other 7%"
  },
  "2fa582319006": {
   "en": "One of my favorite isekai, and one of the OGs from before the torrent of copycats trying to milk the market dry.",
@@ -1591,6 +1679,10 @@
   "en": "Dice tray",
   "t": "주사위 트레이"
  },
+ "359354854248": {
+  "en": "+ 16 more games",
+  "t": "+ 게임 16개 더"
+ },
  "35d24a82655a": {
   "en": " PW ",
   "t": "PW"
@@ -1659,6 +1751,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 14: </span> Placeholder TV show 14 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 14: </span> 임시 TV 프로그램 14"
  },
+ "383c79e5feb9": {
+  "en": " Orbits ",
+  "t": "궤도"
+ },
  "3850a6679753": {
   "en": "First day home",
   "t": "집에 온 첫날"
@@ -1666,6 +1762,10 @@
  "385e22d5fa21": {
   "en": "King of the trail",
   "t": "산책로의 왕"
+ },
+ "3869de54b01c": {
+  "en": "224 days",
+  "t": "224일"
  },
  "3878d567f539": {
   "en": "A streak you could lose feels worse than one you never had. Losing hurts about twice as much as winning feels good.",
@@ -1787,6 +1887,10 @@
   "en": " 633 h ",
   "t": "633 시간"
  },
+ "3b9b88d1447d": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #0ca30c\" data-astro-cid-nqpad2wp=\"\"></span> Cozy &amp; life sims: 904 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #0ca30c\" data-astro-cid-nqpad2wp=\"\"></span> 힐링 &amp; 생활 시뮬레이션: 904 시간"
+ },
  "3bc2370dce47": {
   "en": "Enlarge: Princess Fluffy of Guamá: Fluffy in a pink princess dress and a jeweled tiara, sitting in the back seat of a car",
   "t": "확대: 과마의 Fluffy 공주: 분홍 공주 드레스에 보석 티아라를 쓰고 차 뒷좌석에 앉아 있는 Fluffy"
@@ -1907,6 +2011,10 @@
   "en": "I guess the real #1. The ending is complicated, but more power to the author for sticking to what he wanted to do. When I first watched Season 1 back in 2014, I literally had to sleep with the lights on because it haunted my imagination. I also love how rich the world building is. It reminds me of Age of Empires II, where I'd build a custom map with my city fortified with Imperial Age walls, focus on my own thing on my own time, and then, when I was ready, open the gates and slaughter the other empires that had been bickering with each other the whole time. Not exactly the same, but that unawareness of the wider world is an interesting phenomenon. Amazing OPs, too!",
   "t": "아마 진짜 1위일 거야. 결말은 복잡하지만, 자기가 하고 싶은 걸 끝까지 밀고 간 작가에게 박수를. 2014년에 시즌 1을 처음 봤을 땐, 상상 속에서 계속 떠올라서 말 그대로 불을 켜고 자야 했어. 세계관이 얼마나 풍부한지도 정말 좋아. 에이지 오브 엠파이어 II가 생각나. 제국 시대 성벽으로 도시를 요새화한 커스텀 맵을 만들고, 내 시간에 내 일에만 집중하다가, 준비가 되면 성문을 열고 내내 서로 티격태격하던 다른 제국들을 쓸어버리던 거. 완전히 같진 않지만, 바깥 세상을 모른다는 그 점이 흥미로운 현상이야. 오프닝도 끝내줘!"
  },
+ "3f6605efbbef": {
+  "en": "RPGs & open worlds",
+  "t": "RPG & 오픈 월드"
+ },
  "3fa7a7dd538c": {
   "en": " SW ",
   "t": "SW"
@@ -1914,6 +2022,10 @@
  "3fc2410ae1c5": {
   "en": "Yep. That anime tickled something deep and turbulent that I didn't understand back then: my ecchi/hentai energy. I truly understand it now, and I have no shame about it, since it's something I set out to explore to feel more fulfilled.",
   "t": "응. 그 애니는 그땐 내가 이해 못 했던 깊고 요동치는 무언가를 간질였어: 내 에치/헨타이 에너지. 이제는 진짜 이해하고, 전혀 부끄럽지 않아. 더 충만함을 느끼려고 탐구하기로 마음먹은 거니까."
+ },
+ "3fd584895bc1": {
+  "en": "+ 6 more games",
+  "t": "+ 게임 6개 더"
  },
  "3ffa6ae98146": {
   "en": "The line dance",
@@ -1930,6 +2042,10 @@
  "4077f33562cf": {
   "en": "Tap the kit, or play it with your keyboard: A S D F G, Q W E, X for the kick.",
   "t": "세트를 탭하거나 키보드로 연주해 봐: A S D F G, Q W E, 킥은 X."
+ },
+ "408b5c0e9624": {
+  "en": "4% of my hours",
+  "t": "내 시간의 4%"
  },
  "4095ffeb9bf4": {
   "en": "Deo in a gold imperial dragon robe and crown on a throne at the Imperial City in Huế, flanked by two attendants in blue áo dài",
@@ -1998,6 +2114,10 @@
  "447f1e0ff0ce": {
   "en": "Doki doki~ ♡ (〃▽〃)",
   "t": "두근두근~ ♡ (〃▽〃)"
+ },
+ "448936a95469": {
+  "en": "57% of my hours",
+  "t": "내 시간의 57%"
  },
  "44c57abd888a": {
   "en": "Reset",
@@ -2087,9 +2207,17 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 7: </span> Steins;Gate ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 7: </span> Steins;Gate (슈타인즈 게이트)"
  },
+ "487eeb9b8c81": {
+  "en": "325 h",
+  "t": "325 시간"
+ },
  "4890a20f2b7f": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#31: </span>Best of the Worst: Plinketto #8",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#31: </span>Best of the Worst: Plinketto #8"
+ },
+ "48aaf2be8dae": {
+  "en": "5% of my hours",
+  "t": "내 시간의 5%"
  },
  "48e29fac4cce": {
   "en": "Besides the relationship and the bonding, the merchant life and bartering are really well developed! I took inspiration from it while working on the world lore for #HusbandOutWorld.",
@@ -2155,6 +2283,10 @@
   "en": " Fine line ",
   "t": "가는 선"
  },
+ "4b41ed494adc": {
+  "en": " Steam + Xbox + PlayStation  ·  estimated ",
+  "t": "Steam + Xbox + PlayStation  ·  추정"
+ },
  "4b482e2ae4e2": {
   "en": "⚠️ Your {n}-post streak is about to die!",
   "t": "⚠️ {n} 연속 게시가 곧 끊겨!"
@@ -2195,6 +2327,10 @@
   "en": "Not bad!",
   "t": "나쁘지 않아!"
  },
+ "4c269467e961": {
+  "en": "3 years and 337 days",
+  "t": "3년 337일"
+ },
  "4cbc599953b9": {
   "en": " Rhythm &amp; music ",
   "t": "리듬 &amp; 음악"
@@ -2202,6 +2338,10 @@
  "4cd5ee6da386": {
   "en": "Red Letter Media on YouTube",
   "t": "YouTube의 Red Letter Media"
+ },
+ "4cda1e2daa3e": {
+  "en": "363 h",
+  "t": "363 시간"
  },
  "4cee4c0a5581": {
   "en": "Left forearm",
@@ -2222,6 +2362,10 @@
  "4d528de842ee": {
   "en": "Enlarge: Painting or drawing, 02/05/2013",
   "t": "확대: 그림 또는 스케치, 2013년 2월 5일"
+ },
+ "4d5401de4d73": {
+  "en": "+ 11 more games",
+  "t": "+ 게임 11개 더"
  },
  "4d5fb4549070": {
   "en": "Angle {angle}°, power {power}%. Space to throw.",
@@ -2270,6 +2414,10 @@
  "4e3f3c3401c9": {
   "en": "Gamer",
   "t": "게이머"
+ },
+ "4e7c78a182e6": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #d95926\" data-astro-cid-nqpad2wp=\"\"></span> City, colony &amp; strategy: 1,688 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #d95926\" data-astro-cid-nqpad2wp=\"\"></span> 도시, 식민지 &amp; 전략: 1,688 시간"
  },
  "4e80d1b689cd": {
   "en": "Time Clickers",
@@ -2379,6 +2527,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#28: </span>Best of the Worst: Kill Squad, Ryan's Babe, and Demonwarp",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#28: </span>Best of the Worst: Kill Squad, Ryan's Babe, and Demonwarp"
  },
+ "50c2037edd57": {
+  "en": "Factory & automation",
+  "t": "공장 & 자동화"
+ },
  "50c9e8d5fc98": {
   "en": "D",
   "t": "D"
@@ -2487,6 +2639,14 @@
   "en": "Camera angles are everything",
   "t": "카메라 각도가 전부야"
  },
+ "54225a6752c4": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #c98500\" data-astro-cid-nqpad2wp=\"\"></span> Factory &amp; automation: 1,588 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #c98500\" data-astro-cid-nqpad2wp=\"\"></span> 공장 &amp; 자동화: 1,588 시간"
+ },
+ "5447ef748b4f": {
+  "en": "54 days",
+  "t": "54일"
+ },
  "54561fd891ee": {
   "en": " RS ",
   "t": "RS"
@@ -2494,6 +2654,10 @@
  "54573bfa55e3": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder TV show 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 15: </span> 임시 TV 프로그램 15"
+ },
+ "547f769f215d": {
+  "en": " TrueAchievements ",
+  "t": "TrueAchievements"
  },
  "54834f8e5fe6": {
   "en": "You spent {time} and {posts} posts chasing {n} followers who don't exist. Now go outside.",
@@ -2506,6 +2670,10 @@
  "549368d07edb": {
   "en": " HC ",
   "t": "HC"
+ },
+ "54b75a6c3b9d": {
+  "en": " Steam + Xbox + PC  ·  estimated ",
+  "t": "Steam + Xbox + PC  ·  추정"
  },
  "54f8e34ce17e": {
   "en": "Likes trickle in a few at a time after you post, so you keep checking.",
@@ -2543,6 +2711,10 @@
   "en": " Factory &amp; automation ",
   "t": "공장 &amp; 자동화"
  },
+ "55a27b20d965": {
+  "en": "247 h",
+  "t": "247 시간"
+ },
  "55ab7d3b08ef": {
   "en": "DW",
   "t": "DW"
@@ -2555,9 +2727,17 @@
   "en": "People post more right after a batch of likes, spacing posts to chase the best rate of likes, like an animal in a Skinner box.",
   "t": "사람들은 좋아요가 한꺼번에 들어온 직후에 더 많이 올리고, 가장 좋은 좋아요 비율을 좇아 게시 간격을 조절해. 스키너 상자 속 동물처럼."
  },
+ "55fa0faa800a": {
+  "en": "City, colony & strategy",
+  "t": "도시, 식민지 & 전략"
+ },
  "5601140ccc07": {
   "en": "I Can't Believe It's Not Gambling GOTY Edition",
   "t": "I Can't Believe It's Not Gambling GOTY Edition"
+ },
+ "56107af7f031": {
+  "en": "70 days",
+  "t": "70일"
  },
  "5636fce0bf5d": {
   "en": "For years, that anxiety felt life-or-death: a restless urgency I couldn't name because I was deeply unfulfilled, and later a constant hypervigilance while I chased external validation as an influencer. My AuDHD unmasking finally explained where it came from, and therapy that challenged me, not enabled me, helped me process it. Today it's no longer an alarm that runs me. It's fuel, and I choose where it goes: into building, growing, and the people worth it.",
@@ -2615,6 +2795,14 @@
   "en": "Hip-hop &amp; rap",
   "t": "힙합 &amp; 랩"
  },
+ "581afdb47a5c": {
+  "en": " My hours by category as planets around a sun: Idle &amp; clickers 57%, RPGs &amp; open worlds 16%, City, colony &amp; strategy 5%, Survival &amp; crafting 5%, Factory &amp; automation 5%, Space &amp; flight 4%, Cozy &amp; life sims 3%, Other 7% ",
+  "t": "카테고리별 플레이 시간을 태양 주위의 행성으로: 방치형 &amp; 클리커 57%, RPG &amp; 오픈 월드 16%, 도시, 식민지 &amp; 전략 5%, 생존 &amp; 제작 5%, 공장 &amp; 자동화 5%, 우주 &amp; 비행 4%, 힐링 &amp; 생활 시뮬레이션 3%, Other 7%"
+ },
+ "583247c38dd5": {
+  "en": "{name}: {hours} · {share}",
+  "t": "{name}: {hours} · {share}"
+ },
  "585a38e866f8": {
   "en": "\nI also use sticky notes, but I'm actively trying to get away from them. My rule now: it goes on the calendar, on the\n          whiteboard, or on a board (GitHub Projects for open source, JIRA for work). Those keep the history of past and current\n          work, so I can see burndown and trends, and spot where I'm losing efficiency.\n",
   "t": "포스트잇도 쓰지만, 적극적으로 끊으려고 노력 중이야. 지금 내 규칙: 캘린더, 화이트보드, 아니면 보드(오픈소스는 GitHub Projects, 일은 JIRA)에 올린다. 그래야 지난 일과 지금 일의 기록이 남아서, 번다운과 추세를 보고 어디서 효율이 새는지 알아챌 수 있어."
@@ -2634,6 +2822,14 @@
  "58946e4ad4d5": {
   "en": "Butler Ballet",
   "t": "Butler Ballet"
+ },
+ "58a5c7539f54": {
+  "en": " Cartridge shelf ",
+  "t": "카트리지 선반"
+ },
+ "58b8da4b72d4": {
+  "en": "7% of my hours",
+  "t": "내 시간의 7%"
  },
  "592bc9228abd": {
   "en": "Enlarge: Salty doggo",
@@ -2683,6 +2879,10 @@
   "en": "Pixel pets: turn your phone sideways",
   "t": "픽셀 펫: 휴대폰을 가로로 돌려 줘"
  },
+ "5a986c8fd343": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,255 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,255 시간"
+ },
  "5abf683efa95": {
   "en": "Cities: Skylines",
   "t": "시티즈: 스카이라인"
@@ -2694,6 +2894,10 @@
  "5aece214a405": {
   "en": "Enlarge: Halloween",
   "t": "확대: 핼러윈"
+ },
+ "5aedee0964c6": {
+  "en": "hours",
+  "t": "시간"
  },
  "5b05ffab8457": {
   "en": " 75 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -2862,6 +3066,10 @@
  "605f3c78cb30": {
   "en": "Front Row",
   "t": "맨 앞줄"
+ },
+ "608268fe2d19": {
+  "en": "Day {n}: {item} ({category})",
+  "t": "{n}일째: {item} ({category})"
  },
  "60d012b3aa46": {
   "en": "Not many people have heard of this isekai, but honestly, it's a top dog in the genre for really getting into the weeds of its world building and trying to figure out how everything works.",
@@ -3043,6 +3251,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 25: </span> Hagane no Renkinjutsushi: Fullmetal Alchemist (Fullmetal Alchemist: Brotherhood) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 25: </span> Hagane no Renkinjutsushi: Fullmetal Alchemist (강철의 연금술사 BROTHERHOOD)"
  },
+ "665793f469e9": {
+  "en": "+ 5 more games",
+  "t": "+ 게임 5개 더"
+ },
  "66a55c486fc4": {
   "en": "14 photos",
   "t": "사진 14장"
@@ -3074,6 +3286,10 @@
  "6760b1b50d3b": {
   "en": "DREDGE",
   "t": "DREDGE"
+ },
+ "6794879a1272": {
+  "en": "4 games",
+  "t": "게임 4개"
  },
  "67b782e4b825": {
   "en": "Spore",
@@ -3318,6 +3534,10 @@
  "6e68e69e0822": {
   "en": "Black ink",
   "t": "검은 잉크"
+ },
+ "6e6a6f2086bb": {
+  "en": "Other",
+  "t": "기타"
  },
  "6e979f426b67": {
   "en": "MB",
@@ -3627,6 +3847,10 @@
   "en": "Munly &amp; The Lupercalians<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Munly &amp; The Lupercalians<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 최애</span>"
  },
+ "781012cf77dd": {
+  "en": "estimated",
+  "t": "추정"
+ },
  "781961bc81c2": {
   "en": "Pause",
   "t": "일시정지"
@@ -3683,6 +3907,10 @@
   "en": "Kilograms of beef grilled",
   "t": "구운 소고기 킬로그램"
  },
+ "7a075b3286e7": {
+  "en": " PC + Xbox  ·  estimated ",
+  "t": "PC + Xbox  ·  추정"
+ },
  "7a1e14199723": {
   "en": "Learning English",
   "t": "영어 배우는 중"
@@ -3702,6 +3930,10 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
+ },
+ "7a69b6b4ecc2": {
+  "en": " My hours by category as planets around a sun: RPGs &amp; open worlds 37%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 15% ",
+  "t": "카테고리별 플레이 시간을 태양 주위의 행성으로: RPG &amp; 오픈 월드 37%, 도시, 식민지 &amp; 전략 11%, 생존 &amp; 제작 11%, 공장 &amp; 자동화 11%, 우주 &amp; 비행 9%, 힐링 &amp; 생활 시뮬레이션 6%, Other 15%"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -3762,6 +3994,10 @@
  "7c4c910b08dc": {
   "en": " PT ",
   "t": "PT"
+ },
+ "7c5d0e28e222": {
+  "en": "9% of my hours",
+  "t": "내 시간의 9%"
  },
  "7cbce9cd9969": {
   "en": "Salesman and his companion",
@@ -3842,6 +4078,10 @@
  "7e2b780a1104": {
   "en": "4 facets",
   "t": "4개 면"
+ },
+ "7e377287823c": {
+  "en": " ← All categories ",
+  "t": "← 모든 카테고리"
  },
  "7eb0cee888ab": {
   "en": "Min",
@@ -3962,6 +4202,10 @@
  "8310044a867c": {
   "en": "Forager",
   "t": "Forager"
+ },
+ "83103a70f34c": {
+  "en": "6% of my hours",
+  "t": "내 시간의 6%"
  },
  "8334bb311ce5": {
   "en": "Results are random: usually small, sometimes nothing, rarely huge. Unpredictable rewards are the hardest habit to quit (a variable-ratio schedule).",
@@ -4155,6 +4399,10 @@
   "en": "Ara ara~ That's the first thing you click?",
   "t": "아라아라~ 제일 먼저 누른 게 그거야?"
  },
+ "8937a988d677": {
+  "en": " TrueSteamAchievements ",
+  "t": "TrueSteamAchievements"
+ },
  "89a35bbdf744": {
   "en": "Your {n}-post streak is about to die. Post something!",
   "t": "{n} 연속 게시가 곧 끊겨. 뭔가 게시해!"
@@ -4183,6 +4431,10 @@
   "en": "Standard Play",
   "t": "표준 모드"
  },
+ "8a0858d715f3": {
+  "en": "150 h",
+  "t": "150 시간"
+ },
  "8a12d5626fe3": {
   "en": "Trending",
   "t": "트렌딩"
@@ -4206,6 +4458,10 @@
  "8b3ee45765e5": {
   "en": "Explorer",
   "t": "탐험가"
+ },
+ "8b5051da2153": {
+  "en": "66 days",
+  "t": "66일"
  },
  "8ba25ab7e4e0": {
   "en": "197 h",
@@ -4455,6 +4711,10 @@
   "en": "Don't worry. You're human and curious. I am not tracking IPs or any other metrics.",
   "t": "걱정 마. 넌 인간이고 호기심이 많을 뿐이야. 난 IP나 다른 어떤 지표도 추적하지 않아."
  },
+ "9318d4f63aef": {
+  "en": " Pie ",
+  "t": "파이"
+ },
  "935d45974f78": {
   "en": "100 h",
   "t": "100 시간"
@@ -4563,6 +4823,10 @@
   "en": " Survival &amp; crafting ",
   "t": "생존 &amp; 제작"
  },
+ "967cc1c07fba": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #d55181\" data-astro-cid-nqpad2wp=\"\"></span> Idle &amp; clickers: 19,668 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #d55181\" data-astro-cid-nqpad2wp=\"\"></span> 방치형 &amp; 클리커: 19,668 시간"
+ },
  "9685354d3c82": {
   "en": "190 h",
   "t": "190 시간"
@@ -4659,6 +4923,10 @@
   "en": "Craft",
   "t": "직업"
  },
+ "99b2c070001a": {
+  "en": "3% of my hours",
+  "t": "내 시간의 3%"
+ },
  "99b919bee47d": {
   "en": "Show all 19",
   "t": "19개 모두 보기"
@@ -4674,6 +4942,10 @@
  "9a4c0acd1a3a": {
   "en": "Hours here are mostly the game running in the background.",
   "t": "여기 시간은 대부분 게임을 백그라운드에 켜 둔 시간입니다."
+ },
+ "9a5b71615c31": {
+  "en": "Survival & crafting",
+  "t": "생존 & 제작"
  },
  "9a60e3345c8c": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#8: </span>Best of the Worst: Black Spine Raffle",
@@ -4855,6 +5127,10 @@
   "en": "Amapá",
   "t": "Amapá"
  },
+ "a04c5c0a125c": {
+  "en": "7 games",
+  "t": "게임 7개"
+ },
  "a09567516521": {
   "en": "Started going in the mornings, at 6:30am.\n<ul>\n<li>I had no idea that would turn out to be the best time. I always thought I was a 7pm gym type of guy, but I was proven wrong. Or, better said: the masked Deo who died was the one going at 7pm and hating anything gym-related in the morning.</li>\n</ul>\n",
   "t": "아침 6시 반에 가기 시작했어. <ul> <li>그게 최고의 시간이 될 줄은 전혀 몰랐어. 난 늘 내가 저녁 7시 헬스장 타입이라고 생각했는데, 틀렸다는 게 증명됐지. 아니, 더 정확히 말하면: 저녁 7시에 가고 아침 헬스장 관련된 건 뭐든 싫어하던 건, 이미 죽은 마스킹한 Deo였어.</li> </ul>"
@@ -4882,6 +5158,10 @@
  "a11e07d9f842": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#1: </span>Best of the Worst: Black Spine Junka 3",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#1: </span>Best of the Worst: Black Spine Junka 3"
+ },
+ "a11f62752ca1": {
+  "en": "16% of my hours",
+  "t": "내 시간의 16%"
  },
  "a136fd1bab04": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder movie 27 ",
@@ -5059,6 +5339,10 @@
   "en": "5C",
   "t": "5C"
  },
+ "a6df62f72604": {
+  "en": " ← Back to the system ",
+  "t": "← 항성계로 돌아가기"
+ },
  "a70ff19cacd1": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Placeholder movie 6 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 6: </span> 임시 영화 6"
@@ -5082,6 +5366,10 @@
  "a75e8688b4fb": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24"
+ },
+ "a766bb2ac493": {
+  "en": "345 h",
+  "t": "345 시간"
  },
  "a78d82862561": {
   "en": "Electronic &amp; synthwave",
@@ -5279,6 +5567,10 @@
   "en": "Clingy",
   "t": "껌딱지"
  },
+ "ad5fb3b6084b": {
+  "en": " Bars ",
+  "t": "막대"
+ },
  "ad634a1473c2": {
   "en": "Divinity: Original Sin 2",
   "t": "디비니티: 오리지널 신 2"
@@ -5371,6 +5663,10 @@
   "en": "Losses: 5",
   "t": "패: 5"
  },
+ "af589f359de9": {
+  "en": "{name}: {hours}",
+  "t": "{name}: {hours}"
+ },
  "affabe3f4188": {
   "en": "Campaign #1",
   "t": "캠페인 #1"
@@ -5403,6 +5699,10 @@
   "en": "18 photos",
   "t": "사진 18장"
  },
+ "b1010b9a779b": {
+  "en": "37% of my hours",
+  "t": "내 시간의 37%"
+ },
  "b115fa0f703f": {
   "en": "Every Miku concert I've been to, from Mikunopolis in 2011 onward.",
   "t": "2011년 Mikunopolis부터 지금까지 내가 가 본 모든 미쿠 콘서트."
@@ -5410,6 +5710,10 @@
  "b13596cd2774": {
   "en": "15 h",
   "t": "15 시간"
+ },
+ "b1643e5fd670": {
+  "en": "Hover a square to see which game that day went to. Press a category to light up only its days.",
+  "t": "네모에 마우스를 올리면 그날이 어떤 게임이었는지 보여요. 카테고리를 누르면 그 날들만 켜집니다."
  },
  "b16f6c772985": {
   "en": "Enlarge: Can we fry those up",
@@ -5446,6 +5750,10 @@
  "b226c92a46cb": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 25: </span> Placeholder TV show 25 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 25: </span> 임시 TV 프로그램 25"
+ },
+ "b237d7387a3a": {
+  "en": "Each layer is a game; its volume is its hours. Drag to turn it.",
+  "t": "층 하나가 게임이고, 부피가 시간입니다. 드래그해서 돌려 보세요."
  },
  "b23e9527359f": {
   "en": "Deo in 2017 in a graduation cap and gown with a medal, raising a beer",
@@ -5531,6 +5839,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#35: </span>Best of the Worst: Blood Debts, The Tomb, and Undefeatable",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#35: </span>Best of the Worst: Blood Debts, The Tomb, and Undefeatable"
  },
+ "b4e9509331e4": {
+  "en": "The games on the list add up to 612 days of nonstop play, 24 hours a day. Each square is one of those days.",
+  "t": "목록의 게임을 모두 합치면 하루 24시간 쉬지 않고 612일 동안 플레이한 셈입니다. 네모 하나가 그중 하루예요."
+ },
  "b51db5d42168": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 36: </span> Seikon no Qwaser (The Qwaser of Stigmata) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 36: </span> Seikon no Qwaser (성흔의 퀘이사)"
@@ -5567,6 +5879,10 @@
   "en": "My kokoro can't take this (/▽＼*)｡o○♡",
   "t": "내 코코로가 못 버티겠어 (/▽＼*)｡o○♡"
  },
+ "b6a818d021a2": {
+  "en": "19 games",
+  "t": "게임 19개"
+ },
  "b6bd42e4e730": {
   "en": "In progress",
   "t": "진행 중"
@@ -5598,6 +5914,10 @@
  "b7896305f027": {
   "en": "D&amp;D",
   "t": "D&amp;D"
+ },
+ "b7b3fa90eecd": {
+  "en": " TrueTrophies ",
+  "t": "TrueTrophies"
  },
  "b7baf7c8edaa": {
   "en": "164 h",
@@ -5679,6 +5999,10 @@
   "en": "it climbed too steeply and stalled",
   "t": "너무 가파르게 올라 실속"
  },
+ "bbe358b1d369": {
+  "en": "12 games",
+  "t": "게임 12개"
+ },
  "bbfb183d2a3d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Mahou Shoujo Madoka Magica (Puella Magi Madoka Magica) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 33: </span> Mahou Shoujo Madoka Magica (마법소녀 마도카☆마기카)"
@@ -5707,6 +6031,14 @@
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,003 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,003 시간</strong>  ·  게임 19개  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">내 시간의 3%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">내 시간의 7%</span>"
  },
+ "bca97bae09e1": {
+  "en": " Xbox  ·  estimated ",
+  "t": "Xbox  ·  추정"
+ },
+ "bcf9f12dccef": {
+  "en": " Days of my life ",
+  "t": "내 인생의 날들"
+ },
  "bd62be75218d": {
   "en": " MG ",
   "t": "MG"
@@ -5714,6 +6046,10 @@
  "bd7210aa5ccc": {
   "en": " 10 amethysts → 1 aquamarine ",
   "t": "애머시스트 10 → 아쿠아마린 1"
+ },
+ "bda390f230f3": {
+  "en": "Idle & clickers",
+  "t": "방치형 & 클리커"
  },
  "bdf48be07582": {
   "en": "Far Cry 5",
@@ -5727,6 +6063,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Placeholder TV show 18 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 18: </span> 임시 TV 프로그램 18"
  },
+ "be7536a3d320": {
+  "en": "The games on the list add up to 1,432 days of nonstop play, 24 hours a day. Each square is one of those days.",
+  "t": "목록의 게임을 모두 합치면 하루 24시간 쉬지 않고 1,432일 동안 플레이한 셈입니다. 네모 하나가 그중 하루예요."
+ },
  "be7869041e41": {
   "en": "MyAnimeList",
   "t": "MyAnimeList"
@@ -5738,6 +6078,10 @@
  "bea68df61c69": {
   "en": "Beef grilled so far",
   "t": "지금까지 구운 소고기"
+ },
+ "beaea51e2b8b": {
+  "en": "819 days",
+  "t": "819일"
  },
  "beaf88b8f9bb": {
   "en": "Music: off",
@@ -5782,6 +6126,10 @@
  "c032adc1ff62": {
   "en": "X",
   "t": "X"
+ },
+ "c03b4f70bb93": {
+  "en": "11% of my hours",
+  "t": "내 시간의 11%"
  },
  "c05c3582ef8a": {
   "en": "Chibi pixel Deo in his yellow king's robes and crown hat, dancing the Saturday Night Fever disco point under flashing stage lights.",
@@ -5882,6 +6230,10 @@
  "c327716d8241": {
   "en": "Angle {angle}°   Power {power}%",
   "t": "각도 {angle}°   파워 {power}%"
+ },
+ "c361ac4de54f": {
+  "en": "See it as",
+  "t": "보기 방식"
  },
  "c379a5b7a656": {
   "en": "Hi-hat (key A)",
@@ -6003,6 +6355,10 @@
   "en": "Praise the source of the beef thou art eating. Thank the soul that was given for thy enjoyment and for thy nourishment.",
   "t": "네가 먹는 소고기의 근원을 찬양하라. 너의 즐거움과 너의 양식을 위해 바쳐진 영혼에 감사하라."
  },
+ "c89fbbb316fe": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> Space &amp; flight: 1,302 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> 우주 &amp; 비행: 1,302 시간"
+ },
  "c8b4c761e082": {
   "en": " 1,302 h ",
   "t": "1,302 시간"
@@ -6010,6 +6366,14 @@
  "c8eb359c95bd": {
   "en": " 1,003 h ",
   "t": "1,003 시간"
+ },
+ "c92499e3e7ab": {
+  "en": "8 games",
+  "t": "게임 8개"
+ },
+ "c93e62e0ff43": {
+  "en": " Steam + PC  ·  estimated ",
+  "t": "Steam + PC  ·  추정"
  },
  "c944c31581a4": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">⚽</span> Play ",
@@ -6078,6 +6442,10 @@
  "cb2341d7ae67": {
   "en": "21 h",
   "t": "21 시간"
+ },
+ "cb4f8f79b3d7": {
+  "en": "93 days",
+  "t": "93일"
  },
  "cb617c0ab9ee": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Placeholder TV show 6 ",
@@ -6163,6 +6531,10 @@
   "en": "Potato",
   "t": "감자"
  },
+ "cde507abe00d": {
+  "en": "67 days",
+  "t": "67일"
+ },
  "ce00926930a4": {
   "en": "New personal best!",
   "t": "새 개인 최고 기록!"
@@ -6182,6 +6554,10 @@
  "ce2c178cd497": {
   "en": "Fold precision {n}%.",
   "t": "접기 정밀도 {n}%."
+ },
+ "ce55a3607861": {
+  "en": "15% of my hours",
+  "t": "내 시간의 15%"
  },
  "ce70caaad427": {
   "en": "1 photo",
@@ -6294,6 +6670,10 @@
  "d1801d67057b": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#14: </span>Best of the Worst: Blindfold Picks!",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#14: </span>Best of the Worst: Blindfold Picks!"
+ },
+ "d185b1fb283b": {
+  "en": "5 games",
+  "t": "게임 5개"
  },
  "d1a1eb0d4455": {
   "en": "69 h",
@@ -6631,6 +7011,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 13: </span> Placeholder movie 13 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 13: </span> 임시 영화 13"
  },
+ "db11895b10d7": {
+  "en": "28 games",
+  "t": "게임 28개"
+ },
  "db14ad9a8475": {
   "en": "WS",
   "t": "WS"
@@ -6666,6 +7050,10 @@
  "dc2ebd27dc53": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Sakurasou no Pet na Kanojo (The Pet Girl of Sakurasou) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 32: </span> Sakurasou no Pet na Kanojo (사쿠라장의 애완그녀)"
+ },
+ "dc752cd20399": {
+  "en": " PC  ·  estimated ",
+  "t": "PC  ·  추정"
  },
  "dcd5bcfb4e72": {
   "en": "Mine isn't fully aligned with the other three, and I gave that a meaning too: some of my memories are misaligned. This weird life of mine, like everyone else's, is about figuring out who I am, why I'm alive, and what I want from it before I perish.",
@@ -6727,9 +7115,17 @@
   "en": "Saturday Night Fever, King of Hues edition.",
   "t": "토요일 밤의 열기, King of Hues 에디션."
  },
+ "de587bf1e284": {
+  "en": "23 games",
+  "t": "게임 23개"
+ },
  "de99be866eab": {
   "en": "For years, the gym was a pressure valve. I went for stress relief, so it never satisfied me: it was a tool for relief, not something I enjoyed. Now, for the first time in my life, going to the gym feels as natural as brushing my teeth. I don’t go to relieve stress anymore. I go because I actually enjoy it, with music in my ears on the elliptical or under the weights.",
   "t": "몇 년 동안 헬스장은 압력 밸브였어. 스트레스를 풀려고 갔으니 한 번도 만족스럽지 않았지: 즐기는 게 아니라 해소를 위한 도구였거든. 이제 생애 처음으로, 헬스장에 가는 게 양치질처럼 자연스러워. 더는 스트레스를 풀려고 가지 않아. 정말로 즐거워서 가. 일립티컬 위에서든 바벨 아래에서든 귀에 음악을 꽂고."
+ },
+ "dea96c3549f0": {
+  "en": "+ 12 more games",
+  "t": "+ 게임 12개 더"
  },
  "deabcf59fc55": {
   "en": "Get thyself churrasco salt: iodized, in big rocky chunks, and imported from Brazil if thou canst. Heathens have tried to cheap out with Himalayan salt and paid the price with a ruined steak.",
@@ -6762,6 +7158,10 @@
  "df59735e1f2b": {
   "en": "SS",
   "t": "SS"
+ },
+ "df9d095c1748": {
+  "en": " An exploded sphere of my hours by category: RPGs &amp; open worlds 37%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 15% ",
+  "t": "카테고리별 플레이 시간을 쪼갠 구: RPG &amp; 오픈 월드 37%, 도시, 식민지 &amp; 전략 11%, 생존 &amp; 제작 11%, 공장 &amp; 자동화 11%, 우주 &amp; 비행 9%, 힐링 &amp; 생활 시뮬레이션 6%, Other 15%"
  },
  "dfc22bef9169": {
   "en": "Dragon Cliff 龙崖",
@@ -6847,6 +7247,10 @@
   "en": "<strong>Chögyam Trungpa</strong>, Tibetan Buddhist teacher, coined “idiot compassion”: kindness that avoids conflict. His student Pema Chödrön describes it as enabling. <a href=\"https://tricycle.org/?p=1701\">Pema Chödrön</a>",
   "t": "<strong>초걈 트룽파</strong>, 티베트 불교 스승으로, \"어리석은 연민\"이라는 말을 만들었다: 갈등을 피하는 친절. 그의 제자 페마 초드론은 이를 방조라고 설명한다. <a href=\"https://tricycle.org/?p=1701\">페마 초드론</a>"
  },
+ "e259a950cc03": {
+  "en": "961 h",
+  "t": "961 시간"
+ },
  "e2fdc09c46f0": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez"
@@ -6870,6 +7274,10 @@
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
   "t": "새 던지기, 마나 3 소모 (2번 키)"
+ },
+ "e4443be6531e": {
+  "en": "2,255 h",
+  "t": "2,255 시간"
  },
  "e45f65625355": {
   "en": "amethyst",
@@ -6919,9 +7327,17 @@
   "en": "Cow-meter",
   "t": "소 계량기"
  },
+ "e5d54a5bdc20": {
+  "en": "+ 21 more games",
+  "t": "+ 게임 21개 더"
+ },
  "e5fabe58e839": {
   "en": "Singin' in the Rain",
   "t": "사랑은 비를 타고"
+ },
+ "e60d682aaacf": {
+  "en": "Each chunk is a category, as big as its hours. Drag to turn it; press a chunk to open it.",
+  "t": "조각 하나가 카테고리이고, 크기가 시간입니다. 드래그해서 돌리고, 조각을 누르면 열립니다."
  },
  "e68aee3207bc": {
   "en": " 20 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -7010,6 +7426,10 @@
  "e93ceb015abf": {
   "en": "That's 1,166 VHS tapes recorded in SP (2 hours per T-120 tape).",
   "t": "SP 모드(T-120 테이프 1개당 2시간)로 녹화한 VHS 테이프 1,166개 분량이야."
+ },
+ "e94041b85b87": {
+  "en": "38 days",
+  "t": "38일"
  },
  "e9c60bb36ae2": {
   "en": "Nebraska",
@@ -7171,6 +7591,10 @@
   "en": "{n} of {max}",
   "t": "{n}/{max}"
  },
+ "f0f21ca1cb3a": {
+  "en": "Cozy & life sims",
+  "t": "힐링 & 생활 시뮬레이션"
+ },
  "f0f48a551e02": {
   "en": "A pixel dinosaur running along the ground. Throw obstacles at it.",
   "t": "땅 위를 달리는 픽셀 공룡. 장애물을 던져 봐."
@@ -7239,6 +7663,10 @@
   "en": "The tattoo is mirrored. That used to bring me shame, until I realized it's a matter of perspective: under some conditions it looks perfect, and under others it doesn't. That gap became a lesson in mindset and in how you choose to see things.",
   "t": "이 타투는 좌우가 반전돼 있어. 예전엔 그게 부끄러웠는데, 관점의 문제라는 걸 깨달았어: 어떤 조건에선 완벽해 보이고, 어떤 조건에선 그렇지 않아. 그 차이가 마음가짐에 대한, 그리고 사물을 어떻게 볼지 고르는 것에 대한 교훈이 됐어."
  },
+ "f2eee33f7b84": {
+  "en": "29 games",
+  "t": "게임 29개"
+ },
  "f2fac748899d": {
   "en": "Recording speed",
   "t": "녹화 속도"
@@ -7290,6 +7718,10 @@
  "f4b3775718fe": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Placeholder movie 16 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 16: </span> 임시 영화 16"
+ },
+ "f4e25be12fd0": {
+  "en": "3,385 h",
+  "t": "3,385 시간"
  },
  "f4fc4b8224f9": {
   "en": "Reward learning",
@@ -7367,6 +7799,10 @@
   "en": " Action &amp; adventure ",
   "t": "액션 &amp; 어드벤처"
  },
+ "f80d1870d042": {
+  "en": " ← Close the chunk ",
+  "t": "← 조각 닫기"
+ },
  "f84d1ceb9541": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder movie 32 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 32: </span> 임시 영화 32"
@@ -7374,6 +7810,10 @@
  "f88380a61053": {
   "en": "Enlarge: Artsy Bidu",
   "t": "확대: 예술가 Bidu"
+ },
+ "f89ce696a35d": {
+  "en": "354 h",
+  "t": "354 시간"
  },
  "f8be939ad7c2": {
   "en": "6 h",
@@ -7555,6 +7995,10 @@
   "en": "A Plague Tale series",
   "t": "플래그 테일 시리즈"
  },
+ "fe88ceb17f28": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #199e70\" data-astro-cid-nqpad2wp=\"\"></span> Survival &amp; crafting: 1,590 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #199e70\" data-astro-cid-nqpad2wp=\"\"></span> 생존 &amp; 제작: 1,590 시간"
+ },
  "fe9050f8f41a": {
   "en": "Practice skin. Draw a tattoo on it with the tattoo pen.",
   "t": "연습용 피부. 타투 펜으로 타투를 그려 봐."
@@ -7598,6 +8042,10 @@
  "ffbcb9739951": {
   "en": "Cactus",
   "t": "선인장"
+ },
+ "ffc2e69c952b": {
+  "en": "1,803 h",
+  "t": "1,803 시간"
  },
  "fff4a50e8428": {
   "en": "Đà Nẵng",

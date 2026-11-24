@@ -51,7 +51,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Fishing tab (photo gallery, like each pet on the Pets tab) | `content/fishing/` (see its README) |
 | Camping tab (location cards, 2 photos each) | `content/camping.md` |
 | Theater & Opera tab (Seen live, plus a Wishlist behind a switch, like Concert) | `content/theater.md` and `content/theater-wishlist.md`, show images in `content/theater/shows/` |
-| Gamer tab (games by category, with hours and a Steam/Xbox/PlayStation/PC chip) | categories in `content/gaming/categories.md`, hours in `content/gaming/steam-games.json`, `content/gaming/xbox-games.json` and `content/gaming/estimated.md` (estimates, hand-written) (refresh once a year: `content/gaming/README.md`); `src/components/reusable/HoursByCategory.astro` |
+| Gamer tab (games by category, with hours and a Steam/Xbox/PlayStation/PC chip) | categories in `content/gaming/categories.md`, hours in `content/gaming/steam-games.json`, `content/gaming/xbox-games.json` and `content/gaming/estimated.md` (estimates, hand-written) (refresh once a year: `content/gaming/README.md`); `src/components/reusable/HoursByCategory.astro`, with its other views (pie, sphere, orbits, days, shelf; `viewCategories()` in `src/lib/gamerCategories.ts`) and the Links box (`LinksMenu.astro`) |
 | Gamer tab Dino Ambush (the reverse dino game above the categories) | `src/components/reusable/DinoAmbush.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | Anime tab (top 39 anime, with descriptions) | `content/anime/top39.md` (numbered list) |
 | Potato tab, TV shows side (top 39) | `content/tv/top39.md` (numbered list) |

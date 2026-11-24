@@ -1,0 +1,520 @@
+---
+/**
+ * HoursOrbits: hours as a little solar system. The total is the sun; each category is a planet,
+ * as big (by area) as its hours, with its three biggest items as moons. Pressing a planet (or its
+ * row) flies in: the category becomes the sun and every item a moon, sized by its hours. The orbits
+ * pause while the pointer is over them and don't move for people who prefer reduced motion.
+ * Built for the Gamer tab (#252).
+ *
+ *   <HoursOrbits
+ *     id="games-orbits"
+ *     categories={[
+ *       { id: 'rpg', name: 'RPGs', color: '#3987e5', value: 4935, items: [{ name: 'Skyrim', value: 372 }] },
+ *     ]}
+ *   />
+ *
+ * Drawn by the script; every word is in the page (the lists beside it and the strings below), so
+ * translated pages need nothing extra, and the lists are the accessible version. Inside an element
+ * with `data-hours-scope` (HoursByCategory's root) it follows `data-excluded` and `hours:excluded`.
+ *
+ * Reusable on purpose: no imports, safe to use several times on a page. Theming: --orbits-text,
+ * --orbits-muted, --orbits-border, --orbits-surface, --orbits-accent, --orbits-sun, --orbits-ring.
+ */
+interface Item {
+  name: string;
+  value: number;
+  estimated?: boolean;
+  chips?: string[];
+}
+interface Category {
+  id: string;
+  name: string;
+  color: string;
+  value: number;
+  excludable?: boolean;
+  items: Item[];
+  parts?: { name: string; value: number; count: number }[];
+}
+interface Props {
+  categories: Category[];
+  id?: string;
+  excluded?: boolean;
+  unit?: string;
+  /** Under the sun's number. */
+  sunLabel?: string;
+  hint?: string;
+  openHint?: string;
+  backLabel?: string;
+  /** {name}, {hours} and {share}. */
+  planetCaption?: string;
+  /** {name} and {hours}. */
+  moonCaption?: string;
+  countLabel?: string;
+  countLabelOne?: string;
+  /** Moons drawn when a planet is open; the list beside it has them all. */
+  moons?: number;
+  estimatedLabel?: string;
+  label?: string;
+  locale?: string;
+  class?: string;
+}
+const {
+  categories,
+  id = 'orbits',
+  excluded = false,
+  unit = 'h',
+  sunLabel = 'hours',
+  hint = 'Each planet is a category, sized by its hours. Press one to fly in.',
+  openHint = 'Each moon is an item, sized by its hours.',
+  backLabel = '← Back to the system',
+  planetCaption = '{name}: {hours} · {share}',
+  moonCaption = '{name}: {hours}',
+  countLabel = '{n} items',
+  countLabelOne,
+  moons = 24,
+  estimatedLabel = 'estimated',
+  label = 'Hours by category as planets around a sun: {list}',
+  locale = 'en-US',
+  class: className,
+} = Astro.props;
+const nf = new Intl.NumberFormat(locale);
+const fill = (t: string, v: Record<string, string | number>) => t.replace(/\{(\w+)\}/g, (m, k) => (k in v ? String(v[k]) : m));
+const hasExcludable = categories.some((c) => c.excludable);
+const pct = (part: number, whole: number) => {
+  const p = whole > 0 ? Math.round((part / whole) * 100) : 0;
+  return p === 0 && part > 0 ? '<1%' : `${p}%`;
+};
+const count = (n: number) => fill(n === 1 && countLabelOne ? countLabelOne : countLabel, { n: nf.format(n) });
+const keys = hasExcludable ? ['on', 'off'] : ['on'];
+const stateList = (key: string) => {
+  const list = categories.filter((c) => key === 'on' || !c.excludable);
+  const sum = list.reduce((s, c) => s + c.value, 0);
+  return { sum, list: list.map((c) => ({ ...c, share: pct(c.value, sum), hours: `${nf.format(c.value)} ${unit}` })) };
+};
+const moonsOf = (c: Category) =>
+  c.parts ? c.parts.map((p) => ({ name: p.name, value: p.value, sub: count(p.count), estimated: false })) : c.items.map((i) => ({ name: i.name, value: i.value, sub: (i.chips ?? []).join(' + '), estimated: !!i.estimated }));
+const data = categories.map((c) => ({ id: c.id, color: c.color, v: c.value, ex: !!c.excludable, m: moonsOf(c).slice(0, moons).map((m) => m.value), top: c.items.slice(0, 3).map((i) => i.value) }));
+const sums = Object.fromEntries(keys.map((k) => [k, nf.format(stateList(k).sum)]));
+---
+
+<div class:list={['orbits', className]} id={id} data-hours-orbits data-state={excluded && hasExcludable ? 'off' : 'on'} data-orbits={JSON.stringify(data)} data-sums={JSON.stringify(sums)}>
+  <div class="orbits__stage">
+    {
+      keys.map((k) => (
+        <span class={`orbits__sr orbits__${k}`} id={`${id}-label-${k}`}>
+          {fill(label, { list: stateList(k).list.map((c) => `${c.name} ${c.share}`).join(', ') })}
+        </span>
+      ))
+    }
+    <svg class="orbits__svg" viewBox="5 95 730 410" role="img" aria-labelledby={`${id}-label-${excluded && hasExcludable ? 'off' : 'on'}`} data-svg></svg>
+    <p class="orbits__caption" aria-live="polite" data-caption>{hint}</p>
+  </div>
+  <div class="orbits__side">
+    <div data-orbits-list>
+      {
+        keys.map((k) => (
+          <ul class={`orbits__rows orbits__${k}`}>
+            {stateList(k).list.map((c) => (
+              <li>
+                <button type="button" class="orbits__row" data-cat={c.id}>
+                  <span class="orbits__dot" style={`background: ${c.color}`} />
+                  <span class="orbits__name">{c.name}</span>
+                  <span class="orbits__num">
+                    <span data-h>{c.hours}</span> · <span data-s>{c.share}</span>
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        ))
+      }
+    </div>
+    {
+      categories.map((c) => (
+        <section class="orbits__detail" data-detail={c.id} data-hours={nf.format(c.value)} aria-label={c.name} hidden>
+          <button type="button" class="orbits__back" data-back>
+            {backLabel}
+          </button>
+          <h4 class="orbits__title">
+            <span class="orbits__dot orbits__dot--big" style={`background: ${c.color}`} />
+            <span>{c.name}</span>
+          </h4>
+          <p class="orbits__meta">
+            <span>{`${nf.format(c.value)} ${unit}`}</span> · <span>{count(c.items.length)}</span>
+          </p>
+          <ol class="orbits__moons">
+            {moonsOf(c).map((m, i) => (
+              <li data-moon={i}>
+                <span class="orbits__name">
+                  <span data-moon-name>{m.name}</span>
+                  {(m.sub || m.estimated) && (
+                    <span class="orbits__sub">
+                      {m.sub}
+                      {m.sub && m.estimated && ' · '}
+                      {m.estimated && estimatedLabel}
+                    </span>
+                  )}
+                </span>
+                <span class="orbits__num" data-h>{`${nf.format(m.value)} ${unit}`}</span>
+              </li>
+            ))}
+          </ol>
+        </section>
+      ))
+    }
+  </div>
+  <div hidden data-llms-skip>
+    <span data-k="sun">{sunLabel}</span>
+    <span data-k="hint">{hint}</span>
+    <span data-k="open">{openHint}</span>
+    <span data-k="planet">{planetCaption}</span>
+    <span data-k="moon">{moonCaption}</span>
+  </div>
+</div>
+
+<script>
+  type Cat = { id: string; color: string; v: number; ex: boolean; m: number[]; top: number[] };
+  const CX = 370, CY = 290;
+  const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+  function initHoursOrbits() {
+    document.querySelectorAll<HTMLElement>('[data-hours-orbits]').forEach((root) => {
+      if (root.dataset.orbitsReady) return;
+      root.dataset.orbitsReady = '1';
+      const cats: Cat[] = JSON.parse(root.dataset.orbits || '[]');
+      const sums: Record<string, string> = JSON.parse(root.dataset.sums || '{}');
+      const svg = root.querySelector<SVGSVGElement>('[data-svg]')!;
+      const cap = root.querySelector<HTMLElement>('[data-caption]')!;
+      const msg = (k: string, v: Record<string, string> = {}) =>
+        (root.querySelector(`[data-k="${k}"]`)?.textContent ?? '').replace(/\{(\w+)\}/g, (m, key) => (key in v ? v[key] : m));
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+      const st = { t: 0, pick: null as string | null, hover: null as string | null, paused: false };
+      let visible = false, raf = 0, last = 0;
+      const shown = () => cats.filter((c) => !(root.dataset.state === 'off' && c.ex));
+      const rowFor = (cid: string) => root.querySelector<HTMLElement>(`.orbits__${root.dataset.state} [data-cat="${cid}"]`);
+      const nameOf = (el: Element | null | undefined, sel: string) => el?.querySelector(sel)?.textContent?.trim() ?? '';
+      const draw = () => {
+        const list = shown();
+        const parts: string[] = [];
+        const bodies: { z: number; html: string }[] = [];
+        const labels: string[] = [];
+        const dim = (k: string) => (st.hover && st.hover !== k ? ' opacity="0.4"' : '');
+        const pick = list.find((c) => c.id === st.pick);
+        let sunR: number, sunFill: string, top: string;
+        if (!pick) {
+          const max = Math.max(...list.map((c) => c.v));
+          sunR = 40;
+          sunFill = ''; // the theme's --orbits-sun, from CSS
+          top = sums[root.dataset.state || 'on'] ?? '';
+          list.forEach((c, i) => {
+            const rx = 92 + i * Math.min(38, 260 / Math.max(1, list.length - 1)), ry = rx * 0.36;
+            parts.push(`<ellipse cx="${CX}" cy="${CY}" rx="${rx}" ry="${ry.toFixed(1)}" class="orbits__ring${st.hover === c.id ? ' is-hover' : ''}"/>`);
+            const a = i * 0.9 + st.t * (0.32 / (1 + i * 0.45));
+            const x = CX + rx * Math.cos(a), y = CY + ry * Math.sin(a);
+            const r = 7 + 30 * Math.sqrt(c.v / max);
+            bodies.push({ z: y, html: `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${c.color}" class="orbits__body" data-key="${c.id}"${dim(c.id)}/>` });
+            c.top.forEach((_, k) => {
+              const ma = st.t * (1.4 - k * 0.3) + k * 2.1, mr = r + 7 + k * 5;
+              bodies.push({ z: y + 0.1, html: `<circle cx="${(x + mr * Math.cos(ma)).toFixed(1)}" cy="${(y + mr * 0.55 * Math.sin(ma)).toFixed(1)}" r="2.5" class="orbits__moonlet"/>` });
+            });
+            const name = nameOf(rowFor(c.id), '.orbits__name');
+            const short = name.length > 14 ? name.split(/[ ,&]/)[0] : name;
+            labels.push(`<text x="${x.toFixed(1)}" y="${(y + r + 16).toFixed(1)}" class="orbits__label"${dim(c.id)}>${esc(short)}</text>`);
+          });
+        } else {
+          const det = root.querySelector(`[data-detail="${pick.id}"]`);
+          sunR = 64;
+          sunFill = pick.color;
+          top = det?.getAttribute('data-hours') ?? '';
+          const max = Math.max(...pick.m);
+          const per = [7, 8, 9];
+          let idx = 0;
+          [125, 195, 265].forEach((rx, ri) => {
+            const ry = rx * 0.5;
+            parts.push(`<ellipse cx="${CX}" cy="${CY}" rx="${rx}" ry="${ry}" class="orbits__ring"/>`);
+            const n = Math.min(per[ri], pick.m.length - idx);
+            for (let k = 0; k < n; k++, idx++) {
+              const a = (k / n) * Math.PI * 2 + st.t * (0.22 / (1 + ri * 0.6)) + ri * 0.5;
+              const x = CX + rx * Math.cos(a), y = CY + ry * Math.sin(a);
+              const r = 4 + 24 * Math.sqrt(pick.m[idx] / max);
+              const key = 'M' + idx;
+              bodies.push({ z: y, html: `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" fill="${pick.color}" class="orbits__body" data-key="${key}"${dim(key)}/>` });
+              if (idx < 5) {
+                const nm = nameOf(det?.querySelector(`[data-moon="${idx}"]`), '[data-moon-name]');
+                labels.push(`<text x="${x.toFixed(1)}" y="${(y + r + 15).toFixed(1)}" class="orbits__label"${dim(key)}>${esc(nm.length > 22 ? nm.slice(0, 21) + '…' : nm)}</text>`);
+              }
+            }
+          });
+        }
+        const sun = `<circle cx="${CX}" cy="${CY}" r="${sunR}"${sunFill ? ` style="fill: ${sunFill}"` : ''} class="orbits__sun"/><circle cx="${CX}" cy="${CY}" r="${sunR}" class="orbits__halo"/><text x="${CX}" y="${CY - 2}" class="orbits__sun-num">${esc(top)}</text><text x="${CX}" y="${CY + 15}" class="orbits__sun-label">${esc(msg('sun'))}</text>`;
+        svg.innerHTML = parts.join('') + sun + bodies.sort((a, b) => a.z - b.z).map((b) => b.html).join('') + labels.join('');
+      };
+      const caption = () => {
+        if (st.pick) {
+          const li = st.hover?.startsWith('M') ? root.querySelector<HTMLElement>(`[data-detail="${st.pick}"] [data-moon="${st.hover.slice(1)}"]`) : null;
+          cap.textContent = li ? msg('moon', { name: nameOf(li, '[data-moon-name]'), hours: li.querySelector('[data-h]')?.textContent?.trim() ?? '' }) : msg('open');
+        } else {
+          const row = st.hover ? rowFor(st.hover) : null;
+          cap.textContent = row ? msg('planet', { name: nameOf(row, '.orbits__name'), hours: row.querySelector('[data-h]')?.textContent?.trim() ?? '', share: row.querySelector('[data-s]')?.textContent?.trim() ?? '' }) : msg('hint');
+        }
+        root.querySelectorAll('[data-cat]').forEach((b) => b.classList.toggle('is-hover', b.getAttribute('data-cat') === st.hover));
+        root.querySelectorAll('[data-moon]').forEach((b) => b.classList.toggle('is-hover', 'M' + b.getAttribute('data-moon') === st.hover));
+      };
+      const setHover = (k: string | null) => {
+        if (k === st.hover) return;
+        st.hover = k;
+        caption();
+        draw();
+      };
+      const open = (cid: string | null, focus = false) => {
+        st.pick = cid;
+        st.hover = null;
+        root.querySelector<HTMLElement>('[data-orbits-list]')!.hidden = !!cid;
+        root.querySelectorAll<HTMLElement>('[data-detail]').forEach((d) => (d.hidden = d.dataset.detail !== cid));
+        if (focus) (cid ? root.querySelector<HTMLElement>(`[data-detail="${cid}"] [data-back]`) : root.querySelector<HTMLElement>(`.orbits__${root.dataset.state} .orbits__row`))?.focus();
+        caption();
+        draw();
+      };
+      const tick = (now: number) => {
+        const dt = last ? Math.min(0.1, (now - last) / 1000) : 0;
+        last = now;
+        if (!st.paused && !reduce.matches) {
+          st.t += dt;
+          draw();
+        }
+        raf = visible && !reduce.matches ? requestAnimationFrame(tick) : 0;
+      };
+      new IntersectionObserver(([e]) => {
+        visible = e.isIntersecting;
+        draw();
+        if (visible && !raf && !reduce.matches) {
+          last = 0;
+          raf = requestAnimationFrame(tick);
+        }
+      }).observe(svg);
+      svg.addEventListener('pointerenter', () => (st.paused = true));
+      svg.addEventListener('pointerleave', () => {
+        st.paused = false;
+        setHover(null);
+      });
+      svg.addEventListener('pointermove', (e) => setHover((e.target as Element).getAttribute?.('data-key') ?? null));
+      svg.addEventListener('click', (e) => {
+        const k = (e.target as Element).getAttribute?.('data-key');
+        if (!k) return;
+        if (!st.pick) open(k);
+        else setHover(k);
+      });
+      root.querySelectorAll<HTMLButtonElement>('.orbits__row').forEach((b) => {
+        b.addEventListener('click', () => open(b.dataset.cat!, true));
+        b.addEventListener('pointerenter', () => setHover(b.dataset.cat!));
+        b.addEventListener('focus', () => setHover(b.dataset.cat!));
+        b.addEventListener('pointerleave', () => setHover(null));
+        b.addEventListener('blur', () => setHover(null));
+      });
+      root.querySelectorAll<HTMLElement>('[data-moon]').forEach((li) => {
+        li.addEventListener('pointerenter', () => setHover('M' + li.dataset.moon));
+        li.addEventListener('pointerleave', () => setHover(null));
+      });
+      root.querySelectorAll<HTMLButtonElement>('[data-back]').forEach((b) => b.addEventListener('click', () => open(null, true)));
+      const scope = root.closest<HTMLElement>('[data-hours-scope]');
+      const sync = () => {
+        if (scope) root.dataset.state = scope.hasAttribute('data-excluded') && cats.some((c) => c.ex) ? 'off' : 'on';
+        svg.setAttribute('aria-labelledby', `${root.id}-label-${root.dataset.state}`);
+        open(null);
+      };
+      scope?.addEventListener('hours:excluded', sync);
+      sync();
+    });
+  }
+  initHoursOrbits();
+  document.addEventListener('astro:page-load', initHoursOrbits);
+</script>
+
+<style>
+  .orbits {
+    --_text: var(--orbits-text, #e6edf3);
+    --_muted: var(--orbits-muted, #9aa8bb);
+    --_border: var(--orbits-border, #18224a);
+    --_surface: var(--orbits-surface, #0e1636);
+    --_accent: var(--orbits-accent, #39c5bb);
+    --_sun: var(--orbits-sun, #f5f7ff);
+    --_ring: var(--orbits-ring, #1f2b58);
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: 1.75rem;
+    align-items: start;
+    color: var(--_text);
+  }
+  @media (max-width: 820px) {
+    .orbits {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+  .orbits[data-state='on'] .orbits__off,
+  .orbits[data-state='off'] .orbits__on {
+    display: none;
+  }
+  .orbits__svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+    background: radial-gradient(circle at 50% 49%, var(--orbits-glow, #121c44) 0%, transparent 72%);
+  }
+  .orbits__svg :global(.orbits__ring) {
+    fill: none;
+    stroke: var(--_ring);
+    stroke-width: 1.2;
+  }
+  .orbits__svg :global(.orbits__ring.is-hover) {
+    stroke: var(--_accent);
+  }
+  .orbits__svg :global(.orbits__sun) {
+    fill: var(--_sun);
+    opacity: 0.95;
+  }
+  .orbits__svg :global(.orbits__halo) {
+    fill: none;
+    stroke: var(--_accent);
+    stroke-width: 6;
+    opacity: 0.35;
+  }
+  .orbits__svg :global(.orbits__sun-num) {
+    fill: #070b1f;
+    font-size: 17px;
+    font-weight: 800;
+    text-anchor: middle;
+  }
+  .orbits__svg :global(.orbits__sun-label) {
+    fill: #070b1f;
+    font-size: 12px;
+    font-weight: 600;
+    text-anchor: middle;
+  }
+  .orbits__svg :global(.orbits__body) {
+    stroke: #070b1f;
+    stroke-width: 2;
+    cursor: pointer;
+  }
+  .orbits__svg :global(.orbits__moonlet) {
+    fill: var(--_muted);
+  }
+  .orbits__svg :global(.orbits__label) {
+    fill: var(--_text);
+    font-size: 13px;
+    font-weight: 600;
+    text-anchor: middle;
+    pointer-events: none;
+  }
+  .orbits__caption,
+  .orbits__meta {
+    margin: 0.5rem 0 0;
+    color: var(--_muted);
+    font-size: 0.9rem;
+    min-height: 1.4em;
+  }
+  .orbits__caption {
+    color: var(--_text);
+  }
+  .orbits__rows,
+  .orbits__moons {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .orbits__moons {
+    max-height: 26rem;
+    overflow-y: auto;
+  }
+  [data-orbits-list][hidden],
+  .orbits__detail[hidden] {
+    display: none;
+  }
+  .orbits__row,
+  .orbits__moons li {
+    width: 100%;
+    min-height: 44px;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 14px minmax(0, 1fr) auto;
+    gap: 0.6rem;
+    align-items: center;
+    padding: 0.25rem 0.6rem;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: start;
+  }
+  .orbits__moons li {
+    grid-template-columns: minmax(0, 1fr) auto;
+    flex-shrink: 0;
+  }
+  .orbits__row {
+    cursor: pointer;
+  }
+  .orbits__row.is-hover,
+  .orbits__moons li.is-hover,
+  .orbits__row:focus-visible {
+    background: var(--_surface);
+    border-color: var(--_border);
+  }
+  .orbits__row:focus-visible,
+  .orbits__back:focus-visible {
+    outline: 2px solid var(--_accent);
+    outline-offset: 2px;
+  }
+  .orbits__dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+  .orbits__dot--big {
+    width: 16px;
+    height: 16px;
+  }
+  .orbits__name {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .orbits__sub {
+    display: block;
+    color: var(--_muted);
+    font-weight: 400;
+    font-size: 0.78rem;
+  }
+  .orbits__num {
+    color: var(--_muted);
+    font-size: 0.85rem;
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .orbits__back {
+    min-height: 44px;
+    padding: 0 1rem;
+    border-radius: 22px;
+    border: 1px solid var(--_border);
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+  .orbits__title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 0.75rem 0 0;
+    font-size: 1.3rem;
+  }
+  .orbits__sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+</style>

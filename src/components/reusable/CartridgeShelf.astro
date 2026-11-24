@@ -1,0 +1,353 @@
+---
+/**
+ * CartridgeShelf: one shelf per category, one cartridge per item, each as wide as its hours (one
+ * scale for every shelf, so a longer shelf means more hours). Hover or tap a cartridge to pull it out
+ * and see its hours; press it to keep it out. Estimated items get a dashed outline. Built for the
+ * Gamer tab (#252).
+ *
+ *   <CartridgeShelf
+ *     id="games-shelf"
+ *     categories={[
+ *       { id: 'rpg', name: 'RPGs', color: '#3987e5', value: 4935,
+ *         items: [{ name: 'Skyrim', value: 372, chips: ['Steam'] }, { name: 'Diablo II', value: 200, estimated: true }] },
+ *     ]}
+ *   />
+ *
+ * The shelves are drawn by the script to fit the width; every word it shows is in the page (the
+ * strings and name lists below), so translated pages need nothing extra. Inside an element with
+ * `data-hours-scope` (HoursByCategory's root) it follows `data-excluded` and the `hours:excluded`
+ * event; elsewhere, `excluded` sets it. Without JavaScript the list of categories still shows.
+ *
+ * Reusable on purpose: no imports, safe to use several times on a page. Theming: --shelf-text,
+ * --shelf-muted, --shelf-board, --shelf-label (text on a cartridge).
+ */
+interface Item {
+  name: string;
+  value: number;
+  estimated?: boolean;
+  chips?: string[];
+}
+interface Category {
+  id: string;
+  name: string;
+  color: string;
+  value: number;
+  excludable?: boolean;
+  items: Item[];
+}
+interface Props {
+  categories: Category[];
+  id?: string;
+  excluded?: boolean;
+  unit?: string;
+  hint?: string;
+  /** {n} is the number of items. */
+  countLabel?: string;
+  countLabelOne?: string;
+  estimatedLabel?: string;
+  /** Read by screen readers for the shelves. */
+  label?: string;
+  chipColors?: Record<string, string>;
+  locale?: string;
+  class?: string;
+}
+const {
+  categories,
+  id = 'shelf',
+  excluded = false,
+  unit = 'h',
+  hint = 'Every cartridge is an item, as wide as its hours. Hover one to pull it out; press it to keep it out. Dashed ones are estimated.',
+  countLabel = '{n} items',
+  countLabelOne,
+  estimatedLabel = 'estimated',
+  label = 'Items as cartridges on shelves, one shelf per category, each as wide as its hours',
+  chipColors = {},
+  locale = 'en-US',
+  class: className,
+} = Astro.props;
+const nf = new Intl.NumberFormat(locale);
+const fill = (t: string, v: Record<string, string | number>) => t.replace(/\{(\w+)\}/g, (m, k) => (k in v ? String(v[k]) : m));
+const hasExcludable = categories.some((c) => c.excludable);
+const data = categories.map((c) => ({ color: c.color, ex: !!c.excludable, v: c.items.map((i) => i.value), e: c.items.map((i) => (i.estimated ? 1 : 0)) }));
+---
+
+<div class:list={['shelf', className]} id={id} data-cartridge-shelf data-state={excluded && hasExcludable ? 'off' : 'on'} data-shelf={JSON.stringify(data)}>
+  <div class="shelf__caption" aria-live="polite" data-caption>
+    <span class="shelf__hint">{hint}</span>
+  </div>
+  <svg class="shelf__svg" role="img" aria-label={label} data-svg></svg>
+  <ul class="shelf__fallback" data-fallback>
+    {
+      categories.map((c) => (
+        <li>
+          <span class="shelf__dot" style={`background: ${c.color}`} />
+          {c.name}: {nf.format(c.value)} {unit}
+        </li>
+      ))
+    }
+  </ul>
+  <div class="shelf__strings" hidden data-llms-skip>
+    <span data-k="hint">{hint}</span>
+    <span data-k="estimated">{estimatedLabel}</span>
+    {
+      categories.map((c, ci) => (
+        <ol data-cat-names={ci}>
+          <li>
+            <span data-n>{c.name}</span>
+            <span data-h>{`${nf.format(c.value)} ${unit}`}</span>
+            <span data-c>{fill(c.items.length === 1 && countLabelOne ? countLabelOne : countLabel, { n: nf.format(c.items.length) })}</span>
+          </li>
+          {c.items.map((it) => (
+            <li data-chips={(it.chips ?? []).join('|')}>
+              <span data-n>{it.name}</span>
+              <span data-h>{`${nf.format(it.value)} ${unit}`}</span>
+            </li>
+          ))}
+        </ol>
+      ))
+    }
+    {Object.entries(chipColors).map(([k, v]) => <span data-chip-color={k} data-color={v} />)}
+  </div>
+</div>
+
+<script>
+  const NS = 'http://www.w3.org/2000/svg';
+  let clipSeq = 0;
+  function initCartridgeShelf() {
+    document.querySelectorAll<HTMLElement>('[data-cartridge-shelf]').forEach((root) => {
+      if (root.dataset.shelfReady) return;
+      root.dataset.shelfReady = '1';
+      root.querySelector<HTMLElement>('[data-fallback]')!.hidden = true;
+      const cats: { color: string; ex: boolean; v: number[]; e: number[] }[] = JSON.parse(root.dataset.shelf || '[]');
+      const lists = [...root.querySelectorAll<HTMLElement>('[data-cat-names]')].map((ol) => [...ol.querySelectorAll<HTMLElement>('li')]);
+      const part = (li: HTMLElement, k: string) => li.querySelector(`[data-${k}]`)?.textContent?.trim() ?? '';
+      const chipColor = Object.fromEntries([...root.querySelectorAll<HTMLElement>('[data-chip-color]')].map((s) => [s.dataset.chipColor, s.dataset.color]));
+      const svg = root.querySelector<SVGSVGElement>('[data-svg]')!;
+      const cap = root.querySelector<HTMLElement>('[data-caption]')!;
+      const hintText = root.querySelector('[data-k="hint"]')?.textContent ?? '';
+      const estText = root.querySelector('[data-k="estimated"]')?.textContent ?? '';
+      const uid = `shelf${++clipSeq}`;
+      let pinned: string | null = null;
+      let hover: string | null = null;
+      const el = (tag: string, attrs: Record<string, string | number>) => {
+        const n = document.createElementNS(NS, tag);
+        for (const [k, v] of Object.entries(attrs)) n.setAttribute(k, String(v));
+        return n;
+      };
+      const showCaption = () => {
+        const key = hover || pinned;
+        if (!key) {
+          cap.replaceChildren(Object.assign(document.createElement('span'), { className: 'shelf__hint', textContent: hintText }));
+          return;
+        }
+        const [ci, ii] = key.split('-').map(Number);
+        const li = lists[ci][ii + 1];
+        const parts: Node[] = [];
+        parts.push(Object.assign(document.createElement('strong'), { textContent: part(li, 'n') }));
+        parts.push(Object.assign(document.createElement('span'), { className: 'shelf__hours', textContent: part(li, 'h') + (cats[ci].e[ii] ? ` (${estText})` : '') }));
+        parts.push(Object.assign(document.createElement('span'), { className: 'shelf__cat', textContent: '· ' + part(lists[ci][0], 'n') }));
+        for (const chip of (li.dataset.chips || '').split('|').filter(Boolean)) {
+          const s = Object.assign(document.createElement('span'), { className: 'shelf__chip', textContent: chip });
+          if (chipColor[chip]) s.style.setProperty('--_chip', chipColor[chip]!);
+          parts.push(s);
+        }
+        cap.replaceChildren(...parts);
+      };
+      const draw = () => {
+        const off = root.dataset.state === 'off';
+        const shown = cats.map((c, ci) => ({ ...c, ci })).filter((c) => !(off && c.ex));
+        shown.sort((a, b) => b.v.reduce((s, x) => s + x, 0) - a.v.reduce((s, x) => s + x, 0));
+        const width = Math.max(280, root.clientWidth);
+        const narrow = width < 560;
+        const spineH = narrow ? 70 : 88, row = spineH + 26;
+        const max = Math.max(...shown.map((c) => c.v.reduce((s, x) => s + x, 0) + c.v.length * 1));
+        const scale = (width - 8) / max;
+        svg.setAttribute('viewBox', `0 -10 ${width} ${shown.length * row + 10}`);
+        svg.setAttribute('height', String(shown.length * row + 10));
+        svg.replaceChildren();
+        const defs = el('defs', {});
+        svg.append(defs);
+        shown.forEach((c, r) => {
+          const y0 = r * row;
+          let x = 0;
+          c.v.forEach((v, ii) => {
+            const w = Math.max(3, v * scale);
+            const key = `${c.ci}-${ii}`;
+            const out = key === hover || key === pinned;
+            const g = el('g', { class: 'shelf__cart', 'data-key': key, transform: `translate(0 ${out ? -8 : 0})` });
+            // An invisible hit area 8px taller, so a pulled-out cartridge stays under the pointer.
+            g.append(el('rect', { x: x, y: y0, width: Math.max(1, w), height: spineH + 8, fill: 'transparent' }));
+            const body = el('rect', { x: x, y: y0, width: Math.max(1, w - 2), height: spineH, rx: 3, fill: c.color });
+            if (c.e[ii]) body.setAttribute('class', 'shelf__est');
+            const band = el('rect', { x: x, y: y0, width: Math.max(1, w - 2), height: 7, rx: 3, fill: '#ffffff', 'fill-opacity': 0.35 });
+            g.append(body, band);
+            if (w >= 14) {
+              const id = `${uid}-${key}`;
+              const clip = el('clipPath', { id });
+              clip.append(el('rect', { x: x, y: y0 + 8, width: w - 2, height: spineH - 10 }));
+              defs.append(clip);
+              const tx = x + (w - 2) / 2 + 3.5, ty = y0 + spineH - 4;
+              // Clip in the shelf's own space (a group), then turn the text inside it.
+              const wrap = el('g', { 'clip-path': `url(#${id})` });
+              const t = el('text', { x: tx, y: ty, transform: `rotate(-90 ${tx} ${ty})`, class: 'shelf__label' });
+              t.textContent = part(lists[c.ci][ii + 1], 'n');
+              wrap.append(t);
+              g.append(wrap);
+            }
+            svg.append(g);
+            x += w;
+          });
+          svg.append(el('rect', { x: 0, y: y0 + spineH, width: Math.max(x, 40), height: 5, rx: 2, class: 'shelf__board' }));
+          // Name and numbers as two texts side by side, so a right-to-left name can't run over them.
+          const name = el('text', { x: 0, y: y0 + spineH + 19, class: 'shelf__name' });
+          name.textContent = part(lists[c.ci][0], 'n');
+          svg.append(name);
+          const meta = el('text', { x: 0, y: y0 + spineH + 19, class: 'shelf__meta' });
+          meta.textContent = `${part(lists[c.ci][0], 'h')} · ${part(lists[c.ci][0], 'c')}`;
+          svg.append(meta);
+          meta.setAttribute('x', String(name.getComputedTextLength() + 8));
+        });
+      };
+      const refresh = () =>
+        svg.querySelectorAll<SVGGElement>('[data-key]').forEach((g) => {
+          const k = g.dataset.key;
+          g.setAttribute('transform', `translate(0 ${k === hover || k === pinned ? -8 : 0})`);
+        });
+      const keyOf = (t: EventTarget | null) => (t as Element)?.closest?.('[data-key]')?.getAttribute('data-key') ?? null;
+      svg.addEventListener('pointerover', (e) => {
+        const k = keyOf(e.target);
+        if (k !== hover) {
+          hover = k;
+          refresh();
+          showCaption();
+        }
+      });
+      svg.addEventListener('pointerleave', () => {
+        hover = null;
+        refresh();
+        showCaption();
+      });
+      svg.addEventListener('click', (e) => {
+        const k = keyOf(e.target);
+        pinned = k && k !== pinned ? k : null;
+        refresh();
+        showCaption();
+      });
+      const scope = root.closest<HTMLElement>('[data-hours-scope]');
+      const sync = () => {
+        if (scope) root.dataset.state = scope.hasAttribute('data-excluded') && cats.some((c) => c.ex) ? 'off' : 'on';
+        pinned = hover = null;
+        draw();
+        showCaption();
+      };
+      scope?.addEventListener('hours:excluded', sync);
+      let lastW = 0;
+      new ResizeObserver(() => {
+        const w = root.clientWidth;
+        if (w && w !== lastW) {
+          lastW = w;
+          draw();
+        }
+      }).observe(root);
+      sync();
+    });
+  }
+  initCartridgeShelf();
+  document.addEventListener('astro:page-load', initCartridgeShelf);
+</script>
+
+<style>
+  .shelf {
+    --_text: var(--shelf-text, #e6edf3);
+    --_muted: var(--shelf-muted, #9aa8bb);
+    --_board: var(--shelf-board, #2c3a6e);
+    --_label: var(--shelf-label, #070b1f);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    color: var(--_text);
+  }
+  .shelf__caption {
+    min-height: 44px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .shelf__hint,
+  .shelf__cat {
+    color: var(--_muted);
+    font-size: 0.9rem;
+  }
+  .shelf__caption :global(strong) {
+    font-size: 1.1rem;
+  }
+  .shelf__caption :global(.shelf__hours) {
+    font-variant-numeric: tabular-nums;
+  }
+  .shelf__caption :global(.shelf__chip) {
+    --_c: var(--_chip, currentColor);
+    padding: 0 0.45rem;
+    border-radius: 0.7rem;
+    border: 1px solid color-mix(in srgb, var(--_c) 60%, transparent);
+    background: color-mix(in srgb, var(--_c) 16%, transparent);
+    color: var(--_c);
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.5;
+  }
+  .shelf__svg {
+    display: block;
+    direction: ltr; /* shelves fill left to right in every language */
+    width: 100%;
+    overflow: visible;
+  }
+  .shelf__svg :global(.shelf__cart) {
+    cursor: pointer;
+    transition: transform 0.15s;
+  }
+  .shelf__svg :global(.shelf__est) {
+    stroke: #ffffff;
+    stroke-width: 1.2;
+    stroke-dasharray: 3 2;
+  }
+  .shelf__svg :global(.shelf__label) {
+    fill: var(--_label);
+    font-size: 10px;
+    font-weight: 700;
+    pointer-events: none;
+  }
+  .shelf__svg :global(.shelf__board) {
+    fill: var(--_board);
+  }
+  .shelf__svg :global(.shelf__name) {
+    fill: var(--_text);
+    font-size: 13px;
+    font-weight: 700;
+  }
+  .shelf__svg :global(.shelf__meta) {
+    fill: var(--_muted);
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .shelf__fallback {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .shelf__fallback[hidden] {
+    display: none;
+  }
+  .shelf__dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+    margin-inline-end: 0.4rem;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .shelf__svg :global(.shelf__cart) {
+      transition: none;
+    }
+  }
+</style>
