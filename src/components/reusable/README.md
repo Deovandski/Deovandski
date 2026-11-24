@@ -23,7 +23,7 @@ and a project without translations just shows the English.
 | [VhsPile.astro](VhsPile.astro) | A pile of VHS tapes holding a number of hours of video. Visitors pick the recording speed (SP, LP, EP) and the tapes fall from the top and pile up; they shrink to fit, so it can show a couple of thousand. Canvas, no libraries. | BOTW tab (watch time) |
 | [PaperPlane.astro](PaperPlane.astro) | Fold a paper plane, then throw it: precision decides the distance | Aviation tab |
 | [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing four disco routines (#1 the point, #2 the Night Fever line dance, #3 the hustle, #4 toe stand & point) under spotlights, a mirror ball and a light-up floor, with a fever meter you fill by tapping on the beat and an optional original 8-bit disco loop. | Concert tab, Playground |
-| [IsoDarts.astro](IsoDarts.astro) | An on-rails darts scene in an isometric room: scripted speech bubbles, then a timed round on a board of coloured territories (claim, cancel, smaller is worth more) with a swaying aim. | Board Games tab (Territory Snipping) |
+| IsoDarts (moved) | An on-rails darts scene in an isometric room: scripted speech bubbles, then a timed round on a board of coloured territories (claim, cancel, smaller is worth more) with a swaying aim. | Moved to [HusbandOutWorld](https://github.com/Deovandski/HusbandOutWorld) as `site/js/iso-darts.js` and `site/css/iso-darts.css` (its Playground, Territory Snipping, #245) |
 | [IsoFarm.astro](IsoFarm.astro) | A Colheita Feliz-style farming loop: isometric plots, seeds with timers and random harvests, fertilizer, energy and a market. The whole economy is one config object; saves in the browser. | Mentor tab (the Balls farm) |
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
@@ -326,30 +326,6 @@ straight up, a lean, a kick). A **fever meter** on the right fills a little ever
 stage (or press Space/Enter on it) on the beat; at 100 it hits **FEVER!** and the whole floor lights up for
 8 beats. **Music: on** plays an original 8-bit disco loop (Web Audio, no files; not any existing song) in time
 with the dance; it stops when the dance pauses or the stage is hidden.
-
-## IsoDarts
-
-```astro
----
-import IsoDarts from './reusable/IsoDarts.astro';
-import game from '../../content/territory-snipping.json';
----
-<IsoDarts game={game} title="Territory Snipping" />
-```
-
-| Prop | Default | |
-|---|---|---|
-| `game` | (required) | `players` (`you` and `rival`: `{ name, color, feather }`), `dartsPerPlayer`, `roundSeconds` and `script`: `[{ who: 'you' \| 'rival', text, do? }]`. |
-| `title` | `"Darts"` | Heading of the scene. |
-| `class` | none | Extra class. |
-
-An on-rails darts scene in an isometric room: speech bubbles walk through the script, and `do` triggers a
-step after a line: `warmup` (the rival's first dart falls, the second lands on green), `practice` (one
-throw that flies low), `hiromiMiss` (the rival aims at green, hits purple), `round` (both throw at once
-until the darts or time run out) and `end` (the score). The round board's territories: a dart claims
-one, a dart where the other player's dart is cancels both, and smaller territories are worth more (yellow
-centre 10, inner ring 5, middle 3, outer 1). The visitor's aim sways more with every throw; Space or
-Enter throws. Theme with `--darts-accent` and `--darts-text`.
 
 ## IsoFarm
 

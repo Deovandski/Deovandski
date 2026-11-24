@@ -279,10 +279,6 @@
   "en": "Blog",
   "t": "Blog"
  },
- "0bf9322efcf3": {
-  "en": "Final score: {you} {youScore}, {rival} {rivalScore}. {verdict}",
-  "t": "Punteggio finale: {you} {youScore}, {rival} {rivalScore}. {verdict}"
- },
  "0c146d79c604": {
   "en": "Enlarge: FML! Forgot setup autopay",
   "t": "Ingrandisci: FML! Ho dimenticato di impostare il pagamento automatico"
@@ -558,10 +554,6 @@
  "19c9c9ed8477": {
   "en": "Opera",
   "t": "Opera"
- },
- "19e17a057b61": {
-  "en": "Your turn: press Throw (or Space) when the aim is where you want it.",
-  "t": "Tocca a te: premi Lancia! (o Spazio) quando la mira è dove vuoi."
  },
  "1a1f232c7b93": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder TV show 9 ",
@@ -938,10 +930,6 @@
  "27b48cf9ae90": {
   "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
   "t": "Cioè {tapes} videocassette VHS registrate in {mode} ({perTape} ore per cassetta T-120)."
- },
- "27bbcef16995": {
-  "en": "Hiromi",
-  "t": "Hiromi"
  },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
@@ -1351,10 +1339,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 8: </span> Placeholder movie 8 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 8: </span> Film segnaposto 8"
  },
- "38d4249ff036": {
-  "en": "⏱ {seconds}s · darts: {you} {youLeft}, {rival} {rivalLeft}",
-  "t": "⏱ {seconds}s · dardi: {you} {youLeft}, {rival} {rivalLeft}"
- },
  "38e1d26af274": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer"
@@ -1551,10 +1535,6 @@
   "en": "Captain Bidu final resting place",
   "t": "L’ultima dimora del Capitano Bidu"
  },
- "40e405b6605c": {
-  "en": "I haven’t heard of that, but yeah, I prefer targeting the yellow ones, as those are worth more if you snipe all territories.",
-  "t": "Non l'ho mai sentita questa, ma sì, io preferisco mirare a quelli gialli, perché valgono di più se conquisti tutti i territori."
- },
  "40f6fcda8a97": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder movie 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 9: </span> Film segnaposto 9"
@@ -1566,14 +1546,6 @@
  "4158753b0709": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder movie 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 10: </span> Film segnaposto 10"
- },
- "42766efba402": {
-  "en": "Middle ring",
-  "t": "Anello medio"
- },
- "42ae6cb3cd8f": {
-  "en": "Time! The room starts to move too much…",
-  "t": "Tempo! La stanza inizia a muoversi troppo…"
  },
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
@@ -1767,14 +1739,6 @@
   "en": "Not bad!",
   "t": "Niente male!"
  },
- "4c660686dc07": {
-  "en": "His first dart clings, then falls. The second lands on a green territory near the centre.",
-  "t": "Il suo primo dardo si aggrappa, poi cade. Il secondo atterra su un territorio verde vicino al centro."
- },
- "4c9a82ce72ca": {
-  "en": "blue",
-  "t": "blu"
- },
  "4cd5ee6da386": {
   "en": "Red Letter Media on YouTube",
   "t": "Red Letter Media su YouTube"
@@ -1786,10 +1750,6 @@
  "4d1568414852": {
   "en": "Two Strangers (Carry a Cake Across New York)",
   "t": "Two Strangers (Carry a Cake Across New York)"
- },
- "4d2751b25828": {
-  "en": "Kinda? Was the board always this big and colored? I thought it was rounded too— OH YEAH! The center is worth more, right?",
-  "t": "Più o meno? Il bersaglio è sempre stato così grande e colorato? Pensavo fosse anche rotondo— OH SÌ! Il centro vale di più, giusto?"
  },
  "4d3bce11bac3": {
   "en": "Language levels",
@@ -1934,10 +1894,6 @@
  "50c9e8d5fc98": {
   "en": "D",
   "t": "D"
- },
- "50ccc5e2e037": {
-  "en": "He aims for the same green, and lands far above it, on purple.",
-  "t": "Mira allo stesso verde e atterra molto più in alto, sul viola."
  },
  "50db544157bb": {
   "en": "Off beat",
@@ -2531,10 +2487,6 @@
   "en": "Enlarge: Gimme attention",
   "t": "Ingrandisci: Dammi attenzioni"
  },
- "69b0b68def54": {
-  "en": "SEE? It’s all about mindset! You know what, Harry? You’re cool! So why not play a bit of territory snipping to celebrate?",
-  "t": "VISTO? È tutta una questione di mentalità! Sai una cosa, Harry? Sei forte! Allora perché non giochiamo un po' a caccia ai territori per festeggiare?"
- },
  "69ce5d37a5a7": {
   "en": "Enlarge: Still tired",
   "t": "Ingrandisci: Ancora stanco"
@@ -2614,10 +2566,6 @@
  "6c48581a0b47": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder movie 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 30: </span> Film segnaposto 30"
- },
- "6c4f692b2d93": {
-  "en": "{player} snipes a {colour} territory ({points}).",
-  "t": "{player} conquista un territorio {colour} ({points})."
  },
  "6c84173deb3d": {
   "en": "Vraki<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (written in Vraki)</span>",
@@ -2855,10 +2803,6 @@
   "en": "Enlarge: Close to 12 years old but still kicking",
   "t": "Ingrandisci: Quasi 12 anni, ma ancora in forma"
  },
- "76262d314611": {
-  "en": "Territory Snipping: turn your phone sideways",
-  "t": "Territory Snipping: gira il telefono in orizzontale"
- },
  "762cf7076b06": {
   "en": "CR",
   "t": "CR"
@@ -2939,10 +2883,6 @@
   "en": "Pause",
   "t": "Pausa"
  },
- "78988010b890": {
-  "en": "red",
-  "t": "rosso"
- },
  "78ca112f9500": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder game 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 33: </span> Gioco segnaposto 33"
@@ -2998,10 +2938,6 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
- },
- "7a8cb7243b93": {
-  "en": "{n} pt",
-  "t": "{n} pt"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -3267,10 +3203,6 @@
   "en": "Harvest!",
   "t": "Raccogli!"
  },
- "85a1ecacad2c": {
-  "en": "That’s the spirit! … You played this before, right?",
-  "t": "Questo è lo spirito giusto! … Ci hai già giocato, vero?"
- },
  "85af7ed7a344": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Placeholder movie 18 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 18: </span> Film segnaposto 18"
@@ -3298,10 +3230,6 @@
  "8657af8238d1": {
   "en": "Hairball",
   "t": "Hairball"
- },
- "868657e908ac": {
-  "en": "Harry",
-  "t": "Harry"
  },
  "8686eb8cf046": {
   "en": "Circa Q2 2013",
@@ -3434,10 +3362,6 @@
  "8bc3246a22fe": {
   "en": "Tattoo on my chest",
   "t": "Tatuaggio sul mio petto"
- },
- "8bf12a38bad0": {
-  "en": "Throw!",
-  "t": "Lancia!"
  },
  "8c11a9f1eca9": {
   "en": "Ride cymbal (key E)",
@@ -3615,10 +3539,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder game 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 30: </span> Gioco segnaposto 30"
  },
- "935f6cd89f4a": {
-  "en": "A draw!",
-  "t": "Pareggio!"
- },
  "9384a918b850": {
   "en": "Or grow a spine and just reach out to me: see the <a href=\"/contact/\">Contact</a> page.",
   "t": "Oppure fatti venire un po’ di spina dorsale e contattami direttamente: vedi la pagina <a href=\"/contact/\">Contatti</a>."
@@ -3707,10 +3627,6 @@
   "en": "Fluent",
   "t": "Fluente"
  },
- "96de5543d183": {
-  "en": "yellow",
-  "t": "giallo"
- },
  "96dedce974cf": {
   "en": "Enlarge: Failing to learn English",
   "t": "Ingrandisci: Fallire nell’imparare l’inglese"
@@ -3738,10 +3654,6 @@
  "9790b0b19467": {
   "en": " 1 amethyst  · 1 energy · 20 s ",
   "t": "1 amethyst · 1 energia · 20 s"
- },
- "97ad0a52c978": {
-  "en": "From <a href=\"https://www.husbandoutworld.com/lore/pastimes/#territory-snipping\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld</a>: play the round of Territory Snipping from Vol 2, as Harry, against Hiromi.",
-  "t": "Da <a href=\"https://www.husbandoutworld.com/lore/pastimes/#territory-snipping\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld</a>: gioca la partita di Territory Snipping del Vol 2, nei panni di Harry, contro Hiromi."
  },
  "97c202217634": {
   "en": "17 photos",
@@ -3779,10 +3691,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 34: </span> Placeholder game 34 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 34: </span> Gioco segnaposto 34"
  },
- "992fb4c6838e": {
-  "en": "{you} wins, somehow!",
-  "t": "{you} vince, in qualche modo!"
- },
  "998896860e5d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder TV show 27 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 27: </span> Serie segnaposto 27"
@@ -3810,10 +3718,6 @@
  "9bb732a1e053": {
   "en": "Glad I don't pay rent",
   "t": "Meno male che non pago l’affitto"
- },
- "9bdcbc1f38da": {
-  "en": "You’re coolio too!",
-  "t": "Anche tu sei un figo pazzesco!"
  },
  "9c202ecc19a4": {
   "en": "Am I that really interesting?",
@@ -4087,10 +3991,6 @@
   "en": "Musicals",
   "t": "Musical"
  },
- "a691267c5647": {
-  "en": "{rival} wins.",
-  "t": "{rival} vince."
- },
  "a694aafb9d11": {
   "en": "Deo's hand holding a cup of chimarrão with its metal straw, a black cat curled up on a striped blanket behind it",
   "t": "La mano di Deo che regge una zucca di chimarrão con la cannuccia di metallo, e dietro un gatto nero acciambellato su una coperta a righe"
@@ -4110,10 +4010,6 @@
  "a74615c9d0f5": {
   "en": "The hustle",
   "t": "L’hustle"
- },
- "a75be8f0bded": {
-  "en": "Cancelled! Both darts on the {colour} territory are out.",
-  "t": "Annullato! Entrambi i dardi sul territorio {colour} sono fuori."
  },
  "a75e8688b4fb": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24",
@@ -4355,10 +4251,6 @@
   "en": "Losses: 5",
   "t": "Sconfitte: 5"
  },
- "afaed75406bd": {
-  "en": "purple",
-  "t": "viola"
- },
  "affabe3f4188": {
   "en": "Campaign #1",
   "t": "Campagna n. 1"
@@ -4422,10 +4314,6 @@
  "b297cb01e994": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022"
- },
- "b2b52c2fc7c2": {
-  "en": "Snipe all territories? That’s—different—I think. Can—can you explain?",
-  "t": "Conquistare tutti i territori? È—diverso—credo. Puoi—puoi spiegarmelo?"
  },
  "b31013feefa3": {
   "en": "4 photos",
@@ -4559,10 +4447,6 @@
   "en": "{m} m ({ft} ft).",
   "t": "{m} m ({ft} ft)."
  },
- "b8c8d91c4ad6": {
-  "en": "Yellow centre",
-  "t": "Centro giallo"
- },
  "b90b25305207": {
   "en": "Very hot",
   "t": "Caldissimo"
@@ -4583,10 +4467,6 @@
   "en": "Back to Painting",
   "t": "Torna a Pittura"
  },
- "b98ab59bdc99": {
-  "en": "{n} pts",
-  "t": "{n} pts"
- },
  "b9a2ffa6496c": {
   "en": "Let's go",
   "t": "Andiamo"
@@ -4594,10 +4474,6 @@
  "b9af5469788b": {
   "en": "The clock is ticking on my 💀 Death tab.",
   "t": "L’orologio corre nella mia 💀 scheda Morte."
- },
- "b9f8e7d16bef": {
-  "en": "{player}'s dart bounced off the wall.",
-  "t": "Il dardo di {player} è rimbalzato sul muro."
  },
  "ba01865809b3": {
   "en": "Back to Concert",
@@ -4627,10 +4503,6 @@
   "en": "Pitty",
   "t": "Pitty"
  },
- "bc38448e90c1": {
-  "en": "Aw, my chitin ass! Anyways, the goal is to land on the same color region to score a point. If you land on a region with someone else’s dart, you two cancel each other out. Ehh—right? Right—right. The smaller the region, the more it’s worth when sniping it. That makes sense?",
-  "t": "Ahh, il mio culo di chitina! Comunque, lo scopo è centrare la regione dello stesso colore per fare punto. Se atterri su una regione con la freccetta di qualcun altro, vi annullate a vicenda. Ehh—giusto? Giusto—giusto. Più piccola è la regione, più vale quando la conquisti. Ha senso?"
- },
  "bc4359231d61": {
   "en": "Gym",
   "t": "Palestra"
@@ -4638,14 +4510,6 @@
  "bc5a47b54ae3": {
   "en": "Who's cooler",
   "t": "Chi è più figo"
- },
- "bc74f4f071a5": {
-  "en": "green",
-  "t": "verde"
- },
- "bc981983e7f5": {
-  "en": "Next",
-  "t": "Avanti"
  },
  "bd7210aa5ccc": {
   "en": " 10 amethysts → 1 aquamarine ",
@@ -4662,10 +4526,6 @@
  "be7869041e41": {
   "en": "MyAnimeList",
   "t": "MyAnimeList"
- },
- "be909c082346": {
-  "en": "Territory Snipping",
-  "t": "Territory Snipping"
  },
  "bea68df61c69": {
   "en": "Beef grilled so far",
@@ -4746,10 +4606,6 @@
  "c12140a0ffb4": {
   "en": "日本語",
   "t": "日本語"
- },
- "c1218408e29a": {
-  "en": "Just a hunk—that was me warming up! Now try to throw on a green section or anywhere else.",
-  "t": "Solo un hunk—mi stavo scaldando! Adesso prova a lanciare su una sezione verde o da qualsiasi altra parte."
  },
  "c155ff628d91": {
   "en": "Laser removal",
@@ -4879,17 +4735,9 @@
   "en": "Peeta's backyard run",
   "t": "La corsa di Peeta in giardino"
  },
- "c7abd16eb68f": {
-  "en": "Brotha—you suck at this—Harry?",
-  "t": "Fratello—fai schifo a questo gioco—Harry?"
- },
  "c7c4bc97cb6b": {
   "en": "Solen Zara",
   "t": "Solen Zara"
- },
- "c852360f55c1": {
-  "en": "—Yea? So I play next?",
-  "t": "—Sì? Quindi tocca a me?"
  },
  "c886f4fa5cd8": {
   "en": "Praise the source of the beef thou art eating. Thank the soul that was given for thy enjoyment and for thy nourishment.",
@@ -4967,10 +4815,6 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye"
  },
- "cbbc9c6fec55": {
-  "en": "Back to Board Games",
-  "t": "Torna a Giochi da tavolo"
- },
  "cbe35333fcf5": {
   "en": "\nAnd as to why? Read my <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld Vol 4 afterword</a>.\n",
   "t": "E perché? Leggi la mia <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">postfazione del Vol 4 di #HusbandOutWorld</a>."
@@ -4978,10 +4822,6 @@
  "cc463043bf6a": {
   "en": "Roll all",
   "t": "Tira tutti"
- },
- "cc60a1651cdd": {
-  "en": "Final: {you} {youScore} · {rival} {rivalScore} · {verdict}",
-  "t": "Finale: {you} {youScore} · {rival} {rivalScore} · {verdict}"
  },
  "cc9c3f91bf15": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">✋</span> Pet ",
@@ -5050,10 +4890,6 @@
  "ce2c178cd497": {
   "en": "Fold precision {n}%.",
   "t": "Precisione della piegatura {n}%."
- },
- "ce3c494a5e85": {
-  "en": "Aiight!",
-  "t": "Va bene!"
  },
  "ce70caaad427": {
   "en": "1 photo",
@@ -5143,10 +4979,6 @@
   "en": "Churrasco",
   "t": "Churrasco"
  },
- "d1d827cb044b": {
-  "en": "What each territory is worth",
-  "t": "Quanto vale ogni territorio"
- },
  "d20bc2c58ea9": {
   "en": "Deo might have hit the dust. If he is still kicking, tell his old ass to update the clock.",
   "t": "Deo potrebbe aver tirato le cuoia. Se è ancora vivo e vegeto, di’ al vecchio di aggiornare l’orologio."
@@ -5154,10 +4986,6 @@
  "d223b6c1c738": {
   "en": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>",
   "t": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>"
- },
- "d26d358f777a": {
-  "en": "Your dart flies low and lodges in the wall below the board.",
-  "t": "Il tuo dardo vola basso e si conficca nel muro sotto la tavola."
  },
  "d28817938afa": {
   "en": "Colorado",
@@ -5715,10 +5543,6 @@
   "en": "Likes",
   "t": "Mi piace"
  },
- "ea35482e6295": {
-  "en": "Good try! Good try! C’mon! Try again!",
-  "t": "Bel tentativo! Bel tentativo! Dai! Riprova!"
- },
  "ea3ddf6727a8": {
   "en": "Do Better!",
   "t": "Do Better!"
@@ -5839,10 +5663,6 @@
   "en": "Enlarge: Painting or drawing, 01/23/2013",
   "t": "Ingrandisci: Dipinto o disegno, 23/01/2013"
  },
- "ef0ebbb77298": {
-  "en": "orange",
-  "t": "arancione"
- },
  "efe6cabcbaa1": {
   "en": "Since we’re on the subject: take care of your mental health. And if you’ve ever thought about ending it all… don’t. I nearly did, back in 2016, during a period that far surpassed what my mind could take at the time. I called a crisis hotline. To the older lady who picked up the phone that night: I will forever be grateful. The “Harry” you see in Vol. 1 is an alternate version of myself: the one who plunged that knife into his chest that night.",
   "t": "Visto che siamo in tema: prenditi cura della tua salute mentale. E se hai mai pensato di farla finita… non farlo. Io ci sono andato vicino, nel 2016, in un periodo che superava di gran lunga quello che la mia mente poteva reggere allora. Ho chiamato una linea di ascolto per le crisi. Alla signora anziana che ha risposto quella notte: ti sarò eternamente grato. L’“Harry” che vedi nel Vol. 1 è una versione alternativa di me stesso: quella che quella notte si è piantata il coltello nel petto."
@@ -5886,10 +5706,6 @@
  "f237b4210ce4": {
   "en": "Enlarge: Whatcha doing",
   "t": "Ingrandisci: Che stai facendo"
- },
- "f290164d1315": {
-  "en": "Outer ring",
-  "t": "Anello esterno"
  },
  "f2a63e1c444a": {
   "en": "Photogenic",
@@ -6095,10 +5911,6 @@
   "en": "Enlarge: When the catnip hits just right",
   "t": "Ingrandisci: Quando l’erba gatta fa proprio effetto"
  },
- "fb23c9ff0d27": {
-  "en": "Inner ring",
-  "t": "Anello interno"
- },
  "fb4d13ed6962": {
   "en": "Enlarge: Sleep first",
   "t": "Ingrandisci: Prima la nanna"
@@ -6170,10 +5982,6 @@
  "fe9050f8f41a": {
   "en": "Practice skin. Draw a tattoo on it with the tattoo pen.",
   "t": "Pelle da allenamento. Disegnaci sopra un tatuaggio con la macchinetta."
- },
- "feddfb10fb8d": {
-  "en": "We all play at the same time. GO!",
-  "t": "Giochiamo tutti nello stesso momento. VAI!"
  },
  "feea42718962": {
   "en": "Enlarge: Walk time or more like I stay in the stroller",

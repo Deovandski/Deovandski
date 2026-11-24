@@ -279,10 +279,6 @@
   "en": "Blog",
   "t": "블로그"
  },
- "0bf9322efcf3": {
-  "en": "Final score: {you} {youScore}, {rival} {rivalScore}. {verdict}",
-  "t": "최종 점수: {you} {youScore}, {rival} {rivalScore}. {verdict}"
- },
  "0c146d79c604": {
   "en": "Enlarge: FML! Forgot setup autopay",
   "t": "확대: 망했다! 자동이체 설정 깜빡함"
@@ -558,10 +554,6 @@
  "19c9c9ed8477": {
   "en": "Opera",
   "t": "오페라"
- },
- "19e17a057b61": {
-  "en": "Your turn: press Throw (or Space) when the aim is where you want it.",
-  "t": "네 차례: 조준이 원하는 곳에 오면 \"던지기!\"(또는 스페이스)를 눌러."
  },
  "1a1f232c7b93": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder TV show 9 ",
@@ -938,10 +930,6 @@
  "27b48cf9ae90": {
   "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
   "t": "{mode}로 녹화하면 VHS 테이프 {tapes}개 분량이야(T-120 테이프 하나당 {perTape}시간)."
- },
- "27bbcef16995": {
-  "en": "Hiromi",
-  "t": "히로미"
  },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
@@ -1351,10 +1339,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 8: </span> Placeholder movie 8 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 8: </span> 임시 영화 8"
  },
- "38d4249ff036": {
-  "en": "⏱ {seconds}s · darts: {you} {youLeft}, {rival} {rivalLeft}",
-  "t": "⏱ {seconds}s · 다트: {you} {youLeft}, {rival} {rivalLeft}"
- },
  "38e1d26af274": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer"
@@ -1551,10 +1535,6 @@
   "en": "Captain Bidu final resting place",
   "t": "캡틴 Bidu의 마지막 안식처"
  },
- "40e405b6605c": {
-  "en": "I haven’t heard of that, but yeah, I prefer targeting the yellow ones, as those are worth more if you snipe all territories.",
-  "t": "그런 건 처음 듣는데, 그래, 난 노란 데를 노리는 게 좋아. 영역을 다 저격하면 그게 점수가 더 높거든."
- },
  "40f6fcda8a97": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder movie 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 9: </span> 임시 영화 9"
@@ -1566,14 +1546,6 @@
  "4158753b0709": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder movie 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 10: </span> 임시 영화 10"
- },
- "42766efba402": {
-  "en": "Middle ring",
-  "t": "중간 링"
- },
- "42ae6cb3cd8f": {
-  "en": "Time! The room starts to move too much…",
-  "t": "시간 종료! 방이 너무 많이 움직이기 시작해…"
  },
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
@@ -1767,14 +1739,6 @@
   "en": "Not bad!",
   "t": "나쁘지 않아!"
  },
- "4c660686dc07": {
-  "en": "His first dart clings, then falls. The second lands on a green territory near the centre.",
-  "t": "첫 다트는 붙었다가 떨어져. 두 번째는 중심 근처 초록 영토에 착지."
- },
- "4c9a82ce72ca": {
-  "en": "blue",
-  "t": "파란색"
- },
  "4cd5ee6da386": {
   "en": "Red Letter Media on YouTube",
   "t": "YouTube의 Red Letter Media"
@@ -1786,10 +1750,6 @@
  "4d1568414852": {
   "en": "Two Strangers (Carry a Cake Across New York)",
   "t": "Two Strangers (Carry a Cake Across New York)"
- },
- "4d2751b25828": {
-  "en": "Kinda? Was the board always this big and colored? I thought it was rounded too— OH YEAH! The center is worth more, right?",
-  "t": "대충요? 다트판이 원래 이렇게 크고 알록달록했나요? 동그란 줄 알았는데— 아 맞다! 가운데가 점수가 더 높죠?"
  },
  "4d3bce11bac3": {
   "en": "Language levels",
@@ -1934,10 +1894,6 @@
  "50c9e8d5fc98": {
   "en": "D",
   "t": "D"
- },
- "50ccc5e2e037": {
-  "en": "He aims for the same green, and lands far above it, on purple.",
-  "t": "같은 초록을 조준했지만 훨씬 위 보라에 착지했어."
  },
  "50db544157bb": {
   "en": "Off beat",
@@ -2531,10 +2487,6 @@
   "en": "Enlarge: Gimme attention",
   "t": "확대: 관심 줘"
  },
- "69b0b68def54": {
-  "en": "SEE? It’s all about mindset! You know what, Harry? You’re cool! So why not play a bit of territory snipping to celebrate?",
-  "t": "봤지? 다 마음먹기에 달렸어! 있잖아, 해리? 너 괜찮은 놈이다! 축하하는 의미로 영역 저격 한 판 어때?"
- },
  "69ce5d37a5a7": {
   "en": "Enlarge: Still tired",
   "t": "확대: 아직 피곤해"
@@ -2614,10 +2566,6 @@
  "6c48581a0b47": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder movie 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 30: </span> 임시 영화 30"
- },
- "6c4f692b2d93": {
-  "en": "{player} snipes a {colour} territory ({points}).",
-  "t": "{player}가 {colour} 영역을 저격 ({points})."
  },
  "6c84173deb3d": {
   "en": "Vraki<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (written in Vraki)</span>",
@@ -2855,10 +2803,6 @@
   "en": "Enlarge: Close to 12 years old but still kicking",
   "t": "확대: 12살이 다 돼 가지만 아직 쌩쌩해"
  },
- "76262d314611": {
-  "en": "Territory Snipping: turn your phone sideways",
-  "t": "영역 저격: 휴대폰을 가로로 돌려 줘"
- },
  "762cf7076b06": {
   "en": "CR",
   "t": "CR"
@@ -2939,10 +2883,6 @@
   "en": "Pause",
   "t": "일시정지"
  },
- "78988010b890": {
-  "en": "red",
-  "t": "빨간색"
- },
  "78ca112f9500": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder game 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 33: </span> 임시 게임 33"
@@ -2998,10 +2938,6 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
- },
- "7a8cb7243b93": {
-  "en": "{n} pt",
-  "t": "{n}점"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -3267,10 +3203,6 @@
   "en": "Harvest!",
   "t": "수확!"
  },
- "85a1ecacad2c": {
-  "en": "That’s the spirit! … You played this before, right?",
-  "t": "그 정신이야! … 이거 해 본 적 있지?"
- },
  "85af7ed7a344": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Placeholder movie 18 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 18: </span> 임시 영화 18"
@@ -3298,10 +3230,6 @@
  "8657af8238d1": {
   "en": "Hairball",
   "t": "Hairball"
- },
- "868657e908ac": {
-  "en": "Harry",
-  "t": "해리"
  },
  "8686eb8cf046": {
   "en": "Circa Q2 2013",
@@ -3434,10 +3362,6 @@
  "8bc3246a22fe": {
   "en": "Tattoo on my chest",
   "t": "가슴의 타투"
- },
- "8bf12a38bad0": {
-  "en": "Throw!",
-  "t": "던지기!"
  },
  "8c11a9f1eca9": {
   "en": "Ride cymbal (key E)",
@@ -3615,10 +3539,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder game 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 30: </span> 임시 게임 30"
  },
- "935f6cd89f4a": {
-  "en": "A draw!",
-  "t": "무승부!"
- },
  "9384a918b850": {
   "en": "Or grow a spine and just reach out to me: see the <a href=\"/contact/\">Contact</a> page.",
   "t": "아니면 용기 내서 그냥 연락해: <a href=\"/contact/\">연락처</a> 페이지를 봐."
@@ -3707,10 +3627,6 @@
   "en": "Fluent",
   "t": "유창함"
  },
- "96de5543d183": {
-  "en": "yellow",
-  "t": "노란색"
- },
  "96dedce974cf": {
   "en": "Enlarge: Failing to learn English",
   "t": "확대: 영어 배우기 실패 중"
@@ -3738,10 +3654,6 @@
  "9790b0b19467": {
   "en": " 1 amethyst  · 1 energy · 20 s ",
   "t": "애머시스트 1 · 에너지 1 · 20초"
- },
- "97ad0a52c978": {
-  "en": "From <a href=\"https://www.husbandoutworld.com/lore/pastimes/#territory-snipping\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld</a>: play the round of Territory Snipping from Vol 2, as Harry, against Hiromi.",
-  "t": "<a href=\"https://www.husbandoutworld.com/lore/pastimes/#territory-snipping\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld</a>에서: 2권의 영역 저격 한 판을 해리가 되어 히로미를 상대로 플레이해 봐."
  },
  "97c202217634": {
   "en": "17 photos",
@@ -3779,10 +3691,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 34: </span> Placeholder game 34 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 34: </span> 임시 게임 34"
  },
- "992fb4c6838e": {
-  "en": "{you} wins, somehow!",
-  "t": "{you}가 어떻게든 이겼어!"
- },
  "998896860e5d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder TV show 27 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 27: </span> 임시 TV 프로그램 27"
@@ -3810,10 +3718,6 @@
  "9bb732a1e053": {
   "en": "Glad I don't pay rent",
   "t": "월세 안 내서 다행"
- },
- "9bdcbc1f38da": {
-  "en": "You’re coolio too!",
-  "t": "형님도 짱 멋져요!"
  },
  "9c202ecc19a4": {
   "en": "Am I that really interesting?",
@@ -4087,10 +3991,6 @@
   "en": "Musicals",
   "t": "뮤지컬"
  },
- "a691267c5647": {
-  "en": "{rival} wins.",
-  "t": "{rival} 승리."
- },
  "a694aafb9d11": {
   "en": "Deo's hand holding a cup of chimarrão with its metal straw, a black cat curled up on a striped blanket behind it",
   "t": "금속 빨대가 꽂힌 시마랑 컵을 든 Deo의 손, 뒤에는 줄무늬 담요 위에 웅크린 검은 고양이"
@@ -4110,10 +4010,6 @@
  "a74615c9d0f5": {
   "en": "The hustle",
   "t": "허슬"
- },
- "a75be8f0bded": {
-  "en": "Cancelled! Both darts on the {colour} territory are out.",
-  "t": "취소! {colour} 영역의 다트 두 개 모두 아웃."
  },
  "a75e8688b4fb": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24",
@@ -4355,10 +4251,6 @@
   "en": "Losses: 5",
   "t": "패: 5"
  },
- "afaed75406bd": {
-  "en": "purple",
-  "t": "보라색"
- },
  "affabe3f4188": {
   "en": "Campaign #1",
   "t": "캠페인 #1"
@@ -4422,10 +4314,6 @@
  "b297cb01e994": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022"
- },
- "b2b52c2fc7c2": {
-  "en": "Snipe all territories? That’s—different—I think. Can—can you explain?",
-  "t": "영역을 다 저격해요? 그건—다른데요—아마. 설—설명해 주실 수 있어요?"
  },
  "b31013feefa3": {
   "en": "4 photos",
@@ -4559,10 +4447,6 @@
   "en": "{m} m ({ft} ft).",
   "t": "{m} m ({ft} ft)."
  },
- "b8c8d91c4ad6": {
-  "en": "Yellow centre",
-  "t": "노란색 중심"
- },
  "b90b25305207": {
   "en": "Very hot",
   "t": "아주 뜨거움"
@@ -4583,10 +4467,6 @@
   "en": "Back to Painting",
   "t": "그림으로 돌아가기"
  },
- "b98ab59bdc99": {
-  "en": "{n} pts",
-  "t": "{n}점"
- },
  "b9a2ffa6496c": {
   "en": "Let's go",
   "t": "가자"
@@ -4594,10 +4474,6 @@
  "b9af5469788b": {
   "en": "The clock is ticking on my 💀 Death tab.",
   "t": "내 💀 죽음 탭에서 시계가 똑딱이고 있어."
- },
- "b9f8e7d16bef": {
-  "en": "{player}'s dart bounced off the wall.",
-  "t": "{player}의 다트가 벽에 튕겼어."
  },
  "ba01865809b3": {
   "en": "Back to Concert",
@@ -4627,10 +4503,6 @@
   "en": "Pitty",
   "t": "Pitty"
  },
- "bc38448e90c1": {
-  "en": "Aw, my chitin ass! Anyways, the goal is to land on the same color region to score a point. If you land on a region with someone else’s dart, you two cancel each other out. Ehh—right? Right—right. The smaller the region, the more it’s worth when sniping it. That makes sense?",
-  "t": "아오, 내 키틴 엉덩이! 아무튼, 목표는 같은 색 구역에 맞혀서 점수를 내는 거야. 다른 사람 다트가 있는 구역에 맞히면 둘이 서로 상쇄돼. 에—맞나? 맞아—맞아. 구역이 작을수록 저격했을 때 점수가 더 높아. 이해돼?"
- },
  "bc4359231d61": {
   "en": "Gym",
   "t": "헬스장"
@@ -4638,14 +4510,6 @@
  "bc5a47b54ae3": {
   "en": "Who's cooler",
   "t": "누가 더 멋짐"
- },
- "bc74f4f071a5": {
-  "en": "green",
-  "t": "초록색"
- },
- "bc981983e7f5": {
-  "en": "Next",
-  "t": "다음"
  },
  "bd7210aa5ccc": {
   "en": " 10 amethysts → 1 aquamarine ",
@@ -4662,10 +4526,6 @@
  "be7869041e41": {
   "en": "MyAnimeList",
   "t": "MyAnimeList"
- },
- "be909c082346": {
-  "en": "Territory Snipping",
-  "t": "영역 저격"
  },
  "bea68df61c69": {
   "en": "Beef grilled so far",
@@ -4746,10 +4606,6 @@
  "c12140a0ffb4": {
   "en": "日本語",
   "t": "日本語"
- },
- "c1218408e29a": {
-  "en": "Just a hunk—that was me warming up! Now try to throw on a green section or anywhere else.",
-  "t": "잠깐만—그건 몸 푼 거야! 이제 초록 구역이든 아무 데든 던져 봐."
  },
  "c155ff628d91": {
   "en": "Laser removal",
@@ -4879,17 +4735,9 @@
   "en": "Peeta's backyard run",
   "t": "Peeta의 뒷마당 달리기"
  },
- "c7abd16eb68f": {
-  "en": "Brotha—you suck at this—Harry?",
-  "t": "형제여—너 이거 진짜 못한다—해리?"
- },
  "c7c4bc97cb6b": {
   "en": "Solen Zara",
   "t": "Solen Zara"
- },
- "c852360f55c1": {
-  "en": "—Yea? So I play next?",
-  "t": "—네? 그럼 다음은 제 차례예요?"
  },
  "c886f4fa5cd8": {
   "en": "Praise the source of the beef thou art eating. Thank the soul that was given for thy enjoyment and for thy nourishment.",
@@ -4967,10 +4815,6 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye"
  },
- "cbbc9c6fec55": {
-  "en": "Back to Board Games",
-  "t": "보드게임으로 돌아가기"
- },
  "cbe35333fcf5": {
   "en": "\nAnd as to why? Read my <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld Vol 4 afterword</a>.\n",
   "t": "왜냐고? 내 <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld 4권 후기</a>를 읽어 봐."
@@ -4978,10 +4822,6 @@
  "cc463043bf6a": {
   "en": "Roll all",
   "t": "전부 굴리기"
- },
- "cc60a1651cdd": {
-  "en": "Final: {you} {youScore} · {rival} {rivalScore} · {verdict}",
-  "t": "최종: {you} {youScore} · {rival} {rivalScore} · {verdict}"
  },
  "cc9c3f91bf15": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">✋</span> Pet ",
@@ -5050,10 +4890,6 @@
  "ce2c178cd497": {
   "en": "Fold precision {n}%.",
   "t": "접기 정밀도 {n}%."
- },
- "ce3c494a5e85": {
-  "en": "Aiight!",
-  "t": "좋아!"
  },
  "ce70caaad427": {
   "en": "1 photo",
@@ -5143,10 +4979,6 @@
   "en": "Churrasco",
   "t": "슈하스코"
  },
- "d1d827cb044b": {
-  "en": "What each territory is worth",
-  "t": "각 영역의 점수"
- },
  "d20bc2c58ea9": {
   "en": "Deo might have hit the dust. If he is still kicking, tell his old ass to update the clock.",
   "t": "Deo는 이미 흙으로 돌아갔을지도 몰라. 아직 팔팔하게 살아 있다면, 그 늙은이한테 시계 좀 업데이트하라고 전해 줘."
@@ -5154,10 +4986,6 @@
  "d223b6c1c738": {
   "en": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>",
   "t": "오달라<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>"
- },
- "d26d358f777a": {
-  "en": "Your dart flies low and lodges in the wall below the board.",
-  "t": "다트가 낮게 날아가 보드 아래 벽에 박혔어."
  },
  "d28817938afa": {
   "en": "Colorado",
@@ -5715,10 +5543,6 @@
   "en": "Likes",
   "t": "좋아요"
  },
- "ea35482e6295": {
-  "en": "Good try! Good try! C’mon! Try again!",
-  "t": "잘했어! 잘했어! 자! 다시 해 봐!"
- },
  "ea3ddf6727a8": {
   "en": "Do Better!",
   "t": "Do Better!"
@@ -5839,10 +5663,6 @@
   "en": "Enlarge: Painting or drawing, 01/23/2013",
   "t": "확대: 그림 또는 스케치, 2013년 1월 23일"
  },
- "ef0ebbb77298": {
-  "en": "orange",
-  "t": "주황색"
- },
  "efe6cabcbaa1": {
   "en": "Since we’re on the subject: take care of your mental health. And if you’ve ever thought about ending it all… don’t. I nearly did, back in 2016, during a period that far surpassed what my mind could take at the time. I called a crisis hotline. To the older lady who picked up the phone that night: I will forever be grateful. The “Harry” you see in Vol. 1 is an alternate version of myself: the one who plunged that knife into his chest that night.",
   "t": "말 나온 김에: 네 정신 건강을 돌봐. 그리고 혹시라도 다 끝내 버릴 생각을 해 본 적이 있다면… 하지 마. 난 2016년에 거의 그럴 뻔했어. 그때 내 마음이 감당할 수 있는 걸 훨씬 넘어선 시기였지. 난 위기 상담 전화에 전화를 걸었어. 그날 밤 전화를 받아 준 나이 지긋한 여성분께: 영원히 감사할 거예요. 1권에 나오는 \"해리\"는 나의 또 다른 버전이야: 그날 밤 자기 가슴에 칼을 꽂은 쪽."
@@ -5886,10 +5706,6 @@
  "f237b4210ce4": {
   "en": "Enlarge: Whatcha doing",
   "t": "확대: 뭐 해?"
- },
- "f290164d1315": {
-  "en": "Outer ring",
-  "t": "바깥 링"
  },
  "f2a63e1c444a": {
   "en": "Photogenic",
@@ -6095,10 +5911,6 @@
   "en": "Enlarge: When the catnip hits just right",
   "t": "확대: 캣닢이 딱 제대로 들어갔을 때"
  },
- "fb23c9ff0d27": {
-  "en": "Inner ring",
-  "t": "안쪽 링"
- },
  "fb4d13ed6962": {
   "en": "Enlarge: Sleep first",
   "t": "확대: 잠부터"
@@ -6170,10 +5982,6 @@
  "fe9050f8f41a": {
   "en": "Practice skin. Draw a tattoo on it with the tattoo pen.",
   "t": "연습용 피부. 타투 펜으로 타투를 그려 봐."
- },
- "feddfb10fb8d": {
-  "en": "We all play at the same time. GO!",
-  "t": "다 같이 동시에 하는 거야. 가!"
  },
  "feea42718962": {
   "en": "Enlarge: Walk time or more like I stay in the stroller",

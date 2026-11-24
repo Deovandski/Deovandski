@@ -279,10 +279,6 @@
   "en": "Blog",
   "t": "ब्लॉग"
  },
- "0bf9322efcf3": {
-  "en": "Final score: {you} {youScore}, {rival} {rivalScore}. {verdict}",
-  "t": "अंतिम स्कोर: {you} {youScore}, {rival} {rivalScore}। {verdict}"
- },
  "0c146d79c604": {
   "en": "Enlarge: FML! Forgot setup autopay",
   "t": "बड़ा करें: हाय रे क़िस्मत! ऑटोपे सेट करना भूल गया"
@@ -558,10 +554,6 @@
  "19c9c9ed8477": {
   "en": "Opera",
   "t": "ओपेरा"
- },
- "19e17a057b61": {
-  "en": "Your turn: press Throw (or Space) when the aim is where you want it.",
-  "t": "तुम्हारी बारी: जब निशाना सही जगह हो तब \"फेंको!\" (या स्पेस) दबाओ।"
  },
  "1a1f232c7b93": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder TV show 9 ",
@@ -938,10 +930,6 @@
  "27b48cf9ae90": {
   "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
   "t": "यानी {mode} में रिकॉर्ड की गईं {tapes} VHS टेप (हर T-120 टेप में {perTape} घंटे)।"
- },
- "27bbcef16995": {
-  "en": "Hiromi",
-  "t": "हिरोमी"
  },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
@@ -1351,10 +1339,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 8: </span> Placeholder movie 8 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 8: </span> अस्थायी फ़िल्म 8"
  },
- "38d4249ff036": {
-  "en": "⏱ {seconds}s · darts: {you} {youLeft}, {rival} {rivalLeft}",
-  "t": "⏱ {seconds}s · डार्ट: {you} {youLeft}, {rival} {rivalLeft}"
- },
  "38e1d26af274": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer"
@@ -1551,10 +1535,6 @@
   "en": "Captain Bidu final resting place",
   "t": "कैप्टन Bidu का अंतिम विश्राम स्थल"
  },
- "40e405b6605c": {
-  "en": "I haven’t heard of that, but yeah, I prefer targeting the yellow ones, as those are worth more if you snipe all territories.",
-  "t": "मैंने उसके बारे में नहीं सुना, पर हाँ, मुझे पीले वाले पर निशाना लगाना पसंद है, क्योंकि अगर तुम सारे इलाक़े छीन लो तो वे ज़्यादा क़ीमती होते हैं।"
- },
  "40f6fcda8a97": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder movie 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 9: </span> अस्थायी फ़िल्म 9"
@@ -1566,14 +1546,6 @@
  "4158753b0709": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder movie 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 10: </span> अस्थायी फ़िल्म 10"
- },
- "42766efba402": {
-  "en": "Middle ring",
-  "t": "मध्य रिंग"
- },
- "42ae6cb3cd8f": {
-  "en": "Time! The room starts to move too much…",
-  "t": "समय! कमरा बहुत ज्यादा हिलने लगा…"
  },
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
@@ -1767,14 +1739,6 @@
   "en": "Not bad!",
   "t": "बुरा नहीं!"
  },
- "4c660686dc07": {
-  "en": "His first dart clings, then falls. The second lands on a green territory near the centre.",
-  "t": "उसका पहला डार्ट चिपका, फिर गिरा। दूसरा केंद्र के पास हरे क्षेत्र पर गिरा।"
- },
- "4c9a82ce72ca": {
-  "en": "blue",
-  "t": "नीला"
- },
  "4cd5ee6da386": {
   "en": "Red Letter Media on YouTube",
   "t": "YouTube पर Red Letter Media"
@@ -1786,10 +1750,6 @@
  "4d1568414852": {
   "en": "Two Strangers (Carry a Cake Across New York)",
   "t": "Two Strangers (Carry a Cake Across New York)"
- },
- "4d2751b25828": {
-  "en": "Kinda? Was the board always this big and colored? I thought it was rounded too— OH YEAH! The center is worth more, right?",
-  "t": "कुछ-कुछ? क्या बोर्ड हमेशा इतना बड़ा और रंगीन होता था? मुझे लगा था वह गोल भी होता है— अरे हाँ! बीच वाला ज़्यादा क़ीमती होता है, है न?"
  },
  "4d3bce11bac3": {
   "en": "Language levels",
@@ -1934,10 +1894,6 @@
  "50c9e8d5fc98": {
   "en": "D",
   "t": "D"
- },
- "50ccc5e2e037": {
-  "en": "He aims for the same green, and lands far above it, on purple.",
-  "t": "वही हरा निशाना लगाया और उससे बहुत ऊपर बैंगनी पर गिरा।"
  },
  "50db544157bb": {
   "en": "Off beat",
@@ -2531,10 +2487,6 @@
   "en": "Enlarge: Gimme attention",
   "t": "बड़ा करें: ध्यान दो मुझ पर"
  },
- "69b0b68def54": {
-  "en": "SEE? It’s all about mindset! You know what, Harry? You’re cool! So why not play a bit of territory snipping to celebrate?",
-  "t": "देखा? सब सोच का खेल है! पता है क्या, हैरी? तुम मस्त हो! तो जश्न के लिए थोड़ी टेरिटरी स्निपिंग क्यों न खेलें?"
- },
  "69ce5d37a5a7": {
   "en": "Enlarge: Still tired",
   "t": "बड़ा करें: अब भी थका हूँ"
@@ -2614,10 +2566,6 @@
  "6c48581a0b47": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder movie 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 30: </span> अस्थायी फ़िल्म 30"
- },
- "6c4f692b2d93": {
-  "en": "{player} snipes a {colour} territory ({points}).",
-  "t": "{player} ने {colour} इलाक़ा छीन लिया ({points})।"
  },
  "6c84173deb3d": {
   "en": "Vraki<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (written in Vraki)</span>",
@@ -2855,10 +2803,6 @@
   "en": "Enlarge: Close to 12 years old but still kicking",
   "t": "बड़ा करें: लगभग 12 साल का, पर अब भी दमदार"
  },
- "76262d314611": {
-  "en": "Territory Snipping: turn your phone sideways",
-  "t": "टेरिटरी स्निपिंग: अपना फ़ोन आड़ा करो"
- },
  "762cf7076b06": {
   "en": "CR",
   "t": "CR"
@@ -2939,10 +2883,6 @@
   "en": "Pause",
   "t": "रोकें"
  },
- "78988010b890": {
-  "en": "red",
-  "t": "लाल"
- },
  "78ca112f9500": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder game 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 33: </span> अस्थायी गेम 33"
@@ -2998,10 +2938,6 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
- },
- "7a8cb7243b93": {
-  "en": "{n} pt",
-  "t": "{n} अंक"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -3267,10 +3203,6 @@
   "en": "Harvest!",
   "t": "कटाई!"
  },
- "85a1ecacad2c": {
-  "en": "That’s the spirit! … You played this before, right?",
-  "t": "यह हुई न बात! … तुमने यह पहले खेला है, है न?"
- },
  "85af7ed7a344": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Placeholder movie 18 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 18: </span> अस्थायी फ़िल्म 18"
@@ -3298,10 +3230,6 @@
  "8657af8238d1": {
   "en": "Hairball",
   "t": "Hairball"
- },
- "868657e908ac": {
-  "en": "Harry",
-  "t": "हैरी"
  },
  "8686eb8cf046": {
   "en": "Circa Q2 2013",
@@ -3434,10 +3362,6 @@
  "8bc3246a22fe": {
   "en": "Tattoo on my chest",
   "t": "मेरे सीने पर टैटू"
- },
- "8bf12a38bad0": {
-  "en": "Throw!",
-  "t": "फेंको!"
  },
  "8c11a9f1eca9": {
   "en": "Ride cymbal (key E)",
@@ -3615,10 +3539,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder game 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 30: </span> अस्थायी गेम 30"
  },
- "935f6cd89f4a": {
-  "en": "A draw!",
-  "t": "बराबरी!"
- },
  "9384a918b850": {
   "en": "Or grow a spine and just reach out to me: see the <a href=\"/contact/\">Contact</a> page.",
   "t": "या हिम्मत जुटाओ और सीधे संपर्क करो: <a href=\"/contact/\">संपर्क</a> पेज देखो।"
@@ -3707,10 +3627,6 @@
   "en": "Fluent",
   "t": "धाराप्रवाह"
  },
- "96de5543d183": {
-  "en": "yellow",
-  "t": "पीला"
- },
  "96dedce974cf": {
   "en": "Enlarge: Failing to learn English",
   "t": "बड़ा करें: अंग्रेज़ी सीखने में फ़ेल"
@@ -3738,10 +3654,6 @@
  "9790b0b19467": {
   "en": " 1 amethyst  · 1 energy · 20 s ",
   "t": "1 एमेथिस्ट · 1 ऊर्जा · 20 से."
- },
- "97ad0a52c978": {
-  "en": "From <a href=\"https://www.husbandoutworld.com/lore/pastimes/#territory-snipping\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld</a>: play the round of Territory Snipping from Vol 2, as Harry, against Hiromi.",
-  "t": "<a href=\"https://www.husbandoutworld.com/lore/pastimes/#territory-snipping\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld</a> से: वॉल्यूम 2 वाला टेरिटरी स्निपिंग का राउंड खेलो, हैरी बनकर, हिरोमी के ख़िलाफ़।"
  },
  "97c202217634": {
   "en": "17 photos",
@@ -3779,10 +3691,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 34: </span> Placeholder game 34 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 34: </span> अस्थायी गेम 34"
  },
- "992fb4c6838e": {
-  "en": "{you} wins, somehow!",
-  "t": "{you} किसी तरह जीत गया!"
- },
  "998896860e5d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder TV show 27 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 27: </span> अस्थायी टीवी शो 27"
@@ -3810,10 +3718,6 @@
  "9bb732a1e053": {
   "en": "Glad I don't pay rent",
   "t": "शुक्र है किराया नहीं देता"
- },
- "9bdcbc1f38da": {
-  "en": "You’re coolio too!",
-  "t": "तुम भी मस्तमौला हो!"
  },
  "9c202ecc19a4": {
   "en": "Am I that really interesting?",
@@ -4087,10 +3991,6 @@
   "en": "Musicals",
   "t": "म्यूज़िकल"
  },
- "a691267c5647": {
-  "en": "{rival} wins.",
-  "t": "{rival} जीत गया।"
- },
  "a694aafb9d11": {
   "en": "Deo's hand holding a cup of chimarrão with its metal straw, a black cat curled up on a striped blanket behind it",
   "t": "धातु की स्ट्रॉ वाले शिमारांव के कप को थामे Deo का हाथ, पीछे धारीदार कंबल पर गुड़ी-मुड़ी हुई एक काली बिल्ली"
@@ -4110,10 +4010,6 @@
  "a74615c9d0f5": {
   "en": "The hustle",
   "t": "हसल"
- },
- "a75be8f0bded": {
-  "en": "Cancelled! Both darts on the {colour} territory are out.",
-  "t": "रद्द! {colour} इलाक़े पर दोनों डार्ट बाहर।"
  },
  "a75e8688b4fb": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24",
@@ -4355,10 +4251,6 @@
   "en": "Losses: 5",
   "t": "हार: 5"
  },
- "afaed75406bd": {
-  "en": "purple",
-  "t": "बैंगनी"
- },
  "affabe3f4188": {
   "en": "Campaign #1",
   "t": "कैंपेन #1"
@@ -4422,10 +4314,6 @@
  "b297cb01e994": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022"
- },
- "b2b52c2fc7c2": {
-  "en": "Snipe all territories? That’s—different—I think. Can—can you explain?",
-  "t": "सारे इलाक़े छीन लो? यह तो—अलग है—मुझे लगता है। क्या—क्या तुम समझा सकते हो?"
  },
  "b31013feefa3": {
   "en": "4 photos",
@@ -4559,10 +4447,6 @@
   "en": "{m} m ({ft} ft).",
   "t": "{m} m ({ft} ft)।"
  },
- "b8c8d91c4ad6": {
-  "en": "Yellow centre",
-  "t": "पीला केंद्र"
- },
  "b90b25305207": {
   "en": "Very hot",
   "t": "बेहद गरम"
@@ -4583,10 +4467,6 @@
   "en": "Back to Painting",
   "t": "पेंटिंग पर वापस"
  },
- "b98ab59bdc99": {
-  "en": "{n} pts",
-  "t": "{n} अंक"
- },
  "b9a2ffa6496c": {
   "en": "Let's go",
   "t": "चलो चलें"
@@ -4594,10 +4474,6 @@
  "b9af5469788b": {
   "en": "The clock is ticking on my 💀 Death tab.",
   "t": "मेरे 💀 मौत टैब पर घड़ी टिक-टिक कर रही है।"
- },
- "b9f8e7d16bef": {
-  "en": "{player}'s dart bounced off the wall.",
-  "t": "{player} का डार्ट दीवार से टकराकर लौट गया।"
  },
  "ba01865809b3": {
   "en": "Back to Concert",
@@ -4627,10 +4503,6 @@
   "en": "Pitty",
   "t": "Pitty"
  },
- "bc38448e90c1": {
-  "en": "Aw, my chitin ass! Anyways, the goal is to land on the same color region to score a point. If you land on a region with someone else’s dart, you two cancel each other out. Ehh—right? Right—right. The smaller the region, the more it’s worth when sniping it. That makes sense?",
-  "t": "आउ, मेरा काइटिन पिछवाड़ा! ख़ैर, लक्ष्य है कि एक ही रंग के हिस्से पर गिराकर एक अंक बनाओ। अगर तुम किसी ऐसे हिस्से पर गिराओ जहाँ किसी और का डार्ट हो, तो तुम दोनों एक-दूसरे को काट देते हो। एह्ह—है न? है—है। हिस्सा जितना छोटा, उसे छीनने पर वह उतना ही क़ीमती। समझ आया?"
- },
  "bc4359231d61": {
   "en": "Gym",
   "t": "जिम"
@@ -4638,14 +4510,6 @@
  "bc5a47b54ae3": {
   "en": "Who's cooler",
   "t": "कौन ज़्यादा कूल"
- },
- "bc74f4f071a5": {
-  "en": "green",
-  "t": "हरा"
- },
- "bc981983e7f5": {
-  "en": "Next",
-  "t": "अगला"
  },
  "bd7210aa5ccc": {
   "en": " 10 amethysts → 1 aquamarine ",
@@ -4662,10 +4526,6 @@
  "be7869041e41": {
   "en": "MyAnimeList",
   "t": "MyAnimeList"
- },
- "be909c082346": {
-  "en": "Territory Snipping",
-  "t": "टेरिटरी स्निपिंग"
  },
  "bea68df61c69": {
   "en": "Beef grilled so far",
@@ -4746,10 +4606,6 @@
  "c12140a0ffb4": {
   "en": "日本語",
   "t": "日本語"
- },
- "c1218408e29a": {
-  "en": "Just a hunk—that was me warming up! Now try to throw on a green section or anywhere else.",
-  "t": "बस एक हंक—वह तो मेरा वॉर्म-अप था! अब हरे हिस्से पर या कहीं और फेंकने की कोशिश करो।"
  },
  "c155ff628d91": {
   "en": "Laser removal",
@@ -4879,17 +4735,9 @@
   "en": "Peeta's backyard run",
   "t": "Peeta की पिछवाड़े वाली दौड़"
  },
- "c7abd16eb68f": {
-  "en": "Brotha—you suck at this—Harry?",
-  "t": "भाई—तुम इसमें बेकार हो—हैरी?"
- },
  "c7c4bc97cb6b": {
   "en": "Solen Zara",
   "t": "Solen Zara"
- },
- "c852360f55c1": {
-  "en": "—Yea? So I play next?",
-  "t": "—हाँ? तो अगली बारी मेरी?"
  },
  "c886f4fa5cd8": {
   "en": "Praise the source of the beef thou art eating. Thank the soul that was given for thy enjoyment and for thy nourishment.",
@@ -4967,10 +4815,6 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye"
  },
- "cbbc9c6fec55": {
-  "en": "Back to Board Games",
-  "t": "बोर्ड गेम पर वापस"
- },
  "cbe35333fcf5": {
   "en": "\nAnd as to why? Read my <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld Vol 4 afterword</a>.\n",
   "t": "और क्यों? मेरा <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld वॉल्यूम 4 का उपसंहार</a> पढ़ो।"
@@ -4978,10 +4822,6 @@
  "cc463043bf6a": {
   "en": "Roll all",
   "t": "सब फेंको"
- },
- "cc60a1651cdd": {
-  "en": "Final: {you} {youScore} · {rival} {rivalScore} · {verdict}",
-  "t": "अंतिम: {you} {youScore} · {rival} {rivalScore} · {verdict}"
  },
  "cc9c3f91bf15": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">✋</span> Pet ",
@@ -5050,10 +4890,6 @@
  "ce2c178cd497": {
   "en": "Fold precision {n}%.",
   "t": "मोड़ की सटीकता {n}%।"
- },
- "ce3c494a5e85": {
-  "en": "Aiight!",
-  "t": "चलो ठीक!"
  },
  "ce70caaad427": {
   "en": "1 photo",
@@ -5143,10 +4979,6 @@
   "en": "Churrasco",
   "t": "शुहास्कू"
  },
- "d1d827cb044b": {
-  "en": "What each territory is worth",
-  "t": "हर इलाक़े की क़ीमत"
- },
  "d20bc2c58ea9": {
   "en": "Deo might have hit the dust. If he is still kicking, tell his old ass to update the clock.",
   "t": "हो सकता है Deo सिधार चुका हो। अगर वह अब भी ज़िंदा और लात मार रहा है, तो उस बुड्ढे से कहो कि घड़ी अपडेट करे।"
@@ -5154,10 +4986,6 @@
  "d223b6c1c738": {
   "en": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>",
   "t": "ओथाला<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>"
- },
- "d26d358f777a": {
-  "en": "Your dart flies low and lodges in the wall below the board.",
-  "t": "तुम्हारा डार्ट नीचे उड़ा और बोर्ड के नीचे दीवार में धँस गया।"
  },
  "d28817938afa": {
   "en": "Colorado",
@@ -5715,10 +5543,6 @@
   "en": "Likes",
   "t": "लाइक"
  },
- "ea35482e6295": {
-  "en": "Good try! Good try! C’mon! Try again!",
-  "t": "अच्छी कोशिश! अच्छी कोशिश! चलो! फिर कोशिश करो!"
- },
  "ea3ddf6727a8": {
   "en": "Do Better!",
   "t": "Do Better!"
@@ -5839,10 +5663,6 @@
   "en": "Enlarge: Painting or drawing, 01/23/2013",
   "t": "बड़ा करें: पेंटिंग या स्केच, 23/1/2013"
  },
- "ef0ebbb77298": {
-  "en": "orange",
-  "t": "नारंगी"
- },
  "efe6cabcbaa1": {
   "en": "Since we’re on the subject: take care of your mental health. And if you’ve ever thought about ending it all… don’t. I nearly did, back in 2016, during a period that far surpassed what my mind could take at the time. I called a crisis hotline. To the older lady who picked up the phone that night: I will forever be grateful. The “Harry” you see in Vol. 1 is an alternate version of myself: the one who plunged that knife into his chest that night.",
   "t": "अब जब बात निकली है: अपने मानसिक स्वास्थ्य का ख़याल रखो। और अगर तुमने कभी सब कुछ ख़त्म करने के बारे में सोचा है… तो मत करना। मैं लगभग कर बैठा था, 2016 में, एक ऐसे दौर में जो उस समय मेरे मन की सहन-सीमा से बहुत आगे था। मैंने एक संकट हेल्पलाइन पर फ़ोन किया। उस रात फ़ोन उठाने वाली बुज़ुर्ग महिला से: मैं हमेशा आपका आभारी रहूँगा। वॉल्यूम 1 में जो \"हैरी\" तुम देखते हो, वह मेरा ही एक दूसरा रूप है: वह जिसने उस रात अपने सीने में चाकू घोंप दिया।"
@@ -5886,10 +5706,6 @@
  "f237b4210ce4": {
   "en": "Enlarge: Whatcha doing",
   "t": "बड़ा करें: क्या कर रहे हो"
- },
- "f290164d1315": {
-  "en": "Outer ring",
-  "t": "बाहरी रिंग"
  },
  "f2a63e1c444a": {
   "en": "Photogenic",
@@ -6095,10 +5911,6 @@
   "en": "Enlarge: When the catnip hits just right",
   "t": "बड़ा करें: जब कैटनिप ठीक से चढ़ जाए"
  },
- "fb23c9ff0d27": {
-  "en": "Inner ring",
-  "t": "भीतरी रिंग"
- },
  "fb4d13ed6962": {
   "en": "Enlarge: Sleep first",
   "t": "बड़ा करें: पहले नींद"
@@ -6170,10 +5982,6 @@
  "fe9050f8f41a": {
   "en": "Practice skin. Draw a tattoo on it with the tattoo pen.",
   "t": "प्रैक्टिस स्किन। टैटू पेन से इस पर टैटू बनाओ।"
- },
- "feddfb10fb8d": {
-  "en": "We all play at the same time. GO!",
-  "t": "हम सब एक साथ खेलते हैं। चलो!"
  },
  "feea42718962": {
   "en": "Enlarge: Walk time or more like I stay in the stroller",

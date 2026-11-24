@@ -279,10 +279,6 @@
   "en": "Blog",
   "t": "Blog"
  },
- "0bf9322efcf3": {
-  "en": "Final score: {you} {youScore}, {rival} {rivalScore}. {verdict}",
-  "t": "Điểm cuối: {you} {youScore}, {rival} {rivalScore}. {verdict}"
- },
  "0c146d79c604": {
   "en": "Enlarge: FML! Forgot setup autopay",
   "t": "Phóng to: Đời tôi tàn rồi! Quên cài đặt thanh toán tự động"
@@ -558,10 +554,6 @@
  "19c9c9ed8477": {
   "en": "Opera",
   "t": "Opera"
- },
- "19e17a057b61": {
-  "en": "Your turn: press Throw (or Space) when the aim is where you want it.",
-  "t": "Lượt của bạn: nhấn Ném! (hoặc Space) khi tâm ngắm ở đúng chỗ bạn muốn."
  },
  "1a1f232c7b93": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder TV show 9 ",
@@ -938,10 +930,6 @@
  "27b48cf9ae90": {
   "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
   "t": "Tức là {tapes} cuộn băng VHS ghi ở chế độ {mode} ({perTape} giờ mỗi băng T-120)."
- },
- "27bbcef16995": {
-  "en": "Hiromi",
-  "t": "Hiromi"
  },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
@@ -1351,10 +1339,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 8: </span> Placeholder movie 8 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 8: </span> Phim tạm 8"
  },
- "38d4249ff036": {
-  "en": "⏱ {seconds}s · darts: {you} {youLeft}, {rival} {rivalLeft}",
-  "t": "⏱ {seconds}s · phi tiêu: {you} {youLeft}, {rival} {rivalLeft}"
- },
  "38e1d26af274": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer"
@@ -1551,10 +1535,6 @@
   "en": "Captain Bidu final resting place",
   "t": "Nơi an nghỉ cuối cùng của Thuyền trưởng Bidu"
  },
- "40e405b6605c": {
-  "en": "I haven’t heard of that, but yeah, I prefer targeting the yellow ones, as those are worth more if you snipe all territories.",
-  "t": "Chưa nghe bao giờ, nhưng ừ, tôi thích nhắm vào mấy ô màu vàng hơn, vì chúng được nhiều điểm hơn nếu cậu cướp hết lãnh thổ."
- },
  "40f6fcda8a97": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder movie 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 9: </span> Phim tạm 9"
@@ -1566,14 +1546,6 @@
  "4158753b0709": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder movie 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 10: </span> Phim tạm 10"
- },
- "42766efba402": {
-  "en": "Middle ring",
-  "t": "Vòng giữa"
- },
- "42ae6cb3cd8f": {
-  "en": "Time! The room starts to move too much…",
-  "t": "Hết giờ! Căn phòng bắt đầu chuyển động quá nhiều…"
  },
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
@@ -1767,14 +1739,6 @@
   "en": "Not bad!",
   "t": "Không tệ!"
  },
- "4c660686dc07": {
-  "en": "His first dart clings, then falls. The second lands on a green territory near the centre.",
-  "t": "Phi tiêu đầu của hắn bám, rồi rơi. Cái thứ hai hạ cánh trên lãnh thổ xanh gần tâm."
- },
- "4c9a82ce72ca": {
-  "en": "blue",
-  "t": "xanh dương"
- },
  "4cd5ee6da386": {
   "en": "Red Letter Media on YouTube",
   "t": "Red Letter Media trên YouTube"
@@ -1786,10 +1750,6 @@
  "4d1568414852": {
   "en": "Two Strangers (Carry a Cake Across New York)",
   "t": "Two Strangers (Carry a Cake Across New York)"
- },
- "4d2751b25828": {
-  "en": "Kinda? Was the board always this big and colored? I thought it was rounded too— OH YEAH! The center is worth more, right?",
-  "t": "Kiểu kiểu? Tấm bảng lúc nào cũng to và nhiều màu thế này à? Tôi tưởng nó cũng hình tròn chứ— À ĐÚNG RỒI! Ở giữa được nhiều điểm hơn, đúng không?"
  },
  "4d3bce11bac3": {
   "en": "Language levels",
@@ -1934,10 +1894,6 @@
  "50c9e8d5fc98": {
   "en": "D",
   "t": "D"
- },
- "50ccc5e2e037": {
-  "en": "He aims for the same green, and lands far above it, on purple.",
-  "t": "Hắn ngắm cùng màu xanh, và hạ cánh xa phía trên, trên màu tím."
  },
  "50db544157bb": {
   "en": "Off beat",
@@ -2531,10 +2487,6 @@
   "en": "Enlarge: Gimme attention",
   "t": "Phóng to: Chú ý tới tôi đi"
  },
- "69b0b68def54": {
-  "en": "SEE? It’s all about mindset! You know what, Harry? You’re cool! So why not play a bit of territory snipping to celebrate?",
-  "t": "THẤY CHƯA? Tất cả là ở tư duy! Cậu biết không, Harry? Cậu ngầu lắm! Vậy sao không chơi một ván cướp lãnh thổ để ăn mừng?"
- },
  "69ce5d37a5a7": {
   "en": "Enlarge: Still tired",
   "t": "Phóng to: Vẫn mệt"
@@ -2614,10 +2566,6 @@
  "6c48581a0b47": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder movie 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 30: </span> Phim tạm 30"
- },
- "6c4f692b2d93": {
-  "en": "{player} snipes a {colour} territory ({points}).",
-  "t": "{player} cướp lãnh thổ {colour} ({points})."
  },
  "6c84173deb3d": {
   "en": "Vraki<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (written in Vraki)</span>",
@@ -2855,10 +2803,6 @@
   "en": "Enlarge: Close to 12 years old but still kicking",
   "t": "Phóng to: Gần 12 tuổi rồi mà vẫn khỏe re"
  },
- "76262d314611": {
-  "en": "Territory Snipping: turn your phone sideways",
-  "t": "Territory Snipping: xoay ngang điện thoại"
- },
  "762cf7076b06": {
   "en": "CR",
   "t": "CR"
@@ -2939,10 +2883,6 @@
   "en": "Pause",
   "t": "Tạm dừng"
  },
- "78988010b890": {
-  "en": "red",
-  "t": "đỏ"
- },
  "78ca112f9500": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder game 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 33: </span> Trò chơi tạm 33"
@@ -2998,10 +2938,6 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
- },
- "7a8cb7243b93": {
-  "en": "{n} pt",
-  "t": "{n} điểm"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -3267,10 +3203,6 @@
   "en": "Harvest!",
   "t": "Thu hoạch!"
  },
- "85a1ecacad2c": {
-  "en": "That’s the spirit! … You played this before, right?",
-  "t": "Tinh thần thế chứ! … Cậu chơi trò này rồi, đúng không?"
- },
  "85af7ed7a344": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Placeholder movie 18 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 18: </span> Phim tạm 18"
@@ -3298,10 +3230,6 @@
  "8657af8238d1": {
   "en": "Hairball",
   "t": "Hairball"
- },
- "868657e908ac": {
-  "en": "Harry",
-  "t": "Harry"
  },
  "8686eb8cf046": {
   "en": "Circa Q2 2013",
@@ -3434,10 +3362,6 @@
  "8bc3246a22fe": {
   "en": "Tattoo on my chest",
   "t": "Hình xăm trên ngực tôi"
- },
- "8bf12a38bad0": {
-  "en": "Throw!",
-  "t": "Ném!"
  },
  "8c11a9f1eca9": {
   "en": "Ride cymbal (key E)",
@@ -3615,10 +3539,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder game 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 30: </span> Trò chơi tạm 30"
  },
- "935f6cd89f4a": {
-  "en": "A draw!",
-  "t": "Hòa!"
- },
  "9384a918b850": {
   "en": "Or grow a spine and just reach out to me: see the <a href=\"/contact/\">Contact</a> page.",
   "t": "Hoặc can đảm lên và liên hệ với tôi: xem trang <a href=\"/contact/\">Liên hệ</a>."
@@ -3707,10 +3627,6 @@
   "en": "Fluent",
   "t": "Thành thạo"
  },
- "96de5543d183": {
-  "en": "yellow",
-  "t": "vàng"
- },
  "96dedce974cf": {
   "en": "Enlarge: Failing to learn English",
   "t": "Phóng to: Học tiếng Anh thất bại"
@@ -3738,10 +3654,6 @@
  "9790b0b19467": {
   "en": " 1 amethyst  · 1 energy · 20 s ",
   "t": "1 amethyst · 1 năng lượng · 20 giây"
- },
- "97ad0a52c978": {
-  "en": "From <a href=\"https://www.husbandoutworld.com/lore/pastimes/#territory-snipping\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld</a>: play the round of Territory Snipping from Vol 2, as Harry, against Hiromi.",
-  "t": "Từ <a href=\"https://www.husbandoutworld.com/lore/pastimes/#territory-snipping\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld</a>: chơi ván Territory Snipping trong Vol 2, vào vai Harry, đấu với Hiromi."
  },
  "97c202217634": {
   "en": "17 photos",
@@ -3779,10 +3691,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 34: </span> Placeholder game 34 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 34: </span> Trò chơi tạm 34"
  },
- "992fb4c6838e": {
-  "en": "{you} wins, somehow!",
-  "t": "{you} thắng, kiểu gì đó!"
- },
  "998896860e5d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder TV show 27 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 27: </span> Phim bộ tạm 27"
@@ -3810,10 +3718,6 @@
  "9bb732a1e053": {
   "en": "Glad I don't pay rent",
   "t": "May mà không phải trả tiền nhà"
- },
- "9bdcbc1f38da": {
-  "en": "You’re coolio too!",
-  "t": "Anh cũng ngầu bá cháy!"
  },
  "9c202ecc19a4": {
   "en": "Am I that really interesting?",
@@ -4087,10 +3991,6 @@
   "en": "Musicals",
   "t": "Nhạc kịch"
  },
- "a691267c5647": {
-  "en": "{rival} wins.",
-  "t": "{rival} thắng."
- },
  "a694aafb9d11": {
   "en": "Deo's hand holding a cup of chimarrão with its metal straw, a black cat curled up on a striped blanket behind it",
   "t": "Bàn tay Deo cầm cốc chimarrão với ống hút kim loại, phía sau là một chú mèo đen cuộn tròn trên tấm chăn kẻ sọc"
@@ -4110,10 +4010,6 @@
  "a74615c9d0f5": {
   "en": "The hustle",
   "t": "Hustle"
- },
- "a75be8f0bded": {
-  "en": "Cancelled! Both darts on the {colour} territory are out.",
-  "t": "Hủy! Cả hai phi tiêu trên lãnh thổ {colour} đều ra ngoài."
  },
  "a75e8688b4fb": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24",
@@ -4355,10 +4251,6 @@
   "en": "Losses: 5",
   "t": "Thua: 5"
  },
- "afaed75406bd": {
-  "en": "purple",
-  "t": "tím"
- },
  "affabe3f4188": {
   "en": "Campaign #1",
   "t": "Chiến dịch #1"
@@ -4422,10 +4314,6 @@
  "b297cb01e994": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022"
- },
- "b2b52c2fc7c2": {
-  "en": "Snipe all territories? That’s—different—I think. Can—can you explain?",
-  "t": "Cướp hết lãnh thổ? Cái đó—khác—chắc vậy. Anh—anh giải thích được không?"
  },
  "b31013feefa3": {
   "en": "4 photos",
@@ -4559,10 +4447,6 @@
   "en": "{m} m ({ft} ft).",
   "t": "{m} m ({ft} ft)."
  },
- "b8c8d91c4ad6": {
-  "en": "Yellow centre",
-  "t": "Tâm vàng"
- },
  "b90b25305207": {
   "en": "Very hot",
   "t": "Rất nóng"
@@ -4583,10 +4467,6 @@
   "en": "Back to Painting",
   "t": "Quay lại Vẽ tranh"
  },
- "b98ab59bdc99": {
-  "en": "{n} pts",
-  "t": "{n} điểm"
- },
  "b9a2ffa6496c": {
   "en": "Let's go",
   "t": "Đi thôi"
@@ -4594,10 +4474,6 @@
  "b9af5469788b": {
   "en": "The clock is ticking on my 💀 Death tab.",
   "t": "Đồng hồ đang chạy trên 💀 thẻ Cái chết của tôi."
- },
- "b9f8e7d16bef": {
-  "en": "{player}'s dart bounced off the wall.",
-  "t": "Phi tiêu của {player} nảy khỏi tường."
  },
  "ba01865809b3": {
   "en": "Back to Concert",
@@ -4627,10 +4503,6 @@
   "en": "Pitty",
   "t": "Pitty"
  },
- "bc38448e90c1": {
-  "en": "Aw, my chitin ass! Anyways, the goal is to land on the same color region to score a point. If you land on a region with someone else’s dart, you two cancel each other out. Ehh—right? Right—right. The smaller the region, the more it’s worth when sniping it. That makes sense?",
-  "t": "Á, cái mông kitin của tôi! Dù sao thì, mục tiêu là ném trúng vùng cùng màu để ghi một điểm. Nếu cậu ném trúng vùng có phi tiêu của người khác, hai người triệt tiêu nhau. Ờ—đúng không? Đúng—đúng. Vùng càng nhỏ, cướp được nó càng nhiều điểm. Hiểu chưa?"
- },
  "bc4359231d61": {
   "en": "Gym",
   "t": "Phòng gym"
@@ -4638,14 +4510,6 @@
  "bc5a47b54ae3": {
   "en": "Who's cooler",
   "t": "Ai ngầu hơn"
- },
- "bc74f4f071a5": {
-  "en": "green",
-  "t": "xanh lá"
- },
- "bc981983e7f5": {
-  "en": "Next",
-  "t": "Tiếp"
  },
  "bd7210aa5ccc": {
   "en": " 10 amethysts → 1 aquamarine ",
@@ -4662,10 +4526,6 @@
  "be7869041e41": {
   "en": "MyAnimeList",
   "t": "MyAnimeList"
- },
- "be909c082346": {
-  "en": "Territory Snipping",
-  "t": "Territory Snipping"
  },
  "bea68df61c69": {
   "en": "Beef grilled so far",
@@ -4746,10 +4606,6 @@
  "c12140a0ffb4": {
   "en": "日本語",
   "t": "日本語"
- },
- "c1218408e29a": {
-  "en": "Just a hunk—that was me warming up! Now try to throw on a green section or anywhere else.",
-  "t": "Chỉ một hunk thôi—vừa rồi tôi khởi động! Giờ thử ném vào một ô xanh lá hay bất cứ chỗ nào khác xem."
  },
  "c155ff628d91": {
   "en": "Laser removal",
@@ -4879,17 +4735,9 @@
   "en": "Peeta's backyard run",
   "t": "Peeta chạy ở sân sau"
  },
- "c7abd16eb68f": {
-  "en": "Brotha—you suck at this—Harry?",
-  "t": "Người anh em—cậu chơi dở tệ—Harry?"
- },
  "c7c4bc97cb6b": {
   "en": "Solen Zara",
   "t": "Solen Zara"
- },
- "c852360f55c1": {
-  "en": "—Yea? So I play next?",
-  "t": "—Rồi? Vậy tôi chơi tiếp à?"
  },
  "c886f4fa5cd8": {
   "en": "Praise the source of the beef thou art eating. Thank the soul that was given for thy enjoyment and for thy nourishment.",
@@ -4967,10 +4815,6 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#25: </span>Best of the Worst: Spookies, Action USA, and Alien Private Eye"
  },
- "cbbc9c6fec55": {
-  "en": "Back to Board Games",
-  "t": "Quay lại Board game"
- },
  "cbe35333fcf5": {
   "en": "\nAnd as to why? Read my <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld Vol 4 afterword</a>.\n",
   "t": "Còn tại sao ư? Hãy đọc <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">lời bạt Vol 4 của #HusbandOutWorld</a> của tôi."
@@ -4978,10 +4822,6 @@
  "cc463043bf6a": {
   "en": "Roll all",
   "t": "Đổ tất cả"
- },
- "cc60a1651cdd": {
-  "en": "Final: {you} {youScore} · {rival} {rivalScore} · {verdict}",
-  "t": "Cuối: {you} {youScore} · {rival} {rivalScore} · {verdict}"
  },
  "cc9c3f91bf15": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">✋</span> Pet ",
@@ -5050,10 +4890,6 @@
  "ce2c178cd497": {
   "en": "Fold precision {n}%.",
   "t": "Độ chính xác khi gấp {n}%."
- },
- "ce3c494a5e85": {
-  "en": "Aiight!",
-  "t": "Okela!"
  },
  "ce70caaad427": {
   "en": "1 photo",
@@ -5143,10 +4979,6 @@
   "en": "Churrasco",
   "t": "Churrasco"
  },
- "d1d827cb044b": {
-  "en": "What each territory is worth",
-  "t": "Giá trị của mỗi lãnh thổ"
- },
  "d20bc2c58ea9": {
   "en": "Deo might have hit the dust. If he is still kicking, tell his old ass to update the clock.",
   "t": "Có thể Deo đã đi đời rồi. Nếu ông ấy còn sống nhăn, bảo lão già đó cập nhật đồng hồ đi."
@@ -5154,10 +4986,6 @@
  "d223b6c1c738": {
   "en": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>",
   "t": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>"
- },
- "d26d358f777a": {
-  "en": "Your dart flies low and lodges in the wall below the board.",
-  "t": "Phi tiêu của bạn bay thấp và cắm vào tường dưới bảng."
  },
  "d28817938afa": {
   "en": "Colorado",
@@ -5715,10 +5543,6 @@
   "en": "Likes",
   "t": "Lượt thích"
  },
- "ea35482e6295": {
-  "en": "Good try! Good try! C’mon! Try again!",
-  "t": "Thử tốt lắm! Thử tốt lắm! Nào! Thử lại đi!"
- },
  "ea3ddf6727a8": {
   "en": "Do Better!",
   "t": "Do Better!"
@@ -5839,10 +5663,6 @@
   "en": "Enlarge: Painting or drawing, 01/23/2013",
   "t": "Phóng to: Tranh vẽ hoặc phác họa, 23/01/2013"
  },
- "ef0ebbb77298": {
-  "en": "orange",
-  "t": "cam"
- },
  "efe6cabcbaa1": {
   "en": "Since we’re on the subject: take care of your mental health. And if you’ve ever thought about ending it all… don’t. I nearly did, back in 2016, during a period that far surpassed what my mind could take at the time. I called a crisis hotline. To the older lady who picked up the phone that night: I will forever be grateful. The “Harry” you see in Vol. 1 is an alternate version of myself: the one who plunged that knife into his chest that night.",
   "t": "Nhân tiện nói đến đây: hãy chăm sóc sức khỏe tinh thần của bạn. Và nếu bạn từng nghĩ đến chuyện kết thúc tất cả… đừng. Tôi đã suýt làm thế, năm 2016, trong một giai đoạn vượt xa sức chịu đựng của tâm trí tôi lúc đó. Tôi đã gọi đến đường dây hỗ trợ khủng hoảng. Gửi bà cụ đã nhấc máy đêm hôm ấy: tôi sẽ biết ơn bà mãi mãi. \"Harry\" mà bạn thấy trong Vol. 1 là một phiên bản khác của tôi: người đã đâm con dao ấy vào ngực mình đêm hôm đó."
@@ -5886,10 +5706,6 @@
  "f237b4210ce4": {
   "en": "Enlarge: Whatcha doing",
   "t": "Phóng to: Đang làm gì đó"
- },
- "f290164d1315": {
-  "en": "Outer ring",
-  "t": "Vòng ngoài"
  },
  "f2a63e1c444a": {
   "en": "Photogenic",
@@ -6095,10 +5911,6 @@
   "en": "Enlarge: When the catnip hits just right",
   "t": "Phóng to: Khi cỏ mèo ngấm đúng lúc"
  },
- "fb23c9ff0d27": {
-  "en": "Inner ring",
-  "t": "Vòng trong"
- },
  "fb4d13ed6962": {
   "en": "Enlarge: Sleep first",
   "t": "Phóng to: Ngủ trước đã"
@@ -6170,10 +5982,6 @@
  "fe9050f8f41a": {
   "en": "Practice skin. Draw a tattoo on it with the tattoo pen.",
   "t": "Da tập. Vẽ một hình xăm lên đó bằng bút xăm."
- },
- "feddfb10fb8d": {
-  "en": "We all play at the same time. GO!",
-  "t": "Tất cả chơi cùng lúc. BẮT ĐẦU!"
  },
  "feea42718962": {
   "en": "Enlarge: Walk time or more like I stay in the stroller",

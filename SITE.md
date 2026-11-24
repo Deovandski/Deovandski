@@ -39,7 +39,6 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Painting/Drawing tab (intro text + picture grid captioned with the date taken) | pictures in `content/painting/` (see its README), approximate dates in `content/painting/_dates.md`; intro text in `src/pages/index.astro` (`panel-painting`) |
 | Painting tab LED matrix (click to light LEDs) | `src/components/reusable/LedMatrix.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | Board Games tab (one picture + story per card, like D&D) | `content/boardgames.md`, pictures in `content/boardgames/<card>/` |
-| Board Games tab Territory Snipping (the on-rails darts scene) | script, dialogue and settings in `content/territory-snipping.json` (every line is from HusbandOutWorld Vol 2); `src/components/reusable/IsoDarts.astro`, placed at the top of `panel-boardgames` |
 | MTG tab (Magic: The Gathering; Win vs Loss split-flap score card, then one picture + story per card, like D&D) | `content/mtg.md` (`Wins:` and `Losses:` lines set the score card), pictures in `content/mtg/<card>/` |
 | Cooking tab (one picture + story per card, like D&D) | `content/cooking.md`, pictures in `content/cooking/<card>/` |
 | Reusable components (split-flap board, LED clock, easter-egg banner, icon meter, org chart, route map), built to copy into other projects | `src/components/reusable/` (see its README and the rule in CLAUDE.md) |
