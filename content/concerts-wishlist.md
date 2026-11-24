@@ -16,6 +16,9 @@ move its line to content/concerts.md.
 
 - Bassnectar
 - DJ_Dave
+- Edward Maya
+- Savlonic
+- The Glitch Mob
 
 ## Folk
 
@@ -24,17 +27,43 @@ move its line to content/concerts.md.
 - Heilung
 - Omnia
 - SKALD
+- Danheim
+- Gealdýr
+
+## Hip-hop & rap
+
+- 50 Cent
+- Eminem
+- Kid Cudi
+
+## Latin
+
+- Bad Bunny
+- Kaydy Cain
+- Maluma
+- Ozuna
+- Rauw Alejandro
+- ROSALÍA
+- Soto Asa y La Zowi
+- Wesley Safadão
 
 ## Pop, indie & psychedelic
 
 - Chappell Roan
+- Dua Lipa
+- LiSA
+- Panic! At the Disco
+- RAYE
 
 ## Rock & metal
 
 - Pitty
 - Sabaton
+- BLACKSHAPE
+- Dropkick Murphys
 
 ## World & fusion
 
 - Dead Can Dance
 - Wookiefoot
+- Hamaki

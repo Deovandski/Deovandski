@@ -16,6 +16,10 @@ Edit and push; the Concert tab rebuilds from this file.
   the name; until then the circle shows initials.
 - Plain text under a heading is shown as that genre's description.
 
+## Classical
+
+- The Four Seasons: [Philadelphia Orchestra](https://philorch.ensembleartsphilly.org/tickets-and-events/2025-26-season/the-four-seasons)
+
 ## Country
 
 - Sturgill Simpson
@@ -48,6 +52,7 @@ Edit and push; the Concert tab rebuilds from this file.
 ## Pop, indie & psychedelic
 
 - Artemas
+- Justin Timberlake
 - Tame Impala
 
 ## Rock & metal
