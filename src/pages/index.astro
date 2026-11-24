@@ -16,6 +16,7 @@ import LustFacet from '../components/LustFacet.astro';
 import DeathFacet from '../components/DeathFacet.astro';
 import PetsFacet from '../components/PetsFacet.astro';
 import PhotoGrid from '../components/reusable/PhotoGrid.astro';
+import HoursByCategory from '../components/reusable/HoursByCategory.astro';
 import YouTube from '../components/YouTube.astro';
 import { Content as AviationText } from '../../content/aviation.md';
 import kingOfHues from '../assets/king-of-hues.jpg';
@@ -29,6 +30,7 @@ import { resolve } from 'node:path';
 import { existsSync, readFileSync } from 'node:fs';
 import { loadRankedList } from '../lib/ranking';
 import { loadSections } from '../lib/sections';
+import { loadGamer } from '../lib/gamerCategories';
 import { loadBotw } from '../lib/botw';
 import botwStats from '../../content/botw-stats.json';
 import FacetMilestoneEggs from '../components/FacetMilestoneEggs.astro';
@@ -168,7 +170,7 @@ const branches = [
 const facetById = new Map(facets.map((f) => [f.id, f]));
 const tree = branches.map((b) => ({ ...b, items: b.facets.map((id) => facetById.get(id)!) }));
 
-const games = loadRankedList('content/gaming/top39.md', 'Hours');
+const gamer = loadGamer();
 const anime = loadRankedList('content/anime/top39.md');
 const tvShows = loadRankedList('content/tv/top39.md');
 const movies = loadRankedList('content/movies/top39.md');
@@ -220,7 +222,6 @@ const linkify = (t: string) =>
     .replace(/>/g, '&gt;')
     .replace(/\[([^\]]+)\]\(((?:https?:\/\/|#)[^)\s]+)\)/g, '<a href="$2">$1</a>');
 const nf = new Intl.NumberFormat('en-US');
-const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
 
 ---
 
@@ -678,14 +679,26 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
       <GimmickPlay tab="gamer">
         <p slot="intro">You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it&apos;s still in the air) and take it down before you run dry.</p>
       </GimmickPlay>
-      <Ranking items={games} unit="hours">
-        <div class="list-head">
-          <p class="ranking-lede">
-            My top 39 favorite games, ranked, with how many hours I've sunk into each. {nf.format(totalHours)} hours in total.
-          </p>
-          <a class="list-link" href={STEAM}>My profile on Steam</a>
-        </div>
-      </Ranking>
+      <div class="list-head gamer-head">
+        <div class="gamer-intro">{gamer.intro.map((para) => <p class="ranking-lede">{para}</p>)}</div>
+        <a class="list-link" href={STEAM}>My profile on Steam</a>
+      </div>
+      <HoursByCategory
+        id="gamer"
+        categories={gamer.categories}
+        total={gamer.totalHours}
+        totalLabel="hours on Steam"
+        stats={[
+          { value: gamer.played, label: 'games played' },
+          { value: gamer.owned, label: 'games owned' },
+          { value: gamer.categories.length, label: 'categories' },
+        ]}
+        excludeLabel="Count idle games ({value} h left running)"
+        shareLabel="{share} of my hours"
+        excludedShareLabel="not counted in my hours"
+        countLabel="{n} games"
+      />
+      <p class="gamer-foot">Hours from my Steam library. Games with under 10 hours are left out.</p>
     </section>
 
     <section class="panel" role="region" id="panel-anime" aria-labelledby="tab-anime" tabindex="0" hidden>
@@ -930,6 +943,10 @@ const totalHours = games.reduce((sum, g) => sum + (g.value ?? 0), 0);
     margin-bottom: 1.5rem;
   }
   .list-head .ranking-lede { margin-bottom: 0; }
+  .gamer-head { margin-bottom: 1.25rem; }
+  .gamer-intro { max-width: var(--measure); }
+  .gamer-foot { margin: 1.25rem 0 0; font-size: var(--step--1); color: var(--muted); }
+  #panel-gamer { --hbc-heading-font: var(--font-display); }
   .list-link {
     display: inline-block;
     padding: 0.35rem 1rem;

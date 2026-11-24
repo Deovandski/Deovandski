@@ -1,0 +1,185 @@
+# Gamer tab
+
+Edit and push; the Gamer tab rebuilds from this file and from `steam-games.json` (the hours).
+To refresh the hours, about once a year, follow README.md in this folder.
+
+- Each `##` heading is a category. The site orders categories, and the games in each,
+  by hours (most played first), so the order here doesn't matter.
+- Each bullet is one game, written as Steam names it. ™ and ® can be left out, and
+  capitals don't matter. Its hours come from `steam-games.json`; a game that isn't in
+  the export is skipped (`node scripts/steam-games.mjs` lists those).
+- `{idle}` after a heading marks games that mostly ran in the background. Their hours
+  get their own colour, and the "Count idle games" switch takes them out of the total.
+- A plain line under a heading is that category's note.
+- Lines starting with `>` before the first heading are the tab's intro. `{updated}` is
+  replaced by the day the hours were exported.
+
+> I've consciously chosen to spend a decent chunk of my finite life enjoying experiences crafted by the human mind! Gaming isn't just about interacting with the experience itself; it also goes into the technical details. I'm not much of a game dev, but it always fascinates me the way game engines and devs themselves pursue higher and higher fidelity while hardware itself is a bottleneck. This list was updated on {updated}.
+
+## Idle & clickers {idle}
+
+Hours here are mostly the game running in the background.
+
+- AdVenture Capitalist
+- Clicker Heroes
+- Clicker Heroes 2
+- Cookie Clicker
+- Dragon Cliff 龙崖
+- Guild Quest
+- Holyday City: Reloaded
+- I Can't Believe It's Not Gambling GOTY Edition
+- Idle Evolution
+- Idle Waters
+- Loading Screen Simulator
+- Loot Box Quest
+- Midas Gold Plus
+- Nova Lands
+- PickCrafter
+- Plantera
+- Realm Grinder
+- Rusty's Retirement
+- Scream Collector
+- Soda Dungeon
+- Spirit City: Lofi Sessions
+- Squirreled Away
+- Tap Tap Infinity
+- Time Clickers
+
+## Factory & automation
+
+- Autonauts
+- Blueprint Tycoon
+- Dyson Sphere Program
+- Factorio
+- Little Big Workshop
+- Oxygen Not Included
+- The Planet Crafter
+
+## Space & flight
+
+- ACE COMBAT7: SKIES UNKNOWN
+- EVERSPACE 2
+- Kerbal Space Program
+- Lunar Flight
+- No Man's Sky
+- Outer Wilds
+- The Invincible
+- Universe Sandbox Legacy
+
+## Survival & crafting
+
+- ARK: Survival Evolved
+- Core Keeper
+- Forager
+- Garry's Mod
+- Gedonia
+- Grand Emprise: Time Travel Survival
+- Grounded
+- Medieval Dynasty
+- Nomad Survival
+- Subnautica
+- Subnautica: Below Zero
+- Terraria
+
+## City, colony & strategy
+
+- Age of Empires II (2013)
+- Anno 2070
+- Arboria
+- Banished
+- Before We Leave
+- Cities: Skylines
+- ENDLESS Space - Definitive Edition
+- Frostpunk
+- Game Dev Tycoon
+- Kingdoms and Castles
+- Patron
+- Prison Architect
+- Reus
+- Sid Meier's Civilization V
+- Spore: Galactic Adventures
+- The Colonists
+- Tropico 4
+- Undead Horde
+
+## RPGs & open worlds
+
+- Avowed
+- CHRONO TRIGGER
+- CrossCode
+- Cyberpunk 2077
+- Divinity: Original Sin 2
+- Eastward
+- Fallout: New Vegas
+- FINAL FANTASY XII THE ZODIAC AGE
+- God of War
+- Grand Theft Auto V Legacy
+- Grim Dawn
+- Hogwarts Legacy
+- Like a Dragon: Pirate Yakuza in Hawaii
+- Little Witch Academia: Chamber of Time
+- Mass Effect Legendary Edition
+- Path of Exile
+- Red Dead Redemption 2
+- Tales of ARISE
+- The Elder Scrolls IV: Oblivion Remastered
+- The Elder Scrolls V: Skyrim
+- The Elder Scrolls V: Skyrim Special Edition
+- The Witcher 3: Wild Hunt — Remastered
+
+## Action & adventure
+
+- A Plague Tale: Innocence
+- A Plague Tale: Requiem
+- BLACKTAIL
+- Ghostbusters: The Video Game Remastered
+- Hellblade: Senua's Sacrifice
+- High On Life
+- LEGO Star Wars: The Skywalker Saga
+- Maneater
+- Marvel's Guardians of the Galaxy
+- Marvel’s Spider-Man Remastered
+- Ratchet & Clank: Rift Apart
+- Revenge of the Savage Planet
+- STAR WARS Jedi: Fallen Order
+- Stray
+- Wrongworld
+
+## Roguelites
+
+- Dead Cells
+- Hades
+- Hades II
+- Halls of Torment
+- Vampire Survivors
+
+## Shooters & co-op
+
+- Borderlands 2
+- Borderlands 3
+- Borderlands GOTY Enhanced
+- Dead Island 2
+- Left 4 Dead 2
+- PAYDAY 2
+
+## Cozy & life sims
+
+- Bum Simulator
+- Cult of the Lamb
+- DAVE THE DIVER
+- Death and Taxes
+- Do No Harm
+- DREDGE
+- Feel The Snow
+- Graveyard Keeper
+- Hatsune Miku Logic Paint S
+- Passpartout: The Starving Artist
+- Plants vs. Zombies: Game of the Year
+- PowerWash Simulator
+- Road 96
+- Scribblenauts Unlimited
+- Scritchy Scratchy
+- Slime Rancher
+- Spiritfarer: Farewell Edition
+- Stardew Valley
+- The Stanley Parable
