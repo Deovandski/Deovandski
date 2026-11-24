@@ -17,6 +17,12 @@ import DeathFacet from '../components/DeathFacet.astro';
 import PetsFacet from '../components/PetsFacet.astro';
 import PhotoGrid from '../components/reusable/PhotoGrid.astro';
 import HoursByCategory from '../components/reusable/HoursByCategory.astro';
+import HoursPie from '../components/reusable/HoursPie.astro';
+import ExplodedSphere from '../components/reusable/ExplodedSphere.astro';
+import HoursOrbits from '../components/reusable/HoursOrbits.astro';
+import DaysGrid from '../components/reusable/DaysGrid.astro';
+import CartridgeShelf from '../components/reusable/CartridgeShelf.astro';
+import LinksMenu from '../components/reusable/LinksMenu.astro';
 import YouTube from '../components/YouTube.astro';
 import { Content as AviationText } from '../../content/aviation.md';
 import kingOfHues from '../assets/king-of-hues.jpg';
@@ -30,7 +36,7 @@ import { resolve } from 'node:path';
 import { existsSync, readFileSync } from 'node:fs';
 import { loadRankedList } from '../lib/ranking';
 import { loadSections } from '../lib/sections';
-import { loadGamer } from '../lib/gamerCategories';
+import { loadGamer, viewCategories } from '../lib/gamerCategories';
 import { loadBotw } from '../lib/botw';
 import botwStats from '../../content/botw-stats.json';
 import FacetMilestoneEggs from '../components/FacetMilestoneEggs.astro';
@@ -172,6 +178,9 @@ const facetById = new Map(facets.map((f) => [f.id, f]));
 const tree = branches.map((b) => ({ ...b, items: b.facets.map((id) => facetById.get(id)!) }));
 
 const gamer = loadGamer();
+// The other views of the hours (#252): the four smallest categories share one grey "Other".
+const gamerViews = viewCategories(gamer.categories, 'Other');
+const CHIP_COLORS = { Steam: '#66c0f4', Xbox: '#6cc24a', PlayStation: '#5b9cff', PC: '#c3c9d9' };
 const anime = loadRankedList('content/anime/top39.md');
 const tvShows = loadRankedList('content/tv/top39.md');
 const movies = loadRankedList('content/movies/top39.md');
@@ -682,10 +691,20 @@ const nf = new Intl.NumberFormat('en-US');
       </GimmickPlay>
       <div class="list-head gamer-head">
         <div class="gamer-intro">{gamer.intro.map((para) => <p class="ranking-lede">{para}</p>)}</div>
-        <div class="gamer-links">
-          <a class="list-link" href={STEAM}>My profile on Steam</a>
-          <a class="list-link" href={XBOX}>My profile on Xbox</a>
-        </div>
+        <LinksMenu
+          id="gamer-links"
+          label="Links"
+          primary={[
+            { href: STEAM, label: 'My profile on Steam' },
+            { href: XBOX, label: 'My profile on Xbox' },
+          ]}
+          dividerLabel="Third party trackers"
+          secondary={[
+            { href: 'https://www.truetrophies.com/gamer/Deovandski', label: 'TrueTrophies' },
+            { href: 'https://truesteamachievements.com/gamer/Deovandski', label: 'TrueSteamAchievements' },
+            { href: 'https://www.trueachievements.com/gamer/deovandski', label: 'TrueAchievements' },
+          ]}
+        />
       </div>
       <HoursByCategory
         id="gamer"
@@ -702,8 +721,73 @@ const nf = new Intl.NumberFormat('en-US');
         excludedShareLabel="not counted in my hours"
         countLabel="{n} games"
         countLabelOne="1 game"
-        chipColors={{ Steam: '#66c0f4', Xbox: '#6cc24a', PlayStation: '#5b9cff', PC: '#c3c9d9' }}
-      />
+        chipColors={CHIP_COLORS}
+        excludedByDefault
+        views={[
+          { id: 'pie', label: 'Pie' },
+          { id: 'sphere', label: 'Sphere' },
+          { id: 'orbits', label: 'Orbits' },
+          { id: 'days', label: 'Days of my life' },
+          { id: 'shelf', label: 'Cartridge shelf' },
+        ]}
+      >
+        <HoursPie
+          slot="pie"
+          id="gamer-pie"
+          categories={gamerViews}
+          excluded
+          label="Pie chart of my hours by category: {list}"
+          hint="Press a slice or a row to see its games."
+          shareLabel="{share} of my hours"
+          countLabel="{n} games"
+          countLabelOne="1 game"
+          moreLabel="+ {n} more games"
+          chipColors={CHIP_COLORS}
+        />
+        <ExplodedSphere
+          slot="sphere"
+          id="gamer-sphere"
+          categories={gamerViews}
+          excluded
+          hint="Each chunk is a category, as big as its hours. Drag to turn it; press a chunk to open it."
+          openHint="Each layer is a game; its volume is its hours. Drag to turn it."
+          moreLabel="+ {n} more games"
+          countLabel="{n} games"
+          countLabelOne="1 game"
+          label="An exploded sphere of my hours by category: {list}"
+        />
+        <HoursOrbits
+          slot="orbits"
+          id="gamer-orbits"
+          categories={gamerViews}
+          excluded
+          hint="Each planet is a category, sized by its hours. Press one to fly in."
+          openHint="Each moon is a game, sized by its hours."
+          countLabel="{n} games"
+          countLabelOne="1 game"
+          label="My hours by category as planets around a sun: {list}"
+        />
+        <DaysGrid
+          slot="days"
+          id="gamer-days"
+          categories={gamerViews}
+          excluded
+          subline="The games on the list add up to {days} days of nonstop play, 24 hours a day. Each square is one of those days."
+          hint="Hover a square to see which game that day went to. Press a category to light up only its days."
+          label="{span} of play, one square per day, coloured by category"
+        />
+        <CartridgeShelf
+          slot="shelf"
+          id="gamer-shelf"
+          categories={gamerViews}
+          excluded
+          hint="Every cartridge is a game, as wide as its hours. Hover one to pull it out; press it to keep it out. Dashed ones are estimated."
+          countLabel="{n} games"
+          countLabelOne="1 game"
+          label="My games as cartridges on shelves, one shelf per category, each as wide as its hours"
+          chipColors={CHIP_COLORS}
+        />
+      </HoursByCategory>
       <p class="gamer-foot">Hours from my Steam library, my Xbox profile and my own estimates. Games with under 10 hours are left out.</p>
       <p class="gamer-foot gamer-foot--more">* Estimated hours, from way before playtime tracking and achievements were widely available.</p>
     </section>
@@ -952,10 +1036,9 @@ const nf = new Intl.NumberFormat('en-US');
   .list-head .ranking-lede { margin-bottom: 0; }
   .gamer-head { margin-bottom: 1.25rem; }
   .gamer-intro { max-width: var(--measure); }
-  .gamer-links { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: flex-start; }
   .gamer-foot { margin: 1.25rem 0 0; font-size: var(--step--1); color: var(--muted); }
   .gamer-foot--more { margin-top: 0.35rem; }
-  #panel-gamer { --hbc-heading-font: var(--font-display); }
+  #panel-gamer { --hbc-heading-font: var(--font-display); --days-heading-font: var(--font-display); }
   .list-link {
     display: inline-block;
     padding: 0.35rem 1rem;

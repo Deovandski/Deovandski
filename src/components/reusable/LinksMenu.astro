@@ -1,0 +1,218 @@
+---
+/**
+ * LinksMenu: one "Links" button that drops down a group box of links, like the tab's ▶ Play box:
+ * the main links as buttons on top, then a divider with a centred heading, then more links below.
+ * Built for the Gamer tab (#252): my Steam and Xbox profiles, then third-party trackers.
+ *
+ *   <LinksMenu
+ *     id="gamer-links"
+ *     label="Links"
+ *     primary={[{ href: 'https://steamcommunity.com/id/me', label: 'My profile on Steam' }]}
+ *     dividerLabel="Third party trackers"
+ *     secondary={[{ href: 'https://truesteamachievements.com/gamer/me', label: 'TrueSteamAchievements' }]}
+ *   />
+ *
+ * The button and the box sit side by side in whatever flex row holds them (the root is
+ * `display: contents`), and the box takes a whole line of its own under the row. Enter, Space or a
+ * click opens it; Esc or the button closes it. Without JavaScript the box simply shows, open.
+ *
+ * Reusable on purpose: no imports, safe to use several times on a page. Theming: --links-accent,
+ * --links-surface, --links-text, --links-muted, --links-line.
+ */
+interface Link {
+  href: string;
+  label: string;
+}
+interface Props {
+  id?: string;
+  label?: string;
+  primary: Link[];
+  dividerLabel?: string;
+  secondary?: Link[];
+  class?: string;
+}
+const { id = 'links', label = 'Links', primary, dividerLabel, secondary = [], class: className } = Astro.props;
+---
+
+<div class:list={['links', className]} data-links-menu>
+  <button type="button" class="links__toggle" aria-expanded="false" aria-controls={`${id}-panel`} hidden>
+    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+      <path d="M6.5 9.5l3-3M7 4.5l1-1a2.8 2.8 0 0 1 4 4l-1 1M9 11.5l-1 1a2.8 2.8 0 0 1-4-4l1-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
+    </svg>
+    <span>{label}</span>
+    <svg class="links__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+      <path d="M2.5 4.5l3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
+    </svg>
+  </button>
+  <div class="links__panel" id={`${id}-panel`} role="group" aria-label={label}>
+    <div class="links__primary">
+      {
+        primary.map((l) => (
+          <a class="links__main" href={l.href}>
+            {l.label}
+          </a>
+        ))
+      }
+    </div>
+    {
+      secondary.length > 0 && (
+        <>
+          {dividerLabel && (
+            <div class="links__divider" role="heading" aria-level="4">
+              <span>{dividerLabel}</span>
+            </div>
+          )}
+          <div class="links__secondary">
+            {secondary.map((l) => (
+              <a class="links__more" href={l.href}>
+                {l.label}
+              </a>
+            ))}
+          </div>
+        </>
+      )
+    }
+  </div>
+</div>
+
+<script>
+  function initLinksMenu() {
+    document.querySelectorAll<HTMLElement>('[data-links-menu]').forEach((root) => {
+      if (root.dataset.linksReady) return;
+      root.dataset.linksReady = '1';
+      const btn = root.querySelector<HTMLButtonElement>('.links__toggle')!;
+      const panel = root.querySelector<HTMLElement>('.links__panel')!;
+      btn.hidden = false;
+      panel.hidden = true;
+      const set = (open: boolean) => {
+        btn.setAttribute('aria-expanded', String(open));
+        panel.hidden = !open;
+      };
+      btn.addEventListener('click', () => set(btn.getAttribute('aria-expanded') !== 'true'));
+      root.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !panel.hidden) {
+          set(false);
+          btn.focus();
+        }
+      });
+    });
+  }
+  initLinksMenu();
+  document.addEventListener('astro:page-load', initLinksMenu);
+</script>
+
+<style>
+  .links {
+    --_accent: var(--links-accent, #39c5bb);
+    --_surface: var(--links-surface, rgba(11, 17, 48, 0.85));
+    --_text: var(--links-text, #e6edf3);
+    --_muted: var(--links-muted, #9aa8bb);
+    --_line: var(--links-line, rgba(57, 197, 187, 0.35));
+    display: contents;
+  }
+  .links__toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 44px;
+    padding: 0 1rem 0 0.9rem;
+    border-radius: 999px;
+    border: 2px solid var(--_accent);
+    background: transparent;
+    color: var(--_accent);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .links__toggle[hidden],
+  .links__panel[hidden] {
+    display: none;
+  }
+  .links__toggle:hover {
+    background: color-mix(in srgb, var(--_accent) 14%, transparent);
+  }
+  .links__toggle[aria-expanded='true'] {
+    background: var(--_accent);
+    color: #070b1f;
+  }
+  .links__toggle:focus-visible,
+  .links__main:focus-visible,
+  .links__more:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 3px;
+  }
+  .links__chevron {
+    transition: transform 0.2s;
+  }
+  .links__toggle[aria-expanded='true'] .links__chevron {
+    transform: rotate(180deg);
+  }
+  .links__panel {
+    flex: 1 1 100%;
+    order: 10;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 1rem 1.1rem 1.1rem;
+    border: 1px solid color-mix(in srgb, var(--_accent) 45%, transparent);
+    border-radius: 14px;
+    background: var(--_surface);
+    color: var(--_text);
+  }
+  .links__primary,
+  .links__secondary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+  }
+  .links__main,
+  .links__more {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 0 1.1rem;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .links__main {
+    background: var(--_accent);
+    color: #070b1f;
+  }
+  .links__main:hover {
+    filter: brightness(1.1);
+  }
+  .links__more {
+    border: 1px solid color-mix(in srgb, var(--_accent) 55%, transparent);
+    color: var(--_accent);
+  }
+  .links__more:hover {
+    background: color-mix(in srgb, var(--_accent) 14%, transparent);
+  }
+  .links__divider {
+    display: flex;
+    max-width: none;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 0;
+    color: var(--_muted);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-align: center;
+  }
+  .links__divider::before,
+  .links__divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--_line);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .links__chevron {
+      transition: none;
+    }
+  }
+</style>

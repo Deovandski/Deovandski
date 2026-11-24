@@ -15,6 +15,10 @@
   "en": "EP",
   "t": "EP"
  },
+ "00cad34ec61e": {
+  "en": "Each moon is a game, sized by its hours.",
+  "t": "每颗卫星是一款游戏，大小代表时数。"
+ },
  "00f2a5f37536": {
   "en": "Enlarge: Third year since adoption",
   "t": "放大: 领养三周年"
@@ -39,6 +43,10 @@
   "en": "76 h",
   "t": "76 小时"
  },
+ "014bcd654c60": {
+  "en": "Links",
+  "t": "链接"
+ },
  "017acba7f57e": {
   "en": "The light novel series site: the full novel, the World Lore, and Public and Behind The Scenes layers.",
   "t": "轻小说系列的网站：完整小说、世界观，以及公开层与幕后层。"
@@ -46,6 +54,10 @@
  "019336fad507": {
   "en": "2 countries · 22 states/provinces · 167 photos",
   "t": "2 个国家 · 22 个州/省 · 167 张照片"
+ },
+ "01a119163f5d": {
+  "en": "Every cartridge is a game, as wide as its hours. Hover one to pull it out; press it to keep it out. Dashed ones are estimated.",
+  "t": "每个卡带是一款游戏，宽度代表时数。悬停可把它抽出来；点按可让它一直保持抽出。虚线的是估计值。"
  },
  "01a7e714fe24": {
   "en": "6 facets",
@@ -115,6 +127,14 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#38: </span>Best of the Worst: Bad Movie Scavenger Hunt",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#38: </span>Best of the Worst: Bad Movie Scavenger Hunt"
  },
+ "039bd8dc47b0": {
+  "en": "Press a slice or a row to see its games.",
+  "t": "点按扇区或行，查看其中的游戏。"
+ },
+ "03b8411a444a": {
+  "en": "75 h",
+  "t": "75 小时"
+ },
  "03c0dc4c92b5": {
   "en": "Nani?! So lewd! (⊙_⊙;)",
   "t": "纳尼？！好色哦！(⊙_⊙;)"
@@ -127,6 +147,10 @@
   "en": "331 h",
   "t": "331 小时"
  },
+ "0446c388357c": {
+  "en": " Sphere ",
+  "t": "球体"
+ },
  "0455df4b7952": {
   "en": "Can I haz",
   "t": "可以给我吗"
@@ -138,6 +162,10 @@
  "0480691e0de6": {
   "en": "Ink",
   "t": "墨水"
+ },
+ "049b1f5d7742": {
+  "en": "1 year and 247 days",
+  "t": "1 年247 天"
  },
  "04e3fd08d714": {
   "en": "Description coming soon.",
@@ -206,6 +234,10 @@
  "06ee9ade85e4": {
   "en": "Hellblade: Senua's Sacrifice",
   "t": "地狱之刃：塞娜的献祭"
+ },
+ "070c241ff4e1": {
+  "en": "450 h",
+  "t": "450 小时"
  },
  "07255da4105f": {
   "en": "Grill for about <strong>7 minutes</strong>, then flip. Then grill for another <strong>7 minutes</strong>.",
@@ -339,9 +371,17 @@
   "en": "Blog",
   "t": "博客"
  },
+ "0bb27395d153": {
+  "en": "231 h",
+  "t": "231 小时"
+ },
  "0bdcc8f4a8b0": {
   "en": " HM ",
   "t": "HM"
+ },
+ "0c053e564d90": {
+  "en": "+ 7 more games",
+  "t": "+ 另外 7 款游戏"
  },
  "0c146d79c604": {
   "en": "Enlarge: FML! Forgot setup autopay",
@@ -547,6 +587,10 @@
   "en": "Terraria",
   "t": "泰拉瑞亚"
  },
+ "125b32e61096": {
+  "en": "Space & flight",
+  "t": "太空与飞行"
+ },
  "12778aec0f70": {
   "en": "Wins: 1",
   "t": "胜：1"
@@ -730,6 +774,10 @@
  "1995e83b0e4d": {
   "en": "Part of me wondered about ranking it higher, but it's tough, since a lot of anime have a closer, more special meaning to me. The animation gets a standing ovation, and so do the story and plot development!",
   "t": "我心里有一部分纠结过要不要把它排得更高，但很难，因为有很多动漫对我有更贴近、更特别的意义。动画制作值得起立鼓掌，故事和剧情发展也一样！"
+ },
+ "19b39470c29c": {
+  "en": "1 game",
+  "t": "1 款游戏"
  },
  "19c34e493647": {
   "en": "Wunjo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚹ)</span>",
@@ -975,6 +1023,10 @@
   "en": "Rusty's Retirement",
   "t": "Rusty's Retirement"
  },
+ "220802d836b4": {
+  "en": "Third party trackers",
+  "t": "第三方追踪网站"
+ },
  "220cedd6c50c": {
   "en": "✠ Amen ✠",
   "t": "✠ 阿门 ✠"
@@ -1038,6 +1090,10 @@
  "24b33396d9b8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 1: </span> Placeholder TV show 1 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 1: </span> 占位剧集 1"
+ },
+ "24b78170cf4e": {
+  "en": "316 h",
+  "t": "316 小时"
  },
  "24be61285e09": {
   "en": "Views",
@@ -1135,6 +1191,10 @@
   "en": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna",
   "t": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna"
  },
+ "26fadd02e644": {
+  "en": "94 days",
+  "t": "94 天"
+ },
  "273285456a27": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 19: </span> Placeholder movie 19 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 19: </span> 占位电影 19"
@@ -1162,6 +1222,10 @@
  "27b48cf9ae90": {
   "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
   "t": "也就是用 {mode} 模式录制的 {tapes} 盘 VHS 录像带（每盘 T-120 录 {perTape} 小时）。"
+ },
+ "27c95af95a7e": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,385 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> 角色扮演与开放世界: 5,385 小时"
  },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
@@ -1207,6 +1271,10 @@
   "en": "Tap the stage on the beat",
   "t": "踩着节拍点舞台"
  },
+ "290c68caa39c": {
+  "en": "Year {n}",
+  "t": "第 {n} 年"
+ },
  "2915cfcae6ff": {
   "en": "Enlarge: Khajiit has wares if you have coin",
   "t": "放大: 阁下有钱的话，Khajiit 有货"
@@ -1214,6 +1282,10 @@
  "291e6f1f5baa": {
   "en": "Whack the Miku (top left, key 1)",
   "t": "敲初音未来（左上，按键 1）"
+ },
+ "292006d299a0": {
+  "en": " Steam + Xbox   ",
+  "t": "Steam + Xbox"
  },
  "29733f231324": {
   "en": "Under the hood: how it hooks you",
@@ -1279,6 +1351,10 @@
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">904 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">6% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">904 小时</strong>  ·  19 款游戏  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">占我总时数的 3%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">占我总时数的 6%</span>"
  },
+ "2bd97ed68b1c": {
+  "en": "18 games",
+  "t": "18 款游戏"
+ },
  "2bdc8069faed": {
   "en": "Eastward",
   "t": "Eastward"
@@ -1290,6 +1366,10 @@
  "2c1e5036b725": {
   "en": "{n} balls in the bag",
   "t": "袋中有 {n} 个球"
+ },
+ "2c27ec2a32c3": {
+  "en": "71 days",
+  "t": "71 天"
  },
  "2c6f37232fe8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Nanatsu no Taizai (The Seven Deadly Sins) ",
@@ -1318,6 +1398,10 @@
  "2d19585e07c5": {
   "en": " LB ",
   "t": "LB"
+ },
+ "2d4daa0f09e7": {
+  "en": "Each planet is a category, sized by its hours. Press one to fly in.",
+  "t": "每颗行星是一个类别，大小代表时数。点按一颗飞近看看。"
  },
  "2d8bdb9ce539": {
   "en": "\nAt home, a whiteboard holds my major goals and anything that isn't tied to a date. If it is tied to a date, it goes on\n          the calendar; how I keep 5+ calendars in one place is <a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">Life hack #2: Calendar bound</a>.\n",
@@ -1390,6 +1474,10 @@
  "2f717ffad4e1": {
   "en": "Arkansas",
   "t": "阿肯色州"
+ },
+ "2f9714995b86": {
+  "en": " An exploded sphere of my hours by category: Idle &amp; clickers 57%, RPGs &amp; open worlds 16%, City, colony &amp; strategy 5%, Survival &amp; crafting 5%, Factory &amp; automation 5%, Space &amp; flight 4%, Cozy &amp; life sims 3%, Other 7% ",
+  "t": "按类别划分的我的时数爆炸球体：放置与点击 57%、角色扮演与开放世界 16%、城市、殖民地与策略 5%、生存与制作 5%、工厂与自动化 5%、太空与飞行 4%、休闲与生活模拟 3%、Other 7%"
  },
  "2fa582319006": {
   "en": "One of my favorite isekai, and one of the OGs from before the torrent of copycats trying to milk the market dry.",
@@ -1591,6 +1679,10 @@
   "en": "Dice tray",
   "t": "骰子盘"
  },
+ "359354854248": {
+  "en": "+ 16 more games",
+  "t": "+ 另外 16 款游戏"
+ },
  "35d24a82655a": {
   "en": " PW ",
   "t": "PW"
@@ -1659,6 +1751,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 14: </span> Placeholder TV show 14 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 14: </span> 占位剧集 14"
  },
+ "383c79e5feb9": {
+  "en": " Orbits ",
+  "t": "轨道"
+ },
  "3850a6679753": {
   "en": "First day home",
   "t": "到家第一天"
@@ -1666,6 +1762,10 @@
  "385e22d5fa21": {
   "en": "King of the trail",
   "t": "步道之王"
+ },
+ "3869de54b01c": {
+  "en": "224 days",
+  "t": "224 天"
  },
  "3878d567f539": {
   "en": "A streak you could lose feels worse than one you never had. Losing hurts about twice as much as winning feels good.",
@@ -1787,6 +1887,10 @@
   "en": " 633 h ",
   "t": "633 小时"
  },
+ "3b9b88d1447d": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #0ca30c\" data-astro-cid-nqpad2wp=\"\"></span> Cozy &amp; life sims: 904 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #0ca30c\" data-astro-cid-nqpad2wp=\"\"></span> 休闲与生活模拟: 904 小时"
+ },
  "3bc2370dce47": {
   "en": "Enlarge: Princess Fluffy of Guamá: Fluffy in a pink princess dress and a jeweled tiara, sitting in the back seat of a car",
   "t": "放大: 瓜马的 Fluffy 公主：Fluffy 穿着粉色公主裙、戴着镶宝石的头冠，坐在汽车后座上"
@@ -1907,6 +2011,10 @@
   "en": "I guess the real #1. The ending is complicated, but more power to the author for sticking to what he wanted to do. When I first watched Season 1 back in 2014, I literally had to sleep with the lights on because it haunted my imagination. I also love how rich the world building is. It reminds me of Age of Empires II, where I'd build a custom map with my city fortified with Imperial Age walls, focus on my own thing on my own time, and then, when I was ready, open the gates and slaughter the other empires that had been bickering with each other the whole time. Not exactly the same, but that unawareness of the wider world is an interesting phenomenon. Amazing OPs, too!",
   "t": "我猜这才是真正的第 1 名。结局很复杂，但还是要给作者点赞，因为他坚持了自己想做的。2014 年第一次看第一季时，我真的得开着灯睡觉，因为它萦绕在我的想象里挥之不去。我也爱它的世界观有多丰富。它让我想起《帝国时代 II》，我会做一张自定义地图，用帝王时代的城墙把我的城市围起来，按自己的节奏专心做自己的事，等准备好了，就打开城门，屠了那些一直在互相争吵的其他帝国。不完全一样，但这种对更广阔世界的浑然不觉是个有趣的现象。片头曲也超棒！"
  },
+ "3f6605efbbef": {
+  "en": "RPGs & open worlds",
+  "t": "角色扮演与开放世界"
+ },
  "3fa7a7dd538c": {
   "en": " SW ",
   "t": "SW"
@@ -1914,6 +2022,10 @@
  "3fc2410ae1c5": {
   "en": "Yep. That anime tickled something deep and turbulent that I didn't understand back then: my ecchi/hentai energy. I truly understand it now, and I have no shame about it, since it's something I set out to explore to feel more fulfilled.",
   "t": "没错。那部动漫挠到了我内心深处某种汹涌的东西，那时我还不懂：我的工口/H 能量。我现在真正理解它了，而且一点也不羞耻，因为这是我主动去探索、好让自己更充实的东西。"
+ },
+ "3fd584895bc1": {
+  "en": "+ 6 more games",
+  "t": "+ 另外 6 款游戏"
  },
  "3ffa6ae98146": {
   "en": "The line dance",
@@ -1930,6 +2042,10 @@
  "4077f33562cf": {
   "en": "Tap the kit, or play it with your keyboard: A S D F G, Q W E, X for the kick.",
   "t": "点按鼓组，或用键盘演奏：A S D F G、Q W E，X 是底鼓。"
+ },
+ "408b5c0e9624": {
+  "en": "4% of my hours",
+  "t": "占我总时数的 4%"
  },
  "4095ffeb9bf4": {
   "en": "Deo in a gold imperial dragon robe and crown on a throne at the Imperial City in Huế, flanked by two attendants in blue áo dài",
@@ -1998,6 +2114,10 @@
  "447f1e0ff0ce": {
   "en": "Doki doki~ ♡ (〃▽〃)",
   "t": "心跳心跳～ ♡ (〃▽〃)"
+ },
+ "448936a95469": {
+  "en": "57% of my hours",
+  "t": "占我总时数的 57%"
  },
  "44c57abd888a": {
   "en": "Reset",
@@ -2087,9 +2207,17 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 7: </span> Steins;Gate ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 7: </span> Steins;Gate (命运石之门)"
  },
+ "487eeb9b8c81": {
+  "en": "325 h",
+  "t": "325 小时"
+ },
  "4890a20f2b7f": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#31: </span>Best of the Worst: Plinketto #8",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#31: </span>Best of the Worst: Plinketto #8"
+ },
+ "48aaf2be8dae": {
+  "en": "5% of my hours",
+  "t": "占我总时数的 5%"
  },
  "48e29fac4cce": {
   "en": "Besides the relationship and the bonding, the merchant life and bartering are really well developed! I took inspiration from it while working on the world lore for #HusbandOutWorld.",
@@ -2155,6 +2283,10 @@
   "en": " Fine line ",
   "t": "细线"
  },
+ "4b41ed494adc": {
+  "en": " Steam + Xbox + PlayStation  ·  estimated ",
+  "t": "Steam + Xbox + PlayStation  ·  估计"
+ },
  "4b482e2ae4e2": {
   "en": "⚠️ Your {n}-post streak is about to die!",
   "t": "⚠️ 你的 {n} 连发快断了！"
@@ -2195,6 +2327,10 @@
   "en": "Not bad!",
   "t": "不错！"
  },
+ "4c269467e961": {
+  "en": "3 years and 337 days",
+  "t": "3 年337 天"
+ },
  "4cbc599953b9": {
   "en": " Rhythm &amp; music ",
   "t": "节奏与音乐"
@@ -2202,6 +2338,10 @@
  "4cd5ee6da386": {
   "en": "Red Letter Media on YouTube",
   "t": "YouTube 上的 Red Letter Media"
+ },
+ "4cda1e2daa3e": {
+  "en": "363 h",
+  "t": "363 小时"
  },
  "4cee4c0a5581": {
   "en": "Left forearm",
@@ -2222,6 +2362,10 @@
  "4d528de842ee": {
   "en": "Enlarge: Painting or drawing, 02/05/2013",
   "t": "放大: 绘画或素描, 2013年2月5日"
+ },
+ "4d5401de4d73": {
+  "en": "+ 11 more games",
+  "t": "+ 另外 11 款游戏"
  },
  "4d5fb4549070": {
   "en": "Angle {angle}°, power {power}%. Space to throw.",
@@ -2270,6 +2414,10 @@
  "4e3f3c3401c9": {
   "en": "Gamer",
   "t": "玩家"
+ },
+ "4e7c78a182e6": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #d95926\" data-astro-cid-nqpad2wp=\"\"></span> City, colony &amp; strategy: 1,688 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #d95926\" data-astro-cid-nqpad2wp=\"\"></span> 城市、殖民地与策略: 1,688 小时"
  },
  "4e80d1b689cd": {
   "en": "Time Clickers",
@@ -2379,6 +2527,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#28: </span>Best of the Worst: Kill Squad, Ryan's Babe, and Demonwarp",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#28: </span>Best of the Worst: Kill Squad, Ryan's Babe, and Demonwarp"
  },
+ "50c2037edd57": {
+  "en": "Factory & automation",
+  "t": "工厂与自动化"
+ },
  "50c9e8d5fc98": {
   "en": "D",
   "t": "D"
@@ -2487,6 +2639,14 @@
   "en": "Camera angles are everything",
   "t": "拍摄角度就是一切"
  },
+ "54225a6752c4": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #c98500\" data-astro-cid-nqpad2wp=\"\"></span> Factory &amp; automation: 1,588 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #c98500\" data-astro-cid-nqpad2wp=\"\"></span> 工厂与自动化: 1,588 小时"
+ },
+ "5447ef748b4f": {
+  "en": "54 days",
+  "t": "54 天"
+ },
  "54561fd891ee": {
   "en": " RS ",
   "t": "RS"
@@ -2494,6 +2654,10 @@
  "54573bfa55e3": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder TV show 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 15: </span> 占位剧集 15"
+ },
+ "547f769f215d": {
+  "en": " TrueAchievements ",
+  "t": "TrueAchievements"
  },
  "54834f8e5fe6": {
   "en": "You spent {time} and {posts} posts chasing {n} followers who don't exist. Now go outside.",
@@ -2506,6 +2670,10 @@
  "549368d07edb": {
   "en": " HC ",
   "t": "HC"
+ },
+ "54b75a6c3b9d": {
+  "en": " Steam + Xbox + PC  ·  estimated ",
+  "t": "Steam + Xbox + PC  ·  估计"
  },
  "54f8e34ce17e": {
   "en": "Likes trickle in a few at a time after you post, so you keep checking.",
@@ -2543,6 +2711,10 @@
   "en": " Factory &amp; automation ",
   "t": "工厂与自动化"
  },
+ "55a27b20d965": {
+  "en": "247 h",
+  "t": "247 小时"
+ },
  "55ab7d3b08ef": {
   "en": "DW",
   "t": "DW"
@@ -2555,9 +2727,17 @@
   "en": "People post more right after a batch of likes, spacing posts to chase the best rate of likes, like an animal in a Skinner box.",
   "t": "人们在收到一波赞之后会发得更勤，还会调整发帖间隔去追求最高的点赞率，就像斯金纳箱里的动物。"
  },
+ "55fa0faa800a": {
+  "en": "City, colony & strategy",
+  "t": "城市、殖民地与策略"
+ },
  "5601140ccc07": {
   "en": "I Can't Believe It's Not Gambling GOTY Edition",
   "t": "I Can't Believe It's Not Gambling GOTY Edition"
+ },
+ "56107af7f031": {
+  "en": "70 days",
+  "t": "70 天"
  },
  "5636fce0bf5d": {
   "en": "For years, that anxiety felt life-or-death: a restless urgency I couldn't name because I was deeply unfulfilled, and later a constant hypervigilance while I chased external validation as an influencer. My AuDHD unmasking finally explained where it came from, and therapy that challenged me, not enabled me, helped me process it. Today it's no longer an alarm that runs me. It's fuel, and I choose where it goes: into building, growing, and the people worth it.",
@@ -2615,6 +2795,14 @@
   "en": "Hip-hop &amp; rap",
   "t": "嘻哈与说唱"
  },
+ "581afdb47a5c": {
+  "en": " My hours by category as planets around a sun: Idle &amp; clickers 57%, RPGs &amp; open worlds 16%, City, colony &amp; strategy 5%, Survival &amp; crafting 5%, Factory &amp; automation 5%, Space &amp; flight 4%, Cozy &amp; life sims 3%, Other 7% ",
+  "t": "我的时数按类别化作绕太阳运行的行星：放置与点击 57%、角色扮演与开放世界 16%、城市、殖民地与策略 5%、生存与制作 5%、工厂与自动化 5%、太空与飞行 4%、休闲与生活模拟 3%、Other 7%"
+ },
+ "583247c38dd5": {
+  "en": "{name}: {hours} · {share}",
+  "t": "{name}: {hours} · {share}"
+ },
  "585a38e866f8": {
   "en": "\nI also use sticky notes, but I'm actively trying to get away from them. My rule now: it goes on the calendar, on the\n          whiteboard, or on a board (GitHub Projects for open source, JIRA for work). Those keep the history of past and current\n          work, so I can see burndown and trends, and spot where I'm losing efficiency.\n",
   "t": "我也用便利贴，但正在努力戒掉。我现在的规矩是：要么进日历，要么上白板，要么上看板（开源项目用 GitHub Projects，工作用 JIRA）。它们保留了过去和当前工作的历史，让我看得到燃尽图和趋势，找出我在哪里损失了效率。"
@@ -2634,6 +2822,14 @@
  "58946e4ad4d5": {
   "en": "Butler Ballet",
   "t": "Butler Ballet"
+ },
+ "58a5c7539f54": {
+  "en": " Cartridge shelf ",
+  "t": "卡带架"
+ },
+ "58b8da4b72d4": {
+  "en": "7% of my hours",
+  "t": "占我总时数的 7%"
  },
  "592bc9228abd": {
   "en": "Enlarge: Salty doggo",
@@ -2683,6 +2879,10 @@
   "en": "Pixel pets: turn your phone sideways",
   "t": "像素宠物：把手机横过来"
  },
+ "5a986c8fd343": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,255 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,255 小时"
+ },
  "5abf683efa95": {
   "en": "Cities: Skylines",
   "t": "城市：天际线"
@@ -2694,6 +2894,10 @@
  "5aece214a405": {
   "en": "Enlarge: Halloween",
   "t": "放大: 万圣节"
+ },
+ "5aedee0964c6": {
+  "en": "hours",
+  "t": "小时"
  },
  "5b05ffab8457": {
   "en": " 75 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -2862,6 +3066,10 @@
  "605f3c78cb30": {
   "en": "Front Row",
   "t": "前排"
+ },
+ "608268fe2d19": {
+  "en": "Day {n}: {item} ({category})",
+  "t": "第 {n} 天：{item}（{category}）"
  },
  "60d012b3aa46": {
   "en": "Not many people have heard of this isekai, but honestly, it's a top dog in the genre for really getting into the weeds of its world building and trying to figure out how everything works.",
@@ -3043,6 +3251,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 25: </span> Hagane no Renkinjutsushi: Fullmetal Alchemist (Fullmetal Alchemist: Brotherhood) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 25: </span> Hagane no Renkinjutsushi: Fullmetal Alchemist (钢之炼金术师 FULLMETAL ALCHEMIST)"
  },
+ "665793f469e9": {
+  "en": "+ 5 more games",
+  "t": "+ 另外 5 款游戏"
+ },
  "66a55c486fc4": {
   "en": "14 photos",
   "t": "14 张照片"
@@ -3074,6 +3286,10 @@
  "6760b1b50d3b": {
   "en": "DREDGE",
   "t": "渔帆暗涌"
+ },
+ "6794879a1272": {
+  "en": "4 games",
+  "t": "4 款游戏"
  },
  "67b782e4b825": {
   "en": "Spore",
@@ -3318,6 +3534,10 @@
  "6e68e69e0822": {
   "en": "Black ink",
   "t": "黑色墨水"
+ },
+ "6e6a6f2086bb": {
+  "en": "Other",
+  "t": "其他"
  },
  "6e979f426b67": {
   "en": "MB",
@@ -3627,6 +3847,10 @@
   "en": "Munly &amp; The Lupercalians<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Munly &amp; The Lupercalians<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 最爱</span>"
  },
+ "781012cf77dd": {
+  "en": "estimated",
+  "t": "估计"
+ },
  "781961bc81c2": {
   "en": "Pause",
   "t": "暂停"
@@ -3683,6 +3907,10 @@
   "en": "Kilograms of beef grilled",
   "t": "烤过的牛肉公斤数"
  },
+ "7a075b3286e7": {
+  "en": " PC + Xbox  ·  estimated ",
+  "t": "PC + Xbox  ·  估计"
+ },
  "7a1e14199723": {
   "en": "Learning English",
   "t": "正在学英语"
@@ -3702,6 +3930,10 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
+ },
+ "7a69b6b4ecc2": {
+  "en": " My hours by category as planets around a sun: RPGs &amp; open worlds 37%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 15% ",
+  "t": "我的时数按类别化作绕太阳运行的行星：角色扮演与开放世界 37%、城市、殖民地与策略 11%、生存与制作 11%、工厂与自动化 11%、太空与飞行 9%、休闲与生活模拟 6%、Other 15%"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -3762,6 +3994,10 @@
  "7c4c910b08dc": {
   "en": " PT ",
   "t": "PT"
+ },
+ "7c5d0e28e222": {
+  "en": "9% of my hours",
+  "t": "占我总时数的 9%"
  },
  "7cbce9cd9969": {
   "en": "Salesman and his companion",
@@ -3842,6 +4078,10 @@
  "7e2b780a1104": {
   "en": "4 facets",
   "t": "4 个侧面"
+ },
+ "7e377287823c": {
+  "en": " ← All categories ",
+  "t": "← 所有类别"
  },
  "7eb0cee888ab": {
   "en": "Min",
@@ -3962,6 +4202,10 @@
  "8310044a867c": {
   "en": "Forager",
   "t": "浮岛物语"
+ },
+ "83103a70f34c": {
+  "en": "6% of my hours",
+  "t": "占我总时数的 6%"
  },
  "8334bb311ce5": {
   "en": "Results are random: usually small, sometimes nothing, rarely huge. Unpredictable rewards are the hardest habit to quit (a variable-ratio schedule).",
@@ -4155,6 +4399,10 @@
   "en": "Ara ara~ That's the first thing you click?",
   "t": "哎呀哎呀～第一个点的就是这个？"
  },
+ "8937a988d677": {
+  "en": " TrueSteamAchievements ",
+  "t": "TrueSteamAchievements"
+ },
  "89a35bbdf744": {
   "en": "Your {n}-post streak is about to die. Post something!",
   "t": "你的 {n} 连发快断了。发点什么！"
@@ -4183,6 +4431,10 @@
   "en": "Standard Play",
   "t": "Standard Play"
  },
+ "8a0858d715f3": {
+  "en": "150 h",
+  "t": "150 小时"
+ },
  "8a12d5626fe3": {
   "en": "Trending",
   "t": "热门"
@@ -4206,6 +4458,10 @@
  "8b3ee45765e5": {
   "en": "Explorer",
   "t": "探险家"
+ },
+ "8b5051da2153": {
+  "en": "66 days",
+  "t": "66 天"
  },
  "8ba25ab7e4e0": {
   "en": "197 h",
@@ -4455,6 +4711,10 @@
   "en": "Don't worry. You're human and curious. I am not tracking IPs or any other metrics.",
   "t": "别担心。你是人，你好奇。我不追踪 IP，也不追踪任何其他指标。"
  },
+ "9318d4f63aef": {
+  "en": " Pie ",
+  "t": "饼图"
+ },
  "935d45974f78": {
   "en": "100 h",
   "t": "100 小时"
@@ -4563,6 +4823,10 @@
   "en": " Survival &amp; crafting ",
   "t": "生存与制作"
  },
+ "967cc1c07fba": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #d55181\" data-astro-cid-nqpad2wp=\"\"></span> Idle &amp; clickers: 19,668 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #d55181\" data-astro-cid-nqpad2wp=\"\"></span> 放置与点击: 19,668 小时"
+ },
  "9685354d3c82": {
   "en": "190 h",
   "t": "190 小时"
@@ -4659,6 +4923,10 @@
   "en": "Craft",
   "t": "手艺"
  },
+ "99b2c070001a": {
+  "en": "3% of my hours",
+  "t": "占我总时数的 3%"
+ },
  "99b919bee47d": {
   "en": "Show all 19",
   "t": "显示全部 19 款"
@@ -4674,6 +4942,10 @@
  "9a4c0acd1a3a": {
   "en": "Hours here are mostly the game running in the background.",
   "t": "这里的时数大多是游戏在后台运行。"
+ },
+ "9a5b71615c31": {
+  "en": "Survival & crafting",
+  "t": "生存与制作"
  },
  "9a60e3345c8c": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#8: </span>Best of the Worst: Black Spine Raffle",
@@ -4855,6 +5127,10 @@
   "en": "Amapá",
   "t": "Amapá"
  },
+ "a04c5c0a125c": {
+  "en": "7 games",
+  "t": "7 款游戏"
+ },
  "a09567516521": {
   "en": "Started going in the mornings, at 6:30am.\n<ul>\n<li>I had no idea that would turn out to be the best time. I always thought I was a 7pm gym type of guy, but I was proven wrong. Or, better said: the masked Deo who died was the one going at 7pm and hating anything gym-related in the morning.</li>\n</ul>\n",
   "t": "开始早上去，6:30。<ul> <li>我完全没想到那会是最好的时间。我一直以为自己是晚上 7 点去健身房的那种人，结果被证明错了。或者说得更准确些：晚上 7 点去、讨厌早上一切跟健身有关的事的，是那个戴着面具、已经死去的 Deo。</li> </ul>"
@@ -4882,6 +5158,10 @@
  "a11e07d9f842": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#1: </span>Best of the Worst: Black Spine Junka 3",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#1: </span>Best of the Worst: Black Spine Junka 3"
+ },
+ "a11f62752ca1": {
+  "en": "16% of my hours",
+  "t": "占我总时数的 16%"
  },
  "a136fd1bab04": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder movie 27 ",
@@ -5059,6 +5339,10 @@
   "en": "5C",
   "t": "5C"
  },
+ "a6df62f72604": {
+  "en": " ← Back to the system ",
+  "t": "← 返回星系"
+ },
  "a70ff19cacd1": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Placeholder movie 6 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 6: </span> 占位电影 6"
@@ -5082,6 +5366,10 @@
  "a75e8688b4fb": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24"
+ },
+ "a766bb2ac493": {
+  "en": "345 h",
+  "t": "345 小时"
  },
  "a78d82862561": {
   "en": "Electronic &amp; synthwave",
@@ -5279,6 +5567,10 @@
   "en": "Clingy",
   "t": "黏人"
  },
+ "ad5fb3b6084b": {
+  "en": " Bars ",
+  "t": "条形图"
+ },
  "ad634a1473c2": {
   "en": "Divinity: Original Sin 2",
   "t": "神界：原罪 2"
@@ -5371,6 +5663,10 @@
   "en": "Losses: 5",
   "t": "负：5"
  },
+ "af589f359de9": {
+  "en": "{name}: {hours}",
+  "t": "{name}: {hours}"
+ },
  "affabe3f4188": {
   "en": "Campaign #1",
   "t": "战役 #1"
@@ -5403,6 +5699,10 @@
   "en": "18 photos",
   "t": "18 张照片"
  },
+ "b1010b9a779b": {
+  "en": "37% of my hours",
+  "t": "占我总时数的 37%"
+ },
  "b115fa0f703f": {
   "en": "Every Miku concert I've been to, from Mikunopolis in 2011 onward.",
   "t": "我去过的每一场初音未来演唱会，从 2011 年的 Mikunopolis 开始。"
@@ -5410,6 +5710,10 @@
  "b13596cd2774": {
   "en": "15 h",
   "t": "15 小时"
+ },
+ "b1643e5fd670": {
+  "en": "Hover a square to see which game that day went to. Press a category to light up only its days.",
+  "t": "将鼠标悬停在方块上，看看那一天给了哪款游戏。点按类别，只点亮它的那些天。"
  },
  "b16f6c772985": {
   "en": "Enlarge: Can we fry those up",
@@ -5446,6 +5750,10 @@
  "b226c92a46cb": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 25: </span> Placeholder TV show 25 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 25: </span> 占位剧集 25"
+ },
+ "b237d7387a3a": {
+  "en": "Each layer is a game; its volume is its hours. Drag to turn it.",
+  "t": "每一层是一款游戏，体积代表时数。拖动可旋转。"
  },
  "b23e9527359f": {
   "en": "Deo in 2017 in a graduation cap and gown with a medal, raising a beer",
@@ -5531,6 +5839,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#35: </span>Best of the Worst: Blood Debts, The Tomb, and Undefeatable",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#35: </span>Best of the Worst: Blood Debts, The Tomb, and Undefeatable"
  },
+ "b4e9509331e4": {
+  "en": "The games on the list add up to 612 days of nonstop play, 24 hours a day. Each square is one of those days.",
+  "t": "清单上的游戏加起来相当于连续不停玩 612 天，每天 24 小时。每个方块就是其中一天。"
+ },
  "b51db5d42168": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 36: </span> Seikon no Qwaser (The Qwaser of Stigmata) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 36: </span> Seikon no Qwaser (圣痕炼金士)"
@@ -5567,6 +5879,10 @@
   "en": "My kokoro can't take this (/▽＼*)｡o○♡",
   "t": "我的小心脏受不了了 (/▽＼*)｡o○♡"
  },
+ "b6a818d021a2": {
+  "en": "19 games",
+  "t": "19 款游戏"
+ },
  "b6bd42e4e730": {
   "en": "In progress",
   "t": "进行中"
@@ -5598,6 +5914,10 @@
  "b7896305f027": {
   "en": "D&amp;D",
   "t": "D&amp;D"
+ },
+ "b7b3fa90eecd": {
+  "en": " TrueTrophies ",
+  "t": "TrueTrophies"
  },
  "b7baf7c8edaa": {
   "en": "164 h",
@@ -5679,6 +5999,10 @@
   "en": "it climbed too steeply and stalled",
   "t": "爬升太陡失速了"
  },
+ "bbe358b1d369": {
+  "en": "12 games",
+  "t": "12 款游戏"
+ },
  "bbfb183d2a3d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Mahou Shoujo Madoka Magica (Puella Magi Madoka Magica) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 33: </span> Mahou Shoujo Madoka Magica (魔法少女小圆)"
@@ -5707,6 +6031,14 @@
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,003 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,003 小时</strong>  ·  19 款游戏  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">占我总时数的 3%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">占我总时数的 7%</span>"
  },
+ "bca97bae09e1": {
+  "en": " Xbox  ·  estimated ",
+  "t": "Xbox  ·  估计"
+ },
+ "bcf9f12dccef": {
+  "en": " Days of my life ",
+  "t": "我的人生天数"
+ },
  "bd62be75218d": {
   "en": " MG ",
   "t": "MG"
@@ -5714,6 +6046,10 @@
  "bd7210aa5ccc": {
   "en": " 10 amethysts → 1 aquamarine ",
   "t": "10 阿米西斯特 → 1 阿夸马林"
+ },
+ "bda390f230f3": {
+  "en": "Idle & clickers",
+  "t": "放置与点击"
  },
  "bdf48be07582": {
   "en": "Far Cry 5",
@@ -5727,6 +6063,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Placeholder TV show 18 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 18: </span> 占位剧集 18"
  },
+ "be7536a3d320": {
+  "en": "The games on the list add up to 1,432 days of nonstop play, 24 hours a day. Each square is one of those days.",
+  "t": "清单上的游戏加起来相当于连续不停玩 1,432 天，每天 24 小时。每个方块就是其中一天。"
+ },
  "be7869041e41": {
   "en": "MyAnimeList",
   "t": "MyAnimeList"
@@ -5738,6 +6078,10 @@
  "bea68df61c69": {
   "en": "Beef grilled so far",
   "t": "目前为止烤过的牛肉"
+ },
+ "beaea51e2b8b": {
+  "en": "819 days",
+  "t": "819 天"
  },
  "beaf88b8f9bb": {
   "en": "Music: off",
@@ -5782,6 +6126,10 @@
  "c032adc1ff62": {
   "en": "X",
   "t": "X"
+ },
+ "c03b4f70bb93": {
+  "en": "11% of my hours",
+  "t": "占我总时数的 11%"
  },
  "c05c3582ef8a": {
   "en": "Chibi pixel Deo in his yellow king's robes and crown hat, dancing the Saturday Night Fever disco point under flashing stage lights.",
@@ -5882,6 +6230,10 @@
  "c327716d8241": {
   "en": "Angle {angle}°   Power {power}%",
   "t": "角度 {angle}°   力度 {power}%"
+ },
+ "c361ac4de54f": {
+  "en": "See it as",
+  "t": "查看方式"
  },
  "c379a5b7a656": {
   "en": "Hi-hat (key A)",
@@ -6003,6 +6355,10 @@
   "en": "Praise the source of the beef thou art eating. Thank the soul that was given for thy enjoyment and for thy nourishment.",
   "t": "赞美汝口中牛肉的来处。感谢那为汝之享用与滋养而献出的灵魂。"
  },
+ "c89fbbb316fe": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> Space &amp; flight: 1,302 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> 太空与飞行: 1,302 小时"
+ },
  "c8b4c761e082": {
   "en": " 1,302 h ",
   "t": "1,302 小时"
@@ -6010,6 +6366,14 @@
  "c8eb359c95bd": {
   "en": " 1,003 h ",
   "t": "1,003 小时"
+ },
+ "c92499e3e7ab": {
+  "en": "8 games",
+  "t": "8 款游戏"
+ },
+ "c93e62e0ff43": {
+  "en": " Steam + PC  ·  estimated ",
+  "t": "Steam + PC  ·  估计"
  },
  "c944c31581a4": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">⚽</span> Play ",
@@ -6078,6 +6442,10 @@
  "cb2341d7ae67": {
   "en": "21 h",
   "t": "21 小时"
+ },
+ "cb4f8f79b3d7": {
+  "en": "93 days",
+  "t": "93 天"
  },
  "cb617c0ab9ee": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Placeholder TV show 6 ",
@@ -6163,6 +6531,10 @@
   "en": "Potato",
   "t": "沙发土豆"
  },
+ "cde507abe00d": {
+  "en": "67 days",
+  "t": "67 天"
+ },
  "ce00926930a4": {
   "en": "New personal best!",
   "t": "新个人纪录！"
@@ -6182,6 +6554,10 @@
  "ce2c178cd497": {
   "en": "Fold precision {n}%.",
   "t": "折纸精度 {n}%。"
+ },
+ "ce55a3607861": {
+  "en": "15% of my hours",
+  "t": "占我总时数的 15%"
  },
  "ce70caaad427": {
   "en": "1 photo",
@@ -6294,6 +6670,10 @@
  "d1801d67057b": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#14: </span>Best of the Worst: Blindfold Picks!",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#14: </span>Best of the Worst: Blindfold Picks!"
+ },
+ "d185b1fb283b": {
+  "en": "5 games",
+  "t": "5 款游戏"
  },
  "d1a1eb0d4455": {
   "en": "69 h",
@@ -6631,6 +7011,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 13: </span> Placeholder movie 13 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 13: </span> 占位电影 13"
  },
+ "db11895b10d7": {
+  "en": "28 games",
+  "t": "28 款游戏"
+ },
  "db14ad9a8475": {
   "en": "WS",
   "t": "WS"
@@ -6666,6 +7050,10 @@
  "dc2ebd27dc53": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Sakurasou no Pet na Kanojo (The Pet Girl of Sakurasou) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 32: </span> Sakurasou no Pet na Kanojo (樱花庄的宠物女孩)"
+ },
+ "dc752cd20399": {
+  "en": " PC  ·  estimated ",
+  "t": "PC  ·  估计"
  },
  "dcd5bcfb4e72": {
   "en": "Mine isn't fully aligned with the other three, and I gave that a meaning too: some of my memories are misaligned. This weird life of mine, like everyone else's, is about figuring out who I am, why I'm alive, and what I want from it before I perish.",
@@ -6727,9 +7115,17 @@
   "en": "Saturday Night Fever, King of Hues edition.",
   "t": "《周末夜狂热》，King of Hues 版。"
  },
+ "de587bf1e284": {
+  "en": "23 games",
+  "t": "23 款游戏"
+ },
  "de99be866eab": {
   "en": "For years, the gym was a pressure valve. I went for stress relief, so it never satisfied me: it was a tool for relief, not something I enjoyed. Now, for the first time in my life, going to the gym feels as natural as brushing my teeth. I don’t go to relieve stress anymore. I go because I actually enjoy it, with music in my ears on the elliptical or under the weights.",
   "t": "多年来，健身房是一个泄压阀。我去是为了减压，所以它从来没让我满足过：它是解压的工具，不是我享受的东西。现在，我人生中第一次觉得去健身房和刷牙一样自然。我不再为了减压而去。我去是因为我真心喜欢，在椭圆机上或在杠铃下，耳朵里放着音乐。"
+ },
+ "dea96c3549f0": {
+  "en": "+ 12 more games",
+  "t": "+ 另外 12 款游戏"
  },
  "deabcf59fc55": {
   "en": "Get thyself churrasco salt: iodized, in big rocky chunks, and imported from Brazil if thou canst. Heathens have tried to cheap out with Himalayan salt and paid the price with a ruined steak.",
@@ -6762,6 +7158,10 @@
  "df59735e1f2b": {
   "en": "SS",
   "t": "SS"
+ },
+ "df9d095c1748": {
+  "en": " An exploded sphere of my hours by category: RPGs &amp; open worlds 37%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 15% ",
+  "t": "按类别划分的我的时数爆炸球体：角色扮演与开放世界 37%、城市、殖民地与策略 11%、生存与制作 11%、工厂与自动化 11%、太空与飞行 9%、休闲与生活模拟 6%、Other 15%"
  },
  "dfc22bef9169": {
   "en": "Dragon Cliff 龙崖",
@@ -6847,6 +7247,10 @@
   "en": "<strong>Chögyam Trungpa</strong>, Tibetan Buddhist teacher, coined “idiot compassion”: kindness that avoids conflict. His student Pema Chödrön describes it as enabling. <a href=\"https://tricycle.org/?p=1701\">Pema Chödrön</a>",
   "t": "<strong>丘扬创巴</strong>，藏传佛教导师，提出“愚痴的慈悲”：回避冲突的善良。他的学生佩玛·丘卓将其描述为纵容。<a href=\"https://tricycle.org/?p=1701\">佩玛·丘卓</a>"
  },
+ "e259a950cc03": {
+  "en": "961 h",
+  "t": "961 小时"
+ },
  "e2fdc09c46f0": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez"
@@ -6870,6 +7274,10 @@
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
   "t": "扔鸟，消耗 3 点法力（按键 2）"
+ },
+ "e4443be6531e": {
+  "en": "2,255 h",
+  "t": "2,255 小时"
  },
  "e45f65625355": {
   "en": "amethyst",
@@ -6919,9 +7327,17 @@
   "en": "Cow-meter",
   "t": "牛牛计量表"
  },
+ "e5d54a5bdc20": {
+  "en": "+ 21 more games",
+  "t": "+ 另外 21 款游戏"
+ },
  "e5fabe58e839": {
   "en": "Singin' in the Rain",
   "t": "雨中曲"
+ },
+ "e60d682aaacf": {
+  "en": "Each chunk is a category, as big as its hours. Drag to turn it; press a chunk to open it.",
+  "t": "每块是一个类别，大小代表时数。拖动可旋转；点按一块可打开。"
  },
  "e68aee3207bc": {
   "en": " 20 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -7010,6 +7426,10 @@
  "e93ceb015abf": {
   "en": "That's 1,166 VHS tapes recorded in SP (2 hours per T-120 tape).",
   "t": "也就是用 SP 模式录制的 1,166 盘 VHS 录像带（每盘 T-120 录 2 小时）。"
+ },
+ "e94041b85b87": {
+  "en": "38 days",
+  "t": "38 天"
  },
  "e9c60bb36ae2": {
   "en": "Nebraska",
@@ -7171,6 +7591,10 @@
   "en": "{n} of {max}",
   "t": "{n}/{max}"
  },
+ "f0f21ca1cb3a": {
+  "en": "Cozy & life sims",
+  "t": "休闲与生活模拟"
+ },
  "f0f48a551e02": {
   "en": "A pixel dinosaur running along the ground. Throw obstacles at it.",
   "t": "一只在地上奔跑的像素恐龙。朝它扔障碍物。"
@@ -7239,6 +7663,10 @@
   "en": "The tattoo is mirrored. That used to bring me shame, until I realized it's a matter of perspective: under some conditions it looks perfect, and under others it doesn't. That gap became a lesson in mindset and in how you choose to see things.",
   "t": "这个文身是镜像的。它曾让我感到羞耻，直到我意识到这是视角问题：在某些条件下它看起来很完美，在另一些条件下则不然。这个落差成了关于心态、关于你选择如何看待事物的一课。"
  },
+ "f2eee33f7b84": {
+  "en": "29 games",
+  "t": "29 款游戏"
+ },
  "f2fac748899d": {
   "en": "Recording speed",
   "t": "录制速度"
@@ -7290,6 +7718,10 @@
  "f4b3775718fe": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Placeholder movie 16 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 16: </span> 占位电影 16"
+ },
+ "f4e25be12fd0": {
+  "en": "3,385 h",
+  "t": "3,385 小时"
  },
  "f4fc4b8224f9": {
   "en": "Reward learning",
@@ -7367,6 +7799,10 @@
   "en": " Action &amp; adventure ",
   "t": "动作与冒险"
  },
+ "f80d1870d042": {
+  "en": " ← Close the chunk ",
+  "t": "← 合上这一块"
+ },
  "f84d1ceb9541": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder movie 32 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 32: </span> 占位电影 32"
@@ -7374,6 +7810,10 @@
  "f88380a61053": {
   "en": "Enlarge: Artsy Bidu",
   "t": "放大: 文艺范 Bidu"
+ },
+ "f89ce696a35d": {
+  "en": "354 h",
+  "t": "354 小时"
  },
  "f8be939ad7c2": {
   "en": "6 h",
@@ -7555,6 +7995,10 @@
   "en": "A Plague Tale series",
   "t": "瘟疫传说系列"
  },
+ "fe88ceb17f28": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #199e70\" data-astro-cid-nqpad2wp=\"\"></span> Survival &amp; crafting: 1,590 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #199e70\" data-astro-cid-nqpad2wp=\"\"></span> 生存与制作: 1,590 小时"
+ },
  "fe9050f8f41a": {
   "en": "Practice skin. Draw a tattoo on it with the tattoo pen.",
   "t": "练习皮。用文身笔在上面画个文身。"
@@ -7598,6 +8042,10 @@
  "ffbcb9739951": {
   "en": "Cactus",
   "t": "仙人掌"
+ },
+ "ffc2e69c952b": {
+  "en": "1,803 h",
+  "t": "1,803 小时"
  },
  "fff4a50e8428": {
   "en": "Đà Nẵng",

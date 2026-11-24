@@ -140,3 +140,47 @@ export function loadGamer(
     owned: steam.games.length,
   };
 }
+
+// The Gamer tab's other views (#252): pie, sphere, orbits, days and shelf.
+// Eight colours at most, so no two categories look alike: the biggest categories keep their own,
+// and the smallest share one grey "Other" (its `parts` keep them apart). Picked with the dataviz
+// palette check: neighbours stay apart for colour-blind readers on the dark background.
+export const VIEW_COLORS: Record<string, string> = {
+  'idle-and-clickers': '#d55181',
+  'rpgs-and-open-worlds': '#3987e5',
+  'city-colony-and-strategy': '#d95926',
+  'survival-and-crafting': '#199e70',
+  'factory-and-automation': '#c98500',
+  'space-and-flight': '#9085e9',
+  'cozy-and-life-sims': '#0ca30c',
+};
+export const OTHER_COLOR = '#7d8597';
+export type ViewItem = { name: string; value: number; estimated?: boolean; chips?: string[] };
+export type ViewCategory = {
+  id: string;
+  name: string;
+  color: string;
+  value: number;
+  excludable?: boolean;
+  items: ViewItem[];
+  /** For "Other": the categories folded into it. */
+  parts?: { name: string; value: number; count: number }[];
+};
+export function viewCategories(categories: GameCategory[], otherName = 'Other'): ViewCategory[] {
+  const sum = (c: GameCategory) => c.items.reduce((s, i) => s + i.value, 0);
+  const out: ViewCategory[] = [];
+  const folded = categories.filter((c) => !VIEW_COLORS[c.id]);
+  for (const c of categories.filter((c) => VIEW_COLORS[c.id]))
+    out.push({ id: c.id, name: c.name, color: VIEW_COLORS[c.id], value: sum(c), excludable: c.excludable, items: c.items.map(({ name, value, estimated, chips }) => ({ name, value, estimated, chips })) });
+  out.sort((a, b) => b.value - a.value);
+  if (folded.length)
+    out.push({
+      id: 'other',
+      name: otherName,
+      color: OTHER_COLOR,
+      value: folded.reduce((s, c) => s + sum(c), 0),
+      items: folded.flatMap((c) => c.items).sort((a, b) => b.value - a.value).map(({ name, value, estimated, chips }) => ({ name, value, estimated, chips })),
+      parts: folded.map((c) => ({ name: c.name, value: sum(c), count: c.items.length })).sort((a, b) => b.value - a.value),
+    });
+  return out;
+}

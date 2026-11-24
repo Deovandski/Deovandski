@@ -25,7 +25,13 @@ and a project without translations just shows the English.
 | [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing four disco routines (#1 the point, #2 the Night Fever line dance, #3 the hustle, #4 toe stand & point) under spotlights, a mirror ball and a light-up floor, with a fever meter you fill by tapping on the beat and an optional original 8-bit disco loop. | Concert tab, Playground |
 | IsoDarts (moved) | An on-rails darts scene in an isometric room: scripted speech bubbles, then a timed round on a board of coloured territories (claim, cancel, smaller is worth more) with a swaying aim. | Moved to [HusbandOutWorld](https://github.com/Deovandski/HusbandOutWorld) as `site/js/iso-darts.js` and `site/css/iso-darts.css` (its Playground, Territory Snipping, #245) |
 | [IsoFarm.astro](IsoFarm.astro) | A Colheita Feliz-style farming loop: isometric plots, seeds with timers and random harvests, fertilizer, energy and a market. The whole economy is one config object; saves in the browser. | Mentor tab (the Balls farm) |
-| [HoursByCategory.astro](HoursByCategory.astro) | Things grouped into categories with their hours: a totals card, one bar per category, then a card per category (most first, "Show all"). A switch takes "excludable" categories (idle games) out of the total. Worked out at build time, so translated pages translate every word. | Gamer tab (Steam hours) |
+| [HoursByCategory.astro](HoursByCategory.astro) | Things grouped into categories with their hours: a totals card, one bar per category, then a card per category (most first, "Show all"). A switch takes "excludable" categories (idle games) out of the total. Worked out at build time, so translated pages translate every word. | Gamer tab (Steam, Xbox and estimated hours) |
+| [HoursPie.astro](HoursPie.astro) | A pie of hours by category; pressing a slice or its row opens that category's items. Worked out at build time, with and without the excludable categories. | Gamer tab (a view of Hours by category) |
+| [ExplodedSphere.astro](ExplodedSphere.astro) | A sphere split into chunks (one per category, sized by hours), pulled apart and slowly turning; drag to turn it, press a chunk to split it into layers (one per item, by volume). Its own tiny SVG 3D renderer, no library. | Gamer tab (a view of Hours by category) |
+| [HoursOrbits.astro](HoursOrbits.astro) | Hours as a solar system: the total is the sun, each category a planet sized by its hours with its top items as moons; press a planet to fly in and see every item as a moon. | Gamer tab (a view of Hours by category) |
+| [DaysGrid.astro](DaysGrid.astro) | Hours turned into days: one square per day (24 h) of nonstop play, coloured by category and handed out to items in order, with a mark at each full year. | Gamer tab (a view of Hours by category) |
+| [CartridgeShelf.astro](CartridgeShelf.astro) | One shelf per category, one cartridge per item, each as wide as its hours (one scale for all); hover pulls a cartridge out, estimated ones are dashed. | Gamer tab (a view of Hours by category) |
+| [LinksMenu.astro](LinksMenu.astro) | One "Links" button that drops down a box: main links as buttons, a divider with a centred heading, then more links. Works as an open box without JavaScript. | Gamer tab (Steam, Xbox, third-party trackers) |
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
 | [KitKot.astro](KitKot.astro) | A parody social app idle game on a phone: post for views, likes and followers on a slot-machine schedule (near misses, a hidden hot post type, fatigue, streaks, energy). "Under the hood" names each trick, with sources. | Influencer tab |
@@ -148,13 +154,75 @@ Theme it with `--egg-accent`, `--egg-accent-2`, `--egg-bg` and `--egg-ink`.
 | `showAll` / `showFewer` | `"Show all {n}"` / `"Show fewer"` | The card button. |
 | `chipColors` | `{}` | A colour per chip label, like `{ Steam: '#66c0f4' }`. Other chips use `--hbc-chip` (default: the accent). |
 | `estimatedMark` / `estimatedLabel` | `"*"` / `"estimated"` | After an estimated item's value, and what screen readers say instead. |
+| `excludedByDefault` | `false` | Start with the switch off: excludable categories out of the totals. |
+| `views` / `viewsLabel` / `barsLabel` | `[]` / `"See it as"` / `"Bars"` | Other views of the rollup, `[{ id, label }]`, each filled from the named slot `id`; a "See it as" switch picks one, Bars first. |
 | `locale` | `"en-US"` | How numbers are written. |
+
+Views can follow the switch: the root carries `data-hours-scope`, plus `data-excluded` while the
+switch is off, and fires `hours:excluded` (`detail.excluded`) when it flips. HoursPie,
+ExplodedSphere, HoursOrbits, DaysGrid and CartridgeShelf all do; outside it, their `excluded` prop
+sets the state.
+
+```astro
+<HoursByCategory categories={cats} excludedByDefault views={[{ id: 'pie', label: 'Pie' }]}>
+  <HoursPie slot="pie" categories={pieCats} excluded />
+</HoursByCategory>
+```
 
 Every number and label is worked out at build time, with and without the excludable categories;
 the script only flips which is shown, so translated pages need nothing extra. Without JavaScript
 every item shows and the switch stays hidden. Theme with `--hbc-accent`, `--hbc-chip`, `--hbc-excluded`,
 `--hbc-surface`, `--hbc-border`, `--hbc-track`, `--hbc-text`, `--hbc-muted`, `--hbc-note` and
 `--hbc-heading-font`.
+
+## The views of Hours by category
+
+HoursPie, ExplodedSphere, HoursOrbits, DaysGrid and CartridgeShelf share one data shape, so one
+list feeds them all (`viewCategories()` in `src/lib/gamerCategories.ts` makes it on this site):
+
+```ts
+{ id, name, color, value, excludable?, items: [{ name, value, estimated?, chips? }], parts?: [{ name, value, count }] }
+```
+
+`parts` is for a category that folds smaller ones together ("Other"): the sphere's layers and the
+orbits' moons show its parts instead of its items. Keep to eight colours or fewer, and let colour
+never be the only cue: each view has a list or caption with every name and number.
+
+| Component | Props besides `categories`, `id`, `excluded`, `unit`, `locale` | Notes |
+|---|---|---|
+| HoursPie | `label` ({list}), `hint`, `backLabel`, `shareLabel` ({share}), `countLabel`/`countLabelOne`, `moreLabel` ({n}), `shown` (12), `estimatedMark`/`estimatedLabel`, `chipColors` | Static SVG; the script only shows a category's list and pops its slice out. |
+| ExplodedSphere | `layers` (7), `hint`, `openHint`, `backLabel`, `moreLabel`, `chunkCaption` ({name} {hours} {share}), `layerCaption`, `shareLabel`, `countLabel`/`countLabelOne`, `estimatedLabel`, `label` | Drawn each frame as SVG paths, back to front; turns only while on screen and not for reduced motion. `touch-action: pan-y` keeps the page scrolling on phones. |
+| HoursOrbits | `sunLabel`, `hint`, `openHint`, `backLabel`, `planetCaption`, `moonCaption`, `countLabel`/`countLabelOne`, `moons` (24), `estimatedLabel`, `label` | Pauses under the pointer; still for reduced motion. |
+| DaysGrid | `headline` ({span}), `subline` ({days}), `year`/`years`/`day`/`days` ({n}), `and` ({a} {b}), `hint`, `caption` ({n} {item} {category}), `yearMark`, `label` | Squares drawn to fit the width; a category button lights up only its days. |
+| CartridgeShelf | `hint`, `countLabel`/`countLabelOne`, `estimatedLabel`, `label`, `chipColors` | Shelves drawn to fit the width, left to right in every language. |
+
+The runtime ones read every word from the page (their lists and a hidden strings block), so
+translated pages need nothing extra. Theming: `--pie-*`, `--sphere-*`, `--orbits-*`, `--days-*`,
+`--shelf-*` (see the comment at the top of each file).
+
+## LinksMenu
+
+```astro
+<LinksMenu
+  id="gamer-links"
+  label="Links"
+  primary={[{ href: STEAM, label: 'My profile on Steam' }]}
+  dividerLabel="Third party trackers"
+  secondary={[{ href: 'https://truesteamachievements.com/gamer/me', label: 'TrueSteamAchievements' }]}
+/>
+```
+
+| Prop | Default | |
+|---|---|---|
+| `id` | `"links"` | Prefix for the box's id. |
+| `label` | `"Links"` | The button, and the box's name for screen readers. |
+| `primary` | (required) | `[{ href, label }]`: filled buttons at the top. |
+| `dividerLabel` | none | The heading in the middle of the divider. |
+| `secondary` | `[]` | `[{ href, label }]`: outlined links under the divider. |
+
+The root is `display: contents`, so the button sits in the parent's flex row and the box takes a
+line of its own under it. Esc closes it. Theme with `--links-accent`, `--links-surface`,
+`--links-text`, `--links-muted` and `--links-line`.
 
 ## IconMeter
 
