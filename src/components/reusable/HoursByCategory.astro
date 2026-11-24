@@ -25,12 +25,17 @@
  * translated copy of the page translates every word. Without JavaScript every item shows and the
  * switch stays hidden. Bars don't animate for people who prefer reduced motion.
  *
- * Theming (CSS custom properties, with fallbacks): --hbc-accent, --hbc-excluded, --hbc-surface,
+ * Items can carry chips after their name (`chips: ['Steam', 'Xbox']`), coloured per label with
+ * the `chipColors` prop.
+ *
+ * Theming (CSS custom properties, with fallbacks): --hbc-accent, --hbc-chip, --hbc-excluded, --hbc-surface,
  * --hbc-border, --hbc-track, --hbc-text, --hbc-muted, --hbc-note, --hbc-heading-font.
  */
 interface Item {
   name: string;
   value: number;
+  /** Small labels after the name, e.g. where the hours come from ("Steam", "Xbox"). */
+  chips?: string[];
 }
 interface Category {
   id: string;
@@ -67,6 +72,8 @@ interface Props {
   countLabel?: string;
   showAll?: string;
   showFewer?: string;
+  /** Colour per chip label, e.g. { Steam: '#66c0f4' }. Others use --hbc-chip (default: the accent). */
+  chipColors?: Record<string, string>;
   /** BCP 47 locale for the numbers. */
   locale?: string;
   class?: string;
@@ -88,6 +95,7 @@ const {
   countLabel = '{n} items',
   showAll = 'Show all {n}',
   showFewer = 'Show fewer',
+  chipColors = {},
   locale = 'en-US',
   class: className,
 } = Astro.props;
@@ -232,7 +240,14 @@ const rows = sorted.map((c) => {
                   {i.initials}
                 </span>
                 <span class="hbc__item-main">
-                  <span class="hbc__item-name">{i.name}</span>
+                  <span class="hbc__item-head">
+                    <span class="hbc__item-name">{i.name}</span>
+                    {i.chips?.map((chip) => (
+                      <span class="hbc__chip" style={chipColors[chip] ? `--_chip: ${chipColors[chip]}` : undefined}>
+                        {chip}
+                      </span>
+                    ))}
+                  </span>
                   <span class="hbc__item-track" aria-hidden="true">
                     <span class="hbc__item-bar" style={`width: ${i.bar}%`} />
                   </span>
@@ -284,6 +299,7 @@ const rows = sorted.map((c) => {
 <style>
   .hbc {
     --_accent: var(--hbc-accent, #39c5bb);
+    --_chip: var(--hbc-chip, var(--_accent));
     --_excluded: var(--hbc-excluded, #e12885);
     --_surface: var(--hbc-surface, #0e1636);
     --_border: var(--hbc-border, #18224a);
@@ -522,6 +538,23 @@ const rows = sorted.map((c) => {
     font-size: 0.95rem;
     line-height: 1.25;
     overflow-wrap: anywhere;
+  }
+  .hbc__item-head {
+    line-height: 1.25;
+  }
+  .hbc__chip {
+    display: inline-block;
+    margin-inline-start: 0.4rem;
+    padding: 0 0.45rem;
+    border-radius: 0.7rem;
+    border: 1px solid color-mix(in srgb, var(--_chip) 60%, transparent);
+    background: color-mix(in srgb, var(--_chip) 16%, transparent);
+    color: var(--_chip);
+    font-size: 0.7rem;
+    font-weight: 700;
+    line-height: 1.5;
+    vertical-align: 0.1em;
+    white-space: nowrap;
   }
   .hbc__item-track {
     height: 4px;

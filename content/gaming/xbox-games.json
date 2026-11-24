@@ -1,0 +1,30 @@
+{
+ "_about": "Hours for the Gamer tab, from Xbox (OpenXBL, MinutesPlayed). Only games Xbox has hours for. Refresh with scripts/xbox-fetch.mjs and scripts/xbox-games.mjs; see content/gaming/README.md.",
+ "exported": "2026-11-24",
+ "gamertag": "deovandski",
+ "games": [
+  {"titleId":"1285166951","name":"The Elder Scrolls Online","minutes":16802},
+  {"titleId":"1256782258","name":"Fallout 4","minutes":14385},
+  {"titleId":"252034287","name":"The Elder Scrolls V: Skyrim Special Edition","minutes":11091},
+  {"titleId":"2046562785","name":"Avowed","minutes":10137},
+  {"titleId":"502034863","name":"Assassin's Creed Origins","minutes":9783},
+  {"titleId":"964706972","name":"No Man's Sky","minutes":8256},
+  {"titleId":"226054795","name":"MONSTER HUNTER: WORLD™","minutes":8063},
+  {"titleId":"972249091","name":"Grand Theft Auto V (Xbox One)","minutes":7177},
+  {"titleId":"2109344129","name":"FINAL FANTASY XV WINDOWS EDITION","minutes":6207},
+  {"titleId":"447911394","name":"Far Cry® 5","minutes":5802},
+  {"titleId":"618537566","name":"The Outer Worlds","minutes":5240},
+  {"titleId":"345903534","name":"Minecraft: Xbox One Edition","minutes":4936},
+  {"titleId":"1175562227","name":"Just Cause 3","minutes":4566},
+  {"titleId":"357858858","name":"KINGDOM HEARTS Ⅲ","minutes":4147},
+  {"titleId":"739464821","name":"South Park™: The Fractured but Whole™","minutes":1681},
+  {"titleId":"56347639","name":"Spyro™ Reignited Trilogy","minutes":1365},
+  {"titleId":"106901580","name":"Destroy All Humans!","minutes":625},
+  {"titleId":"2064168993","name":"Age of Empires II: Definitive Edition","minutes":549},
+  {"titleId":"896928775","name":"Minecraft for Windows","minutes":266},
+  {"titleId":"231381248","name":"The Deer God","minutes":245},
+  {"titleId":"2098787950","name":"Age of Empires IV: Anniversary Edition","minutes":141},
+  {"titleId":"2138276496","name":"Pneuma: Breath of Life","minutes":60},
+  {"titleId":"162448742","name":"Outer Wilds","minutes":37}
+ ]
+}

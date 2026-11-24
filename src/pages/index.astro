@@ -102,6 +102,7 @@ const boards = [
 ];
 
 const STEAM = 'https://steamcommunity.com/id/deovandski';
+const XBOX = 'https://www.xbox.com/play/user/deovandski';
 const MAL = 'https://myanimelist.net/profile/Deovandski';
 
 const influencerLinks: LinkItem[] = [
@@ -681,24 +682,28 @@ const nf = new Intl.NumberFormat('en-US');
       </GimmickPlay>
       <div class="list-head gamer-head">
         <div class="gamer-intro">{gamer.intro.map((para) => <p class="ranking-lede">{para}</p>)}</div>
-        <a class="list-link" href={STEAM}>My profile on Steam</a>
+        <div class="gamer-links">
+          <a class="list-link" href={STEAM}>My profile on Steam</a>
+          <a class="list-link" href={XBOX}>My profile on Xbox</a>
+        </div>
       </div>
       <HoursByCategory
         id="gamer"
         categories={gamer.categories}
         total={gamer.totalHours}
-        totalLabel="hours on Steam"
+        totalLabel="hours played"
         stats={[
           { value: gamer.played, label: 'games played' },
-          { value: gamer.owned, label: 'games owned' },
+          { value: gamer.owned, label: 'games owned on Steam' },
           { value: gamer.categories.length, label: 'categories' },
         ]}
         excludeLabel="Count idle games ({value} h left running)"
         shareLabel="{share} of my hours"
         excludedShareLabel="not counted in my hours"
         countLabel="{n} games"
+        chipColors={{ Steam: '#66c0f4', Xbox: '#6cc24a' }}
       />
-      <p class="gamer-foot">Hours from my Steam library. Games with under 10 hours are left out.</p>
+      <p class="gamer-foot">Hours from my Steam library and my Xbox profile. Games with under 10 hours are left out.</p>
     </section>
 
     <section class="panel" role="region" id="panel-anime" aria-labelledby="tab-anime" tabindex="0" hidden>
@@ -945,6 +950,7 @@ const nf = new Intl.NumberFormat('en-US');
   .list-head .ranking-lede { margin-bottom: 0; }
   .gamer-head { margin-bottom: 1.25rem; }
   .gamer-intro { max-width: var(--measure); }
+  .gamer-links { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: flex-start; }
   .gamer-foot { margin: 1.25rem 0 0; font-size: var(--step--1); color: var(--muted); }
   #panel-gamer { --hbc-heading-font: var(--font-display); }
   .list-link {

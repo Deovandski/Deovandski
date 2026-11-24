@@ -1,13 +1,19 @@
 # Gamer tab
 
-Edit and push; the Gamer tab rebuilds from this file and from `steam-games.json` (the hours).
-To refresh the hours, about once a year, follow README.md in this folder.
+Edit and push; the Gamer tab rebuilds from this file and from `steam-games.json` and
+`xbox-games.json` (the hours). To refresh the hours, about once a year, follow README.md in this folder.
 
 - Each `##` heading is a category. The site orders categories, and the games in each,
   by hours (most played first), so the order here doesn't matter.
-- Each bullet is one game, written as Steam names it. ™ and ® can be left out, and
-  capitals don't matter. Its hours come from `steam-games.json`; a game that isn't in
-  the export is skipped (`node scripts/steam-games.mjs` lists those).
+- Each bullet is one game, written as Steam or Xbox names it. ™ and ® can be left out, and
+  capitals don't matter. Its hours come from `steam-games.json` and `xbox-games.json`, and it
+  gets a Steam and/or Xbox chip for each one it's in. A game in neither is skipped
+  (`node scripts/steam-games.mjs` lists those).
+- A game on both adds its Steam and Xbox hours together. Add `{same}` when it's the same play
+  counted twice (a Microsoft game on Steam also reports its hours to Xbox), and it uses the
+  larger number instead.
+- When the two stores name a game differently, list every name with `|` between them; the
+  first is the one shown: `- Grand Theft Auto V | Grand Theft Auto V Legacy | Grand Theft Auto V (Xbox One)`.
 - `{idle}` after a heading marks games that mostly ran in the background. Their hours
   get their own colour, and the "Count idle games" switch takes them out of the total.
 - A plain line under a heading is that category's note.
@@ -76,6 +82,7 @@ Hours here are mostly the game running in the background.
 - Grand Emprise: Time Travel Survival
 - Grounded
 - Medieval Dynasty
+- Minecraft: Xbox One Edition
 - Nomad Survival
 - Subnautica
 - Subnautica: Below Zero
@@ -104,27 +111,34 @@ Hours here are mostly the game running in the background.
 
 ## RPGs & open worlds
 
-- Avowed
+- Assassin's Creed Origins
+- Avowed {same}
 - CHRONO TRIGGER
 - CrossCode
 - Cyberpunk 2077
 - Divinity: Original Sin 2
 - Eastward
+- Fallout 4
 - Fallout: New Vegas
 - FINAL FANTASY XII THE ZODIAC AGE
+- FINAL FANTASY XV WINDOWS EDITION
 - God of War
-- Grand Theft Auto V Legacy
+- Grand Theft Auto V | Grand Theft Auto V Legacy | Grand Theft Auto V (Xbox One)
 - Grim Dawn
 - Hogwarts Legacy
+- KINGDOM HEARTS III
 - Like a Dragon: Pirate Yakuza in Hawaii
 - Little Witch Academia: Chamber of Time
 - Mass Effect Legendary Edition
 - Path of Exile
 - Red Dead Redemption 2
+- South Park: The Fractured but Whole
 - Tales of ARISE
 - The Elder Scrolls IV: Oblivion Remastered
+- The Elder Scrolls Online
 - The Elder Scrolls V: Skyrim
 - The Elder Scrolls V: Skyrim Special Edition
+- The Outer Worlds
 - The Witcher 3: Wild Hunt — Remastered
 
 ## Action & adventure
@@ -132,15 +146,19 @@ Hours here are mostly the game running in the background.
 - A Plague Tale: Innocence
 - A Plague Tale: Requiem
 - BLACKTAIL
+- Destroy All Humans!
 - Ghostbusters: The Video Game Remastered
 - Hellblade: Senua's Sacrifice
 - High On Life
+- Just Cause 3
 - LEGO Star Wars: The Skywalker Saga
 - Maneater
 - Marvel's Guardians of the Galaxy
 - Marvel’s Spider-Man Remastered
+- MONSTER HUNTER: WORLD
 - Ratchet & Clank: Rift Apart
 - Revenge of the Savage Planet
+- Spyro Reignited Trilogy
 - STAR WARS Jedi: Fallen Order
 - Stray
 - Wrongworld
@@ -159,6 +177,7 @@ Hours here are mostly the game running in the background.
 - Borderlands 3
 - Borderlands GOTY Enhanced
 - Dead Island 2
+- Far Cry 5
 - Left 4 Dead 2
 - PAYDAY 2
 
