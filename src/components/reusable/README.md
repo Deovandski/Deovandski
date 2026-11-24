@@ -25,6 +25,7 @@ and a project without translations just shows the English.
 | [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing four disco routines (#1 the point, #2 the Night Fever line dance, #3 the hustle, #4 toe stand & point) under spotlights, a mirror ball and a light-up floor, with a fever meter you fill by tapping on the beat and an optional original 8-bit disco loop. | Concert tab, Playground |
 | IsoDarts (moved) | An on-rails darts scene in an isometric room: scripted speech bubbles, then a timed round on a board of coloured territories (claim, cancel, smaller is worth more) with a swaying aim. | Moved to [HusbandOutWorld](https://github.com/Deovandski/HusbandOutWorld) as `site/js/iso-darts.js` and `site/css/iso-darts.css` (its Playground, Territory Snipping, #245) |
 | [IsoFarm.astro](IsoFarm.astro) | A Colheita Feliz-style farming loop: isometric plots, seeds with timers and random harvests, fertilizer, energy and a market. The whole economy is one config object; saves in the browser. | Mentor tab (the Balls farm) |
+| [HoursByCategory.astro](HoursByCategory.astro) | Things grouped into categories with their hours: a totals card, one bar per category, then a card per category (most first, "Show all"). A switch takes "excludable" categories (idle games) out of the total. Worked out at build time, so translated pages translate every word. | Gamer tab (Steam hours) |
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
 | [KitKot.astro](KitKot.astro) | A parody social app idle game on a phone: post for views, likes and followers on a slot-machine schedule (near misses, a hidden hot post type, fatigue, streaks, energy). "Under the hood" names each trick, with sources. | Influencer tab |
@@ -114,6 +115,44 @@ It starts hidden. Show it from your own script by name, and its picture download
 | `class` | none | Extra class. |
 
 Theme it with `--egg-accent`, `--egg-accent-2`, `--egg-bg` and `--egg-ink`.
+
+## HoursByCategory
+
+```astro
+<HoursByCategory
+  id="gamer"
+  total={30073}
+  totalLabel="hours on Steam"
+  stats={[{ value: 236, label: 'games played' }]}
+  categories={[
+    { id: 'rpg', name: 'RPGs & open worlds', items: [{ name: 'Skyrim', value: 187 }] },
+    { id: 'idle', name: 'Idle & clickers', excludable: true, note: 'Mostly left running.', items: [{ name: 'Cookie Clicker', value: 4854 }] },
+  ]}
+/>
+```
+
+| Prop | Default | |
+|---|---|---|
+| `categories` | (required) | `[{ id, name, note?, excludable?, items: [{ name, value }] }]`. Sorted by total, items by value. |
+| `id` | `"hbc"` | Prefix for element ids (the rollup links jump to `#<id>-<category id>`). Unique per page. |
+| `total` | sum of every item | The big number, e.g. hours including things no category lists. |
+| `totalLabel` | `"hours"` | Words under the total. |
+| `stats` | `[]` | More numbers beside the total: `[{ value, label }]`. |
+| `unit` | `"h"` | Unit after each number. |
+| `shown` | `5` | Items per card before "Show all". |
+| `rollupTitle` | `"Hours by category"` | Heading over the bars. |
+| `excludeLabel` | `"Count idle categories ({value} {unit})"` | The switch, shown only when a category is `excludable`. |
+| `shareLabel` / `excludedShareLabel` | `"{share} of the total"` / `"not counted in the total"` | Under each category title. |
+| `notCounted` | `"not counted"` | A switched-off bar's number. |
+| `countLabel` | `"{n} items"` | Under each category title. |
+| `showAll` / `showFewer` | `"Show all {n}"` / `"Show fewer"` | The card button. |
+| `locale` | `"en-US"` | How numbers are written. |
+
+Every number and label is worked out at build time, with and without the excludable categories;
+the script only flips which is shown, so translated pages need nothing extra. Without JavaScript
+every item shows and the switch stays hidden. Theme with `--hbc-accent`, `--hbc-excluded`,
+`--hbc-surface`, `--hbc-border`, `--hbc-track`, `--hbc-text`, `--hbc-muted`, `--hbc-note` and
+`--hbc-heading-font`.
 
 ## IconMeter
 

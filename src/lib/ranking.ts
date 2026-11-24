@@ -5,7 +5,7 @@ export type RankedItem = { rank: number; name: string; value: number | null; tag
 
 /**
  * Reads a "| Rank | <item> | <value> |" Markdown table, e.g.
- * content/gaming/top39.md (Game, Hours) or content/anime/top39.md (Anime, Episodes).
+ * content/anime/top39.md, content/tv/top39.md or content/movies/top39.md.
  * Throws a readable error listing every bad line so the build tells you what to fix.
  */
 export function loadRanking(file: string, itemColumn: string, valueColumn: string | null, tagColumn?: string): RankedItem[] {
@@ -59,7 +59,7 @@ function cells(line: string): string[] {
 
 /**
  * Reads a numbered Markdown list: "1. Title" followed by description lines,
- * e.g. content/anime/top39.md or content/gaming/top39.md.
+ * e.g. content/anime/top39.md.
  * If valueLabel is given (e.g. "Hours"), a "Hours: 1,234" line under a title sets its number.
  */
 export function loadRankedList(file: string, valueLabel?: string): RankedItem[] {

@@ -1,0 +1,582 @@
+---
+/**
+ * HoursByCategory: things grouped into categories, each with a number of hours (or any amount).
+ * Shows a totals card, one bar per category (the rollup), then a card per category with its
+ * most-played items first and a "Show all" button. Categories marked `excludable` (idle games
+ * left running, say) get their own colour, and a switch takes them out of the total.
+ * Built for the Gamer tab's Steam hours (#112).
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
+ * Copy this one file into any Astro project. See README.md in this folder.
+ *
+ *   <HoursByCategory
+ *     id="games"
+ *     total={30073}
+ *     totalLabel="hours on Steam"
+ *     stats={[{ value: 236, label: 'games played' }]}
+ *     categories={[
+ *       { id: 'rpg', name: 'RPGs', items: [{ name: 'Skyrim', value: 187 }] },
+ *       { id: 'idle', name: 'Idle', excludable: true, note: 'Mostly left running.', items: [{ name: 'Cookie Clicker', value: 4854 }] },
+ *     ]}
+ *   />
+ *
+ * Everything is worked out when the site builds, both with and without the excludable categories,
+ * so the switch and "Show all" only flip what's shown: no text is written by the script, and a
+ * translated copy of the page translates every word. Without JavaScript every item shows and the
+ * switch stays hidden. Bars don't animate for people who prefer reduced motion.
+ *
+ * Theming (CSS custom properties, with fallbacks): --hbc-accent, --hbc-excluded, --hbc-surface,
+ * --hbc-border, --hbc-track, --hbc-text, --hbc-muted, --hbc-note, --hbc-heading-font.
+ */
+interface Item {
+  name: string;
+  value: number;
+}
+interface Category {
+  id: string;
+  name: string;
+  note?: string;
+  /** Can be taken out of the total with the switch (e.g. idle games). */
+  excludable?: boolean;
+  items: Item[];
+}
+interface Props {
+  categories: Category[];
+  /** Prefix for the element ids, unique on the page. */
+  id?: string;
+  /** The overall total. Default: the sum of every item. */
+  total?: number;
+  /** Words under the total. */
+  totalLabel?: string;
+  /** More numbers beside the total, e.g. games played. */
+  stats?: { value: number | string; label: string }[];
+  /** Unit after each number. */
+  unit?: string;
+  /** Items shown per card before "Show all". */
+  shown?: number;
+  rollupTitle?: string;
+  /** Switch label; {value} is the excludable categories' total. */
+  excludeLabel?: string;
+  /** Under each category; {share} is its percent of the total. */
+  shareLabel?: string;
+  /** In place of shareLabel for an excludable category that is switched off. */
+  excludedShareLabel?: string;
+  /** In place of a rollup number that is switched off. */
+  notCounted?: string;
+  /** {n} is the number of items. */
+  countLabel?: string;
+  showAll?: string;
+  showFewer?: string;
+  /** BCP 47 locale for the numbers. */
+  locale?: string;
+  class?: string;
+}
+
+const {
+  categories,
+  id = 'hbc',
+  total: totalProp,
+  totalLabel = 'hours',
+  stats = [],
+  unit = 'h',
+  shown = 5,
+  rollupTitle = 'Hours by category',
+  excludeLabel = 'Count idle categories ({value} {unit})',
+  shareLabel = '{share} of the total',
+  excludedShareLabel = 'not counted in the total',
+  notCounted = 'not counted',
+  countLabel = '{n} items',
+  showAll = 'Show all {n}',
+  showFewer = 'Show fewer',
+  locale = 'en-US',
+  class: className,
+} = Astro.props;
+
+const nf = new Intl.NumberFormat(locale);
+const fill = (t: string, vars: Record<string, string | number>) => t.replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
+const sum = (c: Category) => c.items.reduce((s, i) => s + i.value, 0);
+const pct = (part: number, whole: number) => (whole > 0 ? `${Math.round((part / whole) * 100)}%` : '0%');
+const width = (part: number, whole: number) => (whole > 0 && part > 0 ? Math.max(1, Math.round((part / whole) * 100)) : 0);
+const initials = (name: string) =>
+  name
+    .replace(/[^\p{L}\p{N} ]/gu, ' ')
+    .split(/\s+/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((w) => w[0].toUpperCase())
+    .join('') || '?';
+
+const sorted = [...categories].sort((a, b) => sum(b) - sum(a));
+const total = totalProp ?? sorted.reduce((s, c) => s + sum(c), 0);
+const excludedSum = sorted.filter((c) => c.excludable).reduce((s, c) => s + sum(c), 0);
+const totalOff = total - excludedSum;
+const hasExcludable = excludedSum > 0;
+const maxOn = Math.max(1, ...sorted.map(sum));
+const maxOff = Math.max(1, ...sorted.filter((c) => !c.excludable).map(sum));
+
+const rows = sorted.map((c) => {
+  const h = sum(c);
+  const top = c.items[0]?.value || 1;
+  return {
+    ...c,
+    hours: nf.format(h),
+    count: fill(countLabel, { n: nf.format(c.items.length) }),
+    shareOn: fill(shareLabel, { share: pct(h, total) }),
+    shareOff: c.excludable ? excludedShareLabel : fill(shareLabel, { share: pct(h, totalOff) }),
+    barOn: width(h, maxOn),
+    barOff: c.excludable ? 0 : width(h, maxOff),
+    items: c.items.map((i, n) => ({
+      ...i,
+      initials: initials(i.name),
+      hours: nf.format(i.value),
+      bar: Math.max(2, Math.round((i.value / top) * 100)),
+      extra: n >= shown,
+    })),
+    more: c.items.length > shown,
+    allLabel: fill(showAll, { n: nf.format(c.items.length) }),
+  };
+});
+---
+
+<div class:list={['hbc', className]} data-hbc>
+  <section class="hbc__totals" aria-labelledby={`${id}-totals`}>
+    <h3 class="hbc__sr" id={`${id}-totals`}>{totalLabel}</h3>
+    <div class="hbc__stats">
+      <p class="hbc__stat hbc__stat--main">
+        <span class="hbc__num">
+          <span class="hbc__on">{nf.format(total)}</span>
+          {hasExcludable && <span class="hbc__off">{nf.format(totalOff)}</span>}
+        </span>
+        <span class="hbc__label">{totalLabel}</span>
+      </p>
+      {
+        stats.map((s) => (
+          <p class="hbc__stat">
+            <span class="hbc__num">{typeof s.value === 'number' ? nf.format(s.value) : s.value}</span>
+            <span class="hbc__label">{s.label}</span>
+          </p>
+        ))
+      }
+      {
+        hasExcludable && (
+          <label class="hbc__switch" data-hbc-toggle hidden>
+            <input type="checkbox" checked />
+            <span>{fill(excludeLabel, { value: nf.format(excludedSum), unit })}</span>
+          </label>
+        )
+      }
+    </div>
+
+    <div class="hbc__rollup">
+      <h3 class="hbc__rollup-title">{rollupTitle}</h3>
+      <ul class="hbc__rows">
+        {
+          rows.map((c) => (
+            <li class:list={['hbc__row', { 'hbc__row--excludable': c.excludable }]}>
+              <a class="hbc__row-name" href={`#${id}-${c.id}`}>
+                {c.name}
+              </a>
+              <span class="hbc__track" aria-hidden="true">
+                <span class="hbc__bar" style={`--on: ${c.barOn}%; --off: ${c.barOff}%`} />
+              </span>
+              <span class="hbc__row-value">
+                {c.excludable ? (
+                  <>
+                    <span class="hbc__on">{`${c.hours} ${unit}`}</span>
+                    <span class="hbc__off">{notCounted}</span>
+                  </>
+                ) : (
+                  `${c.hours} ${unit}`
+                )}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <div class="hbc__cards">
+    {
+      rows.map((c) => (
+        <section
+          class:list={['hbc__card', { 'hbc__card--excludable': c.excludable }]}
+          id={`${id}-${c.id}`}
+          aria-labelledby={`${id}-${c.id}-h`}
+          data-hbc-card
+        >
+          <header class="hbc__card-head">
+            <h3 class="hbc__card-title" id={`${id}-${c.id}-h`}>
+              {c.name}
+            </h3>
+            <p class="hbc__card-meta">
+              <strong>{`${c.hours} ${unit}`}</strong>
+              {' · '}
+              {c.count}
+              {' · '}
+              {hasExcludable && c.shareOn !== c.shareOff ? (
+                <>
+                  <span class="hbc__on">{c.shareOn}</span>
+                  <span class="hbc__off">{c.shareOff}</span>
+                </>
+              ) : (
+                c.shareOn
+              )}
+            </p>
+            {c.note && <p class="hbc__note">{c.note}</p>}
+          </header>
+          <ol class="hbc__items">
+            {c.items.map((i) => (
+              <li class:list={['hbc__item', { 'hbc__item--extra': i.extra }]}>
+                <span class="hbc__avatar" aria-hidden="true">
+                  {i.initials}
+                </span>
+                <span class="hbc__item-main">
+                  <span class="hbc__item-name">{i.name}</span>
+                  <span class="hbc__item-track" aria-hidden="true">
+                    <span class="hbc__item-bar" style={`width: ${i.bar}%`} />
+                  </span>
+                </span>
+                <span class="hbc__item-value">{`${i.hours} ${unit}`}</span>
+              </li>
+            ))}
+          </ol>
+          {c.more && (
+            <button type="button" class="hbc__more" data-hbc-more hidden>
+              <span class="hbc__more-all">{c.allLabel}</span>
+              <span class="hbc__more-fewer">{showFewer}</span>
+            </button>
+          )}
+        </section>
+      ))
+    }
+  </div>
+</div>
+
+<script>
+  function initHoursByCategory() {
+    document.querySelectorAll<HTMLElement>('[data-hbc]').forEach((root) => {
+      if (root.dataset.hbcReady) return;
+      root.dataset.hbcReady = '1';
+      const toggle = root.querySelector<HTMLElement>('[data-hbc-toggle]');
+      const box = toggle?.querySelector<HTMLInputElement>('input');
+      if (toggle && box) {
+        toggle.hidden = false;
+        box.addEventListener('change', () => root.toggleAttribute('data-excluded', !box.checked));
+      }
+      root.querySelectorAll<HTMLElement>('[data-hbc-card]').forEach((card) => {
+        const btn = card.querySelector<HTMLButtonElement>('[data-hbc-more]');
+        if (!btn) return;
+        card.classList.add('is-collapsed');
+        btn.hidden = false;
+        btn.setAttribute('aria-expanded', 'false');
+        btn.addEventListener('click', () => {
+          const open = card.classList.toggle('is-collapsed') === false;
+          btn.setAttribute('aria-expanded', String(open));
+        });
+      });
+    });
+  }
+  initHoursByCategory();
+  document.addEventListener('astro:page-load', initHoursByCategory);
+</script>
+
+<style>
+  .hbc {
+    --_accent: var(--hbc-accent, #39c5bb);
+    --_excluded: var(--hbc-excluded, #e12885);
+    --_surface: var(--hbc-surface, #0e1636);
+    --_border: var(--hbc-border, #18224a);
+    --_track: var(--hbc-track, #18224a);
+    --_text: var(--hbc-text, #e6edf3);
+    --_muted: var(--hbc-muted, #9aa8bb);
+    --_heading: var(--hbc-heading-font, inherit);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    color: var(--_text);
+  }
+  .hbc__sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .hbc[data-excluded] .hbc__on,
+  .hbc:not([data-excluded]) .hbc__off {
+    display: none;
+  }
+  .hbc__totals,
+  .hbc__card {
+    background: var(--_surface);
+    border: 1px solid var(--_border);
+    border-radius: 20px;
+  }
+  .hbc__totals {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+  .hbc__stats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 1rem 2.5rem;
+  }
+  .hbc__stat {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .hbc__num {
+    font-family: var(--_heading);
+    font-weight: 800;
+    font-size: 1.75rem;
+    line-height: 1.1;
+    font-variant-numeric: tabular-nums;
+  }
+  .hbc__stat--main .hbc__num {
+    font-size: 2.75rem;
+    line-height: 1;
+    color: var(--_accent);
+  }
+  .hbc__label {
+    font-size: 0.875rem;
+    color: var(--_muted);
+  }
+  .hbc__switch {
+    margin-inline-start: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-height: 44px;
+    font-size: 0.95rem;
+    color: var(--_muted);
+    cursor: pointer;
+  }
+  .hbc__switch[hidden] {
+    display: none;
+  }
+  .hbc__switch input {
+    width: 1.25rem;
+    height: 1.25rem;
+    accent-color: var(--_accent);
+  }
+  .hbc__rollup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .hbc__rollup-title {
+    margin: 0;
+    font-size: 0.875rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--_muted);
+  }
+  .hbc__rows {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .hbc__row {
+    display: grid;
+    grid-template-columns: minmax(8rem, 13rem) minmax(0, 1fr) 6.5rem;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .hbc__row-name {
+    color: inherit;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-decoration: none;
+    min-height: 2rem;
+    display: flex;
+    align-items: center;
+  }
+  .hbc__row-name:hover,
+  .hbc__row-name:focus-visible {
+    color: var(--_accent);
+    text-decoration: underline;
+  }
+  .hbc__track,
+  .hbc__item-track {
+    display: block;
+    background: var(--_track);
+    overflow: hidden;
+  }
+  .hbc__track {
+    height: 14px;
+    border-radius: 7px;
+  }
+  .hbc__bar {
+    display: block;
+    height: 100%;
+    width: var(--on);
+    border-radius: 7px;
+    background: var(--_accent);
+    transition: width 0.35s ease;
+  }
+  .hbc[data-excluded] .hbc__bar {
+    width: var(--off);
+  }
+  .hbc__row--excludable .hbc__bar,
+  .hbc__card--excludable .hbc__item-bar {
+    background: var(--_excluded);
+  }
+  .hbc__row-value {
+    text-align: end;
+    font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .hbc__row-value .hbc__off {
+    color: var(--_muted);
+  }
+  .hbc__cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: 1.25rem;
+    align-items: start;
+  }
+  .hbc__card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    padding: 1.25rem;
+    scroll-margin-top: 5rem;
+  }
+  .hbc__card-head {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .hbc__card-title {
+    margin: 0;
+    font-family: var(--_heading);
+    font-weight: 800;
+    font-size: 1.35rem;
+    line-height: 1.2;
+    color: var(--_accent);
+  }
+  .hbc__card-meta {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--_muted);
+    font-variant-numeric: tabular-nums;
+  }
+  .hbc__card-meta strong {
+    color: var(--_text);
+  }
+  .hbc__note {
+    margin: 0;
+    font-size: 0.82rem;
+    color: var(--hbc-note, #f4a6cc);
+    background: color-mix(in srgb, var(--_excluded) 12%, transparent);
+    border-radius: 8px;
+    padding: 0.35rem 0.6rem;
+  }
+  .hbc__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .hbc__card.is-collapsed .hbc__item--extra {
+    display: none;
+  }
+  .hbc__item {
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) auto;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .hbc__avatar {
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid color-mix(in srgb, var(--_accent) 50%, var(--_surface));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--_accent);
+  }
+  .hbc__item-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+  }
+  .hbc__item-name {
+    font-weight: 700;
+    font-size: 0.95rem;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+  }
+  .hbc__item-track {
+    height: 4px;
+    border-radius: 2px;
+  }
+  .hbc__item-bar {
+    display: block;
+    height: 100%;
+    background: var(--_accent);
+  }
+  .hbc__item-value {
+    font-size: 0.875rem;
+    color: var(--_muted);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+  .hbc__more {
+    align-self: flex-start;
+    min-height: 44px;
+    padding: 0 1rem;
+    border-radius: 22px;
+    border: 1px solid var(--_accent);
+    background: transparent;
+    color: var(--_accent);
+    font: inherit;
+    font-weight: 700;
+    font-size: 0.875rem;
+    cursor: pointer;
+  }
+  .hbc__more[hidden] {
+    display: none;
+  }
+  .hbc__more:hover,
+  .hbc__more:focus-visible {
+    background: color-mix(in srgb, var(--_accent) 15%, transparent);
+  }
+  .hbc__card.is-collapsed .hbc__more-fewer,
+  .hbc__card:not(.is-collapsed) .hbc__more-all {
+    display: none;
+  }
+  @media (max-width: 560px) {
+    .hbc__row {
+      grid-template-columns: minmax(6.5rem, 9rem) minmax(0, 1fr) auto;
+      gap: 0.5rem;
+    }
+    .hbc__switch {
+      margin-inline-start: 0;
+    }
+    .hbc__stat--main .hbc__num {
+      font-size: 2.25rem;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hbc__bar {
+      transition: none;
+    }
+  }
+</style>
