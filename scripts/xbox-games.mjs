@@ -12,7 +12,7 @@
  */
 import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
-import { checkCategories } from './gamer-check.mjs';
+import { checkCategories, checkSeries } from './gamer-check.mjs';
 
 const src = process.argv[2];
 if (!src) {
@@ -48,3 +48,4 @@ console.log(`Saved content/gaming/xbox-games.json: ${games.length} games with ho
 if (pending) console.log(`${pending} games were still waiting for their hours: run scripts/xbox-fetch.mjs again after an hour, then this.`);
 
 checkCategories();
+checkSeries();

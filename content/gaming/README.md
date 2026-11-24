@@ -43,6 +43,13 @@ It takes about 10 minutes.
      `categories.md` to match.
 
    Run it again until both lists say everything matches (or only shows what you chose to leave out).
+   Then:
+   - **Roll up series (always).** A third list, "Might belong in one series line", shows games that
+     look like the same series: a new game of a series already listed (Borderlands 4 next to the
+     Borderlands series), or two single games of the same name (Diablo II and Diablo IV). Fold each
+     into one `… series` line naming every game in it (see the end of "Xbox hours" below), so the tab shows the series
+     and its total, not the games one by one. A game that only shares a name and should stay on its
+     own gets `{solo}` after it (`- Hatsune Miku Logic Paint S {solo}`), and the list stops asking.
 4. **Check it:** `npm run build`, then open the Gamer tab: the new totals, the category bars and
    "Show all" on a couple of cards.
 5. **Open a PR** with both files. New hours and the new date change most of the tab's text, so
@@ -93,7 +100,7 @@ What to watch for in `categories.md`:
   Mark those `{same}` and the larger number is used instead (Avowed).
 - When the two stores name a game differently, list both names with `|`, shown name first
   (`- Grand Theft Auto V | Grand Theft Auto V Legacy | Grand Theft Auto V (Xbox One)`).
-- A **series** is one line naming every game in it, with the series name first
+- A **series** (always rolled up on a refresh, step 3) is one line naming every game in it, with the series name first
   (`- Hades series | Hades | Hades II`): its hours are all of theirs added up, and an estimate under
   the series name in `estimated.md` adds the games that have no tracked hours.
 
@@ -103,7 +110,7 @@ What to watch for in `categories.md`:
   background (`## Idle & clickers {idle}`).
 - A game is a `- Bullet`, named as Steam or Xbox names it. ™ and ® can be left out, and capitals
   don't matter. Moving a game to another category is moving its line. `{same}` and `|` are
-  explained under "Xbox hours".
+  explained under "Xbox hours"; series and `{solo}` in step 3 and under "Xbox hours".
 - A plain line under a heading is that category's note (the idle one explains its hours).
 - The site sorts categories, and the games in each, by hours, so the order in the file doesn't
   matter.

@@ -13,6 +13,9 @@ Edit and push; the Gamer tab rebuilds from this file and from `steam-games.json`
 - A game on both adds its Steam and Xbox hours together. Add `{same}` when it's the same play
   counted twice (a Microsoft game on Steam also reports its hours to Xbox), and it uses the
   larger number instead.
+- A series is one line naming all its games, series name first: `- Hades series | Hades | Hades II`.
+  Its hours are all of theirs added up. Every refresh rolls new games into their series (README.md).
+  `{solo}` keeps a game on its own line when it only shares a name with a series.
 - When the two stores name a game differently, list every name with `|` between them; the
   first is the one shown: `- Grand Theft Auto V | Grand Theft Auto V Legacy | Grand Theft Auto V (Xbox One)`.
 - `{idle}` after a heading marks games that mostly ran in the background. Their hours
@@ -186,7 +189,7 @@ Hours here are mostly the game running in the background.
 - DREDGE
 - Feel The Snow
 - Graveyard Keeper
-- Hatsune Miku Logic Paint S
+- Hatsune Miku Logic Paint S {solo}
 - Passpartout: The Starving Artist
 - Plants vs. Zombies: Game of the Year
 - PowerWash Simulator
