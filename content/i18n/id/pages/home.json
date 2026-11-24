@@ -91,10 +91,6 @@
   "en": "My full list on MyAnimeList",
   "t": "Daftar lengkapku di MyAnimeList"
  },
- "02911252007c": {
-  "en": "2,505 h",
-  "t": "2,505 h"
- },
  "02aa629c8b16": {
   "en": "S",
   "t": "S"
@@ -163,10 +159,6 @@
   "en": "Nothing to clean.",
   "t": "Tidak ada yang perlu dibersihkan."
  },
- "047a39a28384": {
-  "en": "3 years and 352 days",
-  "t": "3 tahun dan 352 hari"
- },
  "0480691e0de6": {
   "en": "Ink",
   "t": "Tinta"
@@ -178,10 +170,6 @@
  "04fb71b0bf3d": {
   "en": "\nYep. As crazy as it sounds, I'm also an author! It all started with the Vraki Writing System, such a cornerstone\n          of who I am, and of what became my \"author\" side, that I had to preserve its history.\n",
   "t": "Yap. Segila apa pun kedengarannya, aku juga seorang penulis! Semuanya berawal dari Sistem Tulisan Vraki, fondasi yang begitu penting bagi siapa aku, dan bagi sisi \"penulis\" dalam diriku, sampai-sampai aku harus melestarikan sejarahnya."
- },
- "052cbbb13bce": {
-  "en": "55 days",
-  "t": "55 hari"
  },
  "052fd9e524e5": {
   "en": "The algorithm",
@@ -254,6 +242,10 @@
  "07306c8e3c85": {
   "en": "CD",
   "t": "CD"
+ },
+ "0769eae50b31": {
+  "en": "The games on the list add up to 1,442 days of nonstop play, 24 hours a day. Each square is one of those days.",
+  "t": "Game dalam daftar kalau dijumlahkan sama dengan 1,442 hari main tanpa henti, 24 jam sehari. Setiap kotak adalah satu dari hari-hari itu."
  },
  "07813f7ab23c": {
   "en": "SKALD",
@@ -331,6 +323,10 @@
   "en": "The shared template for all my repos: AI disclosure, language support, website compilation, and more.",
   "t": "Template bersama untuk semua repo-ku: pengungkapan penggunaan AI, dukungan bahasa, kompilasi situs, dan lainnya."
  },
+ "09e6b0bc6229": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,435 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPG &amp; dunia terbuka: 5,435 h"
+ },
  "0a26223ff3d6": {
   "en": " AO ",
   "t": "AO"
@@ -358,10 +354,6 @@
  "0a9e07baecff": {
   "en": "The Music of Studio Ghibli",
   "t": "The Music of Studio Ghibli"
- },
- "0afa54bba544": {
-  "en": " 169 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
-  "t": "169 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">perkiraan</span>"
  },
  "0afbd329b621": {
   "en": "People can open doors, but nobody walks through them using your legs. Potential earns encouragement, not applause. <strong>Sustained growth is what earns the praise.</strong>",
@@ -575,10 +567,6 @@
   "en": "What you have",
   "t": "Yang kamu punya"
  },
- "113f0f6915ab": {
-  "en": "104 days",
-  "t": "104 hari"
- },
  "11414723e940": {
   "en": "169 h",
   "t": "169 h"
@@ -711,10 +699,6 @@
   "en": "Enlarge: Breakfast",
   "t": "Perbesar: Sarapan"
  },
- "172eb905d24b": {
-  "en": " 227 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
-  "t": "227 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">perkiraan</span>"
- },
  "1761d9bdb3a0": {
   "en": "ROSALÍA",
   "t": "ROSALÍA"
@@ -835,10 +819,6 @@
   "en": "#HusbandOutWorld Series",
   "t": "Seri #HusbandOutWorld"
  },
- "1b25d112e205": {
-  "en": " 763 h ",
-  "t": "763 h"
- },
  "1b4c1d90da83": {
   "en": "Your FBI agent has entered the chat. ( ͡° ͜ʖ ͡°)",
   "t": "Agen FBI-mu telah masuk ke obrolan. ( ͡° ͜ʖ ͡°)"
@@ -918,6 +898,10 @@
  "1e69f9e7e667": {
   "en": "📉 -{n} followers. \"Not this again…\"",
   "t": "📉 -{n} pengikut. \"Ini lagi…\""
+ },
+ "1e98d9e9411b": {
+  "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,445 h ",
+  "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Lainnya: 2,445 h"
  },
  "1eab2e778967": {
   "en": "Mana",
@@ -1066,10 +1050,6 @@
  "2234c20b68ff": {
   "en": "30 h",
   "t": "30 h"
- },
- "227e31d0cde4": {
-  "en": "The games on the list add up to 1,447 days of nonstop play, 24 hours a day. Each square is one of those days.",
-  "t": "Game dalam daftar kalau dijumlahkan sama dengan 1,447 hari main tanpa henti, 24 jam sehari. Setiap kotak adalah satu dari hari-hari itu."
  },
  "229377a6b713": {
   "en": "You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it's still in the air) and take it down before you run dry.",
@@ -1382,6 +1362,10 @@
  "2c1e5036b725": {
   "en": "{n} balls in the bag",
   "t": "{n} bola di tas"
+ },
+ "2c27ec2a32c3": {
+  "en": "71 days",
+  "t": "71 hari"
  },
  "2c6f37232fe8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Nanatsu no Taizai (The Seven Deadly Sins) ",
@@ -1831,6 +1815,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder movie 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 15: </span> Film sementara 15"
  },
+ "39aff3e438c9": {
+  "en": "119 h",
+  "t": "119 h"
+ },
  "39b90d97a21e": {
   "en": "My Stoneridge Software posts",
   "t": "Tulisanku di Stoneridge Software"
@@ -1878,10 +1866,6 @@
  "3af4e2d1a82a": {
   "en": "Fluffy",
   "t": "Fluffy"
- },
- "3af62880aa05": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">763 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">763 h</strong>  ·  5 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% dari jam saya</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% dari jam saya</span>"
  },
  "3b044501691d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Placeholder TV show 16 ",
@@ -2171,10 +2155,6 @@
   "en": "\"Almost went viral!\" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses.",
   "t": "\"Hampir viral!\" tetap saja kekalahan, dan rasanya lebih buruk daripada gagal biasa, tapi itu membuat orang ingin terus bermain. Kegigihan memuncak saat sekitar 30% kekalahan adalah nyaris menang."
  },
- "46e758ae6dd6": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">5,485 h</strong>  ·  28 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">5,485 h</strong>  ·  28 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% dari jam saya</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% dari jam saya</span>"
- },
  "46e80e47b684": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested"
@@ -2230,10 +2210,6 @@
  "48e29fac4cce": {
   "en": "Besides the relationship and the bonding, the merchant life and bartering are really well developed! I took inspiration from it while working on the world lore for #HusbandOutWorld.",
   "t": "Selain hubungan dan kedekatannya, kehidupan pedagang dan tawar-menawarnya dikembangkan dengan sangat baik! Aku mengambil inspirasi darinya saat menggarap lore dunia #HusbandOutWorld."
- },
- "48ea93ab322b": {
-  "en": "1 year and 262 days",
-  "t": "1 tahun dan 262 hari"
  },
  "48ef76f8bb0c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Chuunibyou demo Koi ga Shitai! (Love, Chunibyo &amp; Other Delusions!) ",
@@ -2867,6 +2843,10 @@
   "en": "Hávamál, as sung in Wardruna’s Helvegen",
   "t": "Hávamál, seperti dinyanyikan dalam Helvegen milik Wardruna"
  },
+ "59f21d6a9014": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">703 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">703 h</strong>  ·  5 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% dari jam saya</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% dari jam saya</span>"
+ },
  "5a4a4998e7b7": {
   "en": "Kyaa~! (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)",
   "t": "Kyaa~! (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)"
@@ -3355,6 +3335,10 @@
   "en": "vs",
   "t": "lawan"
  },
+ "692a3808fec3": {
+  "en": "1,853 h",
+  "t": "1,853 h"
+ },
  "693037f17162": {
   "en": "54 h",
   "t": "54 h"
@@ -3479,10 +3463,6 @@
   "en": "Step 5: Judge the Meat",
   "t": "Langkah 5: Nilailah Dagingnya"
  },
- "6cdaa5edd01d": {
-  "en": "105 days",
-  "t": "105 hari"
- },
  "6cf305e84794": {
   "en": "Counting down to March 9, 2076, at 3:39:39 AM.",
   "t": "Hitung mundur hingga 9 Maret 2076, pukul 3.39.39 dini hari."
@@ -3550,10 +3530,6 @@
  "6e979f426b67": {
   "en": "MB",
   "t": "MB"
- },
- "6ee470473403": {
-  "en": " 5,485 h ",
-  "t": "5,485 h"
  },
  "6eef3154b469": {
   "en": "Misaki is hands down my favorite character in the entire series! And this is my favorite series in the \"A Certain...\" world.",
@@ -3878,6 +3854,10 @@
  "78aa655e487b": {
   "en": "LEGO Star Wars: The Skywalker Saga",
   "t": "LEGO Star Wars: The Skywalker Saga"
+ },
+ "78bfea9b54f6": {
+  "en": "226 days",
+  "t": "226 hari"
  },
  "78cc6006e09c": {
   "en": "Gym, 6:47am",
@@ -4607,6 +4587,10 @@
   "en": "Enlarge: More mango!",
   "t": "Perbesar: Mangga lagi!"
  },
+ "9026efb4c546": {
+  "en": " My hours by category as planets around a sun: RPGs &amp; open worlds 36%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 16% ",
+  "t": "Jam saya per kategori sebagai planet yang mengitari matahari: RPG &amp; dunia terbuka 36%, Kota, koloni &amp; strategi 11%, Bertahan hidup &amp; crafting 11%, Pabrik &amp; otomatisasi 11%, Luar angkasa &amp; penerbangan 9%, Santai &amp; simulasi kehidupan 6%, Lainnya 16%"
+ },
  "9049b3f8b99c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder TV show 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 30: </span> Acara TV sementara 30"
@@ -4830,10 +4814,6 @@
  "963dd210cc93": {
   "en": "Tokyo",
   "t": "Tokyo"
- },
- "9640fb09e011": {
-  "en": "227 h",
-  "t": "227 h"
  },
  "964ce7905a2f": {
   "en": " Survival &amp; crafting ",
@@ -5459,10 +5439,6 @@
   "en": "Portuguese: 10 of 10, Fully bilingual",
   "t": "Portugis: 10 dari 10, dwibahasa penuh"
  },
- "a92641e98a51": {
-  "en": "37 days",
-  "t": "37 hari"
- },
  "a94147d8bac2": {
   "en": "#3 Hustle",
   "t": "#3 Hustle"
@@ -5635,6 +5611,10 @@
   "en": "Enlarge: King of the trail",
   "t": "Perbesar: Raja jalan setapak"
  },
+ "ae28c214b195": {
+  "en": "102 days",
+  "t": "102 hari"
+ },
  "ae2caea4bb1f": {
   "en": "KC",
   "t": "KC"
@@ -5707,6 +5687,10 @@
   "en": "22 h",
   "t": "22 h"
  },
+ "b03a2e5199b5": {
+  "en": " 167 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "167 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">perkiraan</span>"
+ },
  "b03ecac4eefe": {
   "en": "Guess what I'm gonna do",
   "t": "Tebak aku mau ngapain"
@@ -5730,6 +5714,10 @@
  "b13596cd2774": {
   "en": "15 h",
   "t": "15 h"
+ },
+ "b13692d8aa4c": {
+  "en": "The games on the list add up to 622 days of nonstop play, 24 hours a day. Each square is one of those days.",
+  "t": "Game dalam daftar kalau dijumlahkan sama dengan 622 hari main tanpa henti, 24 jam sehari. Setiap kotak adalah satu dari hari-hari itu."
  },
  "b1643e5fd670": {
   "en": "Hover a square to see which game that day went to. Press a category to light up only its days.",
@@ -5779,10 +5767,6 @@
   "en": "Deo in 2017 in a graduation cap and gown with a medal, raising a beer",
   "t": "Deo pada 2017 dengan topi dan toga wisuda serta medali, mengangkat bir"
  },
- "b263869d547b": {
-  "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,505 h ",
-  "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Lainnya: 2,505 h"
- },
  "b29157b87cd1": {
   "en": "Bands I still want to see live.",
   "t": "Band yang masih ingin kutonton langsung."
@@ -5802,10 +5786,6 @@
  "b31fda1376bc": {
   "en": "Loading Screen Simulator",
   "t": "Loading Screen Simulator"
- },
- "b3295119ec76": {
-  "en": "17% of my hours",
-  "t": "17% dari jam saya"
  },
  "b337c292eb41": {
   "en": "Memorable characters, a story that moves, people who grow, a plot that thickens, and interesting world building. For how long it is, it's mostly sensible.",
@@ -6007,6 +5987,10 @@
   "en": " LW ",
   "t": "LW"
  },
+ "ba792f3c0d1b": {
+  "en": " 119 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "119 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">perkiraan</span>"
+ },
  "ba7ecfd006a1": {
   "en": "<span class=\"iso-farm__ball\" style=\"--c:#2f5fd6\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Sapphire",
   "t": "<span class=\"iso-farm__ball\" style=\"--c:#2f5fd6\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Sapphire"
@@ -6018,6 +6002,10 @@
  "bb0bc553b8e8": {
   "en": "Whack-a-Miku: turn your phone sideways",
   "t": "Whack-a-Miku: putar ponselmu ke posisi menyamping"
+ },
+ "bb395b5f1d5e": {
+  "en": "101 days",
+  "t": "101 hari"
  },
  "bb78e60fc990": {
   "en": "56 h",
@@ -6347,10 +6335,6 @@
   "en": "Lord Peeta of Tuxford",
   "t": "Lord Peeta dari Tuxford"
  },
- "c74b315a4fcf": {
-  "en": "The games on the list add up to 627 days of nonstop play, 24 hours a day. Each square is one of those days.",
-  "t": "Game dalam daftar kalau dijumlahkan sama dengan 627 hari main tanpa henti, 24 jam sehari. Setiap kotak adalah satu dari hari-hari itu."
- },
  "c75ac3fad137": {
   "en": "{n}s left",
   "t": "{n} detik lagi"
@@ -6491,6 +6475,10 @@
   "en": "FS",
   "t": "FS"
  },
+ "cbcc2e942975": {
+  "en": " An exploded sphere of my hours by category: RPGs &amp; open worlds 36%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 16% ",
+  "t": "Bola terpecah dari jam saya per kategori: RPG &amp; dunia terbuka 36%, Kota, koloni &amp; strategi 11%, Bertahan hidup &amp; crafting 11%, Pabrik &amp; otomatisasi 11%, Luar angkasa &amp; penerbangan 9%, Santai &amp; simulasi kehidupan 6%, Lainnya 16%"
+ },
  "cbe35333fcf5": {
   "en": "\nAnd as to why? Read my <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld Vol 4 afterword</a>.\n",
   "t": "Dan kenapa? Baca <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">kata penutup Vol 4 #HusbandOutWorld</a> milikku."
@@ -6590,6 +6578,10 @@
  "ced1373b37da": {
   "en": "<strong>Horace</strong>, <em>Odes</em> 1.4 (23 BC): pale Death knocks with an impartial foot at the cottages of the poor and the palaces of kings. <a href=\"https://en.wikisource.org/wiki/The_works_of_Horace/First_Book_of_Odes\">Text</a>",
   "t": "<strong>Horatius</strong>, <em>Odes</em> 1.4 (23 SM): Maut yang pucat mengetuk dengan kaki yang adil pondok orang miskin dan istana raja-raja. <a href=\"https://en.wikisource.org/wiki/The_works_of_Horace/First_Book_of_Odes\">Teks</a>"
+ },
+ "cedfe5a37cd5": {
+  "en": "2,445 h",
+  "t": "2,445 h"
  },
  "cf32e9152179": {
   "en": "❤️ +{n} likes",
@@ -6743,6 +6735,10 @@
   "en": "Cirque du Soleil O",
   "t": "Cirque du Soleil O"
  },
+ "d38a691b674d": {
+  "en": "1 year and 257 days",
+  "t": "1 tahun dan 257 hari"
+ },
  "d397cf31a23a": {
   "en": "Same plane. Drag back to aim and let go to throw.",
   "t": "Pesawat sama. Seret ke belakang untuk membidik dan lepaskan untuk melempar."
@@ -6807,9 +6803,17 @@
   "en": "Country",
   "t": "Country"
  },
+ "d556a0f664fb": {
+  "en": "3 years and 347 days",
+  "t": "3 tahun dan 347 hari"
+ },
  "d5580b73bfb2": {
   "en": "Grounded",
   "t": "Grounded"
+ },
+ "d56ba0c1e6ff": {
+  "en": " 703 h ",
+  "t": "703 h"
  },
  "d58f3caf048d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 12: </span> Placeholder TV show 12 ",
@@ -6818,6 +6822,10 @@
  "d62a14276f7a": {
   "en": "Fold 4 of 5: and the right corner to the same dot.",
   "t": "Lipat 4 dari 5: dan sudut kanan ke titik yang sama."
+ },
+ "d65fa9d72f1f": {
+  "en": "167 h",
+  "t": "167 h"
  },
  "d68ddfb67933": {
   "en": "Chilling",
@@ -7015,10 +7023,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 13: </span> Placeholder movie 13 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 13: </span> Film sementara 13"
  },
- "dadda6e583a9": {
-  "en": "1,903 h",
-  "t": "1,903 h"
- },
  "db11895b10d7": {
   "en": "28 games",
   "t": "28 game"
@@ -7074,10 +7078,6 @@
  "dcf43b46333c": {
   "en": "Why share something so dark and personal? <mark>Simple: I hope this finds the right person at the right moment.</mark> I was privileged to have a great, supportive family, but not everyone has that, so this is my way of putting positive energy into this weird world. Take care of yourself. If you suspect you’re on the spectrum and want someone who understands, or want to hear it from someone like me, feel free to <a href=\"contact/\">reach out</a>. But if you’re going through an active crisis, don’t be afraid to reach out for professional help.",
   "t": "Kenapa membagikan sesuatu yang begitu gelap dan pribadi? <mark>Sederhana: aku berharap ini sampai ke orang yang tepat di saat yang tepat.</mark> Aku beruntung punya keluarga yang hebat dan mendukung, tapi tidak semua orang punya itu, jadi inilah caraku menaruh energi positif di dunia yang aneh ini. Jaga dirimu. Kalau kamu curiga kamu ada di spektrum dan ingin seseorang yang mengerti, atau ingin mendengarnya dari orang seperti aku, jangan ragu untuk <a href=\"contact/\">menghubungiku</a>. Tapi kalau kamu sedang mengalami krisis saat ini, jangan takut mencari bantuan profesional."
- },
- "dd157245b11b": {
-  "en": "229 days",
-  "t": "229 hari"
  },
  "dd24cb3de070": {
   "en": "Magic Sword",
@@ -7146,10 +7146,6 @@
  "dec492e278f3": {
   "en": "Ara ara~ (◕‿◕✿)",
   "t": "Ara ara~ (◕‿◕✿)"
- },
- "deebfe37f4b4": {
-  "en": " An exploded sphere of my hours by category: RPGs &amp; open worlds 36%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 17% ",
-  "t": "Bola terpecah dari jam saya per kategori: RPG &amp; dunia terbuka 36%, Kota, koloni &amp; strategi 11%, Bertahan hidup &amp; crafting 11%, Pabrik &amp; otomatisasi 11%, Luar angkasa &amp; penerbangan 9%, Santai &amp; simulasi kehidupan 6%, Lainnya 17%"
  },
  "defaac58f76f": {
   "en": "Dua Lipa",
@@ -7230,10 +7226,6 @@
  "e1914e257b6d": {
   "en": "Tattoo on my right forearm",
   "t": "Tato di lengan bawah kananku"
- },
- "e1945edb1373": {
-  "en": "228 days",
-  "t": "228 hari"
  },
  "e19d5e782319": {
   "en": "The company also counted the swordsman Takeo, the very same Takeo recorded in the chronicles of #HusbandOutWorld, portrayed by Deo.",
@@ -7499,6 +7491,10 @@
   "en": "Snack!",
   "t": "Camilan!"
  },
+ "eb023f0dcb33": {
+  "en": " 5,435 h ",
+  "t": "5,435 h"
+ },
  "eb1429b3f176": {
   "en": "Each view counts as the whole episode, start to finish.",
   "t": "Setiap tayangan dihitung sebagai satu episode penuh, dari awal sampai akhir."
@@ -7574,10 +7570,6 @@
  "ee83a7441ce6": {
   "en": "Time! You whacked {hits} {name} and missed {misses}. {verdict}",
   "t": "Waktu! Kamu memukul {hits} {name} dan melewatkan {misses}. {verdict}"
- },
- "ee9c39d39625": {
-  "en": " My hours by category as planets around a sun: RPGs &amp; open worlds 36%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 17% ",
-  "t": "Jam saya per kategori sebagai planet yang mengitari matahari: RPG &amp; dunia terbuka 36%, Kota, koloni &amp; strategi 11%, Bertahan hidup &amp; crafting 11%, Pabrik &amp; otomatisasi 11%, Luar angkasa &amp; penerbangan 9%, Santai &amp; simulasi kehidupan 6%, Lainnya 17%"
  },
  "ee9f4373eeab": {
   "en": "Keeper of the Sacred Salt and of the secret ways of the Touch.",
@@ -7742,6 +7734,10 @@
  "f4e25be12fd0": {
   "en": "3,385 h",
   "t": "3,385 h"
+ },
+ "f4e26370c856": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">5,435 h</strong>  ·  28 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">5,435 h</strong>  ·  28 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">16% dari jam saya</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">36% dari jam saya</span>"
  },
  "f4fc4b8224f9": {
   "en": "Reward learning",
@@ -7918,10 +7914,6 @@
  "fa81346692f6": {
   "en": "Supreme Pontiff of the Grill",
   "t": "Pontifeks Agung Panggangan"
- },
- "facf5c8faa76": {
-  "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,485 h ",
-  "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPG &amp; dunia terbuka: 5,485 h"
  },
  "fb1415fda4ff": {
   "en": "Music: on",
