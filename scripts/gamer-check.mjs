@@ -2,7 +2,8 @@
  * Shared by scripts/steam-games.mjs and scripts/xbox-games.mjs: compares the saved hours with
  * content/gaming/categories.md and prints what needs a decision. Changes nothing.
  *   - games with 10+ hours that no category lists yet (add them, or leave them out on purpose)
- *   - listed games found in neither export (renamed, or a typo in categories.md)
+ *   - listed games with no hours in either export or estimated.md (renamed, or a typo)
+ *   - games in estimated.md that no category lists
  */
 import { readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
@@ -24,7 +25,14 @@ export function checkCategories() {
     .filter((l) => /^[-*] +/.test(l))
     .map((l) => l.replace(/^[-*] +/, '').replace(/\{[^}]*\}/g, '').split('|').map((n) => n.trim()).filter(Boolean));
   const listed = new Set(bullets.flat().map(norm));
-  const known = new Set([...steam, ...xbox].map((g) => norm(g.name)));
+  // content/gaming/estimated.md: "- Game: hours" bullets under platform headings.
+  const estimated = existsSync(resolve('content/gaming/estimated.md'))
+    ? readFileSync(resolve('content/gaming/estimated.md'), 'utf8')
+        .split(/\r?\n/)
+        .map((l) => l.match(/^[-*] +(.+):\s*[\d.,]+\s*h?\s*$/)?.[1])
+        .filter(Boolean)
+    : [];
+  const known = new Set([...steam, ...xbox].map((g) => norm(g.name)).concat(estimated.map(norm)));
 
   const unlisted = [
     ...steam.map((g) => ({ ...g, from: 'Steam' })),
@@ -33,7 +41,13 @@ export function checkCategories() {
   console.log(unlisted.length ? `\n10+ hours but in no category (${unlisted.length}):` : '\nEvery game with 10+ hours is in a category.');
   for (const g of unlisted) console.log(`  - ${g.name}  (${hours(g.minutes)} h, ${g.from})`);
 
+  const orphans = estimated.filter((n) => !listed.has(norm(n)));
+  if (orphans.length) {
+    console.log(`\nIn estimated.md but in no category (${orphans.length}):`);
+    for (const n of orphans) console.log(`  - ${n}`);
+  }
+
   const missing = bullets.filter((names) => !names.some((n) => known.has(norm(n)))).map((names) => names.join(' | '));
-  console.log(missing.length ? `\nListed in categories.md but in neither export (${missing.length}):` : '\nEvery listed game is in an export.');
+  console.log(missing.length ? `\nListed in categories.md but with no hours anywhere (${missing.length}):` : '\nEvery listed game has hours.');
   for (const n of missing) console.log(`  - ${n}`);
 }

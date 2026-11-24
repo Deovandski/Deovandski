@@ -39,6 +39,10 @@
   "en": "Fold it, throw it",
   "t": "พับแล้วปา"
  },
+ "012fa7cd7512": {
+  "en": "Grand Theft Auto: San Andreas",
+  "t": "Grand Theft Auto: San Andreas"
+ },
  "0132f525753d": {
   "en": "128 h",
   "t": "128 ชม."
@@ -143,6 +147,10 @@
   "en": "Nothing to clean.",
   "t": "ไม่มีอะไรให้เก็บ"
  },
+ "047943a2da53": {
+  "en": "FINAL FANTASY XII",
+  "t": "FINAL FANTASY XII"
+ },
  "0480691e0de6": {
   "en": "Ink",
   "t": "หมึก"
@@ -202,10 +210,6 @@
  "0699138fe5cc": {
   "en": "Click or drag to draw. Right-click erases.",
   "t": "คลิกหรือลากเพื่อวาด คลิกขวาเพื่อลบ"
- },
- "069c63e7880c": {
-  "en": " 1,130 h ",
-  "t": "1,130 ชม."
  },
  "06ee9ade85e4": {
   "en": "Hellblade: Senua's Sacrifice",
@@ -474,10 +478,6 @@
  "0f4ecdf2d6d2": {
   "en": "Back to Miku",
   "t": "กลับไปที่มิกุ"
- },
- "0f6b730c9e2b": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,302 h</strong>  ·  8 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,302 ชม.</strong>  ·  8 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">4% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% ของชั่วโมงทั้งหมด</span>"
  },
  "0f9292f61d18": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#29: </span>Best of the Worst: The Black Spine Edition",
@@ -775,10 +775,6 @@
   "en": "Little Big Workshop",
   "t": "Little Big Workshop"
  },
- "1acbf11e91f3": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">3,610 h</strong>  ·  29 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">11% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">29% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">3,610 ชม.</strong>  ·  29 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">11% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">29% ของชั่วโมงทั้งหมด</span>"
- },
  "1ad741f3bb04": {
   "en": "Salty doggo",
   "t": "หมางอน"
@@ -999,6 +995,10 @@
   "en": "✠ Amen ✠",
   "t": "✠ อาเมน ✠"
  },
+ "220d3bb19716": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">19,668 h</strong>  ·  24 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">58% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">not counted in my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">19,668 ชม.</strong>  ·  24 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">58% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">ไม่นับรวมในชั่วโมงของผม</span>"
+ },
  "222368a81152": {
   "en": "Failing to learn English",
   "t": "เรียนภาษาอังกฤษไม่รอด"
@@ -1207,9 +1207,17 @@
   "en": " Space &amp; flight ",
   "t": "อวกาศและการบิน"
  },
+ "2835bcaa6e76": {
+  "en": " 49 h ",
+  "t": "49 ชม."
+ },
  "283c1ebce40b": {
   "en": "Close to 12 years old but still kicking",
   "t": "เกือบ 12 ขวบแล้วแต่ยังแข็งแรง"
+ },
+ "284507d08d18": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,588 h</strong>  ·  7 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,588 ชม.</strong>  ·  7 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% ของชั่วโมงทั้งหมด</span>"
  },
  "2888f01fb635": {
   "en": "Morning by the river",
@@ -1294,6 +1302,10 @@
  "2b7b561c1de1": {
   "en": "Enlarge: MUCH FAST",
   "t": "ขยาย: เร็วมากมาย"
+ },
+ "2b9227fb6a10": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">904 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">6% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">904 ชม.</strong>  ·  19 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">6% ของชั่วโมงทั้งหมด</span>"
  },
  "2bdc8069faed": {
   "en": "Eastward",
@@ -1615,6 +1627,14 @@
   "en": "Dice tray",
   "t": "ถาดลูกเต๋า"
  },
+ "35c5a69d0117": {
+  "en": " 600 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "600 ชม.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ประมาณการ</span>"
+ },
+ "35d24a82655a": {
+  "en": " PW ",
+  "t": "PW"
+ },
  "35e1b32f082e": {
   "en": " <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\" data-astro-cid-ibmdu3wz=\"\"><path d=\"M4 4l8 8M12 4l-8 8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" data-astro-cid-ibmdu3wz=\"\" /></svg>\nExit\n",
   "t": "<svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\" data-astro-cid-ibmdu3wz=\"\"><path d=\"M4 4l8 8M12 4l-8 8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" data-astro-cid-ibmdu3wz=\"\" /></svg> ออก"
@@ -1627,10 +1647,6 @@
   "en": "Fallout: New Vegas",
   "t": "Fallout: New Vegas"
  },
- "363dfc735f51": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">570 ชม.</strong>  ·  5 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% ของชั่วโมงทั้งหมด</span>"
- },
  "364653cd2a4a": {
   "en": "Breakfast",
   "t": "มื้อเช้า"
@@ -1642,6 +1658,10 @@
  "369f350188dc": {
   "en": "The Witcher in Concert",
   "t": "The Witcher in Concert"
+ },
+ "36f780fdbda5": {
+  "en": " PC ",
+  "t": "PC"
  },
  "37497aa5a227": {
   "en": "Brazil",
@@ -1727,10 +1747,6 @@
   "en": "Enlarge: Ember.js dev assistant",
   "t": "ขยาย: ผู้ช่วยนักพัฒนา Ember.js"
  },
- "394b8bdb342a": {
-  "en": "121 h",
-  "t": "121 ชม."
- },
  "396ac6461723": {
   "en": "Enlarge: So many toys",
   "t": "ขยาย: ของเล่นเยอะจัง"
@@ -1802,10 +1818,6 @@
  "3b0fa055ea28": {
   "en": " RG ",
   "t": "RG"
- },
- "3b2f323a2bef": {
-  "en": "FINAL FANTASY XII THE ZODIAC AGE",
-  "t": "FINAL FANTASY XII THE ZODIAC AGE"
  },
  "3b3b10e8341d": {
   "en": "Play video: Capt. Deovandski – Flight Experience Singapore",
@@ -2071,10 +2083,6 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested"
  },
- "47101d9380a8": {
-  "en": "Show all 29",
-  "t": "แสดงทั้งหมด 29"
- },
  "47299a86ea20": {
   "en": " TW ",
   "t": "TW"
@@ -2219,6 +2227,10 @@
   "en": "Not bad!",
   "t": "ไม่เลว!"
  },
+ "4cbc599953b9": {
+  "en": " Rhythm &amp; music ",
+  "t": "จังหวะและดนตรี"
+ },
  "4cd5ee6da386": {
   "en": "Red Letter Media on YouTube",
   "t": "Red Letter Media บน YouTube"
@@ -2226,6 +2238,10 @@
  "4cee4c0a5581": {
   "en": "Left forearm",
   "t": "แขนท่อนล่างซ้าย"
+ },
+ "4d113ae8df69": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,302 h</strong>  ·  8 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">9% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,302 ชม.</strong>  ·  8 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">4% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">9% ของชั่วโมงทั้งหมด</span>"
  },
  "4d1568414852": {
   "en": "Two Strangers (Carry a Cake Across New York)",
@@ -2250,10 +2266,6 @@
  "4d6474389c69": {
   "en": " BW ",
   "t": "BW"
- },
- "4d9ea973bc55": {
-  "en": "Spore: Galactic Adventures",
-  "t": "Spore: Galactic Adventures"
  },
  "4db745f6113e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Toradora! ",
@@ -2294,6 +2306,10 @@
  "4e80d1b689cd": {
   "en": "Time Clickers",
   "t": "Time Clickers"
+ },
+ "4ea169568872": {
+  "en": "Ragnarok Online",
+  "t": "Ragnarok Online"
  },
  "4ea74666d6d4": {
   "en": "Sticky note madness, March 2023.",
@@ -2422,6 +2438,10 @@
  "512377a8dafe": {
   "en": "You threw {thing}.",
   "t": "คุณโยน {thing}"
+ },
+ "514f2eb993bc": {
+  "en": "Show all 36",
+  "t": "แสดงทั้งหมด 36"
  },
  "5162a45af33b": {
   "en": "\nI can keep a beat, though, which is why I want to get into drumming one day! Why not now? Because of priorities, and\n          there's only so much I can cook at one time... So it's planned out on my backlog! I want to play\n<i data-astro-cid-j7pv25f6=\"\">World's End Dancehall</i>, <i data-astro-cid-j7pv25f6=\"\">Two-Faced Lovers</i> and <i data-astro-cid-j7pv25f6=\"\">Sweet Devil</i> on drums!\n",
@@ -2631,6 +2651,10 @@
   "en": "\nI also use sticky notes, but I'm actively trying to get away from them. My rule now: it goes on the calendar, on the\n          whiteboard, or on a board (GitHub Projects for open source, JIRA for work). Those keep the history of past and current\n          work, so I can see burndown and trends, and spot where I'm losing efficiency.\n",
   "t": "ผมใช้กระดาษโน้ตด้วย แต่กำลังพยายามเลิกอย่างจริงจัง กฎของผมตอนนี้: ลงปฏิทิน ลงไวต์บอร์ด หรือลงบอร์ด (GitHub Projects สำหรับโอเพนซอร์ส JIRA สำหรับงาน) พวกนั้นเก็บประวัติงานทั้งเก่าและปัจจุบัน ผมเลยเห็น burndown และแนวโน้ม และจับได้ว่าตรงไหนที่ประสิทธิภาพรั่วไหล"
  },
+ "586e1c9e5fe6": {
+  "en": "Perfect World",
+  "t": "Perfect World"
+ },
  "58833ac67fd0": {
   "en": "Walkers of the Sacred Steps",
   "t": "ผู้เดินตามขั้นตอนศักดิ์สิทธิ์"
@@ -2699,6 +2723,10 @@
   "en": "Enlarge: Halloween",
   "t": "ขยาย: ฮาโลวีน"
  },
+ "5b05ffab8457": {
+  "en": " 75 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "75 ชม.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ประมาณการ</span>"
+ },
  "5b0af452c330": {
   "en": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Aquamarine",
   "t": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>อความารีน"
@@ -2766,10 +2794,6 @@
  "5cca6659e037": {
   "en": "Enlarge: Lazy",
   "t": "ขยาย: ขี้เกียจ"
- },
- "5cfde1f3eb28": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,589 h</strong>  ·  13 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">13% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,589 ชม.</strong>  ·  13 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">13% ของชั่วโมงทั้งหมด</span>"
  },
  "5d00be2150a7": {
   "en": "Indiana",
@@ -3075,6 +3099,10 @@
   "en": "DREDGE",
   "t": "DREDGE"
  },
+ "67b782e4b825": {
+  "en": "Spore",
+  "t": "Spore"
+ },
  "67d72e344e26": {
   "en": "Another dino",
   "t": "ไดโนอีกตัว"
@@ -3102,10 +3130,6 @@
  "68507370f897": {
   "en": "🚀 VIRAL! +{views} views, +{follows} followers",
   "t": "🚀 ไวรัล! +{views} วิว, +{follows} ผู้ติดตาม"
- },
- "687d10f2380c": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">683 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">6% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">683 ชม.</strong>  ·  19 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">6% ของชั่วโมงทั้งหมด</span>"
  },
  "688ca1ff2e38": {
   "en": "SA",
@@ -3275,10 +3299,6 @@
   "en": "PAYDAY 2",
   "t": "PAYDAY 2"
  },
- "6d53f8369d86": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">19,668 h</strong>  ·  24 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">62% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">not counted in my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">19,668 ชม.</strong>  ·  24 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">62% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">ไม่นับรวมในชั่วโมงของผม</span>"
- },
  "6d5d3874267a": {
   "en": " 1 sapphire  · 1 energy · 1 min ",
   "t": "แซฟไฟร์ 1 · พลังงาน 1 · 1 นาที"
@@ -3327,10 +3347,6 @@
   "en": "MB",
   "t": "MB"
  },
- "6ec7357c2c99": {
-  "en": "Hours from my Steam library and my Xbox profile. Games with under 10 hours are left out.",
-  "t": "ชั่วโมงจากคลัง Steam และโปรไฟล์ Xbox ของผม ไม่รวมเกมที่เล่นไม่ถึง 10 ชั่วโมง"
- },
  "6eef3154b469": {
   "en": "Misaki is hands down my favorite character in the entire series! And this is my favorite series in the \"A Certain...\" world.",
   "t": "มิซากิคือตัวละครโปรดของผมในทั้งซีรีส์แบบไม่ต้องสงสัย! และนี่คือซีรีส์โปรดของผมในจักรวาล \"A Certain...\""
@@ -3354,6 +3370,10 @@
  "7010cbad5c0f": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#36: </span>Best of the Worst: Wheel of the Worst #20",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#36: </span>Best of the Worst: Wheel of the Worst #20"
+ },
+ "70182e9438a1": {
+  "en": "Hours from my Steam library, my Xbox profile and my own estimates. Games with under 10 hours are left out.",
+  "t": "ชั่วโมงจากคลัง Steam โปรไฟล์ Xbox และการประมาณของผมเอง ไม่รวมเกมที่เล่นไม่ถึง 10 ชั่วโมง"
  },
  "7038a855f81b": {
   "en": "Soda Dungeon",
@@ -3395,9 +3415,9 @@
   "en": "Throw at the dino",
   "t": "ปาใส่ไดโน"
  },
- "7162dff0de2d": {
-  "en": "Age of Empires II (2013)",
-  "t": "Age of Empires II (2013)"
+ "7167fb573145": {
+  "en": " 200 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "200 ชม.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ประมาณการ</span>"
  },
  "717fce44a310": {
   "en": "Too much heat! Not in front of the waifu pillow! (〃＞＿＜;〃)",
@@ -3522,6 +3542,10 @@
  "750d694a3c02": {
   "en": "games owned on Steam",
   "t": "เกมที่มีบน Steam"
+ },
+ "7525f13d6c80": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">49 h</strong>  ·  1 game  ·  &lt;1% of my hours ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">49 ชม.</strong>  ·  1 เกม  ·  &lt;1% ของชั่วโมงทั้งหมด"
  },
  "7558e57c2846": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Spy x Family ",
@@ -3959,6 +3983,10 @@
   "en": "Ecchi-meter: turn your phone sideways",
   "t": "มาตรวัดเอจจิ: หมุนมือถือเป็นแนวนอน"
  },
+ "830ba9f1da1c": {
+  "en": "Age of Empires II",
+  "t": "Age of Empires II"
+ },
  "8310044a867c": {
   "en": "Forager",
   "t": "Forager"
@@ -4271,6 +4299,10 @@
   "en": "Gotta look pretty for PetSmart",
   "t": "ต้องสวยไว้ไป PetSmart"
  },
+ "8dd8052b63e7": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,589 h</strong>  ·  13 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,589 ชม.</strong>  ·  13 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">11% ของชั่วโมงทั้งหมด</span>"
+ },
  "8ddbb9fd49d2": {
   "en": "North Carolina",
   "t": "นอร์ทแคโรไลนา"
@@ -4319,6 +4351,10 @@
   "en": "<strong>Peter Gollwitzer</strong>, implementation intentions (“if X happens, then I will do Y”). His 2006 meta-analysis with Paschal Sheeran, across 94 tests, found a medium-to-large effect on reaching goals. <a href=\"https://www.decisionskills.com/uploads/5/1/6/0/5160560/2006_gollwitzersheeran_implementation_intentions.pdf\">Paper</a>",
   "t": "<strong>ปีเตอร์ กอลวิตเซอร์</strong> เจตนาในการลงมือ (\"ถ้า X เกิดขึ้น ผมจะทำ Y\") การวิเคราะห์อภิมานปี 2006 ร่วมกับแพสคัล ชีแรน จากการทดสอบ 94 ครั้ง พบผลระดับปานกลางถึงสูงต่อการบรรลุเป้าหมาย <a href=\"https://www.decisionskills.com/uploads/5/1/6/0/5160560/2006_gollwitzersheeran_implementation_intentions.pdf\">งานวิจัย</a>"
  },
+ "8f3445013381": {
+  "en": "Grand Theft Auto III",
+  "t": "Grand Theft Auto III"
+ },
  "8f60ae052f27": {
   "en": "This one is for seasoned veterans of the genre, or someone deep into Japanese culture. The unique way the story is told is still vivid in my brain, despite all the anime I've absorbed since.",
   "t": "เรื่องนี้สำหรับคอแนวนี้ตัวเก๋า หรือคนที่อินกับวัฒนธรรมญี่ปุ่นลึก ๆ วิธีเล่าเรื่องที่เป็นเอกลักษณ์ยังชัดอยู่ในหัวผม แม้จะดูอนิเมะมาอีกมากมายตั้งแต่นั้น"
@@ -4326,6 +4362,10 @@
  "8fb4529fe68a": {
   "en": "Enlarge: Much tired",
   "t": "ขยาย: เหนื่อยมากมาย"
+ },
+ "8fd26e6e32a7": {
+  "en": "Hatsune Miku: Project DIVA series",
+  "t": "Hatsune Miku: ซีรีส์ Project DIVA"
  },
  "8fd9562b6938": {
   "en": "Spiritfarer: Farewell Edition",
@@ -4447,6 +4487,10 @@
   "en": "Yamete kudasai~ (〃ω〃)",
   "t": "ยาเมเตะ คุดาไซ~ (〃ω〃)"
  },
+ "92f1af0db7dd": {
+  "en": " PlayStation ",
+  "t": "PlayStation"
+ },
  "92f7c08c741a": {
   "en": "Don't worry. You're human and curious. I am not tracking IPs or any other metrics.",
   "t": "ไม่ต้องห่วง คุณเป็นมนุษย์และอยากรู้อยากเห็น ผมไม่ได้ติดตาม IP หรือข้อมูลอื่นใดทั้งนั้น"
@@ -4462,10 +4506,6 @@
  "9393df6885d8": {
   "en": "Plants vs. Zombies: Game of the Year",
   "t": "Plants vs. Zombies: Game of the Year"
- },
- "93a6f864742e": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,588 h</strong>  ·  7 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">13% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,588 ชม.</strong>  ·  7 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">13% ของชั่วโมงทั้งหมด</span>"
  },
  "93c946900d34": {
   "en": "Garry's Mod",
@@ -4534,6 +4574,10 @@
  "95ad14470d3d": {
   "en": "Deovandski Repo Template",
   "t": "Deovandski Repo Template"
+ },
+ "95ced8b1219b": {
+  "en": " R1 ",
+  "t": "R1"
  },
  "95e6738d7e34": {
   "en": "I've also cut contact with a large part of my bloodline, and that's on purpose. Carrying the Skibinski name and sharing this crazy blood doesn't automatically earn you access or attention. We've been taken advantage of before, and we grew from it.",
@@ -4619,6 +4663,10 @@
   "en": "17 photos",
   "t": "17 รูป"
  },
+ "97c65149006c": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">4,935 h</strong>  ·  36 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">15% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">35% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">4,935 ชม.</strong>  ·  36 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">15% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">35% ของชั่วโมงทั้งหมด</span>"
+ },
  "980d61e4994b": {
   "en": "Schüll, Addiction by Design (2012), on how slot machines are tuned",
   "t": "Schüll, Addiction by Design (2012), on how slot machines are tuned"
@@ -4630,10 +4678,6 @@
  "982d68015caa": {
   "en": "Grand Theft Auto V",
   "t": "Grand Theft Auto V"
- },
- "9832b282b4c3": {
-  "en": " SG ",
-  "t": "SG"
  },
  "98615a7d7fc1": {
   "en": "Kanban board",
@@ -4654,10 +4698,6 @@
  "994eabdea741": {
   "en": "Anno 2070",
   "t": "Anno 2070"
- },
- "99887003ecce": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">632 h</strong>  ·  7 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">632 ชม.</strong>  ·  7 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% ของชั่วโมงทั้งหมด</span>"
  },
  "998896860e5d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder TV show 27 ",
@@ -5431,6 +5471,10 @@
   "en": "15 h",
   "t": "15 ชม."
  },
+ "b154e9b617f4": {
+  "en": "Diablo II",
+  "t": "Diablo II"
+ },
  "b16f6c772985": {
   "en": "Enlarge: Can we fry those up",
   "t": "ขยาย: เอาพวกนั้นไปทอดได้ไหม"
@@ -5575,6 +5619,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (ขอให้โชคดีมีชัยในโลกแฟนตาซี!)"
  },
+ "b59799bd9612": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">632 h</strong>  ·  7 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">632 ชม.</strong>  ·  7 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% ของชั่วโมงทั้งหมด</span>"
+ },
  "b61c12b736ff": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 1: </span> Sword Art Online ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 1: </span> Sword Art Online (ซอร์ดอาร์ตออนไลน์)"
@@ -5707,6 +5755,10 @@
   "en": "56 h",
   "t": "56 ชม."
  },
+ "bb92b015822c": {
+  "en": "Grand Theft Auto IV",
+  "t": "Grand Theft Auto IV"
+ },
  "bbc97dc5386e": {
   "en": "it climbed too steeply and stalled",
   "t": "ขึ้นชันเกินไปแล้วสตอล"
@@ -5731,13 +5783,13 @@
   "en": " AP ",
   "t": "AP"
  },
+ "bc64dadfe111": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">570 ชม.</strong>  ·  5 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% ของชั่วโมงทั้งหมด</span>"
+ },
  "bc79c0b252f4": {
   "en": "Little Witch Academia: Chamber of Time",
   "t": "Little Witch Academia: Chamber of Time"
- },
- "bd570f70fcac": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,130 h</strong>  ·  18 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">9% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,130 ชม.</strong>  ·  18 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">4% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">9% ของชั่วโมงทั้งหมด</span>"
  },
  "bd62be75218d": {
   "en": " MG ",
@@ -5947,6 +5999,10 @@
   "en": " CC ",
   "t": "CC"
  },
+ "c5b89dee5b9b": {
+  "en": " 1,688 h ",
+  "t": "1,688 ชม."
+ },
  "c5cf0566a7a8": {
   "en": "Board game nights are on their way.",
   "t": "คืนบอร์ดเกมกำลังมา"
@@ -6014,10 +6070,6 @@
  "c7c4bc97cb6b": {
   "en": "Solen Zara",
   "t": "Solen Zara"
- },
- "c840aa0b2d6c": {
-  "en": " <strong data-astro-cid-y6i3m4dy=\"\">904 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% of my hours</span>  ",
-  "t": "<strong data-astro-cid-y6i3m4dy=\"\">904 ชม.</strong>  ·  19 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% ของชั่วโมงทั้งหมด</span>"
  },
  "c886f4fa5cd8": {
   "en": "Praise the source of the beef thou art eating. Thank the soul that was given for thy enjoyment and for thy nourishment.",
@@ -6155,6 +6207,10 @@
   "en": "Out of shit to fertilize with.",
   "t": "ขี้หมดแล้ว ไม่มีไว้ใส่ปุ๋ย"
  },
+ "ccf1e24e223e": {
+  "en": " 150 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "150 ชม.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ประมาณการ</span>"
+ },
  "cd1007480585": {
   "en": "Roll d8",
   "t": "ทอย d8"
@@ -6234,6 +6290,10 @@
  "cfcf0d7d152e": {
   "en": "Never wrestle with pigs. You both get dirty, and the pig likes it. <span class=\"newest\">New</span>",
   "t": "อย่าปล้ำกับหมูเด็ดขาด เปื้อนกันทั้งคู่ แต่หมูชอบ <span class=\"newest\">ใหม่</span>"
+ },
+ "cfd9334fce91": {
+  "en": "Revenant (1999)",
+  "t": "Revenant (1999)"
  },
  "cfe86a1ce53f": {
   "en": " SD ",
@@ -6407,6 +6467,10 @@
   "en": "<span aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\">💩</span> Shit",
   "t": "<span aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\">💩</span> ขี้"
  },
+ "d47f66118ed9": {
+  "en": " 325 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "325 ชม.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ประมาณการ</span>"
+ },
  "d499fe679d0f": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 35: </span> Placeholder TV show 35 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 35: </span> รายการทีวีชั่วคราว 35"
@@ -6438,6 +6502,10 @@
  "d68ddfb67933": {
   "en": "Chilling",
   "t": "ชิล ๆ"
+ },
+ "d6a5bb4dc875": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,688 h</strong>  ·  18 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">12% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,688 ชม.</strong>  ·  18 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">12% ของชั่วโมงทั้งหมด</span>"
  },
  "d6a766b3bb6f": {
   "en": "Acrobatic theater",
@@ -6759,6 +6827,10 @@
   "en": "Dua Lipa",
   "t": "Dua Lipa"
  },
+ "df0ac35768da": {
+  "en": " 49 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "49 ชม.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ประมาณการ</span>"
+ },
  "df1ba38790aa": {
   "en": "Sleeping beauty",
   "t": "เจ้าหญิงนิทรา"
@@ -6931,6 +7003,10 @@
   "en": "Singin' in the Rain",
   "t": "Singin' in the Rain"
  },
+ "e68aee3207bc": {
+  "en": " 20 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "20 ชม.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ประมาณการ</span>"
+ },
  "e68b871a3f8d": {
   "en": "Autonauts",
   "t": "Autonauts"
@@ -6962,6 +7038,10 @@
  "e738cd88f444": {
   "en": "Enlarge: So fancy",
   "t": "ขยาย: หรูมาก"
+ },
+ "e73a48613932": {
+  "en": " 130 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "130 ชม.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ประมาณการ</span>"
  },
  "e74a1afd48ee": {
   "en": "Step 2: Choose Thy Cut",
@@ -7006,6 +7086,10 @@
  "e8e809086d13": {
   "en": "Fold a new one",
   "t": "พับลำใหม่"
+ },
+ "e9162f431e74": {
+  "en": " 251 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "251 ชม.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ประมาณการ</span>"
  },
  "e91ae83c926f": {
   "en": "Ballet",
@@ -7243,6 +7327,10 @@
   "en": "Photogenic",
   "t": "ขึ้นกล้อง"
  },
+ "f2af09c55a3b": {
+  "en": "* Estimated hours, from way before playtime tracking and achievements were widely available.",
+  "t": "* ชั่วโมงโดยประมาณ จากยุคก่อนที่การบันทึกเวลาเล่นและระบบความสำเร็จจะแพร่หลายนานมาก"
+ },
  "f2e3302c61d2": {
   "en": "The tattoo is mirrored. That used to bring me shame, until I realized it's a matter of perspective: under some conditions it looks perfect, and under others it doesn't. That gap became a lesson in mindset and in how you choose to see things.",
   "t": "รอยสักนี้กลับด้าน เคยทำให้ผมอาย จนกระทั่งผมรู้ว่ามันเป็นเรื่องของมุมมอง: ในบางสภาพมันดูสมบูรณ์แบบ ในบางสภาพก็ไม่ ช่องว่างนั้นกลายเป็นบทเรียนเรื่องกรอบความคิด และเรื่องที่เราเลือกจะมองสิ่งต่าง ๆ อย่างไร"
@@ -7291,9 +7379,9 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Placeholder TV show 23 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 23: </span> รายการทีวีชั่วคราว 23"
  },
- "f4252aa5276c": {
-  "en": " 3,610 h ",
-  "t": "3,610 ชม."
+ "f43ffc562495": {
+  "en": " <strong data-astro-cid-y6i3m4dy=\"\">683 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span>  ",
+  "t": "<strong data-astro-cid-y6i3m4dy=\"\">683 ชม.</strong>  ·  19 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% ของชั่วโมงทั้งหมด</span>"
  },
  "f4853c881e96": {
   "en": "{n} more to earn",
@@ -7395,6 +7483,10 @@
   "en": "Enlarge: Artsy Bidu",
   "t": "ขยาย: Bidu สายอาร์ต"
  },
+ "f886e6daf6f7": {
+  "en": " 4,935 h ",
+  "t": "4,935 ชม."
+ },
  "f8be939ad7c2": {
   "en": "6 h",
   "t": "6 ชม."
@@ -7466,6 +7558,10 @@
  "fa42321aea70": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Placeholder movie 26 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 26: </span> ภาพยนตร์ชั่วคราว 26"
+ },
+ "fa751ae89ae5": {
+  "en": " 293 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
+  "t": "293 ชม.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ประมาณการ</span>"
  },
  "fa78f9346bbd": {
   "en": "My lil sister",

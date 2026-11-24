@@ -1,14 +1,15 @@
 # Gamer tab
 
-Edit and push; the Gamer tab rebuilds from this file and from `steam-games.json` and
-`xbox-games.json` (the hours). To refresh the hours, about once a year, follow README.md in this folder.
+Edit and push; the Gamer tab rebuilds from this file and from `steam-games.json`,
+`xbox-games.json` and `estimated.md` (the hours). To refresh the hours, about once a year, follow README.md in this folder.
 
 - Each `##` heading is a category. The site orders categories, and the games in each,
   by hours (most played first), so the order here doesn't matter.
 - Each bullet is one game, written as Steam or Xbox names it. ™ and ® can be left out, and
   capitals don't matter. Its hours come from `steam-games.json` and `xbox-games.json`, and it
-  gets a Steam and/or Xbox chip for each one it's in. A game in neither is skipped
-  (`node scripts/steam-games.mjs` lists those).
+  gets a Steam and/or Xbox chip for each one it's in. Hours I estimated for older games
+  (PlayStation, PC) come from `estimated.md` and are added on, with their own chip and an
+  asterisk. A game in none of them is skipped (`node scripts/steam-games.mjs` lists those).
 - A game on both adds its Steam and Xbox hours together. Add `{same}` when it's the same play
   counted twice (a Microsoft game on Steam also reports its hours to Xbox), and it uses the
   larger number instead.
@@ -90,7 +91,7 @@ Hours here are mostly the game running in the background.
 
 ## City, colony & strategy
 
-- Age of Empires II (2013)
+- Age of Empires II | Age of Empires II (2013) | Age of Empires II: Definitive Edition {same}
 - Anno 2070
 - Arboria
 - Banished
@@ -104,7 +105,7 @@ Hours here are mostly the game running in the background.
 - Prison Architect
 - Reus
 - Sid Meier's Civilization V
-- Spore: Galactic Adventures
+- Spore | Spore: Galactic Adventures
 - The Colonists
 - Tropico 4
 - Undead Horde
@@ -116,13 +117,17 @@ Hours here are mostly the game running in the background.
 - CHRONO TRIGGER
 - CrossCode
 - Cyberpunk 2077
+- Diablo II
 - Divinity: Original Sin 2
 - Eastward
 - Fallout 4
 - Fallout: New Vegas
-- FINAL FANTASY XII THE ZODIAC AGE
+- FINAL FANTASY XII | FINAL FANTASY XII THE ZODIAC AGE
 - FINAL FANTASY XV WINDOWS EDITION
 - God of War
+- Grand Theft Auto III
+- Grand Theft Auto IV | Grand Theft Auto IV: The Complete Edition
+- Grand Theft Auto: San Andreas
 - Grand Theft Auto V | Grand Theft Auto V Legacy | Grand Theft Auto V (Xbox One)
 - Grim Dawn
 - Hogwarts Legacy
@@ -131,7 +136,10 @@ Hours here are mostly the game running in the background.
 - Little Witch Academia: Chamber of Time
 - Mass Effect Legendary Edition
 - Path of Exile
+- Perfect World
+- Ragnarok Online
 - Red Dead Redemption 2
+- Revenant (1999)
 - South Park: The Fractured but Whole
 - Tales of ARISE
 - The Elder Scrolls IV: Oblivion Remastered
@@ -202,3 +210,7 @@ Hours here are mostly the game running in the background.
 - Spiritfarer: Farewell Edition
 - Stardew Valley
 - The Stanley Parable
+
+## Rhythm & music
+
+- Hatsune Miku: Project DIVA series | Hatsune Miku: Project DIVA Mega Mix+

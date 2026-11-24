@@ -701,9 +701,11 @@ const nf = new Intl.NumberFormat('en-US');
         shareLabel="{share} of my hours"
         excludedShareLabel="not counted in my hours"
         countLabel="{n} games"
-        chipColors={{ Steam: '#66c0f4', Xbox: '#6cc24a' }}
+        countLabelOne="1 game"
+        chipColors={{ Steam: '#66c0f4', Xbox: '#6cc24a', PlayStation: '#5b9cff', PC: '#c3c9d9' }}
       />
-      <p class="gamer-foot">Hours from my Steam library and my Xbox profile. Games with under 10 hours are left out.</p>
+      <p class="gamer-foot">Hours from my Steam library, my Xbox profile and my own estimates. Games with under 10 hours are left out.</p>
+      <p class="gamer-foot gamer-foot--more">* Estimated hours, from way before playtime tracking and achievements were widely available.</p>
     </section>
 
     <section class="panel" role="region" id="panel-anime" aria-labelledby="tab-anime" tabindex="0" hidden>
@@ -952,6 +954,7 @@ const nf = new Intl.NumberFormat('en-US');
   .gamer-intro { max-width: var(--measure); }
   .gamer-links { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: flex-start; }
   .gamer-foot { margin: 1.25rem 0 0; font-size: var(--step--1); color: var(--muted); }
+  .gamer-foot--more { margin-top: 0.35rem; }
   #panel-gamer { --hbc-heading-font: var(--font-display); }
   .list-link {
     display: inline-block;

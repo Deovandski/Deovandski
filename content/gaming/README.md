@@ -1,13 +1,14 @@
 # Gamer tab
 
-The Gamer tab groups my Steam and Xbox games into categories, with the hours each one took and a
-Steam and/or Xbox chip for where those hours come from.
+The Gamer tab groups my games into categories, with the hours each one took and a chip for where
+those hours come from: Steam, Xbox, or (estimated by me) PlayStation and PC.
 
 | File | What it holds |
 |---|---|
 | `categories.md` | The intro, the categories and which games go in each. Edit it by hand. |
 | `steam-games.json` | Every game I own on Steam and its minutes played, plus the day it was exported. Written by the script below; don't edit it by hand. |
 | `xbox-games.json` | Every Xbox game with minutes played, from the last Xbox pull (November 2026). Written by `scripts/xbox-games.mjs`; don't edit it by hand. See "Xbox hours" below. |
+| `estimated.md` | Hours I estimated for games from before playtime tracking (PlayStation, PC). Edit it by hand; no refresh needed. Each game also needs its line in `categories.md`. These games get an asterisk and the tab's footnote. |
 
 The site works out everything else: each category's hours, the totals, the order, and the
 "Count idle games" switch (for categories marked `{idle}`).
