@@ -133,7 +133,7 @@ Theme it with `--egg-accent`, `--egg-accent-2`, `--egg-bg` and `--egg-ink`.
 
 | Prop | Default | |
 |---|---|---|
-| `categories` | (required) | `[{ id, name, note?, excludable?, items: [{ name, value }] }]`. Sorted by total, items by value. |
+| `categories` | (required) | `[{ id, name, note?, excludable?, items: [{ name, value, chips?, estimated? }] }]`. Sorted by total, items by value. `chips` are small labels after the name, like `['Steam', 'Xbox']`; `estimated: true` marks the value for a footnote. |
 | `id` | `"hbc"` | Prefix for element ids (the rollup links jump to `#<id>-<category id>`). Unique per page. |
 | `total` | sum of every item | The big number, e.g. hours including things no category lists. |
 | `totalLabel` | `"hours"` | Words under the total. |
@@ -144,13 +144,15 @@ Theme it with `--egg-accent`, `--egg-accent-2`, `--egg-bg` and `--egg-ink`.
 | `excludeLabel` | `"Count idle categories ({value} {unit})"` | The switch, shown only when a category is `excludable`. |
 | `shareLabel` / `excludedShareLabel` | `"{share} of the total"` / `"not counted in the total"` | Under each category title. |
 | `notCounted` | `"not counted"` | A switched-off bar's number. |
-| `countLabel` | `"{n} items"` | Under each category title. |
+| `countLabel` / `countLabelOne` | `"{n} items"` / countLabel | Under each category title; `countLabelOne` is used for a single item. |
 | `showAll` / `showFewer` | `"Show all {n}"` / `"Show fewer"` | The card button. |
+| `chipColors` | `{}` | A colour per chip label, like `{ Steam: '#66c0f4' }`. Other chips use `--hbc-chip` (default: the accent). |
+| `estimatedMark` / `estimatedLabel` | `"*"` / `"estimated"` | After an estimated item's value, and what screen readers say instead. |
 | `locale` | `"en-US"` | How numbers are written. |
 
 Every number and label is worked out at build time, with and without the excludable categories;
 the script only flips which is shown, so translated pages need nothing extra. Without JavaScript
-every item shows and the switch stays hidden. Theme with `--hbc-accent`, `--hbc-excluded`,
+every item shows and the switch stays hidden. Theme with `--hbc-accent`, `--hbc-chip`, `--hbc-excluded`,
 `--hbc-surface`, `--hbc-border`, `--hbc-track`, `--hbc-text`, `--hbc-muted`, `--hbc-note` and
 `--hbc-heading-font`.
 
