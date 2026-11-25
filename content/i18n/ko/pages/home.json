@@ -459,10 +459,6 @@
   "en": "Reus",
   "t": "Reus"
  },
- "0e39786b50dd": {
-  "en": "Framework 16 LED Matrix Manager",
-  "t": "Framework 16 LED Matrix Manager"
- },
  "0e814bdf1998": {
   "en": "45 h",
   "t": "45 시간"
@@ -554,6 +550,10 @@
  "10c5d043a58d": {
   "en": "A West Marches D&amp;D 5e campaign set in the world of #HusbandOutWorld.",
   "t": "#HusbandOutWorld의 세계를 배경으로 한 West Marches 방식의 D&amp;D 5판 캠페인."
+ },
+ "10da3638ec6c": {
+  "en": " Writing System ",
+  "t": "문자 체계"
  },
  "110e6e5b19fc": {
   "en": " JC ",
@@ -1819,10 +1819,6 @@
   "en": "119 h",
   "t": "119 시간"
  },
- "39b90d97a21e": {
-  "en": "My Stoneridge Software posts",
-  "t": "내 Stoneridge Software 글"
- },
  "39bb4e26efd6": {
   "en": "Avowed",
   "t": "Avowed"
@@ -2067,6 +2063,10 @@
   "en": " 363 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "363 시간  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">추정</span>"
  },
+ "42c3797fbacc": {
+  "en": " Stoneridge Software posts ",
+  "t": "Stoneridge Software 글"
+ },
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
   "t": "브라질 아마존의 붉은 흙으로 된 노천 금광 구덩이에 있는 어린아이와 두 남자의 옛 사진"
@@ -2286,10 +2286,6 @@
  "4b94d73d72df": {
   "en": "12 photos",
   "t": "사진 12장"
- },
- "4ba79780f79b": {
-  "en": "Vraki West March D&amp;D Campaign",
-  "t": "브라키 West March D&amp;D 캠페인"
  },
  "4bd6c7e4c009": {
   "en": "Dead Cells",
@@ -3515,10 +3511,6 @@
   "en": "That one really got me in the feels. It made me feel more in one sitting than I felt while dating some girls. It's hard for me to miss someone once I say goodbye, but this anime made me sit with that feeling for a good while after watching it.",
   "t": "이건 진짜 감정을 건드렸어. 몇몇 여자들이랑 사귈 때 느낀 것보다 앉은자리에서 더 많은 걸 느끼게 했어. 난 한 번 작별하고 나면 누군가를 그리워하는 게 어려운데, 이 애니는 다 보고 나서 한참 동안 그 감정과 함께 앉아 있게 만들었어."
  },
- "6e5eca40165f": {
-  "en": "Vraki Writing System",
-  "t": "브라키 문자 체계"
- },
  "6e68e69e0822": {
   "en": "Black ink",
   "t": "검은 잉크"
@@ -4170,6 +4162,10 @@
  "8271900678e6": {
   "en": "Enlarge: Destroying a whole chicken",
   "t": "확대: 통닭 한 마리 박살 내는 중"
+ },
+ "82af22fd64e6": {
+  "en": " West March D&amp;D Campaign ",
+  "t": "West March D&amp;D 캠페인"
  },
  "82c3ba19280f": {
   "en": "Midas Gold Plus",
@@ -5135,6 +5131,10 @@
   "en": "Dead Can Dance",
   "t": "Dead Can Dance"
  },
+ "a0b39ba7d0f6": {
+  "en": " WDS ",
+  "t": "WDS"
+ },
  "a0d6b0bb5929": {
   "en": "Enlarge: Let's go",
   "t": "확대: 가자"
@@ -5670,6 +5670,10 @@
  "af692ad68205": {
   "en": "Kingdom Hearts series",
   "t": "킹덤 하츠 시리즈"
+ },
+ "af7c21047024": {
+  "en": "Vraki Related",
+  "t": "브라키 관련"
  },
  "affabe3f4188": {
   "en": "Campaign #1",
@@ -7551,6 +7555,10 @@
   "en": "13 photos",
   "t": "사진 13장"
  },
+ "ed53c0dffcec": {
+  "en": " SCHEELS Laurel Wreath Award ",
+  "t": "SCHEELS 월계관상"
+ },
  "ed6b356a51fd": {
   "en": "Enlarge: Learning English",
   "t": "확대: 영어 배우는 중"
@@ -7638,6 +7646,10 @@
  "f1be6af1c552": {
   "en": "You’re human, like me. We have different capabilities, yes, but nothing stops you from picturing your own death clock and starting to work on your life today. <strong>You can’t change the past, but you can do something right now to build a better future.</strong>",
   "t": "너도 나처럼 인간이야. 능력은 다르지, 맞아. 하지만 네 죽음의 시계를 그려 보고 오늘부터 네 삶을 가꾸기 시작하는 걸 막는 건 아무것도 없어. <strong>과거는 바꿀 수 없지만, 더 나은 미래를 위해 지금 당장 뭔가를 할 수는 있어.</strong>"
+ },
+ "f1d1b324ae97": {
+  "en": "Dev History",
+  "t": "개발 이력"
  },
  "f201ce825e65": {
   "en": "40 h",
@@ -7818,6 +7830,10 @@
  "f80d1870d042": {
   "en": " ← Close the chunk ",
   "t": "← 조각 닫기"
+ },
+ "f84872e84d43": {
+  "en": " F16 LED Matrix Mgr ",
+  "t": "F16 LED Matrix Mgr"
  },
  "f84d1ceb9541": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder movie 32 ",

@@ -43,22 +43,29 @@ import FacetMilestoneEggs from '../components/FacetMilestoneEggs.astro';
 
 type LinkItem = { href: string; label: string };
 
+// Dev tab's Links box: the main links, then "Dev History".
 const devLinks: LinkItem[] = [
-  { href: 'https://www.wizarddeosolutions.com/', label: 'Wizard Deo Solutions' },
+  { href: 'https://www.wizarddeosolutions.com/', label: 'WDS' },
   { href: 'https://www.linkedin.com/in/deovandski/', label: 'LinkedIn' },
   { href: 'https://github.com/Deovandski', label: 'GitHub' },
-  { href: 'https://deovandski.github.io/Deo-s-Framework16-LED-Matrix-Manager/', label: 'Framework 16 LED Matrix Manager' },
+];
+const devHistoryLinks: LinkItem[] = [
+  { href: 'https://deovandski.github.io/Deo-s-Framework16-LED-Matrix-Manager/', label: 'F16 LED Matrix Mgr' },
   { href: 'https://stackoverflow.com/users/4830578/deovandski', label: 'StackOverflow' },
-  { href: 'https://stoneridgesoftware.com/author/deovandskis/', label: 'My Stoneridge Software posts' },
+  { href: 'https://stoneridgesoftware.com/author/deovandskis/', label: 'Stoneridge Software posts' },
+  { href: 'https://www.linkedin.com/in/deovandski/details/honors/', label: 'SCHEELS Laurel Wreath Award' },
 ];
 
 const musicianLinks: LinkItem[] = [{ href: 'https://suno.com/@deovandski', label: 'My Suno songs' }];
 
+// Author tab's Links box: the main links, then "Vraki Related".
 const authorLinks: LinkItem[] = [
   { href: 'https://www.husbandoutworld.com/', label: '#HusbandOutWorld Series' },
-  { href: 'https://deovandski.github.io/Vraki-West-March-Campaign-D-D/', label: 'Vraki West March D&D Campaign' },
-  { href: 'https://deovandski.github.io/vraki-windows/', label: 'Vraki Writing System' },
   { href: 'https://www.husbandoutworld.com/blog/', label: 'Blog' },
+];
+const vrakiLinks: LinkItem[] = [
+  { href: 'https://deovandski.github.io/Vraki-West-March-Campaign-D-D/', label: 'West March D&D Campaign' },
+  { href: 'https://deovandski.github.io/vraki-windows/', label: 'Writing System' },
 ];
 
 // PM tab: my public GitHub Projects boards (https://github.com/Deovandski?tab=projects).
@@ -341,7 +348,11 @@ const nf = new Intl.NumberFormat('en-US');
     <span hidden class="i18n-shared" data-count-one>1 facet</span>
 
     <section class="panel" role="region" id="panel-dev" aria-labelledby="tab-dev" tabindex="0" hidden>
-      <LinksMenu id="dev-links" toggle="external" items={[{ links: devLinks }]} />
+      <LinksMenu
+        id="dev-links"
+        toggle="external"
+        items={[{ links: devLinks }, { separator: 'Dev History' }, { style: 'secondary', links: devHistoryLinks }]}
+      />
       <div class="story">
         <p class="dev-headline">
           Senior Software Engineer, Dynamics 365 F&amp;O Architect, and Founder &amp; CEO of Wizard Deo Solutions.
@@ -363,7 +374,11 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-author" aria-labelledby="tab-author" tabindex="0" hidden>
-      <LinksMenu id="author-links" toggle="external" items={[{ links: authorLinks }]} />
+      <LinksMenu
+        id="author-links"
+        toggle="external"
+        items={[{ links: authorLinks }, { separator: 'Vraki Related' }, { style: 'secondary', links: vrakiLinks }]}
+      />
       <div class="story">
         <p>
           Yep. As crazy as it sounds, I'm also an author! It all started with the Vraki Writing System, such a cornerstone
@@ -543,10 +558,8 @@ const nf = new Intl.NumberFormat('en-US');
 
     <section class="panel" role="region" id="panel-botw" aria-labelledby="tab-botw" tabindex="0" hidden>
       <GimmickPlay tab="botw" />
-      <div class="list-head">
-        <div class="botw-intro">{botw.intro.map((para) => <p class="ranking-lede" set:html={linkify(para)} />)}</div>
-        <a class="list-link" href="https://www.youtube.com/@RedLetterMedia">Red Letter Media on YouTube</a>
-      </div>
+      <LinksMenu id="botw-links" toggle="external" items={[{ links: [{ href: 'https://www.youtube.com/@RedLetterMedia', label: 'Red Letter Media on YouTube' }] }]} />
+      <div class="botw-intro">{botw.intro.map((para) => <p class="ranking-lede" set:html={linkify(para)} />)}</div>
       {
         botw.episodes.length === 0 ? (
           <p class="empty">My 39 favorite Best of the Worst episodes are on their way.</p>
@@ -618,6 +631,7 @@ const nf = new Intl.NumberFormat('en-US');
 
     <section class="panel" role="region" id="panel-musician" aria-labelledby="tab-musician" tabindex="0" hidden>
       <GimmickPlay tab="musician" />
+      <LinksMenu id="musician-links" toggle="external" items={[{ links: musicianLinks }]} />
       <div class="story">
         <p>
           I've always been fascinated by creating music. But not only am I tone deaf, I also struggle with reading sheet music,
@@ -632,9 +646,6 @@ const nf = new Intl.NumberFormat('en-US');
           <i>World's End Dancehall</i>, <i>Two-Faced Lovers</i> and <i>Sweet Devil</i> on drums!
         </p>
         <p>Meanwhile, I can use AI to turn random, interesting ideas into fun songs!</p>
-        <ul class="pills">
-          {musicianLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
-        </ul>
       </div>
     </section>
 
@@ -803,11 +814,9 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-anime" aria-labelledby="tab-anime" tabindex="0" hidden>
+      <LinksMenu id="anime-links" toggle="external" items={[{ links: [{ href: MAL, label: 'My full list on MyAnimeList' }] }]} />
       <Ranking items={anime}>
-        <div class="list-head">
-          <p class="ranking-lede">My top 39 favorite anime, ranked, and what each one means to me.</p>
-          <a class="list-link" href={MAL}>My full list on MyAnimeList</a>
-        </div>
+        <p class="ranking-lede">My top 39 favorite anime, ranked, and what each one means to me.</p>
       </Ranking>
     </section>
 
@@ -1052,16 +1061,6 @@ const nf = new Intl.NumberFormat('en-US');
   .gamer-foot { margin: 1.25rem 0 0; font-size: var(--step--1); color: var(--muted); }
   .gamer-foot--more { margin-top: 0.35rem; }
   #panel-gamer { --hbc-heading-font: var(--font-display); --days-heading-font: var(--font-display); }
-  .list-link {
-    display: inline-block;
-    padding: 0.35rem 1rem;
-    border: 1px solid rgba(57, 197, 187, 0.55);
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  .list-link:hover { background: rgba(57, 197, 187, 0.14); }
 
   .empty { color: var(--muted); }
   .switch {
@@ -1090,7 +1089,7 @@ const nf = new Intl.NumberFormat('en-US');
     background: var(--teal);
     box-shadow: 0 0 18px rgba(57, 197, 187, 0.35);
   }
-  .botw-intro { max-width: var(--measure); }
+  .botw-intro { max-width: var(--measure); margin-bottom: 1.5rem; }
   .botw-intro .ranking-lede { margin-bottom: 0; }
   .botw-intro .ranking-lede + .ranking-lede { margin-top: 0.75rem; }
   .botw { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; counter-reset: botw; }
