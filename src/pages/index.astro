@@ -322,11 +322,13 @@ const nf = new Intl.NumberFormat('en-US');
     </nav>
 
     <div class="facet-head" id="facet-head" hidden>
-      <nav class="crumbs" aria-label="Breadcrumb"><ol></ol></nav>
       <div class="facet-head__row">
-        <h3 class="facet-head__title" aria-live="polite"><span class="facet-head__icon" aria-hidden="true"></span> <span class="facet-head__label"></span></h3>
-        <!-- ▶ Play and Links show on every tab (#262), disabled when the tab has nothing for them. On phones they sit in a row
-             under the title, half the width each. -->
+        <!-- The breadcrumb is the visible title (#264); its last item is the open tab or branch. -->
+        <nav class="crumbs" aria-label="Breadcrumb"><ol></ol></nav>
+        <!-- Kept for screen readers and the page outline only: on screen it would repeat the breadcrumb's last item (#264). -->
+        <h3 class="facet-head__title sr-only" aria-live="polite"><span class="facet-head__icon" aria-hidden="true"></span> <span class="facet-head__label"></span></h3>
+        <!-- ▶ Play and Links show on every tab (#262), disabled when the tab has nothing for them. On desktop they sit at the
+             right end of the breadcrumb's row; on phones, in a row under it, half the width each. -->
         <div class="facet-head__actions" hidden>
         <!-- ▶ Play: opens the tab's gimmick (src/lib/gimmicks.ts) in a FastTab under the title (GimmickPlay.astro). -->
         <button type="button" class="facet-head__play" aria-expanded="false" disabled>
@@ -974,13 +976,13 @@ const nf = new Intl.NumberFormat('en-US');
 
   .facet-head { scroll-margin-top: 6rem; padding: clamp(1.25rem, 3vw, 2.25rem) clamp(1.25rem, 3vw, 2.25rem) 0; border-top: 1px solid rgba(57, 197, 187, 0.2); }
   .facet-head[hidden], .facet-head [hidden] { display: none; }
-  .crumbs ol { list-style: none; display: flex; flex-wrap: wrap; align-items: center; margin: 0; padding: 0; color: var(--muted); font-size: var(--step--1); }
+  .crumbs { flex: 1 1 auto; min-width: 0; }
+  .crumbs ol { list-style: none; display: flex; flex-wrap: wrap; align-items: center; margin: 0; padding: 0; color: var(--muted); font-size: var(--step-1); }
   .crumbs :global(li + li)::before { content: '›'; padding: 0 0.35rem; }
   .crumbs :global(button) { min-height: 44px; padding: 0 0.25rem; background: none; border: 0; color: var(--muted); font: inherit; cursor: pointer; }
   .crumbs :global(button:hover) { color: var(--text); text-decoration: underline; }
   .crumbs :global(button:focus-visible) { outline: 2px solid var(--teal); outline-offset: 2px; border-radius: 6px; }
-  .crumbs :global([aria-current]) { color: var(--text); font-weight: 700; }
-  .facet-head__title { margin: 0.1rem 0 0; font-size: var(--step-2); color: var(--text); }
+  .crumbs :global([aria-current]) { color: var(--text); font-family: var(--font-display); font-weight: 800; }
   .facet-head__row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.1rem; }
   .facet-head__play {
     display: inline-flex;
@@ -998,14 +1000,14 @@ const nf = new Intl.NumberFormat('en-US');
     font-weight: 700;
     cursor: pointer;
   }
-  .facet-head__actions { display: flex; flex-wrap: wrap; gap: 0.6rem 1.1rem; }
+  .facet-head__actions { display: flex; flex-wrap: wrap; gap: 0.6rem 1.1rem; margin-inline-start: auto; }
   .facet-head__play:hover:not(:disabled) { background: rgba(57, 197, 187, 0.14); }
   .facet-head__play:disabled { opacity: 0.4; cursor: not-allowed; }
   .facet-head__play:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
   .facet-head__play[aria-expanded='true'] { background: var(--teal); color: var(--bg, #070b1f); }
   .facet-head__play .facet-head__hide-icon, .facet-head__play[aria-expanded='true'] .facet-head__play-icon { display: none; }
   .facet-head__play[aria-expanded='true'] .facet-head__hide-icon { display: inline; }
-  /* Phones: Play and Links in a row under the title, each centred in half the header's width (#262). */
+  /* Phones: Play and Links in a row under the breadcrumb, each centred in half the header's width (#262). */
   @media (max-width: 640px) {
     .facet-head__actions { flex: 1 0 100%; display: grid; grid-template-columns: 1fr 1fr; justify-items: center; gap: 0.6rem; }
     .facet-head__actions[hidden] { display: none; }
