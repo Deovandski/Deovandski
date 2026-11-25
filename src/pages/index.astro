@@ -72,6 +72,15 @@ const vrakiLinks: LinkItem[] = [
   { href: 'https://deovandski.github.io/vraki-windows/', label: 'Writing System' },
 ];
 
+// D&D tab's Links box (#270).
+const dndLinks: LinkItem[] = [{ href: 'https://deovandski.github.io/Vraki-West-March-Campaign-D-D/', label: 'Vraki West March D&D' }];
+
+// Lust tab's Links box (#270).
+const lustLinks: LinkItem[] = [
+  { href: 'https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027', label: 'Read my Vol 4 afterword' },
+  { href: 'https://www.husbandoutworld.com/blog/', label: '#HusbandOutWorld Blog' },
+];
+
 // PM tab: my public GitHub Projects boards (https://github.com/Deovandski?tab=projects).
 const boards = [
   {
@@ -567,6 +576,7 @@ const nf = new Intl.NumberFormat('en-US');
 
     <section class="panel" role="region" id="panel-dnd" aria-labelledby="tab-dnd" tabindex="0" hidden>
       <GimmickPlay tab="dnd" />
+      <LinksMenu id="dnd-links" toggle="external" items={[{ links: dndLinks }]} />
       <Sections data={dnd} id="dnd" slots={1} empty="D&D adventures are on their way." photoAlt={(t) => `Party art for D&D ${t}`} />
     </section>
 
@@ -858,6 +868,7 @@ const nf = new Intl.NumberFormat('en-US');
 
     <section class="panel" role="region" id="panel-lust" aria-labelledby="tab-lust" tabindex="0" hidden>
       <GimmickPlay tab="lust" />
+      <LinksMenu id="lust-links" toggle="external" items={[{ links: lustLinks }]} />
       <LustFacet />
     </section>
   </div>
@@ -1093,11 +1104,14 @@ const nf = new Intl.NumberFormat('en-US');
   #panel-gamer { --hbc-heading-font: var(--font-display); --days-heading-font: var(--font-display); }
 
   .empty { color: var(--muted); }
+  /* In-tab switches (PM | Life hacks, Seen live | Wishlist, TV shows | Movies) sit centred in the tab (#270). */
   .switch {
-    display: inline-flex;
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
     gap: 0.25rem;
     padding: 0.25rem;
-    margin-bottom: 1.5rem;
+    margin: 0 auto 1.5rem;
     border: 1px solid rgba(57, 197, 187, 0.35);
     border-radius: 999px;
     background: rgba(7, 11, 31, 0.55);
