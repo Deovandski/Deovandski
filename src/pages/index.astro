@@ -25,6 +25,7 @@ import CartridgeShelf from '../components/reusable/CartridgeShelf.astro';
 import LinksMenu from '../components/reusable/LinksMenu.astro';
 import Breadcrumb from '../components/reusable/Breadcrumb.astro';
 import SourceList from '../components/reusable/SourceList.astro';
+import PillSwitch from '../components/reusable/PillSwitch.astro';
 import { Content as DeathSources } from '../../content/death-sources.md';
 import { Content as MentorSources } from '../../content/mentor-sources.md';
 import YouTube from '../components/YouTube.astro';
@@ -420,10 +421,13 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-pm" aria-labelledby="tab-pm" tabindex="0" hidden>
-      <div class="switch" role="tablist" aria-label="PM or life hacks">
-        <button type="button" role="tab" id="pm-tab-pm" aria-controls="pm-pm" aria-selected="true" data-switch-hash="#pm">📋 PM</button>
-        <button type="button" role="tab" id="pm-tab-hacks" aria-controls="pm-hacks" aria-selected="false" tabindex="-1" data-switch-hash="#life-hacks">💡 Life hacks</button>
-      </div>
+      <PillSwitch
+        label="PM or life hacks"
+        options={[
+          { id: 'pm-tab-pm', controls: 'pm-pm', label: '📋 PM', hash: '#pm' },
+          { id: 'pm-tab-hacks', controls: 'pm-hacks', label: '💡 Life hacks', hash: '#life-hacks' },
+        ]}
+      />
       <div id="pm-pm" role="tabpanel" aria-labelledby="pm-tab-pm">
       <div class="story">
         <p>
@@ -697,10 +701,13 @@ const nf = new Intl.NumberFormat('en-US');
       <GimmickPlay tab="concert">
         <p slot="intro">Saturday Night Fever, King of Hues edition.</p>
       </GimmickPlay>
-      <div class="switch" role="tablist" aria-label="Seen live or wishlist">
-        <button type="button" role="tab" id="concert-tab-seen" aria-controls="concert-seen" aria-selected="true" data-switch-hash="#concert">🤘 Seen live</button>
-        <button type="button" role="tab" id="concert-tab-wishlist" aria-controls="concert-wishlist" aria-selected="false" tabindex="-1" data-switch-hash="#concert-wishlist">📝 Wishlist</button>
-      </div>
+      <PillSwitch
+        label="Seen live or wishlist"
+        options={[
+          { id: 'concert-tab-seen', controls: 'concert-seen', label: '🤘 Seen live', hash: '#concert' },
+          { id: 'concert-tab-wishlist', controls: 'concert-wishlist', label: '📝 Wishlist', hash: '#concert-wishlist' },
+        ]}
+      />
       <div id="concert-seen" role="tabpanel" aria-labelledby="concert-tab-seen">
         <Sections data={concerts} id="concert" layout="cards" sortAlpha avatarsDir="content/concerts/bands" photoAlt={(t) => `At ${t}`} />
       </div>
@@ -710,10 +717,13 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-theater" aria-labelledby="tab-theater" tabindex="0" hidden>
-      <div class="switch" role="tablist" aria-label="Seen live or wishlist">
-        <button type="button" role="tab" id="theater-tab-seen" aria-controls="theater-seen" aria-selected="true" data-switch-hash="#theater">🎭 Seen live</button>
-        <button type="button" role="tab" id="theater-tab-wishlist" aria-controls="theater-wishlist" aria-selected="false" tabindex="-1" data-switch-hash="#theater-wishlist">📝 Wishlist</button>
-      </div>
+      <PillSwitch
+        label="Seen live or wishlist"
+        options={[
+          { id: 'theater-tab-seen', controls: 'theater-seen', label: '🎭 Seen live', hash: '#theater' },
+          { id: 'theater-tab-wishlist', controls: 'theater-wishlist', label: '📝 Wishlist', hash: '#theater-wishlist' },
+        ]}
+      />
       <div id="theater-seen" role="tabpanel" aria-labelledby="theater-tab-seen">
         <Sections data={theater} id="theater" layout="cards" sortAlpha avatarsDir="content/theater/shows" photoAlt={(t) => `At ${t}`} />
       </div>
@@ -845,10 +855,13 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-potato" aria-labelledby="tab-potato" tabindex="0" hidden>
-      <div class="switch" role="tablist" aria-label="TV shows or movies">
-        <button type="button" role="tab" id="potato-tab-tv" aria-controls="potato-tv" aria-selected="true" data-switch-hash="#potato">📺 TV shows</button>
-        <button type="button" role="tab" id="potato-tab-movies" aria-controls="potato-movies" aria-selected="false" tabindex="-1" data-switch-hash="#potato-movies">🎬 Movies</button>
-      </div>
+      <PillSwitch
+        label="TV shows or movies"
+        options={[
+          { id: 'potato-tab-tv', controls: 'potato-tv', label: '📺 TV shows', hash: '#potato' },
+          { id: 'potato-tab-movies', controls: 'potato-movies', label: '🎬 Movies', hash: '#potato-movies' },
+        ]}
+      />
       <div id="potato-tv" role="tabpanel" aria-labelledby="potato-tab-tv">
         <Ranking items={tvShows}>
           <p class="ranking-lede">My top 39 TV shows. Anime gets its own tab because of how much it means to me.</p>
@@ -1104,35 +1117,8 @@ const nf = new Intl.NumberFormat('en-US');
   #panel-gamer { --hbc-heading-font: var(--font-display); --days-heading-font: var(--font-display); }
 
   .empty { color: var(--muted); }
-  /* In-tab switches (PM | Life hacks, Seen live | Wishlist, TV shows | Movies) sit centred in the tab (#270). */
-  .switch {
-    display: flex;
-    width: fit-content;
-    max-width: 100%;
-    gap: 0.25rem;
-    padding: 0.25rem;
-    margin: 0 auto 1.5rem;
-    border: 1px solid rgba(57, 197, 187, 0.35);
-    border-radius: 999px;
-    background: rgba(7, 11, 31, 0.55);
-  }
-  .switch button {
-    font-family: var(--font-display);
-    font-weight: 800;
-    font-size: var(--step-0);
-    color: var(--silver);
-    background: transparent;
-    border: 0;
-    border-radius: 999px;
-    padding: 0.45rem 1.1rem;
-    cursor: pointer;
-  }
-  .switch button:hover { color: var(--text); }
-  .switch button[aria-selected='true'] {
-    color: var(--night);
-    background: var(--teal);
-    box-shadow: 0 0 18px rgba(57, 197, 187, 0.35);
-  }
+  /* In-tab switches (PillSwitch): the site's display font. */
+  .panel { --switch-font: var(--font-display); --switch-size: var(--step-0); }
   .botw-intro { max-width: var(--measure); margin-bottom: 1.5rem; }
   .botw-intro .ranking-lede { margin-bottom: 0; }
   .botw-intro .ranking-lede + .ranking-lede { margin-top: 0.75rem; }
@@ -1551,31 +1537,13 @@ const nf = new Intl.NumberFormat('en-US');
     for (const f of b.facets) f.addEventListener('keydown', (e) => onKey(e, b.facets, () => b.button.focus()));
   }
 
-  // In-tab switches (Potato: TV shows | Movies, PM/Life hacks: PM | Life hacks, Concert and Theater & Opera: Seen live | Wishlist). Each button carries the
-  // link that opens it (data-switch-hash), e.g. #potato-movies or #concert-wishlist.
-  const switchButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-switch-hash]'));
-  function flip(button: HTMLButtonElement, updateHash = true) {
-    const group = Array.from(button.closest('.switch')!.querySelectorAll<HTMLButtonElement>('[data-switch-hash]'));
-    for (const b of group) {
-      const on = b === button;
-      b.setAttribute('aria-selected', String(on));
-      b.tabIndex = on ? 0 : -1;
-      document.getElementById(b.getAttribute('aria-controls')!)!.hidden = !on;
-    }
-    if (updateHash) history.replaceState(history.state, '', button.dataset.switchHash); // keeps the tab's back entry
-  }
-  for (const b of switchButtons) {
-    b.addEventListener('click', () => flip(b));
-    b.addEventListener('keydown', (e) => {
-      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-      e.preventDefault();
-      e.stopPropagation();
-      const group = Array.from(b.closest('.switch')!.querySelectorAll<HTMLButtonElement>('[data-switch-hash]'));
-      const next = group[(group.indexOf(b) + (e.key === 'ArrowRight' ? 1 : -1) + group.length) % group.length];
-      flip(next);
-      next.focus();
-    });
-  }
+  // In-tab switches (PillSwitch: Potato, PM/Life hacks, Concert, Theater & Opera). Each option carries the link that
+  // opens it (data-switch-hash), e.g. #potato-movies; picking one puts that link in the address bar.
+  const switchButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-pill-switch] [data-switch-hash]'));
+  document.addEventListener('switch:change', (e) => {
+    const { hash, source } = (e as CustomEvent<{ hash?: string; source: string }>).detail;
+    if (source === 'user' && hash) history.replaceState(history.state, '', hash); // keeps the tab's back entry
+  });
 
   // Old links: #weeb is now #anime, #drummer is now #musician; #sex is now #lust; #tv and #movie (the old TV/Movie Potato tabs) open the Potato switch.
   const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies', '#cat': '#pets-peeta', '#sex': '#lust', '#drummer': '#musician' };
@@ -1599,7 +1567,7 @@ const nf = new Intl.NumberFormat('en-US');
     );
     if (!facet) return false;
     openFacetFrom(facet, 'hash');
-    if (switchButton) flip(switchButton, false);
+    if (switchButton) document.dispatchEvent(new CustomEvent('switch:select', { detail: { hash } }));
     return true;
   }
   // #qr is the hidden QR Code page's short link: deovandski.com/#qr → /qr/.

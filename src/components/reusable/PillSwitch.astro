@@ -1,0 +1,139 @@
+---
+/**
+ * PillSwitch: a pill-shaped switch between two (or more) views of the same place, like "📺 TV shows | 🎬 Movies".
+ * Pressing an option shows its panel and hides the others. It sits centred in its container. Built from the home
+ * page's in-tab switches (Potato, PM/Life hacks, Concert, Theater & Opera; #270, #272).
+ *
+ *   <PillSwitch
+ *     label="TV shows or movies"
+ *     options={[
+ *       { id: 'potato-tab-tv', controls: 'potato-tv', label: '📺 TV shows', hash: '#potato' },
+ *       { id: 'potato-tab-movies', controls: 'potato-movies', label: '🎬 Movies', hash: '#potato-movies' },
+ *     ]}
+ *   />
+ *   <div id="potato-tv" role="tabpanel" aria-labelledby="potato-tab-tv">…</div>
+ *   <div id="potato-movies" role="tabpanel" aria-labelledby="potato-tab-movies" hidden>…</div>
+ *
+ * The panels are yours: give each the id in its option's `controls`, and `hidden` on all but the selected one.
+ *
+ * Props:
+ *   label     the switch's name for screen readers.
+ *   options   [{ id, controls, label, hash? }] in order. id: the button's id. controls: its panel's id.
+ *             label: the button's text. hash: an optional link that should open this option (e.g. '#potato-movies').
+ *   selected  the index of the option shown first. Default 0.
+ *
+ * Events:
+ *   switch:change  fired on the switch (it bubbles) when an option is picked: detail { id, hash, source }, where
+ *                  source is 'user' (a press or an arrow key) or 'script'. A page can put `hash` in the address bar.
+ *   switch:select  dispatch it on document with detail { hash } or { id } to pick an option from a script, e.g.
+ *                  when a link like #potato-movies opens the page.
+ * Keyboard: ← → move between options (mirrored right to left), Home and End jump to the ends.
+ *
+ * Theme with CSS custom properties on any parent: --switch-accent (#39c5bb), --switch-surface (rgba(7, 11, 31, 0.55)),
+ * --switch-text (#bec8d1), --switch-text-hover (#e6edf3), --switch-on-text (#070b1f), --switch-font (inherit), --switch-size (1rem).
+ * Reusable on purpose: no imports, safe to use several times on a page.
+ */
+interface Option { id: string; controls: string; label: string; hash?: string }
+interface Props { label: string; options: Option[]; selected?: number }
+const { label, options, selected = 0 } = Astro.props;
+---
+
+<div class="pill-switch" role="tablist" aria-label={label} data-pill-switch>
+  {
+    options.map((o, i) => (
+      <button
+        type="button"
+        role="tab"
+        id={o.id}
+        aria-controls={o.controls}
+        aria-selected={String(i === selected)}
+        tabindex={i === selected ? undefined : -1}
+        data-switch-hash={o.hash}
+      >
+        {o.label}
+      </button>
+    ))
+  }
+</div>
+
+<style>
+  .pill-switch {
+    --_accent: var(--switch-accent, #39c5bb);
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
+    gap: 0.25rem;
+    padding: 0.25rem;
+    margin: 0 auto 1.5rem;
+    border: 1px solid color-mix(in srgb, var(--_accent) 35%, transparent);
+    border-radius: 999px;
+    background: var(--switch-surface, rgba(7, 11, 31, 0.55));
+  }
+  .pill-switch button {
+    font-family: var(--switch-font, inherit);
+    font-weight: 800;
+    font-size: var(--switch-size, 1rem);
+    color: var(--switch-text, #bec8d1);
+    background: transparent;
+    border: 0;
+    border-radius: 999px;
+    padding: 0.45rem 1.1rem;
+    cursor: pointer;
+  }
+  .pill-switch button:hover { color: var(--switch-text-hover, #e6edf3); }
+  .pill-switch button:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+  .pill-switch button[aria-selected='true'] {
+    color: var(--switch-on-text, #070b1f);
+    background: var(--_accent);
+    box-shadow: 0 0 18px color-mix(in srgb, var(--_accent) 35%, transparent);
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .pill-switch button { transition: background-color 0.15s, color 0.15s; }
+  }
+</style>
+
+<script>
+  function select(button: HTMLButtonElement, source: 'user' | 'script', focus = false) {
+    const root = button.closest<HTMLElement>('[data-pill-switch]')!;
+    for (const b of root.querySelectorAll<HTMLButtonElement>('[role="tab"]')) {
+      const on = b === button;
+      b.setAttribute('aria-selected', String(on));
+      b.tabIndex = on ? 0 : -1;
+      const panel = document.getElementById(b.getAttribute('aria-controls') ?? '');
+      if (panel) panel.hidden = !on;
+    }
+    if (focus) button.focus();
+    root.dispatchEvent(new CustomEvent('switch:change', { bubbles: true, detail: { id: button.id, hash: button.dataset.switchHash, source } }));
+  }
+
+  function init(root: HTMLElement) {
+    if (root.dataset.switchReady) return;
+    root.dataset.switchReady = '1';
+    const tabs = () => Array.from(root.querySelectorAll<HTMLButtonElement>('[role="tab"]'));
+    for (const b of tabs()) {
+      b.addEventListener('click', () => select(b, 'user'));
+      b.addEventListener('keydown', (e) => {
+        const all = tabs();
+        const rtl = getComputedStyle(root).direction === 'rtl';
+        const step = { ArrowRight: rtl ? -1 : 1, ArrowLeft: rtl ? 1 : -1 }[e.key];
+        let next: HTMLButtonElement | undefined;
+        if (step) next = all[(all.indexOf(b) + step + all.length) % all.length];
+        else if (e.key === 'Home') next = all[0];
+        else if (e.key === 'End') next = all[all.length - 1];
+        if (!next) return;
+        e.preventDefault();
+        e.stopPropagation(); // the page's own arrow-key handlers stay out of it
+        select(next, 'user', true);
+      });
+    }
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-pill-switch]').forEach(init);
+  document.addEventListener('switch:select', (e) => {
+    const { hash, id } = (e as CustomEvent<{ hash?: string; id?: string }>).detail ?? {};
+    const button = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-pill-switch] [role="tab"]')).find(
+      (b) => (hash && b.dataset.switchHash === hash) || (id && b.id === id),
+    );
+    if (button) select(button, 'script');
+  });
+</script>
