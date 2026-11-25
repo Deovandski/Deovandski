@@ -94,6 +94,8 @@ interface Props {
   views?: { id: string; label: string }[];
   viewsLabel?: string;
   barsLabel?: string;
+  /** The view shown first (a `views` id, or "bars"). Without JavaScript the bars always show. */
+  defaultView?: string;
   /** BCP 47 locale for the numbers. */
   locale?: string;
   class?: string;
@@ -123,6 +125,7 @@ const {
   views = [],
   viewsLabel = 'See it as',
   barsLabel = 'Bars',
+  defaultView = 'bars',
   locale = 'en-US',
   class: className,
 } = Astro.props;
@@ -211,7 +214,7 @@ const rows = sorted.map((c) => {
       <h3 class="hbc__rollup-title">{rollupTitle}</h3>
       {
         viewPanels.length > 0 && (
-          <div class="hbc__views" role="group" aria-label={viewsLabel} data-hbc-views hidden>
+          <div class="hbc__views" role="group" aria-label={viewsLabel} data-hbc-views data-default={defaultView} hidden>
             <span class="hbc__views-label" aria-hidden="true">{viewsLabel}</span>
             <button type="button" class="hbc__view-btn" aria-pressed="true" data-hbc-view-btn="bars">
               {barsLabel}
@@ -349,16 +352,17 @@ const rows = sorted.map((c) => {
       if (switcher) {
         switcher.hidden = false;
         const btns = [...switcher.querySelectorAll<HTMLButtonElement>('[data-hbc-view-btn]')];
-        btns.forEach((btn) =>
-          btn.addEventListener('click', () => {
-            const id = btn.dataset.hbcViewBtn;
-            btns.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
-            root.querySelectorAll<HTMLElement>('[data-hbc-view]').forEach((p) => {
-              p.hidden = p.dataset.hbcView !== id;
-              if (!p.hidden) p.dispatchEvent(new CustomEvent('hours:shown', { bubbles: false }));
-            });
-          }),
-        );
+        const show = (btn: HTMLButtonElement) => {
+          const id = btn.dataset.hbcViewBtn;
+          btns.forEach((b) => b.setAttribute('aria-pressed', String(b === btn)));
+          root.querySelectorAll<HTMLElement>('[data-hbc-view]').forEach((p) => {
+            p.hidden = p.dataset.hbcView !== id;
+            if (!p.hidden) p.dispatchEvent(new CustomEvent('hours:shown', { bubbles: false }));
+          });
+        };
+        btns.forEach((btn) => btn.addEventListener('click', () => show(btn)));
+        const first = btns.find((b) => b.dataset.hbcViewBtn === switcher.dataset.default);
+        if (first) show(first);
       }
       root.querySelectorAll<HTMLElement>('[data-hbc-card]').forEach((card) => {
         const btn = card.querySelector<HTMLButtonElement>('[data-hbc-more]');

@@ -43,22 +43,29 @@ import FacetMilestoneEggs from '../components/FacetMilestoneEggs.astro';
 
 type LinkItem = { href: string; label: string };
 
+// Dev tab's Links box: the main links, then "Dev History".
 const devLinks: LinkItem[] = [
-  { href: 'https://www.wizarddeosolutions.com/', label: 'Wizard Deo Solutions' },
+  { href: 'https://www.wizarddeosolutions.com/', label: 'WDS' },
   { href: 'https://www.linkedin.com/in/deovandski/', label: 'LinkedIn' },
   { href: 'https://github.com/Deovandski', label: 'GitHub' },
-  { href: 'https://deovandski.github.io/Deo-s-Framework16-LED-Matrix-Manager/', label: 'Framework 16 LED Matrix Manager' },
+];
+const devHistoryLinks: LinkItem[] = [
+  { href: 'https://deovandski.github.io/Deo-s-Framework16-LED-Matrix-Manager/', label: 'F16 LED Matrix Mgr' },
   { href: 'https://stackoverflow.com/users/4830578/deovandski', label: 'StackOverflow' },
-  { href: 'https://stoneridgesoftware.com/author/deovandskis/', label: 'My Stoneridge Software posts' },
+  { href: 'https://stoneridgesoftware.com/author/deovandskis/', label: 'Stoneridge Software posts' },
+  { href: 'https://www.linkedin.com/in/deovandski/details/honors/', label: 'SCHEELS Laurel Wreath Award' },
 ];
 
 const musicianLinks: LinkItem[] = [{ href: 'https://suno.com/@deovandski', label: 'My Suno songs' }];
 
+// Author tab's Links box: the main links, then "Vraki Related".
 const authorLinks: LinkItem[] = [
   { href: 'https://www.husbandoutworld.com/', label: '#HusbandOutWorld Series' },
-  { href: 'https://deovandski.github.io/Vraki-West-March-Campaign-D-D/', label: 'Vraki West March D&D Campaign' },
-  { href: 'https://deovandski.github.io/vraki-windows/', label: 'Vraki Writing System' },
   { href: 'https://www.husbandoutworld.com/blog/', label: 'Blog' },
+];
+const vrakiLinks: LinkItem[] = [
+  { href: 'https://deovandski.github.io/Vraki-West-March-Campaign-D-D/', label: 'West March D&D Campaign' },
+  { href: 'https://deovandski.github.io/vraki-windows/', label: 'Writing System' },
 ];
 
 // PM tab: my public GitHub Projects boards (https://github.com/Deovandski?tab=projects).
@@ -324,6 +331,12 @@ const nf = new Intl.NumberFormat('en-US');
           <svg class="facet-head__hide-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 10.5l5-5 5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           <span class="facet-head__play-label">Play</span>
         </button>
+        <!-- Links: shown on tabs with a links box (a LinksMenu with toggle="external" at the top of the tab's panel), right of ▶ Play. See "Tab links" in CLAUDE.md. -->
+        <button type="button" class="facet-head__play facet-head__links" aria-expanded="false" hidden>
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 9.5l3-3M7 4.5l1-1a2.8 2.8 0 0 1 4 4l-1 1M9 11.5l-1 1a2.8 2.8 0 0 1-4-4l1-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>
+          <span>Links</span>
+          <svg class="facet-head__links-chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5l3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
       </div>
       <p class="facet-head__blurb" hidden></p>
       <div class="facet-head__chips" hidden></div>
@@ -335,6 +348,11 @@ const nf = new Intl.NumberFormat('en-US');
     <span hidden class="i18n-shared" data-count-one>1 facet</span>
 
     <section class="panel" role="region" id="panel-dev" aria-labelledby="tab-dev" tabindex="0" hidden>
+      <LinksMenu
+        id="dev-links"
+        toggle="external"
+        items={[{ links: devLinks }, { separator: 'Dev History' }, { style: 'secondary', links: devHistoryLinks }]}
+      />
       <div class="story">
         <p class="dev-headline">
           Senior Software Engineer, Dynamics 365 F&amp;O Architect, and Founder &amp; CEO of Wizard Deo Solutions.
@@ -352,13 +370,15 @@ const nf = new Intl.NumberFormat('en-US');
           GitHub only has a fraction of my code because of NDAs, but I'm proud of the LED Matrix Manager I cooked up for
           Framework 16 users. StackOverflow? Haven't used it in a long, long while. Times have changed, and it's fun and weird!
         </p>
-        <ul class="pills">
-          {devLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
-        </ul>
       </div>
     </section>
 
     <section class="panel" role="region" id="panel-author" aria-labelledby="tab-author" tabindex="0" hidden>
+      <LinksMenu
+        id="author-links"
+        toggle="external"
+        items={[{ links: authorLinks }, { separator: 'Vraki Related' }, { style: 'secondary', links: vrakiLinks }]}
+      />
       <div class="story">
         <p>
           Yep. As crazy as it sounds, I'm also an author! It all started with the Vraki Writing System, such a cornerstone
@@ -374,9 +394,6 @@ const nf = new Intl.NumberFormat('en-US');
           raspberry jelly together and created a West March D&amp;D campaign with Claude so people can party in my world.
           Found an issue or have an idea? Open an issue or send a PR on GitHub!
         </p>
-        <ul class="pills">
-          {authorLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
-        </ul>
       </div>
     </section>
 
@@ -469,14 +486,12 @@ const nf = new Intl.NumberFormat('en-US');
       <GimmickPlay tab="influencer">
         <p slot="intro">Want a taste of the treadmill? Post away. Each post costs one energy bar, and one bar refills every second. Open “Under the hood” to see which trick is working on you as it happens.</p>
       </GimmickPlay>
+      <LinksMenu id="influencer-links" toggle="external" items={[{ links: influencerLinks }]} />
       <div class="story">
       <p>
         I was very active back in the day, getting ~15 million views… Focus on <em>was</em>, for there’s nothing left of it.
         Only an empty YT, my Steam and MyAnimeList profiles, and my LinkedIn, which remains active.
       </p>
-      <ul class="pills influencer-links">
-        {influencerLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
-      </ul>
       <p>
         And as to why? Read my <a href="https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027">#HusbandOutWorld Vol 4 afterword</a>.
       </p>
@@ -541,10 +556,8 @@ const nf = new Intl.NumberFormat('en-US');
 
     <section class="panel" role="region" id="panel-botw" aria-labelledby="tab-botw" tabindex="0" hidden>
       <GimmickPlay tab="botw" />
-      <div class="list-head">
-        <div class="botw-intro">{botw.intro.map((para) => <p class="ranking-lede" set:html={linkify(para)} />)}</div>
-        <a class="list-link" href="https://www.youtube.com/@RedLetterMedia">Red Letter Media on YouTube</a>
-      </div>
+      <LinksMenu id="botw-links" toggle="external" items={[{ links: [{ href: 'https://www.youtube.com/@RedLetterMedia', label: 'Red Letter Media on YouTube' }] }]} />
+      <div class="botw-intro">{botw.intro.map((para) => <p class="ranking-lede" set:html={linkify(para)} />)}</div>
       {
         botw.episodes.length === 0 ? (
           <p class="empty">My 39 favorite Best of the Worst episodes are on their way.</p>
@@ -616,6 +629,7 @@ const nf = new Intl.NumberFormat('en-US');
 
     <section class="panel" role="region" id="panel-musician" aria-labelledby="tab-musician" tabindex="0" hidden>
       <GimmickPlay tab="musician" />
+      <LinksMenu id="musician-links" toggle="external" items={[{ links: musicianLinks }]} />
       <div class="story">
         <p>
           I've always been fascinated by creating music. But not only am I tone deaf, I also struggle with reading sheet music,
@@ -630,9 +644,6 @@ const nf = new Intl.NumberFormat('en-US');
           <i>World's End Dancehall</i>, <i>Two-Faced Lovers</i> and <i>Sweet Devil</i> on drums!
         </p>
         <p>Meanwhile, I can use AI to turn random, interesting ideas into fun songs!</p>
-        <ul class="pills">
-          {musicianLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
-        </ul>
       </div>
     </section>
 
@@ -689,22 +700,29 @@ const nf = new Intl.NumberFormat('en-US');
       <GimmickPlay tab="gamer">
         <p slot="intro">You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it&apos;s still in the air) and take it down before you run dry.</p>
       </GimmickPlay>
+      <LinksMenu
+        id="gamer-links"
+        toggle="external"
+        items={[
+          {
+            links: [
+              { href: STEAM, label: 'My profile on Steam' },
+              { href: XBOX, label: 'My profile on Xbox' },
+            ],
+          },
+          { separator: 'Third party trackers' },
+          {
+            style: 'secondary',
+            links: [
+              { href: 'https://www.truetrophies.com/gamer/Deovandski', label: 'TrueTrophies' },
+              { href: 'https://truesteamachievements.com/gamer/Deovandski', label: 'TrueSteamAchievements' },
+              { href: 'https://www.trueachievements.com/gamer/deovandski', label: 'TrueAchievements' },
+            ],
+          },
+        ]}
+      />
       <div class="list-head gamer-head">
         <div class="gamer-intro">{gamer.intro.map((para) => <p class="ranking-lede">{para}</p>)}</div>
-        <LinksMenu
-          id="gamer-links"
-          label="Links"
-          primary={[
-            { href: STEAM, label: 'My profile on Steam' },
-            { href: XBOX, label: 'My profile on Xbox' },
-          ]}
-          dividerLabel="Third party trackers"
-          secondary={[
-            { href: 'https://www.truetrophies.com/gamer/Deovandski', label: 'TrueTrophies' },
-            { href: 'https://truesteamachievements.com/gamer/Deovandski', label: 'TrueSteamAchievements' },
-            { href: 'https://www.trueachievements.com/gamer/deovandski', label: 'TrueAchievements' },
-          ]}
-        />
       </div>
       <HoursByCategory
         id="gamer"
@@ -723,6 +741,7 @@ const nf = new Intl.NumberFormat('en-US');
         countLabelOne="1 game"
         chipColors={CHIP_COLORS}
         excludedByDefault
+        defaultView="sphere"
         views={[
           { id: 'pie', label: 'Pie' },
           { id: 'sphere', label: 'Sphere' },
@@ -793,11 +812,9 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-anime" aria-labelledby="tab-anime" tabindex="0" hidden>
+      <LinksMenu id="anime-links" toggle="external" items={[{ links: [{ href: MAL, label: 'My full list on MyAnimeList' }] }]} />
       <Ranking items={anime}>
-        <div class="list-head">
-          <p class="ranking-lede">My top 39 favorite anime, ranked, and what each one means to me.</p>
-          <a class="list-link" href={MAL}>My full list on MyAnimeList</a>
-        </div>
+        <p class="ranking-lede">My top 39 favorite anime, ranked, and what each one means to me.</p>
       </Ranking>
     </section>
 
@@ -980,6 +997,9 @@ const nf = new Intl.NumberFormat('en-US');
   .facet-head__play[aria-expanded='true'] { background: var(--teal); color: var(--bg, #070b1f); }
   .facet-head__play .facet-head__hide-icon, .facet-head__play[aria-expanded='true'] .facet-head__play-icon { display: none; }
   .facet-head__play[aria-expanded='true'] .facet-head__hide-icon { display: inline; }
+  .facet-head__links-chevron { transition: transform 0.2s; }
+  .facet-head__links[aria-expanded='true'] .facet-head__links-chevron { transform: rotate(180deg); }
+  @media (prefers-reduced-motion: reduce) { .facet-head__links-chevron { transition: none; } }
   .facet-head__blurb { margin: 0.5rem 0 0; color: var(--muted); max-width: var(--measure); }
   .facet-head__chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.1rem; padding-bottom: clamp(1.25rem, 3vw, 2.25rem); }
   .facet-head__chips :global(button) {
@@ -1039,16 +1059,6 @@ const nf = new Intl.NumberFormat('en-US');
   .gamer-foot { margin: 1.25rem 0 0; font-size: var(--step--1); color: var(--muted); }
   .gamer-foot--more { margin-top: 0.35rem; }
   #panel-gamer { --hbc-heading-font: var(--font-display); --days-heading-font: var(--font-display); }
-  .list-link {
-    display: inline-block;
-    padding: 0.35rem 1rem;
-    border: 1px solid rgba(57, 197, 187, 0.55);
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 700;
-    white-space: nowrap;
-  }
-  .list-link:hover { background: rgba(57, 197, 187, 0.14); }
 
   .empty { color: var(--muted); }
   .switch {
@@ -1077,7 +1087,7 @@ const nf = new Intl.NumberFormat('en-US');
     background: var(--teal);
     box-shadow: 0 0 18px rgba(57, 197, 187, 0.35);
   }
-  .botw-intro { max-width: var(--measure); }
+  .botw-intro { max-width: var(--measure); margin-bottom: 1.5rem; }
   .botw-intro .ranking-lede { margin-bottom: 0; }
   .botw-intro .ranking-lede + .ranking-lede { margin-top: 0.75rem; }
   .botw { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.6rem; counter-reset: botw; }
@@ -1125,7 +1135,6 @@ const nf = new Intl.NumberFormat('en-US');
   .pm-photo { margin: 1.5rem 0; max-width: 560px; }
   .pm-photo img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(190, 200, 209, 0.15); }
   .pm-photo figcaption { margin-top: 0.5rem; text-align: center; color: var(--muted); font-size: var(--step--1); }
-  .influencer-links { margin: 0 0 1.25rem; }
   .influencer-q { font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); line-height: 1.3; color: var(--teal); margin-top: 1.75rem; }
   .influencer-shot { margin: 1rem auto 1.5rem; max-width: 320px; }
   .influencer-shot img { display: block; width: 100%; height: auto; border-radius: 16px; border: 1px solid rgba(190, 200, 209, 0.15); }
@@ -1212,6 +1221,7 @@ const nf = new Intl.NumberFormat('en-US');
   const headChips = head.querySelector<HTMLElement>('.facet-head__chips')!;
   const playButton = head.querySelector<HTMLButtonElement>('.facet-head__play')!;
   const playLabel = playButton.querySelector('.facet-head__play-label')!;
+  const linksButton = head.querySelector<HTMLButtonElement>('.facet-head__links')!;
   const phone = window.matchMedia('(max-width: 640px)');
   const panelOf = (f: HTMLButtonElement) => document.getElementById(f.getAttribute('aria-controls')!)!;
   const labelOf = (b: HTMLButtonElement) => b.querySelector('.tree__label')!.textContent!.trim();
@@ -1306,7 +1316,10 @@ const nf = new Intl.NumberFormat('en-US');
 
   function setFacet(f: HTMLButtonElement | null) {
     // Gimmicks start closed on every visit to a tab.
-    if (f !== openFacet) document.dispatchEvent(new CustomEvent('gimmick:close', { detail: {} }));
+    if (f !== openFacet) {
+      document.dispatchEvent(new CustomEvent('gimmick:close', { detail: {} }));
+      document.dispatchEvent(new CustomEvent('links:close', { detail: {} }));
+    }
     for (const x of allFacets) {
       x.setAttribute('aria-pressed', String(x === f));
       panelOf(x).hidden = x !== f;
@@ -1376,6 +1389,14 @@ const nf = new Intl.NumberFormat('en-US');
       playButton.setAttribute('aria-controls', gimmick.id);
       setPlay(!gimmick.hidden);
     }
+    // Links for a tab with a links box (LinksMenu toggle="external"); it opens under the title like Play's box.
+    const links = openFacet ? panelOf(openFacet).querySelector<HTMLElement>('[data-links-panel]') : null;
+    linksButton.hidden = !links;
+    if (links) {
+      linksButton.dataset.linksToggle = links.id;
+      linksButton.setAttribute('aria-controls', links.id);
+      linksButton.setAttribute('aria-expanded', String(!links.hidden));
+    } else delete linksButton.dataset.linksToggle;
     headBlurb.textContent = openFacet ? '' : b.button.dataset.blurb ?? '';
     headChips.replaceChildren(
       ...(openFacet
@@ -1400,6 +1421,10 @@ const nf = new Intl.NumberFormat('en-US');
     const tab = playButton.dataset.tab;
     const open = playButton.getAttribute('aria-expanded') === 'true';
     document.dispatchEvent(new CustomEvent(open ? 'gimmick:close' : 'gimmick:open', { detail: { tab, immersive: true, returnFocus: true } }));
+  });
+  document.addEventListener('links:state', (e) => {
+    const { id, returnFocus } = (e as CustomEvent).detail;
+    if (id === linksButton.dataset.linksToggle && returnFocus && !linksButton.hidden) linksButton.focus();
   });
   document.addEventListener('gimmick:state', (e) => {
     const { tab, open, returnFocus } = (e as CustomEvent).detail;

@@ -459,10 +459,6 @@
   "en": "Reus",
   "t": "Reus"
  },
- "0e39786b50dd": {
-  "en": "Framework 16 LED Matrix Manager",
-  "t": "Framework 16 LED Matrix Manager"
- },
  "0e814bdf1998": {
   "en": "45 h",
   "t": "45 س"
@@ -554,6 +550,10 @@
  "10c5d043a58d": {
   "en": "A West Marches D&amp;D 5e campaign set in the world of #HusbandOutWorld.",
   "t": "حملة D&amp;D الإصدار الخامس بأسلوب West Marches، تدور في عالم #HusbandOutWorld."
+ },
+ "10da3638ec6c": {
+  "en": " Writing System ",
+  "t": "نظام الكتابة"
  },
  "110e6e5b19fc": {
   "en": " JC ",
@@ -1819,10 +1819,6 @@
   "en": "119 h",
   "t": "119 س"
  },
- "39b90d97a21e": {
-  "en": "My Stoneridge Software posts",
-  "t": "منشوراتي في Stoneridge Software"
- },
  "39bb4e26efd6": {
   "en": "Avowed",
   "t": "Avowed"
@@ -2067,6 +2063,10 @@
   "en": " 363 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "363 س  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">تقديري</span>"
  },
+ "42c3797fbacc": {
+  "en": " Stoneridge Software posts ",
+  "t": "منشورات Stoneridge Software"
+ },
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
   "t": "صورة قديمة لطفل صغير ورجلين في حفرة منجم ذهب مكشوف من التراب الأحمر في الأمازون البرازيلية"
@@ -2286,10 +2286,6 @@
  "4b94d73d72df": {
   "en": "12 photos",
   "t": "12 صورة"
- },
- "4ba79780f79b": {
-  "en": "Vraki West March D&amp;D Campaign",
-  "t": "حملة فراكي West March لـ D&amp;D"
  },
  "4bd6c7e4c009": {
   "en": "Dead Cells",
@@ -3515,10 +3511,6 @@
   "en": "That one really got me in the feels. It made me feel more in one sitting than I felt while dating some girls. It's hard for me to miss someone once I say goodbye, but this anime made me sit with that feeling for a good while after watching it.",
   "t": "هذا أصابني في الصميم حقًا. جعلني أشعر في جلسة واحدة بأكثر مما شعرت به وأنا أواعد بعض الفتيات. من الصعب عليّ أن أشتاق إلى أحد بعد أن أودّعه، لكن هذا الأنمي جعلني أعيش مع ذلك الشعور فترة طويلة بعد مشاهدته."
  },
- "6e5eca40165f": {
-  "en": "Vraki Writing System",
-  "t": "نظام الكتابة فراكي"
- },
  "6e68e69e0822": {
   "en": "Black ink",
   "t": "حبر أسود"
@@ -4170,6 +4162,10 @@
  "8271900678e6": {
   "en": "Enlarge: Destroying a whole chicken",
   "t": "تكبير: أُدمّر دجاجة كاملة"
+ },
+ "82af22fd64e6": {
+  "en": " West March D&amp;D Campaign ",
+  "t": "حملة West March لـ D&amp;D"
  },
  "82c3ba19280f": {
   "en": "Midas Gold Plus",
@@ -5135,6 +5131,10 @@
   "en": "Dead Can Dance",
   "t": "Dead Can Dance"
  },
+ "a0b39ba7d0f6": {
+  "en": " WDS ",
+  "t": "WDS"
+ },
  "a0d6b0bb5929": {
   "en": "Enlarge: Let's go",
   "t": "تكبير: هيا بنا"
@@ -5670,6 +5670,10 @@
  "af692ad68205": {
   "en": "Kingdom Hearts series",
   "t": "سلسلة Kingdom Hearts"
+ },
+ "af7c21047024": {
+  "en": "Vraki Related",
+  "t": "عن فراكي"
  },
  "affabe3f4188": {
   "en": "Campaign #1",
@@ -7551,6 +7555,10 @@
   "en": "13 photos",
   "t": "13 صورة"
  },
+ "ed53c0dffcec": {
+  "en": " SCHEELS Laurel Wreath Award ",
+  "t": "جائزة إكليل الغار من SCHEELS"
+ },
  "ed6b356a51fd": {
   "en": "Enlarge: Learning English",
   "t": "تكبير: أتعلّم الإنجليزية"
@@ -7638,6 +7646,10 @@
  "f1be6af1c552": {
   "en": "You’re human, like me. We have different capabilities, yes, but nothing stops you from picturing your own death clock and starting to work on your life today. <strong>You can’t change the past, but you can do something right now to build a better future.</strong>",
   "t": "أنت إنسان مثلي. لدينا قدرات مختلفة، نعم، لكن لا شيء يمنعك من تخيّل ساعة موتك والبدء في العمل على حياتك اليوم. <strong>لا يمكنك تغيير الماضي، لكن يمكنك أن تفعل شيئًا الآن لتبني مستقبلًا أفضل.</strong>"
+ },
+ "f1d1b324ae97": {
+  "en": "Dev History",
+  "t": "تاريخي في التطوير"
  },
  "f201ce825e65": {
   "en": "40 h",
@@ -7818,6 +7830,10 @@
  "f80d1870d042": {
   "en": " ← Close the chunk ",
   "t": "← أغلق القطعة"
+ },
+ "f84872e84d43": {
+  "en": " F16 LED Matrix Mgr ",
+  "t": "F16 LED Matrix Mgr"
  },
  "f84d1ceb9541": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder movie 32 ",

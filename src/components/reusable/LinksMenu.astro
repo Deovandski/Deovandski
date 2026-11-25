@@ -1,20 +1,33 @@
 ---
 /**
- * LinksMenu: one "Links" button that drops down a group box of links, like the tab's ▶ Play box:
- * the main links as buttons on top, then a divider with a centred heading, then more links below.
- * Built for the Gamer tab (#252): my Steam and Xbox profiles, then third-party trackers.
+ * LinksMenu: a drop-down box of link buttons, opened by one "Links" button, like a tab's ▶ Play box.
+ * The box is built from `items`: groups of buttons, and separators (a line, optionally with a centred
+ * heading) between them. Built for the Gamer tab (#252); the standard for every tab's links (#260).
  *
  *   <LinksMenu
  *     id="gamer-links"
- *     label="Links"
- *     primary={[{ href: 'https://steamcommunity.com/id/me', label: 'My profile on Steam' }]}
- *     dividerLabel="Third party trackers"
- *     secondary={[{ href: 'https://truesteamachievements.com/gamer/me', label: 'TrueSteamAchievements' }]}
+ *     items={[
+ *       { links: [{ href: 'https://steamcommunity.com/id/me', label: 'My profile on Steam' }] },
+ *       { separator: 'Third party trackers' },
+ *       { style: 'secondary', links: [{ href: 'https://truesteamachievements.com/gamer/me', label: 'TrueSteamAchievements' }] },
+ *     ]}
  *   />
  *
- * The button and the box sit side by side in whatever flex row holds them (the root is
- * `display: contents`), and the box takes a whole line of its own under the row. Enter, Space or a
- * click opens it; Esc or the button closes it. Without JavaScript the box simply shows, open.
+ * items, in order:
+ *   { links: [{ href, label }], style?: 'primary' | 'secondary' }   a row of buttons (primary: filled,
+ *                                                                    the default; secondary: outlined)
+ *   { separator: 'Heading' } or { separator: true }                  a line, with or without a heading
+ *
+ * Two ways to open it:
+ *   toggle="own" (default)  the component draws its own Links button. The button and the box sit in the
+ *                           parent's flex row (the root is `display: contents`); the box takes a line of
+ *                           its own under the row.
+ *   toggle="external"       no button: the page has its own (on this site, the Links button in the tab's
+ *                           title row, right of ▶ Play). Any button with `data-links-toggle="<id>-panel"`
+ *                           opens and closes the box; the box announces `links:state` {id, open} on
+ *                           document so that button can follow it. `links:close` (detail {} closes all,
+ *                           {id} one) closes it.
+ * Esc closes it from inside. Without JavaScript the box simply shows, open.
  *
  * Reusable on purpose: no imports, safe to use several times on a page. Theming: --links-accent,
  * --links-surface, --links-text, --links-muted, --links-line.
@@ -23,53 +36,52 @@ interface Link {
   href: string;
   label: string;
 }
+type Item = { links: Link[]; style?: 'primary' | 'secondary' } | { separator: string | true };
 interface Props {
   id?: string;
   label?: string;
-  primary: Link[];
-  dividerLabel?: string;
-  secondary?: Link[];
+  items: Item[];
+  toggle?: 'own' | 'external';
   class?: string;
 }
-const { id = 'links', label = 'Links', primary, dividerLabel, secondary = [], class: className } = Astro.props;
+const { id = 'links', label = 'Links', items, toggle = 'own', class: className } = Astro.props;
+const panelId = `${id}-panel`;
 ---
 
-<div class:list={['links', className]} data-links-menu>
-  <button type="button" class="links__toggle" aria-expanded="false" aria-controls={`${id}-panel`} hidden>
-    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
-      <path d="M6.5 9.5l3-3M7 4.5l1-1a2.8 2.8 0 0 1 4 4l-1 1M9 11.5l-1 1a2.8 2.8 0 0 1-4-4l1-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path>
-    </svg>
-    <span>{label}</span>
-    <svg class="links__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
-      <path d="M2.5 4.5l3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path>
-    </svg>
-  </button>
-  <div class="links__panel" id={`${id}-panel`} role="group" aria-label={label}>
-    <div class="links__primary">
-      {
-        primary.map((l) => (
-          <a class="links__main" href={l.href}>
-            {l.label}
-          </a>
-        ))
-      }
-    </div>
+<div class:list={['links', { 'links--external': toggle === 'external' }, className]} data-links-menu data-toggle={toggle}>
+  {
+    toggle === 'own' && (
+      <button type="button" class="links__toggle" aria-expanded="false" aria-controls={panelId} data-links-toggle={panelId} hidden>
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+          <path d="M6.5 9.5l3-3M7 4.5l1-1a2.8 2.8 0 0 1 4 4l-1 1M9 11.5l-1 1a2.8 2.8 0 0 1-4-4l1-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+        </svg>
+        <span>{label}</span>
+        <svg class="links__chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true">
+          <path d="M2.5 4.5l3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </button>
+    )
+  }
+  <div class="links__panel" id={panelId} role="group" aria-label={label} data-links-panel>
     {
-      secondary.length > 0 && (
-        <>
-          {dividerLabel && (
+      items.map((item) =>
+        'separator' in item ? (
+          item.separator === true ? (
+            <hr class="links__line" />
+          ) : (
             <div class="links__divider" role="heading" aria-level="4">
-              <span>{dividerLabel}</span>
+              <span>{item.separator}</span>
             </div>
-          )}
-          <div class="links__secondary">
-            {secondary.map((l) => (
-              <a class="links__more" href={l.href}>
+          )
+        ) : (
+          <div class:list={['links__group', `links__group--${item.style ?? 'primary'}`]}>
+            {item.links.map((l) => (
+              <a class="links__link" href={l.href}>
                 {l.label}
               </a>
             ))}
           </div>
-        </>
+        ),
       )
     }
   </div>
@@ -80,19 +92,29 @@ const { id = 'links', label = 'Links', primary, dividerLabel, secondary = [], cl
     document.querySelectorAll<HTMLElement>('[data-links-menu]').forEach((root) => {
       if (root.dataset.linksReady) return;
       root.dataset.linksReady = '1';
-      const btn = root.querySelector<HTMLButtonElement>('.links__toggle')!;
-      const panel = root.querySelector<HTMLElement>('.links__panel')!;
-      btn.hidden = false;
+      const panel = root.querySelector<HTMLElement>('[data-links-panel]')!;
+      const own = root.querySelector<HTMLButtonElement>('.links__toggle');
+      if (own) own.hidden = false;
       panel.hidden = true;
-      const set = (open: boolean) => {
-        btn.setAttribute('aria-expanded', String(open));
+      const buttons = () => document.querySelectorAll<HTMLButtonElement>(`[data-links-toggle="${panel.id}"]`);
+      const set = (open: boolean, returnFocus = false) => {
         panel.hidden = !open;
+        buttons().forEach((b) => b.setAttribute('aria-expanded', String(open)));
+        document.dispatchEvent(new CustomEvent('links:state', { detail: { id: panel.id, open, returnFocus } }));
       };
-      btn.addEventListener('click', () => set(btn.getAttribute('aria-expanded') !== 'true'));
-      root.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && !panel.hidden) {
-          set(false);
-          btn.focus();
+      // Every toggle on the page that names this box (its own button, or the page's).
+      document.addEventListener('click', (e) => {
+        const b = (e.target as Element).closest?.<HTMLButtonElement>('[data-links-toggle]');
+        if (b && b.dataset.linksToggle === panel.id) set(panel.hidden);
+      });
+      document.addEventListener('links:close', (e) => {
+        const want = (e as CustomEvent).detail?.id;
+        if (!panel.hidden && (!want || want === panel.id)) set(false);
+      });
+      panel.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          set(false, true);
+          buttons()[0]?.focus();
         }
       });
     });
@@ -109,6 +131,9 @@ const { id = 'links', label = 'Links', primary, dividerLabel, secondary = [], cl
     --_muted: var(--links-muted, #9aa8bb);
     --_line: var(--links-line, rgba(57, 197, 187, 0.35));
     display: contents;
+  }
+  .links--external {
+    display: block;
   }
   .links__toggle {
     display: inline-flex;
@@ -136,8 +161,7 @@ const { id = 'links', label = 'Links', primary, dividerLabel, secondary = [], cl
     color: #070b1f;
   }
   .links__toggle:focus-visible,
-  .links__main:focus-visible,
-  .links__more:focus-visible {
+  .links__link:focus-visible {
     outline: 3px solid #fff;
     outline-offset: 3px;
   }
@@ -160,42 +184,47 @@ const { id = 'links', label = 'Links', primary, dividerLabel, secondary = [], cl
     background: var(--_surface);
     color: var(--_text);
   }
-  .links__primary,
-  .links__secondary {
+  .links--external .links__panel {
+    margin: 0 0 1.75rem;
+  }
+  .links__group {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 0.6rem;
   }
-  .links__main,
-  .links__more {
+  .links__link {
     display: inline-flex;
     align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
     min-height: 44px;
-    padding: 0 1.1rem;
-    border-radius: 999px;
+    padding: 0.35rem 1.1rem;
+    line-height: 1.25;
+    text-align: center;
+    border-radius: 22px;
     font-weight: 700;
     text-decoration: none;
   }
-  .links__main {
+  .links__group--primary .links__link {
     background: var(--_accent);
     color: #070b1f;
   }
-  .links__main:hover {
+  .links__group--primary .links__link:hover {
     filter: brightness(1.1);
   }
-  .links__more {
+  .links__group--secondary .links__link {
     border: 1px solid color-mix(in srgb, var(--_accent) 55%, transparent);
     color: var(--_accent);
   }
-  .links__more:hover {
+  .links__group--secondary .links__link:hover {
     background: color-mix(in srgb, var(--_accent) 14%, transparent);
   }
   .links__divider {
     display: flex;
-    max-width: none;
     align-items: center;
     gap: 0.8rem;
+    max-width: none;
     margin: 0;
     color: var(--_muted);
     font-size: 0.85rem;
@@ -208,6 +237,13 @@ const { id = 'links', label = 'Links', primary, dividerLabel, secondary = [], cl
     content: '';
     flex: 1;
     height: 1px;
+    background: var(--_line);
+  }
+  .links__line {
+    width: 100%;
+    height: 1px;
+    margin: 0;
+    border: 0;
     background: var(--_line);
   }
   @media (prefers-reduced-motion: reduce) {
