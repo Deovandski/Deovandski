@@ -91,6 +91,20 @@ top of [scripts/i18n.mjs](scripts/i18n.mjs).
   to `content/i18n/config.json`, then run the loop. Requests come in on #87, linked from Settings › "Want a language added?".
 - `npm run dev` shows English only. Translated pages exist only after `npm run build`.
 
+## Tab links
+
+A tab's link buttons (profiles, projects, trackers) live in one **Links** box, opened from the tab's title row, never as
+loose buttons in the tab (#260).
+
+- Put a `LinksMenu` (`src/components/reusable/LinksMenu.astro`) with `toggle="external"` at the top of the tab's panel,
+  after its `GimmickPlay` if it has one. The **Links** button in the title row, right of ▶ Play, shows by itself on any
+  tab that has one and opens the box under the title, like Play's box. It starts closed on every visit.
+- Build the box from `items`: groups of buttons (`style: 'primary'`, filled, for the main links; `'secondary'`,
+  outlined, for the rest) and separators between them (`{ separator: 'Heading' }`, or `{ separator: true }` for a
+  plain line). The link list itself lives once, at the top of `src/pages/index.astro` (like `devLinks`), or in the
+  tab's own data.
+- Today: Dev, Author and Gamer. Elsewhere (another page or repo) `toggle="own"` gives the box its own Links button.
+
 ## Website settings
 
 The gear (top right of the header, `src/components/SettingsMenu.astro`) opens Settings: **Language**, "Want a language

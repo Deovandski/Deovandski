@@ -31,7 +31,7 @@ and a project without translations just shows the English.
 | [HoursOrbits.astro](HoursOrbits.astro) | Hours as a solar system: the total is the sun, each category a planet sized by its hours with its top items as moons; press a planet to fly in and see every item as a moon. | Gamer tab (a view of Hours by category) |
 | [DaysGrid.astro](DaysGrid.astro) | Hours turned into days: one square per day (24 h) of nonstop play, coloured by category and handed out to items in order, with a mark at each full year. | Gamer tab (a view of Hours by category) |
 | [CartridgeShelf.astro](CartridgeShelf.astro) | One shelf per category, one cartridge per item, each as wide as its hours (one scale for all); hover pulls a cartridge out, estimated ones are dashed. | Gamer tab (a view of Hours by category) |
-| [LinksMenu.astro](LinksMenu.astro) | One "Links" button that drops down a box: main links as buttons, a divider with a centred heading, then more links. Works as an open box without JavaScript. | Gamer tab (Steam, Xbox, third-party trackers) |
+| [LinksMenu.astro](LinksMenu.astro) | A drop-down box of link buttons, built from groups of buttons and separators (a line, optionally with a centred heading), opened by its own Links button or by one on the page. Works as an open box without JavaScript. | Every tab's links, from the Links button right of ▶ Play: Dev, Author, Gamer |
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
 | [KitKot.astro](KitKot.astro) | A parody social app idle game on a phone: post for views, likes and followers on a slot-machine schedule (near misses, a hidden hot post type, fatigue, streaks, energy). "Under the hood" names each trick, with sources. | Influencer tab |
@@ -156,6 +156,7 @@ Theme it with `--egg-accent`, `--egg-accent-2`, `--egg-bg` and `--egg-ink`.
 | `estimatedMark` / `estimatedLabel` | `"*"` / `"estimated"` | After an estimated item's value, and what screen readers say instead. |
 | `excludedByDefault` | `false` | Start with the switch off: excludable categories out of the totals. |
 | `views` / `viewsLabel` / `barsLabel` | `[]` / `"See it as"` / `"Bars"` | Other views of the rollup, `[{ id, label }]`, each filled from the named slot `id`; a "See it as" switch picks one, Bars first. |
+| `defaultView` | `"bars"` | The view shown first (a `views` id). Without JavaScript the bars show. |
 | `locale` | `"en-US"` | How numbers are written. |
 
 Views can follow the switch: the root carries `data-hours-scope`, plus `data-excluded` while the
@@ -202,27 +203,32 @@ translated pages need nothing extra. Theming: `--pie-*`, `--sphere-*`, `--orbits
 
 ## LinksMenu
 
+A drop-down box of link buttons, opened by one "Links" button, built from groups of buttons and
+separators. On this site it's the standard for every tab's links ("Tab links" in CLAUDE.md).
+
 ```astro
 <LinksMenu
   id="gamer-links"
-  label="Links"
-  primary={[{ href: STEAM, label: 'My profile on Steam' }]}
-  dividerLabel="Third party trackers"
-  secondary={[{ href: 'https://truesteamachievements.com/gamer/me', label: 'TrueSteamAchievements' }]}
+  toggle="external"
+  items={[
+    { links: [{ href: STEAM, label: 'My profile on Steam' }, { href: XBOX, label: 'My profile on Xbox' }] },
+    { separator: 'Third party trackers' },
+    { style: 'secondary', links: [{ href: 'https://truesteamachievements.com/gamer/me', label: 'TrueSteamAchievements' }] },
+  ]}
 />
 ```
 
 | Prop | Default | |
 |---|---|---|
-| `id` | `"links"` | Prefix for the box's id. |
-| `label` | `"Links"` | The button, and the box's name for screen readers. |
-| `primary` | (required) | `[{ href, label }]`: filled buttons at the top. |
-| `dividerLabel` | none | The heading in the middle of the divider. |
-| `secondary` | `[]` | `[{ href, label }]`: outlined links under the divider. |
+| `id` | `"links"` | The box's id is `<id>-panel`. |
+| `label` | `"Links"` | Its own button's text (`toggle="own"`), and the box's name for screen readers. |
+| `items` | (required) | In order: `{ links: [{ href, label }], style?: 'primary' \| 'secondary' }` for a row of buttons (primary filled, secondary outlined), and `{ separator: 'Heading' }` or `{ separator: true }` for a line between rows, with or without a centred heading. |
+| `toggle` | `"own"` | `"own"`: it draws its own Links button, sitting in the parent's flex row with the box on a line of its own under it (the root is `display: contents`). `"external"`: no button; any button with `data-links-toggle="<id>-panel"` opens it. |
 
-The root is `display: contents`, so the button sits in the parent's flex row and the box takes a
-line of its own under it. Esc closes it. Theme with `--links-accent`, `--links-surface`,
-`--links-text`, `--links-muted` and `--links-line`.
+With `toggle="external"` the box announces `links:state` (`{ id, open, returnFocus }`) on `document`, so
+the page's button can follow it, and `links:close` (`{}` for all, `{ id }` for one) closes it. Esc
+closes it from inside. Without JavaScript the box shows, open. Theme with `--links-accent`,
+`--links-surface`, `--links-text`, `--links-muted` and `--links-line`.
 
 ## IconMeter
 

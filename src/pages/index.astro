@@ -324,6 +324,12 @@ const nf = new Intl.NumberFormat('en-US');
           <svg class="facet-head__hide-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 10.5l5-5 5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           <span class="facet-head__play-label">Play</span>
         </button>
+        <!-- Links: shown on tabs with a links box (a LinksMenu with toggle="external" at the top of the tab's panel), right of ▶ Play. See "Tab links" in CLAUDE.md. -->
+        <button type="button" class="facet-head__play facet-head__links" aria-expanded="false" hidden>
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 9.5l3-3M7 4.5l1-1a2.8 2.8 0 0 1 4 4l-1 1M9 11.5l-1 1a2.8 2.8 0 0 1-4-4l1-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>
+          <span>Links</span>
+          <svg class="facet-head__links-chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5l3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+        </button>
       </div>
       <p class="facet-head__blurb" hidden></p>
       <div class="facet-head__chips" hidden></div>
@@ -335,6 +341,7 @@ const nf = new Intl.NumberFormat('en-US');
     <span hidden class="i18n-shared" data-count-one>1 facet</span>
 
     <section class="panel" role="region" id="panel-dev" aria-labelledby="tab-dev" tabindex="0" hidden>
+      <LinksMenu id="dev-links" toggle="external" items={[{ links: devLinks }]} />
       <div class="story">
         <p class="dev-headline">
           Senior Software Engineer, Dynamics 365 F&amp;O Architect, and Founder &amp; CEO of Wizard Deo Solutions.
@@ -352,13 +359,11 @@ const nf = new Intl.NumberFormat('en-US');
           GitHub only has a fraction of my code because of NDAs, but I'm proud of the LED Matrix Manager I cooked up for
           Framework 16 users. StackOverflow? Haven't used it in a long, long while. Times have changed, and it's fun and weird!
         </p>
-        <ul class="pills">
-          {devLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
-        </ul>
       </div>
     </section>
 
     <section class="panel" role="region" id="panel-author" aria-labelledby="tab-author" tabindex="0" hidden>
+      <LinksMenu id="author-links" toggle="external" items={[{ links: authorLinks }]} />
       <div class="story">
         <p>
           Yep. As crazy as it sounds, I'm also an author! It all started with the Vraki Writing System, such a cornerstone
@@ -374,9 +379,6 @@ const nf = new Intl.NumberFormat('en-US');
           raspberry jelly together and created a West March D&amp;D campaign with Claude so people can party in my world.
           Found an issue or have an idea? Open an issue or send a PR on GitHub!
         </p>
-        <ul class="pills">
-          {authorLinks.map((link) => (<li><a href={link.href}>{link.label}</a></li>))}
-        </ul>
       </div>
     </section>
 
@@ -689,22 +691,29 @@ const nf = new Intl.NumberFormat('en-US');
       <GimmickPlay tab="gamer">
         <p slot="intro">You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it&apos;s still in the air) and take it down before you run dry.</p>
       </GimmickPlay>
+      <LinksMenu
+        id="gamer-links"
+        toggle="external"
+        items={[
+          {
+            links: [
+              { href: STEAM, label: 'My profile on Steam' },
+              { href: XBOX, label: 'My profile on Xbox' },
+            ],
+          },
+          { separator: 'Third party trackers' },
+          {
+            style: 'secondary',
+            links: [
+              { href: 'https://www.truetrophies.com/gamer/Deovandski', label: 'TrueTrophies' },
+              { href: 'https://truesteamachievements.com/gamer/Deovandski', label: 'TrueSteamAchievements' },
+              { href: 'https://www.trueachievements.com/gamer/deovandski', label: 'TrueAchievements' },
+            ],
+          },
+        ]}
+      />
       <div class="list-head gamer-head">
         <div class="gamer-intro">{gamer.intro.map((para) => <p class="ranking-lede">{para}</p>)}</div>
-        <LinksMenu
-          id="gamer-links"
-          label="Links"
-          primary={[
-            { href: STEAM, label: 'My profile on Steam' },
-            { href: XBOX, label: 'My profile on Xbox' },
-          ]}
-          dividerLabel="Third party trackers"
-          secondary={[
-            { href: 'https://www.truetrophies.com/gamer/Deovandski', label: 'TrueTrophies' },
-            { href: 'https://truesteamachievements.com/gamer/Deovandski', label: 'TrueSteamAchievements' },
-            { href: 'https://www.trueachievements.com/gamer/deovandski', label: 'TrueAchievements' },
-          ]}
-        />
       </div>
       <HoursByCategory
         id="gamer"
@@ -723,6 +732,7 @@ const nf = new Intl.NumberFormat('en-US');
         countLabelOne="1 game"
         chipColors={CHIP_COLORS}
         excludedByDefault
+        defaultView="sphere"
         views={[
           { id: 'pie', label: 'Pie' },
           { id: 'sphere', label: 'Sphere' },
@@ -980,6 +990,9 @@ const nf = new Intl.NumberFormat('en-US');
   .facet-head__play[aria-expanded='true'] { background: var(--teal); color: var(--bg, #070b1f); }
   .facet-head__play .facet-head__hide-icon, .facet-head__play[aria-expanded='true'] .facet-head__play-icon { display: none; }
   .facet-head__play[aria-expanded='true'] .facet-head__hide-icon { display: inline; }
+  .facet-head__links-chevron { transition: transform 0.2s; }
+  .facet-head__links[aria-expanded='true'] .facet-head__links-chevron { transform: rotate(180deg); }
+  @media (prefers-reduced-motion: reduce) { .facet-head__links-chevron { transition: none; } }
   .facet-head__blurb { margin: 0.5rem 0 0; color: var(--muted); max-width: var(--measure); }
   .facet-head__chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.1rem; padding-bottom: clamp(1.25rem, 3vw, 2.25rem); }
   .facet-head__chips :global(button) {
@@ -1212,6 +1225,7 @@ const nf = new Intl.NumberFormat('en-US');
   const headChips = head.querySelector<HTMLElement>('.facet-head__chips')!;
   const playButton = head.querySelector<HTMLButtonElement>('.facet-head__play')!;
   const playLabel = playButton.querySelector('.facet-head__play-label')!;
+  const linksButton = head.querySelector<HTMLButtonElement>('.facet-head__links')!;
   const phone = window.matchMedia('(max-width: 640px)');
   const panelOf = (f: HTMLButtonElement) => document.getElementById(f.getAttribute('aria-controls')!)!;
   const labelOf = (b: HTMLButtonElement) => b.querySelector('.tree__label')!.textContent!.trim();
@@ -1306,7 +1320,10 @@ const nf = new Intl.NumberFormat('en-US');
 
   function setFacet(f: HTMLButtonElement | null) {
     // Gimmicks start closed on every visit to a tab.
-    if (f !== openFacet) document.dispatchEvent(new CustomEvent('gimmick:close', { detail: {} }));
+    if (f !== openFacet) {
+      document.dispatchEvent(new CustomEvent('gimmick:close', { detail: {} }));
+      document.dispatchEvent(new CustomEvent('links:close', { detail: {} }));
+    }
     for (const x of allFacets) {
       x.setAttribute('aria-pressed', String(x === f));
       panelOf(x).hidden = x !== f;
@@ -1376,6 +1393,14 @@ const nf = new Intl.NumberFormat('en-US');
       playButton.setAttribute('aria-controls', gimmick.id);
       setPlay(!gimmick.hidden);
     }
+    // Links for a tab with a links box (LinksMenu toggle="external"); it opens under the title like Play's box.
+    const links = openFacet ? panelOf(openFacet).querySelector<HTMLElement>('[data-links-panel]') : null;
+    linksButton.hidden = !links;
+    if (links) {
+      linksButton.dataset.linksToggle = links.id;
+      linksButton.setAttribute('aria-controls', links.id);
+      linksButton.setAttribute('aria-expanded', String(!links.hidden));
+    } else delete linksButton.dataset.linksToggle;
     headBlurb.textContent = openFacet ? '' : b.button.dataset.blurb ?? '';
     headChips.replaceChildren(
       ...(openFacet
@@ -1400,6 +1425,10 @@ const nf = new Intl.NumberFormat('en-US');
     const tab = playButton.dataset.tab;
     const open = playButton.getAttribute('aria-expanded') === 'true';
     document.dispatchEvent(new CustomEvent(open ? 'gimmick:close' : 'gimmick:open', { detail: { tab, immersive: true, returnFocus: true } }));
+  });
+  document.addEventListener('links:state', (e) => {
+    const { id, returnFocus } = (e as CustomEvent).detail;
+    if (id === linksButton.dataset.linksToggle && returnFocus && !linksButton.hidden) linksButton.focus();
   });
   document.addEventListener('gimmick:state', (e) => {
     const { tab, open, returnFocus } = (e as CustomEvent).detail;
