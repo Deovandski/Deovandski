@@ -97,8 +97,11 @@ A tab's link buttons (profiles, projects, trackers) live in one **Links** box, o
 loose buttons in the tab (#260).
 
 - Put a `LinksMenu` (`src/components/reusable/LinksMenu.astro`) with `toggle="external"` at the top of the tab's panel,
-  after its `GimmickPlay` if it has one. The **Links** button in the title row, right of ▶ Play, shows by itself on any
-  tab that has one and opens the box under the title, like Play's box. It starts closed on every visit.
+  after its `GimmickPlay` if it has one. The **Links** button in the title row, right of ▶ Play, opens the box under the
+  title, like Play's box. It starts closed on every visit.
+- **Every tab shows both ▶ Play and Links** (#262). A tab with no gimmick or no links box gets that button disabled
+  (faded), so every tab's header looks the same. On phones (640px and narrower) the two buttons sit in a row under the
+  title, each centred in half the header's width.
 - Build the box from `items`: groups of buttons (`style: 'primary'`, filled, for the main links; `'secondary'`,
   outlined, for the rest) and separators between them (`{ separator: 'Heading' }`, or `{ separator: true }` for a
   plain line). The link list itself lives once, at the top of `src/pages/index.astro` (like `devLinks`), or in the

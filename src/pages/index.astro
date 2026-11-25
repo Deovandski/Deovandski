@@ -325,18 +325,22 @@ const nf = new Intl.NumberFormat('en-US');
       <nav class="crumbs" aria-label="Breadcrumb"><ol></ol></nav>
       <div class="facet-head__row">
         <h3 class="facet-head__title" aria-live="polite"><span class="facet-head__icon" aria-hidden="true"></span> <span class="facet-head__label"></span></h3>
-        <!-- ▶ Play: shown on tabs with a gimmick (src/lib/gimmicks.ts); opens it in a FastTab under the title (GimmickPlay.astro). -->
-        <button type="button" class="facet-head__play" aria-expanded="false" hidden>
+        <!-- ▶ Play and Links show on every tab (#262), disabled when the tab has nothing for them. On phones they sit in a row
+             under the title, half the width each. -->
+        <div class="facet-head__actions" hidden>
+        <!-- ▶ Play: opens the tab's gimmick (src/lib/gimmicks.ts) in a FastTab under the title (GimmickPlay.astro). -->
+        <button type="button" class="facet-head__play" aria-expanded="false" disabled>
           <svg class="facet-head__play-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"></path></svg>
           <svg class="facet-head__hide-icon" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 10.5l5-5 5 5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           <span class="facet-head__play-label">Play</span>
         </button>
-        <!-- Links: shown on tabs with a links box (a LinksMenu with toggle="external" at the top of the tab's panel), right of ▶ Play. See "Tab links" in CLAUDE.md. -->
-        <button type="button" class="facet-head__play facet-head__links" aria-expanded="false" hidden>
+        <!-- Links: opens the tab's links box (a LinksMenu with toggle="external" at the top of the tab's panel). See "Tab links" in CLAUDE.md. -->
+        <button type="button" class="facet-head__play facet-head__links" aria-expanded="false" disabled>
           <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M6.5 9.5l3-3M7 4.5l1-1a2.8 2.8 0 0 1 4 4l-1 1M9 11.5l-1 1a2.8 2.8 0 0 1-4-4l1-1" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"></path></svg>
           <span>Links</span>
           <svg class="facet-head__links-chevron" width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 4.5l3.5 3.5 3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"></path></svg>
         </button>
+        </div>
       </div>
       <p class="facet-head__blurb" hidden></p>
       <div class="facet-head__chips" hidden></div>
@@ -346,6 +350,8 @@ const nf = new Intl.NumberFormat('en-US');
     <!-- Read by the tree script when a branch ends up with one facet; in the page so it gets translated (#87).
          i18n-shared keeps its translation in _shared.json. -->
     <span hidden class="i18n-shared" data-count-one>1 facet</span>
+    <!-- ▶ Play's two labels, read by the script so they get translated too. -->
+    <span hidden data-play-label="play">Play</span><span hidden data-play-label="hide">Hide</span>
 
     <section class="panel" role="region" id="panel-dev" aria-labelledby="tab-dev" tabindex="0" hidden>
       <LinksMenu
@@ -992,11 +998,18 @@ const nf = new Intl.NumberFormat('en-US');
     font-weight: 700;
     cursor: pointer;
   }
-  .facet-head__play:hover { background: rgba(57, 197, 187, 0.14); }
+  .facet-head__actions { display: flex; flex-wrap: wrap; gap: 0.6rem 1.1rem; }
+  .facet-head__play:hover:not(:disabled) { background: rgba(57, 197, 187, 0.14); }
+  .facet-head__play:disabled { opacity: 0.4; cursor: not-allowed; }
   .facet-head__play:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
   .facet-head__play[aria-expanded='true'] { background: var(--teal); color: var(--bg, #070b1f); }
   .facet-head__play .facet-head__hide-icon, .facet-head__play[aria-expanded='true'] .facet-head__play-icon { display: none; }
   .facet-head__play[aria-expanded='true'] .facet-head__hide-icon { display: inline; }
+  /* Phones: Play and Links in a row under the title, each centred in half the header's width (#262). */
+  @media (max-width: 640px) {
+    .facet-head__actions { flex: 1 0 100%; display: grid; grid-template-columns: 1fr 1fr; justify-items: center; gap: 0.6rem; }
+    .facet-head__actions[hidden] { display: none; }
+  }
   .facet-head__links-chevron { transition: transform 0.2s; }
   .facet-head__links[aria-expanded='true'] .facet-head__links-chevron { transform: rotate(180deg); }
   @media (prefers-reduced-motion: reduce) { .facet-head__links-chevron { transition: none; } }
@@ -1222,6 +1235,7 @@ const nf = new Intl.NumberFormat('en-US');
   const playButton = head.querySelector<HTMLButtonElement>('.facet-head__play')!;
   const playLabel = playButton.querySelector('.facet-head__play-label')!;
   const linksButton = head.querySelector<HTMLButtonElement>('.facet-head__links')!;
+  const headActions = head.querySelector<HTMLElement>('.facet-head__actions')!;
   const phone = window.matchMedia('(max-width: 640px)');
   const panelOf = (f: HTMLButtonElement) => document.getElementById(f.getAttribute('aria-controls')!)!;
   const labelOf = (b: HTMLButtonElement) => b.querySelector('.tree__label')!.textContent!.trim();
@@ -1381,22 +1395,31 @@ const nf = new Intl.NumberFormat('en-US');
     headIcon.textContent = iconOf(node);
     headLabel.textContent = labelOf(node);
     headBlurb.hidden = headChips.hidden = !!openFacet;
-    // ▶ Play for a tab with a gimmick.
+    // ▶ Play and Links show on every tab, disabled when the tab has no gimmick or no links box (#262).
+    headActions.hidden = !openFacet;
     const gimmick = openFacet ? panelOf(openFacet).querySelector<HTMLElement>('.gimmick-play') : null;
-    playButton.hidden = !gimmick;
+    playButton.disabled = !gimmick;
     if (gimmick) {
       playButton.dataset.tab = gimmick.dataset.gimmickTab;
       playButton.setAttribute('aria-controls', gimmick.id);
       setPlay(!gimmick.hidden);
+    } else {
+      delete playButton.dataset.tab;
+      playButton.removeAttribute('aria-controls');
+      setPlay(false);
     }
-    // Links for a tab with a links box (LinksMenu toggle="external"); it opens under the title like Play's box.
+    // Links opens the tab's links box (LinksMenu toggle="external") under the title, like Play's box.
     const links = openFacet ? panelOf(openFacet).querySelector<HTMLElement>('[data-links-panel]') : null;
-    linksButton.hidden = !links;
+    linksButton.disabled = !links;
     if (links) {
       linksButton.dataset.linksToggle = links.id;
       linksButton.setAttribute('aria-controls', links.id);
       linksButton.setAttribute('aria-expanded', String(!links.hidden));
-    } else delete linksButton.dataset.linksToggle;
+    } else {
+      delete linksButton.dataset.linksToggle;
+      linksButton.removeAttribute('aria-controls');
+      linksButton.setAttribute('aria-expanded', 'false');
+    }
     headBlurb.textContent = openFacet ? '' : b.button.dataset.blurb ?? '';
     headChips.replaceChildren(
       ...(openFacet
@@ -1415,7 +1438,7 @@ const nf = new Intl.NumberFormat('en-US');
 
   function setPlay(open: boolean) {
     playButton.setAttribute('aria-expanded', String(open));
-    playLabel.textContent = open ? 'Hide' : 'Play';
+    playLabel.textContent = document.querySelector(`[data-play-label="${open ? 'hide' : 'play'}"]`)?.textContent ?? (open ? 'Hide' : 'Play');
   }
   playButton.addEventListener('click', () => {
     const tab = playButton.dataset.tab;
@@ -1424,13 +1447,13 @@ const nf = new Intl.NumberFormat('en-US');
   });
   document.addEventListener('links:state', (e) => {
     const { id, returnFocus } = (e as CustomEvent).detail;
-    if (id === linksButton.dataset.linksToggle && returnFocus && !linksButton.hidden) linksButton.focus();
+    if (id === linksButton.dataset.linksToggle && returnFocus && !linksButton.disabled) linksButton.focus();
   });
   document.addEventListener('gimmick:state', (e) => {
     const { tab, open, returnFocus } = (e as CustomEvent).detail;
     if (tab !== playButton.dataset.tab) return;
     setPlay(open);
-    if (!open && returnFocus && !playButton.hidden) playButton.focus();
+    if (!open && returnFocus && !playButton.disabled) playButton.focus();
   });
 
   function collapse(focusRoot = false) {
