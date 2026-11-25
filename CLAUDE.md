@@ -116,9 +116,10 @@ loose buttons in the tab (#260).
 ## In-tab switches
 
 A tab that shows one of two lists (PM | Life hacks, Seen live | Wishlist on Concert and Theater & Opera, TV shows |
-Movies on Potato) uses the pill switch: a `<div class="switch" role="tablist">` of buttons with `data-switch-hash` at
-the top of the tab, under its Links box. It's always **centred** in the tab (#270). Each button's `data-switch-hash` is
-the link that opens it (`#potato-movies`).
+Movies on Potato) uses `PillSwitch` (`src/components/reusable/PillSwitch.astro`, #272) at the top of the tab, under its
+Links box, followed by one `role="tabpanel"` per option. It's always **centred** in the tab (#270). Give each option a
+`hash`: the link that opens it (`#potato-movies`). The page puts it in the address bar when the switch changes and
+picks the option when that link opens the page.
 
 ## Website settings
 
