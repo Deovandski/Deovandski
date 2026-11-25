@@ -32,6 +32,7 @@ and a project without translations just shows the English.
 | [DaysGrid.astro](DaysGrid.astro) | Hours turned into days: one square per day (24 h) of nonstop play, coloured by category and handed out to items in order, with a mark at each full year. | Gamer tab (a view of Hours by category) |
 | [CartridgeShelf.astro](CartridgeShelf.astro) | One shelf per category, one cartridge per item, each as wide as its hours (one scale for all); hover pulls a cartridge out, estimated ones are dashed. | Gamer tab (a view of Hours by category) |
 | [LinksMenu.astro](LinksMenu.astro) | A drop-down box of link buttons, built from groups of buttons and separators (a line, optionally with a centred heading), opened by its own Links button or by one on the page. Works as an open box without JavaScript. | Every tab's links, from the Links button right of ▶ Play: Dev, Author, Gamer, Influencer, Musician, Anime, BOTW |
+| [Breadcrumb.astro](Breadcrumb.astro) | A one-line breadcrumb trail that fits its width: the text shrinks to fit, and below a smallest size (11px) the items are cut with "…" instead (full text on hover). Drawn from `items`, or filled by a script. | The home page tab header (#266) |
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
 | [KitKot.astro](KitKot.astro) | A parody social app idle game on a phone: post for views, likes and followers on a slot-machine schedule (near misses, a hidden hot post type, fatigue, streaks, energy). "Under the hood" names each trick, with sources. | Influencer tab |
@@ -229,6 +230,29 @@ With `toggle="external"` the box announces `links:state` (`{ id, open, returnFoc
 the page's button can follow it, and `links:close` (`{}` for all, `{ id }` for one) closes it. Esc
 closes it from inside. Without JavaScript the box shows, open. Theme with `--links-accent`,
 `--links-surface`, `--links-text`, `--links-muted` and `--links-line`.
+
+## Breadcrumb
+
+A one-line breadcrumb trail ("Deo › 🎟️ Front Row › 🎭 Theater & Opera") that fits its width. A long trail
+shrinks its text to fit; if it would have to go below `minSize` pixels, it stops shrinking and cuts the items
+with "…" instead: the middle items first, the root never, and a cut item shows its full text on hover. It fits
+itself again whenever its width or its items change.
+
+```astro
+<Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Notes', href: '/notes/' }, { label: 'This note' }]} />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `items` | `[]` | `{ label, href? }` in order, drawn at build time; the last is the current page. Leave it out to fill the list from a script instead. |
+| `label` | `"Breadcrumb"` | The trail's name for screen readers. |
+| `minSize` | `11` | The smallest text size, in pixels, before items are cut with "…". |
+
+To fill it from a script, put `<li>` elements in its `[data-breadcrumb-list]`, each holding one `<a>`, `<button>`
+or `<span aria-current="location">` (the home page does this as visitors move through the tree). Theme with
+`--breadcrumb-size`, `--breadcrumb-color`, `--breadcrumb-current`, `--breadcrumb-current-font`,
+`--breadcrumb-accent` and `--breadcrumb-separator`. Without JavaScript the trail still shows, cut with "…" at
+full size.
 
 ## IconMeter
 

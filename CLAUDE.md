@@ -96,8 +96,9 @@ top of [scripts/i18n.mjs](scripts/i18n.mjs).
 A tab's link buttons (profiles, projects, trackers) live in one **Links** box, opened from the tab's header, never as
 loose buttons in the tab (#260).
 
-- **The header** is the breadcrumb, with no title under it (#264): its last item names the tab. ▶ Play and Links sit at the
-  right end of the breadcrumb's row on desktop (the left end in Arabic).
+- **The header** is the breadcrumb (`src/components/reusable/Breadcrumb.astro`), with no title under it (#264): its last
+  item names the tab. It stays on one line, shrinking its text down to 11px and then cutting it with "…" (#266).
+  ▶ Play and Links sit at the right end of the breadcrumb's row on desktop (the left end in Arabic).
 - Put a `LinksMenu` (`src/components/reusable/LinksMenu.astro`) with `toggle="external"` at the top of the tab's panel,
   after its `GimmickPlay` if it has one. The **Links** button, right of ▶ Play, opens the box under the header, like
   Play's box. It starts closed on every visit.
