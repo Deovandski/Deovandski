@@ -24,6 +24,9 @@ import DaysGrid from '../components/reusable/DaysGrid.astro';
 import CartridgeShelf from '../components/reusable/CartridgeShelf.astro';
 import LinksMenu from '../components/reusable/LinksMenu.astro';
 import Breadcrumb from '../components/reusable/Breadcrumb.astro';
+import SourceList from '../components/reusable/SourceList.astro';
+import { Content as DeathSources } from '../../content/death-sources.md';
+import { Content as MentorSources } from '../../content/mentor-sources.md';
 import YouTube from '../components/YouTube.astro';
 import { Content as AviationText } from '../../content/aviation.md';
 import kingOfHues from '../assets/king-of-hues.jpg';
@@ -470,6 +473,8 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-death" aria-labelledby="tab-death" tabindex="0" hidden>
+      <!-- "Shoulders I stand on" lives in the tab's Links box (#268). -->
+      <LinksMenu id="death-links" toggle="external"><SourceList title="Shoulders I stand on"><DeathSources /></SourceList></LinksMenu>
       <DeathFacet />
     </section>
 
@@ -489,6 +494,7 @@ const nf = new Intl.NumberFormat('en-US');
 
     <section class="panel" role="region" id="panel-mentor" aria-labelledby="tab-mentor" tabindex="0" hidden>
       <GimmickPlay tab="mentor" />
+      <LinksMenu id="mentor-links" toggle="external"><SourceList title="Shoulders I stand on"><MentorSources /></SourceList></LinksMenu>
       <MentorFacet />
     </section>
 
@@ -978,6 +984,13 @@ const nf = new Intl.NumberFormat('en-US');
 
   .facet-head { scroll-margin-top: 6rem; padding: clamp(1.25rem, 3vw, 2.25rem) clamp(1.25rem, 3vw, 2.25rem) 0; border-top: 1px solid rgba(57, 197, 187, 0.2); }
   .facet-head[hidden], .facet-head [hidden] { display: none; }
+  #panel-death, #panel-mentor {
+    --sources-title: var(--silver);
+    --sources-title-font: var(--font-display);
+    --sources-text: var(--muted);
+    --sources-name: var(--text);
+    --sources-accent: var(--teal);
+  }
   .crumbs {
     flex: 1 1 0;
     min-width: 0;

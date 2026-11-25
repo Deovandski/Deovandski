@@ -31,7 +31,7 @@ and a project without translations just shows the English.
 | [HoursOrbits.astro](HoursOrbits.astro) | Hours as a solar system: the total is the sun, each category a planet sized by its hours with its top items as moons; press a planet to fly in and see every item as a moon. | Gamer tab (a view of Hours by category) |
 | [DaysGrid.astro](DaysGrid.astro) | Hours turned into days: one square per day (24 h) of nonstop play, coloured by category and handed out to items in order, with a mark at each full year. | Gamer tab (a view of Hours by category) |
 | [CartridgeShelf.astro](CartridgeShelf.astro) | One shelf per category, one cartridge per item, each as wide as its hours (one scale for all); hover pulls a cartridge out, estimated ones are dashed. | Gamer tab (a view of Hours by category) |
-| [LinksMenu.astro](LinksMenu.astro) | A drop-down box of link buttons, built from groups of buttons and separators (a line, optionally with a centred heading), opened by its own Links button or by one on the page. Works as an open box without JavaScript. | Every tab's links, from the Links button right of ▶ Play: Dev, Author, Gamer, Influencer, Musician, Anime, BOTW |
+| [LinksMenu.astro](LinksMenu.astro) | A drop-down box of link buttons, built from groups of buttons and separators (a line, optionally with a centred heading), opened by its own Links button or by one on the page. Works as an open box without JavaScript. | Every tab's links, from the Links button right of ▶ Play: Dev, Author, Gamer, Influencer, Musician, Anime, BOTW, Death, Mentor |
 | [Breadcrumb.astro](Breadcrumb.astro) | A one-line breadcrumb trail that fits its width: the text shrinks to fit, and below a smallest size (11px) the items are cut with "…" instead (full text on hover). Drawn from `items`, or filled by a script. | The home page tab header (#266) |
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
@@ -44,6 +44,7 @@ and a project without translations just shows the English.
 | [DiceTray.astro](DiceTray.astro) | A row of dice (d4 to d20), each tumbling in its own sunken pit when clicked, with a Roll all button and total. Miku colours by default. | D&D tab |
 | [FastTab.astro](FastTab.astro) | A collapsible section in the style of D365 F&O FastTabs: bold title, summary fields on the right while collapsed, a chevron, and optional Expand all / Collapse all buttons. Built on `<details>`, so it works without JavaScript. | Playground page (one per gimmick, titled "Name (Tab facet)" through the `title` slot) |
 | [PhotoViewer.astro](PhotoViewer.astro) | The one photo viewer (lightbox) for a page: every content picture, gallery button and link to an image file opens in it, with its caption and date; ‹ › between pictures. Put it once in the layout. | Every page (in `Base.astro`) |
+| [SourceList.astro](SourceList.astro) | A reading list of the people and works a page builds on ("Shoulders I stand on"): name in bold, work in italics, the idea, a link. Takes a Markdown list in its slot. | Death and Mentor tabs, inside their Links boxes |
 
 ## SplitFlap
 
@@ -223,12 +224,13 @@ separators. On this site it's the standard for every tab's links ("Tab links" in
 |---|---|---|
 | `id` | `"links"` | The box's id is `<id>-panel`. |
 | `label` | `"Links"` | Its own button's text (`toggle="own"`), and the box's name for screen readers. |
-| `items` | (required) | In order: `{ links: [{ href, label }], style?: 'primary' \| 'secondary' }` for a row of buttons (primary filled, secondary outlined), and `{ separator: 'Heading' }` or `{ separator: true }` for a line between rows, with or without a centred heading. |
+| `items` | `[]` | In order: `{ links: [{ href, label }], style?: 'primary' \| 'secondary' }` for a row of buttons (primary filled, secondary outlined), and `{ separator: 'Heading' }` or `{ separator: true }` for a line between rows, with or without a centred heading. |
 | `toggle` | `"own"` | `"own"`: it draws its own Links button, sitting in the parent's flex row with the box on a line of its own under it (the root is `display: contents`). `"external"`: no button; any button with `data-links-toggle="<id>-panel"` opens it. |
 
 With `toggle="external"` the box announces `links:state` (`{ id, open, returnFocus }`) on `document`, so
 the page's button can follow it, and `links:close` (`{}` for all, `{ id }` for one) closes it. Esc
-closes it from inside. Without JavaScript the box shows, open. Theme with `--links-accent`,
+closes it from inside. Anything in its slot goes in the box after the items, for links that need a
+layout of their own (the Death and Mentor tabs put a `SourceList` there). Without JavaScript the box shows, open. Theme with `--links-accent`,
 `--links-surface`, `--links-text`, `--links-muted` and `--links-line`.
 
 ## Breadcrumb
@@ -771,3 +773,24 @@ The caption is the alt text, then the date: `data-date="YYYY-MM-DD"` or `data-da
 size. Theme with `--photo-viewer-accent`, `--photo-viewer-bg`, `--photo-viewer-text`,
 `--photo-viewer-muted` and `--photo-viewer-backdrop`. Keyboard: Tab to a picture, then Enter or Space;
 ← → move between pictures; Esc closes and returns focus.
+
+## SourceList
+
+A reading list of the people and works a page builds on, with an optional title. Each item is one line: the
+name in bold, the work in italics, the idea in a few words, then a link. Put a list in its slot; a Markdown
+file's list works as it is.
+
+```astro
+---
+import { Content as Sources } from '../content/death-sources.md';
+---
+<SourceList title="Shoulders I stand on"><Sources /></SourceList>
+```
+
+| Prop | Default | |
+|---|---|---|
+| `title` | none | The heading above the list. |
+| `level` | `4` | That heading's level for screen readers (2 to 6). |
+
+Theme with `--sources-title`, `--sources-title-font`, `--sources-text`, `--sources-name`, `--sources-accent` and
+`--sources-line`. No script. On this site it sits in the Death and Mentor tabs' Links boxes (#268).

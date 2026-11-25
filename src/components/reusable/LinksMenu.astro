@@ -29,6 +29,11 @@
  *                           {id} one) closes it.
  * Esc closes it from inside. Without JavaScript the box simply shows, open.
  *
+ * Anything in its slot goes in the box after the items, for links that need a layout of their own (the
+ * Death and Mentor tabs put a SourceList there, #268):
+ *
+ *   <LinksMenu id="death-links" toggle="external"><SourceList title="Shoulders I stand on">…</SourceList></LinksMenu>
+ *
  * Reusable on purpose: no imports, safe to use several times on a page. Theming: --links-accent,
  * --links-surface, --links-text, --links-muted, --links-line.
  */
@@ -40,11 +45,11 @@ type Item = { links: Link[]; style?: 'primary' | 'secondary' } | { separator: st
 interface Props {
   id?: string;
   label?: string;
-  items: Item[];
+  items?: Item[];
   toggle?: 'own' | 'external';
   class?: string;
 }
-const { id = 'links', label = 'Links', items, toggle = 'own', class: className } = Astro.props;
+const { id = 'links', label = 'Links', items = [], toggle = 'own', class: className } = Astro.props;
 const panelId = `${id}-panel`;
 ---
 
@@ -84,6 +89,7 @@ const panelId = `${id}-panel`;
         ),
       )
     }
+    <slot />
   </div>
 </div>
 

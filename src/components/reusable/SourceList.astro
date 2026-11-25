@@ -1,0 +1,55 @@
+---
+/**
+ * SourceList: a reading list of the people and works a page builds on, with an optional title
+ * ("Shoulders I stand on"). Each item is one line: the name in bold, the work in italics, the idea in a few
+ * words, then a link. Built for the Death and Mentor tabs' Links boxes (#268).
+ *
+ * Put a list in its slot. Markdown works as it is:
+ *
+ *   ---
+ *   import { Content as Sources } from '../content/death-sources.md';
+ *   ---
+ *   <SourceList title="Shoulders I stand on"><Sources /></SourceList>
+ *
+ * where death-sources.md is a plain list:
+ *   - **Seneca**, *On the Shortness of Life*: life isn't short, we waste much of it. [Summary](https://…)
+ *
+ * Props:
+ *   title  the heading above the list. Default: none.
+ *   level  that heading's level for screen readers (2 to 6). Default 4.
+ *
+ * Theme with CSS custom properties on any parent: --sources-title (the title colour, #c0c8d1),
+ * --sources-title-font (inherit), --sources-text (each line, #9aa8bb), --sources-name (the bold names, #e6edf3),
+ * --sources-accent (links, #39c5bb), --sources-line (lines between items, rgba(190, 200, 209, 0.12)).
+ * Reusable on purpose: no imports, no script, safe to use several times on a page.
+ */
+interface Props { title?: string; level?: 2 | 3 | 4 | 5 | 6 }
+const { title, level = 4 } = Astro.props;
+---
+
+<div class="sources">
+  {title && <p class="sources__title" role="heading" aria-level={level}>{title}</p>}
+  <div class="sources__list"><slot /></div>
+</div>
+
+<style>
+  .sources { color: var(--sources-text, #9aa8bb); }
+  .sources__title {
+    margin: 0 0 0.5rem;
+    font-family: var(--sources-title-font, inherit);
+    font-weight: 800;
+    color: var(--sources-title, #c0c8d1);
+  }
+  .sources__list :global(ul) { list-style: none; margin: 0; padding: 0; }
+  .sources__list :global(li) {
+    padding: 0.55rem 0;
+    border-bottom: 1px solid var(--sources-line, rgba(190, 200, 209, 0.12));
+    font-size: 0.89em;
+    line-height: 1.5;
+  }
+  .sources__list :global(li:last-child) { border-bottom: 0; padding-bottom: 0; }
+  .sources__list :global(strong) { color: var(--sources-name, #e6edf3); }
+  .sources__list :global(em) { font-style: italic; }
+  .sources__list :global(a) { color: var(--sources-accent, #39c5bb); }
+  .sources__list :global(a:focus-visible) { outline: 2px solid var(--sources-accent, #39c5bb); outline-offset: 2px; border-radius: 4px; }
+</style>
