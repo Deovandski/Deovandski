@@ -23,6 +23,7 @@ import HoursOrbits from '../components/reusable/HoursOrbits.astro';
 import DaysGrid from '../components/reusable/DaysGrid.astro';
 import CartridgeShelf from '../components/reusable/CartridgeShelf.astro';
 import LinksMenu from '../components/reusable/LinksMenu.astro';
+import Breadcrumb from '../components/reusable/Breadcrumb.astro';
 import YouTube from '../components/YouTube.astro';
 import { Content as AviationText } from '../../content/aviation.md';
 import kingOfHues from '../assets/king-of-hues.jpg';
@@ -323,8 +324,9 @@ const nf = new Intl.NumberFormat('en-US');
 
     <div class="facet-head" id="facet-head" hidden>
       <div class="facet-head__row">
-        <!-- The breadcrumb is the visible title (#264); its last item is the open tab or branch. -->
-        <nav class="crumbs" aria-label="Breadcrumb"><ol></ol></nav>
+        <!-- The breadcrumb is the visible title (#264); its last item is the open tab or branch. It stays on one line,
+             shrinking its text down to 11px and then cutting it with "…" (#266). The script below fills it. -->
+        <div class="crumbs"><Breadcrumb /></div>
         <!-- Kept for screen readers and the page outline only: on screen it would repeat the breadcrumb's last item (#264). -->
         <h3 class="facet-head__title sr-only" aria-live="polite"><span class="facet-head__icon" aria-hidden="true"></span> <span class="facet-head__label"></span></h3>
         <!-- ▶ Play and Links show on every tab (#262), disabled when the tab has nothing for them. On desktop they sit at the
@@ -976,13 +978,15 @@ const nf = new Intl.NumberFormat('en-US');
 
   .facet-head { scroll-margin-top: 6rem; padding: clamp(1.25rem, 3vw, 2.25rem) clamp(1.25rem, 3vw, 2.25rem) 0; border-top: 1px solid rgba(57, 197, 187, 0.2); }
   .facet-head[hidden], .facet-head [hidden] { display: none; }
-  .crumbs { flex: 1 1 auto; min-width: 0; }
-  .crumbs ol { list-style: none; display: flex; flex-wrap: wrap; align-items: center; margin: 0; padding: 0; color: var(--muted); font-size: var(--step-1); }
-  .crumbs :global(li + li)::before { content: '›'; padding: 0 0.35rem; }
-  .crumbs :global(button) { min-height: 44px; padding: 0 0.25rem; background: none; border: 0; color: var(--muted); font: inherit; cursor: pointer; }
-  .crumbs :global(button:hover) { color: var(--text); text-decoration: underline; }
-  .crumbs :global(button:focus-visible) { outline: 2px solid var(--teal); outline-offset: 2px; border-radius: 6px; }
-  .crumbs :global([aria-current]) { color: var(--text); font-family: var(--font-display); font-weight: 800; }
+  .crumbs {
+    flex: 1 1 0;
+    min-width: 0;
+    --breadcrumb-size: var(--step-1);
+    --breadcrumb-color: var(--muted);
+    --breadcrumb-current: var(--text);
+    --breadcrumb-current-font: var(--font-display);
+    --breadcrumb-accent: var(--teal);
+  }
   .facet-head__row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1.1rem; }
   .facet-head__play {
     display: inline-flex;
@@ -1229,7 +1233,7 @@ const nf = new Intl.NumberFormat('en-US');
   const rootButton = treeEl.querySelector<HTMLButtonElement>('[data-root]')!;
   const head = document.getElementById('facet-head')!;
   const hint = document.getElementById('pick-hint')!;
-  const crumbList = head.querySelector('.crumbs ol')!;
+  const crumbList = head.querySelector('[data-breadcrumb-list]')!;
   const headIcon = head.querySelector('.facet-head__icon')!;
   const headLabel = head.querySelector('.facet-head__label')!;
   const headBlurb = head.querySelector<HTMLElement>('.facet-head__blurb')!;

@@ -1,0 +1,128 @@
+---
+/**
+ * Breadcrumb: a one-line breadcrumb trail ("Deo › 🎟️ Front Row › 🎭 Theater & Opera") that fits itself to its
+ * width. When the trail is too long, its text shrinks; if it would have to go below `minSize` pixels, it stops
+ * shrinking and cuts the items with "…" instead (the middle items first, the root never; a cut item shows its full text on hover).
+ * Built for the home page's tab header (#266).
+ *
+ *   <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Notes', href: '/notes/' }, { label: 'This note' }]} />
+ *
+ * Or fill it from a script: put <li> elements in its [data-breadcrumb-list] list, each holding one <a>, <button>
+ * or <span aria-current="location">. The breadcrumb notices the change and fits itself again.
+ *
+ *   const list = document.querySelector('[data-breadcrumb-list]');
+ *   list.replaceChildren(li('Home', () => goHome()), li('Notes'));
+ *
+ * Props:
+ *   items    [{ label, href? }] drawn at build time; the last one is the current page. Default: none.
+ *   label    the trail's name for screen readers. Default "Breadcrumb".
+ *   minSize  the smallest text size, in pixels, before items are cut with "…". Default 11.
+ *
+ * Theme with CSS custom properties on any parent:
+ *   --breadcrumb-size (the full text size, 1.417rem), --breadcrumb-color (earlier items, #9aa4c4),
+ *   --breadcrumb-current (the last item, #fff), --breadcrumb-current-font (inherit),
+ *   --breadcrumb-accent (focus ring, #39c5bb), --breadcrumb-separator ('›').
+ * Without JavaScript the trail still shows; a long one is cut with "…" at full size.
+ */
+interface Item { label: string; href?: string }
+interface Props { items?: Item[]; label?: string; minSize?: number }
+const { items = [], label = 'Breadcrumb', minSize = 11 } = Astro.props;
+---
+
+<nav class="breadcrumb" aria-label={label} data-breadcrumb data-min-size={minSize}>
+  <ol class="breadcrumb__list" data-breadcrumb-list>
+    {
+      items.map((item, i) => (
+        <li>{i === items.length - 1 ? <span aria-current="page">{item.label}</span> : item.href ? <a href={item.href}>{item.label}</a> : <span>{item.label}</span>}</li>
+      ))
+    }
+  </ol>
+</nav>
+
+<style>
+  .breadcrumb { min-width: 0; color: var(--breadcrumb-color, #9aa4c4); font-size: var(--breadcrumb-size, 1.417rem); }
+  .breadcrumb__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .breadcrumb__list :global(li) { display: flex; align-items: center; flex: 0 1 auto; min-width: 0; }
+  .breadcrumb__list :global(li:first-child) { flex-shrink: 0; } /* the root is short: keep it whole */
+  .breadcrumb__list :global(li:last-child) { flex-shrink: 0.25; }
+  .breadcrumb__list :global(li + li)::before { content: var(--breadcrumb-separator, '›'); flex: none; padding: 0 0.25em; }
+  .breadcrumb__list :global(li > *) { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .breadcrumb__list :global(a),
+  .breadcrumb__list :global(button) {
+    display: block; /* a block, so a cut label can show "…" */
+    padding: 0 0.18em;
+    background: none;
+    border: 0;
+    color: inherit;
+    font: inherit;
+    line-height: 44px; /* a 44px tall touch target (after `font`, which resets it) */
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .breadcrumb__list :global(a:hover),
+  .breadcrumb__list :global(button:hover) { color: var(--breadcrumb-current, #fff); text-decoration: underline; }
+  /* The list hides overflow, so the focus ring goes inside the item. */
+  .breadcrumb__list :global(a:focus-visible),
+  .breadcrumb__list :global(button:focus-visible) {
+    outline: 2px solid var(--breadcrumb-accent, #39c5bb);
+    outline-offset: -2px;
+    border-radius: 6px;
+  }
+  .breadcrumb__list :global([aria-current]) {
+    color: var(--breadcrumb-current, #fff);
+    font-family: var(--breadcrumb-current-font, inherit);
+    font-weight: 800;
+  }
+</style>
+
+<script>
+  // Fit each breadcrumb on one line: shrink the text to fit, down to data-min-size px, then let "…" cut the items.
+  function fit(nav: HTMLElement) {
+    const list = nav.querySelector<HTMLElement>('[data-breadcrumb-list]');
+    if (!list || !list.clientWidth) return; // hidden: fit when it shows
+    list.style.fontSize = '';
+    const full = parseFloat(getComputedStyle(list).fontSize);
+    const min = Math.min(full, Number(nav.dataset.minSize) || 11);
+    const over = () => list.scrollWidth > list.clientWidth + 0.5;
+    // The items can't shrink while measuring, so scrollWidth is the whole trail's width.
+    for (const li of list.children) (li as HTMLElement).style.flexShrink = '0';
+    if (over()) {
+      let size = Math.max(min, Math.floor(((full * list.clientWidth) / list.scrollWidth) * 2) / 2);
+      list.style.fontSize = `${size}px`;
+      while (over() && size > min) {
+        size = Math.max(min, size - 0.5);
+        list.style.fontSize = `${size}px`;
+      }
+    }
+    for (const li of list.children) (li as HTMLElement).style.flexShrink = '';
+    // A cut item shows its full text on hover.
+    for (const el of list.querySelectorAll<HTMLElement>(':scope > li > *')) {
+      if (el.scrollWidth > el.clientWidth + 0.5) el.title = el.textContent?.trim() ?? '';
+      else el.removeAttribute('title');
+    }
+  }
+
+  const widths = new WeakMap<Element, number>();
+  const resize = new ResizeObserver((entries) => {
+    for (const { target, contentRect } of entries) {
+      if (widths.get(target) === contentRect.width) continue; // its own height change, not a new width
+      widths.set(target, contentRect.width);
+      fit(target as HTMLElement);
+    }
+  });
+  for (const nav of document.querySelectorAll<HTMLElement>('[data-breadcrumb]')) {
+    resize.observe(nav);
+    const list = nav.querySelector('[data-breadcrumb-list]');
+    if (list) new MutationObserver(() => fit(nav)).observe(list, { childList: true, subtree: true, characterData: true });
+  }
+  document.fonts?.ready.then(() => document.querySelectorAll<HTMLElement>('[data-breadcrumb]').forEach(fit));
+</script>
