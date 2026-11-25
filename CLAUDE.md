@@ -113,6 +113,13 @@ loose buttons in the tab (#260).
   "Shoulders I stand on" reading list there, as a `SourceList` (#268).
 - Today: Dev, Author, Gamer, Influencer, Musician, Anime, BOTW, Death, Mentor, Lust and D&D. Elsewhere (another page or repo) `toggle="own"` gives the box its own Links button.
 
+## In-tab switches
+
+A tab that shows one of two lists (PM | Life hacks, Seen live | Wishlist on Concert and Theater & Opera, TV shows |
+Movies on Potato) uses the pill switch: a `<div class="switch" role="tablist">` of buttons with `data-switch-hash` at
+the top of the tab, under its Links box. It's always **centred** in the tab (#270). Each button's `data-switch-hash` is
+the link that opens it (`#potato-movies`).
+
 ## Website settings
 
 The gear (top right of the header, `src/components/SettingsMenu.astro`) opens Settings: **Language**, "Want a language
