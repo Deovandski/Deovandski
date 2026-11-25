@@ -103,7 +103,7 @@ loose buttons in the tab (#260).
   outlined, for the rest) and separators between them (`{ separator: 'Heading' }`, or `{ separator: true }` for a
   plain line). The link list itself lives once, at the top of `src/pages/index.astro` (like `devLinks`), or in the
   tab's own data.
-- Today: Dev, Author, Gamer, Musician, Anime and BOTW. Elsewhere (another page or repo) `toggle="own"` gives the box its own Links button.
+- Today: Dev, Author, Gamer, Influencer, Musician, Anime and BOTW. Elsewhere (another page or repo) `toggle="own"` gives the box its own Links button.
 
 ## Website settings
 
