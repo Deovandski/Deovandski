@@ -14,9 +14,9 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Family tab (header photos, text, Itaituba → Fargo map, photos) | `content/family/_intro.md`, header photos in `content/family/header/`, photos in `content/family/` (see its README); layout and map in `src/components/FamilyFacet.astro` |
 | Aviation tab (text + YouTube video) | `content/aviation.md`; video id in `src/pages/index.astro` (`panel-aviation`) |
 | Aviation paper plane | `src/components/reusable/PaperPlane.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
-| Mentor tab | `content/mentor.md` (plain Markdown) |
+| Mentor tab | `content/mentor.md` (plain Markdown); its "Shoulders I stand on" list, in the Links box, in `content/mentor-sources.md` |
 | Mentor tab Balls farm (seeds, odds, trades, mantra) | `content/mentor-farm.json`; `src/components/reusable/IsoFarm.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
-| Death tab (countdown clock + text) | `content/death.md`; clock target in `src/components/DeathFacet.astro` (`TARGET`); the clock itself is the reusable `src/components/reusable/LedClock.astro` |
+| Death tab (countdown clock + text) | `content/death.md` (its "Shoulders I stand on" list, in the Links box, in `content/death-sources.md`); clock target in `src/components/DeathFacet.astro` (`TARGET`); the clock itself is the reusable `src/components/reusable/LedClock.astro` |
 | PM/Life hacks tab: PM side (public Kanban boards) | `boards` near the top of `src/pages/index.astro` |
 | PM/Life hacks tab: Life hacks side | `src/components/LifeHacksFacet.astro` |
 | QR Code page (hidden: `/qr/`, or `#qr` on the home page) | `src/pages/qr.astro`: `contact` (name and phone above the codes) and `codes` (one QR code per row, stacked in order) |
