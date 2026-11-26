@@ -1577,8 +1577,8 @@ const nf = new Intl.NumberFormat('en-US');
     if (source === 'user' && hash) history.replaceState(history.state, '', hash); // keeps the tab's back entry
   });
 
-  // Old links: #weeb is now #anime, #drummer is now #musician; #sex is now #lust; #tv and #movie (the old TV/Movie Potato tabs) open the Potato switch.
-  const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies', '#cat': '#pets-peeta', '#sex': '#lust', '#drummer': '#musician' };
+  // Old links: #weeb is now #anime, #drummer is now #musician, #biomarkers-rides is now #biomarkers-exercise; #sex is now #lust; #tv and #movie (the old TV/Movie Potato tabs) open the Potato switch.
+  const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies', '#cat': '#pets-peeta', '#sex': '#lust', '#drummer': '#musician', '#biomarkers-rides': '#biomarkers-exercise' };
   // Opens the facet a link like #death points to, growing its branch. Returns false if the hash isn't a facet.
   function openFromHash(rawHash: string): boolean {
     const hash = renamed[rawHash] ?? rawHash;

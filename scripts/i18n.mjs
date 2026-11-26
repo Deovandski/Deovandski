@@ -5,7 +5,7 @@
 //
 // How it works
 // - Each built page is split into segments: every element that holds text directly (a paragraph, heading, list
-//   item, button, label, option, caption, ...) plus a few attributes (alt, title, aria-label, placeholder) and the
+//   item, button, label, option, caption, ...) plus a few attributes (alt, title, aria-label, placeholder, an optgroup's label) and the
 //   page description. Each segment is keyed by a short hash of its English HTML.
 // - A segment's translation is looked up by that hash. A segment with no translation stays in English, marked
 //   lang="en", so a half-translated language still works.
@@ -48,7 +48,7 @@ const SITE_URL = (process.env.SITE_URL || 'https://deovandski.com').replace(/\/+
 export const INDEX_COVERAGE = CONFIG.index_coverage ?? 0.9;
 
 const SKIP_TAGS = new Set(['SCRIPT', 'STYLE', 'SVG', 'NOSCRIPT', 'TEMPLATE', 'CODE', 'PRE', 'TEXTAREA']);
-const ATTRS = ['alt', 'title', 'aria-label', 'placeholder'];
+const ATTRS = ['alt', 'title', 'aria-label', 'placeholder', 'label']; // label: an <optgroup>'s heading
 const SHARED_SELECTOR = '.site-header, .site-footer, #site-settings, .skip, .i18n-shared';
 const SHARED_MIN_PAGES = 5;
 const LETTER = /\p{L}/u;

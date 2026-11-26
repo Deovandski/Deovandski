@@ -67,6 +67,7 @@ names and the first lines of the CSVs, fix the script, and update the "checked a
 Things already learned:
 
 - Exercises: `Health Fitness Data_GoogleData/UserExercises_<date>.csv`, UTC times plus a `utc_offset`, distance in mm.
+  The Cycling script takes the bike rides from it; the biomarkers script takes every kind, as minutes per day.
 - Steps and active zone minutes are per minute in **real UTC**: add them up by local day.
 - Sleeps and sleep scores: a `+00:00` offset means the time is **already local** (2023 to mid 2025); any other offset
   means UTC.

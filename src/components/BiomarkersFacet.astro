@@ -6,7 +6,7 @@ import MetricLab from './reusable/MetricLab.astro';
 import { url } from '../lib/url';
 
 // Hearth › Biomarker Lab. The numbers come from content/biomarkers/daily.json (scripts/biomarkers-from-takeout.mjs),
-// served as /biomarkers.json (src/pages/biomarkers.json.ts) with the Cycling tab's rides as the "event".
+// served as /biomarkers.json (src/pages/biomarkers.json.ts), with exercise from the watch's log as the "event".
 const { exported, days } = JSON.parse(readFileSync(resolve('content/biomarkers/daily.json'), 'utf8')) as { exported: string; days: { date: string }[] };
 const from = new Date(`${days[0].date}T00:00:00Z`), to = new Date(`${days[days.length - 1].date}T00:00:00Z`);
 const month = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
@@ -20,29 +20,47 @@ const month = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', year: 
     src={url('/biomarkers.json')}
     hash="#biomarkers"
     metrics={[
-      { key: 'rhr', label: 'Resting heart rate', unit: 'bpm', decimals: 1 },
-      { key: 'hrv', label: 'Heart rate variability', unit: 'ms' },
-      { key: 'sleepMin', label: 'Time asleep', format: 'duration' },
-      { key: 'bedH', label: 'Bedtime', format: 'clock' },
-      { key: 'sleepScore', label: 'Sleep score' },
-      { key: 'deep', label: 'Deep sleep', unit: 'min' },
-      { key: 'rem', label: 'REM sleep', unit: '%', decimals: 1 },
-      { key: 'resp', label: 'Breathing rate', unit: '/min', decimals: 1 },
-      { key: 'spo2', label: 'Blood oxygen', unit: '%', decimals: 1 },
-      { key: 'skinC', label: 'Skin temperature', unit: '°F', decimals: 1 },
-      { key: 'steps', label: 'Steps' },
-      { key: 'azm', label: 'Active zone minutes', unit: 'min' },
-      { key: 'stress', label: 'Stress score' },
-      { key: 'vo2', label: 'Cardio fitness (VO₂ max)', decimals: 1 },
-      { key: 'ready', label: 'Readiness' },
+      { key: 'rhr', label: 'Resting heart rate', unit: 'bpm', decimals: 1, group: 'Heart' },
+      { key: 'hrv', label: 'Heart rate variability', unit: 'ms', group: 'Heart' },
+      { key: 'vo2', label: 'Cardio fitness (VO₂ max)', decimals: 1, group: 'Heart' },
+      { key: 'sleepMin', label: 'Time asleep', format: 'duration', group: 'Overnight' },
+      { key: 'bedH', label: 'Bedtime', format: 'clock', group: 'Overnight' },
+      { key: 'sleepScore', label: 'Sleep score', group: 'Overnight' },
+      { key: 'deep', label: 'Deep sleep', unit: 'min', group: 'Overnight' },
+      { key: 'rem', label: 'REM sleep', unit: '%', decimals: 1, group: 'Overnight' },
+      { key: 'resp', label: 'Breathing rate', unit: '/min', decimals: 1, group: 'Overnight' },
+      { key: 'spo2', label: 'Blood oxygen', unit: '%', decimals: 1, group: 'Overnight' },
+      { key: 'skinC', label: 'Skin temperature', unit: '°F', decimals: 1, group: 'Overnight' },
+      { key: 'steps', label: 'Steps', group: 'Activity' },
+      { key: 'azm', label: 'Active zone minutes', unit: 'min', group: 'Activity' },
+      { key: 'exMin', label: 'Exercise', unit: 'min', group: 'Activity' },
+      { key: 'stress', label: 'Stress score', group: 'Recovery' },
+      { key: 'ready', label: 'Readiness', group: 'Recovery' },
     ]}
-    event={{ view: 'Ride nights', day: 'ride day', after: 'After a ride', other: 'Other nights', value: 'Rode {n} mi', slug: 'rides' }}
-    defaults={{ timeline: ['rhr', 'hrv', 'sleepMin', 'sleepScore', 'deep', 'steps', 'spo2', 'vo2'], calendar: 'sleepScore', seasons: 'rhr', x: 'steps', y: 'hrv' }}
+    event={{
+      view: 'After exercise',
+      day: 'exercise day',
+      after: 'After exercise',
+      other: 'After a rest day',
+      value: '{n} min of exercise',
+      slug: 'exercise',
+      kindsLabel: 'Counts as exercise',
+      kinds: [
+        { key: 'exWalk', label: 'Walking' },
+        { key: 'exBike', label: 'Cycling' },
+        { key: 'exCardio', label: 'Cardio machines' },
+        { key: 'exRun', label: 'Running' },
+        { key: 'exStrength', label: 'Strength' },
+        { key: 'exOther', label: 'Other' },
+      ],
+    }}
+    defaults={{ timeline: ['rhr', 'hrv', 'sleepMin', 'sleepScore', 'deep', 'steps', 'exMin', 'vo2'], calendar: 'sleepScore', seasons: 'rhr', x: 'steps', y: 'hrv' }}
   />
 
   <p class="biomarkers__fine">
-    From my Pixel Watch, through Google Health, {month(from)} to {month(to)} (exported {exported}). Rides come from the
-    <a href="#cycling">Cycling</a> tab. Dates and numbers only: no places.
+    From my Pixel Watch, through Google Health, {month(from)} to {month(to)} (exported {exported}). Exercise is what the
+    watch logged, 10 minutes or more: walks, rides, the elliptical, runs, swims. Bike rides the watch caught on its own
+    count as "Other", as on the <a href="#cycling">Cycling</a> tab. Dates and numbers only: no places.
   </p>
 </div>
 

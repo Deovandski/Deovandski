@@ -12,7 +12,7 @@ Having cycling in the routine, alongside the gym, also helped my circadian rhyth
 
 A ride outside stacks the last two: daylight and exercise, in one go. The studies are in this tab's Links box.
 
-How my nights after a ride compare with the rest is in the [Biomarker Lab](#biomarkers), under Hearth.
+How my nights after exercise, rides included, compare with rest days is in the [Biomarker Lab](#biomarkers-exercise), under Hearth.
 
 ## Mountain biking
 

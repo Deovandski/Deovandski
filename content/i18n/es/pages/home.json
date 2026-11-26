@@ -15,6 +15,10 @@
   "en": "EP",
   "t": "EP"
  },
+ "00c9c7879bf5": {
+  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>After exercise",
+  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>Después de hacer ejercicio"
+ },
  "00cad34ec61e": {
   "en": "Each moon is a game, sized by its hours.",
   "t": "Cada luna es un juego, tan grande como sus horas."
@@ -274,6 +278,10 @@
  "07306c8e3c85": {
   "en": "CD",
   "t": "CD"
+ },
+ "0758261ad426": {
+  "en": " B · After exercise ",
+  "t": "B · Después de hacer ejercicio"
  },
  "0769eae50b31": {
   "en": "The games on the list add up to 1,442 days of nonstop play, 24 hours a day. Each square is one of those days.",
@@ -935,10 +943,6 @@
   "en": "Musician",
   "t": "Músico"
  },
- "1cc7e3f39b49": {
-  "en": "Rode {n} mi",
-  "t": "Pedaleé {n} mi"
- },
  "1d0c8304baed": {
   "en": "Color",
   "t": "Color"
@@ -958,10 +962,6 @@
  "1dd4129242ad": {
   "en": "Classical",
   "t": "Clásica"
- },
- "1de180253ec0": {
-  "en": "After a ride",
-  "t": "Después de pedalear"
  },
  "1df37d663014": {
   "en": "135 h",
@@ -1054,6 +1054,10 @@
  "205557c2e666": {
   "en": "DJ_Dave",
   "t": "DJ_Dave"
+ },
+ "20863c83d39b": {
+  "en": "Exercise",
+  "t": "Ejercicio"
  },
  "208c94b74ffe": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 14: </span> Placeholder movie 14 ",
@@ -1223,6 +1227,10 @@
   "en": "Views",
   "t": "Visualizaciones"
  },
+ "24d3e4fdd9a8": {
+  "en": "Strength",
+  "t": "Fuerza"
+ },
  "24d4ea7ee729": {
   "en": "Do I really have to wear these",
   "t": "¿De verdad tengo que ponerme esto?"
@@ -1262,6 +1270,10 @@
  "259034821da9": {
   "en": "Sabaton",
   "t": "Sabaton"
+ },
+ "25e1d41b4864": {
+  "en": "Cardio machines",
+  "t": "Máquinas de cardio"
  },
  "2648964f2489": {
   "en": "Enlarge: Painting or drawing, 04/30/2013",
@@ -1347,6 +1359,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Puesto 10: </span> Serie provisional 10"
  },
+ "27d882d46a38": {
+  "en": "Seasons",
+  "t": "Estaciones"
+ },
  "27ff191d72e4": {
   "en": "Deo",
   "t": "Deo"
@@ -1430,6 +1446,10 @@
  "2a3202db821a": {
   "en": " <span class=\"step__num\" data-astro-cid-uswg2a56=\"\">VII.</span> Give Thanks ",
   "t": "<span class=\"step__num\" data-astro-cid-uswg2a56=\"\">VII.</span> Da Gracias"
+ },
+ "2a37335eebda": {
+  "en": "Heart",
+  "t": "Corazón"
  },
  "2a45982468f2": {
   "en": "Enlarge: Acting cute",
@@ -1714,10 +1734,6 @@
  "32b93c52f5d9": {
   "en": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(June 21, 2026)</span>",
   "t": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(21 de junio de 2026)</span>"
- },
- "32f4bc9e552c": {
-  "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month. Ticks along the bottom mark each ride day.",
-  "t": "Cada métrica a lo largo del tiempo, un gráfico pequeño para cada una. Pasa el ratón por un gráfico y todos muestran el mismo día, semana o mes. Las marcas de abajo señalan cada día de bici."
  },
  "32f997551915": {
   "en": "{h}h {m}m",
@@ -2011,6 +2027,10 @@
   "en": "Long Play",
   "t": "Long Play"
  },
+ "3aa7e2bfd3d3": {
+  "en": "One square per day, one row per year. The brighter the square, the higher the number. A colored edge marks each exercise day. Faded squares are days outside your filters.",
+  "t": "Un cuadrado por día, una fila por año. Cuanto más claro el cuadrado, mayor el número. Un borde de color marca cada día de ejercicio. Los cuadrados apagados son días fuera de tus filtros."
+ },
  "3aaff43b4038": {
   "en": " UH ",
   "t": "UH"
@@ -2279,6 +2299,10 @@
   "en": "Energy",
   "t": "Energía"
  },
+ "43954ee875dc": {
+  "en": "This tab is in Hearth because at the center of it is my body. Tracking it and caring for it is just as important as caring for my family, my pets and healthy friendships.",
+  "t": "Esta pestaña está en Hogar porque en su centro está mi cuerpo. Seguirlo y cuidarlo es tan importante como cuidar de mi familia, de mis mascotas y de amistades sanas."
+ },
  "43b6999af90e": {
   "en": "My profile on Xbox",
   "t": "Mi perfil de Xbox"
@@ -2390,6 +2414,10 @@
  "47d6c332de8e": {
   "en": "Idle Evolution",
   "t": "Idle Evolution"
+ },
+ "481021d04da3": {
+  "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
+  "t": "Cada métrica a lo largo del tiempo, un gráfico pequeño para cada una. Pasa el ratón por un gráfico y todos muestran el mismo día, semana o mes."
  },
  "482c33fb5f57": {
   "en": "1,137 h",
@@ -2779,6 +2807,10 @@
   "en": "Gossipy old lady",
   "t": "Señora cotilla"
  },
+ "520e20d140b5": {
+  "en": "After exercise",
+  "t": "Después de hacer ejercicio"
+ },
  "521cb68c2c31": {
   "en": "Ceará",
   "t": "Ceará"
@@ -2927,10 +2959,6 @@
   "en": "People post more right after a batch of likes, spacing posts to chase the best rate of likes, like an animal in a Skinner box.",
   "t": "La gente publica más justo después de una tanda de me gusta, espaciando las publicaciones para perseguir la mejor tasa de me gusta, como un animal en una caja de Skinner."
  },
- "55f9fd002ac9": {
-  "en": "The body is the temple",
-  "t": "El cuerpo es el templo"
- },
  "55fa0faa800a": {
   "en": "City, colony & strategy",
   "t": "Ciudades, colonias y estrategia"
@@ -2958,6 +2986,10 @@
  "56ae05777086": {
   "en": "Performance art",
   "t": "Arte de performance"
+ },
+ "56b3a9db1ca6": {
+  "en": "How my nights after exercise, rides included, compare with rest days is in the <a href=\"#biomarkers-exercise\">Biomarker Lab</a>, under Hearth.",
+  "t": "Cómo son mis noches después de hacer ejercicio, salidas en bici incluidas, comparadas con los días de descanso, está en el <a href=\"#biomarkers-exercise\">Laboratorio de Biomarcadores</a>, en Hogar."
  },
  "56b483fec247": {
   "en": "<strong>Carsten Wrosch and colleagues</strong> (2003): letting go of unattainable goals and reengaging with new ones is linked to higher well-being. <a href=\"https://www.cmu.edu/dietrich/psychology/pdf/scales/GAS_article.pdf\">Paper</a>",
@@ -3087,10 +3119,6 @@
   "en": "Change the lights",
   "t": "Cambiar las luces"
  },
- "5a6b6b31729f": {
-  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>Other nights",
-  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>Otras noches"
- },
  "5a7078113356": {
   "en": "Sleep first",
   "t": "Primero, dormir"
@@ -3102,6 +3130,10 @@
  "5abf683efa95": {
   "en": "Cities: Skylines",
   "t": "Cities: Skylines"
+ },
+ "5ac82d7032bb": {
+  "en": "After a rest day",
+  "t": "Después de un día de descanso"
  },
  "5ae29d1cf6fc": {
   "en": "Enlarge: Let's go for a walk",
@@ -3134,6 +3166,10 @@
  "5b596595aba4": {
   "en": "Weight (lb)",
   "t": "Peso (lb)"
+ },
+ "5b5bf00d12e9": {
+  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>After a rest day",
+  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>Después de un día de descanso"
  },
  "5b9a4d2e5f93": {
   "en": "20 h",
@@ -3359,10 +3395,6 @@
   "en": "The wishlist is on its way.",
   "t": "La lista de deseos está en camino."
  },
- "62255f5671e8": {
-  "en": "Season",
-  "t": "Estación"
- },
  "62405c2823c6": {
   "en": "Justin Timberlake",
   "t": "Justin Timberlake"
@@ -3543,6 +3575,10 @@
   "en": "Another dino",
   "t": "Otro dino"
  },
+ "67f294519699": {
+  "en": "Walking",
+  "t": "Caminar"
+ },
  "6804bf126f26": {
   "en": " 368 h  ",
   "t": "368 h"
@@ -3663,10 +3699,6 @@
   "en": "Take care of Peeta",
   "t": "Cuida de Peeta"
  },
- "6a72085653e4": {
-  "en": "All",
-  "t": "Todo"
- },
  "6a985aa2c1d7": {
   "en": "Disturbed",
   "t": "Disturbed"
@@ -3739,10 +3771,6 @@
   "en": "3 mana · 2",
   "t": "3 de maná · 2"
  },
- "6d0a290e3592": {
-  "en": "One square per day, one row per year. The brighter the square, the higher the number. A colored edge marks each ride day. Faded squares are days outside your filters.",
-  "t": "Un cuadrado por día, una fila por año. Cuanto más claro el cuadrado, mayor el número. Un borde de color marca cada día de bici. Los cuadrados apagados son días fuera de tus filtros."
- },
  "6d1c8ee06629": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 29: </span> Placeholder TV show 29 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Puesto 29: </span> Serie provisional 29"
@@ -3790,10 +3818,6 @@
  "6e1f92efbe0b": {
   "en": "That one really got me in the feels. It made me feel more in one sitting than I felt while dating some girls. It's hard for me to miss someone once I say goodbye, but this anime made me sit with that feeling for a good while after watching it.",
   "t": "Ese me tocó la fibra de verdad. Me hizo sentir más en una sola sentada que lo que sentí saliendo con algunas chicas. Me cuesta echar de menos a alguien una vez me despido, pero este anime me tuvo con ese sentimiento un buen rato después de verlo."
- },
- "6e64529a10e6": {
-  "en": "The night and day after each ride day, against every other day you picked. The dot is the middle value (the median) and the bar holds the middle half of the days. This view ignores the Nights filter.",
-  "t": "La noche y el día después de cada día de bici, frente a todos los demás días elegidos. El punto es el valor central (la mediana) y la barra abarca la mitad central de los días. Esta vista no tiene en cuenta el filtro Noches."
  },
  "6e68e69e0822": {
   "en": "Black ink",
@@ -3954,6 +3978,10 @@
  "737ccff0c2c2": {
   "en": "Peeta, a black-and-white cat, running across the backyard grass",
   "t": "Peeta, un gato blanco y negro, corriendo por el césped del jardín"
+ },
+ "73989d9c5926": {
+  "en": "Running",
+  "t": "Correr"
  },
  "73aba9691140": {
   "en": "Madama Butterfly",
@@ -4122,10 +4150,6 @@
  "781012cf77dd": {
   "en": "estimated",
   "t": "estimadas"
- },
- "781291fa12cc": {
-  "en": "ride day",
-  "t": "día de bici"
  },
  "781961bc81c2": {
   "en": "Pause",
@@ -4443,6 +4467,10 @@
   "en": "One kind of post secretly pays better, and it changes without warning, so you keep trying everything.",
   "t": "Un tipo de publicación paga mejor en secreto, y cambia sin avisar, así que sigues probando de todo."
  },
+ "81c0d915fa6d": {
+  "en": "Activity",
+  "t": "Actividad"
+ },
  "81d24cc01ffe": {
   "en": "CW",
   "t": "CW"
@@ -4482,6 +4510,10 @@
  "82d2abb6b0d8": {
   "en": "Skin tone",
   "t": "Tono de piel"
+ },
+ "82e58fbf1aa4": {
+  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Exercise is what the\n    watch logged, 10 minutes or more: walks, rides, the elliptical, runs, swims. Bike rides the watch caught on its own\n    count as \"Other\", as on the <a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Cycling</a> tab. Dates and numbers only: no places.\n",
+  "t": "De mi Pixel Watch, a través de Google Health, de abril de 2023 a noviembre de 2026 (exportado el 2026-11-26). El ejercicio es lo que registró el reloj, de 10 minutos o más: paseos, salidas en bici, la elíptica, carreras, natación. Las salidas en bici que el reloj detectó solo cuentan como \"Otros\", igual que en la pestaña <a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Ciclismo</a>. Solo fechas y números: ningún lugar."
  },
  "82fb9c3d5b57": {
   "en": "Ecchi-meter: turn your phone sideways",
@@ -4819,6 +4851,10 @@
   "en": "Blood oxygen",
   "t": "Oxígeno en sangre"
  },
+ "8cd99549a1a4": {
+  "en": "{n} min of exercise",
+  "t": "{n} min de ejercicio"
+ },
  "8ce8b5330b49": {
   "en": "So damn cute! It reminded me of going through adolescence, which means it does a really good job of capturing how weird and fascinating it is to grow into early adulthood. Also, I absolutely love Satone, because I love clingy girls!",
   "t": "¡Monísimo! Me recordó a pasar por la adolescencia, lo que significa que capta muy bien lo raro y fascinante que es crecer hacia la primera adultez. Además, me encanta Satone, ¡porque me encantan las chicas pegajosas!"
@@ -4854,6 +4890,10 @@
  "8e38c2784d21": {
   "en": "Much tired",
   "t": "Muy cansada"
+ },
+ "8e4cd13e1138": {
+  "en": "The body is a machine, and like any other machine, it needs to be cared for. These are its gauges: what my watch has logged every day since April 2023. Slice them any way you like, and see what exercise does to them.",
+  "t": "El cuerpo es una máquina y, como cualquier otra máquina, hay que cuidarlo. Estos son sus indicadores: lo que mi reloj ha registrado cada día desde abril de 2023. Córtalos como quieras y mira lo que el ejercicio hace con ellos."
  },
  "8e4e0408b8f6": {
   "en": "pearls",
@@ -5299,10 +5339,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder movie 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Puesto 33: </span> Película provisional 33"
  },
- "9ae44de0bb30": {
-  "en": "Other nights",
-  "t": "Otras noches"
- },
  "9b596bacf45e": {
   "en": "You don't have to trust me, you can check <a href=\"https://github.com/Deovandski/Deovandski\" data-astro-cid-somgw2vn=\"\">the source code</a> yourself.",
   "t": "No tienes por qué fiarte de mí: puedes revisar <a href=\"https://github.com/Deovandski/Deovandski\" data-astro-cid-somgw2vn=\"\">el código fuente</a> tú mismo."
@@ -5506,6 +5542,10 @@
  "a11e07d9f842": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#1: </span>Best of the Worst: Black Spine Junka 3",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#1: </span>Best of the Worst: Black Spine Junka 3"
+ },
+ "a11e1f9743eb": {
+  "en": "Days of the week",
+  "t": "Días de la semana"
  },
  "a11f62752ca1": {
   "en": "16% of my hours",
@@ -6271,10 +6311,6 @@
   "en": "60 h",
   "t": "60 h"
  },
- "b553840edbe9": {
-  "en": " B · Ride nights ",
-  "t": "B · Noches de bici"
- },
  "b588aca7bb99": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Puesto 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!)"
@@ -6346,6 +6382,10 @@
  "b7949e214de8": {
   "en": "Mountain biking",
   "t": "Bicicleta de montaña"
+ },
+ "b7972ec7613f": {
+  "en": "The night and day after each exercise day, against every other day you picked. The dot is the middle value (the median) and the bar holds the middle half of the days. This view ignores the Nights boxes.",
+  "t": "La noche y el día después de cada día de ejercicio, frente a todos los demás días elegidos. El punto es el valor central (la mediana) y la barra abarca la mitad central de los días. Esta vista no tiene en cuenta las casillas de Noches."
  },
  "b7b3fa90eecd": {
   "en": " TrueTrophies ",
@@ -6547,6 +6587,10 @@
   "en": "Ghost",
   "t": "Ghost"
  },
+ "bf6aad009bcd": {
+  "en": "Counts as exercise",
+  "t": "Cuenta como ejercicio"
+ },
  "bfa28522fcb3": {
   "en": "Hamilton",
   "t": "Hamilton"
@@ -6719,10 +6763,6 @@
   "en": "Rauw Alejandro",
   "t": "Rauw Alejandro"
  },
- "c4e423204c8a": {
-  "en": "Ride nights",
-  "t": "Noches de bici"
- },
  "c5352fbe59ff": {
   "en": "Next routine",
   "t": "Rutina siguiente"
@@ -6830,10 +6870,6 @@
  "c89fbbb316fe": {
   "en": " <span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> Space &amp; flight: 1,302 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> Espacio y vuelo: 1,302 h"
- },
- "c8a57159c492": {
-  "en": "How my nights after a ride compare with the rest is in the <a href=\"#biomarkers\">Biomarker Lab</a>, under Hearth.",
-  "t": "Cómo son mis noches después de pedalear, comparadas con las demás, está en el <a href=\"#biomarkers\">Laboratorio de Biomarcadores</a>, en Hogar."
  },
  "c8b4c761e082": {
   "en": " 1,302 h ",
@@ -6962,6 +6998,10 @@
  "cc6bd57cedaf": {
   "en": "hours played",
   "t": "horas jugadas"
+ },
+ "cc9b32d95789": {
+  "en": "exercise day",
+  "t": "día de ejercicio"
  },
  "cc9c3f91bf15": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">✋</span> Pet ",
@@ -7191,10 +7231,6 @@
   "en": "Colorado",
   "t": "Colorado"
  },
- "d28fc72baa36": {
-  "en": "The body is a machine, and like any other machine, it needs to be cared for. These are its gauges: what my watch has logged every day since April 2023. Slice them any way you like.",
-  "t": "El cuerpo es una máquina y, como cualquier otra máquina, hay que cuidarlo. Estos son sus indicadores: lo que mi reloj ha registrado cada día desde abril de 2023. Córtalos como quieras."
- },
  "d28fea415d19": {
   "en": "middle value",
   "t": "valor central"
@@ -7234,6 +7270,10 @@
  "d38a691b674d": {
   "en": "1 year and 257 days",
   "t": "1 año y 257 días"
+ },
+ "d3959b02a94f": {
+  "en": "Overnight",
+  "t": "Por la noche"
  },
  "d397cf31a23a": {
   "en": "Same plane. Drag back to aim and let go to throw.",
@@ -7474,10 +7514,6 @@
  "d96d8c890e9f": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#19: </span>Best of the Worst: A Very Cannon Christmas II",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#19: </span>Best of the Worst: A Very Cannon Christmas II"
- },
- "d970d5b83c91": {
-  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Rides come from the\n<a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Cycling</a> tab. Dates and numbers only: no places.\n",
-  "t": "De mi Pixel Watch, a través de Google Health, de abril de 2023 a noviembre de 2026 (exportado el 2026-11-26). Las salidas en bici vienen de la pestaña\n<a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Ciclismo</a>. Solo fechas y números: ningún lugar."
  },
  "d988b45e783b": {
   "en": "Pick a routine",
@@ -8010,6 +8046,10 @@
  "ea86a5ac3b17": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 34: </span> Tokyo Ghoul ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Puesto 34: </span> Tokyo Ghoul"
+ },
+ "ea924f72d31e": {
+  "en": "Recovery",
+  "t": "Recuperación"
  },
  "eaa40e2587dc": {
   "en": "Distrito Federal",
@@ -8602,10 +8642,6 @@
  "fe9050f8f41a": {
   "en": "Practice skin. Draw a tattoo on it with the tattoo pen.",
   "t": "Piel de prácticas. Dibuja un tatuaje en ella con la máquina de tatuar."
- },
- "feda6ec3fdc1": {
-  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>After a ride",
-  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>Después de pedalear"
  },
  "fee0589986c6": {
   "en": "The Stanley Parable",

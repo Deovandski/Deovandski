@@ -15,6 +15,10 @@
   "en": "EP",
   "t": "EP"
  },
+ "00c9c7879bf5": {
+  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>After exercise",
+  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>Setelah berolahraga"
+ },
  "00cad34ec61e": {
   "en": "Each moon is a game, sized by its hours.",
   "t": "Setiap bulan adalah satu game, sebesar jamnya."
@@ -274,6 +278,10 @@
  "07306c8e3c85": {
   "en": "CD",
   "t": "CD"
+ },
+ "0758261ad426": {
+  "en": " B · After exercise ",
+  "t": "B · Setelah berolahraga"
  },
  "0769eae50b31": {
   "en": "The games on the list add up to 1,442 days of nonstop play, 24 hours a day. Each square is one of those days.",
@@ -935,10 +943,6 @@
   "en": "Musician",
   "t": "Musisi"
  },
- "1cc7e3f39b49": {
-  "en": "Rode {n} mi",
-  "t": "Bersepeda {n} mi"
- },
  "1d0c8304baed": {
   "en": "Color",
   "t": "Warna"
@@ -958,10 +962,6 @@
  "1dd4129242ad": {
   "en": "Classical",
   "t": "Klasik"
- },
- "1de180253ec0": {
-  "en": "After a ride",
-  "t": "Setelah bersepeda"
  },
  "1df37d663014": {
   "en": "135 h",
@@ -1054,6 +1054,10 @@
  "205557c2e666": {
   "en": "DJ_Dave",
   "t": "DJ_Dave"
+ },
+ "20863c83d39b": {
+  "en": "Exercise",
+  "t": "Olahraga"
  },
  "208c94b74ffe": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 14: </span> Placeholder movie 14 ",
@@ -1223,6 +1227,10 @@
   "en": "Views",
   "t": "Tayangan"
  },
+ "24d3e4fdd9a8": {
+  "en": "Strength",
+  "t": "Kekuatan"
+ },
  "24d4ea7ee729": {
   "en": "Do I really have to wear these",
   "t": "Beneran harus pakai ini"
@@ -1262,6 +1270,10 @@
  "259034821da9": {
   "en": "Sabaton",
   "t": "Sabaton"
+ },
+ "25e1d41b4864": {
+  "en": "Cardio machines",
+  "t": "Mesin kardio"
  },
  "2648964f2489": {
   "en": "Enlarge: Painting or drawing, 04/30/2013",
@@ -1347,6 +1359,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 10: </span> Acara TV sementara 10"
  },
+ "27d882d46a38": {
+  "en": "Seasons",
+  "t": "Musim"
+ },
  "27ff191d72e4": {
   "en": "Deo",
   "t": "Deo"
@@ -1430,6 +1446,10 @@
  "2a3202db821a": {
   "en": " <span class=\"step__num\" data-astro-cid-uswg2a56=\"\">VII.</span> Give Thanks ",
   "t": "<span class=\"step__num\" data-astro-cid-uswg2a56=\"\">VII.</span> Bersyukurlah"
+ },
+ "2a37335eebda": {
+  "en": "Heart",
+  "t": "Jantung"
  },
  "2a45982468f2": {
   "en": "Enlarge: Acting cute",
@@ -1714,10 +1734,6 @@
  "32b93c52f5d9": {
   "en": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(June 21, 2026)</span>",
   "t": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(21 Juni 2026)</span>"
- },
- "32f4bc9e552c": {
-  "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month. Ticks along the bottom mark each ride day.",
-  "t": "Setiap metrik dari waktu ke waktu, satu grafik kecil untuk masing-masing. Arahkan ke grafik dan semua grafik menampilkan hari, minggu, atau bulan yang sama. Tanda di bawah menandai setiap hari bersepeda."
  },
  "32f997551915": {
   "en": "{h}h {m}m",
@@ -2011,6 +2027,10 @@
   "en": "Long Play",
   "t": "Long Play"
  },
+ "3aa7e2bfd3d3": {
+  "en": "One square per day, one row per year. The brighter the square, the higher the number. A colored edge marks each exercise day. Faded squares are days outside your filters.",
+  "t": "Satu kotak per hari, satu baris per tahun. Makin terang kotaknya, makin tinggi angkanya. Tepi berwarna menandai setiap hari olahraga. Kotak pudar adalah hari di luar filtermu."
+ },
  "3aaff43b4038": {
   "en": " UH ",
   "t": "UH"
@@ -2279,6 +2299,10 @@
   "en": "Energy",
   "t": "Energi"
  },
+ "43954ee875dc": {
+  "en": "This tab is in Hearth because at the center of it is my body. Tracking it and caring for it is just as important as caring for my family, my pets and healthy friendships.",
+  "t": "Tab ini ada di Rumah karena di pusatnya ada tubuh saya. Memantau dan merawatnya sama pentingnya dengan merawat keluarga, hewan peliharaan, dan persahabatan yang sehat."
+ },
  "43b6999af90e": {
   "en": "My profile on Xbox",
   "t": "Profilku di Xbox"
@@ -2390,6 +2414,10 @@
  "47d6c332de8e": {
   "en": "Idle Evolution",
   "t": "Idle Evolution"
+ },
+ "481021d04da3": {
+  "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
+  "t": "Setiap metrik dari waktu ke waktu, satu grafik kecil untuk masing-masing. Arahkan ke grafik dan semua grafik menampilkan hari, minggu, atau bulan yang sama."
  },
  "482c33fb5f57": {
   "en": "1,137 h",
@@ -2779,6 +2807,10 @@
   "en": "Gossipy old lady",
   "t": "Nenek tukang gosip"
  },
+ "520e20d140b5": {
+  "en": "After exercise",
+  "t": "Setelah berolahraga"
+ },
  "521cb68c2c31": {
   "en": "Ceará",
   "t": "Ceará"
@@ -2927,10 +2959,6 @@
   "en": "People post more right after a batch of likes, spacing posts to chase the best rate of likes, like an animal in a Skinner box.",
   "t": "Orang memposting lebih banyak tepat setelah dapat sekumpulan suka, mengatur jarak posting demi mengejar tingkat suka terbaik, seperti hewan di kotak Skinner."
  },
- "55f9fd002ac9": {
-  "en": "The body is the temple",
-  "t": "Tubuh adalah kuil"
- },
  "55fa0faa800a": {
   "en": "City, colony & strategy",
   "t": "Kota, koloni & strategi"
@@ -2958,6 +2986,10 @@
  "56ae05777086": {
   "en": "Performance art",
   "t": "Seni pertunjukan"
+ },
+ "56b3a9db1ca6": {
+  "en": "How my nights after exercise, rides included, compare with rest days is in the <a href=\"#biomarkers-exercise\">Biomarker Lab</a>, under Hearth.",
+  "t": "Perbandingan malam-malam saya setelah berolahraga, termasuk bersepeda, dengan hari istirahat ada di <a href=\"#biomarkers-exercise\">Lab Biomarker</a>, di bawah Rumah."
  },
  "56b483fec247": {
   "en": "<strong>Carsten Wrosch and colleagues</strong> (2003): letting go of unattainable goals and reengaging with new ones is linked to higher well-being. <a href=\"https://www.cmu.edu/dietrich/psychology/pdf/scales/GAS_article.pdf\">Paper</a>",
@@ -3087,10 +3119,6 @@
   "en": "Change the lights",
   "t": "Ganti lampu"
  },
- "5a6b6b31729f": {
-  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>Other nights",
-  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>Malam lain"
- },
  "5a7078113356": {
   "en": "Sleep first",
   "t": "Tidur dulu"
@@ -3102,6 +3130,10 @@
  "5abf683efa95": {
   "en": "Cities: Skylines",
   "t": "Cities: Skylines"
+ },
+ "5ac82d7032bb": {
+  "en": "After a rest day",
+  "t": "Setelah hari istirahat"
  },
  "5ae29d1cf6fc": {
   "en": "Enlarge: Let's go for a walk",
@@ -3134,6 +3166,10 @@
  "5b596595aba4": {
   "en": "Weight (lb)",
   "t": "Berat (lb)"
+ },
+ "5b5bf00d12e9": {
+  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>After a rest day",
+  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>Setelah hari istirahat"
  },
  "5b9a4d2e5f93": {
   "en": "20 h",
@@ -3359,10 +3395,6 @@
   "en": "The wishlist is on its way.",
   "t": "Daftar keinginan sedang dalam perjalanan."
  },
- "62255f5671e8": {
-  "en": "Season",
-  "t": "Musim"
- },
  "62405c2823c6": {
   "en": "Justin Timberlake",
   "t": "Justin Timberlake"
@@ -3543,6 +3575,10 @@
   "en": "Another dino",
   "t": "Dino lain"
  },
+ "67f294519699": {
+  "en": "Walking",
+  "t": "Jalan kaki"
+ },
  "6804bf126f26": {
   "en": " 368 h  ",
   "t": "368 h"
@@ -3663,10 +3699,6 @@
   "en": "Take care of Peeta",
   "t": "Rawat Peeta"
  },
- "6a72085653e4": {
-  "en": "All",
-  "t": "Semua"
- },
  "6a985aa2c1d7": {
   "en": "Disturbed",
   "t": "Disturbed"
@@ -3739,10 +3771,6 @@
   "en": "3 mana · 2",
   "t": "3 mana · 2"
  },
- "6d0a290e3592": {
-  "en": "One square per day, one row per year. The brighter the square, the higher the number. A colored edge marks each ride day. Faded squares are days outside your filters.",
-  "t": "Satu kotak per hari, satu baris per tahun. Makin terang kotaknya, makin tinggi angkanya. Tepi berwarna menandai setiap hari bersepeda. Kotak pudar adalah hari di luar filtermu."
- },
  "6d1c8ee06629": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 29: </span> Placeholder TV show 29 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 29: </span> Acara TV sementara 29"
@@ -3790,10 +3818,6 @@
  "6e1f92efbe0b": {
   "en": "That one really got me in the feels. It made me feel more in one sitting than I felt while dating some girls. It's hard for me to miss someone once I say goodbye, but this anime made me sit with that feeling for a good while after watching it.",
   "t": "Yang itu benar-benar menyentuh perasaanku. Ia membuatku merasakan lebih banyak dalam sekali duduk daripada yang kurasakan saat berpacaran dengan beberapa gadis. Sulit bagiku merindukan seseorang setelah berpamitan, tapi anime ini membuatku terbawa perasaan itu cukup lama setelah menontonnya."
- },
- "6e64529a10e6": {
-  "en": "The night and day after each ride day, against every other day you picked. The dot is the middle value (the median) and the bar holds the middle half of the days. This view ignores the Nights filter.",
-  "t": "Malam dan hari setelah setiap hari bersepeda, dibandingkan semua hari lain yang dipilih. Titik adalah nilai tengah (median) dan batang mencakup separuh tengah hari-hari itu. Tampilan ini mengabaikan filter Malam."
  },
  "6e68e69e0822": {
   "en": "Black ink",
@@ -3954,6 +3978,10 @@
  "737ccff0c2c2": {
   "en": "Peeta, a black-and-white cat, running across the backyard grass",
   "t": "Peeta, kucing hitam putih, berlari di rumput halaman belakang"
+ },
+ "73989d9c5926": {
+  "en": "Running",
+  "t": "Lari"
  },
  "73aba9691140": {
   "en": "Madama Butterfly",
@@ -4122,10 +4150,6 @@
  "781012cf77dd": {
   "en": "estimated",
   "t": "perkiraan"
- },
- "781291fa12cc": {
-  "en": "ride day",
-  "t": "hari bersepeda"
  },
  "781961bc81c2": {
   "en": "Pause",
@@ -4443,6 +4467,10 @@
   "en": "One kind of post secretly pays better, and it changes without warning, so you keep trying everything.",
   "t": "Satu jenis posting diam-diam memberi hasil lebih baik, dan itu berubah tanpa peringatan, jadi kamu terus mencoba segalanya."
  },
+ "81c0d915fa6d": {
+  "en": "Activity",
+  "t": "Aktivitas"
+ },
  "81d24cc01ffe": {
   "en": "CW",
   "t": "CW"
@@ -4482,6 +4510,10 @@
  "82d2abb6b0d8": {
   "en": "Skin tone",
   "t": "Warna kulit"
+ },
+ "82e58fbf1aa4": {
+  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Exercise is what the\n    watch logged, 10 minutes or more: walks, rides, the elliptical, runs, swims. Bike rides the watch caught on its own\n    count as \"Other\", as on the <a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Cycling</a> tab. Dates and numbers only: no places.\n",
+  "t": "Dari Pixel Watch saya, lewat Google Health, April 2023 sampai November 2026 (diekspor 2026-11-26). Olahraga adalah yang dicatat jam, 10 menit atau lebih: jalan kaki, bersepeda, elips, lari, renang. Bersepeda yang dideteksi jam sendiri dihitung sebagai \"Lainnya\", seperti di tab <a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Bersepeda</a>. Hanya tanggal dan angka: tanpa tempat."
  },
  "82fb9c3d5b57": {
   "en": "Ecchi-meter: turn your phone sideways",
@@ -4819,6 +4851,10 @@
   "en": "Blood oxygen",
   "t": "Oksigen darah"
  },
+ "8cd99549a1a4": {
+  "en": "{n} min of exercise",
+  "t": "{n} mnt olahraga"
+ },
  "8ce8b5330b49": {
   "en": "So damn cute! It reminded me of going through adolescence, which means it does a really good job of capturing how weird and fascinating it is to grow into early adulthood. Also, I absolutely love Satone, because I love clingy girls!",
   "t": "Imut banget! Mengingatkanku pada masa remaja, artinya ia sangat berhasil menangkap betapa aneh dan memukaunya tumbuh menuju awal kedewasaan. Lagi pula, aku suka banget Satone, karena aku suka gadis yang manja dan lengket!"
@@ -4854,6 +4890,10 @@
  "8e38c2784d21": {
   "en": "Much tired",
   "t": "Capek banget"
+ },
+ "8e4cd13e1138": {
+  "en": "The body is a machine, and like any other machine, it needs to be cared for. These are its gauges: what my watch has logged every day since April 2023. Slice them any way you like, and see what exercise does to them.",
+  "t": "Tubuh adalah mesin, dan seperti mesin lainnya, ia perlu dirawat. Inilah pengukurnya: apa yang dicatat jam tangan saya setiap hari sejak April 2023. Iris sesukamu dan lihat apa yang dilakukan olahraga padanya."
  },
  "8e4e0408b8f6": {
   "en": "pearls",
@@ -5299,10 +5339,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder movie 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 33: </span> Film sementara 33"
  },
- "9ae44de0bb30": {
-  "en": "Other nights",
-  "t": "Malam lain"
- },
  "9b596bacf45e": {
   "en": "You don't have to trust me, you can check <a href=\"https://github.com/Deovandski/Deovandski\" data-astro-cid-somgw2vn=\"\">the source code</a> yourself.",
   "t": "Kamu tidak perlu percaya padaku, kamu bisa memeriksa <a href=\"https://github.com/Deovandski/Deovandski\" data-astro-cid-somgw2vn=\"\">kode sumbernya</a> sendiri."
@@ -5506,6 +5542,10 @@
  "a11e07d9f842": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#1: </span>Best of the Worst: Black Spine Junka 3",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#1: </span>Best of the Worst: Black Spine Junka 3"
+ },
+ "a11e1f9743eb": {
+  "en": "Days of the week",
+  "t": "Hari dalam seminggu"
  },
  "a11f62752ca1": {
   "en": "16% of my hours",
@@ -6271,10 +6311,6 @@
   "en": "60 h",
   "t": "60 h"
  },
- "b553840edbe9": {
-  "en": " B · Ride nights ",
-  "t": "B · Malam bersepeda"
- },
  "b588aca7bb99": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!)"
@@ -6346,6 +6382,10 @@
  "b7949e214de8": {
   "en": "Mountain biking",
   "t": "Sepeda gunung"
+ },
+ "b7972ec7613f": {
+  "en": "The night and day after each exercise day, against every other day you picked. The dot is the middle value (the median) and the bar holds the middle half of the days. This view ignores the Nights boxes.",
+  "t": "Malam dan hari setelah setiap hari olahraga, dibandingkan semua hari lain yang dipilih. Titik adalah nilai tengah (median) dan batang mencakup separuh tengah hari-hari itu. Tampilan ini mengabaikan kotak Malam."
  },
  "b7b3fa90eecd": {
   "en": " TrueTrophies ",
@@ -6547,6 +6587,10 @@
   "en": "Ghost",
   "t": "Ghost"
  },
+ "bf6aad009bcd": {
+  "en": "Counts as exercise",
+  "t": "Dihitung sebagai olahraga"
+ },
  "bfa28522fcb3": {
   "en": "Hamilton",
   "t": "Hamilton"
@@ -6719,10 +6763,6 @@
   "en": "Rauw Alejandro",
   "t": "Rauw Alejandro"
  },
- "c4e423204c8a": {
-  "en": "Ride nights",
-  "t": "Malam bersepeda"
- },
  "c5352fbe59ff": {
   "en": "Next routine",
   "t": "Rutin berikutnya"
@@ -6830,10 +6870,6 @@
  "c89fbbb316fe": {
   "en": " <span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> Space &amp; flight: 1,302 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> Luar angkasa &amp; penerbangan: 1,302 h"
- },
- "c8a57159c492": {
-  "en": "How my nights after a ride compare with the rest is in the <a href=\"#biomarkers\">Biomarker Lab</a>, under Hearth.",
-  "t": "Perbandingan malam-malam saya setelah bersepeda dengan malam lainnya ada di <a href=\"#biomarkers\">Lab Biomarker</a>, di bawah Rumah."
  },
  "c8b4c761e082": {
   "en": " 1,302 h ",
@@ -6962,6 +6998,10 @@
  "cc6bd57cedaf": {
   "en": "hours played",
   "t": "jam dimainkan"
+ },
+ "cc9b32d95789": {
+  "en": "exercise day",
+  "t": "hari olahraga"
  },
  "cc9c3f91bf15": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">✋</span> Pet ",
@@ -7191,10 +7231,6 @@
   "en": "Colorado",
   "t": "Colorado"
  },
- "d28fc72baa36": {
-  "en": "The body is a machine, and like any other machine, it needs to be cared for. These are its gauges: what my watch has logged every day since April 2023. Slice them any way you like.",
-  "t": "Tubuh adalah mesin, dan seperti mesin lainnya, ia perlu dirawat. Inilah pengukurnya: apa yang dicatat jam tangan saya setiap hari sejak April 2023. Iris sesukamu."
- },
  "d28fea415d19": {
   "en": "middle value",
   "t": "nilai tengah"
@@ -7234,6 +7270,10 @@
  "d38a691b674d": {
   "en": "1 year and 257 days",
   "t": "1 tahun dan 257 hari"
+ },
+ "d3959b02a94f": {
+  "en": "Overnight",
+  "t": "Semalaman"
  },
  "d397cf31a23a": {
   "en": "Same plane. Drag back to aim and let go to throw.",
@@ -7474,10 +7514,6 @@
  "d96d8c890e9f": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#19: </span>Best of the Worst: A Very Cannon Christmas II",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#19: </span>Best of the Worst: A Very Cannon Christmas II"
- },
- "d970d5b83c91": {
-  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Rides come from the\n<a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Cycling</a> tab. Dates and numbers only: no places.\n",
-  "t": "Dari Pixel Watch saya, lewat Google Health, April 2023 sampai November 2026 (diekspor 2026-11-26). Data bersepeda berasal dari tab\n<a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Bersepeda</a>. Hanya tanggal dan angka: tanpa tempat."
  },
  "d988b45e783b": {
   "en": "Pick a routine",
@@ -8010,6 +8046,10 @@
  "ea86a5ac3b17": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 34: </span> Tokyo Ghoul ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 34: </span> Tokyo Ghoul"
+ },
+ "ea924f72d31e": {
+  "en": "Recovery",
+  "t": "Pemulihan"
  },
  "eaa40e2587dc": {
   "en": "Distrito Federal",
@@ -8602,10 +8642,6 @@
  "fe9050f8f41a": {
   "en": "Practice skin. Draw a tattoo on it with the tattoo pen.",
   "t": "Kulit latihan. Gambar tato di atasnya dengan pena tato."
- },
- "feda6ec3fdc1": {
-  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>After a ride",
-  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>Setelah bersepeda"
  },
  "fee0589986c6": {
   "en": "The Stanley Parable",
