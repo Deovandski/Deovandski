@@ -19,6 +19,10 @@
   "en": "Each moon is a game, sized by its hours.",
   "t": "衛星ひとつがゲームで、大きさがプレイ時間です。"
  },
+ "00f03137e155": {
+  "en": "Easy",
+  "t": "イージー"
+ },
  "00f2a5f37536": {
   "en": "Enlarge: Third year since adoption",
   "t": "拡大: うちの子になって 3 年目"
@@ -711,6 +715,10 @@
   "en": "2 mana · 1",
   "t": "マナ 2 · 1"
  },
+ "17b08ffe42a2": {
+  "en": "Easy · 100 BPM",
+  "t": "イージー · 100 BPM"
+ },
  "17d49e2467c8": {
   "en": "55 h",
   "t": "55 時間"
@@ -975,6 +983,10 @@
   "en": "Deo in 2016 in a blue shirt and tie at an outdoor dinner",
   "t": "2016 年の Deo。屋外の夕食会で、青いシャツにネクタイ姿"
  },
+ "20a89915f18c": {
+  "en": "Hard",
+  "t": "ハード"
+ },
  "20a8df9b7603": {
   "en": "Spain",
   "t": "スペイン"
@@ -1134,10 +1146,6 @@
  "25270ee78057": {
   "en": "Balls worth {balls} pearls vs {shit} shit.",
   "t": "ボールの価値：パール {balls} 個分 vs うんこ {shit} 個。"
- },
- "2555abc1fb60": {
-  "en": "#1 The point",
-  "t": "#1 ザ・ポイント"
  },
  "25593f782a85": {
   "en": "Dino Ambush",
@@ -1691,6 +1699,10 @@
   "en": "+ 16 more games",
   "t": "+ ほか16本"
  },
+ "35cf6a830c19": {
+  "en": "Expert · 132 BPM",
+  "t": "エキスパート · 132 BPM"
+ },
  "35d24a82655a": {
   "en": " PW ",
   "t": "PW"
@@ -2082,10 +2094,6 @@
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
   "t": "ブラジル・アマゾンの赤土の露天金鉱で撮られた、幼い子どもと二人の男性の古い写真"
- },
- "4322655424cd": {
-  "en": "Routine #{n}: {routine}.",
-  "t": "ルーチン #{n}：{routine}。"
  },
  "435b659ef5e1": {
   "en": "🎬 Movies",
@@ -2530,10 +2538,6 @@
  "50f3a1f81184": {
   "en": "17 h",
   "t": "17 時間"
- },
- "51162daf4d1b": {
-  "en": "#4 Toe stand",
-  "t": "#4 つま先立ち"
  },
  "511993d3c997": {
   "en": "P",
@@ -5191,6 +5195,10 @@
   "en": "Enlarge: Mickey D's",
   "t": "拡大: マック"
  },
+ "a1a6cd89dd4f": {
+  "en": "Beat",
+  "t": "ビート"
+ },
  "a1d7742427fb": {
   "en": "I am old enough to get day drunk",
   "t": "昼から酔っぱらってもいい歳になった"
@@ -5202,6 +5210,10 @@
  "a21d32457f2f": {
   "en": " 261 h  ",
   "t": "261 時間"
+ },
+ "a2388074beca": {
+  "en": "Routine #{n}: {routine}, {level}, {bpm} BPM.",
+  "t": "ルーチン #{n}：{routine}、{level}、{bpm} BPM。"
  },
  "a255233a0083": {
   "en": "Roll the dice",
@@ -5451,10 +5463,6 @@
   "en": "Portuguese: 10 of 10, Fully bilingual",
   "t": "ポルトガル語：10 段階中 10、完全なバイリンガル"
  },
- "a94147d8bac2": {
-  "en": "#3 Hustle",
-  "t": "#3 ハッスル"
- },
  "a94555ea7a3b": {
   "en": "Enlarge: Did I undersleep or oversleep",
   "t": "拡大: 寝不足？ それとも寝すぎ？"
@@ -5630,10 +5638,6 @@
  "ae2caea4bb1f": {
   "en": "KC",
   "t": "KC"
- },
- "ae3e542098c8": {
-  "en": "#2 Line dance",
-  "t": "#2 ライン・ダンス"
  },
  "ae4d8a00b6ce": {
   "en": "▶️ +{views} views",
@@ -6287,6 +6291,10 @@
   "en": "Rauw Alejandro",
   "t": "Rauw Alejandro"
  },
+ "c5352fbe59ff": {
+  "en": "Next routine",
+  "t": "次のルーチン"
+ },
  "c574501fd8fe": {
   "en": "Roll d{sides} (last roll {result})",
   "t": "d{sides} を振る（前回 {result}）"
@@ -6779,6 +6787,10 @@
   "en": " NS ",
   "t": "NS"
  },
+ "d404968ea90b": {
+  "en": "Medium",
+  "t": "ノーマル"
+ },
  "d41a25e62a6c": {
   "en": "Mentor",
   "t": "メンター"
@@ -6902,6 +6914,10 @@
  "d7925e873bbc": {
   "en": "Halloween",
   "t": "ハロウィン"
+ },
+ "d7a501f83242": {
+  "en": "Expert",
+  "t": "エキスパート"
  },
  "d7be16a1d060": {
   "en": "Enlarge: Meeting Big Chungus",
@@ -7326,6 +7342,10 @@
  "e53060217b21": {
   "en": "Not enough energy. It refills every second.",
   "t": "エネルギー不足。毎秒回復する。"
+ },
+ "e537891a49a9": {
+  "en": "Hard · 122 BPM",
+  "t": "ハード · 122 BPM"
  },
  "e57dfe809709": {
   "en": "Whack the Miku (bottom right, key 4)",
@@ -7851,6 +7871,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder movie 32 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 32: </span> 仮の映画 32"
  },
+ "f876ef95a461": {
+  "en": "Previous routine",
+  "t": "前のルーチン"
+ },
  "f88380a61053": {
   "en": "Enlarge: Artsy Bidu",
   "t": "拡大: 芸術家 Bidu"
@@ -7866,6 +7890,10 @@
  "f8c0bcd95697": {
   "en": "Death as my compass",
   "t": "羅針盤としての死"
+ },
+ "f8c3bb2a4e82": {
+  "en": "Medium · 112 BPM",
+  "t": "ノーマル · 112 BPM"
  },
  "f8c3ef3abd60": {
   "en": "Aquamarine Melon",

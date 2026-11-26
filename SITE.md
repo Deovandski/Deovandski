@@ -44,7 +44,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Cooking tab (one picture + story per card, like D&D) | `content/cooking.md`, pictures in `content/cooking/<card>/` |
 | Reusable components (split-flap board, LED clock, easter-egg banner, icon meter, org chart, route map), built to copy into other projects | `src/components/reusable/` (see its README and the rule in CLAUDE.md) |
 | Concert tab (Seen live, plus a Wishlist behind a switch) | `content/concerts.md` and `content/concerts-wishlist.md`, band images in `content/concerts/bands/` |
-| Concert tab chibi Deo dancing (4 routines, fever meter, 8-bit loop) | `src/components/reusable/StageDancer.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
+| Concert tab chibi Deo dancing (4 routines on a View-Master plate, each with its own tempo, music and difficulty; beat guide, fever meter) | `src/components/reusable/StageDancer.astro` (routines, tempos and difficulty at the top of the file and its script) with `src/components/reusable/ReelPicker.astro` (the plate), behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | BOTW tab (intro and the ranked picks with watch counts) | `content/botw.md` (refresh from a Google Takeout watch history with `scripts/botw-from-history.mjs`) |
 | BOTW tab VHS pile (hours watched, the dates the history covers) | `content/botw-stats.json` (written by the script's `--stats`), video lengths in `content/botw-durations.json`, pile component `src/components/reusable/VhsPile.astro` |
 | D&D tab (one picture + story per campaign) | `content/dnd.md`, pictures in `content/dnd/<campaign>/` |

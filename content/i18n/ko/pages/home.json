@@ -19,6 +19,10 @@
   "en": "Each moon is a game, sized by its hours.",
   "t": "위성 하나가 게임이고, 크기가 시간입니다."
  },
+ "00f03137e155": {
+  "en": "Easy",
+  "t": "쉬움"
+ },
  "00f2a5f37536": {
   "en": "Enlarge: Third year since adoption",
   "t": "확대: 입양 3주년"
@@ -711,6 +715,10 @@
   "en": "2 mana · 1",
   "t": "마나 2 · 1"
  },
+ "17b08ffe42a2": {
+  "en": "Easy · 100 BPM",
+  "t": "쉬움 · 100 BPM"
+ },
  "17d49e2467c8": {
   "en": "55 h",
   "t": "55 시간"
@@ -975,6 +983,10 @@
   "en": "Deo in 2016 in a blue shirt and tie at an outdoor dinner",
   "t": "2016년, 야외 저녁 식사 자리에서 파란 셔츠에 넥타이를 맨 Deo"
  },
+ "20a89915f18c": {
+  "en": "Hard",
+  "t": "어려움"
+ },
  "20a8df9b7603": {
   "en": "Spain",
   "t": "스페인"
@@ -1134,10 +1146,6 @@
  "25270ee78057": {
   "en": "Balls worth {balls} pearls vs {shit} shit.",
   "t": "볼 가치 펄 {balls}개 vs 똥 {shit}개."
- },
- "2555abc1fb60": {
-  "en": "#1 The point",
-  "t": "#1 포인트"
  },
  "25593f782a85": {
   "en": "Dino Ambush",
@@ -1691,6 +1699,10 @@
   "en": "+ 16 more games",
   "t": "+ 게임 16개 더"
  },
+ "35cf6a830c19": {
+  "en": "Expert · 132 BPM",
+  "t": "전문가 · 132 BPM"
+ },
  "35d24a82655a": {
   "en": " PW ",
   "t": "PW"
@@ -2082,10 +2094,6 @@
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
   "t": "브라질 아마존의 붉은 흙으로 된 노천 금광 구덩이에 있는 어린아이와 두 남자의 옛 사진"
- },
- "4322655424cd": {
-  "en": "Routine #{n}: {routine}.",
-  "t": "루틴 #{n}: {routine}."
  },
  "435b659ef5e1": {
   "en": "🎬 Movies",
@@ -2530,10 +2538,6 @@
  "50f3a1f81184": {
   "en": "17 h",
   "t": "17 시간"
- },
- "51162daf4d1b": {
-  "en": "#4 Toe stand",
-  "t": "#4 발끝 서기"
  },
  "511993d3c997": {
   "en": "P",
@@ -5191,6 +5195,10 @@
   "en": "Enlarge: Mickey D's",
   "t": "확대: 맥도날드"
  },
+ "a1a6cd89dd4f": {
+  "en": "Beat",
+  "t": "비트"
+ },
  "a1d7742427fb": {
   "en": "I am old enough to get day drunk",
   "t": "낮술 마실 나이는 됐어"
@@ -5202,6 +5210,10 @@
  "a21d32457f2f": {
   "en": " 261 h  ",
   "t": "261 시간"
+ },
+ "a2388074beca": {
+  "en": "Routine #{n}: {routine}, {level}, {bpm} BPM.",
+  "t": "루틴 #{n}: {routine}, {level}, {bpm} BPM."
  },
  "a255233a0083": {
   "en": "Roll the dice",
@@ -5451,10 +5463,6 @@
   "en": "Portuguese: 10 of 10, Fully bilingual",
   "t": "포르투갈어: 10점 만점에 10점, 완벽한 이중 언어"
  },
- "a94147d8bac2": {
-  "en": "#3 Hustle",
-  "t": "#3 허슬"
- },
  "a94555ea7a3b": {
   "en": "Enlarge: Did I undersleep or oversleep",
   "t": "확대: 덜 잔 건가 더 잔 건가"
@@ -5630,10 +5638,6 @@
  "ae2caea4bb1f": {
   "en": "KC",
   "t": "KC"
- },
- "ae3e542098c8": {
-  "en": "#2 Line dance",
-  "t": "#2 라인 댄스"
  },
  "ae4d8a00b6ce": {
   "en": "▶️ +{views} views",
@@ -6287,6 +6291,10 @@
   "en": "Rauw Alejandro",
   "t": "Rauw Alejandro"
  },
+ "c5352fbe59ff": {
+  "en": "Next routine",
+  "t": "다음 루틴"
+ },
  "c574501fd8fe": {
   "en": "Roll d{sides} (last roll {result})",
   "t": "d{sides} 굴리기 (마지막 {result})"
@@ -6779,6 +6787,10 @@
   "en": " NS ",
   "t": "NS"
  },
+ "d404968ea90b": {
+  "en": "Medium",
+  "t": "보통"
+ },
  "d41a25e62a6c": {
   "en": "Mentor",
   "t": "멘토"
@@ -6902,6 +6914,10 @@
  "d7925e873bbc": {
   "en": "Halloween",
   "t": "핼러윈"
+ },
+ "d7a501f83242": {
+  "en": "Expert",
+  "t": "전문가"
  },
  "d7be16a1d060": {
   "en": "Enlarge: Meeting Big Chungus",
@@ -7326,6 +7342,10 @@
  "e53060217b21": {
   "en": "Not enough energy. It refills every second.",
   "t": "에너지 부족. 매초 충전돼."
+ },
+ "e537891a49a9": {
+  "en": "Hard · 122 BPM",
+  "t": "어려움 · 122 BPM"
  },
  "e57dfe809709": {
   "en": "Whack the Miku (bottom right, key 4)",
@@ -7851,6 +7871,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder movie 32 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 32: </span> 임시 영화 32"
  },
+ "f876ef95a461": {
+  "en": "Previous routine",
+  "t": "이전 루틴"
+ },
  "f88380a61053": {
   "en": "Enlarge: Artsy Bidu",
   "t": "확대: 예술가 Bidu"
@@ -7866,6 +7890,10 @@
  "f8c0bcd95697": {
   "en": "Death as my compass",
   "t": "나침반으로서의 죽음"
+ },
+ "f8c3bb2a4e82": {
+  "en": "Medium · 112 BPM",
+  "t": "보통 · 112 BPM"
  },
  "f8c3ef3abd60": {
   "en": "Aquamarine Melon",

@@ -19,6 +19,10 @@
   "en": "Each moon is a game, sized by its hours.",
   "t": "Ogni luna è un gioco, grande quanto le sue ore."
  },
+ "00f03137e155": {
+  "en": "Easy",
+  "t": "Facile"
+ },
  "00f2a5f37536": {
   "en": "Enlarge: Third year since adoption",
   "t": "Ingrandisci: Terzo anno dall’adozione"
@@ -711,6 +715,10 @@
   "en": "2 mana · 1",
   "t": "2 di mana · 1"
  },
+ "17b08ffe42a2": {
+  "en": "Easy · 100 BPM",
+  "t": "Facile · 100 BPM"
+ },
  "17d49e2467c8": {
   "en": "55 h",
   "t": "55 h"
@@ -975,6 +983,10 @@
   "en": "Deo in 2016 in a blue shirt and tie at an outdoor dinner",
   "t": "Deo nel 2016 in camicia blu e cravatta a una cena all’aperto"
  },
+ "20a89915f18c": {
+  "en": "Hard",
+  "t": "Difficile"
+ },
  "20a8df9b7603": {
   "en": "Spain",
   "t": "Spagna"
@@ -1134,10 +1146,6 @@
  "25270ee78057": {
   "en": "Balls worth {balls} pearls vs {shit} shit.",
   "t": "Palle per un valore di {balls} pearls contro {shit} merda."
- },
- "2555abc1fb60": {
-  "en": "#1 The point",
-  "t": "#1 Il dito puntato"
  },
  "25593f782a85": {
   "en": "Dino Ambush",
@@ -1691,6 +1699,10 @@
   "en": "+ 16 more games",
   "t": "+ altri 16 giochi"
  },
+ "35cf6a830c19": {
+  "en": "Expert · 132 BPM",
+  "t": "Esperto · 132 BPM"
+ },
  "35d24a82655a": {
   "en": " PW ",
   "t": "PW"
@@ -2082,10 +2094,6 @@
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
   "t": "Una vecchia foto di un bambino piccolo e due uomini in una miniera d’oro a cielo aperto di terra rossa, nell’Amazzonia brasiliana"
- },
- "4322655424cd": {
-  "en": "Routine #{n}: {routine}.",
-  "t": "Routine #{n}: {routine}."
  },
  "435b659ef5e1": {
   "en": "🎬 Movies",
@@ -2530,10 +2538,6 @@
  "50f3a1f81184": {
   "en": "17 h",
   "t": "17 h"
- },
- "51162daf4d1b": {
-  "en": "#4 Toe stand",
-  "t": "#4 Sulle punte"
  },
  "511993d3c997": {
   "en": "P",
@@ -5191,6 +5195,10 @@
   "en": "Enlarge: Mickey D's",
   "t": "Ingrandisci: Il Mc"
  },
+ "a1a6cd89dd4f": {
+  "en": "Beat",
+  "t": "Battito"
+ },
  "a1d7742427fb": {
   "en": "I am old enough to get day drunk",
   "t": "Sono abbastanza grande per ubriacarmi di giorno"
@@ -5202,6 +5210,10 @@
  "a21d32457f2f": {
   "en": " 261 h  ",
   "t": "261 h"
+ },
+ "a2388074beca": {
+  "en": "Routine #{n}: {routine}, {level}, {bpm} BPM.",
+  "t": "Routine #{n}: {routine}, {level}, {bpm} BPM."
  },
  "a255233a0083": {
   "en": "Roll the dice",
@@ -5451,10 +5463,6 @@
   "en": "Portuguese: 10 of 10, Fully bilingual",
   "t": "Portoghese: 10 su 10, perfettamente bilingue"
  },
- "a94147d8bac2": {
-  "en": "#3 Hustle",
-  "t": "#3 Hustle"
- },
  "a94555ea7a3b": {
   "en": "Enlarge: Did I undersleep or oversleep",
   "t": "Ingrandisci: Ho dormito troppo poco o troppo"
@@ -5630,10 +5638,6 @@
  "ae2caea4bb1f": {
   "en": "KC",
   "t": "KC"
- },
- "ae3e542098c8": {
-  "en": "#2 Line dance",
-  "t": "#2 Ballo in linea"
  },
  "ae4d8a00b6ce": {
   "en": "▶️ +{views} views",
@@ -6287,6 +6291,10 @@
   "en": "Rauw Alejandro",
   "t": "Rauw Alejandro"
  },
+ "c5352fbe59ff": {
+  "en": "Next routine",
+  "t": "Routine successiva"
+ },
  "c574501fd8fe": {
   "en": "Roll d{sides} (last roll {result})",
   "t": "Tira d{sides} (ultimo risultato {result})"
@@ -6779,6 +6787,10 @@
   "en": " NS ",
   "t": "NS"
  },
+ "d404968ea90b": {
+  "en": "Medium",
+  "t": "Media"
+ },
  "d41a25e62a6c": {
   "en": "Mentor",
   "t": "Mentore"
@@ -6902,6 +6914,10 @@
  "d7925e873bbc": {
   "en": "Halloween",
   "t": "Halloween"
+ },
+ "d7a501f83242": {
+  "en": "Expert",
+  "t": "Esperto"
  },
  "d7be16a1d060": {
   "en": "Enlarge: Meeting Big Chungus",
@@ -7326,6 +7342,10 @@
  "e53060217b21": {
   "en": "Not enough energy. It refills every second.",
   "t": "Energia insufficiente. Si ricarica ogni secondo."
+ },
+ "e537891a49a9": {
+  "en": "Hard · 122 BPM",
+  "t": "Difficile · 122 BPM"
  },
  "e57dfe809709": {
   "en": "Whack the Miku (bottom right, key 4)",
@@ -7851,6 +7871,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder movie 32 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 32: </span> Film segnaposto 32"
  },
+ "f876ef95a461": {
+  "en": "Previous routine",
+  "t": "Routine precedente"
+ },
  "f88380a61053": {
   "en": "Enlarge: Artsy Bidu",
   "t": "Ingrandisci: Bidu artista"
@@ -7866,6 +7890,10 @@
  "f8c0bcd95697": {
   "en": "Death as my compass",
   "t": "La morte come mia bussola"
+ },
+ "f8c3bb2a4e82": {
+  "en": "Medium · 112 BPM",
+  "t": "Media · 112 BPM"
  },
  "f8c3ef3abd60": {
   "en": "Aquamarine Melon",

@@ -19,6 +19,10 @@
   "en": "Each moon is a game, sized by its hours.",
   "t": "हर चाँद एक गेम है, घंटों के हिसाब से बड़ा।"
  },
+ "00f03137e155": {
+  "en": "Easy",
+  "t": "आसान"
+ },
  "00f2a5f37536": {
   "en": "Enlarge: Third year since adoption",
   "t": "बड़ा करें: गोद लिए जाने का तीसरा साल"
@@ -711,6 +715,10 @@
   "en": "2 mana · 1",
   "t": "2 मान · 1"
  },
+ "17b08ffe42a2": {
+  "en": "Easy · 100 BPM",
+  "t": "आसान · 100 BPM"
+ },
  "17d49e2467c8": {
   "en": "55 h",
   "t": "55 घं."
@@ -975,6 +983,10 @@
   "en": "Deo in 2016 in a blue shirt and tie at an outdoor dinner",
   "t": "2016 में Deo, एक बाहरी डिनर पर नीली शर्ट और टाई में"
  },
+ "20a89915f18c": {
+  "en": "Hard",
+  "t": "कठिन"
+ },
  "20a8df9b7603": {
   "en": "Spain",
   "t": "स्पेन"
@@ -1134,10 +1146,6 @@
  "25270ee78057": {
   "en": "Balls worth {balls} pearls vs {shit} shit.",
   "t": "गेंदों की कीमत {balls} पर्ल बनाम {shit} टट्टी।"
- },
- "2555abc1fb60": {
-  "en": "#1 The point",
-  "t": "#1 द पॉइंट"
  },
  "25593f782a85": {
   "en": "Dino Ambush",
@@ -1691,6 +1699,10 @@
   "en": "+ 16 more games",
   "t": "+ 16 और गेम"
  },
+ "35cf6a830c19": {
+  "en": "Expert · 132 BPM",
+  "t": "एक्सपर्ट · 132 BPM"
+ },
  "35d24a82655a": {
   "en": " PW ",
   "t": "PW"
@@ -2082,10 +2094,6 @@
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
   "t": "ब्राज़ीली अमेज़न में लाल मिट्टी के खुले सोने की खदान के गड्ढे में एक छोटे बच्चे और दो आदमियों की पुरानी तस्वीर"
- },
- "4322655424cd": {
-  "en": "Routine #{n}: {routine}.",
-  "t": "रूटीन #{n}: {routine}।"
  },
  "435b659ef5e1": {
   "en": "🎬 Movies",
@@ -2530,10 +2538,6 @@
  "50f3a1f81184": {
   "en": "17 h",
   "t": "17 घं."
- },
- "51162daf4d1b": {
-  "en": "#4 Toe stand",
-  "t": "#4 पंजों पर खड़े होना"
  },
  "511993d3c997": {
   "en": "P",
@@ -5191,6 +5195,10 @@
   "en": "Enlarge: Mickey D's",
   "t": "बड़ा करें: मैकडॉनल्ड्स"
  },
+ "a1a6cd89dd4f": {
+  "en": "Beat",
+  "t": "बीट"
+ },
  "a1d7742427fb": {
   "en": "I am old enough to get day drunk",
   "t": "दिन में नशे में होने लायक बड़ी हो गई हूँ"
@@ -5202,6 +5210,10 @@
  "a21d32457f2f": {
   "en": " 261 h  ",
   "t": "261 घं."
+ },
+ "a2388074beca": {
+  "en": "Routine #{n}: {routine}, {level}, {bpm} BPM.",
+  "t": "रूटीन #{n}: {routine}, {level}, {bpm} BPM।"
  },
  "a255233a0083": {
   "en": "Roll the dice",
@@ -5451,10 +5463,6 @@
   "en": "Portuguese: 10 of 10, Fully bilingual",
   "t": "पुर्तगाली: 10 में से 10, पूरी तरह द्विभाषी"
  },
- "a94147d8bac2": {
-  "en": "#3 Hustle",
-  "t": "#3 हसल"
- },
  "a94555ea7a3b": {
   "en": "Enlarge: Did I undersleep or oversleep",
   "t": "बड़ा करें: कम सोया या ज़्यादा सोया"
@@ -5630,10 +5638,6 @@
  "ae2caea4bb1f": {
   "en": "KC",
   "t": "KC"
- },
- "ae3e542098c8": {
-  "en": "#2 Line dance",
-  "t": "#2 लाइन डांस"
  },
  "ae4d8a00b6ce": {
   "en": "▶️ +{views} views",
@@ -6287,6 +6291,10 @@
   "en": "Rauw Alejandro",
   "t": "Rauw Alejandro"
  },
+ "c5352fbe59ff": {
+  "en": "Next routine",
+  "t": "अगला रूटीन"
+ },
  "c574501fd8fe": {
   "en": "Roll d{sides} (last roll {result})",
   "t": "d{sides} फेंकें (आखिरी रोल {result})"
@@ -6779,6 +6787,10 @@
   "en": " NS ",
   "t": "NS"
  },
+ "d404968ea90b": {
+  "en": "Medium",
+  "t": "मध्यम"
+ },
  "d41a25e62a6c": {
   "en": "Mentor",
   "t": "मेंटर"
@@ -6902,6 +6914,10 @@
  "d7925e873bbc": {
   "en": "Halloween",
   "t": "हैलोवीन"
+ },
+ "d7a501f83242": {
+  "en": "Expert",
+  "t": "एक्सपर्ट"
  },
  "d7be16a1d060": {
   "en": "Enlarge: Meeting Big Chungus",
@@ -7326,6 +7342,10 @@
  "e53060217b21": {
   "en": "Not enough energy. It refills every second.",
   "t": "ऊर्जा कम। हर सेकंड भरती है।"
+ },
+ "e537891a49a9": {
+  "en": "Hard · 122 BPM",
+  "t": "कठिन · 122 BPM"
  },
  "e57dfe809709": {
   "en": "Whack the Miku (bottom right, key 4)",
@@ -7851,6 +7871,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder movie 32 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 32: </span> अस्थायी फ़िल्म 32"
  },
+ "f876ef95a461": {
+  "en": "Previous routine",
+  "t": "पिछला रूटीन"
+ },
  "f88380a61053": {
   "en": "Enlarge: Artsy Bidu",
   "t": "बड़ा करें: कलाकार Bidu"
@@ -7866,6 +7890,10 @@
  "f8c0bcd95697": {
   "en": "Death as my compass",
   "t": "मेरा दिशासूचक, मौत"
+ },
+ "f8c3bb2a4e82": {
+  "en": "Medium · 112 BPM",
+  "t": "मध्यम · 112 BPM"
  },
  "f8c3ef3abd60": {
   "en": "Aquamarine Melon",

@@ -22,7 +22,8 @@ and a project without translations just shows the English.
 | [QrCode.astro](QrCode.astro) | A QR code drawn as SVG when the site builds (no JavaScript in the browser), with an optional title above it and the encoded link below it. | QR Code page (`/qr/`) |
 | [VhsPile.astro](VhsPile.astro) | A pile of VHS tapes holding a number of hours of video. Visitors pick the recording speed (SP, LP, EP) and the tapes fall from the top and pile up; they shrink to fit, so it can show a couple of thousand. Canvas, no libraries. | BOTW tab (watch time) |
 | [PaperPlane.astro](PaperPlane.astro) | Fold a paper plane, then throw it: precision decides the distance | Aviation tab |
-| [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing four disco routines (#1 the point, #2 the Night Fever line dance, #3 the hustle, #4 toe stand & point) under spotlights, a mirror ball and a light-up floor, with a fever meter you fill by tapping on the beat and an optional original 8-bit disco loop. | Concert tab, Playground |
+| [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing four disco routines (#1 the point, #2 the Night Fever line dance, #3 the hustle, #4 toe stand & point), each with its own tempo, music and difficulty, picked on a View-Master plate (ReelPicker), under spotlights, a mirror ball and a light-up floor, with a beat guide and a fever meter you fill by tapping on the beat and an optional original 8-bit disco loop. | Concert tab, Playground |
+| [ReelPicker.astro](ReelPicker.astro) | A View-Master-style picker: cards around the rim of a round plate, seen through a window that shows one card and slivers of its neighbours; drag or swipe to turn the plate, it snaps to a card. Each card has a name, a detail line and an art box for a picture. | Concert tab (Saturday Night Fever routines, inside StageDancer) |
 | IsoDarts (moved) | An on-rails darts scene in an isometric room: scripted speech bubbles, then a timed round on a board of coloured territories (claim, cancel, smaller is worth more) with a swaying aim. | Moved to [HusbandOutWorld](https://github.com/Deovandski/HusbandOutWorld) as `site/js/iso-darts.js` and `site/css/iso-darts.css` (its Playground, Territory Snipping, #245) |
 | [IsoFarm.astro](IsoFarm.astro) | A Colheita Feliz-style farming loop: isometric plots, seeds with timers and random harvests, fertilizer, energy and a market. The whole economy is one config object; saves in the browser. | Mentor tab (the Balls farm) |
 | [HoursByCategory.astro](HoursByCategory.astro) | Things grouped into categories with their hours: a totals card, one bar per category, then a card per category (most first, "Show all"). A switch takes "excludable" categories (idle games) out of the total. Worked out at build time, so translated pages translate every word. | Gamer tab (Steam, Xbox and estimated hours) |
@@ -445,13 +446,12 @@ throwing, up/down set the angle, left/right the power, Space throws.
 import StageDancer from './reusable/StageDancer.astro';
 ---
 <StageDancer label="Chibi Deo dancing" />
-<StageDancer outfit={{ robe: '#d33', pattern: '#fff' }} bpm={120} />
+<StageDancer outfit={{ robe: '#d33', pattern: '#fff' }} />
 ```
 
 | Prop | Default | |
 |---|---|---|
 | `outfit` | yellow king's robes, blue pattern, black-and-gold crown hat | Colours: `{ hat, hatTrim, skin, beard, robe, pattern, hem, boots }`. |
-| `bpm` | `110` | Dance tempo; one pose per beat. |
 | `label` | (describes the scene) | What's on screen, for screen readers. |
 | `class` | none | Extra class. |
 
@@ -460,14 +460,52 @@ and down, hip rolls, a turn and a finish) under sweeping spotlights, a mirror ba
 Buttons pause the dance and change the light colours. Lights change on the beat (under 3 a second).
 Reduced motion: a still point pose with steady lights. Theme with `--dancer-accent`.
 
-Routines (buttons #1 to #4): **#1 The point** (the Saturday Night Fever point, hip rolls, a turn); **#2 The line
+Needs [ReelPicker.astro](ReelPicker.astro) from this folder: the routines sit on its View-Master plate (drag or
+swipe to turn it; each card shows the routine's signature move). Each routine has its own tempo, 8-bit loop and
+difficulty: **#1 Easy, 100 BPM; #2 Medium, 112 BPM; #3 Hard, 122 BPM; #4 Expert, 132 BPM**. Harder routines need taps
+closer to the beat, and a **beat guide** on the left scrolls each beat down to a hit line, with the tap window drawn
+around it.
+
+Routines: **#1 The point** (the Saturday Night Fever point, hip rolls, a turn); **#2 The line
 dance** (the "Night Fever" line dance as the 1978-79 disco books describe it: back three and clap, forward three
 and clap, a turn each way, snap kick, the skate, the point with merengue hips, hand roll, funky chicken, pivot);
 **#3 The hustle** (side-to-side hip bumps and rope arms); **#4 Toe stand & point** (up on the toes, finger
 straight up, a lean, a kick). A **fever meter** on the right fills a little every beat and more when you tap the
 stage (or press Space/Enter on it) on the beat; at 100 it hits **FEVER!** and the whole floor lights up for
-8 beats. **Music: on** plays an original 8-bit disco loop (Web Audio, no files; not any existing song) in time
-with the dance; it stops when the dance pauses or the stage is hidden.
+8 beats. **Music: on** plays the routine's own original 8-bit disco loop (Web Audio, no files; not any existing song) in
+time with the dance; it stops when the dance pauses or the stage is hidden.
+
+## ReelPicker
+
+A View-Master-style picker. The choices are cards around the rim of a round plate; a window shows one card
+fully, plus a sliver of the card before it (above) and after it (below). Drag or swipe up and down to turn the plate
+anticlockwise or clockwise; it snaps to the nearest card when you let go. A tap on a peeking card turns to it, and the
+▲ ▼ buttons beside the window step one card. Short lists repeat around the plate so it always has at least 8 cards.
+
+```astro
+<ReelPicker
+  label="Pick a routine"
+  items={[
+    { label: 'The point', detail: 'Easy · 100 BPM' },
+    { label: 'The hustle', detail: 'Hard · 122 BPM' },
+  ]}
+/>
+```
+
+| Prop | Default | |
+|---|---|---|
+| `items` | (required) | `{ label, detail? }` in order: the card's name and a smaller second line. |
+| `label` | (required) | The picker's name for screen readers. |
+| `selected` | `0` | The card shown first. |
+| `prev`, `next` | `"Previous"`, `"Next"` | The step buttons' names for screen readers. |
+| `class` | none | Extra classes. |
+
+Each card has an empty art box, `[data-reel-art][data-index="<n>"]`: put an `<img>` in it, or draw a `<canvas>`
+there from your script (StageDancer draws each routine's pose). It fires `reel:change` (bubbling, `{ index, source }`)
+when the plate settles on a different card, and turns when you dispatch `reel:select` with `{ index }` on it. ↑ ↓ (and
+← →) on the window turn one card, Home goes back to the first; only the first copy of each card is announced. Theme
+with `--reel-card` (size, 112px), `--reel-accent`, `--reel-plate`, `--reel-card-bg`, `--reel-text` and `--reel-muted`.
+Reduced motion: the plate jumps instead of turning.
 
 ## IsoFarm
 
