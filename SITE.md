@@ -17,8 +17,8 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Mentor tab | `content/mentor.md` (plain Markdown); its "Shoulders I stand on" list, in the Links box, in `content/mentor-sources.md` |
 | Mentor tab Balls farm (seeds, odds, trades, mantra) | `content/mentor-farm.json`; `src/components/reusable/IsoFarm.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | Death tab (countdown clock + text) | `content/death.md` (its "Shoulders I stand on" list, in the Links box, in `content/death-sources.md`); clock target in `src/components/DeathFacet.astro` (`TARGET`); the clock itself is the reusable `src/components/reusable/LedClock.astro` |
-| PM/Life hacks tab: PM side (public Kanban boards) | `boards` near the top of `src/pages/index.astro` |
-| PM/Life hacks tab: Life hacks side | `src/components/LifeHacksFacet.astro` |
+| Management tab: PM sub-tab (public Kanban boards) | `boards` near the top of `src/pages/index.astro` |
+| Management tab: Life hacks sub-tab | `src/components/LifeHacksFacet.astro` |
 | QR Code page (hidden: `/qr/`, or `#qr` on the home page) | `src/pages/qr.astro`: `contact` (name and phone above the codes) and `codes` (one QR code per row, stacked in order) |
 | Playground page (`/playground/`, in the top nav next to Contact; `/gaming/`, `#gaming` and `#playground` land there): every gimmick in a FastTab titled "Name (Tab facet)" | intro text in `src/pages/playground.astro`; one FastTab per row of `src/lib/gimmicks.ts` (sorted A to Z by name; `tabName` is the facet in the title); nav link in `src/layouts/Base.astro`; saved offline by `public/sw.js`; app shortcut in `src/pages/manifest.webmanifest.ts` |
 | Photo viewer (every picture opens bigger, with its date) | `src/components/reusable/PhotoViewer.astro`, placed once in `src/layouts/Base.astro`; rules in CLAUDE.md ("Pictures are clickable") |
@@ -43,7 +43,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | MTG tab (Magic: The Gathering; Win vs Loss split-flap score card, then one picture + story per card, like D&D) | `content/mtg.md` (`Wins:` and `Losses:` lines set the score card), pictures in `content/mtg/<card>/` |
 | Cooking tab (one picture + story per card, like D&D) | `content/cooking.md`, pictures in `content/cooking/<card>/` |
 | Reusable components (split-flap board, LED clock, easter-egg banner, icon meter, org chart, route map), built to copy into other projects | `src/components/reusable/` (see its README and the rule in CLAUDE.md) |
-| Concert tab (Seen live, plus a Wishlist behind a switch) | `content/concerts.md` and `content/concerts-wishlist.md`, band images in `content/concerts/bands/` |
+| Concert tab (Seen live and Wishlist sub-tabs) | `content/concerts.md` and `content/concerts-wishlist.md`, band images in `content/concerts/bands/` |
 | Concert tab chibi Deo dancing (4 routines on a View-Master plate, each with its own tempo, music and difficulty; beat guide, fever meter) | `src/components/reusable/StageDancer.astro` (routines, tempos and difficulty at the top of the file and its script) with `src/components/reusable/ReelPicker.astro` (the plate) and `src/components/reusable/ArcadeButton.astro` (the 🎵 ⏸️ 💡 buttons), behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | BOTW tab (intro and the ranked picks with watch counts) | `content/botw.md` (refresh from a Google Takeout watch history with `scripts/botw-from-history.mjs`) |
 | BOTW tab VHS pile (hours watched, the dates the history covers) | `content/botw-stats.json` (written by the script's `--stats`), video lengths in `content/botw-durations.json`, pile component `src/components/reusable/VhsPile.astro` |
@@ -51,12 +51,12 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | D&D tab dice (the row of dice under the title) | `src/components/reusable/DiceTray.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | Fishing tab (photo gallery, like each pet on the Pets tab) | `content/fishing/` (see its README) |
 | Camping tab (location cards, 2 photos each) | `content/camping.md` |
-| Theater & Opera tab (Seen live, plus a Wishlist behind a switch, like Concert) | `content/theater.md` and `content/theater-wishlist.md`, show images in `content/theater/shows/` |
+| Theater & Opera tab (Seen live and Wishlist sub-tabs, like Concert) | `content/theater.md` and `content/theater-wishlist.md`, show images in `content/theater/shows/` |
 | Gamer tab (games by category, with hours and a Steam/Xbox/PlayStation/PC chip) | categories in `content/gaming/categories.md`, hours in `content/gaming/steam-games.json`, `content/gaming/xbox-games.json` and `content/gaming/estimated.md` (estimates, hand-written) (refresh once a year: `content/gaming/README.md`); `src/components/reusable/HoursByCategory.astro`, with its other views (pie, sphere, orbits, days, shelf; `viewCategories()` in `src/lib/gamerCategories.ts`) and the Links box (`LinksMenu.astro`) |
 | Gamer tab Dino Ambush (the reverse dino game above the categories) | `src/components/reusable/DinoAmbush.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | Anime tab (top 39 anime, with descriptions) | `content/anime/top39.md` (numbered list) |
-| Potato tab, TV shows side (top 39) | `content/tv/top39.md` (numbered list) |
-| Potato tab, Movies side (top 39) | `content/movies/top39.md` (numbered list) |
+| Potato tab, TV shows sub-tab (top 39) | `content/tv/top39.md` (numbered list) |
+| Potato tab, Movies sub-tab (top 39) | `content/movies/top39.md` (numbered list) |
 | Pets tab (Bidu, Fluffy, Peeta: portrait picker + each pet's gallery) | `content/pets/<pet>/` (see `content/pets/README.md`); order in `src/lib/pets.ts` |
 | Pets tab pixel pets (the handhelds next to each big picture) | drawings and device colours in `src/lib/pixelPets.ts`; `src/components/reusable/PixelPet.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | Cycling tab (rides, around-the-world planet, "Ridin' with Peeta" and its Short, story) | text in `content/cycling/story.md`; rides in `content/cycling/rides.json` (from a Google Health Takeout export: `content/cycling/README.md`) and `content/cycling/estimated.md`; studies in `content/cycling/sources.md` (its Links box); `src/components/CyclingFacet.astro`; numbers shared in `src/lib/cycling.ts`; its ▶ Play map "Around the World in 80 Gears" is the reusable `PlanetLap.astro` (gimmick `around-the-world`) |
@@ -119,7 +119,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-No facet opens by default: visitors grow a branch of the facet tree, then pick a facet. Link straight to a facet (its branch grows too) with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm` (or `#life-hacks`), `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#cycling`, `#biomarkers` (or `#biomarkers-exercise`, `#biomarkers-calendar`, `#biomarkers-seasons`, `#biomarkers-compare`), `#miku`, `#churrasco`, `#cooking`, `#musician` (old `#drummer` links still work), `#painting`, `#boardgames`, `#mtg`, `#concert` (or `#concert-wishlist`), `#theater` (or `#theater-wishlist`), `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#lust` (old `#sex` links still work).
+No facet opens by default: visitors grow a branch of the facet tree, then pick a facet (and, on Developer, Management, Concert, Theater & Opera and Potato, a sub-tab: the tree's third level, #296). Link straight to a facet (its branch grows too) with `#death`, `#dev` (or `#dev-games`; old `#developer` links still work), `#family`, `#aviation`, `#author`, `#mentor`, `#pm` (or `#life-hacks`), `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#cycling`, `#biomarkers` (or `#biomarkers-exercise`, `#biomarkers-calendar`, `#biomarkers-seasons`, `#biomarkers-compare`), `#miku`, `#churrasco`, `#cooking`, `#musician` (old `#drummer` links still work), `#painting`, `#boardgames`, `#mtg`, `#concert` (or `#concert-wishlist`), `#theater` (or `#theater-wishlist`), `#gamer`, `#anime`, `#potato` (or `#potato-movies`), `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#lust` (old `#sex` links still work).
 Add `?miku` to any URL to preview the Miku Day confetti (3/9), or `?miku=0831` for Miku's birthday (8/31).
 Add `?deathclock=0` to preview the Death tab's clock at zero (blinking digits and the "update the clock" message).
 

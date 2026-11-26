@@ -100,6 +100,7 @@ top of [scripts/i18n.mjs](scripts/i18n.mjs).
 The facet tree is in alphabetical order at both levels (#280): the branches (Craft, Explorer, Front Row, Hearth,
 Philosophy, Play) and the tabs inside each branch.
 
+- **Sub-tabs are A to Z too,** under their tab, by the same rule.
 - **It goes by the English label,** ignoring case, accents, emoji and punctuation ("D&D" sorts as "dd"). A label in
   another script sorts by its `sortAs` (`初音ミク` sorts as "Hatsune Miku").
 - **The code sorts the tree** (`byAlpha` in `src/pages/index.astro`), so a new tab or branch only needs its entry in
@@ -129,13 +130,22 @@ loose buttons in the tab (#260).
   "Shoulders I stand on" reading list there, as a `SourceList` (#268).
 - Today: Developer, Author, Gamer, Influencer, Musician, Anime, BOTW, Death, Mentor, Lust, D&D, Cycling, Biomarker Lab, Aviation and Traveler. Elsewhere (another page or repo) `toggle="own"` gives the box its own Links button.
 
-## In-tab switches
+## Sub-tabs (the tree's third level)
 
-A tab that shows one of two lists (Software | Games on Developer, PM | Life hacks, Seen live | Wishlist on Concert and
-Theater & Opera, TV shows | Movies on Potato) uses `PillSwitch` (`src/components/reusable/PillSwitch.astro`, #272) at the top of the tab, under its
-Links box, followed by one `role="tabpanel"` per option. It's always **centred** in the tab (#270). Give each option a
-`hash`: the link that opens it (`#potato-movies`). The page puts it in the address bar when the switch changes and
-picks the option when that link opens the page.
+A tab that shows one of two or more lists gets **sub-tabs** in the facet tree, not a switch inside the tab (#296): Games |
+Software on Developer, Life hacks | PM on Management, Seen live | Wishlist on Concert and Theater & Opera, Movies | TV shows
+on Potato.
+
+- **Data:** list them in the tab's entry in `facets` (`src/pages/index.astro`) as `subs: [{ id, icon, label, hash }]`, 2 to
+  6 of them. `hash` is the link that opens one (`#potato-movies`). Exactly one uses the tab's own link (`#potato`): it opens
+  when the tab does, unless the visitor already picked another one on this visit. The build stops if these rules break.
+- **Panels:** inside the tab's panel, one `<div id="<tab>-<sub>" role="region" aria-labelledby="sub-<tab>-<sub>" data-sub-panel>`
+  per sub-tab, `hidden` on all but the default. The tab's ▶ Play and Links stay at the tab level, shared by its sub-tabs.
+- **How it looks:** on desktop a row of smaller nodes hangs from the tab on its own wire; on phones the sub-tabs are a third
+  indent on a pink rail. A tab with sub-tabs shows "N views" under its name. The breadcrumb gains a fourth item.
+- **Phones fold the tree** to the open path (its branch, the tab and its sub-tabs) whenever a tab is open; pressing the
+  branch shows the rest again, and pressing it once more folds everything up.
+- `PillSwitch` (#272) is still the switch *inside* a component, like the Biomarker Lab's views in `MetricLab`.
 
 ## Website settings
 

@@ -54,7 +54,7 @@ and a project without translations just shows the English.
 | [FastTab.astro](FastTab.astro) | A collapsible section in the style of D365 F&O FastTabs: bold title, summary fields on the right while collapsed, a chevron, and optional Expand all / Collapse all buttons. Built on `<details>`, so it works without JavaScript. | Playground page (one per gimmick, titled "Name (Tab facet)" through the `title` slot) |
 | [PhotoViewer.astro](PhotoViewer.astro) | The one photo viewer (lightbox) for a page: every content picture, gallery button and link to an image file opens in it, with its caption and date; ‹ › between pictures. Put it once in the layout. | Every page (in `Base.astro`) |
 | [SourceList.astro](SourceList.astro) | A reading list of the people and works a page builds on ("Shoulders I stand on"): name in bold, work in italics, the idea, a link. Takes a Markdown list in its slot. | Death and Mentor tabs, inside their Links boxes |
-| [PillSwitch.astro](PillSwitch.astro) | A centred pill switch between two or more views ("📺 TV shows \| 🎬 Movies"): pressing an option shows its panel and hides the others; arrow keys, Home and End move between options. | PM/Life hacks, Concert, Theater & Opera and Potato tabs |
+| [PillSwitch.astro](PillSwitch.astro) | A centred pill switch between two or more views ("📺 TV shows \| 🎬 Movies"): pressing an option shows its panel and hides the others; arrow keys, Home and End move between options. | Biomarker Lab tab (inside `MetricLab`); tabs with two lists use sub-tabs in the facet tree instead (#296) |
 
 ## SplitFlap
 
@@ -1000,7 +1000,7 @@ hides the others. It sits centred in its container. The panels are yours: give e
 
 It fires `switch:change` (bubbling, `{ id, hash, source }`, where source is `'user'` or `'script'`) when an
 option is picked, and picks one when you dispatch `switch:select` on `document` with `{ hash }` or `{ id }`. The home
-page uses those two to keep the address bar and links like `#potato-movies` in step. ← → move between options
+page uses those two to keep the address bar and links like `#biomarkers-exercise` in step. ← → move between options
 (mirrored right to left), Home and End jump to the ends. Theme with `--switch-accent`, `--switch-surface`,
 `--switch-text`, `--switch-text-hover`, `--switch-on-text`, `--switch-font` and `--switch-size`.
 

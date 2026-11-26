@@ -487,6 +487,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 24: </span> Placeholder TV show 24 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rang 24: </span> Série provisoire 24"
  },
+ "0c95dc6163ff": {
+  "en": "PM",
+  "t": "GP"
+ },
  "0c972a6d7de2": {
   "en": "Car Ride!",
   "t": "Balade en voiture !"
@@ -550,10 +554,6 @@
  "0e8b5b2223a8": {
   "en": "Like a Dragon: Pirate Yakuza in Hawaii",
   "t": "Like a Dragon: Pirate Yakuza in Hawaii"
- },
- "0ed515c1ff26": {
-  "en": "🤘 Seen live",
-  "t": "🤘 Vus en live"
  },
  "0f197bc2e46c": {
   "en": "Cardio fitness (estimated VO₂ max)",
@@ -678,6 +678,10 @@
  "122babc08c1c": {
   "en": "Not enough days with both numbers.",
   "t": "Pas assez de jours avec les deux chiffres."
+ },
+ "123677c56c66": {
+  "en": "2 views",
+  "t": "2 vues"
  },
  "123b77b3c65c": {
   "en": "Terraria",
@@ -1675,10 +1679,6 @@
   "en": "Enlarge: I am old enough to get day drunk",
   "t": "Agrandir: Je suis assez grande pour me bourrer en plein jour"
  },
- "2e7968956f54": {
-  "en": "Seen live or wishlist",
-  "t": "Vus en live ou liste d’envies"
- },
  "2e8a57cc5c47": {
   "en": "Website",
   "t": "Site"
@@ -1754,10 +1754,6 @@
  "303d884de994": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Placeholder movie 17 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rang 17: </span> Film provisoire 17"
- },
- "30820698988d": {
-  "en": "📺 TV shows",
-  "t": "📺 Séries"
  },
  "3098add33361": {
   "en": "\nThat grew into HusbandOutWorld, a light novel series that took me to conventions, where I met a lot of people,\n          from artists to directors and publishers. It feels surreal how much this project pushed me to grow and challenge\n          myself. If you're curious, you can see my evolution through the Light Novel Afterwords.\n",
@@ -2143,6 +2139,10 @@
   "en": "No Man's Sky",
   "t": "No Man's Sky"
  },
+ "398ed3298149": {
+  "en": "Games",
+  "t": "Jeux"
+ },
  "39a0f31b2a74": {
   "en": "PA",
   "t": "PA"
@@ -2463,10 +2463,6 @@
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
   "t": "Une vieille photo d’un jeune enfant et de deux hommes dans une mine d’or à ciel ouvert de terre rouge, en Amazonie brésilienne"
  },
- "435b659ef5e1": {
-  "en": "🎬 Movies",
-  "t": "🎬 Films"
- },
  "4362097688af": {
   "en": "Not enough meat",
   "t": "Pas assez de viande"
@@ -2746,10 +2742,6 @@
  "4bd6c7e4c009": {
   "en": "Dead Cells",
   "t": "Dead Cells"
- },
- "4bda219d7a8f": {
-  "en": "PM/Life hacks",
-  "t": "GP/Astuces de vie"
  },
  "4c05c049e52b": {
   "en": "Assassin's Creed series",
@@ -3711,10 +3703,6 @@
   "en": "Throw again",
   "t": "Relancer"
  },
- "62ac3e5d6326": {
-  "en": "📝 Wishlist",
-  "t": "📝 Liste d’envies"
- },
  "62bd650a8380": {
   "en": " FC ",
   "t": "FC"
@@ -3742,6 +3730,10 @@
  "63c594643e8f": {
   "en": "Patron",
   "t": "Patron"
+ },
+ "63cecca67b70": {
+  "en": "Management",
+  "t": "Gestion"
  },
  "63d11597f23f": {
   "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my 2014 BIDU songs as the music.",
@@ -4166,6 +4158,10 @@
  "6f3759f0e3d8": {
   "en": "Holyday City: Reloaded",
   "t": "Holyday City: Reloaded"
+ },
+ "6ff33102b1c6": {
+  "en": "Wishlist",
+  "t": "Liste d’envies"
  },
  "7009a0f17b19": {
   "en": "I run my own projects in the open. These are my public Kanban boards: what's next, what's in progress, and what shipped.",
@@ -5487,10 +5483,6 @@
   "en": "Tom 2 (key F)",
   "t": "Tom 2 (touche F)"
  },
- "9429967b2fcd": {
-  "en": "💡 Life hacks",
-  "t": "💡 Astuces de vie"
- },
  "942b7c3d8acd": {
   "en": "Deo in 2025 lounging in a camp chair in a mountain lake",
   "t": "Deo en 2025 se prélassant dans une chaise de camping au milieu d’un lac de montagne"
@@ -5730,6 +5722,10 @@
  "9a7f74a3f509": {
   "en": "Where in the World Was Deo?: turn your phone sideways",
   "t": "Où était Deo ? : tourne ton téléphone à l’horizontale"
+ },
+ "9ad052271e01": {
+  "en": "Software",
+  "t": "Logiciels"
  },
  "9ad4cfc36bda": {
   "en": " What HRV is and its norms (Frontiers, 2017) ",
@@ -6351,10 +6347,6 @@
   "en": "This is a Christian fireplace! (╯°□°)╯",
   "t": "C’est une cheminée chrétienne ici ! (╯°□°)╯"
  },
- "ab1428c03f08": {
-  "en": " 💻 Software ",
-  "t": "💻 Logiciels"
- },
  "ab1960fbc49f": {
   "en": " Booking.com ",
   "t": "Booking.com"
@@ -6406,6 +6398,10 @@
  "ac2c7047534f": {
   "en": "134 h",
   "t": "134 h"
+ },
+ "ac32c5b119ff": {
+  "en": "TV shows",
+  "t": "Séries"
  },
  "ac37f7b3b5e4": {
   "en": "@deovandski",
@@ -7167,10 +7163,6 @@
   "en": "Show all 23",
   "t": "Afficher les 23"
  },
- "c26acf00539d": {
-  "en": " 🎮 Games ",
-  "t": "🎮 Jeux"
- },
  "c2b41f47a48c": {
   "en": "Defenders of Ordo",
   "t": "Les Défenseurs d’Ordo"
@@ -7731,6 +7723,10 @@
   "en": "China",
   "t": "Chine"
  },
+ "d301bc43b0a4": {
+  "en": "Movies",
+  "t": "Films"
+ },
  "d3281b2f5eec": {
   "en": "Hades series",
   "t": "Série Hades"
@@ -7987,6 +7983,10 @@
   "en": "4,854 h",
   "t": "4,854 h"
  },
+ "d8b1604fbd3e": {
+  "en": "Seen live",
+  "t": "Vus en live"
+ },
  "d8bfbca86c7d": {
   "en": "Chest",
   "t": "Torse"
@@ -8062,6 +8062,10 @@
  "da0ec5bcf4c4": {
   "en": "Ghostbusters: The Video Game Remastered",
   "t": "Ghostbusters: The Video Game Remastered"
+ },
+ "da2af52664fb": {
+  "en": "Life hacks",
+  "t": "Astuces de vie"
  },
  "da513ef8f270": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-jytvyid3=\"\">💩</span> Post random shit ",
@@ -8242,10 +8246,6 @@
  "df59735e1f2b": {
   "en": "SS",
   "t": "SS"
- },
- "dfa2d2ac7f75": {
-  "en": "Software or games",
-  "t": "Logiciels ou jeux"
  },
  "dfc22bef9169": {
   "en": "Dragon Cliff 龙崖",
@@ -8494,14 +8494,6 @@
  "e706868fe8b8": {
   "en": "Hard truths",
   "t": "Dures vérités"
- },
- "e7094e6869ea": {
-  "en": "📋 PM",
-  "t": "📋 GP"
- },
- "e713a9e1ca8e": {
-  "en": "🎭 Seen live",
-  "t": "🎭 Vus en live"
  },
  "e738cd88f444": {
   "en": "Enlarge: So fancy",
@@ -8987,10 +8979,6 @@
   "en": "The Defenders of Ordo did not fall to an army at the gates. They fell to one another. Their quarrels were fed by the charms of a spider-god of doll-like countenance, who lurked in the Rotten Unknown and wielded powers never fathomed. Thus the fellowship was undone from within, and its defenders passed into history. Yet to this day, the people of Ordo still speak of the Prince who pleased himself into the ley lines, an episode upon which the court chroniclers have respectfully declined to elaborate.",
   "t": "Les Défenseurs d’Ordo ne tombèrent pas devant une armée aux portes. Ils tombèrent les uns par les autres. Leurs querelles furent attisées par les charmes d’une déesse-araignée au visage de poupée, qui rôdait dans l’Inconnu Pourri et maniait des pouvoirs jamais sondés. Ainsi la confrérie fut défaite de l’intérieur, et ses défenseurs entrèrent dans l’histoire. Pourtant, aujourd’hui encore, le peuple d’Ordo parle du Prince qui se fit plaisir jusque dans les lignes telluriques, un épisode sur lequel les chroniqueurs de la cour ont respectueusement refusé de s’étendre."
  },
- "f743b4a6e766": {
-  "en": "TV shows or movies",
-  "t": "Séries ou films"
- },
  "f760c262e1bf": {
   "en": "99 h",
   "t": "99 h"
@@ -9098,10 +9086,6 @@
  "f9a7ce310699": {
   "en": "▶️ +{views} views, +{follows} follower",
   "t": "▶️ +{views} vues, +{follows} abonné"
- },
- "fa0082d99ac8": {
-  "en": "PM or life hacks",
-  "t": "GP ou astuces de vie"
  },
  "fa18ec4f1b86": {
   "en": " Shooters &amp; co-op ",

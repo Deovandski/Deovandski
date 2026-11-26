@@ -28,7 +28,6 @@ import CartridgeShelf from '../components/reusable/CartridgeShelf.astro';
 import LinksMenu from '../components/reusable/LinksMenu.astro';
 import Breadcrumb from '../components/reusable/Breadcrumb.astro';
 import SourceList from '../components/reusable/SourceList.astro';
-import PillSwitch from '../components/reusable/PillSwitch.astro';
 import ProjectCards from '../components/reusable/ProjectCards.astro';
 import shotSuperbHawk from '../assets/developer/superb-hawk.png';
 import shotGassyDonkey from '../assets/developer/gassy-donkey.png';
@@ -226,7 +225,11 @@ const influencerLinks: LinkItem[] = [
 ];
 
 // Every facet (a tab of content), A to Z. Where each one sits in the tree is decided by `branches` below.
-const facets = [
+// A facet can have sub-tabs (`subs`, the tree's third level, #296): 2 to 6, shown A to Z under it. Each has a `hash`, the
+// link that opens it; the one whose hash is the facet's own (`#dev`) opens when the facet does. Its panel is the element
+// with id `<facet>-<sub>` (dev-games) inside the facet's panel.
+type Sub = { id: string; icon: string; label: string; hash: string };
+const facets: { id: string; icon: string; label: string; sortAs?: string; subs?: Sub[] }[] = [
   { id: 'anime', icon: '🍥', label: 'Anime' },
   { id: 'author', icon: '✍️', label: 'Author' },
   { id: 'aviation', icon: '✈️', label: 'Aviation' },
@@ -235,12 +238,18 @@ const facets = [
   { id: 'botw', icon: '📼', label: 'BOTW' },
   { id: 'camping', icon: '⛺', label: 'Camping' },
   { id: 'churrasco', icon: '🥩', label: 'Churrasco' },
-  { id: 'concert', icon: '🤘', label: 'Concert' },
+  { id: 'concert', icon: '🤘', label: 'Concert', subs: [
+    { id: 'seen', icon: '🤘', label: 'Seen live', hash: '#concert' },
+    { id: 'wishlist', icon: '📝', label: 'Wishlist', hash: '#concert-wishlist' },
+  ] },
   { id: 'cooking', icon: '🍳', label: 'Cooking' },
   { id: 'cycling', icon: '🚴', label: 'Cycling' },
   { id: 'dnd', icon: '🎲', label: 'D&D' },
   { id: 'death', icon: '💀', label: 'Death' },
-  { id: 'dev', icon: '💻', label: 'Developer' },
+  { id: 'dev', icon: '💻', label: 'Developer', subs: [
+    { id: 'games', icon: '🎮', label: 'Games', hash: '#dev-games' },
+    { id: 'software', icon: '💻', label: 'Software', hash: '#dev' },
+  ] },
   { id: 'family', icon: '👨‍👩‍👦', label: 'Family' },
   { id: 'fishing', icon: '🎣', label: 'Fishing' },
   { id: 'gamer', icon: '🎮', label: 'Gamer' },
@@ -248,20 +257,29 @@ const facets = [
   { id: 'miku', icon: '🎤', label: '初音ミク', sortAs: 'Hatsune Miku' },
   { id: 'influencer', icon: '📣', label: 'Influencer' },
   { id: 'lust', icon: '❤️‍🔥', label: 'Lust' },
+  { id: 'pm', icon: '📋', label: 'Management', subs: [
+    { id: 'hacks', icon: '💡', label: 'Life hacks', hash: '#life-hacks' },
+    { id: 'pm', icon: '📋', label: 'PM', hash: '#pm' },
+  ] },
   { id: 'mentor', icon: '🔥', label: 'Mentor' },
   { id: 'mtg', icon: '🃏', label: 'MTG' },
   { id: 'multilingual', icon: '🗣️', label: 'Multilingual' },
   { id: 'musician', icon: '🎶', label: 'Musician' },
   { id: 'painting', icon: '🖌️', label: 'Painting/Drawing' },
   { id: 'pets', icon: '🐾', label: 'Pets' },
-  { id: 'pm', icon: '📋', label: 'PM/Life hacks' },
-  { id: 'potato', icon: '🥔', label: 'Potato' },
+  { id: 'potato', icon: '🥔', label: 'Potato', subs: [
+    { id: 'movies', icon: '🎬', label: 'Movies', hash: '#potato-movies' },
+    { id: 'tv', icon: '📺', label: 'TV shows', hash: '#potato' },
+  ] },
   { id: 'tattoo', icon: '🖋️', label: 'Tattoo' },
-  { id: 'theater', icon: '🎭', label: 'Theater & Opera' },
+  { id: 'theater', icon: '🎭', label: 'Theater & Opera', subs: [
+    { id: 'seen', icon: '🎭', label: 'Seen live', hash: '#theater' },
+    { id: 'wishlist', icon: '📝', label: 'Wishlist', hash: '#theater-wishlist' },
+  ] },
   { id: 'traveler', icon: '🗺️', label: 'Traveler' },
 ];
 
-// The facet tree: Deo → branch → facet (two levels, no sub-facets).
+// The facet tree: Deo → branch → facet → sub-tab (the third level only where a facet lists `subs`).
 // Visitors see both levels A to Z (#280): the branches by label, and the facets inside each branch by label. The code
 // below sorts them, so the order of these lists doesn't matter; they're kept A to Z anyway so they read the same.
 // No facet opens by default: visitors grow a branch, then pick a facet.
@@ -284,16 +302,31 @@ const branches = [
   if (missing.length || unknown.length || twice.length || tooBig.length) {
     throw new Error(`Facet tree: missing ${missing}, unknown ${unknown}, listed twice ${twice}, over 6 facets ${tooBig}`);
   }
+  // Sub-tabs: 2 to 6 per facet, one of them opened by the facet's own link, and every link used once.
+  const hashes = facets.flatMap((f) => [`#${f.id}`, ...(f.subs ?? []).filter((s) => s.hash !== `#${f.id}`).map((s) => s.hash)]);
+  const badSubs = facets
+    .filter((f) => f.subs && (f.subs.length < 2 || f.subs.length > 6 || f.subs.filter((s) => s.hash === `#${f.id}`).length !== 1 || new Set(f.subs.map((s) => s.id)).size !== f.subs.length))
+    .map((f) => f.id);
+  const twiceHash = hashes.filter((h, i) => hashes.indexOf(h) !== i);
+  if (badSubs.length || twiceHash.length) {
+    throw new Error(`Facet tree: sub-tabs need 2 to 6, one opened by #<facet>, unique ids (${badSubs}); links used twice: ${twiceHash}`);
+  }
 }
 const facetById = new Map(facets.map((f) => [f.id, f]));
 // A to Z by the English label (what the tab shows), ignoring case, accents, emoji and punctuation, so "D&D" sorts as
-// "dd" and "PM/Life hacks" as "pmlife hacks". A label in another script sorts by its `sortAs` (初音ミク as Hatsune Miku).
+// "dd" and "Painting/Drawing" as "paintingdrawing". A label in another script sorts by its `sortAs` (初音ミク as Hatsune Miku).
 const alphaKey = (x: { label: string; sortAs?: string }) =>
   (x.sortAs ?? x.label).normalize('NFD').replace(/[^\p{L}\p{N} ]/gu, '').toLowerCase();
 const byAlpha = <T extends { label: string; sortAs?: string }>(a: T, b: T) => alphaKey(a).localeCompare(alphaKey(b), 'en');
 const tree = [...branches]
   .sort(byAlpha)
-  .map((b) => ({ ...b, items: b.facets.map((id) => facetById.get(id)!).sort(byAlpha) }));
+  .map((b) => ({
+    ...b,
+    items: b.facets
+      .map((id) => facetById.get(id)!)
+      .sort(byAlpha)
+      .map((f) => ({ ...f, subs: f.subs ? [...f.subs].sort(byAlpha) : undefined })),
+  }));
 
 const gamer = loadGamer();
 // The other views of the hours (#252): the four smallest categories share one grey "Other".
@@ -409,20 +442,51 @@ const nf = new Intl.NumberFormat('en-US');
                 </div>
                 <div class="tree__row">
                   {b.items.map((t, i) => (
-                    <div class="tree__leaf" style={`--i:${i}`}>
-                      <button
-                        type="button"
-                        class="tree__node tree__node--facet"
-                        id={`tab-${t.id}`}
-                        data-tab={t.id}
-                        data-icon={t.icon}
-                        aria-controls={`panel-${t.id}`}
-                        aria-pressed="false"
-                      >
-                        <span class="tree__disc" aria-hidden="true">{t.icon}</span>
-                        <span class="tree__label">{t.label}</span>
-                      </button>
-                    </div>
+                    <Fragment>
+                      <div class="tree__leaf" style={`--i:${i}`}>
+                        <button
+                          type="button"
+                          class="tree__node tree__node--facet"
+                          id={`tab-${t.id}`}
+                          data-tab={t.id}
+                          data-icon={t.icon}
+                          aria-controls={`panel-${t.id}`}
+                          aria-pressed="false"
+                          aria-expanded={t.subs ? 'false' : undefined}
+                        >
+                          <span class="tree__disc" aria-hidden="true">{t.icon}</span>
+                          <span class="tree__label">{t.label}</span>
+                          {t.subs && <span class="tree__count">{`${t.subs.length} views`}</span>}
+                          {t.subs && <svg class="tree__chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>}
+                        </button>
+                      </div>
+                      {t.subs && (
+                        <div class="tree__subgroup" id={`subs-${t.id}`} data-subs-of={t.id} role="group" aria-labelledby={`tab-${t.id}`} hidden>
+                          <div class="wire" aria-hidden="true">
+                            <span class="wire__drop"></span><span class="wire__bus"></span><span class="wire__hl"></span>
+                          </div>
+                          <div class="tree__row tree__row--sub">
+                            {t.subs.map((s, j) => (
+                              <div class="tree__leaf" style={`--i:${j}`}>
+                                <button
+                                  type="button"
+                                  class="tree__node tree__node--sub"
+                                  id={`sub-${t.id}-${s.id}`}
+                                  data-sub={s.id}
+                                  data-sub-hash={s.hash}
+                                  data-default={s.hash === `#${t.id}` ? '' : undefined}
+                                  aria-controls={`${t.id}-${s.id}`}
+                                  aria-pressed="false"
+                                >
+                                  <span class="tree__disc" aria-hidden="true">{s.icon}</span>
+                                  <span class="tree__label">{s.label}</span>
+                                </button>
+                              </div>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </Fragment>
                   ))}
                 </div>
               </div>
@@ -473,14 +537,7 @@ const nf = new Intl.NumberFormat('en-US');
         toggle="external"
         items={[{ links: devLinks }, { separator: 'Dev History' }, { style: 'secondary', links: devHistoryLinks }]}
       />
-      <PillSwitch
-        label="Software or games"
-        options={[
-          { id: 'dev-tab-software', controls: 'dev-software', label: '💻 Software', hash: '#dev' },
-          { id: 'dev-tab-games', controls: 'dev-games', label: '🎮 Games', hash: '#dev-games' },
-        ]}
-      />
-      <div id="dev-software" role="tabpanel" aria-labelledby="dev-tab-software">
+      <div id="dev-software" role="region" aria-labelledby="sub-dev-software" data-sub-panel>
       <div class="story">
         <p class="dev-headline">
           Senior Software Engineer, Dynamics 365 F&amp;O Architect, and Founder &amp; CEO of Wizard Deo Solutions.
@@ -501,7 +558,7 @@ const nf = new Intl.NumberFormat('en-US');
         <ProjectCards items={softwareCards} label="My business" />
       </div>
       </div>
-      <div id="dev-games" role="tabpanel" aria-labelledby="dev-tab-games" hidden>
+      <div id="dev-games" role="region" aria-labelledby="sub-dev-games" data-sub-panel hidden>
         <div class="story">
           <p>
             By no means I consider myself a true game dev, but a guy with too many ideas alongside a brain powered by AuDHD
@@ -537,14 +594,7 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-pm" aria-labelledby="tab-pm" tabindex="0" hidden>
-      <PillSwitch
-        label="PM or life hacks"
-        options={[
-          { id: 'pm-tab-pm', controls: 'pm-pm', label: '📋 PM', hash: '#pm' },
-          { id: 'pm-tab-hacks', controls: 'pm-hacks', label: '💡 Life hacks', hash: '#life-hacks' },
-        ]}
-      />
-      <div id="pm-pm" role="tabpanel" aria-labelledby="pm-tab-pm">
+      <div id="pm-pm" role="region" aria-labelledby="sub-pm-pm" data-sub-panel>
       <div class="story">
         <p>
           Project management isn't my job title, yet it shows up in almost every facet of my life: work, a light novel series, a
@@ -596,7 +646,7 @@ const nf = new Intl.NumberFormat('en-US');
         }
       </ul>
       </div>
-      <div id="pm-hacks" role="tabpanel" aria-labelledby="pm-tab-hacks" hidden>
+      <div id="pm-hacks" role="region" aria-labelledby="sub-pm-hacks" data-sub-panel hidden>
         <LifeHacksFacet />
       </div>
     </section>
@@ -846,33 +896,19 @@ const nf = new Intl.NumberFormat('en-US');
       <GimmickPlay tab="concert">
         <p slot="intro">Saturday Night Fever, King of Hues edition.</p>
       </GimmickPlay>
-      <PillSwitch
-        label="Seen live or wishlist"
-        options={[
-          { id: 'concert-tab-seen', controls: 'concert-seen', label: '🤘 Seen live', hash: '#concert' },
-          { id: 'concert-tab-wishlist', controls: 'concert-wishlist', label: '📝 Wishlist', hash: '#concert-wishlist' },
-        ]}
-      />
-      <div id="concert-seen" role="tabpanel" aria-labelledby="concert-tab-seen">
+      <div id="concert-seen" role="region" aria-labelledby="sub-concert-seen" data-sub-panel>
         <Sections data={concerts} id="concert" layout="cards" sortAlpha avatarsDir="content/concerts/bands" photoAlt={(t) => `At ${t}`} />
       </div>
-      <div id="concert-wishlist" role="tabpanel" aria-labelledby="concert-tab-wishlist" hidden>
+      <div id="concert-wishlist" role="region" aria-labelledby="sub-concert-wishlist" data-sub-panel hidden>
         <Sections data={concertWishlist} id="concert-wish" layout="cards" sortAlpha avatarsDir="content/concerts/bands" photoAlt={(t) => `At ${t}`} />
       </div>
     </section>
 
     <section class="panel" role="region" id="panel-theater" aria-labelledby="tab-theater" tabindex="0" hidden>
-      <PillSwitch
-        label="Seen live or wishlist"
-        options={[
-          { id: 'theater-tab-seen', controls: 'theater-seen', label: '🎭 Seen live', hash: '#theater' },
-          { id: 'theater-tab-wishlist', controls: 'theater-wishlist', label: '📝 Wishlist', hash: '#theater-wishlist' },
-        ]}
-      />
-      <div id="theater-seen" role="tabpanel" aria-labelledby="theater-tab-seen">
+      <div id="theater-seen" role="region" aria-labelledby="sub-theater-seen" data-sub-panel>
         <Sections data={theater} id="theater" layout="cards" sortAlpha avatarsDir="content/theater/shows" photoAlt={(t) => `At ${t}`} />
       </div>
-      <div id="theater-wishlist" role="tabpanel" aria-labelledby="theater-tab-wishlist" hidden>
+      <div id="theater-wishlist" role="region" aria-labelledby="sub-theater-wishlist" data-sub-panel hidden>
         <Sections data={theaterWishlist} id="theater-wish" layout="cards" sortAlpha avatarsDir="content/theater/shows" empty="The wishlist is on its way." photoAlt={(t) => `At ${t}`} />
       </div>
     </section>
@@ -1000,19 +1036,12 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-potato" aria-labelledby="tab-potato" tabindex="0" hidden>
-      <PillSwitch
-        label="TV shows or movies"
-        options={[
-          { id: 'potato-tab-tv', controls: 'potato-tv', label: '📺 TV shows', hash: '#potato' },
-          { id: 'potato-tab-movies', controls: 'potato-movies', label: '🎬 Movies', hash: '#potato-movies' },
-        ]}
-      />
-      <div id="potato-tv" role="tabpanel" aria-labelledby="potato-tab-tv">
+      <div id="potato-tv" role="region" aria-labelledby="sub-potato-tv" data-sub-panel>
         <Ranking items={tvShows}>
           <p class="ranking-lede">My top 39 TV shows. Anime gets its own tab because of how much it means to me.</p>
         </Ranking>
       </div>
-      <div id="potato-movies" role="tabpanel" aria-labelledby="potato-tab-movies" hidden>
+      <div id="potato-movies" role="region" aria-labelledby="sub-potato-movies" data-sub-panel hidden>
         <Ranking items={movies}>
           <p class="ranking-lede">My top 39 movies.</p>
         </Ranking>
@@ -1122,6 +1151,10 @@ const nf = new Intl.NumberFormat('en-US');
   .tree__label { font-family: var(--font-display); font-weight: 800; font-size: var(--step-0); line-height: 1.25; text-align: center; }
   .tree__node--facet .tree__label { font-size: var(--step--1); }
   .tree__count { color: var(--muted); font-size: var(--step--1); }
+  .tree__node--facet .tree__count { font-size: 0.75rem; margin-top: -0.25rem; }
+  /* Sub-tabs (the third level, #296): smaller nodes under their facet. */
+  .tree__node--sub .tree__disc { width: 44px; height: 44px; font-size: 1.2rem; }
+  .tree__node--sub .tree__label { font-size: var(--step--1); font-weight: 700; }
   .tree__chev { display: none; }
   .tree__node[aria-expanded='true'], .tree__node[aria-pressed='true'] { color: var(--text); }
   .tree__node[aria-expanded='true'] .tree__disc { border-color: var(--teal); background-color: rgba(57, 197, 187, 0.14); }
@@ -1146,6 +1179,9 @@ const nf = new Intl.NumberFormat('en-US');
   .tree__group { grid-row: 2; grid-column: 1 / -1; margin-top: 0.5rem; }
   .tree__group[hidden] { display: none; }
   .tree__leaf { display: flex; justify-content: center; padding: 0 4px; animation: pop-in 0.32s calc(var(--i) * 60ms + 0.45s) ease-out both; }
+  .tree__row > .tree__leaf { grid-row: 1; }
+  .tree__subgroup { grid-row: 2; grid-column: 1 / -1; margin-top: 0.5rem; }
+  .tree__subgroup[hidden] { display: none; }
 
   @keyframes grow-y { from { transform: scaleY(0); } to { transform: scaleY(1); } }
   @keyframes grow-x { from { transform: scaleX(0); } to { transform: scaleX(1); } }
@@ -1262,7 +1298,7 @@ const nf = new Intl.NumberFormat('en-US');
   #panel-gamer { --hbc-heading-font: var(--font-display); --days-heading-font: var(--font-display); }
 
   .empty { color: var(--muted); }
-  /* In-tab switches (PillSwitch): the site's display font. */
+  /* Pill switches (PillSwitch, like the Biomarker Lab's views): the site's display font. */
   .panel {
     --switch-font: var(--font-display);
     --switch-size: var(--step-0);
@@ -1358,7 +1394,7 @@ const nf = new Intl.NumberFormat('en-US');
     .tree__root, .wire { display: none; }
     .tree__grid { display: flex; flex-direction: column; gap: 0.5rem; }
     .tree__branch { padding: 0; }
-    .tree__node--branch, .tree__node--facet {
+    .tree__node--branch, .tree__node--facet, .tree__node--sub {
       flex-direction: row;
       width: 100%;
       gap: 0.7rem;
@@ -1369,23 +1405,33 @@ const nf = new Intl.NumberFormat('en-US');
     }
     .tree__node--branch { min-height: 56px; }
     .tree__node--facet { min-height: 44px; border-radius: 12px; }
+    .tree__node--sub { min-height: 40px; border-radius: 10px; }
     .tree__node .tree__disc,
-    .tree__node--facet .tree__disc { width: 1.75rem; height: auto; border: 0; background: none !important; box-shadow: none !important; font-size: 1.35rem; }
-    .tree__node--facet .tree__disc { font-size: 1.15rem; }
-    .tree__label { flex: 1 1 auto; text-align: left; }
+    .tree__node--facet .tree__disc,
+    .tree__node--sub .tree__disc { width: 1.75rem; height: auto; border: 0; background: none !important; box-shadow: none !important; font-size: 1.35rem; }
+    .tree__node--facet .tree__disc, .tree__node--sub .tree__disc { font-size: 1.15rem; }
+    .tree__node--facet .tree__count { margin: 0; }
+    .tree__label { flex: 1 1 auto; text-align: start; }
     .tree__node--facet .tree__label { font-size: var(--step-0); font-family: var(--font-body); font-weight: 400; }
+    .tree__node--sub .tree__label { font-size: var(--step--1); font-family: var(--font-body); font-weight: 400; }
     .tree__chev { display: block; flex: 0 0 18px; color: var(--muted); transition: transform 0.2s; }
     .tree__node[aria-expanded='true'] { border-color: var(--teal); background: rgba(57, 197, 187, 0.12); }
     .tree__node[aria-expanded='true'] .tree__chev { transform: rotate(180deg); }
     .tree__node[aria-pressed='true'] { border-color: var(--pink); background: rgba(225, 40, 133, 0.18); }
-    .tree__group { margin: 0 0 0.25rem 1.6rem; padding: 0.35rem 0; border-left: 2px solid var(--teal); transform-origin: 50% 0; animation: grow-y 0.22s ease-out both; }
+    .tree__group { margin: 0 0 0.25rem; margin-inline-start: 1.6rem; padding: 0.35rem 0; border-inline-start: 2px solid var(--teal); transform-origin: 50% 0; animation: grow-y 0.22s ease-out both; }
     .tree__row { display: flex; flex-direction: column; gap: 0.3rem; }
-    .tree__leaf { position: relative; padding: 0 0 0 14px; animation-delay: calc(var(--i) * 50ms + 0.1s); }
-    .tree__leaf::before { content: ''; position: absolute; left: 0; top: 50%; width: 14px; height: 2px; background: var(--wire); }
+    .tree__leaf { position: relative; padding: 0; padding-inline-start: 14px; animation-delay: calc(var(--i) * 50ms + 0.1s); }
+    .tree__leaf::before { content: ''; position: absolute; inset-inline-start: 0; top: 50%; width: 14px; height: 2px; background: var(--wire); }
     .tree__leaf:has([aria-pressed='true'])::before { background: var(--pink); }
+    /* Sub-tabs hang under their facet on a pink rail (#296). */
+    .tree__subgroup { margin: 0.3rem 0 0.1rem; margin-inline-start: 2.4rem; padding: 0.3rem 0; border-inline-start: 2px solid var(--pink); transform-origin: 50% 0; animation: grow-y 0.22s ease-out both; }
+    /* With a facet open, the tree folds to the chosen path (#296): its branch, the facet and its sub-tabs. Pressing the
+       branch shows the rest again. */
+    .tree.is-folded .tree__branch:not(:has(> [aria-expanded='true'])) { display: none; }
+    .tree.is-folded .tree__row:not(.tree__row--sub) > .tree__leaf:not(:has([aria-pressed='true'])) { display: none; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .tree *, .tree__group { animation: none !important; transition: none !important; }
+    .tree *, .tree__group, .tree__subgroup { animation: none !important; transition: none !important; }
   }
 </style>
 
@@ -1395,6 +1441,8 @@ const nf = new Intl.NumberFormat('en-US');
   // and the rows re-center around what's left.
   type Wire = { el: HTMLElement; hl: HTMLElement; ticks: HTMLElement[]; p: number; cs: number[] };
   type Branch = { id: string; button: HTMLButtonElement; cell: HTMLElement; group: HTMLElement; facets: HTMLButtonElement[]; wire: Wire };
+  // A facet's sub-tabs (the third level, #296): its group under the facet, the buttons (A to Z), the one its own link opens.
+  type Subs = { group: HTMLElement; buttons: HTMLButtonElement[]; fallback: HTMLButtonElement; wire: Wire };
 
   const treeEl = document.querySelector<HTMLElement>('.tree')!;
   const rootButton = treeEl.querySelector<HTMLButtonElement>('[data-root]')!;
@@ -1422,7 +1470,13 @@ const nf = new Intl.NumberFormat('en-US');
       return { col, center: (col / 12) * 100 };
     });
 
+  // The grid mirrors right to left (Arabic) by itself; the wires are placed with `left`, so they mirror here.
+  const rtl = document.documentElement.dir === 'rtl';
   function wireUp(el: HTMLElement, p: number, cs: number[]): Wire {
+    if (rtl) {
+      p = 100 - p;
+      cs = cs.map((c) => 100 - c);
+    }
     const [drop, bus, hl] = ['wire__drop', 'wire__bus', 'wire__hl'].map((c) => el.querySelector<HTMLElement>(`.${c}`)!);
     const left = Math.min(p, ...cs);
     const right = Math.max(p, ...cs);
@@ -1463,8 +1517,10 @@ const nf = new Intl.NumberFormat('en-US');
     const group = document.getElementById(button.getAttribute('aria-controls')!)!;
     const facets: HTMLButtonElement[] = [];
     for (const f of group.querySelectorAll<HTMLButtonElement>('[data-tab]')) {
-      if (getComputedStyle(f).display === 'none') f.closest('.tree__leaf')!.remove();
-      else facets.push(f);
+      if (getComputedStyle(f).display === 'none') {
+        f.closest('.tree__leaf')!.remove();
+        document.getElementById(`subs-${f.dataset.tab}`)?.remove();
+      } else facets.push(f);
     }
     if (!facets.length) {
       cell.remove();
@@ -1488,8 +1544,33 @@ const nf = new Intl.NumberFormat('en-US');
   const allFacets = branches.flatMap((b) => b.facets);
   const branchOf = (f: HTMLButtonElement) => branches.find((b) => b.facets.includes(f))!;
 
+  // Sub-tabs sit in a row of their own under their facet, centred on it but kept inside the 12 columns.
+  const subsOf = new Map<HTMLButtonElement, Subs>();
+  for (const b of branches) {
+    const facetLayout = rowLayout(b.facets.length);
+    b.facets.forEach((f, j) => {
+      const group = document.getElementById(`subs-${f.dataset.tab}`);
+      if (!group) return;
+      const buttons = Array.from(group.querySelectorAll<HTMLButtonElement>('[data-sub]'));
+      const k = buttons.length;
+      const start = Math.min(Math.max(facetLayout[j].col - k + 1, 1), 13 - 2 * k);
+      const cols = buttons.map((_, i) => start + 2 * i);
+      buttons.forEach((s, i) => (s.closest<HTMLElement>('.tree__leaf')!.style.gridColumn = `${cols[i]} / span 2`));
+      const wire = wireUp(group.querySelector<HTMLElement>('.wire')!, facetLayout[j].center, cols.map((c) => (c / 12) * 100));
+      subsOf.set(f, { group, buttons, fallback: buttons.find((s) => s.hasAttribute('data-default')) ?? buttons[0], wire });
+    });
+  }
+  const allSubs = [...subsOf.values()].flatMap((x) => x.buttons);
+  const facetOfSub = (s: HTMLButtonElement) => [...subsOf].find(([, x]) => x.buttons.includes(s))![0];
+
   let openBranch: Branch | null = null;
   let openFacet: HTMLButtonElement | null = null;
+  let openSub: HTMLButtonElement | null = null;
+  const lastSub = new Map<HTMLButtonElement, HTMLButtonElement>(); // the sub-tab last shown per facet, for this visit
+  // Phones fold the tree to the open path (#296); pressing the open branch unfolds it.
+  function setFolded(on: boolean) {
+    treeEl.classList.toggle('is-folded', on);
+  }
 
   function setBranch(b: Branch | null) {
     for (const x of branches) {
@@ -1511,9 +1592,28 @@ const nf = new Intl.NumberFormat('en-US');
       x.setAttribute('aria-pressed', String(x === f));
       panelOf(x).hidden = x !== f;
     }
+    for (const [x, subs] of subsOf) {
+      x.setAttribute('aria-expanded', String(x === f));
+      subs.group.hidden = x !== f; // un-hiding replays its wire and pop-in, like a branch's
+    }
     if (openBranch) light(openBranch.wire, f ? openBranch.facets.indexOf(f) : -1);
     openFacet = f;
+    openSub = null;
   }
+
+  // Shows one of the open facet's sub-tabs and hides the others.
+  function setSub(s: HTMLButtonElement) {
+    const subs = subsOf.get(facetOfSub(s))!;
+    for (const x of subs.buttons) {
+      x.setAttribute('aria-pressed', String(x === s));
+      panelOf(x).hidden = x !== s;
+    }
+    light(subs.wire, subs.buttons.indexOf(s));
+    lastSub.set(facetOfSub(s), s);
+    openSub = s;
+  }
+  // The link that opens what's on screen: the sub-tab's own (#dev-games) or the facet's (#death).
+  const hashNow = () => openSub?.dataset.subHash ?? `#${openFacet!.dataset.tab}`;
 
   // Phone back button (#208): while a tab is open there is exactly one history entry for it, on top of
   // the tree's. Back from a tab returns to the tree (its branch still open); back again leaves the site,
@@ -1562,7 +1662,12 @@ const nf = new Intl.NumberFormat('en-US');
     const branchText = `${iconOf(b.button)} ${labelOf(b.button)}`;
     if (openFacet) {
       crumb(branchText, () => backToBranch());
-      crumb(`${iconOf(openFacet)} ${labelOf(openFacet)}`);
+      const facetText = `${iconOf(openFacet)} ${labelOf(openFacet)}`;
+      if (openSub) {
+        const f = openFacet;
+        crumb(facetText, () => openSubFrom(subsOf.get(f)!.fallback));
+        crumb(`${iconOf(openSub)} ${labelOf(openSub)}`);
+      } else crumb(facetText);
     } else crumb(branchText);
     const node = openFacet ?? b.button;
     headIcon.textContent = iconOf(node);
@@ -1630,6 +1735,7 @@ const nf = new Intl.NumberFormat('en-US');
   });
 
   function collapse(focusRoot = false) {
+    setFolded(false);
     setFacet(null);
     setBranch(null);
     renderHead();
@@ -1638,7 +1744,10 @@ const nf = new Intl.NumberFormat('en-US');
   }
 
   function growBranch(b: Branch) {
+    // On a phone with the tree folded to a tab's path, the branch first shows its other tabs again.
+    if (openBranch === b && openFacet && phone.matches && treeEl.classList.contains('is-folded')) return setFolded(false);
     if (openBranch === b) return collapse();
+    setFolded(false);
     setFacet(null);
     setBranch(b);
     renderHead();
@@ -1647,6 +1756,7 @@ const nf = new Intl.NumberFormat('en-US');
 
   function backToBranch() {
     const b = openBranch;
+    setFolded(false);
     setFacet(null);
     renderHead();
     clearHash();
@@ -1655,22 +1765,36 @@ const nf = new Intl.NumberFormat('en-US');
 
   // Opens a facet's panel. `source` says whether a visitor picked it ('user') or a link did ('hash');
   // LustFacet only counts the visitor's own picks.
-  function openFacetFrom(f: HTMLButtonElement, source: 'user' | 'hash') {
+  // A facet with sub-tabs opens on `sub` (a link's), else the one shown last on this visit, else the one its own link opens.
+  function openFacetFrom(f: HTMLButtonElement, source: 'user' | 'hash', sub?: HTMLButtonElement) {
     const b = branchOf(f);
     if (openBranch !== b) setBranch(b);
-    setFacet(f);
+    if (openFacet !== f) setFacet(f);
+    const subs = subsOf.get(f);
+    if (subs) setSub(sub ?? lastSub.get(f) ?? subs.fallback);
+    setFolded(true);
     renderHead();
     document.dispatchEvent(new CustomEvent('tabchange', { detail: panelOf(f).id }));
     document.dispatchEvent(new CustomEvent('facetopen', { detail: { id: f.dataset.tab, source } }));
     if (source === 'user') {
-      rememberFacet(`#${f.dataset.tab}`);
+      rememberFacet(hashNow());
       if (phone.matches) head.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
+  }
+  // A visitor picks a sub-tab (in the tree, or the facet's item in the breadcrumb, which goes back to its first one).
+  function openSubFrom(s: HTMLButtonElement) {
+    const f = facetOfSub(s);
+    if (openFacet !== f) return openFacetFrom(f, 'user', s);
+    setSub(s);
+    renderHead();
+    rememberFacet(hashNow());
+    if (phone.matches) head.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   rootButton.addEventListener('click', () => collapse());
   for (const b of branches) b.button.addEventListener('click', () => growBranch(b));
   for (const f of allFacets) f.addEventListener('click', () => openFacetFrom(f, 'user'));
+  for (const s of allSubs) s.addEventListener('click', () => openSubFrom(s));
 
   // Keyboard: arrows (and Home/End) move between siblings in a row, Enter/Space opens,
   // Escape goes back up a level (facet → its branch, branch → Deo).
@@ -1690,9 +1814,12 @@ const nf = new Intl.NumberFormat('en-US');
     b.button.addEventListener('keydown', (e) => onKey(e, branchButtons, () => collapse(true)));
     for (const f of b.facets) f.addEventListener('keydown', (e) => onKey(e, b.facets, () => b.button.focus()));
   }
+  // Sub-tabs: arrows move along their row; Escape goes back up to their facet. Tab reaches them right after the facet.
+  for (const [f, subs] of subsOf) for (const s of subs.buttons) s.addEventListener('keydown', (e) => onKey(e, subs.buttons, () => f.focus()));
 
-  // In-tab switches (PillSwitch: Developer, Potato, PM/Life hacks, Concert, Theater & Opera). Each option carries the link that
-  // opens it (data-switch-hash), e.g. #potato-movies; picking one puts that link in the address bar.
+  // Pill switches inside a tab (PillSwitch, like the Biomarker Lab's views; tabs with two lists use sub-tabs instead, #296).
+  // Each option carries the link that opens it (data-switch-hash), e.g. #biomarkers-exercise; picking one puts that link in
+  // the address bar.
   const switchButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-pill-switch] [data-switch-hash]'));
   document.addEventListener('switch:change', (e) => {
     const { hash, source } = (e as CustomEvent<{ hash?: string; source: string }>).detail;
@@ -1710,6 +1837,12 @@ const nf = new Intl.NumberFormat('en-US');
     if (playFacet) {
       openFacetFrom(playFacet, 'hash');
       document.dispatchEvent(new CustomEvent('gimmick:open', { detail: { tab: playFacet.dataset.tab, immersive: false } }));
+      return true;
+    }
+    // #dev-games, #potato-movies…: a sub-tab, with its facet.
+    const sub = allSubs.find((s) => s.dataset.subHash === hash);
+    if (sub) {
+      openFacetFrom(facetOfSub(sub), 'hash', sub);
       return true;
     }
     const switchButton = switchButtons.find((b) => b.dataset.switchHash === hash);
@@ -1754,6 +1887,7 @@ const nf = new Intl.NumberFormat('en-US');
     if (location.hash || !openFacet) return; // forward to a tab is handled by hashchange
     document.dispatchEvent(new CustomEvent('gimmick:close', { detail: {} }));
     const b = openBranch;
+    setFolded(false);
     setFacet(null);
     renderHead();
     (b?.button ?? treeEl).scrollIntoView({ behavior: 'smooth', block: 'center' });
