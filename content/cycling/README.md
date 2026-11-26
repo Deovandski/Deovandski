@@ -6,7 +6,7 @@ The Cycling tab (Philosophy) shows my rides: totals, distance by year, and how f
 | File | What it holds |
 |---|---|
 | `story.md` | The tab's text. Edit it by hand. |
-| `rides.json` | One line per ride: day, start hour, distance (km), minutes, kind (`outdoor`, `mountain`, `indoor`) and where it came from. Written by `scripts/cycling-from-takeout.mjs`; don't edit it by hand. |
+| `rides.json` | One line per ride: day, start hour, minutes, distance (km, `estimated` when there was no GPS), kind (`outdoor`, `mountain`, `indoor`), whether the watch caught it on its own (`how: auto`), where it came from, and the watch's average heart rate, calories and climb. Written by `scripts/cycling-from-takeout.mjs`; don't edit it by hand. |
 | `estimated.md` | Riding from before the tracking, with distances I estimated: `- Summer 2019 rides: 300 mi`. Edit it by hand. |
 | `sources.md` | The studies in the tab's Links box ("Shoulders I stand on"). |
 
@@ -39,13 +39,25 @@ get the data out, **Google Takeout** is the one that gets everything in one go, 
    ```
 
    (Several folders are fine, if Google split the export: `node scripts/cycling-from-takeout.mjs ~/Downloads/Takeout ~/Downloads/Takeout-2`.)
-   It finds the bike rides wherever they are (Google Health/Fitbit exercise logs, exercise CSVs, Google Fit sessions,
-   TCX files), counts a ride found twice only once, and writes `content/cycling/rides.json`. It prints how many rides it
-   found.
+   It finds the bike rides wherever they are, counts a ride found twice only once, and writes
+   `content/cycling/rides.json`. It prints how many rides it found, how many it left out (0-minute logs, or one left
+   running for 16 hours) and how much distance it estimated.
+
+### What's in the export (checked against the November 2026 one)
+
+| Where | What the script takes from it |
+|---|---|
+| `Google Health/Health Fitness Data_GoogleData/UserExercises_<date>.csv` | Every exercise, one CSV per year. Rides are **Bike** and **Outdoor Bike**, either logged on the watch (`TRACKER`) or caught by it on its own (`AUTO_DETECTED`). Times are UTC plus a `utc_offset` column; distance is in millimetres. |
+| `Google Health/Physical Activity_GoogleData/Gps Location/gps_location_<date>.csv` | The watch's GPS points (exact places: **never copied**). Only read to measure a ride whose log has no distance; just the total leaves the script. |
+| `Fit/All Sessions/*_BIKING.json` and `Fit/Activities/*_Biking.tcx` | A few 2020 rides from Google Fit (a TicWatch), the same rides in both. |
+
+Only rides recorded with GPS have a distance (126 of 305 in 2026's export). The rest, mostly auto-detected ones,
+get a distance estimated from their time at the median speed of the measured rides (about 13.9 km/h, 8.6 mph); they're
+marked `"estimated": true`, drawn lighter in the tab's bars, and explained in its footnote.
 6. `npm run build` and open the Cycling tab. Then open a PR with `rides.json`.
 
-**Privacy:** `rides.json` keeps only each ride's day, start hour, distance, time and kind. No GPS points, no routes, no
-start places, no heart rate: the export itself never goes in the repo.
+**Privacy:** `rides.json` keeps each ride's day, start hour, time, distance, kind and the watch's summary numbers
+(average heart rate, calories, climb). No GPS points, routes or places: the export itself never goes in the repo.
 
 Claude can do steps 5 and 6: send it the unzipped export's exercise files (the `exercise-*.json` files, or the Google
 Fit `All Sessions` folder), not the whole archive.

@@ -99,6 +99,10 @@
   "en": "My full list on MyAnimeList",
   "t": "我在 MyAnimeList 上的完整列表"
  },
+ "02978f5c6f2b": {
+  "en": "Longest ride",
+  "t": "最长一次"
+ },
  "02aa629c8b16": {
   "en": "S",
   "t": "S"
@@ -511,6 +515,10 @@
   "en": "Back to Miku",
   "t": "返回初音未来"
  },
+ "0f5684b2fcf1": {
+  "en": "6 mi*",
+  "t": "6 mi*"
+ },
  "0f9292f61d18": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#29: </span>Best of the Worst: The Black Spine Edition",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#29: </span>Best of the Worst: The Black Spine Edition"
@@ -795,6 +803,10 @@
   "en": "1 game",
   "t": "1 款游戏"
  },
+ "19ba291a353d": {
+  "en": "In the saddle",
+  "t": "骑行时长"
+ },
  "19c34e493647": {
   "en": "Wunjo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚹ)</span>",
   "t": "Wunjo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚹ)</span>"
@@ -910,6 +922,10 @@
  "1e69f9e7e667": {
   "en": "📉 -{n} followers. \"Not this again…\"",
   "t": "📉 -{n} 粉丝。“又来了…”"
+ },
+ "1e7203ade1fc": {
+  "en": "568 mi*",
+  "t": "568 mi*"
  },
  "1e98d9e9411b": {
   "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,445 h ",
@@ -1082,10 +1098,6 @@
  "22f164766765": {
   "en": "Arragoa",
   "t": "Arragoa"
- },
- "230f280c8db3": {
-  "en": "0 mi on the bike: 0% of the way around the world.",
-  "t": "骑行 0 mi：环游世界的 0%。"
  },
  "235a70299830": {
   "en": "Faun",
@@ -1262,6 +1274,10 @@
  "28063f5eaa95": {
   "en": " Space &amp; flight ",
   "t": "太空与飞行"
+ },
+ "2813e0c557ef": {
+  "en": "214 mi*",
+  "t": "214 mi*"
  },
  "2819ba97835f": {
   "en": "Rhythm and sleep",
@@ -1610,6 +1626,10 @@
  "3286fdce39d6": {
   "en": "Wake up at 6am (or 5am; Peeta is the true alarm clock in the house), drink coffee, poop, bathe, hit the gym, then head home to let Peeta run in the backyard while I shove food in my piehole before work. Practical and frictionless: part of my routine now, not something I have to force myself to do.",
   "t": "早上 6 点起床（或者 5 点；Peeta 才是家里真正的闹钟），喝咖啡、拉屎、洗澡、去健身房，然后回家让 Peeta 在后院跑一跑，我则在上班前把饭塞进嘴里。实际又顺畅：它现在是我日常的一部分，不是我得逼自己去做的事。"
+ },
+ "32b93c52f5d9": {
+  "en": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(June 21, 2026)</span>",
+  "t": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(2026年6月21日)</span>"
  },
  "3303cb966359": {
   "en": "PowerWash Simulator",
@@ -2106,6 +2126,10 @@
  "420e6adf0887": {
   "en": "Sleep problems are far more common in autistic people and in people with ADHD than in their neurotypical peers, insomnia and a body clock that runs late above all, and having both tends to make it worse.",
   "t": "睡眠问题在自闭症人士和 ADHD 人士中远比神经典型人群常见，尤其是失眠和偏晚的生物钟，两者兼有往往更糟。"
+ },
+ "423208095dd7": {
+  "en": "Distance",
+  "t": "距离"
  },
  "423af894628e": {
   "en": " 363 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -2703,6 +2727,10 @@
   "en": " CO ",
   "t": "CO"
  },
+ "552492715d5c": {
+  "en": "1,202 mi* on the bike: 4.8% of the way around the world.",
+  "t": "骑行 1,202 mi*：环游世界的 4.8%。"
+ },
  "5527769cff60": {
   "en": "Death and Taxes",
   "t": "Death and Taxes"
@@ -2806,6 +2834,10 @@
  "57e3e71a00f2": {
   "en": "Stardew Valley",
   "t": "Stardew Valley"
+ },
+ "57f6aa530055": {
+  "en": "285 mi*",
+  "t": "285 mi*"
  },
  "57fdad685146": {
   "en": " RC ",
@@ -3535,6 +3567,10 @@
   "en": "Gebo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚷ)</span>",
   "t": "Gebo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚷ)</span>"
  },
+ "6d90d70023e6": {
+  "en": "1,202 mi* <span data-astro-cid-o4ptolev=\"\">(1,935 km)</span>",
+  "t": "1,202 mi* <span data-astro-cid-o4ptolev=\"\">(1,935 km)</span>"
+ },
  "6da2d12faf76": {
   "en": "Campsites are on their way.",
   "t": "露营地即将上线。"
@@ -3958,10 +3994,6 @@
  "7a22ceba7656": {
   "en": "35 h",
   "t": "35 小时"
- },
- "7a37df2a9cae": {
-  "en": "The ride log is on its way: it comes from my Google Health export.",
-  "t": "骑行记录在路上了：数据来自我的 Google Health 导出。"
  },
  "7a56564137e3": {
   "en": "Green ink",
@@ -5711,6 +5743,10 @@
   "en": "I mean, it's Taiga! But for real, the chemistry between the two main characters is well developed, which is why so many people still remember it.",
   "t": "我是说，那可是大河啊！不过说真的，两位主角之间的化学反应发展得很好，所以才有那么多人至今还记得它。"
  },
+ "ae849605d14c": {
+  "en": "Rides",
+  "t": "骑行次数"
+ },
  "ae859f0295a5": {
   "en": "Step 1: Procure the Sacred Salt",
   "t": "第一步：求取神圣之盐"
@@ -5919,6 +5955,10 @@
   "en": " Cozy &amp; life sims ",
   "t": "休闲与生活模拟"
  },
+ "b4c138be906a": {
+  "en": "* 179 rides were caught by my watch without GPS, so their distance (710 mi, the lighter part of the bars) is estimated from their time, at my median speed of 8.6 mph.",
+  "t": "* 有 179 次骑行是手表在没有 GPS 的情况下自动识别的，所以它们的距离（710 mi，条形中较浅的部分）按时长和我的中位速度 8.6 mph 估算。"
+ },
  "b4d362cfcf75": {
   "en": " ME ",
   "t": "ME"
@@ -6027,6 +6067,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 28: </span> Placeholder movie 28 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 28: </span> 占位电影 28"
  },
+ "b87893952020": {
+  "en": "129 mi*",
+  "t": "129 mi*"
+ },
  "b886c7f27a92": {
   "en": "The Holy Order",
   "t": "神圣品级"
@@ -6090,6 +6134,10 @@
  "bb0bc553b8e8": {
   "en": "Whack-a-Miku: turn your phone sideways",
   "t": "打地鼠·初音未来：把手机横过来"
+ },
+ "bb1e86946aa1": {
+  "en": "Rides from my Google Health export, updated on November 26, 2026.",
+  "t": "骑行数据来自我的 Google Health 导出，更新于2026年11月26日。"
  },
  "bb395b5f1d5e": {
   "en": "101 days",
@@ -6290,6 +6338,10 @@
  "c1f6d27e0c31": {
   "en": "Revenge of the Savage Planet",
   "t": "Revenge of the Savage Planet"
+ },
+ "c1ff452fd06e": {
+  "en": "143.6 h",
+  "t": "143.6 h"
  },
  "c2032d98f6ff": {
   "en": "natural {n}!",
@@ -7762,6 +7814,10 @@
  "f1be6af1c552": {
   "en": "You’re human, like me. We have different capabilities, yes, but nothing stops you from picturing your own death clock and starting to work on your life today. <strong>You can’t change the past, but you can do something right now to build a better future.</strong>",
   "t": "你和我一样是人。我们能力不同，没错，但没有什么能阻止你想象自己的死亡时钟，从今天开始经营你的人生。<strong>你改变不了过去，但你现在就可以做点什么，去建设一个更好的未来。</strong>"
+ },
+ "f1cc9eccadd7": {
+  "en": "Distance by year",
+  "t": "每年距离"
  },
  "f1d1b324ae97": {
   "en": "Dev History",
