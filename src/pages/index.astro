@@ -142,51 +142,53 @@ const influencerLinks: LinkItem[] = [
   { href: 'https://www.linkedin.com/in/deovandski', label: 'LinkedIn' },
 ];
 
-// Every facet (a tab of content). Where each one sits in the tree is decided by `branches` below.
+// Every facet (a tab of content), A to Z. Where each one sits in the tree is decided by `branches` below.
 const facets = [
+  { id: 'anime', icon: '🍥', label: 'Anime' },
+  { id: 'author', icon: '✍️', label: 'Author' },
+  { id: 'aviation', icon: '✈️', label: 'Aviation' },
+  { id: 'biomarkers', icon: '🫀', label: 'Biomarker Lab' },
+  { id: 'boardgames', icon: '♟️', label: 'Board Games' },
+  { id: 'botw', icon: '📼', label: 'BOTW' },
+  { id: 'camping', icon: '⛺', label: 'Camping' },
+  { id: 'churrasco', icon: '🥩', label: 'Churrasco' },
+  { id: 'concert', icon: '🤘', label: 'Concert' },
+  { id: 'cooking', icon: '🍳', label: 'Cooking' },
+  { id: 'cycling', icon: '🚴', label: 'Cycling' },
+  { id: 'dnd', icon: '🎲', label: 'D&D' },
   { id: 'death', icon: '💀', label: 'Death' },
   { id: 'dev', icon: '💻', label: 'Dev' },
   { id: 'family', icon: '👨‍👩‍👦', label: 'Family' },
-  { id: 'aviation', icon: '✈️', label: 'Aviation' },
-  { id: 'author', icon: '✍️', label: 'Author' },
-  { id: 'mentor', icon: '🔥', label: 'Mentor' },
-  { id: 'pm', icon: '📋', label: 'PM/Life hacks' },
-  { id: 'influencer', icon: '📣', label: 'Influencer' },
-  { id: 'traveler', icon: '🗺️', label: 'Traveler' },
   { id: 'fishing', icon: '🎣', label: 'Fishing' },
-  { id: 'dnd', icon: '🎲', label: 'D&D' },
-  { id: 'boardgames', icon: '♟️', label: 'Board Games' },
-  { id: 'mtg', icon: '🃏', label: 'MTG' },
-  { id: 'camping', icon: '⛺', label: 'Camping' },
-  { id: 'botw', icon: '📼', label: 'BOTW' },
-  { id: 'multilingual', icon: '🗣️', label: 'Multilingual' },
-  { id: 'tattoo', icon: '🖋️', label: 'Tattoo' },
+  { id: 'gamer', icon: '🎮', label: 'Gamer' },
   { id: 'gym', icon: '🏋️', label: 'Gym' },
-  { id: 'cycling', icon: '🚴', label: 'Cycling' },
-  { id: 'biomarkers', icon: '🫀', label: 'Biomarker Lab' },
-  { id: 'miku', icon: '🎤', label: '初音ミク' },
-  { id: 'churrasco', icon: '🥩', label: 'Churrasco' },
+  { id: 'miku', icon: '🎤', label: '初音ミク', sortAs: 'Hatsune Miku' },
+  { id: 'influencer', icon: '📣', label: 'Influencer' },
+  { id: 'lust', icon: '❤️‍🔥', label: 'Lust' },
+  { id: 'mentor', icon: '🔥', label: 'Mentor' },
+  { id: 'mtg', icon: '🃏', label: 'MTG' },
+  { id: 'multilingual', icon: '🗣️', label: 'Multilingual' },
   { id: 'musician', icon: '🎶', label: 'Musician' },
   { id: 'painting', icon: '🖌️', label: 'Painting/Drawing' },
-  { id: 'cooking', icon: '🍳', label: 'Cooking' },
-  { id: 'concert', icon: '🤘', label: 'Concert' },
-  { id: 'theater', icon: '🎭', label: 'Theater & Opera' },
-  { id: 'gamer', icon: '🎮', label: 'Gamer' },
-  { id: 'anime', icon: '🍥', label: 'Anime' },
-  { id: 'potato', icon: '🥔', label: 'Potato' },
   { id: 'pets', icon: '🐾', label: 'Pets' },
-  { id: 'lust', icon: '❤️‍🔥', label: 'Lust' },
+  { id: 'pm', icon: '📋', label: 'PM/Life hacks' },
+  { id: 'potato', icon: '🥔', label: 'Potato' },
+  { id: 'tattoo', icon: '🖋️', label: 'Tattoo' },
+  { id: 'theater', icon: '🎭', label: 'Theater & Opera' },
+  { id: 'traveler', icon: '🗺️', label: 'Traveler' },
 ];
 
-// The facet tree: Deo → branch → facet (two levels, no sub-facets). Order here is the order visitors see.
+// The facet tree: Deo → branch → facet (two levels, no sub-facets).
+// Visitors see both levels A to Z (#280): the branches by label, and the facets inside each branch by label. The code
+// below sorts them, so the order of these lists doesn't matter; they're kept A to Z anyway so they read the same.
 // No facet opens by default: visitors grow a branch, then pick a facet.
 const branches = [
-  { id: 'philosophy', icon: '🧭', label: 'Philosophy', blurb: 'How Deo thinks: mortality, mentoring, discipline, desire and ink.', facets: ['death', 'mentor', 'gym', 'cycling', 'lust', 'tattoo'] },
-  { id: 'craft', icon: '💼', label: 'Craft', blurb: 'What Deo builds, writes, plays and paints.', facets: ['dev', 'pm', 'author', 'influencer', 'painting', 'musician'] },
-  { id: 'explorer', icon: '🌏', label: 'Explorer', blurb: 'Where Deo goes and the languages he speaks there.', facets: ['traveler', 'aviation', 'multilingual', 'camping', 'fishing'] },
-  { id: 'frontrow', icon: '🎟️', label: 'Front Row', blurb: 'What Deo watches: live shows, the diva herself, anime, and the movies and TV worth (or not worth) the time.', facets: ['concert', 'theater', 'miku', 'anime', 'botw', 'potato'] },
-  { id: 'play', icon: '🕹️', label: 'Play', blurb: 'Games at the table and on the screen, cards included.', facets: ['gamer', 'dnd', 'boardgames', 'mtg'] },
-  { id: 'hearth', icon: '🏡', label: 'Hearth', blurb: 'Family, pets, the grill, the kitchen, and the body that carries it all.', facets: ['family', 'pets', 'churrasco', 'cooking', 'biomarkers'] },
+  { id: 'craft', icon: '💼', label: 'Craft', blurb: 'What Deo builds, writes, plays and paints.', facets: ['author', 'dev', 'influencer', 'musician', 'painting', 'pm'] },
+  { id: 'explorer', icon: '🌏', label: 'Explorer', blurb: 'Where Deo goes and the languages he speaks there.', facets: ['aviation', 'camping', 'fishing', 'multilingual', 'traveler'] },
+  { id: 'frontrow', icon: '🎟️', label: 'Front Row', blurb: 'What Deo watches: live shows, the diva herself, anime, and the movies and TV worth (or not worth) the time.', facets: ['anime', 'botw', 'concert', 'miku', 'potato', 'theater'] },
+  { id: 'hearth', icon: '🏡', label: 'Hearth', blurb: 'Family, pets, the grill, the kitchen, and the body that carries it all.', facets: ['biomarkers', 'churrasco', 'cooking', 'family', 'pets'] },
+  { id: 'philosophy', icon: '🧭', label: 'Philosophy', blurb: 'How Deo thinks: mortality, mentoring, discipline, desire and ink.', facets: ['cycling', 'death', 'gym', 'lust', 'mentor', 'tattoo'] },
+  { id: 'play', icon: '🕹️', label: 'Play', blurb: 'Games at the table and on the screen, cards included.', facets: ['boardgames', 'dnd', 'gamer', 'mtg'] },
 ];
 
 // Every facet must sit in exactly one branch, and a branch holds at most 6 (one row of the tree).
@@ -201,7 +203,14 @@ const branches = [
   }
 }
 const facetById = new Map(facets.map((f) => [f.id, f]));
-const tree = branches.map((b) => ({ ...b, items: b.facets.map((id) => facetById.get(id)!) }));
+// A to Z by the English label (what the tab shows), ignoring case, accents, emoji and punctuation, so "D&D" sorts as
+// "dd" and "PM/Life hacks" as "pmlife hacks". A label in another script sorts by its `sortAs` (初音ミク as Hatsune Miku).
+const alphaKey = (x: { label: string; sortAs?: string }) =>
+  (x.sortAs ?? x.label).normalize('NFD').replace(/[^\p{L}\p{N} ]/gu, '').toLowerCase();
+const byAlpha = <T extends { label: string; sortAs?: string }>(a: T, b: T) => alphaKey(a).localeCompare(alphaKey(b), 'en');
+const tree = [...branches]
+  .sort(byAlpha)
+  .map((b) => ({ ...b, items: b.facets.map((id) => facetById.get(id)!).sort(byAlpha) }));
 
 const gamer = loadGamer();
 // The other views of the hours (#252): the four smallest categories share one grey "Other".

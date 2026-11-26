@@ -91,6 +91,18 @@ top of [scripts/i18n.mjs](scripts/i18n.mjs).
   to `content/i18n/config.json`, then run the loop. Requests come in on #87, linked from Settings › "Want a language added?".
 - `npm run dev` shows English only. Translated pages exist only after `npm run build`.
 
+## Tab order: A to Z
+
+The facet tree is in alphabetical order at both levels (#280): the branches (Craft, Explorer, Front Row, Hearth,
+Philosophy, Play) and the tabs inside each branch.
+
+- **It goes by the English label,** ignoring case, accents, emoji and punctuation ("D&D" sorts as "dd"). A label in
+  another script sorts by its `sortAs` (`初音ミク` sorts as "Hatsune Miku").
+- **The code sorts the tree** (`byAlpha` in `src/pages/index.astro`), so a new tab or branch only needs its entry in
+  `facets` and `branches`. Still write the entries there in A to Z order, so the lists read the same as the site.
+- **Renaming a tab can move it.** That's expected; don't reorder by hand or pin a tab to a spot.
+- Translated pages keep the English order.
+
 ## Tab links
 
 A tab's link buttons (profiles, projects, trackers) live in one **Links** box, opened from the tab's header, never as
