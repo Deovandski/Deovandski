@@ -1,0 +1,212 @@
+---
+/**
+ * PixelHammock: a chibi pixel character chilling in a hammock strung between two palm trees, swaying gently, one arm
+ * behind the head. The same character as StageDancer (Saturday Night Fever, the Concert tab), drawn the same way in
+ * code (no image files), with the same outfit colours, so the two read as one person. Made as the helper beside the
+ * Traveler tab's guessing game (#290).
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page. Its root is a <span>, so
+ * it can sit inside a button (PhotoQuiz's helper).
+ *
+ *   <PixelHammock label="Chibi Deo chilling in a hammock" />
+ *   <PixelHammock outfit={{ robe: '#d33' }} awake />
+ *
+ * Props:
+ *   outfit  colours: { hat, hatTrim, skin, beard, robe, pattern, hem, boots }. Defaults: the yellow king's robes with
+ *           blue patterns and a black-and-gold crown hat (StageDancer's).
+ *   label   what's on screen, for screen readers.
+ *   awake   start with the eyes open. Default false (eyes closed, chilling).
+ *
+ * Script control: set `data-awake="true"` on the element (or toggle it) to open the eyes, for example while the
+ * character talks; remove it and they close again.
+ *
+ * Theming: --hammock-sky (the background behind it, default transparent), --hammock-cloth (#e2504c) and
+ * --hammock-stripe (#ffffff), the hammock's two colours.
+ * Accessible: the canvas has a text label. It only sways while on screen; reduced motion keeps it still.
+ */
+interface Props {
+  outfit?: Partial<Record<'hat' | 'hatTrim' | 'skin' | 'beard' | 'robe' | 'pattern' | 'hem' | 'boots', string>>;
+  label?: string;
+  awake?: boolean;
+  class?: string;
+}
+const {
+  outfit = {},
+  label = 'A chibi pixel character in yellow king’s robes and a crown hat, chilling in a hammock between two palm trees.',
+  awake = false,
+  class: className,
+} = Astro.props;
+const colors = {
+  hat: '#1c1a1d',
+  hatTrim: '#e2b33c',
+  skin: '#f0c8a8',
+  beard: '#3b2a20',
+  robe: '#f5c518',
+  pattern: '#2f5fbf',
+  hem: '#ffffff',
+  boots: '#f2b705',
+  ...outfit,
+};
+---
+
+<span class:list={['pixel-hammock', className]} data-pixel-hammock data-colors={JSON.stringify(colors)} data-awake={awake ? 'true' : undefined}>
+  <canvas class="pixel-hammock__canvas" role="img" aria-label={label}></canvas>
+</span>
+
+<style>
+  .pixel-hammock {
+    display: block;
+    width: 100%;
+    background: var(--hammock-sky, transparent);
+    border-radius: 12px;
+  }
+  .pixel-hammock__canvas {
+    display: block;
+    width: 100%;
+    aspect-ratio: 64 / 40;
+    image-rendering: pixelated;
+  }
+</style>
+
+<script>
+  type Colors = Record<'hat' | 'hatTrim' | 'skin' | 'beard' | 'robe' | 'pattern' | 'hem' | 'boots', string>;
+  const GW = 64, GH = 40;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Draws the scene into a GW x GH grid: palms, ropes, the hammock (sagging by `sway`) and the character in it.
+  function render(c: Colors, cloth: string, stripe: string, sway: number, awake: boolean): (string | null)[][] {
+    const g: (string | null)[][] = Array.from({ length: GH }, () => Array(GW).fill(null));
+    const set = (x: number, y: number, col: string) => {
+      x = Math.round(x);
+      y = Math.round(y);
+      if (x >= 0 && y >= 0 && x < GW && y < GH) g[y][x] = col;
+    };
+    const rect = (x: number, y: number, w: number, h: number, col: string) => {
+      for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) set(x + i, y + j, col);
+    };
+    const ellipse = (cx: number, cy: number, rx: number, ry: number, col: string) => {
+      for (let y = Math.floor(cy - ry); y <= cy + ry; y++)
+        for (let x = Math.floor(cx - rx); x <= cx + rx; x++)
+          if (((x - cx) / (rx + 0.4)) ** 2 + ((y - cy) / (ry + 0.4)) ** 2 <= 1) set(x, y, col);
+    };
+    const line = (x0: number, y0: number, x1: number, y1: number, w: number, col: string) => {
+      const n = Math.ceil(Math.hypot(x1 - x0, y1 - y0) * 2);
+      for (let i = 0; i <= n; i++) rect(x0 + ((x1 - x0) * i) / n - w / 2, y0 + ((y1 - y0) * i) / n - w / 2, w, w, col);
+    };
+    // Palm trees: a leaning trunk with rings and a crown of fronds.
+    for (const [x, lean] of [[4, 1], [59, -1]]) {
+      for (let y = 9; y < GH; y++) {
+        const tx = x + Math.round(((GH - y) / GH) * lean * 2);
+        rect(tx - 1, y, 3, 1, y % 3 === 0 ? '#7a5230' : '#946238');
+      }
+      const top = x + lean * 2;
+      for (const [dx, dy] of [[-7, 3], [-5, -2], [0, -4], [5, -2], [7, 3]]) line(top, 9, top + dx, 9 + dy, 2, '#2f8f46');
+      set(top - 1, 10, '#5b3a1e');
+      set(top + 1, 10, '#5b3a1e');
+    }
+    // The hammock: a striped band that sags in the middle; the sag swings a little.
+    const x0 = 11, x1 = 53;
+    const sag = 9 + sway;
+    const yAt = (x: number) => 15 + sag * Math.sin((Math.PI * (x - x0)) / (x1 - x0));
+    line(5, 13, x0, yAt(x0), 1, '#d9c9a3'); // ropes to the palms
+    line(58, 13, x1, yAt(x1), 1, '#d9c9a3');
+    // The character, lying along the hammock: head on the left, boots poking out on the right.
+    const bodyY = (x: number) => yAt(x) - 4;
+    // Boots and legs.
+    line(38, bodyY(38), 47, bodyY(47) - 3, 3, c.robe);
+    rect(46, bodyY(47) - 6, 3, 4, c.boots);
+    rect(42, bodyY(43) - 5, 3, 3, c.boots);
+    // Robe body.
+    for (let x = 21; x <= 40; x++) {
+      const y = bodyY(x);
+      for (let j = -4; j <= 2; j++) {
+        let col = c.robe;
+        if (x >= 38) col = (x + j) % 2 ? c.hem : c.pattern; // striped hem
+        else if ((x * 7 + j * 3) % 11 === 0) col = c.pattern; // dragon and cloud dots
+        set(x, y + j, col);
+      }
+    }
+    // Head: a big chibi head, the crown hat sideways on the pillow end, beard, and eyes (closed lines, or open).
+    const hx = 16, hy = bodyY(16) - 2;
+    // The arm behind the head.
+    line(24, bodyY(24) - 3, 19, hy - 7, 3, c.robe);
+    rect(15, hy - 9, 3, 3, c.skin);
+    ellipse(hx, hy, 7, 7, c.skin);
+    // Beard around the jaw (the lower right of the face, since he's lying back).
+    for (let y = hy + 2; y <= hy + 7; y++) for (let x = hx - 5; x <= hx + 7; x++) if (((x - hx) / 7.4) ** 2 + ((y - hy) / 7.4) ** 2 <= 1) set(x, y, c.beard);
+    rect(hx - 1, hy + 2, 5, 1, c.beard); // moustache
+    rect(hx, hy + 4, 3, 1, '#b24a3a'); // a little smile
+    if (awake) {
+      rect(hx - 3, hy - 1, 2, 2, '#1b1b1b');
+      rect(hx + 3, hy - 1, 2, 2, '#1b1b1b');
+    } else {
+      rect(hx - 4, hy, 3, 1, '#1b1b1b');
+      rect(hx + 2, hy, 3, 1, '#1b1b1b');
+    }
+    rect(hx - 4, hy - 3, 3, 1, c.beard);
+    rect(hx + 2, hy - 3, 3, 1, c.beard);
+    // The crown hat, tipped back over the top of the head.
+    rect(hx - 6, hy - 11, 13, 4, c.hat);
+    rect(hx - 7, hy - 8, 15, 2, c.hatTrim);
+    rect(hx - 1, hy - 13, 3, 2, c.hatTrim);
+    for (let i = -5; i <= 5; i += 3) set(hx + i, hy - 10, c.hatTrim);
+    // The hammock cloth goes over the body's lower half.
+    for (let x = x0; x <= x1; x++) {
+      const y = Math.round(yAt(x));
+      for (let j = -1; j <= 1; j++) set(x, y + j, Math.floor(x / 3) % 2 ? cloth : stripe);
+    }
+    // Outline.
+    const out = g.map((row) => row.slice());
+    for (let y = 0; y < GH; y++)
+      for (let x = 0; x < GW; x++) {
+        if (g[y][x]) continue;
+        if (g[y - 1]?.[x] || g[y + 1]?.[x] || g[y][x - 1] || g[y][x + 1]) out[y][x] = '#0d0b10';
+      }
+    return out;
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-pixel-hammock]').forEach((root) => {
+    const canvas = root.querySelector<HTMLCanvasElement>('canvas')!;
+    const ctx = canvas.getContext('2d')!;
+    const colors: Colors = JSON.parse(root.dataset.colors!);
+    const css = getComputedStyle(root);
+    const cloth = css.getPropertyValue('--hammock-cloth').trim() || '#e2504c';
+    const stripe = css.getPropertyValue('--hammock-stripe').trim() || '#ffffff';
+    let visible = false, raf = 0, last = '';
+
+    function paint(now: number) {
+      const sway = reduced ? 0 : Math.round(Math.sin(now / 900) * 1.4);
+      const awake = root.dataset.awake === 'true';
+      const r = canvas.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 1;
+      const w = Math.max(1, Math.round(r.width * dpr)), h = Math.max(1, Math.round(r.height * dpr));
+      const key = `${sway}|${awake}|${w}x${h}`;
+      if (key !== last) {
+        last = key;
+        if (canvas.width !== w || canvas.height !== h) {
+          canvas.width = w;
+          canvas.height = h;
+        }
+        const grid = render(colors, cloth, stripe, sway, awake);
+        const p = Math.min(w / GW, h / GH);
+        const ox = (w - GW * p) / 2, oy = (h - GH * p) / 2;
+        ctx.clearRect(0, 0, w, h);
+        for (let y = 0; y < GH; y++)
+          for (let x = 0; x < GW; x++) {
+            const col = grid[y][x];
+            if (!col) continue;
+            ctx.fillStyle = col;
+            ctx.fillRect(Math.floor(ox + x * p), Math.floor(oy + y * p), Math.ceil(p), Math.ceil(p));
+          }
+      }
+      if (visible) raf = requestAnimationFrame(paint);
+    }
+    new IntersectionObserver((entries) => {
+      visible = entries[0].isIntersecting;
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(paint);
+    }).observe(canvas);
+    // Repaint when the eyes open or close, even if it's not moving.
+    new MutationObserver(() => requestAnimationFrame(paint)).observe(root, { attributes: true, attributeFilter: ['data-awake'] });
+  });
+</script>

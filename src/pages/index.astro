@@ -53,6 +53,22 @@ import FacetMilestoneEggs from '../components/FacetMilestoneEggs.astro';
 type LinkItem = { href: string; label: string };
 
 // Dev tab's Links box: the main links, then "Dev History".
+// The Traveler tab's Links box (#290): where Deo finds odd places, then the tools he plans trips with.
+const travelerLinks = [
+  { links: [{ href: 'https://www.atlasobscura.com/', label: 'Atlas Obscura' }] },
+  { separator: 'Tools I use for travels' },
+  {
+    style: 'secondary' as const,
+    links: [
+      { href: 'https://www.booking.com/', label: 'Booking.com' },
+      { href: 'https://www.viator.com/', label: 'Viator' },
+      { href: 'https://www.google.com/maps', label: 'Google Maps' },
+      { href: 'https://www.tripadvisor.com/', label: 'Tripadvisor' },
+      { href: 'https://gemini.google.com/', label: 'Gemini' },
+      { href: 'https://copilot.microsoft.com/', label: 'Copilot' },
+    ],
+  },
+];
 const devLinks: LinkItem[] = [
   { href: 'https://www.wizarddeosolutions.com/', label: 'WDS' },
   { href: 'https://www.linkedin.com/in/deovandski/', label: 'LinkedIn' },
@@ -614,6 +630,8 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-traveler" aria-labelledby="tab-traveler" tabindex="0" hidden>
+      <GimmickPlay tab="traveler" />
+      <LinksMenu id="traveler-links" toggle="external" items={travelerLinks} />
       <TravelerFacet />
     </section>
 

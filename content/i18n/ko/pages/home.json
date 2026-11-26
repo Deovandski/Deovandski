@@ -119,6 +119,10 @@
   "en": "FEVER! The whole floor lights up.",
   "t": "피버! 바닥 전체가 빛나."
  },
+ "02c0e4a1da64": {
+  "en": "Used",
+  "t": "사용함"
+ },
  "02da8ad445d5": {
   "en": " MX ",
   "t": "MX"
@@ -226,6 +230,10 @@
  "05e728e60d80": {
   "en": "\nMy watch logged 162 more \"bike rides\" on its own (76 hours of them). Most of those\n          were me pushing my cat, <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a>, in his stroller, or me on the elliptical when it's too cold outside, so\n          they don't count toward the miles above.\n",
   "t": "내 시계는 혼자서 \"자전거 라이딩\"을 162번 더 기록했다(모두 76시간). 대부분은 내가 고양이 <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a>를 유모차에 태워 밀고 다닌 것이거나, 밖이 너무 추울 때 일립티컬을 탄 것이라, 위의 마일에는 넣지 않았다."
+ },
+ "061ff9e69ad0": {
+  "en": "Shinjuku Station in Tokyo is the busiest train station in the world: millions of people pass through it every day.",
+  "t": "도쿄의 신주쿠역은 세계에서 가장 붐비는 기차역이야: 매일 수백만 명이 지나가."
  },
  "0648fee0c26c": {
   "en": "Around the World in 80 Gears: turn your phone sideways",
@@ -363,6 +371,10 @@
   "en": "Nordic rune associated with heritage, ancestry, inheritance, homeland, and legacy.",
   "t": "유산, 조상, 상속, 고향, 계승과 연결되는 북유럽 룬."
  },
+ "09888c65f0a8": {
+  "en": " Copilot ",
+  "t": "Copilot"
+ },
  "09a6797150ba": {
   "en": "Enlarge: Painting or drawing, 01/10/2013",
   "t": "확대: 그림 또는 스케치, 2013년 1월 10일"
@@ -434,6 +446,10 @@
  "0bb27395d153": {
   "en": "231 h",
   "t": "231 시간"
+ },
+ "0bb362d3d1e7": {
+  "en": "Perfect! You might know my travels better than I do.",
+  "t": "만점! 내 여행은 나보다 네가 더 잘 아는 것 같은데."
  },
  "0bdcc8f4a8b0": {
   "en": " HM ",
@@ -643,6 +659,10 @@
   "en": "not counted",
   "t": "제외"
  },
+ "11835f5ac7a2": {
+  "en": "Photo {n}, from one of Deo’s trips: where was it taken?",
+  "t": "사진 {n}, Deo의 여행 중 한 장: 어디서 찍었을까?"
+ },
  "11982574c056": {
   "en": "StackOverflow",
   "t": "StackOverflow"
@@ -795,6 +815,10 @@
   "en": "Enlarge: Breakfast",
   "t": "확대: 아침밥"
  },
+ "174e4a9ea359": {
+  "en": "North Dakota's Enchanted Highway is lined with giant scrap-metal sculptures, and Geese in Flight is the largest scrap-metal sculpture in the world.",
+  "t": "노스다코타의 인챈티드 하이웨이에는 거대한 고철 조각들이 늘어서 있고, \"기스 인 플라이트\"는 세계에서 가장 큰 고철 조각이야."
+ },
  "1761d9bdb3a0": {
   "en": "ROSALÍA",
   "t": "ROSALÍA"
@@ -843,6 +867,10 @@
   "en": "89 h",
   "t": "89 시간"
  },
+ "184fa99083ff": {
+  "en": "The Eiffel Tower grows about 15 cm in summer, because its iron expands in the heat.",
+  "t": "에펠탑은 여름에 약 15cm 더 커져. 철이 더위에 늘어나거든."
+ },
  "187796f151c3": {
   "en": "Path of Exile",
   "t": "패스 오브 엑자일"
@@ -887,6 +915,10 @@
   "en": "In the saddle",
   "t": "안장 위에서"
  },
+ "19c10323e784": {
+  "en": "<strong>Buy the hotel and transportation.</strong> Those are the next layer of hard commitments.",
+  "t": "<strong>호텔과 교통편을 산다.</strong>이게 확정된 일정의 다음 층이야."
+ },
  "19c34e493647": {
   "en": "Wunjo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚹ)</span>",
   "t": "운요<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚹ)</span>"
@@ -894,6 +926,10 @@
  "19c9c9ed8477": {
   "en": "Opera",
   "t": "오페라"
+ },
+ "1a1599284e10": {
+  "en": "Where in the World Was Deo?",
+  "t": "Deo는 어디에 있었을까?"
  },
  "1a1f232c7b93": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder TV show 9 ",
@@ -1211,6 +1247,10 @@
   "en": "Arragoa",
   "t": "Arragoa"
  },
+ "231583e115b9": {
+  "en": "Macapá, the capital of Amapá, sits right on the equator, and the Marco Zero monument marks the line.",
+  "t": "아마파주의 주도 마카파는 적도 바로 위에 있고, 마르쿠 제루 기념비가 그 선을 표시해."
+ },
  "231fbf14a11a": {
   "en": "Time asleep",
   "t": "수면 시간"
@@ -1266,6 +1306,10 @@
  "24be61285e09": {
   "en": "Views",
   "t": "조회수"
+ },
+ "24bf28681358": {
+  "en": "Freebie",
+  "t": "찬스"
  },
  "24d4ea7ee729": {
   "en": "Do I really have to wear these",
@@ -1391,6 +1435,10 @@
   "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
   "t": "{mode}로 녹화하면 VHS 테이프 {tapes}개 분량이야(T-120 테이프 하나당 {perTape}시간)."
  },
+ "27c908c2dd93": {
+  "en": "Rio Grande do Sul is gaúcho country: the home of churrasco and chimarrão, the bitter mate tea sipped from a gourd.",
+  "t": "히우그란지두술주는 가우초의 땅이야: 슈하스코와, 표주박으로 마시는 쌉쌀한 마테차 시마항의 고향."
+ },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 10: </span> 임시 TV 프로그램 10"
@@ -1434,6 +1482,10 @@
  "28ebb962e775": {
   "en": "Tap the stage on the beat",
   "t": "박자에 맞춰 무대를 탭해"
+ },
+ "28fe28d0a4e1": {
+  "en": "Not bad for a tourist.",
+  "t": "관광객치고는 나쁘지 않아."
  },
  "290c68caa39c": {
   "en": "Year {n}",
@@ -1571,6 +1623,14 @@
   "en": "Each planet is a category, sized by its hours. Press one to fly in.",
   "t": "행성 하나가 카테고리이고, 크기가 시간입니다. 누르면 가까이 날아갑니다."
  },
+ "2d5647a3618b": {
+  "en": "Spain makes more olive oil than any other country in the world.",
+  "t": "스페인은 세계 어느 나라보다 올리브유를 많이 만들어."
+ },
+ "2d66944f3f19": {
+  "en": "How do I plan for travel?",
+  "t": "나는 여행을 어떻게 계획할까?"
+ },
  "2d8bdb9ce539": {
   "en": "\nAt home, a whiteboard holds my major goals and anything that isn't tied to a date. If it is tied to a date, it goes on\n          the calendar; how I keep 5+ calendars in one place is <a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">Life hack #2: Calendar bound</a>.\n",
   "t": "집에서는 화이트보드에 큰 목표와 날짜에 묶이지 않은 모든 걸 적어 둬. 날짜에 묶여 있으면 캘린더로 가. 캘린더 5개 이상을 한곳에 모으는 방법은 <a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">라이프핵 #2: 캘린더 중심</a>에 있어."
@@ -1638,6 +1698,10 @@
  "2f488ffc82cc": {
   "en": "Hong Kong",
   "t": "홍콩"
+ },
+ "2f5809c6e643": {
+  "en": "The London Underground opened in 1863: the oldest underground railway in the world.",
+  "t": "런던 지하철은 1863년에 개통했어: 세계에서 가장 오래된 지하철이야."
  },
  "2f717ffad4e1": {
   "en": "Arkansas",
@@ -1931,6 +1995,10 @@
   "en": " PC ",
   "t": "PC"
  },
+ "37219ea52a83": {
+  "en": "Chibi pixel Deo in his yellow king's robes and crown hat, chilling in a hammock between two palm trees. Press him for a freebie.",
+  "t": "노란 왕의 로브와 왕관 모자를 쓴 꼬마 픽셀 Deo가 야자수 두 그루 사이 해먹에서 쉬고 있어. 누르면 찬스."
+ },
  "37497aa5a227": {
   "en": "Brazil",
   "t": "브라질"
@@ -1987,6 +2055,10 @@
   "en": "King of the trail",
   "t": "산책로의 왕"
  },
+ "386afa7ad2fc": {
+  "en": "<strong>Enjoy!</strong> The goal is a structure that gives the trip a sense of coordination, efficient travel and relaxation, while staying flexible enough for on-the-fly adjustments.",
+  "t": "<strong>즐긴다!</strong>목표는 여행에 짜임새와 효율적인 이동, 그리고 휴식을 주는 구조를 만들면서도, 즉석에서 조정할 수 있을 만큼 유연함을 남기는 거야."
+ },
  "3878d567f539": {
   "en": "A streak you could lose feels worse than one you never had. Losing hurts about twice as much as winning feels good.",
   "t": "잃을 수 있는 연속 기록은 아예 없던 것보다 더 괴로워. 잃는 아픔은 이기는 기쁨의 약 두 배야."
@@ -2002,6 +2074,10 @@
  "389af5e18c8a": {
   "en": "LiSA",
   "t": "LiSA"
+ },
+ "389f91b7ec99": {
+  "en": "<strong>When and where?</strong> I look up the climate and the overall info about the place(s) I’m going, to decide if it’s safe enough to travel, and what I need visa-wise.",
+  "t": "<strong>언제, 어디로?</strong>갈 곳의 기후와 전반적인 정보를 찾아보고, 여행하기에 충분히 안전한지, 비자는 뭐가 필요한지 정해."
  },
  "38a315c1f5b2": {
   "en": "123 h",
@@ -2019,6 +2095,10 @@
   "en": "{h}h",
   "t": "{h}시간"
  },
+ "38d260178740": {
+  "en": "Remember: one freebie per game. Use it wisely.",
+  "t": "기억해: 찬스는 한 게임에 한 번. 잘 써."
+ },
  "38e1d26af274": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer"
@@ -2026,6 +2106,10 @@
  "39005d92752d": {
   "en": " KA ",
   "t": "KA"
+ },
+ "3908597feae4": {
+  "en": "Right! It’s {place}.",
+  "t": "정답! {place}야."
  },
  "39091a099ef5": {
   "en": "Plot {plot}: {crop}, ready in {seconds} seconds.",
@@ -2195,6 +2279,10 @@
   "en": "From all the anime out there you chose this one",
   "t": "세상 그 많은 애니 중에 하필 이걸 골랐냐"
  },
+ "3e017e68a6b7": {
+  "en": "Not quite: it’s {place}.",
+  "t": "아쉽다: 정답은 {place}."
+ },
  "3e1f116ff08d": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-jytvyid3=\"\">😱</span> Post clickbait video ",
   "t": "<span aria-hidden=\"true\" data-astro-cid-jytvyid3=\"\">😱</span> 낚시성 영상 올리기"
@@ -2311,6 +2399,10 @@
   "en": "Captain Bidu final resting place",
   "t": "캡틴 Bidu의 마지막 안식처"
  },
+ "40cd7fa70431": {
+  "en": " Google Maps ",
+  "t": "Google Maps"
+ },
  "40f6fcda8a97": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder movie 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 9: </span> 임시 영화 9"
@@ -2318,6 +2410,10 @@
  "40f9d1ff0260": {
   "en": "Across 82 studies, autistic and ADHD men were as socially connected as other men at best, and never more. Less connection came with worse mental health.",
   "t": "82개 연구에서 자폐와 ADHD 남성의 사회적 연결은 기껏해야 다른 남성과 같았고, 더 많은 적은 없었다. 연결이 적을수록 정신 건강도 나빴다."
+ },
+ "410e49339b79": {
+  "en": "I took these photos and I still squint at some of them.",
+  "t": "이 사진들은 내가 찍었는데도 아직 눈을 가늘게 뜨고 보는 게 있어."
  },
  "414a017a79c7": {
   "en": "<strong>Peace is not passivity.</strong> A boundary without enforcement is a request. Compassion can explain behavior without absorbing it, and standing idle while someone self-destructs is idiot compassion, not peace. Say your piece, then walk away.",
@@ -2467,6 +2563,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested"
  },
+ "4727f6ba44d0": {
+  "en": "Da Nang's Dragon Bridge breathes fire, and then water, on weekend nights. Yes, a bridge. Yes, fire.",
+  "t": "다낭의 용다리는 주말 밤마다 불을 뿜고, 그다음 물을 뿜어. 맞아, 다리가. 맞아, 불을."
+ },
  "47299a86ea20": {
   "en": " TW ",
   "t": "TW"
@@ -2495,6 +2595,10 @@
   "en": "Idle Evolution",
   "t": "Idle Evolution"
  },
+ "47f53f079a30": {
+  "en": "You got {score} out of {total}.",
+  "t": "{total}문제 중 {score}문제 맞혔어."
+ },
  "481021d04da3": {
   "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
   "t": "지표마다 시간에 따른 변화를 작은 차트로 하나씩 보여 줘요. 차트 하나에 마우스를 올리면 모든 차트가 같은 날, 주, 달을 보여 줘요."
@@ -2515,9 +2619,17 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#31: </span>Best of the Worst: Plinketto #8",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#31: </span>Best of the Worst: Plinketto #8"
  },
+ "489f4877244a": {
+  "en": "Score",
+  "t": "점수"
+ },
  "48aaf2be8dae": {
   "en": "5% of my hours",
   "t": "내 시간의 5%"
+ },
+ "48cce38aa1d8": {
+  "en": "6 steps",
+  "t": "6단계"
  },
  "48e29fac4cce": {
   "en": "Besides the relationship and the bonding, the merchant life and bartering are really well developed! I took inspiration from it while working on the world lore for #HusbandOutWorld.",
@@ -2566,6 +2678,10 @@
  "4a3a04380da1": {
   "en": "Ooh wah ah ah ah",
   "t": "Ooh wah ah ah ah"
+ },
+ "4a9a6c803452": {
+  "en": "Ask Deo for a freebie: he narrows it down to two (once per game)",
+  "t": "Deo에게 찬스 요청: 답을 두 개로 줄여 줘(한 게임에 한 번)"
  },
  "4a9f8acaa8c3": {
   "en": " 100 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -2683,9 +2799,17 @@
   "en": "no data",
   "t": "데이터 없음"
  },
+ "4db08c84d2e8": {
+  "en": "Hmm… it’s either {a} or {b}. Huehue, good luck.",
+  "t": "음… {a} 아니면 {b}야. huehue, 행운을 빌어."
+ },
  "4db745f6113e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Toradora! ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 23: </span> Toradora! (토라도라!)"
+ },
+ "4dc7132b40c7": {
+  "en": "I like to take my time too, but I hope you're not doing something Ecchi while staring at me huehue...",
+  "t": "나도 여유 부리는 거 좋아하지만, 나를 쳐다보면서 야한 짓 하는 건 아니길 바라, huehue..."
  },
  "4dd3d53fb92c": {
   "en": "If thou hast farofa for churrasco, thou mayest use it to enhance the taste, but eat it not with every bite. Like the ginger beside the sushi, farofa is taken every few bites to refresh thy taste buds.",
@@ -2711,6 +2835,10 @@
   "en": "Sonja<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Sonja<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 최애</span>"
  },
+ "4e339ffb8498": {
+  "en": "Osaka's food motto is kuidaore: eat until you drop (or go broke). Challenge accepted.",
+  "t": "오사카의 음식 모토는 쿠이다오레: 쓰러질 때까지(아니면 파산할 때까지) 먹기. 도전 수락."
+ },
  "4e353a24f207": {
   "en": "Made the gym a place of zen for the body.\n<ul>\n<li>Made friends there.</li>\n<li>It’s a safe space for me to stim, like dancing or making hand motions when I’m jamming to a song.</li>\n</ul>\n",
   "t": "헬스장을 몸을 위한 선(禪)의 공간으로 만들었어. <ul> <li>거기서 친구를 사귀었어.</li> <li>노래에 맞춰 흥이 날 때 춤추거나 손동작을 하는 것 같은 스티밍을 해도 안전한 공간이야.</li> </ul>"
@@ -2726,6 +2854,10 @@
  "4e80d1b689cd": {
   "en": "Time Clickers",
   "t": "Time Clickers"
+ },
+ "4e9ea28321c7": {
+  "en": "Zzz… huh? Oh, you're still here. Good, good.",
+  "t": "Zzz… 응? 아, 아직 있었네. 좋아, 좋아."
  },
  "4ea169568872": {
   "en": "Ragnarok Online",
@@ -3003,6 +3135,10 @@
   "en": " HC ",
   "t": "HC"
  },
+ "54b2bbfa52d3": {
+  "en": "I already gave you my freebie! Back to hammock time.",
+  "t": "찬스는 이미 줬잖아! 다시 해먹 타임."
+ },
  "54b75a6c3b9d": {
   "en": " Steam + Xbox + PC  ·  estimated ",
   "t": "Steam + Xbox + PC  ·  추정"
@@ -3022,6 +3158,10 @@
  "552f53868eba": {
   "en": " 870 h  ",
   "t": "870 시간"
+ },
+ "5532a7e02945": {
+  "en": "You’ve clearly been around.",
+  "t": "확실히 여기저기 다녀 봤구나."
  },
  "55497593cc05": {
   "en": "Nordic rune representing gift, exchange, reciprocity, partnership, and mutual obligations.",
@@ -3075,6 +3215,10 @@
   "en": "For years, that anxiety felt life-or-death: a restless urgency I couldn't name because I was deeply unfulfilled, and later a constant hypervigilance while I chased external validation as an influencer. My AuDHD unmasking finally explained where it came from, and therapy that challenged me, not enabled me, helped me process it. Today it's no longer an alarm that runs me. It's fuel, and I choose where it goes: into building, growing, and the people worth it.",
   "t": "몇 년 동안 그 불안은 생사가 걸린 문제처럼 느껴졌어: 깊이 채워지지 않아서 이름 붙일 수 없었던 초조한 다급함, 그리고 나중엔 인플루언서로서 외부의 인정을 좇는 동안의 끊임없는 과잉경계. AuDHD 언마스킹이 마침내 그게 어디서 왔는지 설명해 줬고, 날 받아 주기만 하는 게 아니라 도전하게 해 준 상담이 그걸 소화하도록 도와줬어. 이제 그건 날 휘두르는 경보가 아니야. 연료고, 그게 어디로 갈지는 내가 골라: 만드는 일, 성장, 그리고 그럴 가치가 있는 사람들에게."
  },
+ "563fcaed811e": {
+  "en": "Time to book a trip!",
+  "t": "여행 예약할 때가 됐어!"
+ },
  "5675306240db": {
   "en": "The Icelandic compass symbol, associated with guidance and finding one's way. I intentionally placed its center point over a single long white hair that I consider mystical.",
   "t": "길잡이와 길 찾기와 연결되는 아이슬란드의 나침반 상징. 일부러 그 중심점을, 내가 신비롭다고 여기는 기다란 흰 털 한 가닥 위에 놓았어."
@@ -3106,6 +3250,10 @@
  "572c7a51487d": {
   "en": "The Outer Worlds",
   "t": "아우터 월드"
+ },
+ "5733f41cdcdb": {
+  "en": "Psst! Stuck? Press me once for a freebie.",
+  "t": "쉿! 막혔어? 나를 한 번 누르면 찬스를 줄게."
  },
  "576347ec826f": {
   "en": "Europe",
@@ -3191,6 +3339,10 @@
   "en": "30 mi",
   "t": "30 mi"
  },
+ "59a7619e7a8e": {
+  "en": "Brazil is the only country in the Americas whose main language is Portuguese.",
+  "t": "브라질은 아메리카 대륙에서 포르투갈어가 주 언어인 유일한 나라야."
+ },
  "59aa962f7269": {
   "en": " SC ",
   "t": "SC"
@@ -3210,6 +3362,10 @@
  "59f21d6a9014": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">703 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">703 시간</strong>  ·  게임 5개  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">내 시간의 2%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">내 시간의 5%</span>"
+ },
+ "5a199f0f62fb": {
+  "en": "Death Valley holds the hottest air temperature ever recorded on Earth: 56.7 °C (134 °F), back in 1913.",
+  "t": "데스밸리는 지구에서 기록된 가장 높은 기온을 갖고 있어: 1913년의 56.7 °C(134 °F)."
  },
  "5a4a4998e7b7": {
   "en": "Kyaa~! (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)",
@@ -3467,6 +3623,10 @@
   "en": "3 photos",
   "t": "사진 3장"
  },
+ "6162ea49842a": {
+  "en": "Iowa has more pigs than people. Many, many more.",
+  "t": "아이오와에는 사람보다 돼지가 많아. 훨씬, 훨씬 더."
+ },
  "6163bbb03360": {
   "en": "Prison Architect",
   "t": "Prison Architect"
@@ -3490,6 +3650,10 @@
  "61db3a4f5dc3": {
   "en": "Kingdoms and Castles",
   "t": "Kingdoms and Castles"
+ },
+ "61dd1c7b84ac": {
+  "en": "Bangkok's full ceremonial name is the longest place name in the world. Locals just call it Krung Thep.",
+  "t": "방콕의 정식 의례 이름은 세계에서 가장 긴 지명이야. 현지인들은 그냥 끄룽텝이라고 불러."
  },
  "61dedcf053ff": {
   "en": "Good",
@@ -3683,6 +3847,10 @@
   "en": "Spore",
   "t": "스포어"
  },
+ "67d69fcd957c": {
+  "en": "Under a bridge in Seattle lives the Fremont Troll, a giant concrete troll crushing a real Volkswagen Beetle.",
+  "t": "시애틀의 다리 밑에는 프리몬트 트롤이 살아: 진짜 폭스바겐 비틀을 움켜쥔 거대한 콘크리트 트롤이야."
+ },
  "67d72e344e26": {
   "en": "Another dino",
   "t": "다른 공룡"
@@ -3762,6 +3930,10 @@
  "696c1696aee1": {
   "en": "Enlarge: Gimme attention",
   "t": "확대: 관심 줘"
+ },
+ "69c642153907": {
+  "en": "Fukuoka has more yatai, open-air food stalls, than the rest of Japan combined: about a hundred pop up every night and vanish before morning.",
+  "t": "후쿠오카에는 일본의 나머지 지역을 다 합친 것보다 야타이(포장마차)가 더 많아: 매일 밤 약 100곳이 나타났다가 아침 전에 사라져."
  },
  "69ce5d37a5a7": {
   "en": "Enlarge: Still tired",
@@ -3859,6 +4031,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10"
  },
+ "6cac5f329113": {
+  "en": "The Everglades in Florida are the only place in the world where alligators and crocodiles live side by side.",
+  "t": "플로리다의 에버글레이즈는 앨리게이터와 크로커다일이 나란히 사는 세계 유일의 장소야."
+ },
  "6cae7ad96e0d": {
   "en": "sapphires",
   "t": "사파이어"
@@ -3935,6 +4111,14 @@
   "en": "MB",
   "t": "MB"
  },
+ "6edd44939f5a": {
+  "en": "Where was this photo taken?",
+  "t": "이 사진은 어디서 찍었을까?"
+ },
+ "6eddff8a5e91": {
+  "en": " Viator ",
+  "t": "Viator"
+ },
  "6ee7cbb3f2cd": {
   "en": " Low HRV and heart risk (Europace, 2013) ",
   "t": "낮은 심박 변이도와 심장 위험 (Europace, 2013)"
@@ -3962,6 +4146,10 @@
  "70182e9438a1": {
   "en": "Hours from my Steam library, my Xbox profile and my own estimates. Games with under 10 hours are left out.",
   "t": "시간은 제 Steam 라이브러리, Xbox 프로필, 그리고 제 추정치 기준입니다. 10시간 미만인 게임은 뺐습니다."
+ },
+ "7034e1107ace": {
+  "en": "Venice is built on more than a hundred small islands, linked by around 400 bridges.",
+  "t": "베네치아는 100개가 넘는 작은 섬 위에 세워졌고, 약 400개의 다리로 이어져 있어."
  },
  "7038a855f81b": {
   "en": "Soda Dungeon",
@@ -4267,6 +4455,10 @@
   "en": "Clicker Heroes series",
   "t": "Clicker Heroes 시리즈"
  },
+ "78a9c9baf0c3": {
+  "en": "Photo {n} of {total}",
+  "t": "{total}장 중 {n}번째"
+ },
  "78aa655e487b": {
   "en": "LEGO Star Wars: The Skywalker Saga",
   "t": "레고 스타워즈: 스카이워커 사가"
@@ -4371,6 +4563,10 @@
   "en": "I watched the remake. Spoiler warning, but goddamn, can these two just lock themselves in a room and fight it out already? ...huehuehuehue. Okay, shitposting aside, the scene with the rake is so fucking insane it still haunts me years later. I slept fine, but it was an assault on the senses... Well done.",
   "t": "난 리메이크판을 봤어. 스포 주의인데, 젠장, 이 둘은 그냥 방에 틀어박혀서 한판 붙고 끝내면 안 되냐? ...huehuehuehue. 좋아, 헛소리는 그만하고, 갈퀴 장면은 존나 미쳐서 몇 년이 지나도 아직 머릿속에 맴돌아. 잠은 잘 잤지만, 그건 오감에 대한 습격이었어... 잘 만들었어."
  },
+ "7b550ea4934b": {
+  "en": "Germany's Reinheitsgebot, the beer purity law of 1516, allowed only water, barley and hops in beer.",
+  "t": "독일의 맥주 순수령(1516년)은 맥주에 물, 보리, 홉만 쓰도록 했어."
+ },
  "7b6e925e0861": {
   "en": "Same variable-reward idea, applied to what to post",
   "t": "같은 변동 보상 원리를, 무엇을 올릴지에 적용한 것"
@@ -4382,6 +4578,10 @@
  "7ba775845547": {
   "en": "I wanna play",
   "t": "놀고 싶어"
+ },
+ "7bbc5f97f852": {
+  "en": "{name}, {within}",
+  "t": "{name}, {within}"
  },
  "7bcd7423cbe4": {
   "en": "That’s why this tab lives in Hearth: my body is at the center of it all, and looking after it matters as much as looking after my family, my pets and healthy friendships.",
@@ -4499,6 +4699,10 @@
   "en": "Min",
   "t": "분"
  },
+ "7ec79775c355": {
+  "en": "Every wrong answer is just a trip you still have to take.",
+  "t": "틀린 답 하나하나는 아직 안 간 여행 하나일 뿐이야."
+ },
  "7ed97d0b96e7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Monogatari ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 17: </span> Monogatari (이야기 시리즈)"
@@ -4598,6 +4802,10 @@
  "822c38efe849": {
   "en": "Road 96",
   "t": "Road 96"
+ },
+ "823f114d8191": {
+  "en": "Back to Traveler",
+  "t": "여행자로 돌아가기"
  },
  "8271900678e6": {
   "en": "Enlarge: Destroying a whole chicken",
@@ -4831,6 +5039,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#24: </span>Best of the Worst: Junka 4",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#24: </span>Best of the Worst: Junka 4"
  },
+ "88b00f7eddd8": {
+  "en": "<strong>What are the hard commitments?</strong> Things where I have to be at a certain place at a certain time. Those get sorted out and added to the calendar. This is also when I start digging through Tripadvisor, Viator and AI search for more hard commitments tied to group travel, events, concerts, etc.",
+  "t": "<strong>확정된 일정은 뭐지?</strong>정해진 시간에 정해진 장소에 있어야 하는 일들이야. 그걸 정리해서 캘린더에 넣어. 단체 여행, 이벤트, 콘서트 등과 관련된 확정 일정을 더 찾으려고 Tripadvisor, Viator, AI 검색을 뒤지기 시작하는 것도 이때야."
+ },
  "88b84613be17": {
   "en": "Getting there",
   "t": "거의 다 왔어"
@@ -4906,6 +5118,10 @@
  "8b5051da2153": {
   "en": "66 days",
   "t": "66일"
+ },
+ "8b60dec779bd": {
+  "en": "See my score",
+  "t": "점수 보기"
  },
  "8ba25ab7e4e0": {
   "en": "197 h",
@@ -5019,6 +5235,10 @@
   "en": "155 h",
   "t": "155 시간"
  },
+ "8ed00491b7b1": {
+  "en": "If you miss this one, I'm telling Peeta.",
+  "t": "이거 틀리면 Peeta한테 이를 거야."
+ },
  "8ef4196cef6e": {
   "en": "Enlarge: Ready for a walk",
   "t": "확대: 산책 준비 완료"
@@ -5026,6 +5246,10 @@
  "8f21ad742d6a": {
   "en": "<strong>Peter Gollwitzer</strong>, implementation intentions (“if X happens, then I will do Y”). His 2006 meta-analysis with Paschal Sheeran, across 94 tests, found a medium-to-large effect on reaching goals. <a href=\"https://www.decisionskills.com/uploads/5/1/6/0/5160560/2006_gollwitzersheeran_implementation_intentions.pdf\">Paper</a>",
   "t": "<strong>페터 골비처</strong>, 실행 의도(\"X가 일어나면, Y를 하겠다\"). 패스컬 시런과 함께한 2006년 메타분석은 94개 검증에 걸쳐 목표 달성에 중간에서 큰 효과를 발견했다. <a href=\"https://www.decisionskills.com/uploads/5/1/6/0/5160560/2006_gollwitzersheeran_implementation_intentions.pdf\">논문</a>"
+ },
+ "8f53876c891d": {
+  "en": "Take your time. This hammock has no hard commitments.",
+  "t": "천천히 해. 이 해먹에는 확정된 일정이 하나도 없어."
  },
  "8f60ae052f27": {
   "en": "This one is for seasoned veterans of the genre, or someone deep into Japanese culture. The unique way the story is told is still vivid in my brain, despite all the anime I've absorbed since.",
@@ -5110,6 +5334,10 @@
  "91932d565d68": {
   "en": " 349 h  ",
   "t": "349 시간"
+ },
+ "919a69782679": {
+  "en": "Singapore's Changi Airport has the tallest indoor waterfall in the world, the Rain Vortex. An airport with a waterfall: my aviation nerd heart.",
+  "t": "싱가포르 창이 공항에는 세계에서 가장 높은 실내 폭포, 레인 보텍스가 있어. 폭포가 있는 공항이라니: 항공 덕후 심장 저격."
  },
  "91a07087a575": {
   "en": " LF ",
@@ -5423,6 +5651,10 @@
   "en": " 354 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "354 시간  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">추정</span>"
  },
+ "9a26193e6330": {
+  "en": " Tripadvisor ",
+  "t": "Tripadvisor"
+ },
  "9a4013425ae8": {
   "en": "Now then, matey: which o' these bilge rats be Deo? Make yer guess, and make it quick. See that spiky beast risin' from the waves? Aye. The whole crew met their final fate in the guts o' that giant turtle. Yo ho!",
   "t": "자, 친구: 이 쥐새끼들 중 누가 Deo일까? 맞혀 봐, 그것도 빨리. 파도 위로 솟아오르는 저 가시투성이 괴물 보이지? 그래. 선원 전원이 저 거대 거북이의 뱃속에서 최후를 맞았다. 요호!"
@@ -5446,6 +5678,10 @@
  "9a7378f878db": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder movie 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 33: </span> 임시 영화 33"
+ },
+ "9a7f74a3f509": {
+  "en": "Where in the World Was Deo?: turn your phone sideways",
+  "t": "Deo는 어디에 있었을까?: 휴대폰을 가로로 돌려 줘"
  },
  "9ad4cfc36bda": {
   "en": " What HRV is and its norms (Frontiers, 2017) ",
@@ -5490,6 +5726,10 @@
  "9c8a9f570735": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 7: </span> Placeholder movie 7 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 7: </span> 임시 영화 7"
+ },
+ "9ce8a73a39d0": {
+  "en": "<strong>Fill in the chunks.</strong> I search for things to do around there and fill each time chunk with 1–3 things, based on proximity. If something is important or very desirable, it becomes a hard commitment. It’s okay to keep a few things in the backlog, saved in case we have more time than planned. The same way, if we run out of time or energy, we can pop things out of the chunks and reorder them, or move them to the backlog for a future trip.",
+  "t": "<strong>덩어리를 채운다.</strong>주변에서 할 만한 걸 찾아서, 거리를 기준으로 각 시간 덩어리에 1~3개씩 넣어. 중요하거나 정말 하고 싶은 건 확정 일정으로 바꿔. 계획보다 시간이 남을 때를 대비해 몇 개는 백로그에 남겨 둬도 괜찮아. 마찬가지로 시간이나 체력이 바닥나면, 덩어리에서 빼서 순서를 바꾸거나 다음 여행을 위해 백로그로 옮기면 돼."
  },
  "9cf7bc8b3812": {
   "en": "Your {kind} went viral: {views} views and {follows} new followers.",
@@ -5775,6 +6015,10 @@
   "en": "DAVE THE DIVER",
   "t": "데이브 더 다이버"
  },
+ "a3a6593686de": {
+  "en": "In Tonopah, Nevada, there's a motel full of clowns, right next to an old miners' cemetery. Sweet dreams!",
+  "t": "네바다주 토노파에는 광대로 가득한 모텔이 있는데, 바로 옆이 옛 광부들의 묘지야. 좋은 꿈 꿔!"
+ },
  "a3ec0dfc8cc3": {
   "en": "Play video: Ridin' with Peeta",
   "t": "동영상 재생: Peeta와 함께 달리기"
@@ -5873,7 +6117,7 @@
  },
  "a694aafb9d11": {
   "en": "Deo's hand holding a cup of chimarrão with its metal straw, a black cat curled up on a striped blanket behind it",
-  "t": "금속 빨대가 꽂힌 시마랑 컵을 든 Deo의 손, 뒤에는 줄무늬 담요 위에 웅크린 검은 고양이"
+  "t": "금속 빨대가 꽂힌 시마항 컵을 든 Deo의 손, 뒤에는 줄무늬 담요 위에 웅크린 검은 고양이"
  },
  "a6a3e792b450": {
   "en": "5C",
@@ -6058,6 +6302,10 @@
  "aaf4de45da01": {
   "en": "This is a Christian fireplace! (╯°□°)╯",
   "t": "여긴 건전한 벽난로라고! (╯°□°)╯"
+ },
+ "ab1960fbc49f": {
+  "en": " Booking.com ",
+  "t": "Booking.com"
  },
  "ab27df9dd530": {
   "en": "BLACKSHAPE",
@@ -6339,6 +6587,10 @@
   "en": "These days cluster in some seasons more than others, so a difference here is a hint, not proof of a cause.",
   "t": "이런 날은 어떤 계절에 더 몰려 있어서, 여기서 보이는 차이는 힌트일 뿐 원인의 증거는 아니에요."
  },
+ "b25b861c094d": {
+  "en": "Near Da Nang, the Golden Bridge in the Ba Na Hills is held up by two giant stone hands.",
+  "t": "다낭 근처 바나힐의 골든 브리지는 거대한 돌 손 두 개가 받치고 있어."
+ },
  "b29157b87cd1": {
   "en": "Bands I still want to see live.",
   "t": "아직 직관하고 싶은 밴드들."
@@ -6479,6 +6731,10 @@
   "en": "Enlarge: Stroller time",
   "t": "확대: 유모차 타임"
  },
+ "b6d277d4c797": {
+  "en": "Brasília was built from scratch in about four years, and from above its city plan looks like an airplane.",
+  "t": "브라질리아는 약 4년 만에 맨땅에서 지어졌고, 위에서 보면 도시 계획이 비행기 모양이야."
+ },
  "b6df21551d66": {
   "en": "sloppy folds made it wobble and drag",
   "t": "대충 접어서 흔들리고 끌림"
@@ -6510,6 +6766,10 @@
  "b7972ec7613f": {
   "en": "The night and day after each exercise day, against every other day you picked. The dot is the middle value (the median) and the bar holds the middle half of the days. This view ignores the Nights boxes.",
   "t": "운동한 날 다음의 밤과 낮을, 고른 다른 모든 날과 비교해요. 점은 가운데 값(중앙값)이고 막대는 가운데 절반의 날을 담아요. 이 보기는 밤 체크 상자를 무시해요."
+ },
+ "b7a75d8c7880": {
+  "en": "<strong>Figure out how much time I have.</strong> I split it into morning, afternoon, evening and late-night chunks, tied to where I’ll be and when.",
+  "t": "<strong>시간이 얼마나 있는지 파악한다.</strong>있을 장소와 시간에 맞춰 아침, 오후, 저녁, 늦은 밤 덩어리로 나눠."
  },
  "b7b3fa90eecd": {
   "en": " TrueTrophies ",
@@ -6578,6 +6838,10 @@
  "ba01865809b3": {
   "en": "Back to Concert",
   "t": "콘서트로 돌아가기"
+ },
+ "ba5d30be69b6": {
+  "en": "Hong Kong has more skyscrapers than any other city in the world.",
+  "t": "홍콩에는 세계 어느 도시보다 고층 빌딩이 많아."
  },
  "ba70e185ad5f": {
   "en": " LW ",
@@ -6719,6 +6983,10 @@
   "en": "Ghost",
   "t": "Ghost"
  },
+ "bf9b443e4ef0": {
+  "en": "In the Exumas, in the Bahamas, there's a beach where pigs swim out to meet the boats.",
+  "t": "바하마의 엑수마에는 돼지들이 헤엄쳐 나와 배를 맞이하는 해변이 있어."
+ },
  "bfa28522fcb3": {
   "en": "Hamilton",
   "t": "Hamilton"
@@ -6823,6 +7091,10 @@
   "en": "Revenge of the Savage Planet",
   "t": "Revenge of the Savage Planet"
  },
+ "c1fce82f845e": {
+  "en": "Denver is the Mile High City: one step of the Colorado State Capitol sits exactly one mile above sea level.",
+  "t": "덴버는 마일 하이 시티야: 콜로라도 주의사당 계단 한 칸이 정확히 해발 1마일에 있어."
+ },
  "c2032d98f6ff": {
   "en": "natural {n}!",
   "t": "내추럴 {n}!"
@@ -6858,6 +7130,10 @@
  "c327716d8241": {
   "en": "Angle {angle}°   Power {power}%",
   "t": "각도 {angle}°   파워 {power}%"
+ },
+ "c32f3b991a3d": {
+  "en": "Fun fact: {fact}",
+  "t": "재미있는 사실: {fact}"
  },
  "c361ac4de54f": {
   "en": "See it as",
@@ -6911,6 +7187,10 @@
   "en": "Pope Deo in green and gold papal robes and mitre, holding a golden staff, seated on a throne of swords before a churrasco grill full of skewers",
   "t": "초록과 금빛 교황 예복에 주교관을 쓰고 금빛 지팡이를 든 채, 꼬치가 가득한 슈하스코 그릴 앞 검의 옥좌에 앉은 교황 Deo"
  },
+ "c585c9a92390": {
+  "en": "Kuala Lumpur's Petronas Towers were the tallest buildings in the world from 1998 to 2004, and a two-story skybridge joins them.",
+  "t": "쿠알라룸푸르의 페트로나스 타워는 1998년부터 2004년까지 세계에서 가장 높은 건물이었고, 2층짜리 스카이브리지로 이어져 있어."
+ },
  "c5a976de7b52": {
   "en": " CC ",
   "t": "CC"
@@ -6934,6 +7214,10 @@
  "c63ae6dd4fc9": {
   "en": "M",
   "t": "M"
+ },
+ "c640067d579c": {
+  "en": "Tools I use for travels",
+  "t": "여행할 때 쓰는 도구"
  },
  "c65780da80b3": {
   "en": "Undead Horde",
@@ -7130,6 +7414,10 @@
  "cc6bd57cedaf": {
   "en": "hours played",
   "t": "플레이 시간"
+ },
+ "cc9527a5b265": {
+  "en": "Chicago reversed the flow of its river in 1900, so it runs away from Lake Michigan instead of into it. Engineering flex.",
+  "t": "시카고는 1900년에 강의 흐름을 거꾸로 바꿔서, 미시간호로 흘러들지 않고 호수에서 멀어지게 했어. 엔지니어링 자랑."
  },
  "cc9b32d95789": {
   "en": "exercise day",
@@ -7423,6 +7711,10 @@
   "en": "TS",
   "t": "TS"
  },
+ "d3b572e24639": {
+  "en": "Huehue, I can feel that thinking face from here.",
+  "t": "huehue, 그 고민하는 얼굴, 여기까지 느껴진다."
+ },
  "d3c3cff3fcea": {
   "en": "Almost went viral! 97% to the For You page.",
   "t": "거의 바이럴! For You 페이지까지 97%."
@@ -7442,6 +7734,10 @@
  "d41a25e62a6c": {
   "en": "Mentor",
   "t": "멘토"
+ },
+ "d41cddd2d44e": {
+  "en": "Vatican City is the smallest country in the world: less than half a square kilometer.",
+  "t": "바티칸 시국은 세계에서 가장 작은 나라야: 면적이 0.5제곱킬로미터도 안 돼."
  },
  "d429907f8fad": {
   "en": "Massachusetts",
@@ -7799,6 +8095,10 @@
   "en": "SV",
   "t": "SV"
  },
+ "ddba2c9277cd": {
+  "en": " Gemini ",
+  "t": "Gemini"
+ },
  "ddd902407758": {
   "en": "Tattoo on my left forearm",
   "t": "왼쪽 팔뚝의 타투"
@@ -7882,6 +8182,10 @@
  "e0036bf9d252": {
   "en": "Enlarge: Salesman and his companion",
   "t": "확대: 세일즈맨과 그의 동반자"
+ },
+ "e01002532f4a": {
+  "en": "Pro tip: check the signs, the plugs and which side of the road the cars drive on.",
+  "t": "팁: 표지판, 콘센트, 그리고 차가 도로 어느 쪽으로 다니는지 봐."
  },
  "e0184adedf91": {
   "en": "E",
@@ -7979,6 +8283,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez"
  },
+ "e315e9529ed9": {
+  "en": "Nashville has a full-size replica of the Parthenon of Athens.",
+  "t": "내슈빌에는 아테네 파르테논 신전의 실물 크기 복제품이 있어."
+ },
  "e33dd04a8af1": {
   "en": "Enlarge: The trail map",
   "t": "확대: 트레일 지도"
@@ -8006,6 +8314,10 @@
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
   "t": "새 던지기, 마나 3 소모 (2번 키)"
+ },
+ "e43916e49699": {
+  "en": "1 left",
+  "t": "1번 남음"
  },
  "e45f65625355": {
   "en": "amethyst",
@@ -8083,6 +8395,10 @@
   "en": "Autonauts",
   "t": "Autonauts"
  },
+ "e694469949d6": {
+  "en": "No photos yet.",
+  "t": "아직 사진이 없어."
+ },
  "e69f20e9f683": {
   "en": "F",
   "t": "F"
@@ -8141,7 +8457,7 @@
  },
  "e7e43b45cffa": {
   "en": "We have the <a href=\"https://en.wikipedia.org/wiki/Mate_%28drink%29\">chimarrão</a> ritual. In the morning, we gather for it to discuss matters, sync up and make sure we're all on the same page. We also analyze past events and call each other out, so there's no rumination or resentment, only a chance for growth.",
-  "t": "우리에겐 <a href=\"https://en.wikipedia.org/wiki/Mate_%28drink%29\">시마랑(chimarrão)</a> 의식이 있어. 아침마다 그걸 앞에 두고 모여서 이런저런 일을 얘기하고, 서로 맞추고, 모두가 같은 생각인지 확인해. 지난 일을 분석하고 서로 지적도 해서, 곱씹거나 원망이 남지 않고 성장할 기회만 남게 하지."
+  "t": "우리에겐 <a href=\"https://en.wikipedia.org/wiki/Mate_%28drink%29\">시마항(chimarrão)</a> 의식이 있어. 아침마다 그걸 앞에 두고 모여서 이런저런 일을 얘기하고, 서로 맞추고, 모두가 같은 생각인지 확인해. 지난 일을 분석하고 서로 지적도 해서, 곱씹거나 원망이 남지 않고 성장할 기회만 남게 하지."
  },
  "e803ce653782": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#34: </span>Best of the Worst: Christmas 2021",
@@ -8523,6 +8839,10 @@
   "en": "Plays from YouTube when you click",
   "t": "클릭하면 YouTube에서 재생돼"
  },
+ "f54c3e38c29e": {
+  "en": "At Cadillac Ranch in Amarillo, Texas, ten Cadillacs stand nose-down in the dirt, and spray-painting them is encouraged.",
+  "t": "텍사스주 애머릴로의 캐딜락 랜치에는 캐딜락 10대가 코를 땅에 박고 서 있고, 스프레이로 낙서하는 건 대환영이야."
+ },
  "f55f2f49a5fb": {
   "en": "243 h",
   "t": "243 시간"
@@ -8595,6 +8915,14 @@
   "en": "99 h",
   "t": "99 시간"
  },
+ "f7728e6f8374": {
+  "en": " Atlas Obscura ",
+  "t": "Atlas Obscura"
+ },
+ "f7ebf3ce2a64": {
+  "en": "Save it! Ask me while a photo is up.",
+  "t": "아껴 둬! 사진이 떠 있을 때 물어봐."
+ },
  "f80471683dd2": {
   "en": " Action &amp; adventure ",
   "t": "액션 &amp; 어드벤처"
@@ -8602,6 +8930,10 @@
  "f80d1870d042": {
   "en": " ← Close the chunk ",
   "t": "← 조각 닫기"
+ },
+ "f813212f2d43": {
+  "en": "China is wide enough for five time zones, but the whole country runs on one clock: Beijing time.",
+  "t": "중국은 시간대가 다섯 개여도 될 만큼 넓지만, 나라 전체가 시계 하나로 움직여: 베이징 시간."
  },
  "f84872e84d43": {
   "en": " F16 LED Matrix Mgr ",
@@ -8779,6 +9111,10 @@
   "en": "Japan",
   "t": "일본"
  },
+ "fcf66edbab92": {
+  "en": "Minnesota calls itself the Land of 10,000 Lakes, but it actually has more than 11,000.",
+  "t": "미네소타는 스스로를 \"만 개의 호수의 땅\"이라고 부르지만, 실제로는 1만 1천 개가 넘어."
+ },
  "fd5ffa4da538": {
   "en": "Enlarge: Super doggo",
   "t": "확대: 슈퍼 멍멍이"
@@ -8794,6 +9130,10 @@
  "fd932a42296c": {
   "en": "Did I undersleep or oversleep",
   "t": "덜 잔 건가 더 잔 건가"
+ },
+ "fdaa9e2265a8": {
+  "en": "Recife, in Pernambuco, is nicknamed the Brazilian Venice for its rivers and bridges.",
+  "t": "페르남부쿠주의 헤시피는 강과 다리가 많아서 \"브라질의 베네치아\"라고 불려."
  },
  "fdd2b6874d7f": {
   "en": "RA",

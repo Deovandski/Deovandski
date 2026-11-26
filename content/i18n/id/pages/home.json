@@ -119,6 +119,10 @@
   "en": "FEVER! The whole floor lights up.",
   "t": "DEMAM! Seluruh lantai menyala."
  },
+ "02c0e4a1da64": {
+  "en": "Used",
+  "t": "Terpakai"
+ },
  "02da8ad445d5": {
   "en": " MX ",
   "t": "MX"
@@ -226,6 +230,10 @@
  "05e728e60d80": {
   "en": "\nMy watch logged 162 more \"bike rides\" on its own (76 hours of them). Most of those\n          were me pushing my cat, <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a>, in his stroller, or me on the elliptical when it's too cold outside, so\n          they don't count toward the miles above.\n",
   "t": "Jam tanganku mencatat 162 \"gowesan\" lagi dengan sendirinya (76 jam totalnya). Kebanyakan itu aku mendorong kucingku, <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a>, di keretanya, atau aku di elliptical saat di luar terlalu dingin, jadi itu tidak dihitung ke mil di atas."
+ },
+ "061ff9e69ad0": {
+  "en": "Shinjuku Station in Tokyo is the busiest train station in the world: millions of people pass through it every day.",
+  "t": "Stasiun Shinjuku di Tokyo adalah stasiun kereta tersibuk di dunia: jutaan orang melewatinya setiap hari."
  },
  "0648fee0c26c": {
   "en": "Around the World in 80 Gears: turn your phone sideways",
@@ -363,6 +371,10 @@
   "en": "Nordic rune associated with heritage, ancestry, inheritance, homeland, and legacy.",
   "t": "Rune Nordik yang dikaitkan dengan warisan, leluhur, pusaka, tanah air, dan legasi."
  },
+ "09888c65f0a8": {
+  "en": " Copilot ",
+  "t": "Copilot"
+ },
  "09a6797150ba": {
   "en": "Enlarge: Painting or drawing, 01/10/2013",
   "t": "Perbesar: Lukisan atau gambar, 10/01/2013"
@@ -434,6 +446,10 @@
  "0bb27395d153": {
   "en": "231 h",
   "t": "231 h"
+ },
+ "0bb362d3d1e7": {
+  "en": "Perfect! You might know my travels better than I do.",
+  "t": "Sempurna! Mungkin kamu lebih tahu perjalananku daripada aku sendiri."
  },
  "0bdcc8f4a8b0": {
   "en": " HM ",
@@ -643,6 +659,10 @@
   "en": "not counted",
   "t": "tidak dihitung"
  },
+ "11835f5ac7a2": {
+  "en": "Photo {n}, from one of Deo’s trips: where was it taken?",
+  "t": "Foto {n}, dari salah satu perjalanan Deo: di mana foto ini diambil?"
+ },
  "11982574c056": {
   "en": "StackOverflow",
   "t": "StackOverflow"
@@ -795,6 +815,10 @@
   "en": "Enlarge: Breakfast",
   "t": "Perbesar: Sarapan"
  },
+ "174e4a9ea359": {
+  "en": "North Dakota's Enchanted Highway is lined with giant scrap-metal sculptures, and Geese in Flight is the largest scrap-metal sculpture in the world.",
+  "t": "Jalan raya Enchanted Highway di North Dakota dipenuhi patung besi bekas raksasa, dan Geese in Flight adalah patung besi bekas terbesar di dunia."
+ },
  "1761d9bdb3a0": {
   "en": "ROSALÍA",
   "t": "ROSALÍA"
@@ -843,6 +867,10 @@
   "en": "89 h",
   "t": "89 h"
  },
+ "184fa99083ff": {
+  "en": "The Eiffel Tower grows about 15 cm in summer, because its iron expands in the heat.",
+  "t": "Menara Eiffel bertambah tinggi sekitar 15 cm di musim panas, karena besinya memuai saat panas."
+ },
  "187796f151c3": {
   "en": "Path of Exile",
   "t": "Path of Exile"
@@ -887,6 +915,10 @@
   "en": "In the saddle",
   "t": "Di atas sadel"
  },
+ "19c10323e784": {
+  "en": "<strong>Buy the hotel and transportation.</strong> Those are the next layer of hard commitments.",
+  "t": "<strong>Beli hotel dan transportasi.</strong> Itu lapisan berikutnya dari komitmen tetap."
+ },
  "19c34e493647": {
   "en": "Wunjo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚹ)</span>",
   "t": "Wunjo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚹ)</span>"
@@ -894,6 +926,10 @@
  "19c9c9ed8477": {
   "en": "Opera",
   "t": "Opera"
+ },
+ "1a1599284e10": {
+  "en": "Where in the World Was Deo?",
+  "t": "Deo pernah ke mana saja?"
  },
  "1a1f232c7b93": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder TV show 9 ",
@@ -1211,6 +1247,10 @@
   "en": "Arragoa",
   "t": "Arragoa"
  },
+ "231583e115b9": {
+  "en": "Macapá, the capital of Amapá, sits right on the equator, and the Marco Zero monument marks the line.",
+  "t": "Macapá, ibu kota Amapá, terletak tepat di garis khatulistiwa, dan monumen Marco Zero menandai garis itu."
+ },
  "231fbf14a11a": {
   "en": "Time asleep",
   "t": "Waktu tidur"
@@ -1266,6 +1306,10 @@
  "24be61285e09": {
   "en": "Views",
   "t": "Tayangan"
+ },
+ "24bf28681358": {
+  "en": "Freebie",
+  "t": "Bantuan"
  },
  "24d4ea7ee729": {
   "en": "Do I really have to wear these",
@@ -1391,6 +1435,10 @@
   "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
   "t": "Itu {tapes} kaset VHS yang direkam dalam {mode} ({perTape} jam per kaset T-120)."
  },
+ "27c908c2dd93": {
+  "en": "Rio Grande do Sul is gaúcho country: the home of churrasco and chimarrão, the bitter mate tea sipped from a gourd.",
+  "t": "Rio Grande do Sul adalah tanah gaúcho: rumah churrasco dan chimarrão, teh mate pahit yang diseruput dari labu."
+ },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 10: </span> Acara TV sementara 10"
@@ -1434,6 +1482,10 @@
  "28ebb962e775": {
   "en": "Tap the stage on the beat",
   "t": "Ketuk panggung sesuai ketukan"
+ },
+ "28fe28d0a4e1": {
+  "en": "Not bad for a tourist.",
+  "t": "Lumayan untuk seorang turis."
  },
  "290c68caa39c": {
   "en": "Year {n}",
@@ -1571,6 +1623,14 @@
   "en": "Each planet is a category, sized by its hours. Press one to fly in.",
   "t": "Setiap planet adalah satu kategori, sebesar jamnya. Tekan salah satu untuk terbang mendekat."
  },
+ "2d5647a3618b": {
+  "en": "Spain makes more olive oil than any other country in the world.",
+  "t": "Spanyol memproduksi minyak zaitun lebih banyak daripada negara mana pun di dunia."
+ },
+ "2d66944f3f19": {
+  "en": "How do I plan for travel?",
+  "t": "Bagaimana aku merencanakan perjalanan?"
+ },
  "2d8bdb9ce539": {
   "en": "\nAt home, a whiteboard holds my major goals and anything that isn't tied to a date. If it is tied to a date, it goes on\n          the calendar; how I keep 5+ calendars in one place is <a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">Life hack #2: Calendar bound</a>.\n",
   "t": "Di rumah, papan tulis putih menyimpan tujuan-tujuan besarku dan apa pun yang tidak terikat tanggal. Kalau terikat tanggal, masuk ke kalender; cara aku menyimpan lebih dari 5 kalender di satu tempat adalah <a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">Trik hidup #2: Terikat kalender</a>."
@@ -1638,6 +1698,10 @@
  "2f488ffc82cc": {
   "en": "Hong Kong",
   "t": "Hong Kong"
+ },
+ "2f5809c6e643": {
+  "en": "The London Underground opened in 1863: the oldest underground railway in the world.",
+  "t": "Kereta bawah tanah London dibuka tahun 1863: jalur kereta bawah tanah tertua di dunia."
  },
  "2f717ffad4e1": {
   "en": "Arkansas",
@@ -1931,6 +1995,10 @@
   "en": " PC ",
   "t": "PC"
  },
+ "37219ea52a83": {
+  "en": "Chibi pixel Deo in his yellow king's robes and crown hat, chilling in a hammock between two palm trees. Press him for a freebie.",
+  "t": "Deo chibi piksel dengan jubah raja kuning dan topi mahkota, bersantai di tempat tidur gantung di antara dua pohon kelapa. Tekan dia untuk bantuan."
+ },
  "37497aa5a227": {
   "en": "Brazil",
   "t": "Brasil"
@@ -1987,6 +2055,10 @@
   "en": "King of the trail",
   "t": "Raja jalan setapak"
  },
+ "386afa7ad2fc": {
+  "en": "<strong>Enjoy!</strong> The goal is a structure that gives the trip a sense of coordination, efficient travel and relaxation, while staying flexible enough for on-the-fly adjustments.",
+  "t": "<strong>Nikmati!</strong> Tujuannya adalah struktur yang memberi perjalanan rasa terkoordinasi, perjalanan yang efisien, dan santai, sambil tetap cukup fleksibel untuk penyesuaian dadakan."
+ },
  "3878d567f539": {
   "en": "A streak you could lose feels worse than one you never had. Losing hurts about twice as much as winning feels good.",
   "t": "Beruntun yang bisa hilang terasa lebih buruk daripada beruntun yang tidak pernah kamu punya. Kalah terasa kira-kira dua kali lebih sakit daripada senangnya menang."
@@ -2002,6 +2074,10 @@
  "389af5e18c8a": {
   "en": "LiSA",
   "t": "LiSA"
+ },
+ "389f91b7ec99": {
+  "en": "<strong>When and where?</strong> I look up the climate and the overall info about the place(s) I’m going, to decide if it’s safe enough to travel, and what I need visa-wise.",
+  "t": "<strong>Kapan dan ke mana?</strong> Aku mencari info cuaca dan info umum tentang tempat yang akan kutuju, untuk memutuskan apakah cukup aman untuk bepergian, dan apa yang kubutuhkan soal visa."
  },
  "38a315c1f5b2": {
   "en": "123 h",
@@ -2019,6 +2095,10 @@
   "en": "{h}h",
   "t": "{h} j"
  },
+ "38d260178740": {
+  "en": "Remember: one freebie per game. Use it wisely.",
+  "t": "Ingat: satu bantuan per permainan. Gunakan dengan bijak."
+ },
  "38e1d26af274": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer"
@@ -2026,6 +2106,10 @@
  "39005d92752d": {
   "en": " KA ",
   "t": "KA"
+ },
+ "3908597feae4": {
+  "en": "Right! It’s {place}.",
+  "t": "Benar! Ini {place}."
  },
  "39091a099ef5": {
   "en": "Plot {plot}: {crop}, ready in {seconds} seconds.",
@@ -2195,6 +2279,10 @@
   "en": "From all the anime out there you chose this one",
   "t": "Dari semua anime yang ada, kamu pilih yang ini"
  },
+ "3e017e68a6b7": {
+  "en": "Not quite: it’s {place}.",
+  "t": "Belum tepat: ini {place}."
+ },
  "3e1f116ff08d": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-jytvyid3=\"\">😱</span> Post clickbait video ",
   "t": "<span aria-hidden=\"true\" data-astro-cid-jytvyid3=\"\">😱</span> Posting video clickbait"
@@ -2311,6 +2399,10 @@
   "en": "Captain Bidu final resting place",
   "t": "Tempat peristirahatan terakhir Kapten Bidu"
  },
+ "40cd7fa70431": {
+  "en": " Google Maps ",
+  "t": "Google Maps"
+ },
  "40f6fcda8a97": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder movie 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 9: </span> Film sementara 9"
@@ -2318,6 +2410,10 @@
  "40f9d1ff0260": {
   "en": "Across 82 studies, autistic and ADHD men were as socially connected as other men at best, and never more. Less connection came with worse mental health.",
   "t": "Dalam 82 penelitian, pria autistik dan ADHD paling banter sama terhubungnya secara sosial dengan pria lain, dan tidak pernah lebih. Hubungan yang lebih sedikit datang bersama kesehatan mental yang lebih buruk."
+ },
+ "410e49339b79": {
+  "en": "I took these photos and I still squint at some of them.",
+  "t": "Aku yang memotret semua ini, tapi beberapa masih harus kulihat sambil menyipitkan mata."
  },
  "414a017a79c7": {
   "en": "<strong>Peace is not passivity.</strong> A boundary without enforcement is a request. Compassion can explain behavior without absorbing it, and standing idle while someone self-destructs is idiot compassion, not peace. Say your piece, then walk away.",
@@ -2467,6 +2563,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested"
  },
+ "4727f6ba44d0": {
+  "en": "Da Nang's Dragon Bridge breathes fire, and then water, on weekend nights. Yes, a bridge. Yes, fire.",
+  "t": "Jembatan Naga di Da Nang menyemburkan api, lalu air, pada malam akhir pekan. Ya, jembatan. Ya, api."
+ },
  "47299a86ea20": {
   "en": " TW ",
   "t": "TW"
@@ -2495,6 +2595,10 @@
   "en": "Idle Evolution",
   "t": "Idle Evolution"
  },
+ "47f53f079a30": {
+  "en": "You got {score} out of {total}.",
+  "t": "Kamu benar {score} dari {total}."
+ },
  "481021d04da3": {
   "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
   "t": "Setiap metrik dari waktu ke waktu, satu grafik kecil untuk masing-masing. Arahkan ke grafik dan semua grafik menampilkan hari, minggu, atau bulan yang sama."
@@ -2515,9 +2619,17 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#31: </span>Best of the Worst: Plinketto #8",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#31: </span>Best of the Worst: Plinketto #8"
  },
+ "489f4877244a": {
+  "en": "Score",
+  "t": "Skor"
+ },
  "48aaf2be8dae": {
   "en": "5% of my hours",
   "t": "5% dari jam saya"
+ },
+ "48cce38aa1d8": {
+  "en": "6 steps",
+  "t": "6 langkah"
  },
  "48e29fac4cce": {
   "en": "Besides the relationship and the bonding, the merchant life and bartering are really well developed! I took inspiration from it while working on the world lore for #HusbandOutWorld.",
@@ -2566,6 +2678,10 @@
  "4a3a04380da1": {
   "en": "Ooh wah ah ah ah",
   "t": "Ooh wah ah ah ah"
+ },
+ "4a9a6c803452": {
+  "en": "Ask Deo for a freebie: he narrows it down to two (once per game)",
+  "t": "Minta bantuan Deo: dia menyisakan dua jawaban (sekali per permainan)"
  },
  "4a9f8acaa8c3": {
   "en": " 100 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -2683,9 +2799,17 @@
   "en": "no data",
   "t": "tidak ada data"
  },
+ "4db08c84d2e8": {
+  "en": "Hmm… it’s either {a} or {b}. Huehue, good luck.",
+  "t": "Hmm… antara {a} atau {b}. Huehue, semoga beruntung."
+ },
  "4db745f6113e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Toradora! ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 23: </span> Toradora!"
+ },
+ "4dc7132b40c7": {
+  "en": "I like to take my time too, but I hope you're not doing something Ecchi while staring at me huehue...",
+  "t": "Aku juga suka santai, tapi semoga kamu tidak sedang melakukan hal Ecchi sambil menatapku, huehue..."
  },
  "4dd3d53fb92c": {
   "en": "If thou hast farofa for churrasco, thou mayest use it to enhance the taste, but eat it not with every bite. Like the ginger beside the sushi, farofa is taken every few bites to refresh thy taste buds.",
@@ -2711,6 +2835,10 @@
   "en": "Sonja<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Sonja<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">Favorit FITM 2025</span>"
  },
+ "4e339ffb8498": {
+  "en": "Osaka's food motto is kuidaore: eat until you drop (or go broke). Challenge accepted.",
+  "t": "Semboyan kuliner Osaka adalah kuidaore: makan sampai tumbang (atau sampai bangkrut). Tantangan diterima."
+ },
  "4e353a24f207": {
   "en": "Made the gym a place of zen for the body.\n<ul>\n<li>Made friends there.</li>\n<li>It’s a safe space for me to stim, like dancing or making hand motions when I’m jamming to a song.</li>\n</ul>\n",
   "t": "Menjadikan gym tempat zen untuk tubuh. <ul> <li>Berteman di sana.</li> <li>Itu ruang aman bagiku untuk stimming, seperti menari atau menggerakkan tangan saat aku sedang larut dalam sebuah lagu.</li> </ul>"
@@ -2726,6 +2854,10 @@
  "4e80d1b689cd": {
   "en": "Time Clickers",
   "t": "Time Clickers"
+ },
+ "4e9ea28321c7": {
+  "en": "Zzz… huh? Oh, you're still here. Good, good.",
+  "t": "Zzz… hah? Oh, kamu masih di sini. Bagus, bagus."
  },
  "4ea169568872": {
   "en": "Ragnarok Online",
@@ -3003,6 +3135,10 @@
   "en": " HC ",
   "t": "HC"
  },
+ "54b2bbfa52d3": {
+  "en": "I already gave you my freebie! Back to hammock time.",
+  "t": "Bantuanku sudah kuberikan! Balik ke tempat tidur gantung."
+ },
  "54b75a6c3b9d": {
   "en": " Steam + Xbox + PC  ·  estimated ",
   "t": "Steam + Xbox + PC  ·  perkiraan"
@@ -3022,6 +3158,10 @@
  "552f53868eba": {
   "en": " 870 h  ",
   "t": "870 h"
+ },
+ "5532a7e02945": {
+  "en": "You’ve clearly been around.",
+  "t": "Jelas kamu sudah banyak bepergian."
  },
  "55497593cc05": {
   "en": "Nordic rune representing gift, exchange, reciprocity, partnership, and mutual obligations.",
@@ -3075,6 +3215,10 @@
   "en": "For years, that anxiety felt life-or-death: a restless urgency I couldn't name because I was deeply unfulfilled, and later a constant hypervigilance while I chased external validation as an influencer. My AuDHD unmasking finally explained where it came from, and therapy that challenged me, not enabled me, helped me process it. Today it's no longer an alarm that runs me. It's fuel, and I choose where it goes: into building, growing, and the people worth it.",
   "t": "Selama bertahun-tahun, kecemasan itu terasa seperti soal hidup dan mati: desakan gelisah yang tidak bisa kuberi nama karena aku sangat tidak terpenuhi, lalu hypervigilance terus-menerus saat aku mengejar validasi luar sebagai influencer. Proses melepas topeng AuDHD-ku akhirnya menjelaskan dari mana asalnya, dan terapi yang menantangku, bukan memanjakanku, membantuku mengolahnya. Sekarang itu bukan lagi alarm yang mengendalikanku. Itu bahan bakar, dan aku yang memilih ke mana perginya: membangun, bertumbuh, dan orang-orang yang layak."
  },
+ "563fcaed811e": {
+  "en": "Time to book a trip!",
+  "t": "Saatnya memesan perjalanan!"
+ },
  "5675306240db": {
   "en": "The Icelandic compass symbol, associated with guidance and finding one's way. I intentionally placed its center point over a single long white hair that I consider mystical.",
   "t": "Simbol kompas Islandia, dikaitkan dengan bimbingan dan menemukan jalan sendiri. Aku sengaja menaruh titik tengahnya di atas sehelai rambut putih panjang yang kuanggap mistis."
@@ -3106,6 +3250,10 @@
  "572c7a51487d": {
   "en": "The Outer Worlds",
   "t": "The Outer Worlds"
+ },
+ "5733f41cdcdb": {
+  "en": "Psst! Stuck? Press me once for a freebie.",
+  "t": "Psst! Buntu? Tekan aku sekali untuk bantuan gratis."
  },
  "576347ec826f": {
   "en": "Europe",
@@ -3191,6 +3339,10 @@
   "en": "30 mi",
   "t": "30 mi"
  },
+ "59a7619e7a8e": {
+  "en": "Brazil is the only country in the Americas whose main language is Portuguese.",
+  "t": "Brasil adalah satu-satunya negara di benua Amerika yang bahasa utamanya bahasa Portugis."
+ },
  "59aa962f7269": {
   "en": " SC ",
   "t": "SC"
@@ -3210,6 +3362,10 @@
  "59f21d6a9014": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">703 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">703 h</strong>  ·  5 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% dari jam saya</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% dari jam saya</span>"
+ },
+ "5a199f0f62fb": {
+  "en": "Death Valley holds the hottest air temperature ever recorded on Earth: 56.7 °C (134 °F), back in 1913.",
+  "t": "Death Valley memegang suhu udara tertinggi yang pernah tercatat di Bumi: 56,7 °C (134 °F), pada 1913."
  },
  "5a4a4998e7b7": {
   "en": "Kyaa~! (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)",
@@ -3467,6 +3623,10 @@
   "en": "3 photos",
   "t": "3 foto"
  },
+ "6162ea49842a": {
+  "en": "Iowa has more pigs than people. Many, many more.",
+  "t": "Iowa punya lebih banyak babi daripada manusia. Jauh, jauh lebih banyak."
+ },
  "6163bbb03360": {
   "en": "Prison Architect",
   "t": "Prison Architect"
@@ -3490,6 +3650,10 @@
  "61db3a4f5dc3": {
   "en": "Kingdoms and Castles",
   "t": "Kingdoms and Castles"
+ },
+ "61dd1c7b84ac": {
+  "en": "Bangkok's full ceremonial name is the longest place name in the world. Locals just call it Krung Thep.",
+  "t": "Nama upacara lengkap Bangkok adalah nama tempat terpanjang di dunia. Warga setempat cukup menyebutnya Krung Thep."
  },
  "61dedcf053ff": {
   "en": "Good",
@@ -3683,6 +3847,10 @@
   "en": "Spore",
   "t": "Spore"
  },
+ "67d69fcd957c": {
+  "en": "Under a bridge in Seattle lives the Fremont Troll, a giant concrete troll crushing a real Volkswagen Beetle.",
+  "t": "Di bawah sebuah jembatan di Seattle tinggal Fremont Troll, troll beton raksasa yang meremukkan Volkswagen Beetle sungguhan."
+ },
  "67d72e344e26": {
   "en": "Another dino",
   "t": "Dino lain"
@@ -3762,6 +3930,10 @@
  "696c1696aee1": {
   "en": "Enlarge: Gimme attention",
   "t": "Perbesar: Perhatikan aku"
+ },
+ "69c642153907": {
+  "en": "Fukuoka has more yatai, open-air food stalls, than the rest of Japan combined: about a hundred pop up every night and vanish before morning.",
+  "t": "Fukuoka punya lebih banyak yatai, kios makanan terbuka, daripada seluruh Jepang lainnya digabungkan: sekitar seratus muncul setiap malam dan menghilang sebelum pagi."
  },
  "69ce5d37a5a7": {
   "en": "Enlarge: Still tired",
@@ -3859,6 +4031,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10"
  },
+ "6cac5f329113": {
+  "en": "The Everglades in Florida are the only place in the world where alligators and crocodiles live side by side.",
+  "t": "Everglades di Florida adalah satu-satunya tempat di dunia tempat aligator dan buaya hidup berdampingan."
+ },
  "6cae7ad96e0d": {
   "en": "sapphires",
   "t": "sapphires"
@@ -3935,6 +4111,14 @@
   "en": "MB",
   "t": "MB"
  },
+ "6edd44939f5a": {
+  "en": "Where was this photo taken?",
+  "t": "Di mana foto ini diambil?"
+ },
+ "6eddff8a5e91": {
+  "en": " Viator ",
+  "t": "Viator"
+ },
  "6ee7cbb3f2cd": {
   "en": " Low HRV and heart risk (Europace, 2013) ",
   "t": "HRV rendah dan risiko jantung (Europace, 2013)"
@@ -3962,6 +4146,10 @@
  "70182e9438a1": {
   "en": "Hours from my Steam library, my Xbox profile and my own estimates. Games with under 10 hours are left out.",
   "t": "Jam dari pustaka Steam, profil Xbox, dan perkiraan saya sendiri. Game di bawah 10 jam tidak dicantumkan."
+ },
+ "7034e1107ace": {
+  "en": "Venice is built on more than a hundred small islands, linked by around 400 bridges.",
+  "t": "Venesia dibangun di atas lebih dari seratus pulau kecil, dihubungkan sekitar 400 jembatan."
  },
  "7038a855f81b": {
   "en": "Soda Dungeon",
@@ -4267,6 +4455,10 @@
   "en": "Clicker Heroes series",
   "t": "Seri Clicker Heroes"
  },
+ "78a9c9baf0c3": {
+  "en": "Photo {n} of {total}",
+  "t": "Foto {n} dari {total}"
+ },
  "78aa655e487b": {
   "en": "LEGO Star Wars: The Skywalker Saga",
   "t": "LEGO Star Wars: The Skywalker Saga"
@@ -4371,6 +4563,10 @@
   "en": "I watched the remake. Spoiler warning, but goddamn, can these two just lock themselves in a room and fight it out already? ...huehuehuehue. Okay, shitposting aside, the scene with the rake is so fucking insane it still haunts me years later. I slept fine, but it was an assault on the senses... Well done.",
   "t": "Aku nonton versi remake-nya. Awas spoiler, tapi sialan, bisa nggak sih dua orang ini mengunci diri di kamar dan berkelahi sampai tuntas? ...huehuehuehue. Oke, bercanda dulu ditaruh, adegan garu itu gila banget anjir sampai masih menghantuiku bertahun-tahun kemudian. Aku tidur nyenyak, tapi itu serangan ke pancaindra... Mantap."
  },
+ "7b550ea4934b": {
+  "en": "Germany's Reinheitsgebot, the beer purity law of 1516, allowed only water, barley and hops in beer.",
+  "t": "Reinheitsgebot, undang-undang kemurnian bir Jerman tahun 1516, hanya mengizinkan air, jelai dan hop dalam bir."
+ },
  "7b6e925e0861": {
   "en": "Same variable-reward idea, applied to what to post",
   "t": "Gagasan hadiah berubah-ubah yang sama, diterapkan pada apa yang kamu posting"
@@ -4382,6 +4578,10 @@
  "7ba775845547": {
   "en": "I wanna play",
   "t": "Aku mau main"
+ },
+ "7bbc5f97f852": {
+  "en": "{name}, {within}",
+  "t": "{name}, {within}"
  },
  "7bcd7423cbe4": {
   "en": "That’s why this tab lives in Hearth: my body is at the center of it all, and looking after it matters as much as looking after my family, my pets and healthy friendships.",
@@ -4499,6 +4699,10 @@
   "en": "Min",
   "t": "Mnt"
  },
+ "7ec79775c355": {
+  "en": "Every wrong answer is just a trip you still have to take.",
+  "t": "Setiap jawaban salah hanyalah satu perjalanan yang masih harus kamu lakukan."
+ },
  "7ed97d0b96e7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Monogatari ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 17: </span> Monogatari"
@@ -4598,6 +4802,10 @@
  "822c38efe849": {
   "en": "Road 96",
   "t": "Road 96"
+ },
+ "823f114d8191": {
+  "en": "Back to Traveler",
+  "t": "Kembali ke Pelancong"
  },
  "8271900678e6": {
   "en": "Enlarge: Destroying a whole chicken",
@@ -4831,6 +5039,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#24: </span>Best of the Worst: Junka 4",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#24: </span>Best of the Worst: Junka 4"
  },
+ "88b00f7eddd8": {
+  "en": "<strong>What are the hard commitments?</strong> Things where I have to be at a certain place at a certain time. Those get sorted out and added to the calendar. This is also when I start digging through Tripadvisor, Viator and AI search for more hard commitments tied to group travel, events, concerts, etc.",
+  "t": "<strong>Apa saja komitmen tetapnya?</strong> Hal-hal yang mengharuskanku berada di tempat tertentu pada waktu tertentu. Semuanya dibereskan dan dimasukkan ke kalender. Saat ini juga aku mulai menggali Tripadvisor, Viator, dan pencarian AI untuk komitmen tetap lain yang terkait perjalanan rombongan, acara, konser, dan sebagainya."
+ },
  "88b84613be17": {
   "en": "Getting there",
   "t": "Makin dekat"
@@ -4906,6 +5118,10 @@
  "8b5051da2153": {
   "en": "66 days",
   "t": "66 hari"
+ },
+ "8b60dec779bd": {
+  "en": "See my score",
+  "t": "Lihat skorku"
  },
  "8ba25ab7e4e0": {
   "en": "197 h",
@@ -5019,6 +5235,10 @@
   "en": "155 h",
   "t": "155 h"
  },
+ "8ed00491b7b1": {
+  "en": "If you miss this one, I'm telling Peeta.",
+  "t": "Kalau yang ini salah, aku lapor ke Peeta."
+ },
  "8ef4196cef6e": {
   "en": "Enlarge: Ready for a walk",
   "t": "Perbesar: Siap jalan-jalan"
@@ -5026,6 +5246,10 @@
  "8f21ad742d6a": {
   "en": "<strong>Peter Gollwitzer</strong>, implementation intentions (“if X happens, then I will do Y”). His 2006 meta-analysis with Paschal Sheeran, across 94 tests, found a medium-to-large effect on reaching goals. <a href=\"https://www.decisionskills.com/uploads/5/1/6/0/5160560/2006_gollwitzersheeran_implementation_intentions.pdf\">Paper</a>",
   "t": "<strong>Peter Gollwitzer</strong>, niat implementasi (\"kalau X terjadi, aku akan melakukan Y\"). Meta-analisisnya tahun 2006 bersama Paschal Sheeran, dari 94 uji, menemukan efek sedang hingga besar dalam mencapai tujuan. <a href=\"https://www.decisionskills.com/uploads/5/1/6/0/5160560/2006_gollwitzersheeran_implementation_intentions.pdf\">Makalah</a>"
+ },
+ "8f53876c891d": {
+  "en": "Take your time. This hammock has no hard commitments.",
+  "t": "Santai saja. Tempat tidur gantung ini tidak punya komitmen tetap."
  },
  "8f60ae052f27": {
   "en": "This one is for seasoned veterans of the genre, or someone deep into Japanese culture. The unique way the story is told is still vivid in my brain, despite all the anime I've absorbed since.",
@@ -5110,6 +5334,10 @@
  "91932d565d68": {
   "en": " 349 h  ",
   "t": "349 h"
+ },
+ "919a69782679": {
+  "en": "Singapore's Changi Airport has the tallest indoor waterfall in the world, the Rain Vortex. An airport with a waterfall: my aviation nerd heart.",
+  "t": "Bandara Changi di Singapura punya air terjun dalam ruangan tertinggi di dunia, Rain Vortex. Bandara dengan air terjun: hati pencinta penerbanganku meleleh."
  },
  "91a07087a575": {
   "en": " LF ",
@@ -5423,6 +5651,10 @@
   "en": " 354 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "354 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">perkiraan</span>"
  },
+ "9a26193e6330": {
+  "en": " Tripadvisor ",
+  "t": "Tripadvisor"
+ },
  "9a4013425ae8": {
   "en": "Now then, matey: which o' these bilge rats be Deo? Make yer guess, and make it quick. See that spiky beast risin' from the waves? Aye. The whole crew met their final fate in the guts o' that giant turtle. Yo ho!",
   "t": "Nah, kawan: yang mana dari tikus lambung kapal ini yang Deo? Tebak, dan cepat. Lihat makhluk berduri yang naik dari ombak itu? Yap. Seluruh awak menemui nasib akhir mereka di perut kura-kura raksasa itu. Yo ho!"
@@ -5446,6 +5678,10 @@
  "9a7378f878db": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder movie 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 33: </span> Film sementara 33"
+ },
+ "9a7f74a3f509": {
+  "en": "Where in the World Was Deo?: turn your phone sideways",
+  "t": "Deo pernah ke mana saja?: putar ponselmu ke posisi menyamping"
  },
  "9ad4cfc36bda": {
   "en": " What HRV is and its norms (Frontiers, 2017) ",
@@ -5490,6 +5726,10 @@
  "9c8a9f570735": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 7: </span> Placeholder movie 7 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 7: </span> Film sementara 7"
+ },
+ "9ce8a73a39d0": {
+  "en": "<strong>Fill in the chunks.</strong> I search for things to do around there and fill each time chunk with 1–3 things, based on proximity. If something is important or very desirable, it becomes a hard commitment. It’s okay to keep a few things in the backlog, saved in case we have more time than planned. The same way, if we run out of time or energy, we can pop things out of the chunks and reorder them, or move them to the backlog for a future trip.",
+  "t": "<strong>Isi blok-bloknya.</strong> Aku mencari hal yang bisa dilakukan di sekitar dan mengisi setiap blok waktu dengan 1–3 hal, berdasarkan kedekatan. Kalau sesuatu penting atau sangat diinginkan, itu jadi komitmen tetap. Tidak apa-apa menyimpan beberapa hal di daftar tunggu, siapa tahu waktunya lebih banyak dari rencana. Begitu juga, kalau waktu atau tenaga habis, kita bisa mengeluarkan hal dari blok dan menyusun ulang, atau memindahkannya ke daftar tunggu untuk perjalanan berikutnya."
  },
  "9cf7bc8b3812": {
   "en": "Your {kind} went viral: {views} views and {follows} new followers.",
@@ -5775,6 +6015,10 @@
   "en": "DAVE THE DIVER",
   "t": "DAVE THE DIVER"
  },
+ "a3a6593686de": {
+  "en": "In Tonopah, Nevada, there's a motel full of clowns, right next to an old miners' cemetery. Sweet dreams!",
+  "t": "Di Tonopah, Nevada, ada motel penuh badut, persis di sebelah pemakaman penambang tua. Mimpi indah!"
+ },
  "a3ec0dfc8cc3": {
   "en": "Play video: Ridin' with Peeta",
   "t": "Putar video: Gowes bareng Peeta"
@@ -6059,6 +6303,10 @@
   "en": "This is a Christian fireplace! (╯°□°)╯",
   "t": "Ini perapian Kristen! (╯°□°)╯"
  },
+ "ab1960fbc49f": {
+  "en": " Booking.com ",
+  "t": "Booking.com"
+ },
  "ab27df9dd530": {
   "en": "BLACKSHAPE",
   "t": "BLACKSHAPE"
@@ -6339,6 +6587,10 @@
   "en": "These days cluster in some seasons more than others, so a difference here is a hint, not proof of a cause.",
   "t": "Hari-hari ini lebih banyak di musim tertentu, jadi perbedaan di sini adalah petunjuk, bukan bukti penyebab."
  },
+ "b25b861c094d": {
+  "en": "Near Da Nang, the Golden Bridge in the Ba Na Hills is held up by two giant stone hands.",
+  "t": "Dekat Da Nang, Jembatan Emas di Bukit Ba Na ditopang dua tangan batu raksasa."
+ },
  "b29157b87cd1": {
   "en": "Bands I still want to see live.",
   "t": "Band yang masih ingin kutonton langsung."
@@ -6479,6 +6731,10 @@
   "en": "Enlarge: Stroller time",
   "t": "Perbesar: Waktunya kereta dorong"
  },
+ "b6d277d4c797": {
+  "en": "Brasília was built from scratch in about four years, and from above its city plan looks like an airplane.",
+  "t": "Brasília dibangun dari nol dalam sekitar empat tahun, dan dari atas denah kotanya terlihat seperti pesawat terbang."
+ },
  "b6df21551d66": {
   "en": "sloppy folds made it wobble and drag",
   "t": "lipatan asal-asalan membuatnya goyang dan menyeret"
@@ -6510,6 +6766,10 @@
  "b7972ec7613f": {
   "en": "The night and day after each exercise day, against every other day you picked. The dot is the middle value (the median) and the bar holds the middle half of the days. This view ignores the Nights boxes.",
   "t": "Malam dan hari setelah setiap hari olahraga, dibandingkan semua hari lain yang dipilih. Titik adalah nilai tengah (median) dan batang mencakup separuh tengah hari-hari itu. Tampilan ini mengabaikan kotak Malam."
+ },
+ "b7a75d8c7880": {
+  "en": "<strong>Figure out how much time I have.</strong> I split it into morning, afternoon, evening and late-night chunks, tied to where I’ll be and when.",
+  "t": "<strong>Hitung berapa banyak waktu yang kupunya.</strong> Aku membaginya menjadi blok pagi, siang, malam, dan larut malam, sesuai tempat dan waktu aku berada."
  },
  "b7b3fa90eecd": {
   "en": " TrueTrophies ",
@@ -6578,6 +6838,10 @@
  "ba01865809b3": {
   "en": "Back to Concert",
   "t": "Kembali ke Konser"
+ },
+ "ba5d30be69b6": {
+  "en": "Hong Kong has more skyscrapers than any other city in the world.",
+  "t": "Hong Kong punya lebih banyak pencakar langit daripada kota mana pun di dunia."
  },
  "ba70e185ad5f": {
   "en": " LW ",
@@ -6719,6 +6983,10 @@
   "en": "Ghost",
   "t": "Ghost"
  },
+ "bf9b443e4ef0": {
+  "en": "In the Exumas, in the Bahamas, there's a beach where pigs swim out to meet the boats.",
+  "t": "Di Exuma, Bahama, ada pantai tempat babi berenang menyambut perahu."
+ },
  "bfa28522fcb3": {
   "en": "Hamilton",
   "t": "Hamilton"
@@ -6823,6 +7091,10 @@
   "en": "Revenge of the Savage Planet",
   "t": "Revenge of the Savage Planet"
  },
+ "c1fce82f845e": {
+  "en": "Denver is the Mile High City: one step of the Colorado State Capitol sits exactly one mile above sea level.",
+  "t": "Denver adalah Mile High City: satu anak tangga Gedung Capitol Colorado berada tepat satu mil di atas permukaan laut."
+ },
  "c2032d98f6ff": {
   "en": "natural {n}!",
   "t": "{n} natural!"
@@ -6858,6 +7130,10 @@
  "c327716d8241": {
   "en": "Angle {angle}°   Power {power}%",
   "t": "Sudut {angle}°   Daya {power}%"
+ },
+ "c32f3b991a3d": {
+  "en": "Fun fact: {fact}",
+  "t": "Fakta seru: {fact}"
  },
  "c361ac4de54f": {
   "en": "See it as",
@@ -6911,6 +7187,10 @@
   "en": "Pope Deo in green and gold papal robes and mitre, holding a golden staff, seated on a throne of swords before a churrasco grill full of skewers",
   "t": "Paus Deo dengan jubah kepausan hijau-emas dan mitra, memegang tongkat emas, duduk di atas takhta pedang di depan panggangan churrasco penuh tusukan"
  },
+ "c585c9a92390": {
+  "en": "Kuala Lumpur's Petronas Towers were the tallest buildings in the world from 1998 to 2004, and a two-story skybridge joins them.",
+  "t": "Menara Petronas di Kuala Lumpur adalah gedung tertinggi di dunia dari 1998 sampai 2004, dan dihubungkan jembatan langit dua lantai."
+ },
  "c5a976de7b52": {
   "en": " CC ",
   "t": "CC"
@@ -6934,6 +7214,10 @@
  "c63ae6dd4fc9": {
   "en": "M",
   "t": "M"
+ },
+ "c640067d579c": {
+  "en": "Tools I use for travels",
+  "t": "Alat yang kupakai untuk bepergian"
  },
  "c65780da80b3": {
   "en": "Undead Horde",
@@ -7130,6 +7414,10 @@
  "cc6bd57cedaf": {
   "en": "hours played",
   "t": "jam dimainkan"
+ },
+ "cc9527a5b265": {
+  "en": "Chicago reversed the flow of its river in 1900, so it runs away from Lake Michigan instead of into it. Engineering flex.",
+  "t": "Chicago membalik arah aliran sungainya pada 1900, sehingga mengalir menjauhi Danau Michigan alih-alih masuk ke sana. Pamer rekayasa."
  },
  "cc9b32d95789": {
   "en": "exercise day",
@@ -7423,6 +7711,10 @@
   "en": "TS",
   "t": "TS"
  },
+ "d3b572e24639": {
+  "en": "Huehue, I can feel that thinking face from here.",
+  "t": "Huehue, wajah berpikirmu terasa sampai sini."
+ },
  "d3c3cff3fcea": {
   "en": "Almost went viral! 97% to the For You page.",
   "t": "Hampir viral! 97% ke halaman For You."
@@ -7442,6 +7734,10 @@
  "d41a25e62a6c": {
   "en": "Mentor",
   "t": "Mentor"
+ },
+ "d41cddd2d44e": {
+  "en": "Vatican City is the smallest country in the world: less than half a square kilometer.",
+  "t": "Kota Vatikan adalah negara terkecil di dunia: kurang dari setengah kilometer persegi."
  },
  "d429907f8fad": {
   "en": "Massachusetts",
@@ -7799,6 +8095,10 @@
   "en": "SV",
   "t": "SV"
  },
+ "ddba2c9277cd": {
+  "en": " Gemini ",
+  "t": "Gemini"
+ },
  "ddd902407758": {
   "en": "Tattoo on my left forearm",
   "t": "Tato di lengan bawah kiriku"
@@ -7882,6 +8182,10 @@
  "e0036bf9d252": {
   "en": "Enlarge: Salesman and his companion",
   "t": "Perbesar: Si penjual dan rekannya"
+ },
+ "e01002532f4a": {
+  "en": "Pro tip: check the signs, the plugs and which side of the road the cars drive on.",
+  "t": "Tips: perhatikan papan petunjuk, colokan listrik, dan mobil melaju di sisi jalan yang mana."
  },
  "e0184adedf91": {
   "en": "E",
@@ -7979,6 +8283,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez"
  },
+ "e315e9529ed9": {
+  "en": "Nashville has a full-size replica of the Parthenon of Athens.",
+  "t": "Nashville punya replika Parthenon dari Athena dalam ukuran asli."
+ },
  "e33dd04a8af1": {
   "en": "Enlarge: The trail map",
   "t": "Perbesar: Peta jalur"
@@ -8006,6 +8314,10 @@
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
   "t": "Lempar Burung, butuh 3 mana (tombol 2)"
+ },
+ "e43916e49699": {
+  "en": "1 left",
+  "t": "Sisa 1"
  },
  "e45f65625355": {
   "en": "amethyst",
@@ -8082,6 +8394,10 @@
  "e68b871a3f8d": {
   "en": "Autonauts",
   "t": "Autonauts"
+ },
+ "e694469949d6": {
+  "en": "No photos yet.",
+  "t": "Belum ada foto."
  },
  "e69f20e9f683": {
   "en": "F",
@@ -8523,6 +8839,10 @@
   "en": "Plays from YouTube when you click",
   "t": "Diputar dari YouTube saat kamu klik"
  },
+ "f54c3e38c29e": {
+  "en": "At Cadillac Ranch in Amarillo, Texas, ten Cadillacs stand nose-down in the dirt, and spray-painting them is encouraged.",
+  "t": "Di Cadillac Ranch di Amarillo, Texas, sepuluh Cadillac tertancap moncong ke bawah di tanah, dan mengecatnya dengan semprotan justru dianjurkan."
+ },
  "f55f2f49a5fb": {
   "en": "243 h",
   "t": "243 h"
@@ -8595,6 +8915,14 @@
   "en": "99 h",
   "t": "99 h"
  },
+ "f7728e6f8374": {
+  "en": " Atlas Obscura ",
+  "t": "Atlas Obscura"
+ },
+ "f7ebf3ce2a64": {
+  "en": "Save it! Ask me while a photo is up.",
+  "t": "Simpan dulu! Tanya aku saat ada foto."
+ },
  "f80471683dd2": {
   "en": " Action &amp; adventure ",
   "t": "Aksi &amp; petualangan"
@@ -8602,6 +8930,10 @@
  "f80d1870d042": {
   "en": " ← Close the chunk ",
   "t": "← Tutup potongan"
+ },
+ "f813212f2d43": {
+  "en": "China is wide enough for five time zones, but the whole country runs on one clock: Beijing time.",
+  "t": "Tiongkok cukup luas untuk lima zona waktu, tetapi seluruh negeri memakai satu jam: waktu Beijing."
  },
  "f84872e84d43": {
   "en": " F16 LED Matrix Mgr ",
@@ -8779,6 +9111,10 @@
   "en": "Japan",
   "t": "Jepang"
  },
+ "fcf66edbab92": {
+  "en": "Minnesota calls itself the Land of 10,000 Lakes, but it actually has more than 11,000.",
+  "t": "Minnesota menjuluki dirinya Tanah 10.000 Danau, padahal sebenarnya ada lebih dari 11.000."
+ },
  "fd5ffa4da538": {
   "en": "Enlarge: Super doggo",
   "t": "Perbesar: Anjing super"
@@ -8794,6 +9130,10 @@
  "fd932a42296c": {
   "en": "Did I undersleep or oversleep",
   "t": "Aku kurang tidur atau kebanyakan tidur"
+ },
+ "fdaa9e2265a8": {
+  "en": "Recife, in Pernambuco, is nicknamed the Brazilian Venice for its rivers and bridges.",
+  "t": "Recife di Pernambuco dijuluki Venesia Brasil karena sungai dan jembatannya."
  },
  "fdd2b6874d7f": {
   "en": "RA",
