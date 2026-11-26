@@ -815,6 +815,10 @@
   "en": "Enlarge: Breakfast",
   "t": "Perbesar: Sarapan"
  },
+ "172583712386": {
+  "en": "Every metric over time, one small chart each. Tap or hover a chart and every chart shows the same day, week or month.",
+  "t": "Setiap metrik dari waktu ke waktu, satu grafik kecil untuk masing-masing. Ketuk atau arahkan ke grafik dan semua grafik menampilkan hari, minggu, atau bulan yang sama."
+ },
  "174e4a9ea359": {
   "en": "North Dakota's Enchanted Highway is lined with giant scrap-metal sculptures, and Geese in Flight is the largest scrap-metal sculpture in the world.",
   "t": "Jalan raya Enchanted Highway di North Dakota dipenuhi patung besi bekas raksasa, dan Geese in Flight adalah patung besi bekas terbesar di dunia."
@@ -1226,10 +1230,6 @@
  "222368a81152": {
   "en": "Failing to learn English",
   "t": "Gagal belajar bahasa Inggris"
- },
- "222a9a1d0cfc": {
-  "en": "Month by month, one line per year, so the winters line up with each other. Hover a line to pick out its year.",
-  "t": "Bulan demi bulan, satu garis per tahun, agar musim dingin sejajar. Arahkan ke garis untuk menyorot tahunnya."
  },
  "2234c20b68ff": {
   "en": "30 h",
@@ -2447,6 +2447,10 @@
   "en": " 363 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "363 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">perkiraan</span>"
  },
+ "4250f34091c2": {
+  "en": "Tap or hover a dot for its month.",
+  "t": "Ketuk atau arahkan ke titik untuk melihat bulannya."
+ },
  "42c3797fbacc": {
   "en": " Stoneridge Software posts ",
   "t": "Tulisan di Stoneridge Software"
@@ -2606,10 +2610,6 @@
  "47f53f079a30": {
   "en": "You got {score} out of {total}.",
   "t": "Kamu benar {score} dari {total}."
- },
- "481021d04da3": {
-  "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
-  "t": "Setiap metrik dari waktu ke waktu, satu grafik kecil untuk masing-masing. Arahkan ke grafik dan semua grafik menampilkan hari, minggu, atau bulan yang sama."
  },
  "482c33fb5f57": {
   "en": "1,137 h",
@@ -2794,10 +2794,6 @@
  "4d6474389c69": {
   "en": " BW ",
   "t": "BW"
- },
- "4d90542645b2": {
-  "en": "Hover a dot for its month.",
-  "t": "Arahkan ke titik untuk melihat bulannya."
  },
  "4d968a30a022": {
   "en": "no data",
@@ -3278,6 +3274,10 @@
  "57e3e71a00f2": {
   "en": "Stardew Valley",
   "t": "Stardew Valley"
+ },
+ "57fa2afffcfd": {
+  "en": "Month by month, one line per year, so the winters line up with each other. Tap or hover a line to pick out its year.",
+  "t": "Bulan demi bulan, satu garis per tahun, agar musim dingin sejajar. Ketuk atau arahkan ke garis untuk menyorot tahunnya."
  },
  "57fdad685146": {
   "en": " RC ",

@@ -815,6 +815,10 @@
   "en": "Enlarge: Breakfast",
   "t": "Vergrößern: Frühstück"
  },
+ "172583712386": {
+  "en": "Every metric over time, one small chart each. Tap or hover a chart and every chart shows the same day, week or month.",
+  "t": "Jeder Messwert im Zeitverlauf, ein kleines Diagramm pro Wert. Tipp auf ein Diagramm oder fahr darüber, und alle zeigen denselben Tag, dieselbe Woche oder denselben Monat."
+ },
  "174e4a9ea359": {
   "en": "North Dakota's Enchanted Highway is lined with giant scrap-metal sculptures, and Geese in Flight is the largest scrap-metal sculpture in the world.",
   "t": "Der Enchanted Highway in North Dakota ist von riesigen Schrottskulpturen gesäumt, und Geese in Flight ist die größte Schrottskulptur der Welt."
@@ -1226,10 +1230,6 @@
  "222368a81152": {
   "en": "Failing to learn English",
   "t": "Englisch lernen klappt nicht"
- },
- "222a9a1d0cfc": {
-  "en": "Month by month, one line per year, so the winters line up with each other. Hover a line to pick out its year.",
-  "t": "Monat für Monat, eine Linie pro Jahr, damit die Winter übereinanderliegen. Fahr über eine Linie, um ihr Jahr hervorzuheben."
  },
  "2234c20b68ff": {
   "en": "30 h",
@@ -2447,6 +2447,10 @@
   "en": " 363 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "363 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">geschätzt</span>"
  },
+ "4250f34091c2": {
+  "en": "Tap or hover a dot for its month.",
+  "t": "Tipp auf einen Punkt oder fahr darüber, um seinen Monat zu sehen."
+ },
  "42c3797fbacc": {
   "en": " Stoneridge Software posts ",
   "t": "Beiträge bei Stoneridge Software"
@@ -2606,10 +2610,6 @@
  "47f53f079a30": {
   "en": "You got {score} out of {total}.",
   "t": "Du hast {score} von {total} richtig."
- },
- "481021d04da3": {
-  "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
-  "t": "Jeder Messwert im Zeitverlauf, ein kleines Diagramm pro Wert. Fahr über ein Diagramm, und alle zeigen denselben Tag, dieselbe Woche oder denselben Monat."
  },
  "482c33fb5f57": {
   "en": "1,137 h",
@@ -2794,10 +2794,6 @@
  "4d6474389c69": {
   "en": " BW ",
   "t": "BW"
- },
- "4d90542645b2": {
-  "en": "Hover a dot for its month.",
-  "t": "Fahr über einen Punkt, um seinen Monat zu sehen."
  },
  "4d968a30a022": {
   "en": "no data",
@@ -3278,6 +3274,10 @@
  "57e3e71a00f2": {
   "en": "Stardew Valley",
   "t": "Stardew Valley"
+ },
+ "57fa2afffcfd": {
+  "en": "Month by month, one line per year, so the winters line up with each other. Tap or hover a line to pick out its year.",
+  "t": "Monat für Monat, eine Linie pro Jahr, damit die Winter übereinanderliegen. Tipp auf eine Linie oder fahr darüber, um ihr Jahr hervorzuheben."
  },
  "57fdad685146": {
   "en": " RC ",

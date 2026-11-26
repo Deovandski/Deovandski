@@ -815,6 +815,10 @@
   "en": "Enlarge: Breakfast",
   "t": "Phóng to: Bữa sáng"
  },
+ "172583712386": {
+  "en": "Every metric over time, one small chart each. Tap or hover a chart and every chart shows the same day, week or month.",
+  "t": "Mỗi chỉ số theo thời gian, mỗi chỉ số một biểu đồ nhỏ. Chạm hoặc rê chuột lên một biểu đồ thì mọi biểu đồ cùng hiện cùng một ngày, tuần hoặc tháng."
+ },
  "174e4a9ea359": {
   "en": "North Dakota's Enchanted Highway is lined with giant scrap-metal sculptures, and Geese in Flight is the largest scrap-metal sculpture in the world.",
   "t": "Đường cao tốc Enchanted Highway ở North Dakota có những tác phẩm điêu khắc bằng sắt vụn khổng lồ, và Geese in Flight là tác phẩm điêu khắc sắt vụn lớn nhất thế giới."
@@ -1226,10 +1230,6 @@
  "222368a81152": {
   "en": "Failing to learn English",
   "t": "Học tiếng Anh thất bại"
- },
- "222a9a1d0cfc": {
-  "en": "Month by month, one line per year, so the winters line up with each other. Hover a line to pick out its year.",
-  "t": "Từng tháng một, mỗi năm một đường, để các mùa đông thẳng hàng với nhau. Rê chuột lên một đường để làm nổi bật năm của nó."
  },
  "2234c20b68ff": {
   "en": "30 h",
@@ -2447,6 +2447,10 @@
   "en": " 363 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "363 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ước tính</span>"
  },
+ "4250f34091c2": {
+  "en": "Tap or hover a dot for its month.",
+  "t": "Chạm hoặc rê chuột lên một điểm để xem tháng của nó."
+ },
  "42c3797fbacc": {
   "en": " Stoneridge Software posts ",
   "t": "Bài viết ở Stoneridge Software"
@@ -2606,10 +2610,6 @@
  "47f53f079a30": {
   "en": "You got {score} out of {total}.",
   "t": "Bạn đúng {score} trên {total}."
- },
- "481021d04da3": {
-  "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
-  "t": "Mỗi chỉ số theo thời gian, mỗi chỉ số một biểu đồ nhỏ. Rê chuột lên một biểu đồ thì mọi biểu đồ cùng hiện cùng một ngày, tuần hoặc tháng."
  },
  "482c33fb5f57": {
   "en": "1,137 h",
@@ -2794,10 +2794,6 @@
  "4d6474389c69": {
   "en": " BW ",
   "t": "BW"
- },
- "4d90542645b2": {
-  "en": "Hover a dot for its month.",
-  "t": "Rê chuột lên một điểm để xem tháng của nó."
  },
  "4d968a30a022": {
   "en": "no data",
@@ -3278,6 +3274,10 @@
  "57e3e71a00f2": {
   "en": "Stardew Valley",
   "t": "Stardew Valley"
+ },
+ "57fa2afffcfd": {
+  "en": "Month by month, one line per year, so the winters line up with each other. Tap or hover a line to pick out its year.",
+  "t": "Từng tháng một, mỗi năm một đường, để các mùa đông thẳng hàng với nhau. Chạm hoặc rê chuột lên một đường để làm nổi bật năm của nó."
  },
  "57fdad685146": {
   "en": " RC ",

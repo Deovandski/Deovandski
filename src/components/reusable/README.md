@@ -612,7 +612,7 @@ Years of daily numbers to slice and dice. Group boxes of checkboxes on top: year
 the nights after an "event" (such as exercise) or not, and which kinds of event count. A box always keeps one box
 ticked. Under them, five views, picked with `PillSwitch`:
 
-- **Timeline:** one small chart per metric, by day, week or month, picked in boxes by metric group. Hover one and every
+- **Timeline:** one small chart per metric, by day, week or month, picked in boxes by metric group. Tap or hover one and every
   chart shows the same date.
 - **Event** (named by `event.view`): the day after each event against every other day, as a median dot, the middle
   half of the days as a bar, and the difference.

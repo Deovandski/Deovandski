@@ -123,7 +123,7 @@ const SEASONS = ['Winter', 'Spring', 'Summer', 'Fall'];
     <span data-k="high">high</span>
     <span data-k="middle">{'{a}'} to {'{b}'} (the middle 60%)</span>
     <span data-k="seasonsEmpty">No month has 5 or more days in these filters.</span>
-    <span data-k="hoverDot">Hover a dot for its month.</span>
+    <span data-k="hoverDot">Tap or hover a dot for its month.</span>
     <span data-k="compareEmpty">Not enough days with both numbers.</span>
     <span data-k="year">Year</span>
     <span data-k="r0">barely related</span>
@@ -179,7 +179,7 @@ const SEASONS = ['Winter', 'Spring', 'Summer', 'Fall'];
 
   <div id={`${id}-timeline`} role="tabpanel" aria-labelledby={`${id}-tab-timeline`} class="metric-lab__view" data-view="timeline">
     <div class="metric-lab__vhead">
-      <p>Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.</p>
+      <p>Every metric over time, one small chart each. Tap or hover a chart and every chart shows the same day, week or month.</p>
       <span class="metric-lab__sel"><label for={`${id}-group`}>Average by</label>
         <select id={`${id}-group`} data-lab="group">
           <option value="day">day</option>
@@ -226,7 +226,7 @@ const SEASONS = ['Winter', 'Spring', 'Summer', 'Fall'];
 
   <div id={`${id}-seasons`} role="tabpanel" aria-labelledby={`${id}-tab-seasons`} class="metric-lab__view" data-view="seasons" hidden>
     <div class="metric-lab__vhead">
-      <p>Month by month, one line per year, so the winters line up with each other. Hover a line to pick out its year.</p>
+      <p>Month by month, one line per year, so the winters line up with each other. Tap or hover a line to pick out its year.</p>
       <span class="metric-lab__sel"><label for={`${id}-seasons`}>Metric</label>
         <select id={`${id}-seasons`} data-lab="seasons">{groups.map((g) => g.name ? <optgroup label={g.name}>{g.items.map((m) => <option value={m.key} selected={m.key === d.seasons}>{m.label}</option>)}</optgroup> : g.items.map((m) => <option value={m.key} selected={m.key === d.seasons}>{m.label}</option>))}</select>
       </span>
