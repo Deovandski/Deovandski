@@ -7,6 +7,10 @@
   "en": "Deovandski, home",
   "t": "Deovandski, laman utama"
  },
+ "15c61d430df1": {
+  "en": "You’re using the installed app.",
+  "t": "Anda sedang menggunakan apl yang dipasang."
+ },
  "5a1d7fe00c79": {
   "en": "Made by Deovandski Skibinski Junior cracking the whip on Claude huehuehue ;P · <a href=\"/llms.txt\" data-astro-cid-5hce7sga=\"\">llms.txt</a> · <a href=\"/llms-full.txt\" data-astro-cid-5hce7sga=\"\">llms-full.txt</a>",
   "t": "Dibuat oleh Deovandski Skibinski Junior sambil melibas cemeti pada Claude huehuehue ;P · <a href=\"/llms.txt\" data-astro-cid-5hce7sga=\"\">llms.txt</a> · <a href=\"/llms-full.txt\" data-astro-cid-5hce7sga=\"\">llms-full.txt</a>"
@@ -27,6 +31,10 @@
   "en": "Language",
   "t": "Bahasa"
  },
+ "9e3f4c60afcd": {
+  "en": "No install button? Open this page in Chrome (⋮ → Open in Chrome), then ⋮ → Install app.",
+  "t": "Tiada butang pasang? Buka halaman ini dalam Chrome (⋮ → Buka dalam Chrome), kemudian ⋮ → Pasang apl."
+ },
  "a68eb230823a": {
   "en": " Playground ",
   "t": "Taman Permainan"
@@ -34,6 +42,10 @@
  "b37456c4530b": {
   "en": " Contact ",
   "t": "Hubungi"
+ },
+ "bd1cf21678f6": {
+  "en": "Installed! Open it from your home screen or app list.",
+  "t": "Sudah dipasang! Buka dari skrin utama atau senarai apl."
  },
  "c3850bab87fc": {
   "en": "Vraki mode <small data-astro-cid-pajorjl7=\"\">(read everything in the Vraki script)</small> <small class=\"vraki-note\" data-astro-cid-pajorjl7=\"\">Vraki mode works with the English text only.</small>",
@@ -43,12 +55,28 @@
   "en": "Settings",
   "t": "Tetapan"
  },
+ "ccd62e5d37a0": {
+  "en": "To install it, open this page in Chrome, Edge or Samsung Internet. On iPhone or iPad: Share, then Add to Home Screen.",
+  "t": "Untuk memasangnya, buka halaman ini dalam Chrome, Edge atau Samsung Internet. Pada iPhone atau iPad: Kongsi → Tambah ke Skrin Utama."
+ },
  "d36880a182c5": {
   "en": "Want a language added?",
   "t": "Mahu bahasa lain ditambah?"
  },
+ "d5636c56abfd": {
+  "en": "On iPhone or iPad: tap Share, then Add to Home Screen.",
+  "t": "Pada iPhone atau iPad: ketik Kongsi, kemudian Tambah ke Skrin Utama."
+ },
+ "e5f79aa13bd5": {
+  "en": "Install app",
+  "t": "Pasang apl"
+ },
  "e9b450d14bc2": {
   "en": "Done",
   "t": "Selesai"
+ },
+ "fc4a695f02a8": {
+  "en": "App",
+  "t": "Apl"
  }
 }

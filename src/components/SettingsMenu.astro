@@ -1,10 +1,11 @@
 ---
 // The gear (top right of the header) and the Settings menu it opens: Language, "Want a language added?" and
-// Vraki mode (#87). Copied from Deovandski-repo-template's Gear.astro + SettingsDialog.astro and adapted; Vraki mode
+// Vraki mode (#87), and App: the Install app button (#292). Copied from Deovandski-repo-template's Gear.astro + SettingsDialog.astro and adapted; Vraki mode
 // works like husbandoutworld.com's. The behaviour is in src/scripts/settings.ts, and the inline script in
 // Base.astro applies the saved choices before the page paints.
 // The Language list comes from content/i18n/<code>/meta.json, in the order of content/i18n/config.json.
 import config from '../../content/i18n/config.json';
+import InstallApp from './reusable/InstallApp.astro';
 
 interface LanguageMeta { name: string; html_lang?: string }
 const metas = import.meta.glob<LanguageMeta>('../../content/i18n/*/meta.json', { eager: true, import: 'default' });
@@ -30,6 +31,7 @@ const languages = config.languages.filter((c) => byCode.has(c)).map((code) => ({
       <span>Vraki mode <small>(read everything in the Vraki script)</small> <small class="vraki-note">Vraki mode works with the English text only.</small></span>
       <input data-setting="vraki" type="checkbox" />
     </label>
+    <div class="setting"><span>App</span><InstallApp class="settings-install" /></div>
     <div class="done"><button value="close">Done</button></div>
   </form>
 </dialog>
@@ -79,6 +81,7 @@ const languages = config.languages.filter((c) => byCode.has(c)).map((code) => ({
   .setting-link a { color: var(--teal); }
   .vraki-note { display: none !important; }
   :global(html[data-lang]) .vraki-note { display: block !important; }
+  .site-settings :global(.settings-install) { --install-muted: var(--muted); --install-accent: var(--teal); --install-ink: var(--night); }
   .done { display: flex; justify-content: flex-end; }
   .done button {
     font: inherit;

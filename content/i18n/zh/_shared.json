@@ -7,6 +7,10 @@
   "en": "Deovandski, home",
   "t": "Deovandski，首页"
  },
+ "15c61d430df1": {
+  "en": "You’re using the installed app.",
+  "t": "你正在使用已安装的应用。"
+ },
  "5a1d7fe00c79": {
   "en": "Made by Deovandski Skibinski Junior cracking the whip on Claude huehuehue ;P · <a href=\"/llms.txt\" data-astro-cid-5hce7sga=\"\">llms.txt</a> · <a href=\"/llms-full.txt\" data-astro-cid-5hce7sga=\"\">llms-full.txt</a>",
   "t": "由 Deovandski Skibinski Junior 制作，一边挥鞭督促 Claude 干活 huehuehue ;P · <a href=\"/llms.txt\" data-astro-cid-5hce7sga=\"\">llms.txt</a> · <a href=\"/llms-full.txt\" data-astro-cid-5hce7sga=\"\">llms-full.txt</a>"
@@ -27,6 +31,10 @@
   "en": "Language",
   "t": "语言"
  },
+ "9e3f4c60afcd": {
+  "en": "No install button? Open this page in Chrome (⋮ → Open in Chrome), then ⋮ → Install app.",
+  "t": "没有安装按钮？用 Chrome 打开此页面（⋮ → 在 Chrome 中打开），然后 ⋮ → 安装应用。"
+ },
  "a68eb230823a": {
   "en": " Playground ",
   "t": "游乐场"
@@ -34,6 +42,10 @@
  "b37456c4530b": {
   "en": " Contact ",
   "t": "联系"
+ },
+ "bd1cf21678f6": {
+  "en": "Installed! Open it from your home screen or app list.",
+  "t": "已安装！从主屏幕或应用列表中打开它。"
  },
  "c3850bab87fc": {
   "en": "Vraki mode <small data-astro-cid-pajorjl7=\"\">(read everything in the Vraki script)</small> <small class=\"vraki-note\" data-astro-cid-pajorjl7=\"\">Vraki mode works with the English text only.</small>",
@@ -43,12 +55,28 @@
   "en": "Settings",
   "t": "设置"
  },
+ "ccd62e5d37a0": {
+  "en": "To install it, open this page in Chrome, Edge or Samsung Internet. On iPhone or iPad: Share, then Add to Home Screen.",
+  "t": "要安装，请用 Chrome、Edge 或 Samsung Internet 打开此页面。在 iPhone 或 iPad 上：共享 → 添加到主屏幕。"
+ },
  "d36880a182c5": {
   "en": "Want a language added?",
   "t": "想添加一种语言？"
  },
+ "d5636c56abfd": {
+  "en": "On iPhone or iPad: tap Share, then Add to Home Screen.",
+  "t": "在 iPhone 或 iPad 上：点“共享”，然后“添加到主屏幕”。"
+ },
+ "e5f79aa13bd5": {
+  "en": "Install app",
+  "t": "安装应用"
+ },
  "e9b450d14bc2": {
   "en": "Done",
   "t": "完成"
+ },
+ "fc4a695f02a8": {
+  "en": "App",
+  "t": "应用"
  }
 }
