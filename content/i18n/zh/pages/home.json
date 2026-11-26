@@ -19,6 +19,10 @@
   "en": "Each moon is a game, sized by its hours.",
   "t": "每颗卫星是一款游戏，大小代表时数。"
  },
+ "00f03137e155": {
+  "en": "Easy",
+  "t": "简单"
+ },
  "00f2a5f37536": {
   "en": "Enlarge: Third year since adoption",
   "t": "放大: 领养三周年"
@@ -711,6 +715,10 @@
   "en": "2 mana · 1",
   "t": "2 法力 · 1"
  },
+ "17b08ffe42a2": {
+  "en": "Easy · 100 BPM",
+  "t": "简单 · 100 BPM"
+ },
  "17d49e2467c8": {
   "en": "55 h",
   "t": "55 小时"
@@ -975,6 +983,10 @@
   "en": "Deo in 2016 in a blue shirt and tie at an outdoor dinner",
   "t": "2016 年的 Deo，在一场户外晚宴上穿着蓝衬衫、打着领带"
  },
+ "20a89915f18c": {
+  "en": "Hard",
+  "t": "困难"
+ },
  "20a8df9b7603": {
   "en": "Spain",
   "t": "西班牙"
@@ -1134,10 +1146,6 @@
  "25270ee78057": {
   "en": "Balls worth {balls} pearls vs {shit} shit.",
   "t": "球值 {balls} 珀尔，对比 {shit} 坨屎。"
- },
- "2555abc1fb60": {
-  "en": "#1 The point",
-  "t": "#1 指天"
  },
  "25593f782a85": {
   "en": "Dino Ambush",
@@ -1691,6 +1699,10 @@
   "en": "+ 16 more games",
   "t": "+ 另外 16 款游戏"
  },
+ "35cf6a830c19": {
+  "en": "Expert · 132 BPM",
+  "t": "专家 · 132 BPM"
+ },
  "35d24a82655a": {
   "en": " PW ",
   "t": "PW"
@@ -2082,10 +2094,6 @@
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
   "t": "一张老照片：巴西亚马孙地区一个红土露天金矿坑里，一个小孩和两个男人"
- },
- "4322655424cd": {
-  "en": "Routine #{n}: {routine}.",
-  "t": "套路 #{n}：{routine}。"
  },
  "435b659ef5e1": {
   "en": "🎬 Movies",
@@ -2530,10 +2538,6 @@
  "50f3a1f81184": {
   "en": "17 h",
   "t": "17 小时"
- },
- "51162daf4d1b": {
-  "en": "#4 Toe stand",
-  "t": "#4 踮脚"
  },
  "511993d3c997": {
   "en": "P",
@@ -5191,6 +5195,10 @@
   "en": "Enlarge: Mickey D's",
   "t": "放大: 麦当劳"
  },
+ "a1a6cd89dd4f": {
+  "en": "Beat",
+  "t": "节拍"
+ },
  "a1d7742427fb": {
   "en": "I am old enough to get day drunk",
   "t": "我已经到了可以白天喝醉的年纪"
@@ -5202,6 +5210,10 @@
  "a21d32457f2f": {
   "en": " 261 h  ",
   "t": "261 小时"
+ },
+ "a2388074beca": {
+  "en": "Routine #{n}: {routine}, {level}, {bpm} BPM.",
+  "t": "套路 #{n}：{routine}，{level}，{bpm} BPM。"
  },
  "a255233a0083": {
   "en": "Roll the dice",
@@ -5451,10 +5463,6 @@
   "en": "Portuguese: 10 of 10, Fully bilingual",
   "t": "葡萄牙语：10 分（满分 10），完全双语"
  },
- "a94147d8bac2": {
-  "en": "#3 Hustle",
-  "t": "#3 Hustle"
- },
  "a94555ea7a3b": {
   "en": "Enlarge: Did I undersleep or oversleep",
   "t": "放大: 我是睡少了还是睡多了"
@@ -5630,10 +5638,6 @@
  "ae2caea4bb1f": {
   "en": "KC",
   "t": "KC"
- },
- "ae3e542098c8": {
-  "en": "#2 Line dance",
-  "t": "#2 排舞"
  },
  "ae4d8a00b6ce": {
   "en": "▶️ +{views} views",
@@ -6287,6 +6291,10 @@
   "en": "Rauw Alejandro",
   "t": "Rauw Alejandro"
  },
+ "c5352fbe59ff": {
+  "en": "Next routine",
+  "t": "下一套"
+ },
  "c574501fd8fe": {
   "en": "Roll d{sides} (last roll {result})",
   "t": "掷 d{sides}（上次结果 {result}）"
@@ -6779,6 +6787,10 @@
   "en": " NS ",
   "t": "NS"
  },
+ "d404968ea90b": {
+  "en": "Medium",
+  "t": "中等"
+ },
  "d41a25e62a6c": {
   "en": "Mentor",
   "t": "导师"
@@ -6902,6 +6914,10 @@
  "d7925e873bbc": {
   "en": "Halloween",
   "t": "万圣节"
+ },
+ "d7a501f83242": {
+  "en": "Expert",
+  "t": "专家"
  },
  "d7be16a1d060": {
   "en": "Enlarge: Meeting Big Chungus",
@@ -7326,6 +7342,10 @@
  "e53060217b21": {
   "en": "Not enough energy. It refills every second.",
   "t": "能量不足。每秒回复。"
+ },
+ "e537891a49a9": {
+  "en": "Hard · 122 BPM",
+  "t": "困难 · 122 BPM"
  },
  "e57dfe809709": {
   "en": "Whack the Miku (bottom right, key 4)",
@@ -7851,6 +7871,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder movie 32 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 32: </span> 占位电影 32"
  },
+ "f876ef95a461": {
+  "en": "Previous routine",
+  "t": "上一套"
+ },
  "f88380a61053": {
   "en": "Enlarge: Artsy Bidu",
   "t": "放大: 文艺范 Bidu"
@@ -7866,6 +7890,10 @@
  "f8c0bcd95697": {
   "en": "Death as my compass",
   "t": "死亡是我的指南针"
+ },
+ "f8c3bb2a4e82": {
+  "en": "Medium · 112 BPM",
+  "t": "中等 · 112 BPM"
  },
  "f8c3ef3abd60": {
   "en": "Aquamarine Melon",

@@ -1,0 +1,309 @@
+---
+/**
+ * ReelPicker: a View-Master-style picker. The choices are cards around the rim of a round plate. A window shows
+ * one card fully, plus a sliver of the card before it (above) and the one after it (below). Drag or swipe up and down
+ * to turn the plate anticlockwise or clockwise; it snaps to the nearest card when you let go. Built for the
+ * Saturday Night Fever routines (#274).
+ *
+ *   <ReelPicker
+ *     label="Pick a routine"
+ *     items={[
+ *       { label: 'The point', detail: 'Easy · 100 BPM' },
+ *       { label: 'The hustle', detail: 'Hard · 122 BPM' },
+ *     ]}
+ *   />
+ *
+ * Each card has an empty art box, `[data-reel-art][data-index="<n>"]`, for a picture: put an <img> in it, or have
+ * your script draw a <canvas> there (StageDancer draws each routine's pose). Short lists repeat around the plate so
+ * it always has at least 8 cards; only the first copy of each card is announced to screen readers.
+ *
+ * Props:
+ *   items     [{ label, detail? }] in order. label: the card's name; detail: a smaller second line.
+ *   label     the picker's name for screen readers.
+ *   selected  the index of the card shown first. Default 0.
+ *   prev, next  the step buttons' names for screen readers. Default "Previous" and "Next".
+ *   class     extra classes on the root.
+ *
+ * Events, on the root (they bubble):
+ *   reel:change  fired when the plate settles on a different card: detail { index, source } ('user' or 'script').
+ *   reel:select  dispatch it on the root with detail { index } to turn the plate to that card from a script.
+ * Keyboard (on the window): ↑ ↓ (and ← →) turn one card, Home goes back to the first.
+ *
+ * Theme with CSS custom properties: --reel-card (the card's size, 112px), --reel-accent (#39c5bb), --reel-plate
+ * (the plate, #16122a), --reel-card-bg (#0b0918), --reel-text (#f2f2f7), --reel-muted (#a9a3c2).
+ * Reduced motion: the plate jumps to the card instead of turning.
+ * Reusable on purpose: no imports, safe to use several times on a page.
+ */
+interface Item { label: string; detail?: string }
+interface Props { items: Item[]; label: string; selected?: number; prev?: string; next?: string; class?: string }
+const { items, label, selected = 0, prev = 'Previous', next = 'Next', class: className } = Astro.props;
+const n = items.length;
+// At least 8 cards around the plate, so the neighbours peek into the window at 45° or less.
+const copies = Math.max(1, Math.ceil(8 / Math.max(1, n)));
+const slots = n * copies;
+const uid = `reel-${Math.random().toString(36).slice(2, 8)}`;
+---
+
+<div class:list={['reel', className]} data-reel data-count={n} data-slots={slots} data-selected={selected} style={`--slots:${slots}`}>
+  <div class="reel__window" role="listbox" tabindex="0" aria-label={label} aria-activedescendant={`${uid}-${selected}`}>
+    <div class="reel__plate">
+      <span class="reel__hub" aria-hidden="true"></span>
+      {
+        Array.from({ length: slots }, (_, s) => {
+          const i = s % n;
+          const first = s < n;
+          return (
+            <div
+              class="reel__card"
+              style={`--i:${s}`}
+              data-slot={s}
+              data-index={i}
+              id={first ? `${uid}-${i}` : undefined}
+              role={first ? 'option' : undefined}
+              aria-selected={first ? String(i === selected) : undefined}
+              aria-hidden={first ? undefined : 'true'}
+            >
+              <span class="reel__art" data-reel-art data-index={i} aria-hidden="true" />
+              <span class="reel__name">{items[i].label}</span>
+              {items[i].detail && <span class="reel__detail">{items[i].detail}</span>}
+            </div>
+          );
+        })
+      }
+    </div>
+  </div>
+  <div class="reel__steps">
+    <button type="button" class="reel__step" data-step="-1" aria-label={prev}>
+      <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 9.5L7 5l4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
+    <button type="button" class="reel__step" data-step="1" aria-label={next}>
+      <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 4.5L7 9l4.5-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+    </button>
+  </div>
+</div>
+
+<style>
+  .reel {
+    --_s: var(--reel-card, 112px);
+    --_accent: var(--reel-accent, #39c5bb);
+    /* The cards sit this far from the plate's centre: far enough that 8 of them don't touch. */
+    --_r: calc(var(--_s) * 1.5);
+    --_peek: calc(var(--_s) * 0.36);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .reel__window {
+    position: relative;
+    flex: none;
+    width: calc(var(--_s) + 16px);
+    height: calc(var(--_s) + var(--_peek) * 2);
+    overflow: hidden;
+    border-radius: 18px;
+    border: 2px solid color-mix(in srgb, var(--_accent) 60%, transparent);
+    background: radial-gradient(circle at calc(50% - var(--_r)) 50%, var(--reel-plate, #16122a) 0 calc(var(--_r) + var(--_s) * 0.62), #07040d 0);
+    touch-action: none; /* the window handles the drag itself */
+    cursor: grab;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .reel__window.is-dragging { cursor: grabbing; }
+  .reel__window:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+  /* The fade at the top and bottom edges, so the neighbours read as "more on the plate". */
+  .reel__window::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(#07040dcc, transparent 28%, transparent 72%, #07040dcc);
+  }
+  /* The plate: a circle whose rim passes through the window's centre. Its centre is off to the left. */
+  .reel__plate {
+    position: absolute;
+    left: calc(50% - var(--_r));
+    top: 50%;
+    width: 0;
+    height: 0;
+    transform: rotate(var(--rot, 0deg));
+  }
+  .reel__plate.is-snapping { transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.3, 1); }
+  .reel__hub {
+    position: absolute;
+    left: -14px;
+    top: -14px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 3px solid var(--_accent);
+  }
+  .reel__card {
+    position: absolute;
+    left: calc(var(--_s) / -2);
+    top: calc(var(--_s) / -2);
+    width: var(--_s);
+    height: var(--_s);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 4px 5px;
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--_accent) 40%, transparent);
+    background: var(--reel-card-bg, #0b0918);
+    color: var(--reel-text, #f2f2f7);
+    text-align: center;
+    transform: rotate(calc(var(--i) * 360deg / var(--slots))) translateX(var(--_r));
+  }
+  .reel__card[aria-selected='true'],
+  .reel__card.is-current {
+    border-color: var(--_accent);
+    box-shadow: 0 0 14px color-mix(in srgb, var(--_accent) 45%, transparent);
+  }
+  .reel__art {
+    flex: 1 1 0;
+    min-height: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  .reel__art :global(canvas),
+  .reel__art :global(img) {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+    image-rendering: pixelated;
+    border-radius: 6px;
+  }
+  .reel__name {
+    max-width: 100%;
+    font-weight: 800;
+    font-size: calc(var(--_s) * 0.115);
+    line-height: 1.15;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .reel__detail {
+    max-width: 100%;
+    font-size: calc(var(--_s) * 0.09);
+    line-height: 1.15;
+    color: var(--reel-muted, #a9a3c2);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .reel__steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .reel__step {
+    width: 2.5rem;
+    height: 2.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid var(--_accent);
+    background: transparent;
+    color: var(--_accent);
+    cursor: pointer;
+  }
+  .reel__step:hover { background: color-mix(in srgb, var(--_accent) 16%, transparent); }
+  .reel__step:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    .reel__plate.is-snapping { transition: none; }
+  }
+</style>
+
+<script>
+  function initReel(root: HTMLElement) {
+    if (root.dataset.reelReady) return;
+    root.dataset.reelReady = '1';
+    const win = root.querySelector<HTMLElement>('.reel__window')!;
+    const plate = root.querySelector<HTMLElement>('.reel__plate')!;
+    const cards = Array.from(root.querySelectorAll<HTMLElement>('.reel__card'));
+    const n = Number(root.dataset.count) || 1;
+    const slots = Number(root.dataset.slots) || n;
+    const step = 360 / slots;
+    // The plate's turn in degrees (clockwise is positive). Slot k is in the window when rot = -k * step.
+    let rot = 0;
+    let index = Number(root.dataset.selected) || 0;
+    const mod = (a: number, m: number) => ((a % m) + m) % m;
+    const radius = () => cards[0].offsetWidth * 1.5;
+
+    function paint(snap: boolean) {
+      plate.classList.toggle('is-snapping', snap);
+      plate.style.setProperty('--rot', `${rot}deg`);
+      const slot = mod(Math.round(-rot / step), slots);
+      cards.forEach((c, s) => c.classList.toggle('is-current', s === slot));
+    }
+    function settle(slot: number, source: 'user' | 'script') {
+      rot = -slot * step;
+      paint(true);
+      const next = mod(slot, n);
+      if (next === index) return;
+      index = next;
+      for (const c of cards) if (c.getAttribute('role') === 'option') c.setAttribute('aria-selected', String(Number(c.dataset.index) === index));
+      const option = cards.find((c) => c.getAttribute('role') === 'option' && Number(c.dataset.index) === index);
+      if (option) win.setAttribute('aria-activedescendant', option.id);
+      root.dispatchEvent(new CustomEvent('reel:change', { bubbles: true, detail: { index, source } }));
+    }
+    // The slot nearest to the current turn that shows card `i` (so the plate takes the short way round).
+    function nearestSlot(i: number) {
+      const here = Math.round(-rot / step);
+      let best = here;
+      let bestDist = Infinity;
+      for (let k = here - slots; k <= here + slots; k++) {
+        if (mod(k, n) !== i) continue;
+        const d = Math.abs(k - here);
+        if (d < bestDist) [best, bestDist] = [k, d];
+      }
+      return best;
+    }
+    const turn = (by: number) => settle(Math.round(-rot / step) + by, 'user');
+
+    // Drag or swipe: up and down turn the plate around its centre; a tap on a peeking card turns to it.
+    let drag: { y: number; rot: number; moved: boolean; id: number } | null = null;
+    win.addEventListener('pointerdown', (e) => {
+      drag = { y: e.clientY, rot, moved: false, id: e.pointerId };
+      win.setPointerCapture(e.pointerId);
+      win.classList.add('is-dragging');
+    });
+    win.addEventListener('pointermove', (e) => {
+      if (!drag || e.pointerId !== drag.id) return;
+      const dy = e.clientY - drag.y;
+      if (Math.abs(dy) > 4) drag.moved = true;
+      rot = drag.rot + (dy / radius()) * (180 / Math.PI); // dragging down turns it clockwise
+      paint(false);
+    });
+    const end = (e: PointerEvent) => {
+      if (!drag || e.pointerId !== drag.id) return;
+      win.classList.remove('is-dragging');
+      const tapped = !drag.moved;
+      drag = null;
+      if (tapped) {
+        const card = document.elementsFromPoint(e.clientX, e.clientY).find((el) => el.classList?.contains('reel__card')) as HTMLElement | undefined;
+        if (card) return settle(nearestSlot(Number(card.dataset.index)), 'user');
+      }
+      settle(Math.round(-rot / step), 'user');
+    };
+    win.addEventListener('pointerup', end);
+    win.addEventListener('pointercancel', end);
+    win.addEventListener('keydown', (e) => {
+      const by = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+      if (by) turn(by);
+      else if (e.key === 'Home') settle(nearestSlot(0), 'user');
+      else return;
+      e.preventDefault();
+    });
+    root.querySelectorAll<HTMLButtonElement>('[data-step]').forEach((b) => b.addEventListener('click', () => turn(Number(b.dataset.step))));
+    root.addEventListener('reel:select', (e) => {
+      const i = Number((e as CustomEvent<{ index: number }>).detail?.index);
+      if (Number.isInteger(i)) settle(nearestSlot(mod(i, n)), 'script');
+    });
+    rot = -index * step;
+    paint(false);
+  }
+  document.querySelectorAll<HTMLElement>('[data-reel]').forEach(initReel);
+</script>

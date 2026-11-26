@@ -1,52 +1,62 @@
 ---
 /**
  * StageDancer: a chibi pixel character dancing disco routines on a stage, under sweeping coloured
- * spotlights, a mirror ball and a light-up floor. Four routines to pick from (#1 to #4):
- *   #1 The point: the Saturday Night Fever "point" (arm up to the sky, then down across the body), hip
+ * spotlights, a mirror ball and a light-up floor. Four routines, picked on a View-Master-style plate (ReelPicker,
+ * #274), each with its own tempo, its own 8-bit loop and its own difficulty:
+ *   #1 The point (Easy, 100 BPM): the Saturday Night Fever "point" (arm up to the sky, then down across the body), hip
  *      rolls and a turn.
- *   #2 The line dance: the "Night Fever" line dance as the 1978-79 disco books wrote it up: back three
+ *   #2 The line dance (Medium, 112 BPM): the "Night Fever" line dance as the 1978-79 disco books wrote it up: back three
  *      and clap, forward three and clap, a turn each way, a snap kick, the skate, the point with merengue
  *      hips, a hand roll, the funky chicken and a pivot.
- *   #3 The hustle: a four-count street hustle with hip bumps and rope arms.
- *   #4 Toe stand & point: up on the toes, one finger pointing straight up, a lean and a kick.
+ *   #3 The hustle (Hard, 122 BPM): a four-count street hustle with hip bumps and rope arms.
+ *   #4 Toe stand & point (Expert, 132 BPM): up on the toes, one finger pointing straight up, a lean and a kick.
  * A fever meter on the right fills while it dances, faster when you tap the stage on the beat, and at the
- * top hits FEVER! (the whole floor lights up). An optional 8-bit disco loop (original music, synthesized
+ * top hits FEVER! (the whole floor lights up). A beat guide on the left scrolls each beat down to a hit line; the band
+ * around the line is how close a tap has to be, so it narrows on the harder routines. An optional 8-bit disco loop (original music, synthesized
  * with Web Audio, no files) plays in time with the dance. The character is drawn in code (no image files),
  * and its colours are props, so it can be dressed differently.
  *
- * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
- * Copy this one file into any Astro project. See README.md in this folder.
+ * Reusable on purpose: no site imports, no site CSS needed, safe to use several times on a page. Copy this file and
+ * ReelPicker.astro (the routine plate) into any Astro project. See README.md in this folder.
  *
  *   <StageDancer label="Chibi Deo dancing" />
- *   <StageDancer outfit={{ robe: '#d33', pattern: '#fff' }} bpm={120} />
+ *   <StageDancer outfit={{ robe: '#d33', pattern: '#fff' }} />
  *
  * Props:
  *   outfit  colours: { hat, hatTrim, skin, beard, robe, pattern, hem, boots }. Defaults: the yellow
  *           king's robes with blue patterns and a black-and-gold crown hat.
- *   bpm     dance tempo in beats per minute. Default 110 (one pose per beat).
  *   label   what's on screen, for screen readers.
  *
  * Theming (CSS custom properties): --dancer-accent (default #39c5bb).
  *
- * Accessible: a text label describes the scene; buttons pick the routine, pause the dance, change the
+ * Accessible: a text label describes the scene; the plate picks the routine (arrow keys or its ▲ ▼ buttons work too),
+ * buttons pause the dance, change the
  * light colours and turn the music on or off; the fever meter is a role="meter" with its value, and Space or
  * Enter on the stage taps the beat. Lights change on the beat (under 3 changes a second, within WCAG's flash
  * limit), and FEVER! only brightens the floor, it doesn't strobe. Reduced motion shows a still point pose
  * with steady lights. The music is off until the visitor turns it on, and stops when the dance pauses or
  * the stage is hidden.
  */
+import ReelPicker from './ReelPicker.astro';
+
 interface Props {
   outfit?: Partial<Record<'hat' | 'hatTrim' | 'skin' | 'beard' | 'robe' | 'pattern' | 'hem' | 'boots', string>>;
-  bpm?: number;
   label?: string;
   class?: string;
 }
 const {
   outfit = {},
-  bpm = 110,
   label = 'A chibi pixel character in yellow king’s robes and a crown hat, dancing the Saturday Night Fever disco point under stage lights.',
   class: className,
 } = Astro.props;
+// The routines: their names, difficulty and tempo (one pose per beat). The script keeps the moves, the music and how
+// close a tap has to be, in the same order.
+const routines = [
+  { name: 'The point', level: 'Easy', bpm: 100 },
+  { name: 'The line dance', level: 'Medium', bpm: 112 },
+  { name: 'The hustle', level: 'Hard', bpm: 122 },
+  { name: 'Toe stand & point', level: 'Expert', bpm: 132 },
+];
 const colors = {
   hat: '#1c1a1d',
   hatTrim: '#e2b33c',
@@ -60,11 +70,9 @@ const colors = {
 };
 // What the script writes (and draws on the stage). It lives in the page so the site's translations reach it.
 const strings: Record<string, string> = {
-  routine0: 'The point',
-  routine1: 'The line dance',
-  routine2: 'The hustle',
-  routine3: 'Toe stand & point',
-  routine: 'Routine #{n}: {routine}.',
+  ...Object.fromEntries(routines.flatMap((r, i) => [[`routine${i}`, r.name], [`level${i}`, r.level]])),
+  routine: 'Routine #{n}: {routine}, {level}, {bpm} BPM.',
+  beat: 'Beat',
   onBeat: 'On beat!',
   offBeat: 'Off beat',
   fever: 'FEVER!',
@@ -76,14 +84,17 @@ const strings: Record<string, string> = {
 };
 ---
 
-<div class:list={['stage-dancer', className]} data-colors={JSON.stringify(colors)} data-bpm={bpm}>
+<div class:list={['stage-dancer', className]} data-colors={JSON.stringify(colors)} data-bpms={JSON.stringify(routines.map((r) => r.bpm))}>
   <div class="stage-dancer__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
-  <div class="stage-dancer__routines" role="group" aria-label="Pick a routine">
-    <button type="button" data-routine="0" aria-pressed="true">#1 The point</button>
-    <button type="button" data-routine="1" aria-pressed="false">#2 Line dance</button>
-    <button type="button" data-routine="2" aria-pressed="false">#3 Hustle</button>
-    <button type="button" data-routine="3" aria-pressed="false">#4 Toe stand</button>
-  </div>
+  <div class="stage-dancer__layout">
+  <ReelPicker
+    class="stage-dancer__reel"
+    label="Pick a routine"
+    prev="Previous routine"
+    next="Next routine"
+    items={routines.map((r) => ({ label: r.name, detail: `${r.level} · ${r.bpm} BPM` }))}
+  />
+  <div class="stage-dancer__main">
   <div class="stage-dancer__stage">
     <canvas class="stage-dancer__canvas" role="img" aria-label={label} tabindex="0"></canvas>
     <div class="stage-dancer__fever" role="meter" aria-label="Fever" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
@@ -98,18 +109,42 @@ const strings: Record<string, string> = {
     <button type="button" data-act="lights">Change the lights</button>
     <button type="button" data-act="music" aria-pressed="false">Music: off</button>
   </div>
+  </div>
+  </div>
 </div>
 
 <style>
   .stage-dancer {
     --_accent: var(--dancer-accent, #39c5bb);
     margin: 0.5rem 0 1.5rem;
+    container-type: inline-size;
   }
-  .stage-dancer__routines {
+  /* The routine plate beside the stage; above it when the stage is narrow (phones). */
+  .stage-dancer__layout {
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-    margin-bottom: 0.5rem;
+    align-items: center;
+    gap: 1rem;
+  }
+  .stage-dancer__main {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  .stage-dancer__reel {
+    --reel-accent: var(--_accent);
+    --reel-card: 128px;
+    flex: none;
+  }
+  @container (max-width: 560px) {
+    .stage-dancer__layout {
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .stage-dancer__main {
+      width: 100%;
+    }
+    .stage-dancer__reel {
+      --reel-card: 104px;
+    }
   }
   .stage-dancer__stage {
     position: relative;
@@ -154,7 +189,7 @@ const strings: Record<string, string> = {
   }
   .stage-dancer__hint {
     position: absolute;
-    left: 12px;
+    left: 48px; /* clear of the beat guide */
     bottom: 8px;
     margin: 0;
     font-size: 0.7rem;
@@ -186,7 +221,6 @@ const strings: Record<string, string> = {
     gap: 0.5rem;
     margin-top: 0.5rem;
   }
-  .stage-dancer__routines button,
   .stage-dancer__controls button {
     min-height: 2.5rem;
     padding: 0.35rem 1rem;
@@ -198,11 +232,9 @@ const strings: Record<string, string> = {
     font-weight: 700;
     cursor: pointer;
   }
-  .stage-dancer__routines button[aria-pressed='true'],
   .stage-dancer__controls button[aria-pressed='true'] {
     background: color-mix(in srgb, var(--_accent) 18%, transparent);
   }
-  .stage-dancer__routines button:focus-visible,
   .stage-dancer__controls button:focus-visible {
     outline: 2px solid #fff;
     outline-offset: 2px;
@@ -274,6 +306,67 @@ const strings: Record<string, string> = {
   const TOE_STAND: Pose[] = [HAND_HIP, HAND_HIP, TOE_POINT, TOE_POINT, LEAN, SIDE_KICK, TURN, TOE_POINT];
 
   const ROUTINES: Pose[][] = [ROUTINE, LINE_DANCE, HUSTLE, TOE_STAND];
+  // The picture on each routine's card on the plate: its signature move.
+  const COVERS: Pose[] = [POINT_UP, SKATE_L, BUMP_R, TOE_POINT];
+  // Difficulty, per routine: how close to the beat a tap must land (a fraction of a beat either side), what an
+  // on-beat tap adds to the fever meter, what an off-beat one takes away, and what each danced beat adds by itself.
+  const LEVELS = [
+    { window: 0.25, hit: 8, miss: 2, drift: 1.5 },
+    { window: 0.2, hit: 7, miss: 3, drift: 1.2 },
+    { window: 0.15, hit: 6, miss: 4, drift: 1 },
+    { window: 0.11, hit: 6, miss: 5, drift: 0.8 },
+  ];
+  // Each routine's own 8-bit loop (original music, not any existing song): four bars of bass roots (MIDI notes), a
+  // square-wave lead (one note per eighth, null = rest), and its drums. Kick on every beat in all of them.
+  type Song = { roots: number[]; lead: (number | null)[][]; hats16?: boolean; openHat?: boolean; claps: number[] };
+  const SONGS: Song[] = [
+    // #1 The point: Am F G Em, offbeat hi-hats, claps on 2 and 4.
+    {
+      roots: [45, 41, 43, 40],
+      lead: [
+        [69, null, 72, null, 76, 74, null, 72],
+        [65, null, 69, null, 72, 69, null, 67],
+        [67, null, 71, null, 74, 72, null, 71],
+        [64, null, 67, null, 71, 69, 67, null],
+      ],
+      claps: [4, 12],
+    },
+    // #2 The line dance: C G Am F, brighter, with an extra clap before each bar ends (the line dance's claps).
+    {
+      roots: [48, 43, 45, 41],
+      lead: [
+        [72, null, 76, 79, null, 76, 74, 72],
+        [71, null, 74, 79, null, 74, 71, 67],
+        [72, null, 76, 81, null, 79, 76, 72],
+        [69, null, 72, 77, null, 76, 74, 72],
+      ],
+      claps: [4, 12, 14],
+    },
+    // #3 The hustle: Dm Bb C A, driving sixteenth hi-hats.
+    {
+      roots: [38, 46, 48, 45],
+      lead: [
+        [74, 77, null, 81, null, 77, 74, null],
+        [70, 74, null, 77, null, 74, 70, null],
+        [72, 76, null, 79, null, 76, 72, null],
+        [73, 76, null, 81, 79, null, 76, 73],
+      ],
+      hats16: true,
+      claps: [4, 12],
+    },
+    // #4 Toe stand & point: Em C D B, open hi-hats on the offbeats and a clap fill to end each bar.
+    {
+      roots: [40, 48, 50, 47],
+      lead: [
+        [76, null, 79, 83, null, 79, 78, 76],
+        [72, null, 76, 79, null, 76, 74, 72],
+        [74, null, 78, 81, null, 78, 76, 74],
+        [71, null, 75, 78, 81, null, 78, 75],
+      ],
+      openHat: true,
+      claps: [4, 12, 14, 15],
+    },
+  ];
 
   // Draws one pose into a GW x GH grid of colours, then outlines it in black.
   function render(pose: Pose, c: Colors): (string | null)[][] {
@@ -393,12 +486,12 @@ const strings: Record<string, string> = {
     const canvas = root.querySelector<HTMLCanvasElement>('.stage-dancer__canvas')!;
     const ctx = canvas.getContext('2d')!;
     const colors: Colors = JSON.parse(root.dataset.colors!);
-    const beat = 60000 / (Number(root.dataset.bpm) || 110);
+    const tempos: number[] = JSON.parse(root.dataset.bpms || '[110]');
+    let beat = 60000 / tempos[0];
     const frames = ROUTINES.map((r) => r.map((p) => render(p, colors)));
     const pauseBtn = root.querySelector<HTMLButtonElement>('[data-act="pause"]')!;
     const lightsBtn = root.querySelector<HTMLButtonElement>('[data-act="lights"]')!;
     const musicBtn = root.querySelector<HTMLButtonElement>('[data-act="music"]')!;
-    const routineBtns = Array.from(root.querySelectorAll<HTMLButtonElement>('[data-routine]'));
     const meter = root.querySelector<HTMLElement>('.stage-dancer__fever')!;
     const status = root.querySelector<HTMLElement>('.stage-dancer__status')!;
     let routine = 0;
@@ -431,7 +524,8 @@ const strings: Record<string, string> = {
     }
 
     function draw(now: number) {
-      const t = (paused ? pausedAt : now) - start;
+      // Never below zero: a frame stamped a moment before a new routine's beat one would count beat -1.
+      const t = Math.max(0, (paused ? pausedAt : now) - start);
       const b = Math.floor(t / beat);
       const pal = PALETTES[(palette + Math.floor(b / 8)) % PALETTES.length];
       ctx.clearRect(0, 0, W, H);
@@ -514,15 +608,71 @@ const strings: Record<string, string> = {
           ctx.fillStyle = col;
           ctx.fillRect(ox + x * p, oy + y * p, p, p);
         }
-      // "On beat!" / "FEVER!" call-outs, top left.
+      drawGuide(t, pal);
+      // "On beat!" / "FEVER!" call-outs, top left, just right of the beat guide.
       const call = b < feverUntil ? msg('fever') : flash && now < flash.until ? flash.text : '';
       if (call) {
         ctx.font = `900 ${Math.max(16, Math.round(H * 0.07))}px system-ui, sans-serif`;
         ctx.textAlign = 'left';
         ctx.fillStyle = b < feverUntil ? pal[(b % 3)] : '#ffffff';
-        ctx.fillText(call, 14, Math.max(26, H * 0.12));
+        ctx.fillText(call, GUIDE.x + GUIDE.w + 10, Math.max(26, H * 0.12));
       }
       if (!paused) beatTick(b);
+    }
+
+    // The beat guide, on the left like the fever meter on the right: each beat scrolls down to the hit line, the
+    // first beat of each bar bigger. The band around the line is the tap window, so it narrows as routines get harder.
+    const GUIDE = { x: 12, w: 24 };
+    function drawGuide(t: number, pal: string[]) {
+      const top = H * 0.12;
+      const bottom = H * 0.88;
+      const hitY = bottom - 16;
+      const gap = (hitY - top) / 3.2; // pixels per beat: about three beats ahead are on screen
+      const { x, w } = GUIDE;
+      ctx.fillStyle = 'rgba(0, 0, 0, 0.45)';
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.55)';
+      ctx.lineWidth = 2;
+      ctx.beginPath();
+      ctx.roundRect(x, top, w, bottom - top, w / 2);
+      ctx.fill();
+      ctx.stroke();
+      ctx.save();
+      ctx.beginPath();
+      ctx.roundRect(x + 1, top + 1, w - 2, bottom - top - 2, w / 2);
+      ctx.clip();
+      // The tap window around the hit line.
+      const win = LEVELS[routine].window * gap;
+      ctx.fillStyle = pal[1] + '40';
+      ctx.fillRect(x, hitY - win, w, win * 2);
+      // The hit line, brighter right on the beat.
+      const phase = (t % beat) / beat;
+      ctx.fillStyle = phase < 0.15 ? '#ffffff' : 'rgba(255, 255, 255, 0.6)';
+      ctx.fillRect(x, hitY - 1, w, 2);
+      // The beats coming down.
+      const now = t / beat;
+      for (let k = Math.floor(now) - 1; k <= Math.floor(now) + 4; k++) {
+        const y = hitY - (k - now) * gap;
+        if (y < top - 8 || y > bottom + 8) continue;
+        const big = k % 4 === 0;
+        const h = big ? 10 : 6;
+        ctx.globalAlpha = y > hitY ? Math.max(0, 1 - (y - hitY) / 20) : 1;
+        ctx.fillStyle = big ? pal[0] : '#f2f2f7';
+        ctx.beginPath();
+        ctx.roundRect(x + 4, y - h / 2, w - 8, h, h / 2);
+        ctx.fill();
+      }
+      ctx.globalAlpha = 1;
+      ctx.restore();
+      // Its label, up the top of the lane.
+      ctx.save();
+      ctx.translate(x + w / 2, top + 6);
+      ctx.rotate(Math.PI / 2);
+      ctx.font = '800 9px system-ui, sans-serif';
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#ffffff';
+      ctx.fillText(msg('beat').toUpperCase(), 0, 0);
+      ctx.restore();
     }
 
     // Once per beat while dancing: the fever meter fills a little; FEVER! runs its course.
@@ -535,7 +685,8 @@ const strings: Record<string, string> = {
         setFever(60);
         return;
       }
-      setFever(fever + (music.on ? 2.5 : 1.5));
+      const drift = LEVELS[routine].drift;
+      setFever(fever + (music.on ? drift + 1 : drift));
     }
     function setFever(v: number) {
       fever = Math.max(0, Math.min(100, v));
@@ -554,9 +705,10 @@ const strings: Record<string, string> = {
       if (paused) return;
       const t = performance.now() - start;
       const phase = (t % beat) / beat;
-      const onBeat = phase < 0.2 || phase > 0.8;
+      const level = LEVELS[routine];
+      const onBeat = phase < level.window || phase > 1 - level.window;
       flash = { text: msg(onBeat ? 'onBeat' : 'offBeat'), until: performance.now() + 400 };
-      setFever(fever + (onBeat ? 7 : -3));
+      setFever(fever + (onBeat ? level.hit : -level.miss));
     }
     canvas.addEventListener('pointerdown', tap);
     canvas.addEventListener('keydown', (e) => {
@@ -566,16 +718,8 @@ const strings: Record<string, string> = {
       }
     });
 
-    // The music: an original 8-bit disco loop (not any existing song), synthesized with Web Audio and kept
-    // in time with the dance. Four bars (Am, F, G, Em): four-on-the-floor kick, offbeat hi-hats, a clap on
-    // 2 and 4, an octave-bouncing bass and a square-wave lead, one note per eighth (null = rest).
-    const BASS_ROOTS = [45, 41, 43, 40];
-    const LEAD = [
-      [69, null, 72, null, 76, 74, null, 72],
-      [65, null, 69, null, 72, 69, null, 67],
-      [67, null, 71, null, 74, 72, null, 71],
-      [64, null, 67, null, 71, 69, 67, null],
-    ];
+    // The music: the routine's own 8-bit loop (SONGS above), synthesized with Web Audio and kept in time with the
+    // dance: four-on-the-floor kick, hi-hats, claps, an octave-bouncing bass and a square-wave lead.
     const music = { on: false, ctx: null as AudioContext | null, timer: 0, next: 0, noise: null as AudioBuffer | null };
     const hz = (m: number) => 440 * 2 ** ((m - 69) / 12);
     function tone(type: OscillatorType, freq: number, at: number, len: number, gain: number) {
@@ -618,15 +762,17 @@ const strings: Record<string, string> = {
     }
     function playStep(step: number, at: number) {
       const sixteenth = beat / 4000;
+      const song = SONGS[routine];
       const bar = Math.floor(step / 16) % 4;
       const inBar = step % 16;
       if (inBar % 4 === 0) kick(at);
-      if (inBar % 4 === 2) hit(at, 0.04, 0.12, 'highpass', 7000);
-      if (inBar === 4 || inBar === 12) hit(at, 0.12, 0.18, 'bandpass', 1800);
+      if (inBar % 4 === 2) hit(at, song.openHat ? 0.14 : 0.04, 0.12, 'highpass', 7000);
+      else if (song.hats16 && inBar % 2 === 1) hit(at, 0.03, 0.06, 'highpass', 8000);
+      if (song.claps.includes(inBar)) hit(at, 0.12, 0.18, 'bandpass', 1800);
       if (inBar % 2 === 0) {
         const eighth = inBar / 2;
-        tone('square', hz(BASS_ROOTS[bar] + (eighth % 2 ? 12 : 0)), at, sixteenth * 1.8, 0.07);
-        const note = LEAD[bar][eighth];
+        tone('square', hz(song.roots[bar] + (eighth % 2 ? 12 : 0)), at, sixteenth * 1.8, 0.07);
+        const note = song.lead[bar][eighth];
         if (note !== null) tone('square', hz(note), at, sixteenth * 1.9, 0.05);
       }
     }
@@ -664,14 +810,45 @@ const strings: Record<string, string> = {
     }
     musicBtn.addEventListener('click', () => setMusic(!music.on));
 
-    routineBtns.forEach((btn) =>
-      btn.addEventListener('click', () => {
-        routine = Number(btn.dataset.routine);
-        routineBtns.forEach((x) => x.setAttribute('aria-pressed', String(x === btn)));
-        status.textContent = msg('routine', { n: routine + 1, routine: msg(`routine${routine}`) });
-        if (paused && size()) draw(performance.now());
-      }),
-    );
+    // Picking a routine on the plate: its moves, tempo, music and difficulty start together on beat one.
+    root.addEventListener('reel:change', (e) => {
+      routine = Number((e as CustomEvent<{ index: number }>).detail.index) || 0;
+      beat = 60000 / (tempos[routine] || 110);
+      start = performance.now();
+      pausedAt = start;
+      lastBeat = -1;
+      music.next = 0;
+      status.textContent = msg('routine', { n: routine + 1, routine: msg(`routine${routine}`), level: msg(`level${routine}`), bpm: tempos[routine] });
+      if (paused && size()) draw(performance.now());
+    });
+
+    // Each card on the plate gets a picture of its routine's signature move, on a little lit-up floor.
+    root.querySelectorAll<HTMLElement>('[data-reel-art]').forEach((box) => {
+      const i = Number(box.dataset.index) || 0;
+      const p = 2;
+      const art = document.createElement('canvas');
+      art.width = GW * p;
+      art.height = GH * p;
+      const c = art.getContext('2d')!;
+      const pal = PALETTES[i % PALETTES.length];
+      const sky = c.createLinearGradient(0, 0, 0, art.height);
+      sky.addColorStop(0, '#1d1033');
+      sky.addColorStop(1, '#07040d');
+      c.fillStyle = sky;
+      c.fillRect(0, 0, art.width, art.height);
+      for (let k = 0; k < 5; k++) {
+        c.fillStyle = k % 2 ? pal[k % 3] + 'aa' : '#1a1424';
+        c.fillRect(k * 16, art.height - 14, 16, 14);
+      }
+      const frame = render(COVERS[i] ?? COVERS[0], colors);
+      for (let y = 0; y < GH; y++)
+        for (let x = 0; x < GW; x++) {
+          if (!frame[y][x]) continue;
+          c.fillStyle = frame[y][x]!;
+          c.fillRect(x * p, y * p, p, p);
+        }
+      box.replaceChildren(art);
+    });
 
     function loop(now: number) {
       if (!running) return;
