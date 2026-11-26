@@ -407,6 +407,10 @@
   "en": "The Music of Studio Ghibli",
   "t": "The Music of Studio Ghibli"
  },
+ "0aa003687b00": {
+  "en": "<strong>Rachel Grove, Rosa A. Hoekstra, Marlies Wierda &amp; Sander Begeer</strong>, <em>Autism Research</em> (2018): most autistic adults had more than one special interest, and the ones driven by them reported higher wellbeing. <a href=\"https://pubmed.ncbi.nlm.nih.gov/29427546/\">Abstract</a>",
+  "t": "<strong>Rachel Grove, Rosa A. Hoekstra, Marlies Wierda &amp; Sander Begeer</strong>, <em>Autism Research</em> (2018): phần lớn người lớn tự kỷ có nhiều hơn một mối quan tâm đặc biệt, và những ai được chúng thúc đẩy cho biết mức hạnh phúc cao hơn. <a href=\"https://pubmed.ncbi.nlm.nih.gov/29427546/\">Tóm tắt</a>"
+ },
  "0afbd329b621": {
   "en": "People can open doors, but nobody walks through them using your legs. Potential earns encouragement, not applause. <strong>Sustained growth is what earns the praise.</strong>",
   "t": "Người khác có thể mở cửa, nhưng không ai bước qua bằng đôi chân của bạn. Tiềm năng xứng đáng được động viên, không phải vỗ tay. <strong>Sự trưởng thành bền bỉ mới xứng đáng được khen ngợi.</strong>"
@@ -2031,6 +2035,10 @@
   "en": "Enlarge: Ember.js dev assistant",
   "t": "Phóng to: Trợ lý dev Ember.js"
  },
+ "3963bf6407a2": {
+  "en": "<em><strong>State Aviation Journal</strong></em>, “The Bond of Aviation and Autism”: Jacob Erikson, an autistic teen whose love of plane spotting found him a welcoming community that helped his communication. <a href=\"https://stateaviationjournal.com/index.php/state-news/north-carolina/the-bond-of-aviation-and-autism\">Article</a>",
+  "t": "<em><strong>State Aviation Journal</strong></em>, “The Bond of Aviation and Autism”: Jacob Erikson, một thiếu niên tự kỷ có niềm đam mê chụp ảnh máy bay đã đưa cậu đến một cộng đồng cởi mở giúp cậu giao tiếp tốt hơn. <a href=\"https://stateaviationjournal.com/index.php/state-news/north-carolina/the-bond-of-aviation-and-autism\">Bài viết</a>"
+ },
  "396ac6461723": {
   "en": "Enlarge: So many toys",
   "t": "Phóng to: Nhiều đồ chơi quá"
@@ -2066,10 +2074,6 @@
  "3a35f4b8c8b0": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 5: </span> Mushoku Tensei: Isekai Ittara Honki Dasu (Mushoku Tensei: Jobless Reincarnation) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 5: </span> Mushoku Tensei: Isekai Ittara Honki Dasu (Mushoku Tensei: Jobless Reincarnation)"
- },
- "3a38a500e67a": {
-  "en": "With my autistic brain, it’s no surprise I love aviation. I always loved planes and was going to be a pilot. But my parents worked in the industry and worried they were the ones steering me there. I grew up around it, even helping my mom on the SABRE system so we could go home sooner. They did the right thing by pushing me to make my own decision… and I ended up in software development.",
-  "t": "Với bộ não tự kỷ của tôi, chẳng có gì lạ khi tôi mê hàng không. Tôi luôn yêu máy bay và từng định làm phi công. Nhưng bố mẹ tôi làm trong ngành và lo rằng chính họ đang đẩy tôi theo hướng đó. Tôi lớn lên trong môi trường ấy, thậm chí còn giúp mẹ trên hệ thống SABRE để cả nhà được về sớm. Họ đã làm đúng khi khuyến khích tôi tự quyết định… và cuối cùng tôi lại đi làm phát triển phần mềm."
  },
  "3a8e4ff3f891": {
   "en": "Long Play",
@@ -2274,6 +2278,10 @@
  "3fd584895bc1": {
   "en": "+ 6 more games",
   "t": "+ 6 game nữa"
+ },
+ "3ffa50fa96b3": {
+  "en": " Flight Experience Singapore ",
+  "t": "Flight Experience Singapore"
  },
  "3ffa6ae98146": {
   "en": "The line dance",
@@ -3771,10 +3779,6 @@
   "en": "PickCrafter",
   "t": "PickCrafter"
  },
- "6a07e0d2b1cc": {
-  "en": "I still love aviation, though. The complexity of a cockpit and the endless systems to hyperfocus on keep pulling me back. That’s why I love Mentour Pilot’s videos: he gets deep into the weeds of airplane components while breaking down accident investigations.",
-  "t": "Dù vậy tôi vẫn mê hàng không. Sự phức tạp của buồng lái và vô vàn hệ thống để siêu tập trung luôn kéo tôi quay lại. Vì thế tôi thích video của Mentour Pilot: anh ấy đi sâu vào từng chi tiết linh kiện máy bay trong khi phân tích các cuộc điều tra tai nạn."
- },
  "6a21b899e80b": {
   "en": "Amethyst Grapes",
   "t": "Nho Amethyst"
@@ -5187,6 +5191,10 @@
   "en": "100 h",
   "t": "100 h"
  },
+ "937cfa1ddae8": {
+  "en": "I still love aviation, though. The complexity of a cockpit and the endless systems to hyperfocus on keep pulling me back. That’s why I love <a href=\"https://www.youtube.com/playlist?list=PLiNyr6QSO28P2bKMcv2O_lK83jsR0A9-W\">Mentour Pilot’s videos</a>: he gets deep into the weeds of airplane components while breaking down accident investigations.",
+  "t": "Dù vậy tôi vẫn mê hàng không. Sự phức tạp của buồng lái và vô vàn hệ thống để siêu tập trung luôn kéo tôi quay lại. Vì thế tôi thích <a href=\"https://www.youtube.com/playlist?list=PLiNyr6QSO28P2bKMcv2O_lK83jsR0A9-W\">video của Mentour Pilot</a>: anh ấy đi sâu vào từng chi tiết linh kiện máy bay trong khi phân tích các cuộc điều tra tai nạn."
+ },
  "9384a918b850": {
   "en": "Or grow a spine and just reach out to me: see the <a href=\"/contact/\">Contact</a> page.",
   "t": "Hoặc can đảm lên và liên hệ với tôi: xem trang <a href=\"/contact/\">Liên hệ</a>."
@@ -5542,6 +5550,10 @@
  "9e25a34e635a": {
   "en": "Hours",
   "t": "Giờ"
+ },
+ "9e4dc992f238": {
+  "en": "Autism and airplanes",
+  "t": "Tự kỷ và máy bay"
  },
  "9eaeaf3ae148": {
   "en": "Minecraft: Xbox One Edition",
@@ -6382,10 +6394,6 @@
  "b45d00ec07a3": {
   "en": "Bonus day! Every {name} counts double. Go!",
   "t": "Ngày bonus! Mỗi {name} được tính gấp đôi. Bắt đầu!"
- },
- "b474078a4afb": {
-  "en": "A private pilot license is still in my queue! In the meantime, I want to build a home cockpit simulator once I buy a house. In Singapore, I got to fly a full-scale replica of a Boeing 737-800NG cockpit, and it became a core memory. It took me back to my early teens, when I rode in the cockpit jump seat of an Airbus A320-233 taking off from Santos Dumont Airport (SDU) in Rio de Janeiro, Brazil.",
-  "t": "Bằng phi công tư nhân vẫn còn trong hàng chờ của tôi! Trong lúc chờ, tôi muốn tự làm một buồng lái mô phỏng ở nhà khi mua được nhà. Ở Singapore, tôi được lái một bản sao kích thước thật của buồng lái Boeing 737-800NG, và nó trở thành một ký ức cốt lõi. Nó đưa tôi về những năm đầu tuổi thiếu niên, khi tôi ngồi ghế phụ trong buồng lái một chiếc Airbus A320-233 cất cánh từ sân bay Santos Dumont (SDU) ở Rio de Janeiro, Brazil."
  },
  "b47ebcefe60b": {
   "en": "Action or inaction, it’s all seed. Mistakes and lessons feed the next harvest. You eat what you grow, even when it tastes like shit! <span class=\"newest\">New</span>",
@@ -8007,6 +8015,10 @@
   "en": "63 h",
   "t": "63 h"
  },
+ "e470c2fffef1": {
+  "en": "<strong>Simon Baron-Cohen</strong>, <em>Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</em> (2006), “The hyper-systemizing, assortative mating theory of autism”: the autistic mind is tuned to systems with firm rules (if this, then that), and struggles with things that keep changing, like the social world. <a href=\"https://docs.autismresearchcentre.com/papers/2006_BC_Neuropsychophamacology.pdf\">Paper</a>",
+  "t": "<strong>Simon Baron-Cohen</strong>, <em>Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</em> (2006), “The hyper-systemizing, assortative mating theory of autism”: bộ óc tự kỷ bị cuốn vào những hệ thống có quy tắc chắc chắn (nếu thế này thì thế kia), và vất vả với những thứ luôn thay đổi, như thế giới xã hội. <a href=\"https://docs.autismresearchcentre.com/papers/2006_BC_Neuropsychophamacology.pdf\">Bài báo</a>"
+ },
  "e491b6f48726": {
   "en": "Ranked by how many times I've watched each one, counted from my YouTube watch history.",
   "t": "Xếp hạng theo số lần tôi đã xem mỗi tập, đếm từ lịch sử xem YouTube của tôi."
@@ -8114,6 +8126,10 @@
  "e76e281ed9f1": {
   "en": "Back to the starting picture",
   "t": "Quay lại ảnh ban đầu"
+ },
+ "e7928e2438db": {
+  "en": "A private pilot license is still in my queue! In the meantime, I want to build a home cockpit simulator once I buy a house. In Singapore, at <a href=\"https://flightexperience.com.sg/\">Flight Experience</a>, I got to fly a full-scale replica of a Boeing 737-800NG cockpit, and it became a core memory. It took me back to my early teens, when I rode in the cockpit jump seat of an Airbus A320-233 taking off from Santos Dumont Airport (SDU) in Rio de Janeiro, Brazil.",
+  "t": "Bằng phi công tư nhân vẫn còn trong hàng chờ của tôi! Trong lúc chờ, tôi muốn tự làm một buồng lái mô phỏng ở nhà khi mua được nhà. Ở Singapore, tại <a href=\"https://flightexperience.com.sg/\">Flight Experience</a>, tôi được lái một bản sao kích thước thật của buồng lái Boeing 737-800NG, và nó trở thành một ký ức cốt lõi. Nó đưa tôi về những năm đầu tuổi thiếu niên, khi tôi ngồi ghế phụ trong buồng lái một chiếc Airbus A320-233 cất cánh từ sân bay Santos Dumont (SDU) ở Rio de Janeiro, Brazil."
  },
  "e7be4dbaee78": {
   "en": "Metrics to show",
@@ -8519,6 +8535,10 @@
   "en": "Magical Mirai (2024)",
   "t": "Magical Mirai (2024)"
  },
+ "f6019c99fe9d": {
+  "en": "<strong>Mirko Uljarević and colleagues</strong>, <em>Autism</em> (2022): of 237 autistic kids and teens, 75% had at least one special interest, and vehicles and transportation were among the common ones. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9126999/\">Paper</a>",
+  "t": "<strong>Mirko Uljarević và cộng sự</strong>, <em>Autism</em> (2022): trong 237 trẻ em và thiếu niên tự kỷ, 75% có ít nhất một mối quan tâm đặc biệt, và xe cộ, giao thông là một trong những mối quan tâm phổ biến. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9126999/\">Bài báo</a>"
+ },
  "f63f96efcf4d": {
   "en": " GO ",
   "t": "GO"
@@ -8683,6 +8703,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Placeholder movie 26 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 26: </span> Phim tạm 26"
  },
+ "fa5bba3bf3df": {
+  "en": " Mentour Pilot, my favorite aviation channel ",
+  "t": "Mentour Pilot, kênh hàng không tôi thích nhất"
+ },
  "fa751ae89ae5": {
   "en": " 293 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "293 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ước tính</span>"
@@ -8694,6 +8718,10 @@
  "fa81346692f6": {
   "en": "Supreme Pontiff of the Grill",
   "t": "Giáo hoàng Tối cao của Lò nướng"
+ },
+ "faf65a9797bc": {
+  "en": "With my autistic brain, it’s no surprise I love aviation (vehicles are one of the most common autistic special interests, and a plane is a flying pile of systems with firm rules; the research is in this tab’s Links box). I always loved planes and was going to be a pilot. But my parents worked in the industry and worried they were the ones steering me there. I grew up around it, even helping my mom on the SABRE system so we could go home sooner. They did the right thing by pushing me to make my own decision… and I ended up in software development.",
+  "t": "Với bộ não tự kỷ của tôi, chẳng có gì lạ khi tôi mê hàng không (xe cộ là một trong những mối quan tâm đặc biệt phổ biến nhất của người tự kỷ, và máy bay là cả một đống hệ thống có quy tắc chắc chắn biết bay; nghiên cứu nằm trong hộp liên kết của thẻ này). Tôi luôn yêu máy bay và từng định làm phi công. Nhưng bố mẹ tôi làm trong ngành và lo rằng chính họ đang đẩy tôi theo hướng đó. Tôi lớn lên trong môi trường ấy, thậm chí còn giúp mẹ trên hệ thống SABRE để cả nhà được về sớm. Họ đã làm đúng khi khuyến khích tôi tự quyết định… và cuối cùng tôi lại đi làm phát triển phần mềm."
  },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",

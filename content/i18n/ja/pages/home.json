@@ -305,7 +305,7 @@
  },
  "08022eba4187": {
   "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Exercise is anything\n    the watch logged for 10 minutes or more: walks, rides, the elliptical, runs, swims. Cardio fitness is estimated from\n    each day's resting heart rate and my age (the heart rate ratio method). Dates and numbers only: no places.\n    The dashed lines are other people: men my age (born in 1993), from studies and other devices that measure a little\n    differently, so read them as a rough guide. Where they come from is in this tab's Links box.\n",
-  "t": "Pixel Watch から Google Health を通して、2023年4月〜2026年11月（2026-11-26 にエクスポート）。運動は、ウォッチが10分以上記録したものすべて：ウォーキング、サイクリング、エリプティカル、ランニング、水泳。心肺機能は、その日の安静時心拍数と僕の年齢から推定している（心拍数比法）。日付と数値だけで、場所は含まない。破線は他の人たち：僕と同年代（1993年生まれ）の男性のデータで、測り方が少し違う研究や機器によるものなので、おおよその目安として見てほしい。出典はこのタブのリンクにある。"
+  "t": "Pixel Watch から Google Health を通して、2023年4月〜2026年11月（2026-11-26 にエクスポート）。運動は、ウォッチが10分以上記録したものすべて：ウォーキング、サイクリング、エリプティカル、ランニング、水泳。心肺機能は、その日の安静時心拍数と俺の年齢から推定している（心拍数比法）。日付と数値だけで、場所は含まない。破線は他の人たち：俺と同年代（1993年生まれ）の男性のデータで、測り方が少し違う研究や機器によるものなので、おおよその目安として見てほしい。出典はこのタブのリンクにある。"
  },
  "081afbace830": {
   "en": "Traveler",
@@ -406,6 +406,10 @@
  "0a9e07baecff": {
   "en": "The Music of Studio Ghibli",
   "t": "The Music of Studio Ghibli"
+ },
+ "0aa003687b00": {
+  "en": "<strong>Rachel Grove, Rosa A. Hoekstra, Marlies Wierda &amp; Sander Begeer</strong>, <em>Autism Research</em> (2018): most autistic adults had more than one special interest, and the ones driven by them reported higher wellbeing. <a href=\"https://pubmed.ncbi.nlm.nih.gov/29427546/\">Abstract</a>",
+  "t": "<strong>Rachel Grove, Rosa A. Hoekstra, Marlies Wierda &amp; Sander Begeer</strong>, <em>Autism Research</em> (2018)：自閉症の大人の多くは特別な興味を複数持ち、それに突き動かされている人ほど幸福度が高かった。<a href=\"https://pubmed.ncbi.nlm.nih.gov/29427546/\">要旨</a>"
  },
  "0afbd329b621": {
   "en": "People can open doors, but nobody walks through them using your legs. Potential earns encouragement, not applause. <strong>Sustained growth is what earns the praise.</strong>",
@@ -865,7 +869,7 @@
  },
  "195b43118da8": {
   "en": "The body is the temple, and the engine most people forget to maintain. We pour everything outward. Save some care and love for yourself.",
-  "t": "体は神殿であり、多くの人が手入れを忘れるエンジンだ。僕たちはすべてを外に注いでしまう。少しは自分にも思いやりと愛を残しておこう。"
+  "t": "体は神殿であり、多くの人が手入れを忘れるエンジンだ。俺たちはすべてを外に注いでしまう。少しは自分にも思いやりと愛を残しておこう。"
  },
  "195e0030ff82": {
   "en": "d6",
@@ -2031,6 +2035,10 @@
   "en": "Enlarge: Ember.js dev assistant",
   "t": "拡大: Ember.js 開発アシスタント"
  },
+ "3963bf6407a2": {
+  "en": "<em><strong>State Aviation Journal</strong></em>, “The Bond of Aviation and Autism”: Jacob Erikson, an autistic teen whose love of plane spotting found him a welcoming community that helped his communication. <a href=\"https://stateaviationjournal.com/index.php/state-news/north-carolina/the-bond-of-aviation-and-autism\">Article</a>",
+  "t": "<em><strong>State Aviation Journal</strong></em>, “The Bond of Aviation and Autism”：自閉症の十代 Jacob Erikson は飛行機の撮影（スポッティング）が大好きで、そこで温かいコミュニティに出会い、コミュニケーションも伸びた。<a href=\"https://stateaviationjournal.com/index.php/state-news/north-carolina/the-bond-of-aviation-and-autism\">記事</a>"
+ },
  "396ac6461723": {
   "en": "Enlarge: So many toys",
   "t": "拡大: おもちゃがいっぱい"
@@ -2066,10 +2074,6 @@
  "3a35f4b8c8b0": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 5: </span> Mushoku Tensei: Isekai Ittara Honki Dasu (Mushoku Tensei: Jobless Reincarnation) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 5: </span> 無職転生 ～異世界行ったら本気だす～"
- },
- "3a38a500e67a": {
-  "en": "With my autistic brain, it’s no surprise I love aviation. I always loved planes and was going to be a pilot. But my parents worked in the industry and worried they were the ones steering me there. I grew up around it, even helping my mom on the SABRE system so we could go home sooner. They did the right thing by pushing me to make my own decision… and I ended up in software development.",
-  "t": "俺の自閉症の脳からすれば、航空が大好きなのは当然だ。ずっと飛行機が好きで、パイロットになるつもりだった。でも両親はこの業界で働いていて、自分たちが俺をその道へ導いているんじゃないかと心配した。俺はその環境で育ち、早く家に帰れるよう母さんの SABRE システムの作業を手伝ったりもした。二人は自分で決めるよう背中を押してくれた。それは正しかった……そして俺はソフトウェア開発に行き着いた。"
  },
  "3a8e4ff3f891": {
   "en": "Long Play",
@@ -2274,6 +2278,10 @@
  "3fd584895bc1": {
   "en": "+ 6 more games",
   "t": "+ ほか6本"
+ },
+ "3ffa50fa96b3": {
+  "en": " Flight Experience Singapore ",
+  "t": "Flight Experience Singapore"
  },
  "3ffa6ae98146": {
   "en": "The line dance",
@@ -2817,7 +2825,7 @@
  },
  "5089a205fbc3": {
   "en": "Just like the gym, cycling is a way for my ADHD to challenge the autistic side and bring balance to the order of things. The autistic side wants the same safe routine at home; the ADHD side wants something new. A ride gives both: a routine I can count on, with a new trail or a new hill every time. The studies point the same way:",
-  "t": "ジムと同じように、サイクリングは僕のADHDが自閉の側に挑み、物事の秩序にバランスをもたらす手段だ。自閉の側は家での安全で同じルーティンを求め、ADHDの側は新しい何かを求める。ライドはその両方をくれる：頼れるルーティンに、毎回新しいトレイルや新しい坂がついてくる。研究も同じ方向を指している："
+  "t": "ジムと同じように、サイクリングは俺のADHDが自閉の側に挑み、物事の秩序にバランスをもたらす手段だ。自閉の側は家での安全で同じルーティンを求め、ADHDの側は新しい何かを求める。ライドはその両方をくれる：頼れるルーティンに、毎回新しいトレイルや新しい坂がついてくる。研究も同じ方向を指している："
  },
  "508bf5b44796": {
   "en": "12 h",
@@ -2917,7 +2925,7 @@
  },
  "52cdbe99ece4": {
   "en": "I plan to explore more mountain biking, but nothing of the hard or extreme routes: I value still having my teeth, and I was not born with high dexterity (as you can clearly see in my <a href=\"#painting\">paintings</a>).",
-  "t": "マウンテンバイクはもっと探検していくつもりだけど、ハードなルートや過激なルートは一切なし。歯はまだ残しておきたいし、僕は生まれつき器用なほうじゃない（僕の<a href=\"#painting\">絵</a>を見ればはっきりわかる）。"
+  "t": "マウンテンバイクはもっと探検していくつもりだけど、ハードなルートや過激なルートは一切なし。歯はまだ残しておきたいし、俺は生まれつき器用なほうじゃない（俺の<a href=\"#painting\">絵</a>を見ればはっきりわかる）。"
  },
  "5313811b19de": {
   "en": "Scaling up weight training and chasing 200 lb. Sometimes the weight swings, and that’s part of the journey: sleep quality, blood metrics, mental health, and body fat % are all part of the calculation. As long as I keep making progress and stay healthy, I won’t crack the whip on my fat arse to push harder.",
@@ -3771,10 +3779,6 @@
   "en": "PickCrafter",
   "t": "PickCrafter"
  },
- "6a07e0d2b1cc": {
-  "en": "I still love aviation, though. The complexity of a cockpit and the endless systems to hyperfocus on keep pulling me back. That’s why I love Mentour Pilot’s videos: he gets deep into the weeds of airplane components while breaking down accident investigations.",
-  "t": "それでも航空はやっぱり好きだ。コックピットの複雑さと、過集中できる無限のシステムが、俺を引き戻し続ける。だから Mentour Pilot の動画が好きなんだ。事故調査を解説しながら、飛行機の部品の細部まで深く掘り下げてくれる。"
- },
  "6a21b899e80b": {
   "en": "Amethyst Grapes",
   "t": "アメジストグレープ"
@@ -4381,7 +4385,7 @@
  },
  "7bcd7423cbe4": {
   "en": "That’s why this tab lives in Hearth: my body is at the center of it all, and looking after it matters as much as looking after my family, my pets and healthy friendships.",
-  "t": "だからこのタブは「我が家」にある。すべての中心には僕の体があって、体を大切にすることは、家族やペット、健全な友情を大切にすることと同じくらい大事なんだ。"
+  "t": "だからこのタブは「我が家」にある。すべての中心には俺の体があって、体を大切にすることは、家族やペット、健全な友情を大切にすることと同じくらい大事なんだ。"
  },
  "7c10807e67d0": {
   "en": "I am getting old",
@@ -4773,7 +4777,7 @@
  },
  "87867de70103": {
   "en": "These are its gauges, logged by my watch every day since April 2023. Slice them any way you like, and see what exercise does to them.",
-  "t": "これはその計器類で、2023年4月から毎日、僕のウォッチが記録してきた。好きなように切り分けて、運動が数値にどう効くか見てみて。"
+  "t": "これはその計器類で、2023年4月から毎日、俺のウォッチが記録してきた。好きなように切り分けて、運動が数値にどう効くか見てみて。"
  },
  "879e32326c52": {
   "en": "Year",
@@ -5187,6 +5191,10 @@
   "en": "100 h",
   "t": "100 時間"
  },
+ "937cfa1ddae8": {
+  "en": "I still love aviation, though. The complexity of a cockpit and the endless systems to hyperfocus on keep pulling me back. That’s why I love <a href=\"https://www.youtube.com/playlist?list=PLiNyr6QSO28P2bKMcv2O_lK83jsR0A9-W\">Mentour Pilot’s videos</a>: he gets deep into the weeds of airplane components while breaking down accident investigations.",
+  "t": "それでも航空はやっぱり好きだ。コックピットの複雑さと、過集中できる無限のシステムが、俺を引き戻し続ける。だから <a href=\"https://www.youtube.com/playlist?list=PLiNyr6QSO28P2bKMcv2O_lK83jsR0A9-W\">Mentour Pilot の動画</a>が好きなんだ。事故調査を解説しながら、飛行機の部品の細部まで深く掘り下げてくれる。"
+ },
  "9384a918b850": {
   "en": "Or grow a spine and just reach out to me: see the <a href=\"/contact/\">Contact</a> page.",
   "t": "あるいは腹をくくって、俺に直接連絡してくれ：<a href=\"/contact/\">連絡先</a>ページを見て。"
@@ -5542,6 +5550,10 @@
  "9e25a34e635a": {
   "en": "Hours",
   "t": "時間"
+ },
+ "9e4dc992f238": {
+  "en": "Autism and airplanes",
+  "t": "自閉症と飛行機"
  },
  "9eaeaf3ae148": {
   "en": "Minecraft: Xbox One Edition",
@@ -6383,10 +6395,6 @@
   "en": "Bonus day! Every {name} counts double. Go!",
   "t": "ボーナスデー！すべての {name} が2倍。行け！"
  },
- "b474078a4afb": {
-  "en": "A private pilot license is still in my queue! In the meantime, I want to build a home cockpit simulator once I buy a house. In Singapore, I got to fly a full-scale replica of a Boeing 737-800NG cockpit, and it became a core memory. It took me back to my early teens, when I rode in the cockpit jump seat of an Airbus A320-233 taking off from Santos Dumont Airport (SDU) in Rio de Janeiro, Brazil.",
-  "t": "自家用操縦士免許はまだ俺のキューに入っている！ それまでの間、家を買ったら自宅にコックピットシミュレーターを作りたい。シンガポールで、ボーイング 737-800NG のコックピットの実物大レプリカを操縦させてもらって、それがコアメモリーになった。十代前半の頃、ブラジル・リオデジャネイロのサントス・ドゥモン空港（SDU）から離陸するエアバス A320-233 のコックピットのジャンプシートに座ったときに引き戻してくれたんだ。"
- },
  "b47ebcefe60b": {
   "en": "Action or inaction, it’s all seed. Mistakes and lessons feed the next harvest. You eat what you grow, even when it tastes like shit! <span class=\"newest\">New</span>",
   "t": "行動しても、しなくても、すべては種だ。失敗と教訓が次の収穫を育てる。育てたものを食べることになる。たとえそれがクソの味でも！<span class=\"newest\">新</span>"
@@ -6641,7 +6649,7 @@
  },
  "bcbe77311c7a": {
   "en": "The explorer, (mostly) friendly race I created in Spore. They went on to conquer hundreds of planets, until the save file grew past 1.3 GB and got corrupted.",
-  "t": "僕が Spore で作った、探検好きで（だいたい）友好的な種族。何百もの惑星を征服したけれど、セーブデータが 1.3 GB を超えて壊れてしまった。"
+  "t": "俺が Spore で作った、探検好きで（だいたい）友好的な種族。何百もの惑星を征服したけれど、セーブデータが 1.3 GB を超えて壊れてしまった。"
  },
  "bcf9f12dccef": {
   "en": " Days of my life ",
@@ -7301,7 +7309,7 @@
  },
  "d12b55c5431e": {
   "en": "And it’s my <a href=\"#mentor\">Mentor</a> tab, applied to myself: <strong>comfort may visit me, but it will never become my god.</strong> Movement creates evidence, and I’m not dying in the waiting room of my own stagnant life either.",
-  "t": "そしてこれは、僕の<a href=\"#mentor\">メンター</a>タブを自分自身に当てはめたものでもある：<strong>快適さが訪れてもいい。でも、決して僕の神にはならない。</strong>動くことが証拠をつくる。そして僕は、自分自身の停滞した人生の待合室で死ぬつもりもない。"
+  "t": "そしてこれは、俺の<a href=\"#mentor\">メンター</a>タブを自分自身に当てはめたものでもある：<strong>快適さが訪れてもいい。でも、決して俺の神にはならない。</strong>動くことが証拠をつくる。そして俺は、自分自身の停滞した人生の待合室で死ぬつもりもない。"
  },
  "d1346d5f5071": {
   "en": "Whack-a-Miku",
@@ -7901,7 +7909,7 @@
  },
  "e1038f5c447c": {
   "en": "More of my games on the Gamer tab",
-  "t": "僕のほかのゲームは「ゲーマー」タブへ"
+  "t": "俺のほかのゲームは「ゲーマー」タブへ"
  },
  "e137f1441633": {
   "en": "Captain Bidu",
@@ -8006,6 +8014,10 @@
  "e4674e72129e": {
   "en": "63 h",
   "t": "63 時間"
+ },
+ "e470c2fffef1": {
+  "en": "<strong>Simon Baron-Cohen</strong>, <em>Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</em> (2006), “The hyper-systemizing, assortative mating theory of autism”: the autistic mind is tuned to systems with firm rules (if this, then that), and struggles with things that keep changing, like the social world. <a href=\"https://docs.autismresearchcentre.com/papers/2006_BC_Neuropsychophamacology.pdf\">Paper</a>",
+  "t": "<strong>Simon Baron-Cohen</strong>, <em>Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</em> (2006), “The hyper-systemizing, assortative mating theory of autism”：自閉症の脳は確かなルールで動くシステム（こうすれば、ああなる）に引き寄せられ、社会のように変わり続けるものが苦手だ。<a href=\"https://docs.autismresearchcentre.com/papers/2006_BC_Neuropsychophamacology.pdf\">論文</a>"
  },
  "e491b6f48726": {
   "en": "Ranked by how many times I've watched each one, counted from my YouTube watch history.",
@@ -8114,6 +8126,10 @@
  "e76e281ed9f1": {
   "en": "Back to the starting picture",
   "t": "開始画像に戻る"
+ },
+ "e7928e2438db": {
+  "en": "A private pilot license is still in my queue! In the meantime, I want to build a home cockpit simulator once I buy a house. In Singapore, at <a href=\"https://flightexperience.com.sg/\">Flight Experience</a>, I got to fly a full-scale replica of a Boeing 737-800NG cockpit, and it became a core memory. It took me back to my early teens, when I rode in the cockpit jump seat of an Airbus A320-233 taking off from Santos Dumont Airport (SDU) in Rio de Janeiro, Brazil.",
+  "t": "自家用操縦士免許はまだ俺のキューに入っている！ それまでの間、家を買ったら自宅にコックピットシミュレーターを作りたい。シンガポールの<a href=\"https://flightexperience.com.sg/\">Flight Experience</a>で、ボーイング 737-800NG のコックピットの実物大レプリカを操縦させてもらって、それがコアメモリーになった。十代前半の頃、ブラジル・リオデジャネイロのサントス・ドゥモン空港（SDU）から離陸するエアバス A320-233 のコックピットのジャンプシートに座ったときに引き戻してくれたんだ。"
  },
  "e7be4dbaee78": {
   "en": "Metrics to show",
@@ -8519,6 +8535,10 @@
   "en": "Magical Mirai (2024)",
   "t": "Magical Mirai (2024)"
  },
+ "f6019c99fe9d": {
+  "en": "<strong>Mirko Uljarević and colleagues</strong>, <em>Autism</em> (2022): of 237 autistic kids and teens, 75% had at least one special interest, and vehicles and transportation were among the common ones. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9126999/\">Paper</a>",
+  "t": "<strong>Mirko Uljarević ら</strong>, <em>Autism</em> (2022)：自閉症の子どもと十代237人のうち75%に少なくとも一つの特別な興味があり、乗り物や交通はよくあるものの一つだった。<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9126999/\">論文</a>"
+ },
  "f63f96efcf4d": {
   "en": " GO ",
   "t": "GO"
@@ -8683,6 +8703,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Placeholder movie 26 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 26: </span> 仮の映画 26"
  },
+ "fa5bba3bf3df": {
+  "en": " Mentour Pilot, my favorite aviation channel ",
+  "t": "Mentour Pilot（いちばん好きな航空チャンネル）"
+ },
  "fa751ae89ae5": {
   "en": " 293 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "293 時間  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">推定</span>"
@@ -8694,6 +8718,10 @@
  "fa81346692f6": {
   "en": "Supreme Pontiff of the Grill",
   "t": "グリルの最高教皇"
+ },
+ "faf65a9797bc": {
+  "en": "With my autistic brain, it’s no surprise I love aviation (vehicles are one of the most common autistic special interests, and a plane is a flying pile of systems with firm rules; the research is in this tab’s Links box). I always loved planes and was going to be a pilot. But my parents worked in the industry and worried they were the ones steering me there. I grew up around it, even helping my mom on the SABRE system so we could go home sooner. They did the right thing by pushing me to make my own decision… and I ended up in software development.",
+  "t": "俺の自閉症の脳からすれば、航空が大好きなのは当然だ（乗り物は自閉症の特別な興味で最もよくあるものの一つで、飛行機は確かなルールで動くシステムの空飛ぶかたまりだ。研究はこのタブのリンクにある）。ずっと飛行機が好きで、パイロットになるつもりだった。でも両親はこの業界で働いていて、自分たちが俺をその道へ導いているんじゃないかと心配した。俺はその環境で育ち、早く家に帰れるよう母さんの SABRE システムの作業を手伝ったりもした。二人は自分で決めるよう背中を押してくれた。それは正しかった……そして俺はソフトウェア開発に行き着いた。"
  },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",

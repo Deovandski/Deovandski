@@ -407,6 +407,10 @@
   "en": "The Music of Studio Ghibli",
   "t": "The Music of Studio Ghibli"
  },
+ "0aa003687b00": {
+  "en": "<strong>Rachel Grove, Rosa A. Hoekstra, Marlies Wierda &amp; Sander Begeer</strong>, <em>Autism Research</em> (2018): most autistic adults had more than one special interest, and the ones driven by them reported higher wellbeing. <a href=\"https://pubmed.ncbi.nlm.nih.gov/29427546/\">Abstract</a>",
+  "t": "<strong>Rachel Grove, Rosa A. Hoekstra, Marlies Wierda &amp; Sander Begeer</strong>, <em>Autism Research</em> (2018): a maioria dos adultos autistas tinha mais de um interesse especial, e quem era movido por eles relatava mais bem-estar. <a href=\"https://pubmed.ncbi.nlm.nih.gov/29427546/\">Resumo</a>"
+ },
  "0afbd329b621": {
   "en": "People can open doors, but nobody walks through them using your legs. Potential earns encouragement, not applause. <strong>Sustained growth is what earns the praise.</strong>",
   "t": "As pessoas podem abrir portas, mas ninguém passa por elas usando as suas pernas. Potencial merece incentivo, não aplauso. <strong>Crescimento sustentado é o que merece o elogio.</strong>"
@@ -2031,6 +2035,10 @@
   "en": "Enlarge: Ember.js dev assistant",
   "t": "Ampliar: Assistente de dev de Ember.js"
  },
+ "3963bf6407a2": {
+  "en": "<em><strong>State Aviation Journal</strong></em>, “The Bond of Aviation and Autism”: Jacob Erikson, an autistic teen whose love of plane spotting found him a welcoming community that helped his communication. <a href=\"https://stateaviationjournal.com/index.php/state-news/north-carolina/the-bond-of-aviation-and-autism\">Article</a>",
+  "t": "<em><strong>State Aviation Journal</strong></em>, “The Bond of Aviation and Autism”: Jacob Erikson, um adolescente autista cujo amor por fotografar aviões lhe trouxe uma comunidade acolhedora que ajudou na comunicação. <a href=\"https://stateaviationjournal.com/index.php/state-news/north-carolina/the-bond-of-aviation-and-autism\">Matéria</a>"
+ },
  "396ac6461723": {
   "en": "Enlarge: So many toys",
   "t": "Ampliar: Tantos brinquedos"
@@ -2066,10 +2074,6 @@
  "3a35f4b8c8b0": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 5: </span> Mushoku Tensei: Isekai Ittara Honki Dasu (Mushoku Tensei: Jobless Reincarnation) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 5: </span> Mushoku Tensei: Isekai Ittara Honki Dasu (Mushoku Tensei: Jobless Reincarnation)"
- },
- "3a38a500e67a": {
-  "en": "With my autistic brain, it’s no surprise I love aviation. I always loved planes and was going to be a pilot. But my parents worked in the industry and worried they were the ones steering me there. I grew up around it, even helping my mom on the SABRE system so we could go home sooner. They did the right thing by pushing me to make my own decision… and I ended up in software development.",
-  "t": "Com o meu cérebro autista, não é surpresa nenhuma que eu ame aviação. Sempre amei aviões e ia ser piloto. Mas meus pais trabalhavam no setor e tinham medo de serem eles que estavam me empurrando para lá. Cresci no meio disso, até ajudando a minha mãe no sistema SABRE para a gente poder ir para casa mais cedo. Eles fizeram a coisa certa ao me incentivar a tomar a minha própria decisão… e eu acabei no desenvolvimento de software."
  },
  "3a8e4ff3f891": {
   "en": "Long Play",
@@ -2274,6 +2278,10 @@
  "3fd584895bc1": {
   "en": "+ 6 more games",
   "t": "+ 6 outros jogos"
+ },
+ "3ffa50fa96b3": {
+  "en": " Flight Experience Singapore ",
+  "t": "Flight Experience Singapore"
  },
  "3ffa6ae98146": {
   "en": "The line dance",
@@ -3771,10 +3779,6 @@
   "en": "PickCrafter",
   "t": "PickCrafter"
  },
- "6a07e0d2b1cc": {
-  "en": "I still love aviation, though. The complexity of a cockpit and the endless systems to hyperfocus on keep pulling me back. That’s why I love Mentour Pilot’s videos: he gets deep into the weeds of airplane components while breaking down accident investigations.",
-  "t": "Mas ainda amo aviação. A complexidade de uma cabine e os sistemas sem fim para hiperfocar sempre me puxam de volta. Por isso adoro os vídeos do Mentour Pilot: ele entra a fundo nos detalhes dos componentes dos aviões enquanto destrincha investigações de acidentes."
- },
  "6a21b899e80b": {
   "en": "Amethyst Grapes",
   "t": "Uvas Amethyst"
@@ -5187,6 +5191,10 @@
   "en": "100 h",
   "t": "100 h"
  },
+ "937cfa1ddae8": {
+  "en": "I still love aviation, though. The complexity of a cockpit and the endless systems to hyperfocus on keep pulling me back. That’s why I love <a href=\"https://www.youtube.com/playlist?list=PLiNyr6QSO28P2bKMcv2O_lK83jsR0A9-W\">Mentour Pilot’s videos</a>: he gets deep into the weeds of airplane components while breaking down accident investigations.",
+  "t": "Mas ainda amo aviação. A complexidade de uma cabine e os sistemas sem fim para hiperfocar sempre me puxam de volta. Por isso adoro os <a href=\"https://www.youtube.com/playlist?list=PLiNyr6QSO28P2bKMcv2O_lK83jsR0A9-W\">vídeos do Mentour Pilot</a>: ele entra a fundo nos detalhes dos componentes dos aviões enquanto destrincha investigações de acidentes."
+ },
  "9384a918b850": {
   "en": "Or grow a spine and just reach out to me: see the <a href=\"/contact/\">Contact</a> page.",
   "t": "Ou crie coragem e simplesmente fale comigo: veja a página de <a href=\"/contact/\">Contato</a>."
@@ -5542,6 +5550,10 @@
  "9e25a34e635a": {
   "en": "Hours",
   "t": "Horas"
+ },
+ "9e4dc992f238": {
+  "en": "Autism and airplanes",
+  "t": "Autismo e aviões"
  },
  "9eaeaf3ae148": {
   "en": "Minecraft: Xbox One Edition",
@@ -6382,10 +6394,6 @@
  "b45d00ec07a3": {
   "en": "Bonus day! Every {name} counts double. Go!",
   "t": "Dia de bônus! Todo {name} vale o dobro. Vai!"
- },
- "b474078a4afb": {
-  "en": "A private pilot license is still in my queue! In the meantime, I want to build a home cockpit simulator once I buy a house. In Singapore, I got to fly a full-scale replica of a Boeing 737-800NG cockpit, and it became a core memory. It took me back to my early teens, when I rode in the cockpit jump seat of an Airbus A320-233 taking off from Santos Dumont Airport (SDU) in Rio de Janeiro, Brazil.",
-  "t": "Uma licença de piloto privado ainda está na minha fila! Enquanto isso, quero montar um simulador de cabine em casa quando comprar uma. Em Singapura, pilotei uma réplica em tamanho real da cabine de um Boeing 737-800NG, e isso virou uma memória fundamental. Me levou de volta ao começo da adolescência, quando fui no jump seat da cabine de um Airbus A320-233 decolando do Aeroporto Santos Dumont (SDU), no Rio de Janeiro."
  },
  "b47ebcefe60b": {
   "en": "Action or inaction, it’s all seed. Mistakes and lessons feed the next harvest. You eat what you grow, even when it tastes like shit! <span class=\"newest\">New</span>",
@@ -8007,6 +8015,10 @@
   "en": "63 h",
   "t": "63 h"
  },
+ "e470c2fffef1": {
+  "en": "<strong>Simon Baron-Cohen</strong>, <em>Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</em> (2006), “The hyper-systemizing, assortative mating theory of autism”: the autistic mind is tuned to systems with firm rules (if this, then that), and struggles with things that keep changing, like the social world. <a href=\"https://docs.autismresearchcentre.com/papers/2006_BC_Neuropsychophamacology.pdf\">Paper</a>",
+  "t": "<strong>Simon Baron-Cohen</strong>, <em>Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</em> (2006), “The hyper-systemizing, assortative mating theory of autism”: a mente autista é atraída por sistemas com regras firmes (se isto, então aquilo) e tem dificuldade com o que muda o tempo todo, como o mundo social. <a href=\"https://docs.autismresearchcentre.com/papers/2006_BC_Neuropsychophamacology.pdf\">Artigo</a>"
+ },
  "e491b6f48726": {
   "en": "Ranked by how many times I've watched each one, counted from my YouTube watch history.",
   "t": "Classificados por quantas vezes eu assisti cada um, contados a partir do meu histórico do YouTube."
@@ -8114,6 +8126,10 @@
  "e76e281ed9f1": {
   "en": "Back to the starting picture",
   "t": "Voltar à imagem inicial"
+ },
+ "e7928e2438db": {
+  "en": "A private pilot license is still in my queue! In the meantime, I want to build a home cockpit simulator once I buy a house. In Singapore, at <a href=\"https://flightexperience.com.sg/\">Flight Experience</a>, I got to fly a full-scale replica of a Boeing 737-800NG cockpit, and it became a core memory. It took me back to my early teens, when I rode in the cockpit jump seat of an Airbus A320-233 taking off from Santos Dumont Airport (SDU) in Rio de Janeiro, Brazil.",
+  "t": "Uma licença de piloto privado ainda está na minha fila! Enquanto isso, quero montar um simulador de cabine em casa quando comprar uma. Em Singapura, na <a href=\"https://flightexperience.com.sg/\">Flight Experience</a>, pilotei uma réplica em tamanho real da cabine de um Boeing 737-800NG, e isso virou uma memória fundamental. Me levou de volta ao começo da adolescência, quando fui no jump seat da cabine de um Airbus A320-233 decolando do Aeroporto Santos Dumont (SDU), no Rio de Janeiro."
  },
  "e7be4dbaee78": {
   "en": "Metrics to show",
@@ -8519,6 +8535,10 @@
   "en": "Magical Mirai (2024)",
   "t": "Magical Mirai (2024)"
  },
+ "f6019c99fe9d": {
+  "en": "<strong>Mirko Uljarević and colleagues</strong>, <em>Autism</em> (2022): of 237 autistic kids and teens, 75% had at least one special interest, and vehicles and transportation were among the common ones. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9126999/\">Paper</a>",
+  "t": "<strong>Mirko Uljarević e colegas</strong>, <em>Autism</em> (2022): de 237 crianças e adolescentes autistas, 75% tinham pelo menos um interesse especial, e veículos e transporte estavam entre os mais comuns. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9126999/\">Artigo</a>"
+ },
  "f63f96efcf4d": {
   "en": " GO ",
   "t": "GO"
@@ -8683,6 +8703,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Placeholder movie 26 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 26: </span> Filme provisório 26"
  },
+ "fa5bba3bf3df": {
+  "en": " Mentour Pilot, my favorite aviation channel ",
+  "t": "Mentour Pilot, meu canal de aviação favorito"
+ },
  "fa751ae89ae5": {
   "en": " 293 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "293 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimadas</span>"
@@ -8694,6 +8718,10 @@
  "fa81346692f6": {
   "en": "Supreme Pontiff of the Grill",
   "t": "Sumo Pontífice da Grelha"
+ },
+ "faf65a9797bc": {
+  "en": "With my autistic brain, it’s no surprise I love aviation (vehicles are one of the most common autistic special interests, and a plane is a flying pile of systems with firm rules; the research is in this tab’s Links box). I always loved planes and was going to be a pilot. But my parents worked in the industry and worried they were the ones steering me there. I grew up around it, even helping my mom on the SABRE system so we could go home sooner. They did the right thing by pushing me to make my own decision… and I ended up in software development.",
+  "t": "Com o meu cérebro autista, não é surpresa nenhuma que eu ame aviação (veículos são um dos interesses especiais autistas mais comuns, e um avião é um monte voador de sistemas com regras firmes; a pesquisa está na caixa de links desta aba). Sempre amei aviões e ia ser piloto. Mas meus pais trabalhavam no setor e tinham medo de serem eles que estavam me empurrando para lá. Cresci no meio disso, até ajudando a minha mãe no sistema SABRE para a gente poder ir para casa mais cedo. Eles fizeram a coisa certa ao me incentivar a tomar a minha própria decisão… e eu acabei no desenvolvimento de software."
  },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",

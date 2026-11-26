@@ -30,6 +30,7 @@ import Breadcrumb from '../components/reusable/Breadcrumb.astro';
 import SourceList from '../components/reusable/SourceList.astro';
 import PillSwitch from '../components/reusable/PillSwitch.astro';
 import { Content as DeathSources } from '../../content/death-sources.md';
+import { Content as AviationSources } from '../../content/aviation-sources.md';
 import { Content as MentorSources } from '../../content/mentor-sources.md';
 import YouTube from '../components/reusable/YouTube.astro';
 import { Content as AviationText } from '../../content/aviation.md';
@@ -529,6 +530,18 @@ const nf = new Intl.NumberFormat('en-US');
 
     <section class="panel" role="region" id="panel-aviation" aria-labelledby="tab-aviation" tabindex="0" hidden>
       <GimmickPlay tab="aviation" />
+      <LinksMenu
+        id="aviation-links"
+        toggle="external"
+        items={[
+          {
+            links: [
+              { href: 'https://flightexperience.com.sg/', label: 'Flight Experience Singapore' },
+              { href: 'https://www.youtube.com/playlist?list=PLiNyr6QSO28P2bKMcv2O_lK83jsR0A9-W', label: 'Mentour Pilot, my favorite aviation channel' },
+            ],
+          },
+        ]}
+      ><SourceList title="Autism and airplanes"><AviationSources /></SourceList></LinksMenu>
       <div class="story">
         <AviationText />
         <YouTube id="QprnoS8PatE" title="Capt. Deovandski – Flight Experience Singapore" />

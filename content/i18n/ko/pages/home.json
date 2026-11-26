@@ -407,6 +407,10 @@
   "en": "The Music of Studio Ghibli",
   "t": "The Music of Studio Ghibli"
  },
+ "0aa003687b00": {
+  "en": "<strong>Rachel Grove, Rosa A. Hoekstra, Marlies Wierda &amp; Sander Begeer</strong>, <em>Autism Research</em> (2018): most autistic adults had more than one special interest, and the ones driven by them reported higher wellbeing. <a href=\"https://pubmed.ncbi.nlm.nih.gov/29427546/\">Abstract</a>",
+  "t": "<strong>Rachel Grove, Rosa A. Hoekstra, Marlies Wierda &amp; Sander Begeer</strong>, <em>Autism Research</em> (2018): 자폐 성인 대부분은 특별한 관심사가 여러 개였고, 그 관심사에 이끌리는 사람일수록 행복도가 높았다. <a href=\"https://pubmed.ncbi.nlm.nih.gov/29427546/\">초록</a>"
+ },
  "0afbd329b621": {
   "en": "People can open doors, but nobody walks through them using your legs. Potential earns encouragement, not applause. <strong>Sustained growth is what earns the praise.</strong>",
   "t": "사람들이 문을 열어 줄 수는 있어도, 네 다리로 그 문을 지나가 주는 사람은 없어. 잠재력은 박수가 아니라 격려를 받을 자격이 있어. <strong>칭찬받을 자격이 있는 건 꾸준한 성장이야.</strong>"
@@ -2031,6 +2035,10 @@
   "en": "Enlarge: Ember.js dev assistant",
   "t": "확대: Ember.js 개발 조수"
  },
+ "3963bf6407a2": {
+  "en": "<em><strong>State Aviation Journal</strong></em>, “The Bond of Aviation and Autism”: Jacob Erikson, an autistic teen whose love of plane spotting found him a welcoming community that helped his communication. <a href=\"https://stateaviationjournal.com/index.php/state-news/north-carolina/the-bond-of-aviation-and-autism\">Article</a>",
+  "t": "<em><strong>State Aviation Journal</strong></em>, “The Bond of Aviation and Autism”: 비행기 사진(스포팅)을 사랑한 자폐 십대 Jacob Erikson은 그 덕에 따뜻한 커뮤니티를 만나 소통 능력도 키웠다. <a href=\"https://stateaviationjournal.com/index.php/state-news/north-carolina/the-bond-of-aviation-and-autism\">기사</a>"
+ },
  "396ac6461723": {
   "en": "Enlarge: So many toys",
   "t": "확대: 장난감이 이렇게 많아"
@@ -2066,10 +2074,6 @@
  "3a35f4b8c8b0": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 5: </span> Mushoku Tensei: Isekai Ittara Honki Dasu (Mushoku Tensei: Jobless Reincarnation) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 5: </span> Mushoku Tensei: Isekai Ittara Honki Dasu (무직전생 ~이세계에 갔으면 최선을 다한다~)"
- },
- "3a38a500e67a": {
-  "en": "With my autistic brain, it’s no surprise I love aviation. I always loved planes and was going to be a pilot. But my parents worked in the industry and worried they were the ones steering me there. I grew up around it, even helping my mom on the SABRE system so we could go home sooner. They did the right thing by pushing me to make my own decision… and I ended up in software development.",
-  "t": "자폐인 내 뇌를 생각하면, 내가 항공을 사랑하는 건 놀랍지 않지. 난 늘 비행기를 사랑했고 조종사가 될 생각이었어. 그런데 부모님이 업계에서 일하셨고, 자신들이 날 그쪽으로 몰아가는 건 아닐까 걱정하셨어. 난 그 환경에서 자랐고, 집에 일찍 가려고 엄마의 SABRE 시스템 일을 돕기까지 했지. 부모님은 내가 스스로 결정하도록 밀어 주는 옳은 일을 하셨고… 난 결국 소프트웨어 개발로 왔어."
  },
  "3a8e4ff3f891": {
   "en": "Long Play",
@@ -2274,6 +2278,10 @@
  "3fd584895bc1": {
   "en": "+ 6 more games",
   "t": "+ 게임 6개 더"
+ },
+ "3ffa50fa96b3": {
+  "en": " Flight Experience Singapore ",
+  "t": "Flight Experience Singapore"
  },
  "3ffa6ae98146": {
   "en": "The line dance",
@@ -3771,10 +3779,6 @@
   "en": "PickCrafter",
   "t": "PickCrafter"
  },
- "6a07e0d2b1cc": {
-  "en": "I still love aviation, though. The complexity of a cockpit and the endless systems to hyperfocus on keep pulling me back. That’s why I love Mentour Pilot’s videos: he gets deep into the weeds of airplane components while breaking down accident investigations.",
-  "t": "그래도 난 여전히 항공을 사랑해. 조종석의 복잡함과 과몰입할 수 있는 끝없는 시스템들이 날 계속 다시 끌어당겨. 그래서 Mentour Pilot 영상을 좋아해: 사고 조사를 풀어 주면서 비행기 부품의 세세한 부분까지 깊이 파고들거든."
- },
  "6a21b899e80b": {
   "en": "Amethyst Grapes",
   "t": "애머시스트 포도"
@@ -5187,6 +5191,10 @@
   "en": "100 h",
   "t": "100 시간"
  },
+ "937cfa1ddae8": {
+  "en": "I still love aviation, though. The complexity of a cockpit and the endless systems to hyperfocus on keep pulling me back. That’s why I love <a href=\"https://www.youtube.com/playlist?list=PLiNyr6QSO28P2bKMcv2O_lK83jsR0A9-W\">Mentour Pilot’s videos</a>: he gets deep into the weeds of airplane components while breaking down accident investigations.",
+  "t": "그래도 난 여전히 항공을 사랑해. 조종석의 복잡함과 과몰입할 수 있는 끝없는 시스템들이 날 계속 다시 끌어당겨. 그래서 <a href=\"https://www.youtube.com/playlist?list=PLiNyr6QSO28P2bKMcv2O_lK83jsR0A9-W\">Mentour Pilot 영상</a>을 좋아해: 사고 조사를 풀어 주면서 비행기 부품의 세세한 부분까지 깊이 파고들거든."
+ },
  "9384a918b850": {
   "en": "Or grow a spine and just reach out to me: see the <a href=\"/contact/\">Contact</a> page.",
   "t": "아니면 용기 내서 그냥 연락해: <a href=\"/contact/\">연락처</a> 페이지를 봐."
@@ -5542,6 +5550,10 @@
  "9e25a34e635a": {
   "en": "Hours",
   "t": "시간"
+ },
+ "9e4dc992f238": {
+  "en": "Autism and airplanes",
+  "t": "자폐와 비행기"
  },
  "9eaeaf3ae148": {
   "en": "Minecraft: Xbox One Edition",
@@ -6382,10 +6394,6 @@
  "b45d00ec07a3": {
   "en": "Bonus day! Every {name} counts double. Go!",
   "t": "보너스 데이! 모든 {name} 두 배. 가자!"
- },
- "b474078a4afb": {
-  "en": "A private pilot license is still in my queue! In the meantime, I want to build a home cockpit simulator once I buy a house. In Singapore, I got to fly a full-scale replica of a Boeing 737-800NG cockpit, and it became a core memory. It took me back to my early teens, when I rode in the cockpit jump seat of an Airbus A320-233 taking off from Santos Dumont Airport (SDU) in Rio de Janeiro, Brazil.",
-  "t": "자가용 조종사 면허는 아직 내 대기열에 있어! 그동안 집을 사면 홈 콕핏 시뮬레이터를 만들고 싶어. 싱가포르에서 보잉 737-800NG 조종석의 실물 크기 복제품을 조종해 봤는데, 그게 핵심 기억이 됐어. 십대 초반으로 날 데려갔거든. 브라질 리우데자네이루의 산투스두몽 공항(SDU)에서 이륙하는 에어버스 A320-233 조종석 보조석에 탔던 그때로."
  },
  "b47ebcefe60b": {
   "en": "Action or inaction, it’s all seed. Mistakes and lessons feed the next harvest. You eat what you grow, even when it tastes like shit! <span class=\"newest\">New</span>",
@@ -8007,6 +8015,10 @@
   "en": "63 h",
   "t": "63 시간"
  },
+ "e470c2fffef1": {
+  "en": "<strong>Simon Baron-Cohen</strong>, <em>Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</em> (2006), “The hyper-systemizing, assortative mating theory of autism”: the autistic mind is tuned to systems with firm rules (if this, then that), and struggles with things that keep changing, like the social world. <a href=\"https://docs.autismresearchcentre.com/papers/2006_BC_Neuropsychophamacology.pdf\">Paper</a>",
+  "t": "<strong>Simon Baron-Cohen</strong>, <em>Progress in Neuro-Psychopharmacology &amp; Biological Psychiatry</em> (2006), “The hyper-systemizing, assortative mating theory of autism”: 자폐인의 뇌는 규칙이 확실한 시스템(이렇게 하면 저렇게 된다)에 끌리고, 사회처럼 계속 변하는 것은 힘들어한다. <a href=\"https://docs.autismresearchcentre.com/papers/2006_BC_Neuropsychophamacology.pdf\">논문</a>"
+ },
  "e491b6f48726": {
   "en": "Ranked by how many times I've watched each one, counted from my YouTube watch history.",
   "t": "각 에피소드를 몇 번 봤는지에 따라 순위를 매겼어. 내 YouTube 시청 기록에서 센 거야."
@@ -8114,6 +8126,10 @@
  "e76e281ed9f1": {
   "en": "Back to the starting picture",
   "t": "시작 그림으로 돌아가기"
+ },
+ "e7928e2438db": {
+  "en": "A private pilot license is still in my queue! In the meantime, I want to build a home cockpit simulator once I buy a house. In Singapore, at <a href=\"https://flightexperience.com.sg/\">Flight Experience</a>, I got to fly a full-scale replica of a Boeing 737-800NG cockpit, and it became a core memory. It took me back to my early teens, when I rode in the cockpit jump seat of an Airbus A320-233 taking off from Santos Dumont Airport (SDU) in Rio de Janeiro, Brazil.",
+  "t": "자가용 조종사 면허는 아직 내 대기열에 있어! 그동안 집을 사면 홈 콕핏 시뮬레이터를 만들고 싶어. 싱가포르의 <a href=\"https://flightexperience.com.sg/\">Flight Experience</a>에서 보잉 737-800NG 조종석의 실물 크기 복제품을 조종해 봤는데, 그게 핵심 기억이 됐어. 십대 초반으로 날 데려갔거든. 브라질 리우데자네이루의 산투스두몽 공항(SDU)에서 이륙하는 에어버스 A320-233 조종석 보조석에 탔던 그때로."
  },
  "e7be4dbaee78": {
   "en": "Metrics to show",
@@ -8519,6 +8535,10 @@
   "en": "Magical Mirai (2024)",
   "t": "Magical Mirai (2024)"
  },
+ "f6019c99fe9d": {
+  "en": "<strong>Mirko Uljarević and colleagues</strong>, <em>Autism</em> (2022): of 237 autistic kids and teens, 75% had at least one special interest, and vehicles and transportation were among the common ones. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9126999/\">Paper</a>",
+  "t": "<strong>Mirko Uljarević 외</strong>, <em>Autism</em> (2022): 자폐 아동·청소년 237명 중 75%가 특별한 관심사를 하나 이상 가졌고, 탈것과 교통은 흔한 관심사 중 하나였다. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9126999/\">논문</a>"
+ },
  "f63f96efcf4d": {
   "en": " GO ",
   "t": "GO"
@@ -8683,6 +8703,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Placeholder movie 26 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 26: </span> 임시 영화 26"
  },
+ "fa5bba3bf3df": {
+  "en": " Mentour Pilot, my favorite aviation channel ",
+  "t": "Mentour Pilot, 내가 제일 좋아하는 항공 채널"
+ },
  "fa751ae89ae5": {
   "en": " 293 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "293 시간  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">추정</span>"
@@ -8694,6 +8718,10 @@
  "fa81346692f6": {
   "en": "Supreme Pontiff of the Grill",
   "t": "그릴의 최고 대사제"
+ },
+ "faf65a9797bc": {
+  "en": "With my autistic brain, it’s no surprise I love aviation (vehicles are one of the most common autistic special interests, and a plane is a flying pile of systems with firm rules; the research is in this tab’s Links box). I always loved planes and was going to be a pilot. But my parents worked in the industry and worried they were the ones steering me there. I grew up around it, even helping my mom on the SABRE system so we could go home sooner. They did the right thing by pushing me to make my own decision… and I ended up in software development.",
+  "t": "자폐인 내 뇌를 생각하면, 내가 항공을 사랑하는 건 놀랍지 않지(탈것은 가장 흔한 자폐인의 특별한 관심사 중 하나고, 비행기는 규칙이 확실한 시스템들이 하늘을 나는 덩어리야. 연구는 이 탭의 링크에 있어). 난 늘 비행기를 사랑했고 조종사가 될 생각이었어. 그런데 부모님이 업계에서 일하셨고, 자신들이 날 그쪽으로 몰아가는 건 아닐까 걱정하셨어. 난 그 환경에서 자랐고, 집에 일찍 가려고 엄마의 SABRE 시스템 일을 돕기까지 했지. 부모님은 내가 스스로 결정하도록 밀어 주는 옳은 일을 하셨고… 난 결국 소프트웨어 개발로 왔어."
  },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",
