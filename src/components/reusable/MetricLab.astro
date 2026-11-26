@@ -1,7 +1,8 @@
 ---
 /**
- * MetricLab: years of daily numbers (heart rate, sleep, steps…) to slice and dice in five views, under one row of
- * filters (years, season, weekdays or weekends, days after an "event" such as a bike ride):
+ * MetricLab: years of daily numbers (heart rate, sleep, steps…) to slice and dice in five views, under group boxes of
+ * checkboxes (years, seasons, weekdays and weekends, the nights after an "event" such as exercise, and which kinds of
+ * event count):
  *   A. Timeline   one small chart per metric; hover one and every chart shows the same day, week or month.
  *   B. Event      the day after an event against every other day: median and middle half, and the difference.
  *   C. Calendar   one square per day, one row per year, coloured by a metric; event days outlined.
@@ -13,36 +14,44 @@
  *     id="bio"
  *     src={url('/biomarkers.json')}
  *     hash="#biomarkers"
- *     metrics={[{ key: 'rhr', label: 'Resting heart rate', unit: 'bpm', decimals: 1 },
- *               { key: 'sleepMin', label: 'Sleep', format: 'duration' },
- *               { key: 'bedH', label: 'Bedtime', format: 'clock' }]}
- *     event={{ view: 'Ride nights', day: 'ride day', after: 'After a ride', other: 'Other nights', value: 'Rode {n} mi' }}
+ *     metrics={[{ key: 'rhr', label: 'Resting heart rate', unit: 'bpm', decimals: 1, group: 'Heart' },
+ *               { key: 'sleepMin', label: 'Time asleep', format: 'duration', group: 'Overnight' },
+ *               { key: 'bedH', label: 'Bedtime', format: 'clock', group: 'Overnight' }]}
+ *     event={{ view: 'After exercise', day: 'exercise day', after: 'After exercise', other: 'After a rest day',
+ *              value: '{n} min of exercise', slug: 'exercise', kindsLabel: 'Counts as exercise',
+ *              kinds: [{ key: 'exWalk', label: 'Walking' }, { key: 'exBike', label: 'Cycling' }] }}
  *     defaults={{ timeline: ['rhr', 'sleepMin'], calendar: 'rhr', seasons: 'rhr', x: 'rhr', y: 'sleepMin' }}
  *   />
  *
  * Props:
  *   id        prefix for the element ids (unique on the page).
- *   src       URL of the data: { "dates": ["YYYY-MM-DD", …], "<key>": [number|null, …] per metric, "event": [number|0, …] }.
- *             Every array has one entry per date. event > 0 marks an event day (its number shows in the calendar tooltip).
- *   metrics   [{ key, label, unit?, decimals? (default 0), format? }] in the order shown. format: 'number' (default),
- *             'duration' (minutes, shown as 7h 22m) or 'clock' (hour of day, 25.5 = 1:30 am, so late nights sort after 11 pm).
- *   event     words for the event: view (its view's name), day (calendar key), after, other, value ("{n}" = event number).
- *             slug (optional, default 'events') names the view's link: hash-<slug>.
- *             Leave it out and the event filter, view and colours are left out too.
+ *   src       URL of the data: { "dates": ["YYYY-MM-DD", …], "<key>": [number|null, …] per metric and per event kind,
+ *             "event": [number|0, …] }. Every array has one entry per date. A day's event number is the sum of the
+ *             checked kinds (or "event" when there are no kinds); above 0 makes it an event day.
+ *   metrics   [{ key, label, unit?, decimals? (default 0), format?, group? }] in the order shown. format: 'number'
+ *             (default), 'duration' (minutes, shown as 7h 22m) or 'clock' (hour of day, 25.5 = 1:30 am, so late nights
+ *             sort after 11 pm). group: the box (and list section) a metric sits in, e.g. 'Heart', 'Overnight'.
+ *   event     words for the event: view (its view's name), day (calendar key), after, other, value ("{n}" = event number),
+ *             slug (optional, default 'events': the view's link is hash-<slug>), and kinds [{ key, label }] with
+ *             kindsLabel (the box of checkboxes that picks what counts). Leave event out and the event boxes, view and
+ *             colours are left out too.
  *   defaults  metrics picked first: timeline (list), calendar, seasons, x and y (compare).
  *   hash      optional link prefix: the views open with hash, hash-<event slug>, hash-calendar, hash-seasons, hash-compare.
+ *   refs      reference lines, e.g. a population median for someone your age: { <key>: { label, points: [[YYYY-MM-DD,
+ *             value], …] } }. The timeline draws each as a dashed line (straight between points) with its label, and the
+ *             KPI cards show it under the middle value.
  *
  * Words its script writes live in the hidden .metric-lab__strings, so a translated page translates them.
  * Theme with CSS custom properties: --lab-accent (#39c5bb), --lab-event (#e12885), --lab-other (#8d99ab),
  * --lab-surface (#0d1430), --lab-line (#1d2850), --lab-text (#e6edf3), --lab-muted (#9aa8bb), --lab-font (inherit),
  * --lab-display-font (inherit), --lab-ramp-1 … --lab-ramp-5 (dark → bright, for magnitude).
  * Its styles are global (every class starts with metric-lab__) because its script draws most of its parts.
- * Keyboard: the filters and pickers are buttons and selects; the views use PillSwitch. Fades are off under reduced motion.
+ * Keyboard: the filters are checkboxes (a box always keeps one ticked) and the pickers are selects; the views use PillSwitch. Fades are off under reduced motion.
  */
 import PillSwitch from './PillSwitch.astro';
 
-interface Metric { key: string; label: string; unit?: string; decimals?: number; format?: 'number' | 'duration' | 'clock' }
-interface Event { view: string; day: string; after: string; other: string; value: string; slug?: string }
+interface Metric { key: string; label: string; unit?: string; decimals?: number; format?: 'number' | 'duration' | 'clock'; group?: string }
+interface Event { view: string; day: string; after: string; other: string; value: string; slug?: string; kinds?: { key: string; label: string }[]; kindsLabel?: string }
 interface Props {
   id: string;
   src: string;
@@ -50,8 +59,9 @@ interface Props {
   event?: Event;
   defaults?: { timeline?: string[]; calendar?: string; seasons?: string; x?: string; y?: string };
   hash?: string;
+  refs?: Record<string, { label: string; points: [string, number][] }>;
 }
-const { id, src, metrics, event, defaults = {}, hash } = Astro.props;
+const { id, src, metrics, event, defaults = {}, hash, refs = {} } = Astro.props;
 const keys = metrics.map((m) => m.key);
 const pick = (k: string | undefined, i: number) => (k && keys.includes(k) ? k : keys[Math.min(i, keys.length - 1)]);
 const d = {
@@ -76,9 +86,17 @@ const options = views.map((x, i) => ({
   hash: hash ? (i === 0 ? hash : `${hash}-${x.v === 'events' ? (event?.slug ?? 'events') : x.v}`) : undefined,
 }));
 const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format: m.format ?? 'number' }));
+// Metrics by group, in the order the groups first appear (one group with no name when none are given).
+const groups: { name: string; items: Metric[] }[] = [];
+for (const m of metrics) {
+  const g = groups.find((x) => x.name === (m.group ?? '')) ?? groups[groups.push({ name: m.group ?? '', items: [] }) - 1];
+  g.items.push(m);
+}
+const kinds = event?.kinds ?? [];
+const SEASONS = ['Winter', 'Spring', 'Summer', 'Fall'];
 ---
 
-<div class="metric-lab" id={id} data-metric-lab data-src={src} data-metrics={JSON.stringify(meta)} data-defaults={JSON.stringify(d)} data-event={event ? '1' : '0'}>
+<div class="metric-lab" id={id} data-metric-lab data-src={src} data-metrics={JSON.stringify(meta)} data-defaults={JSON.stringify(d)} data-event={event ? '1' : '0'} data-kinds={JSON.stringify(kinds.map((k) => k.key))} data-refs={JSON.stringify(Object.fromEntries(Object.entries(refs).map(([k, r]) => [k, r.points])))}>
   <div class="metric-lab__strings" hidden data-llms-skip>
     {metrics.map((m) => <span data-k={`name-${m.key}`}>{m.label}</span>)}
     {metrics.filter((m) => m.unit).map((m) => <span data-k={`unit-${m.key}`}>{m.unit}</span>)}
@@ -88,6 +106,8 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
     <span data-k="kpiOf">of {'{n}'} tracked</span>
     <span data-k="kpiMid">middle value</span>
     <span data-k="kpiEventSub">in view</span>
+    <span data-k="kpiRef">{'{label}'}: {'{value}'}</span>
+    {Object.entries(refs).map(([k, r]) => <span data-k={`ref-${k}`}>{r.label}</span>)}
     <span data-k="duration">{'{h}'}h {'{m}'}m</span>
     <span data-k="hours">{'{h}'}h</span>
     <span data-k="minutes">{'{n}'} min</span>
@@ -128,28 +148,28 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
   <div class="metric-lab__kpis" aria-live="polite"><p class="metric-lab__note" data-lab-status>Loading the numbers…</p></div>
 
   <div class="metric-lab__filters" role="group" aria-label="Filters">
-    <div class="metric-lab__fgroup" data-filter="years"><span>Years</span></div>
-    <div class="metric-lab__fgroup" data-filter="season">
-      <span>Season</span>
-      <button type="button" class="metric-lab__chip" data-value="All" aria-pressed="true">All</button>
-      <button type="button" class="metric-lab__chip" data-value="Winter" aria-pressed="false">Winter</button>
-      <button type="button" class="metric-lab__chip" data-value="Spring" aria-pressed="false">Spring</button>
-      <button type="button" class="metric-lab__chip" data-value="Summer" aria-pressed="false">Summer</button>
-      <button type="button" class="metric-lab__chip" data-value="Fall" aria-pressed="false">Fall</button>
-    </div>
-    <div class="metric-lab__fgroup" data-filter="dow">
-      <span>Days</span>
-      <button type="button" class="metric-lab__chip" data-value="All" aria-pressed="true">All</button>
-      <button type="button" class="metric-lab__chip" data-value="Weekdays" aria-pressed="false">Weekdays</button>
-      <button type="button" class="metric-lab__chip" data-value="Weekends" aria-pressed="false">Weekends</button>
-    </div>
+    <fieldset class="metric-lab__box" data-filter="years"><legend>Years</legend></fieldset>
+    <fieldset class="metric-lab__box" data-filter="seasons">
+      <legend>Seasons</legend>
+      {SEASONS.map((x) => <label class="metric-lab__check"><input type="checkbox" value={x} checked /><span>{x}</span></label>)}
+    </fieldset>
+    <fieldset class="metric-lab__box" data-filter="dow">
+      <legend>Days of the week</legend>
+      <label class="metric-lab__check"><input type="checkbox" value="wd" checked /><span>Weekdays</span></label>
+      <label class="metric-lab__check"><input type="checkbox" value="we" checked /><span>Weekends</span></label>
+    </fieldset>
     {event && (
-      <div class="metric-lab__fgroup" data-filter="night">
-        <span>Nights</span>
-        <button type="button" class="metric-lab__chip" data-value="All" aria-pressed="true">All</button>
-        <button type="button" class="metric-lab__chip" data-value="After" aria-pressed="false">{event.after}</button>
-        <button type="button" class="metric-lab__chip" data-value="Other" aria-pressed="false">{event.other}</button>
-      </div>
+      <fieldset class="metric-lab__box" data-filter="nights">
+        <legend>Nights</legend>
+        <label class="metric-lab__check"><input type="checkbox" value="after" checked /><i class="metric-lab__swatch metric-lab__swatch--event"></i><span>{event.after}</span></label>
+        <label class="metric-lab__check"><input type="checkbox" value="other" checked /><i class="metric-lab__swatch metric-lab__swatch--other"></i><span>{event.other}</span></label>
+      </fieldset>
+    )}
+    {kinds.length > 0 && (
+      <fieldset class="metric-lab__box metric-lab__box--wide" data-filter="kinds">
+        <legend>{event?.kindsLabel ?? event?.view}</legend>
+        {kinds.map((k) => <label class="metric-lab__check"><input type="checkbox" value={k.key} checked /><span>{k.label}</span></label>)}
+      </fieldset>
     )}
   </div>
 
@@ -157,18 +177,21 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
 
   <div id={`${id}-timeline`} role="tabpanel" aria-labelledby={`${id}-tab-timeline`} class="metric-lab__view" data-view="timeline">
     <div class="metric-lab__vhead">
-      <p>Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.{event && ' Ticks along the bottom mark each ' + event.day + '.'}</p>
+      <p>Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.</p>
       <span class="metric-lab__sel"><label for={`${id}-group`}>Average by</label>
         <select id={`${id}-group`} data-lab="group">
           <option value="day">day</option>
-          <option value="week" selected>week</option>
-          <option value="month">month</option>
+          <option value="week">week</option>
+          <option value="month" selected>month</option>
         </select>
       </span>
     </div>
-    <div class="metric-lab__chips" role="group" aria-label="Metrics to show">
-      {metrics.map((m) => (
-        <button type="button" class="metric-lab__chip" data-metric={m.key} aria-pressed={String(d.timeline.includes(m.key))}>{m.label}</button>
+    <div class="metric-lab__filters metric-lab__filters--metrics" role="group" aria-label="Metrics to show" data-lab="metrics">
+      {groups.map((g) => (
+        <fieldset class="metric-lab__box">
+          {g.name && <legend>{g.name}</legend>}
+          {g.items.map((m) => <label class="metric-lab__check"><input type="checkbox" value={m.key} checked={d.timeline.includes(m.key)} /><span>{m.label}</span></label>)}
+        </fieldset>
       ))}
     </div>
     <div class="metric-lab__grid" data-lab="grid"></div>
@@ -177,7 +200,7 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
   {event && (
     <div id={`${id}-events`} role="tabpanel" aria-labelledby={`${id}-tab-events`} class="metric-lab__view" data-view="events" hidden>
       <div class="metric-lab__vhead">
-        <p>The night and day after each {event.day}, against every other day you picked. The dot is the middle value (the median) and the bar holds the middle half of the days. This view ignores the Nights filter.</p>
+        <p>The night and day after each {event.day}, against every other day you picked. The dot is the middle value (the median) and the bar holds the middle half of the days. This view ignores the Nights boxes.</p>
       </div>
       <div class="metric-lab__key">
         <span><i class="metric-lab__swatch metric-lab__swatch--event"></i>{event.after}</span>
@@ -192,7 +215,7 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
     <div class="metric-lab__vhead">
       <p>One square per day, one row per year. The brighter the square, the higher the number.{event && ' A colored edge marks each ' + event.day + '.'} Faded squares are days outside your filters.</p>
       <span class="metric-lab__sel"><label for={`${id}-calendar`}>Metric</label>
-        <select id={`${id}-calendar`} data-lab="calendar">{metrics.map((m) => <option value={m.key} selected={m.key === d.calendar}>{m.label}</option>)}</select>
+        <select id={`${id}-calendar`} data-lab="calendar">{groups.map((g) => g.name ? <optgroup label={g.name}>{g.items.map((m) => <option value={m.key} selected={m.key === d.calendar}>{m.label}</option>)}</optgroup> : g.items.map((m) => <option value={m.key} selected={m.key === d.calendar}>{m.label}</option>))}</select>
       </span>
     </div>
     <div class="metric-lab__key" data-lab="calkey"></div>
@@ -203,7 +226,7 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
     <div class="metric-lab__vhead">
       <p>Month by month, one line per year, so the winters line up with each other. Hover a line to pick out its year.</p>
       <span class="metric-lab__sel"><label for={`${id}-seasons`}>Metric</label>
-        <select id={`${id}-seasons`} data-lab="seasons">{metrics.map((m) => <option value={m.key} selected={m.key === d.seasons}>{m.label}</option>)}</select>
+        <select id={`${id}-seasons`} data-lab="seasons">{groups.map((g) => g.name ? <optgroup label={g.name}>{g.items.map((m) => <option value={m.key} selected={m.key === d.seasons}>{m.label}</option>)}</optgroup> : g.items.map((m) => <option value={m.key} selected={m.key === d.seasons}>{m.label}</option>))}</select>
       </span>
     </div>
     <div class="metric-lab__card"><div class="metric-lab__fig metric-lab__fig--tall"><svg data-lab="seasonsfig"></svg></div></div>
@@ -212,12 +235,12 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
   <div id={`${id}-compare`} role="tabpanel" aria-labelledby={`${id}-tab-compare`} class="metric-lab__view" data-view="compare" hidden>
     <div class="metric-lab__vhead">
       <p>Any metric against any other, one dot per day, with a straight trend line and how closely the two move together (r, from −1 to 1).</p>
-      <div class="metric-lab__fgroup">
+      <div class="metric-lab__pickers">
         <span class="metric-lab__sel"><label for={`${id}-x`}>Across</label>
-        <select id={`${id}-x`} data-lab="x">{metrics.map((m) => <option value={m.key} selected={m.key === d.x}>{m.label}</option>)}</select>
+        <select id={`${id}-x`} data-lab="x">{groups.map((g) => g.name ? <optgroup label={g.name}>{g.items.map((m) => <option value={m.key} selected={m.key === d.x}>{m.label}</option>)}</optgroup> : g.items.map((m) => <option value={m.key} selected={m.key === d.x}>{m.label}</option>))}</select>
         </span>
         <span class="metric-lab__sel"><label for={`${id}-y`}>Up</label>
-        <select id={`${id}-y`} data-lab="y">{metrics.map((m) => <option value={m.key} selected={m.key === d.y}>{m.label}</option>)}</select>
+        <select id={`${id}-y`} data-lab="y">{groups.map((g) => g.name ? <optgroup label={g.name}>{g.items.map((m) => <option value={m.key} selected={m.key === d.y}>{m.label}</option>)}</optgroup> : g.items.map((m) => <option value={m.key} selected={m.key === d.y}>{m.label}</option>))}</select>
         </span>
         <span class="metric-lab__sel"><label for={`${id}-color`}>Color</label>
         <select id={`${id}-color`} data-lab="color">
@@ -251,19 +274,24 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
   .metric-lab__kpi { background: var(--_surface); border: 1px solid var(--_line); border-radius: 14px; padding: 0.7rem 0.85rem; }
   .metric-lab__kpi span { display: block; font-size: 0.82rem; color: var(--_muted); }
   .metric-lab__kpi b { display: block; font-family: var(--lab-display-font, inherit); font-size: 1.5rem; line-height: 1.15; white-space: nowrap; }
-  .metric-lab__filters { display: flex; flex-wrap: wrap; gap: 0.6rem 1.3rem; align-items: center; background: var(--_surface); border: 1px solid var(--_line); border-radius: 16px; padding: 0.7rem 0.85rem; }
-  .metric-lab__fgroup { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
-  .metric-lab__fgroup > span { font-size: 0.82rem; color: var(--_muted); margin-inline-end: 0.15rem; }
-  .metric-lab__chip { font: inherit; font-size: 0.88rem; color: var(--_text); background: transparent; border: 1px solid var(--_line); border-radius: 999px; padding: 0.4rem 0.75rem; min-height: 2.25rem; cursor: pointer; }
-  .metric-lab__chip[aria-pressed='true'] { background: var(--_accent); border-color: var(--_accent); color: #04131a; font-weight: 700; }
-  .metric-lab__chip:focus-visible, .metric-lab select:focus-visible { outline: 2px solid var(--_event); outline-offset: 2px; }
+  /* Filters: one group box per question, checkboxes inside. */
+  .metric-lab__filters { display: flex; flex-wrap: wrap; gap: 0.6rem; }
+  .metric-lab__filters > .metric-lab__box { flex: 1 1 auto; }
+  .metric-lab__filters--metrics { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); align-items: start; margin-bottom: 0.75rem; }
+  .metric-lab__box { margin: 0; min-width: 0; border: 1px solid var(--_line); border-radius: 12px; background: var(--_surface); padding: 0.3rem 0.75rem 0.5rem; display: flex; flex-wrap: wrap; align-content: start; gap: 0 1rem; }
+  .metric-lab__box legend { padding: 0 0.35rem; font-size: 0.78rem; font-weight: 700; color: var(--_muted); }
+  .metric-lab__check { display: inline-flex; align-items: center; gap: 0.45rem; min-height: 2.25rem; font-size: 0.9rem; color: var(--_text); cursor: pointer; white-space: nowrap; }
+  .metric-lab__check input { width: 1.1rem; height: 1.1rem; margin: 0; accent-color: var(--_accent); cursor: pointer; }
+  .metric-lab__check .metric-lab__swatch { margin: 0; }
+  .metric-lab__check input:focus-visible, .metric-lab select:focus-visible { outline: 2px solid var(--_event); outline-offset: 2px; }
+  .metric-lab__filters > .metric-lab__box--wide { flex-basis: 100%; }
   .metric-lab__switch { margin: 1.1rem 0 0.4rem; }
   .metric-lab__view[hidden] { display: none; }
   .metric-lab__vhead { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: end; justify-content: space-between; margin: 0.8rem 0 0.75rem; }
   .metric-lab__vhead p { margin: 0; color: var(--_muted); max-width: 70ch; }
   .metric-lab select { font: inherit; font-size: 1rem; color: var(--_text); background: var(--_surface); border: 1px solid var(--_line); border-radius: 10px; padding: 0.45rem 0.6rem; min-height: 2.75rem; max-width: 100%; }
+  .metric-lab__pickers { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: center; }
   .metric-lab__sel { display: inline-flex; gap: 0.5rem; align-items: center; font-size: 0.88rem; color: var(--_muted); }
-  .metric-lab__chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.75rem; }
   .metric-lab__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: 0.75rem; }
   .metric-lab__card { background: var(--_surface); border: 1px solid var(--_line); border-radius: 14px; padding: 0.6rem 0.75rem; }
   .metric-lab__card h3 { margin: 0; font-size: 0.95rem; display: flex; justify-content: space-between; gap: 0.5rem; color: var(--_text); }
@@ -273,6 +301,8 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
   .metric-lab__fig > svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; direction: ltr; }
   .metric-lab svg text { fill: var(--_muted); font-size: 12px; font-family: var(--lab-font, inherit); }
   .metric-lab svg .metric-lab__strong { fill: var(--_text); font-weight: 700; }
+  .metric-lab svg .metric-lab__ref { fill: var(--_other); font-size: 11px; font-style: italic; paint-order: stroke; stroke: var(--_surface); stroke-width: 3px; stroke-linejoin: round; }
+  .metric-lab__kpi .metric-lab__kpi-ref { color: var(--_other); font-style: italic; }
   .metric-lab__row { display: grid; grid-template-columns: 11em minmax(0, 1fr) 11em; gap: 0.75rem; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--_line); }
   .metric-lab__row b { font-size: 0.95rem; }
   .metric-lab__row small { display: block; color: var(--_muted); font-size: 0.82rem; }
@@ -307,7 +337,7 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
 </style>
 
 <script>
-  type Row = { i: number; date: string; t: number; y: number; m: number; dow: number; season: string; ev: number; after: boolean; v: Record<string, number | null> };
+  type Row = { i: number; date: string; t: number; y: number; m: number; dow: number; season: string; ev: number; after: boolean; prev: number; kv: Record<string, number>; v: Record<string, number | null> };
   type Meta = { key: string; decimals: number; format: 'number' | 'duration' | 'clock' };
   const SEASON = ['Winter', 'Winter', 'Spring', 'Spring', 'Spring', 'Summer', 'Summer', 'Summer', 'Fall', 'Fall', 'Fall', 'Winter'];
   const DAY = 864e5;
@@ -339,7 +369,8 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
     };
     const axis = (k: string, v: number) => (MK[k].format === 'duration' ? msg('hours', { h: nf(1).format(v / 60) }) : MK[k].format === 'clock' ? clock(v) : new Intl.NumberFormat(lang, { notation: Math.abs(v) >= 1e4 ? 'compact' : 'standard', maximumFractionDigits: Math.abs(v) < 10 ? 1 : 0 }).format(v));
     const delta = (k: string, dv: number) => {
-      const s = dv >= 0 ? '+' : '−', a = Math.abs(dv);
+      const a = Math.abs(dv), shown = MK[k].format !== 'number' ? Math.round(MK[k].format === 'clock' ? a * 60 : a) : a < 10 ? Math.round(a * 10) / 10 : Math.round(a);
+      const s = dv >= 0 || shown === 0 ? '+' : '−'; // no "−0.0"
       if (MK[k].format !== 'number') return s + msg('minutes', { n: nf(0).format(MK[k].format === 'clock' ? a * 60 : a) });
       const u = strings.get(`unit-${k}`);
       return s + nf(a < 10 ? 1 : 0).format(a) + (u ? (/^[%°/]/.test(u) ? '' : ' ') + u : '');
@@ -366,25 +397,41 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
     const hideTip = () => (tip.hidden = true);
 
     let rows: Row[] = [], YEARS: number[] = [];
-    const F = { years: new Set<number>(), season: 'All', dow: 'All', night: 'All' };
-    const T = { group: 'week', on: new Set<string>(defaults.timeline) };
+    const KINDS: string[] = JSON.parse(root.dataset.kinds || '[]');
+    // Reference lines: [time, value] points per metric; refAt gives the value at a time (straight between points).
+    const REFS: Record<string, [number, number][]> = Object.fromEntries(
+      Object.entries(JSON.parse(root.dataset.refs || '{}') as Record<string, [string, number][]>).map(([k, pts]) => [k, pts.map(([d, v]) => [Date.parse(d + 'T00:00:00Z'), v] as [number, number])]),
+    );
+    const refAt = (k: string, t: number) => {
+      const p = REFS[k];
+      if (!p?.length) return null;
+      if (t <= p[0][0]) return p[0][1];
+      for (let i = 1; i < p.length; i++) if (t <= p[i][0]) return p[i - 1][1] + ((p[i][1] - p[i - 1][1]) * (t - p[i - 1][0])) / (p[i][0] - p[i - 1][0]);
+      return p[p.length - 1][1];
+    };
+    const F = { years: new Set<string>(), seasons: new Set(['Winter', 'Spring', 'Summer', 'Fall']), dow: new Set(['wd', 'we']), nights: new Set(['after', 'other']), kinds: new Set(KINDS) };
+    const T = { group: 'month', on: new Set<string>(defaults.timeline) };
     const yearColor = (y: number) => RAMP[Math.round((YEARS.indexOf(y) / Math.max(1, YEARS.length - 1)) * 4)];
     const filtered = (ignoreNight = false) =>
-      rows.filter((r) => F.years.has(r.y) && (F.season === 'All' || r.season === F.season) && (F.dow === 'All' || (F.dow === 'Weekends') === (r.dow === 0 || r.dow === 6)) && (ignoreNight || F.night === 'All' || (F.night === 'After') === r.after));
+      rows.filter((r) => F.years.has(String(r.y)) && F.seasons.has(r.season) && F.dow.has(r.dow === 0 || r.dow === 6 ? 'we' : 'wd') && (ignoreNight || F.nights.has(r.after ? 'after' : 'other')));
     const vals = (rs: Row[], k: string) => rs.map((r) => r.v[k]).filter((v): v is number => v != null);
     const current = () => root.querySelector<HTMLElement>('.metric-lab__view:not([hidden])')?.dataset.view ?? 'timeline';
 
     // ---- KPIs ----
     function kpis(rs: Row[]) {
       const box = $('.metric-lab__kpis')!;
-      const items: [string, string, string][] = [[msg('kpiDays'), nf(0).format(rs.length), msg('kpiOf', { n: nf(0).format(rows.length) })]];
-      for (const k of defaults.timeline.slice(0, 4)) items.push([name(k), fmt(k, q(vals(rs, k), 0.5)), msg('kpiMid')]);
+      const items: [string, string, string, string?][] = [[msg('kpiDays'), nf(0).format(rs.length), msg('kpiOf', { n: nf(0).format(rows.length) })]];
+      const lastT = rs.length ? rs[rs.length - 1].t : 0;
+      for (const k of defaults.timeline.slice(0, 4)) {
+        const ref = refAt(k, lastT);
+        items.push([name(k), fmt(k, q(vals(rs, k), 0.5)), msg('kpiMid'), ref == null ? undefined : msg('kpiRef', { label: msg(`ref-${k}`), value: fmt(k, ref) })]);
+      }
       if (hasEvent) items.push([msg('eventAfter'), nf(0).format(rs.filter((r) => r.after).length), msg('kpiEventSub')]);
-      box.innerHTML = items.map(([a, b, c]) => `<div class="metric-lab__kpi"><span>${esc(a)}</span><b>${esc(b)}</b><span>${esc(c)}</span></div>`).join('');
+      box.innerHTML = items.map(([a, b, c, d]) => `<div class="metric-lab__kpi"><span>${esc(a)}</span><b>${esc(b)}</b><span>${esc(c)}</span>${d ? `<span class="metric-lab__kpi-ref">${esc(d)}</span>` : ''}</div>`).join('');
     }
 
     // ---- A: timeline ----
-    type Panel = { k: string; pts: [number, number][]; card: HTMLElement; t0: number; t1: number; gap: number; evs: number[]; X?: (t: number) => number; Y?: (v: number) => number };
+    type Panel = { k: string; pts: [number, number][]; card: HTMLElement; t0: number; t1: number; gap: number; X?: (t: number) => number; Y?: (v: number) => number };
     const panels: Panel[] = [];
     function timeline(rs: Row[]) {
       const grid = $('[data-lab="grid"]')!;
@@ -405,7 +452,7 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
         card.querySelector('h3 span')!.textContent = name(m.key);
         card.querySelector('svg')!.setAttribute('aria-label', msg('timelineLabel', { name: name(m.key) }));
         grid.appendChild(card);
-        panels.push({ k: m.key, pts, card, t0, t1, gap, evs: rs.filter((r) => r.ev > 0).map((r) => r.t) });
+        panels.push({ k: m.key, pts, card, t0, t1, gap });
       }
       if (!panels.length) grid.innerHTML = `<p class="metric-lab__note">${esc(msg('pickMetric'))}</p>`;
       for (const p of panels) drawPanel(p);
@@ -413,7 +460,9 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
     function drawPanel(p: Panel) {
       const s = p.card.querySelector('svg')!, W = s.clientWidth, H = s.clientHeight, L = 40, R = 6, Tp = 6, B = 22;
       if (!W) return;
-      const ys = p.pts.map((x) => x[1]);
+      // The reference line, if any: its value at both ends and at each of its points in between.
+      const refPts: [number, number][] = REFS[p.k] ? [p.t0, ...REFS[p.k].map(([t]) => t).filter((t) => t > p.t0 && t < p.t1), p.t1].map((t) => [t, refAt(p.k, t)!]) : [];
+      const ys = p.pts.map((x) => x[1]).concat(refPts.map((x) => x[1]));
       let lo = Math.min(...ys), hi = Math.max(...ys);
       if (lo === hi) { lo -= 1; hi += 1; }
       const pad = (hi - lo) * 0.08;
@@ -428,7 +477,7 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
       s.innerHTML =
         [lo + pad, (lo + hi) / 2, hi - pad].map((v) => `<line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" stroke="${C.line}"/><text x="${L - 4}" y="${Y(v) + 4}" text-anchor="end">${esc(axis(p.k, v))}</text>`).join('') +
         yrs.map((y) => { const x = X(Date.UTC(y, 0, 1)); return `<line x1="${x}" x2="${x}" y1="${Tp}" y2="${H - B}" stroke="${C.line}" stroke-dasharray="2 3"/><text x="${x}" y="${H - 6}" text-anchor="middle">${narrow ? "'" + String(y).slice(2) : y}</text>`; }).join('') +
-        p.evs.map((t) => `<line x1="${X(t)}" x2="${X(t)}" y1="${H - B - 5}" y2="${H - B}" stroke="${C.event}" stroke-width="1.5"/>`).join('') +
+        (refPts.length ? `<path d="${refPts.map(([t, v], i) => (i ? 'L' : 'M') + X(t).toFixed(1) + ' ' + Y(v).toFixed(1)).join('')}" fill="none" stroke="${C.other}" stroke-width="1.5" stroke-dasharray="5 4"/><text class="metric-lab__ref" x="${W - R}" y="${(Y(refPts[refPts.length - 1][1]) - 5).toFixed(1)}" text-anchor="end">${esc(msg(`ref-${p.k}`))}</text>` : '') +
         `<path d="${d}" fill="none" stroke="${C.accent}" stroke-width="2" stroke-linejoin="round"/><g class="hov"></g><rect x="${L}" y="0" width="${Math.max(0, W - L - R)}" height="${H}" fill="transparent"/>`;
       const rect = s.querySelector('rect')!;
       rect.addEventListener('pointermove', (e) => { const b = s.getBoundingClientRect(); const t = p.t0 + ((e.clientX - b.left - L) / (W - L - R)) * (p.t1 - p.t0); for (const o of panels) hover(o, t); });
@@ -501,7 +550,7 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
           const i = (e.target as SVGElement).dataset?.i;
           if (i == null) return hideTip();
           const r = rows[Number(i)];
-          showTip(e, `<b>${esc(dateFmt(r.t, { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }))}</b>${esc(name(k))}: ${esc(fmt(k, r.v[k]))}${r.ev && hasEvent ? `<br>${esc(msg('eventValue', { n: nf(1).format(r.ev) }))}` : ''}`);
+          showTip(e, `<b>${esc(dateFmt(r.t, { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }))}</b>${esc(name(k))}: ${esc(fmt(k, r.v[k]))}${r.ev && hasEvent ? `<br>${esc(msg('eventValue', { n: nf(Number.isInteger(r.ev) ? 0 : 1).format(r.ev) }))}` : ''}`);
         });
         s.addEventListener('pointerleave', hideTip);
       }
@@ -515,7 +564,7 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
       s.setAttribute('aria-label', msg('seasonsLabel', { name: name(k) }));
       const lines: { y: number; pts: [number, number][]; c: string }[] = [];
       for (const y of YEARS) {
-        if (!F.years.has(y)) continue;
+        if (!F.years.has(String(y))) continue;
         const pts: [number, number][] = [];
         for (let m = 0; m < 12; m++) { const v = vals(rs.filter((r) => r.y === y && r.m === m), k); if (v.length >= 5) pts.push([m, mean(v)]); }
         if (pts.length) lines.push({ y, pts, c: yearColor(y) });
@@ -598,21 +647,28 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
       else compare(filtered());
     }
 
-    // ---- controls ----
-    function chips(group: HTMLElement, isOn: (b: HTMLButtonElement) => boolean, press: (b: HTMLButtonElement) => void) {
-      group.addEventListener('click', (e) => {
-        const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button');
-        if (!b) return;
-        press(b);
-        for (const c of group.querySelectorAll<HTMLButtonElement>('button')) c.setAttribute('aria-pressed', String(isOn(c)));
+    // ---- controls: boxes of checkboxes ----
+    // keepOne: a filter box always keeps one box ticked (unticking the last one ticks it again).
+    function boxes(group: HTMLElement, set: Set<string>, keepOne = true, after?: () => void) {
+      group.addEventListener('change', (e) => {
+        const cb = e.target as HTMLInputElement;
+        if (cb.type !== 'checkbox') return;
+        if (cb.checked) set.add(cb.value);
+        else if (!keepOne || set.size > 1) set.delete(cb.value);
+        else cb.checked = true;
+        after?.();
         render();
       });
     }
-    for (const g of root.querySelectorAll<HTMLElement>('[data-filter="season"],[data-filter="dow"],[data-filter="night"]')) {
-      const f = g.dataset.filter as 'season' | 'dow' | 'night';
-      chips(g, (b) => F[f] === b.dataset.value, (b) => (F[f] = b.dataset.value!));
+    // A day's event number is the sum of the ticked kinds; "after" is the day after an event day.
+    function events_recount() {
+      for (const r of rows) r.ev = KINDS.length ? KINDS.reduce((s, k) => s + (F.kinds.has(k) ? r.kv[k] ?? 0 : 0), 0) : r.kv.event ?? 0;
+      for (const r of rows) r.after = r.prev >= 0 && rows[r.prev].ev > 0;
     }
-    chips($('.metric-lab__chips')!, (b) => T.on.has(b.dataset.metric!), (b) => { const k = b.dataset.metric!; if (T.on.has(k)) T.on.delete(k); else T.on.add(k); });
+    for (const f of ['seasons', 'dow', 'nights'] as const) { const g = $(`[data-filter="${f}"]`); if (g) boxes(g, F[f]); }
+    const kindBox = $('[data-filter="kinds"]');
+    if (kindBox) boxes(kindBox, F.kinds, true, events_recount);
+    boxes($('[data-lab="metrics"]')!, T.on, false);
     $<HTMLSelectElement>('[data-lab="group"]')!.addEventListener('change', (e) => { T.group = (e.target as HTMLSelectElement).value; render(); });
     for (const k of ['calendar', 'seasons', 'x', 'y', 'color']) $(`[data-lab="${k}"]`)?.addEventListener('change', render);
     root.addEventListener('switch:change', () => requestAnimationFrame(render));
@@ -624,20 +680,22 @@ const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format
       fetch(root.dataset.src!)
         .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
         .then((D: { dates: string[]; event?: number[]; [k: string]: unknown }) => {
-          const byDate = new Map<string, number>();
-          D.dates.forEach((date, i) => byDate.set(date, (D.event ?? [])[i] ?? 0));
+          const index = new Map(D.dates.map((date, i) => [date, i]));
+          const col = (k: string) => (D[k] as (number | null)[] | undefined) ?? [];
           rows = D.dates.map((date, i) => {
             const t = Date.parse(date + 'T00:00:00Z'), dt = new Date(t);
-            const prev = new Date(t - DAY).toISOString().slice(0, 10);
             const v: Record<string, number | null> = {};
-            for (const m of metas) v[m.key] = ((D[m.key] as (number | null)[]) ?? [])[i] ?? null;
-            return { i, date, t, y: dt.getUTCFullYear(), m: dt.getUTCMonth(), dow: dt.getUTCDay(), season: SEASON[dt.getUTCMonth()], ev: (D.event ?? [])[i] ?? 0, after: (byDate.get(prev) ?? 0) > 0, v };
+            for (const m of metas) v[m.key] = col(m.key)[i] ?? null;
+            const kv: Record<string, number> = { event: (D.event ?? [])[i] ?? 0 };
+            for (const k of KINDS) kv[k] = col(k)[i] ?? 0;
+            return { i, date, t, y: dt.getUTCFullYear(), m: dt.getUTCMonth(), dow: dt.getUTCDay(), season: SEASON[dt.getUTCMonth()], ev: 0, after: false, prev: index.get(new Date(t - DAY).toISOString().slice(0, 10)) ?? -1, kv, v };
           });
+          events_recount();
           YEARS = [...new Set(rows.map((r) => r.y))];
-          YEARS.forEach((y) => F.years.add(y));
+          YEARS.forEach((y) => F.years.add(String(y)));
           const yg = $('[data-filter="years"]')!;
-          yg.insertAdjacentHTML('beforeend', YEARS.map((y) => `<button type="button" class="metric-lab__chip" data-value="${y}" aria-pressed="true">${y}</button>`).join(''));
-          chips(yg, (b) => F.years.has(Number(b.dataset.value)), (b) => { const y = Number(b.dataset.value); if (!F.years.has(y)) F.years.add(y); else if (F.years.size > 1) F.years.delete(y); });
+          yg.insertAdjacentHTML('beforeend', YEARS.map((y) => `<label class="metric-lab__check"><input type="checkbox" value="${y}" checked><span>${y}</span></label>`).join(''));
+          boxes(yg, F.years);
           render();
         })
         .catch(() => { const st = $('[data-lab-status]'); if (st) st.textContent = msg('error'); loading = false; });

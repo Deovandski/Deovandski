@@ -10,6 +10,7 @@ import IsoFarm from './reusable/IsoFarm.astro';
 import KitKot from './reusable/KitKot.astro';
 import LedMatrix from './reusable/LedMatrix.astro';
 import PaperPlane from './reusable/PaperPlane.astro';
+import PlanetLap from './reusable/PlanetLap.astro';
 import PixelPet from './reusable/PixelPet.astro';
 import StageDancer from './reusable/StageDancer.astro';
 import VhsPile from './reusable/VhsPile.astro';
@@ -20,6 +21,7 @@ import ecchi from '../../content/lust-meter.json';
 import botwStats from '../../content/botw-stats.json';
 import { PIXEL_PETS } from '../lib/pixelPets';
 import { PETS } from '../lib/pets';
+import { MILE, totalKm, star, places, cities, EARTH_MI } from '../lib/cycling';
 
 interface Props {
   id: string;
@@ -37,6 +39,19 @@ const hours = Math.round(botwStats.hours).toLocaleString('en-US');
       </blockquote>
       <IsoFarm config={farm} saveKey="balls-farm" title="The Balls farm" />
     </>
+  )
+}
+{
+  id === 'around-the-world' && (
+    <PlanetLap
+      class="gimmick__planet"
+      distance={totalKm / MILE}
+      circumference={EARTH_MI}
+      summary={`{distance} mi${star} on the bike: {percent} of the way around the world.`}
+      start={places.start.name}
+      markers={cities}
+      unit="mi"
+    />
   )
 }
 {id === 'dice-tray' && <DiceTray label="Roll the dice" />}
@@ -82,6 +97,12 @@ const hours = Math.round(botwStats.hours).toLocaleString('en-US');
     flex-wrap: wrap;
     gap: 1.5rem;
     justify-content: center;
+  }
+  .gimmick__planet {
+    --planet-text: var(--text);
+    --planet-accent: var(--teal);
+    max-width: 52rem;
+    margin: 0 auto;
   }
   .gimmick__quote {
     margin: 0 0 1rem;

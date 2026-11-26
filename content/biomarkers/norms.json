@@ -1,0 +1,36 @@
+{
+  "note": "Population medians (or averages) for men by age, for the dashed lines in the Biomarker Lab. Each point is [age, value] at the middle of the study's age band; the line between points is straight. Each one's source is its \"link\", shown in the tab's Links box. Ages count from the middle of the birth year: the exact birthday stays out of the repo.",
+  "bornYear": 1993,
+  "metrics": {
+    "rhr": {
+      "label": "Men my age",
+      "points": [[27, 60.2], [32, 61.2], [37, 62.3]],
+      "source": "Oura members, men, average nighttime heart rate (2026)",
+      "link": {"label": "Resting heart rate (Oura)", "href": "https://ouraring.com/blog/average-resting-heart-rate/"}
+    },
+    "hrv": {
+      "label": "Men my age",
+      "points": [[25, 52], [35, 45], [45, 40]],
+      "source": "Ultrahuman Ring users, men, median overnight HRV (RMSSD)",
+      "link": {"label": "HRV by age (Ultrahuman)", "href": "https://www.ultrahuman.com/blog/hrv-by-age-and-gender-whats-normal-for-men-vs-women/"}
+    },
+    "vo2": {
+      "label": "Men my age",
+      "points": [[25, 43.6], [35, 42.3], [45, 40.5]],
+      "source": "The Cooper Institute, men, halfway between the 40th and 60th percentiles",
+      "link": {"label": "VO₂ max norms (Cooper Institute)", "href": "https://www8.garmin.com/manuals/webhelp/GUID-0083D0A0-EA6E-41F0-8207-3F1498875E61/EN-US/GUID-1FBCCD9E-19E1-4E4C-BD60-1793B5B97EB3.html"}
+    },
+    "sleepMin": {
+      "label": "Men my age",
+      "points": [[20, 438], [35, 408], [50, 408]],
+      "source": "Coutrot et al. 2022, men, reported sleep",
+      "link": {"label": "Sleep by age (Nature Communications)", "href": "https://doi.org/10.1038/s41467-022-34624-8"}
+    },
+    "steps": {
+      "label": "US adults my age",
+      "points": [[23.5, 5843], [34.5, 5127], [44.5, 5915]],
+      "source": "Bassett et al. 2010, US adults (men and women), pedometer",
+      "link": {"label": "Steps by age (Bassett et al.)", "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2927728/"}
+    }
+  }
+}

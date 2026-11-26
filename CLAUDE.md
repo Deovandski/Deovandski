@@ -31,6 +31,10 @@ Every game or toy (a "gimmick") exists once: its component in `src/components/re
 (the tab's ▶ Play FastTab through `GimmickPlay.astro`, the Playground) renders that same entry, so a change
 shows everywhere at once. Don't copy a game, its props or its data into a page; a copy needs Deo's OK.
 
+**Everything behind a tab's ▶ Play is also on the Playground.** A tab's Play only ever opens an entry of
+`src/lib/gimmicks.ts` (through `<GimmickPlay tab="…" />`), and the Playground lists every entry there, so adding a
+gimmick to a tab adds it to the Playground in the same PR. Never put a game, toy or animation behind Play another way.
+
 ## Pictures are clickable
 
 Every picture on the site opens bigger when pressed, in the one photo viewer
@@ -123,7 +127,7 @@ loose buttons in the tab (#260).
   tab's own data.
 - A box can also hold its own layout in `LinksMenu`'s slot instead of button groups: Death and Mentor put their
   "Shoulders I stand on" reading list there, as a `SourceList` (#268).
-- Today: Dev, Author, Gamer, Influencer, Musician, Anime, BOTW, Death, Mentor, Lust and D&D. Elsewhere (another page or repo) `toggle="own"` gives the box its own Links button.
+- Today: Dev, Author, Gamer, Influencer, Musician, Anime, BOTW, Death, Mentor, Lust, D&D, Cycling and Biomarker Lab. Elsewhere (another page or repo) `toggle="own"` gives the box its own Links button.
 
 ## In-tab switches
 

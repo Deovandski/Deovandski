@@ -6,9 +6,26 @@ import MetricLab from './reusable/MetricLab.astro';
 import { url } from '../lib/url';
 
 // Hearth › Biomarker Lab. The numbers come from content/biomarkers/daily.json (scripts/biomarkers-from-takeout.mjs),
-// served as /biomarkers.json (src/pages/biomarkers.json.ts) with the Cycling tab's rides as the "event".
+// served as /biomarkers.json (src/pages/biomarkers.json.ts), with exercise from the watch's log as the "event".
 const { exported, days } = JSON.parse(readFileSync(resolve('content/biomarkers/daily.json'), 'utf8')) as { exported: string; days: { date: string }[] };
 const from = new Date(`${days[0].date}T00:00:00Z`), to = new Date(`${days[days.length - 1].date}T00:00:00Z`);
+// Dashed lines: population medians for men my age (content/biomarkers/norms.json; its links are in the tab's Links
+// box), one point a month at my age then, straight between the study's age bands. Ages count from the middle of the
+// birth year: the exact birthday stays out of the repo.
+type Norm = { label: string; points: [number, number][] };
+const norms = JSON.parse(readFileSync(resolve('content/biomarkers/norms.json'), 'utf8')) as { bornYear: number; metrics: Record<string, Norm> };
+const born = Date.UTC(norms.bornYear, 6, 1);
+const ageValue = (pts: [number, number][], age: number) => {
+  if (age <= pts[0][0]) return pts[0][1];
+  for (let i = 1; i < pts.length; i++) if (age <= pts[i][0]) return pts[i - 1][1] + ((pts[i][1] - pts[i - 1][1]) * (age - pts[i - 1][0])) / (pts[i][0] - pts[i - 1][0]);
+  return pts[pts.length - 1][1];
+};
+const months: string[] = [];
+for (let d = new Date(Date.UTC(from.getUTCFullYear(), from.getUTCMonth(), 1)); d <= to; d.setUTCMonth(d.getUTCMonth() + 1)) months.push(d.toISOString().slice(0, 10));
+months.push(days[days.length - 1].date);
+const refs = Object.fromEntries(
+  Object.entries(norms.metrics).map(([k, n]) => [k, { label: n.label, points: months.map((m) => [m, Math.round(ageValue(n.points, (Date.parse(`${m}T00:00:00Z`) - born) / (365.25 * 864e5)) * 10) / 10] as [string, number]) }]),
+);
 const month = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 ---
 
@@ -19,30 +36,41 @@ const month = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', year: 
     id="bio"
     src={url('/biomarkers.json')}
     hash="#biomarkers"
+    refs={refs}
     metrics={[
-      { key: 'rhr', label: 'Resting heart rate', unit: 'bpm', decimals: 1 },
-      { key: 'hrv', label: 'Heart rate variability', unit: 'ms' },
-      { key: 'sleepMin', label: 'Time asleep', format: 'duration' },
-      { key: 'bedH', label: 'Bedtime', format: 'clock' },
-      { key: 'sleepScore', label: 'Sleep score' },
-      { key: 'deep', label: 'Deep sleep', unit: 'min' },
-      { key: 'rem', label: 'REM sleep', unit: '%', decimals: 1 },
-      { key: 'resp', label: 'Breathing rate', unit: '/min', decimals: 1 },
-      { key: 'spo2', label: 'Blood oxygen', unit: '%', decimals: 1 },
-      { key: 'skinC', label: 'Skin temperature', unit: '°F', decimals: 1 },
-      { key: 'steps', label: 'Steps' },
-      { key: 'azm', label: 'Active zone minutes', unit: 'min' },
-      { key: 'stress', label: 'Stress score' },
-      { key: 'vo2', label: 'Cardio fitness (VO₂ max)', decimals: 1 },
-      { key: 'ready', label: 'Readiness' },
+      { key: 'rhr', label: 'Resting heart rate', unit: 'bpm', decimals: 1, group: 'Heart' },
+      { key: 'hrv', label: 'Heart rate variability', unit: 'ms', group: 'Heart' },
+      { key: 'vo2', label: 'Cardio fitness (VO₂ max)', decimals: 1, group: 'Heart' },
+      { key: 'sleepMin', label: 'Time asleep', format: 'duration', group: 'Overnight' },
+      { key: 'bedH', label: 'Bedtime', format: 'clock', group: 'Overnight' },
+      { key: 'sleepScore', label: 'Sleep score', group: 'Overnight' },
+      { key: 'deep', label: 'Deep sleep', unit: 'min', group: 'Overnight' },
+      { key: 'rem', label: 'REM sleep', unit: '%', decimals: 1, group: 'Overnight' },
+      { key: 'resp', label: 'Breathing rate', unit: '/min', decimals: 1, group: 'Overnight' },
+      { key: 'spo2', label: 'Blood oxygen', unit: '%', decimals: 1, group: 'Overnight' },
+      { key: 'skinC', label: 'Skin temperature', unit: '°F', decimals: 1, group: 'Overnight' },
+      { key: 'steps', label: 'Steps', group: 'Activity' },
+      { key: 'azm', label: 'Active zone minutes', unit: 'min', group: 'Activity' },
+      { key: 'exMin', label: 'Exercise', unit: 'min', group: 'Activity' },
+      { key: 'stress', label: 'Stress score', group: 'Recovery' },
+      { key: 'ready', label: 'Readiness', group: 'Recovery' },
     ]}
-    event={{ view: 'Ride nights', day: 'ride day', after: 'After a ride', other: 'Other nights', value: 'Rode {n} mi', slug: 'rides' }}
-    defaults={{ timeline: ['rhr', 'hrv', 'sleepMin', 'sleepScore', 'deep', 'steps', 'spo2', 'vo2'], calendar: 'sleepScore', seasons: 'rhr', x: 'steps', y: 'hrv' }}
+    event={{
+      view: 'After exercise',
+      day: 'exercise day',
+      after: 'After exercise',
+      other: 'After a rest day',
+      value: '{n} min of exercise',
+      slug: 'exercise',
+    }}
+    defaults={{ timeline: ['rhr', 'hrv', 'sleepMin', 'sleepScore', 'deep', 'steps', 'exMin', 'vo2'], calendar: 'sleepScore', seasons: 'rhr', x: 'steps', y: 'hrv' }}
   />
 
   <p class="biomarkers__fine">
-    From my Pixel Watch, through Google Health, {month(from)} to {month(to)} (exported {exported}). Rides come from the
-    <a href="#cycling">Cycling</a> tab. Dates and numbers only: no places.
+    From my Pixel Watch, through Google Health, {month(from)} to {month(to)} (exported {exported}). Exercise is anything
+    the watch logged for 10 minutes or more: walks, rides, the elliptical, runs, swims. Dates and numbers only: no places.
+    The dashed lines are other people: men my age (born in 1993), from studies and other devices that measure a little
+    differently, so read them as a rough guide. Where they come from is in this tab's Links box.
   </p>
 </div>
 

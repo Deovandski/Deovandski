@@ -9,8 +9,9 @@
 // food and nutrition logs, and every GPS file. None of that goes in the repo, not even through this script.
 //
 // What it writes, one line per day: resting heart rate, heart rate variability, blood oxygen, breathing rate, readiness,
-// cardio fitness (VO2 max), skin temperature, stress score, sleep (minutes, bedtime, score, deep, REM), steps and active
-// zone minutes. Dates and numbers only: no places. Weight and body fat stay out of daily.json; body fat leaves the
+// cardio fitness (VO2 max), skin temperature, stress score, sleep (minutes, bedtime, score, deep, REM), steps, active
+// zone minutes, and minutes of exercise by kind (walk, bike, cardio machine, run, strength, other) from the watch's
+// exercise log. Dates and numbers only: no places (the exercise log's location_metadata column is never read). Weight and body fat stay out of daily.json; body fat leaves the
 // script only as one average per year, for the Gym chart.
 //
 // Times, checked against the November 2026 export:
@@ -42,7 +43,20 @@ const DAILY = {
 };
 const PER_MINUTE = { Steps: ['steps', 'steps'], 'Active Zone Minutes': ['azm', 'total minutes'] };
 const READ = new Set([...Object.keys(DAILY), ...Object.keys(PER_MINUTE), 'Body Fat']);
-const FILES = [/^Stress Score\.csv$/i, /^UserSleeps_.*\.csv$/i, /^UserSleepScores_.*\.csv$/i];
+const FILES = [/^Stress Score\.csv$/i, /^UserSleeps_.*\.csv$/i, /^UserSleepScores_.*\.csv$/i, /^UserExercises_.*\.csv$/i];
+
+// Exercise kinds, from the log's activity_name. Bike rides count as "bike" only when logged (TRACKER), as on the Cycling
+// tab: the ones the watch caught on its own were mostly Peeta's stroller or the elliptical, so they're "other".
+// Sessions under 10 minutes or over 6 hours (a log left running) don't count.
+function exerciseKind(name, logType) {
+  const n = String(name ?? '').toLowerCase();
+  if (/bik|cycl|spin/.test(n)) return logType === 'AUTO_DETECTED' ? 'exOther' : 'exBike';
+  if (/run|jog/.test(n)) return 'exRun';
+  if (/walk|hike/.test(n)) return 'exWalk';
+  if (/ellipt|rowing|stair|aerobic|cardio/.test(n)) return 'exCardio';
+  if (/strength|weight|lift|crossfit|circuit/.test(n)) return 'exStrength';
+  return 'exOther';
+}
 
 // Lists file names only; a file is opened only if it passes the allowlist.
 function walk(dir, out = []) {
@@ -80,7 +94,7 @@ const val = (x) => {
 const round = (v, d) => Math.round(v * 10 ** d) / 10 ** d;
 const fmtDay = new Intl.DateTimeFormat('en-CA', { timeZone: TZ, year: 'numeric', month: '2-digit', day: '2-digit' });
 const localDay = (iso) => fmtDay.format(new Date(iso)); // a real-UTC moment → its day in TZ
-// A sleep time with its offset → local { date, hour }. "+00:00" means the time is already local.
+// A sleep or exercise time with its offset → local { date, hour }. "+00:00" means the time is already local.
 function sleepLocal(iso, off) {
   const m = String(off ?? '').match(/([+-])(\d{2}):?(\d{2})/);
   const mins = m ? (m[1] === '-' ? -1 : 1) * (Number(m[2]) * 60 + Number(m[3])) : 0;
@@ -122,6 +136,14 @@ for (const folder of folders) {
         const bed = sleepLocal(r.sleep_start, r.start_utc_offset).hour;
         Object.assign(day(wake), { sleepMin: mins, bedH: round(bed < 12 ? bed + 24 : bed, 2) }); // 1 am → 25
       }
+    } else if (/^UserExercises_/i.test(name)) {
+      for (const r of rows) {
+        if (!r.exercise_start || !r.exercise_end) continue;
+        const mins = (Date.parse(r.exercise_end) - Date.parse(r.exercise_start)) / 60000;
+        if (!(mins >= 10 && mins <= 360)) continue;
+        const d = day(sleepLocal(r.exercise_start, r.utc_offset).date), k = exerciseKind(r.activity_name, r.log_type);
+        d[k] = Math.round((d[k] ?? 0) + mins);
+      }
     } else if (/^UserSleepScores_/i.test(name)) {
       for (const r of rows) {
         if (!r.score_time) continue;
@@ -136,7 +158,7 @@ for (const folder of folders) {
 }
 for (const [key, m] of Object.entries(perMinute)) for (const [d, v] of m) day(d)[key] = Math.round(v);
 
-const ORDER = ['rhr', 'hrv', 'spo2', 'resp', 'ready', 'vo2', 'skinC', 'stress', 'sleepMin', 'bedH', 'sleepScore', 'deep', 'rem', 'steps', 'azm'];
+const ORDER = ['rhr', 'hrv', 'spo2', 'resp', 'ready', 'vo2', 'skinC', 'stress', 'sleepMin', 'bedH', 'sleepScore', 'deep', 'rem', 'steps', 'azm', 'exWalk', 'exBike', 'exCardio', 'exRun', 'exStrength', 'exOther'];
 const list = [...days].filter(([, v]) => Object.keys(v).length).sort(([a], [b]) => a.localeCompare(b));
 // Leading days with only a few steps (the watch's first hours) don't start the record.
 while (list.length && Object.keys(list[0][1]).length < 2) list.shift();

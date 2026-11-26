@@ -76,6 +76,17 @@ const vrakiLinks: LinkItem[] = [
   { href: 'https://deovandski.github.io/vraki-windows/', label: 'Writing System' },
 ];
 
+// Biomarker Lab's Links box: where the dashed "men my age" lines come from (each line's link in
+// content/biomarkers/norms.json), then reading on why heart rate variability matters.
+const normLinks: LinkItem[] = Object.values(
+  (JSON.parse(readFileSync(resolve('content/biomarkers/norms.json'), 'utf8')) as { metrics: Record<string, { link: LinkItem }> }).metrics,
+).map((m) => m.link);
+const hrvLinks: LinkItem[] = [
+  { href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC5624990/', label: 'What HRV is and its norms (Frontiers, 2017)' },
+  { href: 'https://doi.org/10.1093/europace/eus341', label: 'Low HRV and heart risk (Europace, 2013)' },
+  { href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC7663087/', label: 'Training guided by HRV (meta-analysis, 2020)' },
+];
+
 // D&D tab's Links box (#270).
 const dndLinks: LinkItem[] = [{ href: 'https://deovandski.github.io/Vraki-West-March-Campaign-D-D/', label: 'Vraki West March D&D' }];
 
@@ -659,11 +670,17 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-cycling" aria-labelledby="tab-cycling" tabindex="0" hidden>
+      <GimmickPlay tab="cycling" />
       <LinksMenu id="cycling-links" toggle="external"><SourceList title="Shoulders I stand on"><CyclingSources /></SourceList></LinksMenu>
       <CyclingFacet />
     </section>
 
     <section class="panel" role="region" id="panel-biomarkers" aria-labelledby="tab-biomarkers" tabindex="0" hidden>
+      <LinksMenu
+        id="biomarkers-links"
+        toggle="external"
+        items={[{ separator: 'Where the averages come from' }, { links: normLinks }, { separator: 'Why HRV matters' }, { style: 'secondary', links: hrvLinks }]}
+      />
       <BiomarkersFacet />
     </section>
 
@@ -1577,8 +1594,8 @@ const nf = new Intl.NumberFormat('en-US');
     if (source === 'user' && hash) history.replaceState(history.state, '', hash); // keeps the tab's back entry
   });
 
-  // Old links: #weeb is now #anime, #drummer is now #musician; #sex is now #lust; #tv and #movie (the old TV/Movie Potato tabs) open the Potato switch.
-  const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies', '#cat': '#pets-peeta', '#sex': '#lust', '#drummer': '#musician' };
+  // Old links: #weeb is now #anime, #drummer is now #musician, #biomarkers-rides is now #biomarkers-exercise; #sex is now #lust; #tv and #movie (the old TV/Movie Potato tabs) open the Potato switch.
+  const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies', '#cat': '#pets-peeta', '#sex': '#lust', '#drummer': '#musician', '#biomarkers-rides': '#biomarkers-exercise' };
   // Opens the facet a link like #death points to, growing its branch. Returns false if the hash isn't a facet.
   function openFromHash(rawHash: string): boolean {
     const hash = renamed[rawHash] ?? rawHash;

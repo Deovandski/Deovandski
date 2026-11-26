@@ -25,12 +25,22 @@
  *   surface        the biomes round the rim, one per slice, clockwise from the start: 'ocean', 'plains', 'forest',
  *                  'desert', 'mountains' or 'ice'. Default: a made-up world, mostly ocean.
  *
+ *   controls       the zoom bar and the pause button on the right. Default true.
+ *   zoomLabel      the zoom bar's name for screen readers. Default "Zoom".
+ *   pauseLabel     the pause button's name. Default "Pause".
+ *
+ * Controls (on the right, like an in-flight map's): a ⏸️ pause button (ArcadeButton, the same one as Saturday Night
+ * Fever's) over a zoom bar, + at the top (close in) and − at the bottom (the whole half planet). The bar follows the
+ * map as it zooms. Moving it stops the auto zoom (the pause button goes down); pressing pause again lets it run.
  * The drawing is made by the script (without JavaScript: just the caption). The ride starts the first time it scrolls
- * into view, and the map only moves while it's on screen. Reduced motion: it shows where the ride ends, still.
+ * into view, and the map only moves while it's on screen. Reduced motion: it shows where the ride ends, paused; the
+ * zoom bar still works.
  * Theme with CSS custom properties: --planet-accent (the trail, #39c5bb), --planet-rider (#f5c518), --planet-sky
  * (transparent), --planet-text (#e6edf3).
- * Reusable on purpose: no imports, safe to use several times on a page.
+ * Reusable on purpose: it only imports ArcadeButton (same folder), and it's safe to use several times on a page.
  */
+import ArcadeButton from './ArcadeButton.astro';
+
 type Biome = 'ocean' | 'plains' | 'forest' | 'desert' | 'mountains' | 'ice';
 interface Props {
   distance: number;
@@ -42,6 +52,9 @@ interface Props {
   markers?: { label: string; distance: number }[];
   locale?: string;
   surface?: Biome[];
+  controls?: boolean;
+  zoomLabel?: string;
+  pauseLabel?: string;
   class?: string;
 }
 const DEFAULT_SURFACE: Biome[] = [
@@ -59,6 +72,9 @@ const {
   markers = [],
   locale = 'en-US',
   surface = DEFAULT_SURFACE,
+  controls = true,
+  zoomLabel = 'Zoom',
+  pauseLabel = 'Pause',
   class: className,
 } = Astro.props;
 
@@ -96,6 +112,16 @@ const clipId = `planet-cut-${Math.random().toString(36).slice(2, 8)}`;
       </g></g>
     </svg>
     <p class="planet-lap__hud" aria-hidden="true" hidden></p>
+    {
+      controls && (
+        <div class="planet-lap__controls">
+          <ArcadeButton class="planet-lap__pause" emoji="⏸️" label={pauseLabel} toggle pressed={false} color="#ffd23f" />
+          <span class="planet-lap__zoom-end" aria-hidden="true">+</span>
+          <input class="planet-lap__zoom" type="range" min="0" max="1000" step="1" value="0" aria-label={zoomLabel} />
+          <span class="planet-lap__zoom-end" aria-hidden="true">−</span>
+        </div>
+      )
+    }
   </div>
   <figcaption class="planet-lap__caption">{text}</figcaption>
 </figure>
@@ -154,6 +180,39 @@ const clipId = `planet-cut-${Math.random().toString(36).slice(2, 8)}`;
     transition: opacity 0.4s;
   }
   .planet-lap__hud.is-swapping { opacity: 0; }
+  /* Pause and zoom, down the right side. The bar is vertical: + (close in) at the top, − (whole planet) at the bottom. */
+  .planet-lap__controls {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    bottom: 10px;
+    width: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 0 8px;
+    border-radius: 16px;
+    background: rgba(7, 4, 13, 0.6);
+    border: 1px solid color-mix(in srgb, var(--_accent) 30%, transparent);
+    --arcade-size: 46px;
+  }
+  .planet-lap__zoom {
+    flex: 1;
+    min-height: 60px;
+    width: 22px;
+    margin: 0;
+    writing-mode: vertical-lr;
+    direction: rtl;
+    accent-color: var(--_accent);
+    cursor: pointer;
+  }
+  .planet-lap__zoom:focus-visible { outline: 2px solid var(--_accent); outline-offset: 3px; }
+  .planet-lap__zoom-end {
+    font: 800 18px/1 system-ui, sans-serif;
+    color: var(--planet-text, #e6edf3);
+    text-shadow: 0 0 4px rgba(7, 4, 13, 0.9);
+  }
   .planet-lap__caption {
     margin-top: 0.6rem;
     color: var(--planet-text, #e6edf3);
@@ -166,6 +225,9 @@ const clipId = `planet-cut-${Math.random().toString(36).slice(2, 8)}`;
     .planet-lap :global(.planet-lap__marker .planet-lap__togo) { font-size: 22px; }
     .planet-lap :global(.planet-lap__marker:not(.is-key) text) { display: none; }
     .planet-lap__hud { position: static; display: inline-block; margin-top: 0.4rem; font-size: 0.8rem; }
+    .planet-lap__controls { top: 6px; bottom: auto; height: calc(100cqw * 0.5 - 12px); right: 6px; width: 42px; --arcade-size: 32px; gap: 2px; padding: 4px 0; border-radius: 12px; }
+    .planet-lap__zoom-end { font-size: 14px; }
+    .planet-lap__zoom { min-height: 40px; }
   }
   @media (prefers-reduced-motion: reduce) {
     .planet-lap__hud { transition: none; }
@@ -306,18 +368,71 @@ const clipId = `planet-cut-${Math.random().toString(36).slice(2, 8)}`;
       }, 400);
     }
 
-    // Still: where the ride ends, zoomed close.
-    if (reduced) {
-      draw(endShown, rOf(closeReach), featured(closeReach));
-      setHud(closeReach);
-      return;
-    }
+    // The zoom bar: 0 is the whole half planet (bottom), 1000 the close view (top), in log steps like the auto zoom.
+    const zoomBar = root.querySelector<HTMLInputElement>('.planet-lap__zoom');
+    const pauseBtn = root.querySelector<HTMLButtonElement>('.planet-lap__pause');
+    const lo = Math.log(R0), hi = Math.log(rOf(closeReach));
+    const zOf = (R: number) => Math.round(Math.min(1, Math.max(0, (Math.log(R) - lo) / (hi - lo || 1))) * 1000);
+    const ROfZ = (z: number) => Math.exp(lo + (z / 1000) * (hi - lo));
+    // How far either side the map reaches at radius R (for the next-stop panel).
+    const reachOf = (R: number) => (R <= R0 ? 90 : (Math.asin(Math.min(1, 360 / R)) * 180) / Math.PI);
+    let curA = reduced ? endShown : 0, curR = rOf(reduced ? closeReach : 0.05);
+    let paused = reduced, dragging = false;
+    const show = (a: number, R: number, reach: number) => {
+      curA = a;
+      curR = R;
+      draw(a, R, featured(reach));
+      setHud(reach);
+      if (zoomBar && !dragging) zoomBar.value = String(zOf(R));
+    };
+    zoomBar?.addEventListener('pointerdown', () => (dragging = true));
+    window.addEventListener('pointerup', () => (dragging = false));
+    zoomBar?.addEventListener('input', () => {
+      // Touching the zoom stops the auto zoom: the pause button goes down.
+      if (!paused) setPaused(true);
+      const R = ROfZ(Number(zoomBar.value));
+      curR = R;
+      draw(curA, R, featured(reachOf(R)));
+      setHud(reachOf(R));
+    });
+    pauseBtn?.addEventListener('arcade:press', (e) => setPaused((e as CustomEvent<{ pressed: boolean }>).detail.pressed, true));
 
     // Moving: the ride (6 to 12 s, the zoom following the rider), then the zoom cycle, for as long as it's on screen.
     const RIDE = Math.min(12000, 6000 + endShown * 40);
     const HOLD = 4500, MOVE = 3200;
     const cycle = [0, 1, 2, 1]; // close, region, whole, region, close…
-    let running = false, raf = 0, last = 0, elapsed = 0;
+    let running = false, visible = false, raf = 0, last = 0, elapsed = 0;
+
+    // Still: where the ride ends, zoomed close, paused (the zoom bar still works).
+    if (reduced) {
+      pauseBtn?.setAttribute('aria-pressed', 'true');
+      show(endShown, rOf(closeReach), closeReach);
+      return;
+    }
+
+    function setPaused(on: boolean, fromButton = false) {
+      paused = on;
+      if (!fromButton) pauseBtn?.setAttribute('aria-pressed', String(on));
+      if (!on && elapsed >= RIDE) {
+        // Pick the auto zoom back up from the view closest to where the bar left it.
+        const span = HOLD + MOVE;
+        let best = 0;
+        cycle.forEach((tier, i) => { if (Math.abs(Math.log(rOf(tiers[tier])) - Math.log(curR)) < Math.abs(Math.log(rOf(tiers[cycle[best]])) - Math.log(curR))) best = i; });
+        elapsed = RIDE + best * span;
+      }
+      update();
+    }
+    function update() {
+      const go = visible && !paused;
+      if (go && !running) {
+        running = true;
+        last = 0;
+        raf = requestAnimationFrame(frame);
+      } else if (!go && running) {
+        running = false;
+        cancelAnimationFrame(raf);
+      }
+    }
     function frame(now: number) {
       if (!running) return;
       elapsed += last ? Math.min(100, now - last) : 0;
@@ -342,23 +457,16 @@ const clipId = `planet-cut-${Math.random().toString(36).slice(2, 8)}`;
         R = Math.exp(Math.log(rOf(fromTier)) * (1 - k) + Math.log(rOf(toTier)) * k);
         reach = k < 0.5 ? fromTier : toTier;
       }
-      draw(a, R, featured(reach));
-      setHud(reach);
+      show(a, R, reach);
       const spin = ((elapsed / 5) % 360).toFixed(1);
       for (const w of wheels) w.setAttribute('transform', `translate(${w.dataset.at}) rotate(${spin})`);
       raf = requestAnimationFrame(frame);
     }
-    draw(0, rOf(0.05));
+    show(0, rOf(0.05), closeReach);
     new IntersectionObserver(
       (entries) => {
-        if (entries[0].isIntersecting && !running) {
-          running = true;
-          last = 0;
-          raf = requestAnimationFrame(frame);
-        } else if (!entries[0].isIntersecting) {
-          running = false;
-          cancelAnimationFrame(raf);
-        }
+        visible = entries[0].isIntersecting;
+        update();
       },
       { threshold: 0.2 },
     ).observe(svg);
