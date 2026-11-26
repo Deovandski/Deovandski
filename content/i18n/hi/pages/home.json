@@ -227,6 +227,10 @@
   "en": "\nMy watch logged 162 more \"bike rides\" on its own (76 hours of them). Most of those\n          were me pushing my cat, <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a>, in his stroller, or me on the elliptical when it's too cold outside, so\n          they don't count toward the miles above.\n",
   "t": "मेरी घड़ी ने अपने आप 162 और \"बाइक राइड\" दर्ज कीं (कुल 76 घंटे)। उनमें से ज़्यादातर मैं अपनी बिल्ली <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a> को उसके स्ट्रोलर में धकेल रहा था, या बाहर बहुत ठंड होने पर इलिप्टिकल पर था, इसलिए वे ऊपर के मीलों में नहीं गिनी जातीं।"
  },
+ "0648fee0c26c": {
+  "en": "Around the World in 80 Gears: turn your phone sideways",
+  "t": "80 गियर में दुनिया की सैर: अपना फ़ोन आड़ा करो"
+ },
  "06513e2fd9de": {
   "en": "Rise and shine",
   "t": "उठो और चमको"
@@ -631,6 +635,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 39: </span> Placeholder movie 39 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 39: </span> अस्थायी फ़िल्म 39"
  },
+ "11f4a487dbaf": {
+  "en": "<strong>The Cooper Institute</strong>, VO₂ max norms by age and sex: for men 30–39, the 40th percentile is 40.5 and the 60th is 44.0, so the line uses the middle, 42.3. <a href=\"https://www8.garmin.com/manuals/webhelp/GUID-0083D0A0-EA6E-41F0-8207-3F1498875E61/EN-US/GUID-1FBCCD9E-19E1-4E4C-BD60-1793B5B97EB3.html\">Table</a>",
+  "t": "<strong>The Cooper Institute</strong>, उम्र और लिंग के हिसाब से VO₂ मैक्स मानक: 30–39 के पुरुषों में 40वाँ पर्सेंटाइल 40.5 और 60वाँ 44.0 है, इसलिए रेखा बीच का 42.3 लेती है। <a href=\"https://www8.garmin.com/manuals/webhelp/GUID-0083D0A0-EA6E-41F0-8207-3F1498875E61/EN-US/GUID-1FBCCD9E-19E1-4E4C-BD60-1793B5B97EB3.html\">तालिका</a>"
+ },
  "122babc08c1c": {
   "en": "Not enough days with both numbers.",
   "t": "दोनों आँकड़ों वाले दिन काफ़ी नहीं हैं।"
@@ -658,6 +666,10 @@
  "131260cbfbb0": {
   "en": "Music",
   "t": "संगीत"
+ },
+ "1318b5b85065": {
+  "en": "Where the dashed lines come from",
+  "t": "धराशायी रेखाएँ कहाँ से आईं"
  },
  "132a0149f337": {
   "en": "they rise together",
@@ -987,6 +999,10 @@
   "en": "Mana",
   "t": "मान"
  },
+ "1ece8a2f722b": {
+  "en": "Men my age",
+  "t": "मेरी उम्र के पुरुष"
+ },
  "1ed928e6b267": {
   "en": "Still tired",
   "t": "अब भी थका हूँ"
@@ -1227,10 +1243,6 @@
   "en": "Views",
   "t": "व्यूज़"
  },
- "24d3e4fdd9a8": {
-  "en": "Strength",
-  "t": "स्ट्रेंथ ट्रेनिंग"
- },
  "24d4ea7ee729": {
   "en": "Do I really have to wear these",
   "t": "क्या सच में ये पहनने पड़ेंगे"
@@ -1270,10 +1282,6 @@
  "259034821da9": {
   "en": "Sabaton",
   "t": "Sabaton"
- },
- "25e1d41b4864": {
-  "en": "Cardio machines",
-  "t": "कार्डियो मशीनें"
  },
  "2648964f2489": {
   "en": "Enlarge: Painting or drawing, 04/30/2013",
@@ -1798,6 +1806,10 @@
  "33ff8a2b24db": {
   "en": "Thus is the Church arranged, from the Throne of Embers down unto the faithful.",
   "t": "इस प्रकार चर्च सजा है, अंगारों के सिंहासन से लेकर श्रद्धालुओं तक।"
+ },
+ "34141991397e": {
+  "en": " 551 mi* on the bike: <strong data-astro-cid-o4ptolev=\"\">2.2%</strong> of the way around the world.\n      Press <strong data-astro-cid-o4ptolev=\"\">▶ Play</strong> to ride it on the map.\n",
+  "t": "साइकिल पर 551 मील*: दुनिया के चक्कर का <strong data-astro-cid-o4ptolev=\"\">2.2%</strong>। नक्शे पर चलाने के लिए <strong data-astro-cid-o4ptolev=\"\">▶ Play</strong> दबाओ।"
  },
  "3415ddf27fa5": {
   "en": "The Sacred Scripture of Churrasco",
@@ -2339,6 +2351,10 @@
   "en": "Black Jacket Symphony",
   "t": "Black Jacket Symphony"
  },
+ "44eb8b0c618e": {
+  "en": "US adults my age",
+  "t": "मेरी उम्र के अमेरिकी वयस्क"
+ },
  "44ebe8475cd2": {
   "en": "Fixed my fatty liver.\n<ul>\n<li>Cut alcohol. I rarely drink anymore, and when I do, it’s because it’s actually tasty, I’m hanging out with people, and I feel like it.</li>\n<li>Cut carbs.</li>\n<li>Took NAC, milk thistle, curcumin, and most importantly, omega-3. I take vitamins every day but spread them out, never back-to-back, to avoid unnecessary doses: too much of a good thing is bad.</li>\n</ul>\n",
   "t": "फ़ैटी लिवर ठीक किया। <ul> <li>शराब कम की। अब मैं शायद ही पीता हूँ, और जब पीता हूँ तो इसलिए कि वह सच में स्वादिष्ट है, मैं लोगों के साथ हूँ, और मेरा मन है।</li> <li>कार्ब्स कम किए।</li> <li>NAC, मिल्क थिसल, करक्यूमिन, और सबसे ज़रूरी, ओमेगा-3 लिया। मैं रोज़ विटामिन लेता हूँ पर उन्हें बाँटकर, कभी एक के बाद एक नहीं, बेवजह की ख़ुराक से बचने के लिए: अच्छी चीज़ भी ज़्यादा हो तो बुरी है।</li> </ul>"
@@ -2374,6 +2390,10 @@
  "468d79c2e022": {
   "en": "Rock",
   "t": "पत्थर"
+ },
+ "468ddecacd77": {
+  "en": "{label}: {value}",
+  "t": "{label}: {value}"
  },
  "46b00befa084": {
   "en": "\"Almost went viral!\" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses.",
@@ -2414,6 +2434,10 @@
  "47d6c332de8e": {
   "en": "Idle Evolution",
   "t": "Idle Evolution"
+ },
+ "47eb1c699b77": {
+  "en": "<strong>Oura</strong>, “Average resting heart rate” (2026): men’s average nighttime heart rate by age, 60.2 bpm at 25–29, 61.2 at 30–34, 62.3 at 35–39. <a href=\"https://ouraring.com/blog/average-resting-heart-rate/\">Article</a>",
+  "t": "<strong>Oura</strong>, “Average resting heart rate” (2026): उम्र के हिसाब से पुरुषों की रात की औसत हृदय गति, 25–29 पर 60.2 bpm, 30–34 पर 61.2, 35–39 पर 62.3। <a href=\"https://ouraring.com/blog/average-resting-heart-rate/\">लेख</a>"
  },
  "481021d04da3": {
   "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
@@ -2458,6 +2482,10 @@
  "4934994652a1": {
   "en": "Tribute shows",
   "t": "ट्रिब्यूट शो"
+ },
+ "493a6ba39dfb": {
+  "en": "<strong>David Bassett and colleagues</strong>, <em>Medicine &amp; Science in Sports &amp; Exercise</em> (2010): US adults took 5,843 steps a day at 18–29, 5,127 at 30–39 and 5,915 at 40–49 (men and women together; men 5,340 overall). <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2927728/\">Paper</a>",
+  "t": "<strong>David Bassett और साथी</strong>, <em>Medicine &amp; Science in Sports &amp; Exercise</em> (2010): अमेरिकी वयस्क 18–29 में रोज़ 5,843 कदम, 30–39 में 5,127 और 40–49 में 5,915 कदम चलते थे (पुरुष और महिलाएँ मिलाकर; कुल पुरुष 5,340)। <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2927728/\">शोध-पत्र</a>"
  },
  "496e9438ab65": {
   "en": "Philosophy",
@@ -2870,6 +2898,10 @@
  "53dd95cca1e0": {
   "en": "Camera angles are everything",
   "t": "कैमरा एंगल ही सब कुछ है"
+ },
+ "53f8fb0b336c": {
+  "en": "Around the World in 80 Gears",
+  "t": "80 गियर में दुनिया की सैर"
  },
  "54225a6752c4": {
   "en": " <span class=\"shelf__dot\" style=\"background: #c98500\" data-astro-cid-nqpad2wp=\"\"></span> Factory &amp; automation: 1,588 h ",
@@ -3575,10 +3607,6 @@
   "en": "Another dino",
   "t": "दूसरा डायनो"
  },
- "67f294519699": {
-  "en": "Walking",
-  "t": "पैदल चलना"
- },
  "6804bf126f26": {
   "en": " 368 h  ",
   "t": "368 घं."
@@ -3718,6 +3746,10 @@
  "6b24977c1fbe": {
   "en": "Deo and his parents smiling at a race finish, showing their medals",
   "t": "एक दौड़ की फ़िनिश लाइन पर मुस्कुराते Deo और उनके माता-पिता, अपने मेडल दिखाते हुए"
+ },
+ "6b33872b3a61": {
+  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Exercise is anything\n    the watch logged for 10 minutes or more: walks, rides, the elliptical, runs, swims. Dates and numbers only: no places.\n    The dashed lines are other people: men my age (born in 1993), from studies and other devices that measure a little\n    differently, so read them as a rough guide. Where they come from is in this tab's Links box.\n",
+  "t": "मेरी Pixel Watch से, Google Health के ज़रिए, अप्रैल 2023 से नवंबर 2026 तक (2026-11-26 को एक्सपोर्ट)। व्यायाम वह सब है जो घड़ी ने 10 मिनट या ज़्यादा दर्ज किया: पैदल चलना, साइकिल, एलिप्टिकल, दौड़, तैराकी। सिर्फ़ तारीख़ें और आँकड़े: कोई जगह नहीं। धराशायी रेखाएँ दूसरे लोग हैं: मेरी उम्र के पुरुष (1993 में जन्मे), अध्ययनों और दूसरे उपकरणों से जो थोड़ा अलग मापते हैं, इसलिए इन्हें मोटा अंदाज़ा समझो। स्रोत इस टैब के Links बॉक्स में हैं।"
  },
  "6b39b73a4a6a": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#27: </span>Best of the Worst: Vampire Assassin, Hack-O-Lantern, and Cathy's Curse",
@@ -3979,10 +4011,6 @@
   "en": "Peeta, a black-and-white cat, running across the backyard grass",
   "t": "Peeta, एक काली-सफ़ेद बिल्ली, पिछवाड़े की घास पर दौड़ती हुई"
  },
- "73989d9c5926": {
-  "en": "Running",
-  "t": "दौड़ना"
- },
  "73aba9691140": {
   "en": "Madama Butterfly",
   "t": "Madama Butterfly"
@@ -4211,10 +4239,6 @@
   "en": "Kilograms of beef grilled",
   "t": "भुना गया बीफ़ (किलोग्राम)"
  },
- "79d54f2dca09": {
-  "en": "Around the world",
-  "t": "दुनिया का चक्कर"
- },
  "7a075b3286e7": {
   "en": " PC + Xbox  ·  estimated ",
   "t": "PC + Xbox  ·  अनुमानित"
@@ -4238,6 +4262,10 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
+ },
+ "7a849b0e074b": {
+  "en": "<strong>Ultrahuman</strong>, “HRV by age and gender”: men’s median overnight HRV (RMSSD) by decade, 52 ms in their 20s, 45 in their 30s, 40 in their 40s, from over 510,000 ring users. <a href=\"https://www.ultrahuman.com/blog/hrv-by-age-and-gender-whats-normal-for-men-vs-women/\">Article</a>",
+  "t": "<strong>Ultrahuman</strong>, “HRV by age and gender”: दशक के हिसाब से पुरुषों की रात की माध्यिका HRV (RMSSD), 20 के दशक में 52 ms, 30 में 45, 40 में 40, 5,10,000 से ज़्यादा रिंग उपयोगकर्ताओं से। <a href=\"https://www.ultrahuman.com/blog/hrv-by-age-and-gender-whats-normal-for-men-vs-women/\">लेख</a>"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -4510,10 +4538,6 @@
  "82d2abb6b0d8": {
   "en": "Skin tone",
   "t": "त्वचा का रंग"
- },
- "82e58fbf1aa4": {
-  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Exercise is what the\n    watch logged, 10 minutes or more: walks, rides, the elliptical, runs, swims. Bike rides the watch caught on its own\n    count as \"Other\", as on the <a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Cycling</a> tab. Dates and numbers only: no places.\n",
-  "t": "मेरी Pixel Watch से, Google Health के ज़रिए, अप्रैल 2023 से नवंबर 2026 तक (2026-11-26 को एक्सपोर्ट)। व्यायाम वह है जो घड़ी ने दर्ज किया, 10 मिनट या ज़्यादा: पैदल चलना, साइकिल, एलिप्टिकल, दौड़, तैराकी। जो साइकिल सवारियाँ घड़ी ने ख़ुद पकड़ीं, वे \"अन्य\" में गिनी जाती हैं, जैसे <a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">साइकिलिंग</a>टैब में। सिर्फ़ तारीख़ें और आँकड़े: कोई जगह नहीं।"
  },
  "82fb9c3d5b57": {
   "en": "Ecchi-meter: turn your phone sideways",
@@ -5075,6 +5099,10 @@
   "en": "Yamete kudasai~ (〃ω〃)",
   "t": "यामेते कुदासाई~ (〃ω〃)"
  },
+ "92c22fa9971b": {
+  "en": "<strong>Antoine Coutrot and colleagues</strong>, <em>Nature Communications</em> (2022): men reported about 7.3 hours of sleep in early adulthood, down to 6.8 hours by 35, flat until 50. <a href=\"https://doi.org/10.1038/s41467-022-34624-8\">Paper</a>",
+  "t": "<strong>Antoine Coutrot और साथी</strong>, <em>Nature Communications</em> (2022): पुरुषों ने शुरुआती वयस्कता में लगभग 7.3 घंटे नींद बताई, 35 तक घटकर 6.8 घंटे, 50 तक स्थिर। <a href=\"https://doi.org/10.1038/s41467-022-34624-8\">शोध-पत्र</a>"
+ },
  "92f1af0db7dd": {
   "en": " PlayStation ",
   "t": "PlayStation"
@@ -5338,6 +5366,10 @@
  "9a7378f878db": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder movie 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 33: </span> अस्थायी फ़िल्म 33"
+ },
+ "9b3cbed5c490": {
+  "en": "Zoom",
+  "t": "ज़ूम"
  },
  "9b596bacf45e": {
   "en": "You don't have to trust me, you can check <a href=\"https://github.com/Deovandski/Deovandski\" data-astro-cid-somgw2vn=\"\">the source code</a> yourself.",
@@ -6587,10 +6619,6 @@
   "en": "Ghost",
   "t": "Ghost"
  },
- "bf6aad009bcd": {
-  "en": "Counts as exercise",
-  "t": "व्यायाम में गिना जाता है"
- },
  "bfa28522fcb3": {
   "en": "Hamilton",
   "t": "Hamilton"
@@ -7750,6 +7778,10 @@
  "e066dc148a3a": {
   "en": " MD ",
   "t": "MD"
+ },
+ "e08b7f46ba06": {
+  "en": "Back to Cycling",
+  "t": "साइकिलिंग पर वापस"
  },
  "e09a88958081": {
   "en": "The doujinshi is writing itself ( ͡ʘ ͜ʖ ͡ʘ)",

@@ -1,40 +1,17 @@
 ---
-import { readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
 import { Content as Story } from '../../content/cycling/story.md';
-import PlanetLap from './reusable/PlanetLap.astro';
 import YouTube from './reusable/YouTube.astro';
 
-// ---- data: content/cycling/rides.json (from scripts/cycling-from-takeout.mjs) + content/cycling/estimated.md ----
-type Ride = { date: string; hour: number; km: number; minutes: number; kind: 'outdoor' | 'mountain' | 'indoor'; how?: 'logged' | 'auto'; source: string; estimated?: boolean };
-const log = JSON.parse(readFileSync(resolve('content/cycling/rides.json'), 'utf8')) as { exported: string | null; medianKmh?: number; rides: Ride[] };
-const MILE = 1.609344;
-const estimates = readFileSync(resolve('content/cycling/estimated.md'), 'utf8')
-  .split(/\r?\n/)
-  .map((l) => l.match(/^-\s+(.+?):\s*([\d.,]+)\s*(mi|km)\s*$/i))
-  .filter((m): m is RegExpMatchArray => !!m && !m[1].startsWith('<'))
-  .map((m) => ({ what: m[1], km: Number(m[2].replace(/,/g, '')) * (m[3].toLowerCase() === 'mi' ? MILE : 1) }));
+// ---- data: src/lib/cycling.ts (rides.json, estimated.md, cities.json), shared with the tab's ▶ Play map ----
+import { log, MILE, estimates, rides, caught, caughtHours, outdoor, guessed, guessedKm, estimatedKm, totalKm, star, places, totalMi, passed, ahead, EARTH_MI } from '../lib/cycling';
+import type { Ride } from '../lib/cycling';
 
-// Rides the watch caught on its own (how: 'auto') don't count: most were Peeta's stroller or the elliptical
-// ("Ridin' with Peeta" below). Only rides I logged as bike rides count.
-const all = log.rides ?? [];
-const rides = all.filter((r) => r.how !== 'auto');
-const caught = all.filter((r) => r.how === 'auto');
-const caughtHours = caught.reduce((s, r) => s + r.minutes, 0) / 60;
-const outdoor = rides.filter((r) => r.kind !== 'indoor');
-const trackedKm = outdoor.reduce((s, r) => s + r.km, 0);
-// Rides the watch logged without GPS get a distance estimated from their time (scripts/cycling-from-takeout.mjs).
-const guessed = outdoor.filter((r) => r.estimated);
-const guessedKm = guessed.reduce((s, r) => s + r.km, 0);
-const estimatedKm = estimates.reduce((s, e) => s + e.km, 0);
-const totalKm = trackedKm + estimatedKm;
 const hours = rides.reduce((s, r) => s + r.minutes, 0) / 60;
 const longest = outdoor.filter((r) => !r.estimated).reduce<Ride | null>((best, r) => (!best || r.km > best.km ? r : best), null);
 const mountain = rides.filter((r) => r.kind === 'mountain').length;
 const n0 = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
 const n1 = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 });
 const usDate = (d: string) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
-const star = estimatedKm > 0 || guessedKm > 0 ? '*' : '';
 
 // Distance by year (outdoor rides), for the bars: measured, then estimated.
 const byYear = new Map<number, { km: number; est: number; rides: number }>();
@@ -50,33 +27,15 @@ const years = [...byYear.entries()].sort((a, b) => a[0] - b[0]);
 const maxYear = Math.max(1, ...years.map(([, v]) => v.km + v.est));
 const indoor = rides.length - outdoor.length;
 
-const EARTH_MI = 24901; // the Earth round the equator (40,075 km)
-
-// The planet starts at Fargo, with cities along the way as comparisons, as the crow flies (content/cycling/cities.json).
-type Place = { name: string; lat: number; lon: number };
-const places = JSON.parse(readFileSync(resolve('content/cycling/cities.json'), 'utf8')) as { start: Place; cities: Place[] };
-const crowMi = (a: Place, b: Place) => {
-  const r = (d: number) => (d * Math.PI) / 180;
-  const c = Math.sin(r(a.lat)) * Math.sin(r(b.lat)) + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.cos(r(b.lon - a.lon));
-  return 3958.8 * Math.acos(Math.min(1, Math.max(-1, c)));
-};
-const cities = places.cities.map((c) => ({ label: c.name, distance: crowMi(places.start, c) })).sort((a, b) => a.distance - b.distance);
-const totalMi = totalKm / MILE;
-const passed = [...cities].reverse().find((c) => c.distance <= totalMi);
-const ahead = cities.find((c) => c.distance > totalMi);
 ---
 
 <div class="cycling">
   <section class="cycling__world" aria-labelledby="cycling-world">
-    <h2 id="cycling-world">Around the world</h2>
-    <PlanetLap
-      distance={totalKm / MILE}
-      circumference={EARTH_MI}
-      summary={`{distance} mi${star} on the bike: {percent} of the way around the world.`}
-      start={places.start.name}
-      markers={cities}
-      unit="mi"
-    />
+    <h2 id="cycling-world">Around the World in 80 Gears</h2>
+    <p class="cycling__lap">
+      {n0.format(totalMi)} mi{star} on the bike: <strong>{n1.format((totalMi / EARTH_MI) * 100)}%</strong> of the way around the world.
+      Press <strong>▶ Play</strong> to ride it on the map.
+    </p>
     {
       totalMi > 0 && (passed || ahead) && (
         <p class="cycling__compare">
@@ -137,7 +96,8 @@ const ahead = cities.find((c) => c.distance > totalMi);
 </div>
 
 <style>
-  .cycling { max-width: 52rem; --planet-text: var(--text); --planet-accent: var(--teal); }
+  .cycling { max-width: 52rem; }
+  .cycling__lap { font-weight: 700; }
   .cycling h2,
   .cycling :global(h2) {
     font-size: var(--step-2);

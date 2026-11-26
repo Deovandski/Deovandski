@@ -227,6 +227,10 @@
   "en": "\nMy watch logged 162 more \"bike rides\" on its own (76 hours of them). Most of those\n          were me pushing my cat, <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a>, in his stroller, or me on the elliptical when it's too cold outside, so\n          they don't count toward the miles above.\n",
   "t": "時計はほかにも 162 回の「自転車ライド」を勝手に記録していた（合計 76 時間）。そのほとんどは、うちの猫 <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a> をベビーカーに乗せて押していたか、外が寒すぎる日にエリプティカルをしていたときなので、上のマイルには入れていない。"
  },
+ "0648fee0c26c": {
+  "en": "Around the World in 80 Gears: turn your phone sideways",
+  "t": "80段ギア世界一周：スマホを横向きに"
+ },
  "06513e2fd9de": {
   "en": "Rise and shine",
   "t": "おはよう、起きて"
@@ -631,6 +635,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 39: </span> Placeholder movie 39 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 39: </span> 仮の映画 39"
  },
+ "11f4a487dbaf": {
+  "en": "<strong>The Cooper Institute</strong>, VO₂ max norms by age and sex: for men 30–39, the 40th percentile is 40.5 and the 60th is 44.0, so the line uses the middle, 42.3. <a href=\"https://www8.garmin.com/manuals/webhelp/GUID-0083D0A0-EA6E-41F0-8207-3F1498875E61/EN-US/GUID-1FBCCD9E-19E1-4E4C-BD60-1793B5B97EB3.html\">Table</a>",
+  "t": "<strong>The Cooper Institute</strong>、年齢・性別ごとのVO₂max基準：30〜39歳男性の40パーセンタイルは40.5、60パーセンタイルは44.0なので、線はその中間の42.3。<a href=\"https://www8.garmin.com/manuals/webhelp/GUID-0083D0A0-EA6E-41F0-8207-3F1498875E61/EN-US/GUID-1FBCCD9E-19E1-4E4C-BD60-1793B5B97EB3.html\">表</a>"
+ },
  "122babc08c1c": {
   "en": "Not enough days with both numbers.",
   "t": "両方の数値がある日が足りません。"
@@ -658,6 +666,10 @@
  "131260cbfbb0": {
   "en": "Music",
   "t": "音楽"
+ },
+ "1318b5b85065": {
+  "en": "Where the dashed lines come from",
+  "t": "点線の出どころ"
  },
  "132a0149f337": {
   "en": "they rise together",
@@ -987,6 +999,10 @@
   "en": "Mana",
   "t": "マナ"
  },
+ "1ece8a2f722b": {
+  "en": "Men my age",
+  "t": "同年代の男性"
+ },
  "1ed928e6b267": {
   "en": "Still tired",
   "t": "まだ疲れてる"
@@ -1227,10 +1243,6 @@
   "en": "Views",
   "t": "再生数"
  },
- "24d3e4fdd9a8": {
-  "en": "Strength",
-  "t": "筋トレ"
- },
  "24d4ea7ee729": {
   "en": "Do I really have to wear these",
   "t": "これ本当に着なきゃダメ？"
@@ -1270,10 +1282,6 @@
  "259034821da9": {
   "en": "Sabaton",
   "t": "Sabaton"
- },
- "25e1d41b4864": {
-  "en": "Cardio machines",
-  "t": "有酸素マシン"
  },
  "2648964f2489": {
   "en": "Enlarge: Painting or drawing, 04/30/2013",
@@ -1798,6 +1806,10 @@
  "33ff8a2b24db": {
   "en": "Thus is the Church arranged, from the Throne of Embers down unto the faithful.",
   "t": "教会はかく秩序づけられる。燠火の玉座より信徒に至るまで。"
+ },
+ "34141991397e": {
+  "en": " 551 mi* on the bike: <strong data-astro-cid-o4ptolev=\"\">2.2%</strong> of the way around the world.\n      Press <strong data-astro-cid-o4ptolev=\"\">▶ Play</strong> to ride it on the map.\n",
+  "t": "自転車で 551 マイル*：世界一周の <strong data-astro-cid-o4ptolev=\"\">2.2%</strong>。<strong data-astro-cid-o4ptolev=\"\">▶ Play</strong> を押すと地図の上を走れます。"
  },
  "3415ddf27fa5": {
   "en": "The Sacred Scripture of Churrasco",
@@ -2339,6 +2351,10 @@
   "en": "Black Jacket Symphony",
   "t": "Black Jacket Symphony"
  },
+ "44eb8b0c618e": {
+  "en": "US adults my age",
+  "t": "同年代の米国成人"
+ },
  "44ebe8475cd2": {
   "en": "Fixed my fatty liver.\n<ul>\n<li>Cut alcohol. I rarely drink anymore, and when I do, it’s because it’s actually tasty, I’m hanging out with people, and I feel like it.</li>\n<li>Cut carbs.</li>\n<li>Took NAC, milk thistle, curcumin, and most importantly, omega-3. I take vitamins every day but spread them out, never back-to-back, to avoid unnecessary doses: too much of a good thing is bad.</li>\n</ul>\n",
   "t": "脂肪肝を治した。<ul> <li>酒を減らした。今はめったに飲まない。飲むのは、本当においしくて、誰かと一緒に遊んでいて、飲みたい気分のときだけ。</li> <li>炭水化物を減らした。</li> <li>NAC、ミルクシスル、クルクミン、そして何よりオメガ 3 をとった。ビタミンは毎日とるけど、不要な量にならないよう、続けてではなく間隔を空けている：良いものも多すぎれば毒だ。</li> </ul>"
@@ -2374,6 +2390,10 @@
  "468d79c2e022": {
   "en": "Rock",
   "t": "石"
+ },
+ "468ddecacd77": {
+  "en": "{label}: {value}",
+  "t": "{label}：{value}"
  },
  "46b00befa084": {
   "en": "\"Almost went viral!\" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses.",
@@ -2414,6 +2434,10 @@
  "47d6c332de8e": {
   "en": "Idle Evolution",
   "t": "Idle Evolution"
+ },
+ "47eb1c699b77": {
+  "en": "<strong>Oura</strong>, “Average resting heart rate” (2026): men’s average nighttime heart rate by age, 60.2 bpm at 25–29, 61.2 at 30–34, 62.3 at 35–39. <a href=\"https://ouraring.com/blog/average-resting-heart-rate/\">Article</a>",
+  "t": "<strong>Oura</strong>、“Average resting heart rate”（2026）：男性の夜間平均心拍数（年齢別）、25〜29歳 60.2 bpm、30〜34歳 61.2、35〜39歳 62.3。<a href=\"https://ouraring.com/blog/average-resting-heart-rate/\">記事</a>"
  },
  "481021d04da3": {
   "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
@@ -2458,6 +2482,10 @@
  "4934994652a1": {
   "en": "Tribute shows",
   "t": "トリビュートショー"
+ },
+ "493a6ba39dfb": {
+  "en": "<strong>David Bassett and colleagues</strong>, <em>Medicine &amp; Science in Sports &amp; Exercise</em> (2010): US adults took 5,843 steps a day at 18–29, 5,127 at 30–39 and 5,915 at 40–49 (men and women together; men 5,340 overall). <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2927728/\">Paper</a>",
+  "t": "<strong>David Bassett ほか</strong>、<em>Medicine &amp; Science in Sports &amp; Exercise</em>（2010）：米国の成人の1日の歩数は18〜29歳で5,843歩、30〜39歳で5,127歩、40〜49歳で5,915歩（男女合わせて。男性全体では5,340歩）。<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2927728/\">論文</a>"
  },
  "496e9438ab65": {
   "en": "Philosophy",
@@ -2870,6 +2898,10 @@
  "53dd95cca1e0": {
   "en": "Camera angles are everything",
   "t": "カメラアングルがすべて"
+ },
+ "53f8fb0b336c": {
+  "en": "Around the World in 80 Gears",
+  "t": "80段ギア世界一周"
  },
  "54225a6752c4": {
   "en": " <span class=\"shelf__dot\" style=\"background: #c98500\" data-astro-cid-nqpad2wp=\"\"></span> Factory &amp; automation: 1,588 h ",
@@ -3575,10 +3607,6 @@
   "en": "Another dino",
   "t": "別の恐竜"
  },
- "67f294519699": {
-  "en": "Walking",
-  "t": "ウォーキング"
- },
  "6804bf126f26": {
   "en": " 368 h  ",
   "t": "368 時間"
@@ -3718,6 +3746,10 @@
  "6b24977c1fbe": {
   "en": "Deo and his parents smiling at a race finish, showing their medals",
   "t": "レースのゴールで笑顔でメダルを見せる Deo と両親"
+ },
+ "6b33872b3a61": {
+  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Exercise is anything\n    the watch logged for 10 minutes or more: walks, rides, the elliptical, runs, swims. Dates and numbers only: no places.\n    The dashed lines are other people: men my age (born in 1993), from studies and other devices that measure a little\n    differently, so read them as a rough guide. Where they come from is in this tab's Links box.\n",
+  "t": "私の Pixel Watch から Google Health 経由で、2023年4月〜2026年11月（2026-11-26 に書き出し）。運動は時計が10分以上記録したものすべて：ウォーキング、自転車、エリプティカル、ランニング、水泳。日付と数値だけで、場所はありません。点線はほかの人たち：同年代（1993年生まれ）の男性で、研究やほかの機器のデータなので測り方が少し違います。おおまかな目安として見てください。出どころはこのタブの Links にあります。"
  },
  "6b39b73a4a6a": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#27: </span>Best of the Worst: Vampire Assassin, Hack-O-Lantern, and Cathy's Curse",
@@ -3979,10 +4011,6 @@
   "en": "Peeta, a black-and-white cat, running across the backyard grass",
   "t": "裏庭の芝生を走る白黒の猫、Peeta"
  },
- "73989d9c5926": {
-  "en": "Running",
-  "t": "ランニング"
- },
  "73aba9691140": {
   "en": "Madama Butterfly",
   "t": "Madama Butterfly"
@@ -4211,10 +4239,6 @@
   "en": "Kilograms of beef grilled",
   "t": "焼いた牛肉のキロ数"
  },
- "79d54f2dca09": {
-  "en": "Around the world",
-  "t": "世界一周"
- },
  "7a075b3286e7": {
   "en": " PC + Xbox  ·  estimated ",
   "t": "PC + Xbox  ·  推定"
@@ -4238,6 +4262,10 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
+ },
+ "7a849b0e074b": {
+  "en": "<strong>Ultrahuman</strong>, “HRV by age and gender”: men’s median overnight HRV (RMSSD) by decade, 52 ms in their 20s, 45 in their 30s, 40 in their 40s, from over 510,000 ring users. <a href=\"https://www.ultrahuman.com/blog/hrv-by-age-and-gender-whats-normal-for-men-vs-women/\">Article</a>",
+  "t": "<strong>Ultrahuman</strong>、“HRV by age and gender”：男性の夜間心拍変動（RMSSD）の中央値（年代別）、20代 52 ms、30代 45、40代 40。51万人以上のリング利用者から。<a href=\"https://www.ultrahuman.com/blog/hrv-by-age-and-gender-whats-normal-for-men-vs-women/\">記事</a>"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -4510,10 +4538,6 @@
  "82d2abb6b0d8": {
   "en": "Skin tone",
   "t": "肌の色"
- },
- "82e58fbf1aa4": {
-  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Exercise is what the\n    watch logged, 10 minutes or more: walks, rides, the elliptical, runs, swims. Bike rides the watch caught on its own\n    count as \"Other\", as on the <a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Cycling</a> tab. Dates and numbers only: no places.\n",
-  "t": "私の Pixel Watch から Google Health 経由で、2023年4月〜2026年11月（2026-11-26 に書き出し）。運動は時計が記録した10分以上のもの：ウォーキング、自転車、エリプティカル、ランニング、水泳。時計が自動で拾った自転車は、 <a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">サイクリング</a>タブと同じく「その他」に数えます。日付と数値だけで、場所はありません。"
  },
  "82fb9c3d5b57": {
   "en": "Ecchi-meter: turn your phone sideways",
@@ -5075,6 +5099,10 @@
   "en": "Yamete kudasai~ (〃ω〃)",
   "t": "やめてください〜 (〃ω〃)"
  },
+ "92c22fa9971b": {
+  "en": "<strong>Antoine Coutrot and colleagues</strong>, <em>Nature Communications</em> (2022): men reported about 7.3 hours of sleep in early adulthood, down to 6.8 hours by 35, flat until 50. <a href=\"https://doi.org/10.1038/s41467-022-34624-8\">Paper</a>",
+  "t": "<strong>Antoine Coutrot ほか</strong>、<em>Nature Communications</em>（2022）：男性の自己申告の睡眠は成人初期で約7.3時間、35歳で6.8時間まで下がり、50歳まで横ばい。<a href=\"https://doi.org/10.1038/s41467-022-34624-8\">論文</a>"
+ },
  "92f1af0db7dd": {
   "en": " PlayStation ",
   "t": "PlayStation"
@@ -5338,6 +5366,10 @@
  "9a7378f878db": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder movie 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 33: </span> 仮の映画 33"
+ },
+ "9b3cbed5c490": {
+  "en": "Zoom",
+  "t": "ズーム"
  },
  "9b596bacf45e": {
   "en": "You don't have to trust me, you can check <a href=\"https://github.com/Deovandski/Deovandski\" data-astro-cid-somgw2vn=\"\">the source code</a> yourself.",
@@ -6587,10 +6619,6 @@
   "en": "Ghost",
   "t": "Ghost"
  },
- "bf6aad009bcd": {
-  "en": "Counts as exercise",
-  "t": "運動に数えるもの"
- },
  "bfa28522fcb3": {
   "en": "Hamilton",
   "t": "Hamilton"
@@ -7750,6 +7778,10 @@
  "e066dc148a3a": {
   "en": " MD ",
   "t": "MD"
+ },
+ "e08b7f46ba06": {
+  "en": "Back to Cycling",
+  "t": "サイクリングに戻る"
  },
  "e09a88958081": {
   "en": "The doujinshi is writing itself ( ͡ʘ ͜ʖ ͡ʘ)",

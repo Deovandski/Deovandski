@@ -11,6 +11,7 @@
 export type GimmickInfo = { id: string; title: string; tab: string; tabName: string; inline?: boolean };
 
 export const GIMMICKS: GimmickInfo[] = [
+  { id: 'around-the-world', title: 'Around the World in 80 Gears', tab: 'cycling', tabName: 'Cycling', inline: true },
   { id: 'balls-farm', title: 'Balls farm', tab: 'mentor', tabName: 'Mentor' },
   { id: 'dice-tray', title: 'Dice tray', tab: 'dnd', tabName: 'D&D', inline: true },
   { id: 'dino-ambush', title: 'Dino Ambush', tab: 'gamer', tabName: 'Gamer' },

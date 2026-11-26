@@ -15,6 +15,7 @@ import GymFacet from '../components/GymFacet.astro';
 import CyclingFacet from '../components/CyclingFacet.astro';
 import BiomarkersFacet from '../components/BiomarkersFacet.astro';
 import { Content as CyclingSources } from '../../content/cycling/sources.md';
+import { Content as BiomarkerSources } from '../../content/biomarkers/sources.md';
 import LustFacet from '../components/LustFacet.astro';
 import DeathFacet from '../components/DeathFacet.astro';
 import PetsFacet from '../components/PetsFacet.astro';
@@ -659,11 +660,13 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-cycling" aria-labelledby="tab-cycling" tabindex="0" hidden>
+      <GimmickPlay tab="cycling" />
       <LinksMenu id="cycling-links" toggle="external"><SourceList title="Shoulders I stand on"><CyclingSources /></SourceList></LinksMenu>
       <CyclingFacet />
     </section>
 
     <section class="panel" role="region" id="panel-biomarkers" aria-labelledby="tab-biomarkers" tabindex="0" hidden>
+      <LinksMenu id="biomarkers-links" toggle="external"><SourceList title="Where the dashed lines come from"><BiomarkerSources /></SourceList></LinksMenu>
       <BiomarkersFacet />
     </section>
 
@@ -1031,7 +1034,7 @@ const nf = new Intl.NumberFormat('en-US');
 
   .facet-head { scroll-margin-top: 6rem; padding: clamp(1.25rem, 3vw, 2.25rem) clamp(1.25rem, 3vw, 2.25rem) 0; border-top: 1px solid rgba(57, 197, 187, 0.2); }
   .facet-head[hidden], .facet-head [hidden] { display: none; }
-  #panel-death, #panel-mentor, #panel-cycling {
+  #panel-death, #panel-mentor, #panel-cycling, #panel-biomarkers {
     --sources-title: var(--silver);
     --sources-title-font: var(--font-display);
     --sources-text: var(--muted);

@@ -227,6 +227,10 @@
   "en": "\nMy watch logged 162 more \"bike rides\" on its own (76 hours of them). Most of those\n          were me pushing my cat, <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a>, in his stroller, or me on the elliptical when it's too cold outside, so\n          they don't count toward the miles above.\n",
   "t": "นาฬิกาของผมบันทึก \"การปั่นจักรยาน\" เพิ่มเองอีก 162 ครั้ง (รวม 76 ชั่วโมง) ส่วนใหญ่คือผมเข็นแมวของผม <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a> ในรถเข็น หรือผมเล่นเครื่องเดินวงรีตอนที่ข้างนอกหนาวเกินไป เลยไม่นับรวมในระยะไมล์ข้างบน"
  },
+ "0648fee0c26c": {
+  "en": "Around the World in 80 Gears: turn your phone sideways",
+  "t": "รอบโลกใน 80 เกียร์: หมุนมือถือเป็นแนวนอน"
+ },
  "06513e2fd9de": {
   "en": "Rise and shine",
   "t": "ตื่นได้แล้ว"
@@ -631,6 +635,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 39: </span> Placeholder movie 39 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 39: </span> ภาพยนตร์ชั่วคราว 39"
  },
+ "11f4a487dbaf": {
+  "en": "<strong>The Cooper Institute</strong>, VO₂ max norms by age and sex: for men 30–39, the 40th percentile is 40.5 and the 60th is 44.0, so the line uses the middle, 42.3. <a href=\"https://www8.garmin.com/manuals/webhelp/GUID-0083D0A0-EA6E-41F0-8207-3F1498875E61/EN-US/GUID-1FBCCD9E-19E1-4E4C-BD60-1793B5B97EB3.html\">Table</a>",
+  "t": "<strong>The Cooper Institute</strong>, เกณฑ์ VO₂ max ตามอายุและเพศ: สำหรับผู้ชายอายุ 30–39 ปี เปอร์เซ็นไทล์ที่ 40 คือ 40.5 และที่ 60 คือ 44.0 เส้นจึงใช้ค่ากลาง 42.3 <a href=\"https://www8.garmin.com/manuals/webhelp/GUID-0083D0A0-EA6E-41F0-8207-3F1498875E61/EN-US/GUID-1FBCCD9E-19E1-4E4C-BD60-1793B5B97EB3.html\">ตาราง</a>"
+ },
  "122babc08c1c": {
   "en": "Not enough days with both numbers.",
   "t": "วันที่มีทั้งสองตัวเลขไม่พอ"
@@ -658,6 +666,10 @@
  "131260cbfbb0": {
   "en": "Music",
   "t": "เพลง"
+ },
+ "1318b5b85065": {
+  "en": "Where the dashed lines come from",
+  "t": "เส้นประมาจากไหน"
  },
  "132a0149f337": {
   "en": "they rise together",
@@ -987,6 +999,10 @@
   "en": "Mana",
   "t": "มานา"
  },
+ "1ece8a2f722b": {
+  "en": "Men my age",
+  "t": "ผู้ชายวัยเดียวกับผม"
+ },
  "1ed928e6b267": {
   "en": "Still tired",
   "t": "ยังเหนื่อยอยู่"
@@ -1227,10 +1243,6 @@
   "en": "Views",
   "t": "ยอดวิว"
  },
- "24d3e4fdd9a8": {
-  "en": "Strength",
-  "t": "เวทเทรนนิ่ง"
- },
  "24d4ea7ee729": {
   "en": "Do I really have to wear these",
   "t": "ต้องใส่พวกนี้จริง ๆ เหรอ"
@@ -1270,10 +1282,6 @@
  "259034821da9": {
   "en": "Sabaton",
   "t": "Sabaton"
- },
- "25e1d41b4864": {
-  "en": "Cardio machines",
-  "t": "เครื่องคาร์ดิโอ"
  },
  "2648964f2489": {
   "en": "Enlarge: Painting or drawing, 04/30/2013",
@@ -1798,6 +1806,10 @@
  "33ff8a2b24db": {
   "en": "Thus is the Church arranged, from the Throne of Embers down unto the faithful.",
   "t": "ศาสนจักรจึงจัดเรียงไว้ดังนี้ จากบัลลังก์แห่งถ่านแดงลงมาจนถึงผู้ศรัทธา"
+ },
+ "34141991397e": {
+  "en": " 551 mi* on the bike: <strong data-astro-cid-o4ptolev=\"\">2.2%</strong> of the way around the world.\n      Press <strong data-astro-cid-o4ptolev=\"\">▶ Play</strong> to ride it on the map.\n",
+  "t": "ปั่นจักรยานไป 551 ไมล์*: <strong data-astro-cid-o4ptolev=\"\">2.2%</strong> ของการเดินทางรอบโลก กด <strong data-astro-cid-o4ptolev=\"\">▶ Play</strong> เพื่อปั่นบนแผนที่"
  },
  "3415ddf27fa5": {
   "en": "The Sacred Scripture of Churrasco",
@@ -2339,6 +2351,10 @@
   "en": "Black Jacket Symphony",
   "t": "Black Jacket Symphony"
  },
+ "44eb8b0c618e": {
+  "en": "US adults my age",
+  "t": "ผู้ใหญ่ในสหรัฐฯ วัยเดียวกับผม"
+ },
  "44ebe8475cd2": {
   "en": "Fixed my fatty liver.\n<ul>\n<li>Cut alcohol. I rarely drink anymore, and when I do, it’s because it’s actually tasty, I’m hanging out with people, and I feel like it.</li>\n<li>Cut carbs.</li>\n<li>Took NAC, milk thistle, curcumin, and most importantly, omega-3. I take vitamins every day but spread them out, never back-to-back, to avoid unnecessary doses: too much of a good thing is bad.</li>\n</ul>\n",
   "t": "รักษาไขมันพอกตับ <ul> <li>ลดแอลกอฮอล์ ตอนนี้ผมแทบไม่ดื่ม และถ้าดื่มก็เพราะมันอร่อยจริง ๆ ได้อยู่กับเพื่อน และอยากดื่ม</li> <li>ลดคาร์บ</li> <li>กิน NAC มิลค์ทิสเซิล เคอร์คูมิน และที่สำคัญที่สุด โอเมกา-3 ผมกินวิตามินทุกวันแต่กระจายเวลา ไม่กินติดกัน เพื่อเลี่ยงปริมาณที่ไม่จำเป็น: ของดีถ้ามากไปก็ไม่ดี</li> </ul>"
@@ -2374,6 +2390,10 @@
  "468d79c2e022": {
   "en": "Rock",
   "t": "ก้อนหิน"
+ },
+ "468ddecacd77": {
+  "en": "{label}: {value}",
+  "t": "{label}: {value}"
  },
  "46b00befa084": {
   "en": "\"Almost went viral!\" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses.",
@@ -2414,6 +2434,10 @@
  "47d6c332de8e": {
   "en": "Idle Evolution",
   "t": "Idle Evolution"
+ },
+ "47eb1c699b77": {
+  "en": "<strong>Oura</strong>, “Average resting heart rate” (2026): men’s average nighttime heart rate by age, 60.2 bpm at 25–29, 61.2 at 30–34, 62.3 at 35–39. <a href=\"https://ouraring.com/blog/average-resting-heart-rate/\">Article</a>",
+  "t": "<strong>Oura</strong>, “Average resting heart rate” (2026): อัตราการเต้นของหัวใจเฉลี่ยช่วงกลางคืนของผู้ชายตามอายุ 60.2 bpm ที่ 25–29 ปี 61.2 ที่ 30–34 ปี 62.3 ที่ 35–39 ปี <a href=\"https://ouraring.com/blog/average-resting-heart-rate/\">บทความ</a>"
  },
  "481021d04da3": {
   "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
@@ -2458,6 +2482,10 @@
  "4934994652a1": {
   "en": "Tribute shows",
   "t": "โชว์เพลงบรรณาการ"
+ },
+ "493a6ba39dfb": {
+  "en": "<strong>David Bassett and colleagues</strong>, <em>Medicine &amp; Science in Sports &amp; Exercise</em> (2010): US adults took 5,843 steps a day at 18–29, 5,127 at 30–39 and 5,915 at 40–49 (men and women together; men 5,340 overall). <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2927728/\">Paper</a>",
+  "t": "<strong>David Bassett และคณะ</strong>, <em>Medicine &amp; Science in Sports &amp; Exercise</em> (2010): ผู้ใหญ่ในสหรัฐฯ เดิน 5,843 ก้าวต่อวันที่อายุ 18–29 ปี 5,127 ก้าวที่ 30–39 ปี และ 5,915 ก้าวที่ 40–49 ปี (รวมชายและหญิง ผู้ชายโดยรวม 5,340 ก้าว) <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2927728/\">บทความวิจัย</a>"
  },
  "496e9438ab65": {
   "en": "Philosophy",
@@ -2870,6 +2898,10 @@
  "53dd95cca1e0": {
   "en": "Camera angles are everything",
   "t": "มุมกล้องคือทุกอย่าง"
+ },
+ "53f8fb0b336c": {
+  "en": "Around the World in 80 Gears",
+  "t": "รอบโลกใน 80 เกียร์"
  },
  "54225a6752c4": {
   "en": " <span class=\"shelf__dot\" style=\"background: #c98500\" data-astro-cid-nqpad2wp=\"\"></span> Factory &amp; automation: 1,588 h ",
@@ -3575,10 +3607,6 @@
   "en": "Another dino",
   "t": "ไดโนอีกตัว"
  },
- "67f294519699": {
-  "en": "Walking",
-  "t": "เดิน"
- },
  "6804bf126f26": {
   "en": " 368 h  ",
   "t": "368 ชม."
@@ -3718,6 +3746,10 @@
  "6b24977c1fbe": {
   "en": "Deo and his parents smiling at a race finish, showing their medals",
   "t": "Deo กับพ่อแม่ยิ้มอยู่ที่เส้นชัยงานวิ่ง โชว์เหรียญรางวัล"
+ },
+ "6b33872b3a61": {
+  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Exercise is anything\n    the watch logged for 10 minutes or more: walks, rides, the elliptical, runs, swims. Dates and numbers only: no places.\n    The dashed lines are other people: men my age (born in 1993), from studies and other devices that measure a little\n    differently, so read them as a rough guide. Where they come from is in this tab's Links box.\n",
+  "t": "จาก Pixel Watch ของผม ผ่าน Google Health ตั้งแต่เมษายน 2023 ถึงพฤศจิกายน 2026 (ส่งออกเมื่อ 2026-11-26) การออกกำลังกายคืออะไรก็ตามที่นาฬิกาบันทึกนาน 10 นาทีขึ้นไป: เดิน ปั่นจักรยาน เครื่องเดินวงรี วิ่ง ว่ายน้ำ มีแค่วันที่และตัวเลข: ไม่มีสถานที่ เส้นประคือคนอื่น: ผู้ชายวัยเดียวกับผม (เกิดปี 1993) จากงานวิจัยและอุปกรณ์อื่นที่วัดต่างกันเล็กน้อย จึงใช้เป็นแนวทางคร่าว ๆ เท่านั้น ที่มาอยู่ในกล่อง Links ของแท็บนี้"
  },
  "6b39b73a4a6a": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#27: </span>Best of the Worst: Vampire Assassin, Hack-O-Lantern, and Cathy's Curse",
@@ -3979,10 +4011,6 @@
   "en": "Peeta, a black-and-white cat, running across the backyard grass",
   "t": "Peeta แมวขาวดำ วิ่งข้ามสนามหญ้าหลังบ้าน"
  },
- "73989d9c5926": {
-  "en": "Running",
-  "t": "วิ่ง"
- },
  "73aba9691140": {
   "en": "Madama Butterfly",
   "t": "Madama Butterfly"
@@ -4211,10 +4239,6 @@
   "en": "Kilograms of beef grilled",
   "t": "เนื้อวัวที่ย่าง (กิโลกรัม)"
  },
- "79d54f2dca09": {
-  "en": "Around the world",
-  "t": "รอบโลก"
- },
  "7a075b3286e7": {
   "en": " PC + Xbox  ·  estimated ",
   "t": "PC + Xbox  ·  ประมาณการ"
@@ -4238,6 +4262,10 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
+ },
+ "7a849b0e074b": {
+  "en": "<strong>Ultrahuman</strong>, “HRV by age and gender”: men’s median overnight HRV (RMSSD) by decade, 52 ms in their 20s, 45 in their 30s, 40 in their 40s, from over 510,000 ring users. <a href=\"https://www.ultrahuman.com/blog/hrv-by-age-and-gender-whats-normal-for-men-vs-women/\">Article</a>",
+  "t": "<strong>Ultrahuman</strong>, “HRV by age and gender”: ค่ามัธยฐาน HRV ช่วงกลางคืน (RMSSD) ของผู้ชายตามช่วงวัย 52 ms ในวัย 20 ปี 45 ในวัย 30 ปี 40 ในวัย 40 ปี จากผู้ใช้แหวนกว่า 510,000 คน <a href=\"https://www.ultrahuman.com/blog/hrv-by-age-and-gender-whats-normal-for-men-vs-women/\">บทความ</a>"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -4510,10 +4538,6 @@
  "82d2abb6b0d8": {
   "en": "Skin tone",
   "t": "สีผิว"
- },
- "82e58fbf1aa4": {
-  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Exercise is what the\n    watch logged, 10 minutes or more: walks, rides, the elliptical, runs, swims. Bike rides the watch caught on its own\n    count as \"Other\", as on the <a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Cycling</a> tab. Dates and numbers only: no places.\n",
-  "t": "จาก Pixel Watch ของผม ผ่าน Google Health ตั้งแต่เมษายน 2023 ถึงพฤศจิกายน 2026 (ส่งออกเมื่อ 2026-11-26) การออกกำลังกายคือสิ่งที่นาฬิกาบันทึก 10 นาทีขึ้นไป: เดิน ปั่นจักรยาน เครื่องเดินวงรี วิ่ง ว่ายน้ำ การปั่นที่นาฬิกาจับได้เองนับเป็น \"อื่น ๆ\" เหมือนในแท็บ <a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">ปั่นจักรยาน</a> มีแค่วันที่และตัวเลข: ไม่มีสถานที่"
  },
  "82fb9c3d5b57": {
   "en": "Ecchi-meter: turn your phone sideways",
@@ -5075,6 +5099,10 @@
   "en": "Yamete kudasai~ (〃ω〃)",
   "t": "ยาเมเตะ คุดาไซ~ (〃ω〃)"
  },
+ "92c22fa9971b": {
+  "en": "<strong>Antoine Coutrot and colleagues</strong>, <em>Nature Communications</em> (2022): men reported about 7.3 hours of sleep in early adulthood, down to 6.8 hours by 35, flat until 50. <a href=\"https://doi.org/10.1038/s41467-022-34624-8\">Paper</a>",
+  "t": "<strong>Antoine Coutrot และคณะ</strong>, <em>Nature Communications</em> (2022): ผู้ชายรายงานว่านอนราว 7.3 ชั่วโมงช่วงต้นวัยผู้ใหญ่ ลดลงเหลือ 6.8 ชั่วโมงที่อายุ 35 และคงที่จนถึง 50 <a href=\"https://doi.org/10.1038/s41467-022-34624-8\">บทความวิจัย</a>"
+ },
  "92f1af0db7dd": {
   "en": " PlayStation ",
   "t": "PlayStation"
@@ -5338,6 +5366,10 @@
  "9a7378f878db": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder movie 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 33: </span> ภาพยนตร์ชั่วคราว 33"
+ },
+ "9b3cbed5c490": {
+  "en": "Zoom",
+  "t": "ซูม"
  },
  "9b596bacf45e": {
   "en": "You don't have to trust me, you can check <a href=\"https://github.com/Deovandski/Deovandski\" data-astro-cid-somgw2vn=\"\">the source code</a> yourself.",
@@ -6587,10 +6619,6 @@
   "en": "Ghost",
   "t": "Ghost"
  },
- "bf6aad009bcd": {
-  "en": "Counts as exercise",
-  "t": "นับเป็นการออกกำลังกาย"
- },
  "bfa28522fcb3": {
   "en": "Hamilton",
   "t": "Hamilton"
@@ -7750,6 +7778,10 @@
  "e066dc148a3a": {
   "en": " MD ",
   "t": "MD"
+ },
+ "e08b7f46ba06": {
+  "en": "Back to Cycling",
+  "t": "กลับไปที่ปั่นจักรยาน"
  },
  "e09a88958081": {
   "en": "The doujinshi is writing itself ( ͡ʘ ͜ʖ ͡ʘ)",

@@ -9,6 +9,22 @@ import { url } from '../lib/url';
 // served as /biomarkers.json (src/pages/biomarkers.json.ts), with exercise from the watch's log as the "event".
 const { exported, days } = JSON.parse(readFileSync(resolve('content/biomarkers/daily.json'), 'utf8')) as { exported: string; days: { date: string }[] };
 const from = new Date(`${days[0].date}T00:00:00Z`), to = new Date(`${days[days.length - 1].date}T00:00:00Z`);
+// Dashed lines: population medians for men my age (content/biomarkers/norms.json, sources in sources.md), one point a
+// month at my age then, straight between the study's age bands.
+type Norm = { label: string; points: [number, number][] };
+const norms = JSON.parse(readFileSync(resolve('content/biomarkers/norms.json'), 'utf8')) as { born: string; metrics: Record<string, Norm> };
+const born = Date.parse(`${norms.born}T00:00:00Z`);
+const ageValue = (pts: [number, number][], age: number) => {
+  if (age <= pts[0][0]) return pts[0][1];
+  for (let i = 1; i < pts.length; i++) if (age <= pts[i][0]) return pts[i - 1][1] + ((pts[i][1] - pts[i - 1][1]) * (age - pts[i - 1][0])) / (pts[i][0] - pts[i - 1][0]);
+  return pts[pts.length - 1][1];
+};
+const months: string[] = [];
+for (let d = new Date(Date.UTC(from.getUTCFullYear(), from.getUTCMonth(), 1)); d <= to; d.setUTCMonth(d.getUTCMonth() + 1)) months.push(d.toISOString().slice(0, 10));
+months.push(days[days.length - 1].date);
+const refs = Object.fromEntries(
+  Object.entries(norms.metrics).map(([k, n]) => [k, { label: n.label, points: months.map((m) => [m, Math.round(ageValue(n.points, (Date.parse(`${m}T00:00:00Z`) - born) / (365.25 * 864e5)) * 10) / 10] as [string, number]) }]),
+);
 const month = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', year: 'numeric', timeZone: 'UTC' });
 ---
 
@@ -19,6 +35,7 @@ const month = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', year: 
     id="bio"
     src={url('/biomarkers.json')}
     hash="#biomarkers"
+    refs={refs}
     metrics={[
       { key: 'rhr', label: 'Resting heart rate', unit: 'bpm', decimals: 1, group: 'Heart' },
       { key: 'hrv', label: 'Heart rate variability', unit: 'ms', group: 'Heart' },
@@ -44,23 +61,15 @@ const month = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', year: 
       other: 'After a rest day',
       value: '{n} min of exercise',
       slug: 'exercise',
-      kindsLabel: 'Counts as exercise',
-      kinds: [
-        { key: 'exWalk', label: 'Walking' },
-        { key: 'exBike', label: 'Cycling' },
-        { key: 'exCardio', label: 'Cardio machines' },
-        { key: 'exRun', label: 'Running' },
-        { key: 'exStrength', label: 'Strength' },
-        { key: 'exOther', label: 'Other' },
-      ],
     }}
     defaults={{ timeline: ['rhr', 'hrv', 'sleepMin', 'sleepScore', 'deep', 'steps', 'exMin', 'vo2'], calendar: 'sleepScore', seasons: 'rhr', x: 'steps', y: 'hrv' }}
   />
 
   <p class="biomarkers__fine">
-    From my Pixel Watch, through Google Health, {month(from)} to {month(to)} (exported {exported}). Exercise is what the
-    watch logged, 10 minutes or more: walks, rides, the elliptical, runs, swims. Bike rides the watch caught on its own
-    count as "Other", as on the <a href="#cycling">Cycling</a> tab. Dates and numbers only: no places.
+    From my Pixel Watch, through Google Health, {month(from)} to {month(to)} (exported {exported}). Exercise is anything
+    the watch logged for 10 minutes or more: walks, rides, the elliptical, runs, swims. Dates and numbers only: no places.
+    The dashed lines are other people: men my age (born in 1993), from studies and other devices that measure a little
+    differently, so read them as a rough guide. Where they come from is in this tab's Links box.
   </p>
 </div>
 
