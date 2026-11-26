@@ -9,6 +9,7 @@ The Cycling tab (Philosophy) shows my rides: totals, distance by year, and how f
 | `rides.json` | One line per ride: day, start hour, minutes, distance (km, `estimated` when there was no GPS), kind (`outdoor`, `mountain`, `indoor`), whether the watch caught it on its own (`how: auto`), where it came from, and the watch's average heart rate, calories and climb. Written by `scripts/cycling-from-takeout.mjs`; don't edit it by hand. |
 | `estimated.md` | Riding from before the tracking, with distances I estimated: `- Summer 2019 rides: 300 mi`. Edit it by hand. |
 | `sources.md` | The studies in the tab's Links box ("Shoulders I stand on"). |
+| `mountain-biking/` | The Mountain biking photos, shown as a gallery under the story's last section (keep Mountain biking last in `story.md`). Each file name is the date and the caption: `2026-07-04-161434-down-the-singletrack.jpg` shows as "Down the singletrack". Strip a phone photo's location (GPS) before adding it: re-save it without its EXIF data. |
 
 Indoor rides count as rides and time, not distance: a stationary bike goes nowhere. Outdoor, mountain and estimated
 rides go round the planet.

@@ -1,6 +1,8 @@
 ---
 import { Content as Story } from '../../content/cycling/story.md';
 import YouTube from './reusable/YouTube.astro';
+import PhotoGrid from './reusable/PhotoGrid.astro';
+import { loadGallery } from '../lib/gallery';
 
 // ---- data: src/lib/cycling.ts (rides.json, estimated.md, cities.json), shared with the tab's ▶ Play map ----
 import { log, MILE, estimates, rides, caught, caughtHours, outdoor, guessed, guessedKm, estimatedKm, totalKm, star, places, totalMi, passed, ahead, EARTH_MI } from '../lib/cycling';
@@ -26,6 +28,8 @@ for (const r of outdoor) {
 const years = [...byYear.entries()].sort((a, b) => a[0] - b[0]);
 const maxYear = Math.max(1, ...years.map(([, v]) => v.km + v.est));
 const indoor = rides.length - outdoor.length;
+// The Mountain biking photos, shown under the story's last section (Mountain biking): content/cycling/mountain-biking/.
+const mtb = loadGallery('content/cycling/mountain-biking', 'Mountain biking');
 
 ---
 
@@ -93,6 +97,7 @@ const indoor = rides.length - outdoor.length;
     )
   }
   <div class="cycling__story"><Story /></div>
+  {mtb.photos.length > 0 && <PhotoGrid class="cycling__mtb" photos={mtb.photos} name="mountain-biking" caption="text" />}
 </div>
 
 <style>
@@ -132,6 +137,8 @@ const indoor = rides.length - outdoor.length;
   .cycling__bar { height: 0.8rem; width: var(--w); border-radius: 999px; background: var(--teal); }
   .cycling__bar--est { background: repeating-linear-gradient(135deg, rgba(57, 197, 187, 0.55) 0 4px, rgba(57, 197, 187, 0.25) 4px 8px); }
   .cycling__km { font-variant-numeric: tabular-nums; text-align: end; }
+  .cycling :global(.cycling__mtb) { margin-top: 1rem; padding-inline-start: 0; }
+  .cycling :global(.cycling__mtb li) { margin: 0; }
   .cycling :global(strong) { color: var(--teal); }
   .cycling :global(ul) { padding-inline-start: 1.2rem; }
   .cycling :global(li) { margin: 0.35rem 0; }
