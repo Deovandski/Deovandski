@@ -30,7 +30,7 @@ import SourceList from '../components/reusable/SourceList.astro';
 import PillSwitch from '../components/reusable/PillSwitch.astro';
 import { Content as DeathSources } from '../../content/death-sources.md';
 import { Content as MentorSources } from '../../content/mentor-sources.md';
-import YouTube from '../components/YouTube.astro';
+import YouTube from '../components/reusable/YouTube.astro';
 import { Content as AviationText } from '../../content/aviation.md';
 import kingOfHues from '../assets/king-of-hues.jpg';
 import stickyNotes from '../../content/pm/2023-03-20-sticky-note-madness.jpg';
@@ -1126,7 +1126,16 @@ const nf = new Intl.NumberFormat('en-US');
 
   .empty { color: var(--muted); }
   /* In-tab switches (PillSwitch): the site's display font. */
-  .panel { --switch-font: var(--font-display); --switch-size: var(--step-0); }
+  .panel {
+    --switch-font: var(--font-display);
+    --switch-size: var(--step-0);
+    /* YouTube embeds (reusable YouTube) in the site's colours. */
+    --yt-font: var(--font-display);
+    --yt-text: var(--text);
+    --yt-muted: var(--muted);
+    --yt-accent: var(--teal);
+    --yt-on-accent: var(--night);
+  }
   .botw-intro { max-width: var(--measure); margin-bottom: 1.5rem; }
   .botw-intro .ranking-lede { margin-bottom: 0; }
   .botw-intro .ranking-lede + .ranking-lede { margin-top: 0.75rem; }

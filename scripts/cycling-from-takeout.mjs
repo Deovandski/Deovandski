@@ -19,6 +19,9 @@
 // A ride with no distance at all (most auto-detected ones: no GPS) gets one estimated from its time, at the median speed
 // of the rides that were measured; it's marked "estimated": true.
 //
+// Auto-detected rides are written with "how": "auto". The Cycling tab doesn't count them as rides (most were Peeta's
+// stroller or the elliptical); it only counts them in its "Ridin' with Peeta" section.
+//
 // Privacy: rides.json keeps each ride's day, start hour, minutes, distance, kind, and the watch's summary numbers (average
 // heart rate, calories, elevation gain). No GPS points, routes or places: it goes into a public repo. The export itself
 // stays outside the repo.

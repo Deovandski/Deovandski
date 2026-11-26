@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { Content as Story } from '../../content/cycling/story.md';
 import PlanetLap from './reusable/PlanetLap.astro';
+import YouTube from './reusable/YouTube.astro';
 
 // ---- data: content/cycling/rides.json (from scripts/cycling-from-takeout.mjs) + content/cycling/estimated.md ----
 type Ride = { date: string; hour: number; km: number; minutes: number; kind: 'outdoor' | 'mountain' | 'indoor'; how?: 'logged' | 'auto'; source: string; estimated?: boolean };
@@ -14,7 +15,12 @@ const estimates = readFileSync(resolve('content/cycling/estimated.md'), 'utf8')
   .filter((m): m is RegExpMatchArray => !!m && !m[1].startsWith('<'))
   .map((m) => ({ what: m[1], km: Number(m[2].replace(/,/g, '')) * (m[3].toLowerCase() === 'mi' ? MILE : 1) }));
 
-const rides = log.rides ?? [];
+// Rides the watch caught on its own (how: 'auto') don't count: most were Peeta's stroller or the elliptical
+// ("Ridin' with Peeta" below). Only rides I logged as bike rides count.
+const all = log.rides ?? [];
+const rides = all.filter((r) => r.how !== 'auto');
+const caught = all.filter((r) => r.how === 'auto');
+const caughtHours = caught.reduce((s, r) => s + r.minutes, 0) / 60;
 const outdoor = rides.filter((r) => r.kind !== 'indoor');
 const trackedKm = outdoor.reduce((s, r) => s + r.km, 0);
 // Rides the watch logged without GPS get a distance estimated from their time (scripts/cycling-from-takeout.mjs).
@@ -84,12 +90,25 @@ const EARTH_MI = 24901; // the Earth round the equator (40,075 km)
             )
           }
           {log.exported && <p class="cycling__foot">Rides from my Google Health export, updated on {usDate(log.exported)}.{indoor > 0 && ' Indoor bikes count as rides and time, not distance.'}</p>}
-          {guessed.length > 0 && <p class="cycling__foot">* {n0.format(guessed.length)} rides were caught by my watch without GPS, so their distance ({n0.format(guessedKm / MILE)} mi, the lighter part of the bars) is estimated from their time, at my median speed of {n1.format((log.medianKmh ?? 14) / MILE)} mph.</p>}
+          {guessed.length > 0 && <p class="cycling__foot">* {n0.format(guessed.length)} rides were logged without GPS, so their distance ({n0.format(guessedKm / MILE)} mi, the lighter part of the bars) is estimated from their time, at my median speed of {n1.format((log.medianKmh ?? 14) / MILE)} mph.</p>}
           {estimatedKm > 0 && <p class="cycling__foot">* Includes {n0.format(estimatedKm / MILE)} mi I estimated myself, from before the tracking.</p>}
         </>
       )
     }
   </section>
+  {
+    caught.length > 0 && (
+      <section class="cycling__peeta" aria-labelledby="cycling-peeta">
+        <h2 id="cycling-peeta">Ridin' with Peeta</h2>
+        <p>
+          My watch logged {n0.format(caught.length)} more "bike rides" on its own ({n0.format(caughtHours)} hours of them). Most of those
+          were me pushing my cat, <a href="#pets-peeta">Peeta</a>, in his stroller, or me on the elliptical when it's too cold outside, so
+          they don't count toward the miles above.
+        </p>
+        <YouTube id="Ez7ppSYdJmI" title="Ridin' with Peeta" short />
+      </section>
+    )
+  }
   <div class="cycling__story"><Story /></div>
 </div>
 

@@ -12,7 +12,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Influencer tab KitKot game (the phone idle game) | `src/components/reusable/KitKot.astro` (odds and tricks are at the top of its script), behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | Facet tree (which branch each facet sits in, the order, branch blurbs) | `facets` and `branches` near the top of `src/pages/index.astro`; the build stops if a facet is missing, listed twice, or a branch has more than 6 |
 | Family tab (header photos, text, Itaituba → Fargo map, photos) | `content/family/_intro.md`, header photos in `content/family/header/`, photos in `content/family/` (see its README); layout and map in `src/components/FamilyFacet.astro` |
-| Aviation tab (text + YouTube video) | `content/aviation.md`; video id in `src/pages/index.astro` (`panel-aviation`) |
+| Aviation tab (text + YouTube video) | `content/aviation.md`; video id in `src/pages/index.astro` (`panel-aviation`), shown by the reusable `src/components/reusable/YouTube.astro` |
 | Aviation paper plane | `src/components/reusable/PaperPlane.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | Mentor tab | `content/mentor.md` (plain Markdown); its "Shoulders I stand on" list, in the Links box, in `content/mentor-sources.md` |
 | Mentor tab Balls farm (seeds, odds, trades, mantra) | `content/mentor-farm.json`; `src/components/reusable/IsoFarm.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
@@ -59,7 +59,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Potato tab, Movies side (top 39) | `content/movies/top39.md` (numbered list) |
 | Pets tab (Bidu, Fluffy, Peeta: portrait picker + each pet's gallery) | `content/pets/<pet>/` (see `content/pets/README.md`); order in `src/lib/pets.ts` |
 | Pets tab pixel pets (the handhelds next to each big picture) | drawings and device colours in `src/lib/pixelPets.ts`; `src/components/reusable/PixelPet.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
-| Cycling tab (rides, around-the-world planet, story) | text in `content/cycling/story.md`; rides in `content/cycling/rides.json` (from a Google Health Takeout export: `content/cycling/README.md`) and `content/cycling/estimated.md`; studies in `content/cycling/sources.md` (its Links box); `src/components/CyclingFacet.astro` with the reusable `PlanetLap.astro` |
+| Cycling tab (rides, around-the-world planet, "Ridin' with Peeta" and its Short, story) | text in `content/cycling/story.md`; rides in `content/cycling/rides.json` (from a Google Health Takeout export: `content/cycling/README.md`) and `content/cycling/estimated.md`; studies in `content/cycling/sources.md` (its Links box); `src/components/CyclingFacet.astro` with the reusable `PlanetLap.astro` |
 | Lust tab (and the banner for when it's the first facet opened) | `content/lust.md`, `src/components/LustFacet.astro` |
 | Lust tab ecchi-meter (bellows, fire, phrases) | phrases and levels in `content/lust-meter.json`; `src/components/reusable/FireMeter.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | Facet easter eggs (banners after a visitor opens 10 and 20 different facets) | `src/components/FacetMilestoneEggs.astro`, GIFs `public/tea-sip.gif` and `public/aiight.gif` |

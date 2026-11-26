@@ -1,0 +1,133 @@
+---
+/**
+ * YouTube: a privacy-friendly YouTube embed. Nothing loads from YouTube until the visitor presses play; then it plays
+ * from youtube-nocookie.com. Videos are 16:9; Shorts (`short`) are 9:16 and narrower. When the video is hidden (its
+ * tab closed or switched), it pauses on its own and shows paused where it stopped when it's back; scrolling away
+ * doesn't pause it. Below it, a "Watch on YouTube" link. Made reusable from the Aviation tab's video (#276).
+ *
+ *   <YouTube id="QprnoS8PatE" title="Capt. Deovandski – Flight Experience Singapore" />
+ *   <YouTube id="Ez7ppSYdJmI" title="Ridin' with Peeta" short />
+ *
+ * Props:
+ *   id     the video id: QprnoS8PatE in https://youtu.be/QprnoS8PatE, or Ez7ppSYdJmI in https://youtube.com/shorts/Ez7ppSYdJmI.
+ *   title  the video's name: shown on the play button, and the player's title.
+ *   short  a YouTube Short: 9:16, at most --yt-short-width wide (20rem), centred. Default false.
+ *   play   the play button's name for screen readers; {title} is filled in. Default "Play video: {title}".
+ *   note   the small line under the title. Default "Plays from YouTube when you click".
+ *   link   the link's text under the video (empty: no link). Default "Watch on YouTube".
+ *
+ * Theme with CSS custom properties: --yt-accent (the play circle, #39c5bb), --yt-on-accent (its triangle, #070b1f),
+ * --yt-text (#e6edf3), --yt-muted (#9aa8bb), --yt-font (the title's font, inherit), --yt-width (a video's max width,
+ * 48rem), --yt-short-width (20rem). Keyboard: the play button is a real button. Reduced motion: no hover grow.
+ * Reusable on purpose: no imports, safe to use several times on a page.
+ */
+interface Props {
+  id: string;
+  title: string;
+  short?: boolean;
+  play?: string;
+  note?: string;
+  link?: string;
+  class?: string;
+}
+const { id, title, short = false, play = 'Play video: {title}', note = 'Plays from YouTube when you click', link = 'Watch on YouTube', class: className } = Astro.props;
+const href = short ? `https://youtube.com/shorts/${id}` : `https://youtu.be/${id}`;
+---
+
+<div class:list={['yt-embed', { 'yt-embed--short': short }, className]}>
+  <div class="yt" data-yt={id} data-title={title}>
+    <button type="button" class="yt__play" aria-label={play.replace('{title}', title)}>
+      <span class="yt__icon" aria-hidden="true">▶</span>
+      <span class="yt__label">{title}</span>
+      <span class="yt__note">{note}</span>
+    </button>
+  </div>
+  {link && <p class="yt__link"><a href={href}>{link}</a></p>}
+</div>
+
+<style>
+  .yt-embed { --_accent: var(--yt-accent, #39c5bb); max-width: var(--yt-width, 48rem); }
+  .yt-embed--short { max-width: var(--yt-short-width, 20rem); margin-inline: auto; text-align: center; }
+  .yt {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    overflow: hidden;
+    background:
+      radial-gradient(120% 120% at 50% 0%, color-mix(in srgb, var(--_accent) 16%, transparent), transparent 60%),
+      linear-gradient(180deg, #0d1638, #070b1f);
+    border: 1px solid color-mix(in srgb, var(--_accent) 35%, transparent);
+  }
+  .yt-embed--short .yt { aspect-ratio: 9 / 16; }
+  .yt__play {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 1rem;
+    font: inherit;
+    color: var(--yt-text, #e6edf3);
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+  }
+  .yt__play:focus-visible { outline: 3px solid #fff; outline-offset: -4px; border-radius: 16px; }
+  .yt__icon {
+    display: grid;
+    place-items: center;
+    width: 4.25rem;
+    height: 4.25rem;
+    padding-left: 0.3rem;
+    border-radius: 50%;
+    font-size: 1.6rem;
+    color: var(--yt-on-accent, #070b1f);
+    background: var(--_accent);
+    box-shadow: 0 0 30px color-mix(in srgb, var(--_accent) 50%, transparent);
+    transition: transform 0.15s;
+  }
+  .yt__play:hover .yt__icon { transform: scale(1.08); }
+  .yt__label { font-family: var(--yt-font, inherit); font-weight: 800; font-size: 1.05rem; }
+  .yt__note { font-size: 0.75rem; color: var(--yt-muted, #9aa8bb); }
+  /* :global because the iframe is added on click, after Astro scoped the styles. */
+  .yt :global(iframe) { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  .yt__link { margin: 0.5rem 0 0; font-size: 0.85rem; }
+  .yt__link a { color: var(--_accent); }
+  @media (prefers-reduced-motion: reduce) {
+    .yt__icon { transition: none; }
+    .yt__play:hover .yt__icon { transform: none; }
+  }
+</style>
+
+<script>
+  for (const box of document.querySelectorAll<HTMLElement>('[data-yt]')) {
+    if (box.dataset.ytReady) continue;
+    box.dataset.ytReady = '1';
+    box.querySelector('.yt__play')?.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      // enablejsapi=1 lets the page tell the player to pause (below).
+      iframe.src = `https://www.youtube-nocookie.com/embed/${box.dataset.yt}?autoplay=1&rel=0&enablejsapi=1`;
+      iframe.title = box.dataset.title ?? 'YouTube video';
+      iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+      iframe.allowFullscreen = true;
+      iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+      box.replaceChildren(iframe);
+      box.dataset.state = 'shown';
+    });
+
+    // A hidden box (its tab closed or switched) measures 0 × 0: pause the player then.
+    new ResizeObserver(([entry]) => {
+      const iframe = box.querySelector('iframe');
+      if (!iframe) return;
+      const hidden = entry.contentRect.width === 0 && entry.contentRect.height === 0;
+      if (hidden && box.dataset.state === 'shown') {
+        iframe.contentWindow?.postMessage(JSON.stringify({ event: 'command', func: 'pauseVideo', args: [] }), 'https://www.youtube-nocookie.com');
+        box.dataset.state = 'hidden';
+      } else if (!hidden && box.dataset.state === 'hidden') {
+        box.dataset.state = 'shown'; // back on screen, still paused until the visitor presses play
+      }
+    }).observe(box);
+  }
+</script>

@@ -211,6 +211,10 @@
   "en": "4 h",
   "t": "4 س"
  },
+ "05e728e60d80": {
+  "en": "\nMy watch logged 162 more \"bike rides\" on its own (76 hours of them). Most of those\n          were me pushing my cat, <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a>, in his stroller, or me on the elliptical when it's too cold outside, so\n          they don't count toward the miles above.\n",
+  "t": "سجّلت ساعتي من تلقاء نفسها 162 «جولة بالدراجة» أخرى (76 ساعة منها). معظمها كان أنا أدفع قطي <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a> في عربته، أو أنا على جهاز الإهليلجي حين يكون الجو باردًا جدًا في الخارج، لذا لا تُحسب ضمن الأميال أعلاه."
+ },
  "06513e2fd9de": {
   "en": "Rise and shine",
   "t": "انهض وتألّق"
@@ -246,6 +250,10 @@
  "070c241ff4e1": {
   "en": "450 h",
   "t": "450 س"
+ },
+ "07230d63536f": {
+  "en": "Ridin' with Peeta",
+  "t": "جولات مع Peeta"
  },
  "07255da4105f": {
   "en": "Grill for about <strong>7 minutes</strong>, then flip. Then grill for another <strong>7 minutes</strong>.",
@@ -923,10 +931,6 @@
   "en": "📉 -{n} followers. \"Not this again…\"",
   "t": "📉 -{n} متابع. \"ليس هذا مجددًا…\""
  },
- "1e7203ade1fc": {
-  "en": "568 mi*",
-  "t": "568 mi*"
- },
  "1e98d9e9411b": {
   "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,445 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> أخرى: 2,445 س"
@@ -986,6 +990,10 @@
  "20409611a456": {
   "en": "82 h",
   "t": "82 س"
+ },
+ "2042e5e67d14": {
+  "en": "551 mi* <span data-astro-cid-o4ptolev=\"\">(887 km)</span>",
+  "t": "551 mi* <span data-astro-cid-o4ptolev=\"\">(887 km)</span>"
  },
  "205557c2e666": {
   "en": "DJ_Dave",
@@ -1274,10 +1282,6 @@
  "28063f5eaa95": {
   "en": " Space &amp; flight ",
   "t": "الفضاء والطيران"
- },
- "2813e0c557ef": {
-  "en": "214 mi*",
-  "t": "214 mi*"
  },
  "2819ba97835f": {
   "en": "Rhythm and sleep",
@@ -2067,6 +2071,10 @@
   "en": "RPGs & open worlds",
   "t": "تقمّص الأدوار والعوالم المفتوحة"
  },
+ "3f7c46951dac": {
+  "en": "* 17 rides were logged without GPS, so their distance (59 mi, the lighter part of the bars) is estimated from their time, at my median speed of 8.6 mph.",
+  "t": "* سُجّلت 17 جولة دون GPS، لذا قُدّرت مسافتها (59 mi، الجزء الأفتح من الأشرطة) من مدتها بسرعتي الوسيطة 8.6 mph."
+ },
  "3fa7a7dd538c": {
   "en": " SW ",
   "t": "SW"
@@ -2727,10 +2735,6 @@
   "en": " CO ",
   "t": "CO"
  },
- "552492715d5c": {
-  "en": "1,202 mi* on the bike: 4.8% of the way around the world.",
-  "t": "1,202 mi* على الدراجة: 4.8% من الطريق حول العالم."
- },
  "5527769cff60": {
   "en": "Death and Taxes",
   "t": "Death and Taxes"
@@ -2835,10 +2839,6 @@
   "en": "Stardew Valley",
   "t": "Stardew Valley"
  },
- "57f6aa530055": {
-  "en": "285 mi*",
-  "t": "285 mi*"
- },
  "57fdad685146": {
   "en": " RC ",
   "t": "RC"
@@ -2898,6 +2898,10 @@
  "595b1dfe4cd3": {
   "en": "\nProject management isn't my job title, yet it shows up in almost every facet of my life: work, a light novel series, a\n          D&amp;D campaign, a game, and this very site. I know JIRA deeply, and I run my personal projects with the same discipline\n          I bring to client work. Given how much PM'ing I already do, getting a PM certification is officially on my backlog.\n",
   "t": "إدارة المشاريع ليست مسمّاي الوظيفي، ومع ذلك تظهر في كل جانب تقريبًا من حياتي: العمل، وسلسلة روايات خفيفة، وحملة D&amp;D، ولعبة، وهذا الموقع نفسه. أعرف JIRA معرفة عميقة، وأدير مشاريعي الشخصية بالانضباط نفسه الذي أقدّمه في عمل العملاء. وبالنظر إلى كمّ إدارة المشاريع التي أمارسها بالفعل، أصبح الحصول على شهادة في إدارة المشاريع رسميًا ضمن قائمة أعمالي المؤجلة."
+ },
+ "598f8910844c": {
+  "en": "30 mi",
+  "t": "30 mi"
  },
  "59aa962f7269": {
   "en": " SC ",
@@ -3187,6 +3191,10 @@
   "en": "Justin Timberlake",
   "t": "Justin Timberlake"
  },
+ "6256b5ee693a": {
+  "en": "68 h",
+  "t": "68 h"
+ },
  "6270f02c519d": {
   "en": "Based on what you've seen so far, you might expect me not to watch this, but nope. I love how grounded it feels, and the plot does a really good job of using its characters. Cute jokes, too. I'll be showing this to my future kids for sure.",
   "t": "بناءً على ما رأيته حتى الآن، قد تتوقع ألا أشاهد هذا، لكن لا. أحب كم يبدو واقعيًا، والحبكة تحسن استخدام شخصياتها حقًا. ونكات لطيفة أيضًا. سأعرضه على أطفالي في المستقبل بالتأكيد."
@@ -3274,6 +3282,10 @@
  "651d21ca74d0": {
   "en": "Show all 28",
   "t": "عرض الكل (28)"
+ },
+ "6542671af0ee": {
+  "en": "251 mi*",
+  "t": "251 mi*"
  },
  "65a68f752f48": {
   "en": " <strong data-astro-cid-j7pv25f6=\"\">King of Hues.</strong> Crowned in Huế, fluent in <abbr title=\"How Brazilians laugh online\" data-astro-cid-j7pv25f6=\"\">huehuehue</abbr>.\n<em data-astro-cid-j7pv25f6=\"\">I take life as seriously as I laugh at how absurd, finite and fickle it all is.</em> ",
@@ -3566,10 +3578,6 @@
  "6d853a6b6827": {
   "en": "Gebo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚷ)</span>",
   "t": "غيبو<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚷ)</span>"
- },
- "6d90d70023e6": {
-  "en": "1,202 mi* <span data-astro-cid-o4ptolev=\"\">(1,935 km)</span>",
-  "t": "1,202 mi* <span data-astro-cid-o4ptolev=\"\">(1,935 km)</span>"
  },
  "6da2d12faf76": {
   "en": "Campsites are on their way.",
@@ -5347,6 +5355,10 @@
   "en": "DAVE THE DIVER",
   "t": "DAVE THE DIVER"
  },
+ "a3ec0dfc8cc3": {
+  "en": "Play video: Ridin' with Peeta",
+  "t": "تشغيل الفيديو: جولات مع Peeta"
+ },
  "a41de5dc4f1b": {
   "en": "Common free-to-play design",
   "t": "تصميم شائع في الألعاب المجانية"
@@ -5955,10 +5967,6 @@
   "en": " Cozy &amp; life sims ",
   "t": "الألعاب الهادئة ومحاكاة الحياة"
  },
- "b4c138be906a": {
-  "en": "* 179 rides were caught by my watch without GPS, so their distance (710 mi, the lighter part of the bars) is estimated from their time, at my median speed of 8.6 mph.",
-  "t": "* سجّلت ساعتي 179 جولة دون GPS، لذا قُدّرت مسافتها (710 mi، الجزء الأفتح من الأشرطة) من مدتها بسرعتي الوسيطة 8.6 mph."
- },
  "b4d362cfcf75": {
   "en": " ME ",
   "t": "ME"
@@ -6066,10 +6074,6 @@
  "b8671b08c684": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 28: </span> Placeholder movie 28 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 28: </span> فيلم مؤقت 28"
- },
- "b87893952020": {
-  "en": "129 mi*",
-  "t": "129 mi*"
  },
  "b886c7f27a92": {
   "en": "The Holy Order",
@@ -6339,10 +6343,6 @@
   "en": "Revenge of the Savage Planet",
   "t": "Revenge of the Savage Planet"
  },
- "c1ff452fd06e": {
-  "en": "143.6 h",
-  "t": "143.6 h"
- },
  "c2032d98f6ff": {
   "en": "natural {n}!",
   "t": "{n} طبيعي!"
@@ -6418,6 +6418,10 @@
  "c5352fbe59ff": {
   "en": "Next routine",
   "t": "الروتين التالي"
+ },
+ "c5488c9e25e6": {
+  "en": "198 mi",
+  "t": "198 mi"
  },
  "c574501fd8fe": {
   "en": "Roll d{sides} (last roll {result})",
@@ -6830,6 +6834,10 @@
  "d185b1fb283b": {
   "en": "5 games",
   "t": "5 ألعاب"
+ },
+ "d19c46fdac20": {
+  "en": "67 mi",
+  "t": "67 mi"
  },
  "d1a7128069a4": {
   "en": "Churrasco",
@@ -8166,6 +8174,10 @@
  "fd5ffa4da538": {
   "en": "Enlarge: Super doggo",
   "t": "تكبير: الكلب الخارق"
+ },
+ "fd636bc6a01e": {
+  "en": "551 mi* on the bike: 2.2% of the way around the world.",
+  "t": "551 mi* على الدراجة: 2.2% من الطريق حول العالم."
  },
  "fd90fc6c6ee2": {
   "en": "I'm usually not a fan of multiple timelines and time machines, but this is clearly an exception. The whole thing is crafted like a finely tuned orchestra, and the pieces fall into place perfectly.",

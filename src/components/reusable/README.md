@@ -26,6 +26,7 @@ and a project without translations just shows the English.
 | [ReelPicker.astro](ReelPicker.astro) | A View-Master-style picker: cards around the rim of a round plate, seen through a window that shows one card and slivers of its neighbours; drag or swipe to turn the plate, it snaps to a card. Each card has a name, a detail line and an art box for a picture. | Concert tab (Saturday Night Fever routines, inside StageDancer) |
 | [PlanetLap.astro](PlanetLap.astro) | How far around a planet a distance goes, Reus-style: the planet cut in half and seen side on (crust, mantle and cores on the cut, biomes round the rim), turning under a little cyclist while a trail marks the distance from the start flag. | Cycling tab |
 | [ArcadeButton.astro](ArcadeButton.astro) | A big, chunky, old-school push button with one emoji on its cap and a click sound; it sinks when pressed, and as a toggle it stays down and lit while on. | Concert tab (Saturday Night Fever: music, pause, lights) |
+| [YouTube.astro](YouTube.astro) | A privacy-friendly YouTube embed: nothing loads from YouTube until play is pressed, then it plays from youtube-nocookie.com; pauses itself when hidden. 16:9 videos and 9:16 Shorts. | Aviation tab, Cycling tab ("Ridin' with Peeta") |
 | IsoDarts (moved) | An on-rails darts scene in an isometric room: scripted speech bubbles, then a timed round on a board of coloured territories (claim, cancel, smaller is worth more) with a swaying aim. | Moved to [HusbandOutWorld](https://github.com/Deovandski/HusbandOutWorld) as `site/js/iso-darts.js` and `site/css/iso-darts.css` (its Playground, Territory Snipping, #245) |
 | [IsoFarm.astro](IsoFarm.astro) | A Colheita Feliz-style farming loop: isometric plots, seeds with timers and random harvests, fertilizer, energy and a market. The whole economy is one config object; saves in the browser. | Mentor tab (the Balls farm) |
 | [HoursByCategory.astro](HoursByCategory.astro) | Things grouped into categories with their hours: a totals card, one bar per category, then a card per category (most first, "Show all"). A switch takes "excludable" categories (idle games) out of the total. Worked out at build time, so translated pages translate every word. | Gamer tab (Steam, Xbox and estimated hours) |
@@ -554,6 +555,28 @@ pressed and springs back; as a toggle it stays down, ringed and lit, while it's 
 
 Every press fires `arcade:press` (bubbling, `{ pressed }`). Size it with `--arcade-size` (64px); the bezel colour is
 `--arcade-base`. Reduced motion: it brightens instead of sinking.
+
+## YouTube
+
+A privacy-friendly YouTube embed. Nothing loads from YouTube until the visitor presses play; then it plays from
+youtube-nocookie.com. When it's hidden (its tab closed), it pauses on its own. A "Watch on YouTube" link sits below it.
+
+```astro
+<YouTube id="QprnoS8PatE" title="Capt. Deovandski – Flight Experience Singapore" />
+<YouTube id="Ez7ppSYdJmI" title="Ridin' with Peeta" short />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `id` | (required) | The video id (`QprnoS8PatE` in `youtu.be/QprnoS8PatE`, `Ez7ppSYdJmI` in `youtube.com/shorts/Ez7ppSYdJmI`). |
+| `title` | (required) | Shown on the play button, and the player's title. |
+| `short` | `false` | A YouTube Short: 9:16, at most `--yt-short-width` wide, centred. |
+| `play` | `"Play video: {title}"` | The play button's name for screen readers. |
+| `note` | `"Plays from YouTube when you click"` | The small line under the title. |
+| `link` | `"Watch on YouTube"` | The link's text under the video; empty for no link. |
+
+Theme with `--yt-accent`, `--yt-on-accent`, `--yt-text`, `--yt-muted`, `--yt-font`, `--yt-width` (48rem) and
+`--yt-short-width` (20rem).
 
 ## IsoFarm
 
