@@ -11,6 +11,9 @@ import KitKot from './reusable/KitKot.astro';
 import LedMatrix from './reusable/LedMatrix.astro';
 import PaperPlane from './reusable/PaperPlane.astro';
 import PlanetLap from './reusable/PlanetLap.astro';
+import EasterEggBanner from './reusable/EasterEggBanner.astro';
+import UrsuSprite from './UrsuSprite.astro';
+import { url } from '../lib/url';
 import PixelPet from './reusable/PixelPet.astro';
 import StageDancer from './reusable/StageDancer.astro';
 import VhsPile from './reusable/VhsPile.astro';
@@ -43,15 +46,33 @@ const hours = Math.round(botwStats.hours).toLocaleString('en-US');
 }
 {
   id === 'around-the-world' && (
-    <PlanetLap
-      class="gimmick__planet"
-      distance={totalKm / MILE}
-      circumference={EARTH_MI}
-      summary={`{distance} mi${star} on the bike: {percent} of the way around the world.`}
-      start={places.start.name}
-      markers={cities}
-      unit="mi"
-    />
+    <div class="gimmick__ursu" data-ursu>
+      <PlanetLap
+        class="gimmick__planet"
+        distance={totalKm / MILE}
+        circumference={EARTH_MI}
+        summary={`{distance} mi${star} on the bike: {percent} of the way around the world.`}
+        start={places.start.name}
+        markers={cities}
+        unit="mi"
+        chaserLabel="Who's that running after the bike?"
+      >
+        <UrsuSprite slot="chaser" />
+      </PlanetLap>
+      {/* Pressing the creature running after the bike (#284). */}
+      <EasterEggBanner
+        name="ursu-sintasus"
+        image={url('/ursu-sintasus.webp')}
+        imageWidth={520}
+        imageHeight={438}
+        imageAlt="Ursu Sintasus in Spore: a cream-white creature with moose antlers, big orange eyes, a wide smile and black-striped arms and legs."
+        title="Ursu Sintasus"
+        floating
+      >
+        <p>The explorer, (mostly) friendly race I created in Spore. They went on to conquer hundreds of planets, until the save file grew past 1.3 GB and got corrupted.</p>
+        <p><a href={url('/#gamer')}>More of my games on the Gamer tab</a></p>
+      </EasterEggBanner>
+    </div>
   )
 }
 {id === 'dice-tray' && <DiceTray label="Roll the dice" />}
@@ -90,6 +111,19 @@ const hours = Math.round(botwStats.hours).toLocaleString('en-US');
     <WhackAMole sprite={whackSprite} name="Miku" title="Whack-a-Miku" bonusDays={['03-09', '08-31']} spriteAlt="A pixel Miku popped up" />
   )
 }
+
+<script>
+  // Ursu Sintasus: pressing the creature that runs after the bike opens its popup. The popup moves to <body> first,
+  // because the FastTab panels use transforms, which would trap a fixed layer inside them.
+  document.querySelectorAll<HTMLElement>('[data-ursu]').forEach((wrap) => {
+    const egg = wrap.querySelector<HTMLElement>('[data-egg]');
+    if (!egg) return;
+    wrap.addEventListener('planet:chaser', () => {
+      if (egg.parentElement !== document.body) document.body.append(egg);
+      egg.hidden = false;
+    });
+  });
+</script>
 
 <style>
   .gimmick__pets {

@@ -6,10 +6,11 @@
 //
 // It reads ONLY the folders and files in READ below (an allowlist). Everything else in the export is never opened:
 // blood glucose (Biometrics/Glucose *.csv), insulin resistance, blood pressure, ECG and AFib, surveys, moods, journal,
-// food and nutrition logs, and every GPS file. None of that goes in the repo, not even through this script.
+// food and nutrition logs, every GPS file, and Fitbit's own cardio fitness score (the site estimates VO2 max from
+// resting heart rate instead, in src/pages/biomarkers.json.ts). None of that goes in the repo, not even through this script.
 //
 // What it writes, one line per day: resting heart rate, heart rate variability, blood oxygen, breathing rate, readiness,
-// cardio fitness (VO2 max), skin temperature, stress score, sleep (minutes, bedtime, score, deep, REM), steps, active
+// skin temperature, stress score, sleep (minutes, bedtime, score, deep, REM), steps, active
 // zone minutes, and minutes of exercise by kind (walk, bike, cardio machine, run, strength, other) from the watch's
 // exercise log. Dates and numbers only: no places (the exercise log's location_metadata column is never read). Weight and body fat stay out of daily.json; body fat leaves the
 // script only as one average per year, for the Gym chart.
@@ -38,7 +39,6 @@ const DAILY = {
   'Daily Oxygen Saturation': ['spo2', 'average percentage', 1],
   'Daily Respiratory Rate': ['resp', 'breaths per minute', 1],
   'Daily Readiness': ['ready', 'score', 0],
-  'Demographic Vo2max': ['vo2', 'demographic vo2max', 1],
   'Daily Sleep Temperature Derivations': ['skinC', 'nightly temperature celsius', 2],
 };
 const PER_MINUTE = { Steps: ['steps', 'steps'], 'Active Zone Minutes': ['azm', 'total minutes'] };
@@ -158,7 +158,7 @@ for (const folder of folders) {
 }
 for (const [key, m] of Object.entries(perMinute)) for (const [d, v] of m) day(d)[key] = Math.round(v);
 
-const ORDER = ['rhr', 'hrv', 'spo2', 'resp', 'ready', 'vo2', 'skinC', 'stress', 'sleepMin', 'bedH', 'sleepScore', 'deep', 'rem', 'steps', 'azm', 'exWalk', 'exBike', 'exCardio', 'exRun', 'exStrength', 'exOther'];
+const ORDER = ['rhr', 'hrv', 'spo2', 'resp', 'ready', 'skinC', 'stress', 'sleepMin', 'bedH', 'sleepScore', 'deep', 'rem', 'steps', 'azm', 'exWalk', 'exBike', 'exCardio', 'exRun', 'exStrength', 'exOther'];
 const list = [...days].filter(([, v]) => Object.keys(v).length).sort(([a], [b]) => a.localeCompare(b));
 // Leading days with only a few steps (the watch's first hours) don't start the record.
 while (list.length && Object.keys(list[0][1]).length < 2) list.shift();

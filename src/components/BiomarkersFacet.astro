@@ -40,7 +40,7 @@ const month = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', year: 
     metrics={[
       { key: 'rhr', label: 'Resting heart rate', unit: 'bpm', decimals: 1, group: 'Heart' },
       { key: 'hrv', label: 'Heart rate variability', unit: 'ms', group: 'Heart' },
-      { key: 'vo2', label: 'Cardio fitness (VO₂ max)', decimals: 1, group: 'Heart' },
+      { key: 'vo2', label: 'Cardio fitness (estimated VO₂ max)', decimals: 1, group: 'Heart' },
       { key: 'sleepMin', label: 'Time asleep', format: 'duration', group: 'Overnight' },
       { key: 'bedH', label: 'Bedtime', format: 'clock', group: 'Overnight' },
       { key: 'sleepScore', label: 'Sleep score', group: 'Overnight' },
@@ -68,7 +68,8 @@ const month = (d: Date) => d.toLocaleDateString('en-US', { month: 'long', year: 
 
   <p class="biomarkers__fine">
     From my Pixel Watch, through Google Health, {month(from)} to {month(to)} (exported {exported}). Exercise is anything
-    the watch logged for 10 minutes or more: walks, rides, the elliptical, runs, swims. Dates and numbers only: no places.
+    the watch logged for 10 minutes or more: walks, rides, the elliptical, runs, swims. Cardio fitness is estimated from
+    each day's resting heart rate and my age (the heart rate ratio method). Dates and numbers only: no places.
     The dashed lines are other people: men my age (born in 1993), from studies and other devices that measure a little
     differently, so read them as a rough guide. Where they come from is in this tab's Links box.
   </p>
