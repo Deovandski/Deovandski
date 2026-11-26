@@ -5143,6 +5143,10 @@
   "en": "2016 nearly took everything I had worked so hard for, all because of someone else’s screw-up. It felt like being a kid building a sandcastle while some asshole walks by and kicks it, then watching everything you built turn to nothing. It sucked. It nearly drove me to end it all (as I talk about on the <a href=\"#death\">Death tab</a>). Yet I survived the worst, pulled myself out of the misery, and rebuilt.",
   "t": "Tahun 2016 hampir merenggut semua yang sudah kukerjakan dengan susah payah, semuanya karena kesalahan bodoh orang lain. Rasanya seperti anak kecil membangun istana pasir lalu ada bajingan lewat dan menendangnya, kemudian melihat semua yang kamu bangun lenyap. Rasanya busuk. Itu hampir membuatku mengakhiri semuanya (seperti yang kuceritakan di <a href=\"#death\">tab Kematian</a>). Tapi aku selamat dari yang terburuk, menarik diriku keluar dari penderitaan, dan membangun kembali."
  },
+ "8aece1ff24fa": {
+  "en": "Truth be told, I spent way more time playing games than making my own: the hours are on the <a href=\"#gamer\" data-astro-cid-j7pv25f6=\"\">Gamer tab</a>.",
+  "t": "Sejujurnya, saya menghabiskan jauh lebih banyak waktu bermain game daripada membuat game sendiri: jam-jamnya ada di <a href=\"#gamer\" data-astro-cid-j7pv25f6=\"\">tab Gamer</a>."
+ },
  "8af0e417fed8": {
   "en": "Enlarge: Car rides!",
   "t": "Perbesar: Naik mobil!"
@@ -7098,6 +7102,10 @@
  "c0c5f353d6da": {
   "en": "Enlarge: But don't wanna go to sleep",
   "t": "Perbesar: Tapi nggak mau tidur"
+ },
+ "c0d7841b28ca": {
+  "en": "I make games too, now and then: see what I've cooked so far on <a href=\"#dev-games\" data-astro-cid-j7pv25f6=\"\">Developer › Games</a>.",
+  "t": "Saya juga sesekali membuat game: lihat apa yang sudah saya masak sejauh ini di <a href=\"#dev-games\" data-astro-cid-j7pv25f6=\"\">Pengembang › Game</a>."
  },
  "c0ee32d825d6": {
   "en": "week",

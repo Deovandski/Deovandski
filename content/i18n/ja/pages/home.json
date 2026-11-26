@@ -5143,6 +5143,10 @@
   "en": "2016 nearly took everything I had worked so hard for, all because of someone else’s screw-up. It felt like being a kid building a sandcastle while some asshole walks by and kicks it, then watching everything you built turn to nothing. It sucked. It nearly drove me to end it all (as I talk about on the <a href=\"#death\">Death tab</a>). Yet I survived the worst, pulled myself out of the misery, and rebuilt.",
   "t": "2016 年は、ほかの誰かのヘマのせいで、俺が必死に築いてきたものを危うくすべて奪われかけた年だった。砂の城を作っている子どもの横を、どこかのクソ野郎が通りがかって蹴飛ばし、作ったものが全部無になるのを見ているような気分だった。最悪だった。危うくすべてを終わらせるところまで追い込まれた（<a href=\"#death\">死タブ</a>で話しているとおりだ）。それでも俺は最悪を生き延び、苦しみから自分を引きずり出して、立て直した。"
  },
+ "8aece1ff24fa": {
+  "en": "Truth be told, I spent way more time playing games than making my own: the hours are on the <a href=\"#gamer\" data-astro-cid-j7pv25f6=\"\">Gamer tab</a>.",
+  "t": "正直に言うと、俺はゲームを作るよりずっと多くの時間を遊ぶことに使ってきた。その時間は<a href=\"#gamer\" data-astro-cid-j7pv25f6=\"\">ゲーマーのタブ</a>にある。"
+ },
  "8af0e417fed8": {
   "en": "Enlarge: Car rides!",
   "t": "拡大: ドライブ！"
@@ -7098,6 +7102,10 @@
  "c0c5f353d6da": {
   "en": "Enlarge: But don't wanna go to sleep",
   "t": "拡大: でも寝たくない"
+ },
+ "c0d7841b28ca": {
+  "en": "I make games too, now and then: see what I've cooked so far on <a href=\"#dev-games\" data-astro-cid-j7pv25f6=\"\">Developer › Games</a>.",
+  "t": "俺もたまにゲームを作る。これまでに作ったものは<a href=\"#dev-games\" data-astro-cid-j7pv25f6=\"\">開発者 › ゲーム</a>で。"
  },
  "c0ee32d825d6": {
   "en": "week",

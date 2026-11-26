@@ -5143,6 +5143,10 @@
   "en": "2016 nearly took everything I had worked so hard for, all because of someone else’s screw-up. It felt like being a kid building a sandcastle while some asshole walks by and kicks it, then watching everything you built turn to nothing. It sucked. It nearly drove me to end it all (as I talk about on the <a href=\"#death\">Death tab</a>). Yet I survived the worst, pulled myself out of the misery, and rebuilt.",
   "t": "2016 年差点夺走我辛苦打拼来的一切，全是因为别人的失误。那感觉就像一个孩子在堆沙堡，某个混蛋路过一脚踢翻，然后眼睁睁看着自己建的一切化为乌有。糟透了。它差点让我结束一切（就像我在<a href=\"#death\">死亡标签页</a>里说的）。但我挺过了最糟的时候，把自己从痛苦中拉了出来，重新开始。"
  },
+ "8aece1ff24fa": {
+  "en": "Truth be told, I spent way more time playing games than making my own: the hours are on the <a href=\"#gamer\" data-astro-cid-j7pv25f6=\"\">Gamer tab</a>.",
+  "t": "说实话，我玩游戏的时间远远多于做游戏的时间：具体时长都在<a href=\"#gamer\" data-astro-cid-j7pv25f6=\"\">玩家标签页</a>里。"
+ },
  "8af0e417fed8": {
   "en": "Enlarge: Car rides!",
   "t": "放大: 兜风！"
@@ -7098,6 +7102,10 @@
  "c0c5f353d6da": {
   "en": "Enlarge: But don't wanna go to sleep",
   "t": "放大: 但不想去睡觉"
+ },
+ "c0d7841b28ca": {
+  "en": "I make games too, now and then: see what I've cooked so far on <a href=\"#dev-games\" data-astro-cid-j7pv25f6=\"\">Developer › Games</a>.",
+  "t": "我偶尔也做游戏：看看我目前做出来的东西，在<a href=\"#dev-games\" data-astro-cid-j7pv25f6=\"\">开发者 › 游戏</a>。"
  },
  "c0ee32d825d6": {
   "en": "week",

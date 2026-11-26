@@ -577,6 +577,8 @@ const nf = new Intl.NumberFormat('en-US');
             meant I kept exploring stuff! Here's what I cooked so far:
           </p>
           <ProjectCards items={gameCards} label="My games" />
+          <!-- Gamer ↔ Developer › Games (#302). -->
+          <p class="cross-link">Truth be told, I spent way more time playing games than making my own: the hours are on the <a href="#gamer">Gamer tab</a>.</p>
         </div>
       </div>
     </section>
@@ -951,7 +953,11 @@ const nf = new Intl.NumberFormat('en-US');
         ]}
       />
       <div class="list-head gamer-head">
-        <div class="gamer-intro">{gamer.intro.map((para) => <p class="ranking-lede">{para}</p>)}</div>
+        <div class="gamer-intro">
+          {gamer.intro.map((para) => <p class="ranking-lede">{para}</p>)}
+          <!-- Gamer ↔ Developer › Games (#302). -->
+          <p class="ranking-lede cross-link">I make games too, now and then: see what I've cooked so far on <a href="#dev-games">Developer › Games</a>.</p>
+        </div>
       </div>
       <HoursByCategory
         id="gamer"
@@ -1310,6 +1316,8 @@ const nf = new Intl.NumberFormat('en-US');
   #panel-gamer { --hbc-heading-font: var(--font-display); --days-heading-font: var(--font-display); }
 
   .empty { color: var(--muted); }
+  /* A line that sends the visitor to a related tab (#302). */
+  .cross-link { margin-top: 1rem; }
   /* Pill switches (PillSwitch, like the Biomarker Lab's views): the site's display font. */
   .panel {
     --switch-font: var(--font-display);

@@ -5143,6 +5143,10 @@
   "en": "2016 nearly took everything I had worked so hard for, all because of someone else’s screw-up. It felt like being a kid building a sandcastle while some asshole walks by and kicks it, then watching everything you built turn to nothing. It sucked. It nearly drove me to end it all (as I talk about on the <a href=\"#death\">Death tab</a>). Yet I survived the worst, pulled myself out of the misery, and rebuilt.",
   "t": "Năm 2016 suýt lấy đi mọi thứ tôi đã vất vả gây dựng, tất cả chỉ vì sai lầm của người khác. Cảm giác như một đứa trẻ đang xây lâu đài cát thì có thằng khốn đi ngang qua đá đổ, rồi nhìn mọi thứ mình xây hóa thành hư không. Tệ hại vô cùng. Nó suýt đẩy tôi đến chỗ kết thúc tất cả (như tôi kể ở <a href=\"#death\">thẻ Cái chết</a>). Vậy mà tôi đã sống sót qua điều tồi tệ nhất, tự kéo mình ra khỏi khổ đau, và xây dựng lại."
  },
+ "8aece1ff24fa": {
+  "en": "Truth be told, I spent way more time playing games than making my own: the hours are on the <a href=\"#gamer\" data-astro-cid-j7pv25f6=\"\">Gamer tab</a>.",
+  "t": "Nói thật, tôi dành thời gian chơi game nhiều hơn hẳn so với làm game của riêng mình: số giờ nằm ở <a href=\"#gamer\" data-astro-cid-j7pv25f6=\"\">thẻ Game thủ</a>."
+ },
  "8af0e417fed8": {
   "en": "Enlarge: Car rides!",
   "t": "Phóng to: Đi xe hơi!"
@@ -7098,6 +7102,10 @@
  "c0c5f353d6da": {
   "en": "Enlarge: But don't wanna go to sleep",
   "t": "Phóng to: Nhưng không muốn đi ngủ"
+ },
+ "c0d7841b28ca": {
+  "en": "I make games too, now and then: see what I've cooked so far on <a href=\"#dev-games\" data-astro-cid-j7pv25f6=\"\">Developer › Games</a>.",
+  "t": "Thỉnh thoảng tôi cũng làm game: xem những gì tôi đã nấu ra đến giờ ở <a href=\"#dev-games\" data-astro-cid-j7pv25f6=\"\">Lập trình viên › Trò chơi</a>."
  },
  "c0ee32d825d6": {
   "en": "week",

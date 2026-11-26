@@ -5143,6 +5143,10 @@
   "en": "2016 nearly took everything I had worked so hard for, all because of someone else’s screw-up. It felt like being a kid building a sandcastle while some asshole walks by and kicks it, then watching everything you built turn to nothing. It sucked. It nearly drove me to end it all (as I talk about on the <a href=\"#death\">Death tab</a>). Yet I survived the worst, pulled myself out of the misery, and rebuilt.",
   "t": "2016 hätte mir beinahe alles genommen, wofür ich so hart gearbeitet hatte, und alles wegen des Mists, den jemand anderes verbockt hat. Es fühlte sich an, als würde man als Kind eine Sandburg bauen, während irgendein Arschloch vorbeikommt und sie zertritt, und dann zusehen, wie alles, was man gebaut hat, zu nichts wird. Es war beschissen. Es hätte mich beinahe dazu gebracht, allem ein Ende zu setzen (wie ich im <a href=\"#death\">Tod-Tab</a> erzähle). Trotzdem habe ich das Schlimmste überlebt, mich aus dem Elend gezogen und neu aufgebaut."
  },
+ "8aece1ff24fa": {
+  "en": "Truth be told, I spent way more time playing games than making my own: the hours are on the <a href=\"#gamer\" data-astro-cid-j7pv25f6=\"\">Gamer tab</a>.",
+  "t": "Ehrlich gesagt habe ich viel mehr Zeit mit Spielen verbracht als damit, eigene zu machen: Die Stunden stehen im <a href=\"#gamer\" data-astro-cid-j7pv25f6=\"\">Gamer-Tab</a>."
+ },
  "8af0e417fed8": {
   "en": "Enlarge: Car rides!",
   "t": "Vergrößern: Autofahrten!"
@@ -7098,6 +7102,10 @@
  "c0c5f353d6da": {
   "en": "Enlarge: But don't wanna go to sleep",
   "t": "Vergrößern: Aber ich will nicht schlafen gehen"
+ },
+ "c0d7841b28ca": {
+  "en": "I make games too, now and then: see what I've cooked so far on <a href=\"#dev-games\" data-astro-cid-j7pv25f6=\"\">Developer › Games</a>.",
+  "t": "Ab und zu mache ich auch Spiele: Was ich bisher zusammengekocht habe, findest du unter <a href=\"#dev-games\" data-astro-cid-j7pv25f6=\"\">Entwickler › Spiele</a>."
  },
  "c0ee32d825d6": {
   "en": "week",
