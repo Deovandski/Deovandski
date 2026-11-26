@@ -1283,10 +1283,6 @@
   "en": " Space &amp; flight ",
   "t": "우주 &amp; 비행"
  },
- "2819ba97835f": {
-  "en": "Rhythm and sleep",
-  "t": "리듬과 수면"
- },
  "2835bcaa6e76": {
   "en": " 49 h ",
   "t": "49 시간"
@@ -3202,10 +3198,6 @@
  "627553d69f0d": {
   "en": "The Four Seasons",
   "t": "사계"
- },
- "627d89658063": {
-  "en": "Ride it again",
-  "t": "다시 달리기"
  },
  "629faf03c89b": {
   "en": "Throw again",
@@ -6523,6 +6515,10 @@
   "en": " 1,302 h ",
   "t": "1,302 시간"
  },
+ "c8e2de313adf": {
+  "en": "Next stop: {place} · {distance} to go",
+  "t": "다음 목적지: {place} · {distance} 남음"
+ },
  "c92499e3e7ab": {
   "en": "8 games",
   "t": "게임 8개"
@@ -8230,6 +8226,10 @@
  "feea42718962": {
   "en": "Enlarge: Walk time or more like I stay in the stroller",
   "t": "확대: 산책 시간, 이라기보단 난 유모차에 있음"
+ },
+ "ff1ee226e141": {
+  "en": " That's farther than Fargo, ND to Sioux Falls (230 mi as the crow flies).  Next stop: Chicago, 18 mi to go. ",
+  "t": "파고(노스다코타)에서 수폴스까지(직선거리 230 mi)보다 멀다. 다음 목적지: 시카고, 18 mi 남았다."
  },
  "ff3ea3bec182": {
   "en": "Malaysia",

@@ -1283,10 +1283,6 @@
   "en": " Space &amp; flight ",
   "t": "الفضاء والطيران"
  },
- "2819ba97835f": {
-  "en": "Rhythm and sleep",
-  "t": "الإيقاع والنوم"
- },
  "2835bcaa6e76": {
   "en": " 49 h ",
   "t": "49 س"
@@ -3202,10 +3198,6 @@
  "627553d69f0d": {
   "en": "The Four Seasons",
   "t": "الفصول الأربعة"
- },
- "627d89658063": {
-  "en": "Ride it again",
-  "t": "انطلق مجددًا"
  },
  "629faf03c89b": {
   "en": "Throw again",
@@ -6523,6 +6515,10 @@
   "en": " 1,302 h ",
   "t": "1,302 س"
  },
+ "c8e2de313adf": {
+  "en": "Next stop: {place} · {distance} to go",
+  "t": "المحطة التالية: {place} · باقٍ {distance}"
+ },
  "c92499e3e7ab": {
   "en": "8 games",
   "t": "8 ألعاب"
@@ -8230,6 +8226,10 @@
  "feea42718962": {
   "en": "Enlarge: Walk time or more like I stay in the stroller",
   "t": "تكبير: وقت المشي، أو بالأحرى أبقى في العربة"
+ },
+ "ff1ee226e141": {
+  "en": " That's farther than Fargo, ND to Sioux Falls (230 mi as the crow flies).  Next stop: Chicago, 18 mi to go. ",
+  "t": "هذا أبعد من المسافة بين فارغو بولاية داكوتا الشمالية وسو فولز (230 mi في خط مستقيم). المحطة التالية: شيكاغو، باقٍ 18 mi."
  },
  "ff3ea3bec182": {
   "en": "Malaysia",

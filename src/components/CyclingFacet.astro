@@ -51,6 +51,19 @@ const maxYear = Math.max(1, ...years.map(([, v]) => v.km + v.est));
 const indoor = rides.length - outdoor.length;
 
 const EARTH_MI = 24901; // the Earth round the equator (40,075 km)
+
+// The planet starts at Fargo, with cities along the way as comparisons, as the crow flies (content/cycling/cities.json).
+type Place = { name: string; lat: number; lon: number };
+const places = JSON.parse(readFileSync(resolve('content/cycling/cities.json'), 'utf8')) as { start: Place; cities: Place[] };
+const crowMi = (a: Place, b: Place) => {
+  const r = (d: number) => (d * Math.PI) / 180;
+  const c = Math.sin(r(a.lat)) * Math.sin(r(b.lat)) + Math.cos(r(a.lat)) * Math.cos(r(b.lat)) * Math.cos(r(b.lon - a.lon));
+  return 3958.8 * Math.acos(Math.min(1, Math.max(-1, c)));
+};
+const cities = places.cities.map((c) => ({ label: c.name, distance: crowMi(places.start, c) })).sort((a, b) => a.distance - b.distance);
+const totalMi = totalKm / MILE;
+const passed = [...cities].reverse().find((c) => c.distance <= totalMi);
+const ahead = cities.find((c) => c.distance > totalMi);
 ---
 
 <div class="cycling">
@@ -60,7 +73,18 @@ const EARTH_MI = 24901; // the Earth round the equator (40,075 km)
       distance={totalKm / MILE}
       circumference={EARTH_MI}
       summary={`{distance} mi${star} on the bike: {percent} of the way around the world.`}
+      start={places.start.name}
+      markers={cities}
+      unit="mi"
     />
+    {
+      totalMi > 0 && (passed || ahead) && (
+        <p class="cycling__compare">
+          {passed && <>That's farther than {places.start.name} to {passed.label} ({n0.format(passed.distance)} mi as the crow flies). </>}
+          {ahead && <>Next stop: {ahead.label}, {n0.format(ahead.distance - totalMi)} mi to go.</>}
+        </p>
+      )
+    }
     {
       rides.length === 0 && estimates.length === 0 ? (
         <p class="cycling__empty">The ride log is on its way: it comes from my Google Health export.</p>
@@ -105,7 +129,7 @@ const EARTH_MI = 24901; // the Earth round the equator (40,075 km)
           were me pushing my cat, <a href="#pets-peeta">Peeta</a>, in his stroller, or me on the elliptical when it's too cold outside, so
           they don't count toward the miles above.
         </p>
-        <YouTube id="Ez7ppSYdJmI" title="Ridin' with Peeta" short />
+        <YouTube id="Ez7ppSYdJmI" title="Ridin' with Peeta" short ratio="1:1" />
       </section>
     )
   }
@@ -123,6 +147,7 @@ const EARTH_MI = 24901; // the Earth round the equator (40,075 km)
     border-top: 1px solid rgba(225, 40, 133, 0.35);
   }
   .cycling__world h2 { margin-top: 0; padding-top: 0; border-top: 0; }
+  .cycling__compare { margin: 0.35rem 0 0; color: var(--text); }
   .cycling__empty,
   .cycling__foot { color: var(--muted); font-size: var(--step--1); margin: 0.5rem 0 0; }
   .cycling__stats {

@@ -1283,10 +1283,6 @@
   "en": " Space &amp; flight ",
   "t": "अंतरिक्ष और उड़ान"
  },
- "2819ba97835f": {
-  "en": "Rhythm and sleep",
-  "t": "लय और नींद"
- },
  "2835bcaa6e76": {
   "en": " 49 h ",
   "t": "49 घं."
@@ -3202,10 +3198,6 @@
  "627553d69f0d": {
   "en": "The Four Seasons",
   "t": "द फ़ोर सीज़न्स"
- },
- "627d89658063": {
-  "en": "Ride it again",
-  "t": "फिर से चलाओ"
  },
  "629faf03c89b": {
   "en": "Throw again",
@@ -6523,6 +6515,10 @@
   "en": " 1,302 h ",
   "t": "1,302 घं."
  },
+ "c8e2de313adf": {
+  "en": "Next stop: {place} · {distance} to go",
+  "t": "अगला पड़ाव: {place} · {distance} बाकी"
+ },
  "c92499e3e7ab": {
   "en": "8 games",
   "t": "8 गेम"
@@ -8230,6 +8226,10 @@
  "feea42718962": {
   "en": "Enlarge: Walk time or more like I stay in the stroller",
   "t": "बड़ा करें: टहलने का समय, या कहो मैं प्रैम में ही बैठा रहूँ"
+ },
+ "ff1ee226e141": {
+  "en": " That's farther than Fargo, ND to Sioux Falls (230 mi as the crow flies).  Next stop: Chicago, 18 mi to go. ",
+  "t": "यह फ़ार्गो, नॉर्थ डकोटा से सू फ़ॉल्स तक (सीधी रेखा में 230 mi) से ज़्यादा दूर है। अगला पड़ाव: शिकागो, 18 mi बाकी।"
  },
  "ff3ea3bec182": {
   "en": "Malaysia",

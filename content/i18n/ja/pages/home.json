@@ -1283,10 +1283,6 @@
   "en": " Space &amp; flight ",
   "t": "宇宙＆フライト"
  },
- "2819ba97835f": {
-  "en": "Rhythm and sleep",
-  "t": "リズムと睡眠"
- },
  "2835bcaa6e76": {
   "en": " 49 h ",
   "t": "49 時間"
@@ -3202,10 +3198,6 @@
  "627553d69f0d": {
   "en": "The Four Seasons",
   "t": "四季"
- },
- "627d89658063": {
-  "en": "Ride it again",
-  "t": "もう一度走る"
  },
  "629faf03c89b": {
   "en": "Throw again",
@@ -6523,6 +6515,10 @@
   "en": " 1,302 h ",
   "t": "1,302 時間"
  },
+ "c8e2de313adf": {
+  "en": "Next stop: {place} · {distance} to go",
+  "t": "次の目的地：{place} · あと {distance}"
+ },
  "c92499e3e7ab": {
   "en": "8 games",
   "t": "8本"
@@ -8230,6 +8226,10 @@
  "feea42718962": {
   "en": "Enlarge: Walk time or more like I stay in the stroller",
   "t": "拡大: 散歩の時間、というかベビーカーに乗ったまま"
+ },
+ "ff1ee226e141": {
+  "en": " That's farther than Fargo, ND to Sioux Falls (230 mi as the crow flies).  Next stop: Chicago, 18 mi to go. ",
+  "t": "ファーゴ（ノースダコタ州）からスーフォールズまで（直線で 230 mi）より遠い。次の目的地はシカゴ、あと 18 mi。"
  },
  "ff3ea3bec182": {
   "en": "Malaysia",

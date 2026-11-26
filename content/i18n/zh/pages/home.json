@@ -1283,10 +1283,6 @@
   "en": " Space &amp; flight ",
   "t": "太空与飞行"
  },
- "2819ba97835f": {
-  "en": "Rhythm and sleep",
-  "t": "节律与睡眠"
- },
  "2835bcaa6e76": {
   "en": " 49 h ",
   "t": "49 小时"
@@ -3202,10 +3198,6 @@
  "627553d69f0d": {
   "en": "The Four Seasons",
   "t": "四季"
- },
- "627d89658063": {
-  "en": "Ride it again",
-  "t": "再骑一次"
  },
  "629faf03c89b": {
   "en": "Throw again",
@@ -6523,6 +6515,10 @@
   "en": " 1,302 h ",
   "t": "1,302 小时"
  },
+ "c8e2de313adf": {
+  "en": "Next stop: {place} · {distance} to go",
+  "t": "下一站：{place} · 还差 {distance}"
+ },
  "c92499e3e7ab": {
   "en": "8 games",
   "t": "8 款游戏"
@@ -8230,6 +8226,10 @@
  "feea42718962": {
   "en": "Enlarge: Walk time or more like I stay in the stroller",
   "t": "放大: 散步时间，或者说我待在婴儿车里"
+ },
+ "ff1ee226e141": {
+  "en": " That's farther than Fargo, ND to Sioux Falls (230 mi as the crow flies).  Next stop: Chicago, 18 mi to go. ",
+  "t": "这比从法戈（北达科他州）到苏福尔斯还远（直线距离 230 mi）。下一站：芝加哥，还差 18 mi。"
  },
  "ff3ea3bec182": {
   "en": "Malaysia",

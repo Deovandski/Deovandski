@@ -4,8 +4,6 @@
 
 Cycling lives here because it's about health: pushing myself to go outside more and touch grass. It was a good fit for the days when the weather was too nice to spend in the gym, especially during the stretch when the gym was a stress relief tool rather than something I truly enjoyed.
 
-## Rhythm and sleep
-
 Having cycling in the routine, alongside the gym, also helped my circadian rhythm and my sleep quality. Sleep is a known problem for AuDHD people, and the research lines up with what I felt:
 
 - Sleep problems are far more common in autistic people and in people with ADHD than in their neurotypical peers, insomnia and a body clock that runs late above all, and having both tends to make it worse.
