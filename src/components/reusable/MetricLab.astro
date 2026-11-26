@@ -47,6 +47,8 @@
  * --lab-display-font (inherit), --lab-ramp-1 … --lab-ramp-5 (dark → bright, for magnitude).
  * Its styles are global (every class starts with metric-lab__) because its script draws most of its parts.
  * Keyboard: the filters are checkboxes (a box always keeps one ticked) and the pickers are selects; the views use PillSwitch. Fades are off under reduced motion.
+ * Touch: a tap shows a chart's value, sliding a finger sideways moves it (no text selection, #299), and it stays until the next
+ * touch or a scroll.
  */
 import PillSwitch from './PillSwitch.astro';
 
@@ -121,7 +123,7 @@ const SEASONS = ['Winter', 'Spring', 'Summer', 'Fall'];
     <span data-k="high">high</span>
     <span data-k="middle">{'{a}'} to {'{b}'} (the middle 60%)</span>
     <span data-k="seasonsEmpty">No month has 5 or more days in these filters.</span>
-    <span data-k="hoverDot">Hover a dot for its month.</span>
+    <span data-k="hoverDot">Tap or hover a dot for its month.</span>
     <span data-k="compareEmpty">Not enough days with both numbers.</span>
     <span data-k="year">Year</span>
     <span data-k="r0">barely related</span>
@@ -177,7 +179,7 @@ const SEASONS = ['Winter', 'Spring', 'Summer', 'Fall'];
 
   <div id={`${id}-timeline`} role="tabpanel" aria-labelledby={`${id}-tab-timeline`} class="metric-lab__view" data-view="timeline">
     <div class="metric-lab__vhead">
-      <p>Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.</p>
+      <p>Every metric over time, one small chart each. Tap or hover a chart and every chart shows the same day, week or month.</p>
       <span class="metric-lab__sel"><label for={`${id}-group`}>Average by</label>
         <select id={`${id}-group`} data-lab="group">
           <option value="day">day</option>
@@ -224,7 +226,7 @@ const SEASONS = ['Winter', 'Spring', 'Summer', 'Fall'];
 
   <div id={`${id}-seasons`} role="tabpanel" aria-labelledby={`${id}-tab-seasons`} class="metric-lab__view" data-view="seasons" hidden>
     <div class="metric-lab__vhead">
-      <p>Month by month, one line per year, so the winters line up with each other. Hover a line to pick out its year.</p>
+      <p>Month by month, one line per year, so the winters line up with each other. Tap or hover a line to pick out its year.</p>
       <span class="metric-lab__sel"><label for={`${id}-seasons`}>Metric</label>
         <select id={`${id}-seasons`} data-lab="seasons">{groups.map((g) => g.name ? <optgroup label={g.name}>{g.items.map((m) => <option value={m.key} selected={m.key === d.seasons}>{m.label}</option>)}</optgroup> : g.items.map((m) => <option value={m.key} selected={m.key === d.seasons}>{m.label}</option>))}</select>
       </span>
@@ -296,7 +298,10 @@ const SEASONS = ['Winter', 'Spring', 'Summer', 'Fall'];
   .metric-lab__card { background: var(--_surface); border: 1px solid var(--_line); border-radius: 14px; padding: 0.6rem 0.75rem; }
   .metric-lab__card h3 { margin: 0; font-size: 0.95rem; display: flex; justify-content: space-between; gap: 0.5rem; color: var(--_text); }
   .metric-lab__card h3 output { font-weight: 700; font-size: 0.85rem; color: var(--_accent); white-space: nowrap; }
-  .metric-lab__fig { position: relative; min-height: 150px; }
+  /* Charts on a touch screen (#299): a finger sliding across one moves the readout instead of selecting text or (sideways)
+     scrolling the page; up and down still scrolls. The calendar scrolls sideways on a phone, so it keeps both. */
+  .metric-lab__fig { position: relative; min-height: 150px; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; -webkit-tap-highlight-color: transparent; touch-action: pan-y; }
+  .metric-lab__calyr .metric-lab__fig { touch-action: pan-x pan-y; }
   .metric-lab__fig--tall { min-height: 380px; }
   .metric-lab__fig > svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; direction: ltr; }
   .metric-lab svg text { fill: var(--_muted); font-size: 12px; font-family: var(--lab-font, inherit); }
@@ -395,6 +400,10 @@ const SEASONS = ['Winter', 'Spring', 'Summer', 'Fall'];
       tip.style.top = `${Math.max(4, y)}px`;
     };
     const hideTip = () => (tip.hidden = true);
+    // On a touch screen the finger lifting counts as leaving: keep the readout until the next touch or a scroll (#299).
+    const onLeave = (fn: () => void) => (e: PointerEvent) => { if (e.pointerType !== 'touch') fn(); };
+    addEventListener('scroll', hideTip, { passive: true });
+    document.addEventListener('pointerdown', (e) => { if (!(e.target as Element).closest?.('.metric-lab__fig')) hideTip(); });
 
     let rows: Row[] = [], YEARS: number[] = [];
     const KINDS: string[] = JSON.parse(root.dataset.kinds || '[]');
@@ -480,8 +489,10 @@ const SEASONS = ['Winter', 'Spring', 'Summer', 'Fall'];
         (refPts.length ? `<path d="${refPts.map(([t, v], i) => (i ? 'L' : 'M') + X(t).toFixed(1) + ' ' + Y(v).toFixed(1)).join('')}" fill="none" stroke="${C.other}" stroke-width="1.5" stroke-dasharray="5 4"/><text class="metric-lab__ref" x="${W - R}" y="${(Y(refPts[refPts.length - 1][1]) - 5).toFixed(1)}" text-anchor="end">${esc(msg(`ref-${p.k}`))}</text>` : '') +
         `<path d="${d}" fill="none" stroke="${C.accent}" stroke-width="2" stroke-linejoin="round"/><g class="hov"></g><rect x="${L}" y="0" width="${Math.max(0, W - L - R)}" height="${H}" fill="transparent"/>`;
       const rect = s.querySelector('rect')!;
-      rect.addEventListener('pointermove', (e) => { const b = s.getBoundingClientRect(); const t = p.t0 + ((e.clientX - b.left - L) / (W - L - R)) * (p.t1 - p.t0); for (const o of panels) hover(o, t); });
-      rect.addEventListener('pointerleave', () => { for (const o of panels) { o.card.querySelector('.hov')!.innerHTML = ''; o.card.querySelector('output')!.textContent = ''; } });
+      const scrub = (e: PointerEvent) => { const b = s.getBoundingClientRect(); const t = p.t0 + ((e.clientX - b.left - L) / (W - L - R)) * (p.t1 - p.t0); for (const o of panels) hover(o, t); };
+      rect.addEventListener('pointermove', scrub);
+      rect.addEventListener('pointerdown', scrub); // a tap shows the value too
+      rect.addEventListener('pointerleave', onLeave(() => { for (const o of panels) { o.card.querySelector('.hov')!.innerHTML = ''; o.card.querySelector('output')!.textContent = ''; } }));
     }
     function hover(p: Panel, t: number) {
       if (!p.X || !p.Y) return;
@@ -546,13 +557,15 @@ const SEASONS = ['Winter', 'Spring', 'Summer', 'Fall'];
           h += `<rect data-i="${r.i}" x="${col(r.t) + 0.5}" y="${16 + r.dow * cell + 0.5}" width="${cell - 2}" height="${cell - 2}" rx="2" fill="${fill}" opacity="${keep.has(r.i) ? 1 : 0.18}"${r.ev ? ` stroke="${C.event}" stroke-width="1.6"` : ''}/>`;
         }
         s.innerHTML = h;
-        s.addEventListener('pointermove', (e) => {
+        const tipCell = (e: PointerEvent) => {
           const i = (e.target as SVGElement).dataset?.i;
           if (i == null) return hideTip();
           const r = rows[Number(i)];
           showTip(e, `<b>${esc(dateFmt(r.t, { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }))}</b>${esc(name(k))}: ${esc(fmt(k, r.v[k]))}${r.ev && hasEvent ? `<br>${esc(msg('eventValue', { n: nf(Number.isInteger(r.ev) ? 0 : 1).format(r.ev) }))}` : ''}`);
-        });
-        s.addEventListener('pointerleave', hideTip);
+        };
+        s.addEventListener('pointermove', tipCell);
+        s.addEventListener('pointerdown', tipCell);
+        s.addEventListener('pointerleave', onLeave(hideTip));
       }
     }
 
@@ -592,7 +605,8 @@ const SEASONS = ['Winter', 'Spring', 'Summer', 'Fall'];
         focus(g.dataset.y!);
         showTip(e, `<b>${g.dataset.y}</b>${t.dataset.m != null ? esc(monthName(Number(t.dataset.m), 'short') + ': ' + fmt(k, Number(t.dataset.v))) : esc(msg('hoverDot'))}`);
       };
-      s.onpointerleave = () => { focus(null); hideTip(); };
+      s.onpointerdown = s.onpointermove;
+      s.onpointerleave = onLeave(() => { focus(null); hideTip(); });
     }
 
     // ---- E: compare ----
@@ -633,7 +647,8 @@ const SEASONS = ['Winter', 'Spring', 'Summer', 'Fall'];
         if (!best) return hideTip();
         showTip(e, `<b>${esc(dateFmt(best.t, { month: 'short', day: 'numeric', year: 'numeric' }))}${best.after && hasEvent ? ' · ' + esc(msg('eventAfter')) : ''}</b>${esc(name(kx))}: ${esc(fmt(kx, best.v[kx]))}<br>${esc(name(ky))}: ${esc(fmt(ky, best.v[ky]))}`);
       };
-      s.onpointerleave = hideTip;
+      s.onpointerdown = s.onpointermove;
+      s.onpointerleave = onLeave(hideTip);
     }
 
     function render() {

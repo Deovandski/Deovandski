@@ -819,6 +819,10 @@
   "en": "Enlarge: Breakfast",
   "t": "放大: 早餐"
  },
+ "172583712386": {
+  "en": "Every metric over time, one small chart each. Tap or hover a chart and every chart shows the same day, week or month.",
+  "t": "每项指标随时间的变化，每项一张小图。点击或把鼠标移到一张图上，所有图都会显示同一天、同一周或同一个月。"
+ },
  "174e4a9ea359": {
   "en": "North Dakota's Enchanted Highway is lined with giant scrap-metal sculptures, and Geese in Flight is the largest scrap-metal sculpture in the world.",
   "t": "北达科他州的“魔法公路”两旁立着巨大的废金属雕塑，其中《飞翔的大雁》是世界最大的废金属雕塑。"
@@ -1230,10 +1234,6 @@
  "222368a81152": {
   "en": "Failing to learn English",
   "t": "学英语失败"
- },
- "222a9a1d0cfc": {
-  "en": "Month by month, one line per year, so the winters line up with each other. Hover a line to pick out its year.",
-  "t": "逐月来看，每年一条线，让每个冬天对齐。把鼠标移到线上可突出那一年。"
  },
  "2234c20b68ff": {
   "en": "30 h",
@@ -2455,6 +2455,10 @@
   "en": " 363 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "363 小时  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">估计</span>"
  },
+ "4250f34091c2": {
+  "en": "Tap or hover a dot for its month.",
+  "t": "点击或把鼠标移到点上查看月份。"
+ },
  "42c3797fbacc": {
   "en": " Stoneridge Software posts ",
   "t": "Stoneridge Software 文章"
@@ -2614,10 +2618,6 @@
  "47f53f079a30": {
   "en": "You got {score} out of {total}.",
   "t": "你答对了 {total} 题中的 {score} 题。"
- },
- "481021d04da3": {
-  "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
-  "t": "每项指标随时间的变化，每项一张小图。把鼠标移到一张图上，所有图都会显示同一天、同一周或同一个月。"
  },
  "482c33fb5f57": {
   "en": "1,137 h",
@@ -2802,10 +2802,6 @@
  "4d6474389c69": {
   "en": " BW ",
   "t": "BW"
- },
- "4d90542645b2": {
-  "en": "Hover a dot for its month.",
-  "t": "把鼠标移到点上查看月份。"
  },
  "4d968a30a022": {
   "en": "no data",
@@ -3290,6 +3286,10 @@
  "57e3e71a00f2": {
   "en": "Stardew Valley",
   "t": "Stardew Valley"
+ },
+ "57fa2afffcfd": {
+  "en": "Month by month, one line per year, so the winters line up with each other. Tap or hover a line to pick out its year.",
+  "t": "逐月来看，每年一条线，让每个冬天对齐。点击或把鼠标移到线上可突出那一年。"
  },
  "57fdad685146": {
   "en": " RC ",

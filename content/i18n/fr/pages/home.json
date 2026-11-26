@@ -819,6 +819,10 @@
   "en": "Enlarge: Breakfast",
   "t": "Agrandir: Petit-déjeuner"
  },
+ "172583712386": {
+  "en": "Every metric over time, one small chart each. Tap or hover a chart and every chart shows the same day, week or month.",
+  "t": "Chaque mesure au fil du temps, un petit graphique chacune. Touche ou survole un graphique et tous montrent le même jour, la même semaine ou le même mois."
+ },
  "174e4a9ea359": {
   "en": "North Dakota's Enchanted Highway is lined with giant scrap-metal sculptures, and Geese in Flight is the largest scrap-metal sculpture in the world.",
   "t": "L’Enchanted Highway, dans le Dakota du Nord, est bordée de sculptures géantes en ferraille, et Geese in Flight est la plus grande sculpture en ferraille du monde."
@@ -1230,10 +1234,6 @@
  "222368a81152": {
   "en": "Failing to learn English",
   "t": "Échouer à apprendre l’anglais"
- },
- "222a9a1d0cfc": {
-  "en": "Month by month, one line per year, so the winters line up with each other. Hover a line to pick out its year.",
-  "t": "Mois par mois, une ligne par année, pour aligner les hivers. Survole une ligne pour faire ressortir son année."
  },
  "2234c20b68ff": {
   "en": "30 h",
@@ -2455,6 +2455,10 @@
   "en": " 363 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "363 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimées</span>"
  },
+ "4250f34091c2": {
+  "en": "Tap or hover a dot for its month.",
+  "t": "Touche ou survole un point pour voir son mois."
+ },
  "42c3797fbacc": {
   "en": " Stoneridge Software posts ",
   "t": "Articles chez Stoneridge Software"
@@ -2614,10 +2618,6 @@
  "47f53f079a30": {
   "en": "You got {score} out of {total}.",
   "t": "Tu as trouvé {score} sur {total}."
- },
- "481021d04da3": {
-  "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
-  "t": "Chaque mesure au fil du temps, un petit graphique chacune. Survole un graphique et tous montrent le même jour, la même semaine ou le même mois."
  },
  "482c33fb5f57": {
   "en": "1,137 h",
@@ -2802,10 +2802,6 @@
  "4d6474389c69": {
   "en": " BW ",
   "t": "BW"
- },
- "4d90542645b2": {
-  "en": "Hover a dot for its month.",
-  "t": "Survole un point pour voir son mois."
  },
  "4d968a30a022": {
   "en": "no data",
@@ -3290,6 +3286,10 @@
  "57e3e71a00f2": {
   "en": "Stardew Valley",
   "t": "Stardew Valley"
+ },
+ "57fa2afffcfd": {
+  "en": "Month by month, one line per year, so the winters line up with each other. Tap or hover a line to pick out its year.",
+  "t": "Mois par mois, une ligne par année, pour aligner les hivers. Touche ou survole une ligne pour faire ressortir son année."
  },
  "57fdad685146": {
   "en": " RC ",

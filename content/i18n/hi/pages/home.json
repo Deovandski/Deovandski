@@ -819,6 +819,10 @@
   "en": "Enlarge: Breakfast",
   "t": "बड़ा करें: नाश्ता"
  },
+ "172583712386": {
+  "en": "Every metric over time, one small chart each. Tap or hover a chart and every chart shows the same day, week or month.",
+  "t": "हर मीट्रिक समय के साथ, हर एक का छोटा चार्ट। किसी चार्ट पर टैप करें या पॉइंटर ले जाएँ तो सारे चार्ट वही दिन, हफ़्ता या महीना दिखाते हैं।"
+ },
  "174e4a9ea359": {
   "en": "North Dakota's Enchanted Highway is lined with giant scrap-metal sculptures, and Geese in Flight is the largest scrap-metal sculpture in the world.",
   "t": "नॉर्थ डकोटा के एनचांटेड हाईवे पर कबाड़ धातु की विशाल मूर्तियाँ लगी हैं, और \"गीज़ इन फ़्लाइट\" दुनिया की सबसे बड़ी कबाड़ धातु की मूर्ति है।"
@@ -1230,10 +1234,6 @@
  "222368a81152": {
   "en": "Failing to learn English",
   "t": "अंग्रेज़ी सीखने में फ़ेल"
- },
- "222a9a1d0cfc": {
-  "en": "Month by month, one line per year, so the winters line up with each other. Hover a line to pick out its year.",
-  "t": "महीने-दर-महीने, हर साल एक रेखा, ताकि सर्दियाँ एक-दूसरे के सीध में रहें। किसी रेखा पर पॉइंटर ले जाकर उसका साल उभारें।"
  },
  "2234c20b68ff": {
   "en": "30 h",
@@ -2455,6 +2455,10 @@
   "en": " 363 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "363 घं.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">अनुमानित</span>"
  },
+ "4250f34091c2": {
+  "en": "Tap or hover a dot for its month.",
+  "t": "महीना देखने के लिए किसी बिंदु पर टैप करें या पॉइंटर ले जाएँ।"
+ },
  "42c3797fbacc": {
   "en": " Stoneridge Software posts ",
   "t": "Stoneridge Software पर पोस्ट"
@@ -2614,10 +2618,6 @@
  "47f53f079a30": {
   "en": "You got {score} out of {total}.",
   "t": "तुमने {total} में से {score} सही किए।"
- },
- "481021d04da3": {
-  "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
-  "t": "हर मीट्रिक समय के साथ, हर एक का छोटा चार्ट। किसी चार्ट पर पॉइंटर ले जाएँ तो सारे चार्ट वही दिन, हफ़्ता या महीना दिखाते हैं।"
  },
  "482c33fb5f57": {
   "en": "1,137 h",
@@ -2802,10 +2802,6 @@
  "4d6474389c69": {
   "en": " BW ",
   "t": "BW"
- },
- "4d90542645b2": {
-  "en": "Hover a dot for its month.",
-  "t": "महीना देखने के लिए किसी बिंदु पर पॉइंटर ले जाएँ।"
  },
  "4d968a30a022": {
   "en": "no data",
@@ -3290,6 +3286,10 @@
  "57e3e71a00f2": {
   "en": "Stardew Valley",
   "t": "Stardew Valley"
+ },
+ "57fa2afffcfd": {
+  "en": "Month by month, one line per year, so the winters line up with each other. Tap or hover a line to pick out its year.",
+  "t": "महीने-दर-महीने, हर साल एक रेखा, ताकि सर्दियाँ एक-दूसरे के सीध में रहें। किसी रेखा पर टैप करके या पॉइंटर ले जाकर उसका साल उभारें।"
  },
  "57fdad685146": {
   "en": " RC ",

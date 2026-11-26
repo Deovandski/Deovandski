@@ -612,13 +612,16 @@ Years of daily numbers to slice and dice. Group boxes of checkboxes on top: year
 the nights after an "event" (such as exercise) or not, and which kinds of event count. A box always keeps one box
 ticked. Under them, five views, picked with `PillSwitch`:
 
-- **Timeline:** one small chart per metric, by day, week or month, picked in boxes by metric group. Hover one and every
+- **Timeline:** one small chart per metric, by day, week or month, picked in boxes by metric group. Tap or hover one and every
   chart shows the same date.
 - **Event** (named by `event.view`): the day after each event against every other day, as a median dot, the middle
   half of the days as a bar, and the difference.
 - **Calendar:** one square per day, one row per year, in five steps from dark to bright; event days outlined.
 - **Seasons:** month by month, one line per year (older years darker).
 - **Compare:** any metric against any other, one dot per day, a trend line and r.
+
+On a touch screen, a tap shows a chart's value and sliding a finger sideways moves it, without selecting the text around it;
+the value stays after the finger lifts, until the next touch or a scroll. Up and down still scrolls the page (#299).
 
 It downloads its data only the first time it's shown, so a page can carry it in a closed tab for free.
 
