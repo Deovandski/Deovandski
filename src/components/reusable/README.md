@@ -25,6 +25,7 @@ and a project without translations just shows the English.
 | [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing four disco routines (#1 the point, #2 the Night Fever line dance, #3 the hustle, #4 toe stand & point), each with its own tempo, music and difficulty, picked on a View-Master plate (ReelPicker), under spotlights, a mirror ball and a light-up floor, with a beat guide and a fever meter you fill by tapping on the beat and an optional original 8-bit disco loop. | Concert tab, Playground |
 | [ReelPicker.astro](ReelPicker.astro) | A View-Master-style picker: cards around the rim of a round plate, seen through a window that shows one card and slivers of its neighbours; drag or swipe to turn the plate, it snaps to a card. Each card has a name, a detail line and an art box for a picture. | Concert tab (Saturday Night Fever routines, inside StageDancer) |
 | [PlanetLap.astro](PlanetLap.astro) | How far around a planet a distance goes, Reus-style: the planet cut in half and seen side on (crust, mantle and cores on the cut, biomes round the rim), turning under a little cyclist while a trail marks the distance from the start flag. | Cycling tab |
+| [ArcadeButton.astro](ArcadeButton.astro) | A big, chunky, old-school push button with one emoji on its cap and a click sound; it sinks when pressed, and as a toggle it stays down and lit while on. | Concert tab (Saturday Night Fever: music, pause, lights) |
 | IsoDarts (moved) | An on-rails darts scene in an isometric room: scripted speech bubbles, then a timed round on a board of coloured territories (claim, cancel, smaller is worth more) with a swaying aim. | Moved to [HusbandOutWorld](https://github.com/Deovandski/HusbandOutWorld) as `site/js/iso-darts.js` and `site/css/iso-darts.css` (its Playground, Territory Snipping, #245) |
 | [IsoFarm.astro](IsoFarm.astro) | A Colheita Feliz-style farming loop: isometric plots, seeds with timers and random harvests, fertilizer, energy and a market. The whole economy is one config object; saves in the browser. | Mentor tab (the Balls farm) |
 | [HoursByCategory.astro](HoursByCategory.astro) | Things grouped into categories with their hours: a totals card, one bar per category, then a card per category (most first, "Show all"). A switch takes "excludable" categories (idle games) out of the total. Worked out at build time, so translated pages translate every word. | Gamer tab (Steam, Xbox and estimated hours) |
@@ -461,7 +462,7 @@ and down, hip rolls, a turn and a finish) under sweeping spotlights, a mirror ba
 Buttons pause the dance and change the light colours. Lights change on the beat (under 3 a second).
 Reduced motion: a still point pose with steady lights. Theme with `--dancer-accent`.
 
-Needs [ReelPicker.astro](ReelPicker.astro) from this folder: the routines sit on its View-Master plate (drag or
+Needs [ReelPicker.astro](ReelPicker.astro) and [ArcadeButton.astro](ArcadeButton.astro) from this folder. Its controls are three arcade buttons on top of the plate (to its left on phones): 🎵 music (on by default, starting when the stage first shows), ⏸️ pause, and 💡 change the lights (not a toggle: press it as often as you like). the routines sit on its View-Master plate (drag or
 swipe to turn it; each card shows the routine's signature move). Each routine has its own tempo, 8-bit loop and
 difficulty: **#1 Easy, 100 BPM; #2 Medium, 112 BPM; #3 Hard, 122 BPM; #4 Expert, 132 BPM**. Harder routines need taps
 closer to the beat, and a **beat guide** on the left scrolls each beat down to a hit line, with the tap window drawn
@@ -473,7 +474,7 @@ and clap, a turn each way, snap kick, the skate, the point with merengue hips, h
 **#3 The hustle** (side-to-side hip bumps and rope arms); **#4 Toe stand & point** (up on the toes, finger
 straight up, a lean, a kick). A **fever meter** on the right fills a little every beat and more when you tap the
 stage (or press Space/Enter on it) on the beat; at 100 it hits **FEVER!** and the whole floor lights up for
-8 beats. **Music: on** plays the routine's own original 8-bit disco loop (Web Audio, no files; not any existing song) in
+8 beats. **🎵** plays the routine's own original 8-bit disco loop (Web Audio, no files; not any existing song) in
 time with the dance; it stops when the dance pauses or the stage is hidden.
 
 ## ReelPicker
@@ -530,6 +531,29 @@ the distance the first time it scrolls into view; a button replays it.
 
 Past a full lap, the trail starts again and `{laps}` counts the laps. Reduced motion or no JavaScript: it shows where
 the ride ends, without turning. Theme with `--planet-accent`, `--planet-rider`, `--planet-sky` and `--planet-text`.
+
+## ArcadeButton
+
+A big, chunky, old-school push button with one emoji on its cap and a satisfying click. It sinks the moment it's
+pressed and springs back; as a toggle it stays down, ringed and lit, while it's on.
+
+```astro
+<ArcadeButton emoji="🎵" label="Music" toggle pressed />
+<ArcadeButton emoji="💡" label="Change the lights" />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `emoji` | (required) | What's on the cap (decorative). |
+| `label` | (required) | The name screen readers hear, and the tooltip, since the cap has no words. |
+| `toggle` | `false` | Stays down while on (`aria-pressed`). Without it, a plain button you can keep pressing. |
+| `pressed` | `false` | A toggle that starts on. |
+| `color` | `#39c5bb` | The cap's colour (or `--arcade-color`). |
+| `sound` | `true` | Play the click (a tiny Web Audio sound, no files). |
+| `class` | none | Extra classes, handy to find it from a script. |
+
+Every press fires `arcade:press` (bubbling, `{ pressed }`). Size it with `--arcade-size` (64px); the bezel colour is
+`--arcade-base`. Reduced motion: it brightens instead of sinking.
 
 ## IsoFarm
 

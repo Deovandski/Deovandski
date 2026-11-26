@@ -611,6 +611,10 @@
   "en": "Enlarge: Painting or drawing, 04/09/2013",
   "t": "拡大: 絵画またはスケッチ, 2013年4月9日"
  },
+ "131260cbfbb0": {
+  "en": "Music",
+  "t": "音楽"
+ },
  "1349608b58ab": {
   "en": "25 h",
   "t": "25 時間"
@@ -846,10 +850,6 @@
  "1b89ab190390": {
   "en": " Bold line ",
   "t": "太線"
- },
- "1b9f359ce480": {
-  "en": "Dance",
-  "t": "ダンス"
  },
  "1bccc30e6635": {
   "en": "Enlarge: Huehuehue",
@@ -6179,13 +6179,13 @@
   "en": "819 days",
   "t": "819日"
  },
- "beaf88b8f9bb": {
-  "en": "Music: off",
-  "t": "音楽：オフ"
- },
  "bec764a9d2b7": {
   "en": "Fold 2 of 5: now the top-right corner to the same dot.",
   "t": "折り 2/5：今度は右上の角を同じ点に。"
+ },
+ "bee75ca77f75": {
+  "en": "Controls",
+  "t": "コントロール"
  },
  "bf301c3fb31a": {
   "en": " 570 h ",
@@ -8054,10 +8054,6 @@
  "fa81346692f6": {
   "en": "Supreme Pontiff of the Grill",
   "t": "グリルの最高教皇"
- },
- "fb1415fda4ff": {
-  "en": "Music: on",
-  "t": "音楽：オン"
  },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",

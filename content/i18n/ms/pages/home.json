@@ -611,6 +611,10 @@
   "en": "Enlarge: Painting or drawing, 04/09/2013",
   "t": "Besarkan: Lukisan atau lakaran, 09/04/2013"
  },
+ "131260cbfbb0": {
+  "en": "Music",
+  "t": "Muzik"
+ },
  "1349608b58ab": {
   "en": "25 h",
   "t": "25 h"
@@ -846,10 +850,6 @@
  "1b89ab190390": {
   "en": " Bold line ",
   "t": "Garisan tebal"
- },
- "1b9f359ce480": {
-  "en": "Dance",
-  "t": "Menari"
  },
  "1bccc30e6635": {
   "en": "Enlarge: Huehuehue",
@@ -6179,13 +6179,13 @@
   "en": "819 days",
   "t": "819 hari"
  },
- "beaf88b8f9bb": {
-  "en": "Music: off",
-  "t": "Muzik: tutup"
- },
  "bec764a9d2b7": {
   "en": "Fold 2 of 5: now the top-right corner to the same dot.",
   "t": "Lipat 2 daripada 5: sekarang sudut kanan atas ke titik yang sama."
+ },
+ "bee75ca77f75": {
+  "en": "Controls",
+  "t": "Kawalan"
  },
  "bf301c3fb31a": {
   "en": " 570 h ",
@@ -8054,10 +8054,6 @@
  "fa81346692f6": {
   "en": "Supreme Pontiff of the Grill",
   "t": "Paus Agung Pemanggang"
- },
- "fb1415fda4ff": {
-  "en": "Music: on",
-  "t": "Muzik: buka"
  },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",

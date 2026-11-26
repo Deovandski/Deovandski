@@ -611,6 +611,10 @@
   "en": "Enlarge: Painting or drawing, 04/09/2013",
   "t": "확대: 그림 또는 스케치, 2013년 4월 9일"
  },
+ "131260cbfbb0": {
+  "en": "Music",
+  "t": "음악"
+ },
  "1349608b58ab": {
   "en": "25 h",
   "t": "25 시간"
@@ -846,10 +850,6 @@
  "1b89ab190390": {
   "en": " Bold line ",
   "t": "굵은 선"
- },
- "1b9f359ce480": {
-  "en": "Dance",
-  "t": "춤"
  },
  "1bccc30e6635": {
   "en": "Enlarge: Huehuehue",
@@ -6179,13 +6179,13 @@
   "en": "819 days",
   "t": "819일"
  },
- "beaf88b8f9bb": {
-  "en": "Music: off",
-  "t": "음악: 끔"
- },
  "bec764a9d2b7": {
   "en": "Fold 2 of 5: now the top-right corner to the same dot.",
   "t": "접기 2/5: 이제 오른쪽 위 모서리를 같은 점으로."
+ },
+ "bee75ca77f75": {
+  "en": "Controls",
+  "t": "컨트롤"
  },
  "bf301c3fb31a": {
   "en": " 570 h ",
@@ -8054,10 +8054,6 @@
  "fa81346692f6": {
   "en": "Supreme Pontiff of the Grill",
   "t": "그릴의 최고 대사제"
- },
- "fb1415fda4ff": {
-  "en": "Music: on",
-  "t": "음악: 켜짐"
  },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",

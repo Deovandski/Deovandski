@@ -611,6 +611,10 @@
   "en": "Enlarge: Painting or drawing, 04/09/2013",
   "t": "放大: 绘画或素描, 2013年4月9日"
  },
+ "131260cbfbb0": {
+  "en": "Music",
+  "t": "音乐"
+ },
  "1349608b58ab": {
   "en": "25 h",
   "t": "25 小时"
@@ -846,10 +850,6 @@
  "1b89ab190390": {
   "en": " Bold line ",
   "t": "粗线"
- },
- "1b9f359ce480": {
-  "en": "Dance",
-  "t": "跳舞"
  },
  "1bccc30e6635": {
   "en": "Enlarge: Huehuehue",
@@ -6179,13 +6179,13 @@
   "en": "819 days",
   "t": "819 天"
  },
- "beaf88b8f9bb": {
-  "en": "Music: off",
-  "t": "音乐：关"
- },
  "bec764a9d2b7": {
   "en": "Fold 2 of 5: now the top-right corner to the same dot.",
   "t": "第 2/5 折：现在把右上角拖到同一点。"
+ },
+ "bee75ca77f75": {
+  "en": "Controls",
+  "t": "控制"
  },
  "bf301c3fb31a": {
   "en": " 570 h ",
@@ -8054,10 +8054,6 @@
  "fa81346692f6": {
   "en": "Supreme Pontiff of the Grill",
   "t": "烤炉的至高教宗"
- },
- "fb1415fda4ff": {
-  "en": "Music: on",
-  "t": "音乐：开"
  },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",

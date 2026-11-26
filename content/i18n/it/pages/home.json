@@ -611,6 +611,10 @@
   "en": "Enlarge: Painting or drawing, 04/09/2013",
   "t": "Ingrandisci: Dipinto o disegno, 09/04/2013"
  },
+ "131260cbfbb0": {
+  "en": "Music",
+  "t": "Musica"
+ },
  "1349608b58ab": {
   "en": "25 h",
   "t": "25 h"
@@ -846,10 +850,6 @@
  "1b89ab190390": {
   "en": " Bold line ",
   "t": "Linea spessa"
- },
- "1b9f359ce480": {
-  "en": "Dance",
-  "t": "Balla"
  },
  "1bccc30e6635": {
   "en": "Enlarge: Huehuehue",
@@ -6179,13 +6179,13 @@
   "en": "819 days",
   "t": "819 giorni"
  },
- "beaf88b8f9bb": {
-  "en": "Music: off",
-  "t": "Musica: spenta"
- },
  "bec764a9d2b7": {
   "en": "Fold 2 of 5: now the top-right corner to the same dot.",
   "t": "Piegatura 2 di 5: ora l’angolo in alto a destra allo stesso punto."
+ },
+ "bee75ca77f75": {
+  "en": "Controls",
+  "t": "Comandi"
  },
  "bf301c3fb31a": {
   "en": " 570 h ",
@@ -8054,10 +8054,6 @@
  "fa81346692f6": {
   "en": "Supreme Pontiff of the Grill",
   "t": "Sommo Pontefice della Griglia"
- },
- "fb1415fda4ff": {
-  "en": "Music: on",
-  "t": "Musica: accesa"
  },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",
