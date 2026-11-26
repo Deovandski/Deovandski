@@ -79,6 +79,10 @@
   "en": "Notification drip",
   "t": "تقطير الإشعارات"
  },
+ "021710fa7866": {
+  "en": "month",
+  "t": "الشهر"
+ },
  "024a42ce1e4f": {
   "en": "Skin tone 1",
   "t": "لون البشرة 1"
@@ -175,6 +179,10 @@
   "en": "Ink",
   "t": "الحبر"
  },
+ "04c70f3c22a3": {
+  "en": "of {n} tracked",
+  "t": "من {n} يومًا مسجّلًا"
+ },
  "04e3fd08d714": {
   "en": "Description coming soon.",
   "t": "الوصف قريبًا."
@@ -238,6 +246,10 @@
  "067ff8ef9ba2": {
   "en": "\nSenior Software Engineer, Dynamics 365 F&amp;O Architect, and Founder &amp; CEO of Wizard Deo Solutions.\n",
   "t": "مهندس برمجيات أول، ومعماري Dynamics 365 F&amp;O، ومؤسس Wizard Deo Solutions ورئيسها التنفيذي."
+ },
+ "0689a88574c4": {
+  "en": "{value} · {date}",
+  "t": "{value} · {date}"
  },
  "0699138fe5cc": {
   "en": "Click or drag to draw. Right-click erases.",
@@ -583,6 +595,10 @@
   "en": " JC ",
   "t": "JC"
  },
+ "1118f49d26f1": {
+  "en": " E · Compare ",
+  "t": "E · المقارنة"
+ },
  "11255d4d673b": {
   "en": "My top 39 favorite anime, ranked, and what each one means to me.",
   "t": "الأنمي المفضل لديّ الـ 39، مرتبة، وما يعنيه لي كل واحد منها."
@@ -607,6 +623,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 39: </span> Placeholder movie 39 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 39: </span> فيلم مؤقت 39"
  },
+ "122babc08c1c": {
+  "en": "Not enough days with both numbers.",
+  "t": "لا توجد أيام كافية فيها الرقمان معًا."
+ },
  "123b77b3c65c": {
   "en": "Terraria",
   "t": "Terraria"
@@ -630,6 +650,10 @@
  "131260cbfbb0": {
   "en": "Music",
   "t": "الموسيقى"
+ },
+ "132a0149f337": {
+  "en": "they rise together",
+  "t": "يرتفعان معًا"
  },
  "1349608b58ab": {
   "en": "25 h",
@@ -663,9 +687,17 @@
   "en": " PV ",
   "t": "PV"
  },
+ "145a01fb9391": {
+  "en": "/min",
+  "t": "/دقيقة"
+ },
  "14663cc9a7a1": {
   "en": "MUCH FAST",
   "t": "كثير سرعة"
+ },
+ "14696eebf7a4": {
+  "en": "Average by",
+  "t": "المتوسط حسب"
  },
  "148154839756": {
   "en": "Enlarge: Let me go",
@@ -903,6 +935,14 @@
   "en": "Musician",
   "t": "موسيقي"
  },
+ "1cc7e3f39b49": {
+  "en": "Rode {n} mi",
+  "t": "ركبت {n} ميل"
+ },
+ "1d0c8304baed": {
+  "en": "Color",
+  "t": "اللون"
+ },
  "1d23e1eb9609": {
   "en": "Enlarge: Hanging with a Peeta look alike",
   "t": "تكبير: أتسكع مع شبيه Peeta"
@@ -919,6 +959,10 @@
   "en": "Classical",
   "t": "الكلاسيكية"
  },
+ "1de180253ec0": {
+  "en": "After a ride",
+  "t": "بعد ركوب الدراجة"
+ },
  "1df37d663014": {
   "en": "135 h",
   "t": "135 س"
@@ -934,6 +978,10 @@
  "1e98d9e9411b": {
   "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,445 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> أخرى: 2,445 س"
+ },
+ "1e9c5082c7a3": {
+  "en": "{name} over time",
+  "t": "{name} عبر الزمن"
  },
  "1eab2e778967": {
   "en": "Mana",
@@ -967,6 +1015,10 @@
   "en": "Tennessee",
   "t": "تينيسي"
  },
+ "1f6990e0866b": {
+  "en": "Any metric against any other, one dot per day, with a straight trend line and how closely the two move together (r, from −1 to 1).",
+  "t": "أي مقياس مقابل أي مقياس آخر، نقطة لكل يوم، مع خط اتجاه مستقيم ومدى تحرّكهما معًا (r، من −1 إلى 1)."
+ },
  "1f797564f784": {
   "en": "Bahamas",
   "t": "جزر البهاما"
@@ -986,6 +1038,10 @@
  "2001ca082b2d": {
   "en": "Español",
   "t": "Español"
+ },
+ "2038bdec9210": {
+  "en": "Up",
+  "t": "الرأسي"
  },
  "20409611a456": {
   "en": "82 h",
@@ -1087,6 +1143,10 @@
   "en": "Failing to learn English",
   "t": "أفشل في تعلّم الإنجليزية"
  },
+ "222a9a1d0cfc": {
+  "en": "Month by month, one line per year, so the winters line up with each other. Hover a line to pick out its year.",
+  "t": "شهرًا بشهر، خط لكل سنة، كي تصطف فصول الشتاء معًا. مرّر المؤشر فوق خط لإبراز سنته."
+ },
  "2234c20b68ff": {
   "en": "30 h",
   "t": "30 س"
@@ -1106,6 +1166,10 @@
  "22f164766765": {
   "en": "Arragoa",
   "t": "Arragoa"
+ },
+ "231fbf14a11a": {
+  "en": "Time asleep",
+  "t": "مدة النوم"
  },
  "235a70299830": {
   "en": "Faun",
@@ -1134,6 +1198,10 @@
  "244d46168deb": {
   "en": "a cactus",
   "t": "صبار"
+ },
+ "24615d93d230": {
+  "en": "Winter",
+  "t": "الشتاء"
  },
  "247ce5d5d915": {
   "en": "North America",
@@ -1227,6 +1295,10 @@
   "en": "A pile of 1,166 VHS tapes",
   "t": "كومة من 1,166 شريط VHS"
  },
+ "26cc3217be64": {
+  "en": "ms",
+  "t": "مللي ث"
+ },
  "26d16d20b4b9": {
   "en": "From Itaituba, Pará, to Fargo, North Dakota.",
   "t": "من إيتايتوبا في بارا، إلى فارغو في داكوتا الشمالية."
@@ -1283,10 +1355,6 @@
   "en": " Space &amp; flight ",
   "t": "الفضاء والطيران"
  },
- "2819ba97835f": {
-  "en": "Rhythm and sleep",
-  "t": "الإيقاع والنوم"
- },
  "2835bcaa6e76": {
   "en": " 49 h ",
   "t": "49 س"
@@ -1294,6 +1362,10 @@
  "283c1ebce40b": {
   "en": "Close to 12 years old but still kicking",
   "t": "قارب 12 عامًا لكنه ما زال صامدًا"
+ },
+ "285c1b0998a6": {
+  "en": "The body is the temple, and the engine that so many people don’t watch out for. We put all our energy and attention outward. Care for yourself and love yourself too.",
+  "t": "الجسد هو المعبد، والمحرّك الذي لا يعتني به كثير من الناس. نوجّه كل طاقتنا واهتمامنا إلى الخارج. اعتنِ بنفسك وأحبّ نفسك أيضًا."
  },
  "2888f01fb635": {
   "en": "Morning by the river",
@@ -1407,6 +1479,10 @@
   "en": "71 days",
   "t": "71 يومًا"
  },
+ "2c33f945fe8f": {
+  "en": "{name} by month, one line per year",
+  "t": "{name} حسب الشهر، خط لكل سنة"
+ },
  "2c6f37232fe8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Nanatsu no Taizai (The Seven Deadly Sins) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 22: </span> Nanatsu no Taizai (الخطايا السبع المميتة)"
@@ -1510,6 +1586,10 @@
  "2f717ffad4e1": {
   "en": "Arkansas",
   "t": "أركنساس"
+ },
+ "2f92a0aa8ae9": {
+  "en": "Weekends",
+  "t": "عطلات نهاية الأسبوع"
  },
  "2f9714995b86": {
   "en": " An exploded sphere of my hours by category: Idle &amp; clickers 57%, RPGs &amp; open worlds 16%, City, colony &amp; strategy 5%, Survival &amp; crafting 5%, Factory &amp; automation 5%, Space &amp; flight 4%, Cozy &amp; life sims 3%, Other 7% ",
@@ -1635,6 +1715,14 @@
   "en": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(June 21, 2026)</span>",
   "t": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(21 يونيو 2026)</span>"
  },
+ "32f4bc9e552c": {
+  "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month. Ticks along the bottom mark each ride day.",
+  "t": "كل مقياس عبر الزمن، برسم صغير لكل واحد. مرّر المؤشر فوق رسم فتُظهر كل الرسوم اليوم أو الأسبوع أو الشهر نفسه. العلامات في الأسفل تحدد كل يوم ركبت فيه الدراجة."
+ },
+ "32f997551915": {
+  "en": "{h}h {m}m",
+  "t": "{h} س {m} د"
+ },
  "3303cb966359": {
   "en": "PowerWash Simulator",
   "t": "PowerWash Simulator"
@@ -1707,6 +1795,10 @@
   "en": "Deovandski's hub: software, books, travel and games.",
   "t": "مركز Deovandski: البرمجيات والكتب والسفر والألعاب."
  },
+ "348928d6f5be": {
+  "en": "Resting heart rate",
+  "t": "معدل نبض القلب أثناء الراحة"
+ },
  "34b1471c5170": {
   "en": "I’m not dying in the waiting room of someone else’s stagnant life. <span class=\"newest\">New</span>",
   "t": "لن أموت في غرفة انتظار حياة شخص آخر الراكدة. <span class=\"newest\">جديد</span>"
@@ -1722,6 +1814,10 @@
  "34c3262b9b37": {
   "en": " free  · 10 s ",
   "t": "مجاني · 10 ث"
+ },
+ "34cb8ac649a8": {
+  "en": "{x} against {y}, one dot per day",
+  "t": "{x} مقابل {y}، نقطة لكل يوم"
  },
  "34d8b60fe253": {
   "en": "Hide",
@@ -1763,6 +1859,10 @@
   "en": "The Witcher in Concert",
   "t": "The Witcher in Concert"
  },
+ "36a883e762d4": {
+  "en": "low",
+  "t": "منخفض"
+ },
  "36f780fdbda5": {
   "en": " PC ",
   "t": "PC"
@@ -1790,6 +1890,10 @@
  "37e005ab8200": {
   "en": "Enlarge: Painting or drawing, 02/19/2013",
   "t": "تكبير: لوحة أو رسم, 19/2/2013"
+ },
+ "37e737d92cbb": {
+  "en": "{n} min",
+  "t": "{n} دقيقة"
  },
  "380aad144968": {
   "en": "Enlarge: Camera angles are everything",
@@ -1842,6 +1946,10 @@
  "38a9bcedfb5c": {
   "en": "<strong>M. Alexandra Kredlow and colleagues</strong>, <em>Journal of Behavioral Medicine</em> (2015), a meta-analysis of physical activity and sleep: regular exercise has small benefits for total sleep time, small-to-medium ones for falling asleep, and moderate ones for sleep quality. <a href=\"https://pubmed.ncbi.nlm.nih.gov/25596964/\">Abstract</a>",
   "t": "<strong>M. Alexandra Kredlow وزملاؤها</strong>, <em>Journal of Behavioral Medicine</em> (2015)، تحليل تلوي للنشاط البدني والنوم: للرياضة المنتظمة فوائد صغيرة في مدة النوم الكلية، وصغيرة إلى متوسطة في سرعة الاستغراق في النوم، ومتوسطة في جودة النوم. <a href=\"https://pubmed.ncbi.nlm.nih.gov/25596964/\">ملخص</a>"
+ },
+ "38cb9de8ada6": {
+  "en": "{h}h",
+  "t": "{h} س"
  },
  "38e1d26af274": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer",
@@ -1942,6 +2050,10 @@
  "3b419aac7299": {
   "en": "\nTreat your life like a project: break big goals into small steps, be honest about scope and deadlines, and track what's\n        actually done. It's how I run everything from client work to this website, and the <a href=\"#pm\" data-astro-cid-xtzphevd=\"\">PM side</a> of this tab\n        has the details.\n",
   "t": "عامل حياتك كمشروع: قسّم الأهداف الكبيرة إلى خطوات صغيرة، وكن صادقًا بشأن النطاق والمواعيد، وتتبّع ما أُنجز فعلًا. هكذا أدير كل شيء، من عمل العملاء إلى هذا الموقع، و<a href=\"#pm\" data-astro-cid-xtzphevd=\"\">جانب إدارة المشاريع</a> في هذا التبويب فيه التفاصيل."
+ },
+ "3b9579462803": {
+  "en": "Loading the numbers…",
+  "t": "جارٍ تحميل الأرقام…"
  },
  "3b9b88d1447d": {
   "en": " <span class=\"shelf__dot\" style=\"background: #0ca30c\" data-astro-cid-nqpad2wp=\"\"></span> Cozy &amp; life sims: 904 h ",
@@ -2046,6 +2158,10 @@
  "3ef5b5e97c0e": {
   "en": "Back to Musician",
   "t": "العودة إلى الموسيقي"
+ },
+ "3ef5d324a3b2": {
+  "en": "No month has 5 or more days in these filters.",
+  "t": "لا يوجد شهر فيه 5 أيام أو أكثر بهذه المرشّحات."
  },
  "3f03ae3311ee": {
   "en": "VHS pile: turn your phone sideways",
@@ -2191,6 +2307,10 @@
   "en": "Reset",
   "t": "إعادة ضبط"
  },
+ "44cc45ad22b1": {
+  "en": " A · Timeline ",
+  "t": "A · الخط الزمني"
+ },
  "44eb59ea016a": {
   "en": "Black Jacket Symphony",
   "t": "Black Jacket Symphony"
@@ -2215,6 +2335,10 @@
   "en": "The juxtaposition between what you think it's about and what actually happens reminds me of Happy Tree Friends. The world lore and its rules are fascinating!",
   "t": "التناقض بين ما تظن أنه يدور حوله وما يحدث فعلًا يذكّرني بـ Happy Tree Friends. عالم القصة وقواعده رائعة!"
  },
+ "45d7b9f03f0a": {
+  "en": "Body fat (yearly average)",
+  "t": "نسبة الدهون (المتوسط السنوي)"
+ },
  "45f08cb571cd": {
   "en": "<strong>Marcus Aurelius</strong>, <em>Meditations</em> 6.24: death brought Alexander the Great and his mule driver to the same state. <a href=\"https://en.wikisource.org/wiki/Marcus_Aurelius_(Haines_1916)/Book_6\">Text</a>",
   "t": "<strong>ماركوس أوريليوس</strong>، <em>«التأملات»</em> 6.24: أوصل الموت الإسكندر الأكبر وسائق بغاله إلى الحال نفسها. <a href=\"https://en.wikisource.org/wiki/Marcus_Aurelius_(Haines_1916)/Book_6\">النص</a>"
@@ -2230,6 +2354,10 @@
  "46b00befa084": {
   "en": "\"Almost went viral!\" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses.",
   "t": "«كاد ينتشر!» يبقى خسارة، وهو أسوأ من خسارة عادية، ومع ذلك يجعل الناس يريدون الاستمرار في اللعب. يبلغ الإصرار ذروته حين تكون نحو 30% من الخسارات فوزًا وشيكًا."
+ },
+ "46e490cac450": {
+  "en": "bpm",
+  "t": "ن/د"
  },
  "46e80e47b684": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested",
@@ -2435,6 +2563,14 @@
   "en": " BW ",
   "t": "BW"
  },
+ "4d90542645b2": {
+  "en": "Hover a dot for its month.",
+  "t": "مرّر المؤشر فوق نقطة لترى شهرها."
+ },
+ "4d968a30a022": {
+  "en": "no data",
+  "t": "لا بيانات"
+ },
  "4db745f6113e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Toradora! ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 23: </span> Toradora!"
@@ -2551,6 +2687,10 @@
   "en": "Smol",
   "t": "صغنون"
  },
+ "4ffc67b62aae": {
+  "en": "Weekdays",
+  "t": "أيام الأسبوع"
+ },
  "5033c1d06398": {
   "en": "Charles Playhouse, Boston",
   "t": "Charles Playhouse, Boston"
@@ -2599,6 +2739,10 @@
   "en": "17 h",
   "t": "17 س"
  },
+ "5115ff9a0bea": {
+  "en": "{a} vs {o}",
+  "t": "{a} مقابل {o}"
+ },
  "511993d3c997": {
   "en": "P",
   "t": "P"
@@ -2638,6 +2782,10 @@
  "521cb68c2c31": {
   "en": "Ceará",
   "t": "Ceará"
+ },
+ "52709c0fe403": {
+  "en": "{name}, one square per day in {year}",
+  "t": "{name}، مربع لكل يوم في {year}"
  },
  "5284e1a74198": {
   "en": "Tell me I am pretty",
@@ -2779,6 +2927,10 @@
   "en": "People post more right after a batch of likes, spacing posts to chase the best rate of likes, like an animal in a Skinner box.",
   "t": "ينشر الناس أكثر مباشرةً بعد دفعة من الإعجابات، ويباعدون بين منشوراتهم سعيًا وراء أفضل معدل للإعجابات، كحيوان في صندوق سكينر."
  },
+ "55f9fd002ac9": {
+  "en": "The body is the temple",
+  "t": "الجسد هو المعبد"
+ },
  "55fa0faa800a": {
   "en": "City, colony & strategy",
   "t": "المدن والمستعمرات والاستراتيجية"
@@ -2883,6 +3035,10 @@
   "en": "7% of my hours",
   "t": "7% من ساعاتي"
  },
+ "58f7a8f2ec30": {
+  "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n Body fat, yearly average: 2023, 32.9%; 2024, 36.8%; 2025, 38.0%; 2026, 35.4%. ",
+  "t": "الوزن حسب السنة: 2016, 300 رطل؛ 2017, 220 رطل؛ 2018, 230 رطل؛ 2019, 240 رطل؛ 2020, 260 رطل؛ 2021, 230 رطل؛ 2022, 245 رطل؛ 2023, 260 رطل؛ 2024, 250 رطل؛ 2025, 260 رطل؛ 2026, 225 رطل. الهدف: 200 رطل.\n نسبة الدهون في الجسم، المتوسط السنوي: 2023, 32.9%؛ 2024, 36.8%؛ 2025, 38.0%؛ 2026, 35.4%."
+ },
  "592bc9228abd": {
   "en": "Enlarge: Salty doggo",
   "t": "تكبير: كلبة غاضبة"
@@ -2931,6 +3087,10 @@
   "en": "Change the lights",
   "t": "غيّر الأضواء"
  },
+ "5a6b6b31729f": {
+  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>Other nights",
+  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>ليالٍ أخرى"
+ },
  "5a7078113356": {
   "en": "Sleep first",
   "t": "النوم أولًا"
@@ -2963,6 +3123,10 @@
   "en": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Aquamarine",
   "t": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>أكوامارين"
  },
+ "5b290995d5b7": {
+  "en": "Heart rate variability",
+  "t": "تقلّب معدل ضربات القلب"
+ },
  "5b4dfc520699": {
   "en": "Notice me harder, senpai! (｡♥‿♥｡)",
   "t": "لاحظني أكثر يا سينباي! (｡♥‿♥｡)"
@@ -2994,6 +3158,10 @@
  "5bfe7304b93a": {
   "en": "Enlarge: Rueiro",
   "t": "تكبير: Rueiro (ابن الشارع)"
+ },
+ "5c1ae82c2954": {
+  "en": "Fall",
+  "t": "الخريف"
  },
  "5c1db802f890": {
   "en": "Repeat yourself and each post pays less, then starts to cost you followers. The treadmill speeds up.",
@@ -3066,6 +3234,10 @@
  "5e7e6713592f": {
   "en": "Be Awesome!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (written in Vraki)</span>",
   "t": "Be Awesome!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (مكتوبة بخط فراكي)</span>"
+ },
+ "5e873f457d2a": {
+  "en": " C · Calendar ",
+  "t": "C · التقويم"
  },
  "5e89349bfb8a": {
   "en": "Camping",
@@ -3187,6 +3359,10 @@
   "en": "The wishlist is on its way.",
   "t": "قائمة الأمنيات في الطريق."
  },
+ "62255f5671e8": {
+  "en": "Season",
+  "t": "الفصل"
+ },
  "62405c2823c6": {
   "en": "Justin Timberlake",
   "t": "Justin Timberlake"
@@ -3203,10 +3379,6 @@
   "en": "The Four Seasons",
   "t": "الفصول الأربعة"
  },
- "627d89658063": {
-  "en": "Ride it again",
-  "t": "انطلق مجددًا"
- },
  "629faf03c89b": {
   "en": "Throw again",
   "t": "ارمِ مجددًا"
@@ -3218,6 +3390,10 @@
  "62bd650a8380": {
   "en": " FC ",
   "t": "FC"
+ },
+ "62dfe60deea3": {
+  "en": "The numbers didn't load. Try again later.",
+  "t": "تعذّر تحميل الأرقام. حاول مرة أخرى لاحقًا."
  },
  "633797165688": {
   "en": "Magical Mirai, Osaka (2014)",
@@ -3487,6 +3663,10 @@
   "en": "Take care of Peeta",
   "t": "اعتنِ بـ Peeta"
  },
+ "6a72085653e4": {
+  "en": "All",
+  "t": "الكل"
+ },
  "6a985aa2c1d7": {
   "en": "Disturbed",
   "t": "Disturbed"
@@ -3559,6 +3739,10 @@
   "en": "3 mana · 2",
   "t": "3 مانا · 2"
  },
+ "6d0a290e3592": {
+  "en": "One square per day, one row per year. The brighter the square, the higher the number. A colored edge marks each ride day. Faded squares are days outside your filters.",
+  "t": "مربع لكل يوم، وصف لكل سنة. كلما كان المربع أفتح كان الرقم أعلى. الحافة الملوّنة تحدد كل يوم ركوب دراجة. المربعات الباهتة أيام خارج مرشّحاتك."
+ },
  "6d1c8ee06629": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 29: </span> Placeholder TV show 29 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 29: </span> مسلسل مؤقت 29"
@@ -3587,6 +3771,10 @@
   "en": "Play time!",
   "t": "وقت اللعب!"
  },
+ "6dc1222c378c": {
+  "en": "Readiness",
+  "t": "الجاهزية"
+ },
  "6dcd4ce23d88": {
   "en": "A",
   "t": "A"
@@ -3603,6 +3791,10 @@
   "en": "That one really got me in the feels. It made me feel more in one sitting than I felt while dating some girls. It's hard for me to miss someone once I say goodbye, but this anime made me sit with that feeling for a good while after watching it.",
   "t": "هذا أصابني في الصميم حقًا. جعلني أشعر في جلسة واحدة بأكثر مما شعرت به وأنا أواعد بعض الفتيات. من الصعب عليّ أن أشتاق إلى أحد بعد أن أودّعه، لكن هذا الأنمي جعلني أعيش مع ذلك الشعور فترة طويلة بعد مشاهدته."
  },
+ "6e64529a10e6": {
+  "en": "The night and day after each ride day, against every other day you picked. The dot is the middle value (the median) and the bar holds the middle half of the days. This view ignores the Nights filter.",
+  "t": "الليلة واليوم بعد كل يوم ركوب دراجة، مقابل كل الأيام الأخرى التي اخترتها. النقطة هي القيمة الوسطى (الوسيط) والشريط يضم النصف الأوسط من الأيام. هذا العرض يتجاهل مرشّح الليالي."
+ },
  "6e68e69e0822": {
   "en": "Black ink",
   "t": "حبر أسود"
@@ -3618,10 +3810,6 @@
  "6eef3154b469": {
   "en": "Misaki is hands down my favorite character in the entire series! And this is my favorite series in the \"A Certain...\" world.",
   "t": "ميساكي بلا منازع شخصيتي المفضلة في السلسلة كلها! وهذه سلسلتي المفضلة في عالم «A Certain...»."
- },
- "6ef1bd6bc4fd": {
-  "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n",
-  "t": "الوزن حسب السنة: 2016، ‏300 رطل؛ 2017، ‏220 رطلًا؛ 2018، ‏230 رطلًا؛ 2019، ‏240 رطلًا؛ 2020، ‏260 رطلًا؛ 2021، ‏230 رطلًا؛ 2022، ‏245 رطلًا؛ 2023، ‏260 رطلًا؛ 2024، ‏250 رطلًا؛ 2025، ‏260 رطلًا؛ 2026، ‏225 رطلًا. الهدف: 200 رطل."
  },
  "6f1c05b8c7b8": {
   "en": "Trained by the Pope's own hand",
@@ -3775,6 +3963,10 @@
   "en": "{name} is hungry",
   "t": "{name} جائع"
  },
+ "73f12baa61a3": {
+  "en": "Breathing rate",
+  "t": "معدل التنفس"
+ },
  "740587c66df0": {
   "en": "If thou art a <strong>Cardinal of the Touch</strong>, thou shalt know when the meat is done by touch alone. Otherwise, use the thermometer.",
   "t": "إن كنت <strong>كاردينالًا للمس</strong>، فستعرف متى ينضج اللحم باللمس وحده. وإلا، فاستخدم ميزان الحرارة."
@@ -3883,6 +4075,10 @@
   "en": "SP",
   "t": "SP"
  },
+ "770df2e64e5a": {
+  "en": "°F",
+  "t": "°ف"
+ },
  "773239581207": {
   "en": "Rock &amp; metal",
   "t": "الروك والميتال"
@@ -3926,6 +4122,10 @@
  "781012cf77dd": {
   "en": "estimated",
   "t": "تقديري"
+ },
+ "781291fa12cc": {
+  "en": "ride day",
+  "t": "يوم ركوب الدراجة"
  },
  "781961bc81c2": {
   "en": "Pause",
@@ -4079,6 +4279,10 @@
   "en": "9% of my hours",
   "t": "9% من ساعاتي"
  },
+ "7c92fc5cf65f": {
+  "en": "Summer",
+  "t": "الصيف"
+ },
  "7cbce9cd9969": {
   "en": "Salesman and his companion",
   "t": "البائع ورفيقه"
@@ -4186,6 +4390,10 @@
  "7f6175041cc3": {
   "en": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #4: </span>Systematize your brain",
   "t": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">حيلة الحياة #4: </span>نظِّم دماغك كنظام"
+ },
+ "7fe62dcaf796": {
+  "en": "strongly related",
+  "t": "علاقة قوية"
  },
  "8010162de46b": {
   "en": "Final Fantasy series",
@@ -4299,6 +4507,10 @@
   "en": "Faithful servants who yet lean upon the thermometer, but who follow the steps and strive to forsake all sauce.",
   "t": "خدّام مؤمنون ما زالوا يتكئون على ميزان الحرارة، لكنهم يتبعون الخطوات ويجاهدون لهجر كل الصلصات."
  },
+ "8371b1d2be3f": {
+  "en": "Active zone minutes",
+  "t": "دقائق المنطقة النشطة"
+ },
  "8385323100f4": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#2: </span>Best of the Worst: Christmas 2020",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#2: </span>Best of the Worst: Christmas 2020"
@@ -4387,6 +4599,10 @@
   "en": "Hairball",
   "t": "Hairball"
  },
+ "865e588793be": {
+  "en": "Deep sleep",
+  "t": "النوم العميق"
+ },
  "8686eb8cf046": {
   "en": "Circa Q2 2013",
   "t": "نحو الربع 2 من 2013"
@@ -4439,6 +4655,10 @@
   "en": "Can we fry those up",
   "t": "هل نستطيع قلي هؤلاء"
  },
+ "87de5501fb6d": {
+  "en": "Pick at least one metric above.",
+  "t": "اختر مقياسًا واحدًا على الأقل في الأعلى."
+ },
  "87f8a557dc11": {
   "en": "If you read my Vol 2 afterword, you'll understand why this one is so meaningful to me. Besides loving Megumin and the rest of the cast, I love how it takes potshots at the entire isekai genre, and the laissez-faire, shitposting attitude it brings.",
   "t": "إن قرأت كلمتي الختامية للمجلد الثاني، ستفهم لماذا يعني لي هذا الأنمي الكثير. إلى جانب حبي لميغومين وبقية الشخصيات، أحب كيف يسخر من نوع الإيسيكاي بأكمله، وروح اللامبالاة والتهريج التي يأتي بها."
@@ -4486,6 +4706,10 @@
  "8937a988d677": {
   "en": " TrueSteamAchievements ",
   "t": "TrueSteamAchievements"
+ },
+ "89677615c2ec": {
+  "en": "Spring",
+  "t": "الربيع"
  },
  "89a35bbdf744": {
   "en": "Your {n}-post streak is about to die. Post something!",
@@ -4591,9 +4815,17 @@
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,123 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,123 س</strong>  ·  19 لعبة  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% من ساعاتي</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% من ساعاتي</span>"
  },
+ "8cd84528f364": {
+  "en": "Blood oxygen",
+  "t": "الأكسجين في الدم"
+ },
  "8ce8b5330b49": {
   "en": "So damn cute! It reminded me of going through adolescence, which means it does a really good job of capturing how weird and fascinating it is to grow into early adulthood. Also, I absolutely love Satone, because I love clingy girls!",
   "t": "لطيف جدًا بحق الجحيم! ذكّرني بمرحلة المراهقة، أي أنه ينجح حقًا في التقاط كم هو غريب ومدهش أن تنمو نحو بدايات النضج. كما أنني أحب ساتوني تمامًا، لأنني أحب الفتيات المتعلقات!"
+ },
+ "8ceb6b355335": {
+  "en": "barely related",
+  "t": "لا علاقة تقريبًا"
  },
  "8cf47617a602": {
   "en": "Rio Grande do Norte",
@@ -4762,6 +4994,10 @@
  "92164916faa7": {
   "en": "Whack the Miku (bottom left, key 3)",
   "t": "اضرب الميكو (أسفل اليسار، المفتاح 3)"
+ },
+ "9235afd3e988": {
+  "en": "high",
+  "t": "مرتفع"
  },
  "9239c22d1d1c": {
   "en": "Japanese",
@@ -4947,6 +5183,10 @@
   "en": "Enlarge: Failing to learn English",
   "t": "تكبير: أفشل في تعلّم الإنجليزية"
  },
+ "96e578211aa2": {
+  "en": "Filters",
+  "t": "المرشّحات"
+ },
  "96f997bcecb3": {
   "en": "Years",
   "t": "سنوات"
@@ -5047,6 +5287,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#8: </span>Best of the Worst: Black Spine Raffle",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#8: </span>Best of the Worst: Black Spine Raffle"
  },
+ "9a614628eb58": {
+  "en": "Cardio fitness (VO₂ max)",
+  "t": "اللياقة القلبية (VO₂ max)"
+ },
  "9a6a49a5317f": {
   "en": "EM",
   "t": "EM"
@@ -5054,6 +5298,10 @@
  "9a7378f878db": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder movie 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 33: </span> فيلم مؤقت 33"
+ },
+ "9ae44de0bb30": {
+  "en": "Other nights",
+  "t": "ليالٍ أخرى"
  },
  "9b596bacf45e": {
   "en": "You don't have to trust me, you can check <a href=\"https://github.com/Deovandski/Deovandski\" data-astro-cid-somgw2vn=\"\">the source code</a> yourself.",
@@ -5279,6 +5527,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 13: </span> Cyberpunk: Edgerunners ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 13: </span> Cyberpunk: Edgerunners"
  },
+ "a18eb7212129": {
+  "en": "Nights",
+  "t": "الليالي"
+ },
  "a191d463d26a": {
   "en": "Enlarge: Mickey D's",
   "t": "تكبير: ماكدونالدز"
@@ -5314,6 +5566,10 @@
  "a257e7233ab2": {
   "en": "312 h",
   "t": "312 س"
+ },
+ "a2620cbc10f5": {
+  "en": "day",
+  "t": "اليوم"
  },
  "a27a66446545": {
   "en": "Washington",
@@ -5394,6 +5650,10 @@
  "a4c146b7a21c": {
   "en": "Senpai, your bellows technique is... impressive (￣▽￣)ノ",
   "t": "سينباي، تقنيتك في النفخ بالمنفاخ... مبهرة (￣▽￣)ノ"
+ },
+ "a4f5e66b42d2": {
+  "en": "Days in view",
+  "t": "الأيام المعروضة"
  },
  "a54d8d9fd7e6": {
   "en": "7 countries · 4 states/provinces · 94 photos",
@@ -5483,6 +5743,10 @@
   "en": "Maneater",
   "t": "Maneater"
  },
+ "a7554703ef3a": {
+  "en": "Biomarker Lab",
+  "t": "مختبر المؤشرات الحيوية"
+ },
  "a75e8688b4fb": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24"
@@ -5559,6 +5823,10 @@
   "en": "Your clock is ticking too",
   "t": "ساعتك تدق أيضًا"
  },
+ "a912d4a5cf52": {
+  "en": "{a} vs {o} days",
+  "t": "{a} مقابل {o} يومًا"
+ },
  "a91385ae4f0f": {
   "en": "Portuguese: 10 of 10, Fully bilingual",
   "t": "البرتغالية: 10 من 10، ثنائي اللغة تمامًا"
@@ -5614,6 +5882,10 @@
  "aabee28bec46": {
   "en": "August 3, 2026",
   "t": "3 أغسطس 2026"
+ },
+ "aad754dbe1a8": {
+  "en": "in view",
+  "t": "معروضة"
  },
  "aaf4de45da01": {
   "en": "This is a Christian fireplace! (╯°□°)╯",
@@ -5895,6 +6167,10 @@
   "en": "Deo in 2017 in a graduation cap and gown with a medal, raising a beer",
   "t": "Deo عام 2017 بقبعة التخرج وردائه ومعه ميدالية، يرفع كأس بيرة"
  },
+ "b2589a337b11": {
+  "en": "These days cluster in some seasons more than others, so a difference here is a hint, not proof of a cause.",
+  "t": "تتجمع هذه الأيام في بعض الفصول أكثر من غيرها، لذا فالفرق هنا تلميح وليس دليلًا على سبب."
+ },
  "b29157b87cd1": {
   "en": "Bands I still want to see live.",
   "t": "فرق ما زلت أريد أن أشاهدها مباشرة."
@@ -5902,6 +6178,10 @@
  "b297cb01e994": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022"
+ },
+ "b2bb7604c825": {
+  "en": "Metric",
+  "t": "المقياس"
  },
  "b2d879e09416": {
   "en": "Plantera",
@@ -5922,6 +6202,10 @@
  "b36cbebb0440": {
   "en": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">مفضلات FITM 2025</span>"
+ },
+ "b38a99fe0694": {
+  "en": "one rises as the other falls",
+  "t": "يرتفع أحدهما حين ينخفض الآخر"
  },
  "b3fed1091f2c": {
   "en": "d4",
@@ -5987,6 +6271,10 @@
   "en": "60 h",
   "t": "60 س"
  },
+ "b553840edbe9": {
+  "en": " B · Ride nights ",
+  "t": "B · ليالي الدراجة"
+ },
  "b588aca7bb99": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!)"
@@ -6022,6 +6310,10 @@
  "b6c015d12e1b": {
   "en": "Wins",
   "t": "الانتصارات"
+ },
+ "b6c935d4f3c7": {
+  "en": "min",
+  "t": "دقيقة"
  },
  "b6cdc0302c44": {
   "en": "Enlarge: Stroller time",
@@ -6114,6 +6406,10 @@
  "b9af5469788b": {
   "en": "The clock is ticking on my 💀 Death tab.",
   "t": "الساعة تدق في 💀 تبويب الموت الخاص بي."
+ },
+ "b9dd1e7cf0fb": {
+  "en": "Stress score",
+  "t": "درجة التوتر"
  },
  "ba01865809b3": {
   "en": "Back to Concert",
@@ -6295,6 +6591,10 @@
   "en": "Enlarge: But don't wanna go to sleep",
   "t": "تكبير: لكنني لا أريد أن أنام"
  },
+ "c0ee32d825d6": {
+  "en": "week",
+  "t": "الأسبوع"
+ },
  "c0f00b81ade6": {
   "en": "The true churrasco is <strong>picanha</strong> roasted on the <em>espeto</em>, the sword-like skewer, upon a <em>churrasqueira giratória</em>, the wall-style grill that turns the meat without rest.",
   "t": "الشوراسكو الحق هو <strong>البيكانيا (picanha)</strong> المشوية على <em>الإسبيتو (espeto)</em>، السيخ الذي يشبه السيف، فوق <em>الشوراسكيرا الدوّارة (churrasqueira giratória)</em>، الشواية الجدارية التي تدير اللحم بلا توقف."
@@ -6326,6 +6626,10 @@
  "c1596106e469": {
   "en": "Hanging with a Peeta look alike",
   "t": "أتسكع مع شبيه Peeta"
+ },
+ "c169b50f6151": {
+  "en": " D · Seasons ",
+  "t": "D · الفصول"
  },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -6415,6 +6719,10 @@
   "en": "Rauw Alejandro",
   "t": "Rauw Alejandro"
  },
+ "c4e423204c8a": {
+  "en": "Ride nights",
+  "t": "ليالي الدراجة"
+ },
  "c5352fbe59ff": {
   "en": "Next routine",
   "t": "الروتين التالي"
@@ -6446,6 +6754,10 @@
  "c5d40b2b76f6": {
   "en": "\nI've always been fascinated by creating music. But not only am I tone deaf, I also struggle with reading sheet music,\n          and even with something as simple as <a href=\"https://www.image-line.com/fl-studio/\" data-astro-cid-j7pv25f6=\"\">FL Studio</a> and\n<a href=\"https://www.virtualdj.com/\" data-astro-cid-j7pv25f6=\"\">VirtualDJ</a>. I remember messing with them a lot, but never making progress, or\n          just making utter terrible shit. All I've been able to do by myself is fade songs in and out, fix their EQ and such in\n<a href=\"https://www.audacityteam.org/\" data-astro-cid-j7pv25f6=\"\">Audacity</a>. Never true music creation.\n",
   "t": "لطالما فتنني صنع الموسيقى. لكنني لست أصمّ النغم فحسب، بل أعاني أيضًا في قراءة النوتة الموسيقية، وحتى مع شيء بسيط مثل <a href=\"https://www.image-line.com/fl-studio/\" data-astro-cid-j7pv25f6=\"\">FL Studio</a> و<a href=\"https://www.virtualdj.com/\" data-astro-cid-j7pv25f6=\"\">VirtualDJ</a>. أتذكر أنني عبثت بهما كثيرًا، لكنني لم أتقدم أبدًا، أو كنت أصنع خراءً فظيعًا تمامًا. كل ما استطعت فعله بنفسي هو إظهار الأغاني وإخفاؤها تدريجيًا، وضبط معادل الصوت (EQ) وما شابه في <a href=\"https://www.audacityteam.org/\" data-astro-cid-j7pv25f6=\"\">Audacity</a>. لم يكن صنعًا حقيقيًا للموسيقى قط."
+ },
+ "c6129321a1a0": {
+  "en": "clearly related",
+  "t": "علاقة واضحة"
  },
  "c63ae6dd4fc9": {
   "en": "M",
@@ -6519,9 +6831,17 @@
   "en": " <span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> Space &amp; flight: 1,302 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> الفضاء والطيران: 1,302 س"
  },
+ "c8a57159c492": {
+  "en": "How my nights after a ride compare with the rest is in the <a href=\"#biomarkers\">Biomarker Lab</a>, under Hearth.",
+  "t": "كيف تبدو لياليّ بعد ركوب الدراجة مقارنةً بغيرها، تجده في <a href=\"#biomarkers\">مختبر المؤشرات الحيوية</a> ضمن الدار."
+ },
  "c8b4c761e082": {
   "en": " 1,302 h ",
   "t": "1,302 س"
+ },
+ "c8e2de313adf": {
+  "en": "Next stop: {place} · {distance} to go",
+  "t": "المحطة التالية: {place} · باقٍ {distance}"
  },
  "c92499e3e7ab": {
   "en": "8 games",
@@ -6691,6 +7011,10 @@
   "en": "Potato",
   "t": "البطاطس"
  },
+ "cdde4f20ba31": {
+  "en": "Steps",
+  "t": "الخطوات"
+ },
  "cde507abe00d": {
   "en": "67 days",
   "t": "67 يومًا"
@@ -6755,6 +7079,10 @@
   "en": "Never wrestle with pigs. You both get dirty, and the pig likes it. <span class=\"newest\">New</span>",
   "t": "لا تصارع الخنازير أبدًا. كلاكما سيتسخ، والخنزير يحب ذلك. <span class=\"newest\">جديد</span>"
  },
+ "cfd46a36afd8": {
+  "en": "Across",
+  "t": "الأفقي"
+ },
  "cfd9334fce91": {
   "en": "Revenant (1999)",
   "t": "Revenant (1999)"
@@ -6798,6 +7126,10 @@
  "d09bdd281dfa": {
   "en": "Princess Fluffy of Guamá",
   "t": "الأميرة Fluffy من غواما"
+ },
+ "d0c12b6b5196": {
+  "en": "REM sleep",
+  "t": "نوم حركة العين السريعة"
  },
  "d1230224faff": {
   "en": "Campaign #2",
@@ -6858,6 +7190,14 @@
  "d28817938afa": {
   "en": "Colorado",
   "t": "كولورادو"
+ },
+ "d28fc72baa36": {
+  "en": "The body is a machine, and like any other machine, it needs to be cared for. These are its gauges: what my watch has logged every day since April 2023. Slice them any way you like.",
+  "t": "الجسد آلة، ومثل أي آلة أخرى يحتاج إلى العناية. هذه مؤشراته: ما سجّلته ساعتي كل يوم منذ أبريل 2023. قسّمها كما تشاء."
+ },
+ "d28fea415d19": {
+  "en": "middle value",
+  "t": "القيمة الوسطى"
  },
  "d29b1a0ebf5e": {
   "en": "Lukewarm",
@@ -7135,6 +7475,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#19: </span>Best of the Worst: A Very Cannon Christmas II",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#19: </span>Best of the Worst: A Very Cannon Christmas II"
  },
+ "d970d5b83c91": {
+  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Rides come from the\n<a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Cycling</a> tab. Dates and numbers only: no places.\n",
+  "t": "من ساعتي Pixel Watch، عبر Google Health، من أبريل 2023 إلى نوفمبر 2026 (صُدّرت في 2026-11-26). بيانات ركوب الدراجة من تبويب\n<a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">ركوب الدراجات</a>. تواريخ وأرقام فقط: بلا أماكن."
+ },
  "d988b45e783b": {
   "en": "Pick a routine",
   "t": "اختر رقصة"
@@ -7158,6 +7502,10 @@
  "d9c4aa395b07": {
   "en": "Enlarge: Captain Bidu: Bidu wearing a blue military officer cap with a gold winged badge",
   "t": "تكبير: القبطان Bidu: ‏Bidu يرتدي قبعة ضابط عسكري زرقاء عليها شارة ذهبية مجنّحة"
+ },
+ "d9defa2c4cc3": {
+  "en": "loosely related",
+  "t": "علاقة ضعيفة"
  },
  "d9ecc35c78dd": {
   "en": "Scream Collector",
@@ -7218,6 +7566,10 @@
  "dba7601ff7be": {
   "en": "Symphony of Seasons",
   "t": "Symphony of Seasons"
+ },
+ "dbf87a14e9e7": {
+  "en": "{a} to {b} (the middle 60%)",
+  "t": "من {a} إلى {b} (الـ60% في الوسط)"
  },
  "dbf97b660ed1": {
   "en": "Eat sleep poop repeat",
@@ -7427,6 +7779,10 @@
   "en": "961 h",
   "t": "961 س"
  },
+ "e2ce44da53e6": {
+  "en": "Sleep score",
+  "t": "درجة النوم"
+ },
  "e2fdc09c46f0": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez"
@@ -7446,6 +7802,10 @@
  "e3b82040565b": {
   "en": "Now",
   "t": "الآن"
+ },
+ "e3cb8bd6bf09": {
+  "en": "Bedtime",
+  "t": "موعد النوم"
  },
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
@@ -7566,6 +7926,10 @@
  "e76e281ed9f1": {
   "en": "Back to the starting picture",
   "t": "العودة إلى الصورة الابتدائية"
+ },
+ "e7be4dbaee78": {
+  "en": "Metrics to show",
+  "t": "المقاييس المعروضة"
  },
  "e7d965113795": {
   "en": "Kilograms of beef grilled: 295",
@@ -7855,6 +8219,10 @@
   "en": "141 h",
   "t": "141 س"
  },
+ "f281a799c9fd": {
+  "en": "r = {r} · {n} days · {strength}",
+  "t": "r = {r} · {n} يومًا · {strength}"
+ },
  "f2a63e1c444a": {
   "en": "Photogenic",
   "t": "فوتوجيني"
@@ -7914,6 +8282,14 @@
  "f42120fee221": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Placeholder TV show 23 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">المرتبة 23: </span> مسلسل مؤقت 23"
+ },
+ "f4278970b6fb": {
+  "en": "Not enough days in these filters. Try more years or all seasons.",
+  "t": "لا توجد أيام كافية بهذه المرشّحات. جرّب سنوات أكثر أو كل الفصول."
+ },
+ "f437bf56eca8": {
+  "en": "Ways to see the numbers",
+  "t": "طرق رؤية الأرقام"
  },
  "f4853c881e96": {
   "en": "{n} more to earn",
@@ -8151,6 +8527,10 @@
   "en": "The Book of Mormon",
   "t": "The Book of Mormon"
  },
+ "fc10303017c5": {
+  "en": "Skin temperature",
+  "t": "حرارة الجلد"
+ },
  "fc3c2b787144": {
   "en": "Lyric Opera of Chicago",
   "t": "Lyric Opera of Chicago"
@@ -8223,6 +8603,10 @@
   "en": "Practice skin. Draw a tattoo on it with the tattoo pen.",
   "t": "جلد تدريب. ارسم عليه وشمًا بقلم الوشم."
  },
+ "feda6ec3fdc1": {
+  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>After a ride",
+  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>بعد ركوب الدراجة"
+ },
  "fee0589986c6": {
   "en": "The Stanley Parable",
   "t": "The Stanley Parable"
@@ -8230,6 +8614,10 @@
  "feea42718962": {
   "en": "Enlarge: Walk time or more like I stay in the stroller",
   "t": "تكبير: وقت المشي، أو بالأحرى أبقى في العربة"
+ },
+ "ff1ee226e141": {
+  "en": " That's farther than Fargo, ND to Sioux Falls (230 mi as the crow flies).  Next stop: Chicago, 18 mi to go. ",
+  "t": "هذا أبعد من المسافة بين فارغو بولاية داكوتا الشمالية وسو فولز (230 mi في خط مستقيم). المحطة التالية: شيكاغو، باقٍ 18 mi."
  },
  "ff3ea3bec182": {
   "en": "Malaysia",

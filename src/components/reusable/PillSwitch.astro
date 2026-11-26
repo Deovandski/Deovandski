@@ -60,13 +60,15 @@ const { label, options, selected = 0 } = Astro.props;
   .pill-switch {
     --_accent: var(--switch-accent, #39c5bb);
     display: flex;
+    flex-wrap: wrap; /* more options than fit wrap onto a second row, still centred */
+    justify-content: center;
     width: fit-content;
     max-width: 100%;
     gap: 0.25rem;
     padding: 0.25rem;
     margin: 0 auto 1.5rem;
     border: 1px solid color-mix(in srgb, var(--_accent) 35%, transparent);
-    border-radius: 999px;
+    border-radius: 1.5rem; /* a pill on one row, rounded corners when it wraps */
     background: var(--switch-surface, rgba(7, 11, 31, 0.55));
   }
   .pill-switch button {
@@ -78,6 +80,7 @@ const { label, options, selected = 0 } = Astro.props;
     border: 0;
     border-radius: 999px;
     padding: 0.45rem 1.1rem;
+    white-space: nowrap;
     cursor: pointer;
   }
   .pill-switch button:hover { color: var(--switch-text-hover, #e6edf3); }

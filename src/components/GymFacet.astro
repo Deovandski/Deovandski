@@ -64,6 +64,18 @@ const pins = await Promise.all(
   }),
 );
 const nf = new Intl.NumberFormat('en-US');
+
+// ---- body fat: content/gym/body-fat.json, one average per year (scripts/biomarkers-from-takeout.mjs) ----
+// Its own small chart under the weight one, on the same years, so each measure keeps its own scale.
+const fatYears = (JSON.parse(readFileSync(resolve('content/gym/body-fat.json'), 'utf8')) as { years: { year: number; percent: number; readings: number }[] }).years.filter((f) => f.year >= y0 && f.year <= y1);
+const FH = 170, FT = 44, FB = 36;
+const fLo = Math.floor((Math.min(...fatYears.map((f) => f.percent), 100) - 2) / 5) * 5;
+const fHi = Math.ceil((Math.max(...fatYears.map((f) => f.percent), 0) + 2) / 5) * 5;
+const fy = (v: number) => FT + ((fHi - v) / (fHi - fLo || 1)) * (FH - FT - FB);
+const fTicks: number[] = [];
+for (let t = fLo; t <= fHi; t += 5) fTicks.push(t);
+const fatLine = fatYears.map((f, i) => `${i ? 'L' : 'M'}${x(f.year).toFixed(1)},${fy(f.percent).toFixed(1)}`).join(' ');
+const pf = new Intl.NumberFormat('en-US', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
 ---
 
 <div class="gym">
@@ -72,6 +84,7 @@ const nf = new Intl.NumberFormat('en-US');
   <figure class="chart">
     <figcaption class="sr-only">
       Weight by year: {points.map((p) => `${p.year}, ${p.weight} pounds`).join('; ')}. Goal: {goal} pounds.
+      {fatYears.length > 0 && ` Body fat, yearly average: ${fatYears.map((f) => `${f.year}, ${pf.format(f.percent)}%`).join('; ')}.`}
     </figcaption>
     <div class="chart__scroll">
       <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={`Weight trend from ${y0} to ${y1}, with a goal of ${goal} pounds`}>
@@ -127,14 +140,36 @@ const nf = new Intl.NumberFormat('en-US');
           </g>
         ))}
       </svg>
+      {fatYears.length > 0 && (
+        <svg class="fat" viewBox={`0 0 ${W} ${FH}`} role="img" aria-label={`Body fat, yearly average: ${fatYears.map((f) => `${f.year}, ${pf.format(f.percent)}%`).join('; ')}`}>
+          <text class="fat__title" x={M.l} y="20">Body fat, yearly average</text>
+          {fTicks.map((t) => (
+            <g class="grid">
+              <line x1={M.l} x2={W - M.r} y1={fy(t)} y2={fy(t)} />
+              <text x={M.l - 10} y={fy(t)} dy="0.35em" text-anchor="end">{t}%</text>
+            </g>
+          ))}
+          {pins.map((p) => (
+            <g class="year"><text x={p.px} y={FH - FB + 24} text-anchor="middle">{p.year}</text></g>
+          ))}
+          <path class="fat__line" d={fatLine} />
+          {fatYears.map((f) => (
+            <g class="pt" tabindex="0" data-tip={`${f.year}: ${pf.format(f.percent)}%`} data-x={x(f.year)} data-y={fy(f.percent)}>
+              <circle class="hit" cx={x(f.year)} cy={fy(f.percent)} r="16" />
+              <circle class="dot fat__dot" cx={x(f.year)} cy={fy(f.percent)} r="5" />
+              <text class="value" x={x(f.year)} y={fy(f.percent) - 12} text-anchor="middle">{pf.format(f.percent)}%</text>
+            </g>
+          ))}
+        </svg>
+      )}
       <div class="tip" role="status" hidden></div>
     </div>
     <details class="table-view">
       <summary>Show as a table</summary>
       <table>
-        <thead><tr><th scope="col">Year</th><th scope="col">Weight (lb)</th></tr></thead>
+        <thead><tr><th scope="col">Year</th><th scope="col">Weight (lb)</th><th scope="col">Body fat (yearly average)</th></tr></thead>
         <tbody>
-          {points.map((p) => (<tr><td>{p.year}</td><td>{p.weight}</td></tr>))}
+          {points.map((p) => { const f = fatYears.find((x) => x.year === p.year); return (<tr><td>{p.year}</td><td>{p.weight}</td><td>{f ? `${pf.format(f.percent)}%` : '–'}</td></tr>); })}
         </tbody>
       </table>
     </details>
@@ -164,6 +199,10 @@ const nf = new Intl.NumberFormat('en-US');
   .goal line { stroke: var(--pink); stroke-width: 1.5; stroke-dasharray: 6 6; opacity: 0.8; }
   .goal text { fill: var(--silver); font-size: 13px; font-weight: 700; }
 
+  .fat { margin-top: 0.25rem; }
+  .fat__title { fill: var(--silver); font-size: 14px; font-weight: 700; }
+  .fat__line { fill: none; stroke: var(--pink); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  .dot.fat__dot { fill: var(--pink); }
   .trend { fill: none; stroke: var(--teal); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
   .dot { fill: var(--teal); stroke: var(--night-2); stroke-width: 2; }
   .hit { fill: transparent; }
@@ -214,14 +253,15 @@ const nf = new Intl.NumberFormat('en-US');
 
 <script>
   document.querySelectorAll<HTMLElement>('.gym').forEach((root) => {
-    const svg = root.querySelector('svg')!;
     const tip = root.querySelector<HTMLElement>('.tip')!;
     const show = (pt: SVGGElement) => {
+      const svg = pt.ownerSVGElement!; // the weight chart or the body fat one under it
       const box = svg.getBoundingClientRect();
+      const host = tip.parentElement!.getBoundingClientRect();
       const scale = box.width / svg.viewBox.baseVal.width;
       tip.textContent = pt.dataset.tip ?? '';
-      tip.style.left = `${Number(pt.dataset.x) * scale}px`;
-      tip.style.top = `${Number(pt.dataset.y) * scale}px`;
+      tip.style.left = `${box.left - host.left + tip.parentElement!.scrollLeft + Number(pt.dataset.x) * scale}px`;
+      tip.style.top = `${box.top - host.top + Number(pt.dataset.y) * scale}px`;
       tip.hidden = false;
     };
     const hide = () => (tip.hidden = true);

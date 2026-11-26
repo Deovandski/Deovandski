@@ -1,0 +1,25 @@
+{
+  "note": "Yearly average of the smart scale body fat readings. Written by scripts/biomarkers-from-takeout.mjs.",
+  "years": [
+    {
+      "year": 2023,
+      "percent": 32.9,
+      "readings": 4
+    },
+    {
+      "year": 2024,
+      "percent": 36.8,
+      "readings": 63
+    },
+    {
+      "year": 2025,
+      "percent": 38,
+      "readings": 17
+    },
+    {
+      "year": 2026,
+      "percent": 35.4,
+      "readings": 2
+    }
+  ]
+}

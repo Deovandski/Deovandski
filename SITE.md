@@ -32,7 +32,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Multilingual tab (language equalizer) | `content/languages.md` |
 | Tattoo tab | `content/tattoos.md`, photos in `content/tattoos/<area>/` |
 | Tattoo tab practice skin (draw a tattoo) | `src/components/reusable/DrawingPad.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
-| Gym tab (chart + story) | `content/gym/weights.md`, `content/gym/story.md`, photos in `content/gym/photos/<year>.jpg` |
+| Gym tab (chart + story) | `content/gym/weights.md`, `content/gym/story.md`, photos in `content/gym/photos/<year>.jpg`; body fat by year in `content/gym/body-fat.json` (from the Takeout: [TAKEOUT.md](TAKEOUT.md)) |
 | 初音ミク tab (Miku concerts) | `content/miku.md`, photos in `content/miku/<concert>/` |
 | Churrasco tab (the Church of Churrasco: pounds grilled (kilograms are worked out from the pounds), cow-meter, papal decree, Holy Order chart, and the Scripture with its PDF export) | `content/churrasco/church.json` (all text and numbers), Pope's portrait `content/churrasco/pope-deo.jpg`, step photos `content/churrasco/steps/step-<n>.jpg`; layout in `src/components/ChurrascoFacet.astro` |
 | Musician tab (text and the Suno button) | `src/pages/index.astro` (`panel-musician`, `musicianLinks`) |
@@ -60,6 +60,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Pets tab (Bidu, Fluffy, Peeta: portrait picker + each pet's gallery) | `content/pets/<pet>/` (see `content/pets/README.md`); order in `src/lib/pets.ts` |
 | Pets tab pixel pets (the handhelds next to each big picture) | drawings and device colours in `src/lib/pixelPets.ts`; `src/components/reusable/PixelPet.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | Cycling tab (rides, around-the-world planet, "Ridin' with Peeta" and its Short, story) | text in `content/cycling/story.md`; rides in `content/cycling/rides.json` (from a Google Health Takeout export: `content/cycling/README.md`) and `content/cycling/estimated.md`; studies in `content/cycling/sources.md` (its Links box); `src/components/CyclingFacet.astro` with the reusable `PlanetLap.astro` |
+| Biomarker Lab tab (Hearth: "The body is the temple", then the lab) | text in `content/biomarkers/story.md`; daily numbers in `content/biomarkers/daily.json` (from the Takeout: [TAKEOUT.md](TAKEOUT.md), `content/biomarkers/README.md`), served as `/biomarkers.json` by `src/pages/biomarkers.json.ts`; `src/components/BiomarkersFacet.astro` with the reusable `MetricLab.astro` |
 | Lust tab (and the banner for when it's the first facet opened) | `content/lust.md`, `src/components/LustFacet.astro` |
 | Lust tab ecchi-meter (bellows, fire, phrases) | phrases and levels in `content/lust-meter.json`; `src/components/reusable/FireMeter.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | Facet easter eggs (banners after a visitor opens 10 and 20 different facets) | `src/components/FacetMilestoneEggs.astro`, GIFs `public/tea-sip.gif` and `public/aiight.gif` |
@@ -118,7 +119,7 @@ npm install
 npm run dev          # http://localhost:4321
 ```
 
-No facet opens by default: visitors grow a branch of the facet tree, then pick a facet. Link straight to a facet (its branch grows too) with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm` (or `#life-hacks`), `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#cycling`, `#miku`, `#churrasco`, `#cooking`, `#musician` (old `#drummer` links still work), `#painting`, `#boardgames`, `#mtg`, `#concert` (or `#concert-wishlist`), `#theater` (or `#theater-wishlist`), `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#lust` (old `#sex` links still work).
+No facet opens by default: visitors grow a branch of the facet tree, then pick a facet. Link straight to a facet (its branch grows too) with `#death`, `#dev`, `#family`, `#aviation`, `#author`, `#mentor`, `#pm` (or `#life-hacks`), `#influencer`, `#traveler`, `#fishing`, `#dnd`, `#camping`, `#botw`, `#multilingual`, `#tattoo`, `#gym`, `#cycling`, `#biomarkers` (or `#biomarkers-rides`, `#biomarkers-calendar`, `#biomarkers-seasons`, `#biomarkers-compare`), `#miku`, `#churrasco`, `#cooking`, `#musician` (old `#drummer` links still work), `#painting`, `#boardgames`, `#mtg`, `#concert` (or `#concert-wishlist`), `#theater` (or `#theater-wishlist`), `#gamer`, `#anime`, `#potato`, `#potato-movies`, `#pets` (opens Peeta; or `#pets-bidu`, `#pets-fluffy`, `#pets-peeta`) or `#lust` (old `#sex` links still work).
 Add `?miku` to any URL to preview the Miku Day confetti (3/9), or `?miku=0831` for Miku's birthday (8/31).
 Add `?deathclock=0` to preview the Death tab's clock at zero (blinking digits and the "update the clock" message).
 

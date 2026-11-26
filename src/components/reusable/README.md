@@ -24,9 +24,10 @@ and a project without translations just shows the English.
 | [PaperPlane.astro](PaperPlane.astro) | Fold a paper plane, then throw it: precision decides the distance | Aviation tab |
 | [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing four disco routines (#1 the point, #2 the Night Fever line dance, #3 the hustle, #4 toe stand & point), each with its own tempo, music and difficulty, picked on a View-Master plate (ReelPicker), under spotlights, a mirror ball and a light-up floor, with a beat guide and a fever meter you fill by tapping on the beat and an optional original 8-bit disco loop. | Concert tab, Playground |
 | [ReelPicker.astro](ReelPicker.astro) | A View-Master-style picker: cards around the rim of a round plate, seen through a window that shows one card and slivers of its neighbours; drag or swipe to turn the plate, it snaps to a card. Each card has a name, a detail line and an art box for a picture. | Concert tab (Saturday Night Fever routines, inside StageDancer) |
-| [PlanetLap.astro](PlanetLap.astro) | How far around a planet a distance goes, Reus-style: the planet cut in half and seen side on (crust, mantle and cores on the cut, biomes round the rim), turning under a little cyclist while a trail marks the distance from the start flag. | Cycling tab |
+| [PlanetLap.astro](PlanetLap.astro) | How far around a planet a distance goes, Reus-style (the planet cut in half, seen side on), animated like an in-flight map: a little cyclist rides from the start flag, then the map keeps zooming in and out between the nearest places and the far ones, with a next-stop panel and distances to go. | Cycling tab (from Fargo, ND) |
 | [ArcadeButton.astro](ArcadeButton.astro) | A big, chunky, old-school push button with one emoji on its cap and a click sound; it sinks when pressed, and as a toggle it stays down and lit while on. | Concert tab (Saturday Night Fever: music, pause, lights) |
 | [YouTube.astro](YouTube.astro) | A privacy-friendly YouTube embed: nothing loads from YouTube until play is pressed, then it plays from youtube-nocookie.com; pauses itself when hidden. 16:9 videos and 9:16 Shorts. | Aviation tab, Cycling tab ("Ridin' with Peeta") |
+| [MetricLab.astro](MetricLab.astro) | Years of daily numbers to slice and dice: one row of filters (years, season, weekdays or weekends, the day after an event) over five views: small-multiple timelines with a shared hover, the day after an event against the rest, a calendar heatmap, month-by-month lines per year, and a scatter of any two metrics with r. Loads its data file only when first shown. | Biomarker Lab tab (Hearth) |
 | IsoDarts (moved) | An on-rails darts scene in an isometric room: scripted speech bubbles, then a timed round on a board of coloured territories (claim, cancel, smaller is worth more) with a swaying aim. | Moved to [HusbandOutWorld](https://github.com/Deovandski/HusbandOutWorld) as `site/js/iso-darts.js` and `site/css/iso-darts.css` (its Playground, Territory Snipping, #245) |
 | [IsoFarm.astro](IsoFarm.astro) | A Colheita Feliz-style farming loop: isometric plots, seeds with timers and random harvests, fertilizer, energy and a market. The whole economy is one config object; saves in the browser. | Mentor tab (the Balls farm) |
 | [HoursByCategory.astro](HoursByCategory.astro) | Things grouped into categories with their hours: a totals card, one bar per category, then a card per category (most first, "Show all"). A switch takes "excludable" categories (idle games) out of the total. Worked out at build time, so translated pages translate every word. | Gamer tab (Steam, Xbox and estimated hours) |
@@ -512,13 +513,15 @@ Reduced motion: the plate jumps instead of turning.
 
 ## PlanetLap
 
-How far around a planet a distance goes, drawn like the game Reus: the planet cut in half and seen side on, in 2D.
-Its layers show on the cut, its surface (oceans, plains, forests, deserts, mountains, ice) goes round the rim, and a
-little cyclist rides along the top while the planet turns under them, leaving a trail from the start flag. It turns to
-the distance the first time it scrolls into view; a button replays it.
+How far around a planet a distance goes, drawn like the game Reus (the planet cut in half, seen side on in 2D) and
+animated like an airliner's in-flight map. A little cyclist rides from the start flag to the distance, then the map keeps
+breathing: it zooms in close (the nearest places, the next stop), out to the region, out to the whole half planet (the
+far places), and back. A panel names the next stop and how far it is; it changes with the zoom (the nearest place ahead
+close in, a farther one zoomed out), and places ahead show their distance to go.
 
 ```astro
-<PlanetLap distance={1250} circumference={24901} summary="{distance} mi: {percent} of the way around the world." />
+<PlanetLap distance={551} circumference={24901} unit="mi" summary="{distance} mi: {percent} of the way around the world."
+  start="Fargo, ND" markers={[{ label: 'Minneapolis', distance: 214 }, { label: 'Chicago', distance: 569 }]} />
 ```
 
 | Prop | Default | |
@@ -526,12 +529,16 @@ the distance the first time it scrolls into view; a button replays it.
 | `distance` | (required) | How far, in the same unit as `circumference`. |
 | `circumference` | `40075` | The distance round (the Earth at the equator, in km). |
 | `summary` | (required) | The caption and screen-reader text. Slots `{distance}`, `{percent}` (of one lap) and `{laps}` are filled in at build time, so it's translated with the page. |
-| `replay` | `"Ride it again"` | The replay button's text. |
-| `locale` | `"en-US"` | Number format for the slots. |
-| `surface` | a made-up world, mostly ocean | One biome per slice, clockwise from the top: `ocean`, `plains`, `forest`, `desert`, `mountains`, `ice`. |
+| `unit` | `"km"` | The unit shown on the map. |
+| `next` | `"Next stop: {place} · {distance} to go"` | The next-stop panel (kept in the page, so it's translated). |
+| `start` | none | A name on the start flag ("Fargo, ND"). |
+| `markers` | none | Places along the way, `{ label, distance }`: a labelled pin on the rim at that distance from the start. Labels that would overlap step up a row; on narrow screens only the last place passed and the next one keep their names. |
+| `locale` | `"en-US"` | Number format. |
+| `surface` | a made-up world, mostly ocean | One biome per slice, clockwise from the start: `ocean`, `plains`, `forest`, `desert`, `mountains`, `ice`. |
 
-Past a full lap, the trail starts again and `{laps}` counts the laps. Reduced motion or no JavaScript: it shows where
-the ride ends, without turning. Theme with `--planet-accent`, `--planet-rider`, `--planet-sky` and `--planet-text`.
+The script draws the map (without JavaScript only the caption shows) and only moves it while it's on screen. Reduced
+motion: the end of the ride, still, zoomed close. Theme with `--planet-accent`, `--planet-rider`, `--planet-sky` and
+`--planet-text`.
 
 ## ArcadeButton
 
@@ -563,20 +570,59 @@ youtube-nocookie.com. When it's hidden (its tab closed), it pauses on its own. A
 
 ```astro
 <YouTube id="QprnoS8PatE" title="Capt. Deovandski – Flight Experience Singapore" />
-<YouTube id="Ez7ppSYdJmI" title="Ridin' with Peeta" short />
+<YouTube id="Ez7ppSYdJmI" title="Ridin' with Peeta" short ratio="1:1" />
 ```
 
 | Prop | Default | |
 |---|---|---|
 | `id` | (required) | The video id (`QprnoS8PatE` in `youtu.be/QprnoS8PatE`, `Ez7ppSYdJmI` in `youtube.com/shorts/Ez7ppSYdJmI`). |
 | `title` | (required) | Shown on the play button, and the player's title. |
-| `short` | `false` | A YouTube Short: 9:16, at most `--yt-short-width` wide, centred. |
+| `short` | `false` | A YouTube Short: 9:16, at most `--yt-short-width` wide, centred; its link goes to `/shorts/`. |
+| `ratio` | `'9:16'` for a Short, else `'16:9'` | The frame's shape: `'16:9'`, `'9:16'` or `'1:1'` (square, at most `--yt-square-width`, 24rem, centred). |
 | `play` | `"Play video: {title}"` | The play button's name for screen readers. |
 | `note` | `"Plays from YouTube when you click"` | The small line under the title. |
 | `link` | `"Watch on YouTube"` | The link's text under the video; empty for no link. |
 
 Theme with `--yt-accent`, `--yt-on-accent`, `--yt-text`, `--yt-muted`, `--yt-font`, `--yt-width` (48rem) and
 `--yt-short-width` (20rem).
+
+## MetricLab
+
+Years of daily numbers to slice and dice. One row of filters (years, season, weekdays or weekends, and the nights
+after an "event" such as a bike ride) sits over five views, picked with `PillSwitch`:
+
+- **Timeline:** one small chart per metric, by day, week or month. Hover one and every chart shows the same date.
+- **Event** (named by `event.view`): the day after each event against every other day, as a median dot, the middle
+  half of the days as a bar, and the difference.
+- **Calendar:** one square per day, one row per year, in five steps from dark to bright; event days outlined.
+- **Seasons:** month by month, one line per year (older years darker).
+- **Compare:** any metric against any other, one dot per day, a trend line and r.
+
+It downloads its data only the first time it's shown, so a page can carry it in a closed tab for free.
+
+```astro
+<MetricLab
+  id="bio"
+  src={url('/biomarkers.json')}
+  hash="#biomarkers"
+  metrics={[{ key: 'rhr', label: 'Resting heart rate', unit: 'bpm', decimals: 1 }, { key: 'sleepMin', label: 'Sleep', format: 'duration' }]}
+  event={{ view: 'Ride nights', day: 'ride day', after: 'After a ride', other: 'Other nights', value: 'Rode {n} mi', slug: 'rides' }}
+  defaults={{ timeline: ['rhr', 'sleepMin'], calendar: 'rhr', seasons: 'rhr', x: 'rhr', y: 'sleepMin' }}
+/>
+```
+
+| Prop | Default | |
+|---|---|---|
+| `id` | (required) | Prefix for its element ids. |
+| `src` | (required) | The data's URL: `{ "dates": ["2024-01-31", …], "<key>": [number or null, …], "event": [number, …] }`, one entry per date in every array. |
+| `metrics` | (required) | `[{ key, label, unit?, decimals?, format? }]`. `format`: `'number'`, `'duration'` (minutes → 7h 22m) or `'clock'` (hour of the day; 25.5 is 1:30 am). |
+| `event` | none | Words for the event: `view`, `day`, `after`, `other`, `value` (`{n}` is the day's event number), and `slug` for its view's link. Without it, the event filter, view and colours are left out. |
+| `defaults` | the first metrics | What's picked first: `timeline` (a list), `calendar`, `seasons`, `x`, `y`. |
+| `hash` | none | Link prefix for the views: `hash`, `hash-<slug>`, `hash-calendar`, `hash-seasons`, `hash-compare`. |
+
+Theme with `--lab-accent`, `--lab-event`, `--lab-other`, `--lab-surface`, `--lab-line`, `--lab-text`, `--lab-muted`,
+`--lab-font`, `--lab-display-font` and `--lab-ramp-1` to `--lab-ramp-5`. Charts draw at their real size and redraw
+when the width changes. Words its script writes are in its hidden `.metric-lab__strings`.
 
 ## IsoFarm
 

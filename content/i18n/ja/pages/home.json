@@ -79,6 +79,10 @@
   "en": "Notification drip",
   "t": "通知の小出し"
  },
+ "021710fa7866": {
+  "en": "month",
+  "t": "月"
+ },
  "024a42ce1e4f": {
   "en": "Skin tone 1",
   "t": "肌の色 1"
@@ -175,6 +179,10 @@
   "en": "Ink",
   "t": "インク"
  },
+ "04c70f3c22a3": {
+  "en": "of {n} tracked",
+  "t": "記録 {n} 日のうち"
+ },
  "04e3fd08d714": {
   "en": "Description coming soon.",
   "t": "説明は準備中。"
@@ -238,6 +246,10 @@
  "067ff8ef9ba2": {
   "en": "\nSenior Software Engineer, Dynamics 365 F&amp;O Architect, and Founder &amp; CEO of Wizard Deo Solutions.\n",
   "t": "シニアソフトウェアエンジニア、Dynamics 365 F&amp;O アーキテクト、そして Wizard Deo Solutions の創業者兼 CEO。"
+ },
+ "0689a88574c4": {
+  "en": "{value} · {date}",
+  "t": "{value} · {date}"
  },
  "0699138fe5cc": {
   "en": "Click or drag to draw. Right-click erases.",
@@ -583,6 +595,10 @@
   "en": " JC ",
   "t": "JC"
  },
+ "1118f49d26f1": {
+  "en": " E · Compare ",
+  "t": "E · 比べる"
+ },
  "11255d4d673b": {
   "en": "My top 39 favorite anime, ranked, and what each one means to me.",
   "t": "俺のお気に入りのアニメ トップ 39 のランキングと、それぞれが俺にとって何を意味するか。"
@@ -607,6 +623,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 39: </span> Placeholder movie 39 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 39: </span> 仮の映画 39"
  },
+ "122babc08c1c": {
+  "en": "Not enough days with both numbers.",
+  "t": "両方の数値がある日が足りません。"
+ },
  "123b77b3c65c": {
   "en": "Terraria",
   "t": "テラリア"
@@ -630,6 +650,10 @@
  "131260cbfbb0": {
   "en": "Music",
   "t": "音楽"
+ },
+ "132a0149f337": {
+  "en": "they rise together",
+  "t": "一緒に上がる"
  },
  "1349608b58ab": {
   "en": "25 h",
@@ -663,9 +687,17 @@
   "en": " PV ",
   "t": "PV"
  },
+ "145a01fb9391": {
+  "en": "/min",
+  "t": "回/分"
+ },
  "14663cc9a7a1": {
   "en": "MUCH FAST",
   "t": "めっちゃはやい"
+ },
+ "14696eebf7a4": {
+  "en": "Average by",
+  "t": "平均の単位"
  },
  "148154839756": {
   "en": "Enlarge: Let me go",
@@ -903,6 +935,14 @@
   "en": "Musician",
   "t": "ミュージシャン"
  },
+ "1cc7e3f39b49": {
+  "en": "Rode {n} mi",
+  "t": "{n}マイル走った"
+ },
+ "1d0c8304baed": {
+  "en": "Color",
+  "t": "色"
+ },
  "1d23e1eb9609": {
   "en": "Enlarge: Hanging with a Peeta look alike",
   "t": "拡大: Peeta のそっくりさんと一緒に"
@@ -919,6 +959,10 @@
   "en": "Classical",
   "t": "クラシック"
  },
+ "1de180253ec0": {
+  "en": "After a ride",
+  "t": "自転車のあと"
+ },
  "1df37d663014": {
   "en": "135 h",
   "t": "135 時間"
@@ -934,6 +978,10 @@
  "1e98d9e9411b": {
   "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,445 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> その他: 2,445 時間"
+ },
+ "1e9c5082c7a3": {
+  "en": "{name} over time",
+  "t": "{name}の推移"
  },
  "1eab2e778967": {
   "en": "Mana",
@@ -967,6 +1015,10 @@
   "en": "Tennessee",
   "t": "テネシー州"
  },
+ "1f6990e0866b": {
+  "en": "Any metric against any other, one dot per day, with a straight trend line and how closely the two move together (r, from −1 to 1).",
+  "t": "どの指標でもほかの指標と比べられます。1日1点、まっすぐな傾向線と、2つがどれだけ連動しているか（r、−1から1）付き。"
+ },
  "1f797564f784": {
   "en": "Bahamas",
   "t": "バハマ"
@@ -986,6 +1038,10 @@
  "2001ca082b2d": {
   "en": "Español",
   "t": "Español"
+ },
+ "2038bdec9210": {
+  "en": "Up",
+  "t": "縦軸"
  },
  "20409611a456": {
   "en": "82 h",
@@ -1087,6 +1143,10 @@
   "en": "Failing to learn English",
   "t": "英語の勉強に挫折中"
  },
+ "222a9a1d0cfc": {
+  "en": "Month by month, one line per year, so the winters line up with each other. Hover a line to pick out its year.",
+  "t": "月ごとに、1年1本の線で。冬どうしが並ぶように。線にカーソルを合わせるとその年が目立ちます。"
+ },
  "2234c20b68ff": {
   "en": "30 h",
   "t": "30 時間"
@@ -1106,6 +1166,10 @@
  "22f164766765": {
   "en": "Arragoa",
   "t": "Arragoa"
+ },
+ "231fbf14a11a": {
+  "en": "Time asleep",
+  "t": "睡眠時間"
  },
  "235a70299830": {
   "en": "Faun",
@@ -1134,6 +1198,10 @@
  "244d46168deb": {
   "en": "a cactus",
   "t": "サボテン"
+ },
+ "24615d93d230": {
+  "en": "Winter",
+  "t": "冬"
  },
  "247ce5d5d915": {
   "en": "North America",
@@ -1227,6 +1295,10 @@
   "en": "A pile of 1,166 VHS tapes",
   "t": "1,166 本の VHS テープの山"
  },
+ "26cc3217be64": {
+  "en": "ms",
+  "t": "ミリ秒"
+ },
  "26d16d20b4b9": {
   "en": "From Itaituba, Pará, to Fargo, North Dakota.",
   "t": "パラー州イタイトゥーバから、ノースダコタ州ファーゴへ。"
@@ -1283,10 +1355,6 @@
   "en": " Space &amp; flight ",
   "t": "宇宙＆フライト"
  },
- "2819ba97835f": {
-  "en": "Rhythm and sleep",
-  "t": "リズムと睡眠"
- },
  "2835bcaa6e76": {
   "en": " 49 h ",
   "t": "49 時間"
@@ -1294,6 +1362,10 @@
  "283c1ebce40b": {
   "en": "Close to 12 years old but still kicking",
   "t": "もうすぐ 12 歳だけどまだまだ元気"
+ },
+ "285c1b0998a6": {
+  "en": "The body is the temple, and the engine that so many people don’t watch out for. We put all our energy and attention outward. Care for yourself and love yourself too.",
+  "t": "体は神殿であり、多くの人が気にかけないエンジンでもあります。私たちはエネルギーと注意をすべて外に向けてしまう。自分のことも大切にして、自分を愛してあげてください。"
  },
  "2888f01fb635": {
   "en": "Morning by the river",
@@ -1407,6 +1479,10 @@
   "en": "71 days",
   "t": "71日"
  },
+ "2c33f945fe8f": {
+  "en": "{name} by month, one line per year",
+  "t": "{name}の月別、1年1本の線"
+ },
  "2c6f37232fe8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Nanatsu no Taizai (The Seven Deadly Sins) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 22: </span> 七つの大罪"
@@ -1510,6 +1586,10 @@
  "2f717ffad4e1": {
   "en": "Arkansas",
   "t": "アーカンソー州"
+ },
+ "2f92a0aa8ae9": {
+  "en": "Weekends",
+  "t": "週末"
  },
  "2f9714995b86": {
   "en": " An exploded sphere of my hours by category: Idle &amp; clickers 57%, RPGs &amp; open worlds 16%, City, colony &amp; strategy 5%, Survival &amp; crafting 5%, Factory &amp; automation 5%, Space &amp; flight 4%, Cozy &amp; life sims 3%, Other 7% ",
@@ -1635,6 +1715,14 @@
   "en": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(June 21, 2026)</span>",
   "t": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(2026年6月21日)</span>"
  },
+ "32f4bc9e552c": {
+  "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month. Ticks along the bottom mark each ride day.",
+  "t": "指標ごとの推移を、小さなグラフで1つずつ。どれかのグラフにカーソルを合わせると、すべてのグラフが同じ日・週・月を示します。下の目盛りは自転車の日です。"
+ },
+ "32f997551915": {
+  "en": "{h}h {m}m",
+  "t": "{h}時間{m}分"
+ },
  "3303cb966359": {
   "en": "PowerWash Simulator",
   "t": "PowerWash Simulator"
@@ -1707,6 +1795,10 @@
   "en": "Deovandski's hub: software, books, travel and games.",
   "t": "Deovandski の拠点：ソフトウェア、本、旅、ゲーム。"
  },
+ "348928d6f5be": {
+  "en": "Resting heart rate",
+  "t": "安静時心拍数"
+ },
  "34b1471c5170": {
   "en": "I’m not dying in the waiting room of someone else’s stagnant life. <span class=\"newest\">New</span>",
   "t": "俺は、他人の停滞した人生の待合室で死ぬつもりはない。<span class=\"newest\">新</span>"
@@ -1722,6 +1814,10 @@
  "34c3262b9b37": {
   "en": " free  · 10 s ",
   "t": "無料 · 10 秒"
+ },
+ "34cb8ac649a8": {
+  "en": "{x} against {y}, one dot per day",
+  "t": "{x}と{y}、1日1点"
  },
  "34d8b60fe253": {
   "en": "Hide",
@@ -1763,6 +1859,10 @@
   "en": "The Witcher in Concert",
   "t": "The Witcher in Concert"
  },
+ "36a883e762d4": {
+  "en": "low",
+  "t": "低"
+ },
  "36f780fdbda5": {
   "en": " PC ",
   "t": "PC"
@@ -1790,6 +1890,10 @@
  "37e005ab8200": {
   "en": "Enlarge: Painting or drawing, 02/19/2013",
   "t": "拡大: 絵画またはスケッチ, 2013年2月19日"
+ },
+ "37e737d92cbb": {
+  "en": "{n} min",
+  "t": "{n}分"
  },
  "380aad144968": {
   "en": "Enlarge: Camera angles are everything",
@@ -1842,6 +1946,10 @@
  "38a9bcedfb5c": {
   "en": "<strong>M. Alexandra Kredlow and colleagues</strong>, <em>Journal of Behavioral Medicine</em> (2015), a meta-analysis of physical activity and sleep: regular exercise has small benefits for total sleep time, small-to-medium ones for falling asleep, and moderate ones for sleep quality. <a href=\"https://pubmed.ncbi.nlm.nih.gov/25596964/\">Abstract</a>",
   "t": "<strong>M. Alexandra Kredlow ら</strong>, <em>Journal of Behavioral Medicine</em> (2015)、身体活動と睡眠のメタ分析：定期的な運動は総睡眠時間に小さな、寝つきに小〜中程度の、睡眠の質に中程度の効果がある。<a href=\"https://pubmed.ncbi.nlm.nih.gov/25596964/\">要旨</a>"
+ },
+ "38cb9de8ada6": {
+  "en": "{h}h",
+  "t": "{h}時間"
  },
  "38e1d26af274": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer",
@@ -1942,6 +2050,10 @@
  "3b419aac7299": {
   "en": "\nTreat your life like a project: break big goals into small steps, be honest about scope and deadlines, and track what's\n        actually done. It's how I run everything from client work to this website, and the <a href=\"#pm\" data-astro-cid-xtzphevd=\"\">PM side</a> of this tab\n        has the details.\n",
   "t": "人生をプロジェクトとして扱おう：大きな目標を小さなステップに分け、スコープと期限に正直になり、実際に終わったことを追う。クライアントの仕事からこのサイトまで、俺は全部こうやって回している。詳しくはこのタブの<a href=\"#pm\" data-astro-cid-xtzphevd=\"\">PM 側</a>にある。"
+ },
+ "3b9579462803": {
+  "en": "Loading the numbers…",
+  "t": "数値を読み込み中…"
  },
  "3b9b88d1447d": {
   "en": " <span class=\"shelf__dot\" style=\"background: #0ca30c\" data-astro-cid-nqpad2wp=\"\"></span> Cozy &amp; life sims: 904 h ",
@@ -2046,6 +2158,10 @@
  "3ef5b5e97c0e": {
   "en": "Back to Musician",
   "t": "ミュージシャンに戻る"
+ },
+ "3ef5d324a3b2": {
+  "en": "No month has 5 or more days in these filters.",
+  "t": "この絞り込みでは5日以上ある月がありません。"
  },
  "3f03ae3311ee": {
   "en": "VHS pile: turn your phone sideways",
@@ -2191,6 +2307,10 @@
   "en": "Reset",
   "t": "リセット"
  },
+ "44cc45ad22b1": {
+  "en": " A · Timeline ",
+  "t": "A · タイムライン"
+ },
  "44eb59ea016a": {
   "en": "Black Jacket Symphony",
   "t": "Black Jacket Symphony"
@@ -2215,6 +2335,10 @@
   "en": "The juxtaposition between what you think it's about and what actually happens reminds me of Happy Tree Friends. The world lore and its rules are fascinating!",
   "t": "何の話だと思うかと、実際に何が起きるかのギャップが、ハッピーツリーフレンズを思い出させる。世界観とそのルールがたまらなく面白い！"
  },
+ "45d7b9f03f0a": {
+  "en": "Body fat (yearly average)",
+  "t": "体脂肪率（年平均）"
+ },
  "45f08cb571cd": {
   "en": "<strong>Marcus Aurelius</strong>, <em>Meditations</em> 6.24: death brought Alexander the Great and his mule driver to the same state. <a href=\"https://en.wikisource.org/wiki/Marcus_Aurelius_(Haines_1916)/Book_6\">Text</a>",
   "t": "<strong>マルクス・アウレリウス</strong>、<em>『自省録』</em>6.24：死はアレクサンドロス大王とそのラバ追いを同じ状態にした。<a href=\"https://en.wikisource.org/wiki/Marcus_Aurelius_(Haines_1916)/Book_6\">原文</a>"
@@ -2230,6 +2354,10 @@
  "46b00befa084": {
   "en": "\"Almost went viral!\" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses.",
   "t": "「バズりかけた！」はやっぱり負けで、普通の負けよりもっと悔しい。なのに、もっと続けたくなる。負けのうち約 30% がニアミスのとき、粘り強さは最大になる。"
+ },
+ "46e490cac450": {
+  "en": "bpm",
+  "t": "bpm"
  },
  "46e80e47b684": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested",
@@ -2435,6 +2563,14 @@
   "en": " BW ",
   "t": "BW"
  },
+ "4d90542645b2": {
+  "en": "Hover a dot for its month.",
+  "t": "点にカーソルを合わせると月が出ます。"
+ },
+ "4d968a30a022": {
+  "en": "no data",
+  "t": "データなし"
+ },
  "4db745f6113e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Toradora! ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 23: </span> とらドラ！"
@@ -2551,6 +2687,10 @@
   "en": "Smol",
   "t": "ちっちゃい"
  },
+ "4ffc67b62aae": {
+  "en": "Weekdays",
+  "t": "平日"
+ },
  "5033c1d06398": {
   "en": "Charles Playhouse, Boston",
   "t": "Charles Playhouse, Boston"
@@ -2599,6 +2739,10 @@
   "en": "17 h",
   "t": "17 時間"
  },
+ "5115ff9a0bea": {
+  "en": "{a} vs {o}",
+  "t": "{a} 対 {o}"
+ },
  "511993d3c997": {
   "en": "P",
   "t": "P"
@@ -2638,6 +2782,10 @@
  "521cb68c2c31": {
   "en": "Ceará",
   "t": "Ceará"
+ },
+ "52709c0fe403": {
+  "en": "{name}, one square per day in {year}",
+  "t": "{name}、{year}年の1日1マス"
  },
  "5284e1a74198": {
   "en": "Tell me I am pretty",
@@ -2779,6 +2927,10 @@
   "en": "People post more right after a batch of likes, spacing posts to chase the best rate of likes, like an animal in a Skinner box.",
   "t": "人は「いいね」がまとめて来た直後にもっと投稿し、最も「いいね」率が高くなるよう投稿の間隔を調整する。スキナー箱の動物みたいに。"
  },
+ "55f9fd002ac9": {
+  "en": "The body is the temple",
+  "t": "体は神殿"
+ },
  "55fa0faa800a": {
   "en": "City, colony & strategy",
   "t": "都市・コロニー＆ストラテジー"
@@ -2883,6 +3035,10 @@
   "en": "7% of my hours",
   "t": "プレイ時間の7%"
  },
+ "58f7a8f2ec30": {
+  "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n Body fat, yearly average: 2023, 32.9%; 2024, 36.8%; 2025, 38.0%; 2026, 35.4%. ",
+  "t": "年ごとの体重: 2016, 300 ポンド、2017, 220 ポンド、2018, 230 ポンド、2019, 240 ポンド、2020, 260 ポンド、2021, 230 ポンド、2022, 245 ポンド、2023, 260 ポンド、2024, 250 ポンド、2025, 260 ポンド、2026, 225 ポンド. 目標: 200 ポンド.\n 体脂肪率（年平均）: 2023, 32.9%、2024, 36.8%、2025, 38.0%、2026, 35.4%."
+ },
  "592bc9228abd": {
   "en": "Enlarge: Salty doggo",
   "t": "拡大: すねたわんこ"
@@ -2931,6 +3087,10 @@
   "en": "Change the lights",
   "t": "ライトを変える"
  },
+ "5a6b6b31729f": {
+  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>Other nights",
+  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>ほかの夜"
+ },
  "5a7078113356": {
   "en": "Sleep first",
   "t": "まずは寝る"
@@ -2963,6 +3123,10 @@
   "en": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Aquamarine",
   "t": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>アクアマリン"
  },
+ "5b290995d5b7": {
+  "en": "Heart rate variability",
+  "t": "心拍変動"
+ },
  "5b4dfc520699": {
   "en": "Notice me harder, senpai! (｡♥‿♥｡)",
   "t": "もっと気づいて、先輩！(｡♥‿♥｡)"
@@ -2994,6 +3158,10 @@
  "5bfe7304b93a": {
   "en": "Enlarge: Rueiro",
   "t": "拡大: 野良っ子（Rueiro）"
+ },
+ "5c1ae82c2954": {
+  "en": "Fall",
+  "t": "秋"
  },
  "5c1db802f890": {
   "en": "Repeat yourself and each post pays less, then starts to cost you followers. The treadmill speeds up.",
@@ -3066,6 +3234,10 @@
  "5e7e6713592f": {
   "en": "Be Awesome!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (written in Vraki)</span>",
   "t": "Be Awesome!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\">（ヴラキ文字で表記）</span>"
+ },
+ "5e873f457d2a": {
+  "en": " C · Calendar ",
+  "t": "C · カレンダー"
  },
  "5e89349bfb8a": {
   "en": "Camping",
@@ -3187,6 +3359,10 @@
   "en": "The wishlist is on its way.",
   "t": "見たいリストは準備中。"
  },
+ "62255f5671e8": {
+  "en": "Season",
+  "t": "季節"
+ },
  "62405c2823c6": {
   "en": "Justin Timberlake",
   "t": "Justin Timberlake"
@@ -3203,10 +3379,6 @@
   "en": "The Four Seasons",
   "t": "四季"
  },
- "627d89658063": {
-  "en": "Ride it again",
-  "t": "もう一度走る"
- },
  "629faf03c89b": {
   "en": "Throw again",
   "t": "もう一度投げる"
@@ -3218,6 +3390,10 @@
  "62bd650a8380": {
   "en": " FC ",
   "t": "FC"
+ },
+ "62dfe60deea3": {
+  "en": "The numbers didn't load. Try again later.",
+  "t": "数値を読み込めませんでした。あとでもう一度お試しください。"
  },
  "633797165688": {
   "en": "Magical Mirai, Osaka (2014)",
@@ -3487,6 +3663,10 @@
   "en": "Take care of Peeta",
   "t": "Peeta のお世話"
  },
+ "6a72085653e4": {
+  "en": "All",
+  "t": "すべて"
+ },
  "6a985aa2c1d7": {
   "en": "Disturbed",
   "t": "Disturbed"
@@ -3559,6 +3739,10 @@
   "en": "3 mana · 2",
   "t": "マナ 3 · 2"
  },
+ "6d0a290e3592": {
+  "en": "One square per day, one row per year. The brighter the square, the higher the number. A colored edge marks each ride day. Faded squares are days outside your filters.",
+  "t": "1日1マス、1年1行。マスが明るいほど数値が高い。色の枠は自転車の日です。薄いマスは絞り込みの外の日です。"
+ },
  "6d1c8ee06629": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 29: </span> Placeholder TV show 29 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 29: </span> 仮のドラマ 29"
@@ -3587,6 +3771,10 @@
   "en": "Play time!",
   "t": "遊び時間！"
  },
+ "6dc1222c378c": {
+  "en": "Readiness",
+  "t": "準備度"
+ },
  "6dcd4ce23d88": {
   "en": "A",
   "t": "A"
@@ -3603,6 +3791,10 @@
   "en": "That one really got me in the feels. It made me feel more in one sitting than I felt while dating some girls. It's hard for me to miss someone once I say goodbye, but this anime made me sit with that feeling for a good while after watching it.",
   "t": "あれは本当に心に刺さった。何人かの女の子と付き合っていたときよりも、一気に見ただけで多くのことを感じさせられた。俺は一度さよならを言うと誰かを恋しく思うのが難しいんだけど、このアニメは見終わったあともしばらく、その感情と一緒に座っていさせた。"
  },
+ "6e64529a10e6": {
+  "en": "The night and day after each ride day, against every other day you picked. The dot is the middle value (the median) and the bar holds the middle half of the days. This view ignores the Nights filter.",
+  "t": "自転車の日のあとの夜と翌日を、選んだほかのすべての日と比べます。点は中央の値（中央値）、バーは真ん中半分の日の範囲です。この表示は「夜」の絞り込みを無視します。"
+ },
  "6e68e69e0822": {
   "en": "Black ink",
   "t": "黒インク"
@@ -3618,10 +3810,6 @@
  "6eef3154b469": {
   "en": "Misaki is hands down my favorite character in the entire series! And this is my favorite series in the \"A Certain...\" world.",
   "t": "食蜂操祈は、シリーズ全体で文句なしに一番好きなキャラクターだ！ そしてこれは「とある」世界で一番好きなシリーズだ。"
- },
- "6ef1bd6bc4fd": {
-  "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n",
-  "t": "年ごとの体重：2016 年、300 ポンド。2017 年、220 ポンド。2018 年、230 ポンド。2019 年、240 ポンド。2020 年、260 ポンド。2021 年、230 ポンド。2022 年、245 ポンド。2023 年、260 ポンド。2024 年、250 ポンド。2025 年、260 ポンド。2026 年、225 ポンド。目標：200 ポンド。"
  },
  "6f1c05b8c7b8": {
   "en": "Trained by the Pope's own hand",
@@ -3775,6 +3963,10 @@
   "en": "{name} is hungry",
   "t": "{name} はお腹が空いた"
  },
+ "73f12baa61a3": {
+  "en": "Breathing rate",
+  "t": "呼吸数"
+ },
  "740587c66df0": {
   "en": "If thou art a <strong>Cardinal of the Touch</strong>, thou shalt know when the meat is done by touch alone. Otherwise, use the thermometer.",
   "t": "汝が<strong>手触りの枢機卿</strong>ならば、手触りのみで肉の焼き上がりを知るであろう。さもなくば、温度計を使え。"
@@ -3883,6 +4075,10 @@
   "en": "SP",
   "t": "SP"
  },
+ "770df2e64e5a": {
+  "en": "°F",
+  "t": "°F"
+ },
  "773239581207": {
   "en": "Rock &amp; metal",
   "t": "ロック＆メタル"
@@ -3926,6 +4122,10 @@
  "781012cf77dd": {
   "en": "estimated",
   "t": "推定"
+ },
+ "781291fa12cc": {
+  "en": "ride day",
+  "t": "自転車の日"
  },
  "781961bc81c2": {
   "en": "Pause",
@@ -4079,6 +4279,10 @@
   "en": "9% of my hours",
   "t": "プレイ時間の9%"
  },
+ "7c92fc5cf65f": {
+  "en": "Summer",
+  "t": "夏"
+ },
  "7cbce9cd9969": {
   "en": "Salesman and his companion",
   "t": "セールスマンとその相棒"
@@ -4186,6 +4390,10 @@
  "7f6175041cc3": {
   "en": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #4: </span>Systematize your brain",
   "t": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">ライフハック #4：</span>脳をシステム化しろ"
+ },
+ "7fe62dcaf796": {
+  "en": "strongly related",
+  "t": "強い関係"
  },
  "8010162de46b": {
   "en": "Final Fantasy series",
@@ -4299,6 +4507,10 @@
   "en": "Faithful servants who yet lean upon the thermometer, but who follow the steps and strive to forsake all sauce.",
   "t": "いまだ温度計に頼れど、手順に従い、あらゆるソースを捨て去らんと努める忠実なる僕。"
  },
+ "8371b1d2be3f": {
+  "en": "Active zone minutes",
+  "t": "アクティブゾーン時間"
+ },
  "8385323100f4": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#2: </span>Best of the Worst: Christmas 2020",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#2: </span>Best of the Worst: Christmas 2020"
@@ -4387,6 +4599,10 @@
   "en": "Hairball",
   "t": "Hairball"
  },
+ "865e588793be": {
+  "en": "Deep sleep",
+  "t": "深い睡眠"
+ },
  "8686eb8cf046": {
   "en": "Circa Q2 2013",
   "t": "2013年第2四半期ごろ"
@@ -4439,6 +4655,10 @@
   "en": "Can we fry those up",
   "t": "それ揚げられる？"
  },
+ "87de5501fb6d": {
+  "en": "Pick at least one metric above.",
+  "t": "上で指標を1つ以上選んでください。"
+ },
  "87f8a557dc11": {
   "en": "If you read my Vol 2 afterword, you'll understand why this one is so meaningful to me. Besides loving Megumin and the rest of the cast, I love how it takes potshots at the entire isekai genre, and the laissez-faire, shitposting attitude it brings.",
   "t": "俺の第 2 巻のあとがきを読んだなら、なぜこれが俺にとってそんなに意味があるのかわかるはずだ。めぐみんやほかのキャラクターたちが好きなのはもちろん、異世界ジャンル全体を皮肉るところと、それがもたらすゆるくてクソみたいなノリの態度も好きだ。"
@@ -4486,6 +4706,10 @@
  "8937a988d677": {
   "en": " TrueSteamAchievements ",
   "t": "TrueSteamAchievements"
+ },
+ "89677615c2ec": {
+  "en": "Spring",
+  "t": "春"
  },
  "89a35bbdf744": {
   "en": "Your {n}-post streak is about to die. Post something!",
@@ -4591,9 +4815,17 @@
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,123 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,123 時間</strong>  ·  19本  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">プレイ時間の3%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">プレイ時間の7%</span>"
  },
+ "8cd84528f364": {
+  "en": "Blood oxygen",
+  "t": "血中酸素"
+ },
  "8ce8b5330b49": {
   "en": "So damn cute! It reminded me of going through adolescence, which means it does a really good job of capturing how weird and fascinating it is to grow into early adulthood. Also, I absolutely love Satone, because I love clingy girls!",
   "t": "めちゃくちゃかわいい！ 思春期を思い出させてくれた。つまり、大人になっていくことがどれだけ奇妙で魅力的かを本当にうまく捉えているということだ。それに、智音が大好きだ。くっつき系の女の子が好きだから！"
+ },
+ "8ceb6b355335": {
+  "en": "barely related",
+  "t": "ほぼ無関係"
  },
  "8cf47617a602": {
   "en": "Rio Grande do Norte",
@@ -4762,6 +4994,10 @@
  "92164916faa7": {
   "en": "Whack the Miku (bottom left, key 3)",
   "t": "ミクをたたく（左下、キー 3）"
+ },
+ "9235afd3e988": {
+  "en": "high",
+  "t": "高"
  },
  "9239c22d1d1c": {
   "en": "Japanese",
@@ -4947,6 +5183,10 @@
   "en": "Enlarge: Failing to learn English",
   "t": "拡大: 英語の勉強に挫折中"
  },
+ "96e578211aa2": {
+  "en": "Filters",
+  "t": "絞り込み"
+ },
  "96f997bcecb3": {
   "en": "Years",
   "t": "年"
@@ -5047,6 +5287,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#8: </span>Best of the Worst: Black Spine Raffle",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#8: </span>Best of the Worst: Black Spine Raffle"
  },
+ "9a614628eb58": {
+  "en": "Cardio fitness (VO₂ max)",
+  "t": "心肺機能（VO₂max）"
+ },
  "9a6a49a5317f": {
   "en": "EM",
   "t": "EM"
@@ -5054,6 +5298,10 @@
  "9a7378f878db": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder movie 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 33: </span> 仮の映画 33"
+ },
+ "9ae44de0bb30": {
+  "en": "Other nights",
+  "t": "ほかの夜"
  },
  "9b596bacf45e": {
   "en": "You don't have to trust me, you can check <a href=\"https://github.com/Deovandski/Deovandski\" data-astro-cid-somgw2vn=\"\">the source code</a> yourself.",
@@ -5279,6 +5527,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 13: </span> Cyberpunk: Edgerunners ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 13: </span> サイバーパンク エッジランナーズ"
  },
+ "a18eb7212129": {
+  "en": "Nights",
+  "t": "夜"
+ },
  "a191d463d26a": {
   "en": "Enlarge: Mickey D's",
   "t": "拡大: マック"
@@ -5314,6 +5566,10 @@
  "a257e7233ab2": {
   "en": "312 h",
   "t": "312 時間"
+ },
+ "a2620cbc10f5": {
+  "en": "day",
+  "t": "日"
  },
  "a27a66446545": {
   "en": "Washington",
@@ -5394,6 +5650,10 @@
  "a4c146b7a21c": {
   "en": "Senpai, your bellows technique is... impressive (￣▽￣)ノ",
   "t": "先輩、そのふいごのテクニック……すごい (￣▽￣)ノ"
+ },
+ "a4f5e66b42d2": {
+  "en": "Days in view",
+  "t": "表示中の日数"
  },
  "a54d8d9fd7e6": {
   "en": "7 countries · 4 states/provinces · 94 photos",
@@ -5483,6 +5743,10 @@
   "en": "Maneater",
   "t": "Maneater"
  },
+ "a7554703ef3a": {
+  "en": "Biomarker Lab",
+  "t": "バイオマーカー・ラボ"
+ },
  "a75e8688b4fb": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24"
@@ -5559,6 +5823,10 @@
   "en": "Your clock is ticking too",
   "t": "あなたの時計も進んでいる"
  },
+ "a912d4a5cf52": {
+  "en": "{a} vs {o} days",
+  "t": "{a}日 対 {o}日"
+ },
  "a91385ae4f0f": {
   "en": "Portuguese: 10 of 10, Fully bilingual",
   "t": "ポルトガル語：10 段階中 10、完全なバイリンガル"
@@ -5614,6 +5882,10 @@
  "aabee28bec46": {
   "en": "August 3, 2026",
   "t": "2026 年 8 月 3 日"
+ },
+ "aad754dbe1a8": {
+  "en": "in view",
+  "t": "表示中"
  },
  "aaf4de45da01": {
   "en": "This is a Christian fireplace! (╯°□°)╯",
@@ -5895,6 +6167,10 @@
   "en": "Deo in 2017 in a graduation cap and gown with a medal, raising a beer",
   "t": "2017 年の Deo。卒業式の帽子とガウンにメダルを下げて、ビールを掲げている"
  },
+ "b2589a337b11": {
+  "en": "These days cluster in some seasons more than others, so a difference here is a hint, not proof of a cause.",
+  "t": "こうした日は季節によって偏りがあるので、ここでの差はヒントであって、原因の証明ではありません。"
+ },
  "b29157b87cd1": {
   "en": "Bands I still want to see live.",
   "t": "まだ生で見たいバンド。"
@@ -5902,6 +6178,10 @@
  "b297cb01e994": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022"
+ },
+ "b2bb7604c825": {
+  "en": "Metric",
+  "t": "指標"
  },
  "b2d879e09416": {
   "en": "Plantera",
@@ -5922,6 +6202,10 @@
  "b36cbebb0440": {
   "en": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 お気に入り</span>"
+ },
+ "b38a99fe0694": {
+  "en": "one rises as the other falls",
+  "t": "片方が上がるともう片方が下がる"
  },
  "b3fed1091f2c": {
   "en": "d4",
@@ -5987,6 +6271,10 @@
   "en": "60 h",
   "t": "60 時間"
  },
+ "b553840edbe9": {
+  "en": " B · Ride nights ",
+  "t": "B · 自転車の夜"
+ },
  "b588aca7bb99": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 9: </span> この素晴らしい世界に祝福を！"
@@ -6022,6 +6310,10 @@
  "b6c015d12e1b": {
   "en": "Wins",
   "t": "勝ち"
+ },
+ "b6c935d4f3c7": {
+  "en": "min",
+  "t": "分"
  },
  "b6cdc0302c44": {
   "en": "Enlarge: Stroller time",
@@ -6114,6 +6406,10 @@
  "b9af5469788b": {
   "en": "The clock is ticking on my 💀 Death tab.",
   "t": "時計は俺の 💀 死タブで刻まれている。"
+ },
+ "b9dd1e7cf0fb": {
+  "en": "Stress score",
+  "t": "ストレススコア"
  },
  "ba01865809b3": {
   "en": "Back to Concert",
@@ -6295,6 +6591,10 @@
   "en": "Enlarge: But don't wanna go to sleep",
   "t": "拡大: でも寝たくない"
  },
+ "c0ee32d825d6": {
+  "en": "week",
+  "t": "週"
+ },
  "c0f00b81ade6": {
   "en": "The true churrasco is <strong>picanha</strong> roasted on the <em>espeto</em>, the sword-like skewer, upon a <em>churrasqueira giratória</em>, the wall-style grill that turns the meat without rest.",
   "t": "真のシュハスコとは、<em>エスペット（espeto）</em>、すなわち剣のような串に刺した<strong>ピッカーニャ（picanha）</strong>を、肉を休みなく回し続ける壁型グリル、<em>シュハスケイラ・ジラトーリア（churrasqueira giratória）</em>で焼いたものである。"
@@ -6326,6 +6626,10 @@
  "c1596106e469": {
   "en": "Hanging with a Peeta look alike",
   "t": "Peeta のそっくりさんと一緒に"
+ },
+ "c169b50f6151": {
+  "en": " D · Seasons ",
+  "t": "D · 季節"
  },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -6415,6 +6719,10 @@
   "en": "Rauw Alejandro",
   "t": "Rauw Alejandro"
  },
+ "c4e423204c8a": {
+  "en": "Ride nights",
+  "t": "自転車の夜"
+ },
  "c5352fbe59ff": {
   "en": "Next routine",
   "t": "次のルーチン"
@@ -6446,6 +6754,10 @@
  "c5d40b2b76f6": {
   "en": "\nI've always been fascinated by creating music. But not only am I tone deaf, I also struggle with reading sheet music,\n          and even with something as simple as <a href=\"https://www.image-line.com/fl-studio/\" data-astro-cid-j7pv25f6=\"\">FL Studio</a> and\n<a href=\"https://www.virtualdj.com/\" data-astro-cid-j7pv25f6=\"\">VirtualDJ</a>. I remember messing with them a lot, but never making progress, or\n          just making utter terrible shit. All I've been able to do by myself is fade songs in and out, fix their EQ and such in\n<a href=\"https://www.audacityteam.org/\" data-astro-cid-j7pv25f6=\"\">Audacity</a>. Never true music creation.\n",
   "t": "俺はずっと音楽を作ることに魅了されてきた。でも音痴なだけじゃなく、楽譜を読むのも苦手で、<a href=\"https://www.image-line.com/fl-studio/\" data-astro-cid-j7pv25f6=\"\">FL Studio</a>や<a href=\"https://www.virtualdj.com/\" data-astro-cid-j7pv25f6=\"\">VirtualDJ</a>みたいな簡単なものですら苦戦する。いろいろいじったのは覚えているけど、ちっとも上達しなかったか、ひどいクソみたいなものしか作れなかった。自分でできたのは、<a href=\"https://www.audacityteam.org/\" data-astro-cid-j7pv25f6=\"\">Audacity</a>で曲をフェードイン・フェードアウトさせたり、EQ を直したりする程度だ。本当の意味での作曲は一度もない。"
+ },
+ "c6129321a1a0": {
+  "en": "clearly related",
+  "t": "はっきりした関係"
  },
  "c63ae6dd4fc9": {
   "en": "M",
@@ -6519,9 +6831,17 @@
   "en": " <span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> Space &amp; flight: 1,302 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> 宇宙＆フライト: 1,302 時間"
  },
+ "c8a57159c492": {
+  "en": "How my nights after a ride compare with the rest is in the <a href=\"#biomarkers\">Biomarker Lab</a>, under Hearth.",
+  "t": "自転車に乗った夜とほかの夜の比べ方は、我が家の<a href=\"#biomarkers\">バイオマーカー・ラボ</a>にあります。"
+ },
  "c8b4c761e082": {
   "en": " 1,302 h ",
   "t": "1,302 時間"
+ },
+ "c8e2de313adf": {
+  "en": "Next stop: {place} · {distance} to go",
+  "t": "次の目的地：{place} · あと {distance}"
  },
  "c92499e3e7ab": {
   "en": "8 games",
@@ -6691,6 +7011,10 @@
   "en": "Potato",
   "t": "ポテト"
  },
+ "cdde4f20ba31": {
+  "en": "Steps",
+  "t": "歩数"
+ },
  "cde507abe00d": {
   "en": "67 days",
   "t": "67日"
@@ -6755,6 +7079,10 @@
   "en": "Never wrestle with pigs. You both get dirty, and the pig likes it. <span class=\"newest\">New</span>",
   "t": "豚とは決して取っ組み合うな。どっちも汚れるし、豚はそれが好きなんだ。<span class=\"newest\">新</span>"
  },
+ "cfd46a36afd8": {
+  "en": "Across",
+  "t": "横軸"
+ },
  "cfd9334fce91": {
   "en": "Revenant (1999)",
   "t": "Revenant (1999)"
@@ -6798,6 +7126,10 @@
  "d09bdd281dfa": {
   "en": "Princess Fluffy of Guamá",
   "t": "グアマーのプリンセス Fluffy"
+ },
+ "d0c12b6b5196": {
+  "en": "REM sleep",
+  "t": "レム睡眠"
  },
  "d1230224faff": {
   "en": "Campaign #2",
@@ -6858,6 +7190,14 @@
  "d28817938afa": {
   "en": "Colorado",
   "t": "コロラド州"
+ },
+ "d28fc72baa36": {
+  "en": "The body is a machine, and like any other machine, it needs to be cared for. These are its gauges: what my watch has logged every day since April 2023. Slice them any way you like.",
+  "t": "体は機械で、ほかのどんな機械とも同じように手入れが必要です。これがその計器です。2023年4月から毎日、私の時計が記録してきたもの。好きなように切り分けてみてください。"
+ },
+ "d28fea415d19": {
+  "en": "middle value",
+  "t": "中央値"
  },
  "d29b1a0ebf5e": {
   "en": "Lukewarm",
@@ -7135,6 +7475,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#19: </span>Best of the Worst: A Very Cannon Christmas II",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#19: </span>Best of the Worst: A Very Cannon Christmas II"
  },
+ "d970d5b83c91": {
+  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Rides come from the\n<a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Cycling</a> tab. Dates and numbers only: no places.\n",
+  "t": "私の Pixel Watch から Google Health 経由で、2023年4月〜2026年11月（2026-11-26 に書き出し）。自転車のデータは\n<a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">サイクリング</a>タブから。日付と数値だけで、場所はありません。"
+ },
  "d988b45e783b": {
   "en": "Pick a routine",
   "t": "ルーティンを選ぶ"
@@ -7158,6 +7502,10 @@
  "d9c4aa395b07": {
   "en": "Enlarge: Captain Bidu: Bidu wearing a blue military officer cap with a gold winged badge",
   "t": "拡大: キャプテン Bidu：金の翼のバッジが付いた青い軍の士官帽をかぶった Bidu"
+ },
+ "d9defa2c4cc3": {
+  "en": "loosely related",
+  "t": "ゆるい関係"
  },
  "d9ecc35c78dd": {
   "en": "Scream Collector",
@@ -7218,6 +7566,10 @@
  "dba7601ff7be": {
   "en": "Symphony of Seasons",
   "t": "Symphony of Seasons"
+ },
+ "dbf87a14e9e7": {
+  "en": "{a} to {b} (the middle 60%)",
+  "t": "{a}〜{b}（中央の60%）"
  },
  "dbf97b660ed1": {
   "en": "Eat sleep poop repeat",
@@ -7427,6 +7779,10 @@
   "en": "961 h",
   "t": "961 時間"
  },
+ "e2ce44da53e6": {
+  "en": "Sleep score",
+  "t": "睡眠スコア"
+ },
  "e2fdc09c46f0": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez"
@@ -7446,6 +7802,10 @@
  "e3b82040565b": {
   "en": "Now",
   "t": "今"
+ },
+ "e3cb8bd6bf09": {
+  "en": "Bedtime",
+  "t": "就寝時刻"
  },
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
@@ -7566,6 +7926,10 @@
  "e76e281ed9f1": {
   "en": "Back to the starting picture",
   "t": "開始画像に戻る"
+ },
+ "e7be4dbaee78": {
+  "en": "Metrics to show",
+  "t": "表示する指標"
  },
  "e7d965113795": {
   "en": "Kilograms of beef grilled: 295",
@@ -7855,6 +8219,10 @@
   "en": "141 h",
   "t": "141 時間"
  },
+ "f281a799c9fd": {
+  "en": "r = {r} · {n} days · {strength}",
+  "t": "r = {r} · {n}日 · {strength}"
+ },
  "f2a63e1c444a": {
   "en": "Photogenic",
   "t": "写真映え"
@@ -7914,6 +8282,14 @@
  "f42120fee221": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Placeholder TV show 23 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 23: </span> 仮のドラマ 23"
+ },
+ "f4278970b6fb": {
+  "en": "Not enough days in these filters. Try more years or all seasons.",
+  "t": "この絞り込みでは日数が足りません。年を増やすか、季節をすべてにしてください。"
+ },
+ "f437bf56eca8": {
+  "en": "Ways to see the numbers",
+  "t": "数値の見方"
  },
  "f4853c881e96": {
   "en": "{n} more to earn",
@@ -8151,6 +8527,10 @@
   "en": "The Book of Mormon",
   "t": "The Book of Mormon"
  },
+ "fc10303017c5": {
+  "en": "Skin temperature",
+  "t": "皮膚温"
+ },
  "fc3c2b787144": {
   "en": "Lyric Opera of Chicago",
   "t": "Lyric Opera of Chicago"
@@ -8223,6 +8603,10 @@
   "en": "Practice skin. Draw a tattoo on it with the tattoo pen.",
   "t": "練習用スキン。タトゥーペンでタトゥーを描いてみよう。"
  },
+ "feda6ec3fdc1": {
+  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>After a ride",
+  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>自転車のあと"
+ },
  "fee0589986c6": {
   "en": "The Stanley Parable",
   "t": "The Stanley Parable"
@@ -8230,6 +8614,10 @@
  "feea42718962": {
   "en": "Enlarge: Walk time or more like I stay in the stroller",
   "t": "拡大: 散歩の時間、というかベビーカーに乗ったまま"
+ },
+ "ff1ee226e141": {
+  "en": " That's farther than Fargo, ND to Sioux Falls (230 mi as the crow flies).  Next stop: Chicago, 18 mi to go. ",
+  "t": "ファーゴ（ノースダコタ州）からスーフォールズまで（直線で 230 mi）より遠い。次の目的地はシカゴ、あと 18 mi。"
  },
  "ff3ea3bec182": {
   "en": "Malaysia",

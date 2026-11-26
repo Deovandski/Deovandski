@@ -79,6 +79,10 @@
   "en": "Notification drip",
   "t": "Thông báo nhỏ giọt"
  },
+ "021710fa7866": {
+  "en": "month",
+  "t": "tháng"
+ },
  "024a42ce1e4f": {
   "en": "Skin tone 1",
   "t": "Tông da 1"
@@ -175,6 +179,10 @@
   "en": "Ink",
   "t": "Mực"
  },
+ "04c70f3c22a3": {
+  "en": "of {n} tracked",
+  "t": "trên {n} ngày đã ghi"
+ },
  "04e3fd08d714": {
   "en": "Description coming soon.",
   "t": "Mô tả sắp có."
@@ -238,6 +246,10 @@
  "067ff8ef9ba2": {
   "en": "\nSenior Software Engineer, Dynamics 365 F&amp;O Architect, and Founder &amp; CEO of Wizard Deo Solutions.\n",
   "t": "Kỹ sư phần mềm cao cấp, Kiến trúc sư Dynamics 365 F&amp;O, đồng thời là Nhà sáng lập &amp; CEO của Wizard Deo Solutions."
+ },
+ "0689a88574c4": {
+  "en": "{value} · {date}",
+  "t": "{value} · {date}"
  },
  "0699138fe5cc": {
   "en": "Click or drag to draw. Right-click erases.",
@@ -583,6 +595,10 @@
   "en": " JC ",
   "t": "JC"
  },
+ "1118f49d26f1": {
+  "en": " E · Compare ",
+  "t": "E · So sánh"
+ },
  "11255d4d673b": {
   "en": "My top 39 favorite anime, ranked, and what each one means to me.",
   "t": "39 bộ anime yêu thích nhất của tôi, có xếp hạng, và ý nghĩa của từng bộ với tôi."
@@ -607,6 +623,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 39: </span> Placeholder movie 39 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 39: </span> Phim tạm 39"
  },
+ "122babc08c1c": {
+  "en": "Not enough days with both numbers.",
+  "t": "Không đủ ngày có cả hai số liệu."
+ },
  "123b77b3c65c": {
   "en": "Terraria",
   "t": "Terraria"
@@ -630,6 +650,10 @@
  "131260cbfbb0": {
   "en": "Music",
   "t": "Nhạc"
+ },
+ "132a0149f337": {
+  "en": "they rise together",
+  "t": "cùng tăng"
  },
  "1349608b58ab": {
   "en": "25 h",
@@ -663,9 +687,17 @@
   "en": " PV ",
   "t": "PV"
  },
+ "145a01fb9391": {
+  "en": "/min",
+  "t": "/phút"
+ },
  "14663cc9a7a1": {
   "en": "MUCH FAST",
   "t": "NHANH QUÁ"
+ },
+ "14696eebf7a4": {
+  "en": "Average by",
+  "t": "Trung bình theo"
  },
  "148154839756": {
   "en": "Enlarge: Let me go",
@@ -903,6 +935,14 @@
   "en": "Musician",
   "t": "Nhạc sĩ"
  },
+ "1cc7e3f39b49": {
+  "en": "Rode {n} mi",
+  "t": "Đạp {n} mi"
+ },
+ "1d0c8304baed": {
+  "en": "Color",
+  "t": "Màu"
+ },
  "1d23e1eb9609": {
   "en": "Enlarge: Hanging with a Peeta look alike",
   "t": "Phóng to: Chơi với một bạn trông giống Peeta"
@@ -919,6 +959,10 @@
   "en": "Classical",
   "t": "Cổ điển"
  },
+ "1de180253ec0": {
+  "en": "After a ride",
+  "t": "Sau khi đạp xe"
+ },
  "1df37d663014": {
   "en": "135 h",
   "t": "135 h"
@@ -934,6 +978,10 @@
  "1e98d9e9411b": {
   "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,445 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Khác: 2,445 h"
+ },
+ "1e9c5082c7a3": {
+  "en": "{name} over time",
+  "t": "{name} theo thời gian"
  },
  "1eab2e778967": {
   "en": "Mana",
@@ -967,6 +1015,10 @@
   "en": "Tennessee",
   "t": "Tennessee"
  },
+ "1f6990e0866b": {
+  "en": "Any metric against any other, one dot per day, with a straight trend line and how closely the two move together (r, from −1 to 1).",
+  "t": "Bất kỳ chỉ số nào so với chỉ số khác, mỗi ngày một điểm, với đường xu hướng thẳng và mức độ hai chỉ số đi cùng nhau (r, từ −1 đến 1)."
+ },
  "1f797564f784": {
   "en": "Bahamas",
   "t": "Bahamas"
@@ -986,6 +1038,10 @@
  "2001ca082b2d": {
   "en": "Español",
   "t": "Español"
+ },
+ "2038bdec9210": {
+  "en": "Up",
+  "t": "Trục dọc"
  },
  "20409611a456": {
   "en": "82 h",
@@ -1087,6 +1143,10 @@
   "en": "Failing to learn English",
   "t": "Học tiếng Anh thất bại"
  },
+ "222a9a1d0cfc": {
+  "en": "Month by month, one line per year, so the winters line up with each other. Hover a line to pick out its year.",
+  "t": "Từng tháng một, mỗi năm một đường, để các mùa đông thẳng hàng với nhau. Rê chuột lên một đường để làm nổi bật năm của nó."
+ },
  "2234c20b68ff": {
   "en": "30 h",
   "t": "30 h"
@@ -1106,6 +1166,10 @@
  "22f164766765": {
   "en": "Arragoa",
   "t": "Arragoa"
+ },
+ "231fbf14a11a": {
+  "en": "Time asleep",
+  "t": "Thời gian ngủ"
  },
  "235a70299830": {
   "en": "Faun",
@@ -1134,6 +1198,10 @@
  "244d46168deb": {
   "en": "a cactus",
   "t": "một cây xương rồng"
+ },
+ "24615d93d230": {
+  "en": "Winter",
+  "t": "Mùa đông"
  },
  "247ce5d5d915": {
   "en": "North America",
@@ -1227,6 +1295,10 @@
   "en": "A pile of 1,166 VHS tapes",
   "t": "Một đống 1.166 cuộn băng VHS"
  },
+ "26cc3217be64": {
+  "en": "ms",
+  "t": "ms"
+ },
  "26d16d20b4b9": {
   "en": "From Itaituba, Pará, to Fargo, North Dakota.",
   "t": "Từ Itaituba, Pará, đến Fargo, North Dakota."
@@ -1283,10 +1355,6 @@
   "en": " Space &amp; flight ",
   "t": "Không gian &amp; bay"
  },
- "2819ba97835f": {
-  "en": "Rhythm and sleep",
-  "t": "Nhịp sinh học và giấc ngủ"
- },
  "2835bcaa6e76": {
   "en": " 49 h ",
   "t": "49 h"
@@ -1294,6 +1362,10 @@
  "283c1ebce40b": {
   "en": "Close to 12 years old but still kicking",
   "t": "Gần 12 tuổi rồi mà vẫn khỏe re"
+ },
+ "285c1b0998a6": {
+  "en": "The body is the temple, and the engine that so many people don’t watch out for. We put all our energy and attention outward. Care for yourself and love yourself too.",
+  "t": "Cơ thể là ngôi đền, và là cỗ máy mà biết bao người không để ý chăm sóc. Chúng ta dồn hết năng lượng và sự chú ý ra bên ngoài. Hãy chăm sóc và yêu thương chính mình nữa."
  },
  "2888f01fb635": {
   "en": "Morning by the river",
@@ -1407,6 +1479,10 @@
   "en": "71 days",
   "t": "71 ngày"
  },
+ "2c33f945fe8f": {
+  "en": "{name} by month, one line per year",
+  "t": "{name} theo tháng, mỗi năm một đường"
+ },
  "2c6f37232fe8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Nanatsu no Taizai (The Seven Deadly Sins) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 22: </span> Nanatsu no Taizai (The Seven Deadly Sins)"
@@ -1510,6 +1586,10 @@
  "2f717ffad4e1": {
   "en": "Arkansas",
   "t": "Arkansas"
+ },
+ "2f92a0aa8ae9": {
+  "en": "Weekends",
+  "t": "Cuối tuần"
  },
  "2f9714995b86": {
   "en": " An exploded sphere of my hours by category: Idle &amp; clickers 57%, RPGs &amp; open worlds 16%, City, colony &amp; strategy 5%, Survival &amp; crafting 5%, Factory &amp; automation 5%, Space &amp; flight 4%, Cozy &amp; life sims 3%, Other 7% ",
@@ -1635,6 +1715,14 @@
   "en": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(June 21, 2026)</span>",
   "t": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(21 tháng 6, 2026)</span>"
  },
+ "32f4bc9e552c": {
+  "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month. Ticks along the bottom mark each ride day.",
+  "t": "Mỗi chỉ số theo thời gian, mỗi chỉ số một biểu đồ nhỏ. Rê chuột lên một biểu đồ thì mọi biểu đồ cùng hiện cùng một ngày, tuần hoặc tháng. Các vạch ở dưới đánh dấu mỗi ngày đạp xe."
+ },
+ "32f997551915": {
+  "en": "{h}h {m}m",
+  "t": "{h} giờ {m} phút"
+ },
  "3303cb966359": {
   "en": "PowerWash Simulator",
   "t": "PowerWash Simulator"
@@ -1707,6 +1795,10 @@
   "en": "Deovandski's hub: software, books, travel and games.",
   "t": "Góc của Deovandski: phần mềm, sách, du lịch và trò chơi."
  },
+ "348928d6f5be": {
+  "en": "Resting heart rate",
+  "t": "Nhịp tim lúc nghỉ"
+ },
  "34b1471c5170": {
   "en": "I’m not dying in the waiting room of someone else’s stagnant life. <span class=\"newest\">New</span>",
   "t": "Tôi sẽ không chết trong phòng chờ của cuộc đời trì trệ của người khác. <span class=\"newest\">Mới</span>"
@@ -1722,6 +1814,10 @@
  "34c3262b9b37": {
   "en": " free  · 10 s ",
   "t": "miễn phí · 10 giây"
+ },
+ "34cb8ac649a8": {
+  "en": "{x} against {y}, one dot per day",
+  "t": "{x} so với {y}, mỗi ngày một điểm"
  },
  "34d8b60fe253": {
   "en": "Hide",
@@ -1763,6 +1859,10 @@
   "en": "The Witcher in Concert",
   "t": "The Witcher in Concert"
  },
+ "36a883e762d4": {
+  "en": "low",
+  "t": "thấp"
+ },
  "36f780fdbda5": {
   "en": " PC ",
   "t": "PC"
@@ -1790,6 +1890,10 @@
  "37e005ab8200": {
   "en": "Enlarge: Painting or drawing, 02/19/2013",
   "t": "Phóng to: Tranh vẽ hoặc phác họa, 19/02/2013"
+ },
+ "37e737d92cbb": {
+  "en": "{n} min",
+  "t": "{n} phút"
  },
  "380aad144968": {
   "en": "Enlarge: Camera angles are everything",
@@ -1842,6 +1946,10 @@
  "38a9bcedfb5c": {
   "en": "<strong>M. Alexandra Kredlow and colleagues</strong>, <em>Journal of Behavioral Medicine</em> (2015), a meta-analysis of physical activity and sleep: regular exercise has small benefits for total sleep time, small-to-medium ones for falling asleep, and moderate ones for sleep quality. <a href=\"https://pubmed.ncbi.nlm.nih.gov/25596964/\">Abstract</a>",
   "t": "<strong>M. Alexandra Kredlow và cộng sự</strong>, <em>Journal of Behavioral Medicine</em> (2015), một phân tích tổng hợp về vận động và giấc ngủ: tập luyện đều đặn mang lại lợi ích nhỏ cho tổng thời gian ngủ, nhỏ đến vừa cho việc dễ vào giấc và vừa phải cho chất lượng giấc ngủ. <a href=\"https://pubmed.ncbi.nlm.nih.gov/25596964/\">Tóm tắt</a>"
+ },
+ "38cb9de8ada6": {
+  "en": "{h}h",
+  "t": "{h} giờ"
  },
  "38e1d26af274": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer",
@@ -1942,6 +2050,10 @@
  "3b419aac7299": {
   "en": "\nTreat your life like a project: break big goals into small steps, be honest about scope and deadlines, and track what's\n        actually done. It's how I run everything from client work to this website, and the <a href=\"#pm\" data-astro-cid-xtzphevd=\"\">PM side</a> of this tab\n        has the details.\n",
   "t": "Hãy đối xử với cuộc đời như một dự án: chia mục tiêu lớn thành các bước nhỏ, trung thực về phạm vi và thời hạn, và theo dõi những gì thật sự đã xong. Đó là cách tôi điều hành mọi thứ, từ việc cho khách hàng đến trang web này, và <a href=\"#pm\" data-astro-cid-xtzphevd=\"\">phần Quản lý dự án</a> của thẻ này có chi tiết."
+ },
+ "3b9579462803": {
+  "en": "Loading the numbers…",
+  "t": "Đang tải số liệu…"
  },
  "3b9b88d1447d": {
   "en": " <span class=\"shelf__dot\" style=\"background: #0ca30c\" data-astro-cid-nqpad2wp=\"\"></span> Cozy &amp; life sims: 904 h ",
@@ -2046,6 +2158,10 @@
  "3ef5b5e97c0e": {
   "en": "Back to Musician",
   "t": "Quay lại Nhạc sĩ"
+ },
+ "3ef5d324a3b2": {
+  "en": "No month has 5 or more days in these filters.",
+  "t": "Không tháng nào có từ 5 ngày trở lên với các bộ lọc này."
  },
  "3f03ae3311ee": {
   "en": "VHS pile: turn your phone sideways",
@@ -2191,6 +2307,10 @@
   "en": "Reset",
   "t": "Đặt lại"
  },
+ "44cc45ad22b1": {
+  "en": " A · Timeline ",
+  "t": "A · Dòng thời gian"
+ },
  "44eb59ea016a": {
   "en": "Black Jacket Symphony",
   "t": "Black Jacket Symphony"
@@ -2215,6 +2335,10 @@
   "en": "The juxtaposition between what you think it's about and what actually happens reminds me of Happy Tree Friends. The world lore and its rules are fascinating!",
   "t": "Sự đối lập giữa thứ bạn nghĩ nó nói về và thứ thật sự xảy ra làm tôi nhớ đến Happy Tree Friends. Thế giới quan và các quy tắc của nó thật cuốn hút!"
  },
+ "45d7b9f03f0a": {
+  "en": "Body fat (yearly average)",
+  "t": "Mỡ cơ thể (trung bình năm)"
+ },
  "45f08cb571cd": {
   "en": "<strong>Marcus Aurelius</strong>, <em>Meditations</em> 6.24: death brought Alexander the Great and his mule driver to the same state. <a href=\"https://en.wikisource.org/wiki/Marcus_Aurelius_(Haines_1916)/Book_6\">Text</a>",
   "t": "<strong>Marcus Aurelius</strong>, <em>Suy tưởng</em> 6.24: cái chết đưa Alexander Đại đế và người đánh xe la của ông về cùng một trạng thái. <a href=\"https://en.wikisource.org/wiki/Marcus_Aurelius_(Haines_1916)/Book_6\">Văn bản</a>"
@@ -2230,6 +2354,10 @@
  "46b00befa084": {
   "en": "\"Almost went viral!\" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses.",
   "t": "\"Suýt viral!\" vẫn là thua, và còn khó chịu hơn thua hẳn, nhưng nó khiến người ta muốn chơi tiếp. Sự kiên trì đạt đỉnh khi khoảng 30% số lần thua là suýt trúng."
+ },
+ "46e490cac450": {
+  "en": "bpm",
+  "t": "bpm"
  },
  "46e80e47b684": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested",
@@ -2435,6 +2563,14 @@
   "en": " BW ",
   "t": "BW"
  },
+ "4d90542645b2": {
+  "en": "Hover a dot for its month.",
+  "t": "Rê chuột lên một điểm để xem tháng của nó."
+ },
+ "4d968a30a022": {
+  "en": "no data",
+  "t": "không có dữ liệu"
+ },
  "4db745f6113e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Toradora! ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 23: </span> Toradora!"
@@ -2551,6 +2687,10 @@
   "en": "Smol",
   "t": "Bé xíu"
  },
+ "4ffc67b62aae": {
+  "en": "Weekdays",
+  "t": "Ngày thường"
+ },
  "5033c1d06398": {
   "en": "Charles Playhouse, Boston",
   "t": "Charles Playhouse, Boston"
@@ -2599,6 +2739,10 @@
   "en": "17 h",
   "t": "17 h"
  },
+ "5115ff9a0bea": {
+  "en": "{a} vs {o}",
+  "t": "{a} so với {o}"
+ },
  "511993d3c997": {
   "en": "P",
   "t": "P"
@@ -2638,6 +2782,10 @@
  "521cb68c2c31": {
   "en": "Ceará",
   "t": "Ceará"
+ },
+ "52709c0fe403": {
+  "en": "{name}, one square per day in {year}",
+  "t": "{name}, mỗi ngày một ô trong năm {year}"
  },
  "5284e1a74198": {
   "en": "Tell me I am pretty",
@@ -2779,6 +2927,10 @@
   "en": "People post more right after a batch of likes, spacing posts to chase the best rate of likes, like an animal in a Skinner box.",
   "t": "Người ta đăng nhiều hơn ngay sau một đợt lượt thích, giãn cách bài đăng để đuổi theo tỷ lệ lượt thích tốt nhất, như con vật trong hộp Skinner."
  },
+ "55f9fd002ac9": {
+  "en": "The body is the temple",
+  "t": "Cơ thể là ngôi đền"
+ },
  "55fa0faa800a": {
   "en": "City, colony & strategy",
   "t": "Thành phố, thuộc địa & chiến thuật"
@@ -2883,6 +3035,10 @@
   "en": "7% of my hours",
   "t": "7% số giờ của tôi"
  },
+ "58f7a8f2ec30": {
+  "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n Body fat, yearly average: 2023, 32.9%; 2024, 36.8%; 2025, 38.0%; 2026, 35.4%. ",
+  "t": "Cân nặng theo năm: 2016, 300 pound; 2017, 220 pound; 2018, 230 pound; 2019, 240 pound; 2020, 260 pound; 2021, 230 pound; 2022, 245 pound; 2023, 260 pound; 2024, 250 pound; 2025, 260 pound; 2026, 225 pound. Mục tiêu: 200 pound.\n Mỡ cơ thể, trung bình năm: 2023, 32,9%; 2024, 36,8%; 2025, 38,0%; 2026, 35,4%."
+ },
  "592bc9228abd": {
   "en": "Enlarge: Salty doggo",
   "t": "Phóng to: Cún dỗi"
@@ -2931,6 +3087,10 @@
   "en": "Change the lights",
   "t": "Đổi đèn"
  },
+ "5a6b6b31729f": {
+  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>Other nights",
+  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>Các đêm khác"
+ },
  "5a7078113356": {
   "en": "Sleep first",
   "t": "Ngủ trước đã"
@@ -2963,6 +3123,10 @@
   "en": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Aquamarine",
   "t": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Aquamarine"
  },
+ "5b290995d5b7": {
+  "en": "Heart rate variability",
+  "t": "Biến thiên nhịp tim"
+ },
  "5b4dfc520699": {
   "en": "Notice me harder, senpai! (｡♥‿♥｡)",
   "t": "Để ý tôi nhiều hơn nữa đi, senpai! (｡♥‿♥｡)"
@@ -2994,6 +3158,10 @@
  "5bfe7304b93a": {
   "en": "Enlarge: Rueiro",
   "t": "Phóng to: Rueiro"
+ },
+ "5c1ae82c2954": {
+  "en": "Fall",
+  "t": "Mùa thu"
  },
  "5c1db802f890": {
   "en": "Repeat yourself and each post pays less, then starts to cost you followers. The treadmill speeds up.",
@@ -3066,6 +3234,10 @@
  "5e7e6713592f": {
   "en": "Be Awesome!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (written in Vraki)</span>",
   "t": "Be Awesome!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (viết bằng chữ Vraki)</span>"
+ },
+ "5e873f457d2a": {
+  "en": " C · Calendar ",
+  "t": "C · Lịch"
  },
  "5e89349bfb8a": {
   "en": "Camping",
@@ -3187,6 +3359,10 @@
   "en": "The wishlist is on its way.",
   "t": "Danh sách muốn xem sắp có."
  },
+ "62255f5671e8": {
+  "en": "Season",
+  "t": "Mùa"
+ },
  "62405c2823c6": {
   "en": "Justin Timberlake",
   "t": "Justin Timberlake"
@@ -3203,10 +3379,6 @@
   "en": "The Four Seasons",
   "t": "Bốn mùa"
  },
- "627d89658063": {
-  "en": "Ride it again",
-  "t": "Đạp lại lần nữa"
- },
  "629faf03c89b": {
   "en": "Throw again",
   "t": "Phóng lại"
@@ -3218,6 +3390,10 @@
  "62bd650a8380": {
   "en": " FC ",
   "t": "FC"
+ },
+ "62dfe60deea3": {
+  "en": "The numbers didn't load. Try again later.",
+  "t": "Không tải được số liệu. Thử lại sau nhé."
  },
  "633797165688": {
   "en": "Magical Mirai, Osaka (2014)",
@@ -3487,6 +3663,10 @@
   "en": "Take care of Peeta",
   "t": "Chăm sóc Peeta"
  },
+ "6a72085653e4": {
+  "en": "All",
+  "t": "Tất cả"
+ },
  "6a985aa2c1d7": {
   "en": "Disturbed",
   "t": "Disturbed"
@@ -3559,6 +3739,10 @@
   "en": "3 mana · 2",
   "t": "3 mana · 2"
  },
+ "6d0a290e3592": {
+  "en": "One square per day, one row per year. The brighter the square, the higher the number. A colored edge marks each ride day. Faded squares are days outside your filters.",
+  "t": "Mỗi ngày một ô, mỗi năm một hàng. Ô càng sáng thì số càng cao. Viền màu đánh dấu mỗi ngày đạp xe. Ô mờ là những ngày nằm ngoài bộ lọc của bạn."
+ },
  "6d1c8ee06629": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 29: </span> Placeholder TV show 29 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 29: </span> Phim bộ tạm 29"
@@ -3587,6 +3771,10 @@
   "en": "Play time!",
   "t": "Giờ chơi!"
  },
+ "6dc1222c378c": {
+  "en": "Readiness",
+  "t": "Mức sẵn sàng"
+ },
  "6dcd4ce23d88": {
   "en": "A",
   "t": "A"
@@ -3603,6 +3791,10 @@
   "en": "That one really got me in the feels. It made me feel more in one sitting than I felt while dating some girls. It's hard for me to miss someone once I say goodbye, but this anime made me sit with that feeling for a good while after watching it.",
   "t": "Bộ đó thật sự chạm đến cảm xúc của tôi. Nó khiến tôi cảm nhận trong một lần xem nhiều hơn cả khi tôi hẹn hò với vài cô gái. Tôi khó nhớ nhung ai đó một khi đã nói lời tạm biệt, nhưng bộ anime này khiến tôi ngồi lặng với cảm giác đó một hồi lâu sau khi xem."
  },
+ "6e64529a10e6": {
+  "en": "The night and day after each ride day, against every other day you picked. The dot is the middle value (the median) and the bar holds the middle half of the days. This view ignores the Nights filter.",
+  "t": "Đêm và ngày sau mỗi ngày đạp xe, so với mọi ngày khác bạn chọn. Chấm là giá trị giữa (trung vị) và thanh bao nửa giữa các ngày. Chế độ xem này bỏ qua bộ lọc Đêm."
+ },
  "6e68e69e0822": {
   "en": "Black ink",
   "t": "Mực đen"
@@ -3618,10 +3810,6 @@
  "6eef3154b469": {
   "en": "Misaki is hands down my favorite character in the entire series! And this is my favorite series in the \"A Certain...\" world.",
   "t": "Misaki chắc chắn là nhân vật tôi thích nhất trong cả loạt phim! Và đây là loạt tôi thích nhất trong thế giới \"A Certain...\"."
- },
- "6ef1bd6bc4fd": {
-  "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n",
-  "t": "Cân nặng theo năm: 2016, 300 pound; 2017, 220 pound; 2018, 230 pound; 2019, 240 pound; 2020, 260 pound; 2021, 230 pound; 2022, 245 pound; 2023, 260 pound; 2024, 250 pound; 2025, 260 pound; 2026, 225 pound. Mục tiêu: 200 pound."
  },
  "6f1c05b8c7b8": {
   "en": "Trained by the Pope's own hand",
@@ -3775,6 +3963,10 @@
   "en": "{name} is hungry",
   "t": "{name} đói"
  },
+ "73f12baa61a3": {
+  "en": "Breathing rate",
+  "t": "Nhịp thở"
+ },
  "740587c66df0": {
   "en": "If thou art a <strong>Cardinal of the Touch</strong>, thou shalt know when the meat is done by touch alone. Otherwise, use the thermometer.",
   "t": "Nếu ngươi là một <strong>Hồng y Phép Chạm</strong>, ngươi sẽ biết thịt chín khi nào chỉ bằng cách chạm. Nếu không, hãy dùng nhiệt kế."
@@ -3883,6 +4075,10 @@
   "en": "SP",
   "t": "SP"
  },
+ "770df2e64e5a": {
+  "en": "°F",
+  "t": "°F"
+ },
  "773239581207": {
   "en": "Rock &amp; metal",
   "t": "Rock &amp; metal"
@@ -3926,6 +4122,10 @@
  "781012cf77dd": {
   "en": "estimated",
   "t": "ước tính"
+ },
+ "781291fa12cc": {
+  "en": "ride day",
+  "t": "ngày đạp xe"
  },
  "781961bc81c2": {
   "en": "Pause",
@@ -4079,6 +4279,10 @@
   "en": "9% of my hours",
   "t": "9% số giờ của tôi"
  },
+ "7c92fc5cf65f": {
+  "en": "Summer",
+  "t": "Mùa hè"
+ },
  "7cbce9cd9969": {
   "en": "Salesman and his companion",
   "t": "Anh bán hàng và bạn đồng hành"
@@ -4186,6 +4390,10 @@
  "7f6175041cc3": {
   "en": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #4: </span>Systematize your brain",
   "t": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Mẹo sống số 4: </span>Hệ thống hóa bộ não"
+ },
+ "7fe62dcaf796": {
+  "en": "strongly related",
+  "t": "liên quan mạnh"
  },
  "8010162de46b": {
   "en": "Final Fantasy series",
@@ -4299,6 +4507,10 @@
   "en": "Faithful servants who yet lean upon the thermometer, but who follow the steps and strive to forsake all sauce.",
   "t": "Những tôi tớ trung thành vẫn còn nương tựa vào nhiệt kế, nhưng đi theo các bước và cố gắng từ bỏ mọi thứ nước sốt."
  },
+ "8371b1d2be3f": {
+  "en": "Active zone minutes",
+  "t": "Số phút vùng hoạt động"
+ },
  "8385323100f4": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#2: </span>Best of the Worst: Christmas 2020",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#2: </span>Best of the Worst: Christmas 2020"
@@ -4387,6 +4599,10 @@
   "en": "Hairball",
   "t": "Hairball"
  },
+ "865e588793be": {
+  "en": "Deep sleep",
+  "t": "Ngủ sâu"
+ },
  "8686eb8cf046": {
   "en": "Circa Q2 2013",
   "t": "Khoảng quý 2 năm 2013"
@@ -4439,6 +4655,10 @@
   "en": "Can we fry those up",
   "t": "Mình chiên mấy cái đó được không"
  },
+ "87de5501fb6d": {
+  "en": "Pick at least one metric above.",
+  "t": "Chọn ít nhất một chỉ số ở trên."
+ },
  "87f8a557dc11": {
   "en": "If you read my Vol 2 afterword, you'll understand why this one is so meaningful to me. Besides loving Megumin and the rest of the cast, I love how it takes potshots at the entire isekai genre, and the laissez-faire, shitposting attitude it brings.",
   "t": "Nếu bạn đọc lời bạt Vol 2 của tôi, bạn sẽ hiểu vì sao bộ này có ý nghĩa với tôi đến vậy. Ngoài việc mê Megumin và cả dàn nhân vật, tôi thích cách nó châm chọc toàn bộ thể loại isekai, và thái độ mặc kệ, shitpost mà nó mang lại."
@@ -4486,6 +4706,10 @@
  "8937a988d677": {
   "en": " TrueSteamAchievements ",
   "t": "TrueSteamAchievements"
+ },
+ "89677615c2ec": {
+  "en": "Spring",
+  "t": "Mùa xuân"
  },
  "89a35bbdf744": {
   "en": "Your {n}-post streak is about to die. Post something!",
@@ -4591,9 +4815,17 @@
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,123 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,123 h</strong>  ·  19 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% số giờ của tôi</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% số giờ của tôi</span>"
  },
+ "8cd84528f364": {
+  "en": "Blood oxygen",
+  "t": "Oxy trong máu"
+ },
  "8ce8b5330b49": {
   "en": "So damn cute! It reminded me of going through adolescence, which means it does a really good job of capturing how weird and fascinating it is to grow into early adulthood. Also, I absolutely love Satone, because I love clingy girls!",
   "t": "Dễ thương chết đi được! Nó làm tôi nhớ lại thời tuổi dậy thì, nghĩa là nó nắm bắt rất tốt sự kỳ lạ và cuốn hút của việc lớn lên bước vào tuổi trưởng thành. Mà tôi cực kỳ mê Satone, vì tôi thích những cô gái bám dính!"
+ },
+ "8ceb6b355335": {
+  "en": "barely related",
+  "t": "gần như không liên quan"
  },
  "8cf47617a602": {
   "en": "Rio Grande do Norte",
@@ -4762,6 +4994,10 @@
  "92164916faa7": {
   "en": "Whack the Miku (bottom left, key 3)",
   "t": "Đập Miku (dưới bên trái, phím 3)"
+ },
+ "9235afd3e988": {
+  "en": "high",
+  "t": "cao"
  },
  "9239c22d1d1c": {
   "en": "Japanese",
@@ -4947,6 +5183,10 @@
   "en": "Enlarge: Failing to learn English",
   "t": "Phóng to: Học tiếng Anh thất bại"
  },
+ "96e578211aa2": {
+  "en": "Filters",
+  "t": "Bộ lọc"
+ },
  "96f997bcecb3": {
   "en": "Years",
   "t": "Năm"
@@ -5047,6 +5287,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#8: </span>Best of the Worst: Black Spine Raffle",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#8: </span>Best of the Worst: Black Spine Raffle"
  },
+ "9a614628eb58": {
+  "en": "Cardio fitness (VO₂ max)",
+  "t": "Thể lực tim mạch (VO₂ max)"
+ },
  "9a6a49a5317f": {
   "en": "EM",
   "t": "EM"
@@ -5054,6 +5298,10 @@
  "9a7378f878db": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder movie 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 33: </span> Phim tạm 33"
+ },
+ "9ae44de0bb30": {
+  "en": "Other nights",
+  "t": "Các đêm khác"
  },
  "9b596bacf45e": {
   "en": "You don't have to trust me, you can check <a href=\"https://github.com/Deovandski/Deovandski\" data-astro-cid-somgw2vn=\"\">the source code</a> yourself.",
@@ -5279,6 +5527,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 13: </span> Cyberpunk: Edgerunners ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 13: </span> Cyberpunk: Edgerunners"
  },
+ "a18eb7212129": {
+  "en": "Nights",
+  "t": "Đêm"
+ },
  "a191d463d26a": {
   "en": "Enlarge: Mickey D's",
   "t": "Phóng to: Mickey D's"
@@ -5314,6 +5566,10 @@
  "a257e7233ab2": {
   "en": "312 h",
   "t": "312 h"
+ },
+ "a2620cbc10f5": {
+  "en": "day",
+  "t": "ngày"
  },
  "a27a66446545": {
   "en": "Washington",
@@ -5394,6 +5650,10 @@
  "a4c146b7a21c": {
   "en": "Senpai, your bellows technique is... impressive (￣▽￣)ノ",
   "t": "Senpai, kỹ thuật bơm ống thổi của anh... ấn tượng thật (￣▽￣)ノ"
+ },
+ "a4f5e66b42d2": {
+  "en": "Days in view",
+  "t": "Số ngày đang xem"
  },
  "a54d8d9fd7e6": {
   "en": "7 countries · 4 states/provinces · 94 photos",
@@ -5483,6 +5743,10 @@
   "en": "Maneater",
   "t": "Maneater"
  },
+ "a7554703ef3a": {
+  "en": "Biomarker Lab",
+  "t": "Phòng thí nghiệm chỉ số sinh học"
+ },
  "a75e8688b4fb": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24"
@@ -5559,6 +5823,10 @@
   "en": "Your clock is ticking too",
   "t": "Đồng hồ của bạn cũng đang chạy"
  },
+ "a912d4a5cf52": {
+  "en": "{a} vs {o} days",
+  "t": "{a} so với {o} ngày"
+ },
  "a91385ae4f0f": {
   "en": "Portuguese: 10 of 10, Fully bilingual",
   "t": "Tiếng Bồ Đào Nha: 10 trên 10, Song ngữ hoàn toàn"
@@ -5614,6 +5882,10 @@
  "aabee28bec46": {
   "en": "August 3, 2026",
   "t": "3 tháng 8 năm 2026"
+ },
+ "aad754dbe1a8": {
+  "en": "in view",
+  "t": "đang xem"
  },
  "aaf4de45da01": {
   "en": "This is a Christian fireplace! (╯°□°)╯",
@@ -5895,6 +6167,10 @@
   "en": "Deo in 2017 in a graduation cap and gown with a medal, raising a beer",
   "t": "Deo năm 2017 mặc áo choàng và đội mũ tốt nghiệp, đeo huy chương, nâng cốc bia"
  },
+ "b2589a337b11": {
+  "en": "These days cluster in some seasons more than others, so a difference here is a hint, not proof of a cause.",
+  "t": "Những ngày này tập trung ở một số mùa hơn các mùa khác, nên khác biệt ở đây chỉ là gợi ý, không phải bằng chứng về nguyên nhân."
+ },
  "b29157b87cd1": {
   "en": "Bands I still want to see live.",
   "t": "Những ban nhạc tôi vẫn muốn xem trực tiếp."
@@ -5902,6 +6178,10 @@
  "b297cb01e994": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022"
+ },
+ "b2bb7604c825": {
+  "en": "Metric",
+  "t": "Chỉ số"
  },
  "b2d879e09416": {
   "en": "Plantera",
@@ -5922,6 +6202,10 @@
  "b36cbebb0440": {
   "en": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">Yêu thích FITM 2025</span>"
+ },
+ "b38a99fe0694": {
+  "en": "one rises as the other falls",
+  "t": "cái này tăng thì cái kia giảm"
  },
  "b3fed1091f2c": {
   "en": "d4",
@@ -5987,6 +6271,10 @@
   "en": "60 h",
   "t": "60 h"
  },
+ "b553840edbe9": {
+  "en": " B · Ride nights ",
+  "t": "B · Đêm đạp xe"
+ },
  "b588aca7bb99": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!)"
@@ -6022,6 +6310,10 @@
  "b6c015d12e1b": {
   "en": "Wins",
   "t": "Thắng"
+ },
+ "b6c935d4f3c7": {
+  "en": "min",
+  "t": "phút"
  },
  "b6cdc0302c44": {
   "en": "Enlarge: Stroller time",
@@ -6114,6 +6406,10 @@
  "b9af5469788b": {
   "en": "The clock is ticking on my 💀 Death tab.",
   "t": "Đồng hồ đang chạy trên 💀 thẻ Cái chết của tôi."
+ },
+ "b9dd1e7cf0fb": {
+  "en": "Stress score",
+  "t": "Điểm căng thẳng"
  },
  "ba01865809b3": {
   "en": "Back to Concert",
@@ -6295,6 +6591,10 @@
   "en": "Enlarge: But don't wanna go to sleep",
   "t": "Phóng to: Nhưng không muốn đi ngủ"
  },
+ "c0ee32d825d6": {
+  "en": "week",
+  "t": "tuần"
+ },
  "c0f00b81ade6": {
   "en": "The true churrasco is <strong>picanha</strong> roasted on the <em>espeto</em>, the sword-like skewer, upon a <em>churrasqueira giratória</em>, the wall-style grill that turns the meat without rest.",
   "t": "Churrasco đích thực là <strong>picanha</strong> nướng trên <em>espeto</em>, chiếc xiên như thanh kiếm, trên một <em>churrasqueira giratória</em>, lò nướng kiểu tường xoay thịt không ngừng nghỉ."
@@ -6326,6 +6626,10 @@
  "c1596106e469": {
   "en": "Hanging with a Peeta look alike",
   "t": "Chơi với một bạn trông giống Peeta"
+ },
+ "c169b50f6151": {
+  "en": " D · Seasons ",
+  "t": "D · Các mùa"
  },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -6415,6 +6719,10 @@
   "en": "Rauw Alejandro",
   "t": "Rauw Alejandro"
  },
+ "c4e423204c8a": {
+  "en": "Ride nights",
+  "t": "Đêm đạp xe"
+ },
  "c5352fbe59ff": {
   "en": "Next routine",
   "t": "Điệu nhảy sau"
@@ -6446,6 +6754,10 @@
  "c5d40b2b76f6": {
   "en": "\nI've always been fascinated by creating music. But not only am I tone deaf, I also struggle with reading sheet music,\n          and even with something as simple as <a href=\"https://www.image-line.com/fl-studio/\" data-astro-cid-j7pv25f6=\"\">FL Studio</a> and\n<a href=\"https://www.virtualdj.com/\" data-astro-cid-j7pv25f6=\"\">VirtualDJ</a>. I remember messing with them a lot, but never making progress, or\n          just making utter terrible shit. All I've been able to do by myself is fade songs in and out, fix their EQ and such in\n<a href=\"https://www.audacityteam.org/\" data-astro-cid-j7pv25f6=\"\">Audacity</a>. Never true music creation.\n",
   "t": "Tôi luôn mê việc sáng tác nhạc. Nhưng không chỉ mù âm, tôi còn chật vật với việc đọc bản nhạc, và thậm chí với thứ đơn giản như <a href=\"https://www.image-line.com/fl-studio/\" data-astro-cid-j7pv25f6=\"\">FL Studio</a> và <a href=\"https://www.virtualdj.com/\" data-astro-cid-j7pv25f6=\"\">VirtualDJ</a>. Tôi nhớ mình đã nghịch chúng rất nhiều, nhưng chẳng bao giờ tiến bộ, hoặc chỉ làm ra thứ dở tệ kinh khủng. Tất cả những gì tôi tự làm được là fade bài hát vào ra, chỉnh EQ các kiểu trong <a href=\"https://www.audacityteam.org/\" data-astro-cid-j7pv25f6=\"\">Audacity</a>. Chưa bao giờ thật sự sáng tác nhạc."
+ },
+ "c6129321a1a0": {
+  "en": "clearly related",
+  "t": "liên quan rõ"
  },
  "c63ae6dd4fc9": {
   "en": "M",
@@ -6519,9 +6831,17 @@
   "en": " <span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> Space &amp; flight: 1,302 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> Không gian &amp; bay: 1,302 h"
  },
+ "c8a57159c492": {
+  "en": "How my nights after a ride compare with the rest is in the <a href=\"#biomarkers\">Biomarker Lab</a>, under Hearth.",
+  "t": "Những đêm sau khi đạp xe của tôi so với các đêm khác ra sao có trong <a href=\"#biomarkers\">Phòng thí nghiệm chỉ số sinh học</a>, thuộc Mái ấm."
+ },
  "c8b4c761e082": {
   "en": " 1,302 h ",
   "t": "1,302 h"
+ },
+ "c8e2de313adf": {
+  "en": "Next stop: {place} · {distance} to go",
+  "t": "Điểm dừng tiếp theo: {place} · còn {distance}"
  },
  "c92499e3e7ab": {
   "en": "8 games",
@@ -6691,6 +7011,10 @@
   "en": "Potato",
   "t": "Khoai tây"
  },
+ "cdde4f20ba31": {
+  "en": "Steps",
+  "t": "Số bước"
+ },
  "cde507abe00d": {
   "en": "67 days",
   "t": "67 ngày"
@@ -6755,6 +7079,10 @@
   "en": "Never wrestle with pigs. You both get dirty, and the pig likes it. <span class=\"newest\">New</span>",
   "t": "Đừng bao giờ vật lộn với lợn. Cả hai đều bẩn, mà con lợn lại thích thế. <span class=\"newest\">Mới</span>"
  },
+ "cfd46a36afd8": {
+  "en": "Across",
+  "t": "Trục ngang"
+ },
  "cfd9334fce91": {
   "en": "Revenant (1999)",
   "t": "Revenant (1999)"
@@ -6798,6 +7126,10 @@
  "d09bdd281dfa": {
   "en": "Princess Fluffy of Guamá",
   "t": "Công chúa Fluffy xứ Guamá"
+ },
+ "d0c12b6b5196": {
+  "en": "REM sleep",
+  "t": "Ngủ REM"
  },
  "d1230224faff": {
   "en": "Campaign #2",
@@ -6858,6 +7190,14 @@
  "d28817938afa": {
   "en": "Colorado",
   "t": "Colorado"
+ },
+ "d28fc72baa36": {
+  "en": "The body is a machine, and like any other machine, it needs to be cared for. These are its gauges: what my watch has logged every day since April 2023. Slice them any way you like.",
+  "t": "Cơ thể là một cỗ máy, và như mọi cỗ máy khác, nó cần được chăm sóc. Đây là các đồng hồ đo của nó: những gì đồng hồ của tôi ghi lại mỗi ngày từ tháng 4 năm 2023. Cứ cắt lát tùy thích."
+ },
+ "d28fea415d19": {
+  "en": "middle value",
+  "t": "giá trị giữa"
  },
  "d29b1a0ebf5e": {
   "en": "Lukewarm",
@@ -7135,6 +7475,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#19: </span>Best of the Worst: A Very Cannon Christmas II",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#19: </span>Best of the Worst: A Very Cannon Christmas II"
  },
+ "d970d5b83c91": {
+  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Rides come from the\n<a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Cycling</a> tab. Dates and numbers only: no places.\n",
+  "t": "Từ Pixel Watch của tôi, qua Google Health, từ tháng 4 năm 2023 đến tháng 11 năm 2026 (xuất ngày 2026-11-26). Các chuyến đạp xe lấy từ thẻ\n<a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Đạp xe</a>. Chỉ có ngày và số: không có địa điểm."
+ },
  "d988b45e783b": {
   "en": "Pick a routine",
   "t": "Chọn một điệu nhảy"
@@ -7158,6 +7502,10 @@
  "d9c4aa395b07": {
   "en": "Enlarge: Captain Bidu: Bidu wearing a blue military officer cap with a gold winged badge",
   "t": "Phóng to: Thuyền trưởng Bidu: Bidu đội mũ sĩ quan quân đội màu xanh có huy hiệu đôi cánh vàng"
+ },
+ "d9defa2c4cc3": {
+  "en": "loosely related",
+  "t": "liên quan ít"
  },
  "d9ecc35c78dd": {
   "en": "Scream Collector",
@@ -7218,6 +7566,10 @@
  "dba7601ff7be": {
   "en": "Symphony of Seasons",
   "t": "Symphony of Seasons"
+ },
+ "dbf87a14e9e7": {
+  "en": "{a} to {b} (the middle 60%)",
+  "t": "{a} đến {b} (60% ở giữa)"
  },
  "dbf97b660ed1": {
   "en": "Eat sleep poop repeat",
@@ -7427,6 +7779,10 @@
   "en": "961 h",
   "t": "961 h"
  },
+ "e2ce44da53e6": {
+  "en": "Sleep score",
+  "t": "Điểm giấc ngủ"
+ },
  "e2fdc09c46f0": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez"
@@ -7446,6 +7802,10 @@
  "e3b82040565b": {
   "en": "Now",
   "t": "Hiện tại"
+ },
+ "e3cb8bd6bf09": {
+  "en": "Bedtime",
+  "t": "Giờ đi ngủ"
  },
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
@@ -7566,6 +7926,10 @@
  "e76e281ed9f1": {
   "en": "Back to the starting picture",
   "t": "Quay lại ảnh ban đầu"
+ },
+ "e7be4dbaee78": {
+  "en": "Metrics to show",
+  "t": "Các chỉ số hiển thị"
  },
  "e7d965113795": {
   "en": "Kilograms of beef grilled: 295",
@@ -7855,6 +8219,10 @@
   "en": "141 h",
   "t": "141 h"
  },
+ "f281a799c9fd": {
+  "en": "r = {r} · {n} days · {strength}",
+  "t": "r = {r} · {n} ngày · {strength}"
+ },
  "f2a63e1c444a": {
   "en": "Photogenic",
   "t": "Ăn ảnh"
@@ -7914,6 +8282,14 @@
  "f42120fee221": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Placeholder TV show 23 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 23: </span> Phim bộ tạm 23"
+ },
+ "f4278970b6fb": {
+  "en": "Not enough days in these filters. Try more years or all seasons.",
+  "t": "Không đủ ngày với các bộ lọc này. Thử thêm năm hoặc chọn tất cả các mùa."
+ },
+ "f437bf56eca8": {
+  "en": "Ways to see the numbers",
+  "t": "Các cách xem số liệu"
  },
  "f4853c881e96": {
   "en": "{n} more to earn",
@@ -8151,6 +8527,10 @@
   "en": "The Book of Mormon",
   "t": "The Book of Mormon"
  },
+ "fc10303017c5": {
+  "en": "Skin temperature",
+  "t": "Nhiệt độ da"
+ },
  "fc3c2b787144": {
   "en": "Lyric Opera of Chicago",
   "t": "Lyric Opera of Chicago"
@@ -8223,6 +8603,10 @@
   "en": "Practice skin. Draw a tattoo on it with the tattoo pen.",
   "t": "Da tập. Vẽ một hình xăm lên đó bằng bút xăm."
  },
+ "feda6ec3fdc1": {
+  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>After a ride",
+  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>Sau khi đạp xe"
+ },
  "fee0589986c6": {
   "en": "The Stanley Parable",
   "t": "The Stanley Parable"
@@ -8230,6 +8614,10 @@
  "feea42718962": {
   "en": "Enlarge: Walk time or more like I stay in the stroller",
   "t": "Phóng to: Giờ đi dạo, hay đúng hơn là tôi ngồi yên trong xe đẩy"
+ },
+ "ff1ee226e141": {
+  "en": " That's farther than Fargo, ND to Sioux Falls (230 mi as the crow flies).  Next stop: Chicago, 18 mi to go. ",
+  "t": "Xa hơn quãng đường từ Fargo, ND đến Sioux Falls (230 mi theo đường chim bay). Điểm dừng tiếp theo: Chicago, còn 18 mi."
  },
  "ff3ea3bec182": {
   "en": "Malaysia",

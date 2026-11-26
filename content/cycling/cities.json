@@ -1,0 +1,90 @@
+{
+ "_about": "Where the Cycling tab's planet starts (start) and the cities it compares the riding to, with their coordinates (city centres, public). Distances are worked out as the crow flies from the start.",
+ "start": {
+  "name": "Fargo, ND",
+  "lat": 46.8772,
+  "lon": -96.7898
+ },
+ "cities": [
+  {
+   "name": "Grand Forks",
+   "lat": 47.9253,
+   "lon": -97.0329
+  },
+  {
+   "name": "Bismarck",
+   "lat": 46.8083,
+   "lon": -100.7837
+  },
+  {
+   "name": "Minneapolis",
+   "lat": 44.9778,
+   "lon": -93.265
+  },
+  {
+   "name": "Sioux Falls",
+   "lat": 43.5446,
+   "lon": -96.7311
+  },
+  {
+   "name": "Chicago",
+   "lat": 41.8781,
+   "lon": -87.6298
+  },
+  {
+   "name": "Denver",
+   "lat": 39.7392,
+   "lon": -104.9903
+  },
+  {
+   "name": "Toronto",
+   "lat": 43.6532,
+   "lon": -79.3832
+  },
+  {
+   "name": "Dallas",
+   "lat": 32.7767,
+   "lon": -96.797
+  },
+  {
+   "name": "Seattle",
+   "lat": 47.6062,
+   "lon": -122.3321
+  },
+  {
+   "name": "New York",
+   "lat": 40.7128,
+   "lon": -74.006
+  },
+  {
+   "name": "Los Angeles",
+   "lat": 34.0522,
+   "lon": -118.2437
+  },
+  {
+   "name": "Miami",
+   "lat": 25.7617,
+   "lon": -80.1918
+  },
+  {
+   "name": "Mexico City",
+   "lat": 19.4326,
+   "lon": -99.1332
+  },
+  {
+   "name": "London",
+   "lat": 51.5074,
+   "lon": -0.1278
+  },
+  {
+   "name": "São Paulo",
+   "lat": -23.5505,
+   "lon": -46.6333
+  },
+  {
+   "name": "Tokyo",
+   "lat": 35.6762,
+   "lon": 139.6503
+  }
+ ]
+}

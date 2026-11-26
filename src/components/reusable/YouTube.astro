@@ -6,12 +6,14 @@
  * doesn't pause it. Below it, a "Watch on YouTube" link. Made reusable from the Aviation tab's video (#276).
  *
  *   <YouTube id="QprnoS8PatE" title="Capt. Deovandski – Flight Experience Singapore" />
- *   <YouTube id="Ez7ppSYdJmI" title="Ridin' with Peeta" short />
+ *   <YouTube id="Ez7ppSYdJmI" title="Ridin' with Peeta" short ratio="1:1" />
  *
  * Props:
  *   id     the video id: QprnoS8PatE in https://youtu.be/QprnoS8PatE, or Ez7ppSYdJmI in https://youtube.com/shorts/Ez7ppSYdJmI.
  *   title  the video's name: shown on the play button, and the player's title.
- *   short  a YouTube Short: 9:16, at most --yt-short-width wide (20rem), centred. Default false.
+ *   short  a YouTube Short: 9:16, at most --yt-short-width wide (20rem), centred, and its link goes to /shorts/. Default false.
+ *   ratio  the frame's shape: '16:9', '9:16' or '1:1' (square, at most --yt-square-width wide, 24rem, centred).
+ *          Default: '9:16' for a Short, else '16:9'. A Short in a square frame plays with bars at the sides.
  *   play   the play button's name for screen readers; {title} is filled in. Default "Play video: {title}".
  *   note   the small line under the title. Default "Plays from YouTube when you click".
  *   link   the link's text under the video (empty: no link). Default "Watch on YouTube".
@@ -25,16 +27,17 @@ interface Props {
   id: string;
   title: string;
   short?: boolean;
+  ratio?: '16:9' | '9:16' | '1:1';
   play?: string;
   note?: string;
   link?: string;
   class?: string;
 }
-const { id, title, short = false, play = 'Play video: {title}', note = 'Plays from YouTube when you click', link = 'Watch on YouTube', class: className } = Astro.props;
+const { id, title, short = false, ratio = short ? '9:16' : '16:9', play = 'Play video: {title}', note = 'Plays from YouTube when you click', link = 'Watch on YouTube', class: className } = Astro.props;
 const href = short ? `https://youtube.com/shorts/${id}` : `https://youtu.be/${id}`;
 ---
 
-<div class:list={['yt-embed', { 'yt-embed--short': short }, className]}>
+<div class:list={['yt-embed', { 'yt-embed--tall': ratio === '9:16', 'yt-embed--square': ratio === '1:1' }, className]}>
   <div class="yt" data-yt={id} data-title={title}>
     <button type="button" class="yt__play" aria-label={play.replace('{title}', title)}>
       <span class="yt__icon" aria-hidden="true">▶</span>
@@ -47,7 +50,8 @@ const href = short ? `https://youtube.com/shorts/${id}` : `https://youtu.be/${id
 
 <style>
   .yt-embed { --_accent: var(--yt-accent, #39c5bb); max-width: var(--yt-width, 48rem); }
-  .yt-embed--short { max-width: var(--yt-short-width, 20rem); margin-inline: auto; text-align: center; }
+  .yt-embed--tall { max-width: var(--yt-short-width, 20rem); margin-inline: auto; text-align: center; }
+  .yt-embed--square { max-width: var(--yt-square-width, 24rem); margin-inline: auto; text-align: center; }
   .yt {
     position: relative;
     aspect-ratio: 16 / 9;
@@ -58,7 +62,8 @@ const href = short ? `https://youtube.com/shorts/${id}` : `https://youtu.be/${id
       linear-gradient(180deg, #0d1638, #070b1f);
     border: 1px solid color-mix(in srgb, var(--_accent) 35%, transparent);
   }
-  .yt-embed--short .yt { aspect-ratio: 9 / 16; }
+  .yt-embed--tall .yt { aspect-ratio: 9 / 16; }
+  .yt-embed--square .yt { aspect-ratio: 1 / 1; }
   .yt__play {
     position: absolute;
     inset: 0;

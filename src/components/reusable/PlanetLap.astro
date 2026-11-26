@@ -1,11 +1,14 @@
 ---
 /**
- * PlanetLap: how far around a planet a distance goes, drawn like the game Reus: the planet cut in half and seen side
- * on, in 2D. Its layers (crust, mantle, outer and inner core) show on the cut, its surface (oceans, plains, forests,
- * deserts, mountains, ice) goes round the rim, and a little cyclist rides along the top while the planet turns under
- * them. A coloured trail on the rim marks the distance covered from the start flag. Built for the Cycling tab (#276).
+ * PlanetLap: how far around a planet a distance goes, drawn like the game Reus (the planet cut in half, seen side on in
+ * 2D) and animated like an airliner's in-flight map. A little cyclist rides from the start flag to the distance, then
+ * the map keeps breathing: it zooms in close (the nearest places, the next stop), out to the region, out to the whole
+ * half planet (the far places), and back, over and over. A panel shows the next stop and how far it is, and changes
+ * with the zoom: close in it's the nearest place ahead, zoomed out a farther one. Places ahead show their distance to go.
+ * Built for the Cycling tab (#276, #278).
  *
- *   <PlanetLap distance={1250} circumference={24901} unit="mi" summary="{distance} mi: {percent} of the way around the world." />
+ *   <PlanetLap distance={551} circumference={24901} unit="mi" summary="{distance} mi: {percent} of the way around the world."
+ *     start="Fargo, ND" markers={[{ label: 'Minneapolis', distance: 214 }, { label: 'Chicago', distance: 569 }]} />
  *
  * Props:
  *   distance       how far, in the same unit as `circumference`.
@@ -13,15 +16,19 @@
  *   summary        the caption under it, also its description for screen readers. Slots: {distance}, {percent}
  *                  (of one lap, e.g. "12.3%"), {laps} (whole laps done). Filled in when the site builds, so it gets
  *                  translated with the page.
- *   replay         the replay button's text. Default "Ride it again".
- *   locale         number format for the slots. Default "en-US".
- *   surface        the biomes round the rim, one per slice, clockwise from the top: 'ocean', 'plains', 'forest',
+ *   unit           the distance unit shown on the map. Default "km".
+ *   next           the next-stop panel: {place} and {distance} slots. Default "Next stop: {place} · {distance} to go".
+ *   start          a name for the start flag, e.g. "Fargo, ND". Default: none.
+ *   markers        places along the way, as [{ label, distance }] (same unit): a labelled pin on the rim at that
+ *                  distance from the start. Default: none.
+ *   locale         number format. Default "en-US".
+ *   surface        the biomes round the rim, one per slice, clockwise from the start: 'ocean', 'plains', 'forest',
  *                  'desert', 'mountains' or 'ice'. Default: a made-up world, mostly ocean.
  *
- * It turns the planet to the distance the first time it scrolls into view (and again with the replay button).
- * Reduced motion, or no JavaScript: it simply shows where the ride ends.
- * Theme with CSS custom properties: --planet-accent (the trail and the button, #39c5bb), --planet-rider (#f5c518),
- * --planet-sky (transparent), --planet-text (#e6edf3).
+ * The drawing is made by the script (without JavaScript: just the caption). The ride starts the first time it scrolls
+ * into view, and the map only moves while it's on screen. Reduced motion: it shows where the ride ends, still.
+ * Theme with CSS custom properties: --planet-accent (the trail, #39c5bb), --planet-rider (#f5c518), --planet-sky
+ * (transparent), --planet-text (#e6edf3).
  * Reusable on purpose: no imports, safe to use several times on a page.
  */
 type Biome = 'ocean' | 'plains' | 'forest' | 'desert' | 'mountains' | 'ice';
@@ -29,7 +36,10 @@ interface Props {
   distance: number;
   circumference?: number;
   summary: string;
-  replay?: string;
+  unit?: string;
+  next?: string;
+  start?: string;
+  markers?: { label: string; distance: number }[];
   locale?: string;
   surface?: Biome[];
   class?: string;
@@ -43,126 +53,60 @@ const {
   distance,
   circumference = 40075,
   summary,
-  replay = 'Ride it again',
+  unit = 'km',
+  next = 'Next stop: {place} · {distance} to go',
+  start = '',
+  markers = [],
   locale = 'en-US',
   surface = DEFAULT_SURFACE,
   class: className,
 } = Astro.props;
 
 const turn = Math.max(0, distance) / circumference; // in laps
-const angle = turn * 360;
 const fmt = (n: number, d = 0) => new Intl.NumberFormat(locale, { maximumFractionDigits: d, minimumFractionDigits: d }).format(n);
-const pct = (turn % 1 === 0 && turn > 0 ? 100 : (turn % 1) * 100);
+const pct = turn % 1 === 0 && turn > 0 ? 100 : (turn % 1) * 100;
 const text = summary
   .replaceAll('{distance}', fmt(distance))
-  .replaceAll("{percent}", `${fmt(pct, pct > 0 && pct < 10 ? 1 : 0)}%`)
+  .replaceAll('{percent}', `${fmt(pct, pct > 0 && pct < 10 ? 1 : 0)}%`)
   .replaceAll('{laps}', fmt(Math.floor(turn)));
-
-// The drawing: the cut runs along y = CY; the planet's centre is on it, so we see the top half.
-const W = 800;
-const H = 470;
-const CX = 400;
-const CY = 440;
-const R = 330; // the surface
-const layers = [
-  { r: R - 4, fill: '#7a4a2a' }, // crust
-  { r: R - 26, fill: '#c2410c' }, // mantle
-  { r: R * 0.55, fill: '#f97316' }, // outer core
-  { r: R * 0.32, fill: '#fbbf24' }, // inner core
-];
-const BAND: Record<Biome, string> = {
-  ocean: '#2563eb',
-  plains: '#65a30d',
-  forest: '#166534',
-  desert: '#e9c46a',
-  mountains: '#78716c',
-  ice: '#e5f3ff',
-};
-const slice = 360 / surface.length;
-const rad = (deg: number) => ((deg - 90) * Math.PI) / 180; // 0° is the top, clockwise
-const at = (deg: number, r: number) => [CX + r * Math.cos(rad(deg)), CY + r * Math.sin(rad(deg))];
-// One slice of the surface band, as a ring sector.
-function sector(a0: number, a1: number, r0: number, r1: number) {
-  const [x0, y0] = at(a0, r1);
-  const [x1, y1] = at(a1, r1);
-  const [x2, y2] = at(a1, r0);
-  const [x3, y3] = at(a0, r0);
-  return `M${x0.toFixed(1)} ${y0.toFixed(1)}A${r1} ${r1} 0 0 1 ${x1.toFixed(1)} ${y1.toFixed(1)}L${x2.toFixed(1)} ${y2.toFixed(1)}A${r0} ${r0} 0 0 0 ${x3.toFixed(1)} ${y3.toFixed(1)}Z`;
-}
-// The trail: a full circle from the top, clockwise; its dash length is the distance covered.
-const TR = R + 3;
-const trailPath = `M${CX} ${CY - TR}A${TR} ${TR} 0 1 1 ${CX} ${CY + TR}A${TR} ${TR} 0 1 1 ${CX} ${CY - TR}`;
-const trailLen = 2 * Math.PI * TR;
-const shown = angle >= 360 ? 359.999 : angle % 360;
-const top = CY - R;
+const config = { distance, circumference, unit, locale, start, markers, surface };
 const clipId = `planet-cut-${Math.random().toString(36).slice(2, 8)}`;
 ---
 
-<figure class:list={['planet-lap', className]} data-planet-lap data-angle={angle} data-trail={trailLen}>
-  <svg viewBox={`0 0 ${W} ${H}`} role="img" aria-label={text}>
-    <defs>
-      <clipPath id={clipId}><rect x="0" y="0" width={W} height={CY} /></clipPath>
-    </defs>
-    <rect class="planet-lap__sky" x="0" y="0" width={W} height={CY} />
-    {[[70, 60], [160, 140], [250, 40], [560, 70], [660, 150], [730, 50], [120, 250], [700, 260]].map(([x, y]) => <circle class="planet-lap__star" cx={x} cy={y} r="1.6" />)}
-    <g clip-path={`url(#${clipId})`}>
-      {layers.map((l) => <circle cx={CX} cy={CY} r={l.r} fill={l.fill} />)}
-      <circle cx={CX} cy={CY} r={R * 0.32} fill="none" stroke="#fde68a" stroke-width="2" opacity="0.6" />
-      <g class="planet-lap__world" style={`transform-origin: ${CX}px ${CY}px; transform: rotate(${-shown}deg)`}>
-        {surface.map((b, i) => <path d={sector(i * slice, (i + 1) * slice + 0.3, R - 10, R)} fill={BAND[b]} />)}
-        {
-          surface.map((b, i) => {
-            const mid = (i + 0.5) * slice;
-            return (
-              <g transform={`rotate(${mid} ${CX} ${CY})`}>
-                {b === 'forest' && (
-                  <>
-                    <path d={`M${CX - 14} ${top}l7 -20l7 20z`} fill="#14532d" />
-                    <path d={`M${CX + 2} ${top}l7 -26l7 26z`} fill="#15803d" />
-                  </>
-                )}
-                {b === 'mountains' && (
-                  <>
-                    <path d={`M${CX - 26} ${top}l20 -38l20 38z`} fill="#57534e" />
-                    <path d={`M${CX - 12} ${top - 28}l6 -10l6 10l-3 2l-3 -2l-3 2z`} fill="#fafaf9" />
-                    <path d={`M${CX + 2} ${top}l14 -24l14 24z`} fill="#78716c" />
-                  </>
-                )}
-                {b === 'desert' && <path d={`M${CX - 22} ${top}q11 -12 22 0q11 -9 22 0z`} fill="#d4a373" />}
-                {b === 'ocean' && <path d={`M${CX - 14} ${top - 2}q4 -4 8 0t8 0t8 0`} fill="none" stroke="#93c5fd" stroke-width="2" stroke-linecap="round" />}
-                {b === 'ice' && <path d={`M${CX - 10} ${top}l4 -14l10 -4l6 18z`} fill="#f8fbff" stroke="#bfdbfe" />}
-                {b === 'plains' && <path d={`M${CX - 10} ${top}l2 -7M${CX} ${top}l1 -9M${CX + 9} ${top}l-1 -6`} stroke="#a3e635" stroke-width="2" stroke-linecap="round" />}
-              </g>
-            );
-          })
-        }
-        <path class="planet-lap__trail" d={trailPath} fill="none" stroke-width="6" stroke-linecap="round" style={`stroke-dasharray: ${((shown / 360) * trailLen).toFixed(1)} ${trailLen.toFixed(1)}`} />
-        <g class="planet-lap__flag">
-          <path d={`M${CX} ${top}v-34`} stroke="#f2f2f7" stroke-width="2.5" />
-          <path d={`M${CX} ${top - 34}h18l-5 6l5 6h-18z`} />
-        </g>
-      </g>
-    </g>
-    <path d={`M${CX - R - 30} ${CY}H${CX + R + 30}`} class="planet-lap__cut" />
-    <g transform={`translate(${CX} ${top - 2})`}><g class="planet-lap__rider">
-      <circle cx="-11" cy="-8" r="8" fill="none" stroke="#e6edf3" stroke-width="2.5" />
-      <circle cx="11" cy="-8" r="8" fill="none" stroke="#e6edf3" stroke-width="2.5" />
-      <path d="M-11 -8L-2 -20H8L11 -8M-2 -20L1 -8H-11M8 -20l-2 -4h4" fill="none" stroke="#e6edf3" stroke-width="2.2" stroke-linejoin="round" />
-      <path class="planet-lap__body" d="M-1 -22l4 -14l7 6l-1 8M3 -36l-6 8" fill="none" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
-      <circle class="planet-lap__head" cx="4" cy="-42" r="5" />
-    </g></g>
-  </svg>
-  <figcaption class="planet-lap__caption">
-    <span>{text}</span>
-    <button type="button" class="planet-lap__replay" hidden>{replay}</button>
-  </figcaption>
+<figure class:list={['planet-lap', className]} data-planet-lap data-config={JSON.stringify(config)} data-clip={clipId}>
+  <span class="planet-lap__strings" hidden data-llms-skip><span data-k="next">{next}</span></span>
+  <div class="planet-lap__stage">
+    <svg viewBox="0 0 800 400" role="img" aria-label={text}>
+      <defs>
+        <clipPath id={clipId}><rect class="planet-lap__clip" x="0" y="0" width="800" height="400" /></clipPath>
+        <linearGradient id={`${clipId}-depth`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#000" stop-opacity="0" />
+          <stop offset="1" stop-color="#000" stop-opacity="0.7" />
+        </linearGradient>
+      </defs>
+      <rect class="planet-lap__sky" x="0" y="0" width="800" height="400" />
+      {[[70, 60], [160, 40], [250, 30], [560, 50], [660, 25], [730, 70], [40, 140], [770, 150]].map(([x, y]) => <circle class="planet-lap__star" cx={x} cy={y} r="1.6" />)}
+      <g class="planet-lap__world" clip-path={`url(#${clipId})`}></g>
+      <g class="planet-lap__rider-at"><g class="planet-lap__rider">
+        <g class="planet-lap__wheel" data-at="-11 -8" transform="translate(-11 -8)"><circle r="8" /><path d="M-8 0H8M0 -8V8" /></g>
+        <g class="planet-lap__wheel" data-at="11 -8" transform="translate(11 -8)"><circle r="8" /><path d="M-8 0H8M0 -8V8" /></g>
+        <path class="planet-lap__frame" d="M-11 -8L-2 -20H8L11 -8M-2 -20L1 -8H-11M8 -20l-2 -4h4" />
+        <path class="planet-lap__body" d="M-1 -22l4 -14l7 6l-1 8M3 -36l-6 8" />
+        <circle class="planet-lap__head" cx="4" cy="-42" r="5" />
+      </g></g>
+    </svg>
+    <p class="planet-lap__hud" aria-hidden="true" hidden></p>
+  </div>
+  <figcaption class="planet-lap__caption">{text}</figcaption>
 </figure>
 
 <style>
   .planet-lap {
     --_accent: var(--planet-accent, #39c5bb);
     margin: 0;
+    container-type: inline-size;
   }
+  .planet-lap__stage { position: relative; }
   .planet-lap svg {
     display: block;
     width: 100%;
@@ -171,79 +115,252 @@ const clipId = `planet-cut-${Math.random().toString(36).slice(2, 8)}`;
   }
   .planet-lap__sky { fill: var(--planet-sky, transparent); }
   .planet-lap__star { fill: #fff; opacity: 0.55; }
-  .planet-lap__world { transform-box: view-box; }
-  .planet-lap__trail { stroke: var(--_accent); filter: drop-shadow(0 0 4px var(--_accent)); }
-  .planet-lap__flag path:last-child { fill: var(--_accent); }
-  .planet-lap__cut { stroke: rgba(255, 255, 255, 0.35); stroke-width: 2; stroke-dasharray: 6 6; }
-  .planet-lap__body { stroke: var(--planet-rider, #f5c518); }
+  .planet-lap :global(.planet-lap__trail) { stroke: var(--_accent); filter: drop-shadow(0 0 4px var(--_accent)); }
+  .planet-lap :global(.planet-lap__flag-cloth) { fill: var(--_accent); }
+  .planet-lap :global(text) {
+    font: 700 15px system-ui, sans-serif;
+    fill: var(--planet-text, #e6edf3);
+    paint-order: stroke;
+    stroke: rgba(7, 4, 13, 0.85);
+    stroke-width: 4px;
+    stroke-linejoin: round;
+  }
+  .planet-lap :global(.planet-lap__marker path) { stroke: rgba(255, 255, 255, 0.55); stroke-width: 2; stroke-dasharray: 3 3; }
+  .planet-lap :global(.planet-lap__marker circle) { fill: #fff; }
+  .planet-lap :global(.planet-lap__marker.is-passed circle) { fill: var(--_accent); }
+  .planet-lap :global(.planet-lap__marker text) { font-weight: 600; font-size: 14px; }
+  .planet-lap :global(.planet-lap__marker .planet-lap__togo) { font-weight: 500; font-size: 12px; fill: #b8c4d6; }
+  .planet-lap :global(.planet-lap__cut) { stroke: rgba(255, 255, 255, 0.35); stroke-width: 2; stroke-dasharray: 6 6; }
+  .planet-lap__wheel circle,
+  .planet-lap__wheel path,
+  .planet-lap__frame { fill: none; stroke: #e6edf3; stroke-width: 2.4; stroke-linejoin: round; }
+  .planet-lap__wheel path { stroke-width: 1.2; opacity: 0.7; }
+  .planet-lap__body { fill: none; stroke: var(--planet-rider, #f5c518); stroke-width: 5; stroke-linecap: round; stroke-linejoin: round; }
   .planet-lap__head { fill: #f0c8a8; }
-  .planet-lap.is-riding .planet-lap__rider { animation: planet-lap-bob 0.4s ease-in-out infinite alternate; }
-  @keyframes planet-lap-bob { to { transform: translateY(-3px); } }
+  /* The next-stop panel, top left like an in-flight map's. */
+  .planet-lap__hud {
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    margin: 0;
+    padding: 0.35rem 0.7rem;
+    border-radius: 10px;
+    background: rgba(7, 4, 13, 0.7);
+    border: 1px solid color-mix(in srgb, var(--_accent) 45%, transparent);
+    color: var(--planet-text, #e6edf3);
+    font-size: 0.85rem;
+    font-weight: 700;
+    pointer-events: none;
+    transition: opacity 0.4s;
+  }
+  .planet-lap__hud.is-swapping { opacity: 0; }
   .planet-lap__caption {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem 1rem;
     margin-top: 0.6rem;
     color: var(--planet-text, #e6edf3);
     font-weight: 700;
   }
-  .planet-lap__replay {
-    min-height: 2.5rem;
-    padding: 0.35rem 1rem;
-    border-radius: 999px;
-    border: 1px solid var(--_accent);
-    background: transparent;
-    color: var(--_accent);
-    font: inherit;
-    cursor: pointer;
+  /* Narrow: the drawing shrinks, so its words grow back to readable, and only the key places keep their names. */
+  @container (max-width: 520px) {
+    .planet-lap :global(svg text) { font-size: 28px; stroke-width: 6px; }
+    .planet-lap :global(.planet-lap__marker text) { font-size: 26px; }
+    .planet-lap :global(.planet-lap__marker .planet-lap__togo) { font-size: 22px; }
+    .planet-lap :global(.planet-lap__marker:not(.is-key) text) { display: none; }
+    .planet-lap__hud { position: static; display: inline-block; margin-top: 0.4rem; font-size: 0.8rem; }
   }
-  .planet-lap__replay:hover { background: color-mix(in srgb, var(--_accent) 16%, transparent); }
-  .planet-lap__replay:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
   @media (prefers-reduced-motion: reduce) {
-    .planet-lap.is-riding .planet-lap__rider { animation: none; }
+    .planet-lap__hud { transition: none; }
   }
 </style>
 
 <script>
+  type Biome = 'ocean' | 'plains' | 'forest' | 'desert' | 'mountains' | 'ice';
+  type Config = { distance: number; circumference: number; unit: string; locale: string; start: string; markers: { label: string; distance: number }[]; surface: Biome[] };
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const W = 800, VH = 400, CX = 400, TOP = 135, R0 = 250; // R0: the whole half planet fits
+  const BAND: Record<Biome, string> = { ocean: '#2563eb', plains: '#65a30d', forest: '#166534', desert: '#e9c46a', mountains: '#78716c', ice: '#e5f3ff' };
+  const DECOR: Record<Biome, (x: number, t: number) => string> = {
+    forest: (x, t) => `<path d="M${x - 14} ${t}l7 -20l7 20z" fill="#14532d"/><path d="M${x + 2} ${t}l7 -26l7 26z" fill="#15803d"/>`,
+    mountains: (x, t) => `<path d="M${x - 26} ${t}l20 -38l20 38z" fill="#57534e"/><path d="M${x - 12} ${t - 28}l6 -10l6 10l-3 2l-3 -2l-3 2z" fill="#fafaf9"/><path d="M${x + 2} ${t}l14 -24l14 24z" fill="#78716c"/>`,
+    desert: (x, t) => `<path d="M${x - 22} ${t}q11 -12 22 0q11 -9 22 0z" fill="#d4a373"/>`,
+    ocean: (x, t) => `<path d="M${x - 14} ${t - 2}q4 -4 8 0t8 0t8 0" fill="none" stroke="#93c5fd" stroke-width="2" stroke-linecap="round"/>`,
+    ice: (x, t) => `<path d="M${x - 10} ${t}l4 -14l10 -4l6 18z" fill="#f8fbff" stroke="#bfdbfe"/>`,
+    plains: (x, t) => `<path d="M${x - 10} ${t}l2 -7M${x} ${t}l1 -9M${x + 9} ${t}l-1 -6" stroke="#a3e635" stroke-width="2" stroke-linecap="round"/>`,
+  };
+  const esc = (s: string) => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]!);
+  const ease = (k: number) => (k < 0.5 ? 4 * k * k * k : 1 - (-2 * k + 2) ** 3 / 2);
+  // The planet's radius that shows `reach` degrees either side of the rider (90° or more: the whole half planet).
+  const rOf = (reach: number) => (reach >= 90 ? R0 : Math.min(200000, Math.max(R0, 360 / Math.sin((reach * Math.PI) / 180))));
+
   document.querySelectorAll<HTMLElement>('[data-planet-lap]').forEach((root) => {
+    const cfg: Config = JSON.parse(root.dataset.config!);
+    const svg = root.querySelector('svg')!;
     const world = root.querySelector<SVGGElement>('.planet-lap__world')!;
-    const trail = root.querySelector<SVGPathElement>('.planet-lap__trail')!;
-    const button = root.querySelector<HTMLButtonElement>('.planet-lap__replay')!;
-    const angle = Number(root.dataset.angle) || 0;
-    const len = Number(root.dataset.trail) || 1;
-    if (reduced || angle <= 0) return; // the drawing already shows where the ride ends
-    button.hidden = false;
-    // Show the planet at the angle `a` (degrees): turn it back under the rider and grow the trail.
-    const show = (a: number) => {
-      const lap = a >= 360 && a % 360 === 0 ? 359.999 : a % 360;
-      world.style.transform = `rotate(${-lap}deg)`;
-      trail.style.strokeDasharray = `${((lap / 360) * len).toFixed(1)} ${len.toFixed(1)}`;
+    const clip = root.querySelector<SVGRectElement>('.planet-lap__clip')!;
+    const riderAt = root.querySelector<SVGGElement>('.planet-lap__rider-at')!;
+    const wheels = [...root.querySelectorAll<SVGGElement>('.planet-lap__wheel')];
+    const hud = root.querySelector<HTMLElement>('.planet-lap__hud')!;
+    const nextText = root.querySelector('[data-k="next"]')?.textContent ?? 'Next stop: {place} · {distance} to go';
+    const depthId = `${root.dataset.clip}-depth`;
+    const nf = new Intl.NumberFormat(cfg.locale, { maximumFractionDigits: 0 });
+    const toDeg = (d: number) => (Math.max(0, d) / cfg.circumference) * 360;
+    const end = toDeg(cfg.distance);
+    const endShown = end >= 360 ? 359.999 : end;
+    const marks = cfg.markers.map((m) => ({ ...m, deg: toDeg(m.distance) })).sort((a, b) => a.deg - b.deg);
+    const slice = 360 / cfg.surface.length;
+    const biomeAt = (deg: number) => cfg.surface[Math.floor((((deg % 360) + 360) % 360) / slice)];
+    riderAt.setAttribute('transform', `translate(${CX} ${TOP - 2})`);
+
+    // The zoom tiers, as how far either side of the rider the map reaches (degrees of planet): close (back to the flag,
+    // ahead to the next place), region (a few places ahead), and the whole half planet.
+    const ahead = marks.filter((m) => m.deg > endShown);
+    const closeReach = Math.max(endShown, ahead[0] ? ahead[0].deg - endShown : 0, 0.05) * 1.15;
+    const regionReach = Math.min(89, Math.max(closeReach * 3, ahead[2] ? (ahead[2].deg - endShown) * 1.1 : 0));
+    const tiers = [closeReach, regionReach, 90];
+    // The place the next-stop panel names at each zoom: the nearest ahead close in, then the farthest one in view.
+    const featured = (reach: number) => {
+      if (reach <= closeReach * 1.01) return ahead[0];
+      const inView = ahead.filter((m) => m.deg - endShown <= reach * 0.92);
+      return inView[inView.length - 1] ?? ahead[0];
     };
-    let raf = 0;
-    function ride() {
-      cancelAnimationFrame(raf);
-      const ms = Math.min(6000, 1800 + angle * 6); // longer rides take a little longer to replay
-      const t0 = performance.now();
-      root.classList.add('is-riding');
-      const step = (now: number) => {
-        const k = Math.min(1, (now - t0) / ms);
-        const eased = 1 - (1 - k) ** 3;
-        show(angle * eased);
-        if (k < 1) raf = requestAnimationFrame(step);
-        else root.classList.remove('is-riding');
-      };
-      show(0);
-      raf = requestAnimationFrame(step);
+
+    // Draws the map with the rider `a` degrees round the planet, at radius R (the zoom).
+    function draw(a: number, R: number, star?: { label: string }) {
+      const CY = TOP + R;
+      const rad = (deg: number) => ((deg - 90) * Math.PI) / 180;
+      const at = (deg: number, r: number) => [CX + r * Math.cos(rad(deg)), CY + r * Math.sin(rad(deg))];
+      const half = R > 420 ? (Math.asin(420 / R) * 180) / Math.PI : 180;
+      clip.setAttribute('height', String(Math.min(CY, VH)));
+      const out: string[] = [];
+      // Layers: crust, mantle, outer and inner core; zoomed in, a shade of depth under the horizon.
+      for (const [r, fill] of [[R - 4, '#7a4a2a'], [R - 26, '#c2410c'], [R * 0.55, '#f97316'], [R * 0.32, '#fbbf24']] as [number, string][])
+        out.push(`<circle cx="${CX}" cy="${CY}" r="${r.toFixed(1)}" fill="${fill}"/>`);
+      if (CY > VH) out.push(`<rect x="0" y="${TOP}" width="${W}" height="${VH - TOP}" fill="url(#${depthId})"/>`);
+      // The surface band, in slices, where it can be seen (a place's screen angle is its world angle minus a).
+      const from = half >= 180 ? a - 180 : a - half;
+      const to = half >= 180 ? a + 180 : a + half;
+      for (let w0 = from; w0 < to; ) {
+        const w1 = Math.min(to, (Math.floor(w0 / slice + 1e-9) + 1) * slice);
+        const s0 = w0 - a, s1 = w1 - a + 0.05;
+        const [x0, y0] = at(s0, R), [x1, y1] = at(s1, R), [x2, y2] = at(s1, R - 10), [x3, y3] = at(s0, R - 10);
+        const big = s1 - s0 > 180 ? 1 : 0;
+        out.push(`<path d="M${x0.toFixed(1)} ${y0.toFixed(1)}A${R} ${R} 0 ${big} 1 ${x1.toFixed(1)} ${y1.toFixed(1)}L${x2.toFixed(1)} ${y2.toFixed(1)}A${R - 10} ${R - 10} 0 ${big} 0 ${x3.toFixed(1)} ${y3.toFixed(1)}Z" fill="${BAND[biomeAt(w0 + 1e-6)]}"/>`);
+        w0 = w1;
+      }
+      // Decorations about every 46 px along the rim, fixed to the world, so they slide by as it turns.
+      const step = Math.max(slice / 3, ((46 / R) * 180) / Math.PI);
+      for (let w = Math.ceil(from / step) * step, n = 0; w <= to && n < 500; w += step, n++)
+        out.push(`<g transform="rotate(${(w - a).toFixed(4)} ${CX} ${CY})">${DECOR[biomeAt(w)](CX, TOP)}</g>`);
+      // The trail, from the flag to the rider.
+      const tr = R + 3;
+      const back = Math.min(a, half >= 180 ? 359.999 : half + 2);
+      if (back > 0) {
+        const [x0, y0] = at(-back, tr);
+        out.push(`<path class="planet-lap__trail" d="M${x0.toFixed(1)} ${y0.toFixed(1)}A${tr} ${tr} 0 ${back > 180 ? 1 : 0} 1 ${CX} ${(CY - tr).toFixed(1)}" fill="none" stroke-width="6" stroke-linecap="round"/>`);
+      }
+      // The flag, where the ride started.
+      if (a <= half + 2 || half >= 180)
+        out.push(`<g transform="rotate(${(-a).toFixed(4)} ${CX} ${CY})"><path d="M${CX} ${TOP}v-34" stroke="#f2f2f7" stroke-width="2.5"/><path class="planet-lap__flag-cloth" d="M${CX} ${TOP - 34}h18l-5 6l5 6h-18z"/>${cfg.start ? `<text x="${CX}" y="${TOP - 42}" text-anchor="middle">${esc(cfg.start)}</text>` : ''}</g>`);
+      // Places in view: a pin, and the name (the ones ahead with the distance to go) where there's room: the last
+      // place passed, the next one and the one the panel names first, then the rest, on one of two rows, at least
+      // ~90 px apart; a name that won't fit keeps just its pin.
+      const inView = marks.filter((m) => Math.abs(m.deg - a) <= half && m.deg > 0);
+      const lastPassed = [...inView].reverse().find((m) => m.deg <= a);
+      const nextUp = inView.find((m) => m.deg > a);
+      const here = (a / 360) * cfg.circumference;
+      const px = (m: { deg: number }) => at(m.deg - a, R)[0];
+      const rows: number[][] = [[], []];
+      const placed = new Map<(typeof marks)[number], number>();
+      const order = [...new Set([lastPassed, nextUp, star && inView.find((m) => m.label === star.label), ...inView])].filter(Boolean) as typeof marks;
+      for (const m of order) {
+        const x = px(m);
+        const row = rows.findIndex((r) => r.every((o) => Math.abs(o - x) > 90));
+        if (row >= 0) {
+          rows[row].push(x);
+          placed.set(m, row);
+        }
+      }
+      for (const m of inView) {
+        const passed = m.deg <= a;
+        const row = placed.get(m);
+        const h = 46 + (row ?? 0) * 34;
+        const key = m === lastPassed || m === nextUp;
+        const label = row === undefined ? '' : `<text x="${CX}" y="${TOP - h - 10}" text-anchor="middle">${esc(m.label)}</text>${passed ? '' : `<text class="planet-lap__togo" x="${CX}" y="${TOP - h - 26}" text-anchor="middle">${nf.format(m.distance - here)} ${esc(cfg.unit)}</text>`}`;
+        out.push(`<g class="planet-lap__marker${passed ? ' is-passed' : ''}${key ? ' is-key' : ''}" transform="rotate(${(m.deg - a).toFixed(4)} ${CX} ${CY})"><path d="M${CX} ${TOP}v${-h}"/><circle cx="${CX}" cy="${TOP - h}" r="4"/>${label}</g>`);
+      }
+      if (CY <= VH) out.push(`<path class="planet-lap__cut" d="M${CX - R - 30} ${CY}H${CX + R + 30}"/>`);
+      world.innerHTML = out.join('');
     }
-    button.addEventListener('click', ride);
-    const io = new IntersectionObserver((entries) => {
-      if (!entries[0].isIntersecting) return;
-      io.disconnect();
-      ride();
-    }, { threshold: 0.4 });
-    io.observe(root);
+
+    function setHud(reach: number) {
+      const m = featured(reach);
+      if (!m) return void (hud.hidden = true);
+      const txt = nextText.replace('{place}', m.label).replace('{distance}', `${nf.format(m.distance - cfg.distance)} ${cfg.unit}`);
+      if (hud.dataset.text === txt) return;
+      hud.dataset.text = txt;
+      hud.hidden = false;
+      if (reduced || !hud.textContent) return void (hud.textContent = txt);
+      hud.classList.add('is-swapping');
+      setTimeout(() => {
+        hud.textContent = hud.dataset.text ?? txt;
+        hud.classList.remove('is-swapping');
+      }, 400);
+    }
+
+    // Still: where the ride ends, zoomed close.
+    if (reduced) {
+      draw(endShown, rOf(closeReach), featured(closeReach));
+      setHud(closeReach);
+      return;
+    }
+
+    // Moving: the ride (6 to 12 s, the zoom following the rider), then the zoom cycle, for as long as it's on screen.
+    const RIDE = Math.min(12000, 6000 + endShown * 40);
+    const HOLD = 4500, MOVE = 3200;
+    const cycle = [0, 1, 2, 1]; // close, region, whole, region, close…
+    let running = false, raf = 0, last = 0, elapsed = 0;
+    function frame(now: number) {
+      if (!running) return;
+      elapsed += last ? Math.min(100, now - last) : 0;
+      last = now;
+      let a: number, R: number, reach: number;
+      if (elapsed < RIDE) {
+        a = endShown * ease(elapsed / RIDE);
+        // Keep the flag in the picture, and the next place once it's near.
+        const fit = Math.max(a, ahead[0] && a > endShown * 0.7 ? ahead[0].deg - a : 0, 0.05) * 1.3;
+        R = rOf(Math.min(fit, 90));
+        reach = closeReach;
+      } else {
+        a = endShown;
+        const t = elapsed - RIDE;
+        const span = HOLD + MOVE;
+        const i = Math.floor(t / span);
+        const into = t - i * span;
+        const fromTier = tiers[cycle[i % cycle.length]];
+        const toTier = tiers[cycle[(i + 1) % cycle.length]];
+        const k = into < HOLD ? 0 : ease((into - HOLD) / MOVE);
+        // Zoom in log space, so it glides at the same pace at every scale.
+        R = Math.exp(Math.log(rOf(fromTier)) * (1 - k) + Math.log(rOf(toTier)) * k);
+        reach = k < 0.5 ? fromTier : toTier;
+      }
+      draw(a, R, featured(reach));
+      setHud(reach);
+      const spin = ((elapsed / 5) % 360).toFixed(1);
+      for (const w of wheels) w.setAttribute('transform', `translate(${w.dataset.at}) rotate(${spin})`);
+      raf = requestAnimationFrame(frame);
+    }
+    draw(0, rOf(0.05));
+    new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting && !running) {
+          running = true;
+          last = 0;
+          raf = requestAnimationFrame(frame);
+        } else if (!entries[0].isIntersecting) {
+          running = false;
+          cancelAnimationFrame(raf);
+        }
+      },
+      { threshold: 0.2 },
+    ).observe(svg);
   });
 </script>
