@@ -66,7 +66,7 @@ tab's bars, and explained in its footnote.
 Claude can do steps 5 and 6: send it the unzipped export's exercise files (the `exercise-*.json` files, or the Google
 Fit `All Sessions` folder), not the whole archive.
 
-## Ideas for later
+## Sleep and heart rate
 
-The same Takeout export also has sleep and heart rate. With them the tab could show, for example, sleep on ride days
-against days off, or what time of day the rides happen (the start hour is already in `rides.json`).
+The same export's sleep and heart rate are on the Biomarker Lab tab (Hearth), with the nights after a ride marked:
+see [content/biomarkers/README.md](../biomarkers/README.md).

@@ -1,0 +1,654 @@
+---
+/**
+ * MetricLab: years of daily numbers (heart rate, sleep, steps…) to slice and dice in five views, under one row of
+ * filters (years, season, weekdays or weekends, days after an "event" such as a bike ride):
+ *   A. Timeline   one small chart per metric; hover one and every chart shows the same day, week or month.
+ *   B. Event      the day after an event against every other day: median and middle half, and the difference.
+ *   C. Calendar   one square per day, one row per year, coloured by a metric; event days outlined.
+ *   D. Seasons    month by month, one line per year.
+ *   E. Compare    any metric against any other, one dot per day, with a trend line and r.
+ * Built for the Biomarker Lab tab (#278) from a prototype; the data loads only when the lab is first shown.
+ *
+ *   <MetricLab
+ *     id="bio"
+ *     src={url('/biomarkers.json')}
+ *     hash="#biomarkers"
+ *     metrics={[{ key: 'rhr', label: 'Resting heart rate', unit: 'bpm', decimals: 1 },
+ *               { key: 'sleepMin', label: 'Sleep', format: 'duration' },
+ *               { key: 'bedH', label: 'Bedtime', format: 'clock' }]}
+ *     event={{ view: 'Ride nights', day: 'ride day', after: 'After a ride', other: 'Other nights', value: 'Rode {n} mi' }}
+ *     defaults={{ timeline: ['rhr', 'sleepMin'], calendar: 'rhr', seasons: 'rhr', x: 'rhr', y: 'sleepMin' }}
+ *   />
+ *
+ * Props:
+ *   id        prefix for the element ids (unique on the page).
+ *   src       URL of the data: { "dates": ["YYYY-MM-DD", …], "<key>": [number|null, …] per metric, "event": [number|0, …] }.
+ *             Every array has one entry per date. event > 0 marks an event day (its number shows in the calendar tooltip).
+ *   metrics   [{ key, label, unit?, decimals? (default 0), format? }] in the order shown. format: 'number' (default),
+ *             'duration' (minutes, shown as 7h 22m) or 'clock' (hour of day, 25.5 = 1:30 am, so late nights sort after 11 pm).
+ *   event     words for the event: view (its view's name), day (calendar key), after, other, value ("{n}" = event number).
+ *             slug (optional, default 'events') names the view's link: hash-<slug>.
+ *             Leave it out and the event filter, view and colours are left out too.
+ *   defaults  metrics picked first: timeline (list), calendar, seasons, x and y (compare).
+ *   hash      optional link prefix: the views open with hash, hash-<event slug>, hash-calendar, hash-seasons, hash-compare.
+ *
+ * Words its script writes live in the hidden .metric-lab__strings, so a translated page translates them.
+ * Theme with CSS custom properties: --lab-accent (#39c5bb), --lab-event (#e12885), --lab-other (#8d99ab),
+ * --lab-surface (#0d1430), --lab-line (#1d2850), --lab-text (#e6edf3), --lab-muted (#9aa8bb), --lab-font (inherit),
+ * --lab-display-font (inherit), --lab-ramp-1 … --lab-ramp-5 (dark → bright, for magnitude).
+ * Its styles are global (every class starts with metric-lab__) because its script draws most of its parts.
+ * Keyboard: the filters and pickers are buttons and selects; the views use PillSwitch. Fades are off under reduced motion.
+ */
+import PillSwitch from './PillSwitch.astro';
+
+interface Metric { key: string; label: string; unit?: string; decimals?: number; format?: 'number' | 'duration' | 'clock' }
+interface Event { view: string; day: string; after: string; other: string; value: string; slug?: string }
+interface Props {
+  id: string;
+  src: string;
+  metrics: Metric[];
+  event?: Event;
+  defaults?: { timeline?: string[]; calendar?: string; seasons?: string; x?: string; y?: string };
+  hash?: string;
+}
+const { id, src, metrics, event, defaults = {}, hash } = Astro.props;
+const keys = metrics.map((m) => m.key);
+const pick = (k: string | undefined, i: number) => (k && keys.includes(k) ? k : keys[Math.min(i, keys.length - 1)]);
+const d = {
+  timeline: (defaults.timeline ?? keys.slice(0, 6)).filter((k) => keys.includes(k)),
+  calendar: pick(defaults.calendar, 0),
+  seasons: pick(defaults.seasons, 0),
+  x: pick(defaults.x, 0),
+  y: pick(defaults.y, 1),
+};
+const views = [
+  { v: 'timeline', label: 'Timeline' },
+  ...(event ? [{ v: 'events', label: event.view }] : []),
+  { v: 'calendar', label: 'Calendar' },
+  { v: 'seasons', label: 'Seasons' },
+  { v: 'compare', label: 'Compare' },
+];
+const letters = 'ABCDE';
+const options = views.map((x, i) => ({
+  id: `${id}-tab-${x.v}`,
+  controls: `${id}-${x.v}`,
+  label: `${letters[i]} · ${x.label}`,
+  hash: hash ? (i === 0 ? hash : `${hash}-${x.v === 'events' ? (event?.slug ?? 'events') : x.v}`) : undefined,
+}));
+const meta = metrics.map((m) => ({ key: m.key, decimals: m.decimals ?? 0, format: m.format ?? 'number' }));
+---
+
+<div class="metric-lab" id={id} data-metric-lab data-src={src} data-metrics={JSON.stringify(meta)} data-defaults={JSON.stringify(d)} data-event={event ? '1' : '0'}>
+  <div class="metric-lab__strings" hidden data-llms-skip>
+    {metrics.map((m) => <span data-k={`name-${m.key}`}>{m.label}</span>)}
+    {metrics.filter((m) => m.unit).map((m) => <span data-k={`unit-${m.key}`}>{m.unit}</span>)}
+    <span data-k="loading">Loading the numbers…</span>
+    <span data-k="error">The numbers didn't load. Try again later.</span>
+    <span data-k="kpiDays">Days in view</span>
+    <span data-k="kpiOf">of {'{n}'} tracked</span>
+    <span data-k="kpiMid">middle value</span>
+    <span data-k="kpiEventSub">in view</span>
+    <span data-k="duration">{'{h}'}h {'{m}'}m</span>
+    <span data-k="hours">{'{h}'}h</span>
+    <span data-k="minutes">{'{n}'} min</span>
+    <span data-k="noData">no data</span>
+    <span data-k="pickMetric">Pick at least one metric above.</span>
+    <span data-k="tip">{'{value}'} · {'{date}'}</span>
+    <span data-k="counts">{'{a}'} vs {'{o}'} days</span>
+    <span data-k="vs">{'{a}'} vs {'{o}'}</span>
+    <span data-k="notEnough">Not enough days in these filters. Try more years or all seasons.</span>
+    <span data-k="low">low</span>
+    <span data-k="high">high</span>
+    <span data-k="middle">{'{a}'} to {'{b}'} (the middle 60%)</span>
+    <span data-k="seasonsEmpty">No month has 5 or more days in these filters.</span>
+    <span data-k="hoverDot">Hover a dot for its month.</span>
+    <span data-k="compareEmpty">Not enough days with both numbers.</span>
+    <span data-k="year">Year</span>
+    <span data-k="r0">barely related</span>
+    <span data-k="r1">loosely related</span>
+    <span data-k="r2">clearly related</span>
+    <span data-k="r3">strongly related</span>
+    <span data-k="rUp">they rise together</span>
+    <span data-k="rDown">one rises as the other falls</span>
+    <span data-k="rLine">r = {'{r}'} · {'{n}'} days · {'{strength}'}</span>
+    <span data-k="timelineLabel">{'{name}'} over time</span>
+    <span data-k="calendarLabel">{'{name}'}, one square per day in {'{year}'}</span>
+    <span data-k="seasonsLabel">{'{name}'} by month, one line per year</span>
+    <span data-k="compareLabel">{'{x}'} against {'{y}'}, one dot per day</span>
+    {event && (
+      <>
+        <span data-k="eventAfter">{event.after}</span>
+        <span data-k="eventOther">{event.other}</span>
+        <span data-k="eventDay">{event.day}</span>
+        <span data-k="eventValue">{event.value}</span>
+      </>
+    )}
+  </div>
+
+  <div class="metric-lab__kpis" aria-live="polite"><p class="metric-lab__note" data-lab-status>Loading the numbers…</p></div>
+
+  <div class="metric-lab__filters" role="group" aria-label="Filters">
+    <div class="metric-lab__fgroup" data-filter="years"><span>Years</span></div>
+    <div class="metric-lab__fgroup" data-filter="season">
+      <span>Season</span>
+      <button type="button" class="metric-lab__chip" data-value="All" aria-pressed="true">All</button>
+      <button type="button" class="metric-lab__chip" data-value="Winter" aria-pressed="false">Winter</button>
+      <button type="button" class="metric-lab__chip" data-value="Spring" aria-pressed="false">Spring</button>
+      <button type="button" class="metric-lab__chip" data-value="Summer" aria-pressed="false">Summer</button>
+      <button type="button" class="metric-lab__chip" data-value="Fall" aria-pressed="false">Fall</button>
+    </div>
+    <div class="metric-lab__fgroup" data-filter="dow">
+      <span>Days</span>
+      <button type="button" class="metric-lab__chip" data-value="All" aria-pressed="true">All</button>
+      <button type="button" class="metric-lab__chip" data-value="Weekdays" aria-pressed="false">Weekdays</button>
+      <button type="button" class="metric-lab__chip" data-value="Weekends" aria-pressed="false">Weekends</button>
+    </div>
+    {event && (
+      <div class="metric-lab__fgroup" data-filter="night">
+        <span>Nights</span>
+        <button type="button" class="metric-lab__chip" data-value="All" aria-pressed="true">All</button>
+        <button type="button" class="metric-lab__chip" data-value="After" aria-pressed="false">{event.after}</button>
+        <button type="button" class="metric-lab__chip" data-value="Other" aria-pressed="false">{event.other}</button>
+      </div>
+    )}
+  </div>
+
+  <div class="metric-lab__switch"><PillSwitch label="Ways to see the numbers" options={options} /></div>
+
+  <div id={`${id}-timeline`} role="tabpanel" aria-labelledby={`${id}-tab-timeline`} class="metric-lab__view" data-view="timeline">
+    <div class="metric-lab__vhead">
+      <p>Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.{event && ' Ticks along the bottom mark each ' + event.day + '.'}</p>
+      <span class="metric-lab__sel"><label for={`${id}-group`}>Average by</label>
+        <select id={`${id}-group`} data-lab="group">
+          <option value="day">day</option>
+          <option value="week" selected>week</option>
+          <option value="month">month</option>
+        </select>
+      </span>
+    </div>
+    <div class="metric-lab__chips" role="group" aria-label="Metrics to show">
+      {metrics.map((m) => (
+        <button type="button" class="metric-lab__chip" data-metric={m.key} aria-pressed={String(d.timeline.includes(m.key))}>{m.label}</button>
+      ))}
+    </div>
+    <div class="metric-lab__grid" data-lab="grid"></div>
+  </div>
+
+  {event && (
+    <div id={`${id}-events`} role="tabpanel" aria-labelledby={`${id}-tab-events`} class="metric-lab__view" data-view="events" hidden>
+      <div class="metric-lab__vhead">
+        <p>The night and day after each {event.day}, against every other day you picked. The dot is the middle value (the median) and the bar holds the middle half of the days. This view ignores the Nights filter.</p>
+      </div>
+      <div class="metric-lab__key">
+        <span><i class="metric-lab__swatch metric-lab__swatch--event"></i>{event.after}</span>
+        <span><i class="metric-lab__swatch metric-lab__swatch--other"></i>{event.other}</span>
+      </div>
+      <div class="metric-lab__rows" data-lab="rows"></div>
+      <p class="metric-lab__note">These days cluster in some seasons more than others, so a difference here is a hint, not proof of a cause.</p>
+    </div>
+  )}
+
+  <div id={`${id}-calendar`} role="tabpanel" aria-labelledby={`${id}-tab-calendar`} class="metric-lab__view" data-view="calendar" hidden>
+    <div class="metric-lab__vhead">
+      <p>One square per day, one row per year. The brighter the square, the higher the number.{event && ' A colored edge marks each ' + event.day + '.'} Faded squares are days outside your filters.</p>
+      <span class="metric-lab__sel"><label for={`${id}-calendar`}>Metric</label>
+        <select id={`${id}-calendar`} data-lab="calendar">{metrics.map((m) => <option value={m.key} selected={m.key === d.calendar}>{m.label}</option>)}</select>
+      </span>
+    </div>
+    <div class="metric-lab__key" data-lab="calkey"></div>
+    <div class="metric-lab__cal" data-lab="years"></div>
+  </div>
+
+  <div id={`${id}-seasons`} role="tabpanel" aria-labelledby={`${id}-tab-seasons`} class="metric-lab__view" data-view="seasons" hidden>
+    <div class="metric-lab__vhead">
+      <p>Month by month, one line per year, so the winters line up with each other. Hover a line to pick out its year.</p>
+      <span class="metric-lab__sel"><label for={`${id}-seasons`}>Metric</label>
+        <select id={`${id}-seasons`} data-lab="seasons">{metrics.map((m) => <option value={m.key} selected={m.key === d.seasons}>{m.label}</option>)}</select>
+      </span>
+    </div>
+    <div class="metric-lab__card"><div class="metric-lab__fig metric-lab__fig--tall"><svg data-lab="seasonsfig"></svg></div></div>
+  </div>
+
+  <div id={`${id}-compare`} role="tabpanel" aria-labelledby={`${id}-tab-compare`} class="metric-lab__view" data-view="compare" hidden>
+    <div class="metric-lab__vhead">
+      <p>Any metric against any other, one dot per day, with a straight trend line and how closely the two move together (r, from −1 to 1).</p>
+      <div class="metric-lab__fgroup">
+        <span class="metric-lab__sel"><label for={`${id}-x`}>Across</label>
+        <select id={`${id}-x`} data-lab="x">{metrics.map((m) => <option value={m.key} selected={m.key === d.x}>{m.label}</option>)}</select>
+        </span>
+        <span class="metric-lab__sel"><label for={`${id}-y`}>Up</label>
+        <select id={`${id}-y`} data-lab="y">{metrics.map((m) => <option value={m.key} selected={m.key === d.y}>{m.label}</option>)}</select>
+        </span>
+        <span class="metric-lab__sel"><label for={`${id}-color`}>Color</label>
+        <select id={`${id}-color`} data-lab="color">
+            {event && <option value="event">{event.view}</option>}
+            <option value="year">Year</option>
+          </select>
+        </span>
+      </div>
+    </div>
+    <div class="metric-lab__key" data-lab="xkey"></div>
+    <div class="metric-lab__card"><div class="metric-lab__fig metric-lab__fig--tall"><svg data-lab="comparefig"></svg></div></div>
+  </div>
+
+  <div class="metric-lab__tip" role="status" hidden></div>
+</div>
+
+<style is:global>
+  .metric-lab {
+    --_accent: var(--lab-accent, #39c5bb);
+    --_event: var(--lab-event, #e12885);
+    --_other: var(--lab-other, #8d99ab);
+    --_surface: var(--lab-surface, #0d1430);
+    --_line: var(--lab-line, #1d2850);
+    --_text: var(--lab-text, #e6edf3);
+    --_muted: var(--lab-muted, #9aa8bb);
+    font-family: var(--lab-font, inherit);
+    color: var(--_text);
+  }
+  .metric-lab *, .metric-lab *::before { box-sizing: border-box; min-width: 0; }
+  .metric-lab__kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: 0.6rem; margin: 0 0 1rem; }
+  .metric-lab__kpi { background: var(--_surface); border: 1px solid var(--_line); border-radius: 14px; padding: 0.7rem 0.85rem; }
+  .metric-lab__kpi span { display: block; font-size: 0.82rem; color: var(--_muted); }
+  .metric-lab__kpi b { display: block; font-family: var(--lab-display-font, inherit); font-size: 1.5rem; line-height: 1.15; white-space: nowrap; }
+  .metric-lab__filters { display: flex; flex-wrap: wrap; gap: 0.6rem 1.3rem; align-items: center; background: var(--_surface); border: 1px solid var(--_line); border-radius: 16px; padding: 0.7rem 0.85rem; }
+  .metric-lab__fgroup { display: flex; flex-wrap: wrap; gap: 0.35rem; align-items: center; }
+  .metric-lab__fgroup > span { font-size: 0.82rem; color: var(--_muted); margin-inline-end: 0.15rem; }
+  .metric-lab__chip { font: inherit; font-size: 0.88rem; color: var(--_text); background: transparent; border: 1px solid var(--_line); border-radius: 999px; padding: 0.4rem 0.75rem; min-height: 2.25rem; cursor: pointer; }
+  .metric-lab__chip[aria-pressed='true'] { background: var(--_accent); border-color: var(--_accent); color: #04131a; font-weight: 700; }
+  .metric-lab__chip:focus-visible, .metric-lab select:focus-visible { outline: 2px solid var(--_event); outline-offset: 2px; }
+  .metric-lab__switch { margin: 1.1rem 0 0.4rem; }
+  .metric-lab__view[hidden] { display: none; }
+  .metric-lab__vhead { display: flex; flex-wrap: wrap; gap: 0.5rem 1rem; align-items: end; justify-content: space-between; margin: 0.8rem 0 0.75rem; }
+  .metric-lab__vhead p { margin: 0; color: var(--_muted); max-width: 70ch; }
+  .metric-lab select { font: inherit; font-size: 1rem; color: var(--_text); background: var(--_surface); border: 1px solid var(--_line); border-radius: 10px; padding: 0.45rem 0.6rem; min-height: 2.75rem; max-width: 100%; }
+  .metric-lab__sel { display: inline-flex; gap: 0.5rem; align-items: center; font-size: 0.88rem; color: var(--_muted); }
+  .metric-lab__chips { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-bottom: 0.75rem; }
+  .metric-lab__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr)); gap: 0.75rem; }
+  .metric-lab__card { background: var(--_surface); border: 1px solid var(--_line); border-radius: 14px; padding: 0.6rem 0.75rem; }
+  .metric-lab__card h3 { margin: 0; font-size: 0.95rem; display: flex; justify-content: space-between; gap: 0.5rem; color: var(--_text); }
+  .metric-lab__card h3 output { font-weight: 700; font-size: 0.85rem; color: var(--_accent); white-space: nowrap; }
+  .metric-lab__fig { position: relative; min-height: 150px; }
+  .metric-lab__fig--tall { min-height: 380px; }
+  .metric-lab__fig > svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; direction: ltr; }
+  .metric-lab svg text { fill: var(--_muted); font-size: 12px; font-family: var(--lab-font, inherit); }
+  .metric-lab svg .metric-lab__strong { fill: var(--_text); font-weight: 700; }
+  .metric-lab__row { display: grid; grid-template-columns: 11em minmax(0, 1fr) 11em; gap: 0.75rem; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid var(--_line); }
+  .metric-lab__row b { font-size: 0.95rem; }
+  .metric-lab__row small { display: block; color: var(--_muted); font-size: 0.82rem; }
+  .metric-lab__strip { position: relative; height: 34px; }
+  .metric-lab__bar { position: absolute; height: 8px; border-radius: 4px; opacity: 0.55; }
+  .metric-lab__dot { position: absolute; width: 12px; height: 12px; border-radius: 50%; margin-inline-start: -6px; border: 2px solid var(--_surface); }
+  .metric-lab__delta { text-align: end; font-size: 0.88rem; white-space: nowrap; }
+  .metric-lab__delta b { display: block; font-size: 1rem; }
+  .metric-lab__key { display: flex; flex-wrap: wrap; gap: 0.4rem 0.9rem; font-size: 0.82rem; color: var(--_muted); margin: 0.4rem 0; }
+  .metric-lab__swatch { display: inline-block; width: 12px; height: 12px; border-radius: 50%; vertical-align: -1px; margin-inline-end: 0.35rem; }
+  .metric-lab__swatch--event { background: var(--_event); }
+  .metric-lab__swatch--other { background: var(--_other); }
+  .metric-lab__swatch--ring { border: 2px solid var(--_event); border-radius: 2px; }
+  .metric-lab__ramp { display: inline-flex; gap: 2px; vertical-align: middle; margin: 0 0.3rem; }
+  .metric-lab__ramp i { width: 18px; height: 10px; border-radius: 2px; }
+  .metric-lab__cal { overflow-x: auto; }
+  .metric-lab__calyr { display: grid; grid-template-columns: 2.75rem minmax(540px, 1fr); align-items: center; gap: 0.4rem; margin-bottom: 0.4rem; }
+  .metric-lab__calyr .metric-lab__fig { min-height: 0; }
+  .metric-lab__calyr b { font-family: var(--lab-display-font, inherit); }
+  .metric-lab__note { font-size: 0.82rem; color: var(--_muted); }
+  .metric-lab__tip { position: fixed; pointer-events: none; z-index: 50; background: var(--_surface); border: 1px solid var(--_accent); border-radius: 10px; padding: 0.45rem 0.6rem; font-size: 0.82rem; line-height: 1.4; max-width: 15rem; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5); }
+  .metric-lab__tip b { display: block; }
+  @media (max-width: 600px) {
+    .metric-lab__row { grid-template-columns: minmax(0, 1fr) auto; }
+    .metric-lab__row .metric-lab__strip { grid-column: 1 / -1; grid-row: 2; }
+    .metric-lab__delta { font-size: 0.8rem; }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .metric-lab__view:not([hidden]) { animation: metric-lab-fade 0.25s ease; }
+    @keyframes metric-lab-fade { from { opacity: 0; } }
+  }
+</style>
+
+<script>
+  type Row = { i: number; date: string; t: number; y: number; m: number; dow: number; season: string; ev: number; after: boolean; v: Record<string, number | null> };
+  type Meta = { key: string; decimals: number; format: 'number' | 'duration' | 'clock' };
+  const SEASON = ['Winter', 'Winter', 'Spring', 'Spring', 'Spring', 'Summer', 'Summer', 'Summer', 'Fall', 'Fall', 'Fall', 'Winter'];
+  const DAY = 864e5;
+
+  document.querySelectorAll<HTMLElement>('[data-metric-lab]').forEach((root) => {
+    const $ = <T extends Element = HTMLElement>(s: string) => root.querySelector<T>(s);
+    const strings = new Map([...root.querySelectorAll<HTMLElement>('.metric-lab__strings [data-k]')].map((s) => [s.dataset.k!, s.textContent ?? '']));
+    const msg = (k: string, vars: Record<string, string | number> = {}) => (strings.get(k) ?? k).replace(/\{(\w+)\}/g, (_, n) => String(vars[n] ?? ''));
+    const esc = (s: string) => s.replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+    const lang = document.documentElement.lang || 'en';
+    const css = getComputedStyle(root);
+    const cv = (n: string, f: string) => css.getPropertyValue(n).trim() || f;
+    const RAMP = [1, 2, 3, 4, 5].map((i, j) => cv(`--lab-ramp-${i}`, ['#163a52', '#1a6470', '#22918d', '#39c5bb', '#a6efe6'][j]));
+    const C = { accent: cv('--lab-accent', '#39c5bb'), event: cv('--lab-event', '#e12885'), other: cv('--lab-other', '#8d99ab'), line: cv('--lab-line', '#1d2850'), surface: cv('--lab-surface', '#0d1430'), text: cv('--lab-text', '#e6edf3'), muted: cv('--lab-muted', '#9aa8bb') };
+    const metas: Meta[] = JSON.parse(root.dataset.metrics!);
+    const MK = Object.fromEntries(metas.map((m) => [m.key, m]));
+    const defaults = JSON.parse(root.dataset.defaults!);
+    const hasEvent = root.dataset.event === '1';
+    const name = (k: string) => msg(`name-${k}`);
+    const nf = (d: number) => new Intl.NumberFormat(lang, { minimumFractionDigits: d, maximumFractionDigits: d });
+    const clock = (h: number) => new Intl.DateTimeFormat(lang, { hour: 'numeric', minute: '2-digit', timeZone: 'UTC' }).format(new Date(Math.round((h % 24) * 60) * 60000));
+    const fmt = (k: string, v: number | null | undefined) => {
+      if (v == null || Number.isNaN(v)) return '–';
+      const m = MK[k];
+      if (m.format === 'duration') return msg('duration', { h: Math.floor(v / 60), m: String(Math.round(v % 60)).padStart(2, '0') });
+      if (m.format === 'clock') return clock(v);
+      const u = strings.get(`unit-${k}`);
+      return nf(m.decimals).format(v) + (u ? (/^[%°/]/.test(u) ? '' : ' ') + u : '');
+    };
+    const axis = (k: string, v: number) => (MK[k].format === 'duration' ? msg('hours', { h: nf(1).format(v / 60) }) : MK[k].format === 'clock' ? clock(v) : new Intl.NumberFormat(lang, { notation: Math.abs(v) >= 1e4 ? 'compact' : 'standard', maximumFractionDigits: Math.abs(v) < 10 ? 1 : 0 }).format(v));
+    const delta = (k: string, dv: number) => {
+      const s = dv >= 0 ? '+' : '−', a = Math.abs(dv);
+      if (MK[k].format !== 'number') return s + msg('minutes', { n: nf(0).format(MK[k].format === 'clock' ? a * 60 : a) });
+      const u = strings.get(`unit-${k}`);
+      return s + nf(a < 10 ? 1 : 0).format(a) + (u ? (/^[%°/]/.test(u) ? '' : ' ') + u : '');
+    };
+    const dateFmt = (t: number, o: Intl.DateTimeFormatOptions) => new Intl.DateTimeFormat(lang, { ...o, timeZone: 'UTC' }).format(new Date(t));
+    const monthName = (m: number, style: 'short' | 'narrow') => dateFmt(Date.UTC(2001, m, 15), { month: style });
+    const q = (a: number[], p: number) => {
+      if (!a.length) return NaN;
+      const s = [...a].sort((x, y) => x - y), i = (s.length - 1) * p, l = Math.floor(i);
+      return s[l] + (s[Math.ceil(i)] - s[l]) * (i - l);
+    };
+    const mean = (a: number[]) => a.reduce((s, v) => s + v, 0) / a.length;
+    const tip = $('.metric-lab__tip')!;
+    const showTip = (e: PointerEvent, html: string) => {
+      tip.innerHTML = html;
+      tip.hidden = false;
+      const w = tip.offsetWidth, h = tip.offsetHeight;
+      let x = e.clientX + 14, y = e.clientY + 14;
+      if (x + w > innerWidth - 8) x = e.clientX - w - 14;
+      if (y + h > innerHeight - 8) y = e.clientY - h - 14;
+      tip.style.left = `${Math.max(4, x)}px`;
+      tip.style.top = `${Math.max(4, y)}px`;
+    };
+    const hideTip = () => (tip.hidden = true);
+
+    let rows: Row[] = [], YEARS: number[] = [];
+    const F = { years: new Set<number>(), season: 'All', dow: 'All', night: 'All' };
+    const T = { group: 'week', on: new Set<string>(defaults.timeline) };
+    const yearColor = (y: number) => RAMP[Math.round((YEARS.indexOf(y) / Math.max(1, YEARS.length - 1)) * 4)];
+    const filtered = (ignoreNight = false) =>
+      rows.filter((r) => F.years.has(r.y) && (F.season === 'All' || r.season === F.season) && (F.dow === 'All' || (F.dow === 'Weekends') === (r.dow === 0 || r.dow === 6)) && (ignoreNight || F.night === 'All' || (F.night === 'After') === r.after));
+    const vals = (rs: Row[], k: string) => rs.map((r) => r.v[k]).filter((v): v is number => v != null);
+    const current = () => root.querySelector<HTMLElement>('.metric-lab__view:not([hidden])')?.dataset.view ?? 'timeline';
+
+    // ---- KPIs ----
+    function kpis(rs: Row[]) {
+      const box = $('.metric-lab__kpis')!;
+      const items: [string, string, string][] = [[msg('kpiDays'), nf(0).format(rs.length), msg('kpiOf', { n: nf(0).format(rows.length) })]];
+      for (const k of defaults.timeline.slice(0, 4)) items.push([name(k), fmt(k, q(vals(rs, k), 0.5)), msg('kpiMid')]);
+      if (hasEvent) items.push([msg('eventAfter'), nf(0).format(rs.filter((r) => r.after).length), msg('kpiEventSub')]);
+      box.innerHTML = items.map(([a, b, c]) => `<div class="metric-lab__kpi"><span>${esc(a)}</span><b>${esc(b)}</b><span>${esc(c)}</span></div>`).join('');
+    }
+
+    // ---- A: timeline ----
+    type Panel = { k: string; pts: [number, number][]; card: HTMLElement; t0: number; t1: number; gap: number; evs: number[]; X?: (t: number) => number; Y?: (v: number) => number };
+    const panels: Panel[] = [];
+    function timeline(rs: Row[]) {
+      const grid = $('[data-lab="grid"]')!;
+      grid.innerHTML = '';
+      panels.length = 0;
+      if (!rs.length) { grid.innerHTML = `<p class="metric-lab__note">${esc(msg('notEnough'))}</p>`; return; }
+      const key = (r: Row) => (T.group === 'day' ? r.t : T.group === 'month' ? Date.UTC(r.y, r.m, 15) : r.t - ((r.dow + 6) % 7) * DAY);
+      const gap = ({ day: 2, week: 15, month: 45 } as Record<string, number>)[T.group] * DAY;
+      const t0 = rs[0].t, t1 = rs[rs.length - 1].t;
+      for (const m of metas.filter((m) => T.on.has(m.key))) {
+        const g = new Map<number, number[]>();
+        for (const r of rs) { const v = r.v[m.key]; if (v != null) { const kk = key(r); (g.get(kk) ?? g.set(kk, []).get(kk)!).push(v); } }
+        const pts = [...g].map(([t, a]) => [t, mean(a)] as [number, number]).sort((a, b) => a[0] - b[0]);
+        if (!pts.length) continue;
+        const card = document.createElement('div');
+        card.className = 'metric-lab__card';
+        card.innerHTML = '<h3><span></span><output></output></h3><div class="metric-lab__fig"><svg role="img"></svg></div>';
+        card.querySelector('h3 span')!.textContent = name(m.key);
+        card.querySelector('svg')!.setAttribute('aria-label', msg('timelineLabel', { name: name(m.key) }));
+        grid.appendChild(card);
+        panels.push({ k: m.key, pts, card, t0, t1, gap, evs: rs.filter((r) => r.ev > 0).map((r) => r.t) });
+      }
+      if (!panels.length) grid.innerHTML = `<p class="metric-lab__note">${esc(msg('pickMetric'))}</p>`;
+      for (const p of panels) drawPanel(p);
+    }
+    function drawPanel(p: Panel) {
+      const s = p.card.querySelector('svg')!, W = s.clientWidth, H = s.clientHeight, L = 40, R = 6, Tp = 6, B = 22;
+      if (!W) return;
+      const ys = p.pts.map((x) => x[1]);
+      let lo = Math.min(...ys), hi = Math.max(...ys);
+      if (lo === hi) { lo -= 1; hi += 1; }
+      const pad = (hi - lo) * 0.08;
+      lo -= pad; hi += pad;
+      const X = (t: number) => L + ((t - p.t0) / (p.t1 - p.t0 || 1)) * (W - L - R), Y = (v: number) => Tp + ((hi - v) / (hi - lo)) * (H - Tp - B);
+      p.X = X; p.Y = Y;
+      let d = '', prev: number | null = null;
+      for (const [t, v] of p.pts) { d += (prev == null || t - prev > p.gap ? 'M' : 'L') + X(t).toFixed(1) + ' ' + Y(v).toFixed(1); prev = t; }
+      const yrs: number[] = [];
+      for (let y = new Date(p.t0).getUTCFullYear() + 1; y <= new Date(p.t1).getUTCFullYear(); y++) yrs.push(y);
+      const narrow = W < 420;
+      s.innerHTML =
+        [lo + pad, (lo + hi) / 2, hi - pad].map((v) => `<line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" stroke="${C.line}"/><text x="${L - 4}" y="${Y(v) + 4}" text-anchor="end">${esc(axis(p.k, v))}</text>`).join('') +
+        yrs.map((y) => { const x = X(Date.UTC(y, 0, 1)); return `<line x1="${x}" x2="${x}" y1="${Tp}" y2="${H - B}" stroke="${C.line}" stroke-dasharray="2 3"/><text x="${x}" y="${H - 6}" text-anchor="middle">${narrow ? "'" + String(y).slice(2) : y}</text>`; }).join('') +
+        p.evs.map((t) => `<line x1="${X(t)}" x2="${X(t)}" y1="${H - B - 5}" y2="${H - B}" stroke="${C.event}" stroke-width="1.5"/>`).join('') +
+        `<path d="${d}" fill="none" stroke="${C.accent}" stroke-width="2" stroke-linejoin="round"/><g class="hov"></g><rect x="${L}" y="0" width="${Math.max(0, W - L - R)}" height="${H}" fill="transparent"/>`;
+      const rect = s.querySelector('rect')!;
+      rect.addEventListener('pointermove', (e) => { const b = s.getBoundingClientRect(); const t = p.t0 + ((e.clientX - b.left - L) / (W - L - R)) * (p.t1 - p.t0); for (const o of panels) hover(o, t); });
+      rect.addEventListener('pointerleave', () => { for (const o of panels) { o.card.querySelector('.hov')!.innerHTML = ''; o.card.querySelector('output')!.textContent = ''; } });
+    }
+    function hover(p: Panel, t: number) {
+      if (!p.X || !p.Y) return;
+      let best: [number, number] | null = null, bd = Infinity;
+      for (const pt of p.pts) { const dd = Math.abs(pt[0] - t); if (dd < bd) { bd = dd; best = pt; } }
+      const g = p.card.querySelector('.hov')!, out = p.card.querySelector('output')!;
+      if (!best || bd > p.gap * 2) { g.innerHTML = ''; out.textContent = msg('noData'); return; }
+      const x = p.X(best[0]), y = p.Y(best[1]);
+      g.innerHTML = `<line x1="${x}" x2="${x}" y1="0" y2="${p.card.querySelector('svg')!.clientHeight - 22}" stroke="${C.muted}"/><circle cx="${x}" cy="${y}" r="4.5" fill="${C.accent}" stroke="${C.surface}" stroke-width="2"/>`;
+      const when = T.group === 'month' ? dateFmt(best[0], { month: 'short', year: 'numeric' }) : dateFmt(best[0], { month: 'short', day: 'numeric', year: 'numeric' });
+      out.textContent = msg('tip', { value: fmt(p.k, best[1]), date: when });
+    }
+
+    // ---- B: the day after an event ----
+    function events(rs: Row[]) {
+      const out: string[] = [];
+      for (const m of metas) {
+        const a = rs.filter((r) => r.after && r.v[m.key] != null).map((r) => r.v[m.key]!), o = rs.filter((r) => !r.after && r.v[m.key] != null).map((r) => r.v[m.key]!);
+        if (a.length < 5 || o.length < 5) continue;
+        const all = a.concat(o), lo = q(all, 0.05), hi = q(all, 0.95), P = (v: number) => Math.max(0, Math.min(100, ((v - lo) / (hi - lo || 1)) * 100));
+        const S = (x: number[]) => ({ l: P(q(x, 0.25)), r: P(q(x, 0.75)), m: P(q(x, 0.5)), v: q(x, 0.5) });
+        const A = S(a), O = S(o);
+        const bar = (s: ReturnType<typeof S>, top: number, c: string) =>
+          `<span class="metric-lab__bar" style="top:${top}px;inset-inline-start:${s.l}%;width:${Math.max(1, s.r - s.l)}%;background:${c}"></span><span class="metric-lab__dot" style="top:${top - 2}px;inset-inline-start:${s.m}%;background:${c}"></span>`;
+        out.push(
+          `<div class="metric-lab__row"><div><b>${esc(name(m.key))}</b><small>${esc(msg('counts', { a: nf(0).format(a.length), o: nf(0).format(o.length) }))}</small></div>` +
+            `<div class="metric-lab__strip" role="img" aria-label="${esc(name(m.key))}: ${esc(msg('eventAfter'))} ${esc(fmt(m.key, A.v))}, ${esc(msg('eventOther'))} ${esc(fmt(m.key, O.v))}">${bar(A, 3, C.event)}${bar(O, 21, C.other)}</div>` +
+            `<div class="metric-lab__delta"><b>${esc(delta(m.key, A.v - O.v))}</b>${esc(msg('vs', { a: fmt(m.key, A.v), o: fmt(m.key, O.v) }))}</div></div>`,
+        );
+      }
+      $('[data-lab="rows"]')!.innerHTML = out.join('') || `<p class="metric-lab__note">${esc(msg('notEnough'))}</p>`;
+    }
+
+    // ---- C: calendar ----
+    function calendar(rs: Row[]) {
+      const k = $<HTMLSelectElement>('[data-lab="calendar"]')!.value;
+      const keep = new Set(rs.map((r) => r.i)), v = vals(rs, k), b = [0.2, 0.4, 0.6, 0.8].map((p) => q(v, p));
+      const bin = (x: number) => { let i = 0; while (i < 4 && x > b[i]) i++; return i; };
+      $('[data-lab="calkey"]')!.innerHTML =
+        `<span>${esc(msg('low'))}<span class="metric-lab__ramp">${RAMP.map((c) => `<i style="background:${c}"></i>`).join('')}</span>${esc(msg('high'))}</span>` +
+        (v.length ? `<span>${esc(msg('middle', { a: fmt(k, b[0]), b: fmt(k, b[3]) }))}</span>` : '') +
+        (hasEvent ? `<span><i class="metric-lab__swatch metric-lab__swatch--ring"></i>${esc(msg('eventDay'))}</span>` : '');
+      const box = $('[data-lab="years"]')!;
+      box.innerHTML = '';
+      for (const y of YEARS) {
+        const yr = rows.filter((r) => r.y === y);
+        const div = document.createElement('div');
+        div.className = 'metric-lab__calyr';
+        div.innerHTML = `<b>${y}</b><div class="metric-lab__fig"><svg role="img"></svg></div>`;
+        box.appendChild(div);
+        const fig = div.querySelector<HTMLElement>('.metric-lab__fig')!, s = div.querySelector('svg')!;
+        s.setAttribute('aria-label', msg('calendarLabel', { name: name(k), year: y }));
+        const cell = Math.floor(fig.clientWidth / 54) || 10;
+        fig.style.height = `${cell * 7 + 16}px`;
+        const j1 = new Date(Date.UTC(y, 0, 1)).getUTCDay(), col = (t: number) => Math.floor(((t - Date.UTC(y, 0, 1)) / DAY + j1) / 7) * cell;
+        let h = '';
+        for (let m = 0; m < 12; m++) h += `<text x="${col(Date.UTC(y, m, 1))}" y="11">${esc(monthName(m, cell < 11 ? 'narrow' : 'short'))}</text>`;
+        for (const r of yr) {
+          const x = r.v[k];
+          if (x == null && !r.ev) continue;
+          const fill = x == null ? C.line : RAMP[bin(x)];
+          h += `<rect data-i="${r.i}" x="${col(r.t) + 0.5}" y="${16 + r.dow * cell + 0.5}" width="${cell - 2}" height="${cell - 2}" rx="2" fill="${fill}" opacity="${keep.has(r.i) ? 1 : 0.18}"${r.ev ? ` stroke="${C.event}" stroke-width="1.6"` : ''}/>`;
+        }
+        s.innerHTML = h;
+        s.addEventListener('pointermove', (e) => {
+          const i = (e.target as SVGElement).dataset?.i;
+          if (i == null) return hideTip();
+          const r = rows[Number(i)];
+          showTip(e, `<b>${esc(dateFmt(r.t, { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' }))}</b>${esc(name(k))}: ${esc(fmt(k, r.v[k]))}${r.ev && hasEvent ? `<br>${esc(msg('eventValue', { n: nf(1).format(r.ev) }))}` : ''}`);
+        });
+        s.addEventListener('pointerleave', hideTip);
+      }
+    }
+
+    // ---- D: seasons ----
+    function seasons(rs: Row[]) {
+      const k = $<HTMLSelectElement>('[data-lab="seasons"]')!.value, s = $<SVGSVGElement>('[data-lab="seasonsfig"]')!, W = s.clientWidth, H = s.clientHeight;
+      if (!W) return;
+      const narrow = W < 520, L = 52, R = narrow ? 38 : 54, Tp = 14, B = 26;
+      s.setAttribute('aria-label', msg('seasonsLabel', { name: name(k) }));
+      const lines: { y: number; pts: [number, number][]; c: string }[] = [];
+      for (const y of YEARS) {
+        if (!F.years.has(y)) continue;
+        const pts: [number, number][] = [];
+        for (let m = 0; m < 12; m++) { const v = vals(rs.filter((r) => r.y === y && r.m === m), k); if (v.length >= 5) pts.push([m, mean(v)]); }
+        if (pts.length) lines.push({ y, pts, c: yearColor(y) });
+      }
+      const all = lines.flatMap((l) => l.pts.map((p) => p[1]));
+      if (!all.length) { s.innerHTML = `<text x="10" y="30">${esc(msg('seasonsEmpty'))}</text>`; return; }
+      let lo = Math.min(...all), hi = Math.max(...all);
+      const pd = (hi - lo) * 0.1 || 1;
+      lo -= pd; hi += pd;
+      const X = (m: number) => L + ((m + 0.5) / 12) * (W - L - R), Y = (v: number) => Tp + ((hi - v) / (hi - lo)) * (H - Tp - B);
+      let h = [0, 0.25, 0.5, 0.75, 1].map((f) => { const v = lo + pd + (hi - lo - 2 * pd) * f; return `<line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" stroke="${C.line}"/><text x="${L - 6}" y="${Y(v) + 4}" text-anchor="end">${esc(axis(k, v))}</text>`; }).join('');
+      for (let m = 0; m < 12; m++) h += `<text x="${X(m)}" y="${H - 6}" text-anchor="middle">${esc(monthName(m, narrow ? 'narrow' : 'short'))}</text>`;
+      const labs = lines.map((l) => { const p = l.pts[l.pts.length - 1]; return { l, x: X(p[0]), y: Y(p[1]) }; }).sort((a, b) => a.y - b.y);
+      for (let i = 1; i < labs.length; i++) if (labs[i].y - labs[i - 1].y < 14) labs[i].y = labs[i - 1].y + 14;
+      for (const l of lines) {
+        const d = l.pts.map((p, i) => (i ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1)).join('');
+        h += `<g class="yr" data-y="${l.y}"><path d="${d}" fill="none" stroke="${l.c}" stroke-width="2.5" stroke-linejoin="round"/>${l.pts.map((p) => `<circle cx="${X(p[0])}" cy="${Y(p[1])}" r="4" fill="${l.c}" stroke="${C.surface}" stroke-width="2" data-m="${p[0]}" data-v="${p[1]}"/>`).join('')}</g>`;
+      }
+      h += labs.map((o) => `<text class="yl" data-y="${o.l.y}" x="${o.x + 8}" y="${o.y + 4}" style="fill:${o.l.c};font-weight:700">${narrow ? "'" + String(o.l.y).slice(2) : o.l.y}</text>`).join('');
+      s.innerHTML = h;
+      const focus = (y: string | null) => { for (const g of s.querySelectorAll<SVGElement>('.yr,.yl')) g.style.opacity = y == null || g.dataset.y === y ? '1' : '0.15'; };
+      s.onpointermove = (e) => {
+        const t = e.target as SVGElement, g = t.closest<SVGElement>('.yr,.yl');
+        if (!g) { focus(null); return hideTip(); }
+        focus(g.dataset.y!);
+        showTip(e, `<b>${g.dataset.y}</b>${t.dataset.m != null ? esc(monthName(Number(t.dataset.m), 'short') + ': ' + fmt(k, Number(t.dataset.v))) : esc(msg('hoverDot'))}`);
+      };
+      s.onpointerleave = () => { focus(null); hideTip(); };
+    }
+
+    // ---- E: compare ----
+    function compare(rs: Row[]) {
+      const kx = $<HTMLSelectElement>('[data-lab="x"]')!.value, ky = $<HTMLSelectElement>('[data-lab="y"]')!.value, col = $<HTMLSelectElement>('[data-lab="color"]')!.value;
+      const s = $<SVGSVGElement>('[data-lab="comparefig"]')!, W = s.clientWidth, H = s.clientHeight, L = 52, R = 12, Tp = 12, B = 40;
+      if (!W) return;
+      s.setAttribute('aria-label', msg('compareLabel', { x: name(kx), y: name(ky) }));
+      const pts = rs.filter((r) => r.v[kx] != null && r.v[ky] != null);
+      const key = $('[data-lab="xkey"]')!;
+      key.innerHTML = col === 'event'
+        ? `<span><i class="metric-lab__swatch metric-lab__swatch--event"></i>${esc(msg('eventAfter'))}</span><span><i class="metric-lab__swatch metric-lab__swatch--other"></i>${esc(msg('eventOther'))}</span>`
+        : `<span>${esc(msg('year'))}: ${YEARS[0]}<span class="metric-lab__ramp">${RAMP.map((c) => `<i style="background:${c}"></i>`).join('')}</span>${YEARS[YEARS.length - 1]}</span>`;
+      if (pts.length < 3) { s.innerHTML = `<text x="10" y="30">${esc(msg('compareEmpty'))}</text>`; return; }
+      const xs = pts.map((r) => r.v[kx]!), ys = pts.map((r) => r.v[ky]!);
+      const ext = (a: number[]) => { const lo = q(a, 0.005), hi = q(a, 0.995), p = (hi - lo) * 0.05 || 1; return [lo - p, hi + p]; };
+      const [x0, x1] = ext(xs), [y0, y1] = ext(ys);
+      const X = (v: number) => L + ((Math.min(x1, Math.max(x0, v)) - x0) / (x1 - x0)) * (W - L - R), Y = (v: number) => Tp + ((y1 - Math.min(y1, Math.max(y0, v))) / (y1 - y0)) * (H - Tp - B);
+      const mx = mean(xs), my = mean(ys);
+      let sxy = 0, sxx = 0, syy = 0;
+      for (let i = 0; i < xs.length; i++) { sxy += (xs[i] - mx) * (ys[i] - my); sxx += (xs[i] - mx) ** 2; syy += (ys[i] - my) ** 2; }
+      const r = sxy / Math.sqrt(sxx * syy || 1), sl = sxx ? sxy / sxx : 0, ic = my - sl * mx, ar = Math.abs(r);
+      const strength = msg(ar < 0.1 ? 'r0' : ar < 0.3 ? 'r1' : ar < 0.5 ? 'r2' : 'r3') + (ar >= 0.1 ? ', ' + msg(r > 0 ? 'rUp' : 'rDown') : '');
+      key.insertAdjacentHTML('beforeend', `<span><b style="color:${C.text}">${esc(msg('rLine', { r: nf(2).format(r), n: nf(0).format(pts.length), strength }))}</b></span>`);
+      const ticks = (lo: number, hi: number) => [0, 0.25, 0.5, 0.75, 1].map((f) => lo + (hi - lo) * (0.05 + 0.9 * f));
+      let h =
+        ticks(y0, y1).map((v) => `<line x1="${L}" x2="${W - R}" y1="${Y(v)}" y2="${Y(v)}" stroke="${C.line}"/><text x="${L - 6}" y="${Y(v) + 4}" text-anchor="end">${esc(axis(ky, v))}</text>`).join('') +
+        ticks(x0, x1).filter((_, i) => W >= 520 || i % 2 === 0).map((v) => `<text x="${X(v)}" y="${H - B + 16}" text-anchor="middle">${esc(axis(kx, v))}</text>`).join('') +
+        `<text class="metric-lab__strong" x="${(L + W - R) / 2}" y="${H - 4}" text-anchor="middle">${esc(name(kx))} →</text><text class="metric-lab__strong" x="${L + 6}" y="${Tp + 12}">↑ ${esc(name(ky))}</text>`;
+      const order = col === 'event' ? [...pts].sort((a, b) => Number(a.after) - Number(b.after)) : pts;
+      h += order.map((p) => `<circle cx="${X(p.v[kx]!).toFixed(1)}" cy="${Y(p.v[ky]!).toFixed(1)}" r="${col === 'event' && p.after ? 4.5 : 3.5}" fill="${col === 'event' ? (p.after ? C.event : C.other) : yearColor(p.y)}" opacity="${col === 'event' && !p.after ? 0.45 : 0.8}" stroke="${C.surface}" stroke-width="1"/>`).join('');
+      h += `<line x1="${X(x0)}" y1="${Y(sl * x0 + ic)}" x2="${X(x1)}" y2="${Y(sl * x1 + ic)}" stroke="${C.text}" stroke-width="2" stroke-dasharray="6 4"/>`;
+      s.innerHTML = h;
+      s.onpointermove = (e) => {
+        const b = s.getBoundingClientRect(), px = e.clientX - b.left, py = e.clientY - b.top;
+        let best: Row | null = null, bd = 400;
+        for (const p of pts) { const dd = (X(p.v[kx]!) - px) ** 2 + (Y(p.v[ky]!) - py) ** 2; if (dd < bd) { bd = dd; best = p; } }
+        if (!best) return hideTip();
+        showTip(e, `<b>${esc(dateFmt(best.t, { month: 'short', day: 'numeric', year: 'numeric' }))}${best.after && hasEvent ? ' · ' + esc(msg('eventAfter')) : ''}</b>${esc(name(kx))}: ${esc(fmt(kx, best.v[kx]))}<br>${esc(name(ky))}: ${esc(fmt(ky, best.v[ky]))}`);
+      };
+      s.onpointerleave = hideTip;
+    }
+
+    function render() {
+      if (!rows.length) return;
+      kpis(filtered());
+      const v = current();
+      if (v === 'timeline') timeline(filtered());
+      else if (v === 'events') events(filtered(true));
+      else if (v === 'calendar') calendar(filtered());
+      else if (v === 'seasons') seasons(filtered());
+      else compare(filtered());
+    }
+
+    // ---- controls ----
+    function chips(group: HTMLElement, isOn: (b: HTMLButtonElement) => boolean, press: (b: HTMLButtonElement) => void) {
+      group.addEventListener('click', (e) => {
+        const b = (e.target as HTMLElement).closest<HTMLButtonElement>('button');
+        if (!b) return;
+        press(b);
+        for (const c of group.querySelectorAll<HTMLButtonElement>('button')) c.setAttribute('aria-pressed', String(isOn(c)));
+        render();
+      });
+    }
+    for (const g of root.querySelectorAll<HTMLElement>('[data-filter="season"],[data-filter="dow"],[data-filter="night"]')) {
+      const f = g.dataset.filter as 'season' | 'dow' | 'night';
+      chips(g, (b) => F[f] === b.dataset.value, (b) => (F[f] = b.dataset.value!));
+    }
+    chips($('.metric-lab__chips')!, (b) => T.on.has(b.dataset.metric!), (b) => { const k = b.dataset.metric!; if (T.on.has(k)) T.on.delete(k); else T.on.add(k); });
+    $<HTMLSelectElement>('[data-lab="group"]')!.addEventListener('change', (e) => { T.group = (e.target as HTMLSelectElement).value; render(); });
+    for (const k of ['calendar', 'seasons', 'x', 'y', 'color']) $(`[data-lab="${k}"]`)?.addEventListener('change', render);
+    root.addEventListener('switch:change', () => requestAnimationFrame(render));
+
+    // ---- load once the lab is first shown; redraw when its width changes ----
+    let loading = false, width = 0, timer = 0;
+    const load = () => {
+      loading = true;
+      fetch(root.dataset.src!)
+        .then((r) => { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+        .then((D: { dates: string[]; event?: number[]; [k: string]: unknown }) => {
+          const byDate = new Map<string, number>();
+          D.dates.forEach((date, i) => byDate.set(date, (D.event ?? [])[i] ?? 0));
+          rows = D.dates.map((date, i) => {
+            const t = Date.parse(date + 'T00:00:00Z'), dt = new Date(t);
+            const prev = new Date(t - DAY).toISOString().slice(0, 10);
+            const v: Record<string, number | null> = {};
+            for (const m of metas) v[m.key] = ((D[m.key] as (number | null)[]) ?? [])[i] ?? null;
+            return { i, date, t, y: dt.getUTCFullYear(), m: dt.getUTCMonth(), dow: dt.getUTCDay(), season: SEASON[dt.getUTCMonth()], ev: (D.event ?? [])[i] ?? 0, after: (byDate.get(prev) ?? 0) > 0, v };
+          });
+          YEARS = [...new Set(rows.map((r) => r.y))];
+          YEARS.forEach((y) => F.years.add(y));
+          const yg = $('[data-filter="years"]')!;
+          yg.insertAdjacentHTML('beforeend', YEARS.map((y) => `<button type="button" class="metric-lab__chip" data-value="${y}" aria-pressed="true">${y}</button>`).join(''));
+          chips(yg, (b) => F.years.has(Number(b.dataset.value)), (b) => { const y = Number(b.dataset.value); if (!F.years.has(y)) F.years.add(y); else if (F.years.size > 1) F.years.delete(y); });
+          render();
+        })
+        .catch(() => { const st = $('[data-lab-status]'); if (st) st.textContent = msg('error'); loading = false; });
+    };
+    new ResizeObserver(() => {
+      const w = root.clientWidth;
+      if (!w || w === width) return;
+      width = w;
+      if (!rows.length) { if (!loading) load(); return; }
+      clearTimeout(timer);
+      timer = window.setTimeout(render, 120);
+    }).observe(root);
+  });
+</script>

@@ -27,6 +27,7 @@ and a project without translations just shows the English.
 | [PlanetLap.astro](PlanetLap.astro) | How far around a planet a distance goes, Reus-style (the planet cut in half, seen side on), animated like an in-flight map: a little cyclist rides from the start flag, then the map keeps zooming in and out between the nearest places and the far ones, with a next-stop panel and distances to go. | Cycling tab (from Fargo, ND) |
 | [ArcadeButton.astro](ArcadeButton.astro) | A big, chunky, old-school push button with one emoji on its cap and a click sound; it sinks when pressed, and as a toggle it stays down and lit while on. | Concert tab (Saturday Night Fever: music, pause, lights) |
 | [YouTube.astro](YouTube.astro) | A privacy-friendly YouTube embed: nothing loads from YouTube until play is pressed, then it plays from youtube-nocookie.com; pauses itself when hidden. 16:9 videos and 9:16 Shorts. | Aviation tab, Cycling tab ("Ridin' with Peeta") |
+| [MetricLab.astro](MetricLab.astro) | Years of daily numbers to slice and dice: one row of filters (years, season, weekdays or weekends, the day after an event) over five views: small-multiple timelines with a shared hover, the day after an event against the rest, a calendar heatmap, month-by-month lines per year, and a scatter of any two metrics with r. Loads its data file only when first shown. | Biomarker Lab tab (Hearth) |
 | IsoDarts (moved) | An on-rails darts scene in an isometric room: scripted speech bubbles, then a timed round on a board of coloured territories (claim, cancel, smaller is worth more) with a swaying aim. | Moved to [HusbandOutWorld](https://github.com/Deovandski/HusbandOutWorld) as `site/js/iso-darts.js` and `site/css/iso-darts.css` (its Playground, Territory Snipping, #245) |
 | [IsoFarm.astro](IsoFarm.astro) | A Colheita Feliz-style farming loop: isometric plots, seeds with timers and random harvests, fertilizer, energy and a market. The whole economy is one config object; saves in the browser. | Mentor tab (the Balls farm) |
 | [HoursByCategory.astro](HoursByCategory.astro) | Things grouped into categories with their hours: a totals card, one bar per category, then a card per category (most first, "Show all"). A switch takes "excludable" categories (idle games) out of the total. Worked out at build time, so translated pages translate every word. | Gamer tab (Steam, Xbox and estimated hours) |
@@ -584,6 +585,44 @@ youtube-nocookie.com. When it's hidden (its tab closed), it pauses on its own. A
 
 Theme with `--yt-accent`, `--yt-on-accent`, `--yt-text`, `--yt-muted`, `--yt-font`, `--yt-width` (48rem) and
 `--yt-short-width` (20rem).
+
+## MetricLab
+
+Years of daily numbers to slice and dice. One row of filters (years, season, weekdays or weekends, and the nights
+after an "event" such as a bike ride) sits over five views, picked with `PillSwitch`:
+
+- **Timeline:** one small chart per metric, by day, week or month. Hover one and every chart shows the same date.
+- **Event** (named by `event.view`): the day after each event against every other day, as a median dot, the middle
+  half of the days as a bar, and the difference.
+- **Calendar:** one square per day, one row per year, in five steps from dark to bright; event days outlined.
+- **Seasons:** month by month, one line per year (older years darker).
+- **Compare:** any metric against any other, one dot per day, a trend line and r.
+
+It downloads its data only the first time it's shown, so a page can carry it in a closed tab for free.
+
+```astro
+<MetricLab
+  id="bio"
+  src={url('/biomarkers.json')}
+  hash="#biomarkers"
+  metrics={[{ key: 'rhr', label: 'Resting heart rate', unit: 'bpm', decimals: 1 }, { key: 'sleepMin', label: 'Sleep', format: 'duration' }]}
+  event={{ view: 'Ride nights', day: 'ride day', after: 'After a ride', other: 'Other nights', value: 'Rode {n} mi', slug: 'rides' }}
+  defaults={{ timeline: ['rhr', 'sleepMin'], calendar: 'rhr', seasons: 'rhr', x: 'rhr', y: 'sleepMin' }}
+/>
+```
+
+| Prop | Default | |
+|---|---|---|
+| `id` | (required) | Prefix for its element ids. |
+| `src` | (required) | The data's URL: `{ "dates": ["2024-01-31", …], "<key>": [number or null, …], "event": [number, …] }`, one entry per date in every array. |
+| `metrics` | (required) | `[{ key, label, unit?, decimals?, format? }]`. `format`: `'number'`, `'duration'` (minutes → 7h 22m) or `'clock'` (hour of the day; 25.5 is 1:30 am). |
+| `event` | none | Words for the event: `view`, `day`, `after`, `other`, `value` (`{n}` is the day's event number), and `slug` for its view's link. Without it, the event filter, view and colours are left out. |
+| `defaults` | the first metrics | What's picked first: `timeline` (a list), `calendar`, `seasons`, `x`, `y`. |
+| `hash` | none | Link prefix for the views: `hash`, `hash-<slug>`, `hash-calendar`, `hash-seasons`, `hash-compare`. |
+
+Theme with `--lab-accent`, `--lab-event`, `--lab-other`, `--lab-surface`, `--lab-line`, `--lab-text`, `--lab-muted`,
+`--lab-font`, `--lab-display-font` and `--lab-ramp-1` to `--lab-ramp-5`. Charts draw at their real size and redraw
+when the width changes. Words its script writes are in its hidden `.metric-lab__strings`.
 
 ## IsoFarm
 

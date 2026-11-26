@@ -79,6 +79,10 @@
   "en": "Notification drip",
   "t": "Notifikasi menitis"
  },
+ "021710fa7866": {
+  "en": "month",
+  "t": "bulan"
+ },
  "024a42ce1e4f": {
   "en": "Skin tone 1",
   "t": "Warna kulit 1"
@@ -175,6 +179,10 @@
   "en": "Ink",
   "t": "Dakwat"
  },
+ "04c70f3c22a3": {
+  "en": "of {n} tracked",
+  "t": "daripada {n} yang direkod"
+ },
  "04e3fd08d714": {
   "en": "Description coming soon.",
   "t": "Penerangan akan datang."
@@ -238,6 +246,10 @@
  "067ff8ef9ba2": {
   "en": "\nSenior Software Engineer, Dynamics 365 F&amp;O Architect, and Founder &amp; CEO of Wizard Deo Solutions.\n",
   "t": "Jurutera Perisian Kanan, Arkitek Dynamics 365 F&amp;O, serta Pengasas &amp; CEO Wizard Deo Solutions."
+ },
+ "0689a88574c4": {
+  "en": "{value} · {date}",
+  "t": "{value} · {date}"
  },
  "0699138fe5cc": {
   "en": "Click or drag to draw. Right-click erases.",
@@ -583,6 +595,10 @@
   "en": " JC ",
   "t": "JC"
  },
+ "1118f49d26f1": {
+  "en": " E · Compare ",
+  "t": "E · Banding"
+ },
  "11255d4d673b": {
   "en": "My top 39 favorite anime, ranked, and what each one means to me.",
   "t": "39 anime kegemaran saya, mengikut kedudukan, dan apa maknanya setiap satu kepada saya."
@@ -607,6 +623,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 39: </span> Placeholder movie 39 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Kedudukan 39: </span> Filem sementara 39"
  },
+ "122babc08c1c": {
+  "en": "Not enough days with both numbers.",
+  "t": "Tidak cukup hari dengan kedua-dua angka."
+ },
  "123b77b3c65c": {
   "en": "Terraria",
   "t": "Terraria"
@@ -630,6 +650,10 @@
  "131260cbfbb0": {
   "en": "Music",
   "t": "Muzik"
+ },
+ "132a0149f337": {
+  "en": "they rise together",
+  "t": "naik bersama"
  },
  "1349608b58ab": {
   "en": "25 h",
@@ -663,9 +687,17 @@
   "en": " PV ",
   "t": "PV"
  },
+ "145a01fb9391": {
+  "en": "/min",
+  "t": "/min"
+ },
  "14663cc9a7a1": {
   "en": "MUCH FAST",
   "t": "LAJU SANGAT"
+ },
+ "14696eebf7a4": {
+  "en": "Average by",
+  "t": "Purata mengikut"
  },
  "148154839756": {
   "en": "Enlarge: Let me go",
@@ -903,6 +935,14 @@
   "en": "Musician",
   "t": "Pemuzik"
  },
+ "1cc7e3f39b49": {
+  "en": "Rode {n} mi",
+  "t": "Berbasikal {n} bt"
+ },
+ "1d0c8304baed": {
+  "en": "Color",
+  "t": "Warna"
+ },
  "1d23e1eb9609": {
   "en": "Enlarge: Hanging with a Peeta look alike",
   "t": "Besarkan: Lepak dengan kembar Peeta"
@@ -919,6 +959,10 @@
   "en": "Classical",
   "t": "Klasik"
  },
+ "1de180253ec0": {
+  "en": "After a ride",
+  "t": "Selepas berbasikal"
+ },
  "1df37d663014": {
   "en": "135 h",
   "t": "135 h"
@@ -934,6 +978,10 @@
  "1e98d9e9411b": {
   "en": " <span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Other: 2,445 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #7d8597\" data-astro-cid-nqpad2wp=\"\"></span> Lain-lain: 2,445 h"
+ },
+ "1e9c5082c7a3": {
+  "en": "{name} over time",
+  "t": "{name} dari masa ke masa"
  },
  "1eab2e778967": {
   "en": "Mana",
@@ -967,6 +1015,10 @@
   "en": "Tennessee",
   "t": "Tennessee"
  },
+ "1f6990e0866b": {
+  "en": "Any metric against any other, one dot per day, with a straight trend line and how closely the two move together (r, from −1 to 1).",
+  "t": "Mana-mana metrik berbanding yang lain, satu titik sehari, dengan garis aliran lurus dan sejauh mana kedua-duanya bergerak bersama (r, dari −1 hingga 1)."
+ },
  "1f797564f784": {
   "en": "Bahamas",
   "t": "Bahamas"
@@ -986,6 +1038,10 @@
  "2001ca082b2d": {
   "en": "Español",
   "t": "Español"
+ },
+ "2038bdec9210": {
+  "en": "Up",
+  "t": "Menegak"
  },
  "20409611a456": {
   "en": "82 h",
@@ -1087,6 +1143,10 @@
   "en": "Failing to learn English",
   "t": "Gagal belajar bahasa Inggeris"
  },
+ "222a9a1d0cfc": {
+  "en": "Month by month, one line per year, so the winters line up with each other. Hover a line to pick out its year.",
+  "t": "Bulan demi bulan, satu garis setahun, supaya musim sejuk sejajar. Halakan ke garis untuk menonjolkan tahunnya."
+ },
  "2234c20b68ff": {
   "en": "30 h",
   "t": "30 h"
@@ -1106,6 +1166,10 @@
  "22f164766765": {
   "en": "Arragoa",
   "t": "Arragoa"
+ },
+ "231fbf14a11a": {
+  "en": "Time asleep",
+  "t": "Masa tidur"
  },
  "235a70299830": {
   "en": "Faun",
@@ -1134,6 +1198,10 @@
  "244d46168deb": {
   "en": "a cactus",
   "t": "sebatang kaktus"
+ },
+ "24615d93d230": {
+  "en": "Winter",
+  "t": "Musim sejuk"
  },
  "247ce5d5d915": {
   "en": "North America",
@@ -1227,6 +1295,10 @@
   "en": "A pile of 1,166 VHS tapes",
   "t": "Timbunan 1,166 pita VHS"
  },
+ "26cc3217be64": {
+  "en": "ms",
+  "t": "ms"
+ },
  "26d16d20b4b9": {
   "en": "From Itaituba, Pará, to Fargo, North Dakota.",
   "t": "Dari Itaituba, Pará, ke Fargo, North Dakota."
@@ -1290,6 +1362,10 @@
  "283c1ebce40b": {
   "en": "Close to 12 years old but still kicking",
   "t": "Hampir 12 tahun tapi masih bertenaga"
+ },
+ "285c1b0998a6": {
+  "en": "The body is the temple, and the engine that so many people don’t watch out for. We put all our energy and attention outward. Care for yourself and love yourself too.",
+  "t": "Tubuh ialah kuil, dan enjin yang begitu ramai orang tidak jaga. Kita curahkan semua tenaga dan perhatian ke luar. Jaga diri dan sayangi diri sendiri juga."
  },
  "2888f01fb635": {
   "en": "Morning by the river",
@@ -1403,6 +1479,10 @@
   "en": "71 days",
   "t": "71 hari"
  },
+ "2c33f945fe8f": {
+  "en": "{name} by month, one line per year",
+  "t": "{name} mengikut bulan, satu garis setahun"
+ },
  "2c6f37232fe8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Nanatsu no Taizai (The Seven Deadly Sins) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Kedudukan 22: </span> Nanatsu no Taizai (The Seven Deadly Sins)"
@@ -1506,6 +1586,10 @@
  "2f717ffad4e1": {
   "en": "Arkansas",
   "t": "Arkansas"
+ },
+ "2f92a0aa8ae9": {
+  "en": "Weekends",
+  "t": "Hujung minggu"
  },
  "2f9714995b86": {
   "en": " An exploded sphere of my hours by category: Idle &amp; clickers 57%, RPGs &amp; open worlds 16%, City, colony &amp; strategy 5%, Survival &amp; crafting 5%, Factory &amp; automation 5%, Space &amp; flight 4%, Cozy &amp; life sims 3%, Other 7% ",
@@ -1631,6 +1715,14 @@
   "en": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(June 21, 2026)</span>",
   "t": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(21 Jun 2026)</span>"
  },
+ "32f4bc9e552c": {
+  "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month. Ticks along the bottom mark each ride day.",
+  "t": "Setiap metrik dari masa ke masa, satu carta kecil setiap satu. Halakan ke carta dan semua carta menunjukkan hari, minggu atau bulan yang sama. Tanda di bawah menunjukkan setiap hari berbasikal."
+ },
+ "32f997551915": {
+  "en": "{h}h {m}m",
+  "t": "{h} j {m} min"
+ },
  "3303cb966359": {
   "en": "PowerWash Simulator",
   "t": "PowerWash Simulator"
@@ -1703,6 +1795,10 @@
   "en": "Deovandski's hub: software, books, travel and games.",
   "t": "Ruang Deovandski: perisian, buku, pengembaraan dan permainan."
  },
+ "348928d6f5be": {
+  "en": "Resting heart rate",
+  "t": "Kadar denyut jantung rehat"
+ },
  "34b1471c5170": {
   "en": "I’m not dying in the waiting room of someone else’s stagnant life. <span class=\"newest\">New</span>",
   "t": "Saya tidak akan mati di ruang menunggu hidup orang lain yang tidak bergerak. <span class=\"newest\">Baharu</span>"
@@ -1718,6 +1814,10 @@
  "34c3262b9b37": {
   "en": " free  · 10 s ",
   "t": "percuma · 10 s"
+ },
+ "34cb8ac649a8": {
+  "en": "{x} against {y}, one dot per day",
+  "t": "{x} lawan {y}, satu titik sehari"
  },
  "34d8b60fe253": {
   "en": "Hide",
@@ -1759,6 +1859,10 @@
   "en": "The Witcher in Concert",
   "t": "The Witcher in Concert"
  },
+ "36a883e762d4": {
+  "en": "low",
+  "t": "rendah"
+ },
  "36f780fdbda5": {
   "en": " PC ",
   "t": "PC"
@@ -1786,6 +1890,10 @@
  "37e005ab8200": {
   "en": "Enlarge: Painting or drawing, 02/19/2013",
   "t": "Besarkan: Lukisan atau lakaran, 19/02/2013"
+ },
+ "37e737d92cbb": {
+  "en": "{n} min",
+  "t": "{n} min"
  },
  "380aad144968": {
   "en": "Enlarge: Camera angles are everything",
@@ -1838,6 +1946,10 @@
  "38a9bcedfb5c": {
   "en": "<strong>M. Alexandra Kredlow and colleagues</strong>, <em>Journal of Behavioral Medicine</em> (2015), a meta-analysis of physical activity and sleep: regular exercise has small benefits for total sleep time, small-to-medium ones for falling asleep, and moderate ones for sleep quality. <a href=\"https://pubmed.ncbi.nlm.nih.gov/25596964/\">Abstract</a>",
   "t": "<strong>M. Alexandra Kredlow dan rakan-rakan</strong>, <em>Journal of Behavioral Medicine</em> (2015), meta-analisis tentang aktiviti fizikal dan tidur: senaman tetap memberi manfaat kecil pada jumlah masa tidur, kecil hingga sederhana untuk terlelap, dan sederhana pada kualiti tidur. <a href=\"https://pubmed.ncbi.nlm.nih.gov/25596964/\">Abstrak</a>"
+ },
+ "38cb9de8ada6": {
+  "en": "{h}h",
+  "t": "{h} j"
  },
  "38e1d26af274": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer",
@@ -1938,6 +2050,10 @@
  "3b419aac7299": {
   "en": "\nTreat your life like a project: break big goals into small steps, be honest about scope and deadlines, and track what's\n        actually done. It's how I run everything from client work to this website, and the <a href=\"#pm\" data-astro-cid-xtzphevd=\"\">PM side</a> of this tab\n        has the details.\n",
   "t": "Layan hidup anda seperti projek: pecahkan matlamat besar kepada langkah kecil, jujur tentang skop dan tarikh akhir, dan jejak apa yang benar-benar siap. Begitulah cara saya menguruskan segalanya, daripada kerja pelanggan hingga laman web ini, dan <a href=\"#pm\" data-astro-cid-xtzphevd=\"\">bahagian PM</a> tab ini ada butirannya."
+ },
+ "3b9579462803": {
+  "en": "Loading the numbers…",
+  "t": "Memuatkan angka…"
  },
  "3b9b88d1447d": {
   "en": " <span class=\"shelf__dot\" style=\"background: #0ca30c\" data-astro-cid-nqpad2wp=\"\"></span> Cozy &amp; life sims: 904 h ",
@@ -2042,6 +2158,10 @@
  "3ef5b5e97c0e": {
   "en": "Back to Musician",
   "t": "Kembali ke Pemuzik"
+ },
+ "3ef5d324a3b2": {
+  "en": "No month has 5 or more days in these filters.",
+  "t": "Tiada bulan yang ada 5 hari atau lebih dengan penapis ini."
  },
  "3f03ae3311ee": {
   "en": "VHS pile: turn your phone sideways",
@@ -2187,6 +2307,10 @@
   "en": "Reset",
   "t": "Set semula"
  },
+ "44cc45ad22b1": {
+  "en": " A · Timeline ",
+  "t": "A · Garis masa"
+ },
  "44eb59ea016a": {
   "en": "Black Jacket Symphony",
   "t": "Black Jacket Symphony"
@@ -2211,6 +2335,10 @@
   "en": "The juxtaposition between what you think it's about and what actually happens reminds me of Happy Tree Friends. The world lore and its rules are fascinating!",
   "t": "Pertentangan antara apa yang anda sangka dan apa yang sebenarnya berlaku mengingatkan saya kepada Happy Tree Friends. Lore dunia dan peraturannya sangat menarik!"
  },
+ "45d7b9f03f0a": {
+  "en": "Body fat (yearly average)",
+  "t": "Lemak badan (purata tahunan)"
+ },
  "45f08cb571cd": {
   "en": "<strong>Marcus Aurelius</strong>, <em>Meditations</em> 6.24: death brought Alexander the Great and his mule driver to the same state. <a href=\"https://en.wikisource.org/wiki/Marcus_Aurelius_(Haines_1916)/Book_6\">Text</a>",
   "t": "<strong>Marcus Aurelius</strong>, <em>Meditations</em> 6.24: maut membawa Iskandar Agung dan pemandu baghalnya ke keadaan yang sama. <a href=\"https://en.wikisource.org/wiki/Marcus_Aurelius_(Haines_1916)/Book_6\">Teks</a>"
@@ -2226,6 +2354,10 @@
  "46b00befa084": {
   "en": "\"Almost went viral!\" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses.",
   "t": "\"Hampir tular!\" tetap satu kekalahan, dan rasanya lebih teruk daripada gagal biasa, tetapi ia membuatkan orang mahu terus bermain. Ketekunan memuncak bila kira-kira 30% kekalahan ialah hampir-hampir menang."
+ },
+ "46e490cac450": {
+  "en": "bpm",
+  "t": "bpm"
  },
  "46e80e47b684": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested",
@@ -2431,6 +2563,14 @@
   "en": " BW ",
   "t": "BW"
  },
+ "4d90542645b2": {
+  "en": "Hover a dot for its month.",
+  "t": "Halakan ke titik untuk melihat bulannya."
+ },
+ "4d968a30a022": {
+  "en": "no data",
+  "t": "tiada data"
+ },
  "4db745f6113e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Toradora! ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Kedudukan 23: </span> Toradora!"
@@ -2547,6 +2687,10 @@
   "en": "Smol",
   "t": "Kecik"
  },
+ "4ffc67b62aae": {
+  "en": "Weekdays",
+  "t": "Hari bekerja"
+ },
  "5033c1d06398": {
   "en": "Charles Playhouse, Boston",
   "t": "Charles Playhouse, Boston"
@@ -2595,6 +2739,10 @@
   "en": "17 h",
   "t": "17 h"
  },
+ "5115ff9a0bea": {
+  "en": "{a} vs {o}",
+  "t": "{a} lwn {o}"
+ },
  "511993d3c997": {
   "en": "P",
   "t": "P"
@@ -2634,6 +2782,10 @@
  "521cb68c2c31": {
   "en": "Ceará",
   "t": "Ceará"
+ },
+ "52709c0fe403": {
+  "en": "{name}, one square per day in {year}",
+  "t": "{name}, satu petak sehari pada {year}"
  },
  "5284e1a74198": {
   "en": "Tell me I am pretty",
@@ -2775,6 +2927,10 @@
   "en": "People post more right after a batch of likes, spacing posts to chase the best rate of likes, like an animal in a Skinner box.",
   "t": "Orang menyiar lebih banyak sejurus selepas mendapat sekumpulan suka, menjarakkan hantaran untuk mengejar kadar suka terbaik, seperti haiwan dalam kotak Skinner."
  },
+ "55f9fd002ac9": {
+  "en": "The body is the temple",
+  "t": "Tubuh ialah kuil"
+ },
  "55fa0faa800a": {
   "en": "City, colony & strategy",
   "t": "Bandar, koloni & strategi"
@@ -2879,6 +3035,10 @@
   "en": "7% of my hours",
   "t": "7% daripada jam saya"
  },
+ "58f7a8f2ec30": {
+  "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n Body fat, yearly average: 2023, 32.9%; 2024, 36.8%; 2025, 38.0%; 2026, 35.4%. ",
+  "t": "Berat mengikut tahun: 2016, 300 paun; 2017, 220 paun; 2018, 230 paun; 2019, 240 paun; 2020, 260 paun; 2021, 230 paun; 2022, 245 paun; 2023, 260 paun; 2024, 250 paun; 2025, 260 paun; 2026, 225 paun. Sasaran: 200 paun.\n Lemak badan, purata tahunan: 2023, 32.9%; 2024, 36.8%; 2025, 38.0%; 2026, 35.4%."
+ },
  "592bc9228abd": {
   "en": "Enlarge: Salty doggo",
   "t": "Besarkan: Anjing merajuk"
@@ -2927,6 +3087,10 @@
   "en": "Change the lights",
   "t": "Tukar lampu"
  },
+ "5a6b6b31729f": {
+  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>Other nights",
+  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>Malam lain"
+ },
  "5a7078113356": {
   "en": "Sleep first",
   "t": "Tidur dulu"
@@ -2959,6 +3123,10 @@
   "en": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Aquamarine",
   "t": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Aquamarine"
  },
+ "5b290995d5b7": {
+  "en": "Heart rate variability",
+  "t": "Kebolehubahan kadar denyut jantung"
+ },
  "5b4dfc520699": {
   "en": "Notice me harder, senpai! (｡♥‿♥｡)",
   "t": "Perasanlah saya lagi, senpai! (｡♥‿♥｡)"
@@ -2990,6 +3158,10 @@
  "5bfe7304b93a": {
   "en": "Enlarge: Rueiro",
   "t": "Besarkan: Rueiro"
+ },
+ "5c1ae82c2954": {
+  "en": "Fall",
+  "t": "Musim luruh"
  },
  "5c1db802f890": {
   "en": "Repeat yourself and each post pays less, then starts to cost you followers. The treadmill speeds up.",
@@ -3062,6 +3234,10 @@
  "5e7e6713592f": {
   "en": "Be Awesome!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (written in Vraki)</span>",
   "t": "Be Awesome!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ditulis dalam Vraki)</span>"
+ },
+ "5e873f457d2a": {
+  "en": " C · Calendar ",
+  "t": "C · Kalendar"
  },
  "5e89349bfb8a": {
   "en": "Camping",
@@ -3183,6 +3359,10 @@
   "en": "The wishlist is on its way.",
   "t": "Senarai hajat dalam perjalanan."
  },
+ "62255f5671e8": {
+  "en": "Season",
+  "t": "Musim"
+ },
  "62405c2823c6": {
   "en": "Justin Timberlake",
   "t": "Justin Timberlake"
@@ -3210,6 +3390,10 @@
  "62bd650a8380": {
   "en": " FC ",
   "t": "FC"
+ },
+ "62dfe60deea3": {
+  "en": "The numbers didn't load. Try again later.",
+  "t": "Angka tidak dapat dimuatkan. Cuba lagi nanti."
  },
  "633797165688": {
   "en": "Magical Mirai, Osaka (2014)",
@@ -3479,6 +3663,10 @@
   "en": "Take care of Peeta",
   "t": "Jaga Peeta"
  },
+ "6a72085653e4": {
+  "en": "All",
+  "t": "Semua"
+ },
  "6a985aa2c1d7": {
   "en": "Disturbed",
   "t": "Disturbed"
@@ -3551,6 +3739,10 @@
   "en": "3 mana · 2",
   "t": "3 mana · 2"
  },
+ "6d0a290e3592": {
+  "en": "One square per day, one row per year. The brighter the square, the higher the number. A colored edge marks each ride day. Faded squares are days outside your filters.",
+  "t": "Satu petak sehari, satu baris setahun. Lebih cerah petak, lebih tinggi angkanya. Tepi berwarna menandakan setiap hari berbasikal. Petak pudar ialah hari di luar penapis anda."
+ },
  "6d1c8ee06629": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 29: </span> Placeholder TV show 29 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Kedudukan 29: </span> Rancangan TV sementara 29"
@@ -3579,6 +3771,10 @@
   "en": "Play time!",
   "t": "Masa bermain!"
  },
+ "6dc1222c378c": {
+  "en": "Readiness",
+  "t": "Kesediaan"
+ },
  "6dcd4ce23d88": {
   "en": "A",
   "t": "A"
@@ -3595,6 +3791,10 @@
   "en": "That one really got me in the feels. It made me feel more in one sitting than I felt while dating some girls. It's hard for me to miss someone once I say goodbye, but this anime made me sit with that feeling for a good while after watching it.",
   "t": "Yang itu betul-betul menyentuh perasaan saya. Ia membuatkan saya rasa lebih banyak dalam satu duduk berbanding ketika saya bercinta dengan sesetengah gadis. Susah untuk saya rindu seseorang selepas saya ucap selamat tinggal, tetapi anime ini membuatkan saya terbawa-bawa perasaan itu lama selepas menontonnya."
  },
+ "6e64529a10e6": {
+  "en": "The night and day after each ride day, against every other day you picked. The dot is the middle value (the median) and the bar holds the middle half of the days. This view ignores the Nights filter.",
+  "t": "Malam dan hari selepas setiap hari berbasikal, berbanding semua hari lain yang dipilih. Titik ialah nilai tengah (median) dan bar meliputi separuh tengah hari-hari itu. Paparan ini mengabaikan penapis Malam."
+ },
  "6e68e69e0822": {
   "en": "Black ink",
   "t": "Dakwat hitam"
@@ -3610,10 +3810,6 @@
  "6eef3154b469": {
   "en": "Misaki is hands down my favorite character in the entire series! And this is my favorite series in the \"A Certain...\" world.",
   "t": "Misaki memang watak kegemaran saya dalam seluruh siri! Dan ini siri kegemaran saya dalam dunia \"A Certain...\"."
- },
- "6ef1bd6bc4fd": {
-  "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n",
-  "t": "Berat mengikut tahun: 2016, 300 paun; 2017, 220 paun; 2018, 230 paun; 2019, 240 paun; 2020, 260 paun; 2021, 230 paun; 2022, 245 paun; 2023, 260 paun; 2024, 250 paun; 2025, 260 paun; 2026, 225 paun. Sasaran: 200 paun."
  },
  "6f1c05b8c7b8": {
   "en": "Trained by the Pope's own hand",
@@ -3767,6 +3963,10 @@
   "en": "{name} is hungry",
   "t": "{name} lapar"
  },
+ "73f12baa61a3": {
+  "en": "Breathing rate",
+  "t": "Kadar pernafasan"
+ },
  "740587c66df0": {
   "en": "If thou art a <strong>Cardinal of the Touch</strong>, thou shalt know when the meat is done by touch alone. Otherwise, use the thermometer.",
   "t": "Jika kau seorang <strong>Kardinal Sentuhan</strong>, kau akan tahu bila daging masak hanya dengan sentuhan. Jika tidak, gunakan termometer."
@@ -3875,6 +4075,10 @@
   "en": "SP",
   "t": "SP"
  },
+ "770df2e64e5a": {
+  "en": "°F",
+  "t": "°F"
+ },
  "773239581207": {
   "en": "Rock &amp; metal",
   "t": "Rock &amp; metal"
@@ -3918,6 +4122,10 @@
  "781012cf77dd": {
   "en": "estimated",
   "t": "anggaran"
+ },
+ "781291fa12cc": {
+  "en": "ride day",
+  "t": "hari berbasikal"
  },
  "781961bc81c2": {
   "en": "Pause",
@@ -4071,6 +4279,10 @@
   "en": "9% of my hours",
   "t": "9% daripada jam saya"
  },
+ "7c92fc5cf65f": {
+  "en": "Summer",
+  "t": "Musim panas"
+ },
  "7cbce9cd9969": {
   "en": "Salesman and his companion",
   "t": "Jurujual dan temannya"
@@ -4178,6 +4390,10 @@
  "7f6175041cc3": {
   "en": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #4: </span>Systematize your brain",
   "t": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Petua hidup #4: </span>Sistemkan otak anda"
+ },
+ "7fe62dcaf796": {
+  "en": "strongly related",
+  "t": "sangat berkaitan"
  },
  "8010162de46b": {
   "en": "Final Fantasy series",
@@ -4291,6 +4507,10 @@
   "en": "Faithful servants who yet lean upon the thermometer, but who follow the steps and strive to forsake all sauce.",
   "t": "Hamba setia yang masih bersandar pada termometer, tetapi mengikut langkah-langkah dan berusaha meninggalkan segala sos."
  },
+ "8371b1d2be3f": {
+  "en": "Active zone minutes",
+  "t": "Minit zon aktif"
+ },
  "8385323100f4": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#2: </span>Best of the Worst: Christmas 2020",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#2: </span>Best of the Worst: Christmas 2020"
@@ -4379,6 +4599,10 @@
   "en": "Hairball",
   "t": "Hairball"
  },
+ "865e588793be": {
+  "en": "Deep sleep",
+  "t": "Tidur nyenyak"
+ },
  "8686eb8cf046": {
   "en": "Circa Q2 2013",
   "t": "Sekitar S2 2013"
@@ -4431,6 +4655,10 @@
   "en": "Can we fry those up",
   "t": "Boleh goreng tak benda tu"
  },
+ "87de5501fb6d": {
+  "en": "Pick at least one metric above.",
+  "t": "Pilih sekurang-kurangnya satu metrik di atas."
+ },
  "87f8a557dc11": {
   "en": "If you read my Vol 2 afterword, you'll understand why this one is so meaningful to me. Besides loving Megumin and the rest of the cast, I love how it takes potshots at the entire isekai genre, and the laissez-faire, shitposting attitude it brings.",
   "t": "Kalau anda baca kata akhir Vol 2 saya, anda akan faham kenapa yang ini begitu bermakna kepada saya. Selain menyayangi Megumin dan watak-watak lain, saya suka cara ia menyindir seluruh genre isekai, dan sikap laissez-faire dan shitpost yang dibawanya."
@@ -4478,6 +4706,10 @@
  "8937a988d677": {
   "en": " TrueSteamAchievements ",
   "t": "TrueSteamAchievements"
+ },
+ "89677615c2ec": {
+  "en": "Spring",
+  "t": "Musim bunga"
  },
  "89a35bbdf744": {
   "en": "Your {n}-post streak is about to die. Post something!",
@@ -4583,9 +4815,17 @@
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,123 h</strong>  ·  19 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,123 h</strong>  ·  19 permainan  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">3% daripada jam saya</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">7% daripada jam saya</span>"
  },
+ "8cd84528f364": {
+  "en": "Blood oxygen",
+  "t": "Oksigen darah"
+ },
  "8ce8b5330b49": {
   "en": "So damn cute! It reminded me of going through adolescence, which means it does a really good job of capturing how weird and fascinating it is to grow into early adulthood. Also, I absolutely love Satone, because I love clingy girls!",
   "t": "Comel sangat! Ia mengingatkan saya kepada zaman remaja, maksudnya ia sangat berjaya menangkap betapa pelik dan menakjubkannya membesar ke alam dewasa awal. Lagipun, saya sangat suka Satone, kerana saya suka gadis yang manja melekat!"
+ },
+ "8ceb6b355335": {
+  "en": "barely related",
+  "t": "hampir tiada kaitan"
  },
  "8cf47617a602": {
   "en": "Rio Grande do Norte",
@@ -4754,6 +4994,10 @@
  "92164916faa7": {
   "en": "Whack the Miku (bottom left, key 3)",
   "t": "Pukul Miku (bawah kiri, kekunci 3)"
+ },
+ "9235afd3e988": {
+  "en": "high",
+  "t": "tinggi"
  },
  "9239c22d1d1c": {
   "en": "Japanese",
@@ -4939,6 +5183,10 @@
   "en": "Enlarge: Failing to learn English",
   "t": "Besarkan: Gagal belajar bahasa Inggeris"
  },
+ "96e578211aa2": {
+  "en": "Filters",
+  "t": "Penapis"
+ },
  "96f997bcecb3": {
   "en": "Years",
   "t": "Tahun"
@@ -5039,6 +5287,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#8: </span>Best of the Worst: Black Spine Raffle",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#8: </span>Best of the Worst: Black Spine Raffle"
  },
+ "9a614628eb58": {
+  "en": "Cardio fitness (VO₂ max)",
+  "t": "Kecergasan kardio (VO₂ maks)"
+ },
  "9a6a49a5317f": {
   "en": "EM",
   "t": "EM"
@@ -5046,6 +5298,10 @@
  "9a7378f878db": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder movie 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Kedudukan 33: </span> Filem sementara 33"
+ },
+ "9ae44de0bb30": {
+  "en": "Other nights",
+  "t": "Malam lain"
  },
  "9b596bacf45e": {
   "en": "You don't have to trust me, you can check <a href=\"https://github.com/Deovandski/Deovandski\" data-astro-cid-somgw2vn=\"\">the source code</a> yourself.",
@@ -5271,6 +5527,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 13: </span> Cyberpunk: Edgerunners ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Kedudukan 13: </span> Cyberpunk: Edgerunners"
  },
+ "a18eb7212129": {
+  "en": "Nights",
+  "t": "Malam"
+ },
  "a191d463d26a": {
   "en": "Enlarge: Mickey D's",
   "t": "Besarkan: McD"
@@ -5306,6 +5566,10 @@
  "a257e7233ab2": {
   "en": "312 h",
   "t": "312 h"
+ },
+ "a2620cbc10f5": {
+  "en": "day",
+  "t": "hari"
  },
  "a27a66446545": {
   "en": "Washington",
@@ -5386,6 +5650,10 @@
  "a4c146b7a21c": {
   "en": "Senpai, your bellows technique is... impressive (￣▽￣)ノ",
   "t": "Senpai, teknik belos awak... mengagumkan (￣▽￣)ノ"
+ },
+ "a4f5e66b42d2": {
+  "en": "Days in view",
+  "t": "Hari dipaparkan"
  },
  "a54d8d9fd7e6": {
   "en": "7 countries · 4 states/provinces · 94 photos",
@@ -5475,6 +5743,10 @@
   "en": "Maneater",
   "t": "Maneater"
  },
+ "a7554703ef3a": {
+  "en": "Biomarker Lab",
+  "t": "Makmal Biopenanda"
+ },
  "a75e8688b4fb": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24"
@@ -5551,6 +5823,10 @@
   "en": "Your clock is ticking too",
   "t": "Jam anda juga sedang berdetik"
  },
+ "a912d4a5cf52": {
+  "en": "{a} vs {o} days",
+  "t": "{a} lwn {o} hari"
+ },
  "a91385ae4f0f": {
   "en": "Portuguese: 10 of 10, Fully bilingual",
   "t": "Portugis: 10 daripada 10, dwibahasa sepenuhnya"
@@ -5606,6 +5882,10 @@
  "aabee28bec46": {
   "en": "August 3, 2026",
   "t": "3 Ogos 2026"
+ },
+ "aad754dbe1a8": {
+  "en": "in view",
+  "t": "dipaparkan"
  },
  "aaf4de45da01": {
   "en": "This is a Christian fireplace! (╯°□°)╯",
@@ -5887,6 +6167,10 @@
   "en": "Deo in 2017 in a graduation cap and gown with a medal, raising a beer",
   "t": "Deo pada 2017 memakai topi dan jubah graduasi dengan pingat, mengangkat bir"
  },
+ "b2589a337b11": {
+  "en": "These days cluster in some seasons more than others, so a difference here is a hint, not proof of a cause.",
+  "t": "Hari-hari ini lebih banyak dalam sesetengah musim berbanding yang lain, jadi perbezaan di sini ialah petunjuk, bukan bukti punca."
+ },
  "b29157b87cd1": {
   "en": "Bands I still want to see live.",
   "t": "Band yang masih saya mahu tonton secara langsung."
@@ -5894,6 +6178,10 @@
  "b297cb01e994": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#5: </span>Best of the Worst: Halloween 2022"
+ },
+ "b2bb7604c825": {
+  "en": "Metric",
+  "t": "Metrik"
  },
  "b2d879e09416": {
   "en": "Plantera",
@@ -5914,6 +6202,10 @@
  "b36cbebb0440": {
   "en": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">Kegemaran FITM 2025</span>"
+ },
+ "b38a99fe0694": {
+  "en": "one rises as the other falls",
+  "t": "satu naik bila yang lain turun"
  },
  "b3fed1091f2c": {
   "en": "d4",
@@ -5979,6 +6271,10 @@
   "en": "60 h",
   "t": "60 h"
  },
+ "b553840edbe9": {
+  "en": " B · Ride nights ",
+  "t": "B · Malam berbasikal"
+ },
  "b588aca7bb99": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Kedudukan 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!)"
@@ -6014,6 +6310,10 @@
  "b6c015d12e1b": {
   "en": "Wins",
   "t": "Menang"
+ },
+ "b6c935d4f3c7": {
+  "en": "min",
+  "t": "min"
  },
  "b6cdc0302c44": {
   "en": "Enlarge: Stroller time",
@@ -6106,6 +6406,10 @@
  "b9af5469788b": {
   "en": "The clock is ticking on my 💀 Death tab.",
   "t": "Jam sedang berdetik di 💀 tab Kematian saya."
+ },
+ "b9dd1e7cf0fb": {
+  "en": "Stress score",
+  "t": "Skor tekanan"
  },
  "ba01865809b3": {
   "en": "Back to Concert",
@@ -6287,6 +6591,10 @@
   "en": "Enlarge: But don't wanna go to sleep",
   "t": "Besarkan: Tapi tak nak tidur"
  },
+ "c0ee32d825d6": {
+  "en": "week",
+  "t": "minggu"
+ },
  "c0f00b81ade6": {
   "en": "The true churrasco is <strong>picanha</strong> roasted on the <em>espeto</em>, the sword-like skewer, upon a <em>churrasqueira giratória</em>, the wall-style grill that turns the meat without rest.",
   "t": "Churrasco sejati ialah <strong>picanha</strong> yang dipanggang pada <em>espeto</em>, cucuk seperti pedang, di atas <em>churrasqueira giratória</em>, pemanggang dinding yang memutar daging tanpa henti."
@@ -6318,6 +6626,10 @@
  "c1596106e469": {
   "en": "Hanging with a Peeta look alike",
   "t": "Lepak dengan kembar Peeta"
+ },
+ "c169b50f6151": {
+  "en": " D · Seasons ",
+  "t": "D · Musim"
  },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -6407,6 +6719,10 @@
   "en": "Rauw Alejandro",
   "t": "Rauw Alejandro"
  },
+ "c4e423204c8a": {
+  "en": "Ride nights",
+  "t": "Malam berbasikal"
+ },
  "c5352fbe59ff": {
   "en": "Next routine",
   "t": "Rutin seterusnya"
@@ -6438,6 +6754,10 @@
  "c5d40b2b76f6": {
   "en": "\nI've always been fascinated by creating music. But not only am I tone deaf, I also struggle with reading sheet music,\n          and even with something as simple as <a href=\"https://www.image-line.com/fl-studio/\" data-astro-cid-j7pv25f6=\"\">FL Studio</a> and\n<a href=\"https://www.virtualdj.com/\" data-astro-cid-j7pv25f6=\"\">VirtualDJ</a>. I remember messing with them a lot, but never making progress, or\n          just making utter terrible shit. All I've been able to do by myself is fade songs in and out, fix their EQ and such in\n<a href=\"https://www.audacityteam.org/\" data-astro-cid-j7pv25f6=\"\">Audacity</a>. Never true music creation.\n",
   "t": "Saya sentiasa terpesona dengan mencipta muzik. Tetapi bukan sahaja saya buta nada, saya juga sukar membaca not muzik, malah dengan sesuatu semudah <a href=\"https://www.image-line.com/fl-studio/\" data-astro-cid-j7pv25f6=\"\">FL Studio</a> dan <a href=\"https://www.virtualdj.com/\" data-astro-cid-j7pv25f6=\"\">VirtualDJ</a>. Saya ingat banyak bermain-main dengannya, tetapi tidak pernah maju, atau hanya menghasilkan benda yang betul-betul teruk. Apa yang saya mampu buat sendiri hanyalah melembutkan masuk dan keluar lagu, membetulkan EQ dan seumpamanya dalam <a href=\"https://www.audacityteam.org/\" data-astro-cid-j7pv25f6=\"\">Audacity</a>. Bukan ciptaan muzik sebenar."
+ },
+ "c6129321a1a0": {
+  "en": "clearly related",
+  "t": "jelas berkaitan"
  },
  "c63ae6dd4fc9": {
   "en": "M",
@@ -6510,6 +6830,10 @@
  "c89fbbb316fe": {
   "en": " <span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> Space &amp; flight: 1,302 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #9085e9\" data-astro-cid-nqpad2wp=\"\"></span> Angkasa &amp; penerbangan: 1,302 h"
+ },
+ "c8a57159c492": {
+  "en": "How my nights after a ride compare with the rest is in the <a href=\"#biomarkers\">Biomarker Lab</a>, under Hearth.",
+  "t": "Bagaimana malam saya selepas berbasikal berbanding malam lain ada dalam <a href=\"#biomarkers\">Makmal Biopenanda</a>, di bawah Rumah."
  },
  "c8b4c761e082": {
   "en": " 1,302 h ",
@@ -6687,6 +7011,10 @@
   "en": "Potato",
   "t": "Kentang"
  },
+ "cdde4f20ba31": {
+  "en": "Steps",
+  "t": "Langkah"
+ },
  "cde507abe00d": {
   "en": "67 days",
   "t": "67 hari"
@@ -6751,6 +7079,10 @@
   "en": "Never wrestle with pigs. You both get dirty, and the pig likes it. <span class=\"newest\">New</span>",
   "t": "Jangan sesekali bergelut dengan babi. Kamu berdua jadi kotor, dan babi suka. <span class=\"newest\">Baharu</span>"
  },
+ "cfd46a36afd8": {
+  "en": "Across",
+  "t": "Mendatar"
+ },
  "cfd9334fce91": {
   "en": "Revenant (1999)",
   "t": "Revenant (1999)"
@@ -6794,6 +7126,10 @@
  "d09bdd281dfa": {
   "en": "Princess Fluffy of Guamá",
   "t": "Puteri Fluffy dari Guamá"
+ },
+ "d0c12b6b5196": {
+  "en": "REM sleep",
+  "t": "Tidur REM"
  },
  "d1230224faff": {
   "en": "Campaign #2",
@@ -6854,6 +7190,14 @@
  "d28817938afa": {
   "en": "Colorado",
   "t": "Colorado"
+ },
+ "d28fc72baa36": {
+  "en": "The body is a machine, and like any other machine, it needs to be cared for. These are its gauges: what my watch has logged every day since April 2023. Slice them any way you like.",
+  "t": "Tubuh ialah mesin, dan seperti mesin lain, ia perlu dijaga. Ini tolok-toloknya: apa yang direkod oleh jam tangan saya setiap hari sejak April 2023. Hirislah sesuka hati."
+ },
+ "d28fea415d19": {
+  "en": "middle value",
+  "t": "nilai tengah"
  },
  "d29b1a0ebf5e": {
   "en": "Lukewarm",
@@ -7131,6 +7475,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#19: </span>Best of the Worst: A Very Cannon Christmas II",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#19: </span>Best of the Worst: A Very Cannon Christmas II"
  },
+ "d970d5b83c91": {
+  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Rides come from the\n<a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Cycling</a> tab. Dates and numbers only: no places.\n",
+  "t": "Daripada Pixel Watch saya, melalui Google Health, April 2023 hingga November 2026 (dieksport pada 2026-11-26). Kayuhan datang dari tab\n<a href=\"#cycling\" data-astro-cid-dnrbux3h=\"\">Berbasikal</a>. Tarikh dan angka sahaja: tiada tempat."
+ },
  "d988b45e783b": {
   "en": "Pick a routine",
   "t": "Pilih satu tarian"
@@ -7154,6 +7502,10 @@
  "d9c4aa395b07": {
   "en": "Enlarge: Captain Bidu: Bidu wearing a blue military officer cap with a gold winged badge",
   "t": "Besarkan: Kapten Bidu: Bidu memakai topi pegawai tentera biru dengan lencana bersayap emas"
+ },
+ "d9defa2c4cc3": {
+  "en": "loosely related",
+  "t": "sedikit berkaitan"
  },
  "d9ecc35c78dd": {
   "en": "Scream Collector",
@@ -7214,6 +7566,10 @@
  "dba7601ff7be": {
   "en": "Symphony of Seasons",
   "t": "Symphony of Seasons"
+ },
+ "dbf87a14e9e7": {
+  "en": "{a} to {b} (the middle 60%)",
+  "t": "{a} hingga {b} (60% di tengah)"
  },
  "dbf97b660ed1": {
   "en": "Eat sleep poop repeat",
@@ -7423,6 +7779,10 @@
   "en": "961 h",
   "t": "961 h"
  },
+ "e2ce44da53e6": {
+  "en": "Sleep score",
+  "t": "Skor tidur"
+ },
  "e2fdc09c46f0": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez"
@@ -7442,6 +7802,10 @@
  "e3b82040565b": {
   "en": "Now",
   "t": "Sekarang"
+ },
+ "e3cb8bd6bf09": {
+  "en": "Bedtime",
+  "t": "Waktu tidur"
  },
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
@@ -7562,6 +7926,10 @@
  "e76e281ed9f1": {
   "en": "Back to the starting picture",
   "t": "Kembali ke gambar mula"
+ },
+ "e7be4dbaee78": {
+  "en": "Metrics to show",
+  "t": "Metrik untuk dipaparkan"
  },
  "e7d965113795": {
   "en": "Kilograms of beef grilled: 295",
@@ -7851,6 +8219,10 @@
   "en": "141 h",
   "t": "141 h"
  },
+ "f281a799c9fd": {
+  "en": "r = {r} · {n} days · {strength}",
+  "t": "r = {r} · {n} hari · {strength}"
+ },
  "f2a63e1c444a": {
   "en": "Photogenic",
   "t": "Fotogenik"
@@ -7910,6 +8282,14 @@
  "f42120fee221": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Placeholder TV show 23 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Kedudukan 23: </span> Rancangan TV sementara 23"
+ },
+ "f4278970b6fb": {
+  "en": "Not enough days in these filters. Try more years or all seasons.",
+  "t": "Tidak cukup hari dengan penapis ini. Cuba lebih banyak tahun atau semua musim."
+ },
+ "f437bf56eca8": {
+  "en": "Ways to see the numbers",
+  "t": "Cara melihat angka"
  },
  "f4853c881e96": {
   "en": "{n} more to earn",
@@ -8147,6 +8527,10 @@
   "en": "The Book of Mormon",
   "t": "The Book of Mormon"
  },
+ "fc10303017c5": {
+  "en": "Skin temperature",
+  "t": "Suhu kulit"
+ },
  "fc3c2b787144": {
   "en": "Lyric Opera of Chicago",
   "t": "Lyric Opera of Chicago"
@@ -8218,6 +8602,10 @@
  "fe9050f8f41a": {
   "en": "Practice skin. Draw a tattoo on it with the tattoo pen.",
   "t": "Kulit latihan. Lukis tatu padanya dengan pen tatu."
+ },
+ "feda6ec3fdc1": {
+  "en": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>After a ride",
+  "t": "<i class=\"metric-lab__swatch metric-lab__swatch--event\"></i>Selepas berbasikal"
  },
  "fee0589986c6": {
   "en": "The Stanley Parable",

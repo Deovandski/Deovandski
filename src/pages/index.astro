@@ -13,6 +13,7 @@ import LifeHacksFacet from '../components/LifeHacksFacet.astro';
 import FamilyFacet from '../components/FamilyFacet.astro';
 import GymFacet from '../components/GymFacet.astro';
 import CyclingFacet from '../components/CyclingFacet.astro';
+import BiomarkersFacet from '../components/BiomarkersFacet.astro';
 import { Content as CyclingSources } from '../../content/cycling/sources.md';
 import LustFacet from '../components/LustFacet.astro';
 import DeathFacet from '../components/DeathFacet.astro';
@@ -162,6 +163,7 @@ const facets = [
   { id: 'tattoo', icon: '🖋️', label: 'Tattoo' },
   { id: 'gym', icon: '🏋️', label: 'Gym' },
   { id: 'cycling', icon: '🚴', label: 'Cycling' },
+  { id: 'biomarkers', icon: '🫀', label: 'Biomarker Lab' },
   { id: 'miku', icon: '🎤', label: '初音ミク' },
   { id: 'churrasco', icon: '🥩', label: 'Churrasco' },
   { id: 'musician', icon: '🎶', label: 'Musician' },
@@ -184,7 +186,7 @@ const branches = [
   { id: 'explorer', icon: '🌏', label: 'Explorer', blurb: 'Where Deo goes and the languages he speaks there.', facets: ['traveler', 'aviation', 'multilingual', 'camping', 'fishing'] },
   { id: 'frontrow', icon: '🎟️', label: 'Front Row', blurb: 'What Deo watches: live shows, the diva herself, anime, and the movies and TV worth (or not worth) the time.', facets: ['concert', 'theater', 'miku', 'anime', 'botw', 'potato'] },
   { id: 'play', icon: '🕹️', label: 'Play', blurb: 'Games at the table and on the screen, cards included.', facets: ['gamer', 'dnd', 'boardgames', 'mtg'] },
-  { id: 'hearth', icon: '🏡', label: 'Hearth', blurb: 'Family, pets, the grill and the kitchen.', facets: ['family', 'pets', 'churrasco', 'cooking'] },
+  { id: 'hearth', icon: '🏡', label: 'Hearth', blurb: 'Family, pets, the grill, the kitchen, and the body that carries it all.', facets: ['family', 'pets', 'churrasco', 'cooking', 'biomarkers'] },
 ];
 
 // Every facet must sit in exactly one branch, and a branch holds at most 6 (one row of the tree).
@@ -650,6 +652,10 @@ const nf = new Intl.NumberFormat('en-US');
     <section class="panel" role="region" id="panel-cycling" aria-labelledby="tab-cycling" tabindex="0" hidden>
       <LinksMenu id="cycling-links" toggle="external"><SourceList title="Shoulders I stand on"><CyclingSources /></SourceList></LinksMenu>
       <CyclingFacet />
+    </section>
+
+    <section class="panel" role="region" id="panel-biomarkers" aria-labelledby="tab-biomarkers" tabindex="0" hidden>
+      <BiomarkersFacet />
     </section>
 
     <section class="panel" role="region" id="panel-miku" aria-labelledby="tab-miku" tabindex="0" hidden>

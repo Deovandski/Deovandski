@@ -12,6 +12,8 @@ Having cycling in the routine, alongside the gym, also helped my circadian rhyth
 
 A ride outside stacks the last two: daylight and exercise, in one go. The studies are in this tab's Links box.
 
+How my nights after a ride compare with the rest is in the [Biomarker Lab](#biomarkers), under Hearth.
+
 ## Mountain biking
 
 Going mountain biking for the first time was a natural step up to expand my experiences, although my bike did not survive the endeavor.
