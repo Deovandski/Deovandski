@@ -7,6 +7,10 @@
   "en": "Deovandski, home",
   "t": "Deovandski, home"
  },
+ "15c61d430df1": {
+  "en": "You’re using the installed app.",
+  "t": "Stai usando l’app installata."
+ },
  "5a1d7fe00c79": {
   "en": "Made by Deovandski Skibinski Junior cracking the whip on Claude huehuehue ;P · <a href=\"/llms.txt\" data-astro-cid-5hce7sga=\"\">llms.txt</a> · <a href=\"/llms-full.txt\" data-astro-cid-5hce7sga=\"\">llms-full.txt</a>",
   "t": "Fatto da Deovandski Skibinski Junior, facendo schioccare la frusta su Claude huehuehue ;P · <a href=\"/llms.txt\" data-astro-cid-5hce7sga=\"\">llms.txt</a> · <a href=\"/llms-full.txt\" data-astro-cid-5hce7sga=\"\">llms-full.txt</a>"
@@ -27,6 +31,10 @@
   "en": "Language",
   "t": "Lingua"
  },
+ "9e3f4c60afcd": {
+  "en": "No install button? Open this page in Chrome (⋮ → Open in Chrome), then ⋮ → Install app.",
+  "t": "Non vedi il pulsante per installare? Apri questa pagina in Chrome (⋮ → Apri in Chrome), poi ⋮ → Installa app."
+ },
  "a68eb230823a": {
   "en": " Playground ",
   "t": "Playground"
@@ -34,6 +42,10 @@
  "b37456c4530b": {
   "en": " Contact ",
   "t": "Contatti"
+ },
+ "bd1cf21678f6": {
+  "en": "Installed! Open it from your home screen or app list.",
+  "t": "Installata! Aprila dalla schermata Home o dall’elenco delle app."
  },
  "c3850bab87fc": {
   "en": "Vraki mode <small data-astro-cid-pajorjl7=\"\">(read everything in the Vraki script)</small> <small class=\"vraki-note\" data-astro-cid-pajorjl7=\"\">Vraki mode works with the English text only.</small>",
@@ -43,12 +55,28 @@
   "en": "Settings",
   "t": "Impostazioni"
  },
+ "ccd62e5d37a0": {
+  "en": "To install it, open this page in Chrome, Edge or Samsung Internet. On iPhone or iPad: Share, then Add to Home Screen.",
+  "t": "Per installarla, apri questa pagina in Chrome, Edge o Samsung Internet. Su iPhone o iPad: Condividi → Aggiungi alla schermata Home."
+ },
  "d36880a182c5": {
   "en": "Want a language added?",
   "t": "Vuoi che aggiungiamo una lingua?"
  },
+ "d5636c56abfd": {
+  "en": "On iPhone or iPad: tap Share, then Add to Home Screen.",
+  "t": "Su iPhone o iPad: tocca Condividi, poi Aggiungi alla schermata Home."
+ },
+ "e5f79aa13bd5": {
+  "en": "Install app",
+  "t": "Installa app"
+ },
  "e9b450d14bc2": {
   "en": "Done",
   "t": "Fatto"
+ },
+ "fc4a695f02a8": {
+  "en": "App",
+  "t": "App"
  }
 }

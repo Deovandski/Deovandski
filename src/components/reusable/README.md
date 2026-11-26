@@ -27,6 +27,7 @@ and a project without translations just shows the English.
 | [PlanetLap.astro](PlanetLap.astro) | How far around a planet a distance goes, Reus-style (the planet cut in half, seen side on), animated like an in-flight map: a little cyclist rides from the start flag, then the map keeps zooming in and out between the nearest places and the far ones, with a next-stop panel and distances to go, fossils under the surface, and an optional chaser that runs after the rider. | Cycling tab (from Fargo, ND), with Ursu Sintasus giving chase |
 | [PhotoQuiz.astro](PhotoQuiz.astro) | Guess where a photo was taken: rounds of photos (10 by default) with multiple-choice answers, a score card, and a helper slot under it who gives one freebie per game (narrows the answers to two), chats now and then, and shares fun facts after some answers. Every word is in the page, so it gets translated. | Traveler tab (Where in the World Was Deo?, #290) |
 | [PixelHammock.astro](PixelHammock.astro) | The chibi pixel character from StageDancer, chilling in a hammock between two palm trees, swaying; opens its eyes while it talks (`data-awake`). Drawn in code, outfit colours as props. | Traveler tab (the game's helper) |
+| [InstallApp.astro](InstallApp.astro) | An "Install app" button for an installable site (PWA): shown only when the browser can install it right now, otherwise a short line on how (open in Chrome on Android, Share → Add to Home Screen on iPhone), and "You're using the installed app" inside the app. | Settings menu (#292) |
 | [ArcadeButton.astro](ArcadeButton.astro) | A big, chunky, old-school push button with one emoji on its cap and a click sound; it sinks when pressed, and as a toggle it stays down and lit while on. | Concert tab (Saturday Night Fever: music, pause, lights) |
 | [YouTube.astro](YouTube.astro) | A privacy-friendly YouTube embed: nothing loads from YouTube until play is pressed, then it plays from youtube-nocookie.com; pauses itself when hidden. 16:9 videos and 9:16 Shorts. | Aviation tab, Cycling tab ("Ridin' with Peeta") |
 | [MetricLab.astro](MetricLab.astro) | Years of daily numbers to slice and dice: group boxes of checkboxes (years, seasons, weekdays and weekends, the nights after an event, which kinds of event count) over five views: small-multiple timelines with a shared hover, the day after an event against the rest, a calendar heatmap, month-by-month lines per year, and a scatter of any two metrics with r. Loads its data file only when first shown. | Biomarker Lab tab (Hearth) |
@@ -1050,3 +1051,21 @@ button (PhotoQuiz's helper).
 | `awake` | `false` | Start with the eyes open. Scripts set `data-awake="true"` to open them (while it talks). |
 
 Theme with `--hammock-sky`, `--hammock-cloth` and `--hammock-stripe`. Reduced motion: no swaying.
+
+## InstallApp
+
+An "Install app" button for a site that's installable (a web app manifest and a service worker). The browser fires
+`beforeinstallprompt` when the site can be installed; a tiny inline script keeps that event, and the button calls its
+`prompt()`. When the browser can't install it right now, a short line says how: on Android, open the page in Chrome (links
+opened from WhatsApp, Instagram or Gmail land in a viewer with no install option); on iPhone and iPad, Share → Add to
+Home Screen; elsewhere, which browsers can. Inside the installed app it says so. Nothing is saved.
+
+```astro
+<InstallApp />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `text` | | Replace any of its words: `install`, `installed`, `done`, `android`, `ios`, `other`. |
+
+Theme with `--install-accent`, `--install-ink` and `--install-muted`.

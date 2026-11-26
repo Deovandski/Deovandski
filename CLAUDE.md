@@ -140,8 +140,8 @@ picks the option when that link opens the page.
 ## Website settings
 
 The gear (top right of the header, `src/components/SettingsMenu.astro`) opens Settings: **Language**, "Want a language
-added?" and **Vraki mode** (the English page in the Vraki script, like husbandoutworld.com; it's off on translated pages,
-because the Vraki script spells English letters). `src/scripts/settings.ts` saves the choices in `localStorage` under
+added?", **Vraki mode** (the English page in the Vraki script, like husbandoutworld.com; it's off on translated pages,
+because the Vraki script spells English letters) and **App** (the Install app button, `src/components/reusable/InstallApp.astro`, #292). `src/scripts/settings.ts` saves the choices in `localStorage` under
 `deovandski-site` (`lang`, `vraki`); the inline script in `Base.astro` applies them before the page paints. The Multilingual
 tab's columns pick a language (or Vraki mode) too, with a cyan box on the current one. Add more settings to the same menu
 and the same storage key.

@@ -7,6 +7,10 @@
   "en": "Deovandski, home",
   "t": "Deovandski หน้าแรก"
  },
+ "15c61d430df1": {
+  "en": "You’re using the installed app.",
+  "t": "คุณกำลังใช้แอปที่ติดตั้งแล้ว"
+ },
  "5a1d7fe00c79": {
   "en": "Made by Deovandski Skibinski Junior cracking the whip on Claude huehuehue ;P · <a href=\"/llms.txt\" data-astro-cid-5hce7sga=\"\">llms.txt</a> · <a href=\"/llms-full.txt\" data-astro-cid-5hce7sga=\"\">llms-full.txt</a>",
   "t": "สร้างโดย Deovandski Skibinski Junior ผู้คอยหวดแส้ใส่ Claude huehuehue ;P · <a href=\"/llms.txt\" data-astro-cid-5hce7sga=\"\">llms.txt</a> · <a href=\"/llms-full.txt\" data-astro-cid-5hce7sga=\"\">llms-full.txt</a>"
@@ -27,6 +31,10 @@
   "en": "Language",
   "t": "ภาษา"
  },
+ "9e3f4c60afcd": {
+  "en": "No install button? Open this page in Chrome (⋮ → Open in Chrome), then ⋮ → Install app.",
+  "t": "ไม่เห็นปุ่มติดตั้ง? เปิดหน้านี้ใน Chrome (⋮ → เปิดใน Chrome) แล้ว ⋮ → ติดตั้งแอป"
+ },
  "a68eb230823a": {
   "en": " Playground ",
   "t": "เพลย์กราวด์"
@@ -34,6 +42,10 @@
  "b37456c4530b": {
   "en": " Contact ",
   "t": "ติดต่อ"
+ },
+ "bd1cf21678f6": {
+  "en": "Installed! Open it from your home screen or app list.",
+  "t": "ติดตั้งแล้ว! เปิดได้จากหน้าจอโฮมหรือรายการแอป"
  },
  "c3850bab87fc": {
   "en": "Vraki mode <small data-astro-cid-pajorjl7=\"\">(read everything in the Vraki script)</small> <small class=\"vraki-note\" data-astro-cid-pajorjl7=\"\">Vraki mode works with the English text only.</small>",
@@ -43,12 +55,28 @@
   "en": "Settings",
   "t": "การตั้งค่า"
  },
+ "ccd62e5d37a0": {
+  "en": "To install it, open this page in Chrome, Edge or Samsung Internet. On iPhone or iPad: Share, then Add to Home Screen.",
+  "t": "หากต้องการติดตั้ง ให้เปิดหน้านี้ใน Chrome, Edge หรือ Samsung Internet บน iPhone หรือ iPad: แชร์ → เพิ่มไปยังหน้าจอโฮม"
+ },
  "d36880a182c5": {
   "en": "Want a language added?",
   "t": "อยากให้เพิ่มภาษาไหม?"
  },
+ "d5636c56abfd": {
+  "en": "On iPhone or iPad: tap Share, then Add to Home Screen.",
+  "t": "บน iPhone หรือ iPad: แตะแชร์ แล้วเพิ่มไปยังหน้าจอโฮม"
+ },
+ "e5f79aa13bd5": {
+  "en": "Install app",
+  "t": "ติดตั้งแอป"
+ },
  "e9b450d14bc2": {
   "en": "Done",
   "t": "เสร็จ"
+ },
+ "fc4a695f02a8": {
+  "en": "App",
+  "t": "แอป"
  }
 }

@@ -7,6 +7,10 @@
   "en": "Deovandski, home",
   "t": "Deovandski، الصفحة الرئيسية"
  },
+ "15c61d430df1": {
+  "en": "You’re using the installed app.",
+  "t": "أنت تستخدم التطبيق المثبَّت."
+ },
  "5a1d7fe00c79": {
   "en": "Made by Deovandski Skibinski Junior cracking the whip on Claude huehuehue ;P · <a href=\"/llms.txt\" data-astro-cid-5hce7sga=\"\">llms.txt</a> · <a href=\"/llms-full.txt\" data-astro-cid-5hce7sga=\"\">llms-full.txt</a>",
   "t": "صنعه Deovandski Skibinski Junior وهو يلوّح بالسوط على Claude ‏huehuehue ;P · <a href=\"/llms.txt\" data-astro-cid-5hce7sga=\"\">llms.txt</a> · <a href=\"/llms-full.txt\" data-astro-cid-5hce7sga=\"\">llms-full.txt</a>"
@@ -27,6 +31,10 @@
   "en": "Language",
   "t": "اللغة"
  },
+ "9e3f4c60afcd": {
+  "en": "No install button? Open this page in Chrome (⋮ → Open in Chrome), then ⋮ → Install app.",
+  "t": "لا يوجد زر تثبيت؟ افتح هذه الصفحة في Chrome (⋮ ← فتح في Chrome)، ثم ⋮ ← تثبيت التطبيق."
+ },
  "a68eb230823a": {
   "en": " Playground ",
   "t": "ساحة اللعب"
@@ -34,6 +42,10 @@
  "b37456c4530b": {
   "en": " Contact ",
   "t": "تواصل"
+ },
+ "bd1cf21678f6": {
+  "en": "Installed! Open it from your home screen or app list.",
+  "t": "تم التثبيت! افتحه من الشاشة الرئيسية أو قائمة التطبيقات."
  },
  "c3850bab87fc": {
   "en": "Vraki mode <small data-astro-cid-pajorjl7=\"\">(read everything in the Vraki script)</small> <small class=\"vraki-note\" data-astro-cid-pajorjl7=\"\">Vraki mode works with the English text only.</small>",
@@ -43,12 +55,28 @@
   "en": "Settings",
   "t": "الإعدادات"
  },
+ "ccd62e5d37a0": {
+  "en": "To install it, open this page in Chrome, Edge or Samsung Internet. On iPhone or iPad: Share, then Add to Home Screen.",
+  "t": "لتثبيته، افتح هذه الصفحة في Chrome أو Edge أو Samsung Internet. على iPhone أو iPad: مشاركة ← إضافة إلى الشاشة الرئيسية."
+ },
  "d36880a182c5": {
   "en": "Want a language added?",
   "t": "هل تريد إضافة لغة؟"
  },
+ "d5636c56abfd": {
+  "en": "On iPhone or iPad: tap Share, then Add to Home Screen.",
+  "t": "على iPhone أو iPad: اضغط مشاركة، ثم إضافة إلى الشاشة الرئيسية."
+ },
+ "e5f79aa13bd5": {
+  "en": "Install app",
+  "t": "تثبيت التطبيق"
+ },
  "e9b450d14bc2": {
   "en": "Done",
   "t": "تم"
+ },
+ "fc4a695f02a8": {
+  "en": "App",
+  "t": "التطبيق"
  }
 }

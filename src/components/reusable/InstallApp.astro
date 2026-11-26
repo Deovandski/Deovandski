@@ -1,0 +1,123 @@
+---
+/**
+ * InstallApp: an "Install app" button for a site that's installable (PWA: a web app manifest and a service worker).
+ * It shows the button only when the browser can install the site right now (Chrome, Edge, Samsung Internet), and
+ * otherwise a short line on how to get there: "Open this page in Chrome" on Android (links opened from WhatsApp,
+ * Instagram or Gmail land in a viewer with no install option, #292), "Share, then Add to Home Screen" on iPhone and
+ * iPad, and which browsers can install it anywhere else. Inside the installed app it says so. Built for the Settings
+ * menu (#292).
+ *
+ *   <InstallApp />
+ *   <InstallApp text={{ install: 'Get the app' }} />
+ *
+ * Props:
+ *   text   replace any of its words: install ("Install app"), installed, done, android, ios, other (see `T` below).
+ *
+ * How it works: the browser fires `beforeinstallprompt` when the site can be installed; a tiny inline script keeps that
+ * event (even if it fires before the page's scripts run), and the button calls its prompt(). Nothing is saved.
+ * Every word is in the page (a hidden strings block), so the site's translations reach it. Keyboard and screen
+ * reader friendly: a real button, and the line under it is read out when it changes (aria-live).
+ * Theming: --install-accent (#39c5bb), --install-ink (#07040d, the button's text), --install-muted (#9aa6b8).
+ * Reusable on purpose: no imports, safe to use several times on a page.
+ */
+interface Props {
+  text?: Partial<Record<keyof typeof T, string>>;
+  class?: string;
+}
+const T = {
+  install: 'Install app',
+  installed: 'You’re using the installed app.',
+  done: 'Installed! Open it from your home screen or app list.',
+  android: 'No install button? Open this page in Chrome (⋮ → Open in Chrome), then ⋮ → Install app.',
+  ios: 'On iPhone or iPad: tap Share, then Add to Home Screen.',
+  other: 'To install it, open this page in Chrome, Edge or Samsung Internet. On iPhone or iPad: Share, then Add to Home Screen.',
+};
+const { text = {}, class: className } = Astro.props;
+const words = { ...T, ...text };
+---
+
+<div class:list={['install-app', className]} data-install-app>
+  <span class="install-app__strings" hidden data-llms-skip>{Object.entries(words).map(([k, v]) => <span data-k={k}>{v}</span>)}</span>
+  <button type="button" class="install-app__btn" hidden>
+    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M11 3h2v9.6l3.3-3.3 1.4 1.4L12 16.4l-5.7-5.7 1.4-1.4 3.3 3.3V3Zm-6 15h14v2H5v-2Z" /></svg>
+    <span>{words.install}</span>
+  </button>
+  <p class="install-app__note" aria-live="polite"></p>
+</div>
+
+<script is:inline>
+  // Keep the browser's install offer, even if it comes before the page's own scripts run.
+  if (!window.__installAppPrompt) {
+    window.__installAppPrompt = { event: null };
+    addEventListener('beforeinstallprompt', function (e) {
+      window.__installAppPrompt.event = e;
+      document.dispatchEvent(new CustomEvent('install-app:ready'));
+    });
+  }
+</script>
+
+<style>
+  .install-app { display: grid; gap: 0.35rem; justify-items: start; }
+  .install-app__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    font: inherit;
+    font-weight: 700;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    border: 0;
+    background: var(--install-accent, #39c5bb);
+    color: var(--install-ink, #07040d);
+    cursor: pointer;
+  }
+  .install-app__btn[hidden] { display: none; }
+  .install-app__btn:focus-visible { outline: 2px solid var(--install-accent, #39c5bb); outline-offset: 3px; }
+  .install-app__note { margin: 0; font-size: 0.9em; color: var(--install-muted, #9aa6b8); }
+  .install-app__note:empty { display: none; }
+</style>
+
+<script>
+  type Prompt = Event & { prompt(): Promise<void>; userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }> };
+  const keep = () => (window as unknown as { __installAppPrompt?: { event: Prompt | null } }).__installAppPrompt;
+  const standalone = () => matchMedia('(display-mode: standalone)').matches || (navigator as Navigator & { standalone?: boolean }).standalone === true;
+  const ua = navigator.userAgent;
+  const ios = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  const android = /Android/.test(ua);
+
+  document.querySelectorAll<HTMLElement>('[data-install-app]').forEach((root) => {
+    const btn = root.querySelector<HTMLButtonElement>('.install-app__btn')!;
+    const note = root.querySelector<HTMLElement>('.install-app__note')!;
+    const msg = (k: string) => root.querySelector(`.install-app__strings [data-k="${k}"]`)?.textContent ?? '';
+    // What to show: the button when the browser can install the site now, otherwise how to get there.
+    const show = () => {
+      if (standalone()) {
+        btn.hidden = true;
+        note.textContent = msg('installed');
+      } else if (keep()?.event) {
+        btn.hidden = false;
+        note.textContent = '';
+      } else {
+        btn.hidden = true;
+        note.textContent = msg(ios ? 'ios' : android ? 'android' : 'other');
+      }
+    };
+    btn.addEventListener('click', async () => {
+      const e = keep()?.event;
+      if (!e) return show();
+      keep()!.event = null; // the offer can only be used once
+      await e.prompt();
+      const { outcome } = await e.userChoice;
+      if (outcome === 'accepted') {
+        btn.hidden = true;
+        note.textContent = msg('done');
+      } else show();
+    });
+    document.addEventListener('install-app:ready', show);
+    addEventListener('appinstalled', () => {
+      btn.hidden = true;
+      note.textContent = msg('done');
+    });
+    show();
+  });
+</script>
