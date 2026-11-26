@@ -130,6 +130,18 @@ because the Vraki script spells English letters). `src/scripts/settings.ts` save
 tab's columns pick a language (or Vraki mode) too, with a cyan box on the current one. Add more settings to the same menu
 and the same storage key.
 
+## Google Takeout data (Cycling, Biomarker Lab, Gym)
+
+The health numbers come from Deo's Google Health export, refreshed about once a year with `npm run takeout`.
+[TAKEOUT.md](TAKEOUT.md) has the steps, including how Claude runs it on Deo's computer.
+
+- **The export never enters the repo,** and nothing from it but `content/cycling/rides.json`,
+  `content/biomarkers/daily.json` and `content/gym/body-fat.json`.
+- **No places:** no GPS points, routes, addresses or place names.
+- **No medical records:** blood glucose, insulin, blood pressure, ECG/AFib, surveys, moods, journal and food logs stay
+  out, even if a future export makes them easy. Adding any metric is Deo's call.
+- **The privacy check must pass** (`npm run takeout -- --check`) before those files are committed.
+
 ## Building
 
 ```sh

@@ -42,12 +42,11 @@ Get a Takeout export as in [content/cycling/README.md](../cycling/README.md) (th
 **outside the repo**, then from the repo's folder:
 
 ```sh
-node scripts/cycling-from-takeout.mjs ~/Downloads/Takeout
-node scripts/biomarkers-from-takeout.mjs ~/Downloads/Takeout
+npm run takeout -- ~/Downloads/Takeout   # both scripts, then the privacy check
 npm run build
 ```
 
-Open a PR with `content/biomarkers/daily.json`, `content/gym/body-fat.json` (and `content/cycling/rides.json`).
+Claude can do it too: [TAKEOUT.md](../../TAKEOUT.md) has the steps. Open a PR with `content/biomarkers/daily.json`, `content/gym/body-fat.json` (and `content/cycling/rides.json`).
 
 ## Privacy: what never goes in the repo
 
