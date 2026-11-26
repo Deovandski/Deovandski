@@ -91,9 +91,17 @@
   "en": "Deo in 2024 on stage holding a book award certificate",
   "t": "Deo en 2024 en un escenario sosteniendo un diploma de premio literario"
  },
+ "0272cb5019a7": {
+  "en": "Why it’s in Philosophy",
+  "t": "Por qué está en Filosofía"
+ },
  "02737c591f81": {
   "en": "My full list on MyAnimeList",
   "t": "Mi lista completa en MyAnimeList"
+ },
+ "02978f5c6f2b": {
+  "en": "Longest ride",
+  "t": "Salida más larga"
  },
  "02aa629c8b16": {
   "en": "S",
@@ -203,6 +211,10 @@
   "en": "4 h",
   "t": "4 h"
  },
+ "05e728e60d80": {
+  "en": "\nMy watch logged 162 more \"bike rides\" on its own (76 hours of them). Most of those\n          were me pushing my cat, <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a>, in his stroller, or me on the elliptical when it's too cold outside, so\n          they don't count toward the miles above.\n",
+  "t": "Mi reloj registró por su cuenta otras 162 \"salidas en bici\" (76 horas en total). La mayoría era yo empujando a mi gato, <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a>, en su carrito, o yo en la elíptica cuando hace demasiado frío fuera, así que no cuentan para las millas de arriba."
+ },
  "06513e2fd9de": {
   "en": "Rise and shine",
   "t": "Arriba, dormilón"
@@ -238,6 +250,10 @@
  "070c241ff4e1": {
   "en": "450 h",
   "t": "450 h"
+ },
+ "07230d63536f": {
+  "en": "Ridin' with Peeta",
+  "t": "Rodando con Peeta"
  },
  "07255da4105f": {
   "en": "Grill for about <strong>7 minutes</strong>, then flip. Then grill for another <strong>7 minutes</strong>.",
@@ -507,6 +523,10 @@
   "en": "Back to Miku",
   "t": "Volver a Miku"
  },
+ "0f5684b2fcf1": {
+  "en": "6 mi*",
+  "t": "6 mi*"
+ },
  "0f9292f61d18": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#29: </span>Best of the Worst: The Black Spine Edition",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#29: </span>Best of the Worst: The Black Spine Edition"
@@ -606,6 +626,10 @@
  "12cafa27532f": {
   "en": "Enlarge: Painting or drawing, 04/09/2013",
   "t": "Ampliar: Pintura o dibujo, 09/04/2013"
+ },
+ "131260cbfbb0": {
+  "en": "Music",
+  "t": "Música"
  },
  "1349608b58ab": {
   "en": "25 h",
@@ -787,6 +811,10 @@
   "en": "1 game",
   "t": "1 juegos"
  },
+ "19ba291a353d": {
+  "en": "In the saddle",
+  "t": "En el sillín"
+ },
  "19c34e493647": {
   "en": "Wunjo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚹ)</span>",
   "t": "Wunjo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚹ)</span>"
@@ -842,10 +870,6 @@
  "1b89ab190390": {
   "en": " Bold line ",
   "t": "Línea gruesa"
- },
- "1b9f359ce480": {
-  "en": "Dance",
-  "t": "Bailar"
  },
  "1bccc30e6635": {
   "en": "Enlarge: Huehuehue",
@@ -966,6 +990,10 @@
  "20409611a456": {
   "en": "82 h",
   "t": "82 h"
+ },
+ "2042e5e67d14": {
+  "en": "551 mi* <span data-astro-cid-o4ptolev=\"\">(887 km)</span>",
+  "t": "551 mi* <span data-astro-cid-o4ptolev=\"\">(887 km)</span>"
  },
  "205557c2e666": {
   "en": "DJ_Dave",
@@ -1254,6 +1282,10 @@
  "28063f5eaa95": {
   "en": " Space &amp; flight ",
   "t": "Espacio y vuelo"
+ },
+ "2819ba97835f": {
+  "en": "Rhythm and sleep",
+  "t": "Ritmo y sueño"
  },
  "2835bcaa6e76": {
   "en": " 49 h ",
@@ -1599,6 +1631,10 @@
   "en": "Wake up at 6am (or 5am; Peeta is the true alarm clock in the house), drink coffee, poop, bathe, hit the gym, then head home to let Peeta run in the backyard while I shove food in my piehole before work. Practical and frictionless: part of my routine now, not something I have to force myself to do.",
   "t": "Me despierto a las 6 (o a las 5; Peeta es el verdadero despertador de la casa), me tomo un café, hago caca, me ducho, voy al gimnasio y luego vuelvo a casa para que Peeta corra por el jardín mientras me meto comida en la boca antes de trabajar. Práctico y sin fricción: ahora forma parte de mi rutina, no es algo a lo que me tenga que obligar."
  },
+ "32b93c52f5d9": {
+  "en": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(June 21, 2026)</span>",
+  "t": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(21 de junio de 2026)</span>"
+ },
  "3303cb966359": {
   "en": "PowerWash Simulator",
   "t": "PowerWash Simulator"
@@ -1803,6 +1839,10 @@
   "en": "123 h",
   "t": "123 h"
  },
+ "38a9bcedfb5c": {
+  "en": "<strong>M. Alexandra Kredlow and colleagues</strong>, <em>Journal of Behavioral Medicine</em> (2015), a meta-analysis of physical activity and sleep: regular exercise has small benefits for total sleep time, small-to-medium ones for falling asleep, and moderate ones for sleep quality. <a href=\"https://pubmed.ncbi.nlm.nih.gov/25596964/\">Abstract</a>",
+  "t": "<strong>M. Alexandra Kredlow y colegas</strong>, <em>Journal of Behavioral Medicine</em> (2015), un metaanálisis sobre actividad física y sueño: el ejercicio regular aporta beneficios pequeños en el tiempo total de sueño, de pequeños a medianos para conciliar el sueño y moderados en su calidad. <a href=\"https://pubmed.ncbi.nlm.nih.gov/25596964/\">Resumen</a>"
+ },
  "38e1d26af274": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer"
@@ -1955,6 +1995,10 @@
   "en": "VHS pile",
   "t": "Montón de VHS"
  },
+ "3dd4ef3ca316": {
+  "en": "Having cycling in the routine, alongside the gym, also helped my circadian rhythm and my sleep quality. Sleep is a known problem for AuDHD people, and the research lines up with what I felt:",
+  "t": "Tener el ciclismo en la rutina, junto con el gimnasio, también ayudó a mi ritmo circadiano y a la calidad de mi sueño. El sueño es un problema conocido para las personas AuDHD, y la investigación encaja con lo que sentí:"
+ },
  "3dddf7feb16b": {
   "en": "New York",
   "t": "Nueva York"
@@ -2027,6 +2071,10 @@
   "en": "RPGs & open worlds",
   "t": "RPG y mundos abiertos"
  },
+ "3f7c46951dac": {
+  "en": "* 17 rides were logged without GPS, so their distance (59 mi, the lighter part of the bars) is estimated from their time, at my median speed of 8.6 mph.",
+  "t": "* 17 salidas se registraron sin GPS, así que su distancia (59 mi, la parte más clara de las barras) se estima a partir de su duración, a mi velocidad mediana de 8.6 mph."
+ },
  "3fa7a7dd538c": {
   "en": " SW ",
   "t": "SW"
@@ -2082,6 +2130,14 @@
  "41e1360a1ebf": {
   "en": "Realm Grinder",
   "t": "Realm Grinder"
+ },
+ "420e6adf0887": {
+  "en": "Sleep problems are far more common in autistic people and in people with ADHD than in their neurotypical peers, insomnia and a body clock that runs late above all, and having both tends to make it worse.",
+  "t": "Los problemas de sueño son mucho más frecuentes en personas autistas y con TDAH que en personas neurotípicas, sobre todo el insomnio y un reloj biológico que va con retraso, y tener ambos suele empeorarlo."
+ },
+ "423208095dd7": {
+  "en": "Distance",
+  "t": "Distancia"
  },
  "423af894628e": {
   "en": " 363 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -2286,6 +2342,10 @@
  "4ad51e59a5be": {
   "en": " Fine line ",
   "t": "Línea fina"
+ },
+ "4b2cef64e841": {
+  "en": "Daylight, especially in the morning, is what sets the body clock. More morning sun goes with an earlier, steadier sleep.",
+  "t": "La luz del día, sobre todo por la mañana, es lo que ajusta el reloj biológico. Más sol por la mañana va de la mano de un sueño más temprano y más estable."
  },
  "4b41ed494adc": {
   "en": " Steam + Xbox + PlayStation  ·  estimated ",
@@ -2839,6 +2899,10 @@
   "en": "\nProject management isn't my job title, yet it shows up in almost every facet of my life: work, a light novel series, a\n          D&amp;D campaign, a game, and this very site. I know JIRA deeply, and I run my personal projects with the same discipline\n          I bring to client work. Given how much PM'ing I already do, getting a PM certification is officially on my backlog.\n",
   "t": "La gestión de proyectos no es mi cargo, pero aparece en casi todas las facetas de mi vida: el trabajo, una serie de novelas ligeras, una campaña de D&amp;D, un juego y esta misma web. Conozco JIRA a fondo y llevo mis proyectos personales con la misma disciplina que pongo en el trabajo con clientes. Con toda la GP que ya hago, sacarme una certificación de gestión de proyectos está oficialmente en mi backlog."
  },
+ "598f8910844c": {
+  "en": "30 mi",
+  "t": "30 mi"
+ },
  "59aa962f7269": {
   "en": " SC ",
   "t": "SC"
@@ -3127,6 +3191,10 @@
   "en": "Justin Timberlake",
   "t": "Justin Timberlake"
  },
+ "6256b5ee693a": {
+  "en": "68 h",
+  "t": "68 h"
+ },
  "6270f02c519d": {
   "en": "Based on what you've seen so far, you might expect me not to watch this, but nope. I love how grounded it feels, and the plot does a really good job of using its characters. Cute jokes, too. I'll be showing this to my future kids for sure.",
   "t": "Por lo que has visto hasta ahora, igual esperas que no vea esto, pero no. Me encanta lo con los pies en la tierra que es, y la trama usa muy bien a sus personajes. Chistes monos, además. Seguro que se lo enseñaré a mis futuros hijos."
@@ -3134,6 +3202,10 @@
  "627553d69f0d": {
   "en": "The Four Seasons",
   "t": "Las cuatro estaciones"
+ },
+ "627d89658063": {
+  "en": "Ride it again",
+  "t": "Pedalear otra vez"
  },
  "629faf03c89b": {
   "en": "Throw again",
@@ -3210,6 +3282,10 @@
  "651d21ca74d0": {
   "en": "Show all 28",
   "t": "Mostrar los 28"
+ },
+ "6542671af0ee": {
+  "en": "251 mi*",
+  "t": "251 mi*"
  },
  "65a68f752f48": {
   "en": " <strong data-astro-cid-j7pv25f6=\"\">King of Hues.</strong> Crowned in Huế, fluent in <abbr title=\"How Brazilians laugh online\" data-astro-cid-j7pv25f6=\"\">huehuehue</abbr>.\n<em data-astro-cid-j7pv25f6=\"\">I take life as seriously as I laugh at how absurd, finite and fickle it all is.</em> ",
@@ -3831,6 +3907,10 @@
   "en": "A pixel Miku popped up",
   "t": "Ha aparecido una Miku de píxeles"
  },
+ "77cf8f6185c6": {
+  "en": "When spring comes around in 2027, I’m buying a new bike and a car mount, and I’m going crazy around.",
+  "t": "Cuando llegue la primavera de 2027, me compraré una bici nueva y un portabicis para el coche, y me volveré loco rodando por ahí."
+ },
  "77dba5136b05": {
   "en": "Party art for D&D Arragoa",
   "t": "Ilustración del grupo de D&D de Arragoa"
@@ -3906,6 +3986,10 @@
  "79aaf254ed5a": {
   "en": "Kilograms of beef grilled",
   "t": "Kilos de carne asada"
+ },
+ "79d54f2dca09": {
+  "en": "Around the world",
+  "t": "La vuelta al mundo"
  },
  "7a075b3286e7": {
   "en": " PC + Xbox  ·  estimated ",
@@ -4643,6 +4727,10 @@
   "en": "Following",
   "t": "Siguiendo"
  },
+ "90f8797fbb2c": {
+  "en": "A ride outside stacks the last two: daylight and exercise, in one go. The studies are in this tab’s Links box.",
+  "t": "Una salida en bici al aire libre suma las dos últimas: luz del día y ejercicio a la vez. Los estudios están en el cuadro de Enlaces de esta pestaña."
+ },
  "9141b1b48942": {
   "en": "Step 6: The Farofa",
   "t": "Paso 6: La Farofa"
@@ -5267,6 +5355,10 @@
   "en": "DAVE THE DIVER",
   "t": "DAVE THE DIVER"
  },
+ "a3ec0dfc8cc3": {
+  "en": "Play video: Ridin' with Peeta",
+  "t": "Reproducir vídeo: Rodando con Peeta"
+ },
  "a41de5dc4f1b": {
   "en": "Common free-to-play design",
   "t": "Diseño habitual de los juegos free-to-play"
@@ -5282,6 +5374,10 @@
  "a44c1fbbccc0": {
   "en": "Traded {n} {give} for 1 {get}.",
   "t": "Cambiaste {n} {give} por 1 {get}."
+ },
+ "a46906017e78": {
+  "en": "Going mountain biking for the first time was a natural step up to expand my experiences, although my bike did not survive the endeavor.",
+  "t": "Salir en bicicleta de montaña por primera vez fue un paso natural para ampliar mis experiencias, aunque mi bici no sobrevivió a la aventura."
  },
  "a4769e37e0e6": {
   "en": "\nThis is especially useful for ADHD-leaning brains, as a way to force monotropic focus on whatever needs a crosscheck. When\n        I want to confirm the garage is closed, I raise my hand toward it and say \"garage closed\". That works like a system-wide\n        interrupt to my many ongoing thought channels, so my brain actually stores that the garage is closed before I drive away.\n",
@@ -5362,6 +5458,10 @@
  "a6df62f72604": {
   "en": " ← Back to the system ",
   "t": "← Volver al sistema"
+ },
+ "a6f5bc3894c2": {
+  "en": "Cycling lives here because it’s about health: pushing myself to go outside more and touch grass. It was a good fit for the days when the weather was too nice to spend in the gym, especially during the stretch when the gym was a stress relief tool rather than something I truly enjoyed.",
+  "t": "El ciclismo está aquí porque va de salud: obligarme a salir más y tocar césped. Encajaba en los días en que hacía demasiado bueno para encerrarse en el gimnasio, sobre todo en la época en que el gimnasio era una válvula de escape para el estrés y no algo que de verdad disfrutara."
  },
  "a70ff19cacd1": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Placeholder movie 6 ",
@@ -5655,6 +5755,10 @@
   "en": "I mean, it's Taiga! But for real, the chemistry between the two main characters is well developed, which is why so many people still remember it.",
   "t": "Hombre, ¡es Taiga! Pero en serio, la química entre los dos protagonistas está bien desarrollada, y por eso tanta gente la sigue recordando."
  },
+ "ae849605d14c": {
+  "en": "Rides",
+  "t": "Salidas"
+ },
  "ae859f0295a5": {
   "en": "Step 1: Procure the Sacred Salt",
   "t": "Paso 1: Procúrate la Sal Sagrada"
@@ -5738,6 +5842,10 @@
  "b13692d8aa4c": {
   "en": "The games on the list add up to 622 days of nonstop play, 24 hours a day. Each square is one of those days.",
   "t": "Los juegos de la lista suman 622 días jugando sin parar, 24 horas al día. Cada cuadrado es uno de esos días."
+ },
+ "b153b3eecf8c": {
+  "en": "Regular exercise brings moderate gains in sleep quality and helps you fall asleep faster.",
+  "t": "El ejercicio regular aporta mejoras moderadas en la calidad del sueño y ayuda a dormirse antes."
  },
  "b1643e5fd670": {
   "en": "Hover a square to see which game that day went to. Press a category to light up only its days.",
@@ -5943,6 +6051,10 @@
   "en": "D&amp;D",
   "t": "D&amp;D"
  },
+ "b7949e214de8": {
+  "en": "Mountain biking",
+  "t": "Bicicleta de montaña"
+ },
  "b7b3fa90eecd": {
   "en": " TrueTrophies ",
   "t": "TrueTrophies"
@@ -5974,6 +6086,10 @@
  "b8a1e1dc56df": {
   "en": " VS ",
   "t": "VS"
+ },
+ "b8ca49c5d521": {
+  "en": "Cycling",
+  "t": "Ciclismo"
  },
  "b90b25305207": {
   "en": "Very hot",
@@ -6022,6 +6138,10 @@
  "bb0bc553b8e8": {
   "en": "Whack-a-Miku: turn your phone sideways",
   "t": "Whack-a-Miku: pon el móvil en horizontal"
+ },
+ "bb1e86946aa1": {
+  "en": "Rides from my Google Health export, updated on November 26, 2026.",
+  "t": "Salidas de mi exportación de Google Health, actualizada el 26 de noviembre de 2026."
  },
  "bb395b5f1d5e": {
   "en": "101 days",
@@ -6083,6 +6203,10 @@
   "en": "Idle & clickers",
   "t": "Idle y clickers"
  },
+ "bdab8a1751d7": {
+  "en": "<strong>Yi Xie and colleagues</strong>, <em>Frontiers in Psychiatry</em> (2021), a meta-analysis of 22 randomized trials (cycling among the exercises): regular exercise mainly improves how well people say they sleep. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8215288/\">Paper</a>",
+  "t": "<strong>Yi Xie y colegas</strong>, <em>Frontiers in Psychiatry</em> (2021), un metaanálisis de 22 ensayos aleatorizados (con el ciclismo entre los ejercicios): el ejercicio regular mejora sobre todo lo bien que la gente dice dormir. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8215288/\">Artículo</a>"
+ },
  "be31a86c982d": {
   "en": "Happy",
   "t": "Felicidad"
@@ -6107,13 +6231,13 @@
   "en": "819 days",
   "t": "819 días"
  },
- "beaf88b8f9bb": {
-  "en": "Music: off",
-  "t": "Música: apagada"
- },
  "bec764a9d2b7": {
   "en": "Fold 2 of 5: now the top-right corner to the same dot.",
   "t": "Pliegue 2 de 5: ahora la esquina superior derecha al mismo punto."
+ },
+ "bee75ca77f75": {
+  "en": "Controls",
+  "t": "Controles"
  },
  "bf301c3fb31a": {
   "en": " 570 h ",
@@ -6294,6 +6418,10 @@
  "c5352fbe59ff": {
   "en": "Next routine",
   "t": "Rutina siguiente"
+ },
+ "c5488c9e25e6": {
+  "en": "198 mi",
+  "t": "198 mi"
  },
  "c574501fd8fe": {
   "en": "Roll d{sides} (last roll {result})",
@@ -6707,6 +6835,10 @@
   "en": "5 games",
   "t": "5 juegos"
  },
+ "d19c46fdac20": {
+  "en": "67 mi",
+  "t": "67 mi"
+ },
  "d1a7128069a4": {
   "en": "Churrasco",
   "t": "Churrasco"
@@ -6938,6 +7070,10 @@
  "d7f43bc5a045": {
   "en": "Screw it",
   "t": "A la porra"
+ },
+ "d82a3fc86e98": {
+  "en": "<strong>The Lancet Child &amp; Adolescent Health</strong> (2025), “The sleep–circadian connection: pathways to understanding and supporting autism and attention-deficit/hyperactivity disorder”: insomnia, a delayed sleep–wake phase and restless legs are far more common in autistic people and people with ADHD than in neurotypical peers. <a href=\"https://eprints.soton.ac.uk/507892/\">Review</a>",
+  "t": "<strong>The Lancet Child &amp; Adolescent Health</strong> (2025), “The sleep–circadian connection: pathways to understanding and supporting autism and attention-deficit/hyperactivity disorder”: el insomnio, la fase de sueño retrasada y las piernas inquietas son mucho más frecuentes en personas autistas y con TDAH que en personas neurotípicas. <a href=\"https://eprints.soton.ac.uk/507892/\">Revisión</a>"
  },
  "d84fbd5e19a7": {
   "en": "Mango time",
@@ -7563,6 +7699,10 @@
   "en": "Enlarge: Painting or drawing, 02/25/2013",
   "t": "Ampliar: Pintura o dibujo, 25/02/2013"
  },
+ "ec908ac3ae10": {
+  "en": "<em><strong>BMC Public Health</strong></em> (2025), “The role of sunlight in sleep regulation”: the midpoint of sleep moved most with sunlight, above all with morning sun. <a href=\"https://pubmed.ncbi.nlm.nih.gov/41053799/\">Abstract</a>",
+  "t": "<em><strong>BMC Public Health</strong></em> (2025), “The role of sunlight in sleep regulation”: el punto medio del sueño fue lo que más cambió con la luz del sol, sobre todo con el sol de la mañana. <a href=\"https://pubmed.ncbi.nlm.nih.gov/41053799/\">Resumen</a>"
+ },
  "ecb8e9f855da": {
   "en": "Deovandski Skibinski Junior",
   "t": "Deovandski Skibinski Junior"
@@ -7602,6 +7742,10 @@
  "ed8d6e99dc88": {
   "en": "BONK! 🔨 Go to horny jail. (ﾉ´ｰ`)ﾉ",
   "t": "¡BONK! 🔨 A la cárcel de los salidos. (ﾉ´ｰ`)ﾉ"
+ },
+ "ee0f96685dbc": {
+  "en": "<strong>Theodore Petti, Mayank Gupta, Yuli Fradkin &amp; Nihit Gupta</strong>, <em>BJPsych Open</em> (2023), sleep disorders in autism with co-occurring ADHD: sleep disruption shows up mostly as insomnia and a body clock out of step with the day, and having both brings more disruption than either one alone. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10755553/\">Paper</a>",
+  "t": "<strong>Theodore Petti, Mayank Gupta, Yuli Fradkin &amp; Nihit Gupta</strong>, <em>BJPsych Open</em> (2023), trastornos del sueño en el autismo con TDAH: el sueño alterado aparece sobre todo como insomnio y un reloj biológico desacompasado del día, y tener ambos altera más que cada uno por separado. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC10755553/\">Artículo</a>"
  },
  "ee6997287a58": {
   "en": "Fully bilingual in English and Portuguese, and working on the rest.",
@@ -7678,6 +7822,10 @@
  "f1be6af1c552": {
   "en": "You’re human, like me. We have different capabilities, yes, but nothing stops you from picturing your own death clock and starting to work on your life today. <strong>You can’t change the past, but you can do something right now to build a better future.</strong>",
   "t": "Eres humano, como yo. Tenemos capacidades distintas, sí, pero nada te impide imaginar tu propio reloj de la muerte y empezar a trabajar en tu vida hoy. <strong>No puedes cambiar el pasado, pero puedes hacer algo ahora mismo para construir un futuro mejor.</strong>"
+ },
+ "f1cc9eccadd7": {
+  "en": "Distance by year",
+  "t": "Distancia por año"
  },
  "f1d1b324ae97": {
   "en": "Dev History",
@@ -7971,10 +8119,6 @@
   "en": "Supreme Pontiff of the Grill",
   "t": "Sumo Pontífice de la Parrilla"
  },
- "fb1415fda4ff": {
-  "en": "Music: on",
-  "t": "Música: encendida"
- },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",
   "t": "Ampliar: Cuando la hierba gatera pega justo"
@@ -8030,6 +8174,10 @@
  "fd5ffa4da538": {
   "en": "Enlarge: Super doggo",
   "t": "Ampliar: Superperrete"
+ },
+ "fd636bc6a01e": {
+  "en": "551 mi* on the bike: 2.2% of the way around the world.",
+  "t": "551 mi* en bici: el 2.2 % de la vuelta al mundo."
  },
  "fd90fc6c6ee2": {
   "en": "I'm usually not a fan of multiple timelines and time machines, but this is clearly an exception. The whole thing is crafted like a finely tuned orchestra, and the pieces fall into place perfectly.",

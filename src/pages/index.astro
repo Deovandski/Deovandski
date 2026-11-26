@@ -12,6 +12,8 @@ import ChurrascoFacet from '../components/ChurrascoFacet.astro';
 import LifeHacksFacet from '../components/LifeHacksFacet.astro';
 import FamilyFacet from '../components/FamilyFacet.astro';
 import GymFacet from '../components/GymFacet.astro';
+import CyclingFacet from '../components/CyclingFacet.astro';
+import { Content as CyclingSources } from '../../content/cycling/sources.md';
 import LustFacet from '../components/LustFacet.astro';
 import DeathFacet from '../components/DeathFacet.astro';
 import PetsFacet from '../components/PetsFacet.astro';
@@ -28,7 +30,7 @@ import SourceList from '../components/reusable/SourceList.astro';
 import PillSwitch from '../components/reusable/PillSwitch.astro';
 import { Content as DeathSources } from '../../content/death-sources.md';
 import { Content as MentorSources } from '../../content/mentor-sources.md';
-import YouTube from '../components/YouTube.astro';
+import YouTube from '../components/reusable/YouTube.astro';
 import { Content as AviationText } from '../../content/aviation.md';
 import kingOfHues from '../assets/king-of-hues.jpg';
 import stickyNotes from '../../content/pm/2023-03-20-sticky-note-madness.jpg';
@@ -159,6 +161,7 @@ const facets = [
   { id: 'multilingual', icon: '🗣️', label: 'Multilingual' },
   { id: 'tattoo', icon: '🖋️', label: 'Tattoo' },
   { id: 'gym', icon: '🏋️', label: 'Gym' },
+  { id: 'cycling', icon: '🚴', label: 'Cycling' },
   { id: 'miku', icon: '🎤', label: '初音ミク' },
   { id: 'churrasco', icon: '🥩', label: 'Churrasco' },
   { id: 'musician', icon: '🎶', label: 'Musician' },
@@ -176,7 +179,7 @@ const facets = [
 // The facet tree: Deo → branch → facet (two levels, no sub-facets). Order here is the order visitors see.
 // No facet opens by default: visitors grow a branch, then pick a facet.
 const branches = [
-  { id: 'philosophy', icon: '🧭', label: 'Philosophy', blurb: 'How Deo thinks: mortality, mentoring, discipline, desire and ink.', facets: ['death', 'mentor', 'gym', 'lust', 'tattoo'] },
+  { id: 'philosophy', icon: '🧭', label: 'Philosophy', blurb: 'How Deo thinks: mortality, mentoring, discipline, desire and ink.', facets: ['death', 'mentor', 'gym', 'cycling', 'lust', 'tattoo'] },
   { id: 'craft', icon: '💼', label: 'Craft', blurb: 'What Deo builds, writes, plays and paints.', facets: ['dev', 'pm', 'author', 'influencer', 'painting', 'musician'] },
   { id: 'explorer', icon: '🌏', label: 'Explorer', blurb: 'Where Deo goes and the languages he speaks there.', facets: ['traveler', 'aviation', 'multilingual', 'camping', 'fishing'] },
   { id: 'frontrow', icon: '🎟️', label: 'Front Row', blurb: 'What Deo watches: live shows, the diva herself, anime, and the movies and TV worth (or not worth) the time.', facets: ['concert', 'theater', 'miku', 'anime', 'botw', 'potato'] },
@@ -644,6 +647,11 @@ const nf = new Intl.NumberFormat('en-US');
       <GymFacet />
     </section>
 
+    <section class="panel" role="region" id="panel-cycling" aria-labelledby="tab-cycling" tabindex="0" hidden>
+      <LinksMenu id="cycling-links" toggle="external"><SourceList title="Shoulders I stand on"><CyclingSources /></SourceList></LinksMenu>
+      <CyclingFacet />
+    </section>
+
     <section class="panel" role="region" id="panel-miku" aria-labelledby="tab-miku" tabindex="0" hidden>
       <GimmickPlay tab="miku" />
       <Sections data={mikuConcerts} id="miku" layout="cards" slots={2} titleAbove noDescription="Description coming soon." photoAlt={(t) => `Me at ${t}`} />
@@ -1008,7 +1016,7 @@ const nf = new Intl.NumberFormat('en-US');
 
   .facet-head { scroll-margin-top: 6rem; padding: clamp(1.25rem, 3vw, 2.25rem) clamp(1.25rem, 3vw, 2.25rem) 0; border-top: 1px solid rgba(57, 197, 187, 0.2); }
   .facet-head[hidden], .facet-head [hidden] { display: none; }
-  #panel-death, #panel-mentor {
+  #panel-death, #panel-mentor, #panel-cycling {
     --sources-title: var(--silver);
     --sources-title-font: var(--font-display);
     --sources-text: var(--muted);
@@ -1118,7 +1126,16 @@ const nf = new Intl.NumberFormat('en-US');
 
   .empty { color: var(--muted); }
   /* In-tab switches (PillSwitch): the site's display font. */
-  .panel { --switch-font: var(--font-display); --switch-size: var(--step-0); }
+  .panel {
+    --switch-font: var(--font-display);
+    --switch-size: var(--step-0);
+    /* YouTube embeds (reusable YouTube) in the site's colours. */
+    --yt-font: var(--font-display);
+    --yt-text: var(--text);
+    --yt-muted: var(--muted);
+    --yt-accent: var(--teal);
+    --yt-on-accent: var(--night);
+  }
   .botw-intro { max-width: var(--measure); margin-bottom: 1.5rem; }
   .botw-intro .ranking-lede { margin-bottom: 0; }
   .botw-intro .ranking-lede + .ranking-lede { margin-top: 0.75rem; }

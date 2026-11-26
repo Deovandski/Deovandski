@@ -1,0 +1,171 @@
+---
+/**
+ * ArcadeButton: a big, chunky, old-school push button with one emoji on its cap and a satisfying click. It sinks when
+ * pressed and springs back; as a toggle it stays down (and lit) while it's on. Built for Saturday Night Fever's
+ * controls (#276): music, pause and the lights.
+ *
+ *   <ArcadeButton emoji="🎵" label="Music" toggle pressed />
+ *   <ArcadeButton emoji="💡" label="Change the lights" />
+ *
+ * Props:
+ *   emoji    what's on the cap (decorative; the label is what screen readers hear).
+ *   label    the button's name for screen readers (and its tooltip), since the cap has no words.
+ *   toggle   stays down while on, and announces it (aria-pressed). Default false: a plain button you can keep pressing.
+ *   pressed  a toggle that starts on. Default false.
+ *   color    the cap's colour. Default #39c5bb (or --arcade-color).
+ *   sound    play the click. Default true.
+ *   class    extra classes.
+ *
+ * Event: `arcade:press`, on the button (it bubbles), after every press: detail { pressed } (always false for a plain
+ * button). A script can also set `aria-pressed` itself to change a toggle's state without a click.
+ * Theme with CSS custom properties: --arcade-color, --arcade-size (64px), --arcade-base (#1b1530).
+ * Keyboard: it's a real <button>, so Space and Enter press it. The click is a tiny sound made with Web Audio (no
+ * files). Reduced motion: it changes colour instead of sinking.
+ * Reusable on purpose: no imports, safe to use several times on a page.
+ */
+interface Props {
+  emoji: string;
+  label: string;
+  toggle?: boolean;
+  pressed?: boolean;
+  color?: string;
+  sound?: boolean;
+  class?: string;
+}
+const { emoji, label, toggle = false, pressed = false, color, sound = true, class: className } = Astro.props;
+---
+
+<button
+  type="button"
+  class:list={['arcade-btn', className]}
+  aria-label={label}
+  title={label}
+  aria-pressed={toggle ? String(pressed) : undefined}
+  data-arcade
+  data-toggle={toggle ? '1' : undefined}
+  data-sound={sound ? '1' : undefined}
+  style={color ? `--arcade-color:${color}` : undefined}
+>
+  <span class="arcade-btn__cap" aria-hidden="true"><span class="arcade-btn__emoji">{emoji}</span></span>
+</button>
+
+<style>
+  .arcade-btn {
+    --_c: var(--arcade-color, #39c5bb);
+    --_s: var(--arcade-size, 64px);
+    position: relative;
+    width: var(--_s);
+    height: var(--_s);
+    flex: none;
+    padding: calc(var(--_s) * 0.09);
+    border: 0;
+    border-radius: 50%;
+    /* The bezel: a dark ring the cap sits in. */
+    background: radial-gradient(circle at 50% 40%, #3a3150, var(--arcade-base, #1b1530) 70%);
+    box-shadow:
+      inset 0 2px 3px rgba(255, 255, 255, 0.12),
+      0 4px 0 #0b0716,
+      0 6px 10px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+  .arcade-btn__cap {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, color-mix(in srgb, var(--_c) 55%, #fff) 0 12%, var(--_c) 48%, color-mix(in srgb, var(--_c) 62%, #000) 100%);
+    /* The cap's side: what makes it look tall, until it's pressed down. */
+    box-shadow:
+      0 calc(var(--_s) * 0.09) 0 color-mix(in srgb, var(--_c) 45%, #000),
+      0 calc(var(--_s) * 0.1) 3px rgba(0, 0, 0, 0.55),
+      inset 0 -3px 6px rgba(0, 0, 0, 0.25);
+    transform: translateY(calc(var(--_s) * -0.07));
+    transition: transform 0.06s ease-out, box-shadow 0.06s ease-out, filter 0.15s;
+  }
+  .arcade-btn__emoji {
+    font-size: calc(var(--_s) * 0.4);
+    line-height: 1;
+    filter: drop-shadow(0 1px 0 rgba(0, 0, 0, 0.35));
+  }
+  .arcade-btn:hover .arcade-btn__cap { filter: brightness(1.08); }
+  /* Pushed: the cap sinks into the bezel. A toggle that's on stays down and lights up. */
+  .arcade-btn:active .arcade-btn__cap,
+  .arcade-btn.is-down .arcade-btn__cap,
+  .arcade-btn[aria-pressed='true'] .arcade-btn__cap {
+    transform: translateY(calc(var(--_s) * 0.01));
+    box-shadow:
+      0 calc(var(--_s) * 0.015) 0 color-mix(in srgb, var(--_c) 45%, #000),
+      inset 0 3px 6px rgba(0, 0, 0, 0.35);
+  }
+  .arcade-btn[aria-pressed='true'] .arcade-btn__cap { filter: brightness(1.15) saturate(1.2); }
+  .arcade-btn[aria-pressed='true'] {
+    box-shadow:
+      inset 0 2px 3px rgba(255, 255, 255, 0.12),
+      0 4px 0 #0b0716,
+      0 0 0 3px color-mix(in srgb, var(--_c) 55%, transparent),
+      0 0 18px color-mix(in srgb, var(--_c) 70%, transparent);
+  }
+  .arcade-btn[aria-pressed='false'][data-toggle] .arcade-btn__emoji { opacity: 0.75; }
+  .arcade-btn:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) {
+    .arcade-btn__cap { transition: none; }
+    .arcade-btn:active .arcade-btn__cap,
+    .arcade-btn.is-down .arcade-btn__cap,
+    .arcade-btn[aria-pressed='true'] .arcade-btn__cap { transform: translateY(calc(var(--_s) * -0.07)); filter: brightness(1.3); }
+  }
+</style>
+
+<script>
+  // One shared AudioContext for every button's click, made on the first press (browsers only allow sound after one).
+  let audio: AudioContext | null = null;
+  function click() {
+    try {
+      audio ??= new AudioContext();
+      audio.resume();
+      const t = audio.currentTime;
+      // A short thump (the cap bottoming out) plus a tiny noise tick (the switch).
+      const o = audio.createOscillator();
+      const g = audio.createGain();
+      o.type = 'square';
+      o.frequency.setValueAtTime(220, t);
+      o.frequency.exponentialRampToValueAtTime(70, t + 0.05);
+      g.gain.setValueAtTime(0.12, t);
+      g.gain.exponentialRampToValueAtTime(0.001, t + 0.07);
+      o.connect(g).connect(audio.destination);
+      o.start(t);
+      o.stop(t + 0.08);
+      const len = Math.floor(audio.sampleRate * 0.012);
+      const buf = audio.createBuffer(1, len, audio.sampleRate);
+      const d = buf.getChannelData(0);
+      for (let i = 0; i < len; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / len);
+      const n = audio.createBufferSource();
+      const ng = audio.createGain();
+      n.buffer = buf;
+      ng.gain.value = 0.18;
+      n.connect(ng).connect(audio.destination);
+      n.start(t);
+    } catch {
+      /* no sound: fine */
+    }
+  }
+  function init(btn: HTMLButtonElement) {
+    if (btn.dataset.arcadeReady) return;
+    btn.dataset.arcadeReady = '1';
+    // Sink on touch or mouse down right away (not only on release), like a real button.
+    btn.addEventListener('pointerdown', () => btn.classList.add('is-down'));
+    for (const ev of ['pointerup', 'pointerleave', 'pointercancel']) btn.addEventListener(ev, () => btn.classList.remove('is-down'));
+    btn.addEventListener('click', () => {
+      if (btn.dataset.sound) click();
+      let pressed = false;
+      if (btn.dataset.toggle) {
+        pressed = btn.getAttribute('aria-pressed') !== 'true';
+        btn.setAttribute('aria-pressed', String(pressed));
+      }
+      btn.dispatchEvent(new CustomEvent('arcade:press', { bubbles: true, detail: { pressed } }));
+    });
+  }
+  document.querySelectorAll<HTMLButtonElement>('[data-arcade]').forEach(init);
+</script>

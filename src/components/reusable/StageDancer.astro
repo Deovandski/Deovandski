@@ -17,7 +17,7 @@
  * and its colours are props, so it can be dressed differently.
  *
  * Reusable on purpose: no site imports, no site CSS needed, safe to use several times on a page. Copy this file and
- * ReelPicker.astro (the routine plate) into any Astro project. See README.md in this folder.
+ * ReelPicker.astro (the routine plate) and ArcadeButton.astro (the controls) into any Astro project. See README.md in this folder.
  *
  *   <StageDancer label="Chibi Deo dancing" />
  *   <StageDancer outfit={{ robe: '#d33', pattern: '#fff' }} />
@@ -29,15 +29,20 @@
  *
  * Theming (CSS custom properties): --dancer-accent (default #39c5bb).
  *
+ * Controls are three big arcade buttons (ArcadeButton, #276) on top of the plate (to its left on phones): 🎵 music (on
+ * by default; it starts when the stage first shows, or on the first tap if the browser holds sound back), ⏸️ pause, and
+ * 💡 change the lights (press it as often as you like).
+ *
  * Accessible: a text label describes the scene; the plate picks the routine (arrow keys or its ▲ ▼ buttons work too),
- * buttons pause the dance, change the
+ * the buttons (named for screen readers) pause the dance, change the
  * light colours and turn the music on or off; the fever meter is a role="meter" with its value, and Space or
  * Enter on the stage taps the beat. Lights change on the beat (under 3 changes a second, within WCAG's flash
  * limit), and FEVER! only brightens the floor, it doesn't strobe. Reduced motion shows a still point pose
- * with steady lights. The music is off until the visitor turns it on, and stops when the dance pauses or
- * the stage is hidden.
+ * with steady lights (paused, so no music until the dance starts). The music stops while the dance is paused or the
+ * stage is hidden, and picks up again when it's back.
  */
 import ReelPicker from './ReelPicker.astro';
+import ArcadeButton from './ArcadeButton.astro';
 
 interface Props {
   outfit?: Partial<Record<'hat' | 'hatTrim' | 'skin' | 'beard' | 'robe' | 'pattern' | 'hem' | 'boots', string>>;
@@ -77,16 +82,18 @@ const strings: Record<string, string> = {
   offBeat: 'Off beat',
   fever: 'FEVER!',
   feverLive: 'FEVER! The whole floor lights up.',
-  musicOn: 'Music: on',
-  musicOff: 'Music: off',
-  dance: 'Dance',
-  pause: 'Pause',
 };
 ---
 
 <div class:list={['stage-dancer', className]} data-colors={JSON.stringify(colors)} data-bpms={JSON.stringify(routines.map((r) => r.bpm))}>
   <div class="stage-dancer__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <div class="stage-dancer__layout">
+  <div class="stage-dancer__side">
+  <div class="stage-dancer__buttons" role="group" aria-label="Controls">
+    <ArcadeButton class="stage-dancer__music" emoji="🎵" label="Music" toggle pressed color="#ff2d95" />
+    <ArcadeButton class="stage-dancer__pause" emoji="⏸️" label="Pause" toggle pressed={false} color="#ffd23f" />
+    <ArcadeButton class="stage-dancer__lights" emoji="💡" label="Change the lights" color="#39c5bb" />
+  </div>
   <ReelPicker
     class="stage-dancer__reel"
     label="Pick a routine"
@@ -94,6 +101,7 @@ const strings: Record<string, string> = {
     next="Next routine"
     items={routines.map((r) => ({ label: r.name, detail: `${r.level} · ${r.bpm} BPM` }))}
   />
+  </div>
   <div class="stage-dancer__main">
   <div class="stage-dancer__stage">
     <canvas class="stage-dancer__canvas" role="img" aria-label={label} tabindex="0"></canvas>
@@ -104,11 +112,6 @@ const strings: Record<string, string> = {
     <p class="stage-dancer__hint" aria-hidden="true">Tap the stage on the beat</p>
   </div>
   <p class="stage-dancer__status" aria-live="polite"></p>
-  <div class="stage-dancer__controls">
-    <button type="button" data-act="pause" aria-pressed="false">Pause</button>
-    <button type="button" data-act="lights">Change the lights</button>
-    <button type="button" data-act="music" aria-pressed="false">Music: off</button>
-  </div>
   </div>
   </div>
 </div>
@@ -134,6 +137,19 @@ const strings: Record<string, string> = {
     --reel-card: 128px;
     flex: none;
   }
+  /* The controls (big arcade buttons) sit on top of the plate; on phones, to its left. */
+  .stage-dancer__side {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.9rem;
+  }
+  .stage-dancer__buttons {
+    --arcade-size: 60px;
+    display: flex;
+    gap: 0.7rem;
+  }
   @container (max-width: 560px) {
     .stage-dancer__layout {
       flex-direction: column;
@@ -144,6 +160,15 @@ const strings: Record<string, string> = {
     }
     .stage-dancer__reel {
       --reel-card: 104px;
+    }
+    .stage-dancer__side {
+      flex-direction: row;
+      gap: 0.8rem;
+    }
+    .stage-dancer__buttons {
+      --arcade-size: 52px;
+      flex-direction: column;
+      gap: 0.55rem;
     }
   }
   .stage-dancer__stage {
@@ -214,30 +239,6 @@ const strings: Record<string, string> = {
     border-radius: 16px;
     background: #07040d;
     image-rendering: pixelated;
-  }
-  .stage-dancer__controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
-  }
-  .stage-dancer__controls button {
-    min-height: 2.5rem;
-    padding: 0.35rem 1rem;
-    border-radius: 999px;
-    border: 1px solid var(--_accent);
-    background: transparent;
-    color: var(--_accent);
-    font: inherit;
-    font-weight: 700;
-    cursor: pointer;
-  }
-  .stage-dancer__controls button[aria-pressed='true'] {
-    background: color-mix(in srgb, var(--_accent) 18%, transparent);
-  }
-  .stage-dancer__controls button:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 2px;
   }
 </style>
 
@@ -489,9 +490,9 @@ const strings: Record<string, string> = {
     const tempos: number[] = JSON.parse(root.dataset.bpms || '[110]');
     let beat = 60000 / tempos[0];
     const frames = ROUTINES.map((r) => r.map((p) => render(p, colors)));
-    const pauseBtn = root.querySelector<HTMLButtonElement>('[data-act="pause"]')!;
-    const lightsBtn = root.querySelector<HTMLButtonElement>('[data-act="lights"]')!;
-    const musicBtn = root.querySelector<HTMLButtonElement>('[data-act="music"]')!;
+    const pauseBtn = root.querySelector<HTMLButtonElement>('.stage-dancer__pause')!;
+    const lightsBtn = root.querySelector<HTMLButtonElement>('.stage-dancer__lights')!;
+    const musicBtn = root.querySelector<HTMLButtonElement>('.stage-dancer__music')!;
     const meter = root.querySelector<HTMLElement>('.stage-dancer__fever')!;
     const status = root.querySelector<HTMLElement>('.stage-dancer__status')!;
     let routine = 0;
@@ -780,8 +781,8 @@ const strings: Record<string, string> = {
     function schedule() {
       const a = music.ctx;
       if (!a || !music.on) return;
-      if (!visible()) return setMusic(false); // the stage was hidden (tab or FastTab closed): music off
-      if (paused) return;
+      if (!visible() || paused) return; // hidden (tab or FastTab closed) or paused: nothing new plays; it picks up again
+      if (a.state !== 'running') return void a.resume();
       const step = beat / 4;
       const perfZero = performance.now() - a.currentTime * 1000;
       const now = performance.now();
@@ -791,10 +792,11 @@ const strings: Record<string, string> = {
         music.next += step;
       }
     }
+    // Music is on by default (the 🎵 button starts pressed); it starts when the stage first shows.
+    music.on = musicBtn.getAttribute('aria-pressed') === 'true';
     function setMusic(on: boolean) {
       music.on = on;
       musicBtn.setAttribute('aria-pressed', String(on));
-      musicBtn.textContent = msg(on ? 'musicOn' : 'musicOff');
       clearInterval(music.timer);
       if (!on) return;
       if (!music.ctx) {
@@ -807,8 +809,14 @@ const strings: Record<string, string> = {
       music.ctx.resume();
       music.next = 0;
       music.timer = window.setInterval(schedule, 25);
+      // Browsers hold sound back until the visitor has touched the page; if so, start on the first touch or key.
+      if (music.ctx.state !== 'running') {
+        const unlock = () => music.ctx?.resume();
+        document.addEventListener('pointerdown', unlock, { once: true });
+        document.addEventListener('keydown', unlock, { once: true });
+      }
     }
-    musicBtn.addEventListener('click', () => setMusic(!music.on));
+    musicBtn.addEventListener('arcade:press', (e) => setMusic((e as CustomEvent<{ pressed: boolean }>).detail.pressed));
 
     // Picking a routine on the plate: its moves, tempo, music and difficulty start together on beat one.
     root.addEventListener('reel:change', (e) => {
@@ -862,27 +870,23 @@ const strings: Record<string, string> = {
       requestAnimationFrame(loop);
     }
 
-    pauseBtn.addEventListener('click', () => {
-      paused = !paused;
-      pauseBtn.setAttribute('aria-pressed', String(paused));
-      pauseBtn.textContent = msg(paused ? 'dance' : 'pause');
+    pauseBtn.addEventListener('arcade:press', (e) => {
+      paused = (e as CustomEvent<{ pressed: boolean }>).detail.pressed;
       if (paused) pausedAt = performance.now();
       else {
         start += performance.now() - pausedAt;
         play();
       }
     });
-    if (reduced) {
-      pauseBtn.textContent = msg('dance');
-      pauseBtn.setAttribute('aria-pressed', 'true');
-    }
-    lightsBtn.addEventListener('click', () => {
+    if (reduced) pauseBtn.setAttribute('aria-pressed', 'true');
+    lightsBtn.addEventListener('arcade:press', () => {
       palette = (palette + 1) % PALETTES.length;
       if (paused && size()) draw(performance.now());
     });
 
     new IntersectionObserver((entries) => {
       if (!entries[0].isIntersecting) return;
+      if (music.on && !music.timer) setMusic(true); // first time on screen: the music starts with the dance
       if (paused) {
         if (size()) draw(performance.now());
       } else play();
