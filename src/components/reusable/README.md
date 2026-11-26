@@ -14,7 +14,7 @@ and a project without translations just shows the English.
 |---|---|---|
 | [SplitFlap.astro](SplitFlap.astro) | Split-flap (Solari board) display for a number or short word. It flips into place the first time it scrolls into view. | MTG tab (Win vs Loss) |
 | [LedClock.astro](LedClock.astro) + [fonts/](fonts/) | Countdown in red LED digits: years, days, hours, minutes, seconds. It blinks and shows a message at zero. | Death tab |
-| [EasterEggBanner.astro](EasterEggBanner.astro) | A hidden banner (picture, title, message, Close) that your script shows when a visitor does something. In the page, or floating at the bottom of the screen. | Lust tab (Ara ara~ / didn't take the bait), the 10- and 20-facets easter eggs |
+| [EasterEggBanner.astro](EasterEggBanner.astro) | A hidden banner (picture, title, message, Close) that your script shows when a visitor does something. In the page, or floating at the bottom of the screen. | Lust tab (Ara ara~ / didn't take the bait), the 10- and 20-facets easter eggs, Ursu Sintasus in Around the World in 80 Gears |
 | [IconMeter.astro](IconMeter.astro) | A quantity shown as a row of icons, with the last one partly filled (650 lb ÷ 500 lb per cow = 1.3 cows). | Churrasco tab (cow-meter) |
 | [OrgChart.astro](OrgChart.astro) | A top-down organization chart. Each row of people or roles is joined to the row above, with optional portraits. | Churrasco tab (The Holy Order) |
 | [RouteMap.astro](RouteMap.astro) | A map that joins places with a curved great-circle line, kept inside the area you choose, with pinch and button zoom. Leaflet plus your own outline file: no API key, no tile server, no tracking. | Family tab (Itaituba → Fargo) |
@@ -24,7 +24,7 @@ and a project without translations just shows the English.
 | [PaperPlane.astro](PaperPlane.astro) | Fold a paper plane, then throw it: precision decides the distance | Aviation tab |
 | [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing four disco routines (#1 the point, #2 the Night Fever line dance, #3 the hustle, #4 toe stand & point), each with its own tempo, music and difficulty, picked on a View-Master plate (ReelPicker), under spotlights, a mirror ball and a light-up floor, with a beat guide and a fever meter you fill by tapping on the beat and an optional original 8-bit disco loop. | Concert tab, Playground |
 | [ReelPicker.astro](ReelPicker.astro) | A View-Master-style picker: cards around the rim of a round plate, seen through a window that shows one card and slivers of its neighbours; drag or swipe to turn the plate, it snaps to a card. Each card has a name, a detail line and an art box for a picture. | Concert tab (Saturday Night Fever routines, inside StageDancer) |
-| [PlanetLap.astro](PlanetLap.astro) | How far around a planet a distance goes, Reus-style (the planet cut in half, seen side on), animated like an in-flight map: a little cyclist rides from the start flag, then the map keeps zooming in and out between the nearest places and the far ones, with a next-stop panel and distances to go. | Cycling tab (from Fargo, ND) |
+| [PlanetLap.astro](PlanetLap.astro) | How far around a planet a distance goes, Reus-style (the planet cut in half, seen side on), animated like an in-flight map: a little cyclist rides from the start flag, then the map keeps zooming in and out between the nearest places and the far ones, with a next-stop panel and distances to go, fossils under the surface, and an optional chaser that runs after the rider. | Cycling tab (from Fargo, ND), with Ursu Sintasus giving chase |
 | [ArcadeButton.astro](ArcadeButton.astro) | A big, chunky, old-school push button with one emoji on its cap and a click sound; it sinks when pressed, and as a toggle it stays down and lit while on. | Concert tab (Saturday Night Fever: music, pause, lights) |
 | [YouTube.astro](YouTube.astro) | A privacy-friendly YouTube embed: nothing loads from YouTube until play is pressed, then it plays from youtube-nocookie.com; pauses itself when hidden. 16:9 videos and 9:16 Shorts. | Aviation tab, Cycling tab ("Ridin' with Peeta") |
 | [MetricLab.astro](MetricLab.astro) | Years of daily numbers to slice and dice: group boxes of checkboxes (years, seasons, weekdays and weekends, the nights after an event, which kinds of event count) over five views: small-multiple timelines with a shared hover, the day after an event against the rest, a calendar heatmap, month-by-month lines per year, and a scatter of any two metrics with r. Loads its data file only when first shown. | Biomarker Lab tab (Hearth) |
@@ -124,7 +124,7 @@ It starts hidden. Show it from your own script by name, and its picture download
 | `image`, `imageWidth`, `imageHeight` | (required) | The picture (often a GIF) and its size. |
 | `imageAlt` | `""` | Leave empty when the picture is decoration. |
 | `title` | (required) | The headline. The message goes inside the tag. |
-| `floating` | `false` | Pin it to the bottom of the screen. It then takes keyboard focus and closes with Escape. |
+| `floating` | `false` | Pin it to the bottom of the screen. It then takes keyboard focus and closes with Escape (through CloseWatcher where the browser has it, so Escape closes the banner and not a Play box behind it). |
 | `closeLabel` | `"Close"` | Text on the button. |
 | `class` | none | Extra class. |
 
@@ -535,9 +535,25 @@ close in, a farther one zoomed out), and places ahead show their distance to go.
 | `markers` | none | Places along the way, `{ label, distance }`: a labelled pin on the rim at that distance from the start. Labels that would overlap step up a row; on narrow screens only the last place passed and the next one keep their names. |
 | `locale` | `"en-US"` | Number format. |
 | `surface` | a made-up world, mostly ocean | One biome per slice, clockwise from the start: `ocean`, `plains`, `forest`, `desert`, `mountains`, `ice`. |
+| `controls` | `true` | The green ▶️ Play button (an ArcadeButton, on to start with) over the zoom bar, on the right. Moving the bar stops the auto zoom and pops Play up. |
+| `zoomLabel` | `"Zoom"` | The zoom bar's name for screen readers. |
+| `playLabel` | `"Play"` | The Play button's name. |
+| `chaserLabel` | `"Who's that?"` | The name of the button on top of the chaser (see below). |
+
+**Slot `chaser`:** SVG for something that runs after the rider, 70 px behind on the rim: feet at (0, 0), facing right,
+with two frames (`<g data-frame="1">` and `<g data-frame="2">`) that take turns while it plays. A see-through button
+sits on top of it; pressing it fires `planet:chaser` (it bubbles) for your own script. The Cycling gimmick puts
+Ursu Sintasus there (`src/components/UrsuSprite.astro`) and opens an EasterEggBanner (#284).
+
+```astro
+<PlanetLap … chaserLabel="Ursu Sintasus"><UrsuSprite slot="chaser" /></PlanetLap>
+```
+
+Under the surface lie fossils (dinosaurs, a mammoth, a fish, an ammonite, and a dragon, a sea serpent and a unicorn),
+fixed to the world; more turn up as it zooms in, and the crust thickens close in to make room for them.
 
 The script draws the map (without JavaScript only the caption shows) and only moves it while it's on screen. Reduced
-motion: the end of the ride, still, zoomed close. Theme with `--planet-accent`, `--planet-rider`, `--planet-sky` and
+motion: the end of the ride, still, zoomed close, with Play off. Theme with `--planet-accent`, `--planet-rider`, `--planet-sky` and
 `--planet-text`.
 
 ## ArcadeButton

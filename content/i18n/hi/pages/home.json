@@ -303,6 +303,10 @@
   "en": "Let me go",
   "t": "मुझे जाने दो"
  },
+ "08022eba4187": {
+  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Exercise is anything\n    the watch logged for 10 minutes or more: walks, rides, the elliptical, runs, swims. Cardio fitness is estimated from\n    each day's resting heart rate and my age (the heart rate ratio method). Dates and numbers only: no places.\n    The dashed lines are other people: men my age (born in 1993), from studies and other devices that measure a little\n    differently, so read them as a rough guide. Where they come from is in this tab's Links box.\n",
+  "t": "मेरी Pixel Watch से, Google Health के ज़रिए, अप्रैल 2023 से नवंबर 2026 तक (2026-11-26 को निर्यात)। कसरत यानी कुछ भी जो घड़ी ने 10 मिनट या ज़्यादा दर्ज किया: पैदल चलना, साइकिल, इलिप्टिकल, दौड़, तैराकी। कार्डियो फ़िटनेस का अनुमान हर दिन की आराम के समय हृदय गति और मेरी उम्र से लगाया गया है (हृदय गति अनुपात विधि)। सिर्फ़ तारीख़ें और संख्याएँ: कोई जगह नहीं। डैश वाली रेखाएँ दूसरे लोग हैं: मेरी उम्र के पुरुष (1993 में जन्मे), ऐसे अध्ययनों और उपकरणों से जो थोड़ा अलग मापते हैं, इसलिए इन्हें मोटा अंदाज़ा मानें। ये कहाँ से आए, यह इस टैब के लिंक बॉक्स में है।"
+ },
  "081afbace830": {
   "en": "Traveler",
   "t": "यात्री"
@@ -523,6 +527,10 @@
   "en": "🤘 Seen live",
   "t": "🤘 लाइव देखा"
  },
+ "0f197bc2e46c": {
+  "en": "Cardio fitness (estimated VO₂ max)",
+  "t": "कार्डियो फ़िटनेस (अनुमानित VO₂ मैक्स)"
+ },
  "0f249e4e5aa1": {
   "en": "MS",
   "t": "MS"
@@ -670,6 +678,10 @@
  "132a0149f337": {
   "en": "they rise together",
   "t": "साथ-साथ बढ़ते हैं"
+ },
+ "133762fdd79a": {
+  "en": "Who's that running after the bike?",
+  "t": "साइकिल के पीछे कौन दौड़ रहा है?"
  },
  "1349608b58ab": {
   "en": "25 h",
@@ -846,6 +858,10 @@
  "1945ca5513cf": {
   "en": " TE ",
   "t": "TE"
+ },
+ "195b43118da8": {
+  "en": "The body is the temple, and the engine most people forget to maintain. We pour everything outward. Save some care and love for yourself.",
+  "t": "शरीर मंदिर है, और वह इंजन जिसकी देखभाल ज़्यादातर लोग भूल जाते हैं। हम सब कुछ बाहर उड़ेल देते हैं। थोड़ी देखभाल और प्यार अपने लिए भी बचाकर रखो।"
  },
  "195e0030ff82": {
   "en": "d6",
@@ -1387,10 +1403,6 @@
   "en": "Close to 12 years old but still kicking",
   "t": "लगभग 12 साल का, पर अब भी दमदार"
  },
- "285c1b0998a6": {
-  "en": "The body is the temple, and the engine that so many people don’t watch out for. We put all our energy and attention outward. Care for yourself and love yourself too.",
-  "t": "शरीर मंदिर है, और वह इंजन जिसका ख़याल बहुत से लोग नहीं रखते। हम अपनी सारी ऊर्जा और ध्यान बाहर की ओर लगा देते हैं। अपना भी ख़याल रखो और ख़ुद से भी प्यार करो।"
- },
  "2888f01fb635": {
   "en": "Morning by the river",
   "t": "नदी किनारे सुबह"
@@ -1822,6 +1834,10 @@
  "345851f87103": {
   "en": "Deovandski's hub: software, books, travel and games.",
   "t": "Deovandski का अड्डा: सॉफ़्टवेयर, किताबें, यात्रा और गेम।"
+ },
+ "348796fc8af1": {
+  "en": " VO₂ max from heart rates (Uth et al., 2004) ",
+  "t": "हृदय गति से VO₂ मैक्स (Uth और साथी, 2004)"
  },
  "348928d6f5be": {
   "en": "Resting heart rate",
@@ -2311,10 +2327,6 @@
   "en": "Energy",
   "t": "ऊर्जा"
  },
- "43954ee875dc": {
-  "en": "This tab is in Hearth because at the center of it is my body. Tracking it and caring for it is just as important as caring for my family, my pets and healthy friendships.",
-  "t": "यह टैब घर-आँगन में है क्योंकि इसके केंद्र में मेरा शरीर है। इसे ट्रैक करना और इसकी देखभाल करना उतना ही ज़रूरी है जितना अपने परिवार, अपने पालतू जानवरों और अच्छी दोस्तियों की देखभाल करना।"
- },
  "439be97b8441": {
   "en": " Sleep by age (Nature Communications) ",
   "t": "उम्र के हिसाब से नींद (Nature Communications)"
@@ -2390,6 +2402,10 @@
  "46156a5660a4": {
   "en": "Deo in 2026 running a race with both arms raised",
   "t": "2026 में Deo, दोनों बाँहें उठाए एक दौड़ दौड़ते हुए"
+ },
+ "467918b8adcb": {
+  "en": "Ursu Sintasus",
+  "t": "उर्सु सिन्तासुस"
  },
  "468d79c2e022": {
   "en": "Rock",
@@ -2518,6 +2534,10 @@
  "4aace3557060": {
   "en": "Enlarge: Quite the stretch",
   "t": "बड़ा करें: क्या अंगड़ाई है"
+ },
+ "4ab1376befeb": {
+  "en": "Play the ride",
+  "t": "सवारी चलाएँ"
  },
  "4ad51e59a5be": {
   "en": " Fine line ",
@@ -3747,10 +3767,6 @@
   "en": "Deo and his parents smiling at a race finish, showing their medals",
   "t": "एक दौड़ की फ़िनिश लाइन पर मुस्कुराते Deo और उनके माता-पिता, अपने मेडल दिखाते हुए"
  },
- "6b33872b3a61": {
-  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Exercise is anything\n    the watch logged for 10 minutes or more: walks, rides, the elliptical, runs, swims. Dates and numbers only: no places.\n    The dashed lines are other people: men my age (born in 1993), from studies and other devices that measure a little\n    differently, so read them as a rough guide. Where they come from is in this tab's Links box.\n",
-  "t": "मेरी Pixel Watch से, Google Health के ज़रिए, अप्रैल 2023 से नवंबर 2026 तक (2026-11-26 को एक्सपोर्ट)। व्यायाम वह सब है जो घड़ी ने 10 मिनट या ज़्यादा दर्ज किया: पैदल चलना, साइकिल, एलिप्टिकल, दौड़, तैराकी। सिर्फ़ तारीख़ें और आँकड़े: कोई जगह नहीं। धराशायी रेखाएँ दूसरे लोग हैं: मेरी उम्र के पुरुष (1993 में जन्मे), अध्ययनों और दूसरे उपकरणों से जो थोड़ा अलग मापते हैं, इसलिए इन्हें मोटा अंदाज़ा समझो। स्रोत इस टैब के Links बॉक्स में हैं।"
- },
  "6b39b73a4a6a": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#27: </span>Best of the Worst: Vampire Assassin, Hack-O-Lantern, and Cathy's Curse",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#27: </span>Best of the Worst: Vampire Assassin, Hack-O-Lantern, and Cathy's Curse"
@@ -4315,6 +4331,10 @@
   "en": "I wanna play",
   "t": "मुझे खेलना है"
  },
+ "7bcd7423cbe4": {
+  "en": "That’s why this tab lives in Hearth: my body is at the center of it all, and looking after it matters as much as looking after my family, my pets and healthy friendships.",
+  "t": "इसीलिए यह टैब घर-आँगन में है: हर चीज़ के केंद्र में मेरा शरीर है, और उसकी देखभाल उतनी ही ज़रूरी है जितनी अपने परिवार, अपने पालतू जानवरों और अच्छी दोस्तियों की।"
+ },
  "7c10807e67d0": {
   "en": "I am getting old",
   "t": "मैं बूढ़ा हो रहा हूँ"
@@ -4703,6 +4723,10 @@
   "en": "Dead Island 2",
   "t": "Dead Island 2"
  },
+ "87867de70103": {
+  "en": "These are its gauges, logged by my watch every day since April 2023. Slice them any way you like, and see what exercise does to them.",
+  "t": "ये उसके मीटर हैं, जिन्हें मेरी घड़ी अप्रैल 2023 से हर दिन दर्ज करती आई है। इन्हें जैसे चाहो बाँटो, और देखो कि कसरत इन पर क्या असर डालती है।"
+ },
  "879e32326c52": {
   "en": "Year",
   "t": "साल"
@@ -4918,10 +4942,6 @@
  "8e38c2784d21": {
   "en": "Much tired",
   "t": "बहुत थकान"
- },
- "8e4cd13e1138": {
-  "en": "The body is a machine, and like any other machine, it needs to be cared for. These are its gauges: what my watch has logged every day since April 2023. Slice them any way you like, and see what exercise does to them.",
-  "t": "शरीर एक मशीन है, और किसी भी दूसरी मशीन की तरह इसकी भी देखभाल ज़रूरी है। ये इसके मीटर हैं: अप्रैल 2023 से हर दिन मेरी घड़ी ने जो दर्ज किया। जैसे चाहो वैसे काटकर देखो, और देखो कि व्यायाम इन पर क्या असर डालता है।"
  },
  "8e4e0408b8f6": {
   "en": "pearls",
@@ -5303,6 +5323,10 @@
   "en": "Pope Deo",
   "t": "पोप Deo"
  },
+ "989ad0d2851a": {
+  "en": "Ursu Sintasus in Spore: a cream-white creature with moose antlers, big orange eyes, a wide smile and black-striped arms and legs.",
+  "t": "Spore में उर्सु सिन्तासुस: मूस जैसे सींग, बड़ी नारंगी आँखें, चौड़ी मुस्कान और काली धारियों वाले हाथ-पैर वाला क्रीम-सफ़ेद जीव।"
+ },
  "98a9de144013": {
   "en": "I wonder what dinner will be",
   "t": "पता नहीं डिनर में क्या होगा"
@@ -5358,10 +5382,6 @@
  "9a60e3345c8c": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#8: </span>Best of the Worst: Black Spine Raffle",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#8: </span>Best of the Worst: Black Spine Raffle"
- },
- "9a614628eb58": {
-  "en": "Cardio fitness (VO₂ max)",
-  "t": "कार्डियो फ़िटनेस (VO₂ मैक्स)"
  },
  "9a6a49a5317f": {
   "en": "EM",
@@ -6562,6 +6582,10 @@
  "bca97bae09e1": {
   "en": " Xbox  ·  estimated ",
   "t": "Xbox  ·  अनुमानित"
+ },
+ "bcbe77311c7a": {
+  "en": "The explorer, (mostly) friendly race I created in Spore. They went on to conquer hundreds of planets, until the save file grew past 1.3 GB and got corrupted.",
+  "t": "खोजी और (ज़्यादातर) दोस्ताना नस्ल, जो मैंने Spore में बनाई। उन्होंने सैकड़ों ग्रहों पर कब्ज़ा किया, जब तक सेव फ़ाइल 1.3 GB से बड़ी होकर ख़राब नहीं हो गई।"
  },
  "bcf9f12dccef": {
   "en": " Days of my life ",
@@ -7807,6 +7831,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Shingeki no Kyojin (Attack on Titan) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 4: </span> Shingeki no Kyojin (Attack on Titan)"
  },
+ "e1038f5c447c": {
+  "en": "More of my games on the Gamer tab",
+  "t": "मेरे और गेम गेमर टैब पर"
+ },
  "e137f1441633": {
   "en": "Captain Bidu",
   "t": "कैप्टन Bidu"
@@ -7862,6 +7890,10 @@
  "e259a950cc03": {
   "en": "961 h",
   "t": "961 घं."
+ },
+ "e277ff218486": {
+  "en": "How cardio fitness is estimated",
+  "t": "कार्डियो फ़िटनेस का अनुमान कैसे लगाया जाता है"
  },
  "e2ce44da53e6": {
   "en": "Sleep score",
@@ -8454,6 +8486,10 @@
  "f6f88a0b2392": {
   "en": "Much tasty",
   "t": "बहुत स्वाद"
+ },
+ "f721478c1c58": {
+  "en": " Maximal heart rate by age (Tanaka et al., 2001) ",
+  "t": "उम्र के हिसाब से अधिकतम हृदय गति (Tanaka और साथी, 2001)"
  },
  "f741561b264b": {
   "en": "The Defenders of Ordo did not fall to an army at the gates. They fell to one another. Their quarrels were fed by the charms of a spider-god of doll-like countenance, who lurked in the Rotten Unknown and wielded powers never fathomed. Thus the fellowship was undone from within, and its defenders passed into history. Yet to this day, the people of Ordo still speak of the Prince who pleased himself into the ley lines, an episode upon which the court chroniclers have respectfully declined to elaborate.",
