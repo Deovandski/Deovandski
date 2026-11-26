@@ -24,6 +24,7 @@ and a project without translations just shows the English.
 | [PaperPlane.astro](PaperPlane.astro) | Fold a paper plane, then throw it: precision decides the distance | Aviation tab |
 | [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing four disco routines (#1 the point, #2 the Night Fever line dance, #3 the hustle, #4 toe stand & point), each with its own tempo, music and difficulty, picked on a View-Master plate (ReelPicker), under spotlights, a mirror ball and a light-up floor, with a beat guide and a fever meter you fill by tapping on the beat and an optional original 8-bit disco loop. | Concert tab, Playground |
 | [ReelPicker.astro](ReelPicker.astro) | A View-Master-style picker: cards around the rim of a round plate, seen through a window that shows one card and slivers of its neighbours; drag or swipe to turn the plate, it snaps to a card. Each card has a name, a detail line and an art box for a picture. | Concert tab (Saturday Night Fever routines, inside StageDancer) |
+| [PlanetLap.astro](PlanetLap.astro) | How far around a planet a distance goes, Reus-style: the planet cut in half and seen side on (crust, mantle and cores on the cut, biomes round the rim), turning under a little cyclist while a trail marks the distance from the start flag. | Cycling tab |
 | IsoDarts (moved) | An on-rails darts scene in an isometric room: scripted speech bubbles, then a timed round on a board of coloured territories (claim, cancel, smaller is worth more) with a swaying aim. | Moved to [HusbandOutWorld](https://github.com/Deovandski/HusbandOutWorld) as `site/js/iso-darts.js` and `site/css/iso-darts.css` (its Playground, Territory Snipping, #245) |
 | [IsoFarm.astro](IsoFarm.astro) | A Colheita Feliz-style farming loop: isometric plots, seeds with timers and random harvests, fertilizer, energy and a market. The whole economy is one config object; saves in the browser. | Mentor tab (the Balls farm) |
 | [HoursByCategory.astro](HoursByCategory.astro) | Things grouped into categories with their hours: a totals card, one bar per category, then a card per category (most first, "Show all"). A switch takes "excludable" categories (idle games) out of the total. Worked out at build time, so translated pages translate every word. | Gamer tab (Steam, Xbox and estimated hours) |
@@ -506,6 +507,29 @@ when the plate settles on a different card, and turns when you dispatch `reel:se
 ← →) on the window turn one card, Home goes back to the first; only the first copy of each card is announced. Theme
 with `--reel-card` (size, 112px), `--reel-accent`, `--reel-plate`, `--reel-card-bg`, `--reel-text` and `--reel-muted`.
 Reduced motion: the plate jumps instead of turning.
+
+## PlanetLap
+
+How far around a planet a distance goes, drawn like the game Reus: the planet cut in half and seen side on, in 2D.
+Its layers show on the cut, its surface (oceans, plains, forests, deserts, mountains, ice) goes round the rim, and a
+little cyclist rides along the top while the planet turns under them, leaving a trail from the start flag. It turns to
+the distance the first time it scrolls into view; a button replays it.
+
+```astro
+<PlanetLap distance={1250} circumference={24901} summary="{distance} mi: {percent} of the way around the world." />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `distance` | (required) | How far, in the same unit as `circumference`. |
+| `circumference` | `40075` | The distance round (the Earth at the equator, in km). |
+| `summary` | (required) | The caption and screen-reader text. Slots `{distance}`, `{percent}` (of one lap) and `{laps}` are filled in at build time, so it's translated with the page. |
+| `replay` | `"Ride it again"` | The replay button's text. |
+| `locale` | `"en-US"` | Number format for the slots. |
+| `surface` | a made-up world, mostly ocean | One biome per slice, clockwise from the top: `ocean`, `plains`, `forest`, `desert`, `mountains`, `ice`. |
+
+Past a full lap, the trail starts again and `{laps}` counts the laps. Reduced motion or no JavaScript: it shows where
+the ride ends, without turning. Theme with `--planet-accent`, `--planet-rider`, `--planet-sky` and `--planet-text`.
 
 ## IsoFarm
 

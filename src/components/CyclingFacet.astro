@@ -1,0 +1,117 @@
+---
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { Content as Story } from '../../content/cycling/story.md';
+import PlanetLap from './reusable/PlanetLap.astro';
+
+// ---- data: content/cycling/rides.json (from scripts/cycling-from-takeout.mjs) + content/cycling/estimated.md ----
+type Ride = { date: string; hour: number; km: number; minutes: number; kind: 'outdoor' | 'mountain' | 'indoor'; source: string };
+const log = JSON.parse(readFileSync(resolve('content/cycling/rides.json'), 'utf8')) as { exported: string | null; rides: Ride[] };
+const MILE = 1.609344;
+const estimates = readFileSync(resolve('content/cycling/estimated.md'), 'utf8')
+  .split(/\r?\n/)
+  .map((l) => l.match(/^-\s+(.+?):\s*([\d.,]+)\s*(mi|km)\s*$/i))
+  .filter((m): m is RegExpMatchArray => !!m && !m[1].startsWith('<'))
+  .map((m) => ({ what: m[1], km: Number(m[2].replace(/,/g, '')) * (m[3].toLowerCase() === 'mi' ? MILE : 1) }));
+
+const rides = log.rides ?? [];
+const outdoor = rides.filter((r) => r.kind !== 'indoor');
+const trackedKm = outdoor.reduce((s, r) => s + r.km, 0);
+const estimatedKm = estimates.reduce((s, e) => s + e.km, 0);
+const totalKm = trackedKm + estimatedKm;
+const hours = rides.reduce((s, r) => s + r.minutes, 0) / 60;
+const longest = outdoor.reduce<Ride | null>((best, r) => (!best || r.km > best.km ? r : best), null);
+const mountain = rides.filter((r) => r.kind === 'mountain').length;
+const n0 = new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 });
+const n1 = new Intl.NumberFormat('en-US', { maximumFractionDigits: 1 });
+const usDate = (d: string) => new Date(`${d}T12:00:00`).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+const star = estimatedKm > 0 ? '*' : '';
+
+// Distance by year (outdoor rides), for the bars.
+const byYear = new Map<number, number>();
+for (const r of outdoor) byYear.set(Number(r.date.slice(0, 4)), (byYear.get(Number(r.date.slice(0, 4))) ?? 0) + r.km);
+const years = [...byYear.entries()].sort((a, b) => a[0] - b[0]);
+const maxYear = Math.max(1, ...years.map(([, km]) => km));
+
+const EARTH_MI = 24901; // the Earth round the equator (40,075 km)
+---
+
+<div class="cycling">
+  <section class="cycling__world" aria-labelledby="cycling-world">
+    <h2 id="cycling-world">Around the world</h2>
+    <PlanetLap
+      distance={totalKm / MILE}
+      circumference={EARTH_MI}
+      summary={`{distance} mi${star} on the bike: {percent} of the way around the world.`}
+    />
+    {
+      rides.length === 0 && estimates.length === 0 ? (
+        <p class="cycling__empty">The ride log is on its way: it comes from my Google Health export.</p>
+      ) : (
+        <>
+          <dl class="cycling__stats">
+            <div><dt>Rides</dt><dd>{n0.format(rides.length)}</dd></div>
+            <div><dt>Distance</dt><dd>{n0.format(totalKm / MILE)} mi{star} <span>({n0.format(totalKm)} km)</span></dd></div>
+            <div><dt>In the saddle</dt><dd>{n1.format(hours)} h</dd></div>
+            {longest && <div><dt>Longest ride</dt><dd>{n1.format(longest.km / MILE)} mi <span>({usDate(longest.date)})</span></dd></div>}
+            {mountain > 0 && <div><dt>Mountain rides</dt><dd>{n0.format(mountain)}</dd></div>}
+          </dl>
+          {
+            years.length > 1 && (
+              <ul class="cycling__years" aria-label="Distance by year">
+                {years.map(([y, km]) => (
+                  <li>
+                    <span class="cycling__year">{y}</span>
+                    <span class="cycling__bar" style={`--w:${((km / maxYear) * 100).toFixed(1)}%`} aria-hidden="true" />
+                    <span class="cycling__km">{n0.format(km / MILE)} mi</span>
+                  </li>
+                ))}
+              </ul>
+            )
+          }
+          {log.exported && <p class="cycling__foot">Rides from my Google Health export, updated on {usDate(log.exported)}. Indoor bikes count as rides and time, not distance.</p>}
+          {estimatedKm > 0 && <p class="cycling__foot">* Includes distance I estimated, from before the tracking.</p>}
+        </>
+      )
+    }
+  </section>
+  <div class="cycling__story"><Story /></div>
+</div>
+
+<style>
+  .cycling { max-width: 52rem; --planet-text: var(--text); --planet-accent: var(--teal); }
+  .cycling h2,
+  .cycling :global(h2) {
+    font-size: var(--step-2);
+    color: var(--text);
+    margin: 2.4em 0 0.6em;
+    padding-top: 1.1em;
+    border-top: 1px solid rgba(225, 40, 133, 0.35);
+  }
+  .cycling__world h2 { margin-top: 0; padding-top: 0; border-top: 0; }
+  .cycling__empty,
+  .cycling__foot { color: var(--muted); font-size: var(--step--1); margin: 0.5rem 0 0; }
+  .cycling__stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
+    gap: 0.75rem;
+    margin: 1.25rem 0 0;
+  }
+  .cycling__stats div {
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(57, 197, 187, 0.35);
+    border-radius: 14px;
+    background: rgba(57, 197, 187, 0.06);
+  }
+  .cycling__stats dt { color: var(--muted); font-size: var(--step--1); }
+  .cycling__stats dd { margin: 0.2rem 0 0; font-family: var(--font-display); font-weight: 800; font-size: var(--step-1); color: var(--text); }
+  .cycling__stats dd span { font-family: inherit; font-weight: 400; font-size: var(--step--1); color: var(--muted); }
+  .cycling__years { list-style: none; margin: 1.25rem 0 0; padding: 0; display: grid; gap: 0.4rem; }
+  .cycling__years li { display: grid; grid-template-columns: 3.5rem 1fr 5.5rem; align-items: center; gap: 0.6rem; }
+  .cycling__year { color: var(--muted); font-variant-numeric: tabular-nums; }
+  .cycling__bar { height: 0.8rem; width: var(--w); min-width: 2px; border-radius: 999px; background: var(--teal); }
+  .cycling__km { font-variant-numeric: tabular-nums; text-align: end; }
+  .cycling :global(strong) { color: var(--teal); }
+  .cycling :global(ul) { padding-inline-start: 1.2rem; }
+  .cycling :global(li) { margin: 0.35rem 0; }
+</style>
