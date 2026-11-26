@@ -25,6 +25,8 @@ and a project without translations just shows the English.
 | [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing four disco routines (#1 the point, #2 the Night Fever line dance, #3 the hustle, #4 toe stand & point), each with its own tempo, music and difficulty, picked on a View-Master plate (ReelPicker), under spotlights, a mirror ball and a light-up floor, with a beat guide and a fever meter you fill by tapping on the beat and an optional original 8-bit disco loop. | Concert tab, Playground |
 | [ReelPicker.astro](ReelPicker.astro) | A View-Master-style picker: cards around the rim of a round plate, seen through a window that shows one card and slivers of its neighbours; drag or swipe to turn the plate, it snaps to a card. Each card has a name, a detail line and an art box for a picture. | Concert tab (Saturday Night Fever routines, inside StageDancer) |
 | [PlanetLap.astro](PlanetLap.astro) | How far around a planet a distance goes, Reus-style (the planet cut in half, seen side on), animated like an in-flight map: a little cyclist rides from the start flag, then the map keeps zooming in and out between the nearest places and the far ones, with a next-stop panel and distances to go, fossils under the surface, and an optional chaser that runs after the rider. | Cycling tab (from Fargo, ND), with Ursu Sintasus giving chase |
+| [PhotoQuiz.astro](PhotoQuiz.astro) | Guess where a photo was taken: rounds of photos (10 by default) with multiple-choice answers, a score card, and a helper slot under it who gives one freebie per game (narrows the answers to two), chats now and then, and shares fun facts after some answers. Every word is in the page, so it gets translated. | Traveler tab (Where in the World Was Deo?, #290) |
+| [PixelHammock.astro](PixelHammock.astro) | The chibi pixel character from StageDancer, chilling in a hammock between two palm trees, swaying; opens its eyes while it talks (`data-awake`). Drawn in code, outfit colours as props. | Traveler tab (the game's helper) |
 | [ArcadeButton.astro](ArcadeButton.astro) | A big, chunky, old-school push button with one emoji on its cap and a click sound; it sinks when pressed, and as a toggle it stays down and lit while on. | Concert tab (Saturday Night Fever: music, pause, lights) |
 | [YouTube.astro](YouTube.astro) | A privacy-friendly YouTube embed: nothing loads from YouTube until play is pressed, then it plays from youtube-nocookie.com; pauses itself when hidden. 16:9 videos and 9:16 Shorts. | Aviation tab, Cycling tab ("Ridin' with Peeta") |
 | [MetricLab.astro](MetricLab.astro) | Years of daily numbers to slice and dice: group boxes of checkboxes (years, seasons, weekdays and weekends, the nights after an event, which kinds of event count) over five views: small-multiple timelines with a shared hover, the day after an event against the rest, a calendar heatmap, month-by-month lines per year, and a scatter of any two metrics with r. Loads its data file only when first shown. | Biomarker Lab tab (Hearth) |
@@ -999,3 +1001,52 @@ option is picked, and picks one when you dispatch `switch:select` on `document` 
 page uses those two to keep the address bar and links like `#potato-movies` in step. ← → move between options
 (mirrored right to left), Home and End jump to the ends. Theme with `--switch-accent`, `--switch-surface`,
 `--switch-text`, `--switch-text-hover`, `--switch-on-text`, `--switch-font` and `--switch-size`.
+
+## PhotoQuiz
+
+Guess where a photo was taken. Each game draws `rounds` photos from the pool (a different answer group each where it
+can), with `choices` answers each: the right one and wrong ones from other groups, so two places in one country never
+compete. A score card sits on the side, and under it whatever you put in the `helper` slot: pressing it once per game
+narrows the answers down to two. The helper also says a random `chatter` line now and then, and after some answers a fun
+fact about that photo's place. Every word (answers, facts, chatter, feedback) is written into a hidden strings block,
+so the site's translations reach it.
+
+```astro
+<PhotoQuiz questions={[{ src: '/p/tokyo.webp', answer: 'jp-13' }]}
+  answers={[{ key: 'jp-13', name: 'Tokyo', within: 'Japan', group: 'jp' }, { key: 'cn', name: 'China', group: 'cn' }]}
+  facts={[{ key: 'jp-13', text: 'Shinjuku Station is the busiest in the world.' }]} chatter={['Take your time.']}>
+  <PixelHammock slot="helper" />
+</PhotoQuiz>
+```
+
+| Prop | Default | |
+|---|---|---|
+| `questions` | (required) | The photo pool: `{ src, answer }` (an image URL and the right answer's key). |
+| `answers` | (required) | Every answer: `{ key, name, within?, group? }`, shown as "name" or "name, within". |
+| `rounds` | `10` | Photos per game. |
+| `choices` | `4` | Answers per photo. |
+| `facts` | none | `{ key, text }`: `key` is an answer key or a group. Shared after some answers. |
+| `chatter` | none | Lines the helper says now and then. |
+| `helperLabel` | `"Ask for a hint (one per game)"` | The helper button's name for screen readers. |
+| `text` | | Replace any of the game's words (`question`, `right`, `wrong`, `freebie`, `endTop`…; see the `T` list in the file). |
+
+While the helper talks, the slot's first element gets `data-awake="true"`. Theme with `--quiz-accent`, `--quiz-good`,
+`--quiz-bad`, `--quiz-text`, `--quiz-muted` and `--quiz-card`.
+
+## PixelHammock
+
+StageDancer's chibi pixel character, chilling in a hammock between two palm trees, swaying gently, one arm behind the
+head. Drawn in code like StageDancer, with the same outfit colours. Its root is a `<span>`, so it can sit inside a
+button (PhotoQuiz's helper).
+
+```astro
+<PixelHammock label="Chibi Deo chilling in a hammock" />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `outfit` | the yellow king's robes | `{ hat, hatTrim, skin, beard, robe, pattern, hem, boots }` colours. |
+| `label` | a description | What's on screen, for screen readers. |
+| `awake` | `false` | Start with the eyes open. Scripts set `data-awake="true"` to open them (while it talks). |
+
+Theme with `--hammock-sky`, `--hammock-cloth` and `--hammock-stripe`. Reduced motion: no swaying.

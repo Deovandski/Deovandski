@@ -3,6 +3,8 @@ import { getImage } from 'astro:assets';
 import { loadPlaces, type Place } from '../lib/travel';
 import { photoDate } from '../lib/photoDate';
 import { url } from '../lib/url';
+import FastTab from './reusable/FastTab.astro';
+import { Content as Planning } from '../../content/travel-planning.md';
 
 const places = loadPlaces();
 
@@ -76,6 +78,10 @@ const grandTotal = tallyText(total);
       : `Where Deo has been? ${grandTotal}`
   }
 </p>
+
+<FastTab title="How do I plan for travel?" summary="6 steps" id="traveler-planning" class="planning">
+  <div class="planning__steps"><Planning /></div>
+</FastTab>
 
 <div class="map" id="map" data-world={url('/world.json')} data-countries={JSON.stringify(data)} aria-label="World map of visited places"></div>
 
@@ -181,6 +187,10 @@ const grandTotal = tallyText(total);
 
 <style>
   .lede { margin-bottom: 0; }
+  :global(.planning) { margin: 0.75rem 0 1rem; }
+  .planning__steps :global(ol) { margin: 0.25rem 0 0.75rem; padding-inline-start: 1.4rem; }
+  .planning__steps :global(li) { margin: 0.5rem 0; }
+  .planning__steps :global(strong) { display: block; color: var(--teal); }
   .map {
     height: min(70vh, 640px);
     min-height: 360px;

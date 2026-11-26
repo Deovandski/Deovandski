@@ -1,0 +1,481 @@
+---
+/**
+ * PhotoQuiz: guess where a photo was taken. A game is a round of photos (10 by default), each with a few answers to
+ * pick from (4 by default); a score card on the side, and under it a helper (anything you put in the `helper` slot,
+ * like PixelHammock) who gives one freebie per game: press them and they narrow the answers down to two. The helper
+ * also chats now and then, and after some answers shares a fun fact about the place. Built for the Traveler tab (#290).
+ *
+ *   <PhotoQuiz
+ *     questions={[{ src: '/photos/tokyo-1.webp', answer: 'jp-13' }, …]}
+ *     answers={[{ key: 'jp-13', name: 'Tokyo', within: 'Japan', group: 'jp' }, { key: 'cn', name: 'China', group: 'cn' }, …]}
+ *     facts={[{ key: 'jp-13', text: 'Shinjuku Station is the busiest train station in the world.' }]}
+ *     chatter={['Take your time.']}
+ *     helperLabel="Ask the helper for a hint (one per game)"
+ *   >
+ *     <PixelHammock slot="helper" />
+ *   </PhotoQuiz>
+ *
+ * Props:
+ *   questions    the photo pool, as [{ src, answer }]: an image URL and the key of the right answer. Each game draws
+ *                `rounds` of them, a different answer group each where it can.
+ *   answers      every possible answer, as [{ key, name, within?, group? }]. Shown as "name" or "name, within"
+ *                ("Tokyo, Japan"). Wrong answers are picked from other groups than the right one (and from different
+ *                groups from each other), so two places in the same country never compete.
+ *   rounds       photos per game. Default 10.
+ *   choices      answers per photo. Default 4.
+ *   facts        fun facts, as [{ key, text }]: `key` is an answer key or a group. After some answers the helper shares
+ *                one about that photo's place.
+ *   chatter      things the helper says now and then while you think.
+ *   helperLabel  the helper button's name for screen readers.
+ *   text         replace any of the game's words (see the `T` list below for the keys and their {slots}).
+ *
+ * Slot `helper`: what sits under the score (PixelHammock, a picture…). While the helper talks, its first element gets
+ * `data-awake="true"` (PixelHammock opens its eyes).
+ *
+ * Every word the script shows (answers, facts, chatter, feedback) is written into the page, in a hidden strings
+ * block, so the site's translations reach it. Pictures are game pieces, so they don't open in the photo viewer.
+ * Accessible: the answers are buttons, feedback and the helper's words are read out (aria-live), and the photo has
+ * alt text. Reduced motion: no fades.
+ * Theming: --quiz-accent (#39c5bb), --quiz-good (#22c55e), --quiz-bad (#ef4444), --quiz-text (#e6edf3),
+ * --quiz-muted (#9aa6b8), --quiz-card (rgba(255,255,255,0.04)). Reusable on purpose: no imports.
+ */
+interface Answer {
+  key: string;
+  name: string;
+  within?: string;
+  group?: string;
+}
+interface Props {
+  questions: { src: string; answer: string }[];
+  answers: Answer[];
+  rounds?: number;
+  choices?: number;
+  facts?: { key: string; text: string }[];
+  chatter?: string[];
+  helperLabel?: string;
+  text?: Partial<Record<keyof typeof T, string>>;
+  class?: string;
+}
+const T = {
+  question: 'Where was this photo taken?',
+  round: 'Photo {n} of {total}',
+  score: 'Score',
+  hint: 'Freebie',
+  hintLeft: '1 left',
+  hintUsed: 'Used',
+  place: '{name}, {within}',
+  right: 'Right! It’s {place}.',
+  wrong: 'Not quite: it’s {place}.',
+  next: 'Next photo',
+  finish: 'See my score',
+  end: 'You got {score} out of {total}.',
+  endTop: 'Perfect score! Certified globetrotter.',
+  endHigh: 'You’ve clearly been around.',
+  endMid: 'Not bad for a tourist.',
+  endLow: 'Time to book a trip!',
+  again: 'Play again',
+  alt: 'Photo {n}: where was it taken?',
+  hello: 'Stuck? Press me once for a freebie.',
+  freebie: 'Hmm… it’s either {a} or {b}.',
+  freebieUsed: 'I already gave you my freebie!',
+  freebieWait: 'Ask me while a photo is up!',
+  fact: 'Fun fact: {fact}',
+  empty: 'No photos yet.',
+};
+const {
+  questions,
+  answers,
+  rounds = 10,
+  choices = 4,
+  facts = [],
+  chatter = [],
+  helperLabel = 'Ask for a hint (one per game)',
+  text = {},
+  class: className,
+} = Astro.props;
+const words = { ...T, ...text };
+const withins = [...new Set(answers.map((a) => a.within).filter(Boolean))] as string[];
+const config = {
+  rounds,
+  choices,
+  questions,
+  answers: answers.map(({ key, within, group }) => ({ key, w: within ? withins.indexOf(within) : -1, group: group ?? key })),
+  facts: facts.map((f) => f.key),
+  chatter: chatter.length,
+};
+---
+
+<div class:list={['photo-quiz', className]} data-photo-quiz data-config={JSON.stringify(config)}>
+  <div class="photo-quiz__strings" hidden data-llms-skip>
+    {Object.entries(words).map(([k, v]) => <span data-k={k}>{v}</span>)}
+    {answers.map((a) => <span data-k={`n:${a.key}`}>{a.name}</span>)}
+    {withins.map((w, i) => <span data-k={`w:${i}`}>{w}</span>)}
+    {facts.map((f, i) => <span data-k={`f:${i}`}>{f.text}</span>)}
+    {chatter.map((c, i) => <span data-k={`c:${i}`}>{c}</span>)}
+  </div>
+  <div class="photo-quiz__layout">
+  <div class="photo-quiz__main">
+    <p class="photo-quiz__question">{words.question}</p>
+    <div class="photo-quiz__frame" data-no-zoom>
+      <img class="photo-quiz__img" alt="" decoding="async" hidden />
+    </div>
+    <div class="photo-quiz__choices" role="group" aria-label={words.question}></div>
+    <p class="photo-quiz__feedback" aria-live="polite"></p>
+    <div class="photo-quiz__end" hidden>
+      <p class="photo-quiz__end-score"></p>
+      <p class="photo-quiz__end-line"></p>
+    </div>
+    <button type="button" class="photo-quiz__next" hidden></button>
+    {questions.length === 0 && <p class="photo-quiz__empty">{words.empty}</p>}
+  </div>
+  <aside class="photo-quiz__side">
+    <dl class="photo-quiz__card">
+      <div><dt class="photo-quiz__round"></dt></div>
+      <div><dt>{words.score}</dt><dd class="photo-quiz__score">0</dd></div>
+      <div><dt>{words.hint}</dt><dd class="photo-quiz__hint">{words.hintLeft}</dd></div>
+    </dl>
+    <div class="photo-quiz__helper-wrap">
+      <p class="photo-quiz__bubble" aria-live="polite" hidden></p>
+      <button type="button" class="photo-quiz__helper" aria-label={helperLabel} title={helperLabel}>
+        <slot name="helper" />
+      </button>
+    </div>
+  </aside>
+  </div>
+</div>
+
+<style>
+  .photo-quiz {
+    --_accent: var(--quiz-accent, #39c5bb);
+    --_text: var(--quiz-text, #e6edf3);
+    --_muted: var(--quiz-muted, #9aa6b8);
+    --_card: var(--quiz-card, rgba(255, 255, 255, 0.04));
+    container-type: inline-size;
+    color: var(--_text);
+  }
+  .photo-quiz__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 15rem;
+    gap: 1rem;
+  }
+  .photo-quiz__question { margin: 0 0 0.5rem; font-weight: 700; }
+  .photo-quiz__frame {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    max-height: 62vh;
+    width: 100%;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #05060a;
+    border: 1px solid color-mix(in srgb, var(--_accent) 35%, transparent);
+  }
+  .photo-quiz__img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.3s;
+  }
+  .photo-quiz__img.is-loading { opacity: 0; }
+  .photo-quiz__choices {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+  .photo-quiz__choices :global(button),
+  .photo-quiz__next {
+    font: inherit;
+    font-weight: 700;
+    color: var(--_text);
+    background: var(--_card);
+    border: 1px solid color-mix(in srgb, var(--_accent) 45%, transparent);
+    border-radius: 12px;
+    padding: 0.6rem 0.8rem;
+    min-height: 44px;
+    cursor: pointer;
+    text-align: center;
+  }
+  .photo-quiz__choices :global(button:hover:not(:disabled)),
+  .photo-quiz__next:hover { background: color-mix(in srgb, var(--_accent) 18%, transparent); }
+  .photo-quiz__choices :global(button:focus-visible),
+  .photo-quiz__next:focus-visible,
+  .photo-quiz__helper:focus-visible { outline: 2px solid var(--_accent); outline-offset: 2px; }
+  .photo-quiz__choices :global(button:disabled) { cursor: default; }
+  .photo-quiz__choices :global(button.is-out) { opacity: 0.3; text-decoration: line-through; }
+  .photo-quiz__choices :global(button.is-right) { background: color-mix(in srgb, var(--quiz-good, #22c55e) 35%, transparent); border-color: var(--quiz-good, #22c55e); }
+  .photo-quiz__choices :global(button.is-wrong) { background: color-mix(in srgb, var(--quiz-bad, #ef4444) 35%, transparent); border-color: var(--quiz-bad, #ef4444); }
+  .photo-quiz__feedback { min-height: 1.5em; margin: 0.6rem 0 0; font-weight: 700; }
+  .photo-quiz__next { display: block; margin: 0.5rem 0 0 auto; background: var(--_accent); color: #07040d; }
+  .photo-quiz__next[hidden],
+  .photo-quiz__end[hidden] { display: none; }
+  .photo-quiz__end { margin-top: 0.75rem; text-align: center; }
+  .photo-quiz__end-score { font-size: 1.4em; font-weight: 800; margin: 0; }
+  .photo-quiz__end-line { margin: 0.25rem 0 0; color: var(--_muted); }
+  .photo-quiz__empty { color: var(--_muted); }
+  .photo-quiz__side { display: flex; flex-direction: column; gap: 0.75rem; }
+  .photo-quiz__card {
+    margin: 0;
+    display: grid;
+    gap: 0.4rem;
+    padding: 0.75rem 1rem;
+    border-radius: 14px;
+    background: var(--_card);
+    border: 1px solid color-mix(in srgb, var(--_accent) 35%, transparent);
+  }
+  .photo-quiz__card div { display: flex; justify-content: space-between; gap: 0.5rem; align-items: baseline; }
+  .photo-quiz__card dt { color: var(--_muted); }
+  .photo-quiz__card .photo-quiz__round { color: var(--_text); font-weight: 700; }
+  .photo-quiz__card dd { margin: 0; font-weight: 800; }
+  .photo-quiz__helper-wrap { position: relative; display: flex; flex-direction: column; gap: 0.5rem; }
+  .photo-quiz__helper {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+  .photo-quiz__bubble {
+    position: relative;
+    margin: 0;
+    padding: 0.55rem 0.75rem;
+    border-radius: 12px;
+    background: #fdf6e3;
+    color: #1b1b1b;
+    font-size: 0.9rem;
+    line-height: 1.35;
+    animation: photo-quiz-pop 0.2s ease-out;
+  }
+  .photo-quiz__bubble::after {
+    content: '';
+    position: absolute;
+    left: 28%;
+    bottom: -8px;
+    border: 8px solid transparent;
+    border-bottom: 0;
+    border-top-color: #fdf6e3;
+  }
+  .photo-quiz__bubble[hidden] { display: none; }
+  @keyframes photo-quiz-pop {
+    from { opacity: 0; transform: translateY(4px); }
+  }
+  /* Narrow: the score and the helper go under the photo, side by side. */
+  @container (max-width: 640px) {
+    .photo-quiz__layout { grid-template-columns: minmax(0, 1fr); }
+    .photo-quiz__side { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); align-items: start; }
+  }
+  @container (max-width: 380px) {
+    .photo-quiz__choices { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .photo-quiz__img { transition: none; }
+    .photo-quiz__bubble { animation: none; }
+  }
+</style>
+
+<script>
+  type Config = {
+    rounds: number;
+    choices: number;
+    questions: { src: string; answer: string }[];
+    answers: { key: string; w: number; group: string }[];
+    facts: string[];
+    chatter: number;
+  };
+  const shuffle = <X,>(xs: X[]) => {
+    const a = xs.slice();
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  };
+
+  document.querySelectorAll<HTMLElement>('[data-photo-quiz]').forEach((root) => {
+    const cfg: Config = JSON.parse(root.dataset.config!);
+    if (!cfg.questions.length) return;
+    const $ = <E extends Element>(s: string) => root.querySelector<E>(s)!;
+    const strings = new Map([...root.querySelectorAll<HTMLElement>('.photo-quiz__strings [data-k]')].map((s) => [s.dataset.k!, s.textContent ?? '']));
+    const msg = (k: string, vars: Record<string, string | number> = {}) =>
+      (strings.get(k) ?? k).replace(/\{(\w+)\}/g, (_, v) => String(vars[v] ?? `{${v}}`));
+    const byKey = new Map(cfg.answers.map((a) => [a.key, a]));
+    const label = (key: string) => {
+      const a = byKey.get(key);
+      const name = msg(`n:${key}`);
+      return a && a.w >= 0 ? msg('place', { name, within: msg(`w:${a.w}`) }) : name;
+    };
+
+    const img = $<HTMLImageElement>('.photo-quiz__img');
+    const box = $<HTMLElement>('.photo-quiz__choices');
+    const feedback = $<HTMLElement>('.photo-quiz__feedback');
+    const next = $<HTMLButtonElement>('.photo-quiz__next');
+    const end = $<HTMLElement>('.photo-quiz__end');
+    const roundEl = $<HTMLElement>('.photo-quiz__round');
+    const scoreEl = $<HTMLElement>('.photo-quiz__score');
+    const hintEl = $<HTMLElement>('.photo-quiz__hint');
+    const bubble = $<HTMLElement>('.photo-quiz__bubble');
+    const helper = $<HTMLButtonElement>('.photo-quiz__helper');
+    const face = () => helper.querySelector<HTMLElement>(':scope > *');
+
+    let game: { src: string; answer: string }[] = [];
+    let i = 0, score = 0, freebie = true, answered = false;
+    let options: string[] = [];
+    let sayTimer = 0, idleTimer = 0;
+
+    // The helper talks: a speech bubble for a while, eyes open meanwhile.
+    function say(text: string, ms = 6000) {
+      bubble.textContent = text;
+      bubble.hidden = false;
+      face()?.setAttribute('data-awake', 'true');
+      clearTimeout(sayTimer);
+      sayTimer = window.setTimeout(() => {
+        bubble.hidden = true;
+        face()?.removeAttribute('data-awake');
+      }, ms);
+    }
+    // Now and then, while nobody's pressing anything, a random line.
+    function idle() {
+      clearTimeout(idleTimer);
+      if (!cfg.chatter) return;
+      idleTimer = window.setTimeout(() => {
+        if (root.checkVisibility?.() !== false && root.offsetParent !== null) say(msg(`c:${Math.floor(Math.random() * cfg.chatter)}`), 7000);
+        idle();
+      }, 22000 + Math.random() * 15000);
+    }
+
+    // A game: photos with a different answer group each first, then any others.
+    function pick() {
+      const seen = new Set<string>();
+      const first: typeof game = [], rest: typeof game = [];
+      for (const q of shuffle(cfg.questions)) {
+        const g = byKey.get(q.answer)?.group ?? q.answer;
+        (seen.has(g) ? rest : first).push(q);
+        seen.add(g);
+      }
+      return [...first, ...rest].slice(0, cfg.rounds);
+    }
+    // The answers for a photo: the right one, plus wrong ones from other groups (one per group).
+    function choicesFor(answer: string) {
+      const right = byKey.get(answer);
+      const used = new Set([right?.group]);
+      const wrong: string[] = [];
+      for (const a of shuffle(cfg.answers)) {
+        if (wrong.length >= cfg.choices - 1) break;
+        if (a.key === answer || used.has(a.group)) continue;
+        used.add(a.group);
+        wrong.push(a.key);
+      }
+      return shuffle([answer, ...wrong]);
+    }
+
+    function show() {
+      const q = game[i];
+      answered = false;
+      end.hidden = true;
+      next.hidden = true;
+      feedback.textContent = '';
+      roundEl.textContent = msg('round', { n: i + 1, total: game.length });
+      scoreEl.textContent = String(score);
+      img.hidden = false;
+      img.classList.add('is-loading');
+      img.onload = () => img.classList.remove('is-loading');
+      img.src = q.src;
+      img.alt = msg('alt', { n: i + 1 });
+      if (game[i + 1]) new Image().src = game[i + 1].src; // the next photo, ready
+      options = choicesFor(q.answer);
+      box.replaceChildren(
+        ...options.map((key) => {
+          const b = document.createElement('button');
+          b.type = 'button';
+          b.textContent = label(key);
+          b.dataset.key = key;
+          b.addEventListener('click', () => answer(key));
+          return b;
+        }),
+      );
+    }
+
+    function answer(key: string) {
+      if (answered) return;
+      answered = true;
+      idle();
+      const right = game[i].answer;
+      const ok = key === right;
+      if (ok) score++;
+      scoreEl.textContent = String(score);
+      for (const b of box.querySelectorAll<HTMLButtonElement>('button')) {
+        b.disabled = true;
+        if (b.dataset.key === right) b.classList.add('is-right');
+        else if (b.dataset.key === key) b.classList.add('is-wrong');
+      }
+      feedback.textContent = msg(ok ? 'right' : 'wrong', { place: label(right) });
+      next.textContent = msg(i + 1 < game.length ? 'next' : 'finish');
+      next.hidden = false;
+      next.focus({ preventScroll: true });
+      // Sometimes, a fun fact about the place (or its country).
+      const group = byKey.get(right)?.group;
+      const factIdx = cfg.facts.map((k, n) => (k === right || k === group ? n : -1)).filter((n) => n >= 0);
+      if (factIdx.length && Math.random() < 0.5) say(msg('fact', { fact: msg(`f:${factIdx[Math.floor(Math.random() * factIdx.length)]}`) }), 11000);
+    }
+
+    function finish() {
+      box.replaceChildren();
+      img.hidden = true;
+      feedback.textContent = '';
+      roundEl.textContent = msg('round', { n: game.length, total: game.length });
+      const total = game.length;
+      $<HTMLElement>('.photo-quiz__end-score').textContent = msg('end', { score, total });
+      const r = score / total;
+      $<HTMLElement>('.photo-quiz__end-line').textContent = msg(r === 1 ? 'endTop' : r >= 0.7 ? 'endHigh' : r >= 0.4 ? 'endMid' : 'endLow');
+      end.hidden = false;
+      next.textContent = msg('again');
+      next.hidden = false;
+      i = game.length;
+    }
+
+    function start() {
+      game = pick();
+      i = 0;
+      score = 0;
+      freebie = true;
+      hintEl.textContent = msg('hintLeft');
+      show();
+    }
+
+    next.addEventListener('click', () => {
+      if (i >= game.length) return start();
+      i++;
+      if (i < game.length) show();
+      else finish();
+    });
+
+    helper.addEventListener('click', () => {
+      idle();
+      if (!freebie) return say(msg('freebieUsed'));
+      if (answered || i >= game.length) return say(msg('freebieWait'));
+      freebie = false;
+      hintEl.textContent = msg('hintUsed');
+      const right = game[i].answer;
+      const keep = shuffle(options.filter((k) => k !== right))[0];
+      for (const b of box.querySelectorAll<HTMLButtonElement>('button'))
+        if (b.dataset.key !== right && b.dataset.key !== keep) {
+          b.disabled = true;
+          b.classList.add('is-out');
+        }
+      const [a, b] = shuffle([right, keep]);
+      say(msg('freebie', { a: label(a), b: label(b) }), 9000);
+    });
+
+    start();
+    // Say hello the first time the game is on screen.
+    let greeted = false;
+    new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !greeted) {
+        greeted = true;
+        setTimeout(() => say(msg('hello')), 800);
+        idle();
+      }
+    }).observe(root);
+  });
+</script>

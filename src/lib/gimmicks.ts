@@ -24,6 +24,7 @@ export const GIMMICKS: GimmickInfo[] = [
   { id: 'saturday-night-fever', title: 'Saturday Night Fever', tab: 'concert', tabName: 'Concert', inline: true },
   { id: 'tattoo-skin', title: 'Tattoo practice skin', tab: 'tattoo', tabName: 'Tattoo' },
   { id: 'vhs-pile', title: 'VHS pile', tab: 'botw', tabName: 'BOTW', inline: true },
+  { id: 'where-was-deo', title: 'Where in the World Was Deo?', tab: 'traveler', tabName: 'Traveler', inline: true },
   { id: 'whack-a-miku', title: 'Whack-a-Miku', tab: 'miku', tabName: 'Miku', inline: true },
 ];
 

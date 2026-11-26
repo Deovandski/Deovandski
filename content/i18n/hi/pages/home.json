@@ -119,6 +119,10 @@
   "en": "FEVER! The whole floor lights up.",
   "t": "फ़ीवर! पूरा फ़र्श जगमगा उठा।"
  },
+ "02c0e4a1da64": {
+  "en": "Used",
+  "t": "इस्तेमाल हो गई"
+ },
  "02da8ad445d5": {
   "en": " MX ",
   "t": "MX"
@@ -226,6 +230,10 @@
  "05e728e60d80": {
   "en": "\nMy watch logged 162 more \"bike rides\" on its own (76 hours of them). Most of those\n          were me pushing my cat, <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a>, in his stroller, or me on the elliptical when it's too cold outside, so\n          they don't count toward the miles above.\n",
   "t": "मेरी घड़ी ने अपने आप 162 और \"बाइक राइड\" दर्ज कीं (कुल 76 घंटे)। उनमें से ज़्यादातर मैं अपनी बिल्ली <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a> को उसके स्ट्रोलर में धकेल रहा था, या बाहर बहुत ठंड होने पर इलिप्टिकल पर था, इसलिए वे ऊपर के मीलों में नहीं गिनी जातीं।"
+ },
+ "061ff9e69ad0": {
+  "en": "Shinjuku Station in Tokyo is the busiest train station in the world: millions of people pass through it every day.",
+  "t": "टोक्यो का शिंजुकु स्टेशन दुनिया का सबसे व्यस्त रेलवे स्टेशन है: हर दिन लाखों लोग यहाँ से गुज़रते हैं।"
  },
  "0648fee0c26c": {
   "en": "Around the World in 80 Gears: turn your phone sideways",
@@ -363,6 +371,10 @@
   "en": "Nordic rune associated with heritage, ancestry, inheritance, homeland, and legacy.",
   "t": "नॉर्डिक रून जो विरासत, पूर्वजों, उत्तराधिकार, मातृभूमि और धरोहर से जुड़ा है।"
  },
+ "09888c65f0a8": {
+  "en": " Copilot ",
+  "t": "Copilot"
+ },
  "09a6797150ba": {
   "en": "Enlarge: Painting or drawing, 01/10/2013",
   "t": "बड़ा करें: पेंटिंग या स्केच, 10/1/2013"
@@ -434,6 +446,10 @@
  "0bb27395d153": {
   "en": "231 h",
   "t": "231 घं."
+ },
+ "0bb362d3d1e7": {
+  "en": "Perfect! You might know my travels better than I do.",
+  "t": "पूरे नंबर! शायद तुम मेरी यात्राओं को मुझसे बेहतर जानते हो।"
  },
  "0bdcc8f4a8b0": {
   "en": " HM ",
@@ -643,6 +659,10 @@
   "en": "not counted",
   "t": "गिने नहीं गए"
  },
+ "11835f5ac7a2": {
+  "en": "Photo {n}, from one of Deo’s trips: where was it taken?",
+  "t": "फ़ोटो {n}, Deo की एक यात्रा से: यह कहाँ ली गई थी?"
+ },
  "11982574c056": {
   "en": "StackOverflow",
   "t": "StackOverflow"
@@ -795,6 +815,10 @@
   "en": "Enlarge: Breakfast",
   "t": "बड़ा करें: नाश्ता"
  },
+ "174e4a9ea359": {
+  "en": "North Dakota's Enchanted Highway is lined with giant scrap-metal sculptures, and Geese in Flight is the largest scrap-metal sculpture in the world.",
+  "t": "नॉर्थ डकोटा के एनचांटेड हाईवे पर कबाड़ धातु की विशाल मूर्तियाँ लगी हैं, और \"गीज़ इन फ़्लाइट\" दुनिया की सबसे बड़ी कबाड़ धातु की मूर्ति है।"
+ },
  "1761d9bdb3a0": {
   "en": "ROSALÍA",
   "t": "ROSALÍA"
@@ -843,6 +867,10 @@
   "en": "89 h",
   "t": "89 घं."
  },
+ "184fa99083ff": {
+  "en": "The Eiffel Tower grows about 15 cm in summer, because its iron expands in the heat.",
+  "t": "एफ़िल टावर गर्मियों में लगभग 15 सेमी बढ़ जाता है, क्योंकि गर्मी से उसका लोहा फैलता है।"
+ },
  "187796f151c3": {
   "en": "Path of Exile",
   "t": "Path of Exile"
@@ -887,6 +915,10 @@
   "en": "In the saddle",
   "t": "सीट पर बिताया समय"
  },
+ "19c10323e784": {
+  "en": "<strong>Buy the hotel and transportation.</strong> Those are the next layer of hard commitments.",
+  "t": "<strong>होटल और आने-जाने का इंतज़ाम ख़रीदो।</strong> ये पक्के कमिटमेंट की अगली परत हैं।"
+ },
  "19c34e493647": {
   "en": "Wunjo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚹ)</span>",
   "t": "वुन्यो<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚹ)</span>"
@@ -894,6 +926,10 @@
  "19c9c9ed8477": {
   "en": "Opera",
   "t": "ओपेरा"
+ },
+ "1a1599284e10": {
+  "en": "Where in the World Was Deo?",
+  "t": "Deo कहाँ था?"
  },
  "1a1f232c7b93": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder TV show 9 ",
@@ -1211,6 +1247,10 @@
   "en": "Arragoa",
   "t": "Arragoa"
  },
+ "231583e115b9": {
+  "en": "Macapá, the capital of Amapá, sits right on the equator, and the Marco Zero monument marks the line.",
+  "t": "अमापा की राजधानी मकापा ठीक भूमध्य रेखा पर है, और मार्को ज़ेरो स्मारक उस रेखा को दिखाता है।"
+ },
  "231fbf14a11a": {
   "en": "Time asleep",
   "t": "सोने का समय"
@@ -1266,6 +1306,10 @@
  "24be61285e09": {
   "en": "Views",
   "t": "व्यूज़"
+ },
+ "24bf28681358": {
+  "en": "Freebie",
+  "t": "मदद"
  },
  "24d4ea7ee729": {
   "en": "Do I really have to wear these",
@@ -1391,6 +1435,10 @@
   "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
   "t": "यानी {mode} में रिकॉर्ड की गईं {tapes} VHS टेप (हर T-120 टेप में {perTape} घंटे)।"
  },
+ "27c908c2dd93": {
+  "en": "Rio Grande do Sul is gaúcho country: the home of churrasco and chimarrão, the bitter mate tea sipped from a gourd.",
+  "t": "रियो ग्रांडे दो सुल गाउचो का इलाक़ा है: शुरास्को और शिमाहाउ, यानी लौकी से पी जाने वाली कड़वी माते चाय, का घर।"
+ },
  "27cdecfc6e6c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder TV show 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 10: </span> अस्थायी टीवी शो 10"
@@ -1434,6 +1482,10 @@
  "28ebb962e775": {
   "en": "Tap the stage on the beat",
   "t": "ताल पर स्टेज को टैप करो"
+ },
+ "28fe28d0a4e1": {
+  "en": "Not bad for a tourist.",
+  "t": "एक पर्यटक के लिए बुरा नहीं।"
  },
  "290c68caa39c": {
   "en": "Year {n}",
@@ -1571,6 +1623,14 @@
   "en": "Each planet is a category, sized by its hours. Press one to fly in.",
   "t": "हर ग्रह एक श्रेणी है, घंटों के हिसाब से बड़ा। पास जाने के लिए किसी एक को दबाएँ।"
  },
+ "2d5647a3618b": {
+  "en": "Spain makes more olive oil than any other country in the world.",
+  "t": "स्पेन दुनिया के किसी भी देश से ज़्यादा जैतून का तेल बनाता है।"
+ },
+ "2d66944f3f19": {
+  "en": "How do I plan for travel?",
+  "t": "मैं यात्रा की योजना कैसे बनाता हूँ?"
+ },
  "2d8bdb9ce539": {
   "en": "\nAt home, a whiteboard holds my major goals and anything that isn't tied to a date. If it is tied to a date, it goes on\n          the calendar; how I keep 5+ calendars in one place is <a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">Life hack #2: Calendar bound</a>.\n",
   "t": "घर पर एक व्हाइटबोर्ड पर मेरे बड़े लक्ष्य और वह सब रहता है जो किसी तारीख से बँधा नहीं है। अगर तारीख से बँधा है, तो कैलेंडर में जाता है; 5 से ज़्यादा कैलेंडर एक जगह कैसे रखता हूँ, वह <a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">लाइफ़ हैक #2: कैलेंडर से बँधा</a> में है।"
@@ -1638,6 +1698,10 @@
  "2f488ffc82cc": {
   "en": "Hong Kong",
   "t": "हांगकांग"
+ },
+ "2f5809c6e643": {
+  "en": "The London Underground opened in 1863: the oldest underground railway in the world.",
+  "t": "लंदन अंडरग्राउंड 1863 में खुला: दुनिया की सबसे पुरानी भूमिगत रेल।"
  },
  "2f717ffad4e1": {
   "en": "Arkansas",
@@ -1931,6 +1995,10 @@
   "en": " PC ",
   "t": "PC"
  },
+ "37219ea52a83": {
+  "en": "Chibi pixel Deo in his yellow king's robes and crown hat, chilling in a hammock between two palm trees. Press him for a freebie.",
+  "t": "पीले शाही चोगे और ताज वाली टोपी में चिबी पिक्सेल Deo, दो ताड़ के पेड़ों के बीच झूले में आराम करता हुआ। मुफ़्त मदद के लिए उसे दबाओ।"
+ },
  "37497aa5a227": {
   "en": "Brazil",
   "t": "ब्राज़ील"
@@ -1987,6 +2055,10 @@
   "en": "King of the trail",
   "t": "पगडंडी का राजा"
  },
+ "386afa7ad2fc": {
+  "en": "<strong>Enjoy!</strong> The goal is a structure that gives the trip a sense of coordination, efficient travel and relaxation, while staying flexible enough for on-the-fly adjustments.",
+  "t": "<strong>मज़े करो!</strong> लक्ष्य एक ऐसा ढाँचा है जो यात्रा को तालमेल, कुशल सफ़र और आराम का एहसास दे, और साथ ही मौक़े पर बदलाव के लिए काफ़ी लचीला रहे।"
+ },
  "3878d567f539": {
   "en": "A streak you could lose feels worse than one you never had. Losing hurts about twice as much as winning feels good.",
   "t": "जो स्ट्रीक खो सकती हो वह उस स्ट्रीक से बुरी लगती है जो कभी थी ही नहीं। खोने का दर्द जीतने की ख़ुशी से लगभग दोगुना होता है।"
@@ -2002,6 +2074,10 @@
  "389af5e18c8a": {
   "en": "LiSA",
   "t": "LiSA"
+ },
+ "389f91b7ec99": {
+  "en": "<strong>When and where?</strong> I look up the climate and the overall info about the place(s) I’m going, to decide if it’s safe enough to travel, and what I need visa-wise.",
+  "t": "<strong>कब और कहाँ?</strong> मैं जहाँ जा रहा हूँ वहाँ के मौसम और कुल जानकारी खोजता हूँ, ताकि तय कर सकूँ कि वहाँ जाना पर्याप्त सुरक्षित है या नहीं, और वीज़ा के लिए क्या चाहिए।"
  },
  "38a315c1f5b2": {
   "en": "123 h",
@@ -2019,6 +2095,10 @@
   "en": "{h}h",
   "t": "{h} घं"
  },
+ "38d260178740": {
+  "en": "Remember: one freebie per game. Use it wisely.",
+  "t": "याद रखो: हर गेम में एक मुफ़्त मदद। सोच-समझकर इस्तेमाल करो।"
+ },
  "38e1d26af274": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#10: </span>Best of the Worst: Shock Em Dead, Hollow Gate, and The Satan Killer"
@@ -2026,6 +2106,10 @@
  "39005d92752d": {
   "en": " KA ",
   "t": "KA"
+ },
+ "3908597feae4": {
+  "en": "Right! It’s {place}.",
+  "t": "सही! यह {place} है।"
  },
  "39091a099ef5": {
   "en": "Plot {plot}: {crop}, ready in {seconds} seconds.",
@@ -2195,6 +2279,10 @@
   "en": "From all the anime out there you chose this one",
   "t": "दुनिया के सारे एनीमे में से तुमने यही चुना"
  },
+ "3e017e68a6b7": {
+  "en": "Not quite: it’s {place}.",
+  "t": "पूरा सही नहीं: यह {place} है।"
+ },
  "3e1f116ff08d": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-jytvyid3=\"\">😱</span> Post clickbait video ",
   "t": "<span aria-hidden=\"true\" data-astro-cid-jytvyid3=\"\">😱</span> क्लिकबेट वीडियो पोस्ट करो"
@@ -2311,6 +2399,10 @@
   "en": "Captain Bidu final resting place",
   "t": "कैप्टन Bidu का अंतिम विश्राम स्थल"
  },
+ "40cd7fa70431": {
+  "en": " Google Maps ",
+  "t": "Google Maps"
+ },
  "40f6fcda8a97": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder movie 9 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 9: </span> अस्थायी फ़िल्म 9"
@@ -2318,6 +2410,10 @@
  "40f9d1ff0260": {
   "en": "Across 82 studies, autistic and ADHD men were as socially connected as other men at best, and never more. Less connection came with worse mental health.",
   "t": "82 अध्ययनों में ऑटिस्टिक और ADHD पुरुष ज़्यादा से ज़्यादा दूसरे पुरुषों जितने ही सामाजिक रूप से जुड़े थे, कभी ज़्यादा नहीं। कम जुड़ाव के साथ मानसिक स्वास्थ्य भी बदतर था।"
+ },
+ "410e49339b79": {
+  "en": "I took these photos and I still squint at some of them.",
+  "t": "ये फ़ोटो मैंने ही ली हैं, फिर भी कुछ को आँखें सिकोड़कर देखता हूँ।"
  },
  "414a017a79c7": {
   "en": "<strong>Peace is not passivity.</strong> A boundary without enforcement is a request. Compassion can explain behavior without absorbing it, and standing idle while someone self-destructs is idiot compassion, not peace. Say your piece, then walk away.",
@@ -2467,6 +2563,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#9: </span>Best of the Worst: Twin Dragon Encounter, American Rickshaw, and Infested"
  },
+ "4727f6ba44d0": {
+  "en": "Da Nang's Dragon Bridge breathes fire, and then water, on weekend nights. Yes, a bridge. Yes, fire.",
+  "t": "दा नांग का ड्रैगन ब्रिज वीकेंड की रातों में आग उगलता है, फिर पानी। हाँ, एक पुल। हाँ, आग।"
+ },
  "47299a86ea20": {
   "en": " TW ",
   "t": "TW"
@@ -2495,6 +2595,10 @@
   "en": "Idle Evolution",
   "t": "Idle Evolution"
  },
+ "47f53f079a30": {
+  "en": "You got {score} out of {total}.",
+  "t": "तुमने {total} में से {score} सही किए।"
+ },
  "481021d04da3": {
   "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
   "t": "हर मीट्रिक समय के साथ, हर एक का छोटा चार्ट। किसी चार्ट पर पॉइंटर ले जाएँ तो सारे चार्ट वही दिन, हफ़्ता या महीना दिखाते हैं।"
@@ -2515,9 +2619,17 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#31: </span>Best of the Worst: Plinketto #8",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#31: </span>Best of the Worst: Plinketto #8"
  },
+ "489f4877244a": {
+  "en": "Score",
+  "t": "स्कोर"
+ },
  "48aaf2be8dae": {
   "en": "5% of my hours",
   "t": "मेरे घंटों का 5%"
+ },
+ "48cce38aa1d8": {
+  "en": "6 steps",
+  "t": "6 कदम"
  },
  "48e29fac4cce": {
   "en": "Besides the relationship and the bonding, the merchant life and bartering are really well developed! I took inspiration from it while working on the world lore for #HusbandOutWorld.",
@@ -2566,6 +2678,10 @@
  "4a3a04380da1": {
   "en": "Ooh wah ah ah ah",
   "t": "Ooh wah ah ah ah"
+ },
+ "4a9a6c803452": {
+  "en": "Ask Deo for a freebie: he narrows it down to two (once per game)",
+  "t": "Deo से मुफ़्त मदद माँगो: वह जवाब दो तक घटा देगा (हर गेम में एक बार)"
  },
  "4a9f8acaa8c3": {
   "en": " 100 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -2683,9 +2799,17 @@
   "en": "no data",
   "t": "डेटा नहीं"
  },
+ "4db08c84d2e8": {
+  "en": "Hmm… it’s either {a} or {b}. Huehue, good luck.",
+  "t": "हम्म… या तो {a} या {b}। huehue, शुभकामनाएँ।"
+ },
  "4db745f6113e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Toradora! ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 23: </span> Toradora!"
+ },
+ "4dc7132b40c7": {
+  "en": "I like to take my time too, but I hope you're not doing something Ecchi while staring at me huehue...",
+  "t": "मुझे भी आराम से समय लेना पसंद है, पर उम्मीद है तुम मुझे घूरते हुए कुछ एच्ची तो नहीं कर रहे, huehue..."
  },
  "4dd3d53fb92c": {
   "en": "If thou hast farofa for churrasco, thou mayest use it to enhance the taste, but eat it not with every bite. Like the ginger beside the sushi, farofa is taken every few bites to refresh thy taste buds.",
@@ -2711,6 +2835,10 @@
   "en": "Sonja<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Sonja<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 के पसंदीदा</span>"
  },
+ "4e339ffb8498": {
+  "en": "Osaka's food motto is kuidaore: eat until you drop (or go broke). Challenge accepted.",
+  "t": "ओसाका का खाने का मंत्र है कुइदाओरे: तब तक खाओ जब तक गिर न जाओ (या कंगाल न हो जाओ)। चुनौती मंज़ूर।"
+ },
  "4e353a24f207": {
   "en": "Made the gym a place of zen for the body.\n<ul>\n<li>Made friends there.</li>\n<li>It’s a safe space for me to stim, like dancing or making hand motions when I’m jamming to a song.</li>\n</ul>\n",
   "t": "जिम को शरीर के लिए सुकून की जगह बनाया। <ul> <li>वहाँ दोस्त बनाए।</li> <li>यह मेरे लिए स्टिम करने की सुरक्षित जगह है, जैसे किसी गाने पर झूमते हुए नाचना या हाथ हिलाना।</li> </ul>"
@@ -2726,6 +2854,10 @@
  "4e80d1b689cd": {
   "en": "Time Clickers",
   "t": "Time Clickers"
+ },
+ "4e9ea28321c7": {
+  "en": "Zzz… huh? Oh, you're still here. Good, good.",
+  "t": "Zzz… हुँह? ओह, तुम अब भी यहाँ हो। बढ़िया, बढ़िया।"
  },
  "4ea169568872": {
   "en": "Ragnarok Online",
@@ -3003,6 +3135,10 @@
   "en": " HC ",
   "t": "HC"
  },
+ "54b2bbfa52d3": {
+  "en": "I already gave you my freebie! Back to hammock time.",
+  "t": "मैं अपनी मुफ़्त मदद दे चुका हूँ! वापस झूले का वक़्त।"
+ },
  "54b75a6c3b9d": {
   "en": " Steam + Xbox + PC  ·  estimated ",
   "t": "Steam + Xbox + PC  ·  अनुमानित"
@@ -3022,6 +3158,10 @@
  "552f53868eba": {
   "en": " 870 h  ",
   "t": "870 घं."
+ },
+ "5532a7e02945": {
+  "en": "You’ve clearly been around.",
+  "t": "साफ़ है, तुम खूब घूमे हो।"
  },
  "55497593cc05": {
   "en": "Nordic rune representing gift, exchange, reciprocity, partnership, and mutual obligations.",
@@ -3075,6 +3215,10 @@
   "en": "For years, that anxiety felt life-or-death: a restless urgency I couldn't name because I was deeply unfulfilled, and later a constant hypervigilance while I chased external validation as an influencer. My AuDHD unmasking finally explained where it came from, and therapy that challenged me, not enabled me, helped me process it. Today it's no longer an alarm that runs me. It's fuel, and I choose where it goes: into building, growing, and the people worth it.",
   "t": "सालों तक, वह चिंता ज़िंदगी और मौत का सवाल लगती थी: एक बेचैन जल्दबाज़ी जिसका मैं नाम नहीं ले पाता था क्योंकि मैं गहराई से अधूरा था, और बाद में इन्फ़्लुएंसर के तौर पर बाहरी मान्यता के पीछे भागते हुए लगातार अति-सतर्कता। मेरी AuDHD अनमास्किंग ने आख़िरकार समझाया कि वह कहाँ से आई थी, और ऐसी थेरेपी ने, जिसने मुझे चुनौती दी, बिगाड़ा नहीं, मुझे उसे समझने में मदद की। आज वह मुझे चलाने वाला अलार्म नहीं रही। वह ईंधन है, और मैं चुनता हूँ कि वह कहाँ जाए: बनाने में, बढ़ने में, और उन लोगों में जो इसके लायक हैं।"
  },
+ "563fcaed811e": {
+  "en": "Time to book a trip!",
+  "t": "ट्रिप बुक करने का वक़्त आ गया!"
+ },
  "5675306240db": {
   "en": "The Icelandic compass symbol, associated with guidance and finding one's way. I intentionally placed its center point over a single long white hair that I consider mystical.",
   "t": "आइसलैंडिक दिशासूचक प्रतीक, जो मार्गदर्शन और अपनी राह ढूँढ़ने से जुड़ा है। मैंने जान-बूझकर इसका केंद्र एक अकेले लंबे सफ़ेद बाल के ऊपर रखा, जिसे मैं रहस्यमय मानता हूँ।"
@@ -3106,6 +3250,10 @@
  "572c7a51487d": {
   "en": "The Outer Worlds",
   "t": "The Outer Worlds"
+ },
+ "5733f41cdcdb": {
+  "en": "Psst! Stuck? Press me once for a freebie.",
+  "t": "श्श! अटक गए? एक मुफ़्त मदद के लिए मुझे एक बार दबाओ।"
  },
  "576347ec826f": {
   "en": "Europe",
@@ -3191,6 +3339,10 @@
   "en": "30 mi",
   "t": "30 mi"
  },
+ "59a7619e7a8e": {
+  "en": "Brazil is the only country in the Americas whose main language is Portuguese.",
+  "t": "ब्राज़ील अमेरिका महाद्वीपों का इकलौता देश है जिसकी मुख्य भाषा पुर्तगाली है।"
+ },
  "59aa962f7269": {
   "en": " SC ",
   "t": "SC"
@@ -3210,6 +3362,10 @@
  "59f21d6a9014": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">703 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">703 घं.</strong>  ·  5 गेम  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 2%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 5%</span>"
+ },
+ "5a199f0f62fb": {
+  "en": "Death Valley holds the hottest air temperature ever recorded on Earth: 56.7 °C (134 °F), back in 1913.",
+  "t": "डेथ वैली के नाम धरती पर दर्ज सबसे ऊँचा वायु तापमान है: 56.7 °C (134 °F), 1913 में।"
  },
  "5a4a4998e7b7": {
   "en": "Kyaa~! (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)",
@@ -3467,6 +3623,10 @@
   "en": "3 photos",
   "t": "3 तस्वीरें"
  },
+ "6162ea49842a": {
+  "en": "Iowa has more pigs than people. Many, many more.",
+  "t": "आयोवा में इंसानों से ज़्यादा सूअर हैं। बहुत, बहुत ज़्यादा।"
+ },
  "6163bbb03360": {
   "en": "Prison Architect",
   "t": "Prison Architect"
@@ -3490,6 +3650,10 @@
  "61db3a4f5dc3": {
   "en": "Kingdoms and Castles",
   "t": "Kingdoms and Castles"
+ },
+ "61dd1c7b84ac": {
+  "en": "Bangkok's full ceremonial name is the longest place name in the world. Locals just call it Krung Thep.",
+  "t": "बैंकॉक का पूरा औपचारिक नाम दुनिया का सबसे लंबा जगह का नाम है। स्थानीय लोग बस क्रुंग थेप कहते हैं।"
  },
  "61dedcf053ff": {
   "en": "Good",
@@ -3683,6 +3847,10 @@
   "en": "Spore",
   "t": "Spore"
  },
+ "67d69fcd957c": {
+  "en": "Under a bridge in Seattle lives the Fremont Troll, a giant concrete troll crushing a real Volkswagen Beetle.",
+  "t": "सिएटल में एक पुल के नीचे फ़्रीमोंट ट्रोल रहता है, कंक्रीट का एक विशाल ट्रोल जो असली फ़ोक्सवैगन बीटल को कुचल रहा है।"
+ },
  "67d72e344e26": {
   "en": "Another dino",
   "t": "दूसरा डायनो"
@@ -3762,6 +3930,10 @@
  "696c1696aee1": {
   "en": "Enlarge: Gimme attention",
   "t": "बड़ा करें: ध्यान दो मुझ पर"
+ },
+ "69c642153907": {
+  "en": "Fukuoka has more yatai, open-air food stalls, than the rest of Japan combined: about a hundred pop up every night and vanish before morning.",
+  "t": "फ़ुकुओका में बाक़ी पूरे जापान को मिलाकर भी ज़्यादा याताई, यानी खुले में खाने के स्टॉल, हैं: लगभग सौ हर रात लगते हैं और सुबह से पहले ग़ायब हो जाते हैं।"
  },
  "69ce5d37a5a7": {
   "en": "Enlarge: Still tired",
@@ -3859,6 +4031,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10"
  },
+ "6cac5f329113": {
+  "en": "The Everglades in Florida are the only place in the world where alligators and crocodiles live side by side.",
+  "t": "फ़्लोरिडा का एवरग्लेड्स दुनिया की इकलौती जगह है जहाँ एलिगेटर और मगरमच्छ साथ-साथ रहते हैं।"
+ },
  "6cae7ad96e0d": {
   "en": "sapphires",
   "t": "सफ़ायर"
@@ -3935,6 +4111,14 @@
   "en": "MB",
   "t": "MB"
  },
+ "6edd44939f5a": {
+  "en": "Where was this photo taken?",
+  "t": "यह फ़ोटो कहाँ ली गई थी?"
+ },
+ "6eddff8a5e91": {
+  "en": " Viator ",
+  "t": "Viator"
+ },
  "6ee7cbb3f2cd": {
   "en": " Low HRV and heart risk (Europace, 2013) ",
   "t": "कम HRV और दिल का जोखिम (Europace, 2013)"
@@ -3962,6 +4146,10 @@
  "70182e9438a1": {
   "en": "Hours from my Steam library, my Xbox profile and my own estimates. Games with under 10 hours are left out.",
   "t": "घंटे मेरी Steam लाइब्रेरी, Xbox प्रोफ़ाइल और मेरे अपने अनुमानों से। 10 घंटे से कम वाले गेम शामिल नहीं हैं।"
+ },
+ "7034e1107ace": {
+  "en": "Venice is built on more than a hundred small islands, linked by around 400 bridges.",
+  "t": "वेनिस सौ से ज़्यादा छोटे द्वीपों पर बसा है, जिन्हें लगभग 400 पुल जोड़ते हैं।"
  },
  "7038a855f81b": {
   "en": "Soda Dungeon",
@@ -4267,6 +4455,10 @@
   "en": "Clicker Heroes series",
   "t": "Clicker Heroes सीरीज़"
  },
+ "78a9c9baf0c3": {
+  "en": "Photo {n} of {total}",
+  "t": "{total} में से फ़ोटो {n}"
+ },
  "78aa655e487b": {
   "en": "LEGO Star Wars: The Skywalker Saga",
   "t": "LEGO Star Wars: The Skywalker Saga"
@@ -4371,6 +4563,10 @@
   "en": "I watched the remake. Spoiler warning, but goddamn, can these two just lock themselves in a room and fight it out already? ...huehuehuehue. Okay, shitposting aside, the scene with the rake is so fucking insane it still haunts me years later. I slept fine, but it was an assault on the senses... Well done.",
   "t": "मैंने रीमेक देखा। स्पॉइलर चेतावनी, पर कसम से, क्या ये दोनों बस खुद को एक कमरे में बंद करके एक बार में लड़कर मामला निपटा नहीं सकतीं? ...huehuehuehue। ठीक है, मज़ाक़ एक तरफ़, रेक वाला सीन इतना साला पागलपन भरा है कि सालों बाद भी मुझे सताता है। मुझे नींद तो ठीक आई, पर वह इंद्रियों पर हमला था... बहुत ख़ूब।"
  },
+ "7b550ea4934b": {
+  "en": "Germany's Reinheitsgebot, the beer purity law of 1516, allowed only water, barley and hops in beer.",
+  "t": "जर्मनी के 1516 के बीयर शुद्धता क़ानून (राइनहाइट्सगेबोट) ने बीयर में सिर्फ़ पानी, जौ और हॉप्स की इजाज़त दी।"
+ },
  "7b6e925e0861": {
   "en": "Same variable-reward idea, applied to what to post",
   "t": "वही परिवर्ती इनाम का विचार, क्या पोस्ट करना है उस पर लागू"
@@ -4382,6 +4578,10 @@
  "7ba775845547": {
   "en": "I wanna play",
   "t": "मुझे खेलना है"
+ },
+ "7bbc5f97f852": {
+  "en": "{name}, {within}",
+  "t": "{name}, {within}"
  },
  "7bcd7423cbe4": {
   "en": "That’s why this tab lives in Hearth: my body is at the center of it all, and looking after it matters as much as looking after my family, my pets and healthy friendships.",
@@ -4499,6 +4699,10 @@
   "en": "Min",
   "t": "मिनट"
  },
+ "7ec79775c355": {
+  "en": "Every wrong answer is just a trip you still have to take.",
+  "t": "हर ग़लत जवाब बस एक ट्रिप है जो तुम्हें अभी करनी है।"
+ },
  "7ed97d0b96e7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Monogatari ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 17: </span> Monogatari"
@@ -4598,6 +4802,10 @@
  "822c38efe849": {
   "en": "Road 96",
   "t": "Road 96"
+ },
+ "823f114d8191": {
+  "en": "Back to Traveler",
+  "t": "यात्री पर वापस"
  },
  "8271900678e6": {
   "en": "Enlarge: Destroying a whole chicken",
@@ -4831,6 +5039,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#24: </span>Best of the Worst: Junka 4",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#24: </span>Best of the Worst: Junka 4"
  },
+ "88b00f7eddd8": {
+  "en": "<strong>What are the hard commitments?</strong> Things where I have to be at a certain place at a certain time. Those get sorted out and added to the calendar. This is also when I start digging through Tripadvisor, Viator and AI search for more hard commitments tied to group travel, events, concerts, etc.",
+  "t": "<strong>पक्के कमिटमेंट क्या हैं?</strong> वो चीज़ें जिनके लिए मुझे किसी तय समय पर किसी तय जगह होना है। उन्हें सुलझाकर कैलेंडर में डालता हूँ। इसी समय मैं ग्रुप ट्रैवल, इवेंट, कॉन्सर्ट वग़ैरह से जुड़े और पक्के कमिटमेंट खोजने के लिए Tripadvisor, Viator और AI सर्च खंगालना शुरू करता हूँ।"
+ },
  "88b84613be17": {
   "en": "Getting there",
   "t": "पहुँच रहा हूँ"
@@ -4906,6 +5118,10 @@
  "8b5051da2153": {
   "en": "66 days",
   "t": "66 दिन"
+ },
+ "8b60dec779bd": {
+  "en": "See my score",
+  "t": "मेरा स्कोर देखो"
  },
  "8ba25ab7e4e0": {
   "en": "197 h",
@@ -5019,6 +5235,10 @@
   "en": "155 h",
   "t": "155 घं."
  },
+ "8ed00491b7b1": {
+  "en": "If you miss this one, I'm telling Peeta.",
+  "t": "अगर ये ग़लत हुआ, तो मैं Peeta को बता दूँगा।"
+ },
  "8ef4196cef6e": {
   "en": "Enlarge: Ready for a walk",
   "t": "बड़ा करें: टहलने के लिए तैयार"
@@ -5026,6 +5246,10 @@
  "8f21ad742d6a": {
   "en": "<strong>Peter Gollwitzer</strong>, implementation intentions (“if X happens, then I will do Y”). His 2006 meta-analysis with Paschal Sheeran, across 94 tests, found a medium-to-large effect on reaching goals. <a href=\"https://www.decisionskills.com/uploads/5/1/6/0/5160560/2006_gollwitzersheeran_implementation_intentions.pdf\">Paper</a>",
   "t": "<strong>पीटर गोलविट्ज़र</strong>, कार्यान्वयन इरादे (\"अगर X होगा, तो मैं Y करूँगा\")। पास्कल शीरन के साथ उनके 2006 के मेटा-विश्लेषण ने 94 परीक्षणों में लक्ष्य पाने पर मध्यम से बड़ा असर पाया। <a href=\"https://www.decisionskills.com/uploads/5/1/6/0/5160560/2006_gollwitzersheeran_implementation_intentions.pdf\">शोध-पत्र</a>"
+ },
+ "8f53876c891d": {
+  "en": "Take your time. This hammock has no hard commitments.",
+  "t": "आराम से सोचो। इस झूले पर कोई पक्का कमिटमेंट नहीं।"
  },
  "8f60ae052f27": {
   "en": "This one is for seasoned veterans of the genre, or someone deep into Japanese culture. The unique way the story is told is still vivid in my brain, despite all the anime I've absorbed since.",
@@ -5110,6 +5334,10 @@
  "91932d565d68": {
   "en": " 349 h  ",
   "t": "349 घं."
+ },
+ "919a69782679": {
+  "en": "Singapore's Changi Airport has the tallest indoor waterfall in the world, the Rain Vortex. An airport with a waterfall: my aviation nerd heart.",
+  "t": "सिंगापुर के चांगी एयरपोर्ट में दुनिया का सबसे ऊँचा इनडोर झरना है, रेन वॉर्टेक्स। झरने वाला एयरपोर्ट: मेरा एविएशन-दीवाना दिल।"
  },
  "91a07087a575": {
   "en": " LF ",
@@ -5423,6 +5651,10 @@
   "en": " 354 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "354 घं.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">अनुमानित</span>"
  },
+ "9a26193e6330": {
+  "en": " Tripadvisor ",
+  "t": "Tripadvisor"
+ },
  "9a4013425ae8": {
   "en": "Now then, matey: which o' these bilge rats be Deo? Make yer guess, and make it quick. See that spiky beast risin' from the waves? Aye. The whole crew met their final fate in the guts o' that giant turtle. Yo ho!",
   "t": "तो बताओ दोस्त: इन गंदे चूहों में Deo कौन है? अंदाज़ा लगाओ, और जल्दी लगाओ। लहरों से उठता वह काँटेदार दैत्य दिख रहा है? हाँ। पूरा दल उसी विशाल कछुए की अंतड़ियों में अपने अंजाम को पहुँचा। यो हो!"
@@ -5446,6 +5678,10 @@
  "9a7378f878db": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder movie 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 33: </span> अस्थायी फ़िल्म 33"
+ },
+ "9a7f74a3f509": {
+  "en": "Where in the World Was Deo?: turn your phone sideways",
+  "t": "Deo कहाँ था?: अपना फ़ोन आड़ा करो"
  },
  "9ad4cfc36bda": {
   "en": " What HRV is and its norms (Frontiers, 2017) ",
@@ -5490,6 +5726,10 @@
  "9c8a9f570735": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 7: </span> Placeholder movie 7 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 7: </span> अस्थायी फ़िल्म 7"
+ },
+ "9ce8a73a39d0": {
+  "en": "<strong>Fill in the chunks.</strong> I search for things to do around there and fill each time chunk with 1–3 things, based on proximity. If something is important or very desirable, it becomes a hard commitment. It’s okay to keep a few things in the backlog, saved in case we have more time than planned. The same way, if we run out of time or energy, we can pop things out of the chunks and reorder them, or move them to the backlog for a future trip.",
+  "t": "<strong>हिस्सों को भरो।</strong> मैं आसपास करने लायक चीज़ें खोजता हूँ और दूरी के हिसाब से हर हिस्से में 1–3 चीज़ें भरता हूँ। अगर कुछ ज़रूरी या बहुत मनचाहा है, तो वह पक्का कमिटमेंट बन जाता है। कुछ चीज़ें बैकलॉग में रखना ठीक है, अगर योजना से ज़्यादा समय मिले तो। इसी तरह, अगर समय या ऊर्जा ख़त्म हो जाए, तो चीज़ों को हिस्सों से निकालकर दोबारा क्रम दे सकते हैं, या अगली यात्रा के लिए बैकलॉग में डाल सकते हैं।"
  },
  "9cf7bc8b3812": {
   "en": "Your {kind} went viral: {views} views and {follows} new followers.",
@@ -5775,6 +6015,10 @@
   "en": "DAVE THE DIVER",
   "t": "DAVE THE DIVER"
  },
+ "a3a6593686de": {
+  "en": "In Tonopah, Nevada, there's a motel full of clowns, right next to an old miners' cemetery. Sweet dreams!",
+  "t": "नेवादा के टोनोपा में जोकरों से भरा एक मोटेल है, ठीक पुराने खनिकों के क़ब्रिस्तान के बगल में। मीठे सपने!"
+ },
  "a3ec0dfc8cc3": {
   "en": "Play video: Ridin' with Peeta",
   "t": "वीडियो चलाएँ: Peeta के साथ सवारी"
@@ -6059,6 +6303,10 @@
   "en": "This is a Christian fireplace! (╯°□°)╯",
   "t": "यह एक शरीफ़ अँगीठी है! (╯°□°)╯"
  },
+ "ab1960fbc49f": {
+  "en": " Booking.com ",
+  "t": "Booking.com"
+ },
  "ab27df9dd530": {
   "en": "BLACKSHAPE",
   "t": "BLACKSHAPE"
@@ -6339,6 +6587,10 @@
   "en": "These days cluster in some seasons more than others, so a difference here is a hint, not proof of a cause.",
   "t": "ये दिन कुछ मौसमों में ज़्यादा होते हैं, इसलिए यहाँ का फ़र्क़ एक इशारा है, किसी कारण का सबूत नहीं।"
  },
+ "b25b861c094d": {
+  "en": "Near Da Nang, the Golden Bridge in the Ba Na Hills is held up by two giant stone hands.",
+  "t": "दा नांग के पास बा ना हिल्स का गोल्डन ब्रिज पत्थर के दो विशाल हाथों पर टिका है।"
+ },
  "b29157b87cd1": {
   "en": "Bands I still want to see live.",
   "t": "बैंड जिन्हें मैं अब भी लाइव देखना चाहता हूँ।"
@@ -6479,6 +6731,10 @@
   "en": "Enlarge: Stroller time",
   "t": "बड़ा करें: प्रैम का समय"
  },
+ "b6d277d4c797": {
+  "en": "Brasília was built from scratch in about four years, and from above its city plan looks like an airplane.",
+  "t": "ब्रासीलिया लगभग चार साल में शून्य से बना, और ऊपर से उसका नगर-नक़्शा एक हवाई जहाज़ जैसा दिखता है।"
+ },
  "b6df21551d66": {
   "en": "sloppy folds made it wobble and drag",
   "t": "बेढंगे मोड़ों से हिला और घसीटा"
@@ -6510,6 +6766,10 @@
  "b7972ec7613f": {
   "en": "The night and day after each exercise day, against every other day you picked. The dot is the middle value (the median) and the bar holds the middle half of the days. This view ignores the Nights boxes.",
   "t": "हर व्यायाम वाले दिन के बाद की रात और दिन, आपके चुने बाकी सभी दिनों के मुकाबले। बिंदु बीच का मान (माध्यिका) है और पट्टी बीच के आधे दिनों को दिखाती है। यह व्यू रातें वाले बॉक्स को नहीं मानता।"
+ },
+ "b7a75d8c7880": {
+  "en": "<strong>Figure out how much time I have.</strong> I split it into morning, afternoon, evening and late-night chunks, tied to where I’ll be and when.",
+  "t": "<strong>पता करो कितना समय है।</strong> मैं उसे सुबह, दोपहर, शाम और देर रात के हिस्सों में बाँटता हूँ, इस हिसाब से कि मैं कहाँ और कब रहूँगा।"
  },
  "b7b3fa90eecd": {
   "en": " TrueTrophies ",
@@ -6578,6 +6838,10 @@
  "ba01865809b3": {
   "en": "Back to Concert",
   "t": "कॉन्सर्ट पर वापस"
+ },
+ "ba5d30be69b6": {
+  "en": "Hong Kong has more skyscrapers than any other city in the world.",
+  "t": "हांगकांग में दुनिया के किसी भी शहर से ज़्यादा गगनचुंबी इमारतें हैं।"
  },
  "ba70e185ad5f": {
   "en": " LW ",
@@ -6719,6 +6983,10 @@
   "en": "Ghost",
   "t": "Ghost"
  },
+ "bf9b443e4ef0": {
+  "en": "In the Exumas, in the Bahamas, there's a beach where pigs swim out to meet the boats.",
+  "t": "बहामास के एक्ज़ूमा में एक समुद्र तट है जहाँ सूअर तैरकर नावों से मिलने आते हैं।"
+ },
  "bfa28522fcb3": {
   "en": "Hamilton",
   "t": "Hamilton"
@@ -6823,6 +7091,10 @@
   "en": "Revenge of the Savage Planet",
   "t": "Revenge of the Savage Planet"
  },
+ "c1fce82f845e": {
+  "en": "Denver is the Mile High City: one step of the Colorado State Capitol sits exactly one mile above sea level.",
+  "t": "डेनवर \"माइल हाई सिटी\" है: कोलोराडो स्टेट कैपिटल की एक सीढ़ी समुद्र तल से ठीक एक मील ऊपर है।"
+ },
  "c2032d98f6ff": {
   "en": "natural {n}!",
   "t": "नैचुरल {n}!"
@@ -6858,6 +7130,10 @@
  "c327716d8241": {
   "en": "Angle {angle}°   Power {power}%",
   "t": "कोण {angle}°   पावर {power}%"
+ },
+ "c32f3b991a3d": {
+  "en": "Fun fact: {fact}",
+  "t": "मज़ेदार बात: {fact}"
  },
  "c361ac4de54f": {
   "en": "See it as",
@@ -6911,6 +7187,10 @@
   "en": "Pope Deo in green and gold papal robes and mitre, holding a golden staff, seated on a throne of swords before a churrasco grill full of skewers",
   "t": "हरे और सुनहरे पोप परिधान और मुकुट में पोप Deo, सुनहरी छड़ी थामे, सीखों से भरी शुहास्कू ग्रिल के सामने तलवारों के सिंहासन पर विराजमान"
  },
+ "c585c9a92390": {
+  "en": "Kuala Lumpur's Petronas Towers were the tallest buildings in the world from 1998 to 2004, and a two-story skybridge joins them.",
+  "t": "कुआलालंपुर के पेट्रोनास टावर 1998 से 2004 तक दुनिया की सबसे ऊँची इमारतें थे, और उन्हें दो मंज़िला स्काईब्रिज जोड़ता है।"
+ },
  "c5a976de7b52": {
   "en": " CC ",
   "t": "CC"
@@ -6934,6 +7214,10 @@
  "c63ae6dd4fc9": {
   "en": "M",
   "t": "M"
+ },
+ "c640067d579c": {
+  "en": "Tools I use for travels",
+  "t": "यात्रा के लिए मेरे टूल"
  },
  "c65780da80b3": {
   "en": "Undead Horde",
@@ -7130,6 +7414,10 @@
  "cc6bd57cedaf": {
   "en": "hours played",
   "t": "खेले गए घंटे"
+ },
+ "cc9527a5b265": {
+  "en": "Chicago reversed the flow of its river in 1900, so it runs away from Lake Michigan instead of into it. Engineering flex.",
+  "t": "शिकागो ने 1900 में अपनी नदी का बहाव उलट दिया, ताकि वह मिशिगन झील में गिरने की जगह उससे दूर बहे। इंजीनियरिंग का दम।"
  },
  "cc9b32d95789": {
   "en": "exercise day",
@@ -7423,6 +7711,10 @@
   "en": "TS",
   "t": "TS"
  },
+ "d3b572e24639": {
+  "en": "Huehue, I can feel that thinking face from here.",
+  "t": "huehue, तुम्हारा सोचता हुआ चेहरा मुझे यहाँ तक महसूस हो रहा है।"
+ },
  "d3c3cff3fcea": {
   "en": "Almost went viral! 97% to the For You page.",
   "t": "लगभग वायरल! For You पेज तक 97%।"
@@ -7442,6 +7734,10 @@
  "d41a25e62a6c": {
   "en": "Mentor",
   "t": "मेंटर"
+ },
+ "d41cddd2d44e": {
+  "en": "Vatican City is the smallest country in the world: less than half a square kilometer.",
+  "t": "वेटिकन सिटी दुनिया का सबसे छोटा देश है: आधे वर्ग किलोमीटर से भी कम।"
  },
  "d429907f8fad": {
   "en": "Massachusetts",
@@ -7799,6 +8095,10 @@
   "en": "SV",
   "t": "SV"
  },
+ "ddba2c9277cd": {
+  "en": " Gemini ",
+  "t": "Gemini"
+ },
  "ddd902407758": {
   "en": "Tattoo on my left forearm",
   "t": "मेरे बाएँ अग्रबाहु पर टैटू"
@@ -7882,6 +8182,10 @@
  "e0036bf9d252": {
   "en": "Enlarge: Salesman and his companion",
   "t": "बड़ा करें: सेल्समैन और उसका साथी"
+ },
+ "e01002532f4a": {
+  "en": "Pro tip: check the signs, the plugs and which side of the road the cars drive on.",
+  "t": "प्रो टिप: बोर्ड, प्लग और गाड़ियाँ सड़क के किस तरफ़ चलती हैं, ये देखो।"
  },
  "e0184adedf91": {
   "en": "E",
@@ -7979,6 +8283,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#6: </span>Best of the Worst: Showdown, Robot in the Family, and Bloodz vs. Wolvez"
  },
+ "e315e9529ed9": {
+  "en": "Nashville has a full-size replica of the Parthenon of Athens.",
+  "t": "नैशविल में एथेंस के पार्थेनॉन की पूरे आकार की प्रतिकृति है।"
+ },
  "e33dd04a8af1": {
   "en": "Enlarge: The trail map",
   "t": "बड़ा करें: ट्रेल का नक्शा"
@@ -8006,6 +8314,10 @@
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
   "t": "चिड़िया फेंको, 3 मान लगता है (कुंजी 2)"
+ },
+ "e43916e49699": {
+  "en": "1 left",
+  "t": "1 बाक़ी"
  },
  "e45f65625355": {
   "en": "amethyst",
@@ -8082,6 +8394,10 @@
  "e68b871a3f8d": {
   "en": "Autonauts",
   "t": "Autonauts"
+ },
+ "e694469949d6": {
+  "en": "No photos yet.",
+  "t": "अभी कोई फ़ोटो नहीं।"
  },
  "e69f20e9f683": {
   "en": "F",
@@ -8523,6 +8839,10 @@
   "en": "Plays from YouTube when you click",
   "t": "क्लिक करने पर YouTube से चलता है"
  },
+ "f54c3e38c29e": {
+  "en": "At Cadillac Ranch in Amarillo, Texas, ten Cadillacs stand nose-down in the dirt, and spray-painting them is encouraged.",
+  "t": "टेक्सास के अमारिलो में कैडिलैक रैंच पर दस कैडिलैक नाक के बल मिट्टी में गड़ी हैं, और उन पर स्प्रे पेंट करने का स्वागत है।"
+ },
  "f55f2f49a5fb": {
   "en": "243 h",
   "t": "243 घं."
@@ -8595,6 +8915,14 @@
   "en": "99 h",
   "t": "99 घं."
  },
+ "f7728e6f8374": {
+  "en": " Atlas Obscura ",
+  "t": "Atlas Obscura"
+ },
+ "f7ebf3ce2a64": {
+  "en": "Save it! Ask me while a photo is up.",
+  "t": "बचाकर रखो! जब फ़ोटो दिख रही हो तब पूछना।"
+ },
  "f80471683dd2": {
   "en": " Action &amp; adventure ",
   "t": "एक्शन और एडवेंचर"
@@ -8602,6 +8930,10 @@
  "f80d1870d042": {
   "en": " ← Close the chunk ",
   "t": "← टुकड़ा बंद करें"
+ },
+ "f813212f2d43": {
+  "en": "China is wide enough for five time zones, but the whole country runs on one clock: Beijing time.",
+  "t": "चीन इतना चौड़ा है कि उसमें पाँच टाइम ज़ोन हो सकते हैं, पर पूरा देश एक ही घड़ी पर चलता है: बीजिंग टाइम।"
  },
  "f84872e84d43": {
   "en": " F16 LED Matrix Mgr ",
@@ -8779,6 +9111,10 @@
   "en": "Japan",
   "t": "जापान"
  },
+ "fcf66edbab92": {
+  "en": "Minnesota calls itself the Land of 10,000 Lakes, but it actually has more than 11,000.",
+  "t": "मिनेसोटा ख़ुद को 10,000 झीलों की धरती कहता है, पर असल में वहाँ 11,000 से ज़्यादा हैं।"
+ },
  "fd5ffa4da538": {
   "en": "Enlarge: Super doggo",
   "t": "बड़ा करें: सुपर कुत्ता"
@@ -8794,6 +9130,10 @@
  "fd932a42296c": {
   "en": "Did I undersleep or oversleep",
   "t": "कम सोया या ज़्यादा सोया"
+ },
+ "fdaa9e2265a8": {
+  "en": "Recife, in Pernambuco, is nicknamed the Brazilian Venice for its rivers and bridges.",
+  "t": "पेरनामबूको का रेसिफ़ अपनी नदियों और पुलों के कारण \"ब्राज़ील का वेनिस\" कहलाता है।"
  },
  "fdd2b6874d7f": {
   "en": "RA",

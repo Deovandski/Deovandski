@@ -11,6 +11,9 @@ import KitKot from './reusable/KitKot.astro';
 import LedMatrix from './reusable/LedMatrix.astro';
 import PaperPlane from './reusable/PaperPlane.astro';
 import PlanetLap from './reusable/PlanetLap.astro';
+import PhotoQuiz from './reusable/PhotoQuiz.astro';
+import PixelHammock from './reusable/PixelHammock.astro';
+import { travelQuiz } from '../lib/travelQuiz';
 import EasterEggBanner from './reusable/EasterEggBanner.astro';
 import UrsuSprite from './UrsuSprite.astro';
 import { url } from '../lib/url';
@@ -32,6 +35,7 @@ interface Props {
 const { id } = Astro.props;
 const pixelPets = PETS.filter((p) => PIXEL_PETS[p.id]);
 const hours = Math.round(botwStats.hours).toLocaleString('en-US');
+const trip = id === 'where-was-deo' ? await travelQuiz() : null;
 ---
 
 {
@@ -108,6 +112,28 @@ const hours = Math.round(botwStats.hours).toLocaleString('en-US');
   )
 }
 {
+  trip && (
+    <PhotoQuiz
+      class="gimmick__quiz"
+      questions={trip.questions}
+      answers={trip.answers}
+      facts={trip.facts}
+      chatter={trip.chatter}
+      helperLabel="Ask Deo for a freebie: he narrows it down to two (once per game)"
+      text={{
+        alt: 'Photo {n}, from one of Deo’s trips: where was it taken?',
+        hello: 'Psst! Stuck? Press me once for a freebie.',
+        freebie: 'Hmm… it’s either {a} or {b}. Huehue, good luck.',
+        freebieUsed: 'I already gave you my freebie! Back to hammock time.',
+        freebieWait: 'Save it! Ask me while a photo is up.',
+        endTop: 'Perfect! You might know my travels better than I do.',
+      }}
+    >
+      <PixelHammock slot="helper" label="Chibi pixel Deo in his yellow king's robes and crown hat, chilling in a hammock between two palm trees. Press him for a freebie." />
+    </PhotoQuiz>
+  )
+}
+{
   id === 'whack-a-miku' && (
     <WhackAMole sprite={whackSprite} name="Miku" title="Whack-a-Miku" bonusDays={['03-09', '08-31']} spriteAlt="A pixel Miku popped up" />
   )
@@ -138,6 +164,11 @@ const hours = Math.round(botwStats.hours).toLocaleString('en-US');
     --planet-accent: var(--teal);
     max-width: 52rem;
     margin: 0 auto;
+  }
+  .gimmick__quiz {
+    --quiz-accent: var(--teal);
+    --quiz-text: var(--text);
+    --quiz-muted: var(--muted);
   }
   .gimmick__quote {
     margin: 0 0 1rem;
