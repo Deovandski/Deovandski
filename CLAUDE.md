@@ -133,7 +133,7 @@ loose buttons in the tab (#260).
 ## Sub-tabs (the tree's third level)
 
 A tab that shows one of two or more lists gets **sub-tabs** in the facet tree, not a switch inside the tab (#296): Games |
-Software on Developer, Life hacks | PM on Management, Seen live | Wishlist on Concert and Theater & Opera, Movies | TV shows
+Software on Developer, Life hacks | Project Management on Management, Seen live | Wishlist on Concert and Theater & Opera, Movies | TV shows
 on Potato.
 
 - **Data:** list them in the tab's entry in `facets` (`src/pages/index.astro`) as `subs: [{ id, icon, label, hash }]`, 2 to
@@ -142,7 +142,7 @@ on Potato.
 - **Panels:** inside the tab's panel, one `<div id="<tab>-<sub>" role="region" aria-labelledby="sub-<tab>-<sub>" data-sub-panel>`
   per sub-tab, `hidden` on all but the default. The tab's ▶ Play and Links stay at the tab level, shared by its sub-tabs.
 - **How it looks:** on desktop a row of smaller nodes hangs from the tab on its own wire; on phones the sub-tabs are a third
-  indent on a pink rail. A tab with sub-tabs shows "N views" under its name. The breadcrumb gains a fourth item.
+  indent on a pink rail. A tab with sub-tabs shows "N sub-facets" under its name, like a branch's "N facets". The breadcrumb gains a fourth item.
 - **Phones fold the tree** to the open path (its branch, the tab and its sub-tabs) whenever a tab is open; pressing the
   branch shows the rest again, and pressing it once more folds everything up.
 - `PillSwitch` (#272) is still the switch *inside* a component, like the Biomarker Lab's views in `MetricLab`.

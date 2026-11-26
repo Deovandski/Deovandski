@@ -487,10 +487,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 24: </span> Placeholder TV show 24 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 24: </span> 임시 TV 프로그램 24"
  },
- "0c95dc6163ff": {
-  "en": "PM",
-  "t": "PM"
- },
  "0c972a6d7de2": {
   "en": "Car Ride!",
   "t": "드라이브다!"
@@ -678,10 +674,6 @@
  "122babc08c1c": {
   "en": "Not enough days with both numbers.",
   "t": "두 숫자가 모두 있는 날이 부족해요."
- },
- "123677c56c66": {
-  "en": "2 views",
-  "t": "2개 보기"
  },
  "123b77b3c65c": {
   "en": "Terraria",
@@ -5487,6 +5479,10 @@
   "en": "Deo in 2025 lounging in a camp chair in a mountain lake",
   "t": "2025년, 산속 호수 안에 캠핑 의자를 놓고 느긋하게 앉아 있는 Deo"
  },
+ "94558c5001df": {
+  "en": "2 sub-facets",
+  "t": "2개 하위 면"
+ },
  "947a1916fa8e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Placeholder movie 4 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 4: </span> 임시 영화 4"
@@ -8166,6 +8162,10 @@
  "dd60283ddeed": {
   "en": "Needle",
   "t": "바늘"
+ },
+ "dd64c0f0e9b3": {
+  "en": "Project Management",
+  "t": "프로젝트 관리"
  },
  "dd677fb86e9e": {
   "en": "Back to D&amp;D",

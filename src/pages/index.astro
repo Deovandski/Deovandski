@@ -259,7 +259,7 @@ const facets: { id: string; icon: string; label: string; sortAs?: string; subs?:
   { id: 'lust', icon: '❤️‍🔥', label: 'Lust' },
   { id: 'pm', icon: '📋', label: 'Management', subs: [
     { id: 'hacks', icon: '💡', label: 'Life hacks', hash: '#life-hacks' },
-    { id: 'pm', icon: '📋', label: 'PM', hash: '#pm' },
+    { id: 'pm', icon: '📋', label: 'Project Management', hash: '#pm' },
   ] },
   { id: 'mentor', icon: '🔥', label: 'Mentor' },
   { id: 'mtg', icon: '🃏', label: 'MTG' },
@@ -456,7 +456,7 @@ const nf = new Intl.NumberFormat('en-US');
                         >
                           <span class="tree__disc" aria-hidden="true">{t.icon}</span>
                           <span class="tree__label">{t.label}</span>
-                          {t.subs && <span class="tree__count">{`${t.subs.length} views`}</span>}
+                          {t.subs && <span class="tree__count">{`${t.subs.length} sub-facets`}</span>}
                           {t.subs && <svg class="tree__chev" aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>}
                         </button>
                       </div>

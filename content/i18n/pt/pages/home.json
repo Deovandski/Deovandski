@@ -487,10 +487,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 24: </span> Placeholder TV show 24 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 24: </span> Série provisória 24"
  },
- "0c95dc6163ff": {
-  "en": "PM",
-  "t": "GP"
- },
  "0c972a6d7de2": {
   "en": "Car Ride!",
   "t": "Passeio de carro!"
@@ -678,10 +674,6 @@
  "122babc08c1c": {
   "en": "Not enough days with both numbers.",
   "t": "Poucos dias com os dois números."
- },
- "123677c56c66": {
-  "en": "2 views",
-  "t": "2 visões"
  },
  "123b77b3c65c": {
   "en": "Terraria",
@@ -5487,6 +5479,10 @@
   "en": "Deo in 2025 lounging in a camp chair in a mountain lake",
   "t": "Deo em 2025 relaxando numa cadeira de camping dentro de um lago de montanha"
  },
+ "94558c5001df": {
+  "en": "2 sub-facets",
+  "t": "2 subfacetas"
+ },
  "947a1916fa8e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Placeholder movie 4 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 4: </span> Filme provisório 4"
@@ -8166,6 +8162,10 @@
  "dd60283ddeed": {
   "en": "Needle",
   "t": "Agulha"
+ },
+ "dd64c0f0e9b3": {
+  "en": "Project Management",
+  "t": "Gestão de Projetos"
  },
  "dd677fb86e9e": {
   "en": "Back to D&amp;D",

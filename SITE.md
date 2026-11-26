@@ -17,7 +17,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Mentor tab | `content/mentor.md` (plain Markdown); its "Shoulders I stand on" list, in the Links box, in `content/mentor-sources.md` |
 | Mentor tab Balls farm (seeds, odds, trades, mantra) | `content/mentor-farm.json`; `src/components/reusable/IsoFarm.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | Death tab (countdown clock + text) | `content/death.md` (its "Shoulders I stand on" list, in the Links box, in `content/death-sources.md`); clock target in `src/components/DeathFacet.astro` (`TARGET`); the clock itself is the reusable `src/components/reusable/LedClock.astro` |
-| Management tab: PM sub-tab (public Kanban boards) | `boards` near the top of `src/pages/index.astro` |
+| Management tab: Project Management sub-tab (public Kanban boards) | `boards` near the top of `src/pages/index.astro` |
 | Management tab: Life hacks sub-tab | `src/components/LifeHacksFacet.astro` |
 | QR Code page (hidden: `/qr/`, or `#qr` on the home page) | `src/pages/qr.astro`: `contact` (name and phone above the codes) and `codes` (one QR code per row, stacked in order) |
 | Playground page (`/playground/`, in the top nav next to Contact; `/gaming/`, `#gaming` and `#playground` land there): every gimmick in a FastTab titled "Name (Tab facet)" | intro text in `src/pages/playground.astro`; one FastTab per row of `src/lib/gimmicks.ts` (sorted A to Z by name; `tabName` is the facet in the title); nav link in `src/layouts/Base.astro`; saved offline by `public/sw.js`; app shortcut in `src/pages/manifest.webmanifest.ts` |
