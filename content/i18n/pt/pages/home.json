@@ -635,10 +635,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 39: </span> Placeholder movie 39 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 39: </span> Filme provisório 39"
  },
- "11f4a487dbaf": {
-  "en": "<strong>The Cooper Institute</strong>, VO₂ max norms by age and sex: for men 30–39, the 40th percentile is 40.5 and the 60th is 44.0, so the line uses the middle, 42.3. <a href=\"https://www8.garmin.com/manuals/webhelp/GUID-0083D0A0-EA6E-41F0-8207-3F1498875E61/EN-US/GUID-1FBCCD9E-19E1-4E4C-BD60-1793B5B97EB3.html\">Table</a>",
-  "t": "<strong>The Cooper Institute</strong>, normas de VO₂ máx. por idade e sexo: para homens de 30–39, o percentil 40 é 40,5 e o 60 é 44,0, então a linha usa o meio, 42,3. <a href=\"https://www8.garmin.com/manuals/webhelp/GUID-0083D0A0-EA6E-41F0-8207-3F1498875E61/EN-US/GUID-1FBCCD9E-19E1-4E4C-BD60-1793B5B97EB3.html\">Tabela</a>"
- },
  "122babc08c1c": {
   "en": "Not enough days with both numbers.",
   "t": "Poucos dias com os dois números."
@@ -663,13 +659,13 @@
   "en": "Enlarge: Painting or drawing, 04/09/2013",
   "t": "Ampliar: Pintura ou desenho, 09/04/2013"
  },
+ "130c48532b18": {
+  "en": " Resting heart rate (Oura) ",
+  "t": "Frequência cardíaca em repouso (Oura)"
+ },
  "131260cbfbb0": {
   "en": "Music",
   "t": "Música"
- },
- "1318b5b85065": {
-  "en": "Where the dashed lines come from",
-  "t": "De onde vêm as linhas tracejadas"
  },
  "132a0149f337": {
   "en": "they rise together",
@@ -962,6 +958,10 @@
  "1d23e1eb9609": {
   "en": "Enlarge: Hanging with a Peeta look alike",
   "t": "Ampliar: Com um sósia do Peeta"
+ },
+ "1d9715eead3d": {
+  "en": " Training guided by HRV (meta-analysis, 2020) ",
+  "t": "Treino guiado pela VFC (meta-análise, 2020)"
  },
  "1da305d68390": {
   "en": "Sec",
@@ -2315,6 +2315,10 @@
   "en": "This tab is in Hearth because at the center of it is my body. Tracking it and caring for it is just as important as caring for my family, my pets and healthy friendships.",
   "t": "Esta aba está em Lar porque no centro dela está o meu corpo. Acompanhar e cuidar dele é tão importante quanto cuidar da minha família, dos meus pets e de amizades saudáveis."
  },
+ "439be97b8441": {
+  "en": " Sleep by age (Nature Communications) ",
+  "t": "Sono por idade (Nature Communications)"
+ },
  "43b6999af90e": {
   "en": "My profile on Xbox",
   "t": "Meu perfil no Xbox"
@@ -2435,10 +2439,6 @@
   "en": "Idle Evolution",
   "t": "Idle Evolution"
  },
- "47eb1c699b77": {
-  "en": "<strong>Oura</strong>, “Average resting heart rate” (2026): men’s average nighttime heart rate by age, 60.2 bpm at 25–29, 61.2 at 30–34, 62.3 at 35–39. <a href=\"https://ouraring.com/blog/average-resting-heart-rate/\">Article</a>",
-  "t": "<strong>Oura</strong>, “Average resting heart rate” (2026): frequência cardíaca média noturna dos homens por idade, 60,2 bpm aos 25–29, 61,2 aos 30–34, 62,3 aos 35–39. <a href=\"https://ouraring.com/blog/average-resting-heart-rate/\">Artigo</a>"
- },
  "481021d04da3": {
   "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
   "t": "Cada métrica ao longo do tempo, um gráfico pequeno para cada. Passe o mouse em um gráfico e todos mostram o mesmo dia, semana ou mês."
@@ -2482,10 +2482,6 @@
  "4934994652a1": {
   "en": "Tribute shows",
   "t": "Shows tributo"
- },
- "493a6ba39dfb": {
-  "en": "<strong>David Bassett and colleagues</strong>, <em>Medicine &amp; Science in Sports &amp; Exercise</em> (2010): US adults took 5,843 steps a day at 18–29, 5,127 at 30–39 and 5,915 at 40–49 (men and women together; men 5,340 overall). <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2927728/\">Paper</a>",
-  "t": "<strong>David Bassett e colegas</strong>, <em>Medicine &amp; Science in Sports &amp; Exercise</em> (2010): adultos dos EUA davam 5.843 passos por dia aos 18–29, 5.127 aos 30–39 e 5.915 aos 40–49 (homens e mulheres juntos; homens 5.340 no geral). <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2927728/\">Artigo</a>"
  },
  "496e9438ab65": {
   "en": "Philosophy",
@@ -3355,6 +3351,10 @@
   "en": "Author",
   "t": "Autor"
  },
+ "601de7b2b60f": {
+  "en": " VO₂ max norms (Cooper Institute) ",
+  "t": "Normas de VO₂ máx. (Cooper Institute)"
+ },
  "60590f7c8d85": {
   "en": "Minnesota",
   "t": "Minnesota"
@@ -3863,6 +3863,10 @@
   "en": "MB",
   "t": "MB"
  },
+ "6ee7cbb3f2cd": {
+  "en": " Low HRV and heart risk (Europace, 2013) ",
+  "t": "VFC baixa e risco cardíaco (Europace, 2013)"
+ },
  "6eef3154b469": {
   "en": "Misaki is hands down my favorite character in the entire series! And this is my favorite series in the \"A Certain...\" world.",
   "t": "A Misaki é, de longe, a minha personagem favorita da série inteira! E esta é a minha série favorita do universo \"A Certain...\"."
@@ -3990,6 +3994,10 @@
  "72e4c52c966a": {
   "en": "LED painting",
   "t": "Pintura de LED"
+ },
+ "72eca31f40e4": {
+  "en": " HRV by age (Ultrahuman) ",
+  "t": "VFC por idade (Ultrahuman)"
  },
  "731b4b42fe78": {
   "en": "Marvel’s Spider-Man Remastered",
@@ -4262,10 +4270,6 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
- },
- "7a849b0e074b": {
-  "en": "<strong>Ultrahuman</strong>, “HRV by age and gender”: men’s median overnight HRV (RMSSD) by decade, 52 ms in their 20s, 45 in their 30s, 40 in their 40s, from over 510,000 ring users. <a href=\"https://www.ultrahuman.com/blog/hrv-by-age-and-gender-whats-normal-for-men-vs-women/\">Article</a>",
-  "t": "<strong>Ultrahuman</strong>, “HRV by age and gender”: VFC noturna mediana (RMSSD) dos homens por década, 52 ms nos 20 anos, 45 nos 30, 40 nos 40, de mais de 510.000 usuários do anel. <a href=\"https://www.ultrahuman.com/blog/hrv-by-age-and-gender-whats-normal-for-men-vs-women/\">Artigo</a>"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -5099,10 +5103,6 @@
   "en": "Yamete kudasai~ (〃ω〃)",
   "t": "Yamete kudasai~ (〃ω〃)"
  },
- "92c22fa9971b": {
-  "en": "<strong>Antoine Coutrot and colleagues</strong>, <em>Nature Communications</em> (2022): men reported about 7.3 hours of sleep in early adulthood, down to 6.8 hours by 35, flat until 50. <a href=\"https://doi.org/10.1038/s41467-022-34624-8\">Paper</a>",
-  "t": "<strong>Antoine Coutrot e colegas</strong>, <em>Nature Communications</em> (2022): homens relataram cerca de 7,3 horas de sono no início da vida adulta, caindo para 6,8 horas aos 35, estável até os 50. <a href=\"https://doi.org/10.1038/s41467-022-34624-8\">Artigo</a>"
- },
  "92f1af0db7dd": {
   "en": " PlayStation ",
   "t": "PlayStation"
@@ -5311,6 +5311,10 @@
   "en": "Dynasty Warriors and Empires series",
   "t": "Série Dynasty Warriors e Empires"
  },
+ "98c7acf7ace7": {
+  "en": "Where the averages come from",
+  "t": "De onde vêm as médias"
+ },
  "98df8dd8ca2b": {
   "en": "Enlarge: Painting or drawing, Circa Q2 2013",
   "t": "Ampliar: Pintura ou desenho, Por volta do 2º tri. de 2013"
@@ -5366,6 +5370,10 @@
  "9a7378f878db": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder movie 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 33: </span> Filme provisório 33"
+ },
+ "9ad4cfc36bda": {
+  "en": " What HRV is and its norms (Frontiers, 2017) ",
+  "t": "O que é VFC e suas normas (Frontiers, 2017)"
  },
  "9b3cbed5c490": {
   "en": "Zoom",
@@ -6639,6 +6647,10 @@
   "en": "Diminishing returns",
   "t": "Retornos decrescentes"
  },
+ "c01a1211d390": {
+  "en": " Steps by age (Bassett et al.) ",
+  "t": "Passos por idade (Bassett et al.)"
+ },
  "c032adc1ff62": {
   "en": "X",
   "t": "X"
@@ -7762,6 +7774,10 @@
  "dfe2dfa41bf6": {
   "en": "\nIf you got to see my shenanigans, I hope you found it entertaining. Now go outside, touch grass, and drag your dreams\n        from fantasy into reality like I am; truly recommended.\n",
   "t": "Se você chegou a ver as minhas palhaçadas, espero que tenha se divertido. Agora vá lá fora, toque na grama e arraste os seus sonhos da fantasia para a realidade como eu estou fazendo; recomendo muito."
+ },
+ "dfea54317ced": {
+  "en": "Why HRV matters",
+  "t": "Por que a VFC importa"
  },
  "e0036bf9d252": {
   "en": "Enlarge: Salesman and his companion",

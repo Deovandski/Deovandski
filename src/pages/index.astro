@@ -15,7 +15,6 @@ import GymFacet from '../components/GymFacet.astro';
 import CyclingFacet from '../components/CyclingFacet.astro';
 import BiomarkersFacet from '../components/BiomarkersFacet.astro';
 import { Content as CyclingSources } from '../../content/cycling/sources.md';
-import { Content as BiomarkerSources } from '../../content/biomarkers/sources.md';
 import LustFacet from '../components/LustFacet.astro';
 import DeathFacet from '../components/DeathFacet.astro';
 import PetsFacet from '../components/PetsFacet.astro';
@@ -75,6 +74,17 @@ const authorLinks: LinkItem[] = [
 const vrakiLinks: LinkItem[] = [
   { href: 'https://deovandski.github.io/Vraki-West-March-Campaign-D-D/', label: 'West March D&D Campaign' },
   { href: 'https://deovandski.github.io/vraki-windows/', label: 'Writing System' },
+];
+
+// Biomarker Lab's Links box: where the dashed "men my age" lines come from (each line's link in
+// content/biomarkers/norms.json), then reading on why heart rate variability matters.
+const normLinks: LinkItem[] = Object.values(
+  (JSON.parse(readFileSync(resolve('content/biomarkers/norms.json'), 'utf8')) as { metrics: Record<string, { link: LinkItem }> }).metrics,
+).map((m) => m.link);
+const hrvLinks: LinkItem[] = [
+  { href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC5624990/', label: 'What HRV is and its norms (Frontiers, 2017)' },
+  { href: 'https://doi.org/10.1093/europace/eus341', label: 'Low HRV and heart risk (Europace, 2013)' },
+  { href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC7663087/', label: 'Training guided by HRV (meta-analysis, 2020)' },
 ];
 
 // D&D tab's Links box (#270).
@@ -666,7 +676,11 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-biomarkers" aria-labelledby="tab-biomarkers" tabindex="0" hidden>
-      <LinksMenu id="biomarkers-links" toggle="external"><SourceList title="Where the dashed lines come from"><BiomarkerSources /></SourceList></LinksMenu>
+      <LinksMenu
+        id="biomarkers-links"
+        toggle="external"
+        items={[{ separator: 'Where the averages come from' }, { links: normLinks }, { separator: 'Why HRV matters' }, { style: 'secondary', links: hrvLinks }]}
+      />
       <BiomarkersFacet />
     </section>
 
@@ -1034,7 +1048,7 @@ const nf = new Intl.NumberFormat('en-US');
 
   .facet-head { scroll-margin-top: 6rem; padding: clamp(1.25rem, 3vw, 2.25rem) clamp(1.25rem, 3vw, 2.25rem) 0; border-top: 1px solid rgba(57, 197, 187, 0.2); }
   .facet-head[hidden], .facet-head [hidden] { display: none; }
-  #panel-death, #panel-mentor, #panel-cycling, #panel-biomarkers {
+  #panel-death, #panel-mentor, #panel-cycling {
     --sources-title: var(--silver);
     --sources-title-font: var(--font-display);
     --sources-text: var(--muted);

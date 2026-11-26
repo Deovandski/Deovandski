@@ -635,10 +635,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 39: </span> Placeholder movie 39 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 39: </span> 임시 영화 39"
  },
- "11f4a487dbaf": {
-  "en": "<strong>The Cooper Institute</strong>, VO₂ max norms by age and sex: for men 30–39, the 40th percentile is 40.5 and the 60th is 44.0, so the line uses the middle, 42.3. <a href=\"https://www8.garmin.com/manuals/webhelp/GUID-0083D0A0-EA6E-41F0-8207-3F1498875E61/EN-US/GUID-1FBCCD9E-19E1-4E4C-BD60-1793B5B97EB3.html\">Table</a>",
-  "t": "<strong>The Cooper Institute</strong>, 연령·성별 VO₂ max 기준: 30–39세 남성의 40번째 백분위는 40.5, 60번째는 44.0이라 선은 그 가운데인 42.3을 써요. <a href=\"https://www8.garmin.com/manuals/webhelp/GUID-0083D0A0-EA6E-41F0-8207-3F1498875E61/EN-US/GUID-1FBCCD9E-19E1-4E4C-BD60-1793B5B97EB3.html\">표</a>"
- },
  "122babc08c1c": {
   "en": "Not enough days with both numbers.",
   "t": "두 숫자가 모두 있는 날이 부족해요."
@@ -663,13 +659,13 @@
   "en": "Enlarge: Painting or drawing, 04/09/2013",
   "t": "확대: 그림 또는 스케치, 2013년 4월 9일"
  },
+ "130c48532b18": {
+  "en": " Resting heart rate (Oura) ",
+  "t": "안정 시 심박수 (Oura)"
+ },
  "131260cbfbb0": {
   "en": "Music",
   "t": "음악"
- },
- "1318b5b85065": {
-  "en": "Where the dashed lines come from",
-  "t": "점선은 어디서 왔나"
  },
  "132a0149f337": {
   "en": "they rise together",
@@ -962,6 +958,10 @@
  "1d23e1eb9609": {
   "en": "Enlarge: Hanging with a Peeta look alike",
   "t": "확대: Peeta 닮은꼴이랑 노는 중"
+ },
+ "1d9715eead3d": {
+  "en": " Training guided by HRV (meta-analysis, 2020) ",
+  "t": "심박 변이도에 맞춘 훈련 (메타분석, 2020)"
  },
  "1da305d68390": {
   "en": "Sec",
@@ -2315,6 +2315,10 @@
   "en": "This tab is in Hearth because at the center of it is my body. Tracking it and caring for it is just as important as caring for my family, my pets and healthy friendships.",
   "t": "이 탭이 보금자리에 있는 건 그 중심에 제 몸이 있기 때문이에요. 몸을 기록하고 돌보는 건 가족, 반려동물, 건강한 우정을 돌보는 것만큼 중요해요."
  },
+ "439be97b8441": {
+  "en": " Sleep by age (Nature Communications) ",
+  "t": "나이별 수면 (Nature Communications)"
+ },
  "43b6999af90e": {
   "en": "My profile on Xbox",
   "t": "내 Xbox 프로필"
@@ -2435,10 +2439,6 @@
   "en": "Idle Evolution",
   "t": "Idle Evolution"
  },
- "47eb1c699b77": {
-  "en": "<strong>Oura</strong>, “Average resting heart rate” (2026): men’s average nighttime heart rate by age, 60.2 bpm at 25–29, 61.2 at 30–34, 62.3 at 35–39. <a href=\"https://ouraring.com/blog/average-resting-heart-rate/\">Article</a>",
-  "t": "<strong>Oura</strong>, “Average resting heart rate”(2026): 남성의 연령별 야간 평균 심박수, 25–29세 60.2 bpm, 30–34세 61.2, 35–39세 62.3. <a href=\"https://ouraring.com/blog/average-resting-heart-rate/\">기사</a>"
- },
  "481021d04da3": {
   "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
   "t": "지표마다 시간에 따른 변화를 작은 차트로 하나씩 보여 줘요. 차트 하나에 마우스를 올리면 모든 차트가 같은 날, 주, 달을 보여 줘요."
@@ -2482,10 +2482,6 @@
  "4934994652a1": {
   "en": "Tribute shows",
   "t": "트리뷰트 공연"
- },
- "493a6ba39dfb": {
-  "en": "<strong>David Bassett and colleagues</strong>, <em>Medicine &amp; Science in Sports &amp; Exercise</em> (2010): US adults took 5,843 steps a day at 18–29, 5,127 at 30–39 and 5,915 at 40–49 (men and women together; men 5,340 overall). <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2927728/\">Paper</a>",
-  "t": "<strong>David Bassett 외</strong>, <em>Medicine &amp; Science in Sports &amp; Exercise</em>(2010): 미국 성인은 18–29세에 하루 5,843걸음, 30–39세에 5,127걸음, 40–49세에 5,915걸음을 걸었어요(남녀 합산, 남성 전체는 5,340걸음). <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2927728/\">논문</a>"
  },
  "496e9438ab65": {
   "en": "Philosophy",
@@ -3355,6 +3351,10 @@
   "en": "Author",
   "t": "작가"
  },
+ "601de7b2b60f": {
+  "en": " VO₂ max norms (Cooper Institute) ",
+  "t": "VO₂ max 기준 (Cooper Institute)"
+ },
  "60590f7c8d85": {
   "en": "Minnesota",
   "t": "미네소타"
@@ -3863,6 +3863,10 @@
   "en": "MB",
   "t": "MB"
  },
+ "6ee7cbb3f2cd": {
+  "en": " Low HRV and heart risk (Europace, 2013) ",
+  "t": "낮은 심박 변이도와 심장 위험 (Europace, 2013)"
+ },
  "6eef3154b469": {
   "en": "Misaki is hands down my favorite character in the entire series! And this is my favorite series in the \"A Certain...\" world.",
   "t": "미사키는 이 시리즈 전체에서 단연 내 최애 캐릭터야! 그리고 이건 \"어떤 ...\" 세계관에서 내가 제일 좋아하는 시리즈야."
@@ -3990,6 +3994,10 @@
  "72e4c52c966a": {
   "en": "LED painting",
   "t": "LED 그림"
+ },
+ "72eca31f40e4": {
+  "en": " HRV by age (Ultrahuman) ",
+  "t": "나이별 심박 변이도 (Ultrahuman)"
  },
  "731b4b42fe78": {
   "en": "Marvel’s Spider-Man Remastered",
@@ -4262,10 +4270,6 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
- },
- "7a849b0e074b": {
-  "en": "<strong>Ultrahuman</strong>, “HRV by age and gender”: men’s median overnight HRV (RMSSD) by decade, 52 ms in their 20s, 45 in their 30s, 40 in their 40s, from over 510,000 ring users. <a href=\"https://www.ultrahuman.com/blog/hrv-by-age-and-gender-whats-normal-for-men-vs-women/\">Article</a>",
-  "t": "<strong>Ultrahuman</strong>, “HRV by age and gender”: 남성의 연대별 야간 심박 변이도(RMSSD) 중앙값, 20대 52 ms, 30대 45, 40대 40, 51만 명이 넘는 반지 사용자 기준. <a href=\"https://www.ultrahuman.com/blog/hrv-by-age-and-gender-whats-normal-for-men-vs-women/\">기사</a>"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -5099,10 +5103,6 @@
   "en": "Yamete kudasai~ (〃ω〃)",
   "t": "야메테 쿠다사이~ (〃ω〃)"
  },
- "92c22fa9971b": {
-  "en": "<strong>Antoine Coutrot and colleagues</strong>, <em>Nature Communications</em> (2022): men reported about 7.3 hours of sleep in early adulthood, down to 6.8 hours by 35, flat until 50. <a href=\"https://doi.org/10.1038/s41467-022-34624-8\">Paper</a>",
-  "t": "<strong>Antoine Coutrot 외</strong>, <em>Nature Communications</em>(2022): 남성이 말한 수면 시간은 성인 초기 약 7.3시간, 35세에 6.8시간으로 줄고 50세까지 비슷해요. <a href=\"https://doi.org/10.1038/s41467-022-34624-8\">논문</a>"
- },
  "92f1af0db7dd": {
   "en": " PlayStation ",
   "t": "PlayStation"
@@ -5311,6 +5311,10 @@
   "en": "Dynasty Warriors and Empires series",
   "t": "진·삼국무쌍 &amp; 엠파이어스 시리즈"
  },
+ "98c7acf7ace7": {
+  "en": "Where the averages come from",
+  "t": "평균은 어디서 왔나"
+ },
  "98df8dd8ca2b": {
   "en": "Enlarge: Painting or drawing, Circa Q2 2013",
   "t": "확대: 그림 또는 스케치, 2013년 2분기경"
@@ -5366,6 +5370,10 @@
  "9a7378f878db": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder movie 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 33: </span> 임시 영화 33"
+ },
+ "9ad4cfc36bda": {
+  "en": " What HRV is and its norms (Frontiers, 2017) ",
+  "t": "심박 변이도란, 그리고 기준 (Frontiers, 2017)"
  },
  "9b3cbed5c490": {
   "en": "Zoom",
@@ -6639,6 +6647,10 @@
   "en": "Diminishing returns",
   "t": "수확 체감"
  },
+ "c01a1211d390": {
+  "en": " Steps by age (Bassett et al.) ",
+  "t": "나이별 걸음 수 (Bassett 외)"
+ },
  "c032adc1ff62": {
   "en": "X",
   "t": "X"
@@ -7762,6 +7774,10 @@
  "dfe2dfa41bf6": {
   "en": "\nIf you got to see my shenanigans, I hope you found it entertaining. Now go outside, touch grass, and drag your dreams\n        from fantasy into reality like I am; truly recommended.\n",
   "t": "내 헛짓거리를 봤다면, 재밌었길 바라. 이제 밖에 나가서 풀 좀 만지고, 나처럼 네 꿈을 판타지에서 현실로 끌어내. 진심으로 추천해."
+ },
+ "dfea54317ced": {
+  "en": "Why HRV matters",
+  "t": "심박 변이도가 중요한 이유"
  },
  "e0036bf9d252": {
   "en": "Enlarge: Salesman and his companion",

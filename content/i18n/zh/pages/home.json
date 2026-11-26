@@ -635,10 +635,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 39: </span> Placeholder movie 39 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 39: </span> 占位电影 39"
  },
- "11f4a487dbaf": {
-  "en": "<strong>The Cooper Institute</strong>, VO₂ max norms by age and sex: for men 30–39, the 40th percentile is 40.5 and the 60th is 44.0, so the line uses the middle, 42.3. <a href=\"https://www8.garmin.com/manuals/webhelp/GUID-0083D0A0-EA6E-41F0-8207-3F1498875E61/EN-US/GUID-1FBCCD9E-19E1-4E4C-BD60-1793B5B97EB3.html\">Table</a>",
-  "t": "<strong>The Cooper Institute</strong>，按年龄和性别的最大摄氧量标准：30–39 岁男性第 40 百分位为 40.5，第 60 百分位为 44.0，所以线取中间值 42.3。<a href=\"https://www8.garmin.com/manuals/webhelp/GUID-0083D0A0-EA6E-41F0-8207-3F1498875E61/EN-US/GUID-1FBCCD9E-19E1-4E4C-BD60-1793B5B97EB3.html\">表格</a>"
- },
  "122babc08c1c": {
   "en": "Not enough days with both numbers.",
   "t": "同时有两项数字的天数不够。"
@@ -663,13 +659,13 @@
   "en": "Enlarge: Painting or drawing, 04/09/2013",
   "t": "放大: 绘画或素描, 2013年4月9日"
  },
+ "130c48532b18": {
+  "en": " Resting heart rate (Oura) ",
+  "t": "静息心率（Oura）"
+ },
  "131260cbfbb0": {
   "en": "Music",
   "t": "音乐"
- },
- "1318b5b85065": {
-  "en": "Where the dashed lines come from",
-  "t": "虚线从哪里来"
  },
  "132a0149f337": {
   "en": "they rise together",
@@ -962,6 +958,10 @@
  "1d23e1eb9609": {
   "en": "Enlarge: Hanging with a Peeta look alike",
   "t": "放大: 和一只长得像 Peeta 的猫玩"
+ },
+ "1d9715eead3d": {
+  "en": " Training guided by HRV (meta-analysis, 2020) ",
+  "t": "按心率变异性安排训练（荟萃分析，2020）"
  },
  "1da305d68390": {
   "en": "Sec",
@@ -2315,6 +2315,10 @@
   "en": "This tab is in Hearth because at the center of it is my body. Tracking it and caring for it is just as important as caring for my family, my pets and healthy friendships.",
   "t": "这个标签页放在“家”里，因为它的中心是我的身体。记录和照顾它，和照顾家人、宠物以及健康的友谊一样重要。"
  },
+ "439be97b8441": {
+  "en": " Sleep by age (Nature Communications) ",
+  "t": "各年龄的睡眠（Nature Communications）"
+ },
  "43b6999af90e": {
   "en": "My profile on Xbox",
   "t": "我的 Xbox 主页"
@@ -2435,10 +2439,6 @@
   "en": "Idle Evolution",
   "t": "Idle Evolution"
  },
- "47eb1c699b77": {
-  "en": "<strong>Oura</strong>, “Average resting heart rate” (2026): men’s average nighttime heart rate by age, 60.2 bpm at 25–29, 61.2 at 30–34, 62.3 at 35–39. <a href=\"https://ouraring.com/blog/average-resting-heart-rate/\">Article</a>",
-  "t": "<strong>Oura</strong>，“Average resting heart rate”（2026）：男性夜间平均心率按年龄，25–29 岁 60.2 次/分，30–34 岁 61.2，35–39 岁 62.3。<a href=\"https://ouraring.com/blog/average-resting-heart-rate/\">文章</a>"
- },
  "481021d04da3": {
   "en": "Every metric over time, one small chart each. Hover a chart and every chart shows the same day, week or month.",
   "t": "每项指标随时间的变化，每项一张小图。把鼠标移到一张图上，所有图都会显示同一天、同一周或同一个月。"
@@ -2482,10 +2482,6 @@
  "4934994652a1": {
   "en": "Tribute shows",
   "t": "致敬演出"
- },
- "493a6ba39dfb": {
-  "en": "<strong>David Bassett and colleagues</strong>, <em>Medicine &amp; Science in Sports &amp; Exercise</em> (2010): US adults took 5,843 steps a day at 18–29, 5,127 at 30–39 and 5,915 at 40–49 (men and women together; men 5,340 overall). <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2927728/\">Paper</a>",
-  "t": "<strong>David Bassett 等</strong>，<em>Medicine &amp; Science in Sports &amp; Exercise</em>（2010）：美国成年人 18–29 岁每天走 5,843 步，30–39 岁 5,127 步，40–49 岁 5,915 步（男女合计；男性整体 5,340 步）。<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2927728/\">论文</a>"
  },
  "496e9438ab65": {
   "en": "Philosophy",
@@ -3355,6 +3351,10 @@
   "en": "Author",
   "t": "作家"
  },
+ "601de7b2b60f": {
+  "en": " VO₂ max norms (Cooper Institute) ",
+  "t": "最大摄氧量标准（Cooper Institute）"
+ },
  "60590f7c8d85": {
   "en": "Minnesota",
   "t": "明尼苏达州"
@@ -3863,6 +3863,10 @@
   "en": "MB",
   "t": "MB"
  },
+ "6ee7cbb3f2cd": {
+  "en": " Low HRV and heart risk (Europace, 2013) ",
+  "t": "低心率变异性与心脏风险（Europace，2013）"
+ },
  "6eef3154b469": {
   "en": "Misaki is hands down my favorite character in the entire series! And this is my favorite series in the \"A Certain...\" world.",
   "t": "食蜂操祈绝对是整个系列里我最喜欢的角色！而这是“某……”世界里我最喜欢的系列。"
@@ -3990,6 +3994,10 @@
  "72e4c52c966a": {
   "en": "LED painting",
   "t": "LED 绘画"
+ },
+ "72eca31f40e4": {
+  "en": " HRV by age (Ultrahuman) ",
+  "t": "各年龄的心率变异性（Ultrahuman）"
  },
  "731b4b42fe78": {
   "en": "Marvel’s Spider-Man Remastered",
@@ -4262,10 +4270,6 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
- },
- "7a849b0e074b": {
-  "en": "<strong>Ultrahuman</strong>, “HRV by age and gender”: men’s median overnight HRV (RMSSD) by decade, 52 ms in their 20s, 45 in their 30s, 40 in their 40s, from over 510,000 ring users. <a href=\"https://www.ultrahuman.com/blog/hrv-by-age-and-gender-whats-normal-for-men-vs-women/\">Article</a>",
-  "t": "<strong>Ultrahuman</strong>，“HRV by age and gender”：男性夜间心率变异性（RMSSD）中位数按年龄段，20 多岁 52 毫秒，30 多岁 45，40 多岁 40，来自超过 51 万名戒指用户。<a href=\"https://www.ultrahuman.com/blog/hrv-by-age-and-gender-whats-normal-for-men-vs-women/\">文章</a>"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -5099,10 +5103,6 @@
   "en": "Yamete kudasai~ (〃ω〃)",
   "t": "雅蠛蝶～ (〃ω〃)"
  },
- "92c22fa9971b": {
-  "en": "<strong>Antoine Coutrot and colleagues</strong>, <em>Nature Communications</em> (2022): men reported about 7.3 hours of sleep in early adulthood, down to 6.8 hours by 35, flat until 50. <a href=\"https://doi.org/10.1038/s41467-022-34624-8\">Paper</a>",
-  "t": "<strong>Antoine Coutrot 等</strong>，<em>Nature Communications</em>（2022）：男性自述成年早期睡约 7.3 小时，35 岁降到 6.8 小时，到 50 岁持平。<a href=\"https://doi.org/10.1038/s41467-022-34624-8\">论文</a>"
- },
  "92f1af0db7dd": {
   "en": " PlayStation ",
   "t": "PlayStation"
@@ -5311,6 +5311,10 @@
   "en": "Dynasty Warriors and Empires series",
   "t": "真·三国无双与帝国系列"
  },
+ "98c7acf7ace7": {
+  "en": "Where the averages come from",
+  "t": "平均值从哪里来"
+ },
  "98df8dd8ca2b": {
   "en": "Enlarge: Painting or drawing, Circa Q2 2013",
   "t": "放大: 绘画或素描, 约 2013 年第 2 季度"
@@ -5366,6 +5370,10 @@
  "9a7378f878db": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder movie 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 33: </span> 占位电影 33"
+ },
+ "9ad4cfc36bda": {
+  "en": " What HRV is and its norms (Frontiers, 2017) ",
+  "t": "心率变异性是什么及其标准（Frontiers，2017）"
  },
  "9b3cbed5c490": {
   "en": "Zoom",
@@ -6639,6 +6647,10 @@
   "en": "Diminishing returns",
   "t": "收益递减"
  },
+ "c01a1211d390": {
+  "en": " Steps by age (Bassett et al.) ",
+  "t": "各年龄的步数（Bassett 等）"
+ },
  "c032adc1ff62": {
   "en": "X",
   "t": "X"
@@ -7762,6 +7774,10 @@
  "dfe2dfa41bf6": {
   "en": "\nIf you got to see my shenanigans, I hope you found it entertaining. Now go outside, touch grass, and drag your dreams\n        from fantasy into reality like I am; truly recommended.\n",
   "t": "如果你看过我的那些胡闹，希望你看得开心。现在出门去，摸摸草，像我一样把你的梦想从幻想拖进现实；真心推荐。"
+ },
+ "dfea54317ced": {
+  "en": "Why HRV matters",
+  "t": "为什么心率变异性重要"
  },
  "e0036bf9d252": {
   "en": "Enlarge: Salesman and his companion",

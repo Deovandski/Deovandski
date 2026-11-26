@@ -9,6 +9,7 @@ week, nights after exercise or a rest day, and which kinds of exercise count). T
 |---|---|
 | `story.md` | The tab's text ("The body is the temple"). Edit it by hand. |
 | `daily.json` | One line per day: the numbers below. Written by `scripts/biomarkers-from-takeout.mjs`; don't edit it by hand. |
+| `norms.json` | The dashed "men my age" lines: for each metric, [age, value] points from a study, the line's label, and the study's link (shown in the tab's Links box). Ages count from the middle of `bornYear`: the exact birthday stays out of the repo. Edit it by hand. |
 
 The page gets the data from `/biomarkers.json` (`src/pages/biomarkers.json.ts`), which adds each day's total exercise
 (`exMin`) to `daily.json`. The lab marks exercise days (any ticked kind) and the nights after them. The lab only downloads it
