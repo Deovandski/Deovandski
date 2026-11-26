@@ -12,7 +12,9 @@ week, nights after exercise or a rest day, and which kinds of exercise count). T
 | `norms.json` | The dashed "men my age" lines: for each metric, [age, value] points from a study, the line's label, and the study's link (shown in the tab's Links box). Ages count from the middle of `bornYear`: the exact birthday stays out of the repo. Edit it by hand. |
 
 The page gets the data from `/biomarkers.json` (`src/pages/biomarkers.json.ts`), which adds each day's total exercise
-(`exMin`) to `daily.json`. The lab marks exercise days (any ticked kind) and the nights after them. The lab only downloads it
+(`exMin`) and an estimated cardio fitness (`vo2`) to `daily.json`. Fitbit's own cardio fitness score isn't read: the
+estimate is the heart rate ratio method, VO₂ max ≈ 15.3 × HRmax ÷ resting heart rate (Uth et al. 2004), with HRmax =
+208 − 0.7 × age (Tanaka et al. 2001). The lab marks exercise days (any ticked kind) and the nights after them. The lab only downloads it
 the first time it's opened, so the home page stays light.
 
 ## What's in daily.json
@@ -24,7 +26,6 @@ the first time it's opened, so the home page stays light.
 | `spo2` | Blood oxygen, % | `Daily Oxygen Saturation/` |
 | `resp` | Breathing rate while asleep, breaths a minute | `Daily Respiratory Rate/` |
 | `ready` | Readiness score (from September 2024) | `Daily Readiness/` |
-| `vo2` | Cardio fitness (VO₂ max) | `Demographic Vo2max/` |
 | `skinC` | Skin temperature at night, °C (the tab shows °F) | `Daily Sleep Temperature Derivations/` |
 | `stress` | Stress score | `Stress Score/Stress Score.csv` |
 | `sleepMin`, `bedH` | Minutes asleep and bedtime (hour of the day; past midnight counts on, so 1 am is 25) | `Health Fitness Data_GoogleData/UserSleeps_*.csv` |

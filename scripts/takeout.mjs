@@ -43,7 +43,7 @@ for (const script of checkOnly ? [] : ['cycling-from-takeout.mjs', 'biomarkers-f
 // ---- privacy check ----
 const ALLOWED = {
   rides: { top: ['exported', 'medianKmh', 'rides'], item: ['date', 'hour', 'minutes', 'km', 'kind', 'how', 'source', 'estimated', 'hr', 'kcal', 'climbM'], list: 'rides' },
-  daily: { top: ['exported', 'tz', 'days'], item: ['date', 'rhr', 'hrv', 'spo2', 'resp', 'ready', 'vo2', 'skinC', 'stress', 'sleepMin', 'bedH', 'sleepScore', 'deep', 'rem', 'steps', 'azm', 'exWalk', 'exBike', 'exCardio', 'exRun', 'exStrength', 'exOther'], list: 'days' },
+  daily: { top: ['exported', 'tz', 'days'], item: ['date', 'rhr', 'hrv', 'spo2', 'resp', 'ready', 'skinC', 'stress', 'sleepMin', 'bedH', 'sleepScore', 'deep', 'rem', 'steps', 'azm', 'exWalk', 'exBike', 'exCardio', 'exRun', 'exStrength', 'exOther'], list: 'days' },
   fat: { top: ['note', 'years'], item: ['year', 'percent', 'readings'], list: 'years' },
 };
 const problems = [];

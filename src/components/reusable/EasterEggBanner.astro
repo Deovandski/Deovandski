@@ -16,7 +16,8 @@
  *   document.querySelector('[data-egg="ara-ara"]').hidden = false;
  *
  * `floating` pins it to the bottom of the screen (for eggs that aren't tied to one section);
- * it then also closes with Escape and moves keyboard focus to its Close button.
+ * it then also closes with Escape (through CloseWatcher where the browser has it, so Escape closes the banner
+ * and not what's behind it) and moves keyboard focus to its Close button.
  */
 interface Props {
   /** Name your script uses to find and show it: data-egg="<name>". */
@@ -134,12 +135,24 @@ const titleId = `egg-${name}-title`;
     const close = egg.querySelector<HTMLButtonElement>('.egg__close')!;
     const floating = egg.classList.contains('egg--floating');
     let returnTo: HTMLElement | null = null;
+    // Where the browser has CloseWatcher, Escape (and a phone's back button) closes the banner through it, so it
+    // closes this banner first and not whatever opened it (a Play box has its own watcher).
+    type Watcher = { destroy(): void; onclose: (() => void) | null };
+    const CW = (window as unknown as { CloseWatcher?: new () => Watcher }).CloseWatcher;
+    let watcher: Watcher | null = null;
 
     const onShow = () => {
       if (img?.dataset.src && !img.getAttribute('src')) img.src = img.dataset.src;
       if (floating) {
         returnTo = document.activeElement as HTMLElement | null;
         close.focus({ preventScroll: true });
+        if (CW && !watcher) {
+          watcher = new CW();
+          watcher.onclose = () => {
+            watcher = null;
+            hide();
+          };
+        }
       }
     };
     new MutationObserver(() => {
@@ -147,11 +160,13 @@ const titleId = `egg-${name}-title`;
     }).observe(egg, { attributes: true, attributeFilter: ['hidden'] });
 
     const hide = () => {
+      watcher?.destroy();
+      watcher = null;
       egg.hidden = true;
       if (floating && returnTo?.isConnected) returnTo.focus({ preventScroll: true });
     };
     close.addEventListener('click', hide);
-    if (floating) {
+    if (floating && !CW) {
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && !egg.hidden) hide();
       });

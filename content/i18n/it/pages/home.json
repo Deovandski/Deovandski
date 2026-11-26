@@ -303,6 +303,10 @@
   "en": "Let me go",
   "t": "Lasciami andare"
  },
+ "08022eba4187": {
+  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Exercise is anything\n    the watch logged for 10 minutes or more: walks, rides, the elliptical, runs, swims. Cardio fitness is estimated from\n    each day's resting heart rate and my age (the heart rate ratio method). Dates and numbers only: no places.\n    The dashed lines are other people: men my age (born in 1993), from studies and other devices that measure a little\n    differently, so read them as a rough guide. Where they come from is in this tab's Links box.\n",
+  "t": "Dal mio Pixel Watch, tramite Google Health, da aprile 2023 a novembre 2026 (esportati il 2026-11-26). L’esercizio è tutto ciò che l’orologio ha registrato per 10 minuti o più: camminate, giri in bici, l’ellittica, corse, nuoto. La forma cardio è stimata dalla frequenza cardiaca a riposo di ogni giorno e dalla mia età (il metodo del rapporto tra frequenze cardiache). Solo date e numeri: nessun luogo. Le linee tratteggiate sono altre persone: uomini della mia età (nati nel 1993), da studi e altri dispositivi che misurano in modo un po’ diverso, quindi prendile come una guida approssimativa. Le fonti sono nel riquadro dei link di questa scheda."
+ },
  "081afbace830": {
   "en": "Traveler",
   "t": "Viaggiatore"
@@ -523,6 +527,10 @@
   "en": "🤘 Seen live",
   "t": "🤘 Visti dal vivo"
  },
+ "0f197bc2e46c": {
+  "en": "Cardio fitness (estimated VO₂ max)",
+  "t": "Forma cardio (VO₂ max stimato)"
+ },
  "0f249e4e5aa1": {
   "en": "MS",
   "t": "MS"
@@ -670,6 +678,10 @@
  "132a0149f337": {
   "en": "they rise together",
   "t": "salgono insieme"
+ },
+ "133762fdd79a": {
+  "en": "Who's that running after the bike?",
+  "t": "Chi sta correndo dietro alla bici?"
  },
  "1349608b58ab": {
   "en": "25 h",
@@ -846,6 +858,10 @@
  "1945ca5513cf": {
   "en": " TE ",
   "t": "TE"
+ },
+ "195b43118da8": {
+  "en": "The body is the temple, and the engine most people forget to maintain. We pour everything outward. Save some care and love for yourself.",
+  "t": "Il corpo è il tempio, e il motore che quasi tutti dimenticano di curare. Riversiamo tutto verso l’esterno. Tieni un po’ di cura e di amore per te."
  },
  "195e0030ff82": {
   "en": "d6",
@@ -1387,10 +1403,6 @@
   "en": "Close to 12 years old but still kicking",
   "t": "Quasi 12 anni, ma ancora in forma"
  },
- "285c1b0998a6": {
-  "en": "The body is the temple, and the engine that so many people don’t watch out for. We put all our energy and attention outward. Care for yourself and love yourself too.",
-  "t": "Il corpo è il tempio, e il motore di cui tanta gente non si prende cura. Mettiamo tutta la nostra energia e attenzione verso l’esterno. Prenditi cura di te e vogliti bene anche tu."
- },
  "2888f01fb635": {
   "en": "Morning by the river",
   "t": "Mattina sul fiume"
@@ -1822,6 +1834,10 @@
  "345851f87103": {
   "en": "Deovandski's hub: software, books, travel and games.",
   "t": "L’angolo di Deovandski: software, libri, viaggi e giochi."
+ },
+ "348796fc8af1": {
+  "en": " VO₂ max from heart rates (Uth et al., 2004) ",
+  "t": "VO₂ max dalla frequenza cardiaca (Uth et al., 2004)"
  },
  "348928d6f5be": {
   "en": "Resting heart rate",
@@ -2311,10 +2327,6 @@
   "en": "Energy",
   "t": "Energia"
  },
- "43954ee875dc": {
-  "en": "This tab is in Hearth because at the center of it is my body. Tracking it and caring for it is just as important as caring for my family, my pets and healthy friendships.",
-  "t": "Questa scheda è in Focolare perché al suo centro c’è il mio corpo. Seguirlo e prendermene cura è importante quanto prendermi cura della mia famiglia, dei miei animali e di amicizie sane."
- },
  "439be97b8441": {
   "en": " Sleep by age (Nature Communications) ",
   "t": "Sonno per età (Nature Communications)"
@@ -2390,6 +2402,10 @@
  "46156a5660a4": {
   "en": "Deo in 2026 running a race with both arms raised",
   "t": "Deo nel 2026 durante una corsa con entrambe le braccia alzate"
+ },
+ "467918b8adcb": {
+  "en": "Ursu Sintasus",
+  "t": "Ursu Sintasus"
  },
  "468d79c2e022": {
   "en": "Rock",
@@ -2518,6 +2534,10 @@
  "4aace3557060": {
   "en": "Enlarge: Quite the stretch",
   "t": "Ingrandisci: Che stiracchiata"
+ },
+ "4ab1376befeb": {
+  "en": "Play the ride",
+  "t": "Avvia il giro"
  },
  "4ad51e59a5be": {
   "en": " Fine line ",
@@ -3747,10 +3767,6 @@
   "en": "Deo and his parents smiling at a race finish, showing their medals",
   "t": "Deo e i suoi genitori sorridono al traguardo di una corsa, mostrando le medaglie"
  },
- "6b33872b3a61": {
-  "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Exercise is anything\n    the watch logged for 10 minutes or more: walks, rides, the elliptical, runs, swims. Dates and numbers only: no places.\n    The dashed lines are other people: men my age (born in 1993), from studies and other devices that measure a little\n    differently, so read them as a rough guide. Where they come from is in this tab's Links box.\n",
-  "t": "Dal mio Pixel Watch, tramite Google Health, da aprile 2023 a novembre 2026 (esportato il 2026-11-26). L’esercizio è tutto ciò che l’orologio ha registrato per 10 minuti o più: camminate, pedalate, l’ellittica, corse, nuotate. Solo date e numeri: nessun luogo. Le linee tratteggiate sono altre persone: uomini della mia età (nati nel 1993), da studi e altri dispositivi che misurano in modo un po’ diverso, quindi un riferimento approssimativo. Da dove vengono è nel riquadro Links di questa scheda."
- },
  "6b39b73a4a6a": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#27: </span>Best of the Worst: Vampire Assassin, Hack-O-Lantern, and Cathy's Curse",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#27: </span>Best of the Worst: Vampire Assassin, Hack-O-Lantern, and Cathy's Curse"
@@ -4315,6 +4331,10 @@
   "en": "I wanna play",
   "t": "Voglio giocare"
  },
+ "7bcd7423cbe4": {
+  "en": "That’s why this tab lives in Hearth: my body is at the center of it all, and looking after it matters as much as looking after my family, my pets and healthy friendships.",
+  "t": "Ecco perché questa scheda sta in Focolare: al centro di tutto c’è il mio corpo, e prendermene cura conta quanto prendermi cura della mia famiglia, dei miei animali e delle amicizie sane."
+ },
  "7c10807e67d0": {
   "en": "I am getting old",
   "t": "Sto invecchiando"
@@ -4703,6 +4723,10 @@
   "en": "Dead Island 2",
   "t": "Dead Island 2"
  },
+ "87867de70103": {
+  "en": "These are its gauges, logged by my watch every day since April 2023. Slice them any way you like, and see what exercise does to them.",
+  "t": "Questi sono i suoi indicatori, registrati dal mio orologio ogni giorno da aprile 2023. Affettali come vuoi e guarda cosa ci fa l’esercizio."
+ },
  "879e32326c52": {
   "en": "Year",
   "t": "Anno"
@@ -4918,10 +4942,6 @@
  "8e38c2784d21": {
   "en": "Much tired",
   "t": "Stanchissima"
- },
- "8e4cd13e1138": {
-  "en": "The body is a machine, and like any other machine, it needs to be cared for. These are its gauges: what my watch has logged every day since April 2023. Slice them any way you like, and see what exercise does to them.",
-  "t": "Il corpo è una macchina e, come ogni altra macchina, ha bisogno di cure. Questi sono i suoi indicatori: quello che il mio orologio ha registrato ogni giorno da aprile 2023. Sezionali come vuoi e guarda cosa fa loro l’esercizio."
  },
  "8e4e0408b8f6": {
   "en": "pearls",
@@ -5303,6 +5323,10 @@
   "en": "Pope Deo",
   "t": "Papa Deo"
  },
+ "989ad0d2851a": {
+  "en": "Ursu Sintasus in Spore: a cream-white creature with moose antlers, big orange eyes, a wide smile and black-striped arms and legs.",
+  "t": "Ursu Sintasus in Spore: una creatura bianco crema con corna d’alce, grandi occhi arancioni, un gran sorriso e braccia e gambe a strisce nere."
+ },
  "98a9de144013": {
   "en": "I wonder what dinner will be",
   "t": "Chissà cosa c’è per cena"
@@ -5358,10 +5382,6 @@
  "9a60e3345c8c": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#8: </span>Best of the Worst: Black Spine Raffle",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#8: </span>Best of the Worst: Black Spine Raffle"
- },
- "9a614628eb58": {
-  "en": "Cardio fitness (VO₂ max)",
-  "t": "Forma cardio (VO₂ max)"
  },
  "9a6a49a5317f": {
   "en": "EM",
@@ -6562,6 +6582,10 @@
  "bca97bae09e1": {
   "en": " Xbox  ·  estimated ",
   "t": "Xbox  ·  stimate"
+ },
+ "bcbe77311c7a": {
+  "en": "The explorer, (mostly) friendly race I created in Spore. They went on to conquer hundreds of planets, until the save file grew past 1.3 GB and got corrupted.",
+  "t": "La razza esploratrice e (quasi sempre) amichevole che ho creato in Spore. Hanno conquistato centinaia di pianeti, finché il salvataggio non ha superato 1,3 GB e si è corrotto."
  },
  "bcf9f12dccef": {
   "en": " Days of my life ",
@@ -7807,6 +7831,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Shingeki no Kyojin (Attack on Titan) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 4: </span> Shingeki no Kyojin (L'attacco dei giganti)"
  },
+ "e1038f5c447c": {
+  "en": "More of my games on the Gamer tab",
+  "t": "Altri miei giochi nella scheda Gamer"
+ },
  "e137f1441633": {
   "en": "Captain Bidu",
   "t": "Capitano Bidu"
@@ -7862,6 +7890,10 @@
  "e259a950cc03": {
   "en": "961 h",
   "t": "961 h"
+ },
+ "e277ff218486": {
+  "en": "How cardio fitness is estimated",
+  "t": "Come si stima la forma cardio"
  },
  "e2ce44da53e6": {
   "en": "Sleep score",
@@ -8454,6 +8486,10 @@
  "f6f88a0b2392": {
   "en": "Much tasty",
   "t": "Buonissimo"
+ },
+ "f721478c1c58": {
+  "en": " Maximal heart rate by age (Tanaka et al., 2001) ",
+  "t": "Frequenza cardiaca massima per età (Tanaka et al., 2001)"
  },
  "f741561b264b": {
   "en": "The Defenders of Ordo did not fall to an army at the gates. They fell to one another. Their quarrels were fed by the charms of a spider-god of doll-like countenance, who lurked in the Rotten Unknown and wielded powers never fathomed. Thus the fellowship was undone from within, and its defenders passed into history. Yet to this day, the people of Ordo still speak of the Prince who pleased himself into the ley lines, an episode upon which the court chroniclers have respectfully declined to elaborate.",
