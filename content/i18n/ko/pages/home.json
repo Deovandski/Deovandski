@@ -335,6 +335,10 @@
   "en": "LP",
   "t": "LP"
  },
+ "0861a9d5e48d": {
+  "en": "A Framework Laptop 16 with LED Matrix modules on both sides of the keyboard, chevrons on the left and text on the right, with the app open on screen",
+  "t": "키보드 양옆에 LED Matrix 모듈을 단 Framework Laptop 16: 왼쪽엔 셰브론, 오른쪽엔 글자, 화면엔 앱이 열려 있다"
+ },
  "0888f6115d4d": {
   "en": "Skin tone 2",
   "t": "피부색 2"
@@ -3123,6 +3127,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder TV show 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 15: </span> 임시 TV 프로그램 15"
  },
+ "546189d2d14b": {
+  "en": "A light Windows tray app for the Framework Laptop 16 LED Matrix modules: draw, animate and write text on both sides of the keyboard, and the LEDs turn themselves off when I dock and close the lid. C#, .NET 10 and WPF, no admin rights, no telemetry.",
+  "t": "Framework Laptop 16의 LED Matrix 모듈을 위한 가벼운 Windows 트레이 앱: 키보드 양쪽에 그림을 그리고, 애니메이션을 돌리고, 글자를 쓰며, 도킹하고 덮개를 닫으면 LED가 알아서 꺼진다. C#, .NET 10, WPF로 만들었고 관리자 권한도, 원격 측정도 없다."
+ },
  "547f769f215d": {
   "en": " TrueAchievements ",
   "t": "TrueAchievements"
@@ -4503,6 +4511,10 @@
   "en": "Spyro Reignited Trilogy",
   "t": "Spyro Reignited Trilogy"
  },
+ "78f180503162": {
+  "en": " Deo’s Framework 16 LED Matrix Manager <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">November 2026</span> ",
+  "t": "Deo’s Framework 16 LED Matrix Manager <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">2026년 11월</span>"
+ },
  "78fadeed7303": {
   "en": "{n} ball in the bag",
   "t": "가방에 볼 {n}개"
@@ -5834,6 +5846,10 @@
  "9e4dc992f238": {
   "en": "Autism and airplanes",
   "t": "자폐와 비행기"
+ },
+ "9e774ec78219": {
+  "en": " Microsoft Store ",
+  "t": "Microsoft Store"
  },
  "9eaeaf3ae148": {
   "en": "Minecraft: Xbox One Edition",
@@ -9002,10 +9018,6 @@
  "f813212f2d43": {
   "en": "China is wide enough for five time zones, but the whole country runs on one clock: Beijing time.",
   "t": "중국은 시간대가 다섯 개여도 될 만큼 넓지만, 나라 전체가 시계 하나로 움직여: 베이징 시간."
- },
- "f84872e84d43": {
-  "en": " F16 LED Matrix Mgr ",
-  "t": "F16 LED Matrix Mgr"
  },
  "f84d1ceb9541": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder movie 32 ",

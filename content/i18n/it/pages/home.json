@@ -335,6 +335,10 @@
   "en": "LP",
   "t": "LP"
  },
+ "0861a9d5e48d": {
+  "en": "A Framework Laptop 16 with LED Matrix modules on both sides of the keyboard, chevrons on the left and text on the right, with the app open on screen",
+  "t": "Un Framework Laptop 16 con moduli LED Matrix ai due lati della tastiera: chevron a sinistra, testo a destra e l’app aperta sullo schermo"
+ },
  "0888f6115d4d": {
   "en": "Skin tone 2",
   "t": "Tonalità della pelle 2"
@@ -3123,6 +3127,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder TV show 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 15: </span> Serie segnaposto 15"
  },
+ "546189d2d14b": {
+  "en": "A light Windows tray app for the Framework Laptop 16 LED Matrix modules: draw, animate and write text on both sides of the keyboard, and the LEDs turn themselves off when I dock and close the lid. C#, .NET 10 and WPF, no admin rights, no telemetry.",
+  "t": "Un’app leggera per la barra di sistema di Windows per i moduli LED Matrix del Framework Laptop 16: disegna, anima e scrivi testo ai due lati della tastiera, e i LED si spengono da soli quando collego il dock e chiudo il coperchio. C#, .NET 10 e WPF, niente diritti di amministratore, niente telemetria."
+ },
  "547f769f215d": {
   "en": " TrueAchievements ",
   "t": "TrueAchievements"
@@ -4503,6 +4511,10 @@
   "en": "Spyro Reignited Trilogy",
   "t": "Spyro Reignited Trilogy"
  },
+ "78f180503162": {
+  "en": " Deo’s Framework 16 LED Matrix Manager <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">November 2026</span> ",
+  "t": "Deo’s Framework 16 LED Matrix Manager <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Novembre 2026</span>"
+ },
  "78fadeed7303": {
   "en": "{n} ball in the bag",
   "t": "{n} palla nella borsa"
@@ -5834,6 +5846,10 @@
  "9e4dc992f238": {
   "en": "Autism and airplanes",
   "t": "Autismo e aerei"
+ },
+ "9e774ec78219": {
+  "en": " Microsoft Store ",
+  "t": "Microsoft Store"
  },
  "9eaeaf3ae148": {
   "en": "Minecraft: Xbox One Edition",
@@ -9002,10 +9018,6 @@
  "f813212f2d43": {
   "en": "China is wide enough for five time zones, but the whole country runs on one clock: Beijing time.",
   "t": "La Cina è abbastanza larga per cinque fusi orari, ma tutto il paese segue un solo orologio: l’ora di Pechino."
- },
- "f84872e84d43": {
-  "en": " F16 LED Matrix Mgr ",
-  "t": "F16 LED Matrix Mgr"
  },
  "f84d1ceb9541": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder movie 32 ",

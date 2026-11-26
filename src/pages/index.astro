@@ -33,6 +33,7 @@ import shotSuperbHawk from '../assets/developer/superb-hawk.png';
 import shotGassyDonkey from '../assets/developer/gassy-donkey.png';
 import shotSinoi from '../assets/developer/sinoi-the-fisherman.png';
 import shotWds from '../assets/developer/wizard-deo-solutions.jpg';
+import shotLedMatrix from '../assets/developer/led-matrix-manager.jpg';
 import { Content as DeathSources } from '../../content/death-sources.md';
 import { Content as AviationSources } from '../../content/aviation-sources.md';
 import { Content as MentorSources } from '../../content/mentor-sources.md';
@@ -78,7 +79,7 @@ const devLinks: LinkItem[] = [
   { href: 'https://www.linkedin.com/in/deovandski/', label: 'LinkedIn' },
   { href: 'https://github.com/Deovandski', label: 'GitHub' },
 ];
-// Developer tab's cards (#294): the business on the Software side, the games (oldest first) on the Games side.
+// Developer tab's cards (#294): the business and the LED Matrix Manager (#298) on the Software side, the games (oldest first) on the Games side.
 const softwareCards = [
   {
     title: 'Wizard Deo Solutions',
@@ -86,6 +87,18 @@ const softwareCards = [
     alt: 'The Wizard Deo Solutions logo: a black-and-white cat in a blue wizard hat, holding a glowing crystal staff',
     text: 'My company: ad hoc help across X++, C#, React.js, Power Apps and PHP, for the tough problems in-house devs can’t crack, or the lower-priority work that doesn’t need a tight deadline. Hourly, no subscriptions.',
     links: [{ href: 'https://www.wizarddeosolutions.com/', label: 'Visit the website' }],
+  },
+  {
+    title: 'Deo’s Framework 16 LED Matrix Manager',
+    date: 'November 2026',
+    image: shotLedMatrix,
+    alt: 'A Framework Laptop 16 with LED Matrix modules on both sides of the keyboard, chevrons on the left and text on the right, with the app open on screen',
+    text: 'A light Windows tray app for the Framework Laptop 16 LED Matrix modules: draw, animate and write text on both sides of the keyboard, and the LEDs turn themselves off when I dock and close the lid. C#, .NET 10 and WPF, no admin rights, no telemetry.',
+    links: [
+      { href: 'https://deovandski.github.io/Deo-s-Framework16-LED-Matrix-Manager/', label: 'Visit the website' },
+      { href: 'https://apps.microsoft.com/detail/9PF263W0KCSF?mode=direct', label: 'Microsoft Store' },
+      { href: 'https://github.com/Deovandski/Deo-s-Framework16-LED-Matrix-Manager', label: 'GitHub' },
+    ],
   },
 ];
 const gameCards = [
@@ -124,7 +137,6 @@ const gameCards = [
   },
 ];
 const devHistoryLinks: LinkItem[] = [
-  { href: 'https://deovandski.github.io/Deo-s-Framework16-LED-Matrix-Manager/', label: 'F16 LED Matrix Mgr' },
   { href: 'https://stackoverflow.com/users/4830578/deovandski', label: 'StackOverflow' },
   { href: 'https://stoneridgesoftware.com/author/deovandskis/', label: 'Stoneridge Software posts' },
   { href: 'https://www.linkedin.com/in/deovandski/details/honors/', label: 'SCHEELS Laurel Wreath Award' },
