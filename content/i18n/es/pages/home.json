@@ -335,6 +335,10 @@
   "en": "LP",
   "t": "LP"
  },
+ "0861a9d5e48d": {
+  "en": "A Framework Laptop 16 with LED Matrix modules on both sides of the keyboard, chevrons on the left and text on the right, with the app open on screen",
+  "t": "Un Framework Laptop 16 con módulos LED Matrix a ambos lados del teclado: cheurones a la izquierda, texto a la derecha y la aplicación abierta en pantalla"
+ },
  "0888f6115d4d": {
   "en": "Skin tone 2",
   "t": "Tono de piel 2"
@@ -1358,6 +1362,10 @@
  "25b97064de16": {
   "en": "It’s also here for the same reason as the <a href=\"#gym\">Gym</a>. AuDHD people tend to get stuck inside their own homes and fall behind socially: home is safe, quiet and predictable, and the world outside costs energy. The research lines up with that too:",
   "t": "También está aquí por la misma razón que el <a href=\"#gym\">Gimnasio</a>. Las personas AuDHD tendemos a quedarnos encerradas en casa y a quedarnos atrás socialmente: la casa es segura, tranquila y predecible, y el mundo de fuera cuesta energía. La investigación también lo respalda:"
+ },
+ "2641c8ed7f11": {
+  "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my dad’s 2014 BIDU songs as the music.",
+  "t": "Un burro pedorro corre, salta, embiste con la cabeza y se tira pedos por el Amazonas y el desierto. Esbozado en 2014, empezado en Unity en 2016 y terminado en Godot en 2026, con las canciones BIDU de mi padre, de 2014, como música."
  },
  "2648964f2489": {
   "en": "Enlarge: Painting or drawing, 04/30/2013",
@@ -3123,6 +3131,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder TV show 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Puesto 15: </span> Serie provisional 15"
  },
+ "546189d2d14b": {
+  "en": "A light Windows tray app for the Framework Laptop 16 LED Matrix modules: draw, animate and write text on both sides of the keyboard, and the LEDs turn themselves off when I dock and close the lid. C#, .NET 10 and WPF, no admin rights, no telemetry.",
+  "t": "Una aplicación ligera de la bandeja de Windows para los módulos LED Matrix del Framework Laptop 16: dibuja, anima y escribe texto a ambos lados del teclado, y los LED se apagan solos cuando lo conecto al dock y cierro la tapa. C#, .NET 10 y WPF, sin permisos de administrador ni telemetría."
+ },
  "547f769f215d": {
   "en": " TrueAchievements ",
   "t": "TrueAchievements"
@@ -3726,10 +3738,6 @@
  "63cecca67b70": {
   "en": "Management",
   "t": "Gestión"
- },
- "63d11597f23f": {
-  "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my 2014 BIDU songs as the music.",
-  "t": "Un burro pedorro corre, salta, embiste con la cabeza y se tira pedos por el Amazonas y el desierto. Esbozado en 2014, empezado en Unity en 2016 y terminado en Godot en 2026, con mis canciones BIDU de 2014 como música."
  },
  "63db64b46614": {
   "en": "ᚷ",
@@ -4502,6 +4510,10 @@
  "78eddf4dbab5": {
   "en": "Spyro Reignited Trilogy",
   "t": "Spyro Reignited Trilogy"
+ },
+ "78f180503162": {
+  "en": " Deo’s Framework 16 LED Matrix Manager <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">November 2026</span> ",
+  "t": "Deo’s Framework 16 LED Matrix Manager <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Noviembre de 2026</span>"
  },
  "78fadeed7303": {
   "en": "{n} ball in the bag",
@@ -5834,6 +5846,10 @@
  "9e4dc992f238": {
   "en": "Autism and airplanes",
   "t": "Autismo y aviones"
+ },
+ "9e774ec78219": {
+  "en": " Microsoft Store ",
+  "t": "Microsoft Store"
  },
  "9eaeaf3ae148": {
   "en": "Minecraft: Xbox One Edition",
@@ -9002,10 +9018,6 @@
  "f813212f2d43": {
   "en": "China is wide enough for five time zones, but the whole country runs on one clock: Beijing time.",
   "t": "China es lo bastante ancha para cinco husos horarios, pero todo el país va con un solo reloj: la hora de Pekín."
- },
- "f84872e84d43": {
-  "en": " F16 LED Matrix Mgr ",
-  "t": "F16 LED Matrix Mgr"
  },
  "f84d1ceb9541": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder movie 32 ",

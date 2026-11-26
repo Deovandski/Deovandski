@@ -335,6 +335,10 @@
   "en": "LP",
   "t": "LP"
  },
+ "0861a9d5e48d": {
+  "en": "A Framework Laptop 16 with LED Matrix modules on both sides of the keyboard, chevrons on the left and text on the right, with the app open on screen",
+  "t": "Một chiếc Framework Laptop 16 có mô-đun LED Matrix ở hai bên bàn phím: hình chữ V bên trái, chữ bên phải, và ứng dụng đang mở trên màn hình"
+ },
  "0888f6115d4d": {
   "en": "Skin tone 2",
   "t": "Tông da 2"
@@ -1358,6 +1362,10 @@
  "25b97064de16": {
   "en": "It’s also here for the same reason as the <a href=\"#gym\">Gym</a>. AuDHD people tend to get stuck inside their own homes and fall behind socially: home is safe, quiet and predictable, and the world outside costs energy. The research lines up with that too:",
   "t": "Nó cũng nằm ở đây vì cùng lý do với <a href=\"#gym\">Phòng gym</a>. Người AuDHD hay bị mắc kẹt trong chính ngôi nhà mình và tụt lại về mặt xã hội: nhà thì an toàn, yên tĩnh và đoán trước được, còn thế giới bên ngoài thì tốn năng lượng. Nghiên cứu cũng xác nhận điều này:"
+ },
+ "2641c8ed7f11": {
+  "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my dad’s 2014 BIDU songs as the music.",
+  "t": "Một chú lừa hay đánh rắm chạy, nhảy, húc đầu và đánh rắm khắp Amazon và sa mạc. Phác thảo năm 2014, bắt đầu bằng Unity năm 2016 và hoàn thành bằng Godot năm 2026, với nhạc là các bài hát BIDU bố tôi viết năm 2014."
  },
  "2648964f2489": {
   "en": "Enlarge: Painting or drawing, 04/30/2013",
@@ -3123,6 +3131,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder TV show 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 15: </span> Phim bộ tạm 15"
  },
+ "546189d2d14b": {
+  "en": "A light Windows tray app for the Framework Laptop 16 LED Matrix modules: draw, animate and write text on both sides of the keyboard, and the LEDs turn themselves off when I dock and close the lid. C#, .NET 10 and WPF, no admin rights, no telemetry.",
+  "t": "Một ứng dụng khay hệ thống Windows gọn nhẹ cho các mô-đun LED Matrix của Framework Laptop 16: vẽ, làm hoạt ảnh và viết chữ ở cả hai bên bàn phím, và đèn LED tự tắt khi tôi cắm dock và gập máy. Viết bằng C#, .NET 10 và WPF, không cần quyền quản trị, không thu thập dữ liệu."
+ },
  "547f769f215d": {
   "en": " TrueAchievements ",
   "t": "TrueAchievements"
@@ -3726,10 +3738,6 @@
  "63cecca67b70": {
   "en": "Management",
   "t": "Quản lý"
- },
- "63d11597f23f": {
-  "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my 2014 BIDU songs as the music.",
-  "t": "Một chú lừa hay đánh rắm chạy, nhảy, húc đầu và đánh rắm khắp Amazon và sa mạc. Phác thảo năm 2014, bắt đầu bằng Unity năm 2016 và hoàn thành bằng Godot năm 2026, với nhạc là các bài hát BIDU tôi viết năm 2014."
  },
  "63db64b46614": {
   "en": "ᚷ",
@@ -4502,6 +4510,10 @@
  "78eddf4dbab5": {
   "en": "Spyro Reignited Trilogy",
   "t": "Spyro Reignited Trilogy"
+ },
+ "78f180503162": {
+  "en": " Deo’s Framework 16 LED Matrix Manager <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">November 2026</span> ",
+  "t": "Deo’s Framework 16 LED Matrix Manager <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Tháng 11 năm 2026</span>"
  },
  "78fadeed7303": {
   "en": "{n} ball in the bag",
@@ -5834,6 +5846,10 @@
  "9e4dc992f238": {
   "en": "Autism and airplanes",
   "t": "Tự kỷ và máy bay"
+ },
+ "9e774ec78219": {
+  "en": " Microsoft Store ",
+  "t": "Microsoft Store"
  },
  "9eaeaf3ae148": {
   "en": "Minecraft: Xbox One Edition",
@@ -9002,10 +9018,6 @@
  "f813212f2d43": {
   "en": "China is wide enough for five time zones, but the whole country runs on one clock: Beijing time.",
   "t": "Trung Quốc rộng đủ cho năm múi giờ, nhưng cả nước chạy theo một chiếc đồng hồ: giờ Bắc Kinh."
- },
- "f84872e84d43": {
-  "en": " F16 LED Matrix Mgr ",
-  "t": "F16 LED Matrix Mgr"
  },
  "f84d1ceb9541": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder movie 32 ",

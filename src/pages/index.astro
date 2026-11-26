@@ -33,6 +33,7 @@ import shotSuperbHawk from '../assets/developer/superb-hawk.png';
 import shotGassyDonkey from '../assets/developer/gassy-donkey.png';
 import shotSinoi from '../assets/developer/sinoi-the-fisherman.png';
 import shotWds from '../assets/developer/wizard-deo-solutions.jpg';
+import shotLedMatrix from '../assets/developer/led-matrix-manager.jpg';
 import { Content as DeathSources } from '../../content/death-sources.md';
 import { Content as AviationSources } from '../../content/aviation-sources.md';
 import { Content as MentorSources } from '../../content/mentor-sources.md';
@@ -78,7 +79,7 @@ const devLinks: LinkItem[] = [
   { href: 'https://www.linkedin.com/in/deovandski/', label: 'LinkedIn' },
   { href: 'https://github.com/Deovandski', label: 'GitHub' },
 ];
-// Developer tab's cards (#294): the business on the Software side, the games (oldest first) on the Games side.
+// Developer tab's cards (#294): the business and the LED Matrix Manager (#298) on the Software side, the games (newest first, #298) on the Games side.
 const softwareCards = [
   {
     title: 'Wizard Deo Solutions',
@@ -87,30 +88,20 @@ const softwareCards = [
     text: 'My company: ad hoc help across X++, C#, React.js, Power Apps and PHP, for the tough problems in-house devs can’t crack, or the lower-priority work that doesn’t need a tight deadline. Hourly, no subscriptions.',
     links: [{ href: 'https://www.wizarddeosolutions.com/', label: 'Visit the website' }],
   },
+  {
+    title: 'Deo’s Framework 16 LED Matrix Manager',
+    date: 'November 2026',
+    image: shotLedMatrix,
+    alt: 'A Framework Laptop 16 with LED Matrix modules on both sides of the keyboard, chevrons on the left and text on the right, with the app open on screen',
+    text: 'A light Windows tray app for the Framework Laptop 16 LED Matrix modules: draw, animate and write text on both sides of the keyboard, and the LEDs turn themselves off when I dock and close the lid. C#, .NET 10 and WPF, no admin rights, no telemetry.',
+    links: [
+      { href: 'https://deovandski.github.io/Deo-s-Framework16-LED-Matrix-Manager/', label: 'Visit the website' },
+      { href: 'https://apps.microsoft.com/detail/9PF263W0KCSF?mode=direct', label: 'Microsoft Store' },
+      { href: 'https://github.com/Deovandski/Deo-s-Framework16-LED-Matrix-Manager', label: 'GitHub' },
+    ],
+  },
 ];
 const gameCards = [
-  {
-    title: 'Superb Hawk',
-    date: 'Spring 2014 · back in 2026',
-    image: shotSuperbHawk,
-    alt: 'The Superb Hawk website: a young hawk game from 2014, playable in the browser',
-    text: 'My 2014 college game (XNA for Windows Phone), brought back in Godot. Hold to fly up, let go to glide, eat or starve. Play the 2014 version as it was, or the full game its design document planned.',
-    links: [
-      { href: 'https://deovandski.github.io/Superb-Hawk/', label: 'Play in your browser' },
-      { href: 'https://github.com/Deovandski/Superb-Hawk', label: 'GitHub' },
-    ],
-  },
-  {
-    title: 'Gassy Donkey',
-    date: '2016 · finished in 2026',
-    image: shotGassyDonkey,
-    alt: 'The Gassy Donkey website: a farting donkey runner, started in 2016 and finished in 2026',
-    text: 'A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my 2014 BIDU songs as the music.',
-    links: [
-      { href: 'https://deovandski.github.io/gassy-donkey/', label: 'Play in your browser' },
-      { href: 'https://github.com/Deovandski/gassy-donkey', label: 'GitHub' },
-    ],
-  },
   {
     title: 'Sinoi the Fisherman',
     date: 'Pre-production · production starts Q1 2027',
@@ -122,9 +113,30 @@ const gameCards = [
       { href: 'https://github.com/Deovandski/Sinoi-the-fisherman', label: 'GitHub' },
     ],
   },
+  {
+    title: 'Gassy Donkey',
+    date: '2016 · finished in 2026',
+    image: shotGassyDonkey,
+    alt: 'The Gassy Donkey website: a farting donkey runner, started in 2016 and finished in 2026',
+    text: 'A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my dad’s 2014 BIDU songs as the music.',
+    links: [
+      { href: 'https://deovandski.github.io/gassy-donkey/', label: 'Play in your browser' },
+      { href: 'https://github.com/Deovandski/gassy-donkey', label: 'GitHub' },
+    ],
+  },
+  {
+    title: 'Superb Hawk',
+    date: 'Spring 2014 · back in 2026',
+    image: shotSuperbHawk,
+    alt: 'The Superb Hawk website: a young hawk game from 2014, playable in the browser',
+    text: 'My 2014 college game (XNA for Windows Phone), brought back in Godot. Hold to fly up, let go to glide, eat or starve. Play the 2014 version as it was, or the full game its design document planned.',
+    links: [
+      { href: 'https://deovandski.github.io/Superb-Hawk/', label: 'Play in your browser' },
+      { href: 'https://github.com/Deovandski/Superb-Hawk', label: 'GitHub' },
+    ],
+  },
 ];
 const devHistoryLinks: LinkItem[] = [
-  { href: 'https://deovandski.github.io/Deo-s-Framework16-LED-Matrix-Manager/', label: 'F16 LED Matrix Mgr' },
   { href: 'https://stackoverflow.com/users/4830578/deovandski', label: 'StackOverflow' },
   { href: 'https://stoneridgesoftware.com/author/deovandskis/', label: 'Stoneridge Software posts' },
   { href: 'https://www.linkedin.com/in/deovandski/details/honors/', label: 'SCHEELS Laurel Wreath Award' },

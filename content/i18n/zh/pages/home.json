@@ -335,6 +335,10 @@
   "en": "LP",
   "t": "LP"
  },
+ "0861a9d5e48d": {
+  "en": "A Framework Laptop 16 with LED Matrix modules on both sides of the keyboard, chevrons on the left and text on the right, with the app open on screen",
+  "t": "一台键盘两侧装有 LED Matrix 模块的 Framework Laptop 16：左边是 V 形图案，右边是文字，屏幕上开着这个应用"
+ },
  "0888f6115d4d": {
   "en": "Skin tone 2",
   "t": "肤色 2"
@@ -1358,6 +1362,10 @@
  "25b97064de16": {
   "en": "It’s also here for the same reason as the <a href=\"#gym\">Gym</a>. AuDHD people tend to get stuck inside their own homes and fall behind socially: home is safe, quiet and predictable, and the world outside costs energy. The research lines up with that too:",
   "t": "它放在这里，也和<a href=\"#gym\">健身房</a>是同一个原因。AuDHD人士往往会困在自己家里，在社交上掉队：家里安全、安静、可预测，而外面的世界很耗能量。研究也印证了这一点："
+ },
+ "2641c8ed7f11": {
+  "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my dad’s 2014 BIDU songs as the music.",
+  "t": "一头会放屁的驴在亚马逊和沙漠里奔跑、跳跃、用头撞、放屁。2014 年画草图，2016 年用 Unity 开工，2026 年用 Godot 完成，配乐是我爸爸 2014 年写的 BIDU 歌曲。"
  },
  "2648964f2489": {
   "en": "Enlarge: Painting or drawing, 04/30/2013",
@@ -3123,6 +3131,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder TV show 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 15: </span> 占位剧集 15"
  },
+ "546189d2d14b": {
+  "en": "A light Windows tray app for the Framework Laptop 16 LED Matrix modules: draw, animate and write text on both sides of the keyboard, and the LEDs turn themselves off when I dock and close the lid. C#, .NET 10 and WPF, no admin rights, no telemetry.",
+  "t": "一个为 Framework Laptop 16 的 LED Matrix 模块打造的轻量 Windows 托盘应用：在键盘两侧绘图、做动画、写文字，接上扩展坞合上盖子时 LED 会自动关闭。用 C#、.NET 10 和 WPF 编写，无需管理员权限，没有遥测。"
+ },
  "547f769f215d": {
   "en": " TrueAchievements ",
   "t": "TrueAchievements"
@@ -3726,10 +3738,6 @@
  "63cecca67b70": {
   "en": "Management",
   "t": "管理"
- },
- "63d11597f23f": {
-  "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my 2014 BIDU songs as the music.",
-  "t": "一头会放屁的驴在亚马逊和沙漠里奔跑、跳跃、用头撞、放屁。2014 年画草图，2016 年用 Unity 开工，2026 年用 Godot 完成，配乐是我 2014 年写的 BIDU 歌曲。"
  },
  "63db64b46614": {
   "en": "ᚷ",
@@ -4502,6 +4510,10 @@
  "78eddf4dbab5": {
   "en": "Spyro Reignited Trilogy",
   "t": "Spyro Reignited Trilogy"
+ },
+ "78f180503162": {
+  "en": " Deo’s Framework 16 LED Matrix Manager <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">November 2026</span> ",
+  "t": "Deo’s Framework 16 LED Matrix Manager <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">2026 年 11 月</span>"
  },
  "78fadeed7303": {
   "en": "{n} ball in the bag",
@@ -5834,6 +5846,10 @@
  "9e4dc992f238": {
   "en": "Autism and airplanes",
   "t": "自闭症与飞机"
+ },
+ "9e774ec78219": {
+  "en": " Microsoft Store ",
+  "t": "Microsoft Store"
  },
  "9eaeaf3ae148": {
   "en": "Minecraft: Xbox One Edition",
@@ -9002,10 +9018,6 @@
  "f813212f2d43": {
   "en": "China is wide enough for five time zones, but the whole country runs on one clock: Beijing time.",
   "t": "中国大到可以分五个时区，但全国只用一个时钟：北京时间。"
- },
- "f84872e84d43": {
-  "en": " F16 LED Matrix Mgr ",
-  "t": "F16 LED Matrix Mgr"
  },
  "f84d1ceb9541": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder movie 32 ",
