@@ -87,6 +87,10 @@
   "en": "month",
   "t": "月"
  },
+ "0241a5b7fcf5": {
+  "en": "My business",
+  "t": "我的公司业务"
+ },
  "024a42ce1e4f": {
   "en": "Skin tone 1",
   "t": "肤色 1"
@@ -927,6 +931,10 @@
   "en": "Opera",
   "t": "歌剧"
  },
+ "1a033dcc86e5": {
+  "en": "My 2014 college game (XNA for Windows Phone), brought back in Godot. Hold to fly up, let go to glide, eat or starve. Play the 2014 version as it was, or the full game its design document planned.",
+  "t": "我 2014 年的大学课程游戏（Windows Phone 上的 XNA），用 Godot 重新带回来。按住向上飞，松开滑翔，不吃就饿死。可以玩原汁原味的 2014 版，也可以玩设计文档里规划的完整版。"
+ },
  "1a1599284e10": {
   "en": "Where in the World Was Deo?",
   "t": "Deo 去过哪儿？"
@@ -1542,6 +1550,10 @@
  "2a45982468f2": {
   "en": "Enlarge: Acting cute",
   "t": "放大: 装可爱"
+ },
+ "2a4d5402c166": {
+  "en": " Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Spring 2014 · back in 2026</span> ",
+  "t": "Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">2014 年春 · 2026 年回归</span>"
  },
  "2a7dbc5cf815": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 2: </span> Placeholder movie 2 ",
@@ -2243,6 +2255,10 @@
   "en": "Chelsea Wolfe<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Chelsea Wolfe<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 最爱</span>"
  },
+ "3cf11df930b2": {
+  "en": " Play in your browser ",
+  "t": "在浏览器中游玩"
+ },
  "3cf1e92920dd": {
   "en": "<span class=\"iso-farm__ball\" style=\"--c:#9b59d0\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Amethyst",
   "t": "<span class=\"iso-farm__ball\" style=\"--c:#9b59d0\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>阿米西斯特"
@@ -2554,6 +2570,10 @@
  "46b00befa084": {
   "en": "\"Almost went viral!\" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses.",
   "t": "“差点就火了！”仍然是输，而且比单纯的输更难受，却让人想继续玩下去。当大约 30% 的输是“差点就中”时，人的坚持程度最高。"
+ },
+ "46c6c0a2b847": {
+  "en": " Play the prototype ",
+  "t": "试玩原型"
  },
  "46e490cac450": {
   "en": "bpm",
@@ -3143,6 +3163,10 @@
   "en": " Steam + Xbox + PC  ·  estimated ",
   "t": "Steam + Xbox + PC  ·  估计"
  },
+ "54f1730a3d5e": {
+  "en": "The Gassy Donkey website: a farting donkey runner, started in 2016 and finished in 2026",
+  "t": "Gassy Donkey 网站：一款放屁驴跑酷游戏，2016 年开始，2026 年完成"
+ },
  "54f8e34ce17e": {
   "en": "Likes trickle in a few at a time after you post, so you keep checking.",
   "t": "发帖后，赞一点一点地冒出来，所以你会一直去看。"
@@ -3703,6 +3727,10 @@
   "en": "Magical Mirai, Osaka (2014)",
   "t": "魔法未来，大阪（2014）"
  },
+ "633a693e2f1a": {
+  "en": " Visit the website ",
+  "t": "访问网站"
+ },
  "63407bc19fcb": {
   "en": "5 mana · 4",
   "t": "5 法力 · 4"
@@ -3714,6 +3742,10 @@
  "63c594643e8f": {
   "en": "Patron",
   "t": "Patron"
+ },
+ "63d11597f23f": {
+  "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my 2014 BIDU songs as the music.",
+  "t": "一头会放屁的驴在亚马逊和沙漠里奔跑、跳跃、用头撞、放屁。2014 年画草图，2016 年用 Unity 开工，2026 年用 Godot 完成，配乐是我 2014 年写的 BIDU 歌曲。"
  },
  "63db64b46614": {
   "en": "ᚷ",
@@ -4659,6 +4691,10 @@
   "en": "Enlarge: Painting or drawing, 04/25/2013",
   "t": "放大: 绘画或素描, 2013年4月25日"
  },
+ "7dc733401317": {
+  "en": "My games",
+  "t": "我的游戏"
+ },
  "7dcd5ec1cea0": {
   "en": "\nAnd given how much world lore I created, and that I'm also a technical architect, I put the peanut butter and\n          raspberry jelly together and created a West March D&amp;D campaign with Claude so people can party in my world.\n          Found an issue or have an idea? Open an issue or send a PR on GitHub!\n",
   "t": "既然我创造了这么多世界观，而且我还是技术架构师，我就把花生酱和覆盆子果酱抹在了一起，和 Claude 一起做了一个 West March 风格的 D&amp;D 战役，让大家能在我的世界里尽情冒险。发现问题或有点子？在 GitHub 上提 issue 或发 PR 吧！"
@@ -4678,6 +4714,10 @@
  "7e074539600b": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 37: </span> Placeholder movie 37 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 37: </span> 占位电影 37"
+ },
+ "7e08ebec5e6f": {
+  "en": "Developer",
+  "t": "开发者"
  },
  "7e1aa2608b18": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 38: </span> Placeholder TV show 38 ",
@@ -5307,6 +5347,10 @@
   "en": "Hearth",
   "t": "家"
  },
+ "908fb85ad153": {
+  "en": "My company: ad hoc help across X++, C#, React.js, Power Apps and PHP, for the tough problems in-house devs can’t crack, or the lower-priority work that doesn’t need a tight deadline. Hourly, no subscriptions.",
+  "t": "我的公司：提供 X++、C#、React.js、Power Apps 和 PHP 的临时支持，解决内部开发人员搞不定的难题，或处理没有紧迫期限的低优先级工作。按小时计费，不搞订阅。"
+ },
  "909a7986886c": {
   "en": "Back to Pets",
   "t": "返回宠物"
@@ -5598,6 +5642,10 @@
  "98125dc77105": {
   "en": "Texas",
   "t": "得克萨斯州"
+ },
+ "9856d9122184": {
+  "en": "The Superb Hawk website: a young hawk game from 2014, playable in the browser",
+  "t": "Superb Hawk 网站：2014 年的一款小鹰游戏，可在浏览器中游玩"
  },
  "98615a7d7fc1": {
   "en": "Kanban board",
@@ -6303,6 +6351,10 @@
   "en": "This is a Christian fireplace! (╯°□°)╯",
   "t": "这可是基督教的壁炉！(╯°□°)╯"
  },
+ "ab1428c03f08": {
+  "en": " 💻 Software ",
+  "t": "💻 软件"
+ },
  "ab1960fbc49f": {
   "en": " Booking.com ",
   "t": "Booking.com"
@@ -6514,6 +6566,10 @@
  "b09a83f9fa1d": {
   "en": "Banished",
   "t": "放逐之城"
+ },
+ "b0c9559fb4d2": {
+  "en": "An active, touch-first pixel-art fishing game set in the world of #HusbandOutWorld: fight every fish with taps, slides, flicks and two-finger moves. The prototype already plays in your browser.",
+  "t": "一款以 #HusbandOutWorld 世界为背景、主动操作、触屏优先的像素风钓鱼游戏：用点击、滑动、轻扫和双指操作与每一条鱼搏斗。原型已经可以在浏览器中游玩。"
  },
  "b0d3216d6a9a": {
   "en": "18 photos",
@@ -7111,6 +7167,10 @@
   "en": "Show all 23",
   "t": "显示全部 23 款"
  },
+ "c26acf00539d": {
+  "en": " 🎮 Games ",
+  "t": "🎮 游戏"
+ },
  "c2b41f47a48c": {
   "en": "Defenders of Ordo",
   "t": "奥尔多的守护者"
@@ -7190,6 +7250,10 @@
  "c585c9a92390": {
   "en": "Kuala Lumpur's Petronas Towers were the tallest buildings in the world from 1998 to 2004, and a two-story skybridge joins them.",
   "t": "吉隆坡的双子塔在 1998 到 2004 年是世界最高建筑，由一座两层的天桥相连。"
+ },
+ "c59ed36b1ccf": {
+  "en": " Gassy Donkey <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">2016 · finished in 2026</span> ",
+  "t": "Gassy Donkey <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">2016 年 · 2026 年完成</span>"
  },
  "c5a976de7b52": {
   "en": " CC ",
@@ -7695,6 +7759,10 @@
   "en": "1 year and 257 days",
   "t": "1 年257 天"
  },
+ "d38ca31276ea": {
+  "en": "\nBy no means I consider myself a true game dev, but a guy with too many ideas alongside a brain powered by AuDHD\n            meant I kept exploring stuff! Here's what I cooked so far:\n",
+  "t": "我绝不认为自己是真正的游戏开发者，只是一个点子太多的人，再加上一颗由 AuDHD 驱动的大脑，让我一直在探索各种东西！这是我目前做出来的："
+ },
  "d3959b02a94f": {
   "en": "Overnight",
   "t": "夜间"
@@ -7850,6 +7918,10 @@
  "d74cdcf6827c": {
   "en": "Landed!",
   "t": "着陆了！"
+ },
+ "d755b616422e": {
+  "en": "The Sinoi the Fisherman website: a touch-first pixel-art fishing game in pre-production",
+  "t": "Sinoi the Fisherman 网站：一款正在前期制作中的触屏优先像素风钓鱼游戏"
  },
  "d7688c620ff7": {
   "en": "Back to Tattoo",
@@ -8166,6 +8238,10 @@
  "df59735e1f2b": {
   "en": "SS",
   "t": "SS"
+ },
+ "dfa2d2ac7f75": {
+  "en": "Software or games",
+  "t": "软件还是游戏"
  },
  "dfc22bef9169": {
   "en": "Dragon Cliff 龙崖",
@@ -8871,10 +8947,6 @@
   "en": "A Papal Decree",
   "t": "教宗谕令"
  },
- "f67bc6dad74f": {
-  "en": "Dev",
-  "t": "开发"
- },
  "f6842ab3afca": {
   "en": "Miku",
   "t": "初音未来"
@@ -8898,6 +8970,10 @@
  "f6f88a0b2392": {
   "en": "Much tasty",
   "t": "好好吃"
+ },
+ "f6fc77308b19": {
+  "en": " Sinoi the Fisherman <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Pre-production · production starts Q1 2027</span> ",
+  "t": "Sinoi the Fisherman <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">前期制作 · 2027 年第一季度开始正式制作</span>"
  },
  "f721478c1c58": {
   "en": " Maximal heart rate by age (Tanaka et al., 2001) ",

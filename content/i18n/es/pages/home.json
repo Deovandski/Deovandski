@@ -87,6 +87,10 @@
   "en": "month",
   "t": "mes"
  },
+ "0241a5b7fcf5": {
+  "en": "My business",
+  "t": "Mi empresa"
+ },
  "024a42ce1e4f": {
   "en": "Skin tone 1",
   "t": "Tono de piel 1"
@@ -927,6 +931,10 @@
   "en": "Opera",
   "t": "Ópera"
  },
+ "1a033dcc86e5": {
+  "en": "My 2014 college game (XNA for Windows Phone), brought back in Godot. Hold to fly up, let go to glide, eat or starve. Play the 2014 version as it was, or the full game its design document planned.",
+  "t": "Mi juego de la universidad de 2014 (XNA para Windows Phone), recuperado en Godot. Mantén pulsado para subir, suelta para planear, come o pasa hambre. Juega la versión de 2014 tal como era, o el juego completo que planeaba su documento de diseño."
+ },
  "1a1599284e10": {
   "en": "Where in the World Was Deo?",
   "t": "¿Dónde estuvo Deo?"
@@ -1542,6 +1550,10 @@
  "2a45982468f2": {
   "en": "Enlarge: Acting cute",
   "t": "Ampliar: Poniéndose mono"
+ },
+ "2a4d5402c166": {
+  "en": " Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Spring 2014 · back in 2026</span> ",
+  "t": "Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Primavera de 2014 · de vuelta en 2026</span>"
  },
  "2a7dbc5cf815": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 2: </span> Placeholder movie 2 ",
@@ -2243,6 +2255,10 @@
   "en": "Chelsea Wolfe<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Chelsea Wolfe<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">Favoritos del FITM 2025</span>"
  },
+ "3cf11df930b2": {
+  "en": " Play in your browser ",
+  "t": "Jugar en el navegador"
+ },
  "3cf1e92920dd": {
   "en": "<span class=\"iso-farm__ball\" style=\"--c:#9b59d0\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Amethyst",
   "t": "<span class=\"iso-farm__ball\" style=\"--c:#9b59d0\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Amethyst"
@@ -2554,6 +2570,10 @@
  "46b00befa084": {
   "en": "\"Almost went viral!\" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses.",
   "t": "\"¡Casi se hace viral!\" sigue siendo una derrota, y se siente peor que fallar sin más, pero hace que la gente quiera seguir jugando. La persistencia llega al máximo cuando alrededor del 30 % de las derrotas son casi aciertos."
+ },
+ "46c6c0a2b847": {
+  "en": " Play the prototype ",
+  "t": "Jugar el prototipo"
  },
  "46e490cac450": {
   "en": "bpm",
@@ -3143,6 +3163,10 @@
   "en": " Steam + Xbox + PC  ·  estimated ",
   "t": "Steam + Xbox + PC  ·  estimadas"
  },
+ "54f1730a3d5e": {
+  "en": "The Gassy Donkey website: a farting donkey runner, started in 2016 and finished in 2026",
+  "t": "La web de Gassy Donkey: un runner de un burro pedorro, empezado en 2016 y terminado en 2026"
+ },
  "54f8e34ce17e": {
   "en": "Likes trickle in a few at a time after you post, so you keep checking.",
   "t": "Los me gusta llegan poco a poco después de publicar, así que no paras de mirar."
@@ -3703,6 +3727,10 @@
   "en": "Magical Mirai, Osaka (2014)",
   "t": "Magical Mirai, Osaka (2014)"
  },
+ "633a693e2f1a": {
+  "en": " Visit the website ",
+  "t": "Visitar la web"
+ },
  "63407bc19fcb": {
   "en": "5 mana · 4",
   "t": "5 de maná · 4"
@@ -3714,6 +3742,10 @@
  "63c594643e8f": {
   "en": "Patron",
   "t": "Patron"
+ },
+ "63d11597f23f": {
+  "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my 2014 BIDU songs as the music.",
+  "t": "Un burro pedorro corre, salta, embiste con la cabeza y se tira pedos por el Amazonas y el desierto. Esbozado en 2014, empezado en Unity en 2016 y terminado en Godot en 2026, con mis canciones BIDU de 2014 como música."
  },
  "63db64b46614": {
   "en": "ᚷ",
@@ -4659,6 +4691,10 @@
   "en": "Enlarge: Painting or drawing, 04/25/2013",
   "t": "Ampliar: Pintura o dibujo, 25/04/2013"
  },
+ "7dc733401317": {
+  "en": "My games",
+  "t": "Mis juegos"
+ },
  "7dcd5ec1cea0": {
   "en": "\nAnd given how much world lore I created, and that I'm also a technical architect, I put the peanut butter and\n          raspberry jelly together and created a West March D&amp;D campaign with Claude so people can party in my world.\n          Found an issue or have an idea? Open an issue or send a PR on GitHub!\n",
   "t": "Y como creé tanto lore de mundo, y además soy arquitecto técnico, junté la mantequilla de cacahuete con la mermelada de frambuesa y creé una campaña de D&amp;D West March con Claude para que la gente pueda irse de fiesta por mi mundo. ¿Has encontrado un problema o tienes una idea? ¡Abre una issue o manda un PR en GitHub!"
@@ -4678,6 +4714,10 @@
  "7e074539600b": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 37: </span> Placeholder movie 37 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Puesto 37: </span> Película provisional 37"
+ },
+ "7e08ebec5e6f": {
+  "en": "Developer",
+  "t": "Desarrollador"
  },
  "7e1aa2608b18": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 38: </span> Placeholder TV show 38 ",
@@ -5307,6 +5347,10 @@
   "en": "Hearth",
   "t": "Hogar"
  },
+ "908fb85ad153": {
+  "en": "My company: ad hoc help across X++, C#, React.js, Power Apps and PHP, for the tough problems in-house devs can’t crack, or the lower-priority work that doesn’t need a tight deadline. Hourly, no subscriptions.",
+  "t": "Mi empresa: ayuda puntual en X++, C#, React.js, Power Apps y PHP, para los problemas difíciles que los desarrolladores internos no logran resolver, o para el trabajo de menor prioridad que no necesita un plazo ajustado. Por horas, sin suscripciones."
+ },
  "909a7986886c": {
   "en": "Back to Pets",
   "t": "Volver a Mascotas"
@@ -5598,6 +5642,10 @@
  "98125dc77105": {
   "en": "Texas",
   "t": "Texas"
+ },
+ "9856d9122184": {
+  "en": "The Superb Hawk website: a young hawk game from 2014, playable in the browser",
+  "t": "La web de Superb Hawk: un juego de un joven halcón de 2014, jugable en el navegador"
  },
  "98615a7d7fc1": {
   "en": "Kanban board",
@@ -6303,6 +6351,10 @@
   "en": "This is a Christian fireplace! (╯°□°)╯",
   "t": "¡Esta es una chimenea cristiana! (╯°□°)╯"
  },
+ "ab1428c03f08": {
+  "en": " 💻 Software ",
+  "t": "💻 Software"
+ },
  "ab1960fbc49f": {
   "en": " Booking.com ",
   "t": "Booking.com"
@@ -6514,6 +6566,10 @@
  "b09a83f9fa1d": {
   "en": "Banished",
   "t": "Banished"
+ },
+ "b0c9559fb4d2": {
+  "en": "An active, touch-first pixel-art fishing game set in the world of #HusbandOutWorld: fight every fish with taps, slides, flicks and two-finger moves. The prototype already plays in your browser.",
+  "t": "Un juego de pesca activo en pixel art, pensado para pantallas táctiles y ambientado en el mundo de #HusbandOutWorld: lucha contra cada pez con toques, deslizamientos, golpes rápidos y gestos con dos dedos. El prototipo ya se puede jugar en el navegador."
  },
  "b0d3216d6a9a": {
   "en": "18 photos",
@@ -7111,6 +7167,10 @@
   "en": "Show all 23",
   "t": "Mostrar los 23"
  },
+ "c26acf00539d": {
+  "en": " 🎮 Games ",
+  "t": "🎮 Juegos"
+ },
  "c2b41f47a48c": {
   "en": "Defenders of Ordo",
   "t": "Defensores de Ordo"
@@ -7190,6 +7250,10 @@
  "c585c9a92390": {
   "en": "Kuala Lumpur's Petronas Towers were the tallest buildings in the world from 1998 to 2004, and a two-story skybridge joins them.",
   "t": "Las Torres Petronas de Kuala Lumpur fueron los edificios más altos del mundo de 1998 a 2004, y las une una pasarela de dos pisos."
+ },
+ "c59ed36b1ccf": {
+  "en": " Gassy Donkey <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">2016 · finished in 2026</span> ",
+  "t": "Gassy Donkey <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">2016 · terminado en 2026</span>"
  },
  "c5a976de7b52": {
   "en": " CC ",
@@ -7695,6 +7759,10 @@
   "en": "1 year and 257 days",
   "t": "1 año y 257 días"
  },
+ "d38ca31276ea": {
+  "en": "\nBy no means I consider myself a true game dev, but a guy with too many ideas alongside a brain powered by AuDHD\n            meant I kept exploring stuff! Here's what I cooked so far:\n",
+  "t": "De ninguna manera me considero un desarrollador de juegos de verdad, sino un tío con demasiadas ideas y un cerebro que funciona con AuDHD, ¡así que no he dejado de explorar cosas! Esto es lo que he cocinado hasta ahora:"
+ },
  "d3959b02a94f": {
   "en": "Overnight",
   "t": "Por la noche"
@@ -7850,6 +7918,10 @@
  "d74cdcf6827c": {
   "en": "Landed!",
   "t": "¡Aterrizó!"
+ },
+ "d755b616422e": {
+  "en": "The Sinoi the Fisherman website: a touch-first pixel-art fishing game in pre-production",
+  "t": "La web de Sinoi the Fisherman: un juego de pesca en pixel art pensado para pantallas táctiles, en preproducción"
  },
  "d7688c620ff7": {
   "en": "Back to Tattoo",
@@ -8166,6 +8238,10 @@
  "df59735e1f2b": {
   "en": "SS",
   "t": "SS"
+ },
+ "dfa2d2ac7f75": {
+  "en": "Software or games",
+  "t": "Software o juegos"
  },
  "dfc22bef9169": {
   "en": "Dragon Cliff 龙崖",
@@ -8871,10 +8947,6 @@
   "en": "A Papal Decree",
   "t": "Un Decreto Papal"
  },
- "f67bc6dad74f": {
-  "en": "Dev",
-  "t": "Dev"
- },
  "f6842ab3afca": {
   "en": "Miku",
   "t": "Miku"
@@ -8898,6 +8970,10 @@
  "f6f88a0b2392": {
   "en": "Much tasty",
   "t": "Muy rico"
+ },
+ "f6fc77308b19": {
+  "en": " Sinoi the Fisherman <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Pre-production · production starts Q1 2027</span> ",
+  "t": "Sinoi the Fisherman <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Preproducción · la producción empieza en el T1 de 2027</span>"
  },
  "f721478c1c58": {
   "en": " Maximal heart rate by age (Tanaka et al., 2001) ",

@@ -127,12 +127,12 @@ loose buttons in the tab (#260).
   tab's own data.
 - A box can also hold its own layout in `LinksMenu`'s slot instead of button groups: Death and Mentor put their
   "Shoulders I stand on" reading list there, as a `SourceList` (#268).
-- Today: Dev, Author, Gamer, Influencer, Musician, Anime, BOTW, Death, Mentor, Lust, D&D, Cycling, Biomarker Lab, Aviation and Traveler. Elsewhere (another page or repo) `toggle="own"` gives the box its own Links button.
+- Today: Developer, Author, Gamer, Influencer, Musician, Anime, BOTW, Death, Mentor, Lust, D&D, Cycling, Biomarker Lab, Aviation and Traveler. Elsewhere (another page or repo) `toggle="own"` gives the box its own Links button.
 
 ## In-tab switches
 
-A tab that shows one of two lists (PM | Life hacks, Seen live | Wishlist on Concert and Theater & Opera, TV shows |
-Movies on Potato) uses `PillSwitch` (`src/components/reusable/PillSwitch.astro`, #272) at the top of the tab, under its
+A tab that shows one of two lists (Software | Games on Developer, PM | Life hacks, Seen live | Wishlist on Concert and
+Theater & Opera, TV shows | Movies on Potato) uses `PillSwitch` (`src/components/reusable/PillSwitch.astro`, #272) at the top of the tab, under its
 Links box, followed by one `role="tabpanel"` per option. It's always **centred** in the tab (#270). Give each option a
 `hash`: the link that opens it (`#potato-movies`). The page puts it in the address bar when the switch changes and
 picks the option when that link opens the page.
