@@ -1,0 +1,135 @@
+---
+/**
+ * ProjectCards: a grid of cards, each with a screenshot, a title (with an optional date line), a short explainer and
+ * link buttons. Built for the Developer tab (Wizard Deo Solutions, and the games: #294).
+ *
+ *   ---
+ *   import shot from '../assets/developer/superb-hawk.png';
+ *   ---
+ *   <ProjectCards items={[{
+ *     title: 'Superb Hawk', date: 'Spring 2014 · back in 2026', image: shot, alt: 'The Superb Hawk website',
+ *     text: 'My 2014 college game, brought back in Godot.',
+ *     links: [{ href: 'https://deovandski.github.io/Superb-Hawk/', label: 'Play in your browser' }, { href: 'https://github.com/…', label: 'GitHub' }],
+ *   }]} />
+ *
+ * Props:
+ *   items  [{ title, date?, image?, alt?, text, links }]: image is an imported picture (a screenshot); without one, the
+ *          card shows a plain panel with the title instead. The first link is the main (filled) button, the rest are
+ *          outlined. The screenshot opens bigger in the site's photo viewer (alt is its caption).
+ *   label  what the list is called, for screen readers. Optional.
+ *
+ * Theming: --cards-accent (#39c5bb), --cards-border, --cards-bg, --cards-text, --cards-muted. Reusable on purpose:
+ * it only imports Astro's own image helpers, and it's safe to use several times on a page.
+ */
+import type { ImageMetadata } from 'astro';
+import { Image, getImage } from 'astro:assets';
+
+interface Item {
+  title: string;
+  date?: string;
+  image?: ImageMetadata;
+  alt?: string;
+  text: string;
+  links: { href: string; label: string }[];
+}
+interface Props {
+  items: Item[];
+  label?: string;
+  class?: string;
+}
+const { items, label, class: className } = Astro.props;
+const fulls = await Promise.all(items.map((i) => (i.image ? getImage({ src: i.image, width: Math.min(1800, i.image.width), format: 'webp', quality: 80 }) : null)));
+---
+
+<ul class:list={['project-cards', className]} aria-label={label}>
+  {
+    items.map((item, n) => (
+      <li class="project-cards__card">
+        <div class="project-cards__shot">
+          {item.image ? (
+            <Image src={item.image} alt={item.alt ?? item.title} widths={[400, 800]} sizes="(max-width: 640px) 100vw, 400px" format="webp" quality={75} data-full={fulls[n]?.src} />
+          ) : (
+            <span class="project-cards__placeholder" aria-hidden="true">{item.title}</span>
+          )}
+        </div>
+        <div class="project-cards__body">
+          <h3 class="project-cards__title">
+            {item.title}
+            {item.date && <span class="project-cards__date">{item.date}</span>}
+          </h3>
+          <p class="project-cards__text">{item.text}</p>
+          <p class="project-cards__links">
+            {item.links.map((l, i) => (
+              <a class:list={['project-cards__link', { 'is-main': i === 0 }]} href={l.href} rel="noopener">
+                {l.label}
+              </a>
+            ))}
+          </p>
+        </div>
+      </li>
+    ))
+  }
+</ul>
+
+<style>
+  .project-cards {
+    --_accent: var(--cards-accent, #39c5bb);
+    list-style: none;
+    margin: 1.25rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 17rem), 1fr));
+    gap: 1rem;
+  }
+  .project-cards__card {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--cards-border, color-mix(in srgb, var(--_accent) 35%, transparent));
+    background: var(--cards-bg, rgba(255, 255, 255, 0.04));
+    color: var(--cards-text, inherit);
+  }
+  .project-cards__shot {
+    aspect-ratio: 16 / 10;
+    background: #05060a;
+    border-bottom: 1px solid var(--cards-border, color-mix(in srgb, var(--_accent) 25%, transparent));
+  }
+  .project-cards__shot :global(img) {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    cursor: zoom-in;
+  }
+  .project-cards__placeholder {
+    display: grid;
+    place-items: center;
+    height: 100%;
+    padding: 1rem;
+    font-weight: 800;
+    font-size: 1.3em;
+    text-align: center;
+    color: var(--_accent);
+    background: radial-gradient(circle at 30% 20%, color-mix(in srgb, var(--_accent) 25%, transparent), transparent 70%);
+  }
+  .project-cards__body { display: flex; flex-direction: column; gap: 0.5rem; padding: 0.9rem 1rem 1rem; flex: 1; }
+  .project-cards__title { margin: 0; font-size: 1.15em; line-height: 1.25; }
+  .project-cards__date { display: block; margin-top: 0.2rem; font-size: 0.78em; font-weight: 600; color: var(--_accent); }
+  .project-cards__text { margin: 0; color: var(--cards-muted, inherit); flex: 1; }
+  .project-cards__links { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.25rem 0 0; }
+  .project-cards__link {
+    display: inline-block;
+    padding: 0.4rem 0.9rem;
+    border-radius: 999px;
+    border: 1px solid var(--_accent);
+    color: var(--_accent);
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .project-cards__link.is-main { background: var(--_accent); color: var(--cards-ink, #07040d); }
+  .project-cards__link:hover { filter: brightness(1.1); }
+  .project-cards__link:focus-visible { outline: 2px solid var(--_accent); outline-offset: 2px; }
+</style>

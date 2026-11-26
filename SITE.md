@@ -7,7 +7,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 
 | What | File or folder |
 |---|---|
-| Home page facets (Dev, Author, Influencer) | `src/pages/index.astro` |
+| Home page facets (Developer, Author, Influencer) | `src/pages/index.astro` |
 | A tab's links (the **Links** button right of ▶ Play, and its box) | a `LinksMenu` with `toggle="external"` at the top of the tab's panel; the lists (`devLinks`, `authorLinks`) at the top of `src/pages/index.astro`. Standard: "Tab links" in CLAUDE.md |
 | Influencer tab KitKot game (the phone idle game) | `src/components/reusable/KitKot.astro` (odds and tricks are at the top of its script), behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | Facet tree (which branch each facet sits in, branch blurbs; both levels are A to Z on their own, see CLAUDE.md) | `facets` and `branches` near the top of `src/pages/index.astro`; the build stops if a facet is missing, listed twice, or a branch has more than 6 |

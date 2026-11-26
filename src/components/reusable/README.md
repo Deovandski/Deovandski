@@ -28,6 +28,7 @@ and a project without translations just shows the English.
 | [PhotoQuiz.astro](PhotoQuiz.astro) | Guess where a photo was taken: rounds of photos (10 by default) with multiple-choice answers, a score card, and a helper slot under it who gives one freebie per game (narrows the answers to two), chats now and then, and shares fun facts after some answers. Every word is in the page, so it gets translated. | Traveler tab (Where in the World Was Deo?, #290) |
 | [PixelHammock.astro](PixelHammock.astro) | The chibi pixel character from StageDancer, chilling in a hammock between two palm trees, swaying; opens its eyes while it talks (`data-awake`). Drawn in code, outfit colours as props. | Traveler tab (the game's helper) |
 | [InstallApp.astro](InstallApp.astro) | An "Install app" button for an installable site (PWA): shown only when the browser can install it right now, otherwise a short line on how (open in Chrome on Android, Share → Add to Home Screen on iPhone), and "You're using the installed app" inside the app. | Settings menu (#292) |
+| [ProjectCards.astro](ProjectCards.astro) | A grid of cards, each with a screenshot (or a plain panel), a title with an optional date line, a short explainer and link buttons; the screenshot opens in the photo viewer. | Developer tab (Wizard Deo Solutions, the games, #294) |
 | [ArcadeButton.astro](ArcadeButton.astro) | A big, chunky, old-school push button with one emoji on its cap and a click sound; it sinks when pressed, and as a toggle it stays down and lit while on. | Concert tab (Saturday Night Fever: music, pause, lights) |
 | [YouTube.astro](YouTube.astro) | A privacy-friendly YouTube embed: nothing loads from YouTube until play is pressed, then it plays from youtube-nocookie.com; pauses itself when hidden. 16:9 videos and 9:16 Shorts. | Aviation tab, Cycling tab ("Ridin' with Peeta") |
 | [MetricLab.astro](MetricLab.astro) | Years of daily numbers to slice and dice: group boxes of checkboxes (years, seasons, weekdays and weekends, the nights after an event, which kinds of event count) over five views: small-multiple timelines with a shared hover, the day after an event against the rest, a calendar heatmap, month-by-month lines per year, and a scatter of any two metrics with r. Loads its data file only when first shown. | Biomarker Lab tab (Hearth) |
@@ -39,7 +40,7 @@ and a project without translations just shows the English.
 | [HoursOrbits.astro](HoursOrbits.astro) | Hours as a solar system: the total is the sun, each category a planet sized by its hours with its top items as moons; press a planet to fly in and see every item as a moon. | Gamer tab (a view of Hours by category) |
 | [DaysGrid.astro](DaysGrid.astro) | Hours turned into days: one square per day (24 h) of nonstop play, coloured by category and handed out to items in order, with a mark at each full year. | Gamer tab (a view of Hours by category) |
 | [CartridgeShelf.astro](CartridgeShelf.astro) | One shelf per category, one cartridge per item, each as wide as its hours (one scale for all); hover pulls a cartridge out, estimated ones are dashed. | Gamer tab (a view of Hours by category) |
-| [LinksMenu.astro](LinksMenu.astro) | A drop-down box of link buttons, built from groups of buttons and separators (a line, optionally with a centred heading), opened by its own Links button or by one on the page. Works as an open box without JavaScript. | Every tab's links, from the Links button right of ▶ Play: Dev, Author, Gamer, Influencer, Musician, Anime, BOTW, Death, Mentor, Lust, D&D, Aviation |
+| [LinksMenu.astro](LinksMenu.astro) | A drop-down box of link buttons, built from groups of buttons and separators (a line, optionally with a centred heading), opened by its own Links button or by one on the page. Works as an open box without JavaScript. | Every tab's links, from the Links button right of ▶ Play: Developer, Author, Gamer, Influencer, Musician, Anime, BOTW, Death, Mentor, Lust, D&D, Aviation |
 | [Breadcrumb.astro](Breadcrumb.astro) | A one-line breadcrumb trail that fits its width: the text shrinks to fit, and below a smallest size (11px) the items are cut with "…" instead (full text on hover). Drawn from `items`, or filled by a script. | The home page tab header (#266) |
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
@@ -1069,3 +1070,21 @@ Home Screen; elsewhere, which browsers can. Inside the installed app it says so.
 | `text` | | Replace any of its words: `install`, `installed`, `done`, `android`, `ios`, `other`. |
 
 Theme with `--install-accent`, `--install-ink` and `--install-muted`.
+
+## ProjectCards
+
+A grid of cards: a screenshot on top (it opens bigger in the photo viewer), a title with an optional date line, a short
+explainer, and link buttons (the first one filled, the rest outlined). Without an image, the card shows a plain panel with
+its title.
+
+```astro
+<ProjectCards items={[{ title: 'Superb Hawk', date: 'Spring 2014 · back in 2026', image: shot, alt: 'The Superb Hawk website',
+  text: 'My 2014 college game, brought back in Godot.', links: [{ href: 'https://…', label: 'Play in your browser' }] }]} />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `items` | (required) | `{ title, date?, image?, alt?, text, links }`: `image` is an imported picture; `links` are `{ href, label }`. |
+| `label` | none | What the list is called, for screen readers. |
+
+Theme with `--cards-accent`, `--cards-border`, `--cards-bg`, `--cards-text`, `--cards-muted` and `--cards-ink`.

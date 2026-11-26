@@ -29,6 +29,11 @@ import LinksMenu from '../components/reusable/LinksMenu.astro';
 import Breadcrumb from '../components/reusable/Breadcrumb.astro';
 import SourceList from '../components/reusable/SourceList.astro';
 import PillSwitch from '../components/reusable/PillSwitch.astro';
+import ProjectCards from '../components/reusable/ProjectCards.astro';
+import shotSuperbHawk from '../assets/developer/superb-hawk.png';
+import shotGassyDonkey from '../assets/developer/gassy-donkey.png';
+import shotSinoi from '../assets/developer/sinoi-the-fisherman.png';
+import shotWds from '../assets/developer/wizard-deo-solutions.jpg';
 import { Content as DeathSources } from '../../content/death-sources.md';
 import { Content as AviationSources } from '../../content/aviation-sources.md';
 import { Content as MentorSources } from '../../content/mentor-sources.md';
@@ -52,7 +57,7 @@ import FacetMilestoneEggs from '../components/FacetMilestoneEggs.astro';
 
 type LinkItem = { href: string; label: string };
 
-// Dev tab's Links box: the main links, then "Dev History".
+// Developer tab's Links box: the main links, then "Dev History".
 // The Traveler tab's Links box (#290): where Deo finds odd places, then the tools he plans trips with.
 const travelerLinks = [
   { links: [{ href: 'https://www.atlasobscura.com/', label: 'Atlas Obscura' }] },
@@ -73,6 +78,51 @@ const devLinks: LinkItem[] = [
   { href: 'https://www.wizarddeosolutions.com/', label: 'WDS' },
   { href: 'https://www.linkedin.com/in/deovandski/', label: 'LinkedIn' },
   { href: 'https://github.com/Deovandski', label: 'GitHub' },
+];
+// Developer tab's cards (#294): the business on the Software side, the games (oldest first) on the Games side.
+const softwareCards = [
+  {
+    title: 'Wizard Deo Solutions',
+    image: shotWds,
+    alt: 'The Wizard Deo Solutions logo: a black-and-white cat in a blue wizard hat, holding a glowing crystal staff',
+    text: 'My company: ad hoc help across X++, C#, React.js, Power Apps and PHP, for the tough problems in-house devs can’t crack, or the lower-priority work that doesn’t need a tight deadline. Hourly, no subscriptions.',
+    links: [{ href: 'https://www.wizarddeosolutions.com/', label: 'Visit the website' }],
+  },
+];
+const gameCards = [
+  {
+    title: 'Superb Hawk',
+    date: 'Spring 2014 · back in 2026',
+    image: shotSuperbHawk,
+    alt: 'The Superb Hawk website: a young hawk game from 2014, playable in the browser',
+    text: 'My 2014 college game (XNA for Windows Phone), brought back in Godot. Hold to fly up, let go to glide, eat or starve. Play the 2014 version as it was, or the full game its design document planned.',
+    links: [
+      { href: 'https://deovandski.github.io/Superb-Hawk/', label: 'Play in your browser' },
+      { href: 'https://github.com/Deovandski/Superb-Hawk', label: 'GitHub' },
+    ],
+  },
+  {
+    title: 'Gassy Donkey',
+    date: '2016 · finished in 2026',
+    image: shotGassyDonkey,
+    alt: 'The Gassy Donkey website: a farting donkey runner, started in 2016 and finished in 2026',
+    text: 'A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my 2014 BIDU songs as the music.',
+    links: [
+      { href: 'https://deovandski.github.io/gassy-donkey/', label: 'Play in your browser' },
+      { href: 'https://github.com/Deovandski/gassy-donkey', label: 'GitHub' },
+    ],
+  },
+  {
+    title: 'Sinoi the Fisherman',
+    date: 'Pre-production · production starts Q1 2027',
+    image: shotSinoi,
+    alt: 'The Sinoi the Fisherman website: a touch-first pixel-art fishing game in pre-production',
+    text: 'An active, touch-first pixel-art fishing game set in the world of #HusbandOutWorld: fight every fish with taps, slides, flicks and two-finger moves. The prototype already plays in your browser.',
+    links: [
+      { href: 'https://deovandski.github.io/Sinoi-the-fisherman/', label: 'Play the prototype' },
+      { href: 'https://github.com/Deovandski/Sinoi-the-fisherman', label: 'GitHub' },
+    ],
+  },
 ];
 const devHistoryLinks: LinkItem[] = [
   { href: 'https://deovandski.github.io/Deo-s-Framework16-LED-Matrix-Manager/', label: 'F16 LED Matrix Mgr' },
@@ -190,7 +240,7 @@ const facets = [
   { id: 'cycling', icon: '🚴', label: 'Cycling' },
   { id: 'dnd', icon: '🎲', label: 'D&D' },
   { id: 'death', icon: '💀', label: 'Death' },
-  { id: 'dev', icon: '💻', label: 'Dev' },
+  { id: 'dev', icon: '💻', label: 'Developer' },
   { id: 'family', icon: '👨‍👩‍👦', label: 'Family' },
   { id: 'fishing', icon: '🎣', label: 'Fishing' },
   { id: 'gamer', icon: '🎮', label: 'Gamer' },
@@ -423,6 +473,14 @@ const nf = new Intl.NumberFormat('en-US');
         toggle="external"
         items={[{ links: devLinks }, { separator: 'Dev History' }, { style: 'secondary', links: devHistoryLinks }]}
       />
+      <PillSwitch
+        label="Software or games"
+        options={[
+          { id: 'dev-tab-software', controls: 'dev-software', label: '💻 Software', hash: '#dev' },
+          { id: 'dev-tab-games', controls: 'dev-games', label: '🎮 Games', hash: '#dev-games' },
+        ]}
+      />
+      <div id="dev-software" role="tabpanel" aria-labelledby="dev-tab-software">
       <div class="story">
         <p class="dev-headline">
           Senior Software Engineer, Dynamics 365 F&amp;O Architect, and Founder &amp; CEO of Wizard Deo Solutions.
@@ -440,6 +498,17 @@ const nf = new Intl.NumberFormat('en-US');
           GitHub only has a fraction of my code because of NDAs, but I'm proud of the LED Matrix Manager I cooked up for
           Framework 16 users. StackOverflow? Haven't used it in a long, long while. Times have changed, and it's fun and weird!
         </p>
+        <ProjectCards items={softwareCards} label="My business" />
+      </div>
+      </div>
+      <div id="dev-games" role="tabpanel" aria-labelledby="dev-tab-games" hidden>
+        <div class="story">
+          <p>
+            By no means I consider myself a true game dev, but a guy with too many ideas alongside a brain powered by AuDHD
+            meant I kept exploring stuff! Here's what I cooked so far:
+          </p>
+          <ProjectCards items={gameCards} label="My games" />
+        </div>
       </div>
     </section>
 
@@ -1622,7 +1691,7 @@ const nf = new Intl.NumberFormat('en-US');
     for (const f of b.facets) f.addEventListener('keydown', (e) => onKey(e, b.facets, () => b.button.focus()));
   }
 
-  // In-tab switches (PillSwitch: Potato, PM/Life hacks, Concert, Theater & Opera). Each option carries the link that
+  // In-tab switches (PillSwitch: Developer, Potato, PM/Life hacks, Concert, Theater & Opera). Each option carries the link that
   // opens it (data-switch-hash), e.g. #potato-movies; picking one puts that link in the address bar.
   const switchButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-pill-switch] [data-switch-hash]'));
   document.addEventListener('switch:change', (e) => {
@@ -1630,8 +1699,8 @@ const nf = new Intl.NumberFormat('en-US');
     if (source === 'user' && hash) history.replaceState(history.state, '', hash); // keeps the tab's back entry
   });
 
-  // Old links: #weeb is now #anime, #drummer is now #musician, #biomarkers-rides is now #biomarkers-exercise; #sex is now #lust; #tv and #movie (the old TV/Movie Potato tabs) open the Potato switch.
-  const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies', '#cat': '#pets-peeta', '#sex': '#lust', '#drummer': '#musician', '#biomarkers-rides': '#biomarkers-exercise' };
+  // Old links: #weeb is now #anime, #drummer is now #musician, #biomarkers-rides is now #biomarkers-exercise; #sex is now #lust; #developer (the tab's new name) opens #dev; #tv and #movie (the old TV/Movie Potato tabs) open the Potato switch.
+  const renamed: Record<string, string> = { '#weeb': '#anime', '#tv': '#potato', '#movie': '#potato-movies', '#cat': '#pets-peeta', '#sex': '#lust', '#drummer': '#musician', '#biomarkers-rides': '#biomarkers-exercise', '#developer': '#dev' };
   // Opens the facet a link like #death points to, growing its branch. Returns false if the hash isn't a facet.
   function openFromHash(rawHash: string): boolean {
     const hash = renamed[rawHash] ?? rawHash;

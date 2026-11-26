@@ -87,6 +87,10 @@
   "en": "month",
   "t": "月"
  },
+ "0241a5b7fcf5": {
+  "en": "My business",
+  "t": "俺のビジネス"
+ },
  "024a42ce1e4f": {
   "en": "Skin tone 1",
   "t": "肌の色 1"
@@ -927,6 +931,10 @@
   "en": "Opera",
   "t": "オペラ"
  },
+ "1a033dcc86e5": {
+  "en": "My 2014 college game (XNA for Windows Phone), brought back in Godot. Hold to fly up, let go to glide, eat or starve. Play the 2014 version as it was, or the full game its design document planned.",
+  "t": "2014 年の大学の課題で作ったゲーム（Windows Phone 向け XNA）を Godot で復活させた。押して上昇、離して滑空、食べなければ飢える。2014 年版をそのまま遊ぶことも、設計書が計画していた完全版を遊ぶこともできる。"
+ },
  "1a1599284e10": {
   "en": "Where in the World Was Deo?",
   "t": "Deoはどこにいた？"
@@ -1542,6 +1550,10 @@
  "2a45982468f2": {
   "en": "Enlarge: Acting cute",
   "t": "拡大: かわいいふり"
+ },
+ "2a4d5402c166": {
+  "en": " Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Spring 2014 · back in 2026</span> ",
+  "t": "Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">2014 年春 · 2026 年に復活</span>"
  },
  "2a7dbc5cf815": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 2: </span> Placeholder movie 2 ",
@@ -2243,6 +2255,10 @@
   "en": "Chelsea Wolfe<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Chelsea Wolfe<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 お気に入り</span>"
  },
+ "3cf11df930b2": {
+  "en": " Play in your browser ",
+  "t": "ブラウザでプレイ"
+ },
  "3cf1e92920dd": {
   "en": "<span class=\"iso-farm__ball\" style=\"--c:#9b59d0\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Amethyst",
   "t": "<span class=\"iso-farm__ball\" style=\"--c:#9b59d0\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>アメジスト"
@@ -2554,6 +2570,10 @@
  "46b00befa084": {
   "en": "\"Almost went viral!\" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses.",
   "t": "「バズりかけた！」はやっぱり負けで、普通の負けよりもっと悔しい。なのに、もっと続けたくなる。負けのうち約 30% がニアミスのとき、粘り強さは最大になる。"
+ },
+ "46c6c0a2b847": {
+  "en": " Play the prototype ",
+  "t": "プロトタイプをプレイ"
  },
  "46e490cac450": {
   "en": "bpm",
@@ -3143,6 +3163,10 @@
   "en": " Steam + Xbox + PC  ·  estimated ",
   "t": "Steam + Xbox + PC  ·  推定"
  },
+ "54f1730a3d5e": {
+  "en": "The Gassy Donkey website: a farting donkey runner, started in 2016 and finished in 2026",
+  "t": "Gassy Donkey のウェブサイト：おならをするロバのランナーゲーム、2016 年に始まり 2026 年に完成"
+ },
  "54f8e34ce17e": {
   "en": "Likes trickle in a few at a time after you post, so you keep checking.",
   "t": "投稿のあと、「いいね」が少しずつ届くから、つい何度も確認してしまう。"
@@ -3703,6 +3727,10 @@
   "en": "Magical Mirai, Osaka (2014)",
   "t": "マジカルミライ、大阪（2014）"
  },
+ "633a693e2f1a": {
+  "en": " Visit the website ",
+  "t": "ウェブサイトへ"
+ },
  "63407bc19fcb": {
   "en": "5 mana · 4",
   "t": "マナ 5 · 4"
@@ -3714,6 +3742,10 @@
  "63c594643e8f": {
   "en": "Patron",
   "t": "Patron"
+ },
+ "63d11597f23f": {
+  "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my 2014 BIDU songs as the music.",
+  "t": "おならをするロバが、アマゾンと砂漠を走り、跳び、頭突きし、おならをする。2014 年にスケッチし、2016 年に Unity で始め、2026 年に Godot で完成。音楽は俺が 2014 年に作った BIDU の曲。"
  },
  "63db64b46614": {
   "en": "ᚷ",
@@ -4659,6 +4691,10 @@
   "en": "Enlarge: Painting or drawing, 04/25/2013",
   "t": "拡大: 絵画またはスケッチ, 2013年4月25日"
  },
+ "7dc733401317": {
+  "en": "My games",
+  "t": "俺のゲーム"
+ },
  "7dcd5ec1cea0": {
   "en": "\nAnd given how much world lore I created, and that I'm also a technical architect, I put the peanut butter and\n          raspberry jelly together and created a West March D&amp;D campaign with Claude so people can party in my world.\n          Found an issue or have an idea? Open an issue or send a PR on GitHub!\n",
   "t": "これだけの世界観を作ったうえに、俺はテクニカルアーキテクトでもあるから、ピーナッツバターとラズベリージャムを合わせて、Claude と一緒に West March 形式の D&amp;D キャンペーンを作った。俺の世界でみんなが冒険を楽しめるようにね。問題を見つけた？ アイデアがある？ GitHub で issue を立てるか PR を送ってくれ！"
@@ -4678,6 +4714,10 @@
  "7e074539600b": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 37: </span> Placeholder movie 37 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 37: </span> 仮の映画 37"
+ },
+ "7e08ebec5e6f": {
+  "en": "Developer",
+  "t": "開発者"
  },
  "7e1aa2608b18": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 38: </span> Placeholder TV show 38 ",
@@ -5307,6 +5347,10 @@
   "en": "Hearth",
   "t": "我が家"
  },
+ "908fb85ad153": {
+  "en": "My company: ad hoc help across X++, C#, React.js, Power Apps and PHP, for the tough problems in-house devs can’t crack, or the lower-priority work that doesn’t need a tight deadline. Hourly, no subscriptions.",
+  "t": "俺の会社：X++、C#、React.js、Power Apps、PHP にわたるスポット対応。社内の開発者では解けない難題や、厳しい締め切りのない優先度の低い作業を引き受ける。時間制で、サブスクなし。"
+ },
  "909a7986886c": {
   "en": "Back to Pets",
   "t": "ペットに戻る"
@@ -5598,6 +5642,10 @@
  "98125dc77105": {
   "en": "Texas",
   "t": "テキサス州"
+ },
+ "9856d9122184": {
+  "en": "The Superb Hawk website: a young hawk game from 2014, playable in the browser",
+  "t": "Superb Hawk のウェブサイト：2014 年の若いタカのゲーム、ブラウザでプレイできる"
  },
  "98615a7d7fc1": {
   "en": "Kanban board",
@@ -6303,6 +6351,10 @@
   "en": "This is a Christian fireplace! (╯°□°)╯",
   "t": "ここはクリスチャンの暖炉だぞ！(╯°□°)╯"
  },
+ "ab1428c03f08": {
+  "en": " 💻 Software ",
+  "t": "💻 ソフトウェア"
+ },
  "ab1960fbc49f": {
   "en": " Booking.com ",
   "t": "Booking.com"
@@ -6514,6 +6566,10 @@
  "b09a83f9fa1d": {
   "en": "Banished",
   "t": "Banished"
+ },
+ "b0c9559fb4d2": {
+  "en": "An active, touch-first pixel-art fishing game set in the world of #HusbandOutWorld: fight every fish with taps, slides, flicks and two-finger moves. The prototype already plays in your browser.",
+  "t": "#HusbandOutWorld の世界を舞台にした、アクティブでタッチ操作のピクセルアート釣りゲーム。タップ、スライド、フリック、二本指の操作ですべての魚と戦う。プロトタイプはもうブラウザで遊べる。"
  },
  "b0d3216d6a9a": {
   "en": "18 photos",
@@ -7111,6 +7167,10 @@
   "en": "Show all 23",
   "t": "23本すべて表示"
  },
+ "c26acf00539d": {
+  "en": " 🎮 Games ",
+  "t": "🎮 ゲーム"
+ },
  "c2b41f47a48c": {
   "en": "Defenders of Ordo",
   "t": "オルドの守護者たち"
@@ -7190,6 +7250,10 @@
  "c585c9a92390": {
   "en": "Kuala Lumpur's Petronas Towers were the tallest buildings in the world from 1998 to 2004, and a two-story skybridge joins them.",
   "t": "クアラルンプールのペトロナスツインタワーは1998年から2004年まで世界一高いビルで、2階建てのスカイブリッジでつながっている。"
+ },
+ "c59ed36b1ccf": {
+  "en": " Gassy Donkey <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">2016 · finished in 2026</span> ",
+  "t": "Gassy Donkey <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">2016 年 · 2026 年に完成</span>"
  },
  "c5a976de7b52": {
   "en": " CC ",
@@ -7695,6 +7759,10 @@
   "en": "1 year and 257 days",
   "t": "1年257日"
  },
+ "d38ca31276ea": {
+  "en": "\nBy no means I consider myself a true game dev, but a guy with too many ideas alongside a brain powered by AuDHD\n            meant I kept exploring stuff! Here's what I cooked so far:\n",
+  "t": "俺は決して本物のゲーム開発者だとは思っていない。ただアイデアが多すぎる男で、AuDHD で動く脳のおかげで色々と探求し続けてきた！ これまでに作ったものはこちら："
+ },
  "d3959b02a94f": {
   "en": "Overnight",
   "t": "夜間"
@@ -7851,6 +7919,10 @@
   "en": "Landed!",
   "t": "着地！"
  },
+ "d755b616422e": {
+  "en": "The Sinoi the Fisherman website: a touch-first pixel-art fishing game in pre-production",
+  "t": "Sinoi the Fisherman のウェブサイト：プリプロダクション中のタッチ操作のピクセルアート釣りゲーム"
+ },
  "d7688c620ff7": {
   "en": "Back to Tattoo",
   "t": "タトゥーに戻る"
@@ -7866,6 +7938,10 @@
  "d7a501f83242": {
   "en": "Expert",
   "t": "エキスパート"
+ },
+ "d7b63648b152": {
+  "en": "The Wizard Deo Solutions logo: a black-and-white cat in a blue wizard hat, holding a glowing crystal staff",
+  "t": "Wizard Deo Solutions のロゴ：青い魔法使いの帽子をかぶり、光るクリスタルの杖を持った白黒の猫"
  },
  "d7be16a1d060": {
   "en": "Enlarge: Meeting Big Chungus",
@@ -8166,6 +8242,10 @@
  "df59735e1f2b": {
   "en": "SS",
   "t": "SS"
+ },
+ "dfa2d2ac7f75": {
+  "en": "Software or games",
+  "t": "ソフトウェアかゲームか"
  },
  "dfc22bef9169": {
   "en": "Dragon Cliff 龙崖",
@@ -8871,10 +8951,6 @@
   "en": "A Papal Decree",
   "t": "教皇勅書"
  },
- "f67bc6dad74f": {
-  "en": "Dev",
-  "t": "開発"
- },
  "f6842ab3afca": {
   "en": "Miku",
   "t": "ミク"
@@ -8898,6 +8974,10 @@
  "f6f88a0b2392": {
   "en": "Much tasty",
   "t": "めっちゃうまい"
+ },
+ "f6fc77308b19": {
+  "en": " Sinoi the Fisherman <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Pre-production · production starts Q1 2027</span> ",
+  "t": "Sinoi the Fisherman <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">プリプロダクション · 本制作は 2027 年第 1 四半期から</span>"
  },
  "f721478c1c58": {
   "en": " Maximal heart rate by age (Tanaka et al., 2001) ",
