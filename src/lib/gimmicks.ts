@@ -23,6 +23,7 @@ export const GIMMICKS: GimmickInfo[] = [
   { id: 'kitkot', title: 'KitKot', tab: 'influencer', tabName: 'Influencer', inline: true, n: 8 },
   { id: 'led-painting', title: 'LED painting', tab: 'painting', tabName: 'Painting', n: 9 },
   { id: 'paper-plane', title: 'Paper plane', tab: 'aviation', tabName: 'Aviation', n: 10 },
+  { id: 'photo-shoot', title: 'Photo shoot', tab: 'photographer', tabName: 'Photographer', n: 17 },
   { id: 'pixel-pets', title: 'Pixel pets', tab: 'pets', tabName: 'Pets', n: 11 },
   { id: 'saturday-night-fever', title: 'Saturday Night Fever', tab: 'concert', tabName: 'Concert', inline: true, n: 12 },
   { id: 'tattoo-skin', title: 'Tattoo practice skin', tab: 'tattoo', tabName: 'Tattoo', n: 13 },

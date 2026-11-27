@@ -118,6 +118,9 @@ if (!g) throw new Error(`GimmickPlay: no gimmick for the "${tab}" tab in src/lib
     height: calc(100dvh - 10.5rem);
     min-height: 180px;
   }
+  .gimmick-play.is-immersive :global(.photo-shoot) {
+    --photo-shoot-view-max: calc(100dvh - 7.5rem); /* the viewfinder and the roll fit the short screen */
+  }
   .gimmick-play__exit {
     position: absolute;
     top: calc(env(safe-area-inset-top) + 0.35rem);

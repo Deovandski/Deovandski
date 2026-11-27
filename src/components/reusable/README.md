@@ -23,7 +23,7 @@ and a project without translations just shows the English.
 | [QrCode.astro](QrCode.astro) | A QR code drawn as SVG when the site builds (no JavaScript in the browser), with an optional title above it and the encoded link below it. | QR Code page (`/qr/`) |
 | [VhsPile.astro](VhsPile.astro) | A pile of VHS tapes holding a number of hours of video. Visitors pick the recording speed (SP, LP, EP) and the tapes fall from the top and pile up; they shrink to fit, so it can show a couple of thousand. Canvas, no libraries. | BOTW tab (watch time) |
 | [PaperPlane.astro](PaperPlane.astro) | Fold a paper plane, then throw it: precision decides the distance | Aviation tab |
-| [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing four disco routines (#1 the point, #2 the Night Fever line dance, #3 the hustle, #4 toe stand & point), each with its own tempo, music and difficulty, picked on a View-Master plate (ReelPicker), under spotlights, a mirror ball and a light-up floor, with a beat guide and a fever meter you fill by tapping on the beat and an optional original 8-bit disco loop. | Concert tab, Playground |
+| [StageDancer.astro](StageDancer.astro) + [pixel-deo/sprite.ts](pixel-deo/sprite.ts) | A chibi pixel character (drawn in code by `pixel-deo/sprite.ts`, shared with PhotoShoot; colours as props) dancing four disco routines (#1 the point, #2 the Night Fever line dance, #3 the hustle, #4 toe stand & point), each with its own tempo, music and difficulty, picked on a View-Master plate (ReelPicker), under spotlights, a mirror ball and a light-up floor, with a beat guide and a fever meter you fill by tapping on the beat and an optional original 8-bit disco loop. | Concert tab, Playground |
 | [ReelPicker.astro](ReelPicker.astro) | A View-Master-style picker: cards around the rim of a round plate, seen through a window that shows one card and slivers of its neighbours; drag or swipe to turn the plate, it snaps to a card. `orientation="horizontal"` lays the cards out in a flat row instead, the neighbours coming straight in from the left and right. Each card has a name, a detail line and an art box for a picture. | Concert tab (Saturday Night Fever routines, inside StageDancer); Photographer tab (the photo themes, as a flat horizontal row, inside ThemeGallery) |
 | [PlanetLap.astro](PlanetLap.astro) | How far around a planet a distance goes, Reus-style (the planet cut in half, seen side on), animated like an in-flight map: a little cyclist rides from the start flag, then the map keeps zooming in and out between the nearest places and the far ones, with a next-stop panel and distances to go, fossils under the surface, and an optional chaser that runs after the rider. | Cycling tab (from Fargo, ND), with Ursu Sintasus giving chase |
 | [PhotoQuiz.astro](PhotoQuiz.astro) | Guess where a photo was taken: rounds of photos (10 by default) with multiple-choice answers, a score card, and a helper slot under it who gives one freebie per game (narrows the answers to two), chats now and then, and shares fun facts after some answers. Every word is in the page, so it gets translated. | Traveler tab (Where in the World Was Deo?, #290) |
@@ -46,6 +46,7 @@ and a project without translations just shows the English.
 | [Breadcrumb.astro](Breadcrumb.astro) | A one-line breadcrumb trail that fits its width: the text shrinks to fit, and below a smallest size (11px) the items are cut with "…" instead (full text on hover). Drawn from `items`, or filled by a script. | The home page tab header (#266) |
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
 | [IceFlasher.astro](IceFlasher.astro) | Ice fishing with a working three-colour flasher (based on the Vexilar FL-18): the spinning-LED dial (red, orange, green), working Range, Mode and Gain knobs (press Gain for the 10 IR steps), the motor's whir and ping ticks (Web Audio), and a first-person view of the hole with your rod and a beer on the ice. Scroll or swipe to jig, flick hard when the rod tip flashes (phones buzz), then reel, keeping the Line gauge (SegmentMeter) in the green. | Fishing tab (#310) |
+| [PhotoShoot.astro](PhotoShoot.astro) + [pixel-deo/sprite.ts](pixel-deo/sprite.ts) | A photo shoot through a camera: chibi pixel Deo holds one of 9 meme poses in front of one of 9 backgrounds. The camera body sets ISO, shutter speed and aperture (an exposure meter; background blur; hand shake), the lens (fisheye to 200mm, aimed with arrows), white balance and a filter. Shots go onto a 24-photo roll: ↓ saves a PNG, the Replace roll switch downloads them all as a .zip. | Photographer tab (#318) |
 | [SegmentMeter.astro](SegmentMeter.astro) | A column of lit segments like a graphic-equalizer bar: a level lit from the bottom up (fill), or a scale with one lit segment (marker), one colour or one per segment, updated live through `data-value`. Taken from the Multilingual tab's language levels. | Multilingual tab (language levels), ice fishing (the Line gauge, #314) |
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
 | [KitKot.astro](KitKot.astro) | A parody social app idle game on a phone: post for views, likes and followers on a slot-machine schedule (near misses, a hidden hot post type, fatigue, streaks, energy). "Under the hood" names each trick, with sources. | Influencer tab |
@@ -705,6 +706,48 @@ cover photo, name and photo count. Flip it left or right (drag, swipe, the arrow
 that theme's photos, with a short fade (none with reduced motion). The switch is announced ("Fog and smoke: 6 photos").
 Copy `ReelPicker.astro` and `PhotoGrid.astro` along with it. On the site, `loadThemes()` in `src/lib/gallery.ts` turns a folder
 of theme folders into its `themes`.
+
+## PhotoShoot
+
+```astro
+---
+import PhotoShoot from './reusable/PhotoShoot.astro';
+---
+<PhotoShoot />
+<PhotoShoot stamp="deovandski.com" />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `stamp` | `''` | Text written in the corner of saved photos, before the settings (none when empty). |
+| `label` | a short description | What it is, for screen readers. |
+| `roll` | `24` | Shots on a roll. |
+| `class` | none | Extra class. |
+
+A photo shoot seen through a camera. The viewfinder (left, or on top when narrow) shows chibi pixel Deo standing still
+in the pose you pick: Dab, T-pose, Roll Safe, Shrug, Gigachad, Success Kid, Distracted Boyfriend, Hide the Pain Harold or
+Jojo pose. The backgrounds: Studio, Beach, Neon city, Concert fog (the crowd in front), Snowy woods, Chicago lakefront,
+FITM 2025 stage, Hue throne room (from the King of Hues photo) and The squad (the same hall, five friends in blue áo dài
+and feathered hats behind him). Over the frame: a rule-of-thirds grid, focus brackets, the settings, shots left, the pose
+and an exposure meter (−2 to +2, red when far off).
+
+The camera body: ISO (100 to 6400; brighter and grainier), Shutter (1/1000 to 1/2; slower is brighter, and below 1/60 your
+hands shake into a double image) and Aperture (f/1.4 to f/16; wider is brighter and blurs the background, the friends a
+little less and the crowd in front a little more). Tabs for Lens (Fisheye, 16, 35, 50, 85 and 200mm), White balance
+(Auto, Daylight, Cloudy, Shade, Tungsten, Fluorescent), Filter (None, B&W, Retro, Vivid, Neon, Fog), Background and Pose.
+Arrows aim the camera (the middle button aims back at Deo; a new lens starts aimed at him), and the shutter flashes and
+clicks (Web Audio). On a short screen (a phone turned sideways) the arrows and shutter move into a column of their own.
+
+Photos are 240 × 160 pixels, saved at 1200 × 800 with the stamp line (`stamp · ISO · shutter · f-stop · lens`) in the
+corner. They go onto the roll under the viewfinder: press one to save it as a PNG. Sliding Replace roll downloads the
+whole roll as `deo-photo-roll-<date>.zip` (a plain .zip written in the page, no library) and loads a fresh one; at 24 the
+shutter waits for a fresh roll. Nothing is saved in the browser or sent anywhere.
+
+The character comes from `pixel-deo/sprite.ts` (one source, also used by StageDancer); the friends and backgrounds are
+drawn in the component. Keyboard: the viewfinder takes focus, the arrow keys aim and Space or Enter shoots; the tabs move
+with the arrow keys. Reduced motion skips the white flash. Words the script writes are in a hidden
+`.photo-shoot__strings` block, so they're translated with the page. Theming: `--photo-shoot-accent`,
+`--photo-shoot-view-max` (the viewfinder's tallest height; the ▶ Play box sets it to fit a phone held sideways).
 
 ## SegmentMeter
 
