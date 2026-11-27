@@ -1,0 +1,148 @@
+---
+/**
+ * ThemeGallery: a photo gallery split into themes, picked on a View-Master-style plate turned on its side (#316).
+ * Flip the plate left or right (drag, swipe, the arrow buttons or the arrow keys) and the grid below swaps to that
+ * theme's photos. Each card shows the theme's cover photo, its name and how many photos it has.
+ *
+ * Built from two other components in this folder: ReelPicker (orientation="horizontal") for the plate and PhotoGrid
+ * for each theme's grid, so copy those two along with this file.
+ *
+ *   ---
+ *   import ThemeGallery from './reusable/ThemeGallery.astro';
+ *   const themes = [
+ *     { id: 'all', label: 'All', photos: allPhotos, cover: allPhotos[0] },
+ *     { id: 'fog', label: 'Fog and smoke', photos: fogPhotos, cover: fogPhotos[0] },
+ *   ];
+ *   ---
+ *   <ThemeGallery themes={themes} name="photographer" label="Pick a theme" />
+ *
+ * Props:
+ *   themes   [{ id, label, photos, cover? }] in order; the first is shown first. photos are PhotoGrid photos
+ *            ({ src, alt, ... }); cover is one of them (default: the first).
+ *   name     the photo viewer's gallery name; each theme's grid is "<name>-<id>", so ‹ › stay inside the theme.
+ *   label    the plate's name for screen readers. Default "Pick a theme".
+ *   caption  PhotoGrid's caption: "text" (default), "date" or "none".
+ *   count    the line under each card's name, with {n} for the number of photos. Default "{n} photos".
+ *   empty    shown in a theme with no photos.
+ *   class    extra class.
+ *
+ * Theme it with ReelPicker's and PhotoGrid's custom properties (--reel-card is 150px here).
+ * Accessible: the plate is ReelPicker's listbox; switching themes is announced ("Fog and smoke: 6 photos").
+ * Reduced motion: the grid swaps without fading.
+ */
+import type { ImageMetadata } from 'astro';
+import { getImage } from 'astro:assets';
+import ReelPicker from './ReelPicker.astro';
+import PhotoGrid from './PhotoGrid.astro';
+
+interface Photo {
+  src: ImageMetadata;
+  alt: string;
+  date?: string | null;
+  dateLabel?: string;
+}
+interface Theme {
+  id: string;
+  label: string;
+  photos: Photo[];
+  cover?: Photo;
+}
+interface Props {
+  themes: Theme[];
+  name: string;
+  label?: string;
+  caption?: 'text' | 'date' | 'none';
+  count?: string;
+  empty?: string;
+  class?: string;
+}
+const { themes, name, label = 'Pick a theme', caption = 'text', count = '{n} photos', empty, class: className } = Astro.props;
+const detail = (t: Theme) => count.replace('{n}', String(t.photos.length));
+// Small square-ish covers for the cards (the plate shows them at about 150px).
+const covers = await Promise.all(
+  themes.map(async (t) => {
+    const c = t.cover ?? t.photos[0];
+    return c ? { src: (await getImage({ src: c.src, width: 360, format: 'webp' })).src, alt: c.alt } : null;
+  }),
+);
+---
+
+<div class:list={['theme-gallery', className]} data-theme-gallery>
+  <div class="theme-gallery__picker">
+    <ReelPicker orientation="horizontal" label={label} items={themes.map((t) => ({ label: t.label, detail: detail(t) }))} />
+  </div>
+  <div class="theme-gallery__covers" hidden>
+    {covers.map((c, i) => c && <img data-photo data-index={i} src={c.src} alt="" draggable="false" loading="lazy" decoding="async" />)}
+  </div>
+  <div class="theme-gallery__strings" hidden data-llms-skip>
+    {themes.map((t, i) => <span data-index={i}>{`${t.label}: ${detail(t)}`}</span>)}
+  </div>
+  <p class="theme-gallery__status" aria-live="polite"></p>
+  {
+    themes.map((t, i) => (
+      <div class="theme-gallery__panel" data-index={i} hidden={i !== 0}>
+        <PhotoGrid photos={t.photos} name={`${name}-${t.id}`} caption={caption} empty={empty} />
+      </div>
+    ))
+  }
+</div>
+
+<style>
+  .theme-gallery {
+    --reel-card: 150px;
+  }
+  .theme-gallery__picker {
+    display: flex;
+    justify-content: center;
+    margin: 0.5rem 0 1rem;
+  }
+  .theme-gallery__status {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+  .theme-gallery__panel.is-in {
+    animation: theme-gallery-in 0.35s ease-out both;
+  }
+  @keyframes theme-gallery-in {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .theme-gallery__panel.is-in {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-theme-gallery]').forEach((root) => {
+    if (root.dataset.ready) return;
+    root.dataset.ready = '1';
+    const panels = [...root.querySelectorAll<HTMLElement>('.theme-gallery__panel')];
+    const status = root.querySelector<HTMLElement>('.theme-gallery__status')!;
+    // Each card (the plate repeats short lists) gets its theme's cover.
+    root.querySelectorAll<HTMLElement>('[data-reel-art]').forEach((art) => {
+      const img = root.querySelector<HTMLImageElement>(`.theme-gallery__covers img[data-index="${art.dataset.index}"]`);
+      if (img) art.append(img.cloneNode(true));
+    });
+    root.addEventListener('reel:change', (e) => {
+      const i = (e as CustomEvent<{ index: number }>).detail.index;
+      panels.forEach((p) => {
+        const on = Number(p.dataset.index) === i;
+        p.hidden = !on;
+        p.classList.toggle('is-in', on);
+      });
+      status.textContent = root.querySelector(`.theme-gallery__strings [data-index="${i}"]`)?.textContent ?? '';
+    });
+  });
+</script>

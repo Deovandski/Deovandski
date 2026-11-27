@@ -8,7 +8,8 @@ const photoModules = import.meta.glob<ImageMetadata>('/content/**/*.{jpg,jpeg,pn
   import: 'default',
 });
 
-export type GalleryPhoto = { src: ImageMetadata; alt: string; file: string };
+// dateLabel: "Circa 2013" for a file named with only its year (2013-Frosted-tree.jpg), shown by the photo viewer.
+export type GalleryPhoto = { src: ImageMetadata; alt: string; file: string; dateLabel?: string };
 export type Gallery = { photos: GalleryPhoto[]; intro: string[] };
 
 /**
@@ -40,7 +41,8 @@ export function loadGallery(dir: string, fallbackAlt: string): Gallery {
     })
     .map(([path, src]) => {
       const file = path.split('/').pop()!;
-      return { src, file, alt: altFromFile(file, fallbackAlt) };
+      const year = file.match(/^(\d{4})-(?!\d{2}(?:[-_ ]|\.|$))/)?.[1];
+      return { src, file, alt: altFromFile(file, fallbackAlt), ...(year ? { dateLabel: `Circa ${year}` } : {}) };
     })
     .sort((a, b) => a.file.localeCompare(b.file, undefined, { numeric: true }));
 
@@ -54,4 +56,33 @@ export function loadGallery(dir: string, fallbackAlt: string): Gallery {
     : [];
 
   return { photos, intro };
+}
+
+export type GalleryTheme = { id: string; label: string; photos: GalleryPhoto[]; cover: GalleryPhoto | undefined };
+
+/**
+ * A photo folder split into themes (#316): each subfolder of `dir` is a theme, in folder-name order, named after the
+ * folder ("01-Fog-and-smoke" -> "Fog and smoke"), with its photos loaded like loadGallery. An optional `themes.json`
+ * in `dir` picks each theme's cover by the end of a photo's file name: { "01-Fog-and-smoke": "Godrays-at-the-concert",
+ * "all": "..." }; otherwise the theme's first photo is its cover. `all` holds every theme's photos, in date order.
+ */
+export function loadThemes(dir: string, fallbackAlt: string) {
+  const root = `/${dir.replace(/^\/|\/$/g, '')}/`;
+  const folders = [
+    ...new Set(
+      Object.keys(photoModules)
+        .filter((p) => p.startsWith(root) && p.slice(root.length).split('/').length === 2)
+        .map((p) => p.slice(root.length).split('/')[0]),
+    ),
+  ].sort((a, b) => a.localeCompare(b, undefined, { numeric: true }));
+  const coverFile = resolve(dir, 'themes.json');
+  const covers: Record<string, string> = existsSync(coverFile) ? JSON.parse(readFileSync(coverFile, 'utf8')) : {};
+  const pick = (photos: GalleryPhoto[], key: string) =>
+    (covers[key] && photos.find((p) => p.file.replace(/\.[^.]+$/, '').endsWith(covers[key]))) || photos[0];
+  const themes: GalleryTheme[] = folders.map((folder) => {
+    const { photos } = loadGallery(`${dir}/${folder}`, fallbackAlt);
+    return { id: folder.replace(/^\d+[-_ ]*/, '').toLowerCase(), label: altFromFile(folder, folder), photos, cover: pick(photos, folder) };
+  });
+  const everything = themes.flatMap((t) => t.photos).sort((a, b) => a.file.localeCompare(b.file, undefined, { numeric: true }));
+  return { themes, all: { id: 'all', label: 'All', photos: everything, cover: pick(everything, 'all') } as GalleryTheme };
 }

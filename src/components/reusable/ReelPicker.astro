@@ -5,6 +5,9 @@
  * to turn the plate anticlockwise or clockwise; it snaps to the nearest card when you let go. Built for the
  * Saturday Night Fever routines (#274).
  *
+ * orientation="horizontal" (#316) lays the cards out flat in a row instead: the neighbours slide in straight from the
+ * left and right (no tilt), and you drag or swipe left and right. Built for the Photographer tab's photo themes.
+ *
  *   <ReelPicker
  *     label="Pick a routine"
  *     items={[
@@ -22,6 +25,9 @@
  *   label     the picker's name for screen readers.
  *   selected  the index of the card shown first. Default 0.
  *   prev, next  the step buttons' names for screen readers. Default "Previous" and "Next".
+ *   orientation "vertical" (default: the plate, neighbours above and below, drag up and down) or "horizontal" (a flat
+ *             row, neighbours straight left and right, drag left and right, the step buttons on either side).
+ * A photo in a card's art box: give the <img> a data-photo attribute and it fills the box (cropped), not pixelated.
  *   class     extra classes on the root.
  *
  * Events, on the root (they bubble):
@@ -35,8 +41,9 @@
  * Reusable on purpose: no imports, safe to use several times on a page.
  */
 interface Item { label: string; detail?: string }
-interface Props { items: Item[]; label: string; selected?: number; prev?: string; next?: string; class?: string }
-const { items, label, selected = 0, prev = 'Previous', next = 'Next', class: className } = Astro.props;
+interface Props { items: Item[]; label: string; selected?: number; prev?: string; next?: string; orientation?: 'vertical' | 'horizontal'; class?: string }
+const { items, label, selected = 0, prev = 'Previous', next = 'Next', orientation = 'vertical', class: className } = Astro.props;
+const across = orientation === 'horizontal';
 const n = items.length;
 // At least 8 cards around the plate, so the neighbours peek into the window at 45° or less.
 const copies = Math.max(1, Math.ceil(8 / Math.max(1, n)));
@@ -44,7 +51,7 @@ const slots = n * copies;
 const uid = `reel-${Math.random().toString(36).slice(2, 8)}`;
 ---
 
-<div class:list={['reel', className]} data-reel data-count={n} data-slots={slots} data-selected={selected} style={`--slots:${slots}`}>
+<div class:list={['reel', { 'reel--across': across }, className]} data-reel data-orientation={orientation} data-count={n} data-slots={slots} data-selected={selected} style={`--slots:${slots}`}>
   <div class="reel__window" role="listbox" tabindex="0" aria-label={label} aria-activedescendant={`${uid}-${selected}`}>
     <div class="reel__plate">
       <span class="reel__hub" aria-hidden="true"></span>
@@ -73,10 +80,10 @@ const uid = `reel-${Math.random().toString(36).slice(2, 8)}`;
     </div>
   </div>
   <div class="reel__steps">
-    <button type="button" class="reel__step" data-step="-1" aria-label={prev}>
+    <button type="button" class="reel__step reel__step--prev" data-step="-1" aria-label={prev}>
       <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 9.5L7 5l4.5 4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
     </button>
-    <button type="button" class="reel__step" data-step="1" aria-label={next}>
+    <button type="button" class="reel__step reel__step--next" data-step="1" aria-label={next}>
       <svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 4.5L7 9l4.5-4.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
     </button>
   </div>
@@ -211,8 +218,35 @@ const uid = `reel-${Math.random().toString(36).slice(2, 8)}`;
   }
   .reel__step:hover { background: color-mix(in srgb, var(--_accent) 16%, transparent); }
   .reel__step:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+  .reel__art :global(img[data-photo]) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: auto;
+  }
+  /* Horizontal: a flat row. Each card's place comes from the script (--d, in cards from the centre), so the neighbours
+     come straight in from the left and right; cards far off the window are hidden so the row can loop. */
+  .reel--across { display: inline-grid; grid-template-columns: auto auto auto; }
+  .reel--across .reel__window {
+    grid-column: 2;
+    grid-row: 1;
+    width: calc(var(--_s) * 1.9);
+    height: calc(var(--_s) + 16px);
+    background: linear-gradient(var(--reel-plate, #16122a), #07040d);
+  }
+  .reel--across .reel__window::after { background: linear-gradient(90deg, #07040dcc, transparent 26%, transparent 74%, #07040dcc); }
+  .reel--across .reel__plate { left: 50%; top: 50%; transform: none; }
+  .reel--across .reel__hub { display: none; }
+  .reel--across .reel__card { transform: translateX(calc(var(--d, 0) * var(--_s) * 1.08)); }
+  .reel--across .reel__card.is-far { visibility: hidden; }
+  .reel--across .reel__plate.is-snapping .reel__card:not(.is-far) { transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.3, 1); }
+  .reel--across .reel__steps { display: contents; }
+  .reel--across .reel__step--prev { grid-column: 1; grid-row: 1; transform: rotate(-90deg); }
+  .reel--across .reel__step--next { grid-column: 3; grid-row: 1; transform: rotate(-90deg); }
+  :global([dir='rtl']) .reel--across { direction: ltr; }
   @media (prefers-reduced-motion: reduce) {
-    .reel__plate.is-snapping { transition: none; }
+    .reel__plate.is-snapping,
+    .reel--across .reel__plate.is-snapping .reel__card:not(.is-far) { transition: none; }
   }
 </style>
 
@@ -230,13 +264,24 @@ const uid = `reel-${Math.random().toString(36).slice(2, 8)}`;
     let rot = 0;
     let index = Number(root.dataset.selected) || 0;
     const mod = (a: number, m: number) => ((a % m) + m) % m;
-    const radius = () => cards[0].offsetWidth * 1.5;
+    const across = root.dataset.orientation === 'horizontal';
+    const radius = () => cards[0].offsetWidth * 1.5; // matches --_r in the styles
+    const pitch = () => cards[0].offsetWidth * 1.08; // horizontal: the distance from one card to the next (as in the styles)
 
     function paint(snap: boolean) {
       plate.classList.toggle('is-snapping', snap);
       plate.style.setProperty('--rot', `${rot}deg`);
       const slot = mod(Math.round(-rot / step), slots);
       cards.forEach((c, s) => c.classList.toggle('is-current', s === slot));
+      if (across) {
+        // Each card's offset from the window, in cards, wrapped so the row loops; far ones hide (and don't animate).
+        const pos = -rot / step;
+        cards.forEach((c, s) => {
+          const d = mod(s - pos + slots / 2, slots) - slots / 2;
+          c.classList.toggle('is-far', Math.abs(d) > 2.5);
+          c.style.setProperty('--d', String(d));
+        });
+      }
     }
     function settle(slot: number, source: 'user' | 'script') {
       rot = -slot * step;
@@ -263,18 +308,21 @@ const uid = `reel-${Math.random().toString(36).slice(2, 8)}`;
     }
     const turn = (by: number) => settle(Math.round(-rot / step) + by, 'user');
 
-    // Drag or swipe: up and down turn the plate around its centre; a tap on a peeking card turns to it.
+    // Drag or swipe: up and down (left and right when it's on its side) turn the plate around its centre; a tap on a
+    // peeking card turns to it.
     let drag: { y: number; rot: number; moved: boolean; id: number } | null = null;
+    const along = (e: PointerEvent) => (across ? e.clientX : e.clientY);
     win.addEventListener('pointerdown', (e) => {
-      drag = { y: e.clientY, rot, moved: false, id: e.pointerId };
+      drag = { y: along(e), rot, moved: false, id: e.pointerId };
       win.setPointerCapture(e.pointerId);
       win.classList.add('is-dragging');
     });
     win.addEventListener('pointermove', (e) => {
       if (!drag || e.pointerId !== drag.id) return;
-      const dy = e.clientY - drag.y;
+      const dy = along(e) - drag.y;
       if (Math.abs(dy) > 4) drag.moved = true;
-      rot = drag.rot + (dy / radius()) * (180 / Math.PI); // dragging down turns it clockwise
+      // Dragging down turns the plate clockwise; dragging right moves the row right (the card on the left comes in).
+      rot = across ? drag.rot + (dy / pitch()) * step : drag.rot + (dy / radius()) * (180 / Math.PI);
       paint(false);
     });
     const end = (e: PointerEvent) => {
@@ -289,6 +337,7 @@ const uid = `reel-${Math.random().toString(36).slice(2, 8)}`;
       settle(Math.round(-rot / step), 'user');
     };
     win.addEventListener('pointerup', end);
+    win.addEventListener('dragstart', (e) => e.preventDefault()); // a picture in a card would otherwise start a drag-and-drop
     win.addEventListener('pointercancel', end);
     win.addEventListener('keydown', (e) => {
       const by = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];

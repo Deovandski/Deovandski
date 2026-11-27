@@ -3,6 +3,7 @@ import { Image, getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import GimmickPlay from '../components/GimmickPlay.astro';
 import FastTab from '../components/reusable/FastTab.astro';
+import ThemeGallery from '../components/reusable/ThemeGallery.astro';
 import '@fontsource/im-fell-english/400-italic.css';
 import Ranking from '../components/Ranking.astro';
 import TravelerFacet from '../components/TravelerFacet.astro';
@@ -51,7 +52,7 @@ import stickyNotes from '../../content/pm/2023-03-20-sticky-note-madness.jpg';
 import influencerShot from '../../content/influencer/Screenshot_20260803-210132.png';
 // The screenshot links to a large webp copy (the photo viewer opens it), not the original PNG.
 const influencerFull = (await getImage({ src: influencerShot, width: Math.min(1800, influencerShot.width), format: 'webp', quality: 85 })).src;
-import { loadGallery } from '../lib/gallery';
+import { loadGallery, loadThemes } from '../lib/gallery';
 import { photoDate } from '../lib/photoDate';
 import { resolve } from 'node:path';
 import { existsSync, readFileSync } from 'node:fs';
@@ -362,22 +363,23 @@ const concertWishlist = loadSections('content/concerts-wishlist.md', 'content/co
 const theater = loadSections('content/theater.md', 'content/theater');
 const theaterWishlist = loadSections('content/theater-wishlist.md', 'content/theater');
 const fishing = loadGallery('content/fishing', 'Fishing');
-const photography = loadGallery('content/photography', 'Photo');
+const photography = loadThemes('content/photography', 'Photo');
 // Painting/Drawing: each picture captioned with the date it was taken (photo metadata, else filename).
 // Pictures with neither can get an approximate day in content/painting/_dates.md, shown as "Circa Q1 2013".
 // Oldest first so it reads as a progression; undated ones go last, in filename order.
 const circa = new Map(
   [...(existsSync('content/painting/_dates.md') ? readFileSync('content/painting/_dates.md', 'utf8') : '')
     .replace(/<!--[\s\S]*?-->/g, '')
-    .matchAll(/^- +(.+?): *(\d{4})-(\d{2})-(\d{2}) *$/gm)].map((m) => [m[1].trim(), `${m[2]}-${m[3]}-${m[4]}`]),
+    .matchAll(/^- +(.+?): *(\d{4})(?:-(\d{2})-(\d{2}))? *$/gm)].map((m) => [m[1].trim(), m[3] ? `${m[2]}-${m[3]}-${m[4]}` : m[2]]),
 );
-const quarterOf = (iso: string) => `Circa Q${Math.ceil(Number(iso.slice(5, 7)) / 3)} ${iso.slice(0, 4)}`;
+// "2013-02-03" shows as "Circa Q1 2013"; a year alone ("2013") as "Circa 2013", sorted after that year's dated pictures.
+const quarterOf = (iso: string) => (iso.length === 4 ? `Circa ${iso}` : `Circa Q${Math.ceil(Number(iso.slice(5, 7)) / 3)} ${iso.slice(0, 4)}`);
 const painting = (
   await Promise.all(
     loadGallery('content/painting', 'Painting or drawing').photos.map(async (p) => {
       const date = await photoDate(resolve('content/painting', p.file), p.file);
       const approx = date ? undefined : circa.get(p.file);
-      return { src: p.src, file: p.file, alt: 'Painting or drawing', date, dateLabel: approx && quarterOf(approx), sortKey: date ?? approx ?? '9999' };
+      return { src: p.src, file: p.file, alt: 'Painting or drawing', date, dateLabel: approx && quarterOf(approx), sortKey: date ?? (approx && approx.length === 4 ? `${approx}-99` : approx) ?? '9999' };
     }),
   )
 ).sort((a, b) => a.sortKey.localeCompare(b.sortKey) || a.file.localeCompare(b.file, undefined, { numeric: true }));
@@ -786,7 +788,7 @@ const nf = new Intl.NumberFormat('en-US');
           {
             links: [
               { href: 'https://store.google.com/product/pixel_8_pro_specs', label: 'Pixel 8 Pro tech specs' },
-              { href: 'https://www.dpreview.com/reviews/sonyslta35/2', label: 'Sony SLT-A35 specs' },
+              { href: 'https://www.dpreview.com/reviews/sonydslra350/20', label: 'Sony DSLR-A350 specs' },
             ],
           },
           { separator: 'Kindred spirits (per the critic)' },
@@ -805,7 +807,7 @@ const nf = new Intl.NumberFormat('en-US');
       <FastTab title="The critic's appraisal (by Claude)" summary="Overly fancy, by request" id="photographer-critique" class="critique">
         <div class="critique__text"><PhotoCritique /></div>
       </FastTab>
-      <PhotoGrid photos={photography.photos} name="photographer" caption="text" empty="Photos are on their way." />
+      <ThemeGallery themes={[photography.all, ...photography.themes]} name="photographer" label="Pick a theme" empty="Photos are on their way." />
     </section>
 
     <section class="panel" role="region" id="panel-fishing" aria-labelledby="tab-fishing" tabindex="0" hidden>
