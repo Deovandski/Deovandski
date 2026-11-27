@@ -50,7 +50,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | BOTW tab VHS pile (hours watched, the dates the history covers) | `content/botw-stats.json` (written by the script's `--stats`), video lengths in `content/botw-durations.json`, pile component `src/components/reusable/VhsPile.astro` |
 | D&D tab (one picture + story per campaign) | `content/dnd.md`, pictures in `content/dnd/<campaign>/` |
 | D&D tab dice (the row of dice under the title) | `src/components/reusable/DiceTray.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
-| Fishing tab (photo gallery, like each pet on the Pets tab) | `content/fishing/` (see its README) |
+| Fishing tab (text, a YouTube Short, then the photo gallery) | `content/fishing/` (see its README): the text in `story.md` (above the Short) and `more.md` (below it); the Short's id and the Links box in `panel-fishing` in `src/pages/index.astro` |
 | Camping tab (location cards, 2 photos each) | `content/camping.md` |
 | Theater & Opera tab (Seen live and Wishlist sub-tabs, like Concert) | `content/theater.md` and `content/theater-wishlist.md`, show images in `content/theater/shows/` |
 | Gamer tab (games by category, with hours and a Steam/Xbox/PlayStation/PC chip) | categories in `content/gaming/categories.md`, hours in `content/gaming/steam-games.json`, `content/gaming/xbox-games.json` and `content/gaming/estimated.md` (estimates, hand-written) (refresh once a year: `content/gaming/README.md`); `src/components/reusable/HoursByCategory.astro`, with its other views (pie, sphere, orbits, days, shelf; `viewCategories()` in `src/lib/gamerCategories.ts`) and the Links box (`LinksMenu.astro`) |

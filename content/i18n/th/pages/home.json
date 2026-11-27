@@ -23,6 +23,10 @@
   "en": "Each moon is a game, sized by its hours.",
   "t": "แต่ละดวงจันทร์คือหนึ่งเกม ขนาดคือชั่วโมง"
  },
+ "00d603161317": {
+  "en": "Enlarge: Inside the cozy ice castle",
+  "t": "ขยาย: ข้างในปราสาทน้ำแข็งแสนอบอุ่น"
+ },
  "00f03137e155": {
   "en": "Easy",
   "t": "ง่าย"
@@ -34,6 +38,10 @@
  "00f42f627fce": {
   "en": "Your post was shown to 1 more person than last time! Keep going!",
   "t": "โพสต์ของคุณถูกแสดงให้คนดูเพิ่ม 1 คนจากครั้งก่อน! ไปต่อ!"
+ },
+ "00ff82fac41b": {
+  "en": "2 countries · 22 states/provinces · 169 photos",
+  "t": "2 ประเทศ · 22 รัฐ/จังหวัด · 169 รูป"
  },
  "010a0d803f20": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Made in Abyss ",
@@ -47,6 +55,10 @@
   "en": "Fold it, throw it",
   "t": "พับแล้วปา"
  },
+ "01222ad325e7": {
+  "en": "Enlarge: Bass on the pontoon",
+  "t": "ขยาย: ปลาเบสบนเรือพอนทูน"
+ },
  "0144c52019a9": {
   "en": "76 h",
   "t": "76 ชม."
@@ -58,10 +70,6 @@
  "017acba7f57e": {
   "en": "The light novel series site: the full novel, the World Lore, and Public and Behind The Scenes layers.",
   "t": "เว็บไซต์ของไลต์โนเวลซีรีส์: นิยายฉบับเต็ม ตำนานโลก และชั้นสาธารณะกับเบื้องหลัง"
- },
- "019336fad507": {
-  "en": "2 countries · 22 states/provinces · 167 photos",
-  "t": "2 ประเทศ · 22 รัฐ/จังหวัด · 167 รูป"
  },
  "01a119163f5d": {
   "en": "Every cartridge is a game, as wide as its hours. Hover one to pull it out; press it to keep it out. Dashed ones are estimated.",
@@ -98,6 +106,10 @@
  "02543e7a69d6": {
   "en": " PS ",
   "t": "PS"
+ },
+ "0257f709be74": {
+  "en": "Enlarge: Feast at the Tanjung Rhu floating restaurant",
+  "t": "ขยาย: ฉลองที่ร้านอาหารลอยน้ำตันจุงรู"
  },
  "026d0912a966": {
   "en": "Deo in 2024 on stage holding a book award certificate",
@@ -191,6 +203,10 @@
   "en": "Ink",
   "t": "หมึก"
  },
+ "04aad2e37698": {
+  "en": "Enlarge: On the grill",
+  "t": "ขยาย: ขึ้นเตาย่าง"
+ },
  "04c70f3c22a3": {
   "en": "of {n} tracked",
   "t": "จาก {n} วันที่บันทึก"
@@ -238,6 +254,10 @@
  "05e728e60d80": {
   "en": "\nMy watch logged 162 more \"bike rides\" on its own (76 hours of them). Most of those\n          were me pushing my cat, <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a>, in his stroller, or me on the elliptical when it's too cold outside, so\n          they don't count toward the miles above.\n",
   "t": "นาฬิกาของผมบันทึก \"การปั่นจักรยาน\" เพิ่มเองอีก 162 ครั้ง (รวม 76 ชั่วโมง) ส่วนใหญ่คือผมเข็นแมวของผม <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a> ในรถเข็น หรือผมเล่นเครื่องเดินวงรีตอนที่ข้างนอกหนาวเกินไป เลยไม่นับรวมในระยะไมล์ข้างบน"
+ },
+ "05f26caf36c5": {
+  "en": "Rod flasher and a hole in the ice",
+  "t": "คันเบ็ด เครื่องหาปลา และรูบนน้ำแข็ง"
  },
  "061ff9e69ad0": {
   "en": "Shinjuku Station in Tokyo is the busiest train station in the world: millions of people pass through it every day.",
@@ -306,6 +326,10 @@
  "0769eae50b31": {
   "en": "The games on the list add up to 1,442 days of nonstop play, 24 hours a day. Each square is one of those days.",
   "t": "เกมในรายการรวมกันเท่ากับเล่นไม่หยุด 1,442 วัน วันละ 24 ชั่วโมง แต่ละช่องคือหนึ่งวันในนั้น"
+ },
+ "076b94b77103": {
+  "en": "Cleaning the catch",
+  "t": "ทำความสะอาดปลา"
  },
  "07813f7ab23c": {
   "en": "SKALD",
@@ -507,6 +531,10 @@
   "en": "268 h",
   "t": "268 ชม."
  },
+ "0d3a836fc775": {
+  "en": "Spring bass selfie",
+  "t": "เซลฟีปลาเบสหน้าใบไม้ผลิ"
+ },
  "0d97f4d5801b": {
   "en": "Enlarge: Bathing in the Amazon",
   "t": "ขยาย: อาบน้ำในแอมะซอน"
@@ -639,6 +667,14 @@
   "en": "Walk time or more like I stay in the stroller",
   "t": "เวลาเดินเล่น หรือจะพูดให้ถูกคือผมนั่งในรถเข็น"
  },
+ "10551eef4bdd": {
+  "en": "Enlarge: Lake of the Woods here we come",
+  "t": "ขยาย: เลกออฟเดอะวูดส์ เรามาแล้ว"
+ },
+ "107a2fe82512": {
+  "en": "Riding out to the ice",
+  "t": "ออกไปบนน้ำแข็ง"
+ },
  "10c5d043a58d": {
   "en": "A West Marches D&amp;D 5e campaign set in the world of #HusbandOutWorld.",
   "t": "แคมเปญ D&amp;D 5e แบบ West Marches ในโลกของ #HusbandOutWorld"
@@ -679,6 +715,10 @@
   "en": "Photo {n}, from one of Deo’s trips: where was it taken?",
   "t": "รูปที่ {n} จากทริปหนึ่งของ Deo: ถ่ายที่ไหน?"
  },
+ "118cb1f0c3c6": {
+  "en": "Sunset on the ice",
+  "t": "พระอาทิตย์ตกบนน้ำแข็ง"
+ },
  "11982574c056": {
   "en": "StackOverflow",
   "t": "StackOverflow"
@@ -710,6 +750,10 @@
  "12cafa27532f": {
   "en": "Enlarge: Painting or drawing, 04/09/2013",
   "t": "ขยาย: ภาพวาดหรือภาพร่าง, 9/4/2013"
+ },
+ "12e4132c6497": {
+  "en": "Enlarge: Cheers from the ice",
+  "t": "ขยาย: ชนแก้วบนน้ำแข็ง"
  },
  "130c48532b18": {
   "en": " Resting heart rate (Oura) ",
@@ -871,6 +915,10 @@
   "en": "H-hentai! (*/ω＼*)",
   "t": "ฮ-เฮ็นไต! (*/ω＼*)"
  },
+ "181c616ba7dc": {
+  "en": "Enlarge: Catch of the day in the tent",
+  "t": "ขยาย: ปลาประจำวันในเต็นท์"
+ },
  "1825a9d5984b": {
   "en": "Fold 1 of 5: drag the top-left corner to the dot on the centre line.",
   "t": "พับ 1/5: ลากมุมซ้ายบนไปจุดบนเส้นกลาง"
@@ -947,9 +995,17 @@
   "en": "Opera",
   "t": "โอเปรา"
  },
+ "19fd65c63424": {
+  "en": "Enlarge: Deep fried walleye time",
+  "t": "ขยาย: ได้เวลาปลาวอลอายทอด"
+ },
  "1a033dcc86e5": {
   "en": "My 2014 college game (XNA for Windows Phone), brought back in Godot. Hold to fly up, let go to glide, eat or starve. Play the 2014 version as it was, or the full game its design document planned.",
   "t": "เกมสมัยมหาวิทยาลัยของผมจากปี 2014 (XNA สำหรับ Windows Phone) นำกลับมาใหม่ใน Godot กดค้างเพื่อบินขึ้น ปล่อยเพื่อร่อน กินหรืออดตาย เล่นเวอร์ชัน 2014 แบบเดิม หรือเกมเต็มตามที่เอกสารออกแบบวางแผนไว้ก็ได้"
+ },
+ "1a04b5f15ca6": {
+  "en": "Lake of the Woods here we come",
+  "t": "เลกออฟเดอะวูดส์ เรามาแล้ว"
  },
  "1a1599284e10": {
   "en": "Where in the World Was Deo?",
@@ -1046,6 +1102,10 @@
  "1d23e1eb9609": {
   "en": "Enlarge: Hanging with a Peeta look alike",
   "t": "ขยาย: เที่ยวกับตัวที่หน้าเหมือน Peeta"
+ },
+ "1d43a97217e1": {
+  "en": "Bass on the pontoon",
+  "t": "ปลาเบสบนเรือพอนทูน"
  },
  "1d9715eead3d": {
   "en": " Training guided by HRV (meta-analysis, 2020) ",
@@ -1170,6 +1230,10 @@
  "208cb0a742bf": {
   "en": "Open hi-hat (key Q)",
   "t": "ไฮแฮตเปิด (ปุ่ม Q)"
+ },
+ "2090192a3115": {
+  "en": "Fillets ready",
+  "t": "ชิ้นปลาพร้อมแล้ว"
  },
  "2095d1f352f7": {
   "en": "Deo in 2016 in a blue shirt and tie at an outdoor dinner",
@@ -1355,6 +1419,10 @@
   "en": "Ecchi in the shape of an anime. I absolutely loved the creativity in pushing the envelope as far as possible! Yami is my favorite girl, even though IRL that type of girl tends to be toxic as fuck. Avoidant girls, especially fearful avoidants, are complete energy vampires.",
   "t": "เอจจิในร่างอนิเมะ ผมชอบความสร้างสรรค์ในการดันขอบเขตไปให้สุดที่สุดเท่าที่จะทำได้มาก! ยามิคือสาวคนโปรดของผม ถึงในชีวิตจริงผู้หญิงแบบนั้นมักจะท็อกซิกชิบหายก็ตาม ผู้หญิงสายหลีกเลี่ยง โดยเฉพาะแบบหลีกเลี่ยงเพราะกลัว คือแวมไพร์ดูดพลังงานตัวจริง"
  },
+ "25200d152a79": {
+  "en": "Pressure ridges on Lake of the Woods",
+  "t": "สันน้ำแข็งบนเลกออฟเดอะวูดส์"
+ },
  "25270ee78057": {
   "en": "Balls worth {balls} pearls vs {shit} shit.",
   "t": "บอลมูลค่า {balls} เพิร์ล vs ขี้ {shit} ก้อน"
@@ -1491,6 +1559,10 @@
   "en": " Space &amp; flight ",
   "t": "อวกาศและการบิน"
  },
+ "28139135118f": {
+  "en": "Enlarge: The floating fish farm",
+  "t": "ขยาย: ฟาร์มปลาลอยน้ำ"
+ },
  "2835bcaa6e76": {
   "en": " 49 h ",
   "t": "49 ชม."
@@ -1570,6 +1642,10 @@
  "2a37335eebda": {
   "en": "Heart",
   "t": "หัวใจ"
+ },
+ "2a37ee4a5a2e": {
+  "en": "Generator duty at night",
+  "t": "เวรดูเครื่องปั่นไฟตอนกลางคืน"
  },
  "2a45982468f2": {
   "en": "Enlarge: Acting cute",
@@ -1843,6 +1919,10 @@
   "en": "Dropkick Murphys",
   "t": "Dropkick Murphys"
  },
+ "3246c5bdd6e0": {
+  "en": "A northern pike as long as my torso",
+  "t": "ปลาไพค์ยาวเท่าลำตัวผม"
+ },
  "32477dd234fb": {
   "en": "Confidence is not noise. <strong>It’s trusting yourself to do what’s right when your core is shaken.</strong> Build boldly, measure honestly, correct without ego.",
   "t": "ความมั่นใจไม่ใช่เสียงดัง <strong>มันคือการเชื่อมั่นว่าตัวเองจะทำสิ่งที่ถูกต้องเมื่อแก่นของคุณสั่นคลอน</strong> สร้างอย่างกล้าหาญ วัดผลอย่างซื่อตรง แก้ไขโดยไม่มีอีโก้"
@@ -1955,6 +2035,10 @@
   "en": "Resting heart rate",
   "t": "อัตราการเต้นของหัวใจขณะพัก"
  },
+ "34ad8fd68dda": {
+  "en": "Enlarge: Saying hi to Willie Walleye in Baudette",
+  "t": "ขยาย: ทักทายวิลลี่ วอลอายที่โบเด็ต"
+ },
  "34b1471c5170": {
   "en": "I’m not dying in the waiting room of someone else’s stagnant life. <span class=\"newest\">New</span>",
   "t": "ผมจะไม่ตายในห้องรอของชีวิตที่หยุดนิ่งของคนอื่น <span class=\"newest\">ใหม่</span>"
@@ -2026,6 +2110,10 @@
  "37219ea52a83": {
   "en": "Chibi pixel Deo in his yellow king's robes and crown hat, chilling in a hammock between two palm trees. Press him for a freebie.",
   "t": "Deo แบบพิกเซลตัวจิ๋ว ในชุดคลุมกษัตริย์สีเหลืองและหมวกมงกุฎ นอนชิลในเปลระหว่างต้นปาล์มสองต้น กดเขาเพื่อรับตัวช่วย"
+ },
+ "3724f8a7aa48": {
+  "en": "A catch and a sunset",
+  "t": "ปลาที่ได้กับพระอาทิตย์ตก"
  },
  "37497aa5a227": {
   "en": "Brazil",
@@ -2142,6 +2230,10 @@
  "39210f2abeb2": {
   "en": "Enlarge: Ember.js dev assistant",
   "t": "ขยาย: ผู้ช่วยนักพัฒนา Ember.js"
+ },
+ "393a3315e9d7": {
+  "en": "Enlarge: Boxing Day catch",
+  "t": "ขยาย: ปลาวันบ็อกซิ่งเดย์"
  },
  "3963bf6407a2": {
   "en": "<em><strong>State Aviation Journal</strong></em>, “The Bond of Aviation and Autism”: Jacob Erikson, an autistic teen whose love of plane spotting found him a welcoming community that helped his communication. <a href=\"https://stateaviationjournal.com/index.php/state-news/north-carolina/the-bond-of-aviation-and-autism\">Article</a>",
@@ -2407,6 +2499,10 @@
   "en": "+ 6 more games",
   "t": "+ อีก 6 เกม"
  },
+ "3fdc591636cf": {
+  "en": "Enlarge: Rock salt like a churrasco",
+  "t": "ขยาย: เกลือเม็ดแบบชูราสโก"
+ },
  "3ffa50fa96b3": {
   "en": " Flight Experience Singapore ",
   "t": "Flight Experience Singapore"
@@ -2426,6 +2522,10 @@
  "4077f33562cf": {
   "en": "Tap the kit, or play it with your keyboard: A S D F G, Q W E, X for the kick.",
   "t": "แตะชุดกลอง หรือเล่นด้วยคีย์บอร์ด: A S D F G, Q W E และ X สำหรับกระเดื่อง"
+ },
+ "4087e44c19db": {
+  "en": "Tiny fish big pride",
+  "t": "ปลาตัวเล็ก ความภูมิใจตัวใหญ่"
  },
  "408b5c0e9624": {
   "en": "4% of my hours",
@@ -2611,6 +2711,10 @@
   "en": "Da Nang's Dragon Bridge breathes fire, and then water, on weekend nights. Yes, a bridge. Yes, fire.",
   "t": "สะพานมังกรในดานังพ่นไฟ แล้วพ่นน้ำ ในคืนวันหยุดสุดสัปดาห์ ใช่ สะพาน ใช่ ไฟ"
  },
+ "472946cacc03": {
+  "en": "Enlarge: Generator duty at night",
+  "t": "ขยาย: เวรดูเครื่องปั่นไฟตอนกลางคืน"
+ },
  "47299a86ea20": {
   "en": " TW ",
   "t": "TW"
@@ -2771,6 +2875,10 @@
   "en": "Dead Cells",
   "t": "Dead Cells"
  },
+ "4bfafcf0ad5a": {
+  "en": "Enlarge: Dinner is served",
+  "t": "ขยาย: อาหารมาแล้ว"
+ },
  "4c05c049e52b": {
   "en": "Assassin's Creed series",
   "t": "ซีรีส์ Assassin's Creed"
@@ -2786,6 +2894,14 @@
  "4c1f1c138390": {
   "en": "Not bad!",
   "t": "ไม่เลว!"
+ },
+ "4c2f8ff5d504": {
+  "en": "More yellow snow HUE!",
+  "t": "หิมะสีเหลืองอีกรอบ HUE!"
+ },
+ "4c8fdbba4f63": {
+  "en": "Enlarge: A northern pike as long as my torso",
+  "t": "ขยาย: ปลาไพค์ยาวเท่าลำตัวผม"
  },
  "4cbc599953b9": {
   "en": " Rhythm &amp; music ",
@@ -2834,6 +2950,10 @@
  "4d6474389c69": {
   "en": " BW ",
   "t": "BW"
+ },
+ "4d7354f5df06": {
+  "en": "Enlarge: Yellow snow HUEHUEHUE edition",
+  "t": "ขยาย: หิมะสีเหลือง ฉบับ HUEHUEHUE"
  },
  "4d968a30a022": {
   "en": "no data",
@@ -2963,6 +3083,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 8: </span> Re:Zero kara Hajimeru Isekai Seikatsu (Re:Zero − Starting Life in Another World) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 8: </span> Re:Zero kara Hajimeru Isekai Seikatsu (รีเซทชีวิต ฝ่าวิกฤตต่างโลก)"
  },
+ "4fc34492f33d": {
+  "en": "Enlarge: Ice fishing in my finest sweater",
+  "t": "ขยาย: ตกปลาบนน้ำแข็งในเสื้อสเวตเตอร์ตัวเก่ง"
+ },
  "4fc5178f818d": {
   "en": "Pump the bellows",
   "t": "สูบลมเครื่องเป่า"
@@ -2990,6 +3114,10 @@
  "50744e2a121c": {
   "en": "The story development, the world lore and the characters themselves are really well done! That ending was unique; I still remember pieces of it.",
   "t": "การพัฒนาเรื่อง ตำนานโลก และตัวละครเองทำออกมาได้ดีมาก! ตอนจบนั้นเป็นเอกลักษณ์ ผมยังจำได้บางส่วน"
+ },
+ "5076856fe34c": {
+  "en": "I’ve fished in 3 countries so far: Brazil, the United States and Malaysia. So many more countries to fish, so little time huehue. I’ve been to Thailand multiple times, but I haven’t hit up <a href=\"https://www.phuket-monster-fishing-park.com/\">Monster Fishing Park in Phuket</a> yet! Meanwhile, back closer to home, <a href=\"https://lakeofthewoodsmn.com/\">Lake of the Woods</a> is nice, and deep-fried walleye makes me salivate just thinking about it… And I also want to eat freshly caught, grilled grouper in Langkawi! That floating restaurant was downright one of the best life experiences I’ve had, gastronomically speaking.",
+  "t": "จนถึงตอนนี้ผมตกปลามาแล้ว 3 ประเทศ: บราซิล สหรัฐอเมริกา และมาเลเซีย ประเทศที่อยากไปตกปลามีเยอะ แต่เวลามีน้อย huehue ผมไปไทยมาหลายครั้งแล้ว แต่ยังไม่ได้ไป <a href=\"https://www.phuket-monster-fishing-park.com/\">Monster Fishing Park ที่ภูเก็ต</a> เลย! ส่วนใกล้บ้านหน่อย <a href=\"https://lakeofthewoodsmn.com/\">เลกออฟเดอะวูดส์</a> ก็ดี และปลาวอลอายทอดก็ทำให้ผมน้ำลายไหลแค่คิดถึง... แล้วผมก็อยากกินปลาเก๋าที่จับสด ๆ แล้วย่างที่ลังกาวีด้วย! ร้านอาหารลอยน้ำร้านนั้นเป็นหนึ่งในประสบการณ์ที่ดีที่สุดในชีวิตผมเลย ถ้าพูดเรื่องอาหาร"
  },
  "5088ebe3cd7c": {
   "en": "More mango!",
@@ -3062,6 +3190,10 @@
  "51cce40b959d": {
   "en": "AdVenture Capitalist",
   "t": "AdVenture Capitalist"
+ },
+ "51ea346b58e2": {
+  "en": "Our fish house on the ice",
+  "t": "บ้านตกปลาของเราบนน้ำแข็ง"
  },
  "51fef5f7a957": {
   "en": "Stroller time",
@@ -3243,13 +3375,13 @@
   "en": "DW",
   "t": "DW"
  },
- "55c2f56f7ce7": {
-  "en": "Fishing trips and catches.",
-  "t": "ทริปตกปลาและปลาที่จับได้"
- },
  "55e08b3430ad": {
   "en": "People post more right after a batch of likes, spacing posts to chase the best rate of likes, like an animal in a Skinner box.",
   "t": "คนจะโพสต์ถี่ขึ้นทันทีหลังได้ไลก์มาเป็นกอง และเว้นระยะโพสต์เพื่อไล่ตามอัตราไลก์ที่ดีที่สุด เหมือนสัตว์ในกล่องสกินเนอร์"
+ },
+ "55f4d753106c": {
+  "en": "Enlarge: Our fish house on the ice",
+  "t": "ขยาย: บ้านตกปลาของเราบนน้ำแข็ง"
  },
  "55fa0faa800a": {
   "en": "City, colony & strategy",
@@ -3323,6 +3455,10 @@
   "en": "World map of visited places",
   "t": "แผนที่โลกของสถานที่ที่เคยไป"
  },
+ "57da4b232593": {
+  "en": "Dinner is served",
+  "t": "อาหารมาแล้ว"
+ },
  "57e3e71a00f2": {
   "en": "Stardew Valley",
   "t": "Stardew Valley"
@@ -3378,6 +3514,14 @@
  "58f7a8f2ec30": {
   "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n Body fat, yearly average: 2023, 32.9%; 2024, 36.8%; 2025, 38.0%; 2026, 35.4%. ",
   "t": "น้ำหนักรายปี: 2016, 300 ปอนด์; 2017, 220 ปอนด์; 2018, 230 ปอนด์; 2019, 240 ปอนด์; 2020, 260 ปอนด์; 2021, 230 ปอนด์; 2022, 245 ปอนด์; 2023, 260 ปอนด์; 2024, 250 ปอนด์; 2025, 260 ปอนด์; 2026, 225 ปอนด์. เป้าหมาย: 200 ปอนด์.\n ไขมันในร่างกาย ค่าเฉลี่ยรายปี: 2023, 32.9%; 2024, 36.8%; 2025, 38.0%; 2026, 35.4%."
+ },
+ "5901f48be1dc": {
+  "en": "Inside the cozy ice castle",
+  "t": "ข้างในปราสาทน้ำแข็งแสนอบอุ่น"
+ },
+ "590b6efc9d57": {
+  "en": "Enlarge: Sunset on the ice",
+  "t": "ขยาย: พระอาทิตย์ตกบนน้ำแข็ง"
  },
  "592bc9228abd": {
   "en": "Enlarge: Salty doggo",
@@ -3587,6 +3731,10 @@
   "en": "842 h",
   "t": "842 ชม."
  },
+ "5e3f6f842f63": {
+  "en": "Caught one!",
+  "t": "ได้แล้ว!"
+ },
  "5e749e984aef": {
   "en": "Saturday Night Fever",
   "t": "Saturday Night Fever"
@@ -3690,6 +3838,10 @@
  "61475d16204c": {
   "en": "3 photos",
   "t": "3 รูป"
+ },
+ "61610a991827": {
+  "en": "Lazy fishing on a boat in Langkawi",
+  "t": "ตกปลาชิล ๆ บนเรือที่ลังกาวี"
  },
  "6162ea49842a": {
   "en": "Iowa has more pigs than people. Many, many more.",
@@ -3799,6 +3951,10 @@
   "en": "Subnautica series",
   "t": "ซีรีส์ Subnautica"
  },
+ "64365c5619c9": {
+  "en": "Tocantins",
+  "t": "Tocantins"
+ },
  "643fa1b2225e": {
   "en": "Enlarge: Long nose",
   "t": "ขยาย: จมูกยาว"
@@ -3839,6 +3995,10 @@
   "en": "251 mi*",
   "t": "251 mi*"
  },
+ "6597c160dce8": {
+  "en": "Enlarge: Riding out to the ice",
+  "t": "ขยาย: ออกไปบนน้ำแข็ง"
+ },
  "65a68f752f48": {
   "en": " <strong data-astro-cid-j7pv25f6=\"\">King of Hues.</strong> Crowned in Huế, fluent in <abbr title=\"How Brazilians laugh online\" data-astro-cid-j7pv25f6=\"\">huehuehue</abbr>.\n<em data-astro-cid-j7pv25f6=\"\">I take life as seriously as I laugh at how absurd, finite and fickle it all is.</em> ",
   "t": "<strong data-astro-cid-j7pv25f6=\"\">King of Hues</strong> สวมมงกุฎที่เว้ คล่องแคล่วใน <abbr title=\"วิธีหัวเราะออนไลน์ของคนบราซิล\" data-astro-cid-j7pv25f6=\"\">huehuehue</abbr> <em data-astro-cid-j7pv25f6=\"\">ผมจริงจังกับชีวิตพอ ๆ กับที่หัวเราะให้กับความไร้สาระ ความมีจำกัด และความเอาแน่เอานอนไม่ได้ของมัน</em>"
@@ -3878,6 +4038,10 @@
  "665793f469e9": {
   "en": "+ 5 more games",
   "t": "+ อีก 5 เกม"
+ },
+ "666c786e8bca": {
+  "en": "São Paulo",
+  "t": "São Paulo"
  },
  "66a55c486fc4": {
   "en": "14 photos",
@@ -4107,6 +4271,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder movie 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 30: </span> ภาพยนตร์ชั่วคราว 30"
  },
+ "6c669ba41e8e": {
+  "en": "On the grill",
+  "t": "ขึ้นเตาย่าง"
+ },
  "6c84173deb3d": {
   "en": "Vraki<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (written in Vraki)</span>",
   "t": "วรากี<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (เขียนด้วยอักษรวรากี)</span>"
@@ -4154,6 +4322,10 @@
  "6d853a6b6827": {
   "en": "Gebo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚷ)</span>",
   "t": "เกโบ<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚷ)</span>"
+ },
+ "6d8aa36e5071": {
+  "en": "Enlarge: Sunfish and sunshine",
+  "t": "ขยาย: ปลาซันฟิชกับแสงแดด"
  },
  "6da2d12faf76": {
   "en": "Campsites are on their way.",
@@ -4258,6 +4430,10 @@
  "708d30ee6f71": {
   "en": "Tap Tap Infinity",
   "t": "Tap Tap Infinity"
+ },
+ "70c3d0311b21": {
+  "en": "Enlarge: Crappie selfie",
+  "t": "ขยาย: เซลฟีกับปลาแครปปี้"
  },
  "70e3b3dcbb78": {
   "en": " NM ",
@@ -4579,6 +4755,10 @@
   "en": " Deo’s Framework 16 LED Matrix Manager <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">November 2026</span> ",
   "t": "Deo’s Framework 16 LED Matrix Manager <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">พฤศจิกายน 2026</span>"
  },
+ "78f96c5ed4ce": {
+  "en": "Enlarge: Spring bass selfie",
+  "t": "ขยาย: เซลฟีปลาเบสหน้าใบไม้ผลิ"
+ },
  "78fadeed7303": {
   "en": "{n} ball in the bag",
   "t": "บอล {n} ลูกในกระเป๋า"
@@ -4614,6 +4794,10 @@
  "7a22ceba7656": {
   "en": "35 h",
   "t": "35 ชม."
+ },
+ "7a4fabcbb74e": {
+  "en": "Enlarge: Cleaning the catch",
+  "t": "ขยาย: ทำความสะอาดปลา"
  },
  "7a56564137e3": {
   "en": "Green ink",
@@ -4859,6 +5043,10 @@
   "en": "<strong>Edward Deci &amp; Richard Ryan</strong>, Self-Determination Theory: autonomy, competence and relatedness as basic psychological needs. <a href=\"https://selfdeterminationtheory.org/theory/\">Overview</a>",
   "t": "<strong>เอ็ดเวิร์ด เดซี และริชาร์ด ไรอัน</strong> ทฤษฎีการกำหนดตนเอง: ความเป็นอิสระ ความสามารถ และความสัมพันธ์ คือความต้องการพื้นฐานทางจิตใจ <a href=\"https://selfdeterminationtheory.org/theory/\">ภาพรวม</a>"
  },
+ "8120e5173338": {
+  "en": "Rock salt like a churrasco",
+  "t": "เกลือเม็ดแบบชูราสโก"
+ },
  "81268987b9ea": {
   "en": "Step 7: Give Thanks",
   "t": "ขั้นที่ 7: จงขอบคุณ"
@@ -4874,6 +5062,10 @@
  "819c4f648255": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Kimetsu no Yaiba (Demon Slayer) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 16: </span> Kimetsu no Yaiba (ดาบพิฆาตอสูร)"
+ },
+ "81a08de6b872": {
+  "en": "Boxing Day catch",
+  "t": "ปลาวันบ็อกซิ่งเดย์"
  },
  "81b9f21311e7": {
   "en": "One kind of post secretly pays better, and it changes without warning, so you keep trying everything.",
@@ -5023,6 +5215,10 @@
   "en": "Enlarge: Guess my plan for today",
   "t": "ขยาย: ทายแผนวันนี้ของผมสิ"
  },
+ "85e01b892f15": {
+  "en": "Enlarge: Crappie on the ice",
+  "t": "ขยาย: ปลาแครปปี้บนน้ำแข็ง"
+ },
  "85ed2372bb94": {
   "en": "Enlarge: I am getting old",
   "t": "ขยาย: ผมเริ่มแก่แล้ว"
@@ -5038,6 +5234,10 @@
  "86282ad0a8ac": {
   "en": " RO ",
   "t": "RO"
+ },
+ "862e4be872f8": {
+  "en": "Minas Gerais",
+  "t": "Minas Gerais"
  },
  "863e89bd3f72": {
   "en": "Blueprint Tycoon",
@@ -5074,6 +5274,10 @@
  "86e1ec88c970": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Placeholder movie 23 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 23: </span> ภาพยนตร์ชั่วคราว 23"
+ },
+ "86fa1b02226a": {
+  "en": "Enlarge: Lazy fishing on a boat in Langkawi",
+  "t": "ขยาย: ตกปลาชิล ๆ บนเรือที่ลังกาวี"
  },
  "8709c7619535": {
   "en": "Scritchy Scratchy",
@@ -5243,6 +5447,10 @@
   "en": "Enlarge: Car Ride!",
   "t": "ขยาย: นั่งรถเล่น!"
  },
+ "8bb83051e3d3": {
+  "en": "Enlarge: A fresh hole in the ice",
+  "t": "ขยาย: รูเจาะน้ำแข็งใหม่เอี่ยม"
+ },
  "8bc3246a22fe": {
   "en": "Tattoo on my chest",
   "t": "รอยสักที่หน้าอก"
@@ -5250,6 +5458,10 @@
  "8bf72c446253": {
   "en": "Game Dev Tycoon",
   "t": "Game Dev Tycoon"
+ },
+ "8c0510612bb8": {
+  "en": "Ice fishing in my finest sweater",
+  "t": "ตกปลาบนน้ำแข็งในเสื้อสเวตเตอร์ตัวเก่ง"
  },
  "8c11a9f1eca9": {
   "en": "Ride cymbal (key E)",
@@ -5327,6 +5539,10 @@
   "en": "pearls",
   "t": "เพิร์ล"
  },
+ "8e7cacfc2979": {
+  "en": "Anyway, thanks to a dear friend of mine who got me hooked on ice fishing, this facet of mine holds tons of pleasurable memories. Once, a blizzard struck our tent in the middle of the lake: the tent started to freeze as the heater struggled, and we eventually had to fight our way back, trying to find the shore and the way home. I also remember getting hail and a snowstorm while out fishing deeper into fall. It might sound horrible to some, but for me it was just as memorable as sitting in a cozy ice castle and jigging for hours while drinking and chilling out.",
+  "t": "ยังไงก็ตาม ต้องขอบคุณเพื่อนรักที่ทำให้ผมติดการตกปลาบนน้ำแข็ง ด้านนี้ของผมจึงมีความทรงจำดี ๆ มากมาย ครั้งหนึ่งพายุหิมะพัดถล่มเต็นท์ของเรากลางทะเลสาบ เต็นท์เริ่มแข็งตัวขณะที่ฮีตเตอร์สู้ไม่ไหว สุดท้ายเราต้องฝ่าทางกลับ คอยหาฝั่งและทางกลับบ้าน ผมยังจำได้ว่าเจอลูกเห็บกับพายุหิมะตอนออกไปตกปลาช่วงปลายฤดูใบไม้ร่วง สำหรับบางคนอาจฟังดูแย่ แต่สำหรับผมมันน่าจดจำพอ ๆ กับการนั่งในปราสาทน้ำแข็งอุ่น ๆ แล้วจิ๊กปลาเป็นชั่วโมง ๆ พร้อมดื่มและชิลไปด้วย"
+ },
  "8e81ceb925cb": {
   "en": "Lindström et al., Nature Communications 12:1311 (2021)",
   "t": "Lindström et al., Nature Communications 12:1311 (2021)"
@@ -5362,6 +5578,10 @@
  "8f53876c891d": {
   "en": "Take your time. This hammock has no hard commitments.",
   "t": "ค่อย ๆ คิด เปลนี้ไม่มีนัดตายตัว"
+ },
+ "8f5a614878c5": {
+  "en": "Chilling in the ice castle",
+  "t": "ชิลในปราสาทน้ำแข็ง"
  },
  "8f60ae052f27": {
   "en": "This one is for seasoned veterans of the genre, or someone deep into Japanese culture. The unique way the story is told is still vivid in my brain, despite all the anime I've absorbed since.",
@@ -5443,6 +5663,10 @@
   "en": "A ride outside stacks the last two: daylight and exercise, in one go. The studies are in this tab’s Links box.",
   "t": "ออกไปปั่นข้างนอกครั้งเดียวได้สองอย่างหลังพร้อมกัน: แสงกลางวันและการออกกำลังกาย งานวิจัยอยู่ในกล่องลิงก์ของแท็บนี้"
  },
+ "910f56da4d02": {
+  "en": "Yellow snow HUEHUEHUE edition",
+  "t": "หิมะสีเหลือง ฉบับ HUEHUEHUE"
+ },
  "9141b1b48942": {
   "en": "Step 6: The Farofa",
   "t": "ขั้นที่ 6: ฟาโรฟา"
@@ -5510,6 +5734,10 @@
  "92904aa843fd": {
   "en": "Red Dead Redemption 2",
   "t": "Red Dead Redemption 2"
+ },
+ "92929b228442": {
+  "en": "Enlarge: Rod flasher and a hole in the ice",
+  "t": "ขยาย: คันเบ็ด เครื่องหาปลา และรูบนน้ำแข็ง"
  },
  "92b1467f90fa": {
   "en": "The later seasons kind of derailed it, but that first season got me hooked, and I binge-watched it in one sitting. The MC's progression and changing persona is something I took notes on, and you can see it in Harry and other characters.",
@@ -5618,6 +5846,10 @@
  "95ad14470d3d": {
   "en": "Deovandski Repo Template",
   "t": "Deovandski Repo Template"
+ },
+ "95c3750c5aa2": {
+  "en": "Watching the flasher",
+  "t": "เฝ้าดูเครื่องหาปลา"
  },
  "95ced8b1219b": {
   "en": " R1 ",
@@ -5851,6 +6083,10 @@
   "en": " <span class=\"step__num\" data-astro-cid-uswg2a56=\"\">I.</span> Procure the Sacred Salt ",
   "t": "<span class=\"step__num\" data-astro-cid-uswg2a56=\"\">I.</span> จงหาเกลือศักดิ์สิทธิ์"
  },
+ "9c7d35007894": {
+  "en": "Crappie on the ice",
+  "t": "ปลาแครปปี้บนน้ำแข็ง"
+ },
  "9c8a9f570735": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 7: </span> Placeholder movie 7 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 7: </span> ภาพยนตร์ชั่วคราว 7"
@@ -5895,10 +6131,6 @@
   "en": "Third year since adoption",
   "t": "ครบ 3 ปีตั้งแต่รับเลี้ยง"
  },
- "9dc0862985d5": {
-  "en": "1 country · 8 states/provinces · 39 photos",
-  "t": "1 ประเทศ · 8 รัฐ/จังหวัด · 39 รูป"
- },
  "9de02278ebbb": {
   "en": "46 h",
   "t": "46 ชม."
@@ -5906,6 +6138,10 @@
  "9debabbaa01a": {
   "en": " ES ",
   "t": "ES"
+ },
+ "9e048ca7940e": {
+  "en": "Crappie selfie",
+  "t": "เซลฟีกับปลาแครปปี้"
  },
  "9e0817814636": {
   "en": "Lil princess",
@@ -5950,6 +6186,10 @@
  "9f3490676f4d": {
   "en": "Super doggo",
   "t": "ซูเปอร์หมา"
+ },
+ "9f3ecd832a8b": {
+  "en": " Tanjung Rhu Floating Restaurant &amp; Fish Farm, Langkawi ",
+  "t": "Tanjung Rhu Floating Restaurant &amp; Fish Farm ลังกาวี"
  },
  "9f46d02897f8": {
   "en": "2 h",
@@ -6175,6 +6415,10 @@
   "en": "Traded {n} {give} for 1 {get}.",
   "t": "แลก {give} {n} อันเป็น {get} 1 อัน"
  },
+ "a4664f9fa7e0": {
+  "en": "Play video: Fishing, influencer style",
+  "t": "เล่นวิดีโอ: ตกปลาแบบอินฟลูเอนเซอร์"
+ },
  "a46906017e78": {
   "en": "Going mountain biking for the first time was a natural step up to expand my experiences, although my bike did not survive the endeavor.",
   "t": "การไปปั่นเสือภูเขาครั้งแรกเป็นก้าวต่อไปที่เป็นธรรมชาติเพื่อขยายประสบการณ์ของผม แม้ว่าจักรยานของผมจะไม่รอดจากการผจญภัยครั้งนั้น"
@@ -6190,6 +6434,10 @@
  "a48363071f8d": {
   "en": " OW ",
   "t": "OW"
+ },
+ "a486e14465d8": {
+  "en": "Saying hi to Willie Walleye in Baudette",
+  "t": "ทักทายวิลลี่ วอลอายที่โบเด็ต"
  },
  "a4c146b7a21c": {
   "en": "Senpai, your bellows technique is... impressive (￣▽￣)ノ",
@@ -6231,6 +6479,10 @@
   "en": " GD ",
   "t": "GD"
  },
+ "a6106e925d6c": {
+  "en": "The floating fish farm",
+  "t": "ฟาร์มปลาลอยน้ำ"
+ },
  "a62b912cc6ec": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#7: </span>Best of the Worst: Plinketto #9",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#7: </span>Best of the Worst: Plinketto #9"
@@ -6246,6 +6498,10 @@
  "a66864f45a5a": {
   "en": "GM",
   "t": "GM"
+ },
+ "a674c01dbed9": {
+  "en": " Where Deo has been? 16 countries · 37 states/provinces · 343 photos ",
+  "t": "Deo เคยไปที่ไหนมาบ้าง? 16 ประเทศ · 37 รัฐ/จังหวัด · 343 รูป"
  },
  "a68df9592359": {
   "en": "Musicals",
@@ -6382,6 +6638,10 @@
  "a97904722187": {
   "en": " City, colony &amp; strategy ",
   "t": "เมือง อาณานิคม และกลยุทธ์"
+ },
+ "a979a84a7f3b": {
+  "en": "Enlarge: Chilling in the ice castle",
+  "t": "ขยาย: ชิลในปราสาทน้ำแข็ง"
  },
  "a97da7b73c5d": {
   "en": "Increased my protein intake, aiming for at least 100 g a day.\n<ul>\n<li>Food for the week must be 90%+ lean meat, with brown rice for the extra fiber. Petite Young Sweet Peas are an easy fiber boost too: mild on their own, so they mix well with a lot of stuff.</li>\n<li>Coffee with Kemps 13 g protein milk.</li>\n<li>3 or 4 eggs for breakfast. Or protein cereal (added sugar at most 15% of the serving) when my sweet tooth hits. Or both, on those days when my gut is extra loud.</li>\n<li>A Cosmic Crisp apple as a sweet treat after lunch.</li>\n<li>Fairlife Core Power (42 g protein) as an afternoon snack.</li>\n<li>Sick of leftovers? I let myself get something else for dinner. With that much protein already in, I’m usually not terribly hungry anyway.</li>\n<li>Fast from 7pm until the next day.</li>\n</ul>\n",
@@ -6662,6 +6922,10 @@
  "b115fa0f703f": {
   "en": "Every Miku concert I've been to, from Mikunopolis in 2011 onward.",
   "t": "ทุกคอนเสิร์ตมิกุที่ผมเคยไป ตั้งแต่ Mikunopolis ปี 2011 เป็นต้นมา"
+ },
+ "b127454ab3aa": {
+  "en": "More pictures below, including me making yellow snow and holding up more fish than strictly necessary. None of those made the cut for my dating profile, which is truly a pity. Maybe that’s why I had such bad matches the last time I tried it out, and realized it was worse than going into a wet market huehuehue.",
+  "t": "รูปเพิ่มเติมอยู่ด้านล่าง รวมถึงตอนผมทำหิมะสีเหลือง และตอนถือปลาเยอะเกินความจำเป็น ไม่มีรูปไหนได้ไปอยู่ในโปรไฟล์หาคู่ของผมเลย น่าเสียดายจริง ๆ บางทีนั่นอาจเป็นเหตุผลที่ครั้งล่าสุดที่ลองใช้ ผมได้แมตช์แย่ ๆ แบบนั้น และพบว่ามันแย่กว่าไปตลาดสดอีก huehuehue"
  },
  "b13596cd2774": {
   "en": "15 h",
@@ -6975,6 +7239,10 @@
   "en": "The clock is ticking on my 💀 Death tab.",
   "t": "นาฬิกากำลังเดินอยู่ใน 💀 แท็บความตายของผม"
  },
+ "b9b43caf5896": {
+  "en": "Feast at the Tanjung Rhu floating restaurant",
+  "t": "ฉลองที่ร้านอาหารลอยน้ำตันจุงรู"
+ },
  "b9dd1e7cf0fb": {
   "en": "Stress score",
   "t": "คะแนนความเครียด"
@@ -7002,6 +7270,10 @@
  "baa7da26618a": {
   "en": "Peeta, a pixel pet",
   "t": "Peeta สัตว์เลี้ยงพิกเซล"
+ },
+ "bac02f06b01e": {
+  "en": "Jigging into the night",
+  "t": "จิ๊กปลาจนดึก"
  },
  "bb0bc553b8e8": {
   "en": "Whack-a-Miku: turn your phone sideways",
@@ -7034,6 +7306,10 @@
  "bc306868ce5c": {
   "en": "Pitty",
   "t": "Pitty"
+ },
+ "bc3d9d5447db": {
+  "en": "1 country · 11 states/provinces · 59 photos",
+  "t": "1 ประเทศ · 11 รัฐ/จังหวัด · 59 รูป"
  },
  "bc4359231d61": {
   "en": "Gym",
@@ -7111,6 +7387,10 @@
   "en": "Fold 2 of 5: now the top-right corner to the same dot.",
   "t": "พับ 2/5: ตอนนี้มุมขวาบนไปจุดเดียวกัน"
  },
+ "bed1cd8de831": {
+  "en": "Enlarge: Fillets ready",
+  "t": "ขยาย: ชิ้นปลาพร้อมแล้ว"
+ },
  "bee75ca77f75": {
   "en": "Controls",
   "t": "ปุ่มควบคุม"
@@ -7142,6 +7422,10 @@
  "bfc1086b2a80": {
   "en": "Enlarge: Lil princess",
   "t": "ขยาย: เจ้าหญิงตัวน้อย"
+ },
+ "bfc2012b411c": {
+  "en": "Sunfish and sunshine",
+  "t": "ปลาซันฟิชกับแสงแดด"
  },
  "bfc2ec349cc6": {
   "en": "{n} shit 💩",
@@ -7178,6 +7462,10 @@
  "c0c5f353d6da": {
   "en": "Enlarge: But don't wanna go to sleep",
   "t": "ขยาย: แต่ไม่อยากนอน"
+ },
+ "c0d0d1a3569b": {
+  "en": " Phuket Monster Fishing Park ",
+  "t": "Phuket Monster Fishing Park"
  },
  "c0d7841b28ca": {
   "en": "I make games too, now and then: see what I've cooked so far on <a href=\"#dev-games\" data-astro-cid-j7pv25f6=\"\">Developer › Games</a>.",
@@ -7371,6 +7659,10 @@
   "en": "Tools I use for travels",
   "t": "เครื่องมือที่ผมใช้เวลาเดินทาง"
  },
+ "c6488d2f0902": {
+  "en": "Enlarge: Tiny fish big pride",
+  "t": "ขยาย: ปลาตัวเล็ก ความภูมิใจตัวใหญ่"
+ },
  "c65780da80b3": {
   "en": "Undead Horde",
   "t": "Undead Horde"
@@ -7419,6 +7711,10 @@
   "en": "Breadcrumb",
   "t": "เส้นทางนำทาง"
  },
+ "c76a1ded06e6": {
+  "en": "Enlarge: Seasoned and ready",
+  "t": "ขยาย: ปรุงรสพร้อมแล้ว"
+ },
  "c794b70221ac": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,590 h</strong>  ·  12 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,590 ชม.</strong>  ·  12 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% ของชั่วโมงทั้งหมด</span>"
@@ -7446,6 +7742,10 @@
  "c8e2de313adf": {
   "en": "Next stop: {place} · {distance} to go",
   "t": "จุดหมายถัดไป: {place} · อีก {distance}"
+ },
+ "c92472adceec": {
+  "en": "28 photos",
+  "t": "28 รูป"
  },
  "c92499e3e7ab": {
   "en": "8 games",
@@ -7502,6 +7802,10 @@
  "cabe88dd6104": {
   "en": "💩 Fertilize (1 shit per use)",
   "t": "💩 ใส่ปุ๋ย (ใช้ขี้ 1 ก้อนต่อครั้ง)"
+ },
+ "cac6a1784eb0": {
+  "en": "Enlarge: Watching the flasher",
+  "t": "ขยาย: เฝ้าดูเครื่องหาปลา"
  },
  "cacd82451941": {
   "en": "Show as a table",
@@ -7711,6 +8015,10 @@
   "en": " SD ",
   "t": "SD"
  },
+ "cff6a7bdbdd6": {
+  "en": "Enlarge: A catch and a sunset",
+  "t": "ขยาย: ปลาที่ได้กับพระอาทิตย์ตก"
+ },
  "d004a7d961e1": {
   "en": "Enlarge: Painting or drawing, 03/05/2023",
   "t": "ขยาย: ภาพวาดหรือภาพร่าง, 5/3/2023"
@@ -7763,6 +8071,10 @@
   "en": "Whack-a-Miku",
   "t": "ตีมิกุ"
  },
+ "d13fefbf3555": {
+  "en": "Enlarge: Jigging into the night",
+  "t": "ขยาย: จิ๊กปลาจนดึก"
+ },
  "d153c794ecdb": {
   "en": "Play upright instead",
   "t": "เล่นแนวตั้งแทน"
@@ -7806,6 +8118,10 @@
  "d20bc2c58ea9": {
   "en": "Deo might have hit the dust. If he is still kicking, tell his old ass to update the clock.",
   "t": "Deo อาจจะลาโลกไปแล้วก็ได้ ถ้ายังมีลมหายใจอยู่ ช่วยบอกตาแก่นั่นให้อัปเดตนาฬิกาที"
+ },
+ "d21edd9f85f5": {
+  "en": "Catch of the day in the tent",
+  "t": "ปลาประจำวันในเต็นท์"
  },
  "d223b6c1c738": {
   "en": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>",
@@ -8006,6 +8322,10 @@
  "d712806feb36": {
   "en": "<strong>Andy Clark &amp; David Chalmers</strong>, <em>Analysis</em> (1998), “The Extended Mind”: Otto’s notebook does the job of his memory, so where it lives matters less than what it does. Skin, a whiteboard or a website can hold part of the mind too. <a href=\"https://web.ics.purdue.edu/~drkelly/ClarkChalmersTheExtendedMind1998.pdf\">Paper</a>",
   "t": "<strong>Andy Clark &amp; David Chalmers</strong>, <em>Analysis</em> (1998), “The Extended Mind”: สมุดของอ็อตโตทำหน้าที่แทนความจำของเขา ดังนั้นมันอยู่ที่ไหนสำคัญน้อยกว่ามันทำอะไร ผิวหนัง ไวต์บอร์ด หรือเว็บไซต์ก็เก็บส่วนหนึ่งของจิตใจได้เช่นกัน <a href=\"https://web.ics.purdue.edu/~drkelly/ClarkChalmersTheExtendedMind1998.pdf\">งานวิจัย</a>"
+ },
+ "d71861317ee9": {
+  "en": "A fresh hole in the ice",
+  "t": "รูเจาะน้ำแข็งใหม่เอี่ยม"
  },
  "d726db94d220": {
   "en": "Down the singletrack",
@@ -8591,6 +8911,10 @@
   "en": "No photos yet.",
   "t": "ยังไม่มีรูป"
  },
+ "e699b002d646": {
+  "en": "Cheers from the ice",
+  "t": "ชนแก้วบนน้ำแข็ง"
+ },
  "e69f20e9f683": {
   "en": "F",
   "t": "F"
@@ -8618,6 +8942,10 @@
  "e74a1afd48ee": {
   "en": "Step 2: Choose Thy Cut",
   "t": "ขั้นที่ 2: จงเลือกส่วนเนื้อของเจ้า"
+ },
+ "e75ea941f509": {
+  "en": "Enlarge: Caught one!",
+  "t": "ขยาย: ได้แล้ว!"
  },
  "e76dbe835acf": {
   "en": "Miku's name in Japanese. Miku-chan (ミクちゃん) is a cornerstone of my life, tied to the things that drive me: ambition, technology, collaboration and community. She also stands for my passion, my drive, and the anxiety side of my personality.",
@@ -8695,6 +9023,10 @@
   "en": "Show all 18",
   "t": "แสดงทั้งหมด 18"
  },
+ "ea006909c8e0": {
+  "en": "Deep fried walleye time",
+  "t": "ได้เวลาปลาวอลอายทอด"
+ },
  "ea3ddf6727a8": {
   "en": "Do Better!",
   "t": "Do Better!"
@@ -8755,13 +9087,13 @@
   "en": "Rest in peace, bud. Thank you for being a core part of my childhood. See you in the afterlife, if there is one!",
   "t": "ไปสู่สุคตินะเพื่อน ขอบคุณที่เป็นส่วนสำคัญของวัยเด็กผม เจอกันในโลกหน้า ถ้ามันมีจริง!"
  },
- "eb827f2a823b": {
-  "en": "Fishing photos are on their way.",
-  "t": "รูปตกปลากำลังมา"
- },
  "ebc9989078dc": {
   "en": "This is roughly how much time I have left. I’m striving to make the most of every second of it, rest included. Am I a machine? Maybe. But even machines have downtime, so I choose how I recharge and get the most out of that too. Or, as the kids call it nowadays, <em>Lifemaxxing</em>!",
   "t": "นี่คือเวลาคร่าว ๆ ที่ผมเหลืออยู่ ผมพยายามใช้ทุกวินาทีให้คุ้มที่สุด รวมถึงการพักด้วย ผมเป็นเครื่องจักรเหรอ? อาจจะ แต่เครื่องจักรก็ยังมีช่วงหยุดพัก ผมเลยเลือกเองว่าจะชาร์จพลังยังไง แล้วใช้มันให้คุ้มที่สุดด้วย หรืออย่างที่เด็กสมัยนี้เรียกกันว่า <em>Lifemaxxing</em>!"
+ },
+ "ebca95f4299e": {
+  "en": "Enlarge: Pressure ridges on Lake of the Woods",
+  "t": "ขยาย: สันน้ำแข็งบนเลกออฟเดอะวูดส์"
  },
  "ebeff8af956a": {
   "en": "I WANNA GO OUTSIDE",
@@ -9099,6 +9431,10 @@
   "en": " Sinoi the Fisherman <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Pre-production · production starts Q1 2027</span> ",
   "t": "Sinoi the Fisherman <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">พรีโปรดักชัน · เริ่มผลิตจริงไตรมาส 1 ปี 2027</span>"
  },
+ "f71a7b87f258": {
+  "en": "Enlarge: More yellow snow HUE!",
+  "t": "ขยาย: หิมะสีเหลืองอีกรอบ HUE!"
+ },
  "f721478c1c58": {
   "en": " Maximal heart rate by age (Tanaka et al., 2001) ",
   "t": "อัตราการเต้นของหัวใจสูงสุดตามอายุ (Tanaka และคณะ, 2001)"
@@ -9199,6 +9535,10 @@
   "en": "Nordic rune associated with ice, stillness, focus, containment, and preservation.",
   "t": "รูนนอร์ดิกที่เกี่ยวข้องกับน้ำแข็ง ความนิ่ง สมาธิ การควบคุม และการรักษาไว้"
  },
+ "f965bb0ee45e": {
+  "en": "This was made by my social influencer facet, but it’s something all my sides treasure: having fun!",
+  "t": "อันนี้ด้านอินฟลูเอนเซอร์ของผมเป็นคนทำ แต่มันคือสิ่งที่ทุกด้านของผมรักเหมือนกัน: ความสนุก!"
+ },
  "f96e7bc80d25": {
   "en": "Fertilize a plot that has something growing.",
   "t": "ใส่ปุ๋ยแปลงที่มีอะไรกำลังโต"
@@ -9218,10 +9558,6 @@
  "fa18ec4f1b86": {
   "en": " Shooters &amp; co-op ",
   "t": "เกมยิงและเล่นร่วมกัน"
- },
- "fa24a9207097": {
-  "en": " Where Deo has been? 16 countries · 34 states/provinces · 321 photos ",
-  "t": "Deo เคยไปที่ไหนมาบ้าง? 16 ประเทศ · 34 รัฐ/จังหวัด · 321 รูป"
  },
  "fa42321aea70": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Placeholder movie 26 ",
@@ -9286,6 +9622,10 @@
  "fc3c2b787144": {
   "en": "Lyric Opera of Chicago",
   "t": "Lyric Opera of Chicago"
+ },
+ "fc52417e681d": {
+  "en": " Lake of the Woods, Minnesota ",
+  "t": "เลกออฟเดอะวูดส์ มินนิโซตา"
  },
  "fc8cf6ba4561": {
   "en": "Kaydy Cain",
@@ -9410,6 +9750,14 @@
  "ffbcb9739951": {
   "en": "Cactus",
   "t": "กระบองเพชร"
+ },
+ "ffcfe5e9eab8": {
+  "en": "Fishing, influencer style",
+  "t": "ตกปลาแบบอินฟลูเอนเซอร์"
+ },
+ "ffe8eb5ee020": {
+  "en": "Seasoned and ready",
+  "t": "ปรุงรสพร้อมแล้ว"
  },
  "fff4a50e8428": {
   "en": "Đà Nẵng",

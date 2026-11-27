@@ -23,6 +23,10 @@
   "en": "Each moon is a game, sized by its hours.",
   "t": "衛星ひとつがゲームで、大きさがプレイ時間です。"
  },
+ "00d603161317": {
+  "en": "Enlarge: Inside the cozy ice castle",
+  "t": "拡大: 居心地のいいアイスキャッスルの中"
+ },
  "00f03137e155": {
   "en": "Easy",
   "t": "イージー"
@@ -34,6 +38,10 @@
  "00f42f627fce": {
   "en": "Your post was shown to 1 more person than last time! Keep going!",
   "t": "前回より1人多く表示された！続けろ！"
+ },
+ "00ff82fac41b": {
+  "en": "2 countries · 22 states/provinces · 169 photos",
+  "t": "2 か国 · 22 の州/県 · 写真 169 枚"
  },
  "010a0d803f20": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Made in Abyss ",
@@ -47,6 +55,10 @@
   "en": "Fold it, throw it",
   "t": "折って、投げる"
  },
+ "01222ad325e7": {
+  "en": "Enlarge: Bass on the pontoon",
+  "t": "拡大: ポンツーンボートでバス"
+ },
  "0144c52019a9": {
   "en": "76 h",
   "t": "76 時間"
@@ -58,10 +70,6 @@
  "017acba7f57e": {
   "en": "The light novel series site: the full novel, the World Lore, and Public and Behind The Scenes layers.",
   "t": "ライトノベルシリーズのサイト：小説全編、世界観、そして公開と舞台裏の二つのレイヤー。"
- },
- "019336fad507": {
-  "en": "2 countries · 22 states/provinces · 167 photos",
-  "t": "2 か国 · 22 の州/県 · 写真 167 枚"
  },
  "01a119163f5d": {
   "en": "Every cartridge is a game, as wide as its hours. Hover one to pull it out; press it to keep it out. Dashed ones are estimated.",
@@ -98,6 +106,10 @@
  "02543e7a69d6": {
   "en": " PS ",
   "t": "PS"
+ },
+ "0257f709be74": {
+  "en": "Enlarge: Feast at the Tanjung Rhu floating restaurant",
+  "t": "拡大: タンジュン・ルーの水上レストランでごちそう"
  },
  "026d0912a966": {
   "en": "Deo in 2024 on stage holding a book award certificate",
@@ -191,6 +203,10 @@
   "en": "Ink",
   "t": "インク"
  },
+ "04aad2e37698": {
+  "en": "Enlarge: On the grill",
+  "t": "拡大: グリルへ"
+ },
  "04c70f3c22a3": {
   "en": "of {n} tracked",
   "t": "記録 {n} 日のうち"
@@ -238,6 +254,10 @@
  "05e728e60d80": {
   "en": "\nMy watch logged 162 more \"bike rides\" on its own (76 hours of them). Most of those\n          were me pushing my cat, <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a>, in his stroller, or me on the elliptical when it's too cold outside, so\n          they don't count toward the miles above.\n",
   "t": "時計はほかにも 162 回の「自転車ライド」を勝手に記録していた（合計 76 時間）。そのほとんどは、うちの猫 <a href=\"#pets-peeta\" data-astro-cid-o4ptolev=\"\">Peeta</a> をベビーカーに乗せて押していたか、外が寒すぎる日にエリプティカルをしていたときなので、上のマイルには入れていない。"
+ },
+ "05f26caf36c5": {
+  "en": "Rod flasher and a hole in the ice",
+  "t": "竿と魚群探知機と氷の穴"
  },
  "061ff9e69ad0": {
   "en": "Shinjuku Station in Tokyo is the busiest train station in the world: millions of people pass through it every day.",
@@ -306,6 +326,10 @@
  "0769eae50b31": {
   "en": "The games on the list add up to 1,442 days of nonstop play, 24 hours a day. Each square is one of those days.",
   "t": "リストのゲームを合わせると、1日24時間ぶっ通しで1,442日分のプレイになります。四角ひとつがその1日です。"
+ },
+ "076b94b77103": {
+  "en": "Cleaning the catch",
+  "t": "釣った魚をさばく"
  },
  "07813f7ab23c": {
   "en": "SKALD",
@@ -507,6 +531,10 @@
   "en": "268 h",
   "t": "268 時間"
  },
+ "0d3a836fc775": {
+  "en": "Spring bass selfie",
+  "t": "春のバス自撮り"
+ },
  "0d97f4d5801b": {
   "en": "Enlarge: Bathing in the Amazon",
   "t": "拡大: アマゾンで水浴び"
@@ -639,6 +667,14 @@
   "en": "Walk time or more like I stay in the stroller",
   "t": "散歩の時間、というかベビーカーに乗ったまま"
  },
+ "10551eef4bdd": {
+  "en": "Enlarge: Lake of the Woods here we come",
+  "t": "拡大: レイク・オブ・ザ・ウッズ、今行くぞ"
+ },
+ "107a2fe82512": {
+  "en": "Riding out to the ice",
+  "t": "氷の上へ出発"
+ },
  "10c5d043a58d": {
   "en": "A West Marches D&amp;D 5e campaign set in the world of #HusbandOutWorld.",
   "t": "#HusbandOutWorld の世界を舞台にした、West Marches 形式の D&amp;D 第 5 版キャンペーン。"
@@ -679,6 +715,10 @@
   "en": "Photo {n}, from one of Deo’s trips: where was it taken?",
   "t": "写真{n}、Deoの旅の一枚：どこで撮った？"
  },
+ "118cb1f0c3c6": {
+  "en": "Sunset on the ice",
+  "t": "氷上の夕日"
+ },
  "11982574c056": {
   "en": "StackOverflow",
   "t": "StackOverflow"
@@ -710,6 +750,10 @@
  "12cafa27532f": {
   "en": "Enlarge: Painting or drawing, 04/09/2013",
   "t": "拡大: 絵画またはスケッチ, 2013年4月9日"
+ },
+ "12e4132c6497": {
+  "en": "Enlarge: Cheers from the ice",
+  "t": "拡大: 氷の上から乾杯"
  },
  "130c48532b18": {
   "en": " Resting heart rate (Oura) ",
@@ -871,6 +915,10 @@
   "en": "H-hentai! (*/ω＼*)",
   "t": "へ、変態！(*/ω＼*)"
  },
+ "181c616ba7dc": {
+  "en": "Enlarge: Catch of the day in the tent",
+  "t": "拡大: テントの中で今日の一匹"
+ },
  "1825a9d5984b": {
   "en": "Fold 1 of 5: drag the top-left corner to the dot on the centre line.",
   "t": "折り 1/5：左上の角を中央線の点にドラッグ。"
@@ -947,9 +995,17 @@
   "en": "Opera",
   "t": "オペラ"
  },
+ "19fd65c63424": {
+  "en": "Enlarge: Deep fried walleye time",
+  "t": "拡大: ウォールアイの唐揚げタイム"
+ },
  "1a033dcc86e5": {
   "en": "My 2014 college game (XNA for Windows Phone), brought back in Godot. Hold to fly up, let go to glide, eat or starve. Play the 2014 version as it was, or the full game its design document planned.",
   "t": "2014 年の大学の課題で作ったゲーム（Windows Phone 向け XNA）を Godot で復活させた。押して上昇、離して滑空、食べなければ飢える。2014 年版をそのまま遊ぶことも、設計書が計画していた完全版を遊ぶこともできる。"
+ },
+ "1a04b5f15ca6": {
+  "en": "Lake of the Woods here we come",
+  "t": "レイク・オブ・ザ・ウッズ、今行くぞ"
  },
  "1a1599284e10": {
   "en": "Where in the World Was Deo?",
@@ -1046,6 +1102,10 @@
  "1d23e1eb9609": {
   "en": "Enlarge: Hanging with a Peeta look alike",
   "t": "拡大: Peeta のそっくりさんと一緒に"
+ },
+ "1d43a97217e1": {
+  "en": "Bass on the pontoon",
+  "t": "ポンツーンボートでバス"
  },
  "1d9715eead3d": {
   "en": " Training guided by HRV (meta-analysis, 2020) ",
@@ -1170,6 +1230,10 @@
  "208cb0a742bf": {
   "en": "Open hi-hat (key Q)",
   "t": "オープンハイハット（キー Q）"
+ },
+ "2090192a3115": {
+  "en": "Fillets ready",
+  "t": "切り身の準備完了"
  },
  "2095d1f352f7": {
   "en": "Deo in 2016 in a blue shirt and tie at an outdoor dinner",
@@ -1355,6 +1419,10 @@
   "en": "Ecchi in the shape of an anime. I absolutely loved the creativity in pushing the envelope as far as possible! Yami is my favorite girl, even though IRL that type of girl tends to be toxic as fuck. Avoidant girls, especially fearful avoidants, are complete energy vampires.",
   "t": "アニメの形をしたエッチ。限界まで攻める創造力が最高に好きだ！ ヤミは一番好きな子だけど、現実ではああいうタイプの女の子はめちゃくちゃ有害になりがちだ。回避型の女の子、特に恐れ・回避型は、完全なエネルギーヴァンパイアだ。"
  },
+ "25200d152a79": {
+  "en": "Pressure ridges on Lake of the Woods",
+  "t": "レイク・オブ・ザ・ウッズの氷の盛り上がり"
+ },
  "25270ee78057": {
   "en": "Balls worth {balls} pearls vs {shit} shit.",
   "t": "ボールの価値：パール {balls} 個分 vs うんこ {shit} 個。"
@@ -1491,6 +1559,10 @@
   "en": " Space &amp; flight ",
   "t": "宇宙＆フライト"
  },
+ "28139135118f": {
+  "en": "Enlarge: The floating fish farm",
+  "t": "拡大: 水上の養魚場"
+ },
  "2835bcaa6e76": {
   "en": " 49 h ",
   "t": "49 時間"
@@ -1570,6 +1642,10 @@
  "2a37335eebda": {
   "en": "Heart",
   "t": "心臓"
+ },
+ "2a37ee4a5a2e": {
+  "en": "Generator duty at night",
+  "t": "夜の発電機当番"
  },
  "2a45982468f2": {
   "en": "Enlarge: Acting cute",
@@ -1843,6 +1919,10 @@
   "en": "Dropkick Murphys",
   "t": "Dropkick Murphys"
  },
+ "3246c5bdd6e0": {
+  "en": "A northern pike as long as my torso",
+  "t": "俺の胴体くらい長いノーザンパイク"
+ },
  "32477dd234fb": {
   "en": "Confidence is not noise. <strong>It’s trusting yourself to do what’s right when your core is shaken.</strong> Build boldly, measure honestly, correct without ego.",
   "t": "自信は騒音じゃない。<strong>芯が揺さぶられたときに、正しいことをする自分を信じることだ。</strong>大胆に築き、正直に測り、エゴなしに正せ。"
@@ -1955,6 +2035,10 @@
   "en": "Resting heart rate",
   "t": "安静時心拍数"
  },
+ "34ad8fd68dda": {
+  "en": "Enlarge: Saying hi to Willie Walleye in Baudette",
+  "t": "拡大: ボーデットのウィリー・ウォールアイにあいさつ"
+ },
  "34b1471c5170": {
   "en": "I’m not dying in the waiting room of someone else’s stagnant life. <span class=\"newest\">New</span>",
   "t": "俺は、他人の停滞した人生の待合室で死ぬつもりはない。<span class=\"newest\">新</span>"
@@ -2026,6 +2110,10 @@
  "37219ea52a83": {
   "en": "Chibi pixel Deo in his yellow king's robes and crown hat, chilling in a hammock between two palm trees. Press him for a freebie.",
   "t": "黄色い王様のローブと王冠帽子のちびピクセルDeoが、2本のヤシの木の間のハンモックでくつろいでいる。押すとお助け。"
+ },
+ "3724f8a7aa48": {
+  "en": "A catch and a sunset",
+  "t": "釣果と夕日"
  },
  "37497aa5a227": {
   "en": "Brazil",
@@ -2142,6 +2230,10 @@
  "39210f2abeb2": {
   "en": "Enlarge: Ember.js dev assistant",
   "t": "拡大: Ember.js 開発アシスタント"
+ },
+ "393a3315e9d7": {
+  "en": "Enlarge: Boxing Day catch",
+  "t": "拡大: ボクシング・デーの釣果"
  },
  "3963bf6407a2": {
   "en": "<em><strong>State Aviation Journal</strong></em>, “The Bond of Aviation and Autism”: Jacob Erikson, an autistic teen whose love of plane spotting found him a welcoming community that helped his communication. <a href=\"https://stateaviationjournal.com/index.php/state-news/north-carolina/the-bond-of-aviation-and-autism\">Article</a>",
@@ -2407,6 +2499,10 @@
   "en": "+ 6 more games",
   "t": "+ ほか6本"
  },
+ "3fdc591636cf": {
+  "en": "Enlarge: Rock salt like a churrasco",
+  "t": "拡大: シュハスコみたいに岩塩"
+ },
  "3ffa50fa96b3": {
   "en": " Flight Experience Singapore ",
   "t": "Flight Experience Singapore"
@@ -2426,6 +2522,10 @@
  "4077f33562cf": {
   "en": "Tap the kit, or play it with your keyboard: A S D F G, Q W E, X for the kick.",
   "t": "キットをタップするか、キーボードで演奏しよう：A S D F G、Q W E、バスドラムは X。"
+ },
+ "4087e44c19db": {
+  "en": "Tiny fish big pride",
+  "t": "小さな魚、大きな誇り"
  },
  "408b5c0e9624": {
   "en": "4% of my hours",
@@ -2611,6 +2711,10 @@
   "en": "Da Nang's Dragon Bridge breathes fire, and then water, on weekend nights. Yes, a bridge. Yes, fire.",
   "t": "ダナンのドラゴン橋は週末の夜に火を噴き、そのあと水を噴く。そう、橋が。そう、火を。"
  },
+ "472946cacc03": {
+  "en": "Enlarge: Generator duty at night",
+  "t": "拡大: 夜の発電機当番"
+ },
  "47299a86ea20": {
   "en": " TW ",
   "t": "TW"
@@ -2771,6 +2875,10 @@
   "en": "Dead Cells",
   "t": "Dead Cells"
  },
+ "4bfafcf0ad5a": {
+  "en": "Enlarge: Dinner is served",
+  "t": "拡大: いただきます"
+ },
  "4c05c049e52b": {
   "en": "Assassin's Creed series",
   "t": "アサシン クリード シリーズ"
@@ -2786,6 +2894,14 @@
  "4c1f1c138390": {
   "en": "Not bad!",
   "t": "悪くない！"
+ },
+ "4c2f8ff5d504": {
+  "en": "More yellow snow HUE!",
+  "t": "黄色い雪おかわり、HUE!"
+ },
+ "4c8fdbba4f63": {
+  "en": "Enlarge: A northern pike as long as my torso",
+  "t": "拡大: 俺の胴体くらい長いノーザンパイク"
  },
  "4cbc599953b9": {
   "en": " Rhythm &amp; music ",
@@ -2834,6 +2950,10 @@
  "4d6474389c69": {
   "en": " BW ",
   "t": "BW"
+ },
+ "4d7354f5df06": {
+  "en": "Enlarge: Yellow snow HUEHUEHUE edition",
+  "t": "拡大: 黄色い雪、HUEHUEHUE エディション"
  },
  "4d968a30a022": {
   "en": "no data",
@@ -2963,6 +3083,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 8: </span> Re:Zero kara Hajimeru Isekai Seikatsu (Re:Zero − Starting Life in Another World) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 8: </span> Re:ゼロから始める異世界生活"
  },
+ "4fc34492f33d": {
+  "en": "Enlarge: Ice fishing in my finest sweater",
+  "t": "拡大: 一張羅のセーターで氷上釣り"
+ },
  "4fc5178f818d": {
   "en": "Pump the bellows",
   "t": "ふいごを押す"
@@ -2990,6 +3114,10 @@
  "50744e2a121c": {
   "en": "The story development, the world lore and the characters themselves are really well done! That ending was unique; I still remember pieces of it.",
   "t": "ストーリーの展開も、世界観も、キャラクター自体も本当によくできている！ あの結末は独特で、今でもところどころ覚えている。"
+ },
+ "5076856fe34c": {
+  "en": "I’ve fished in 3 countries so far: Brazil, the United States and Malaysia. So many more countries to fish, so little time huehue. I’ve been to Thailand multiple times, but I haven’t hit up <a href=\"https://www.phuket-monster-fishing-park.com/\">Monster Fishing Park in Phuket</a> yet! Meanwhile, back closer to home, <a href=\"https://lakeofthewoodsmn.com/\">Lake of the Woods</a> is nice, and deep-fried walleye makes me salivate just thinking about it… And I also want to eat freshly caught, grilled grouper in Langkawi! That floating restaurant was downright one of the best life experiences I’ve had, gastronomically speaking.",
+  "t": "これまで釣りをした国は3か国：ブラジル、アメリカ、マレーシア。釣りたい国は山ほどあるのに、時間が足りない huehue。タイには何度も行ったけど、<a href=\"https://www.phuket-monster-fishing-park.com/\">プーケットの Monster Fishing Park</a> にはまだ行けていない！ 一方、地元に近いところでは <a href=\"https://lakeofthewoodsmn.com/\">レイク・オブ・ザ・ウッズ</a> がいいし、ウォールアイの唐揚げは考えただけでよだれが出る… それに、ランカウイで釣れたての焼いたハタも食べたい！ あの水上レストランは、食の面で言えば間違いなく人生最高の体験のひとつだった。"
  },
  "5088ebe3cd7c": {
   "en": "More mango!",
@@ -3062,6 +3190,10 @@
  "51cce40b959d": {
   "en": "AdVenture Capitalist",
   "t": "AdVenture Capitalist"
+ },
+ "51ea346b58e2": {
+  "en": "Our fish house on the ice",
+  "t": "氷の上の俺たちのフィッシュハウス"
  },
  "51fef5f7a957": {
   "en": "Stroller time",
@@ -3243,13 +3375,13 @@
   "en": "DW",
   "t": "DW"
  },
- "55c2f56f7ce7": {
-  "en": "Fishing trips and catches.",
-  "t": "釣り旅行と釣果。"
- },
  "55e08b3430ad": {
   "en": "People post more right after a batch of likes, spacing posts to chase the best rate of likes, like an animal in a Skinner box.",
   "t": "人は「いいね」がまとめて来た直後にもっと投稿し、最も「いいね」率が高くなるよう投稿の間隔を調整する。スキナー箱の動物みたいに。"
+ },
+ "55f4d753106c": {
+  "en": "Enlarge: Our fish house on the ice",
+  "t": "拡大: 氷の上の俺たちのフィッシュハウス"
  },
  "55fa0faa800a": {
   "en": "City, colony & strategy",
@@ -3323,6 +3455,10 @@
   "en": "World map of visited places",
   "t": "訪れた場所の世界地図"
  },
+ "57da4b232593": {
+  "en": "Dinner is served",
+  "t": "いただきます"
+ },
  "57e3e71a00f2": {
   "en": "Stardew Valley",
   "t": "Stardew Valley"
@@ -3378,6 +3514,14 @@
  "58f7a8f2ec30": {
   "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n Body fat, yearly average: 2023, 32.9%; 2024, 36.8%; 2025, 38.0%; 2026, 35.4%. ",
   "t": "年ごとの体重: 2016, 300 ポンド、2017, 220 ポンド、2018, 230 ポンド、2019, 240 ポンド、2020, 260 ポンド、2021, 230 ポンド、2022, 245 ポンド、2023, 260 ポンド、2024, 250 ポンド、2025, 260 ポンド、2026, 225 ポンド. 目標: 200 ポンド.\n 体脂肪率（年平均）: 2023, 32.9%、2024, 36.8%、2025, 38.0%、2026, 35.4%."
+ },
+ "5901f48be1dc": {
+  "en": "Inside the cozy ice castle",
+  "t": "居心地のいいアイスキャッスルの中"
+ },
+ "590b6efc9d57": {
+  "en": "Enlarge: Sunset on the ice",
+  "t": "拡大: 氷上の夕日"
  },
  "592bc9228abd": {
   "en": "Enlarge: Salty doggo",
@@ -3587,6 +3731,10 @@
   "en": "842 h",
   "t": "842 時間"
  },
+ "5e3f6f842f63": {
+  "en": "Caught one!",
+  "t": "釣れた！"
+ },
  "5e749e984aef": {
   "en": "Saturday Night Fever",
   "t": "サタデー・ナイト・フィーバー"
@@ -3690,6 +3838,10 @@
  "61475d16204c": {
   "en": "3 photos",
   "t": "写真 3 枚"
+ },
+ "61610a991827": {
+  "en": "Lazy fishing on a boat in Langkawi",
+  "t": "ランカウイの船でのんびり釣り"
  },
  "6162ea49842a": {
   "en": "Iowa has more pigs than people. Many, many more.",
@@ -3799,6 +3951,10 @@
   "en": "Subnautica series",
   "t": "Subnautica シリーズ"
  },
+ "64365c5619c9": {
+  "en": "Tocantins",
+  "t": "Tocantins"
+ },
  "643fa1b2225e": {
   "en": "Enlarge: Long nose",
   "t": "拡大: 長い鼻"
@@ -3839,6 +3995,10 @@
   "en": "251 mi*",
   "t": "251 mi*"
  },
+ "6597c160dce8": {
+  "en": "Enlarge: Riding out to the ice",
+  "t": "拡大: 氷の上へ出発"
+ },
  "65a68f752f48": {
   "en": " <strong data-astro-cid-j7pv25f6=\"\">King of Hues.</strong> Crowned in Huế, fluent in <abbr title=\"How Brazilians laugh online\" data-astro-cid-j7pv25f6=\"\">huehuehue</abbr>.\n<em data-astro-cid-j7pv25f6=\"\">I take life as seriously as I laugh at how absurd, finite and fickle it all is.</em> ",
   "t": "<strong data-astro-cid-j7pv25f6=\"\">King of Hues。</strong>フエで戴冠し、<abbr title=\"ブラジル人のネットでの笑い方\" data-astro-cid-j7pv25f6=\"\">huehuehue</abbr>に堪能。<em data-astro-cid-j7pv25f6=\"\">俺は人生を、それがどれだけ馬鹿げていて、有限で、気まぐれかを笑うのと同じくらい真剣に生きている。</em>"
@@ -3878,6 +4038,10 @@
  "665793f469e9": {
   "en": "+ 5 more games",
   "t": "+ ほか5本"
+ },
+ "666c786e8bca": {
+  "en": "São Paulo",
+  "t": "São Paulo"
  },
  "66a55c486fc4": {
   "en": "14 photos",
@@ -4107,6 +4271,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder movie 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 30: </span> 仮の映画 30"
  },
+ "6c669ba41e8e": {
+  "en": "On the grill",
+  "t": "グリルへ"
+ },
  "6c84173deb3d": {
   "en": "Vraki<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (written in Vraki)</span>",
   "t": "ヴラキ語<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\">（ヴラキ文字で表記）</span>"
@@ -4154,6 +4322,10 @@
  "6d853a6b6827": {
   "en": "Gebo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚷ)</span>",
   "t": "Gebo<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᚷ)</span>"
+ },
+ "6d8aa36e5071": {
+  "en": "Enlarge: Sunfish and sunshine",
+  "t": "拡大: サンフィッシュと日差し"
  },
  "6da2d12faf76": {
   "en": "Campsites are on their way.",
@@ -4258,6 +4430,10 @@
  "708d30ee6f71": {
   "en": "Tap Tap Infinity",
   "t": "Tap Tap Infinity"
+ },
+ "70c3d0311b21": {
+  "en": "Enlarge: Crappie selfie",
+  "t": "拡大: クラッピーと自撮り"
  },
  "70e3b3dcbb78": {
   "en": " NM ",
@@ -4579,6 +4755,10 @@
   "en": " Deo’s Framework 16 LED Matrix Manager <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">November 2026</span> ",
   "t": "Deo’s Framework 16 LED Matrix Manager <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">2026 年 11 月</span>"
  },
+ "78f96c5ed4ce": {
+  "en": "Enlarge: Spring bass selfie",
+  "t": "拡大: 春のバス自撮り"
+ },
  "78fadeed7303": {
   "en": "{n} ball in the bag",
   "t": "袋に {n} 個のボール"
@@ -4614,6 +4794,10 @@
  "7a22ceba7656": {
   "en": "35 h",
   "t": "35 時間"
+ },
+ "7a4fabcbb74e": {
+  "en": "Enlarge: Cleaning the catch",
+  "t": "拡大: 釣った魚をさばく"
  },
  "7a56564137e3": {
   "en": "Green ink",
@@ -4859,6 +5043,10 @@
   "en": "<strong>Edward Deci &amp; Richard Ryan</strong>, Self-Determination Theory: autonomy, competence and relatedness as basic psychological needs. <a href=\"https://selfdeterminationtheory.org/theory/\">Overview</a>",
   "t": "<strong>エドワード・デシ＆リチャード・ライアン</strong>、自己決定理論：自律性、有能感、関係性は人の基本的な心理的欲求である。<a href=\"https://selfdeterminationtheory.org/theory/\">概要</a>"
  },
+ "8120e5173338": {
+  "en": "Rock salt like a churrasco",
+  "t": "シュハスコみたいに岩塩"
+ },
  "81268987b9ea": {
   "en": "Step 7: Give Thanks",
   "t": "手順 7：感謝を捧げよ"
@@ -4874,6 +5062,10 @@
  "819c4f648255": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Kimetsu no Yaiba (Demon Slayer) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 16: </span> 鬼滅の刃"
+ },
+ "81a08de6b872": {
+  "en": "Boxing Day catch",
+  "t": "ボクシング・デーの釣果"
  },
  "81b9f21311e7": {
   "en": "One kind of post secretly pays better, and it changes without warning, so you keep trying everything.",
@@ -5023,6 +5215,10 @@
   "en": "Enlarge: Guess my plan for today",
   "t": "拡大: 今日の予定を当ててみて"
  },
+ "85e01b892f15": {
+  "en": "Enlarge: Crappie on the ice",
+  "t": "拡大: 氷の上のクラッピー"
+ },
  "85ed2372bb94": {
   "en": "Enlarge: I am getting old",
   "t": "拡大: 年を取ってきた"
@@ -5038,6 +5234,10 @@
  "86282ad0a8ac": {
   "en": " RO ",
   "t": "RO"
+ },
+ "862e4be872f8": {
+  "en": "Minas Gerais",
+  "t": "Minas Gerais"
  },
  "863e89bd3f72": {
   "en": "Blueprint Tycoon",
@@ -5074,6 +5274,10 @@
  "86e1ec88c970": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Placeholder movie 23 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 23: </span> 仮の映画 23"
+ },
+ "86fa1b02226a": {
+  "en": "Enlarge: Lazy fishing on a boat in Langkawi",
+  "t": "拡大: ランカウイの船でのんびり釣り"
  },
  "8709c7619535": {
   "en": "Scritchy Scratchy",
@@ -5243,6 +5447,10 @@
   "en": "Enlarge: Car Ride!",
   "t": "拡大: ドライブ！"
  },
+ "8bb83051e3d3": {
+  "en": "Enlarge: A fresh hole in the ice",
+  "t": "拡大: 氷に開けたての穴"
+ },
  "8bc3246a22fe": {
   "en": "Tattoo on my chest",
   "t": "俺の胸のタトゥー"
@@ -5250,6 +5458,10 @@
  "8bf72c446253": {
   "en": "Game Dev Tycoon",
   "t": "Game Dev Tycoon"
+ },
+ "8c0510612bb8": {
+  "en": "Ice fishing in my finest sweater",
+  "t": "一張羅のセーターで氷上釣り"
  },
  "8c11a9f1eca9": {
   "en": "Ride cymbal (key E)",
@@ -5327,6 +5539,10 @@
   "en": "pearls",
   "t": "パール"
  },
+ "8e7cacfc2979": {
+  "en": "Anyway, thanks to a dear friend of mine who got me hooked on ice fishing, this facet of mine holds tons of pleasurable memories. Once, a blizzard struck our tent in the middle of the lake: the tent started to freeze as the heater struggled, and we eventually had to fight our way back, trying to find the shore and the way home. I also remember getting hail and a snowstorm while out fishing deeper into fall. It might sound horrible to some, but for me it was just as memorable as sitting in a cozy ice castle and jigging for hours while drinking and chilling out.",
+  "t": "とにかく、俺を氷上釣りにハマらせてくれた大切な友達のおかげで、俺のこの面には楽しい思い出が山ほどある。あるときは湖の真ん中で俺たちのテントを吹雪が襲い、ヒーターが苦戦する中でテントが凍り始め、最後は岸と帰り道を探しながら必死で戻ることになった。秋が深まってからの釣りで、雹や吹雪に遭ったことも覚えている。ひどい話に聞こえるかもしれないけど、俺にとっては、居心地のいいアイスキャッスルに座って、飲みながらのんびり何時間もジギングするのと同じくらい思い出深い。"
+ },
  "8e81ceb925cb": {
   "en": "Lindström et al., Nature Communications 12:1311 (2021)",
   "t": "Lindström et al., Nature Communications 12:1311 (2021)"
@@ -5362,6 +5578,10 @@
  "8f53876c891d": {
   "en": "Take your time. This hammock has no hard commitments.",
   "t": "ごゆっくり。このハンモックにハードな予定はない。"
+ },
+ "8f5a614878c5": {
+  "en": "Chilling in the ice castle",
+  "t": "アイスキャッスルでまったり"
  },
  "8f60ae052f27": {
   "en": "This one is for seasoned veterans of the genre, or someone deep into Japanese culture. The unique way the story is told is still vivid in my brain, despite all the anime I've absorbed since.",
@@ -5443,6 +5663,10 @@
   "en": "A ride outside stacks the last two: daylight and exercise, in one go. The studies are in this tab’s Links box.",
   "t": "外を走れば、最後の二つがいっぺんに手に入る：日の光と運動。研究はこのタブのリンクボックスにある。"
  },
+ "910f56da4d02": {
+  "en": "Yellow snow HUEHUEHUE edition",
+  "t": "黄色い雪、HUEHUEHUE エディション"
+ },
  "9141b1b48942": {
   "en": "Step 6: The Farofa",
   "t": "手順 6：ファロファ"
@@ -5510,6 +5734,10 @@
  "92904aa843fd": {
   "en": "Red Dead Redemption 2",
   "t": "レッド・デッド・リデンプション2"
+ },
+ "92929b228442": {
+  "en": "Enlarge: Rod flasher and a hole in the ice",
+  "t": "拡大: 竿と魚群探知機と氷の穴"
  },
  "92b1467f90fa": {
   "en": "The later seasons kind of derailed it, but that first season got me hooked, and I binge-watched it in one sitting. The MC's progression and changing persona is something I took notes on, and you can see it in Harry and other characters.",
@@ -5618,6 +5846,10 @@
  "95ad14470d3d": {
   "en": "Deovandski Repo Template",
   "t": "Deovandski Repo Template"
+ },
+ "95c3750c5aa2": {
+  "en": "Watching the flasher",
+  "t": "魚群探知機とにらめっこ"
  },
  "95ced8b1219b": {
   "en": " R1 ",
@@ -5851,6 +6083,10 @@
   "en": " <span class=\"step__num\" data-astro-cid-uswg2a56=\"\">I.</span> Procure the Sacred Salt ",
   "t": "<span class=\"step__num\" data-astro-cid-uswg2a56=\"\">I.</span> 聖なる塩を手に入れよ"
  },
+ "9c7d35007894": {
+  "en": "Crappie on the ice",
+  "t": "氷の上のクラッピー"
+ },
  "9c8a9f570735": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 7: </span> Placeholder movie 7 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 7: </span> 仮の映画 7"
@@ -5895,10 +6131,6 @@
   "en": "Third year since adoption",
   "t": "うちの子になって 3 年目"
  },
- "9dc0862985d5": {
-  "en": "1 country · 8 states/provinces · 39 photos",
-  "t": "1 か国 · 8 つの州/県 · 写真 39 枚"
- },
  "9de02278ebbb": {
   "en": "46 h",
   "t": "46 時間"
@@ -5906,6 +6138,10 @@
  "9debabbaa01a": {
   "en": " ES ",
   "t": "ES"
+ },
+ "9e048ca7940e": {
+  "en": "Crappie selfie",
+  "t": "クラッピーと自撮り"
  },
  "9e0817814636": {
   "en": "Lil princess",
@@ -5950,6 +6186,10 @@
  "9f3490676f4d": {
   "en": "Super doggo",
   "t": "スーパーわんこ"
+ },
+ "9f3ecd832a8b": {
+  "en": " Tanjung Rhu Floating Restaurant &amp; Fish Farm, Langkawi ",
+  "t": "Tanjung Rhu Floating Restaurant &amp; Fish Farm（ランカウイ）"
  },
  "9f46d02897f8": {
   "en": "2 h",
@@ -6175,6 +6415,10 @@
   "en": "Traded {n} {give} for 1 {get}.",
   "t": "{give} {n} 個を {get} 1 個に交換した。"
  },
+ "a4664f9fa7e0": {
+  "en": "Play video: Fishing, influencer style",
+  "t": "動画を再生：インフルエンサー流の釣り"
+ },
  "a46906017e78": {
   "en": "Going mountain biking for the first time was a natural step up to expand my experiences, although my bike did not survive the endeavor.",
   "t": "初めてのマウンテンバイクは、経験を広げるための自然なステップアップだった。ただし俺の自転車はその冒険を生き延びられなかった。"
@@ -6190,6 +6434,10 @@
  "a48363071f8d": {
   "en": " OW ",
   "t": "OW"
+ },
+ "a486e14465d8": {
+  "en": "Saying hi to Willie Walleye in Baudette",
+  "t": "ボーデットのウィリー・ウォールアイにあいさつ"
  },
  "a4c146b7a21c": {
   "en": "Senpai, your bellows technique is... impressive (￣▽￣)ノ",
@@ -6231,6 +6479,10 @@
   "en": " GD ",
   "t": "GD"
  },
+ "a6106e925d6c": {
+  "en": "The floating fish farm",
+  "t": "水上の養魚場"
+ },
  "a62b912cc6ec": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#7: </span>Best of the Worst: Plinketto #9",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#7: </span>Best of the Worst: Plinketto #9"
@@ -6246,6 +6498,10 @@
  "a66864f45a5a": {
   "en": "GM",
   "t": "GM"
+ },
+ "a674c01dbed9": {
+  "en": " Where Deo has been? 16 countries · 37 states/provinces · 343 photos ",
+  "t": "Deo はどこへ行った？ 16 か国 · 37 の州/県 · 写真 343 枚"
  },
  "a68df9592359": {
   "en": "Musicals",
@@ -6382,6 +6638,10 @@
  "a97904722187": {
   "en": " City, colony &amp; strategy ",
   "t": "都市・コロニー＆ストラテジー"
+ },
+ "a979a84a7f3b": {
+  "en": "Enlarge: Chilling in the ice castle",
+  "t": "拡大: アイスキャッスルでまったり"
  },
  "a97da7b73c5d": {
   "en": "Increased my protein intake, aiming for at least 100 g a day.\n<ul>\n<li>Food for the week must be 90%+ lean meat, with brown rice for the extra fiber. Petite Young Sweet Peas are an easy fiber boost too: mild on their own, so they mix well with a lot of stuff.</li>\n<li>Coffee with Kemps 13 g protein milk.</li>\n<li>3 or 4 eggs for breakfast. Or protein cereal (added sugar at most 15% of the serving) when my sweet tooth hits. Or both, on those days when my gut is extra loud.</li>\n<li>A Cosmic Crisp apple as a sweet treat after lunch.</li>\n<li>Fairlife Core Power (42 g protein) as an afternoon snack.</li>\n<li>Sick of leftovers? I let myself get something else for dinner. With that much protein already in, I’m usually not terribly hungry anyway.</li>\n<li>Fast from 7pm until the next day.</li>\n</ul>\n",
@@ -6662,6 +6922,10 @@
  "b115fa0f703f": {
   "en": "Every Miku concert I've been to, from Mikunopolis in 2011 onward.",
   "t": "2011 年の Mikunopolis 以来、俺が行ったすべてのミクのコンサート。"
+ },
+ "b127454ab3aa": {
+  "en": "More pictures below, including me making yellow snow and holding up more fish than strictly necessary. None of those made the cut for my dating profile, which is truly a pity. Maybe that’s why I had such bad matches the last time I tried it out, and realized it was worse than going into a wet market huehuehue.",
+  "t": "下にはもっと写真がある。黄色い雪を作っている俺や、必要以上にたくさんの魚を抱えている俺も。どれもマッチングアプリのプロフィールには載らなかった。本当に残念。だから前に試したとき、あんなにひどいマッチばかりで、魚市場に行くよりひどいと気づいたのかもしれない huehuehue。"
  },
  "b13596cd2774": {
   "en": "15 h",
@@ -6975,6 +7239,10 @@
   "en": "The clock is ticking on my 💀 Death tab.",
   "t": "時計は俺の 💀 死タブで刻まれている。"
  },
+ "b9b43caf5896": {
+  "en": "Feast at the Tanjung Rhu floating restaurant",
+  "t": "タンジュン・ルーの水上レストランでごちそう"
+ },
  "b9dd1e7cf0fb": {
   "en": "Stress score",
   "t": "ストレススコア"
@@ -7002,6 +7270,10 @@
  "baa7da26618a": {
   "en": "Peeta, a pixel pet",
   "t": "ピクセルペットの Peeta"
+ },
+ "bac02f06b01e": {
+  "en": "Jigging into the night",
+  "t": "夜までジギング"
  },
  "bb0bc553b8e8": {
   "en": "Whack-a-Miku: turn your phone sideways",
@@ -7034,6 +7306,10 @@
  "bc306868ce5c": {
   "en": "Pitty",
   "t": "Pitty"
+ },
+ "bc3d9d5447db": {
+  "en": "1 country · 11 states/provinces · 59 photos",
+  "t": "1 か国 · 11 の州/県 · 写真 59 枚"
  },
  "bc4359231d61": {
   "en": "Gym",
@@ -7111,6 +7387,10 @@
   "en": "Fold 2 of 5: now the top-right corner to the same dot.",
   "t": "折り 2/5：今度は右上の角を同じ点に。"
  },
+ "bed1cd8de831": {
+  "en": "Enlarge: Fillets ready",
+  "t": "拡大: 切り身の準備完了"
+ },
  "bee75ca77f75": {
   "en": "Controls",
   "t": "コントロール"
@@ -7142,6 +7422,10 @@
  "bfc1086b2a80": {
   "en": "Enlarge: Lil princess",
   "t": "拡大: ちっちゃなプリンセス"
+ },
+ "bfc2012b411c": {
+  "en": "Sunfish and sunshine",
+  "t": "サンフィッシュと日差し"
  },
  "bfc2ec349cc6": {
   "en": "{n} shit 💩",
@@ -7178,6 +7462,10 @@
  "c0c5f353d6da": {
   "en": "Enlarge: But don't wanna go to sleep",
   "t": "拡大: でも寝たくない"
+ },
+ "c0d0d1a3569b": {
+  "en": " Phuket Monster Fishing Park ",
+  "t": "Phuket Monster Fishing Park"
  },
  "c0d7841b28ca": {
   "en": "I make games too, now and then: see what I've cooked so far on <a href=\"#dev-games\" data-astro-cid-j7pv25f6=\"\">Developer › Games</a>.",
@@ -7371,6 +7659,10 @@
   "en": "Tools I use for travels",
   "t": "旅で使っているツール"
  },
+ "c6488d2f0902": {
+  "en": "Enlarge: Tiny fish big pride",
+  "t": "拡大: 小さな魚、大きな誇り"
+ },
  "c65780da80b3": {
   "en": "Undead Horde",
   "t": "Undead Horde"
@@ -7419,6 +7711,10 @@
   "en": "Breadcrumb",
   "t": "パンくずリスト"
  },
+ "c76a1ded06e6": {
+  "en": "Enlarge: Seasoned and ready",
+  "t": "拡大: 味付け完了"
+ },
  "c794b70221ac": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">1,590 h</strong>  ·  12 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">10% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">1,590 時間</strong>  ·  12本  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">プレイ時間の5%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">プレイ時間の10%</span>"
@@ -7446,6 +7742,10 @@
  "c8e2de313adf": {
   "en": "Next stop: {place} · {distance} to go",
   "t": "次の目的地：{place} · あと {distance}"
+ },
+ "c92472adceec": {
+  "en": "28 photos",
+  "t": "写真 28 枚"
  },
  "c92499e3e7ab": {
   "en": "8 games",
@@ -7502,6 +7802,10 @@
  "cabe88dd6104": {
   "en": "💩 Fertilize (1 shit per use)",
   "t": "💩 肥料をやる（1 回につきうんこ 1 個）"
+ },
+ "cac6a1784eb0": {
+  "en": "Enlarge: Watching the flasher",
+  "t": "拡大: 魚群探知機とにらめっこ"
  },
  "cacd82451941": {
   "en": "Show as a table",
@@ -7711,6 +8015,10 @@
   "en": " SD ",
   "t": "SD"
  },
+ "cff6a7bdbdd6": {
+  "en": "Enlarge: A catch and a sunset",
+  "t": "拡大: 釣果と夕日"
+ },
  "d004a7d961e1": {
   "en": "Enlarge: Painting or drawing, 03/05/2023",
   "t": "拡大: 絵画またはスケッチ, 2023年3月5日"
@@ -7763,6 +8071,10 @@
   "en": "Whack-a-Miku",
   "t": "モグラたたきミク"
  },
+ "d13fefbf3555": {
+  "en": "Enlarge: Jigging into the night",
+  "t": "拡大: 夜までジギング"
+ },
  "d153c794ecdb": {
   "en": "Play upright instead",
   "t": "縦のまま遊ぶ"
@@ -7806,6 +8118,10 @@
  "d20bc2c58ea9": {
   "en": "Deo might have hit the dust. If he is still kicking, tell his old ass to update the clock.",
   "t": "Deo はもうくたばっているかもしれない。まだピンピンしているなら、あのジジイに時計を更新しろと言ってくれ。"
+ },
+ "d21edd9f85f5": {
+  "en": "Catch of the day in the tent",
+  "t": "テントの中で今日の一匹"
  },
  "d223b6c1c738": {
   "en": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>",
@@ -8006,6 +8322,10 @@
  "d712806feb36": {
   "en": "<strong>Andy Clark &amp; David Chalmers</strong>, <em>Analysis</em> (1998), “The Extended Mind”: Otto’s notebook does the job of his memory, so where it lives matters less than what it does. Skin, a whiteboard or a website can hold part of the mind too. <a href=\"https://web.ics.purdue.edu/~drkelly/ClarkChalmersTheExtendedMind1998.pdf\">Paper</a>",
   "t": "<strong>Andy Clark &amp; David Chalmers</strong>, <em>Analysis</em> (1998), “The Extended Mind”：オットーのノートは彼の記憶の役目を果たしている。だから、それがどこにあるかより、何をしているかが大事。肌も、ホワイトボードも、ウェブサイトも、心の一部を持てる。 <a href=\"https://web.ics.purdue.edu/~drkelly/ClarkChalmersTheExtendedMind1998.pdf\">論文</a>"
+ },
+ "d71861317ee9": {
+  "en": "A fresh hole in the ice",
+  "t": "氷に開けたての穴"
  },
  "d726db94d220": {
   "en": "Down the singletrack",
@@ -8591,6 +8911,10 @@
   "en": "No photos yet.",
   "t": "まだ写真がない。"
  },
+ "e699b002d646": {
+  "en": "Cheers from the ice",
+  "t": "氷の上から乾杯"
+ },
  "e69f20e9f683": {
   "en": "F",
   "t": "F"
@@ -8618,6 +8942,10 @@
  "e74a1afd48ee": {
   "en": "Step 2: Choose Thy Cut",
   "t": "手順 2：汝の部位を選べ"
+ },
+ "e75ea941f509": {
+  "en": "Enlarge: Caught one!",
+  "t": "拡大: 釣れた！"
  },
  "e76dbe835acf": {
   "en": "Miku's name in Japanese. Miku-chan (ミクちゃん) is a cornerstone of my life, tied to the things that drive me: ambition, technology, collaboration and community. She also stands for my passion, my drive, and the anxiety side of my personality.",
@@ -8695,6 +9023,10 @@
   "en": "Show all 18",
   "t": "18本すべて表示"
  },
+ "ea006909c8e0": {
+  "en": "Deep fried walleye time",
+  "t": "ウォールアイの唐揚げタイム"
+ },
  "ea3ddf6727a8": {
   "en": "Do Better!",
   "t": "Do Better!"
@@ -8755,13 +9087,13 @@
   "en": "Rest in peace, bud. Thank you for being a core part of my childhood. See you in the afterlife, if there is one!",
   "t": "安らかに眠れ、相棒。俺の子ども時代の大切な一部でいてくれてありがとう。あの世があるなら、あの世で会おう！"
  },
- "eb827f2a823b": {
-  "en": "Fishing photos are on their way.",
-  "t": "釣りの写真は準備中。"
- },
  "ebc9989078dc": {
   "en": "This is roughly how much time I have left. I’m striving to make the most of every second of it, rest included. Am I a machine? Maybe. But even machines have downtime, so I choose how I recharge and get the most out of that too. Or, as the kids call it nowadays, <em>Lifemaxxing</em>!",
   "t": "これが、俺に残されたおおよその時間だ。休息も含めて、その一秒一秒を最大限に生かそうとしている。俺は機械か？ かもな。でも機械にも停止時間はある。だから俺は充電の仕方を自分で選び、それも最大限に活用する。今どきの若者の言葉で言えば、<em>Lifemaxxing</em>だ！"
+ },
+ "ebca95f4299e": {
+  "en": "Enlarge: Pressure ridges on Lake of the Woods",
+  "t": "拡大: レイク・オブ・ザ・ウッズの氷の盛り上がり"
  },
  "ebeff8af956a": {
   "en": "I WANNA GO OUTSIDE",
@@ -9099,6 +9431,10 @@
   "en": " Sinoi the Fisherman <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Pre-production · production starts Q1 2027</span> ",
   "t": "Sinoi the Fisherman <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">プリプロダクション · 本制作は 2027 年第 1 四半期から</span>"
  },
+ "f71a7b87f258": {
+  "en": "Enlarge: More yellow snow HUE!",
+  "t": "拡大: 黄色い雪おかわり、HUE!"
+ },
  "f721478c1c58": {
   "en": " Maximal heart rate by age (Tanaka et al., 2001) ",
   "t": "年齢別の最大心拍数（Tanaka ほか、2001）"
@@ -9199,6 +9535,10 @@
   "en": "Nordic rune associated with ice, stillness, focus, containment, and preservation.",
   "t": "氷、静止、集中、抑制、保存と結びつく北欧のルーン。"
  },
+ "f965bb0ee45e": {
+  "en": "This was made by my social influencer facet, but it’s something all my sides treasure: having fun!",
+  "t": "これは俺のインフルエンサーの面が作ったものだけど、俺のどの面も大事にしていること、それは楽しむこと！"
+ },
  "f96e7bc80d25": {
   "en": "Fertilize a plot that has something growing.",
   "t": "何かが育っている区画に肥料をやれ。"
@@ -9218,10 +9558,6 @@
  "fa18ec4f1b86": {
   "en": " Shooters &amp; co-op ",
   "t": "シューター＆協力プレイ"
- },
- "fa24a9207097": {
-  "en": " Where Deo has been? 16 countries · 34 states/provinces · 321 photos ",
-  "t": "Deo はどこへ行った？ 16 か国 · 34 の州/県 · 写真 321 枚"
  },
  "fa42321aea70": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Placeholder movie 26 ",
@@ -9286,6 +9622,10 @@
  "fc3c2b787144": {
   "en": "Lyric Opera of Chicago",
   "t": "Lyric Opera of Chicago"
+ },
+ "fc52417e681d": {
+  "en": " Lake of the Woods, Minnesota ",
+  "t": "ミネソタ州レイク・オブ・ザ・ウッズ"
  },
  "fc8cf6ba4561": {
   "en": "Kaydy Cain",
@@ -9410,6 +9750,14 @@
  "ffbcb9739951": {
   "en": "Cactus",
   "t": "サボテン"
+ },
+ "ffcfe5e9eab8": {
+  "en": "Fishing, influencer style",
+  "t": "インフルエンサー流の釣り"
+ },
+ "ffe8eb5ee020": {
+  "en": "Seasoned and ready",
+  "t": "味付け完了"
  },
  "fff4a50e8428": {
   "en": "Đà Nẵng",
