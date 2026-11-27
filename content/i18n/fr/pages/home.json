@@ -1615,10 +1615,6 @@
   "en": " Xbox ",
   "t": "Xbox"
  },
- "28c143b65e3d": {
-  "en": "<b data-astro-cid-o3poasna=\"\">Mode</b>: Low Power for less clutter, or Auto Zoom and Bottom Lock to split the dial, with the bottom 6 ft zoomed on the left.",
-  "t": "<b data-astro-cid-o3poasna=\"\">Mode</b> : Basse puissance pour moins de parasites, ou Zoom auto et Verrouillage du fond pour partager le cadran, avec les 6 derniers pieds au-dessus du fond agrandis à gauche."
- },
  "28e75153a2a3": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  4 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  4 jeux  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% de mes heures</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% de mes heures</span>"
@@ -3551,6 +3547,10 @@
   "en": "Play again",
   "t": "Rejouer"
  },
+ "576a18c0d25d": {
+  "en": "Low power + auto zoom",
+  "t": "Basse puissance + zoom auto"
+ },
  "57d1b17da5e2": {
   "en": "World map of visited places",
   "t": "Carte du monde des lieux visités"
@@ -4710,6 +4710,10 @@
  "748ed75259c8": {
   "en": "Access is earned through behavior, never granted because someone asked. Time, attention and trust are finite; my attention is not public property. <strong>I will meet you in the middle. I will not live there alone.</strong>",
   "t": "L’accès se gagne par le comportement, il n’est jamais accordé parce que quelqu’un l’a demandé. Le temps, l’attention et la confiance sont limités ; mon attention n’est pas une propriété publique. <strong>Je ferai la moitié du chemin. Je n’y vivrai pas seul.</strong>"
+ },
+ "749d5106c88c": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Mode</b>: Normal in the middle. Turn it left for Low Power (much less clutter), and further left for Auto Zoom and Bottom Lock in Low Power; turn it right for Auto Zoom and Bottom Lock. Those split the dial, with the bottom 6 ft zoomed on the left.",
+  "t": "<b data-astro-cid-o3poasna=\"\">Mode</b> : Normal au milieu. Tourne à gauche pour Basse puissance (beaucoup moins de parasites), et encore à gauche pour Zoom auto et Verrouillage du fond en basse puissance ; tourne à droite pour Zoom auto et Verrouillage du fond. Ceux-ci partagent le cadran, avec les 6 derniers pieds au-dessus du fond agrandis à gauche."
  },
  "74a8c36c9678": {
   "en": "You fucking loser! The dino survived and flips you off.",
@@ -7950,6 +7954,10 @@
  "c92499e3e7ab": {
   "en": "8 games",
   "t": "8 jeux"
+ },
+ "c92c63bf4549": {
+  "en": "Low power + bottom lock",
+  "t": "Basse puissance + verrouillage du fond"
  },
  "c93e62e0ff43": {
   "en": " Steam + PC  ·  estimated ",
