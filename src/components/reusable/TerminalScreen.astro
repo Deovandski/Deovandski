@@ -1,0 +1,188 @@
+---
+/**
+ * TerminalScreen: an old-school computer terminal (green phosphor on black, amber headings) that types its text out
+ * one character at a time, fast, the way old PCs filled the screen. Built for the "Stats for nerds" page (/debug/,
+ * Deovandski-repo-template#19); nothing like it existed in the other repos.
+ *
+ *   <TerminalScreen label="Build details" title="sysinfo">
+ *     <div class="term-h">== CODE ==</div>
+ *     <div class="term-row"><span class="term-k">Commit</span><span class="term-v">abc1234</span></div>
+ *     <div class="term-gap"></div>
+ *   </TerminalScreen>
+ *
+ *   <TerminalScreen wait> … </TerminalScreen>
+ *   <script>
+ *     // fill in values first, then:
+ *     document.querySelector('[data-terminal]')!.dispatchEvent(new CustomEvent('terminal:start'));
+ *   </script>
+ *
+ * Props:
+ *   label     what screen readers call it (default "Terminal")
+ *   title     text in the title bar (default none: no title bar)
+ *   duration  about how long the whole text takes to type, in ms (default 1800); long texts type more per frame
+ *   wait      don't start by itself: wait for a `terminal:start` event on the element (default false)
+ *   class     extra class
+ *
+ * Content: each direct child of the slot is one line, revealed in order; its text is typed. Classes you can use:
+ *   .term-h (amber heading), .term-row (a key column and a value column) with .term-k (key) and .term-v (value),
+ *   .term-dim (faded), .term-hi (bright), .term-amber, .term-warn (red), .term-gap (an empty line), .term-bar (a
+ *   progress bar made of characters), .term-pre (keeps spaces, for ASCII art). Links keep working.
+ * Events (on the element): `terminal:start` (types it, again if already typed), `terminal:done` (fired when typing ends).
+ * Click, tap or press any key while it types to show everything at once. Reduced-motion visitors get it all at once,
+ * with no blinking cursor or flicker. While typing, aria-busy="true" tells screen readers to wait for the full text.
+ * Theming: --term-bg (#000), --term-ink (#39ff14), --term-dim (#1f9e0e), --term-amber (#ffb000), --term-warn (#ff4d4d),
+ *   --term-font (monospace stack), --term-size (15px), --term-key (17ch, the key column).
+ * Always left to right (dir="ltr"), even on an Arabic page: it is machine output, like code.
+ * Reusable on purpose: no imports, works several times on a page.
+ */
+interface Props {
+  label?: string;
+  title?: string;
+  duration?: number;
+  wait?: boolean;
+  class?: string;
+}
+const { label = 'Terminal', title, duration = 1800, wait = false, class: className } = Astro.props;
+---
+
+<div role="region" dir="ltr" class:list={["terminal", className]} data-terminal data-duration={duration} data-wait={wait ? '' : undefined} aria-label={label}>
+  {title && <div class="terminal__bar" aria-hidden="true" translate="no"><span class="terminal__dots"><i></i><i></i><i></i></span><span class="terminal__title">{title}</span></div>}
+  <div class="terminal__screen" translate="no" tabindex="0">
+    <slot />
+    <span class="terminal__cursor" aria-hidden="true"></span>
+  </div>
+</div>
+
+<style>
+  .terminal {
+    --_ink: var(--term-ink, #39ff14);
+    --_dim: var(--term-dim, #1f9e0e);
+    --_amber: var(--term-amber, #ffb000);
+    background: var(--term-bg, #000);
+    color: var(--_ink);
+    border: 1px solid color-mix(in srgb, var(--_ink) 25%, transparent);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 24px color-mix(in srgb, var(--_ink) 12%, transparent), inset 0 0 60px rgba(0, 0, 0, .9);
+  }
+  .terminal__bar { display: flex; align-items: center; gap: 12px; padding: 8px 12px; border-bottom: 1px solid color-mix(in srgb, var(--_ink) 20%, transparent); font: 12px/1 var(--term-font, ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace); color: var(--_dim); }
+  .terminal__dots { display: flex; gap: 6px; }
+  .terminal__dots i { width: 10px; height: 10px; border-radius: 50%; background: color-mix(in srgb, var(--_ink) 35%, transparent); }
+  .terminal__title { letter-spacing: .08em; text-transform: uppercase; }
+  .terminal__screen {
+    position: relative;
+    padding: 16px 18px 20px;
+    font: var(--term-size, 15px)/1.55 var(--term-font, ui-monospace, "Cascadia Mono", "SFMono-Regular", Consolas, "Liberation Mono", monospace);
+    overflow-wrap: anywhere;
+    text-shadow: 0 0 4px color-mix(in srgb, var(--_ink) 70%, transparent), 0 0 12px color-mix(in srgb, var(--_ink) 30%, transparent);
+    min-height: 12em;
+    outline: none;
+  }
+  .terminal__screen:focus-visible { box-shadow: inset 0 0 0 2px var(--_amber); }
+  /* Scan lines over the text, like a CRT. */
+  .terminal__screen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(to bottom, rgba(0, 0, 0, 0) 0 2px, rgba(0, 0, 0, .22) 2px 3px);
+  }
+  .terminal__cursor { display: inline-block; width: .6em; height: 1.1em; vertical-align: text-bottom; background: var(--_ink); box-shadow: 0 0 8px var(--_ink); animation: terminal-blink 1s steps(1) infinite; }
+  @keyframes terminal-blink { 50% { opacity: 0; } }
+  .terminal[data-typing] .terminal__screen { cursor: pointer; }
+
+  .terminal :global(.term-h) { color: var(--_amber); font-weight: 700; text-shadow: 0 0 6px color-mix(in srgb, var(--_amber) 60%, transparent); margin-top: .35em; }
+  .terminal :global(.term-row) { display: grid; grid-template-columns: var(--term-key, 17ch) 1fr; column-gap: 1ch; }
+  .terminal :global(.term-k) { color: var(--_dim); }
+  .terminal :global(.term-v) { min-width: 0; }
+  .terminal :global(.term-dim) { color: var(--_dim); }
+  .terminal :global(.term-hi) { color: #b6ffa6; }
+  .terminal :global(.term-amber) { color: var(--_amber); }
+  .terminal :global(.term-warn) { color: var(--term-warn, #ff4d4d); }
+  .terminal :global(.term-gap) { height: .8em; }
+  .terminal :global(.term-bar), .terminal :global(.term-pre) { white-space: pre; }
+  .terminal :global(a) { color: inherit; text-decoration: underline; text-decoration-color: color-mix(in srgb, currentColor 45%, transparent); text-underline-offset: 3px; }
+  .terminal :global(a:hover), .terminal :global(a:focus-visible) { color: #b6ffa6; outline: none; }
+  .terminal :global([data-term-hidden]) { display: none; }
+
+  @media (max-width: 560px) {
+    .terminal__screen { padding: 12px 12px 16px; font-size: var(--term-size-phone, 13px); }
+    .terminal :global(.term-row) { grid-template-columns: var(--term-key-phone, 13ch) 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .terminal__cursor { animation: none; }
+  }
+</style>
+
+<script>
+  // Types every terminal's text out, line by line, character by character.
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)');
+
+  function setup(root: HTMLElement): void {
+    const screen = root.querySelector<HTMLElement>('.terminal__screen')!;
+    const cursor = screen.querySelector<HTMLElement>('.terminal__cursor')!;
+    let stop: (() => void) | null = null;
+
+    const start = (): void => {
+      stop?.();
+      const lines = [...screen.children].filter((el): el is HTMLElement => el !== cursor);
+      // Every text node of every line, with its full text kept aside.
+      const texts = lines.map((line) => {
+        const w = document.createTreeWalker(line, NodeFilter.SHOW_TEXT);
+        const nodes: { node: Text; full: string }[] = [];
+        for (let n = w.nextNode(); n; n = w.nextNode()) nodes.push({ node: n as Text, full: (n as Text).data });
+        return nodes;
+      });
+      const total = texts.flat().reduce((sum, t) => sum + t.full.length, 0);
+      const finish = (): void => {
+        texts.flat().forEach((t) => { t.node.data = t.full; });
+        lines.forEach((l) => l.removeAttribute('data-term-hidden'));
+        screen.append(cursor);
+        root.removeAttribute('data-typing');
+        root.removeAttribute('aria-busy');
+        stop = null;
+        root.dispatchEvent(new CustomEvent('terminal:done'));
+      };
+      if (reduce.matches || total === 0) return finish();
+
+      root.setAttribute('data-typing', '');
+      root.setAttribute('aria-busy', 'true');
+      texts.flat().forEach((t) => { t.node.data = ''; });
+      lines.forEach((l) => l.setAttribute('data-term-hidden', ''));
+      const duration = Number(root.dataset.duration) || 1800;
+      let line = 0;
+      let node = 0;
+      let raf = 0;
+      let last = performance.now();
+      let budget = 0;
+      const perMs = Math.max(total / duration, 0.06);
+      const step = (now: number): void => {
+        budget += (now - last) * perMs;
+        last = now;
+        while (budget >= 1 && line < lines.length) {
+          lines[line].removeAttribute('data-term-hidden');
+          const t = texts[line][node];
+          if (!t) { line++; node = 0; continue; }          // a line with no (more) text: next line
+          const take = Math.min(Math.floor(budget), t.full.length - t.node.data.length);
+          t.node.data = t.full.slice(0, t.node.data.length + take);
+          budget -= take;
+          t.node.after(cursor);
+          if (t.node.data.length === t.full.length) node++;
+        }
+        if (line >= lines.length) return finish();
+        raf = requestAnimationFrame(step);
+      };
+      raf = requestAnimationFrame(step);
+      stop = () => { cancelAnimationFrame(raf); finish(); };
+    };
+
+    // Show everything at once: click, tap or any key while it types.
+    const skip = (): void => { if (root.hasAttribute('data-typing')) stop?.(); };
+    screen.addEventListener('click', skip);
+    addEventListener('keydown', (e) => { if (!e.metaKey && !e.ctrlKey && !e.altKey) skip(); });
+    root.addEventListener('terminal:start', start);
+    if (!root.hasAttribute('data-wait')) start();
+  }
+
+  document.querySelectorAll<HTMLElement>('[data-terminal]').forEach(setup);
+</script>

@@ -43,6 +43,10 @@
   "en": " Contact ",
   "t": "連絡先"
  },
+ "b5608ea73b86": {
+  "en": "Stats for nerds",
+  "t": "詳細統計情報"
+ },
  "bd1cf21678f6": {
   "en": "Installed! Open it from your home screen or app list.",
   "t": "インストールしました！ ホーム画面かアプリ一覧から開いてください。"
@@ -70,10 +74,6 @@
  "e5f79aa13bd5": {
   "en": "Install app",
   "t": "アプリをインストール"
- },
- "e9b450d14bc2": {
-  "en": "Done",
-  "t": "完了"
  },
  "fc4a695f02a8": {
   "en": "App",

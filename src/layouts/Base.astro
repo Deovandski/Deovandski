@@ -13,10 +13,11 @@ interface Props {
   description?: string;
   wide?: boolean;
   hideBrand?: boolean;
-  noindex?: boolean; // hidden pages (like /qr/): kept out of search engines and sitemap.xml
+  noindex?: boolean; // hidden pages (like /qr/ and /debug/): kept out of search engines and sitemap.xml
+  bodyClass?: string; // a class on <body>, for a page that looks different (the black /debug/ page uses "page-terminal")
 }
 
-const { title, description = "Deovandski's hub: software, books, travel and games.", wide = false, hideBrand = false, noindex = false } = Astro.props;
+const { title, description = "Deovandski's hub: software, books, travel and games.", wide = false, hideBrand = false, noindex = false, bodyClass } = Astro.props;
 const pageTitle = title ? `${title} | Deovandski` : "Deovandski's Blog";
 
 const nav = [
@@ -38,7 +39,7 @@ const isCurrent =(href: string) => (href === '/' ? here === '/' || here === '' :
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
-    {noindex && <meta name="robots" content="noindex" />}
+    {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta name="theme-color" content="#070b1f" />
     <link rel="icon" type="image/png" href={url('/favicon.png')} />
     <!-- Installable app (PWA): manifest, home-screen icon, and the service worker that keeps the QR Code page offline (public/sw.js). -->
@@ -97,7 +98,7 @@ const isCurrent =(href: string) => (href === '/' ? here === '/' || here === '' :
       })();
     </script>
   </head>
-  <body>
+  <body class={bodyClass}>
     <Starfield />
     <a class="skip" href="#main">Skip to content</a>
     <header class="site-header">

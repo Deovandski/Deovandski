@@ -43,6 +43,10 @@
   "en": " Contact ",
   "t": "Contato"
  },
+ "b5608ea73b86": {
+  "en": "Stats for nerds",
+  "t": "Estatísticas para nerds"
+ },
  "bd1cf21678f6": {
   "en": "Installed! Open it from your home screen or app list.",
   "t": "Instalado! Abra pela tela inicial ou pela lista de apps."
@@ -70,10 +74,6 @@
  "e5f79aa13bd5": {
   "en": "Install app",
   "t": "Instalar app"
- },
- "e9b450d14bc2": {
-  "en": "Done",
-  "t": "Pronto"
  },
  "fc4a695f02a8": {
   "en": "App",

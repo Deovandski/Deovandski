@@ -151,10 +151,35 @@ on Potato.
 
 The gear (top right of the header, `src/components/SettingsMenu.astro`) opens Settings: **Language**, "Want a language
 added?", **Vraki mode** (the English page in the Vraki script, like husbandoutworld.com; it's off on translated pages,
-because the Vraki script spells English letters) and **App** (the Install app button, `src/components/reusable/InstallApp.astro`, #292). `src/scripts/settings.ts` saves the choices in `localStorage` under
+because the Vraki script spells English letters), **App** (the Install app button, `src/components/reusable/InstallApp.astro`, #292) and, last, **Stats for nerds**: a black
+DEBUG button (green text) that opens `/debug/` (see below). The × at the top right closes the menu (there is no Done button),
+and so does Esc. `src/scripts/settings.ts` saves the choices in `localStorage` under
 `deovandski-site` (`lang`, `vraki`); the inline script in `Base.astro` applies them before the page paints. The Multilingual
 tab's columns pick a language (or Vraki mode) too, with a cyan box on the current one. Add more settings to the same menu
 and the same storage key.
+
+## Stats for nerds (/debug/)
+
+`src/pages/debug.astro` (#306, from Deovandski-repo-template#19): the header and footer stay, the page turns black, and a
+terminal (`src/components/reusable/TerminalScreen.astro`, copied unchanged from the template) types out, fast and one
+character at a time, green with amber section headings: **Code** (repository, build, branch, commit, pull request, workflow
+run, tool versions, when the Steam, Xbox and Takeout data were refreshed), **Site** (pages, the facet tree's branches, tabs
+and sub-tabs, reusable parts, files and size, languages, Vraki mode, settings, offline worker), **Runtime**, **Network**,
+**Performance** and **Languages** (every language, % translated, pages ready).
+
+- **Build facts come from `stats.json`**, written by `scripts/stats.mjs` at the end of `npm run build` (npm's postbuild,
+  after `scripts/i18n.mjs build`), so the browser never works them out. Commit, branch, pull request and repository are left
+  out when the repo is private. The translation numbers come from `languageStats()` in `scripts/i18n.mjs`, the same
+  counting as `node scripts/i18n.mjs status`.
+- **Browser facts** are read by `src/scripts/debug.ts`, which fills every `[data-v]` value and then starts the typing. It
+  saves nothing and sends nothing (it fetches `stats.json`, plus three timed HEAD requests for Ping). A browser that doesn't
+  share something shows "n/a" (so does a local build, for the workflow run and the CDN).
+- **To add a line:** a build fact goes in `scripts/stats.mjs` first. Then add `['Label', 'key']` to its section in
+  `debug.astro` and `set('key', value)` in `debug.ts`. Words the script writes go in `.debug-words` on the page.
+- **Not indexed:** `<Base noindex>` adds `<meta name="robots" content="noindex, nofollow">`, and `scripts/llms.mjs` and
+  `scripts/i18n.mjs` leave noindex pages out of `sitemap.xml` (llms.txt only lists the home page's tabs). The terminal is
+  `translate="no"` (machine output); the page's title and description are translated.
+- **Privacy:** listed in [PRIVACY.md](PRIVACY.md), with everything else the site keeps in the browser.
 
 ## Google Takeout data (Cycling, Biomarker Lab, Gym)
 
@@ -172,7 +197,7 @@ The health numbers come from Deo's Google Health export, refreshed about once a 
 
 ```sh
 npm install
-npm run build        # builds dist/, llms.txt and the translated pages (dist/<lang>/)
+npm run build        # builds dist/, llms.txt, the translated pages (dist/<lang>/) and stats.json
 ```
 
 The build ends with `scripts/prune-originals.mjs`, which deletes the original photos Astro copies into

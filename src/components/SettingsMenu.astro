@@ -1,11 +1,14 @@
 ---
 // The gear (top right of the header) and the Settings menu it opens: Language, "Want a language added?" and
-// Vraki mode (#87), and App: the Install app button (#292). Copied from Deovandski-repo-template's Gear.astro + SettingsDialog.astro and adapted; Vraki mode
+// Vraki mode (#87), App: the Install app button (#292), and Stats for nerds: the DEBUG button, which opens /debug/ (#306,
+// from Deovandski-repo-template#19). The × at the top right closes it (a submit button in a method="dialog" form), and so
+// does Esc. Copied from Deovandski-repo-template's Gear.astro + SettingsDialog.astro and adapted; Vraki mode
 // works like husbandoutworld.com's. The behaviour is in src/scripts/settings.ts, and the inline script in
 // Base.astro applies the saved choices before the page paints.
 // The Language list comes from content/i18n/<code>/meta.json, in the order of content/i18n/config.json.
 import config from '../../content/i18n/config.json';
 import InstallApp from './reusable/InstallApp.astro';
+import { url } from '../lib/url';
 
 interface LanguageMeta { name: string; html_lang?: string }
 const metas = import.meta.glob<LanguageMeta>('../../content/i18n/*/meta.json', { eager: true, import: 'default' });
@@ -19,7 +22,10 @@ const languages = config.languages.filter((c) => byCode.has(c)).map((code) => ({
 
 <dialog id="site-settings" class="site-settings keep-latin" aria-labelledby="site-settings-title">
   <form method="dialog">
-    <h2 id="site-settings-title">Settings</h2>
+    <div class="settings-head">
+      <h2 id="site-settings-title">Settings</h2>
+      <button class="settings-close" value="close" aria-label="Close" title="Close"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M6.4 5 12 10.6 17.6 5 19 6.4 13.4 12l5.6 5.6-1.4 1.4-5.6-5.6L6.4 19 5 17.6l5.6-5.6L5 6.4 6.4 5Z"/></svg></button>
+    </div>
     <label class="setting"><span>Language</span>
       <select data-setting="lang" translate="no">
         <option value="en" lang="en">English</option>
@@ -32,7 +38,7 @@ const languages = config.languages.filter((c) => byCode.has(c)).map((code) => ({
       <input data-setting="vraki" type="checkbox" />
     </label>
     <div class="setting"><span>App</span><InstallApp class="settings-install" /></div>
-    <div class="done"><button value="close">Done</button></div>
+    <div class="setting setting-debug"><span>Stats for nerds</span><a class="debug-btn" href={url('/debug/')} translate="no">DEBUG</a></div>
   </form>
 </dialog>
 
@@ -63,7 +69,22 @@ const languages = config.languages.filter((c) => byCode.has(c)).map((code) => ({
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.55), 0 0 24px rgba(57, 197, 187, 0.15);
   }
   .site-settings::backdrop { background: rgba(7, 11, 31, 0.7); backdrop-filter: blur(3px); }
-  .site-settings h2 { margin: 0 0 1rem; font-size: var(--step-1); }
+  .settings-head { display: flex; justify-content: space-between; align-items: center; gap: 0.75rem; margin: 0 0 1rem; }
+  .site-settings h2 { margin: 0; font-size: var(--step-1); }
+  .settings-close {
+    display: grid;
+    place-items: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    margin-inline-end: -0.5rem;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--silver);
+    cursor: pointer;
+  }
+  .settings-close:hover { background: rgba(57, 197, 187, 0.14); color: var(--text); }
+  .settings-close:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
   .setting { display: grid; gap: 0.35rem; margin: 0 0 0.9rem; }
   .setting span { font-weight: 700; }
   .setting small { display: block; font-weight: 400; color: var(--muted); }
@@ -82,17 +103,21 @@ const languages = config.languages.filter((c) => byCode.has(c)).map((code) => ({
   .vraki-note { display: none !important; }
   :global(html[data-lang]) .vraki-note { display: block !important; }
   .site-settings :global(.settings-install) { --install-muted: var(--muted); --install-accent: var(--teal); --install-ink: var(--night); }
-  .done { display: flex; justify-content: flex-end; }
-  .done button {
-    font: inherit;
-    font-weight: 700;
-    padding: 0.45rem 1.1rem;
-    border-radius: 999px;
-    border: 0;
-    background: var(--teal);
-    color: var(--night);
-    cursor: pointer;
+  /* Stats for nerds: the DEBUG button looks like the terminal it opens (src/pages/debug.astro): black, green, monospace. */
+  .setting-debug { grid-template-columns: 1fr auto; align-items: center; gap: 1rem; margin: 0; }
+  .debug-btn {
+    font: 700 0.85rem/1 ui-monospace, 'Cascadia Mono', Consolas, monospace;
+    letter-spacing: 0.12em;
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    background: #000;
+    color: #39ff14;
+    text-decoration: none;
+    text-shadow: 0 0 6px rgba(57, 255, 20, 0.6);
+    border: 1px solid #1f6f12;
   }
+  .debug-btn:hover { box-shadow: 0 0 10px rgba(57, 255, 20, 0.35); }
+  .debug-btn:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
   @media (max-width: 640px) {
     .gear { width: 2.1rem; height: 2.1rem; flex: none; }
   }

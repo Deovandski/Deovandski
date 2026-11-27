@@ -43,6 +43,10 @@
   "en": " Contact ",
   "t": "संपर्क"
  },
+ "b5608ea73b86": {
+  "en": "Stats for nerds",
+  "t": "तकनीकी आँकड़े"
+ },
  "bd1cf21678f6": {
   "en": "Installed! Open it from your home screen or app list.",
   "t": "इंस्टॉल हो गया! इसे होम स्क्रीन या ऐप सूची से खोलें।"
@@ -70,10 +74,6 @@
  "e5f79aa13bd5": {
   "en": "Install app",
   "t": "ऐप इंस्टॉल करें"
- },
- "e9b450d14bc2": {
-  "en": "Done",
-  "t": "हो गया"
  },
  "fc4a695f02a8": {
   "en": "App",
