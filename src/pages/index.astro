@@ -36,6 +36,7 @@ import shotWds from '../assets/developer/wizard-deo-solutions.jpg';
 import shotLedMatrix from '../assets/developer/led-matrix-manager.jpg';
 import { Content as DeathSources } from '../../content/death-sources.md';
 import { Content as AviationSources } from '../../content/aviation-sources.md';
+import { Content as TattooSources } from '../../content/tattoo-sources.md';
 import { Content as MentorSources } from '../../content/mentor-sources.md';
 import YouTube from '../components/reusable/YouTube.astro';
 import { Content as AviationText } from '../../content/aviation.md';
@@ -564,8 +565,8 @@ const nf = new Intl.NumberFormat('en-US');
           solutions, mentoring developers, collaborating with stakeholders, or leading client discussions.
         </p>
         <p>
-          GitHub only has a fraction of my code because of NDAs, but I'm proud of the LED Matrix Manager I cooked up for
-          Framework 16 users. StackOverflow? Haven't used it in a long, long while. Times have changed, and it's fun and weird!
+          GitHub only has a fraction of all the code I developed in my developer career, but there's enough out there for y'all
+          to have fun and see my growth, and ambitions.
         </p>
         <ProjectCards items={softwareCards} label="My business" />
       </div>
@@ -577,6 +578,8 @@ const nf = new Intl.NumberFormat('en-US');
             meant I kept exploring stuff! Here's what I cooked so far:
           </p>
           <ProjectCards items={gameCards} label="My games" />
+          <!-- Gamer ↔ Developer › Games (#302). -->
+          <p class="cross-link">Truth be told, I spent way more time playing games than making my own: the hours are on the <a href="#gamer">Gamer tab</a>.</p>
         </div>
       </div>
     </section>
@@ -829,6 +832,11 @@ const nf = new Intl.NumberFormat('en-US');
       <GimmickPlay tab="tattoo">
         <p slot="intro">A practice skin, like the ones tattoo artists learn on. Pick a skin tone, an ink and a needle, and go.</p>
       </GimmickPlay>
+      <LinksMenu
+        id="tattoo-links"
+        toggle="external"
+        items={[{ links: [{ href: 'https://deovandski.github.io/vraki-windows/', label: 'Vraki, the script on my wrists' }] }]}
+      ><SourceList title="AuDHD, ink and grounding"><TattooSources /></SourceList></LinksMenu>
       <Sections data={tattoos} id="tattoo" photoAlt={(t) => `Tattoo on my ${t.toLowerCase()}`} />
     </section>
 
@@ -880,7 +888,7 @@ const nf = new Intl.NumberFormat('en-US');
           there's only so much I can cook at one time... So it's planned out on my backlog! I want to play
           <i>World's End Dancehall</i>, <i>Two-Faced Lovers</i> and <i>Sweet Devil</i> on drums!
         </p>
-        <p>Meanwhile, I can use AI to turn random, interesting ideas into fun songs!</p>
+        <p>Meanwhile, I can use AI to turn random, interesting ideas into fun songs! Just like anyone else! 🥳</p>
       </div>
     </section>
 
@@ -888,8 +896,8 @@ const nf = new Intl.NumberFormat('en-US');
       <GimmickPlay tab="painting" />
       <div class="story">
         <p>
-          Definitely I do not have enough dexterity to really get where I want, but fortunately I know the right people with
-          the skills to help transform my ideas into reality. Regardless, I still push myself to at least try!
+          Definitely I do not have enough dexterity to really get where I want in terms of this skill as I've approach my natural
+          upper limit in this skill, but fortunately I know the right people with the skills to help transform my ideas into reality. Regardless, I still push myself to at least try!
         </p>
       </div>
       <PhotoGrid photos={painting} name="painting" caption="date" empty="Paintings and drawings are on their way." />
@@ -951,7 +959,11 @@ const nf = new Intl.NumberFormat('en-US');
         ]}
       />
       <div class="list-head gamer-head">
-        <div class="gamer-intro">{gamer.intro.map((para) => <p class="ranking-lede">{para}</p>)}</div>
+        <div class="gamer-intro">
+          {gamer.intro.map((para) => <p class="ranking-lede">{para}</p>)}
+          <!-- Gamer ↔ Developer › Games (#302). -->
+          <p class="ranking-lede cross-link">I make games too, now and then: see what I've cooked so far on <a href="#dev-games">Developer › Games</a>.</p>
+        </div>
       </div>
       <HoursByCategory
         id="gamer"
@@ -1310,6 +1322,8 @@ const nf = new Intl.NumberFormat('en-US');
   #panel-gamer { --hbc-heading-font: var(--font-display); --days-heading-font: var(--font-display); }
 
   .empty { color: var(--muted); }
+  /* A line that sends the visitor to a related tab (#302). */
+  .cross-link { margin-top: 1rem; }
   /* Pill switches (PillSwitch, like the Biomarker Lab's views): the site's display font. */
   .panel {
     --switch-font: var(--font-display);

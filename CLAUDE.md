@@ -127,8 +127,8 @@ loose buttons in the tab (#260).
   plain line). The link list itself lives once, at the top of `src/pages/index.astro` (like `devLinks`), or in the
   tab's own data.
 - A box can also hold its own layout in `LinksMenu`'s slot instead of button groups: Death and Mentor put their
-  "Shoulders I stand on" reading list there, as a `SourceList` (#268).
-- Today: Developer, Author, Gamer, Influencer, Musician, Anime, BOTW, Death, Mentor, Lust, D&D, Cycling, Biomarker Lab, Aviation and Traveler. Elsewhere (another page or repo) `toggle="own"` gives the box its own Links button.
+  "Shoulders I stand on" reading list there, as a `SourceList` (#268); Aviation and Tattoo put one after their buttons.
+- Today: Developer, Author, Gamer, Influencer, Musician, Anime, BOTW, Death, Mentor, Lust, D&D, Cycling, Biomarker Lab, Aviation, Traveler and Tattoo. Elsewhere (another page or repo) `toggle="own"` gives the box its own Links button.
 
 ## Sub-tabs (the tree's third level)
 
