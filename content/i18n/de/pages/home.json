@@ -59,9 +59,17 @@
   "en": "Fold it, throw it",
   "t": "Falten, werfen"
  },
+ "0120f2e77392": {
+  "en": "Guinness and red wine for the braise",
+  "t": "Guinness und Rotwein zum Schmoren"
+ },
  "01222ad325e7": {
   "en": "Enlarge: Bass on the pontoon",
   "t": "Vergrößern: Barsch auf dem Ponton"
+ },
+ "0127791be02b": {
+  "en": "Bacon-wrapped filets",
+  "t": "Filets im Speckmantel"
  },
  "01394f52fac1": {
   "en": "85mm",
@@ -147,6 +155,10 @@
   "en": "FEVER! The whole floor lights up.",
   "t": "FIEBER! Die ganze Tanzfläche leuchtet."
  },
+ "02b744b40ec3": {
+  "en": "Cubing the beef",
+  "t": "Rindfleisch würfeln"
+ },
  "02c0e4a1da64": {
   "en": "Used",
   "t": "Benutzt"
@@ -226,6 +238,10 @@
  "04c70f3c22a3": {
   "en": "of {n} tracked",
   "t": "von {n} erfassten"
+ },
+ "04c731363bd8": {
+  "en": "Looks like pig slop, tastes like ambrosia!",
+  "t": "Sieht aus wie Schweinefraß, schmeckt wie Ambrosia!"
  },
  "04e3fd08d714": {
   "en": "Description coming soon.",
@@ -311,6 +327,10 @@
   "en": "Nosebleed level: critical (￣ε￣＠)",
   "t": "Nasenbluten-Stufe: kritisch (￣ε￣＠)"
  },
+ "066c450bdf83": {
+  "en": "Enlarge: Crispy tilapia",
+  "t": "Vergrößern: Knuspriger Tilapia"
+ },
  "067ff8ef9ba2": {
   "en": "\nSenior Software Engineer, Dynamics 365 F&amp;O Architect, and Founder &amp; CEO of Wizard Deo Solutions.\n",
   "t": "Senior Software Engineer, Dynamics 365 F&amp;O Architect sowie Gründer &amp; CEO von Wizard Deo Solutions."
@@ -386,6 +406,10 @@
  "07c6c2071295": {
   "en": "Let me go",
   "t": "Lass mich los"
+ },
+ "07df0370701f": {
+  "en": "Enlarge: Pulling the pork",
+  "t": "Vergrößern: Pulled Pork zupfen"
  },
  "08022eba4187": {
   "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Exercise is anything\n    the watch logged for 10 minutes or more: walks, rides, the elliptical, runs, swims. Cardio fitness is estimated from\n    each day's resting heart rate and my age (the heart rate ratio method). Dates and numbers only: no places.\n    The dashed lines are other people: men my age (born in 1993), from studies and other devices that measure a little\n    differently, so read them as a rough guide. Where they come from is in this tab's Links box.\n",
@@ -590,6 +614,14 @@
  "0cb7f32cae29": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 21: </span> Placeholder TV show 21 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Platz 21: </span> Platzhalter-Serie 21"
+ },
+ "0cb87e6a7a5d": {
+  "en": "Enlarge: Cheeseburgers with pickled red onions and broccoli",
+  "t": "Vergrößern: Cheeseburger mit eingelegten roten Zwiebeln und Brokkoli"
+ },
+ "0cbbbf48166d": {
+  "en": "Peppered fish fillets",
+  "t": "Pfeffer-Fischfilets"
  },
  "0cf0f0c8b066": {
   "en": "268 h",
@@ -835,6 +867,10 @@
   "en": "Enlarge: Painting or drawing, 04/09/2013",
   "t": "Vergrößern: Gemälde oder Zeichnung, 09.04.2013"
  },
+ "12d7727521d7": {
+  "en": "Two whole fried fish",
+  "t": "Zwei ganze frittierte Fische"
+ },
  "12e4132c6497": {
   "en": "Enlarge: Cheers from the ice",
   "t": "Vergrößern: Prost vom Eis"
@@ -858,6 +894,10 @@
  "1349608b58ab": {
   "en": "25 h",
   "t": "25 h"
+ },
+ "1359469e9656": {
+  "en": "Enlarge: Jerky, cheese and coffee for breakfast",
+  "t": "Vergrößern: Jerky, Käse und Kaffee zum Frühstück"
  },
  "13674b70852d": {
   "en": "South Park: The Fractured but Whole",
@@ -890,6 +930,10 @@
  "13e54ce09816": {
   "en": " PV ",
   "t": "PV"
+ },
+ "142cafe6b958": {
+  "en": "Enlarge: Meatball meal prep",
+  "t": "Vergrößern: Fleischbällchen zum Vorkochen"
  },
  "143fa4c4c81c": {
   "en": "Walleye",
@@ -970,6 +1014,10 @@
  "16fbeb64cf87": {
   "en": "Enlarge: Breakfast",
   "t": "Vergrößern: Frühstück"
+ },
+ "17063c506b81": {
+  "en": "Saturday",
+  "t": "Samstag"
  },
  "172583712386": {
   "en": "Every metric over time, one small chart each. Tap or hover a chart and every chart shows the same day, week or month.",
@@ -1343,6 +1391,10 @@
   "en": " Lens ",
   "t": "Objektiv"
  },
+ "204d45fec535": {
+  "en": "Jerky, cheese and coffee for breakfast",
+  "t": "Jerky, Käse und Kaffee zum Frühstück"
+ },
  "20545ec97959": {
   "en": "Nothing on this roll yet. Take a photo first.",
   "t": "Auf diesem Film ist noch nichts. Mach zuerst ein Foto."
@@ -1455,6 +1507,10 @@
   "en": "30 h",
   "t": "30 h"
  },
+ "22477f319e84": {
+  "en": "Enlarge: Fishing trip in the Amazon",
+  "t": "Vergrößern: Angeltour im Amazonas"
+ },
  "229377a6b713": {
   "en": "You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it's still in the air) and take it down before you run dry.",
   "t": "Du bist die Hindernisse. Der Dino rennt. Du wirfst Sachen nach ihm. Mana baut sich ab jetzt jede Sekunde auf; time deine Würfe (erwisch ihn, solange er noch in der Luft ist) und hol ihn runter, bevor dir das Mana ausgeht."
@@ -1503,6 +1559,10 @@
   "en": "Portuguese",
   "t": "Portugiesisch"
  },
+ "239be35ddca5": {
+  "en": "Broccoli and chicken, robe on",
+  "t": "Brokkoli und Hähnchen, im Bademantel"
+ },
  "23aa58622740": {
   "en": "\nAbout <strong data-astro-cid-j7pv25f6=\"\">2,332 hours</strong> of Best of the Worst: 1,966 views of 157 \nepisodes (Spotlight, Wheel of the Worst and Junka included), from my YouTube watch history from Dec 15, 2019 to  Nov 20, 2026.\n",
   "t": "Etwa <strong data-astro-cid-j7pv25f6=\"\">2.332 Stunden</strong> Best of the Worst: 1.966 Aufrufe von 157 Folgen (Spotlight, Wheel of the Worst und Junka eingeschlossen), aus meinem YouTube-Verlauf vom 15. Dez. 2019 bis 20. Nov. 2026."
@@ -1511,6 +1571,10 @@
   "en": "I see you",
   "t": "Ich seh dich"
  },
+ "24037838f36c": {
+  "en": "Enlarge: Drumsticks in the air fryer",
+  "t": "Vergrößern: Keulen in der Heißluftfritteuse"
+ },
  "24130d4dd839": {
   "en": "Enlarge: Sun through the blossoms",
   "t": "Vergrößern: Sonne durch die Blüten"
@@ -1518,6 +1582,10 @@
  "2438453caeb0": {
   "en": "there's poop to clean",
   "t": "da ist Kacke wegzumachen"
+ },
+ "2443fea27558": {
+  "en": "Enlarge: Braising in the slow cooker",
+  "t": "Vergrößern: Schmoren im Slow Cooker"
  },
  "244d46168deb": {
   "en": "a cactus",
@@ -1570,6 +1638,10 @@
  "25141bd9981f": {
   "en": "Ecchi in the shape of an anime. I absolutely loved the creativity in pushing the envelope as far as possible! Yami is my favorite girl, even though IRL that type of girl tends to be toxic as fuck. Avoidant girls, especially fearful avoidants, are complete energy vampires.",
   "t": "Ecchi in Form eines Animes. Ich habe die Kreativität geliebt, die Grenzen so weit wie möglich zu verschieben! Yami ist mein Lieblingsmädchen, auch wenn diese Art Mädchen im echten Leben meist verdammt toxisch ist. Vermeidende Mädchen, besonders ängstlich-vermeidende, sind komplette Energievampire."
+ },
+ "251f87f23a4d": {
+  "en": "Braising in the slow cooker",
+  "t": "Schmoren im Slow Cooker"
  },
  "25200d152a79": {
   "en": "Pressure ridges on Lake of the Woods",
@@ -1782,6 +1854,10 @@
  "292006d299a0": {
   "en": " Steam + Xbox   ",
   "t": "Steam + Xbox"
+ },
+ "296866d3c043": {
+  "en": "Chicken drumsticks marinating",
+  "t": "Hähnchenkeulen in der Marinade"
  },
  "29733f231324": {
   "en": "Under the hood: how it hooks you",
@@ -2419,6 +2495,10 @@
   "en": "Enlarge: Painting or drawing, 11/28/2019",
   "t": "Vergrößern: Gemälde oder Zeichnung, 28.11.2019"
  },
+ "381b0a1df54d": {
+  "en": "Enlarge: Cubing the beef",
+  "t": "Vergrößern: Rindfleisch würfeln"
+ },
  "382493c11813": {
   "en": "#HusbandOutWorld Website",
   "t": "#HusbandOutWorld-Website"
@@ -2442,6 +2522,10 @@
  "386afa7ad2fc": {
   "en": "<strong>Enjoy!</strong> The goal is a structure that gives the trip a sense of coordination, efficient travel and relaxation, while staying flexible enough for on-the-fly adjustments.",
   "t": "<strong>Genießen!</strong> Das Ziel ist eine Struktur, die der Reise ein Gefühl von Koordination, effizientem Reisen und Entspannung gibt und trotzdem flexibel genug für spontane Anpassungen bleibt."
+ },
+ "3876b762d5ac": {
+  "en": "HUEHUE, spelled in meat sticks",
+  "t": "HUEHUE, aus Fleischsticks gelegt"
  },
  "3878d567f539": {
   "en": "A streak you could lose feels worse than one you never had. Losing hurts about twice as much as winning feels good.",
@@ -2563,6 +2647,10 @@
   "en": "Neon city",
   "t": "Neonstadt"
  },
+ "3a66d7a5d77a": {
+  "en": "Cheeseburgers with pickled red onions and broccoli",
+  "t": "Cheeseburger mit eingelegten roten Zwiebeln und Brokkoli"
+ },
  "3a7303445404": {
   "en": "Enlarge: Winter fit check",
   "t": "Vergrößern: Winter-Outfit-Check"
@@ -2594,6 +2682,10 @@
  "3af4e2d1a82a": {
   "en": "Fluffy",
   "t": "Fluffy"
+ },
+ "3b0349b11d05": {
+  "en": "Pork in the big pot",
+  "t": "Schweinefleisch im großen Topf"
  },
  "3b044501691d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Placeholder TV show 16 ",
@@ -2666,6 +2758,10 @@
  "3cac34e67446": {
   "en": "Sleep",
   "t": "Schlafen"
+ },
+ "3cbbf330eac8": {
+  "en": "Fishing trip in the Amazon",
+  "t": "Angeltour im Amazonas"
  },
  "3cdd78544e70": {
   "en": "Chelsea Wolfe<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
@@ -2807,10 +2903,6 @@
   "en": "+ 6 more games",
   "t": "+ 6 weitere Spiele"
  },
- "3fdc591636cf": {
-  "en": "Enlarge: Rock salt like a churrasco",
-  "t": "Vergrößern: Grobes Salz wie beim Churrasco"
- },
  "3ffa50fa96b3": {
   "en": " Flight Experience Singapore ",
   "t": "Flight Experience Singapore"
@@ -2899,6 +2991,10 @@
   "en": "Tap or hover a dot for its month.",
   "t": "Tipp auf einen Punkt oder fahr darüber, um seinen Monat zu sehen."
  },
+ "42681e89d8d0": {
+  "en": "Enlarge: Meatballs in the air fryer",
+  "t": "Vergrößern: Fleischbällchen in der Heißluftfritteuse"
+ },
  "42c3797fbacc": {
   "en": " Stoneridge Software posts ",
   "t": "Beiträge bei Stoneridge Software"
@@ -2906,6 +3002,14 @@
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
   "t": "Ein altes Foto eines kleinen Kindes und zweier Männer in einer offenen Goldmine aus roter Erde im brasilianischen Amazonas"
+ },
+ "42e43b612a5d": {
+  "en": "Tuesday",
+  "t": "Dienstag"
+ },
+ "42ea1990ab69": {
+  "en": "Enlarge: Beef and baby potatoes, ready to go",
+  "t": "Vergrößern: Rindfleisch und kleine Kartoffeln, startklar"
  },
  "43444027c266": {
   "en": "Cruise ships on the horizon",
@@ -3091,6 +3195,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 7: </span> Steins;Gate ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Platz 7: </span> Steins;Gate"
  },
+ "4865f426d664": {
+  "en": "Beans on the stove, steak waiting in the bag",
+  "t": "Bohnen auf dem Herd, das Steak wartet im Beutel"
+ },
  "487eeb9b8c81": {
   "en": "325 h",
   "t": "325 h"
@@ -3118,6 +3226,10 @@
  "48ef76f8bb0c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Chuunibyou demo Koi ga Shitai! (Love, Chunibyo &amp; Other Delusions!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Platz 30: </span> Chuunibyou demo Koi ga Shitai! (Love, Chunibyo &amp; Other Delusions!)"
+ },
+ "48fe34c257d7": {
+  "en": "Checking the temperature",
+  "t": "Temperatur prüfen"
  },
  "490e4f4efc87": {
   "en": "District of Columbia",
@@ -3183,6 +3295,10 @@
   "en": " Fine line ",
   "t": "Feine Linie"
  },
+ "4b0bb2c7cd3a": {
+  "en": "Enlarge: Broccoli and chicken, robe on",
+  "t": "Vergrößern: Brokkoli und Hähnchen, im Bademantel"
+ },
  "4b1bbadd28f8": {
   "en": "Blue trees and red dirt",
   "t": "Blaue Bäume und rote Erde"
@@ -3218,6 +3334,10 @@
  "4b94d73d72df": {
   "en": "12 photos",
   "t": "12 Fotos"
+ },
+ "4bca447154dc": {
+  "en": "Seared tuna steaks",
+  "t": "Scharf angebratene Thunfischsteaks"
  },
  "4bd6c7e4c009": {
   "en": "Dead Cells",
@@ -3319,6 +3439,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Toradora! ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Platz 23: </span> Toradora!"
  },
+ "4dbcf2023b9c": {
+  "en": "Enlarge: Sriracha maple bacon in the dehydrator",
+  "t": "Vergrößern: Sriracha-Ahorn-Speck im Dörrautomaten"
+ },
  "4dc7132b40c7": {
   "en": "I like to take my time too, but I hope you're not doing something Ecchi while staring at me huehue...",
   "t": "Ich lass mir auch gern Zeit, aber ich hoffe, du machst nichts Ecchi, während du mich anstarrst, huehue..."
@@ -3342,6 +3466,10 @@
  "4e17a7b165de": {
   "en": "Sonja<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Sonja<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM-2025-Favoriten</span>"
+ },
+ "4e1ea0f4d3ea": {
+  "en": "Pulled pork sliders",
+  "t": "Pulled-Pork-Slider"
  },
  "4e339ffb8498": {
   "en": "Osaka's food motto is kuidaore: eat until you drop (or go broke). Challenge accepted.",
@@ -3414,6 +3542,10 @@
  "4f11acac7df1": {
   "en": "Photo {n} of {roll} is on the roll.",
   "t": "Foto {n} von {roll} ist auf dem Film."
+ },
+ "4f1e6278de06": {
+  "en": "Enlarge: Sriracha maple bacon jerky",
+  "t": "Vergrößern: Sriracha-Ahorn-Speck-Jerky"
  },
  "4f2081c60ca6": {
   "en": "I watched this in the same time frame as Yosuga no Sora. Interesting world rules, and definitely the author knew what he liked... It made me curious about being physically intimate with a commanding, forward girl... Results are in! It's fun, given I'm usually the more dominant type.",
@@ -3499,6 +3631,10 @@
   "en": "12 h",
   "t": "12 h"
  },
+ "50a689438f5a": {
+  "en": "Enlarge: Steak and onions with black beans and rice",
+  "t": "Vergrößern: Steak mit Zwiebeln, schwarzen Bohnen und Reis"
+ },
  "50b7d95c7fe1": {
   "en": "Meanwhile, I can use AI to turn random, interesting ideas into fun songs! Just like anyone else! 🥳",
   "t": "Bis dahin kann ich mit KI zufällige, interessante Ideen in lustige Songs verwandeln! Genau wie alle anderen auch! 🥳"
@@ -3550,6 +3686,10 @@
  "5162a45af33b": {
   "en": "\nI can keep a beat, though, which is why I want to get into drumming one day! Why not now? Because of priorities, and\n          there's only so much I can cook at one time... So it's planned out on my backlog! I want to play\n<i data-astro-cid-j7pv25f6=\"\">World's End Dancehall</i>, <i data-astro-cid-j7pv25f6=\"\">Two-Faced Lovers</i> and <i data-astro-cid-j7pv25f6=\"\">Sweet Devil</i> on drums!\n",
   "t": "Den Takt halten kann ich aber, deshalb will ich eines Tages mit dem Schlagzeugspielen anfangen! Warum nicht jetzt? Wegen der Prioritäten, und man kann nur so viel gleichzeitig kochen... Also steht es geplant in meinem Backlog! Ich will <i data-astro-cid-j7pv25f6=\"\">World's End Dancehall</i>, <i data-astro-cid-j7pv25f6=\"\">Two-Faced Lovers</i> und <i data-astro-cid-j7pv25f6=\"\">Sweet Devil</i> auf dem Schlagzeug spielen!"
+ },
+ "51813ac8b661": {
+  "en": "Enlarge: Two whole fried fish",
+  "t": "Vergrößern: Zwei ganze frittierte Fische"
  },
  "5185eb58733a": {
   "en": "Jojo pose",
@@ -3683,6 +3823,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder TV show 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Platz 15: </span> Platzhalter-Serie 15"
  },
+ "545dac1aea36": {
+  "en": "Chicken breasts on the grill",
+  "t": "Hähnchenbrust auf dem Grill"
+ },
  "546189d2d14b": {
   "en": "A light Windows tray app for the Framework Laptop 16 LED Matrix modules: draw, animate and write text on both sides of the keyboard, and the LEDs turn themselves off when I dock and close the lid. C#, .NET 10 and WPF, no admin rights, no telemetry.",
   "t": "Eine schlanke Windows-Tray-App für die LED-Matrix-Module des Framework Laptop 16: Zeichne, animiere und schreibe Text auf beiden Seiten der Tastatur, und die LEDs gehen von selbst aus, wenn ich andocke und den Deckel schließe. C#, .NET 10 und WPF, keine Adminrechte, keine Telemetrie."
@@ -3806,6 +3950,14 @@
  "563fcaed811e": {
   "en": "Time to book a trip!",
   "t": "Zeit, eine Reise zu buchen!"
+ },
+ "564ee79085bb": {
+  "en": "Beef, seared and raw",
+  "t": "Rindfleisch, angebraten und roh"
+ },
+ "5656b9b79b03": {
+  "en": "Wednesday",
+  "t": "Mittwoch"
  },
  "5675306240db": {
   "en": "The Icelandic compass symbol, associated with guidance and finding one's way. I intentionally placed its center point over a single long white hair that I consider mystical.",
@@ -3999,6 +4151,10 @@
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">703 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">703 h</strong>  ·  5 Spiele  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% meiner Stunden</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% meiner Stunden</span>"
  },
+ "5a1545eb9848": {
+  "en": "Enlarge: Chicken drumsticks marinating",
+  "t": "Vergrößern: Hähnchenkeulen in der Marinade"
+ },
  "5a199f0f62fb": {
   "en": "Death Valley holds the hottest air temperature ever recorded on Earth: 56.7 °C (134 °F), back in 1913.",
   "t": "Das Death Valley hält die höchste je auf der Erde gemessene Lufttemperatur: 56,7 °C (134 °F), im Jahr 1913."
@@ -4151,6 +4307,10 @@
   "en": "Enlarge: Lazy",
   "t": "Vergrößern: Faul"
  },
+ "5ce087e790ff": {
+  "en": "Beef and baby potatoes, ready to go",
+  "t": "Rindfleisch und kleine Kartoffeln, startklar"
+ },
  "5d00be2150a7": {
   "en": "Indiana",
   "t": "Indiana"
@@ -4194,6 +4354,10 @@
  "5e3f6f842f63": {
   "en": "Caught one!",
   "t": "Einen gefangen!"
+ },
+ "5e4a6b40a235": {
+  "en": "Enlarge: Pork shoulder on the smoker",
+  "t": "Vergrößern: Schweineschulter im Smoker"
  },
  "5e749e984aef": {
   "en": "Saturday Night Fever",
@@ -4290,6 +4454,10 @@
  "608268fe2d19": {
   "en": "Day {n}: {item} ({category})",
   "t": "Tag {n}: {item} ({category})"
+ },
+ "608ccf246cef": {
+  "en": "Pork shoulder with its rub",
+  "t": "Schweineschulter mit ihrer Gewürzmischung"
  },
  "60a938835b97": {
   "en": "Fog and smoke",
@@ -4419,6 +4587,10 @@
   "en": "Bottom at {d} ft. Scroll or swipe down to drop your jig: it's the thin mark on the dial.",
   "t": "Grund bei {d} ft. Scroll oder wisch nach unten, um deinen Jig runterzulassen: Er ist die dünne Markierung auf der Skala."
  },
+ "63312bc4b298": {
+  "en": "Enlarge: HUEHUE, spelled in meat sticks",
+  "t": "Vergrößern: HUEHUE, aus Fleischsticks gelegt"
+ },
  "633797165688": {
   "en": "Magical Mirai, Osaka (2014)",
   "t": "Magical Mirai, Osaka (2014)"
@@ -4515,6 +4687,10 @@
   "en": "251 mi*",
   "t": "251 mi*"
  },
+ "656f14b421b5": {
+  "en": "Bacon, Sriracha and maple syrup",
+  "t": "Speck, Sriracha und Ahornsirup"
+ },
  "6597c160dce8": {
   "en": "Enlarge: Riding out to the ice",
   "t": "Vergrößern: Raus aufs Eis"
@@ -4567,6 +4743,10 @@
   "en": "São Paulo",
   "t": "São Paulo"
  },
+ "6676327083a1": {
+  "en": "Enlarge: Bacon in the pot for the black beans",
+  "t": "Vergrößern: Speck im Topf für die schwarzen Bohnen"
+ },
  "669cff7ab58e": {
   "en": "Film door",
   "t": "Filmklappe"
@@ -4614,6 +4794,10 @@
  "67b782e4b825": {
   "en": "Spore",
   "t": "Spore"
+ },
+ "67d1b197da3e": {
+  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> gets its own tab as it warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
+  "t": "Wie meine Mama folge ich keinen Rezepten und schreibe nichts auf. Aber ich mache Fotos, damit ich es später nachkochen kann, wenn es richtig gut geworden ist! Das macht jede Mahlzeit besonders, würde ich sagen! <a href=\"#churrasco\">Churrasco</a> hat einen eigenen Tab, weil es eine eigene Facette verdient! Ich liebe Essen in allen Formen und Arten, aber ich ziehe auch Grenzen, zum Beispiel kann ich keinen Stinktofu essen."
  },
  "67d69fcd957c": {
   "en": "Under a bridge in Seattle lives the Fremont Troll, a giant concrete troll crushing a real Volkswagen Beetle.",
@@ -4802,6 +4986,10 @@
  "6b57400f6846": {
   "en": "473 h",
   "t": "473 h"
+ },
+ "6b58c1922cdc": {
+  "en": "Enlarge: Seared tuna steaks",
+  "t": "Vergrößern: Scharf angebratene Thunfischsteaks"
  },
  "6b75c456b935": {
   "en": "Meeting Big Chungus",
@@ -5203,6 +5391,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Spy x Family ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Platz 15: </span> Spy x Family"
  },
+ "7562fb66d590": {
+  "en": "Sriracha maple bacon jerky",
+  "t": "Sriracha-Ahorn-Speck-Jerky"
+ },
  "7599dc12705d": {
   "en": "Sandy village road",
   "t": "Sandige Dorfstraße"
@@ -5222,6 +5414,10 @@
  "75e734d05411": {
   "en": " KS ",
   "t": "KS"
+ },
+ "76031ddf9245": {
+  "en": "Thursday",
+  "t": "Donnerstag"
  },
  "760929922824": {
   "en": "Spreaders of the Faith",
@@ -5395,6 +5591,10 @@
   "en": "{n} ball in the bag",
   "t": "{n} Kugel in der Tasche"
  },
+ "7906c92d50be": {
+  "en": "Enlarge: Guinness and red wine for the braise",
+  "t": "Vergrößern: Guinness und Rotwein zum Schmoren"
+ },
  "7958bacf5b59": {
   "en": "Back to Lust",
   "t": "Zurück zu Lust"
@@ -5406,6 +5606,10 @@
  "798f8bfe7ae0": {
   "en": "Date unknown",
   "t": "Datum unbekannt"
+ },
+ "79911222bb9f": {
+  "en": "A bacon-wrapped filet, sliced",
+  "t": "Ein Filet im Speckmantel, aufgeschnitten"
  },
  "7999a7774a08": {
   "en": "Let's go for a walk",
@@ -5555,6 +5759,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 21: </span> Placeholder movie 21 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Platz 21: </span> Platzhalter-Film 21"
  },
+ "7d4bd8ef77df": {
+  "en": "Enlarge: Meat sticks drying",
+  "t": "Vergrößern: Fleischsticks beim Trocknen"
+ },
  "7d53b1dfac35": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 38: </span> Placeholder movie 38 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Platz 38: </span> Platzhalter-Film 38"
@@ -5687,6 +5895,10 @@
   "en": "<strong>Steven C. Hayes</strong>, Acceptance and Commitment Therapy’s psychological flexibility: stay present with what you feel, and persist or change in service of chosen values. <a href=\"https://contextualscience.org/the_six_core_processes_of_act\">ACBS</a>",
   "t": "<strong>Steven C. Hayes</strong>, die psychologische Flexibilität der Akzeptanz- und Commitment-Therapie: Bleib präsent mit dem, was du fühlst, und mach weiter oder ändere dich im Dienst selbst gewählter Werte. <a href=\"https://contextualscience.org/the_six_core_processes_of_act\">ACBS</a>"
  },
+ "80745b6662b3": {
+  "en": "Enlarge: Steak and onions with black-eyed peas",
+  "t": "Vergrößern: Steak mit Zwiebeln und Augenbohnen"
+ },
  "80ad7e3d1940": {
   "en": "Squirreled Away",
   "t": "Squirreled Away"
@@ -5695,13 +5907,17 @@
   "en": "Do Better!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (written in Vraki)</span>",
   "t": "Do Better!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (in Vraki geschrieben)</span>"
  },
+ "80cdcf834adc": {
+  "en": "Enlarge: Extra-crunchy breaded fillet",
+  "t": "Vergrößern: Extra knuspriges paniertes Filet"
+ },
+ "80f41e7317cd": {
+  "en": "Enlarge: Beef jerky going into the dehydrator",
+  "t": "Vergrößern: Beef Jerky kommt in den Dörrautomaten"
+ },
  "8108be52474a": {
   "en": "<strong>Edward Deci &amp; Richard Ryan</strong>, Self-Determination Theory: autonomy, competence and relatedness as basic psychological needs. <a href=\"https://selfdeterminationtheory.org/theory/\">Overview</a>",
   "t": "<strong>Edward Deci &amp; Richard Ryan</strong>, Selbstbestimmungstheorie: Autonomie, Kompetenz und soziale Eingebundenheit als psychologische Grundbedürfnisse. <a href=\"https://selfdeterminationtheory.org/theory/\">Überblick</a>"
- },
- "8120e5173338": {
-  "en": "Rock salt like a churrasco",
-  "t": "Grobes Salz wie beim Churrasco"
  },
  "81268987b9ea": {
   "en": "Step 7: Give Thanks",
@@ -5771,6 +5987,10 @@
   "en": "Midas Gold Plus",
   "t": "Midas Gold Plus"
  },
+ "82cc0ecee6f9": {
+  "en": "Breaded tilapia out of the air fryer",
+  "t": "Panierter Tilapia aus der Heißluftfritteuse"
+ },
  "82d2abb6b0d8": {
   "en": "Skin tone",
   "t": "Hautton"
@@ -5794,6 +6014,10 @@
  "8334bb311ce5": {
   "en": "Results are random: usually small, sometimes nothing, rarely huge. Unpredictable rewards are the hardest habit to quit (a variable-ratio schedule).",
   "t": "Die Ergebnisse sind zufällig: meist klein, manchmal nichts, selten riesig. Unvorhersehbare Belohnungen sind die am schwersten abzulegende Gewohnheit (ein variabler Quotenplan)."
+ },
+ "833bd264b254": {
+  "en": "Pulling the pork",
+  "t": "Pulled Pork zupfen"
  },
  "833becf2f191": {
   "en": "Faithful servants who yet lean upon the thermometer, but who follow the steps and strive to forsake all sauce.",
@@ -5843,6 +6067,10 @@
   "en": "Pets",
   "t": "Haustiere"
  },
+ "84a3c090faa5": {
+  "en": "Searing the beef",
+  "t": "Rindfleisch anbraten"
+ },
  "84aebbb15ac4": {
   "en": "Right wrist, written in <a href=\"https://deovandski.github.io/vraki-windows/\">Vraki</a>. This side ties to my ambition, collaboration, and community: striving to learn and always growing. This is my ADHD side to the core.",
   "t": "Rechtes Handgelenk, in <a href=\"https://deovandski.github.io/vraki-windows/\">Vraki</a> geschrieben („Mach es besser!“). Diese Seite gehört zu meinem Ehrgeiz, zur Zusammenarbeit und zur Community: danach streben, zu lernen und immer zu wachsen. Das ist meine ADHS-Seite bis ins Mark."
@@ -5859,6 +6087,10 @@
   "en": "Bidu, a pixel pet",
   "t": "Bidu, ein Pixel-Haustier"
  },
+ "854e203f03c3": {
+  "en": "Enlarge: Searing the beef",
+  "t": "Vergrößern: Rindfleisch anbraten"
+ },
  "857aacdbee63": {
   "en": "Harvest!",
   "t": "Ernten!"
@@ -5874,6 +6106,10 @@
  "85c46aa54865": {
   "en": "Hexvessel<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Hexvessel<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM-2025-Favoriten</span>"
+ },
+ "85caf012de86": {
+  "en": "Fried eggs, bacon and greens on toast",
+  "t": "Spiegeleier, Speck und Grünzeug auf Toast"
  },
  "85e00db11c0a": {
   "en": "Enlarge: Guess my plan for today",
@@ -5914,6 +6150,10 @@
  "865e588793be": {
   "en": "Deep sleep",
   "t": "Tiefschlaf"
+ },
+ "86737f3aba01": {
+  "en": "Sriracha maple bacon in the dehydrator",
+  "t": "Sriracha-Ahorn-Speck im Dörrautomaten"
  },
  "86820db881dd": {
   "en": "Enlarge: Frosted tree",
@@ -6467,6 +6707,10 @@
   "en": " Pie ",
   "t": "Kuchen"
  },
+ "932eeb1076c8": {
+  "en": "Monday",
+  "t": "Montag"
+ },
  "935d45974f78": {
   "en": "100 h",
   "t": "100 h"
@@ -6511,6 +6755,10 @@
   "en": "2 sub-facets",
   "t": "2 Unterfacetten"
  },
+ "945d4f25fa6d": {
+  "en": "A CrunchLabs space selfie: a phone in a little frame up in space, with Earth curving behind it, shows a selfie of Deo and his parents on a rooftop over a city with the Brazilian flag",
+  "t": "Ein CrunchLabs-Space-Selfie: ein Handy in einem kleinen Rahmen im All, dahinter die Erdkrümmung; darauf ein Selfie von Deo und seinen Eltern auf einem Dach über einer Stadt mit der brasilianischen Flagge"
+ },
  "947a1916fa8e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Placeholder movie 4 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Platz 4: </span> Platzhalter-Film 4"
@@ -6518,6 +6766,10 @@
  "94a7ce99993b": {
   "en": "Enlarge: Painting or drawing, 01/24/2013",
   "t": "Vergrößern: Gemälde oder Zeichnung, 24.01.2013"
+ },
+ "94cd69d01887": {
+  "en": "Enlarge: Breaded tilapia out of the air fryer",
+  "t": "Vergrößern: Panierter Tilapia aus der Heißluftfritteuse"
  },
  "94ce9e966039": {
   "en": " IC ",
@@ -6674,6 +6926,10 @@
  "9790b0b19467": {
   "en": " 1 amethyst  · 1 energy · 20 s ",
   "t": "1 Amethyst · 1 Energie · 20 s"
+ },
+ "9798118e7de0": {
+  "en": "Enlarge: Looks like pig slop, tastes like ambrosia!",
+  "t": "Vergrößern: Sieht aus wie Schweinefraß, schmeckt wie Ambrosia!"
  },
  "97a52f834aea": {
   "en": "Marvel's Guardians of the Galaxy",
@@ -6983,6 +7239,10 @@
   "en": "Wheee!",
   "t": "Wheee!"
  },
+ "9fa43abad733": {
+  "en": "Enlarge: Beans on the stove, steak waiting in the bag",
+  "t": "Vergrößern: Bohnen auf dem Herd, das Steak wartet im Beutel"
+ },
  "9fab49a7a7bd": {
   "en": "Dream violently. Plan soberly. Execute relentlessly. Update honestly. <strong>Unapplied lessons and unexecuted intentions are the same thing: masturbatory self-entertainment.</strong>",
   "t": "Träume gewaltig. Plane nüchtern. Setze unerbittlich um. Aktualisiere ehrlich. <strong>Nicht angewandte Lektionen und nicht umgesetzte Absichten sind dasselbe: masturbatorische Selbstunterhaltung.</strong>"
@@ -7119,6 +7379,10 @@
   "en": " 261 h  ",
   "t": "261 h"
  },
+ "a22ce5dbd63d": {
+  "en": "Bacon in the pot for the black beans",
+  "t": "Speck im Topf für die schwarzen Bohnen"
+ },
  "a2388074beca": {
   "en": "Routine #{n}: {routine}, {level}, {bpm} BPM.",
   "t": "Routine #{n}: {routine}, {level}, {bpm} BPM."
@@ -7138,6 +7402,10 @@
  "a2620cbc10f5": {
   "en": "day",
   "t": "Tag"
+ },
+ "a26ab37bdd61": {
+  "en": "Enlarge: Meat sticks piped onto the dehydrator",
+  "t": "Vergrößern: Fleischsticks auf den Dörrautomaten gespritzt"
  },
  "a27a66446545": {
   "en": "Washington",
@@ -7226,6 +7494,10 @@
  "a48363071f8d": {
   "en": " OW ",
   "t": "OW"
+ },
+ "a4837efeab91": {
+  "en": "Enlarge: Fried eggs, bacon and greens on toast",
+  "t": "Vergrößern: Spiegeleier, Speck und Grünzeug auf Toast"
  },
  "a486e14465d8": {
   "en": "Saying hi to Willie Walleye in Baudette",
@@ -7350,6 +7622,10 @@
  "a766bb2ac493": {
   "en": "345 h",
   "t": "345 h"
+ },
+ "a7840d4591c0": {
+  "en": "Drumsticks in the air fryer",
+  "t": "Keulen in der Heißluftfritteuse"
  },
  "a78d82862561": {
   "en": "Electronic &amp; synthwave",
@@ -7503,6 +7779,10 @@
   "en": "Aperture",
   "t": "Blende"
  },
+ "aaeb90f02d59": {
+  "en": "Enlarge: Bacon-wrapped filets",
+  "t": "Vergrößern: Filets im Speckmantel"
+ },
  "aaf4de45da01": {
   "en": "This is a Christian fireplace! (╯°□°)╯",
   "t": "Das ist ein christlicher Kamin! (╯°□°)╯"
@@ -7575,6 +7855,10 @@
   "en": "Bathing in the Amazon",
   "t": "Baden im Amazonas"
  },
+ "acca83e6c1e5": {
+  "en": "Beef jerky going into the dehydrator",
+  "t": "Beef Jerky kommt in den Dörrautomaten"
+ },
  "acf04e6e70cf": {
   "en": "I know I am cute",
   "t": "Ich weiß, dass ich süß bin"
@@ -7594,6 +7878,10 @@
  "ad79ef0f076d": {
   "en": "Italy",
   "t": "Italien"
+ },
+ "ad88887b0665": {
+  "en": "Black-eyed peas and green onions",
+  "t": "Augenbohnen mit Frühlingszwiebeln"
  },
  "ad93df41989e": {
   "en": "Hunger",
@@ -7678,6 +7966,10 @@
  "aed6b9811801": {
   "en": "So close! Your post was one share away from blowing up.",
   "t": "So nah! Dein Post war einen Share vom Durchstarten entfernt."
+ },
+ "aee3f67643c6": {
+  "en": "Enlarge: Pork in the big pot",
+  "t": "Vergrößern: Schweinefleisch im großen Topf"
  },
  "af38615beb76": {
   "en": "The facets that fulfill Deo",
@@ -8127,6 +8419,10 @@
   "en": "Back to Concert",
   "t": "Zurück zu Konzerte"
  },
+ "ba567f575059": {
+  "en": "Enlarge: Checking the temperature",
+  "t": "Vergrößern: Temperatur prüfen"
+ },
  "ba5d30be69b6": {
   "en": "Hong Kong has more skyscrapers than any other city in the world.",
   "t": "Hongkong hat mehr Wolkenkratzer als jede andere Stadt der Welt."
@@ -8203,6 +8499,10 @@
   "en": " AP ",
   "t": "AP"
  },
+ "bc5dd045b862": {
+  "en": "Sunday",
+  "t": "Sonntag"
+ },
  "bc79c0b252f4": {
   "en": "Little Witch Academia: Chamber of Time",
   "t": "Little Witch Academia: Chamber of Time"
@@ -8242,6 +8542,10 @@
  "bdab8a1751d7": {
   "en": "<strong>Yi Xie and colleagues</strong>, <em>Frontiers in Psychiatry</em> (2021), a meta-analysis of 22 randomized trials (cycling among the exercises): regular exercise mainly improves how well people say they sleep. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8215288/\">Paper</a>",
   "t": "<strong>Yi Xie und Kolleg:innen</strong>, <em>Frontiers in Psychiatry</em> (2021), eine Metaanalyse von 22 randomisierten Studien (Radfahren unter den Übungen): Regelmäßiger Sport verbessert vor allem, wie gut Menschen nach eigener Aussage schlafen. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8215288/\">Artikel</a>"
+ },
+ "bdeb4738bf18": {
+  "en": "Enlarge: Black-eyed peas and green onions",
+  "t": "Vergrößern: Augenbohnen mit Frühlingszwiebeln"
  },
  "bdf030920a2a": {
   "en": "<strong>Yi Yang and colleagues</strong>, <em>Journal of Global Health</em> (2025), a meta-analysis of physical activity and inhibitory control in adults with ADHD: both single sessions and regular exercise improved it, regular exercise the most. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11907377/\">Paper</a>",
@@ -8326,6 +8630,10 @@
  "bfc2012b411c": {
   "en": "Sunfish and sunshine",
   "t": "Sonnenbarsch und Sonnenschein"
+ },
+ "bfc2a821e6c9": {
+  "en": "Meat sticks drying",
+  "t": "Fleischsticks beim Trocknen"
  },
  "bfc2ec349cc6": {
   "en": "{n} shit 💩",
@@ -8470,6 +8778,10 @@
  "c2b41f47a48c": {
   "en": "Defenders of Ordo",
   "t": "Verteidiger von Ordo"
+ },
+ "c2c141258e2f": {
+  "en": "Crispy tilapia",
+  "t": "Knuspriger Tilapia"
  },
  "c2c53d669482": {
   "en": " T ",
@@ -8666,6 +8978,10 @@
  "c8b4c761e082": {
   "en": " 1,302 h ",
   "t": "1,302 h"
+ },
+ "c8bfda661fd4": {
+  "en": "Enlarge: Salmon and a big salad",
+  "t": "Vergrößern: Lachs und ein großer Salat"
  },
  "c8e2de313adf": {
   "en": "Next stop: {place} · {distance} to go",
@@ -8935,6 +9251,10 @@
   "en": "AuDHD, ink and grounding",
   "t": "AuDHD, Tinte und Erdung"
  },
+ "cf315c89551c": {
+  "en": "Tilapia, ready for breading",
+  "t": "Tilapia, bereit zum Panieren"
+ },
  "cf32e9152179": {
   "en": "❤️ +{n} likes",
   "t": "❤️ +{n} Likes"
@@ -8999,6 +9319,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 36: </span> Placeholder movie 36 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Platz 36: </span> Platzhalter-Film 36"
  },
+ "d0586f622d3e": {
+  "en": "Enlarge: Pulled pork sliders",
+  "t": "Vergrößern: Pulled-Pork-Slider"
+ },
  "d0683718593c": {
   "en": "Sloppy",
   "t": "Schlampig"
@@ -9054,6 +9378,10 @@
  "d160e0986aca": {
   "en": "L",
   "t": "L"
+ },
+ "d166e844a3f3": {
+  "en": "Friday",
+  "t": "Freitag"
  },
  "d173841191a2": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 29: </span> Higurashi no Naku Koro ni (When They Cry) ",
@@ -9118,6 +9446,10 @@
  "d2b790620af3": {
   "en": "T-pose",
   "t": "T-Pose"
+ },
+ "d2e6e1f01f15": {
+  "en": "Enlarge: Tilapia, ready for breading",
+  "t": "Vergrößern: Tilapia, bereit zum Panieren"
  },
  "d2eaf2aa1512": {
   "en": "China",
@@ -9242,6 +9574,10 @@
  "d4bf1e54e3e7": {
   "en": "So fancy",
   "t": "Sehr schick"
+ },
+ "d4c0dca42b74": {
+  "en": "Meatballs in the air fryer",
+  "t": "Fleischbällchen in der Heißluftfritteuse"
  },
  "d4c67d8dae2b": {
   "en": "Hamaki",
@@ -9491,6 +9827,10 @@
   "en": "loosely related",
   "t": "loser Zusammenhang"
  },
+ "d9e8e0cb378b": {
+  "en": "Extra-crunchy breaded fillet",
+  "t": "Extra knuspriges paniertes Filet"
+ },
  "d9ecc35c78dd": {
   "en": "Scream Collector",
   "t": "Scream Collector"
@@ -9534,6 +9874,14 @@
  "dac190ecc27e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 13: </span> Placeholder movie 13 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Platz 13: </span> Platzhalter-Film 13"
+ },
+ "daf17dd35999": {
+  "en": "Enlarge: Pork shoulder with its rub",
+  "t": "Vergrößern: Schweineschulter mit ihrer Gewürzmischung"
+ },
+ "db0e2094392f": {
+  "en": "Steak and onions with black beans and rice",
+  "t": "Steak mit Zwiebeln, schwarzen Bohnen und Reis"
  },
  "db11895b10d7": {
   "en": "28 games",
@@ -9678,6 +10026,10 @@
  "de587bf1e284": {
   "en": "23 games",
   "t": "23 Spiele"
+ },
+ "de7f359516a9": {
+  "en": "Enlarge: Peppered fish fillets",
+  "t": "Vergrößern: Pfeffer-Fischfilets"
  },
  "de99be866eab": {
   "en": "For years, the gym was a pressure valve. I went for stress relief, so it never satisfied me: it was a tool for relief, not something I enjoyed. Now, for the first time in my life, going to the gym feels as natural as brushing my teeth. I don’t go to relieve stress anymore. I go because I actually enjoy it, with music in my ears on the elliptical or under the weights.",
@@ -9891,6 +10243,10 @@
   "en": "Bedtime",
   "t": "Schlafenszeit"
  },
+ "e3cc0aeec404": {
+  "en": "Enlarge: Beef, seared and raw",
+  "t": "Vergrößern: Rindfleisch, angebraten und roh"
+ },
  "e3de5ab0ca4c": {
   "en": "Off",
   "t": "Aus"
@@ -10051,6 +10407,10 @@
   "en": "Metrics to show",
   "t": "Angezeigte Messwerte"
  },
+ "e7d901178492": {
+  "en": "Pork shoulder on the smoker",
+  "t": "Schweineschulter im Smoker"
+ },
  "e7d965113795": {
   "en": "Kilograms of beef grilled: 295",
   "t": "Kilogramm gegrilltes Rindfleisch: 295"
@@ -10151,6 +10511,10 @@
   "en": "Line",
   "t": "Schnur"
  },
+ "eaa2e6aabc3c": {
+  "en": "Meatball meal prep",
+  "t": "Fleischbällchen zum Vorkochen"
+ },
  "eaa40e2587dc": {
   "en": "Distrito Federal",
   "t": "Distrito Federal"
@@ -10195,6 +10559,10 @@
   "en": "Enlarge: Pressure ridges on Lake of the Woods",
   "t": "Vergrößern: Presseisrücken auf dem Lake of the Woods"
  },
+ "ebde285e9639": {
+  "en": "Enlarge: Bacon, Sriracha and maple syrup",
+  "t": "Vergrößern: Speck, Sriracha und Ahornsirup"
+ },
  "ebeff8af956a": {
   "en": "I WANNA GO OUTSIDE",
   "t": "ICH WILL RAUS"
@@ -10210,6 +10578,10 @@
  "ec35596f3bd2": {
   "en": "Enlarge: Painting or drawing, 02/25/2013",
   "t": "Vergrößern: Gemälde oder Zeichnung, 25.02.2013"
+ },
+ "ec636d8aedbe": {
+  "en": "Steak and onions with black-eyed peas",
+  "t": "Steak mit Zwiebeln und Augenbohnen"
  },
  "ec908ac3ae10": {
   "en": "<em><strong>BMC Public Health</strong></em> (2025), “The role of sunlight in sleep regulation”: the midpoint of sleep moved most with sunlight, above all with morning sun. <a href=\"https://pubmed.ncbi.nlm.nih.gov/41053799/\">Abstract</a>",
@@ -10251,6 +10623,10 @@
   "en": "She got away…",
   "t": "Sie ist entkommen…"
  },
+ "ed84d419d519": {
+  "en": "Enlarge: A bacon-wrapped filet, sliced",
+  "t": "Vergrößern: Ein Filet im Speckmantel, aufgeschnitten"
+ },
  "ed8d6e99dc88": {
   "en": "BONK! 🔨 Go to horny jail. (ﾉ´ｰ`)ﾉ",
   "t": "BONK! 🔨 Ab ins Horny-Gefängnis. (ﾉ´ｰ`)ﾉ"
@@ -10290,6 +10666,10 @@
  "eefc86deb7f1": {
   "en": "Enlarge: Painting or drawing, 01/23/2013",
   "t": "Vergrößern: Gemälde oder Zeichnung, 23.01.2013"
+ },
+ "efc92ccf659c": {
+  "en": "Meat sticks piped onto the dehydrator",
+  "t": "Fleischsticks auf den Dörrautomaten gespritzt"
  },
  "efe6cabcbaa1": {
   "en": "Since we’re on the subject: take care of your mental health. And if you’ve ever thought about ending it all… don’t. I nearly did, back in 2016, during a period that far surpassed what my mind could take at the time. I called a crisis hotline. To the older lady who picked up the phone that night: I will forever be grateful. The “Harry” you see in Vol. 1 is an alternate version of myself: the one who plunged that knife into his chest that night.",
@@ -10582,6 +10962,10 @@
  "f7728e6f8374": {
   "en": " Atlas Obscura ",
   "t": "Atlas Obscura"
+ },
+ "f7856857ac1c": {
+  "en": "Salmon and a big salad",
+  "t": "Lachs und ein großer Salat"
  },
  "f7e23fd5bdd6": {
   "en": "Enlarge: Wing and the morning sky",
@@ -10887,6 +11271,10 @@
   "en": "130 h",
   "t": "130 h"
  },
+ "ff6cd8b89344": {
+  "en": "Enlarge: Chicken breasts on the grill",
+  "t": "Vergrößern: Hähnchenbrust auf dem Grill"
+ },
  "ff77bf2aced8": {
   "en": "Senpai noticed me! (✿◠‿◠)",
   "t": "Senpai hat mich bemerkt! (✿◠‿◠)"
@@ -10902,10 +11290,6 @@
  "ffb1f457819d": {
   "en": "Magic: The Gathering decks and stories are on their way.",
   "t": "Magic: The Gathering-Decks und -Geschichten sind unterwegs."
- },
- "ffbae99ba261": {
-  "en": "Recipes and kitchen adventures are on their way.",
-  "t": "Rezepte und Küchenabenteuer sind unterwegs."
  },
  "ffbcb9739951": {
   "en": "Cactus",

@@ -18,8 +18,9 @@ and a project without translations just shows the English.
 | [IconMeter.astro](IconMeter.astro) | A quantity shown as a row of icons, with the last one partly filled (650 lb ÷ 500 lb per cow = 1.3 cows). | Churrasco tab (cow-meter) |
 | [OrgChart.astro](OrgChart.astro) | A top-down organization chart. Each row of people or roles is joined to the row above, with optional portraits. | Churrasco tab (The Holy Order) |
 | [RouteMap.astro](RouteMap.astro) | A map that joins places with a curved great-circle line, kept inside the area you choose, with pinch and button zoom. Leaflet plus your own outline file: no API key, no tile server, no tracking. | Family tab (Itaituba → Fargo) |
-| [PhotoGrid.astro](PhotoGrid.astro) | A grid of square photo cards, each captioned with a short description or the date the photo was taken (`--/--/----` when unknown). Photos carry data attributes for one shared lightbox. | Pets, Fishing, Photographer, Family (descriptions), Painting/Drawing (dates) |
+| [PhotoGrid.astro](PhotoGrid.astro) | A grid of square photo cards, each captioned with a short description or the date the photo was taken (`--/--/----` when unknown). Photos carry data attributes for one shared lightbox. | Pets, Fishing, Photographer, Family (descriptions), Painting/Drawing (dates), Cooking (inside DayGallery) |
 | [ThemeGallery.astro](ThemeGallery.astro) | A photo gallery split into themes: a flat ReelPicker row of theme cards (cover photo, name, photo count) to flip left and right, and the grid below swaps to that theme's photos. Built from ReelPicker and PhotoGrid. | Photographer tab (#316) |
+| [DayGallery.astro](DayGallery.astro) | Photos grouped by the day they were taken: each day gets a pennant-shaped banner (weekday, MM/DD/YYYY date, photo count) over a PhotoGrid of that day's photos, captioned. Each day is its own gallery in the photo viewer. Built on PhotoGrid. | Cooking tab (#320) |
 | [QrCode.astro](QrCode.astro) | A QR code drawn as SVG when the site builds (no JavaScript in the browser), with an optional title above it and the encoded link below it. | QR Code page (`/qr/`) |
 | [VhsPile.astro](VhsPile.astro) | A pile of VHS tapes holding a number of hours of video. Visitors pick the recording speed (SP, LP, EP) and the tapes fall from the top and pile up; they shrink to fit, so it can show a couple of thousand. Canvas, no libraries. | BOTW tab (watch time) |
 | [PaperPlane.astro](PaperPlane.astro) | Fold a paper plane, then throw it: precision decides the distance | Aviation tab |
@@ -752,6 +753,29 @@ drawn in the component. Keyboard: the viewfinder takes focus, the arrow keys aim
 with the arrow keys. Reduced motion skips the white flash. Words the script writes are in a hidden
 `.photo-shoot__strings` block, so they're translated with the page. Theming: `--photo-shoot-accent`,
 `--photo-shoot-view-max` (the viewfinder's tallest height; the ▶ Play box sets it to fit a phone held sideways).
+
+## DayGallery
+
+```astro
+---
+import DayGallery from './reusable/DayGallery.astro';
+---
+<DayGallery photos={photos} name="cooking" empty="Photos are on their way." />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `photos` | (required) | `{ src, alt, date }`, `date` as `YYYY-MM-DD`; photos without one are left out. Inside a day they keep the order given. |
+| `name` | (required) | Prefix for the photo viewer's galleries: each day is `<name>-<date>`, so ‹ › step through that day. |
+| `order` | `"oldest"` | `"newest"` puts the latest day first. |
+| `empty` | none | Shown when there are no photos. |
+| `one` / `many` | `"1 photo"` / `"{n} photos"` | The count on each banner. |
+| `class` | none | Extra class. |
+
+Each day is a `<section>` named by its banner, an `<h3>` with the weekday, the date (`translate="no"`) and the count as
+separate elements, so translated pages translate the seven weekdays and the counts once, not every date. The photos below
+are a `PhotoGrid` (imported from this folder) with text captions. Theme it with `--day-gallery-accent`,
+`--day-gallery-banner-bg`, `--day-gallery-ink` and PhotoGrid's own properties.
 
 ## SegmentMeter
 

@@ -1,0 +1,1 @@
+Like my mom, I don't follow recipes and I don't write stuff down. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I'd say! [Churrasco](#churrasco) gets its own tab as it warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.

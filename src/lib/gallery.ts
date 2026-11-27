@@ -14,14 +14,17 @@ export type Gallery = { photos: GalleryPhoto[]; intro: string[] };
 
 /**
  * "2024-10-13-I-wanna-play.jpg" -> "I wanna play", "2024-05-04-134837-rueiro.jpg" -> "Rueiro",
- * "2026-04-lord-peeta.jpeg" -> "Lord peeta", "03-peeta_in-a-box.jpg" -> "Peeta in a box":
+ * "2026-04-lord-peeta.jpeg" -> "Lord peeta", "03-peeta_in-a-box.jpg" -> "Peeta in a box",
+ * "2017-11-19-093022-Black--eyed-peas.jpg" -> "Black-eyed peas" (a double dash keeps a hyphen):
  * a leading date (month, day, or day plus HHMMSS time) or number is dropped.
  */
 function altFromFile(file: string, fallback: string) {
   const words = file
     .replace(/\.[^.]+$/, '')
     .replace(/^(?:\d{4}-\d{2}(?:-\d{2}(?:-\d{6})?)?(?=[-_ ]|$)|\d+)[-_ ]*/, '')
+    .replace(/--/g, '\u0000') // a double dash is a real hyphen: "Black--eyed-peas" -> "Black-eyed peas"
     .replace(/[-_]+/g, ' ')
+    .replace(/\u0000/g, '-')
     .trim();
   return words ? words[0].toUpperCase() + words.slice(1) : fallback;
 }
