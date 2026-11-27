@@ -128,7 +128,7 @@ loose buttons in the tab (#260).
   tab's own data.
 - A box can also hold its own layout in `LinksMenu`'s slot instead of button groups: Death and Mentor put their
   "Shoulders I stand on" reading list there, as a `SourceList` (#268); Aviation and Tattoo put one after their buttons.
-- Today: Developer, Author, Gamer, Influencer, Musician, Anime, BOTW, Death, Mentor, Lust, D&D, Cycling, Biomarker Lab, Aviation, Traveler, Tattoo and Fishing. Elsewhere (another page or repo) `toggle="own"` gives the box its own Links button.
+- Today: Developer, Author, Gamer, Influencer, Musician, Anime, BOTW, Death, Mentor, Lust, D&D, Cycling, Biomarker Lab, Aviation, Traveler, Tattoo, Fishing and Photographer. Elsewhere (another page or repo) `toggle="own"` gives the box its own Links button.
 
 ## Sub-tabs (the tree's third level)
 

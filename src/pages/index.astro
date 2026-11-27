@@ -2,6 +2,8 @@
 import { Image, getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import GimmickPlay from '../components/GimmickPlay.astro';
+import FastTab from '../components/reusable/FastTab.astro';
+import '@fontsource/im-fell-english/400-italic.css';
 import Ranking from '../components/Ranking.astro';
 import TravelerFacet from '../components/TravelerFacet.astro';
 import MentorFacet from '../components/MentorFacet.astro';
@@ -38,6 +40,8 @@ import { Content as DeathSources } from '../../content/death-sources.md';
 import { Content as AviationSources } from '../../content/aviation-sources.md';
 import { Content as FishingStory } from '../../content/fishing/story.md';
 import { Content as FishingMore } from '../../content/fishing/more.md';
+import { Content as PhotoStory } from '../../content/photography/story.md';
+import { Content as PhotoCritique } from '../../content/photography/critique.md';
 import { Content as TattooSources } from '../../content/tattoo-sources.md';
 import { Content as MentorSources } from '../../content/mentor-sources.md';
 import YouTube from '../components/reusable/YouTube.astro';
@@ -282,6 +286,7 @@ const facets: { id: string; icon: string; label: string; sortAs?: string; subs?:
   { id: 'musician', icon: '🎶', label: 'Musician' },
   { id: 'painting', icon: '🖌️', label: 'Painting/Drawing' },
   { id: 'pets', icon: '🐾', label: 'Pets' },
+  { id: 'photographer', icon: '📷', label: 'Photographer' },
   { id: 'potato', icon: '🥔', label: 'Potato', subs: [
     { id: 'movies', icon: '🎬', label: 'Movies', hash: '#potato-movies' },
     { id: 'tv', icon: '📺', label: 'TV shows', hash: '#potato' },
@@ -300,7 +305,7 @@ const facets: { id: string; icon: string; label: string; sortAs?: string; subs?:
 // No facet opens by default: visitors grow a branch, then pick a facet.
 const branches = [
   { id: 'craft', icon: '💼', label: 'Craft', blurb: 'What Deo builds, writes, plays and paints.', facets: ['author', 'dev', 'influencer', 'musician', 'painting', 'pm'] },
-  { id: 'explorer', icon: '🌏', label: 'Explorer', blurb: 'Where Deo goes and the languages he speaks there.', facets: ['aviation', 'camping', 'fishing', 'multilingual', 'traveler'] },
+  { id: 'explorer', icon: '🌏', label: 'Explorer', blurb: 'Where Deo goes and the languages he speaks there.', facets: ['aviation', 'camping', 'fishing', 'multilingual', 'photographer', 'traveler'] },
   { id: 'frontrow', icon: '🎟️', label: 'Front Row', blurb: 'What Deo watches: live shows, the diva herself, anime, and the movies and TV worth (or not worth) the time.', facets: ['anime', 'botw', 'concert', 'miku', 'potato', 'theater'] },
   { id: 'hearth', icon: '🏡', label: 'Hearth', blurb: 'Family, pets, the grill, the kitchen, and the body that carries it all.', facets: ['biomarkers', 'churrasco', 'cooking', 'family', 'pets'] },
   { id: 'philosophy', icon: '🧭', label: 'Philosophy', blurb: 'How Deo thinks: mortality, mentoring, discipline, desire and ink.', facets: ['cycling', 'death', 'gym', 'lust', 'mentor', 'tattoo'] },
@@ -357,6 +362,7 @@ const concertWishlist = loadSections('content/concerts-wishlist.md', 'content/co
 const theater = loadSections('content/theater.md', 'content/theater');
 const theaterWishlist = loadSections('content/theater-wishlist.md', 'content/theater');
 const fishing = loadGallery('content/fishing', 'Fishing');
+const photography = loadGallery('content/photography', 'Photo');
 // Painting/Drawing: each picture captioned with the date it was taken (photo metadata, else filename).
 // Pictures with neither can get an approximate day in content/painting/_dates.md, shown as "Circa Q1 2013".
 // Oldest first so it reads as a progression; undated ones go last, in filename order.
@@ -769,6 +775,37 @@ const nf = new Intl.NumberFormat('en-US');
       <GimmickPlay tab="traveler" />
       <LinksMenu id="traveler-links" toggle="external" items={travelerLinks} />
       <TravelerFacet />
+    </section>
+
+    <section class="panel" role="region" id="panel-photographer" aria-labelledby="tab-photographer" tabindex="0" hidden>
+      <LinksMenu
+        id="photographer-links"
+        toggle="external"
+        items={[
+          { separator: 'The cameras' },
+          {
+            links: [
+              { href: 'https://store.google.com/product/pixel_8_pro_specs', label: 'Pixel 8 Pro tech specs' },
+              { href: 'https://www.dpreview.com/reviews/sonyslta35/2', label: 'Sony SLT-A35 specs' },
+            ],
+          },
+          { separator: 'Kindred spirits (per the critic)' },
+          {
+            style: 'secondary',
+            links: [
+              { href: 'https://en.wikipedia.org/wiki/Peter_Lik', label: 'Peter Lik' },
+              { href: 'https://en.wikipedia.org/wiki/Saul_Leiter', label: 'Saul Leiter' },
+            ],
+          },
+        ]}
+      />
+      <div class="story">
+        <PhotoStory />
+      </div>
+      <FastTab title="The critic's appraisal (by Claude)" summary="Overly fancy, by request" id="photographer-critique" class="critique">
+        <div class="critique__text"><PhotoCritique /></div>
+      </FastTab>
+      <PhotoGrid photos={photography.photos} name="photographer" caption="text" empty="Photos are on their way." />
     </section>
 
     <section class="panel" role="region" id="panel-fishing" aria-labelledby="tab-fishing" tabindex="0" hidden>
@@ -1310,6 +1347,11 @@ const nf = new Intl.NumberFormat('en-US');
   .panel > :last-child { margin-bottom: 0; }
 
   .story { max-width: var(--measure); }
+  /* Photographer: Claude's over-the-top critique, in italics, in IM Fell English (already used by Churrasco). */
+  .critique { max-width: var(--measure); margin: 1.25rem 0 1.5rem; --fasttab-accent: var(--teal); --fasttab-muted: var(--muted); }
+  .critique__text { font-family: 'IM Fell English', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 1.12rem; line-height: 1.6; }
+  .critique__text :global(p) { margin: 0 0 0.9rem; }
+  .critique__text :global(em) { font-style: normal; }
   .story .pills { margin-top: 1.5rem; }
   .dev-headline {
     font-family: var(--font-display);
