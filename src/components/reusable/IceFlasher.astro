@@ -422,7 +422,7 @@ const strings: Record<string, string> = {
   const GREEN = '#3dff52';
   const ZOOM_FROM = (210 / 360) * Math.PI * 2; // 7 o'clock, the bottom in the zoom view
   const ZOOM_SPAN = (140 / 360) * Math.PI * 2; // 6 ft of zoom
-  const HUM_PITCH = 0.9; // every frequency of the hum, against the recording
+  const HUM_PITCH = 0.96; // every frequency of the hum, against the recording
   const BITE_WINDOW = 1.3; // seconds to set the hook once it bites
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -559,7 +559,7 @@ const strings: Record<string, string> = {
     // The hum it makes while it's on, modelled on a recording of a real Vexilar: a 40 Hz buzz whose
     // overtones ring loudest around 400-440 Hz and 720-760 Hz, plus faint tones at 3 kHz and 13.5 kHz
     // that pulse 80 times a second. It spins up when switched on and winds down when switched off.
-    // Deo's ear: the whole hum 10% lower than the recording (HUM_PITCH).
+    // Deo's ear: the whole hum 4% lower than the recording (HUM_PITCH).
     function motorOn() {
       const c = snd.get();
       const m = out();
