@@ -32,7 +32,11 @@
  * Reverse scroll flips the mouse wheel, for natural scrolling. You get 1.3 s to set the hook (BITE_WINDOW).
  *
  * Theming (CSS custom properties): --if-case (the flasher's case, default #23262c), --if-accent
- * (buttons and the tension bar, #39c5bb), --if-text (inherit).
+ * (buttons, #39c5bb), --if-text (inherit).
+ *
+ * While a fish is on, a Line gauge sits on the top left of the first-person view (SegmentMeter, in this folder):
+ * keep it in the green. Low (red at the bottom) the line is slack and the fish can shake the hook; high (red at
+ * the top) it breaks.
  *
  * Words the script shows (hints, the catches, the knobs' values) are written into a hidden
  * .ice-flasher__strings block, so a translated copy of the page translates them too.
@@ -46,7 +50,11 @@ interface Props {
   depth?: number;
   class?: string;
 }
+import SegmentMeter from './SegmentMeter.astro';
 const { depth = 28, class: className } = Astro.props;
+// The line-strain gauge, bottom to top: slack (red, the fish can shake the hook) through yellow to the green
+// middle, then yellow into red at the top (the line breaks).
+const strain = ['#f43f5e', '#f43f5e', '#facc15', '#facc15', '#4ade80', '#4ade80', '#4ade80', '#4ade80', '#4ade80', '#facc15', '#facc15', '#f43f5e', '#f43f5e'];
 // What the script writes while you play. It lives in the page so the site's translations reach it.
 const strings: Record<string, string> = {
   off: 'Off',
@@ -84,7 +92,7 @@ const strings: Record<string, string> = {
   spat: 'Too late: it spat the jig.',
   spooked: 'Too much: it spooked.',
   ripped: 'Nothing bit yet: that rip spooked it.',
-  hooked: 'Fish on! Reel up (scroll or swipe up), and ease off when it runs.',
+  hooked: 'Fish on! Reel up (scroll or swipe up) and keep the Line gauge in the green.',
   running: "It's running! Ease off.",
   keepReeling: 'Keep reeling!',
   snapped: 'Snap! The line broke.',
@@ -130,11 +138,14 @@ const strings: Record<string, string> = {
     </div>
     <div class="ice-flasher__hole">
       <canvas class="ice-flasher__rod" aria-hidden="true"></canvas>
+      <div class="ice-flasher__strain" hidden>
+        <span class="ice-flasher__strain-name" aria-hidden="true">Line</span>
+        <SegmentMeter mode="marker" segments={strain.length} value={5} colors={strain} animate={false} label="Line strain" />
+      </div>
     </div>
   </div>
   <div class="ice-flasher__bar">
     <span class="ice-flasher__jig" aria-hidden="true"></span>
-    <span class="ice-flasher__tension" hidden aria-hidden="true"><span>Line</span><i></i></span>
     <span class="ice-flasher__count" aria-hidden="true"></span>
     <button type="button" class="ice-flasher__flip" aria-pressed="false">⇅ Reverse scroll</button>
     <button type="button" class="ice-flasher__mute" aria-pressed="false"></button>
@@ -148,7 +159,7 @@ const strings: Record<string, string> = {
       <li>Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom. Wheel going the wrong way (natural scrolling)? Press <b>Reverse scroll</b>.</li>
       <li>Jig to call fish in. A green mark at the edge of the cone turns orange, then red, as it comes to your jig. Then twitch it, or lift it slowly.</li>
       <li>When the rod tip flashes (and your phone buzzes), flick up hard: a big, fast scroll up or swipe up, or Space. Too early and it spooks; too late and it spits the jig.</li>
-      <li>Reel it up, and ease off when it runs, or the line breaks.</li>
+      <li>Reel it up and keep the <b>Line</b> gauge (top left of the view) in the green. Too low (red at the bottom) and the line goes slack and the fish shakes the hook; too high (red at the top) and the line breaks. Ease off when it runs.</li>
       <li><b>Gain</b> sets how strong the marks show (about 3 to 4 here); too much and the dial fills with clutter. Press it to step through the 10 IR settings when another flasher interferes.</li>
       <li><b>Mode</b>: Normal in the middle. Turn it left for Low Power (much less clutter), and further left for Auto Zoom and Bottom Lock in Low Power; turn it right for Auto Zoom and Bottom Lock. Those split the dial, with the bottom 6 ft zoomed on the left.</li>
     </ul>
@@ -270,12 +281,38 @@ const strings: Record<string, string> = {
     max-width: 100%;
   }
   .ice-flasher__hole {
+    position: relative;
     flex: 1 1 140px;
     min-width: 110px;
     border-radius: 20px;
     overflow: hidden;
     background: #dbe6ee;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+  .ice-flasher__strain {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 5px;
+    border-radius: 10px;
+    background: rgba(8, 18, 32, 0.7);
+    --meter-width: 24px;
+    --meter-seg: 9px;
+    --meter-gap: 3px;
+  }
+  .ice-flasher__strain[hidden] {
+    display: none;
+  }
+  .ice-flasher__strain-name {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #f1f4f8;
   }
   .ice-flasher__rod {
     display: block;
@@ -292,24 +329,6 @@ const strings: Record<string, string> = {
   }
   .ice-flasher__jig {
     font-variant-numeric: tabular-nums;
-  }
-  .ice-flasher__tension {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-  }
-  .ice-flasher__tension[hidden] {
-    display: none;
-  }
-  .ice-flasher__tension i {
-    display: block;
-    width: 90px;
-    height: 10px;
-    border-radius: 5px;
-    background: linear-gradient(90deg, var(--_accent) calc(var(--t, 0) * 100%), rgba(127, 127, 127, 0.3) 0);
-  }
-  .ice-flasher__tension.is-high i {
-    background: linear-gradient(90deg, #e5484d calc(var(--t, 0) * 100%), rgba(127, 127, 127, 0.3) 0);
   }
   .ice-flasher__flip {
     margin-inline-start: auto;
@@ -379,6 +398,14 @@ const strings: Record<string, string> = {
     .ice-flasher__hole {
       flex: none;
       height: 210px;
+    }
+    .ice-flasher__strain {
+      top: 6px;
+      left: 6px;
+      padding: 4px;
+      --meter-width: 20px;
+      --meter-seg: 6px;
+      --meter-gap: 2px;
     }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -464,7 +491,9 @@ const strings: Record<string, string> = {
     const status = root.querySelector<HTMLElement>('.ice-flasher__status')!;
     const jigEl = root.querySelector<HTMLElement>('.ice-flasher__jig')!;
     const countEl = root.querySelector<HTMLElement>('.ice-flasher__count')!;
-    const tensionEl = root.querySelector<HTMLElement>('.ice-flasher__tension')!;
+    const strainEl = root.querySelector<HTMLElement>('.ice-flasher__strain')!;
+    const strainMeter = strainEl.querySelector<HTMLElement>('.segment-meter')!;
+    const STRAIN_TOP = strainMeter.children.length - 1;
     const logEl = root.querySelector<HTMLElement>('.ice-flasher__log')!;
     const muteBtn = root.querySelector<HTMLButtonElement>('.ice-flasher__mute')!;
     const flipBtn = root.querySelector<HTMLButtonElement>('.ice-flasher__flip')!;
@@ -496,6 +525,7 @@ const strings: Record<string, string> = {
     let tension = 0;
     let run = 0; // seconds of the current run left
     let idle = 0; // seconds since the last reel during a fight
+    let slack = 0; // seconds the line has been slack (the gauge's bottom red)
     let keepTold = false;
     let biteFlash = 0; // seconds of rod-tip flash left
     let catches = 0;
@@ -864,13 +894,14 @@ const strings: Record<string, string> = {
         biter.state = 'hooked';
         biter.t = 0;
         biter.cone = 1;
-        tension = 0.2;
+        tension = 0.45;
+        slack = 0;
         run = 0;
         idle = 0;
         keepTold = false;
         biteFlash = 0;
         navigator.vibrate?.(40);
-        tensionEl.hidden = false;
+        strainEl.hidden = false;
         say('hooked', {}, true);
         return;
       }
@@ -914,7 +945,7 @@ const strings: Record<string, string> = {
       hooked = null;
       run = 0;
       tension = 0;
-      tensionEl.hidden = true;
+      strainEl.hidden = true;
       spawnIn = rand(3, 7);
     }
     function land(f: Fish) {
@@ -1083,9 +1114,12 @@ const strings: Record<string, string> = {
           } else if (now - lastSay > 1.2 && lastHint === msg('running')) {
             say('hooked', {}, true);
           }
-          tension = Math.max(0, tension - dt * (run > 0 ? 0.05 : 0.3));
+          // A running fish pulls against the drag; otherwise the line goes slack unless you keep reeling.
+          if (run > 0) tension += dt * 0.18 * (0.5 + sp.power);
+          else tension = Math.max(0, tension - dt * 0.3);
           idle += dt;
-          if (idle > 2.5 && !keepTold && run <= 0) {
+          slack = tension < 2 / 13 && run <= 0 ? slack + dt : 0;
+          if (slack > 1.2 && !keepTold) {
             keepTold = true;
             say('keepReeling', {}, true);
           }
@@ -1098,7 +1132,7 @@ const strings: Record<string, string> = {
             endFight();
             break;
           }
-          if (idle > 5 && run <= 0 && Math.random() < dt * 0.4) {
+          if (slack > 2.5 && Math.random() < dt * 0.5) {
             say('shook', {}, true);
             fishes = fishes.filter((x) => x !== f);
             endFight();
@@ -1118,8 +1152,10 @@ const strings: Record<string, string> = {
         }
       }
       fishes = fishes.filter((f) => f.state !== 'gone' || f.cone > -0.1);
-      tensionEl.style.setProperty('--t', String(clamp(tension, 0, 1)));
-      tensionEl.classList.toggle('is-high', tension > 0.7);
+      if (hooked) {
+        const at = String(Math.round(clamp(tension, 0, 1) * STRAIN_TOP));
+        if (strainMeter.dataset.value !== at) strainMeter.dataset.value = at;
+      }
       hints();
     }
 

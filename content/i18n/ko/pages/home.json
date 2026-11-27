@@ -543,10 +543,6 @@
   "en": "Spring bass selfie",
   "t": "봄 배스 셀카"
  },
- "0d6b08d281da": {
-  "en": "Fish on! Reel up (scroll or swipe up), and ease off when it runs.",
-  "t": "걸렸다! 감아 올려(위로 스크롤이나 스와이프), 차고 나가면 풀어 줘."
- },
  "0d97f4d5801b": {
   "en": "Enlarge: Bathing in the Amazon",
   "t": "확대: 아마존에서 목욕"
@@ -5163,6 +5159,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #4: </span>Systematize your brain",
   "t": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">라이프핵 #4: </span>네 뇌를 시스템화하라"
  },
+ "7f9b43a4c5e5": {
+  "en": "Fish on! Reel up (scroll or swipe up) and keep the Line gauge in the green.",
+  "t": "걸렸다! 감아 올리고(위로 스크롤이나 스와이프) 줄 게이지를 초록에 맞춰."
+ },
  "7fe62dcaf796": {
   "en": "strongly related",
   "t": "강한 관련"
@@ -6547,6 +6547,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 31: </span> Log Horizon ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 31: </span> Log Horizon (로그 호라이즌)"
  },
+ "a3363fa7c796": {
+  "en": "Reel it up and keep the <b data-astro-cid-o3poasna=\"\">Line</b> gauge (top left of the view) in the green. Too low (red at the bottom) and the line goes slack and the fish shakes the hook; too high (red at the top) and the line breaks. Ease off when it runs.",
+  "t": "감아 올리면서 <b data-astro-cid-o3poasna=\"\">줄</b> 게이지(화면 왼쪽 위)를 초록에 맞춰. 너무 낮으면(아래 빨강) 줄이 늘어져서 바늘을 털어 내고, 너무 높으면(위 빨강) 줄이 끊어져. 차고 나가면 풀어 줘."
+ },
  "a36a6718f545": {
   "en": "G",
   "t": "G"
@@ -7710,10 +7714,6 @@
  "c169b50f6151": {
   "en": " D · Seasons ",
   "t": "D · 계절"
- },
- "c16fa30192fe": {
-  "en": "Reel it up, and ease off when it runs, or the line breaks.",
-  "t": "감아 올리고, 차고 나가면 풀어 줘. 안 그러면 줄이 끊어져."
  },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -9930,6 +9930,10 @@
  "fdd6cc467336": {
   "en": "Oxygen Not Included",
   "t": "Oxygen Not Included"
+ },
+ "fddc69f9c54d": {
+  "en": "Line strain",
+  "t": "줄 장력"
  },
  "fdee7e9f221d": {
   "en": "Drum kit",

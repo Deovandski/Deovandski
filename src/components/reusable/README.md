@@ -44,7 +44,8 @@ and a project without translations just shows the English.
 | [LinksMenu.astro](LinksMenu.astro) | A drop-down box of link buttons, built from groups of buttons and separators (a line, optionally with a centred heading), opened by its own Links button or by one on the page. Works as an open box without JavaScript. | Every tab's links, from the Links button right of ▶ Play: Developer, Author, Gamer, Influencer, Musician, Anime, BOTW, Death, Mentor, Lust, D&D, Aviation |
 | [Breadcrumb.astro](Breadcrumb.astro) | A one-line breadcrumb trail that fits its width: the text shrinks to fit, and below a smallest size (11px) the items are cut with "…" instead (full text on hover). Drawn from `items`, or filled by a script. | The home page tab header (#266) |
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
-| [IceFlasher.astro](IceFlasher.astro) | Ice fishing with a working three-colour flasher (based on the Vexilar FL-18): the spinning-LED dial (red, orange, green), working Range, Mode and Gain knobs (press Gain for the 10 IR steps), the motor's whir and ping ticks (Web Audio), and a first-person view of the hole with your rod and a beer on the ice. Scroll or swipe to jig, flick hard when the rod tip flashes (phones buzz), then reel. | Fishing tab (#310) |
+| [IceFlasher.astro](IceFlasher.astro) | Ice fishing with a working three-colour flasher (based on the Vexilar FL-18): the spinning-LED dial (red, orange, green), working Range, Mode and Gain knobs (press Gain for the 10 IR steps), the motor's whir and ping ticks (Web Audio), and a first-person view of the hole with your rod and a beer on the ice. Scroll or swipe to jig, flick hard when the rod tip flashes (phones buzz), then reel, keeping the Line gauge (SegmentMeter) in the green. | Fishing tab (#310) |
+| [SegmentMeter.astro](SegmentMeter.astro) | A column of lit segments like a graphic-equalizer bar: a level lit from the bottom up (fill), or a scale with one lit segment (marker), one colour or one per segment, updated live through `data-value`. Taken from the Multilingual tab's language levels. | Multilingual tab (language levels), ice fishing (the Line gauge, #314) |
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
 | [KitKot.astro](KitKot.astro) | A parody social app idle game on a phone: post for views, likes and followers on a slot-machine schedule (near misses, a hidden hot post type, fatigue, streaks, energy). "Under the hood" names each trick, with sources. | Influencer tab |
 | [FireMeter.astro](FireMeter.astro) | A fireplace with bellows and a meter: each pump grows the fire, climbs the meter and shows a phrase for that level; maxing out "bonks" and resets. | Lust tab (ecchi-meter) |
@@ -679,6 +680,31 @@ give, bad? }] }]`. The crop drawings are built in for the ids `pearl`, `amethyst
 page is closed; the outcome is rolled the moment a crop is ripe, and a bad one shows as a wilted plant.
 Theme with `--farm-accent`, `--farm-soil`, `--farm-grass` and `--farm-text`.
 
+## SegmentMeter
+
+```astro
+---
+import SegmentMeter from './reusable/SegmentMeter.astro';
+---
+<SegmentMeter value={7} label="Japanese: 7 of 10" />
+<SegmentMeter mode="marker" segments={13} value={6} label="Line strain"
+  colors={['#f43f5e', '#f43f5e', '#facc15', '#facc15', '#4ade80', '#4ade80', '#4ade80', '#4ade80', '#4ade80', '#facc15', '#facc15', '#f43f5e', '#f43f5e']} />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `label` | (required) | What screen readers hear. |
+| `segments` | `10` | How many segments. |
+| `value` | `0` | How many are lit (fill), or which one is lit, from 0 at the bottom (marker). |
+| `mode` | `"fill"` | `"fill"` lights from the bottom up; `"marker"` shows the whole scale dim and lights one segment (its neighbours a little). |
+| `colors` | none | One colour per segment, bottom to top. Without it every segment uses `--meter-color`, else `--c`, else teal. |
+| `animate` | `true` | Fill mode: the lit segments light up one by one when it first shows. Stagger several meters with `--i`. |
+| `class` | none | Extra class. |
+
+The Multilingual tab's language levels, made reusable (#314). Set `data-value` on the meter to move it live
+(`meter.dataset.value = '9'`); it relights and updates `aria-valuenow`. `role="meter"`. Theme with `--meter-color`,
+`--meter-off`, `--meter-width`, `--meter-seg` (segment height) and `--meter-gap`. Reduced motion: no light-up animation.
+
 ## IceFlasher
 
 ```astro
@@ -704,6 +730,9 @@ Power; Auto Zoom and Bottom Lock to the right; the zoom modes split the dial wit
 settings, for when a "buddy's flasher" switches on now and then and draws dashes on the dial; like other weak returns,
 they fade as the Gain goes down). Drag, scroll over or click a knob, or use the
 arrow keys and Enter.
+
+While a fish is on, a Line gauge (a `SegmentMeter`, imported from this folder) sits on the top left of the view: keep it in
+the green. Low is slack line, and the fish can shake the hook; high snaps the line.
 
 Play: the mouse wheel (or a swipe or drag on the flasher or the rod; Up and Down keys) moves the jig. Jig to call a fish
 in, twitch or lift slowly while it's on the jig, and when the rod tip flashes (`navigator.vibrate` buzzes phones), flick

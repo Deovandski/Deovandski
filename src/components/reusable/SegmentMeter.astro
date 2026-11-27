@@ -1,0 +1,145 @@
+---
+/**
+ * SegmentMeter: a column of lit segments, like the bars of a graphic equalizer. Taken out of the Multilingual tab's
+ * language levels (#314), so the same bar can show a fixed level there and a live gauge elsewhere.
+ *
+ * Two ways to light it:
+ *   mode="fill"    lights every segment from the bottom up to the value (a level: "7 of 10").
+ *   mode="marker"  shows every segment dim in its own colour and lights the one at the value, with its
+ *                  neighbours a little (a needle on a scale, like a line-strain gauge).
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
+ * Copy this one file into any Astro project. See README.md in this folder.
+ *
+ *   <SegmentMeter value={7} label="Japanese: 7 of 10" />
+ *   <SegmentMeter mode="marker" segments={13} value={6} label="Line strain"
+ *     colors={['#f43f5e', '#f43f5e', '#facc15', '#facc15', '#4ade80', '#4ade80', '#4ade80', '#4ade80', '#4ade80', '#facc15', '#facc15', '#f43f5e', '#f43f5e']} />
+ *
+ * Props:
+ *   segments  how many segments. Default 10.
+ *   value     how many are lit (fill) or which one is lit, counting from 0 at the bottom (marker). Default 0.
+ *   mode      "fill" (default) or "marker".
+ *   colors    one colour per segment, bottom to top. Leave it out to use one colour for all: --meter-color,
+ *             else --c (so a parent can set it), else teal.
+ *   label     what screen readers hear (the meter's aria-label).
+ *   animate   lights the filled segments one by one when it first shows (fill mode). Default true. Set --i on
+ *             the meter (or a parent) to stagger several meters.
+ *   class     extra class.
+ *
+ * Live updates: set data-value on the meter (meter.dataset.value = '9') and it relights itself and updates
+ * aria-valuenow. Values outside 0..segments are clamped.
+ *
+ * Theming (CSS custom properties): --meter-color, --meter-off (unlit segments, default rgba(190,200,209,0.08)),
+ * --meter-width (default min(100%, 4.5rem)), --meter-seg (segment height, 14px), --meter-gap (5px).
+ *
+ * Accessible: role="meter" with aria-valuemin, aria-valuemax and aria-valuenow. Reduced motion: no lighting-up
+ * animation.
+ */
+interface Props {
+  segments?: number;
+  value?: number;
+  mode?: 'fill' | 'marker';
+  colors?: string[];
+  label: string;
+  animate?: boolean;
+  class?: string;
+}
+const { segments = 10, value = 0, mode = 'fill', colors, label, animate = true, class: className } = Astro.props;
+const v = Math.max(0, Math.min(segments, Math.round(value)));
+const lit = (s: number) => (mode === 'fill' ? s < v : s === Math.min(v, segments - 1));
+---
+
+<div
+  class:list={['segment-meter', `segment-meter--${mode}`, { 'segment-meter--animate': animate }, className]}
+  role="meter"
+  aria-valuemin="0"
+  aria-valuemax={segments}
+  aria-valuenow={v}
+  aria-label={label}
+  data-mode={mode}
+  data-value={v}
+>
+  {
+    Array.from({ length: segments }, (_, s) => (
+      <span class:list={['segment-meter__seg', { on: lit(s) }]} style={`--s:${s}${colors?.[s] ? `;--seg-c:${colors[s]}` : ''}`} />
+    ))
+  }
+</div>
+
+<style>
+  .segment-meter {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--meter-gap, 5px);
+    width: var(--meter-width, min(100%, 4.5rem));
+  }
+  .segment-meter__seg {
+    --_c: var(--seg-c, var(--meter-color, var(--c, #39c5bb)));
+    height: var(--meter-seg, 14px);
+    border-radius: 3px;
+    background: var(--meter-off, rgba(190, 200, 209, 0.08));
+    transition: background-color 0.08s, box-shadow 0.08s, opacity 0.08s;
+  }
+  .segment-meter__seg.on {
+    background: var(--_c);
+    box-shadow: 0 0 10px color-mix(in srgb, var(--_c) 60%, transparent);
+  }
+  .segment-meter--animate .segment-meter__seg.on {
+    animation: segment-meter-light 0.25s ease-out both;
+    animation-delay: calc(var(--i, 0) * 90ms + var(--s) * 45ms);
+  }
+  /* Marker: the whole scale shows dim in its colours; the lit segment glows, its neighbours a little. */
+  .segment-meter--marker .segment-meter__seg {
+    background: color-mix(in srgb, var(--_c) 40%, transparent);
+  }
+  .segment-meter--marker .segment-meter__seg.near {
+    background: color-mix(in srgb, var(--_c) 70%, transparent);
+  }
+  .segment-meter--marker .segment-meter__seg.on {
+    background: var(--_c);
+    box-shadow:
+      0 0 10px color-mix(in srgb, var(--_c) 70%, transparent),
+      inset 0 0 0 2px rgba(255, 255, 255, 0.85);
+  }
+  @keyframes segment-meter-light {
+    from {
+      opacity: 0;
+      transform: scaleX(0.6);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .segment-meter__seg {
+      transition: none;
+    }
+    .segment-meter--animate .segment-meter__seg.on {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  // Relights a meter whenever its data-value changes.
+  function relight(m: HTMLElement) {
+    const segs = [...m.querySelectorAll<HTMLElement>('.segment-meter__seg')];
+    const n = segs.length;
+    const v = Math.max(0, Math.min(n, Math.round(Number(m.dataset.value) || 0)));
+    const marker = m.dataset.mode === 'marker';
+    const at = Math.min(v, n - 1);
+    segs.forEach((s, i) => {
+      s.classList.toggle('on', marker ? i === at : i < v);
+      s.classList.toggle('near', marker && Math.abs(i - at) === 1);
+    });
+    m.setAttribute('aria-valuenow', String(v));
+  }
+  const watch = new MutationObserver((records) => {
+    for (const r of records) relight(r.target as HTMLElement);
+  });
+  document.querySelectorAll<HTMLElement>('.segment-meter').forEach((m) => {
+    if (m.dataset.mode === 'marker') relight(m);
+    watch.observe(m, { attributes: true, attributeFilter: ['data-value'] });
+  });
+</script>

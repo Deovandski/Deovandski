@@ -543,10 +543,6 @@
   "en": "Spring bass selfie",
   "t": "वसंत की बास सेल्फ़ी"
  },
- "0d6b08d281da": {
-  "en": "Fish on! Reel up (scroll or swipe up), and ease off when it runs.",
-  "t": "मछली फँस गई! ऊपर लपेटो (ऊपर स्क्रॉल या स्वाइप करो), और जब वह भागे तो ढील दो।"
- },
  "0d97f4d5801b": {
   "en": "Enlarge: Bathing in the Amazon",
   "t": "बड़ा करें: अमेज़न में नहाना"
@@ -5163,6 +5159,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #4: </span>Systematize your brain",
   "t": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">लाइफ़ हैक #4: </span>अपने दिमाग़ को सिस्टम बनाओ"
  },
+ "7f9b43a4c5e5": {
+  "en": "Fish on! Reel up (scroll or swipe up) and keep the Line gauge in the green.",
+  "t": "मछली फँस गई! ऊपर लपेटो (ऊपर स्क्रॉल या स्वाइप करो) और डोर का मीटर हरे में रखो।"
+ },
  "7fe62dcaf796": {
   "en": "strongly related",
   "t": "मज़बूत संबंध"
@@ -6547,6 +6547,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 31: </span> Log Horizon ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 31: </span> Log Horizon"
  },
+ "a3363fa7c796": {
+  "en": "Reel it up and keep the <b data-astro-cid-o3poasna=\"\">Line</b> gauge (top left of the view) in the green. Too low (red at the bottom) and the line goes slack and the fish shakes the hook; too high (red at the top) and the line breaks. Ease off when it runs.",
+  "t": "उसे ऊपर लपेटो और <b data-astro-cid-o3poasna=\"\">डोर</b> का मीटर (दृश्य के ऊपर बाएँ) हरे में रखो। बहुत कम (नीचे लाल) तो डोर ढीली हो जाती है और मछली काँटा छुड़ा लेती है; बहुत ज़्यादा (ऊपर लाल) तो डोर टूट जाती है। जब वह भागे तो ढील दो।"
+ },
  "a36a6718f545": {
   "en": "G",
   "t": "G"
@@ -7710,10 +7714,6 @@
  "c169b50f6151": {
   "en": " D · Seasons ",
   "t": "D · मौसम"
- },
- "c16fa30192fe": {
-  "en": "Reel it up, and ease off when it runs, or the line breaks.",
-  "t": "उसे ऊपर लपेटो, और जब वह भागे तो ढील दो, वरना डोर टूट जाएगी।"
  },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -9930,6 +9930,10 @@
  "fdd6cc467336": {
   "en": "Oxygen Not Included",
   "t": "Oxygen Not Included"
+ },
+ "fddc69f9c54d": {
+  "en": "Line strain",
+  "t": "डोर का खिंचाव"
  },
  "fdee7e9f221d": {
   "en": "Drum kit",

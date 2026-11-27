@@ -2,6 +2,7 @@
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { loadLanguages } from '../lib/languages';
+import SegmentMeter from './reusable/SegmentMeter.astro';
 
 const langs = loadLanguages();
 const SEGMENTS = 10;
@@ -31,11 +32,7 @@ const hrefFor = (c: string) => (c === 'en' ? `${base}/#multilingual` : `${base}/
           const code = siteCode(l.name);
           const body = (
             <>
-              <div class="eq__bar" role="meter" aria-valuemin="0" aria-valuemax={SEGMENTS} aria-valuenow={l.level} aria-label={`${l.name}: ${l.level} of ${SEGMENTS}, ${l.note}`}>
-                {Array.from({ length: SEGMENTS }, (_, s) => (
-                  <span class:list={['eq__seg', { on: s < l.level }]} style={`--s:${s}`} />
-                ))}
-              </div>
+              <SegmentMeter class="eq__bar" segments={SEGMENTS} value={l.level} label={`${l.name}: ${l.level} of ${SEGMENTS}, ${l.note}`} />
               {
                 l.vraki ? (
                   <>
@@ -135,27 +132,9 @@ const hrefFor = (c: string) => (c === 'en' ? `${base}/#multilingual` : `${base}/
   .is-yellow { --c: var(--yellow); }
   .is-red { --c: var(--red); }
 
-  .eq__bar {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 5px;
-    width: min(100%, 4.5rem);
+  /* The bars are SegmentMeter (src/components/reusable/), coloured by each column's --c. */
+  .eq__col :global(.eq__bar) {
     margin: 0 auto 0.85rem;
-  }
-  .eq__seg {
-    height: 14px;
-    border-radius: 3px;
-    background: rgba(190, 200, 209, 0.08);
-  }
-  .eq__seg.on {
-    background: var(--c);
-    box-shadow: 0 0 10px color-mix(in srgb, var(--c) 60%, transparent);
-    animation: light 0.25s ease-out both;
-    animation-delay: calc(var(--i) * 90ms + var(--s) * 45ms);
-  }
-  @keyframes light {
-    from { opacity: 0; transform: scaleX(0.6); }
-    to { opacity: 1; transform: none; }
   }
 
   .eq__name {

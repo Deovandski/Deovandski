@@ -543,10 +543,6 @@
   "en": "Spring bass selfie",
   "t": "Selfie com black bass na primavera"
  },
- "0d6b08d281da": {
-  "en": "Fish on! Reel up (scroll or swipe up), and ease off when it runs.",
-  "t": "Fisgou! Recolha (role ou deslize para cima) e alivie quando ele correr."
- },
  "0d97f4d5801b": {
   "en": "Enlarge: Bathing in the Amazon",
   "t": "Ampliar: Tomando banho na Amazônia"
@@ -5163,6 +5159,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #4: </span>Systematize your brain",
   "t": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Dica de vida nº 4: </span>Sistematize o seu cérebro"
  },
+ "7f9b43a4c5e5": {
+  "en": "Fish on! Reel up (scroll or swipe up) and keep the Line gauge in the green.",
+  "t": "Fisgou! Recolha (role ou deslize para cima) e mantenha o medidor da Linha no verde."
+ },
  "7fe62dcaf796": {
   "en": "strongly related",
   "t": "relação forte"
@@ -6547,6 +6547,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 31: </span> Log Horizon ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posição 31: </span> Log Horizon"
  },
+ "a3363fa7c796": {
+  "en": "Reel it up and keep the <b data-astro-cid-o3poasna=\"\">Line</b> gauge (top left of the view) in the green. Too low (red at the bottom) and the line goes slack and the fish shakes the hook; too high (red at the top) and the line breaks. Ease off when it runs.",
+  "t": "Recolha o peixe e mantenha o medidor da <b data-astro-cid-o3poasna=\"\">Linha</b> (no canto superior esquerdo da vista) no verde. Baixo demais (vermelho embaixo) e a linha fica frouxa e o peixe se solta; alto demais (vermelho em cima) e a linha arrebenta. Alivie quando ele correr."
+ },
  "a36a6718f545": {
   "en": "G",
   "t": "G"
@@ -7710,10 +7714,6 @@
  "c169b50f6151": {
   "en": " D · Seasons ",
   "t": "D · Estações"
- },
- "c16fa30192fe": {
-  "en": "Reel it up, and ease off when it runs, or the line breaks.",
-  "t": "Recolha o peixe e alivie quando ele correr, senão a linha arrebenta."
  },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -9930,6 +9930,10 @@
  "fdd6cc467336": {
   "en": "Oxygen Not Included",
   "t": "Oxygen Not Included"
+ },
+ "fddc69f9c54d": {
+  "en": "Line strain",
+  "t": "Tensão da linha"
  },
  "fdee7e9f221d": {
   "en": "Drum kit",
