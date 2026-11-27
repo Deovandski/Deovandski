@@ -59,9 +59,17 @@
   "en": "Fold it, throw it",
   "t": "折って、投げる"
  },
+ "0120f2e77392": {
+  "en": "Guinness and red wine for the braise",
+  "t": "煮込み用の Guinness と赤ワイン"
+ },
  "01222ad325e7": {
   "en": "Enlarge: Bass on the pontoon",
   "t": "拡大: ポンツーンボートでバス"
+ },
+ "0127791be02b": {
+  "en": "Bacon-wrapped filets",
+  "t": "ベーコン巻きフィレ"
  },
  "01394f52fac1": {
   "en": "85mm",
@@ -147,6 +155,10 @@
   "en": "FEVER! The whole floor lights up.",
   "t": "フィーバー！フロア全体が光る。"
  },
+ "02b744b40ec3": {
+  "en": "Cubing the beef",
+  "t": "牛肉を角切りに"
+ },
  "02c0e4a1da64": {
   "en": "Used",
   "t": "使用済み"
@@ -226,6 +238,10 @@
  "04c70f3c22a3": {
   "en": "of {n} tracked",
   "t": "記録 {n} 日のうち"
+ },
+ "04c731363bd8": {
+  "en": "Looks like pig slop, tastes like ambrosia!",
+  "t": "見た目は豚のエサ、味はアンブロシア！"
  },
  "04e3fd08d714": {
   "en": "Description coming soon.",
@@ -311,6 +327,10 @@
   "en": "Nosebleed level: critical (￣ε￣＠)",
   "t": "鼻血レベル：危険 (￣ε￣＠)"
  },
+ "066c450bdf83": {
+  "en": "Enlarge: Crispy tilapia",
+  "t": "拡大: カリカリのティラピア"
+ },
  "067ff8ef9ba2": {
   "en": "\nSenior Software Engineer, Dynamics 365 F&amp;O Architect, and Founder &amp; CEO of Wizard Deo Solutions.\n",
   "t": "シニアソフトウェアエンジニア、Dynamics 365 F&amp;O アーキテクト、そして Wizard Deo Solutions の創業者兼 CEO。"
@@ -386,6 +406,10 @@
  "07c6c2071295": {
   "en": "Let me go",
   "t": "放して"
+ },
+ "07df0370701f": {
+  "en": "Enlarge: Pulling the pork",
+  "t": "拡大: 豚肉をほぐす"
  },
  "08022eba4187": {
   "en": "\nFrom my Pixel Watch, through Google Health, April 2023 to November 2026 (exported 2026-11-26). Exercise is anything\n    the watch logged for 10 minutes or more: walks, rides, the elliptical, runs, swims. Cardio fitness is estimated from\n    each day's resting heart rate and my age (the heart rate ratio method). Dates and numbers only: no places.\n    The dashed lines are other people: men my age (born in 1993), from studies and other devices that measure a little\n    differently, so read them as a rough guide. Where they come from is in this tab's Links box.\n",
@@ -590,6 +614,14 @@
  "0cb7f32cae29": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 21: </span> Placeholder TV show 21 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 21: </span> 仮のドラマ 21"
+ },
+ "0cb87e6a7a5d": {
+  "en": "Enlarge: Cheeseburgers with pickled red onions and broccoli",
+  "t": "拡大: チーズバーガー、赤玉ねぎのピクルスとブロッコリー添え"
+ },
+ "0cbbbf48166d": {
+  "en": "Peppered fish fillets",
+  "t": "黒こしょうの魚の切り身"
  },
  "0cf0f0c8b066": {
   "en": "268 h",
@@ -835,6 +867,10 @@
   "en": "Enlarge: Painting or drawing, 04/09/2013",
   "t": "拡大: 絵画またはスケッチ, 2013年4月9日"
  },
+ "12d7727521d7": {
+  "en": "Two whole fried fish",
+  "t": "丸ごと揚げた魚 2 尾"
+ },
  "12e4132c6497": {
   "en": "Enlarge: Cheers from the ice",
   "t": "拡大: 氷の上から乾杯"
@@ -858,6 +894,10 @@
  "1349608b58ab": {
   "en": "25 h",
   "t": "25 時間"
+ },
+ "1359469e9656": {
+  "en": "Enlarge: Jerky, cheese and coffee for breakfast",
+  "t": "拡大: 朝ごはんはジャーキー、チーズ、コーヒー"
  },
  "13674b70852d": {
   "en": "South Park: The Fractured but Whole",
@@ -890,6 +930,10 @@
  "13e54ce09816": {
   "en": " PV ",
   "t": "PV"
+ },
+ "142cafe6b958": {
+  "en": "Enlarge: Meatball meal prep",
+  "t": "拡大: ミートボールの作り置き"
  },
  "143fa4c4c81c": {
   "en": "Walleye",
@@ -970,6 +1014,10 @@
  "16fbeb64cf87": {
   "en": "Enlarge: Breakfast",
   "t": "拡大: 朝ごはん"
+ },
+ "17063c506b81": {
+  "en": "Saturday",
+  "t": "土曜日"
  },
  "172583712386": {
   "en": "Every metric over time, one small chart each. Tap or hover a chart and every chart shows the same day, week or month.",
@@ -1343,6 +1391,10 @@
   "en": " Lens ",
   "t": "レンズ"
  },
+ "204d45fec535": {
+  "en": "Jerky, cheese and coffee for breakfast",
+  "t": "朝ごはんはジャーキー、チーズ、コーヒー"
+ },
  "20545ec97959": {
   "en": "Nothing on this roll yet. Take a photo first.",
   "t": "このフィルムはまだ空です。まずは一枚撮ってください。"
@@ -1455,6 +1507,10 @@
   "en": "30 h",
   "t": "30 時間"
  },
+ "22477f319e84": {
+  "en": "Enlarge: Fishing trip in the Amazon",
+  "t": "拡大: アマゾンの釣り旅行"
+ },
  "229377a6b713": {
   "en": "You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it's still in the air) and take it down before you run dry.",
   "t": "障害物はあなただ。恐竜が走る。あなたはそいつに物を投げる。マナは今から毎秒たまっていく。投げるタイミングを計って（まだ空中にいるうちに捕まえろ）、マナが尽きる前に仕留めろ。"
@@ -1503,6 +1559,10 @@
   "en": "Portuguese",
   "t": "ポルトガル語"
  },
+ "239be35ddca5": {
+  "en": "Broccoli and chicken, robe on",
+  "t": "ブロッコリーとチキン、バスローブ姿で"
+ },
  "23aa58622740": {
   "en": "\nAbout <strong data-astro-cid-j7pv25f6=\"\">2,332 hours</strong> of Best of the Worst: 1,966 views of 157 \nepisodes (Spotlight, Wheel of the Worst and Junka included), from my YouTube watch history from Dec 15, 2019 to  Nov 20, 2026.\n",
   "t": "Best of the Worst 約<strong data-astro-cid-j7pv25f6=\"\">2,332 時間</strong>分：157 エピソードを 1,966 回視聴（Spotlight、Wheel of the Worst、Junka を含む）。2019 年 12 月 15 日から 2026 年 11 月 20 日までの俺の YouTube 視聴履歴より。"
@@ -1511,6 +1571,10 @@
   "en": "I see you",
   "t": "見えてるよ"
  },
+ "24037838f36c": {
+  "en": "Enlarge: Drumsticks in the air fryer",
+  "t": "拡大: エアフライヤーのドラムスティック"
+ },
  "24130d4dd839": {
   "en": "Enlarge: Sun through the blossoms",
   "t": "拡大: 花越しの太陽"
@@ -1518,6 +1582,10 @@
  "2438453caeb0": {
   "en": "there's poop to clean",
   "t": "うんこを掃除しないと"
+ },
+ "2443fea27558": {
+  "en": "Enlarge: Braising in the slow cooker",
+  "t": "拡大: スロークッカーで煮込み中"
  },
  "244d46168deb": {
   "en": "a cactus",
@@ -1570,6 +1638,10 @@
  "25141bd9981f": {
   "en": "Ecchi in the shape of an anime. I absolutely loved the creativity in pushing the envelope as far as possible! Yami is my favorite girl, even though IRL that type of girl tends to be toxic as fuck. Avoidant girls, especially fearful avoidants, are complete energy vampires.",
   "t": "アニメの形をしたエッチ。限界まで攻める創造力が最高に好きだ！ ヤミは一番好きな子だけど、現実ではああいうタイプの女の子はめちゃくちゃ有害になりがちだ。回避型の女の子、特に恐れ・回避型は、完全なエネルギーヴァンパイアだ。"
+ },
+ "251f87f23a4d": {
+  "en": "Braising in the slow cooker",
+  "t": "スロークッカーで煮込み中"
  },
  "25200d152a79": {
   "en": "Pressure ridges on Lake of the Woods",
@@ -1782,6 +1854,10 @@
  "292006d299a0": {
   "en": " Steam + Xbox   ",
   "t": "Steam + Xbox"
+ },
+ "296866d3c043": {
+  "en": "Chicken drumsticks marinating",
+  "t": "漬け込み中の鶏ドラムスティック"
  },
  "29733f231324": {
   "en": "Under the hood: how it hooks you",
@@ -2419,6 +2495,10 @@
   "en": "Enlarge: Painting or drawing, 11/28/2019",
   "t": "拡大: 絵画またはスケッチ, 2019年11月28日"
  },
+ "381b0a1df54d": {
+  "en": "Enlarge: Cubing the beef",
+  "t": "拡大: 牛肉を角切りに"
+ },
  "382493c11813": {
   "en": "#HusbandOutWorld Website",
   "t": "#HusbandOutWorld のサイト"
@@ -2442,6 +2522,10 @@
  "386afa7ad2fc": {
   "en": "<strong>Enjoy!</strong> The goal is a structure that gives the trip a sense of coordination, efficient travel and relaxation, while staying flexible enough for on-the-fly adjustments.",
   "t": "<strong>楽しむ！</strong>目標は、まとまりと効率のいい移動とリラックスを旅に与える構造を作りつつ、その場の調整ができる柔軟さを残すこと。"
+ },
+ "3876b762d5ac": {
+  "en": "HUEHUE, spelled in meat sticks",
+  "t": "ミートスティックで書いた HUEHUE"
  },
  "3878d567f539": {
   "en": "A streak you could lose feels worse than one you never had. Losing hurts about twice as much as winning feels good.",
@@ -2563,6 +2647,10 @@
   "en": "Neon city",
   "t": "ネオン街"
  },
+ "3a66d7a5d77a": {
+  "en": "Cheeseburgers with pickled red onions and broccoli",
+  "t": "チーズバーガー、赤玉ねぎのピクルスとブロッコリー添え"
+ },
  "3a7303445404": {
   "en": "Enlarge: Winter fit check",
   "t": "拡大: 冬のコーデチェック"
@@ -2594,6 +2682,10 @@
  "3af4e2d1a82a": {
   "en": "Fluffy",
   "t": "Fluffy"
+ },
+ "3b0349b11d05": {
+  "en": "Pork in the big pot",
+  "t": "大鍋の豚肉"
  },
  "3b044501691d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Placeholder TV show 16 ",
@@ -2666,6 +2758,10 @@
  "3cac34e67446": {
   "en": "Sleep",
   "t": "ねんね"
+ },
+ "3cbbf330eac8": {
+  "en": "Fishing trip in the Amazon",
+  "t": "アマゾンの釣り旅行"
  },
  "3cdd78544e70": {
   "en": "Chelsea Wolfe<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
@@ -2807,10 +2903,6 @@
   "en": "+ 6 more games",
   "t": "+ ほか6本"
  },
- "3fdc591636cf": {
-  "en": "Enlarge: Rock salt like a churrasco",
-  "t": "拡大: シュハスコみたいに岩塩"
- },
  "3ffa50fa96b3": {
   "en": " Flight Experience Singapore ",
   "t": "Flight Experience Singapore"
@@ -2899,6 +2991,10 @@
   "en": "Tap or hover a dot for its month.",
   "t": "点をタップするかカーソルを合わせると月が出ます。"
  },
+ "42681e89d8d0": {
+  "en": "Enlarge: Meatballs in the air fryer",
+  "t": "拡大: エアフライヤーのミートボール"
+ },
  "42c3797fbacc": {
   "en": " Stoneridge Software posts ",
   "t": "Stoneridge Software の投稿"
@@ -2906,6 +3002,14 @@
  "42d5cd6f0d86": {
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
   "t": "ブラジル・アマゾンの赤土の露天金鉱で撮られた、幼い子どもと二人の男性の古い写真"
+ },
+ "42e43b612a5d": {
+  "en": "Tuesday",
+  "t": "火曜日"
+ },
+ "42ea1990ab69": {
+  "en": "Enlarge: Beef and baby potatoes, ready to go",
+  "t": "拡大: 牛肉とベビーポテト、準備完了"
  },
  "43444027c266": {
   "en": "Cruise ships on the horizon",
@@ -3091,6 +3195,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 7: </span> Steins;Gate ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 7: </span> シュタインズ・ゲート"
  },
+ "4865f426d664": {
+  "en": "Beans on the stove, steak waiting in the bag",
+  "t": "コンロに豆、袋の中でステーキが待機"
+ },
  "487eeb9b8c81": {
   "en": "325 h",
   "t": "325 時間"
@@ -3118,6 +3226,10 @@
  "48ef76f8bb0c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Chuunibyou demo Koi ga Shitai! (Love, Chunibyo &amp; Other Delusions!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 30: </span> 中二病でも恋がしたい！"
+ },
+ "48fe34c257d7": {
+  "en": "Checking the temperature",
+  "t": "温度チェック"
  },
  "490e4f4efc87": {
   "en": "District of Columbia",
@@ -3183,6 +3295,10 @@
   "en": " Fine line ",
   "t": "細線"
  },
+ "4b0bb2c7cd3a": {
+  "en": "Enlarge: Broccoli and chicken, robe on",
+  "t": "拡大: ブロッコリーとチキン、バスローブ姿で"
+ },
  "4b1bbadd28f8": {
   "en": "Blue trees and red dirt",
   "t": "青い木々と赤い土"
@@ -3218,6 +3334,10 @@
  "4b94d73d72df": {
   "en": "12 photos",
   "t": "写真 12 枚"
+ },
+ "4bca447154dc": {
+  "en": "Seared tuna steaks",
+  "t": "マグロステーキのたたき焼き"
  },
  "4bd6c7e4c009": {
   "en": "Dead Cells",
@@ -3319,6 +3439,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 23: </span> Toradora! ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 23: </span> とらドラ！"
  },
+ "4dbcf2023b9c": {
+  "en": "Enlarge: Sriracha maple bacon in the dehydrator",
+  "t": "拡大: ディハイドレーターの Sriracha メープルベーコン"
+ },
  "4dc7132b40c7": {
   "en": "I like to take my time too, but I hope you're not doing something Ecchi while staring at me huehue...",
   "t": "俺だってゆっくりするのは好きだけど、俺を見つめながらエッチなことしてないよな、huehue..."
@@ -3342,6 +3466,10 @@
  "4e17a7b165de": {
   "en": "Sonja<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Sonja<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 お気に入り</span>"
+ },
+ "4e1ea0f4d3ea": {
+  "en": "Pulled pork sliders",
+  "t": "プルドポークのスライダー"
  },
  "4e339ffb8498": {
   "en": "Osaka's food motto is kuidaore: eat until you drop (or go broke). Challenge accepted.",
@@ -3414,6 +3542,10 @@
  "4f11acac7df1": {
   "en": "Photo {n} of {roll} is on the roll.",
   "t": "{n} 枚目（全 {roll} 枚）をフィルムに記録しました。"
+ },
+ "4f1e6278de06": {
+  "en": "Enlarge: Sriracha maple bacon jerky",
+  "t": "拡大: Sriracha メープルベーコンジャーキー"
  },
  "4f2081c60ca6": {
   "en": "I watched this in the same time frame as Yosuga no Sora. Interesting world rules, and definitely the author knew what he liked... It made me curious about being physically intimate with a commanding, forward girl... Results are in! It's fun, given I'm usually the more dominant type.",
@@ -3499,6 +3631,10 @@
   "en": "12 h",
   "t": "12 時間"
  },
+ "50a689438f5a": {
+  "en": "Enlarge: Steak and onions with black beans and rice",
+  "t": "拡大: ステーキと玉ねぎ、ブラックビーンズとご飯添え"
+ },
  "50b7d95c7fe1": {
   "en": "Meanwhile, I can use AI to turn random, interesting ideas into fun songs! Just like anyone else! 🥳",
   "t": "それまでは、AI を使って、ランダムで面白いアイデアを楽しい曲にできる！ ほかのみんなと同じようにね！ 🥳"
@@ -3550,6 +3686,10 @@
  "5162a45af33b": {
   "en": "\nI can keep a beat, though, which is why I want to get into drumming one day! Why not now? Because of priorities, and\n          there's only so much I can cook at one time... So it's planned out on my backlog! I want to play\n<i data-astro-cid-j7pv25f6=\"\">World's End Dancehall</i>, <i data-astro-cid-j7pv25f6=\"\">Two-Faced Lovers</i> and <i data-astro-cid-j7pv25f6=\"\">Sweet Devil</i> on drums!\n",
   "t": "でもリズムはキープできるから、いつかドラムをやりたい！ なぜ今じゃないのか？ 優先順位の問題だし、一度に料理できる量には限りがある……だからバックログに計画済みだ！ ドラムで<i data-astro-cid-j7pv25f6=\"\">ワールズエンド・ダンスホール</i>、<i data-astro-cid-j7pv25f6=\"\">裏表ラバーズ</i>、<i data-astro-cid-j7pv25f6=\"\">Sweet Devil</i>を叩きたい！"
+ },
+ "51813ac8b661": {
+  "en": "Enlarge: Two whole fried fish",
+  "t": "拡大: 丸ごと揚げた魚 2 尾"
  },
  "5185eb58733a": {
   "en": "Jojo pose",
@@ -3683,6 +3823,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Placeholder TV show 15 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 15: </span> 仮のドラマ 15"
  },
+ "545dac1aea36": {
+  "en": "Chicken breasts on the grill",
+  "t": "グリルの鶏むね肉"
+ },
  "546189d2d14b": {
   "en": "A light Windows tray app for the Framework Laptop 16 LED Matrix modules: draw, animate and write text on both sides of the keyboard, and the LEDs turn themselves off when I dock and close the lid. C#, .NET 10 and WPF, no admin rights, no telemetry.",
   "t": "Framework Laptop 16 の LED Matrix モジュール用の軽い Windows トレイアプリ。キーボードの両側に描いたり、アニメーションさせたり、文字を書いたりでき、ドックにつないで蓋を閉じると LED が自動で消える。C#、.NET 10、WPF 製で、管理者権限なし、テレメトリなし。"
@@ -3806,6 +3950,14 @@
  "563fcaed811e": {
   "en": "Time to book a trip!",
   "t": "旅の予約をする時間だ！"
+ },
+ "564ee79085bb": {
+  "en": "Beef, seared and raw",
+  "t": "牛肉、焼いたものと生のもの"
+ },
+ "5656b9b79b03": {
+  "en": "Wednesday",
+  "t": "水曜日"
  },
  "5675306240db": {
   "en": "The Icelandic compass symbol, associated with guidance and finding one's way. I intentionally placed its center point over a single long white hair that I consider mystical.",
@@ -3999,6 +4151,10 @@
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">703 h</strong>  ·  5 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">5% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">703 時間</strong>  ·  5本  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">プレイ時間の2%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">プレイ時間の5%</span>"
  },
+ "5a1545eb9848": {
+  "en": "Enlarge: Chicken drumsticks marinating",
+  "t": "拡大: 漬け込み中の鶏ドラムスティック"
+ },
  "5a199f0f62fb": {
   "en": "Death Valley holds the hottest air temperature ever recorded on Earth: 56.7 °C (134 °F), back in 1913.",
   "t": "デスバレーは地球上で記録された最高気温を持つ：1913年の56.7 °C（134 °F）。"
@@ -4151,6 +4307,10 @@
   "en": "Enlarge: Lazy",
   "t": "拡大: だらだら"
  },
+ "5ce087e790ff": {
+  "en": "Beef and baby potatoes, ready to go",
+  "t": "牛肉とベビーポテト、準備完了"
+ },
  "5d00be2150a7": {
   "en": "Indiana",
   "t": "インディアナ州"
@@ -4194,6 +4354,10 @@
  "5e3f6f842f63": {
   "en": "Caught one!",
   "t": "釣れた！"
+ },
+ "5e4a6b40a235": {
+  "en": "Enlarge: Pork shoulder on the smoker",
+  "t": "拡大: スモーカーの上の豚肩肉"
  },
  "5e749e984aef": {
   "en": "Saturday Night Fever",
@@ -4290,6 +4454,10 @@
  "608268fe2d19": {
   "en": "Day {n}: {item} ({category})",
   "t": "{n}日目：{item}（{category}）"
+ },
+ "608ccf246cef": {
+  "en": "Pork shoulder with its rub",
+  "t": "スパイスをすり込んだ豚肩肉"
  },
  "60a938835b97": {
   "en": "Fog and smoke",
@@ -4419,6 +4587,10 @@
   "en": "Bottom at {d} ft. Scroll or swipe down to drop your jig: it's the thin mark on the dial.",
   "t": "底は{d}フィート。スクロールか下スワイプでジグを落とそう。ダイヤルの細い印がジグだ。"
  },
+ "63312bc4b298": {
+  "en": "Enlarge: HUEHUE, spelled in meat sticks",
+  "t": "拡大: ミートスティックで書いた HUEHUE"
+ },
  "633797165688": {
   "en": "Magical Mirai, Osaka (2014)",
   "t": "マジカルミライ、大阪（2014）"
@@ -4515,6 +4687,10 @@
   "en": "251 mi*",
   "t": "251 mi*"
  },
+ "656f14b421b5": {
+  "en": "Bacon, Sriracha and maple syrup",
+  "t": "ベーコン、Sriracha、メープルシロップ"
+ },
  "6597c160dce8": {
   "en": "Enlarge: Riding out to the ice",
   "t": "拡大: 氷の上へ出発"
@@ -4567,6 +4743,10 @@
   "en": "São Paulo",
   "t": "São Paulo"
  },
+ "6676327083a1": {
+  "en": "Enlarge: Bacon in the pot for the black beans",
+  "t": "拡大: ブラックビーンズ用にベーコンを鍋へ"
+ },
  "669cff7ab58e": {
   "en": "Film door",
   "t": "裏ぶた"
@@ -4614,6 +4794,10 @@
  "67b782e4b825": {
   "en": "Spore",
   "t": "スポア"
+ },
+ "67d1b197da3e": {
+  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> gets its own tab as it warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
+  "t": "母と同じで、俺はレシピを見ないし、何も書き留めない。でも写真は撮る。すごくうまくできたら、あとで再現できるようにね！おかげで毎回の食事が特別になると思う！<a href=\"#churrasco\">シュハスコ</a>は一つの面に値するから、専用のタブがある！どんな食べ物も大好きだけど、線引きはある。たとえば臭豆腐はどうしても食べられない。"
  },
  "67d69fcd957c": {
   "en": "Under a bridge in Seattle lives the Fremont Troll, a giant concrete troll crushing a real Volkswagen Beetle.",
@@ -4802,6 +4986,10 @@
  "6b57400f6846": {
   "en": "473 h",
   "t": "473 時間"
+ },
+ "6b58c1922cdc": {
+  "en": "Enlarge: Seared tuna steaks",
+  "t": "拡大: マグロステーキのたたき焼き"
  },
  "6b75c456b935": {
   "en": "Meeting Big Chungus",
@@ -5203,6 +5391,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Spy x Family ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 15: </span> SPY×FAMILY"
  },
+ "7562fb66d590": {
+  "en": "Sriracha maple bacon jerky",
+  "t": "Sriracha メープルベーコンジャーキー"
+ },
  "7599dc12705d": {
   "en": "Sandy village road",
   "t": "砂の村道"
@@ -5222,6 +5414,10 @@
  "75e734d05411": {
   "en": " KS ",
   "t": "KS"
+ },
+ "76031ddf9245": {
+  "en": "Thursday",
+  "t": "木曜日"
  },
  "760929922824": {
   "en": "Spreaders of the Faith",
@@ -5395,6 +5591,10 @@
   "en": "{n} ball in the bag",
   "t": "袋に {n} 個のボール"
  },
+ "7906c92d50be": {
+  "en": "Enlarge: Guinness and red wine for the braise",
+  "t": "拡大: 煮込み用の Guinness と赤ワイン"
+ },
  "7958bacf5b59": {
   "en": "Back to Lust",
   "t": "欲望に戻る"
@@ -5406,6 +5606,10 @@
  "798f8bfe7ae0": {
   "en": "Date unknown",
   "t": "日付不明"
+ },
+ "79911222bb9f": {
+  "en": "A bacon-wrapped filet, sliced",
+  "t": "切ったベーコン巻きフィレ"
  },
  "7999a7774a08": {
   "en": "Let's go for a walk",
@@ -5555,6 +5759,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 21: </span> Placeholder movie 21 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 21: </span> 仮の映画 21"
  },
+ "7d4bd8ef77df": {
+  "en": "Enlarge: Meat sticks drying",
+  "t": "拡大: 乾燥中のミートスティック"
+ },
  "7d53b1dfac35": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 38: </span> Placeholder movie 38 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 38: </span> 仮の映画 38"
@@ -5687,6 +5895,10 @@
   "en": "<strong>Steven C. Hayes</strong>, Acceptance and Commitment Therapy’s psychological flexibility: stay present with what you feel, and persist or change in service of chosen values. <a href=\"https://contextualscience.org/the_six_core_processes_of_act\">ACBS</a>",
   "t": "<strong>スティーブン・C・ヘイズ</strong>、アクセプタンス＆コミットメント・セラピーの心理的柔軟性：感じていることと共に今ここにいて、選んだ価値のために続けるか変わるか。<a href=\"https://contextualscience.org/the_six_core_processes_of_act\">ACBS</a>"
  },
+ "80745b6662b3": {
+  "en": "Enlarge: Steak and onions with black-eyed peas",
+  "t": "拡大: ステーキと玉ねぎ、黒目豆添え"
+ },
  "80ad7e3d1940": {
   "en": "Squirreled Away",
   "t": "Squirreled Away"
@@ -5695,13 +5907,17 @@
   "en": "Do Better!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (written in Vraki)</span>",
   "t": "Do Better!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\">（ヴラキ文字で表記）</span>"
  },
+ "80cdcf834adc": {
+  "en": "Enlarge: Extra-crunchy breaded fillet",
+  "t": "拡大: 超カリカリの衣付き切り身"
+ },
+ "80f41e7317cd": {
+  "en": "Enlarge: Beef jerky going into the dehydrator",
+  "t": "拡大: ディハイドレーターに入れるビーフジャーキー"
+ },
  "8108be52474a": {
   "en": "<strong>Edward Deci &amp; Richard Ryan</strong>, Self-Determination Theory: autonomy, competence and relatedness as basic psychological needs. <a href=\"https://selfdeterminationtheory.org/theory/\">Overview</a>",
   "t": "<strong>エドワード・デシ＆リチャード・ライアン</strong>、自己決定理論：自律性、有能感、関係性は人の基本的な心理的欲求である。<a href=\"https://selfdeterminationtheory.org/theory/\">概要</a>"
- },
- "8120e5173338": {
-  "en": "Rock salt like a churrasco",
-  "t": "シュハスコみたいに岩塩"
  },
  "81268987b9ea": {
   "en": "Step 7: Give Thanks",
@@ -5771,6 +5987,10 @@
   "en": "Midas Gold Plus",
   "t": "Midas Gold Plus"
  },
+ "82cc0ecee6f9": {
+  "en": "Breaded tilapia out of the air fryer",
+  "t": "エアフライヤーから出した衣付きティラピア"
+ },
  "82d2abb6b0d8": {
   "en": "Skin tone",
   "t": "肌の色"
@@ -5794,6 +6014,10 @@
  "8334bb311ce5": {
   "en": "Results are random: usually small, sometimes nothing, rarely huge. Unpredictable rewards are the hardest habit to quit (a variable-ratio schedule).",
   "t": "結果はランダム：たいてい小さく、ときどきゼロ、まれに巨大。予測できない報酬は、最もやめにくい習慣になる（変動比率スケジュール）。"
+ },
+ "833bd264b254": {
+  "en": "Pulling the pork",
+  "t": "豚肉をほぐす"
  },
  "833becf2f191": {
   "en": "Faithful servants who yet lean upon the thermometer, but who follow the steps and strive to forsake all sauce.",
@@ -5843,6 +6067,10 @@
   "en": "Pets",
   "t": "ペット"
  },
+ "84a3c090faa5": {
+  "en": "Searing the beef",
+  "t": "牛肉を焼く"
+ },
  "84aebbb15ac4": {
   "en": "Right wrist, written in <a href=\"https://deovandski.github.io/vraki-windows/\">Vraki</a>. This side ties to my ambition, collaboration, and community: striving to learn and always growing. This is my ADHD side to the core.",
   "t": "右手首、<a href=\"https://deovandski.github.io/vraki-windows/\">ヴラキ文字</a>で書いてある。こちら側は俺の野心、コラボレーション、コミュニティと結びついている：学ぼうと努力し、常に成長すること。これは芯の芯まで俺の ADHD の側面だ。"
@@ -5859,6 +6087,10 @@
   "en": "Bidu, a pixel pet",
   "t": "ピクセルペットの Bidu"
  },
+ "854e203f03c3": {
+  "en": "Enlarge: Searing the beef",
+  "t": "拡大: 牛肉を焼く"
+ },
  "857aacdbee63": {
   "en": "Harvest!",
   "t": "収穫！"
@@ -5874,6 +6106,10 @@
  "85c46aa54865": {
   "en": "Hexvessel<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Hexvessel<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 お気に入り</span>"
+ },
+ "85caf012de86": {
+  "en": "Fried eggs, bacon and greens on toast",
+  "t": "目玉焼き、ベーコン、葉野菜のトースト"
  },
  "85e00db11c0a": {
   "en": "Enlarge: Guess my plan for today",
@@ -5914,6 +6150,10 @@
  "865e588793be": {
   "en": "Deep sleep",
   "t": "深い睡眠"
+ },
+ "86737f3aba01": {
+  "en": "Sriracha maple bacon in the dehydrator",
+  "t": "ディハイドレーターの Sriracha メープルベーコン"
  },
  "86820db881dd": {
   "en": "Enlarge: Frosted tree",
@@ -6467,6 +6707,10 @@
   "en": " Pie ",
   "t": "円グラフ"
  },
+ "932eeb1076c8": {
+  "en": "Monday",
+  "t": "月曜日"
+ },
  "935d45974f78": {
   "en": "100 h",
   "t": "100 時間"
@@ -6511,6 +6755,10 @@
   "en": "2 sub-facets",
   "t": "2 つのサブ面"
  },
+ "945d4f25fa6d": {
+  "en": "A CrunchLabs space selfie: a phone in a little frame up in space, with Earth curving behind it, shows a selfie of Deo and his parents on a rooftop over a city with the Brazilian flag",
+  "t": "CrunchLabs のスペースセルフィー：宇宙に浮かぶ小さな枠の中のスマホ、その後ろに丸い地球。画面には、ブラジル国旗のある街の屋上で撮った Deo と両親のセルフィー"
+ },
  "947a1916fa8e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Placeholder movie 4 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 4: </span> 仮の映画 4"
@@ -6518,6 +6766,10 @@
  "94a7ce99993b": {
   "en": "Enlarge: Painting or drawing, 01/24/2013",
   "t": "拡大: 絵画またはスケッチ, 2013年1月24日"
+ },
+ "94cd69d01887": {
+  "en": "Enlarge: Breaded tilapia out of the air fryer",
+  "t": "拡大: エアフライヤーから出した衣付きティラピア"
  },
  "94ce9e966039": {
   "en": " IC ",
@@ -6674,6 +6926,10 @@
  "9790b0b19467": {
   "en": " 1 amethyst  · 1 energy · 20 s ",
   "t": "アメジスト 1 · エネルギー 1 · 20 秒"
+ },
+ "9798118e7de0": {
+  "en": "Enlarge: Looks like pig slop, tastes like ambrosia!",
+  "t": "拡大: 見た目は豚のエサ、味はアンブロシア！"
  },
  "97a52f834aea": {
   "en": "Marvel's Guardians of the Galaxy",
@@ -6983,6 +7239,10 @@
   "en": "Wheee!",
   "t": "Wheee！"
  },
+ "9fa43abad733": {
+  "en": "Enlarge: Beans on the stove, steak waiting in the bag",
+  "t": "拡大: コンロに豆、袋の中でステーキが待機"
+ },
  "9fab49a7a7bd": {
   "en": "Dream violently. Plan soberly. Execute relentlessly. Update honestly. <strong>Unapplied lessons and unexecuted intentions are the same thing: masturbatory self-entertainment.</strong>",
   "t": "激しく夢見ろ。冷静に計画しろ。容赦なく実行しろ。正直に更新しろ。<strong>活かされない教訓と実行されない意図は同じものだ：自己満足の自己娯楽にすぎない。</strong>"
@@ -7119,6 +7379,10 @@
   "en": " 261 h  ",
   "t": "261 時間"
  },
+ "a22ce5dbd63d": {
+  "en": "Bacon in the pot for the black beans",
+  "t": "ブラックビーンズ用にベーコンを鍋へ"
+ },
  "a2388074beca": {
   "en": "Routine #{n}: {routine}, {level}, {bpm} BPM.",
   "t": "ルーチン #{n}：{routine}、{level}、{bpm} BPM。"
@@ -7138,6 +7402,10 @@
  "a2620cbc10f5": {
   "en": "day",
   "t": "日"
+ },
+ "a26ab37bdd61": {
+  "en": "Enlarge: Meat sticks piped onto the dehydrator",
+  "t": "拡大: ディハイドレーターに絞り出したミートスティック"
  },
  "a27a66446545": {
   "en": "Washington",
@@ -7226,6 +7494,10 @@
  "a48363071f8d": {
   "en": " OW ",
   "t": "OW"
+ },
+ "a4837efeab91": {
+  "en": "Enlarge: Fried eggs, bacon and greens on toast",
+  "t": "拡大: 目玉焼き、ベーコン、葉野菜のトースト"
  },
  "a486e14465d8": {
   "en": "Saying hi to Willie Walleye in Baudette",
@@ -7350,6 +7622,10 @@
  "a766bb2ac493": {
   "en": "345 h",
   "t": "345 時間"
+ },
+ "a7840d4591c0": {
+  "en": "Drumsticks in the air fryer",
+  "t": "エアフライヤーのドラムスティック"
  },
  "a78d82862561": {
   "en": "Electronic &amp; synthwave",
@@ -7503,6 +7779,10 @@
   "en": "Aperture",
   "t": "絞り"
  },
+ "aaeb90f02d59": {
+  "en": "Enlarge: Bacon-wrapped filets",
+  "t": "拡大: ベーコン巻きフィレ"
+ },
  "aaf4de45da01": {
   "en": "This is a Christian fireplace! (╯°□°)╯",
   "t": "ここはクリスチャンの暖炉だぞ！(╯°□°)╯"
@@ -7575,6 +7855,10 @@
   "en": "Bathing in the Amazon",
   "t": "アマゾンで水浴び"
  },
+ "acca83e6c1e5": {
+  "en": "Beef jerky going into the dehydrator",
+  "t": "ディハイドレーターに入れるビーフジャーキー"
+ },
  "acf04e6e70cf": {
   "en": "I know I am cute",
   "t": "かわいいのは知ってる"
@@ -7594,6 +7878,10 @@
  "ad79ef0f076d": {
   "en": "Italy",
   "t": "イタリア"
+ },
+ "ad88887b0665": {
+  "en": "Black-eyed peas and green onions",
+  "t": "黒目豆と青ねぎ"
  },
  "ad93df41989e": {
   "en": "Hunger",
@@ -7678,6 +7966,10 @@
  "aed6b9811801": {
   "en": "So close! Your post was one share away from blowing up.",
   "t": "あと少し！投稿があと1シェアで爆発するところだった。"
+ },
+ "aee3f67643c6": {
+  "en": "Enlarge: Pork in the big pot",
+  "t": "拡大: 大鍋の豚肉"
  },
  "af38615beb76": {
   "en": "The facets that fulfill Deo",
@@ -8127,6 +8419,10 @@
   "en": "Back to Concert",
   "t": "コンサートに戻る"
  },
+ "ba567f575059": {
+  "en": "Enlarge: Checking the temperature",
+  "t": "拡大: 温度チェック"
+ },
  "ba5d30be69b6": {
   "en": "Hong Kong has more skyscrapers than any other city in the world.",
   "t": "香港には世界のどの都市よりも多くの超高層ビルがある。"
@@ -8203,6 +8499,10 @@
   "en": " AP ",
   "t": "AP"
  },
+ "bc5dd045b862": {
+  "en": "Sunday",
+  "t": "日曜日"
+ },
  "bc79c0b252f4": {
   "en": "Little Witch Academia: Chamber of Time",
   "t": "リトルウィッチアカデミア 時の魔法と七不思議"
@@ -8242,6 +8542,10 @@
  "bdab8a1751d7": {
   "en": "<strong>Yi Xie and colleagues</strong>, <em>Frontiers in Psychiatry</em> (2021), a meta-analysis of 22 randomized trials (cycling among the exercises): regular exercise mainly improves how well people say they sleep. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8215288/\">Paper</a>",
   "t": "<strong>Yi Xie ら</strong>, <em>Frontiers in Psychiatry</em> (2021)、22 件のランダム化試験のメタ分析（運動にはサイクリングも含む）：定期的な運動が主に改善するのは、本人が感じる睡眠の質。<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC8215288/\">論文</a>"
+ },
+ "bdeb4738bf18": {
+  "en": "Enlarge: Black-eyed peas and green onions",
+  "t": "拡大: 黒目豆と青ねぎ"
  },
  "bdf030920a2a": {
   "en": "<strong>Yi Yang and colleagues</strong>, <em>Journal of Global Health</em> (2025), a meta-analysis of physical activity and inhibitory control in adults with ADHD: both single sessions and regular exercise improved it, regular exercise the most. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11907377/\">Paper</a>",
@@ -8326,6 +8630,10 @@
  "bfc2012b411c": {
   "en": "Sunfish and sunshine",
   "t": "サンフィッシュと日差し"
+ },
+ "bfc2a821e6c9": {
+  "en": "Meat sticks drying",
+  "t": "乾燥中のミートスティック"
  },
  "bfc2ec349cc6": {
   "en": "{n} shit 💩",
@@ -8470,6 +8778,10 @@
  "c2b41f47a48c": {
   "en": "Defenders of Ordo",
   "t": "オルドの守護者たち"
+ },
+ "c2c141258e2f": {
+  "en": "Crispy tilapia",
+  "t": "カリカリのティラピア"
  },
  "c2c53d669482": {
   "en": " T ",
@@ -8666,6 +8978,10 @@
  "c8b4c761e082": {
   "en": " 1,302 h ",
   "t": "1,302 時間"
+ },
+ "c8bfda661fd4": {
+  "en": "Enlarge: Salmon and a big salad",
+  "t": "拡大: サーモンと大盛りサラダ"
  },
  "c8e2de313adf": {
   "en": "Next stop: {place} · {distance} to go",
@@ -8935,6 +9251,10 @@
   "en": "AuDHD, ink and grounding",
   "t": "AuDHD、インク、グラウンディング"
  },
+ "cf315c89551c": {
+  "en": "Tilapia, ready for breading",
+  "t": "ティラピア、衣をつける前"
+ },
  "cf32e9152179": {
   "en": "❤️ +{n} likes",
   "t": "❤️ +{n} いいね"
@@ -8999,6 +9319,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 36: </span> Placeholder movie 36 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 36: </span> 仮の映画 36"
  },
+ "d0586f622d3e": {
+  "en": "Enlarge: Pulled pork sliders",
+  "t": "拡大: プルドポークのスライダー"
+ },
  "d0683718593c": {
   "en": "Sloppy",
   "t": "雑"
@@ -9054,6 +9378,10 @@
  "d160e0986aca": {
   "en": "L",
   "t": "L"
+ },
+ "d166e844a3f3": {
+  "en": "Friday",
+  "t": "金曜日"
  },
  "d173841191a2": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 29: </span> Higurashi no Naku Koro ni (When They Cry) ",
@@ -9118,6 +9446,10 @@
  "d2b790620af3": {
   "en": "T-pose",
   "t": "T ポーズ"
+ },
+ "d2e6e1f01f15": {
+  "en": "Enlarge: Tilapia, ready for breading",
+  "t": "拡大: ティラピア、衣をつける前"
  },
  "d2eaf2aa1512": {
   "en": "China",
@@ -9242,6 +9574,10 @@
  "d4bf1e54e3e7": {
   "en": "So fancy",
   "t": "おしゃれ"
+ },
+ "d4c0dca42b74": {
+  "en": "Meatballs in the air fryer",
+  "t": "エアフライヤーのミートボール"
  },
  "d4c67d8dae2b": {
   "en": "Hamaki",
@@ -9491,6 +9827,10 @@
   "en": "loosely related",
   "t": "ゆるい関係"
  },
+ "d9e8e0cb378b": {
+  "en": "Extra-crunchy breaded fillet",
+  "t": "超カリカリの衣付き切り身"
+ },
  "d9ecc35c78dd": {
   "en": "Scream Collector",
   "t": "Scream Collector"
@@ -9534,6 +9874,14 @@
  "dac190ecc27e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 13: </span> Placeholder movie 13 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 13: </span> 仮の映画 13"
+ },
+ "daf17dd35999": {
+  "en": "Enlarge: Pork shoulder with its rub",
+  "t": "拡大: スパイスをすり込んだ豚肩肉"
+ },
+ "db0e2094392f": {
+  "en": "Steak and onions with black beans and rice",
+  "t": "ステーキと玉ねぎ、ブラックビーンズとご飯添え"
  },
  "db11895b10d7": {
   "en": "28 games",
@@ -9678,6 +10026,10 @@
  "de587bf1e284": {
   "en": "23 games",
   "t": "23本"
+ },
+ "de7f359516a9": {
+  "en": "Enlarge: Peppered fish fillets",
+  "t": "拡大: 黒こしょうの魚の切り身"
  },
  "de99be866eab": {
   "en": "For years, the gym was a pressure valve. I went for stress relief, so it never satisfied me: it was a tool for relief, not something I enjoyed. Now, for the first time in my life, going to the gym feels as natural as brushing my teeth. I don’t go to relieve stress anymore. I go because I actually enjoy it, with music in my ears on the elliptical or under the weights.",
@@ -9891,6 +10243,10 @@
   "en": "Bedtime",
   "t": "就寝時刻"
  },
+ "e3cc0aeec404": {
+  "en": "Enlarge: Beef, seared and raw",
+  "t": "拡大: 牛肉、焼いたものと生のもの"
+ },
  "e3de5ab0ca4c": {
   "en": "Off",
   "t": "オフ"
@@ -10051,6 +10407,10 @@
   "en": "Metrics to show",
   "t": "表示する指標"
  },
+ "e7d901178492": {
+  "en": "Pork shoulder on the smoker",
+  "t": "スモーカーの上の豚肩肉"
+ },
  "e7d965113795": {
   "en": "Kilograms of beef grilled: 295",
   "t": "焼いた牛肉のキロ数：295"
@@ -10151,6 +10511,10 @@
   "en": "Line",
   "t": "ライン"
  },
+ "eaa2e6aabc3c": {
+  "en": "Meatball meal prep",
+  "t": "ミートボールの作り置き"
+ },
  "eaa40e2587dc": {
   "en": "Distrito Federal",
   "t": "Distrito Federal"
@@ -10195,6 +10559,10 @@
   "en": "Enlarge: Pressure ridges on Lake of the Woods",
   "t": "拡大: レイク・オブ・ザ・ウッズの氷の盛り上がり"
  },
+ "ebde285e9639": {
+  "en": "Enlarge: Bacon, Sriracha and maple syrup",
+  "t": "拡大: ベーコン、Sriracha、メープルシロップ"
+ },
  "ebeff8af956a": {
   "en": "I WANNA GO OUTSIDE",
   "t": "外に出たい"
@@ -10210,6 +10578,10 @@
  "ec35596f3bd2": {
   "en": "Enlarge: Painting or drawing, 02/25/2013",
   "t": "拡大: 絵画またはスケッチ, 2013年2月25日"
+ },
+ "ec636d8aedbe": {
+  "en": "Steak and onions with black-eyed peas",
+  "t": "ステーキと玉ねぎ、黒目豆添え"
  },
  "ec908ac3ae10": {
   "en": "<em><strong>BMC Public Health</strong></em> (2025), “The role of sunlight in sleep regulation”: the midpoint of sleep moved most with sunlight, above all with morning sun. <a href=\"https://pubmed.ncbi.nlm.nih.gov/41053799/\">Abstract</a>",
@@ -10251,6 +10623,10 @@
   "en": "She got away…",
   "t": "逃げられた…"
  },
+ "ed84d419d519": {
+  "en": "Enlarge: A bacon-wrapped filet, sliced",
+  "t": "拡大: 切ったベーコン巻きフィレ"
+ },
  "ed8d6e99dc88": {
   "en": "BONK! 🔨 Go to horny jail. (ﾉ´ｰ`)ﾉ",
   "t": "ボンク！🔨 エロ牢獄行き。(ﾉ´ｰ`)ﾉ"
@@ -10290,6 +10666,10 @@
  "eefc86deb7f1": {
   "en": "Enlarge: Painting or drawing, 01/23/2013",
   "t": "拡大: 絵画またはスケッチ, 2013年1月23日"
+ },
+ "efc92ccf659c": {
+  "en": "Meat sticks piped onto the dehydrator",
+  "t": "ディハイドレーターに絞り出したミートスティック"
  },
  "efe6cabcbaa1": {
   "en": "Since we’re on the subject: take care of your mental health. And if you’ve ever thought about ending it all… don’t. I nearly did, back in 2016, during a period that far surpassed what my mind could take at the time. I called a crisis hotline. To the older lady who picked up the phone that night: I will forever be grateful. The “Harry” you see in Vol. 1 is an alternate version of myself: the one who plunged that knife into his chest that night.",
@@ -10582,6 +10962,10 @@
  "f7728e6f8374": {
   "en": " Atlas Obscura ",
   "t": "Atlas Obscura"
+ },
+ "f7856857ac1c": {
+  "en": "Salmon and a big salad",
+  "t": "サーモンと大盛りサラダ"
  },
  "f7e23fd5bdd6": {
   "en": "Enlarge: Wing and the morning sky",
@@ -10887,6 +11271,10 @@
   "en": "130 h",
   "t": "130 時間"
  },
+ "ff6cd8b89344": {
+  "en": "Enlarge: Chicken breasts on the grill",
+  "t": "拡大: グリルの鶏むね肉"
+ },
  "ff77bf2aced8": {
   "en": "Senpai noticed me! (✿◠‿◠)",
   "t": "先輩が気づいてくれた！(✿◠‿◠)"
@@ -10902,10 +11290,6 @@
  "ffb1f457819d": {
   "en": "Magic: The Gathering decks and stories are on their way.",
   "t": "マジック：ザ・ギャザリングのデッキと話は準備中。"
- },
- "ffbae99ba261": {
-  "en": "Recipes and kitchen adventures are on their way.",
-  "t": "レシピとキッチンでの冒険は準備中。"
  },
  "ffbcb9739951": {
   "en": "Cactus",

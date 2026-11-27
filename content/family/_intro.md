@@ -11,4 +11,6 @@ We have the [chimarrão](https://en.wikipedia.org/wiki/Mate_%28drink%29) ritual.
 
 My parents fought tooth and nail to give me a chance in life that they never had, and with blood, sweat and tears, I took full advantage of it, while also pursuing my own opportunities to make myself fulfilled. Once I become a citizen, it'll be my turn to make sure they have a good retirement.
 
+![A CrunchLabs space selfie: a phone in a little frame up in space, with Earth curving behind it, shows a selfie of Deo and his parents on a rooftop over a city with the Brazilian flag](familySpaceSelfie)
+
 I've also cut contact with a large part of my bloodline, and that's on purpose. Carrying the Skibinski name and sharing this crazy blood doesn't automatically earn you access or attention. We've been taken advantage of before, and we grew from it.

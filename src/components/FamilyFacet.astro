@@ -83,8 +83,8 @@ const headerFull = await Promise.all(headers.map((h) => fullOf(h.src)));
     b.kind === 'p' ? (
       <p set:html={b.html} />
     ) : (
-      <figure class="family-inline">
-        <Image src={b.src} alt={b.alt} widths={[360, 720]} sizes="(max-width: 720px) 80vw, 360px" data-full={b.full} />
+      <figure class:list={['family-inline', { 'family-inline--wide': b.src.width > b.src.height }]}>
+        <Image src={b.src} alt={b.alt} widths={[360, 720, 1080]} sizes="(max-width: 720px) 90vw, 560px" data-full={b.full} />
       </figure>
     ),
   )
@@ -109,6 +109,7 @@ const headerFull = await Promise.all(headers.map((h) => fullOf(h.src)));
     border: 1px solid rgba(190, 200, 209, 0.15);
   }
   .family-inline { max-width: 22rem; margin: 1.5rem auto 1.75rem; }
+  .family-inline--wide { max-width: 35rem; } /* landscape pictures (the space selfie) get more room */
   .family-inline :global(img) {
     display: block;
     width: 100%;
