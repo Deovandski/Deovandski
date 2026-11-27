@@ -31,6 +31,7 @@ Pages by `.github/workflows/deploy.yml` on every push to `main`.
 | Traveler tab (map pins and photos) | `content/travel/` (see its README, COUNTRY_CODES.md and SUBDIVISION_CODES.md) |
 | Multilingual tab (language equalizer) | `content/languages.md` |
 | Tattoo tab | `content/tattoos.md`, photos in `content/tattoos/<area>/` |
+| Tattoo tab Links box (the Vraki site, plus the "AuDHD, ink and grounding" reading list) | the link in `panel-tattoo` in `src/pages/index.astro`; the list in `content/tattoo-sources.md` |
 | Tattoo tab practice skin (draw a tattoo) | `src/components/reusable/DrawingPad.astro`, behind the tab's ▶ Play button (`src/components/GimmickPlay.astro`; see "Tab ▶ Play gimmicks") |
 | Gym tab (chart + story) | `content/gym/weights.md`, `content/gym/story.md`, photos in `content/gym/photos/<year>.jpg`; body fat by year in `content/gym/body-fat.json` (from the Takeout: [TAKEOUT.md](TAKEOUT.md)) |
 | 初音ミク tab (Miku concerts) | `content/miku.md`, photos in `content/miku/<concert>/` |

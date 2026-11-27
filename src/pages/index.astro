@@ -36,6 +36,7 @@ import shotWds from '../assets/developer/wizard-deo-solutions.jpg';
 import shotLedMatrix from '../assets/developer/led-matrix-manager.jpg';
 import { Content as DeathSources } from '../../content/death-sources.md';
 import { Content as AviationSources } from '../../content/aviation-sources.md';
+import { Content as TattooSources } from '../../content/tattoo-sources.md';
 import { Content as MentorSources } from '../../content/mentor-sources.md';
 import YouTube from '../components/reusable/YouTube.astro';
 import { Content as AviationText } from '../../content/aviation.md';
@@ -564,8 +565,8 @@ const nf = new Intl.NumberFormat('en-US');
           solutions, mentoring developers, collaborating with stakeholders, or leading client discussions.
         </p>
         <p>
-          GitHub only has a fraction of my code because of NDAs, but I'm proud of the LED Matrix Manager I cooked up for
-          Framework 16 users. StackOverflow? Haven't used it in a long, long while. Times have changed, and it's fun and weird!
+          GitHub only has a fraction of all the code I developed in my developer career, but there's enough out there for y'all
+          to have fun and see my growth, and ambitions.
         </p>
         <ProjectCards items={softwareCards} label="My business" />
       </div>
@@ -831,6 +832,11 @@ const nf = new Intl.NumberFormat('en-US');
       <GimmickPlay tab="tattoo">
         <p slot="intro">A practice skin, like the ones tattoo artists learn on. Pick a skin tone, an ink and a needle, and go.</p>
       </GimmickPlay>
+      <LinksMenu
+        id="tattoo-links"
+        toggle="external"
+        items={[{ links: [{ href: 'https://deovandski.github.io/vraki-windows/', label: 'Vraki, the script on my wrists' }] }]}
+      ><SourceList title="AuDHD, ink and grounding"><TattooSources /></SourceList></LinksMenu>
       <Sections data={tattoos} id="tattoo" photoAlt={(t) => `Tattoo on my ${t.toLowerCase()}`} />
     </section>
 
