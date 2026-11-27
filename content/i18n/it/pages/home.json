@@ -179,6 +179,10 @@
   "en": "Take care of Bidu",
   "t": "Prenditi cura di Bidu"
  },
+ "0321da967790": {
+  "en": "2 whole chickens ready for a 7 hour boiling session! The start of my famous Mushroom Alfredo Chicken egg noodle pasta.",
+  "t": "2 polli interi pronti per 7 ore di bollitura! L’inizio della mia famosa pasta all’uovo con pollo e salsa Alfredo ai funghi."
+ },
  "0323e8524bb0": {
   "en": "Zero tracking, zero metrics. I'll never know, so if you see me out in the wild, brag about it. 😉",
   "t": "Zero tracciamento, zero metriche. Non lo saprò mai, quindi se mi incontri in giro, vantatene. 😉"
@@ -895,10 +899,6 @@
   "en": "25 h",
   "t": "25 h"
  },
- "1359469e9656": {
-  "en": "Enlarge: Jerky, cheese and coffee for breakfast",
-  "t": "Ingrandisci: Carne secca, formaggio e caffè a colazione"
- },
  "13674b70852d": {
   "en": "South Park: The Fractured but Whole",
   "t": "South Park: The Fractured but Whole"
@@ -1390,10 +1390,6 @@
  "204d15148f96": {
   "en": " Lens ",
   "t": "Obiettivo"
- },
- "204d45fec535": {
-  "en": "Jerky, cheese and coffee for breakfast",
-  "t": "Carne secca, formaggio e caffè a colazione"
  },
  "20545ec97959": {
   "en": "Nothing on this roll yet. Take a photo first.",
@@ -2683,10 +2679,6 @@
   "en": "Fluffy",
   "t": "Fluffy"
  },
- "3b0349b11d05": {
-  "en": "Pork in the big pot",
-  "t": "Maiale nella pentola grande"
- },
  "3b044501691d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Placeholder TV show 16 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Posizione 16: </span> Serie segnaposto 16"
@@ -3430,6 +3422,10 @@
  "4d968a30a022": {
   "en": "no data",
   "t": "nessun dato"
+ },
+ "4d9f8982913a": {
+  "en": "Enlarge: Jerky, farinha, cheese and coffee for breakfast",
+  "t": "Ingrandisci: Carne secca, farinha, formaggio e caffè a colazione"
  },
  "4db08c84d2e8": {
   "en": "Hmm… it’s either {a} or {b}. Huehue, good luck.",
@@ -4795,10 +4791,6 @@
   "en": "Spore",
   "t": "Spore"
  },
- "67d1b197da3e": {
-  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> gets its own tab as it warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
-  "t": "Come mia mamma, non seguo ricette e non mi segno niente. Però faccio foto, così posso provare a rifarlo se è venuto davvero buono! Direi che rende speciale ogni pasto! Il <a href=\"#churrasco\">churrasco</a> ha una scheda tutta sua, perché si merita una sfaccettatura a parte! Adoro il cibo di ogni forma e tipo, anche se ho i miei limiti, tipo che non riesco a mangiare il tofu puzzolente."
- },
  "67d69fcd957c": {
   "en": "Under a bridge in Seattle lives the Fremont Troll, a giant concrete troll crushing a real Volkswagen Beetle.",
   "t": "Sotto un ponte di Seattle vive il Fremont Troll, un gigantesco troll di cemento che stritola un vero Maggiolino Volkswagen."
@@ -5870,6 +5862,10 @@
  "7fcbec07b35e": {
   "en": "Temple gate",
   "t": "Porta del tempio"
+ },
+ "7fd618c780f6": {
+  "en": "Jerky, farinha, cheese and coffee for breakfast",
+  "t": "Carne secca, farinha, formaggio e caffè a colazione"
  },
  "7fdb071a3f1b": {
   "en": "Enlarge: Wide open road",
@@ -7967,10 +7963,6 @@
   "en": "So close! Your post was one share away from blowing up.",
   "t": "Così vicino! Il tuo post era a un share dall’esplodere."
  },
- "aee3f67643c6": {
-  "en": "Enlarge: Pork in the big pot",
-  "t": "Ingrandisci: Maiale nella pentola grande"
- },
  "af38615beb76": {
   "en": "The facets that fulfill Deo",
   "t": "Le sfaccettature che realizzano Deo"
@@ -8090,6 +8082,10 @@
  "b1e53f0d9bf7": {
   "en": "37 h",
   "t": "37 h"
+ },
+ "b1f6d706a171": {
+  "en": "Enlarge: 2 whole chickens ready for a 7 hour boiling session! The start of my famous Mushroom Alfredo Chicken egg noodle pasta.",
+  "t": "Ingrandisci: 2 polli interi pronti per 7 ore di bollitura! L’inizio della mia famosa pasta all’uovo con pollo e salsa Alfredo ai funghi."
  },
  "b1fa569013ea": {
   "en": " RD ",
@@ -10578,6 +10574,10 @@
  "ec35596f3bd2": {
   "en": "Enlarge: Painting or drawing, 02/25/2013",
   "t": "Ingrandisci: Dipinto o disegno, 25/02/2013"
+ },
+ "ec3a6e3e8b5d": {
+  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
+  "t": "Come mia mamma, non seguo ricette e non mi segno niente. Però faccio foto, così posso provare a rifarlo se è venuto davvero buono! Direi che rende speciale ogni pasto! Il <a href=\"#churrasco\">churrasco</a> si merita una sfaccettatura a parte! Adoro il cibo di ogni forma e tipo, anche se ho i miei limiti, tipo che non riesco a mangiare il tofu puzzolente."
  },
  "ec636d8aedbe": {
   "en": "Steak and onions with black-eyed peas",

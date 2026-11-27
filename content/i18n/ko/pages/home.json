@@ -179,6 +179,10 @@
   "en": "Take care of Bidu",
   "t": "Bidu 돌보기"
  },
+ "0321da967790": {
+  "en": "2 whole chickens ready for a 7 hour boiling session! The start of my famous Mushroom Alfredo Chicken egg noodle pasta.",
+  "t": "통닭 2마리, 7시간 동안 삶을 준비 완료! 내 유명한 버섯 알프레도 치킨 에그 누들 파스타의 시작."
+ },
  "0323e8524bb0": {
   "en": "Zero tracking, zero metrics. I'll never know, so if you see me out in the wild, brag about it. 😉",
   "t": "추적 제로, 지표 제로. 난 절대 모를 테니, 혹시 밖에서 날 만나면 자랑해. 😉"
@@ -895,10 +899,6 @@
   "en": "25 h",
   "t": "25 시간"
  },
- "1359469e9656": {
-  "en": "Enlarge: Jerky, cheese and coffee for breakfast",
-  "t": "확대: 아침: 저키, 치즈, 커피"
- },
  "13674b70852d": {
   "en": "South Park: The Fractured but Whole",
   "t": "South Park: The Fractured but Whole"
@@ -1390,10 +1390,6 @@
  "204d15148f96": {
   "en": " Lens ",
   "t": "렌즈"
- },
- "204d45fec535": {
-  "en": "Jerky, cheese and coffee for breakfast",
-  "t": "아침: 저키, 치즈, 커피"
  },
  "20545ec97959": {
   "en": "Nothing on this roll yet. Take a photo first.",
@@ -2683,10 +2679,6 @@
   "en": "Fluffy",
   "t": "Fluffy"
  },
- "3b0349b11d05": {
-  "en": "Pork in the big pot",
-  "t": "큰 냄비 속 돼지고기"
- },
  "3b044501691d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Placeholder TV show 16 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 16: </span> 임시 TV 프로그램 16"
@@ -3430,6 +3422,10 @@
  "4d968a30a022": {
   "en": "no data",
   "t": "데이터 없음"
+ },
+ "4d9f8982913a": {
+  "en": "Enlarge: Jerky, farinha, cheese and coffee for breakfast",
+  "t": "확대: 아침: 저키, 파리냐, 치즈, 커피"
  },
  "4db08c84d2e8": {
   "en": "Hmm… it’s either {a} or {b}. Huehue, good luck.",
@@ -4795,10 +4791,6 @@
   "en": "Spore",
   "t": "스포어"
  },
- "67d1b197da3e": {
-  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> gets its own tab as it warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
-  "t": "엄마처럼 나도 레시피를 안 따르고 아무것도 적어 두지 않아. 대신 사진은 찍어. 정말 맛있게 됐으면 나중에 다시 만들어 볼 수 있게! 그래서 매 끼니가 특별해지는 것 같아! <a href=\"#churrasco\">슈하스코</a>는 따로 한 면을 차지할 만하니까 자기 탭이 있어! 어떤 음식이든 다 좋아하지만, 선은 있어. 예를 들면 취두부는 도저히 못 먹어."
- },
  "67d69fcd957c": {
   "en": "Under a bridge in Seattle lives the Fremont Troll, a giant concrete troll crushing a real Volkswagen Beetle.",
   "t": "시애틀의 다리 밑에는 프리몬트 트롤이 살아: 진짜 폭스바겐 비틀을 움켜쥔 거대한 콘크리트 트롤이야."
@@ -5870,6 +5862,10 @@
  "7fcbec07b35e": {
   "en": "Temple gate",
   "t": "사원 문"
+ },
+ "7fd618c780f6": {
+  "en": "Jerky, farinha, cheese and coffee for breakfast",
+  "t": "아침: 저키, 파리냐, 치즈, 커피"
  },
  "7fdb071a3f1b": {
   "en": "Enlarge: Wide open road",
@@ -7967,10 +7963,6 @@
   "en": "So close! Your post was one share away from blowing up.",
   "t": "아깝다! 게시물이 공유 하나만 더하면 폭발할 뻔했어."
  },
- "aee3f67643c6": {
-  "en": "Enlarge: Pork in the big pot",
-  "t": "확대: 큰 냄비 속 돼지고기"
- },
  "af38615beb76": {
   "en": "The facets that fulfill Deo",
   "t": "Deo를 채우는 면면들"
@@ -8090,6 +8082,10 @@
  "b1e53f0d9bf7": {
   "en": "37 h",
   "t": "37 시간"
+ },
+ "b1f6d706a171": {
+  "en": "Enlarge: 2 whole chickens ready for a 7 hour boiling session! The start of my famous Mushroom Alfredo Chicken egg noodle pasta.",
+  "t": "확대: 통닭 2마리, 7시간 동안 삶을 준비 완료! 내 유명한 버섯 알프레도 치킨 에그 누들 파스타의 시작."
  },
  "b1fa569013ea": {
   "en": " RD ",
@@ -10578,6 +10574,10 @@
  "ec35596f3bd2": {
   "en": "Enlarge: Painting or drawing, 02/25/2013",
   "t": "확대: 그림 또는 스케치, 2013년 2월 25일"
+ },
+ "ec3a6e3e8b5d": {
+  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
+  "t": "엄마처럼 나도 레시피를 안 따르고 아무것도 적어 두지 않아. 대신 사진은 찍어. 정말 맛있게 됐으면 나중에 다시 만들어 볼 수 있게! 그래서 매 끼니가 특별해지는 것 같아! <a href=\"#churrasco\">슈하스코</a>는 따로 한 면을 차지할 만해! 어떤 음식이든 다 좋아하지만, 선은 있어. 예를 들면 취두부는 도저히 못 먹어."
  },
  "ec636d8aedbe": {
   "en": "Steak and onions with black-eyed peas",

@@ -179,6 +179,10 @@
   "en": "Take care of Bidu",
   "t": "照顾 Bidu"
  },
+ "0321da967790": {
+  "en": "2 whole chickens ready for a 7 hour boiling session! The start of my famous Mushroom Alfredo Chicken egg noodle pasta.",
+  "t": "两只整鸡，准备煮上 7 个小时！这是我拿手的蘑菇阿尔弗雷多鸡肉鸡蛋面的开始。"
+ },
  "0323e8524bb0": {
   "en": "Zero tracking, zero metrics. I'll never know, so if you see me out in the wild, brag about it. 😉",
   "t": "零追踪，零指标。我永远不会知道，所以如果你在外面碰到我，尽管拿来炫耀。😉"
@@ -895,10 +899,6 @@
   "en": "25 h",
   "t": "25 小时"
  },
- "1359469e9656": {
-  "en": "Enlarge: Jerky, cheese and coffee for breakfast",
-  "t": "放大: 早餐：肉干、奶酪和咖啡"
- },
  "13674b70852d": {
   "en": "South Park: The Fractured but Whole",
   "t": "South Park: The Fractured but Whole"
@@ -1390,10 +1390,6 @@
  "204d15148f96": {
   "en": " Lens ",
   "t": "镜头"
- },
- "204d45fec535": {
-  "en": "Jerky, cheese and coffee for breakfast",
-  "t": "早餐：肉干、奶酪和咖啡"
  },
  "20545ec97959": {
   "en": "Nothing on this roll yet. Take a photo first.",
@@ -2683,10 +2679,6 @@
   "en": "Fluffy",
   "t": "Fluffy"
  },
- "3b0349b11d05": {
-  "en": "Pork in the big pot",
-  "t": "大锅里的猪肉"
- },
  "3b044501691d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Placeholder TV show 16 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 16: </span> 占位剧集 16"
@@ -3430,6 +3422,10 @@
  "4d968a30a022": {
   "en": "no data",
   "t": "无数据"
+ },
+ "4d9f8982913a": {
+  "en": "Enlarge: Jerky, farinha, cheese and coffee for breakfast",
+  "t": "放大: 早餐：肉干、木薯粉、奶酪和咖啡"
  },
  "4db08c84d2e8": {
   "en": "Hmm… it’s either {a} or {b}. Huehue, good luck.",
@@ -4795,10 +4791,6 @@
   "en": "Spore",
   "t": "孢子"
  },
- "67d1b197da3e": {
-  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> gets its own tab as it warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
-  "t": "和我妈一样，我做饭不看食谱，也不把东西记下来。不过我会拍照，要是哪道菜做得特别好吃，以后就能照着再做一次！我觉得这让每一顿饭都很特别！<a href=\"#churrasco\">巴西烤肉</a>有自己的标签页，因为它值得单独一个侧面！各种各样的食物我都爱，不过我也有底线，比如臭豆腐我实在吃不下。"
- },
  "67d69fcd957c": {
   "en": "Under a bridge in Seattle lives the Fremont Troll, a giant concrete troll crushing a real Volkswagen Beetle.",
   "t": "西雅图一座桥下住着弗里蒙特巨魔：一个巨大的水泥巨魔，手里捏着一辆真的大众甲壳虫。"
@@ -5870,6 +5862,10 @@
  "7fcbec07b35e": {
   "en": "Temple gate",
   "t": "寺庙大门"
+ },
+ "7fd618c780f6": {
+  "en": "Jerky, farinha, cheese and coffee for breakfast",
+  "t": "早餐：肉干、木薯粉、奶酪和咖啡"
  },
  "7fdb071a3f1b": {
   "en": "Enlarge: Wide open road",
@@ -7967,10 +7963,6 @@
   "en": "So close! Your post was one share away from blowing up.",
   "t": "好近！你的帖子只差一次分享就爆了。"
  },
- "aee3f67643c6": {
-  "en": "Enlarge: Pork in the big pot",
-  "t": "放大: 大锅里的猪肉"
- },
  "af38615beb76": {
   "en": "The facets that fulfill Deo",
   "t": "成就 Deo 的那些侧面"
@@ -8090,6 +8082,10 @@
  "b1e53f0d9bf7": {
   "en": "37 h",
   "t": "37 小时"
+ },
+ "b1f6d706a171": {
+  "en": "Enlarge: 2 whole chickens ready for a 7 hour boiling session! The start of my famous Mushroom Alfredo Chicken egg noodle pasta.",
+  "t": "放大: 两只整鸡，准备煮上 7 个小时！这是我拿手的蘑菇阿尔弗雷多鸡肉鸡蛋面的开始。"
  },
  "b1fa569013ea": {
   "en": " RD ",
@@ -10578,6 +10574,10 @@
  "ec35596f3bd2": {
   "en": "Enlarge: Painting or drawing, 02/25/2013",
   "t": "放大: 绘画或素描, 2013年2月25日"
+ },
+ "ec3a6e3e8b5d": {
+  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
+  "t": "和我妈一样，我做饭不看食谱，也不把东西记下来。不过我会拍照，要是哪道菜做得特别好吃，以后就能照着再做一次！我觉得这让每一顿饭都很特别！<a href=\"#churrasco\">巴西烤肉</a>值得单独一个侧面！各种各样的食物我都爱，不过我也有底线，比如臭豆腐我实在吃不下。"
  },
  "ec636d8aedbe": {
   "en": "Steak and onions with black-eyed peas",

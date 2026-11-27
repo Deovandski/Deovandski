@@ -179,6 +179,10 @@
   "en": "Take care of Bidu",
   "t": "ดูแล Bidu"
  },
+ "0321da967790": {
+  "en": "2 whole chickens ready for a 7 hour boiling session! The start of my famous Mushroom Alfredo Chicken egg noodle pasta.",
+  "t": "ไก่ทั้งตัว 2 ตัว พร้อมต้ม 7 ชั่วโมง! จุดเริ่มต้นของพาสต้าเส้นไข่ไก่อัลเฟรโดเห็ดสูตรดังของผม"
+ },
  "0323e8524bb0": {
   "en": "Zero tracking, zero metrics. I'll never know, so if you see me out in the wild, brag about it. 😉",
   "t": "ไม่ติดตาม ไม่เก็บข้อมูล ผมไม่มีวันรู้ ถ้าเจอผมข้างนอกก็อวดได้เลย 😉"
@@ -895,10 +899,6 @@
   "en": "25 h",
   "t": "25 ชม."
  },
- "1359469e9656": {
-  "en": "Enlarge: Jerky, cheese and coffee for breakfast",
-  "t": "ขยาย: มื้อเช้า: เนื้อแห้ง ชีส และกาแฟ"
- },
  "13674b70852d": {
   "en": "South Park: The Fractured but Whole",
   "t": "South Park: The Fractured but Whole"
@@ -1390,10 +1390,6 @@
  "204d15148f96": {
   "en": " Lens ",
   "t": "เลนส์"
- },
- "204d45fec535": {
-  "en": "Jerky, cheese and coffee for breakfast",
-  "t": "มื้อเช้า: เนื้อแห้ง ชีส และกาแฟ"
  },
  "20545ec97959": {
   "en": "Nothing on this roll yet. Take a photo first.",
@@ -2683,10 +2679,6 @@
   "en": "Fluffy",
   "t": "Fluffy"
  },
- "3b0349b11d05": {
-  "en": "Pork in the big pot",
-  "t": "หมูในหม้อใหญ่"
- },
  "3b044501691d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Placeholder TV show 16 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 16: </span> รายการทีวีชั่วคราว 16"
@@ -3430,6 +3422,10 @@
  "4d968a30a022": {
   "en": "no data",
   "t": "ไม่มีข้อมูล"
+ },
+ "4d9f8982913a": {
+  "en": "Enlarge: Jerky, farinha, cheese and coffee for breakfast",
+  "t": "ขยาย: มื้อเช้า: เนื้อแห้ง ฟารินญา ชีส และกาแฟ"
  },
  "4db08c84d2e8": {
   "en": "Hmm… it’s either {a} or {b}. Huehue, good luck.",
@@ -4795,10 +4791,6 @@
   "en": "Spore",
   "t": "Spore"
  },
- "67d1b197da3e": {
-  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> gets its own tab as it warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
-  "t": "เหมือนแม่ ผมไม่ทำตามสูตรและไม่จดอะไรไว้เลย แต่ผมถ่ายรูปไว้ ถ้าออกมาอร่อยมากจะได้ลองทำซ้ำทีหลัง! ทำให้ทุกมื้อพิเศษ ผมว่านะ! <a href=\"#churrasco\">ชูราสโก</a>มีแท็บของตัวเอง เพราะสมควรได้ด้านของตัวเอง! ผมรักอาหารทุกรูปแบบทุกชนิด แต่ก็มีขีดจำกัด อย่างเช่นกินเต้าหู้เหม็นไม่ได้เลย"
- },
  "67d69fcd957c": {
   "en": "Under a bridge in Seattle lives the Fremont Troll, a giant concrete troll crushing a real Volkswagen Beetle.",
   "t": "ใต้สะพานในซีแอตเทิลมีโทรลล์ฟรีมอนต์อาศัยอยู่ เป็นโทรลล์คอนกรีตยักษ์ที่บีบรถโฟล์คสวาเกนบีเทิลของจริง"
@@ -5870,6 +5862,10 @@
  "7fcbec07b35e": {
   "en": "Temple gate",
   "t": "ประตูวัด"
+ },
+ "7fd618c780f6": {
+  "en": "Jerky, farinha, cheese and coffee for breakfast",
+  "t": "มื้อเช้า: เนื้อแห้ง ฟารินญา ชีส และกาแฟ"
  },
  "7fdb071a3f1b": {
   "en": "Enlarge: Wide open road",
@@ -7967,10 +7963,6 @@
   "en": "So close! Your post was one share away from blowing up.",
   "t": "ใกล้จัง! โพสต์ของคุณเหลือแค่แชร์เดียวจะระเบิด"
  },
- "aee3f67643c6": {
-  "en": "Enlarge: Pork in the big pot",
-  "t": "ขยาย: หมูในหม้อใหญ่"
- },
  "af38615beb76": {
   "en": "The facets that fulfill Deo",
   "t": "ด้านต่าง ๆ ที่เติมเต็ม Deo"
@@ -8090,6 +8082,10 @@
  "b1e53f0d9bf7": {
   "en": "37 h",
   "t": "37 ชม."
+ },
+ "b1f6d706a171": {
+  "en": "Enlarge: 2 whole chickens ready for a 7 hour boiling session! The start of my famous Mushroom Alfredo Chicken egg noodle pasta.",
+  "t": "ขยาย: ไก่ทั้งตัว 2 ตัว พร้อมต้ม 7 ชั่วโมง! จุดเริ่มต้นของพาสต้าเส้นไข่ไก่อัลเฟรโดเห็ดสูตรดังของผม"
  },
  "b1fa569013ea": {
   "en": " RD ",
@@ -10578,6 +10574,10 @@
  "ec35596f3bd2": {
   "en": "Enlarge: Painting or drawing, 02/25/2013",
   "t": "ขยาย: ภาพวาดหรือภาพร่าง, 25/2/2013"
+ },
+ "ec3a6e3e8b5d": {
+  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
+  "t": "เหมือนแม่ ผมไม่ทำตามสูตรและไม่จดอะไรไว้เลย แต่ผมถ่ายรูปไว้ ถ้าออกมาอร่อยมากจะได้ลองทำซ้ำทีหลัง! ทำให้ทุกมื้อพิเศษ ผมว่านะ! <a href=\"#churrasco\">ชูราสโก</a>สมควรได้ด้านของตัวเอง! ผมรักอาหารทุกรูปแบบทุกชนิด แต่ก็มีขีดจำกัด อย่างเช่นกินเต้าหู้เหม็นไม่ได้เลย"
  },
  "ec636d8aedbe": {
   "en": "Steak and onions with black-eyed peas",

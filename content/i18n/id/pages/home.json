@@ -179,6 +179,10 @@
   "en": "Take care of Bidu",
   "t": "Rawat Bidu"
  },
+ "0321da967790": {
+  "en": "2 whole chickens ready for a 7 hour boiling session! The start of my famous Mushroom Alfredo Chicken egg noodle pasta.",
+  "t": "2 ekor ayam utuh siap direbus 7 jam! Awal dari pasta mi telur ayam Alfredo jamur andalanku yang terkenal."
+ },
  "0323e8524bb0": {
   "en": "Zero tracking, zero metrics. I'll never know, so if you see me out in the wild, brag about it. 😉",
   "t": "Nol pelacakan, nol metrik. Aku tidak akan pernah tahu, jadi kalau kamu melihatku di luar sana, banggakan saja. 😉"
@@ -895,10 +899,6 @@
   "en": "25 h",
   "t": "25 h"
  },
- "1359469e9656": {
-  "en": "Enlarge: Jerky, cheese and coffee for breakfast",
-  "t": "Perbesar: Dendeng, keju dan kopi untuk sarapan"
- },
  "13674b70852d": {
   "en": "South Park: The Fractured but Whole",
   "t": "South Park: The Fractured but Whole"
@@ -1390,10 +1390,6 @@
  "204d15148f96": {
   "en": " Lens ",
   "t": "Lensa"
- },
- "204d45fec535": {
-  "en": "Jerky, cheese and coffee for breakfast",
-  "t": "Dendeng, keju dan kopi untuk sarapan"
  },
  "20545ec97959": {
   "en": "Nothing on this roll yet. Take a photo first.",
@@ -2683,10 +2679,6 @@
   "en": "Fluffy",
   "t": "Fluffy"
  },
- "3b0349b11d05": {
-  "en": "Pork in the big pot",
-  "t": "Daging babi di panci besar"
- },
  "3b044501691d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 16: </span> Placeholder TV show 16 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 16: </span> Acara TV sementara 16"
@@ -3430,6 +3422,10 @@
  "4d968a30a022": {
   "en": "no data",
   "t": "tidak ada data"
+ },
+ "4d9f8982913a": {
+  "en": "Enlarge: Jerky, farinha, cheese and coffee for breakfast",
+  "t": "Perbesar: Dendeng, farinha, keju dan kopi untuk sarapan"
  },
  "4db08c84d2e8": {
   "en": "Hmm… it’s either {a} or {b}. Huehue, good luck.",
@@ -4795,10 +4791,6 @@
   "en": "Spore",
   "t": "Spore"
  },
- "67d1b197da3e": {
-  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> gets its own tab as it warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
-  "t": "Seperti ibuku, aku tidak mengikuti resep dan tidak mencatat apa pun. Tapi aku memotretnya, supaya bisa mencoba membuatnya lagi kalau hasilnya enak banget! Menurutku itu bikin setiap hidangan jadi istimewa! <a href=\"#churrasco\">Churrasco</a> punya tab sendiri karena pantas jadi sisi tersendiri! Aku suka makanan dalam segala bentuk dan jenis, walau ada batasnya, termasuk tidak sanggup makan tahu busuk."
- },
  "67d69fcd957c": {
   "en": "Under a bridge in Seattle lives the Fremont Troll, a giant concrete troll crushing a real Volkswagen Beetle.",
   "t": "Di bawah sebuah jembatan di Seattle tinggal Fremont Troll, troll beton raksasa yang meremukkan Volkswagen Beetle sungguhan."
@@ -5870,6 +5862,10 @@
  "7fcbec07b35e": {
   "en": "Temple gate",
   "t": "Gerbang kuil"
+ },
+ "7fd618c780f6": {
+  "en": "Jerky, farinha, cheese and coffee for breakfast",
+  "t": "Dendeng, farinha, keju dan kopi untuk sarapan"
  },
  "7fdb071a3f1b": {
   "en": "Enlarge: Wide open road",
@@ -7967,10 +7963,6 @@
   "en": "So close! Your post was one share away from blowing up.",
   "t": "Begitu dekat! Post kamu tinggal satu share lagi untuk meledak."
  },
- "aee3f67643c6": {
-  "en": "Enlarge: Pork in the big pot",
-  "t": "Perbesar: Daging babi di panci besar"
- },
  "af38615beb76": {
   "en": "The facets that fulfill Deo",
   "t": "Sisi-sisi yang membuat Deo utuh"
@@ -8090,6 +8082,10 @@
  "b1e53f0d9bf7": {
   "en": "37 h",
   "t": "37 h"
+ },
+ "b1f6d706a171": {
+  "en": "Enlarge: 2 whole chickens ready for a 7 hour boiling session! The start of my famous Mushroom Alfredo Chicken egg noodle pasta.",
+  "t": "Perbesar: 2 ekor ayam utuh siap direbus 7 jam! Awal dari pasta mi telur ayam Alfredo jamur andalanku yang terkenal."
  },
  "b1fa569013ea": {
   "en": " RD ",
@@ -10578,6 +10574,10 @@
  "ec35596f3bd2": {
   "en": "Enlarge: Painting or drawing, 02/25/2013",
   "t": "Perbesar: Lukisan atau gambar, 25/02/2013"
+ },
+ "ec3a6e3e8b5d": {
+  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
+  "t": "Seperti ibuku, aku tidak mengikuti resep dan tidak mencatat apa pun. Tapi aku memotretnya, supaya bisa mencoba membuatnya lagi kalau hasilnya enak banget! Menurutku itu bikin setiap hidangan jadi istimewa! <a href=\"#churrasco\">Churrasco</a> pantas jadi sisi tersendiri! Aku suka makanan dalam segala bentuk dan jenis, walau ada batasnya, termasuk tidak sanggup makan tahu busuk."
  },
  "ec636d8aedbe": {
   "en": "Steak and onions with black-eyed peas",
