@@ -107,7 +107,8 @@ The site is also built in 14 languages at `/zh/`, `/ja/`, `/pt/`, `/es/`, `/ar/`
 `scripts/i18n.mjs` adds them to the built pages. Text not translated yet shows in English. The rules for translating are in
 CLAUDE.md ("Translations").
 
-- **Settings** (the gear, top right): Language, "Want a language added?" (opens #87) and Vraki mode.
+- **Settings** (the gear, top right): Language, "Want a language added?" (opens #87), Vraki mode, App (Install app) and
+  Stats for nerds (the DEBUG button, which opens the hidden `/debug/` page, #306). The × at the top right closes it.
 - **Multilingual tab:** each language column opens the site in that language (Vraki turns on Vraki mode). The current one
   has a cyan box.
 - **See where each language stands:** `node scripts/i18n.mjs status` after a build (the deploy's summary shows it too).

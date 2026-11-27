@@ -244,7 +244,7 @@ function headExtras(document, page, cov, thisCode) {
   document.documentElement.setAttribute('data-langs', ready.join(' '));
 }
 
-const noindexed = (html) => /<meta name="robots" content="noindex"/.test(html);
+const noindexed = (html) => /<meta name="robots" content="noindex/.test(html);
 
 function cmdBuild() {
   const langs = languages().map((code) => ({ code, meta: loadMeta(code), store: loadStore(code) }));
@@ -286,6 +286,40 @@ function cmdBuild() {
 }
 
 // ---------------------------------------------------------------- command line
+
+/** What's translated, per language, for stats.json (scripts/stats.mjs) and the /debug/ page (#306). Same counting as
+ *  `status`: words of the English segments that have a translation. A page counts as ready (indexed, offered to the
+ *  browser-language auto-select) once INDEX_COVERAGE of its words are. From Deovandski-repo-template's tools/i18n.ts. */
+export function languageStats() {
+  const segs = inventory();
+  const pages = builtPages();
+  const words = [...segs.values()].reduce((n, s) => n + s.words, 0);
+  const pageWords = new Map();
+  for (const s of segs.values()) for (const p of s.pages) pageWords.set(p, (pageWords.get(p) ?? 0) + s.words);
+  return {
+    english: { pages: pages.length, segments: segs.size, words },
+    indexCoverage: INDEX_COVERAGE,
+    languages: languages().map((code) => {
+      const meta = loadMeta(code);
+      const st = loadStore(code);
+      let doneWords = 0;
+      let doneSegs = 0;
+      const pageDone = new Map();
+      for (const [h, s] of segs) {
+        if (!st.has(h)) continue;
+        doneWords += s.words;
+        doneSegs++;
+        for (const p of s.pages) pageDone.set(p, (pageDone.get(p) ?? 0) + s.words);
+      }
+      const indexed = pages.filter((p) => (pageDone.get(p) ?? 0) >= INDEX_COVERAGE * (pageWords.get(p) ?? 0)).length;
+      return {
+        code, name: meta.name ?? code, dir: meta.dir ?? 'ltr',
+        percent: Math.round((1000 * doneWords) / Math.max(1, words)) / 10,
+        words: doneWords, segments: doneSegs, pagesIndexed: indexed,
+      };
+    }),
+  };
+}
 
 function cmdStatus(args) {
   const segs = inventory();

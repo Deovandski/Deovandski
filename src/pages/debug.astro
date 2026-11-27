@@ -1,0 +1,97 @@
+---
+// "Stats for nerds" (#306, from Deovandski-repo-template#19): Settings › DEBUG opens this page. A terminal types out
+// what the build and the browser know: Code, Site, Runtime, Network, Performance and Languages. Build facts come from
+// stats.json (written by scripts/stats.mjs at the end of `npm run build`); everything else is read in the browser by
+// src/scripts/debug.ts, which fills each [data-v] value, then starts the typing. Nothing is saved or sent anywhere.
+// Not indexed: noindex keeps it out of search engines and sitemap.xml (llms.txt only lists the home page's tabs).
+// The terminal is translate="no": it's machine output, like sample code. The page title and description are translated.
+// To add a line: ['Label', 'key'] in `sections` below, then set('key', value) in src/scripts/debug.ts.
+import Base from '../layouts/Base.astro';
+import TerminalScreen from '../components/reusable/TerminalScreen.astro';
+
+type Row = [label: string, key: string];
+/** "== CODE =================", every heading the same width. */
+const heading = (title: string): string => `== ${title} ${'='.repeat(Math.max(3, 26 - title.length))}`;
+const sections: { title: string; rows: Row[] }[] = [
+  { title: 'CODE', rows: [
+    ['Repository', 'repo'], ['Visibility', 'visibility'], ['Build', 'build'], ['Built at', 'builtAt'], ['Branch', 'branch'],
+    ['Commit', 'commit'], ['Committed', 'commitDate'], ['Pull request', 'pr'], ['Workflow run', 'run'], ['Tools', 'tools'],
+    ['Data refreshed', 'data'],
+  ] },
+  { title: 'SITE', rows: [
+    ['Address', 'siteUrl'], ['This page', 'path'], ['Pages', 'pages'], ['Facet tree', 'tree'], ['Reusable parts', 'reusable'],
+    ['Deployed', 'deployed'], ['Biggest types', 'types'], ['Page language', 'pageLang'], ['Ready langs', 'readyLangs'],
+    ['Vraki mode', 'vraki'], ['Settings key', 'storeKey'], ['Saved settings', 'saved'], ['Offline worker', 'sw'],
+    ['Saved copies', 'caches'], ['App mode', 'display'],
+  ] },
+  { title: 'RUNTIME', rows: [
+    ['Browser', 'browser'], ['Platform', 'platform'], ['CPU threads', 'cpu'], ['Device memory', 'deviceMemory'],
+    ['JS heap', 'heap'], ['Storage', 'storage'], ['Cookies', 'cookies'], ['Local storage', 'local'], ['Session storage', 'session'],
+    ['Screen', 'screen'], ['Viewport', 'viewport'], ['Pixel ratio', 'dpr'], ['Colour scheme', 'scheme'], ['Motion', 'motion'],
+    ['Input', 'input'], ['GPU', 'gpu'], ['WebGPU', 'webgpu'], ['Battery', 'battery'], ['Time zone', 'tz'],
+    ['Languages', 'langs'], ['Local time', 'clock'], ['Uptime', 'uptime'], ['Frame rate', 'fps'], ['User agent', 'ua'],
+  ] },
+  { title: 'NETWORK', rows: [
+    ['Status', 'online'], ['Connection', 'connection'], ['Downlink', 'downlink'], ['Round trip', 'rtt'], ['Data saver', 'saveData'],
+    ['Protocol', 'protocol'], ['Served from', 'servedFrom'], ['Server', 'server'], ['CDN node', 'cdn'], ['Cache', 'cdnCache'],
+    ['Ping', 'ping'], ['Secure context', 'secure'], ['Isolated', 'isolated'],
+  ] },
+  { title: 'PERFORMANCE', rows: [
+    ['DNS', 'dns'], ['Connect', 'connect'], ['TLS', 'tls'], ['First byte', 'ttfb'], ['Download', 'download'],
+    ['DOM ready', 'domReady'], ['Load', 'load'], ['First paint', 'fcp'], ['Largest paint', 'lcp'], ['Layout shift', 'cls'],
+    ['Page transfer', 'transfer'], ['Resources', 'resources'], ['DOM nodes', 'nodes'],
+  ] },
+];
+---
+<Base title="Stats for nerds" description="Build, device, network and translation details for this site, typed out like an old computer terminal." noindex bodyClass="page-terminal">
+  <h1 class="sr-only">Stats for nerds</h1>
+  <noscript><p class="debug-noscript">Stats for nerds needs JavaScript: the browser fills in every value.</p></noscript>
+
+  <TerminalScreen label="Stats for nerds" title="stats-for-nerds" wait class="debug-terminal">
+    <div class="term-hi">DEOVANDSKI DIAGNOSTICS</div>
+    <div class="term-dim">Memory test <span data-v="memtest">...</span> OK · <span data-v="now">...</span></div>
+    <div class="term-dim">Click or press any key to skip the typing.</div>
+    {sections.map((s) => (
+      <>
+        <div class="term-gap"></div>
+        <div class="term-h">{heading(s.title)}</div>
+        {s.rows.map(([label, key]) => (
+          <div class="term-row" data-row={key}><span class="term-k">{label}</span><span class="term-v" data-v={key}>...</span></div>
+        ))}
+      </>
+    ))}
+    <div class="term-gap"></div>
+    <div class="term-h">{heading('LANGUAGES')}</div>
+    <div class="term-dim" data-v="i18nSummary">...</div>
+    <div data-langs-list hidden></div>
+    <div class="term-gap"></div>
+    <div class="term-hi">READY. 🩵🎤</div>
+  </TerminalScreen>
+  <!-- Words src/scripts/debug.ts writes into the terminal (kept in the page; the terminal itself isn't translated). -->
+  <div class="debug-words" hidden translate="no" data-llms-skip>
+    <span data-k="na">n/a</span><span data-k="local">local build</span><span data-k="public">public</span><span data-k="private">private (hidden)</span>
+    <span data-k="online">online</span><span data-k="offline">offline</span><span data-k="yes">yes</span><span data-k="no">no</span>
+    <span data-k="none">none</span><span data-k="network">network</span><span data-k="worker">offline worker (saved copy)</span>
+    <span data-k="memcache">browser cache</span><span data-k="charging">charging</span><span data-k="unplugged">on battery</span>
+    <span data-k="standalone">installed app</span><span data-k="tab">browser tab</span><span data-k="noStats">stats.json not found (run npm run build)</span>
+    <span data-k="controlled">active, controlling this page</span><span data-k="notControlled">not controlling this page yet</span>
+    <span data-k="noWorker">not supported</span><span data-k="reduce">reduced</span><span data-k="full">full</span>
+    <span data-k="indexed">ready</span><span data-k="current">← this page</span>
+    <span data-k="vrakiOn">on (English letters in the Vraki script)</span><span data-k="vrakiOff">off</span><span data-k="vrakiNa">off (it only works on the English pages)</span>
+  </div>
+</Base>
+
+<style is:global>
+  /* The whole page turns black (the starfield too); the header and footer are already dark, so they stay readable. */
+  html:has(body.page-terminal) { background: #000; }
+  body.page-terminal { background: #000; }
+  body.page-terminal .starfield { display: none; }
+  body.page-terminal .debug-terminal { margin: 0.5rem 0 2rem; --term-size: 15px; --term-size-phone: 12.5px; }
+  /* The terminal is always left to right; keep Arabic pages' right alignment (global.css) out of it. */
+  body.page-terminal .debug-terminal { text-align: left; }
+  body.page-terminal .debug-noscript { color: #39ff14; font-family: ui-monospace, Consolas, monospace; }
+</style>
+
+<script>
+  import '../scripts/debug.ts';
+</script>

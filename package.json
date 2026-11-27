@@ -9,7 +9,7 @@
     "travel:codes": "node scripts/country-codes.mjs && node scripts/subdivision-codes.mjs",
     "prebuild": "node scripts/convert-heic.mjs",
     "photos:fix-heic": "node scripts/convert-heic.mjs",
-    "postbuild": "node scripts/llms.mjs && node scripts/i18n.mjs build",
+    "postbuild": "node scripts/llms.mjs && node scripts/i18n.mjs build && node scripts/stats.mjs",
     "i18n": "node scripts/i18n.mjs",
     "takeout": "node scripts/takeout.mjs"
   },

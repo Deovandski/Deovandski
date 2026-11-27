@@ -28,6 +28,7 @@ and a project without translations just shows the English.
 | [PhotoQuiz.astro](PhotoQuiz.astro) | Guess where a photo was taken: rounds of photos (10 by default) with multiple-choice answers, a score card, and a helper slot under it who gives one freebie per game (narrows the answers to two), chats now and then, and shares fun facts after some answers. Every word is in the page, so it gets translated. | Traveler tab (Where in the World Was Deo?, #290) |
 | [PixelHammock.astro](PixelHammock.astro) | The chibi pixel character from StageDancer, chilling in a hammock between two palm trees, swaying; opens its eyes while it talks (`data-awake`). Drawn in code, outfit colours as props. | Traveler tab (the game's helper) |
 | [InstallApp.astro](InstallApp.astro) | An "Install app" button for an installable site (PWA): shown only when the browser can install it right now, otherwise a short line on how (open in Chrome on Android, Share → Add to Home Screen on iPhone), and "You're using the installed app" inside the app. | Settings menu (#292) |
+| [TerminalScreen.astro](TerminalScreen.astro) | An old-school computer terminal (green on black, amber headings, scan lines, blinking cursor) that types its text out one character at a time, fast. Click or any key shows it all; reduced motion shows it all at once. Copied unchanged from Deovandski-repo-template (template#19). | Stats for nerds (`/debug/`, #306) |
 | [ProjectCards.astro](ProjectCards.astro) | A grid of cards, each with a screenshot (or a plain panel), a title with an optional date line, a short explainer and link buttons; the screenshot opens in the photo viewer. | Developer tab (Wizard Deo Solutions, the games, #294) |
 | [ArcadeButton.astro](ArcadeButton.astro) | A big, chunky, old-school push button with one emoji on its cap and a click sound; it sinks when pressed, and as a toggle it stays down and lit while on. | Concert tab (Saturday Night Fever: music, pause, lights) |
 | [YouTube.astro](YouTube.astro) | A privacy-friendly YouTube embed: nothing loads from YouTube until play is pressed, then it plays from youtube-nocookie.com; pauses itself when hidden. 16:9 videos and 9:16 Shorts. | Aviation tab, Cycling tab ("Ridin' with Peeta") |
@@ -1073,6 +1074,36 @@ Home Screen; elsewhere, which browsers can. Inside the installed app it says so.
 | `text` | | Replace any of its words: `install`, `installed`, `done`, `android`, `ios`, `other`. |
 
 Theme with `--install-accent`, `--install-ink` and `--install-muted`.
+
+## TerminalScreen
+
+Copied unchanged from Deovandski-repo-template (template#19); change it there first and copy it back.
+
+```astro
+<TerminalScreen title="sysinfo" label="Build details">
+  <div class="term-h">== CODE ==</div>
+  <div class="term-row"><span class="term-k">Commit</span><span class="term-v">abc1234</span></div>
+  <div class="term-gap"></div>
+  <div class="term-hi">READY.</div>
+</TerminalScreen>
+```
+
+Each direct child is one line, shown in order as its text is typed. To fill in values first, pass `wait` and fire
+`terminal:start` on the element when ready (it fires `terminal:done` at the end). `terminal:start` again types it again.
+
+| Prop | Default | |
+|---|---|---|
+| `label` | `"Terminal"` | What screen readers call it. |
+| `title` | none | Text in a title bar with three dots; no bar without it. |
+| `duration` | `1800` | About how long the whole text takes, in ms. Long texts type more characters per frame. |
+| `wait` | `false` | Wait for `terminal:start` instead of starting by itself. |
+| `class` | none | Extra class. |
+
+Line classes: `.term-h` (amber heading), `.term-row` with `.term-k` and `.term-v` (key and value columns), `.term-dim`,
+`.term-hi`, `.term-amber`, `.term-warn`, `.term-gap` (empty line), `.term-bar` and `.term-pre` (keep spaces). It is
+always left to right and `translate="no"` (on an Arabic page, also give it `text-align: left`, as `/debug/` does). Theme
+with `--term-bg`, `--term-ink`, `--term-dim`, `--term-amber`, `--term-warn`, `--term-font`, `--term-size`,
+`--term-size-phone`, `--term-key` and `--term-key-phone`.
 
 ## ProjectCards
 
