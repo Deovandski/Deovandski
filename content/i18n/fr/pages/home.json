@@ -1,4 +1,8 @@
 {
+ "00706b5e9ede": {
+  "en": "Neon",
+  "t": "Néon"
+ },
  "008c2f9fdcbb": {
   "en": "Enlarge: I wanna play",
   "t": "Agrandir: Je veux jouer"
@@ -58,6 +62,10 @@
  "01222ad325e7": {
   "en": "Enlarge: Bass on the pontoon",
   "t": "Agrandir: Un black-bass sur le ponton"
+ },
+ "01394f52fac1": {
+  "en": "85mm",
+  "t": "85mm"
  },
  "0144c52019a9": {
   "en": "76 h",
@@ -183,6 +191,10 @@
   "en": "Nani?! So lewd! (⊙_⊙;)",
   "t": "Nani ?! Trop coquin ! (⊙_⊙;)"
  },
+ "03d4b0566642": {
+  "en": "Roll",
+  "t": "Pellicule"
+ },
  "03dc9c3a151f": {
   "en": "AC/DC's Back in Black",
   "t": "AC/DC's Back in Black"
@@ -307,6 +319,10 @@
   "en": "{value} · {date}",
   "t": "{value} · {date}"
  },
+ "068d94407a68": {
+  "en": "Too bright",
+  "t": "Trop claire"
+ },
  "068fc996c32e": {
   "en": "Quiet side street",
   "t": "Rue calme"
@@ -326,6 +342,10 @@
  "06ee9ade85e4": {
   "en": "Hellblade: Senua's Sacrifice",
   "t": "Hellblade: Senua's Sacrifice"
+ },
+ "070927600afb": {
+  "en": "Aim up",
+  "t": "Vers le haut"
  },
  "070c241ff4e1": {
   "en": "450 h",
@@ -439,6 +459,10 @@
   "en": "Enlarge: Painting or drawing, 01/10/2013",
   "t": "Agrandir: Peinture ou dessin, 10/01/2013"
  },
+ "09adb21c00db": {
+  "en": "Aperture +",
+  "t": "Ouverture +"
+ },
  "09bb7822f7d1": {
   "en": "FML! Forgot setup autopay",
   "t": "FML ! J’ai oublié de mettre en place le prélèvement automatique"
@@ -518,6 +542,10 @@
  "0bb362d3d1e7": {
   "en": "Perfect! You might know my travels better than I do.",
   "t": "Parfait ! Tu connais peut-être mes voyages mieux que moi."
+ },
+ "0bd923f64e46": {
+  "en": "Retro",
+  "t": "Rétro"
  },
  "0bdcc8f4a8b0": {
   "en": " HM ",
@@ -1035,6 +1063,10 @@
   "en": "Snowed in",
   "t": "Bloqué par la neige"
  },
+ "1941dd0c969f": {
+  "en": "Fluorescent",
+  "t": "Fluorescent"
+ },
  "1945ca5513cf": {
   "en": " TE ",
   "t": "TE"
@@ -1095,6 +1127,10 @@
   "en": "Destroy All Humans series",
   "t": "Série Destroy All Humans"
  },
+ "1a2ef8b39291": {
+  "en": "50mm",
+  "t": "50mm"
+ },
  "1a30f309ad8a": {
   "en": "The Scallywags of the Rusty Tankard",
   "t": "Les Fripouilles du Rusty Tankard"
@@ -1138,6 +1174,10 @@
  "1ba5fe038d58": {
   "en": "<strong>Ren Riley</strong>, <em>Wavy Thoughts</em> (2024), “I get tattoos to remind me that my body exists”: an AuDHD writer on tattoos as a way to get to know a body they had long felt disconnected from, and on the needle as a grounding practice. <a href=\"https://buttondown.com/RenRiley/archive/i-get-tattoos-to-remind-me-that-my/\">Article</a>",
   "t": "<strong>Ren Riley</strong>, <em>Wavy Thoughts</em> (2024), “I get tattoos to remind me that my body exists” : une personne AuDHD parle des tatouages comme d’une façon de faire connaissance avec un corps dont elle se sentait déconnectée depuis longtemps, et de l’aiguille comme pratique d’ancrage. <a href=\"https://buttondown.com/RenRiley/archive/i-get-tattoos-to-remind-me-that-my/\">Article</a>"
+ },
+ "1bcb6325e25c": {
+  "en": "Aim at Deo again",
+  "t": "Revenir sur Deo"
  },
  "1bccc30e6635": {
   "en": "Enlarge: Huehuehue",
@@ -1298,6 +1338,14 @@
  "2042e5e67d14": {
   "en": "551 mi* <span data-astro-cid-o4ptolev=\"\">(887 km)</span>",
   "t": "551 mi* <span data-astro-cid-o4ptolev=\"\">(887 km)</span>"
+ },
+ "204d15148f96": {
+  "en": " Lens ",
+  "t": "Objectif"
+ },
+ "20545ec97959": {
+  "en": "Nothing on this roll yet. Take a photo first.",
+  "t": "Rien sur cette pellicule pour l’instant. Prends d’abord une photo."
  },
  "205557c2e666": {
   "en": "DJ_Dave",
@@ -1727,6 +1775,10 @@
   "en": "Whack the Miku (top left, key 1)",
   "t": "Taper la Miku (en haut à gauche, touche 1)"
  },
+ "291fe235da67": {
+  "en": "Aim left",
+  "t": "Vers la gauche"
+ },
  "292006d299a0": {
   "en": " Steam + Xbox   ",
   "t": "Steam + Xbox"
@@ -1838,6 +1890,10 @@
  "2c7c10171212": {
   "en": "This site: every facet, fix and idea, from backlog to merged.",
   "t": "Ce site : chaque facette, correctif et idée, du backlog au merge."
+ },
+ "2c8cf6ad590d": {
+  "en": "Save photo {n} as a PNG",
+  "t": "Enregistrer la photo {n} en PNG"
  },
  "2ca7120f8aaf": {
   "en": " HL ",
@@ -2231,6 +2287,10 @@
   "en": " free  · 10 s ",
   "t": "gratuit · 10 s"
  },
+ "34c8e78190b7": {
+  "en": "Shrug",
+  "t": "Haussement d’épaules"
+ },
  "34cb8ac649a8": {
   "en": "{x} against {y}, one dot per day",
   "t": "{x} contre {y}, un point par jour"
@@ -2262,6 +2322,10 @@
  "35e1b32f082e": {
   "en": " <svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\" data-astro-cid-ibmdu3wz=\"\"><path d=\"M4 4l8 8M12 4l-8 8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" data-astro-cid-ibmdu3wz=\"\" /></svg>\nExit\n",
   "t": "<svg width=\"16\" height=\"16\" viewBox=\"0 0 16 16\" aria-hidden=\"true\" data-astro-cid-ibmdu3wz=\"\"><path d=\"M4 4l8 8M12 4l-8 8\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" data-astro-cid-ibmdu3wz=\"\" /></svg> Quitter"
+ },
+ "35edf7fa0f84": {
+  "en": "Photo {n}: {pose}, {scene}",
+  "t": "Photo {n} : {pose}, {scene}"
  },
  "35f155c72666": {
   "en": "Crash cymbal (key W)",
@@ -2307,6 +2371,10 @@
   "en": "Brazil",
   "t": "Brésil"
  },
+ "3751fa8d293c": {
+  "en": "Roll full. Slide the film door latch to download it and load a fresh roll.",
+  "t": "Pellicule pleine. Fais glisser le loquet du dos pour la télécharger et en charger une neuve."
+ },
  "375f856a96a7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder TV show 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rang 33: </span> Série provisoire 33"
@@ -2326,6 +2394,10 @@
  "378b38c44e73": {
   "en": "Enlarge: I wonder what dinner will be",
   "t": "Agrandir: Je me demande ce qu’il y aura au dîner"
+ },
+ "37caa170262d": {
+  "en": "Aim down",
+  "t": "Vers le bas"
  },
  "37e005ab8200": {
   "en": "Enlarge: Painting or drawing, 02/19/2013",
@@ -2487,6 +2559,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 5: </span> Mushoku Tensei: Isekai Ittara Honki Dasu (Mushoku Tensei: Jobless Reincarnation) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rang 5: </span> Mushoku Tensei: Isekai Ittara Honki Dasu (Mushoku Tensei: Jobless Reincarnation)"
  },
+ "3a48cdf5fb99": {
+  "en": "Neon city",
+  "t": "Ville néon"
+ },
  "3a7303445404": {
   "en": "Enlarge: Winter fit check",
   "t": "Agrandir: Check du look d’hiver"
@@ -2531,6 +2607,10 @@
   "en": "Headlights in the fog",
   "t": "Phares dans le brouillard"
  },
+ "3b2f5b0cf572": {
+  "en": "Vivid",
+  "t": "Éclatant"
+ },
  "3b391d8da76c": {
   "en": " Vraki West March D&amp;D ",
   "t": "Vraki West March D&amp;D"
@@ -2571,6 +2651,10 @@
   "en": "The kind of anime that makes you go \"Oh! Didn't expect that!\", with a unique creative vision for portraying the struggles and feelings of adolescence. Unique!",
   "t": "Le genre d’anime qui te fait dire « Oh ! Je ne m’y attendais pas ! », avec une vision créative unique pour dépeindre les difficultés et les sentiments de l’adolescence. Unique !"
  },
+ "3c410c8aa810": {
+  "en": "Shutter −",
+  "t": "Obturateur −"
+ },
  "3c8ce3ab75a0": {
   "en": "Enlarge: Smol",
   "t": "Agrandir: Tout petit"
@@ -2598,6 +2682,10 @@
  "3d31f3684c4a": {
   "en": " FT ",
   "t": "FT"
+ },
+ "3d4f06fa7493": {
+  "en": "Roll Safe",
+  "t": "Roll Safe"
  },
  "3d77a2755b6f": {
   "en": "How I track my own life",
@@ -2863,6 +2951,10 @@
   "en": "57% of my hours",
   "t": "57% de mes heures"
  },
+ "44961bce9ce8": {
+  "en": "Cloudy",
+  "t": "Nuageux"
+ },
  "44c57abd888a": {
   "en": "Reset",
   "t": "Réinitialiser"
@@ -2902,6 +2994,10 @@
  "45bcf7cfcf4a": {
   "en": "The juxtaposition between what you think it's about and what actually happens reminds me of Happy Tree Friends. The world lore and its rules are fascinating!",
   "t": "Le contraste entre ce que tu crois que c’est et ce qui se passe vraiment me rappelle Happy Tree Friends. Le lore du monde et ses règles sont fascinants !"
+ },
+ "45d598500951": {
+  "en": "35mm",
+  "t": "35mm"
  },
  "45d7b9f03f0a": {
   "en": "Body fat (yearly average)",
@@ -3315,9 +3411,17 @@
   "en": "<strong>Michel de Montaigne</strong>, “That to Study Philosophy Is to Learn to Die” (1580): to premeditate death is to premeditate freedom. <a href=\"https://publicdomainreview.org/collection/that-to-study-philosophy-is-to-learn-to-die-1580\">Text</a>",
   "t": "<strong>Michel de Montaigne</strong>, « Que philosopher c’est apprendre à mourir » (1580) : la préméditation de la mort est préméditation de la liberté. <a href=\"https://publicdomainreview.org/collection/that-to-study-philosophy-is-to-learn-to-die-1580\">Texte</a>"
  },
+ "4f11acac7df1": {
+  "en": "Photo {n} of {roll} is on the roll.",
+  "t": "La photo {n} sur {roll} est sur la pellicule."
+ },
  "4f2081c60ca6": {
   "en": "I watched this in the same time frame as Yosuga no Sora. Interesting world rules, and definitely the author knew what he liked... It made me curious about being physically intimate with a commanding, forward girl... Results are in! It's fun, given I'm usually the more dominant type.",
   "t": "Je l’ai regardé à peu près en même temps que Yosuga no Sora. Des règles du monde intéressantes, et l’auteur savait clairement ce qu’il aimait... Ça m’a rendu curieux d’une intimité physique avec une fille autoritaire et entreprenante... Les résultats sont là ! C’est fun, vu que je suis d’habitude plutôt du genre dominant."
+ },
+ "4f325d995b6d": {
+  "en": "ISO",
+  "t": "ISO"
  },
  "4f39f493473f": {
   "en": "Sleepy",
@@ -3447,6 +3551,10 @@
   "en": "\nI can keep a beat, though, which is why I want to get into drumming one day! Why not now? Because of priorities, and\n          there's only so much I can cook at one time... So it's planned out on my backlog! I want to play\n<i data-astro-cid-j7pv25f6=\"\">World's End Dancehall</i>, <i data-astro-cid-j7pv25f6=\"\">Two-Faced Lovers</i> and <i data-astro-cid-j7pv25f6=\"\">Sweet Devil</i> on drums!\n",
   "t": "Par contre, je sais tenir un rythme, et c’est pour ça que je veux me mettre à la batterie un jour ! Pourquoi pas maintenant ? À cause des priorités, et on ne peut pas faire mijoter tant de choses à la fois... Alors c’est prévu dans mon backlog ! Je veux jouer <i data-astro-cid-j7pv25f6=\"\">World's End Dancehall</i>, <i data-astro-cid-j7pv25f6=\"\">Two-Faced Lovers</i> et <i data-astro-cid-j7pv25f6=\"\">Sweet Devil</i> à la batterie !"
  },
+ "5185eb58733a": {
+  "en": "Jojo pose",
+  "t": "Pose de JoJo"
+ },
  "519f14c3f38a": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#30: </span>Best of the Worst: Wheel of the Worst #22",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#30: </span>Best of the Worst: Wheel of the Worst #22"
@@ -3478,6 +3586,10 @@
  "521cb68c2c31": {
   "en": "Ceará",
   "t": "Ceará"
+ },
+ "52271abebfa5": {
+  "en": "Replace roll",
+  "t": "Changer de pellicule"
  },
  "52709c0fe403": {
   "en": "{name}, one square per day in {year}",
@@ -3911,6 +4023,10 @@
   "en": "Pixel pets: turn your phone sideways",
   "t": "Animaux en pixels : tourne ton téléphone à l’horizontale"
  },
+ "5aaa215a50a7": {
+  "en": "Daylight",
+  "t": "Lumière du jour"
+ },
  "5abf683efa95": {
   "en": "Cities: Skylines",
   "t": "Cities: Skylines"
@@ -3942,6 +4058,10 @@
  "5b0af452c330": {
   "en": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Aquamarine",
   "t": "<span class=\"iso-farm__ball\" style=\"--c:#39c5bb\" aria-hidden=\"true\" data-astro-cid-zqpjb6bi=\"\"></span>Aquamarine"
+ },
+ "5b23bd71b38c": {
+  "en": "Studio",
+  "t": "Studio"
  },
  "5b290995d5b7": {
   "en": "Heart rate variability",
@@ -4094,6 +4214,10 @@
  "5e9f48f66af0": {
   "en": "Bite! Flick up hard to set the hook!",
   "t": "Touche ! Ferre d’un coup sec vers le haut !"
+ },
+ "5ed9dc65de5c": {
+  "en": "Concert fog",
+  "t": "Fumée de concert"
  },
  "5ef1da7aa7f2": {
   "en": "Quite the stretch",
@@ -4371,6 +4495,10 @@
   "en": "English",
   "t": "English"
  },
+ "64dd60fe1a04": {
+  "en": "Background",
+  "t": "Décor"
+ },
  "64f1cdcb0b2e": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-jytvyid3=\"\">🧠</span> Post intellectual video ",
   "t": "<span aria-hidden=\"true\" data-astro-cid-jytvyid3=\"\">🧠</span> Poster une vidéo intello"
@@ -4438,6 +4566,10 @@
  "666c786e8bca": {
   "en": "São Paulo",
   "t": "São Paulo"
+ },
+ "669cff7ab58e": {
+  "en": "Film door",
+  "t": "Dos de l’appareil"
  },
  "66a55c486fc4": {
   "en": "14 photos",
@@ -4507,6 +4639,10 @@
   "en": "Fourth bday",
   "t": "Quatrième anniversaire"
  },
+ "682299e7f4f5": {
+  "en": "Too dark",
+  "t": "Trop sombre"
+ },
  "6828326e26cb": {
   "en": "It's rare for me to watch something, get hungry, go find the ingredients and immediately try to recreate a dish from the show. That beef stew was divine!",
   "t": "C’est rare que je regarde quelque chose, que j’aie faim, que j’aille chercher les ingrédients et que j’essaie aussitôt de recréer un plat de la série. Ce ragoût de bœuf était divin !"
@@ -4555,6 +4691,10 @@
   "en": "BLACKTAIL",
   "t": "BLACKTAIL"
  },
+ "6916a3d02150": {
+  "en": "B&amp;W",
+  "t": "N&amp;B"
+ },
  "691a77cd21a3": {
   "en": "vs",
   "t": "contre"
@@ -4566,6 +4706,10 @@
  "693037f17162": {
   "en": "54 h",
   "t": "54 h"
+ },
+ "6933fd716ed4": {
+  "en": "White balance",
+  "t": "Balance des blancs"
  },
  "694a71c2b848": {
   "en": "<strong>John Wooden</strong>, Pyramid of Success: poise and confidence sit near the top, built on every block beneath; competitive greatness is the peak. <a href=\"https://coachwooden.com/pyramid-of-success\">Pyramid</a>",
@@ -4634,6 +4778,10 @@
  "6abde3b42ab3": {
   "en": "d10",
   "t": "d10"
+ },
+ "6af968585018": {
+  "en": "Fisheye",
+  "t": "Fisheye"
  },
  "6b023553fe51": {
   "en": "I don’t let it happen. I make it happen.",
@@ -4791,6 +4939,10 @@
   "en": "Misaki is hands down my favorite character in the entire series! And this is my favorite series in the \"A Certain...\" world.",
   "t": "Misaki est sans conteste mon personnage préféré de toute la saga ! Et c’est ma série préférée de l’univers « A Certain... »."
  },
+ "6eef6648406c": {
+  "en": "None",
+  "t": "Aucun"
+ },
  "6f1c05b8c7b8": {
   "en": "Trained by the Pope's own hand",
   "t": "Formés de la main même du pape"
@@ -4798,6 +4950,10 @@
  "6f3759f0e3d8": {
   "en": "Holyday City: Reloaded",
   "t": "Holyday City: Reloaded"
+ },
+ "6f683304f3df": {
+  "en": "Success Kid",
+  "t": "Success Kid"
  },
  "6ff33102b1c6": {
   "en": "Wishlist",
@@ -4822,6 +4978,10 @@
  "7038a855f81b": {
   "en": "Soda Dungeon",
   "t": "Soda Dungeon"
+ },
+ "70419d74cf61": {
+  "en": "Shutter +",
+  "t": "Obturateur +"
  },
  "7052c90bfbaf": {
   "en": "Balls worth {balls} pearl vs {shit} shit.",
@@ -4859,6 +5019,10 @@
   "en": "And yet he is no mere architect of distance. <em>Lonely arches</em> sets a fast-food sign against an empty sky with all the solitude of an Edward Hopper canvas and none of the overtime. <em>Footprint and a sprout</em>, meanwhile, offers the entire cycle of life, death and the beach in a single frame.",
   "t": "Et pourtant, il n’est pas un simple architecte de la distance. <em>Arches solitaires</em> dresse une enseigne de fast-food contre un ciel vide avec toute la solitude d’une toile d’Edward Hopper, les heures sup en moins. <em>Empreinte et une pousse</em>, quant à elle, offre le cycle entier de la vie, de la mort et de la plage en un seul cadre."
  },
+ "7116fe95954e": {
+  "en": "Shutter",
+  "t": "Obturateur"
+ },
  "714e6666b35e": {
   "en": "Gimme that",
   "t": "Donne-moi ça"
@@ -4866,6 +5030,10 @@
  "71504d80b45a": {
   "en": "Export the Scripture to PDF ✠",
   "t": "Exporter l’Écriture en PDF ✠"
+ },
+ "7156a95e4a00": {
+  "en": "{n} left",
+  "t": "Encore {n}"
  },
  "715bf27b9eb6": {
   "en": "Throw at the dino",
@@ -5043,6 +5211,10 @@
   "en": "Alice Cooper",
   "t": "Alice Cooper"
  },
+ "75c67faed5d6": {
+  "en": "Packing {n} photos…",
+  "t": "Emballage de {n} photos…"
+ },
  "75d2045ec280": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#39: </span>Best of the Worst: Carnivore, HauntedWeen, and Black Roses",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#39: </span>Best of the Worst: Carnivore, HauntedWeen, and Black Roses"
@@ -5086,6 +5258,10 @@
  "768685ca582a": {
   "en": "United States",
   "t": "États-Unis"
+ },
+ "7686b060e67d": {
+  "en": "Aperture −",
+  "t": "Ouverture −"
  },
  "7696bf362567": {
   "en": "As a citizen of the world, I’ve experienced many cultures, and I built my own moral compass from three facts: I’m mortal, I’m curious, and I had a lot of pent-up lust. I’m usually an open book, but this topic involves experiences shared between me and other women, so all I’ll say publicly is what’s in my Vol 4 afterword. That said, I do have some batshit insane stories to tell you in person, over a drink or by a cozy fire.",
@@ -5803,6 +5979,10 @@
   "en": "Can we fry those up",
   "t": "On peut les faire frire"
  },
+ "87d9656ab0ba": {
+  "en": "Downloaded {n} photos as a zip. Fresh roll loaded.",
+  "t": "{n} photos téléchargées dans un zip. Pellicule neuve chargée."
+ },
  "87de5501fb6d": {
   "en": "Pick at least one metric above.",
   "t": "Choisis au moins une mesure ci-dessus."
@@ -6179,6 +6359,10 @@
   "en": "Yellow snow HUEHUEHUE edition",
   "t": "Neige jaune, édition HUEHUEHUE"
  },
+ "911fbb653350": {
+  "en": "Beach",
+  "t": "Plage"
+ },
  "9141b1b48942": {
   "en": "Step 6: The Farofa",
   "t": "Étape 6 : La farofa"
@@ -6367,6 +6551,10 @@
   "en": "Row {row}, column {col} on",
   "t": "Ligne {row}, colonne {col} allumée"
  },
+ "956ce2248d60": {
+  "en": "Slide the latch all the way to open the film door.",
+  "t": "Fais glisser le loquet jusqu’au bout pour ouvrir le dos de l’appareil."
+ },
  "956ec36375d4": {
   "en": "Best {n} m",
   "t": "Meilleur {n} m"
@@ -6451,6 +6639,10 @@
   "en": "Filters",
   "t": "Filtres"
  },
+ "96e70fd91c70": {
+  "en": "Chicago lakefront",
+  "t": "Bord du lac à Chicago"
+ },
  "96f997bcecb3": {
   "en": "Years",
   "t": "Années"
@@ -6462,6 +6654,10 @@
  "972a61c6393a": {
   "en": "{name} is content.",
   "t": "{name} est aux anges."
+ },
+ "97389d1a0ff7": {
+  "en": "Shade",
+  "t": "Ombre"
  },
  "974c2c9d8398": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 24: </span> Akira ",
@@ -6538,6 +6734,10 @@
  "98df8dd8ca2b": {
   "en": "Enlarge: Painting or drawing, Circa Q2 2013",
   "t": "Agrandir: Peinture ou dessin, Vers le T2 2013"
+ },
+ "98f71fe476d2": {
+  "en": "Distracted Boyfriend",
+  "t": "Distracted Boyfriend"
  },
  "994eabdea741": {
   "en": "Anno 2070",
@@ -6771,6 +6971,10 @@
   "en": "Succulent Chinese meal",
   "t": "Un succulent repas chinois"
  },
+ "9f5da1d189a4": {
+  "en": " BG ",
+  "t": "Décor"
+ },
  "9f8030cb22e8": {
   "en": "The algorithm has left you on read.",
   "t": "L’algo t’a laissé en vu."
@@ -6806,6 +7010,10 @@
  "9ff31bb53dfc": {
   "en": " IE ",
   "t": "IE"
+ },
+ "9ff544bcb42e": {
+  "en": "Viewfinder: Deo, pose “{pose}”, background “{scene}”. {lens}, ISO {iso}, {shutter} second, f/{f}.",
+  "t": "Viseur : Deo, pose « {pose} », décor « {scene} ». {lens}, ISO {iso}, {shutter} seconde, f/{f}."
  },
  "a0096607a26f": {
   "en": "Guild Quest",
@@ -7231,6 +7439,10 @@
   "en": "Mass Effect Legendary Edition",
   "t": "Mass Effect Legendary Edition"
  },
+ "a96e67a93f99": {
+  "en": "Aim right",
+  "t": "Vers la droite"
+ },
  "a97904722187": {
   "en": " City, colony &amp; strategy ",
   "t": "Villes, colonies &amp; stratégie"
@@ -7286,6 +7498,10 @@
  "aad754dbe1a8": {
   "en": "in view",
   "t": "affichées"
+ },
+ "aae1263383b9": {
+  "en": "Aperture",
+  "t": "Ouverture"
  },
  "aaf4de45da01": {
   "en": "This is a Christian fireplace! (╯°□°)╯",
@@ -7407,6 +7623,10 @@
   "en": "8 photos",
   "t": "8 photos"
  },
+ "adf5e8bc16c6": {
+  "en": "16mm",
+  "t": "16mm"
+ },
  "adf81815edcc": {
   "en": "Painting/Drawing",
   "t": "Peinture/Dessin"
@@ -7422,6 +7642,10 @@
  "ae2caea4bb1f": {
   "en": "KC",
   "t": "KC"
+ },
+ "ae3679dd7632": {
+  "en": "Snowy woods",
+  "t": "Forêt enneigée"
  },
  "ae4d8a00b6ce": {
   "en": "▶️ +{views} views",
@@ -7514,6 +7738,10 @@
  "b09a83f9fa1d": {
   "en": "Banished",
   "t": "Banished"
+ },
+ "b0a30ad05b44": {
+  "en": "ISO +",
+  "t": "ISO +"
  },
  "b0c9559fb4d2": {
   "en": "An active, touch-first pixel-art fishing game set in the world of #HusbandOutWorld: fight every fish with taps, slides, flicks and two-finger moves. The prototype already plays in your browser.",
@@ -7923,6 +8151,10 @@
   "en": "Jigging into the night",
   "t": "Du jigging jusqu’à la nuit"
  },
+ "bae15ef895e9": {
+  "en": "Fog",
+  "t": "Brouillard"
+ },
  "bb0bc553b8e8": {
   "en": "Whack-a-Miku: turn your phone sideways",
   "t": "Whack-a-Miku : tourne ton téléphone à l’horizontale"
@@ -8026,6 +8258,10 @@
  "be7869041e41": {
   "en": "MyAnimeList",
   "t": "MyAnimeList"
+ },
+ "be9f739195cf": {
+  "en": "Aim the camera",
+  "t": "Orienter l’appareil"
  },
  "bea461b9d726": {
   "en": "Observe, first, the fog. In <em>Headlights in the fog</em>, two pale suns approach through a grey so total it ceases to be weather and becomes metaphysics. The motif returns, transfigured, in <em>Godrays at the concert</em>, where shafts of stage light cleave the smoke like the fingers of some benevolent and possibly ticketed deity, and again in <em>Ballet through the haze</em>, where the dancers do not so much dance as condense.",
@@ -8187,6 +8423,10 @@
   "en": " D · Seasons ",
   "t": "D · Saisons"
  },
+ "c1947f39235d": {
+  "en": "Camera settings",
+  "t": "Réglages de l’appareil"
+ },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimées</span>"
@@ -8299,6 +8539,10 @@
   "en": "Roll d{sides} (last roll {result})",
   "t": "Lancer d{sides} (dernier jet {result})"
  },
+ "c5746cee7805": {
+  "en": "Tungsten",
+  "t": "Tungstène"
+ },
  "c579d488d93d": {
   "en": "Pope Deo in green and gold papal robes and mitre, holding a golden staff, seated on a throne of swords before a churrasco grill full of skewers",
   "t": "Le pape Deo en habits pontificaux vert et or et mitre, tenant une crosse dorée, assis sur un trône d’épées devant un gril de churrasco rempli de broches"
@@ -8330,6 +8574,10 @@
  "c6129321a1a0": {
   "en": "clearly related",
   "t": "lien net"
+ },
+ "c614ba7c453c": {
+  "en": "Auto",
+  "t": "Auto"
  },
  "c63ae6dd4fc9": {
   "en": "M",
@@ -8699,6 +8947,10 @@
   "en": "Enlarge: Sleeping beauty",
   "t": "Agrandir: La Belle au bois dormant"
  },
+ "cf5cbd898afc": {
+  "en": "Back to Photographer",
+  "t": "Retour à Photographe"
+ },
  "cf7bd460f4f0": {
   "en": "Cult of the Lamb",
   "t": "Cult of the Lamb"
@@ -8739,6 +8991,10 @@
   "en": "Enlarge: Gimme that",
   "t": "Agrandir: Donne-moi ça"
  },
+ "d0412b278dfb": {
+  "en": "Dab",
+  "t": "Dab"
+ },
  "d05793556c53": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 36: </span> Placeholder movie 36 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rang 36: </span> Film provisoire 36"
@@ -8770,6 +9026,10 @@
  "d0c12b6b5196": {
   "en": "REM sleep",
   "t": "Sommeil paradoxal"
+ },
+ "d10ea06bc3fc": {
+  "en": "Hue throne room",
+  "t": "Salle du trône de Hue"
  },
  "d1230224faff": {
   "en": "Campaign #2",
@@ -8854,6 +9114,10 @@
  "d29b1a0ebf5e": {
   "en": "Lukewarm",
   "t": "Tiède"
+ },
+ "d2b790620af3": {
+  "en": "T-pose",
+  "t": "Pose en T"
  },
  "d2eaf2aa1512": {
   "en": "China",
@@ -8971,6 +9235,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 35: </span> Placeholder TV show 35 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rang 35: </span> Série provisoire 35"
  },
+ "d4aea162d4bc": {
+  "en": "Photo shoot: turn your phone sideways",
+  "t": "Séance photo : tourne ton téléphone à l’horizontale"
+ },
  "d4bf1e54e3e7": {
   "en": "So fancy",
   "t": "Trop classe"
@@ -9034,6 +9302,10 @@
  "d6e513cf59dd": {
   "en": "Then, as I wrote in my <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-3-afterword-2026\">Vol. 3 afterword</a>, someone became the catalyst for a quantum leap. Hypervigilance, mental abuse, misery, a pile of unresolved crap, and a major crack in my masking overloaded my OS until it hit a kernel panic: my nervous system was frying from the inside out. But this time, I didn’t even think of the same “solution” as in 2016. I had collected enough experience and self-understanding to see it: I’m not just ADHD, or anxious, or GAD, as I wrote in my <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-1-afterword-2022\">Vol. 1 afterword</a>. It had fucking finally clicked! I’m full-blown AuDHD, and I was in the middle of my true unmasking, after my soul had been drained of all empathy, love, and care, to the point that I questioned who I even was. I took the opportunity life handed me and turned it into massive growth, knowledge, and a healthier way of living, both mentally and physically.",
   "t": "Puis, comme je l’ai écrit dans ma <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-3-afterword-2026\">postface du Vol. 3</a>, quelqu’un est devenu le catalyseur d’un bond quantique. L’hypervigilance, la maltraitance psychologique, la misère, un tas de merdes non résolues et une grosse fissure dans mon masking ont surchargé mon système d’exploitation jusqu’au kernel panic : mon système nerveux grillait de l’intérieur. Mais cette fois, je n’ai même pas pensé à la même « solution » qu’en 2016. J’avais accumulé assez d’expérience et de compréhension de moi-même pour le voir : je ne suis pas juste TDAH, ou anxieux, ou TAG, comme je l’avais écrit dans ma <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-1-afterword-2022\">postface du Vol. 1</a>. Putain, ça a enfin fait tilt ! Je suis AuDHD à fond, et j’étais en plein dans mon vrai démasquage, après que mon âme eut été vidée de toute empathie, de tout amour et de toute bienveillance, au point de me demander qui j’étais. J’ai saisi l’occasion que la vie m’offrait et l’ai transformée en une croissance énorme, en connaissances et en une façon de vivre plus saine, mentalement comme physiquement."
+ },
+ "d6fbd8d27ba3": {
+  "en": "A photo shoot through a camera: chibi pixel Deo in his yellow king's robes holds the pose you pick, in front of the background you pick.",
+  "t": "Une séance photo à travers l’appareil : Deo chibi en pixels, dans sa robe jaune de roi, prend la pose que tu choisis devant le décor que tu choisis."
  },
  "d6fe8312f54c": {
   "en": "\nAbout <strong data-astro-cid-3ewsvev2=\"\">2,332 hours</strong> of Best of the Worst from my YouTube watch history.\n",
@@ -9107,6 +9379,10 @@
   "en": "ENDLESS Space - Definitive Edition",
   "t": "ENDLESS Space - Definitive Edition"
  },
+ "d7decf1aa22b": {
+  "en": " Filter ",
+  "t": "Filtre"
+ },
  "d7f186ff8a7c": {
   "en": "leaking away: use it!",
   "t": "ça s’échappe : utilise-le !"
@@ -9162,6 +9438,10 @@
  "d8eceaee1e05": {
   "en": "13 h",
   "t": "13 h"
+ },
+ "d92a04e3cad3": {
+  "en": " Pose ",
+  "t": "Pose"
  },
  "d941a4517364": {
   "en": "Lunar Flight",
@@ -9238,6 +9518,10 @@
  "da6e7e2a79dc": {
   "en": "744 h",
   "t": "744 h"
+ },
+ "da748b109aa7": {
+  "en": "Take the photo",
+  "t": "Prendre la photo"
  },
  "da7af1ccc734": {
   "en": "Enlarge: Painting or drawing, 02/01/2013",
@@ -9387,6 +9671,10 @@
   "en": "Saturday Night Fever, King of Hues edition.",
   "t": "La Fièvre du samedi soir, édition King of Hues."
  },
+ "de4c6b815e8a": {
+  "en": " WB ",
+  "t": "BdB"
+ },
  "de587bf1e284": {
   "en": "23 games",
   "t": "23 jeux"
@@ -9435,6 +9723,10 @@
   "en": "SS",
   "t": "SS"
  },
+ "dfb1f452343e": {
+  "en": "Film door latch: slide it all the way to replace the roll",
+  "t": "Loquet du dos de l’appareil : fais-le glisser jusqu’au bout pour changer de pellicule"
+ },
  "dfc22bef9169": {
   "en": "Dragon Cliff 龙崖",
   "t": "Dragon Cliff 龙崖"
@@ -9466,6 +9758,10 @@
  "e066dc148a3a": {
   "en": " MD ",
   "t": "MD"
+ },
+ "e080ab24beaa": {
+  "en": "Hide the Pain Harold",
+  "t": "Hide the Pain Harold"
  },
  "e089fa94b971": {
   "en": "Enlarge: Fresh fish with a view in Langkawi",
@@ -9510,6 +9806,10 @@
  "e1734ca32c2f": {
   "en": "20 tabs? Aiight.",
   "t": "20 onglets ? Ça marche."
+ },
+ "e181aa4b4b28": {
+  "en": "Point the camera at me, tell me how to pose, and take the shot.",
+  "t": "Pointe l’appareil sur moi, dis-moi quelle pose prendre et déclenche."
  },
  "e1914e257b6d": {
   "en": "Tattoo on my right forearm",
@@ -9658,6 +9958,10 @@
  "e5b320643aa7": {
   "en": "Vraki: 10 of 10, I created it",
   "t": "Vraki : 10 sur 10, c’est moi qui l’ai créé"
+ },
+ "e5c841e90d7c": {
+  "en": "200mm",
+  "t": "200mm"
  },
  "e5d32a1cafd1": {
   "en": "Cow-meter",
@@ -9991,6 +10295,10 @@
   "en": "Since we’re on the subject: take care of your mental health. And if you’ve ever thought about ending it all… don’t. I nearly did, back in 2016, during a period that far surpassed what my mind could take at the time. I called a crisis hotline. To the older lady who picked up the phone that night: I will forever be grateful. The “Harry” you see in Vol. 1 is an alternate version of myself: the one who plunged that knife into his chest that night.",
   "t": "Puisqu’on en parle : prends soin de ta santé mentale. Et si tu as déjà pensé à en finir… ne le fais pas. J’ai failli, en 2016, pendant une période qui dépassait de loin ce que mon esprit pouvait supporter à l’époque. J’ai appelé une ligne d’écoute de crise. À la dame âgée qui a décroché ce soir-là : je te serai éternellement reconnaissant. Le « Harry » du Vol. 1 est une version alternative de moi-même : celle qui s’est planté ce couteau dans la poitrine cette nuit-là."
  },
+ "f01cb0581b38": {
+  "en": "ISO −",
+  "t": "ISO −"
+ },
  "f0b025216c14": {
   "en": "Godrays at the concert",
   "t": "Rayons de lumière au concert"
@@ -10054,6 +10362,10 @@
  "f201ce825e65": {
   "en": "40 h",
   "t": "40 h"
+ },
+ "f2103bd34e13": {
+  "en": "The squad",
+  "t": "La bande"
  },
  "f214d3404544": {
   "en": "Wookiefoot",
@@ -10178,6 +10490,10 @@
  "f521ce968b11": {
   "en": "Plays from YouTube when you click",
   "t": "Lecture depuis YouTube au clic"
+ },
+ "f524000dbc64": {
+  "en": "Gigachad",
+  "t": "Gigachad"
  },
  "f54c3e38c29e": {
   "en": "At Cadillac Ranch in Amarillo, Texas, ten Cadillacs stand nose-down in the dirt, and spray-painting them is encouraged.",
@@ -10391,6 +10707,10 @@
   "en": " Mentour Pilot, my favorite aviation channel ",
   "t": "Mentour Pilot, ma chaîne d’aviation préférée"
  },
+ "fa6e5c2dbfe2": {
+  "en": "Photo shoot",
+  "t": "Séance photo"
+ },
  "fa751ae89ae5": {
   "en": " 293 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "293 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimées</span>"
@@ -10450,6 +10770,10 @@
  "fc10303017c5": {
   "en": "Skin temperature",
   "t": "Température de la peau"
+ },
+ "fc269ad100d9": {
+  "en": "FITM 2025 stage",
+  "t": "Scène du FITM 2025"
  },
  "fc3c2b787144": {
   "en": "Lyric Opera of Chicago",

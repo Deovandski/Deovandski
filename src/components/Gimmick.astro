@@ -13,6 +13,7 @@ import LedMatrix from './reusable/LedMatrix.astro';
 import PaperPlane from './reusable/PaperPlane.astro';
 import PlanetLap from './reusable/PlanetLap.astro';
 import PhotoQuiz from './reusable/PhotoQuiz.astro';
+import PhotoShoot from './reusable/PhotoShoot.astro';
 import PixelHammock from './reusable/PixelHammock.astro';
 import { travelQuiz } from '../lib/travelQuiz';
 import EasterEggBanner from './reusable/EasterEggBanner.astro';
@@ -89,6 +90,7 @@ const trip = id === 'where-was-deo' ? await travelQuiz() : null;
 {id === 'kitkot' && <KitKot name="Deovandski Skibinski Junior" handle="deovandski" bio="Author, x++ dev, chasing the algorithm" />}
 {id === 'led-painting' && <LedMatrix label="LED matrix to paint on. Click or drag to light LEDs; arrow keys and Space work too." />}
 {id === 'paper-plane' && <PaperPlane />}
+{id === 'photo-shoot' && <PhotoShoot stamp="deovandski.com" label="A photo shoot through a camera: chibi pixel Deo in his yellow king&apos;s robes holds the pose you pick, in front of the background you pick." />}
 {
   id === 'pixel-pets' && (
     <div class="gimmick__pets">

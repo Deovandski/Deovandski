@@ -19,6 +19,9 @@ Storage. Gallery photos and anything from other websites are never saved. The co
 **Videos.** Embedded YouTube videos load nothing from YouTube until you press play; then they play from
 youtube-nocookie.com.
 
+**Photo shoot.** The camera on the Photographer tab keeps the photos you take only in the open page, until you leave it.
+Saving a photo or the roll (.zip) downloads it to your device. Nothing is stored in the browser or sent anywhere.
+
 **Stats for nerds.** The debug page (Settings › DEBUG, `/debug/`) shows what your browser tells the page about itself:
 browser and device, screen, storage use, connection, page timings. It reads this only to show it to you on that page.
 Nothing is saved and nothing is sent anywhere; the page only asks this website for its build file (`stats.json`) and
