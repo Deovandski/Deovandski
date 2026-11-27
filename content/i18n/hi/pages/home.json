@@ -2371,6 +2371,10 @@
   "en": "Brazil",
   "t": "ब्राज़ील"
  },
+ "3751fa8d293c": {
+  "en": "Roll full. Slide the film door latch to download it and load a fresh roll.",
+  "t": "रील भर गई। रील डाउनलोड करने और नई रील डालने के लिए फ़िल्म के ढक्कन की कुंडी खिसकाओ।"
+ },
  "375f856a96a7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder TV show 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 33: </span> अस्थायी टीवी शो 33"
@@ -4563,6 +4567,10 @@
   "en": "São Paulo",
   "t": "São Paulo"
  },
+ "669cff7ab58e": {
+  "en": "Film door",
+  "t": "फ़िल्म का ढक्कन"
+ },
  "66a55c486fc4": {
   "en": "14 photos",
   "t": "14 तस्वीरें"
@@ -6543,6 +6551,10 @@
   "en": "Row {row}, column {col} on",
   "t": "पंक्ति {row}, कॉलम {col} ऑन"
  },
+ "956ce2248d60": {
+  "en": "Slide the latch all the way to open the film door.",
+  "t": "फ़िल्म का ढक्कन खोलने के लिए कुंडी को आख़िर तक खिसकाओ।"
+ },
  "956ec36375d4": {
   "en": "Best {n} m",
   "t": "सर्वश्रेष्ठ {n} m"
@@ -7890,10 +7902,6 @@
  "b45d00ec07a3": {
   "en": "Bonus day! Every {name} counts double. Go!",
   "t": "बोनस दिन! हर {name} दोगुना गिना। जाओ!"
- },
- "b467f45a1fef": {
-  "en": "Roll full. Slide Replace roll to download it and load a fresh roll.",
-  "t": "रील भर गई। रील डाउनलोड करने और नई रील डालने के लिए “रील बदलो” को खिसकाओ।"
  },
  "b47ebcefe60b": {
   "en": "Action or inaction, it’s all seed. Mistakes and lessons feed the next harvest. You eat what you grow, even when it tastes like shit! <span class=\"newest\">New</span>",
@@ -9714,6 +9722,10 @@
  "df59735e1f2b": {
   "en": "SS",
   "t": "SS"
+ },
+ "dfb1f452343e": {
+  "en": "Film door latch: slide it all the way to replace the roll",
+  "t": "फ़िल्म के ढक्कन की कुंडी: रील बदलने के लिए इसे आख़िर तक खिसकाओ"
  },
  "dfc22bef9169": {
   "en": "Dragon Cliff 龙崖",

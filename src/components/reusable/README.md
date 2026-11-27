@@ -46,7 +46,7 @@ and a project without translations just shows the English.
 | [Breadcrumb.astro](Breadcrumb.astro) | A one-line breadcrumb trail that fits its width: the text shrinks to fit, and below a smallest size (11px) the items are cut with "…" instead (full text on hover). Drawn from `items`, or filled by a script. | The home page tab header (#266) |
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
 | [IceFlasher.astro](IceFlasher.astro) | Ice fishing with a working three-colour flasher (based on the Vexilar FL-18): the spinning-LED dial (red, orange, green), working Range, Mode and Gain knobs (press Gain for the 10 IR steps), the motor's whir and ping ticks (Web Audio), and a first-person view of the hole with your rod and a beer on the ice. Scroll or swipe to jig, flick hard when the rod tip flashes (phones buzz), then reel, keeping the Line gauge (SegmentMeter) in the green. | Fishing tab (#310) |
-| [PhotoShoot.astro](PhotoShoot.astro) + [pixel-deo/sprite.ts](pixel-deo/sprite.ts) | A photo shoot through a camera: chibi pixel Deo holds one of 9 meme poses in front of one of 9 backgrounds. The camera body sets ISO, shutter speed and aperture (an exposure meter; background blur; hand shake), the lens (fisheye to 200mm, aimed with arrows), white balance and a filter. Shots go onto a 24-photo roll: ↓ saves a PNG, the Replace roll switch downloads them all as a .zip. | Photographer tab (#318) |
+| [PhotoShoot.astro](PhotoShoot.astro) + [pixel-deo/sprite.ts](pixel-deo/sprite.ts) | A photo shoot through a camera: chibi pixel Deo holds one of 9 meme poses in front of one of 9 backgrounds. The camera body sets ISO, shutter speed and aperture (an exposure meter; background blur; hand shake), the lens (fisheye to 200mm, aimed with arrows), white balance and a filter. Shots go onto a 24-photo roll: ↓ saves a PNG; sliding the film door latch (a knurled knob, like an old film camera's) all the way downloads them all as a .zip and loads a fresh roll. | Photographer tab (#318) |
 | [SegmentMeter.astro](SegmentMeter.astro) | A column of lit segments like a graphic-equalizer bar: a level lit from the bottom up (fill), or a scale with one lit segment (marker), one colour or one per segment, updated live through `data-value`. Taken from the Multilingual tab's language levels. | Multilingual tab (language levels), ice fishing (the Line gauge, #314) |
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
 | [KitKot.astro](KitKot.astro) | A parody social app idle game on a phone: post for views, likes and followers on a slot-machine schedule (near misses, a hidden hot post type, fatigue, streaks, energy). "Under the hood" names each trick, with sources. | Influencer tab |
@@ -739,9 +739,13 @@ Arrows aim the camera (the middle button aims back at Deo; a new lens starts aim
 clicks (Web Audio). On a short screen (a phone turned sideways) the arrows and shutter move into a column of their own.
 
 Photos are 240 × 160 pixels, saved at 1200 × 800 with the stamp line (`stamp · ISO · shutter · f-stop · lens`) in the
-corner. They go onto the roll under the viewfinder: press one to save it as a PNG. Sliding Replace roll downloads the
-whole roll as `deo-photo-roll-<date>.zip` (a plain .zip written in the page, no library) and loads a fresh one; at 24 the
-shutter waits for a fresh roll. Nothing is saved in the browser or sent anywhere.
+corner. They go onto the roll under the viewfinder: press one to save it as a PNG. Under the camera body sits the film
+door latch, like the one on an old film camera's back: drag its knurled knob all the way along the groove (or use the
+arrow keys and End on it; it's a slider) and the door "opens": a clunk and the rewind motor (Web Audio), the whole roll
+downloads as `deo-photo-roll-<date>.zip` (a plain .zip written in the page, no library), a fresh roll loads and the knob
+springs back. Let go early and it springs back without opening; a tap just shows how. At 24 the shutter waits for a
+fresh roll. On a short screen the latch sits beside the roll, under the viewfinder. Nothing is saved in the browser or
+sent anywhere.
 
 The character comes from `pixel-deo/sprite.ts` (one source, also used by StageDancer); the friends and backgrounds are
 drawn in the component. Keyboard: the viewfinder takes focus, the arrow keys aim and Space or Enter shoots; the tabs move

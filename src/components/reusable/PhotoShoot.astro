@@ -5,7 +5,8 @@
  * him, in front of the background you pick. On the right is the camera body: ISO, shutter speed and aperture (they
  * set the exposure, shown on the meter in the viewfinder), the lens, white balance, a filter, the background, the
  * pose, arrows to aim the camera, and the shutter. Each shot goes into a roll of 24 under the viewfinder; ↓ on a
- * photo saves it as a PNG, and the Replace roll switch downloads the whole roll as a .zip and loads a fresh one.
+ * photo saves it as a PNG. Under the body, the film door latch (a knurled knob, like an old film camera's) slid all the
+ * way downloads the whole roll as a .zip and loads a fresh one.
  *
  * What the settings do:
  *   ISO        brighter and grainier as it goes up.
@@ -84,13 +85,14 @@ const uid = `ps${Math.random().toString(36).slice(2, 8)}`;
 const strings: Record<string, string> = {
   view: 'Viewfinder: Deo, pose “{pose}”, background “{scene}”. {lens}, ISO {iso}, {shutter} second, f/{f}.',
   shot: 'Photo {n} of {roll} is on the roll.',
-  full: 'Roll full. Slide Replace roll to download it and load a fresh roll.',
+  full: 'Roll full. Slide the film door latch to download it and load a fresh roll.',
   empty: 'Nothing on this roll yet. Take a photo first.',
   packing: 'Packing {n} photos…',
   zipped: 'Downloaded {n} photos as a zip. Fresh roll loaded.',
   left: '{n} left',
   save: 'Save photo {n} as a PNG',
   photo: 'Photo {n}: {pose}, {scene}',
+  slide: 'Slide the latch all the way to open the film door.',
   over: 'Too bright',
   under: 'Too dark',
 };
@@ -119,13 +121,10 @@ const strings: Record<string, string> = {
       </div>
       <div class="photo-shoot__rollbar">
         <ol class="photo-shoot__roll" data-roll-list aria-label="Roll"></ol>
-        <button type="button" class="photo-shoot__switch" role="switch" aria-checked="false" data-replace>
-          <span class="photo-shoot__track" aria-hidden="true"><span class="photo-shoot__thumb"></span></span>
-          <span>Replace roll</span>
-        </button>
       </div>
     </div>
 
+    <div class="photo-shoot__right">
     <div class="photo-shoot__body">
       <div class="photo-shoot__brand"><span translate="no">DEO-A350</span><span data-left-body dir="auto"></span></div>
       <div class="photo-shoot__dials">
@@ -183,6 +182,15 @@ const strings: Record<string, string> = {
         <button type="button" class="photo-shoot__shutter" data-shoot aria-label="Take the photo"></button>
       </div>
       <p class="photo-shoot__sr" aria-live="polite" data-status></p>
+    </div>
+    <!-- The film door latch, like an old film camera's: slide the knob all the way to open the back and swap the roll. -->
+    <div class="photo-shoot__door">
+      <span class="photo-shoot__door-name">Film door</span>
+      <div class="photo-shoot__latch" data-latch>
+        <span class="photo-shoot__groove" aria-hidden="true"><span>Replace roll</span> <span>▶</span></span>
+        <span class="photo-shoot__knob" role="slider" tabindex="0" aria-label="Film door latch: slide it all the way to replace the roll" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-knob></span>
+      </div>
+    </div>
     </div>
   </div>
 </div>
@@ -390,44 +398,89 @@ const strings: Record<string, string> = {
     font-size: 12px;
     line-height: 16px;
   }
-  .photo-shoot__switch {
-    display: inline-flex;
+  .photo-shoot__right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    min-width: 0;
+  }
+  /* The film door latch: a brushed-metal plate with a groove and a knurled knob. */
+  .photo-shoot__door {
+    display: flex;
     align-items: center;
-    gap: 0.45rem;
-    min-height: 44px;
-    padding: 0 0.2rem;
-    border: 0;
-    background: none;
-    color: inherit;
-    font: inherit;
-    font-size: 0.85rem;
+    gap: 0.6rem;
+    padding: 0.45rem 0.7rem;
+    border-radius: 12px;
+    background: linear-gradient(#3a3b40, #26272b);
+    border: 2px solid #34353a;
+    box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.08);
+  }
+  .photo-shoot__door-name {
+    font: 700 0.68rem ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #a8a49a;
+    white-space: nowrap;
+  }
+  .photo-shoot__latch {
+    --p: 0;
+    --_k: 52px;
+    position: relative;
+    flex: 1;
+    height: 44px;
+    direction: ltr;
+    touch-action: none;
+    user-select: none;
+  }
+  .photo-shoot__groove {
+    position: absolute;
+    inset: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.3rem;
+    padding: 0 0.6rem 0 calc(var(--_k) + 0.4rem);
+    border-radius: 12px;
+    background: #0b0c0d;
+    box-shadow: inset 0 2px 4px rgb(0 0 0 / 0.8), 0 1px 0 rgb(255 255 255 / 0.06);
+    color: #6f6c66;
+    font-size: 0.72rem;
     font-weight: 700;
     white-space: nowrap;
-    cursor: pointer;
+    overflow: hidden;
   }
-  .photo-shoot__track {
-    position: relative;
-    width: 44px;
-    height: 24px;
-    border-radius: 12px;
-    background: #3a3b40;
-    transition: background 0.2s;
-  }
-  .photo-shoot__thumb {
+  .photo-shoot__knob {
     position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background: #e9e6df;
-    transition: transform 0.2s;
+    top: 2px;
+    left: calc(var(--p) * (100% - var(--_k)));
+    width: var(--_k);
+    height: 40px;
+    border-radius: 8px;
+    background:
+      repeating-linear-gradient(90deg, rgb(0 0 0 / 0.35) 0 2px, transparent 2px 5px),
+      linear-gradient(#e8e6e1, #9c9a95 55%, #d4d2cd);
+    box-shadow: 0 2px 4px rgb(0 0 0 / 0.6), inset 0 1px 0 #fff;
+    cursor: grab;
+    transition: left 0.35s cubic-bezier(0.3, 1.4, 0.6, 1);
   }
-  .photo-shoot__switch[aria-checked='true'] .photo-shoot__track {
-    background: var(--_accent);
+  .photo-shoot__knob:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
   }
-  .photo-shoot__switch[aria-checked='true'] .photo-shoot__thumb {
-    transform: translateX(20px);
+  .photo-shoot__latch.is-dragging .photo-shoot__knob {
+    cursor: grabbing;
+    transition: none;
+  }
+  .photo-shoot__latch.is-open .photo-shoot__groove {
+    color: var(--_accent);
+  }
+  .photo-shoot__latch.is-nudge .photo-shoot__knob {
+    animation: photo-shoot-nudge 0.5s ease-out;
+  }
+  @keyframes photo-shoot-nudge {
+    40% {
+      left: 18px;
+    }
   }
   .photo-shoot__body {
     display: flex;
@@ -643,6 +696,7 @@ const strings: Record<string, string> = {
         grid-template-columns: minmax(0, 1fr) auto;
         grid-template-areas: 'dials foot' 'tabs foot' 'panels foot';
         align-content: start;
+        grid-area: body; /* beside both the viewfinder and the roll row */
       }
       .photo-shoot__dials {
         grid-area: dials;
@@ -661,15 +715,62 @@ const strings: Record<string, string> = {
       .photo-shoot__pad {
         grid-template-columns: repeat(3, 28px);
       }
+      /* The film door moves up beside the roll, under the viewfinder, so the camera body keeps its height. */
+      .photo-shoot__left,
+      .photo-shoot__right {
+        display: contents;
+      }
+      .photo-shoot__wrap {
+        grid-template-columns: minmax(0, 1fr) auto minmax(330px, 380px);
+        grid-template-areas: 'view view body' 'roll door body';
+        row-gap: 0.4rem;
+      }
+      .photo-shoot__view {
+        grid-area: view;
+        justify-self: center;
+      }
+      .photo-shoot__rollbar {
+        grid-area: roll;
+        width: auto;
+        min-width: 0;
+      }
+      .photo-shoot__roll {
+        min-height: 38px;
+        padding: 0;
+      }
+      .photo-shoot__roll :global(button) {
+        width: 57px;
+        height: 38px;
+      }
+      .photo-shoot__door {
+        grid-area: door;
+        padding: 0 0.4rem;
+      }
+      .photo-shoot__door-name {
+        display: none;
+      }
+      .photo-shoot__latch {
+        flex: none;
+        width: 200px;
+        height: 38px;
+      }
+      .photo-shoot__groove {
+        inset: 8px 0;
+      }
+      .photo-shoot__knob {
+        height: 34px;
+      }
     }
   }
   @media (prefers-reduced-motion: reduce) {
     .photo-shoot__flash.is-on {
       animation: none;
     }
-    .photo-shoot__track,
-    .photo-shoot__thumb {
+    .photo-shoot__knob {
       transition: none;
+    }
+    .photo-shoot__latch.is-nudge .photo-shoot__knob {
+      animation: none;
     }
   }
 </style>
@@ -1415,9 +1516,6 @@ const strings: Record<string, string> = {
       say(shots.length >= ROLL ? msg('full') : msg('shot', { n: shots.length, roll: ROLL }), shots.length >= ROLL);
     }
     async function replaceRoll() {
-      const sw = $('[data-replace]');
-      if (sw.getAttribute('aria-checked') === 'true') return;
-      sw.setAttribute('aria-checked', 'true');
       if (!shots.length) say(msg('empty'), true);
       else {
         const n = shots.length;
@@ -1430,8 +1528,114 @@ const strings: Record<string, string> = {
         hud();
         say(msg('zipped', { n }), true);
       }
-      setTimeout(() => sw.setAttribute('aria-checked', 'false'), 900);
     }
+
+    // The film door: the latch's clunk, then the motor rewinding the film.
+    function doorSound() {
+      try {
+        audio ??= new AudioContext();
+        const t = audio.currentTime;
+        const buf = audio.createBuffer(1, audio.sampleRate * 0.06, audio.sampleRate);
+        const ch = buf.getChannelData(0);
+        for (let i = 0; i < ch.length; i++) ch[i] = (Math.random() * 2 - 1) * Math.exp(-i / (ch.length / 5));
+        const clunk = audio.createBufferSource();
+        clunk.buffer = buf;
+        const lp = audio.createBiquadFilter();
+        lp.type = 'lowpass';
+        lp.frequency.value = 700;
+        const g1 = audio.createGain();
+        g1.gain.value = 0.9;
+        clunk.connect(lp).connect(g1).connect(audio.destination);
+        clunk.start(t);
+        const motor = audio.createOscillator();
+        motor.type = 'sawtooth';
+        motor.frequency.setValueAtTime(140, t + 0.08);
+        motor.frequency.linearRampToValueAtTime(520, t + 0.75);
+        const mlp = audio.createBiquadFilter();
+        mlp.type = 'lowpass';
+        mlp.frequency.value = 1400;
+        const g2 = audio.createGain();
+        g2.gain.setValueAtTime(0, t + 0.08);
+        g2.gain.linearRampToValueAtTime(0.12, t + 0.15);
+        g2.gain.setValueAtTime(0.12, t + 0.7);
+        g2.gain.linearRampToValueAtTime(0, t + 0.85);
+        motor.connect(mlp).connect(g2).connect(audio.destination);
+        motor.start(t + 0.08);
+        motor.stop(t + 0.9);
+      } catch {
+        /* no sound, no problem */
+      }
+    }
+    const latch = $('[data-latch]');
+    const knob = $('[data-knob]');
+    let pos = 0;
+    let opening = false;
+    const setPos = (p: number) => {
+      pos = Math.max(0, Math.min(1, p));
+      latch.style.setProperty('--p', String(pos));
+      knob.setAttribute('aria-valuenow', String(Math.round(pos * 100)));
+    };
+    async function open() {
+      opening = true;
+      setPos(1);
+      latch.classList.add('is-open');
+      doorSound();
+      await replaceRoll();
+      setTimeout(() => {
+        latch.classList.remove('is-open');
+        setPos(0); // the spring pulls the latch back
+        opening = false;
+      }, 1000);
+    }
+    const release = () => {
+      latch.classList.remove('is-dragging');
+      if (pos >= 0.92) open();
+      else setPos(0);
+    };
+    const nudge = () => {
+      say(msg('slide'), true);
+      latch.classList.remove('is-nudge');
+      void latch.offsetWidth;
+      latch.classList.add('is-nudge');
+    };
+    let drag: { x: number; p: number; moved: boolean } | null = null;
+    latch.addEventListener('pointerdown', (e) => {
+      if (opening) return;
+      latch.setPointerCapture(e.pointerId);
+      latch.classList.add('is-dragging');
+      drag = { x: e.clientX, p: pos, moved: false };
+    });
+    latch.addEventListener('pointermove', (e) => {
+      if (!drag) return;
+      const range = latch.clientWidth - knob.offsetWidth;
+      if (Math.abs(e.clientX - drag.x) > 4) drag.moved = true;
+      setPos(drag.p + (e.clientX - drag.x) / range);
+    });
+    const up = () => {
+      if (!drag) return;
+      const moved = drag.moved;
+      drag = null;
+      if (!moved) {
+        latch.classList.remove('is-dragging');
+        setPos(0);
+        nudge(); // a tap doesn't open it: show how
+      } else release();
+    };
+    latch.addEventListener('pointerup', up);
+    latch.addEventListener('pointercancel', up);
+    knob.addEventListener('keydown', (e) => {
+      if (opening) return;
+      const k = e.key;
+      if (k === 'ArrowRight' || k === 'ArrowUp') setPos(pos + 0.25);
+      else if (k === 'ArrowLeft' || k === 'ArrowDown' || k === 'Home') setPos(k === 'Home' ? 0 : pos - 0.25);
+      else if (k === 'End' || k === 'Enter' || k === ' ') setPos(1);
+      else return;
+      e.preventDefault();
+      if (pos >= 1) open();
+    });
+    knob.addEventListener('blur', () => {
+      if (!opening && !drag) setPos(0);
+    });
 
     // Controls.
     for (const b of $$<HTMLButtonElement>('[data-step]'))
@@ -1494,7 +1698,6 @@ const strings: Record<string, string> = {
       }
     });
     $('[data-shoot]').addEventListener('click', () => shoot());
-    $('[data-replace]').addEventListener('click', () => replaceRoll());
     draw();
   }
 </script>
