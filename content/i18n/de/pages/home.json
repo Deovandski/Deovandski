@@ -543,10 +543,6 @@
   "en": "Spring bass selfie",
   "t": "Frühlings-Barsch-Selfie"
  },
- "0d6b08d281da": {
-  "en": "Fish on! Reel up (scroll or swipe up), and ease off when it runs.",
-  "t": "Fisch dran! Kurbel ihn hoch (nach oben scrollen oder wischen) und lass locker, wenn er flüchtet."
- },
  "0d97f4d5801b": {
   "en": "Enlarge: Bathing in the Amazon",
   "t": "Vergrößern: Baden im Amazonas"
@@ -5163,6 +5159,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #4: </span>Systematize your brain",
   "t": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Lifehack #4: </span>Systematisiere dein Gehirn"
  },
+ "7f9b43a4c5e5": {
+  "en": "Fish on! Reel up (scroll or swipe up) and keep the Line gauge in the green.",
+  "t": "Fisch dran! Kurbel ihn hoch (nach oben scrollen oder wischen) und halt die Schnur-Anzeige im Grünen."
+ },
  "7fe62dcaf796": {
   "en": "strongly related",
   "t": "starker Zusammenhang"
@@ -6547,6 +6547,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 31: </span> Log Horizon ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Platz 31: </span> Log Horizon"
  },
+ "a3363fa7c796": {
+  "en": "Reel it up and keep the <b data-astro-cid-o3poasna=\"\">Line</b> gauge (top left of the view) in the green. Too low (red at the bottom) and the line goes slack and the fish shakes the hook; too high (red at the top) and the line breaks. Ease off when it runs.",
+  "t": "Kurbel ihn hoch und halt die <b data-astro-cid-o3poasna=\"\">Schnur</b>-Anzeige (oben links im Bild) im Grünen. Zu niedrig (rot unten), und die Schnur wird schlaff und der Fisch schüttelt den Haken ab; zu hoch (rot oben), und die Schnur reißt. Lass locker, wenn er flüchtet."
+ },
  "a36a6718f545": {
   "en": "G",
   "t": "G"
@@ -7710,10 +7714,6 @@
  "c169b50f6151": {
   "en": " D · Seasons ",
   "t": "D · Jahreszeiten"
- },
- "c16fa30192fe": {
-  "en": "Reel it up, and ease off when it runs, or the line breaks.",
-  "t": "Kurbel ihn hoch und lass locker, wenn er flüchtet, sonst reißt die Schnur."
  },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -9930,6 +9930,10 @@
  "fdd6cc467336": {
   "en": "Oxygen Not Included",
   "t": "Oxygen Not Included"
+ },
+ "fddc69f9c54d": {
+  "en": "Line strain",
+  "t": "Schnurspannung"
  },
  "fdee7e9f221d": {
   "en": "Drum kit",

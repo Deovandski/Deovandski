@@ -543,10 +543,6 @@
   "en": "Spring bass selfie",
   "t": "春天的鲈鱼自拍"
  },
- "0d6b08d281da": {
-  "en": "Fish on! Reel up (scroll or swipe up), and ease off when it runs.",
-  "t": "中鱼了！往上收线（向上滚动或向上滑动），它冲的时候就放松。"
- },
  "0d97f4d5801b": {
   "en": "Enlarge: Bathing in the Amazon",
   "t": "放大: 在亚马孙河里洗澡"
@@ -5163,6 +5159,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #4: </span>Systematize your brain",
   "t": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">生活妙招 #4：</span>把大脑系统化"
  },
+ "7f9b43a4c5e5": {
+  "en": "Fish on! Reel up (scroll or swipe up) and keep the Line gauge in the green.",
+  "t": "中鱼了！往上收线（向上滚动或向上滑动），让鱼线表保持在绿色。"
+ },
  "7fe62dcaf796": {
   "en": "strongly related",
   "t": "高度相关"
@@ -6547,6 +6547,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 31: </span> Log Horizon ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 31: </span> Log Horizon (记录的地平线)"
  },
+ "a3363fa7c796": {
+  "en": "Reel it up and keep the <b data-astro-cid-o3poasna=\"\">Line</b> gauge (top left of the view) in the green. Too low (red at the bottom) and the line goes slack and the fish shakes the hook; too high (red at the top) and the line breaks. Ease off when it runs.",
+  "t": "往上收线，让<b data-astro-cid-o3poasna=\"\">鱼线</b>表（画面左上角）保持在绿色。太低（底部红色）线就松了，鱼会脱钩；太高（顶部红色）线会断。鱼冲的时候要放松。"
+ },
  "a36a6718f545": {
   "en": "G",
   "t": "G"
@@ -7710,10 +7714,6 @@
  "c169b50f6151": {
   "en": " D · Seasons ",
   "t": "D · 季节"
- },
- "c16fa30192fe": {
-  "en": "Reel it up, and ease off when it runs, or the line breaks.",
-  "t": "把鱼收上来，它冲的时候要放松，不然线会断。"
  },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
@@ -9930,6 +9930,10 @@
  "fdd6cc467336": {
   "en": "Oxygen Not Included",
   "t": "缺氧"
+ },
+ "fddc69f9c54d": {
+  "en": "Line strain",
+  "t": "鱼线张力"
  },
  "fdee7e9f221d": {
   "en": "Drum kit",
