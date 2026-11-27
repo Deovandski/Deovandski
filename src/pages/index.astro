@@ -36,6 +36,8 @@ import shotWds from '../assets/developer/wizard-deo-solutions.jpg';
 import shotLedMatrix from '../assets/developer/led-matrix-manager.jpg';
 import { Content as DeathSources } from '../../content/death-sources.md';
 import { Content as AviationSources } from '../../content/aviation-sources.md';
+import { Content as FishingStory } from '../../content/fishing/story.md';
+import { Content as FishingMore } from '../../content/fishing/more.md';
 import { Content as TattooSources } from '../../content/tattoo-sources.md';
 import { Content as MentorSources } from '../../content/mentor-sources.md';
 import YouTube from '../components/reusable/YouTube.astro';
@@ -770,7 +772,25 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-fishing" aria-labelledby="tab-fishing" tabindex="0" hidden>
-      <PhotoGrid photos={fishing.photos} intro={fishing.intro} name="fishing" caption="text" empty="Fishing photos are on their way." />
+      <LinksMenu
+        id="fishing-links"
+        toggle="external"
+        items={[
+          {
+            links: [
+              { href: 'https://lakeofthewoodsmn.com/', label: 'Lake of the Woods, Minnesota' },
+              { href: 'https://www.google.com/maps/place/Tanjung+Rhu+Floating+Restaurant+%26+Fishfarm/@6.4602732,99.833168,829m/data=!3m2!1e3!4b1!4m6!3m5!1s0x304c7c9514796afb:0xeb3b22404705dbb0!8m2!3d6.4602732!4d99.833168!16s%2Fg%2F11gf3vkngg', label: 'Tanjung Rhu Floating Restaurant & Fish Farm, Langkawi' },
+              { href: 'https://www.phuket-monster-fishing-park.com/', label: 'Phuket Monster Fishing Park' },
+            ],
+          },
+        ]}
+      />
+      <div class="story">
+        <FishingStory />
+        <YouTube id="JVSZyPdvjwI" title="Fishing, influencer style" short />
+        <FishingMore />
+      </div>
+      <PhotoGrid photos={fishing.photos} name="fishing" caption="text" empty="Fishing photos are on their way." />
     </section>
 
     <section class="panel" role="region" id="panel-dnd" aria-labelledby="tab-dnd" tabindex="0" hidden>
