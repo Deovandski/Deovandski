@@ -1615,10 +1615,6 @@
   "en": " Xbox ",
   "t": "Xbox"
  },
- "28c143b65e3d": {
-  "en": "<b data-astro-cid-o3poasna=\"\">Mode</b>: Low Power for less clutter, or Auto Zoom and Bottom Lock to split the dial, with the bottom 6 ft zoomed on the left.",
-  "t": "<b data-astro-cid-o3poasna=\"\">Chế độ</b>: Công suất thấp để bớt nhiễu, hoặc Tự phóng to và Khóa đáy để chia đôi mặt đồng hồ, bên trái phóng to 6 ft sát đáy."
- },
  "28e75153a2a3": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  4 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  4 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% số giờ của tôi</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% số giờ của tôi</span>"
@@ -3551,6 +3547,10 @@
   "en": "Play again",
   "t": "Chơi lại"
  },
+ "576a18c0d25d": {
+  "en": "Low power + auto zoom",
+  "t": "Công suất thấp + tự phóng to"
+ },
  "57d1b17da5e2": {
   "en": "World map of visited places",
   "t": "Bản đồ thế giới những nơi đã đến"
@@ -4710,6 +4710,10 @@
  "748ed75259c8": {
   "en": "Access is earned through behavior, never granted because someone asked. Time, attention and trust are finite; my attention is not public property. <strong>I will meet you in the middle. I will not live there alone.</strong>",
   "t": "Quyền tiếp cận phải được giành lấy bằng hành vi, không bao giờ được trao chỉ vì ai đó yêu cầu. Thời gian, sự chú ý và niềm tin đều có hạn; sự chú ý của tôi không phải tài sản công cộng. <strong>Tôi sẽ gặp bạn ở giữa. Tôi sẽ không sống ở đó một mình.</strong>"
+ },
+ "749d5106c88c": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Mode</b>: Normal in the middle. Turn it left for Low Power (much less clutter), and further left for Auto Zoom and Bottom Lock in Low Power; turn it right for Auto Zoom and Bottom Lock. Those split the dial, with the bottom 6 ft zoomed on the left.",
+  "t": "<b data-astro-cid-o3poasna=\"\">Chế độ</b>: Thường ở giữa. Xoay sang trái để dùng Công suất thấp (bớt nhiễu hẳn), xoay xa hơn sang trái để có Tự phóng to và Khóa đáy ở công suất thấp; xoay sang phải để có Tự phóng to và Khóa đáy. Các chế độ này chia đôi mặt đồng hồ, bên trái phóng to 6 ft sát đáy."
  },
  "74a8c36c9678": {
   "en": "You fucking loser! The dino survived and flips you off.",
@@ -7950,6 +7954,10 @@
  "c92499e3e7ab": {
   "en": "8 games",
   "t": "8 game"
+ },
+ "c92c63bf4549": {
+  "en": "Low power + bottom lock",
+  "t": "Công suất thấp + khóa đáy"
  },
  "c93e62e0ff43": {
   "en": " Steam + PC  ·  estimated ",

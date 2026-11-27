@@ -1615,10 +1615,6 @@
   "en": " Xbox ",
   "t": "Xbox"
  },
- "28c143b65e3d": {
-  "en": "<b data-astro-cid-o3poasna=\"\">Mode</b>: Low Power for less clutter, or Auto Zoom and Bottom Lock to split the dial, with the bottom 6 ft zoomed on the left.",
-  "t": "<b data-astro-cid-o3poasna=\"\">모드</b>: 잡음을 줄이려면 저전력, 오토 줌과 바닥 고정은 다이얼을 나눠서 왼쪽에 바닥 위 6피트를 확대해 보여 줘."
- },
  "28e75153a2a3": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  4 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">570 시간</strong>  ·  게임 4개  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">내 시간의 2%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">내 시간의 4%</span>"
@@ -3551,6 +3547,10 @@
   "en": "Play again",
   "t": "다시 하기"
  },
+ "576a18c0d25d": {
+  "en": "Low power + auto zoom",
+  "t": "저전력 + 오토 줌"
+ },
  "57d1b17da5e2": {
   "en": "World map of visited places",
   "t": "가 본 곳의 세계 지도"
@@ -4710,6 +4710,10 @@
  "748ed75259c8": {
   "en": "Access is earned through behavior, never granted because someone asked. Time, attention and trust are finite; my attention is not public property. <strong>I will meet you in the middle. I will not live there alone.</strong>",
   "t": "접근권은 행동으로 얻는 거지, 누가 요청했다고 주는 게 절대 아니야. 시간, 관심, 신뢰는 유한해. 내 관심은 공공재가 아니야. <strong>중간에서 만나 줄게. 하지만 거기서 혼자 살진 않아.</strong>"
+ },
+ "749d5106c88c": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Mode</b>: Normal in the middle. Turn it left for Low Power (much less clutter), and further left for Auto Zoom and Bottom Lock in Low Power; turn it right for Auto Zoom and Bottom Lock. Those split the dial, with the bottom 6 ft zoomed on the left.",
+  "t": "<b data-astro-cid-o3poasna=\"\">모드</b>: 가운데가 노멀. 왼쪽으로 돌리면 저전력(잡음이 훨씬 줄어), 더 왼쪽은 저전력 상태의 오토 줌과 바닥 고정. 오른쪽으로 돌리면 오토 줌과 바닥 고정. 줌 모드는 다이얼을 나눠서 왼쪽에 바닥 위 6피트를 확대해 보여 줘."
  },
  "74a8c36c9678": {
   "en": "You fucking loser! The dino survived and flips you off.",
@@ -7950,6 +7954,10 @@
  "c92499e3e7ab": {
   "en": "8 games",
   "t": "게임 8개"
+ },
+ "c92c63bf4549": {
+  "en": "Low power + bottom lock",
+  "t": "저전력 + 바닥 고정"
  },
  "c93e62e0ff43": {
   "en": " Steam + PC  ·  estimated ",

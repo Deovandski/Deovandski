@@ -4,7 +4,8 @@
  * flasher's spinning-LED wheel: 0 (the ice) at 12 o'clock, depth going clockwise, red for strong
  * returns, orange for medium and green for weak. Your jig is the thin mark, the bottom is the wide red
  * band, and fish show up as marks that turn from green (edge of the cone) to red (right under the hole)
- * as they come in. Beside it, the rod over the hole.
+ * as they come in. Beside it, a first-person view: the hole in the ice, your mittens on the rod, and a
+ * beer (an original farmhouse-ale can) on the ice.
  *
  * Play: scroll the mouse wheel (or swipe up and down, or drag) to move the jig. Jig to call a fish in,
  * twitch it or lift it slowly, and when the rod tip flashes (phones also buzz), flick up hard: a big,
@@ -31,8 +32,7 @@
  * Reverse scroll flips the mouse wheel, for natural scrolling. You get 1.3 s to set the hook (BITE_WINDOW).
  *
  * Theming (CSS custom properties): --if-case (the flasher's case, default #23262c), --if-accent
- * (buttons and the tension bar, #39c5bb), --if-sky and --if-water (the rod's scene, #cfe3f2 and
- * #0d2a3f), --if-text (inherit).
+ * (buttons and the tension bar, #39c5bb), --if-text (inherit).
  *
  * Words the script shows (hints, the catches, the knobs' values) are written into a hidden
  * .ice-flasher__strings block, so a translated copy of the page translates them too.
@@ -54,6 +54,8 @@ const strings: Record<string, string> = {
   lp: 'Low power',
   az: 'Auto zoom',
   bl: 'Bottom lock',
+  lpaz: 'Low power + auto zoom',
+  lpbl: 'Low power + bottom lock',
   rangeText: 'x{x}: 0 to {ft} ft',
   gainText: '{n} of 10',
   irText: 'IR {n}',
@@ -111,7 +113,7 @@ const strings: Record<string, string> = {
           <span class="ice-flasher__knob-val" aria-hidden="true"></span>
         </div>
         <div class="ice-flasher__knob-wrap">
-          <div class="ice-flasher__knob" role="slider" tabindex="0" data-knob="mode" aria-label="Mode" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0">
+          <div class="ice-flasher__knob" role="slider" tabindex="0" data-knob="mode" aria-label="Mode" aria-valuemin="0" aria-valuemax="5" aria-valuenow="3">
             <span class="ice-flasher__cap"></span>
           </div>
           <span class="ice-flasher__knob-name">Mode</span>
@@ -148,7 +150,7 @@ const strings: Record<string, string> = {
       <li>When the rod tip flashes (and your phone buzzes), flick up hard: a big, fast scroll up or swipe up, or Space. Too early and it spooks; too late and it spits the jig.</li>
       <li>Reel it up, and ease off when it runs, or the line breaks.</li>
       <li><b>Gain</b> sets how strong the marks show (about 3 to 4 here); too much and the dial fills with clutter. Press it to step through the 10 IR settings when another flasher interferes.</li>
-      <li><b>Mode</b>: Low Power for less clutter, or Auto Zoom and Bottom Lock to split the dial, with the bottom 6 ft zoomed on the left.</li>
+      <li><b>Mode</b>: Normal in the middle. Turn it left for Low Power (much less clutter), and further left for Auto Zoom and Bottom Lock in Low Power; turn it right for Auto Zoom and Bottom Lock. Those split the dial, with the bottom 6 ft zoomed on the left.</li>
     </ul>
   </details>
 </div>
@@ -157,8 +159,6 @@ const strings: Record<string, string> = {
   .ice-flasher {
     --_case: var(--if-case, #23262c);
     --_accent: var(--if-accent, #39c5bb);
-    --_sky: var(--if-sky, #cfe3f2);
-    --_water: var(--if-water, #0d2a3f);
     color: var(--if-text, inherit);
     max-width: 640px;
     container: ice-flasher / inline-size;
@@ -274,7 +274,7 @@ const strings: Record<string, string> = {
     min-width: 110px;
     border-radius: 20px;
     overflow: hidden;
-    background: var(--_water);
+    background: #dbe6ee;
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
   }
   .ice-flasher__rod {
@@ -378,7 +378,7 @@ const strings: Record<string, string> = {
     }
     .ice-flasher__hole {
       flex: none;
-      height: 130px;
+      height: 210px;
     }
   }
   @media (prefers-reduced-motion: reduce) {
@@ -416,7 +416,10 @@ const strings: Record<string, string> = {
     crappie: { weight: 6, min: 9, max: 14, band: [6, 14], power: 0.3, speed: 2, bite: 1.2 },
   };
   const RANGES = [0, 1, 2, 3, 4, 10]; // x multiplier of 20 ft; 0 is Off
-  const MODES = ['normal', 'lp', 'az', 'bl'] as const;
+  // The FL-18's mode knob: Normal in the middle, Low Power to its left (and further left, Auto Zoom and
+  // Bottom Lock in Low Power), Auto Zoom and Bottom Lock to its right.
+  const MODES = ['lpbl', 'lpaz', 'lp', 'normal', 'az', 'bl'] as const;
+  const MODE_SHORT = ['LP·BL', 'LP·AZ', 'LP', 'N', 'AZ', 'BL'];
   const RED = '#ff2b1c';
   const ORANGE = '#ff9a1a';
   const GREEN = '#3dff52';
@@ -478,12 +481,13 @@ const strings: Record<string, string> = {
 
     // ---- State ----
     let range = 0; // index into RANGES
-    let mode = 0;
+    let mode = 3; // Normal
     let gain = 4;
     let ir = 1;
     const irGood = 2 + Math.floor(Math.random() * 9); // 2..10
     let interference = false;
     let interferenceIn = rand(12, 25); // seconds of flasher-on time until a buddy turns his on
+    let interferenceFor = 0; // seconds until he turns it off again
     let interferenceTold = false;
     let jig = 3;
     let fishes: Fish[] = [];
@@ -511,7 +515,8 @@ const strings: Record<string, string> = {
 
     const rangeFt = () => RANGES[range] * 20;
     const on = () => range > 0;
-    const zoomed = () => on() && (MODES[mode] === 'az' || MODES[mode] === 'bl');
+    const zoomed = () => on() && /az|bl/.test(MODES[mode]);
+    const lowPower = () => MODES[mode].startsWith('lp');
 
     function say(key: string, vars: Record<string, string | number> = {}, force = false) {
       const text = msg(key, vars);
@@ -690,7 +695,7 @@ const strings: Record<string, string> = {
     });
 
     // ---- Knobs ----
-    const knobMax = { range: 5, mode: 3, gain: 10 };
+    const knobMax = { range: 5, mode: 5, gain: 10 };
     const knobWheel: Record<string, number> = {};
     function knobText(name: 'range' | 'mode' | 'gain') {
       if (name === 'range') return range ? msg('rangeText', { x: RANGES[range], ft: rangeFt() }) : msg('off');
@@ -699,7 +704,7 @@ const strings: Record<string, string> = {
     }
     function knobShort(name: 'range' | 'mode' | 'gain') {
       if (name === 'range') return range ? `x${RANGES[range]} · ${rangeFt()}` : msg('off');
-      if (name === 'mode') return ['N', 'LP', 'AZ', 'BL'][mode];
+      if (name === 'mode') return MODE_SHORT[mode];
       return `${gain} · ${msg('irText', { n: ir })}`;
     }
     function renderKnobs() {
@@ -825,6 +830,7 @@ const strings: Record<string, string> = {
       jig = clamp(jig + dy, 0, D - 0.3);
       const real = jig - before;
       if (real) moves.push({ t: now, dy: real });
+      rodBob = clamp(rodBob + real * 6, -14, 14);
       if (hooked) reel(-dy);
     }
     function activity(window: number) {
@@ -971,8 +977,21 @@ const strings: Record<string, string> = {
       const lifting = a1.net < -0.4 && a1.net > -3.5;
 
       if (on()) {
-        interferenceIn -= dt;
-        if (interferenceIn <= 0 && !interference) interference = true;
+        // A buddy's flasher comes and goes: on for a minute or so, then off for a while.
+        if (interference) {
+          interferenceFor -= dt;
+          if (interferenceFor <= 0) {
+            interference = false;
+            interferenceIn = rand(45, 120);
+          }
+        } else {
+          interferenceIn -= dt;
+          if (interferenceIn <= 0) {
+            interference = true;
+            interferenceFor = rand(40, 90);
+            interferenceTold = false;
+          }
+        }
       }
       biteFlash = Math.max(0, biteFlash - dt);
 
@@ -1122,7 +1141,7 @@ const strings: Record<string, string> = {
         say('hintOn', { d: num(D) });
         return;
       }
-      if (interference && ir !== irGood && !interferenceTold && now - lastSay > 3) {
+      if (interferenceSeen() > 0.12 && !interferenceTold && now - lastSay > 3) {
         interferenceTold = true;
         say('hintInterference', {}, true);
         return;
@@ -1164,9 +1183,18 @@ const strings: Record<string, string> = {
 
     // Signal strength seen on the dial (before colours): gain, power, how far the sound travelled.
     const seen = (s: number, d: number) => {
-      const lp = MODES[mode] === 'lp' ? 0.6 : 1;
+      const lp = lowPower() ? 0.6 : 1;
       return s * (0.25 + 2 * (gain / 10)) * lp * (1 - d / 160);
     };
+    // How strongly the interference shows (0 to 1): how far IR is from the right step, times the Gain.
+    function interferenceSeen() {
+      if (!interference || !on()) return 0;
+      const off = Math.abs(ir - irGood);
+      if (off === 0) return 0;
+      const byIr = clamp(off / 3, 0.35, 1);
+      const byGain = Math.pow(clamp((gain - 1) / 9, 0, 1), 1.5) * (lowPower() ? 0.4 : 1);
+      return byIr * byGain;
+    }
     let speckles: { a: number; i: number; zoom: boolean }[] = [];
     let speckAt = 0;
     let interPhase = 0;
@@ -1321,8 +1349,9 @@ const strings: Record<string, string> = {
           }
         }
       }
-      // Clutter at high gain (less in Low Power), refreshed fast like the real wheel.
-      const clutter = Math.max(0, gain - 6) / 4 * (MODES[mode] === 'lp' ? 0.4 : 1);
+      // Clutter at high gain: much less in Low Power, less in the zoom modes and on the short ranges.
+      const clutter =
+        (Math.max(0, gain - 6) / 4) * (lowPower() ? 0.3 : 1) * (zoom ? 0.6 : 1) * Math.sqrt(Math.min(1, max / 40));
       speckAt -= dt;
       if (speckAt <= 0) {
         speckAt = reduced ? 0.5 : 0.05;
@@ -1334,114 +1363,204 @@ const strings: Record<string, string> = {
       }
       for (const s of speckles) arcAt(s.a, 0.02, s.i > 0.6 ? ORANGE : GREEN, 0.8 * glow);
       // Interference from a buddy's flasher: dashes that crawl around the dial, until IR fixes it.
-      if (interference) {
+      // Like any weak return they fade as the Gain goes down: full at 10, faint by 4, gone at 1.
+      const inter = interferenceSeen();
+      if (inter > 0) {
         const off = Math.abs(ir - irGood);
-        const amount = off === 0 ? 0 : clamp(off / 3, 0.35, 1);
-        if (amount > 0) {
-          interPhase += dt * (reduced ? 0.4 : 2.2) * (1 + off * 0.1);
-          const n = Math.round(4 + amount * 8);
-          for (let i = 0; i < n; i++) {
-            const a = (interPhase * (1 + (i % 3) * 0.13) + i * 2.399) % (Math.PI * 2);
-            arcAt(a, 0.03, i % 4 === 0 ? ORANGE : GREEN, 0.85 * amount);
-          }
+        interPhase += dt * (reduced ? 0.4 : 2.2) * (1 + off * 0.1);
+        const n = Math.round(3 + inter * 9);
+        for (let i = 0; i < n; i++) {
+          const a = (interPhase * (1 + (i % 3) * 0.13) + i * 2.399) % (Math.PI * 2);
+          arcAt(a, 0.03, i % 4 === 0 && inter > 0.5 ? ORANGE : GREEN, 0.85 * Math.min(1, inter * 1.3));
         }
       }
       dx.restore();
       dx.globalAlpha = 1;
     }
 
-    // ---- Drawing the rod over the hole ----
+    // ---- Drawing the first-person view: the ice from your own eyes ----
+    // Drawn on a 400 × 420 scene, scaled to fit the canvas.
+    const P = (d: string) => new Path2D(d);
+    const TREES = P('M0 98 L0 90 L8 78 L14 90 L22 74 L30 90 L36 82 L44 92 L52 76 L60 92 L70 80 L78 94 L90 84 L100 96 L130 94 L160 97 L230 96 L262 92 L270 80 L278 92 L288 84 L296 94 L330 93 L338 82 L346 93 L356 78 L364 92 L374 84 L382 94 L392 80 L400 90 L400 98 Z');
+    const DRIFTS = P('M20 150 Q90 140 150 152 M250 130 Q320 122 390 134 M10 230 Q60 222 110 232 M300 200 Q350 194 400 204');
+    const SPOTS = P('M4 24 q6 -3 9 2 q2 5 -4 7 q-6 0 -5 -9z M30 22 q8 1 8 7 q-3 5 -9 2 q-3 -5 1 -9z M33 60 q6 0 6 5 q-4 4 -8 1 q-1 -4 2 -6z M3 62 q5 -1 6 4 q-3 4 -6 1z');
+    const HILL = P('M6 58 Q16 46 26 52 Q34 48 40 56 L40 64 L6 64 Z');
+    const MITT1 = P('M322 378 q14 -16 32 -6 q10 8 4 22 q-6 12 -22 10 q-18 -4 -14 -26z');
+    const MITT2 = P('M356 404 q14 -10 28 -2 q10 8 4 20 q-8 10 -22 8 q-14 -6 -10 -26z');
+    let rodBob = 0; // the rod tip's little dip when you jig
+    const ellipse = (x: number, y: number, a: number, b: number, fill: string) => {
+      rx.fillStyle = fill;
+      rx.beginPath();
+      rx.ellipse(x, y, a, b, 0, 0, Math.PI * 2);
+      rx.fill();
+    };
     function drawRod() {
       const W = rodW;
       const H = rodH;
       if (!W || !H) return;
-      rx.clearRect(0, 0, W, H);
-      const iceTop = H * 0.3;
-      const iceBot = H * 0.37;
-      const holeX = W * 0.36;
-      const holeW = Math.max(12, W * 0.12);
-      // Sky, snow, ice, water
-      const sky = rx.createLinearGradient(0, 0, 0, iceTop);
-      sky.addColorStop(0, getVar('--_sky', '#cfe3f2'));
-      sky.addColorStop(1, '#f3f8fc');
+      const dpr = rodCv.width / W;
+      // At least as wide as the canvas. On a tall canvas it grows a little past the sides (a bit more sky on
+      // top); on a short one the top and bottom are cropped, keeping the hole.
+      const k = Math.max(W / 400, (H / 420) * 0.85);
+      const extra = H - 420 * k;
+      rx.setTransform(dpr * k, 0, 0, dpr * k, (dpr * (W - 400 * k)) / 2, dpr * (extra > 0 ? extra : extra * 0.62));
+      // Sky, tree line and a far-off ice house
+      const sky = rx.createLinearGradient(0, 0, 0, 98);
+      sky.addColorStop(0, '#a9c6de');
+      sky.addColorStop(1, '#e9f1f7');
       rx.fillStyle = sky;
-      rx.fillRect(0, 0, W, iceTop);
-      const water = rx.createLinearGradient(0, iceBot, 0, H);
-      water.addColorStop(0, '#1d5a80');
-      water.addColorStop(1, getVar('--_water', '#0d2a3f'));
-      rx.fillStyle = water;
-      rx.fillRect(0, iceBot, W, H - iceBot);
-      rx.fillStyle = '#dbeef8';
-      rx.fillRect(0, iceTop, W, iceBot - iceTop);
-      rx.fillStyle = '#ffffff';
-      rx.fillRect(0, iceTop - 4, W, 5);
-      // The hole
-      rx.fillStyle = '#173f5c';
-      rx.fillRect(holeX - holeW / 2, iceTop - 2, holeW, iceBot - iceTop + 2);
-      // The bottom
-      const bottomY = H - 10;
-      rx.fillStyle = '#3b2f22';
+      rx.fillRect(-100, -2000, 600, 2098);
+      rx.fillStyle = '#3e5448';
+      rx.fill(TREES);
+      rx.fillStyle = '#7c3b2a';
+      rx.fillRect(196, 86, 20, 11);
+      rx.fillStyle = '#5a2a1e';
       rx.beginPath();
-      rx.moveTo(0, bottomY + 2);
-      for (let x = 0; x <= W; x += 12) rx.lineTo(x, bottomY + Math.sin(x * 0.11) * 3);
-      rx.lineTo(W, H);
-      rx.lineTo(0, H);
+      rx.moveTo(194, 87);
+      rx.lineTo(206, 80);
+      rx.lineTo(218, 87);
       rx.fill();
-      // The rod: handle on the right, tip over the hole, bending with the line's tension.
-      const shake = hooked && run > 0 && !reduced ? Math.sin(now * 40) * 2.5 : 0;
-      const bend = hooked ? 0.25 + tension * 0.9 : biteFlash > 0 ? 0.35 : 0;
-      const hx = W * 0.94;
-      const hy = H * 0.24;
-      const tx = holeX + bend * W * 0.04;
-      const ty = H * 0.08 + bend * H * 0.14 + shake;
-      const mx = (hx + tx) / 2;
-      const my = Math.min(hy, ty) - H * 0.04 + bend * H * 0.02;
-      const flashOn = biteFlash > 0 && (reduced || Math.floor(now * 10) % 2 === 0);
-      rx.lineCap = 'round';
-      rx.strokeStyle = flashOn ? '#fff7a8' : '#20262e';
-      rx.lineWidth = 4;
-      rx.beginPath();
-      rx.moveTo(hx, hy);
-      rx.quadraticCurveTo(mx, my, tx, ty);
-      rx.stroke();
-      rx.strokeStyle = '#7a4b2a';
-      rx.lineWidth = 7;
-      rx.beginPath();
-      rx.moveTo(hx, hy);
-      rx.lineTo(hx - W * 0.12, hy - H * 0.01);
-      rx.stroke();
-      rx.fillStyle = '#9aa3ad';
-      rx.beginPath();
-      rx.arc(hx - W * 0.07, hy + 6, 5, 0, Math.PI * 2);
-      rx.fill();
-      // The line down to the jig
-      const jy = iceBot + 4 + (jig / D) * (bottomY - iceBot - 8);
+      // The ice
+      const ice = rx.createLinearGradient(0, 97, 0, 420);
+      ice.addColorStop(0, '#dbe6ee');
+      ice.addColorStop(1, '#f8fbfd');
+      rx.fillStyle = ice;
+      rx.fillRect(-100, 97, 600, 523);
       rx.strokeStyle = 'rgba(255,255,255,0.8)';
-      rx.lineWidth = 1;
+      rx.lineWidth = 2;
+      rx.stroke(DRIFTS);
+      // The hole, with its snow ring and slush
+      ellipse(200, 312, 96, 36, '#ffffff');
+      ellipse(200, 306, 78, 28, '#c3d3df');
+      const water = rx.createRadialGradient(200, 304, 2, 200, 309, 70);
+      water.addColorStop(0, '#1d4a66');
+      water.addColorStop(1, '#081a27');
+      ellipse(200, 309, 66, 21, '#081a27');
+      rx.save();
       rx.beginPath();
-      rx.moveTo(tx, ty);
-      rx.lineTo(holeX, iceTop);
-      rx.lineTo(holeX, jy);
-      rx.stroke();
-      rx.fillStyle = hooked ? '#ff7a3a' : '#ffb347';
-      rx.beginPath();
-      rx.arc(holeX, jy, hooked ? 4 + SPECIES[hooked.kind].power * 3 : 3, 0, Math.PI * 2);
-      rx.fill();
-      // The tip flashes on a bite.
-      if (biteFlash > 0) {
-        rx.save();
-        rx.shadowColor = '#fff36b';
-        rx.shadowBlur = 18;
-        rx.fillStyle = flashOn ? '#fffbe0' : '#ffd23f';
-        rx.beginPath();
-        rx.arc(tx, ty, flashOn ? 8 : 6, 0, Math.PI * 2);
-        rx.fill();
-        rx.restore();
+      rx.ellipse(200, 309, 66, 21, 0, 0, Math.PI * 2);
+      rx.clip();
+      rx.fillStyle = water;
+      rx.fillRect(130, 285, 140, 50);
+      rx.restore();
+      for (const [x, y, r] of [
+        [160, 304, 3],
+        [232, 312, 2.5],
+        [214, 300, 2],
+        [178, 316, 2],
+      ])
+        ellipse(x, y, r, r, 'rgba(232,240,245,0.85)');
+      // Ripples while a fish is on or biting
+      const biting = biteFlash > 0;
+      if (biting || hooked) {
+        const grow = reduced ? 0.5 : (now * 1.5) % 1;
+        rx.strokeStyle = `rgba(255,255,255,${0.6 * (1 - grow)})`;
+        rx.lineWidth = 1.5;
+        for (const m of [1, 2]) {
+          rx.beginPath();
+          rx.ellipse(203, 308, 10 * m + 14 * grow, 3.5 * m + 5 * grow, 0, 0, Math.PI * 2);
+          rx.stroke();
+        }
       }
+      drawCan();
+      // The rod: idle, bent on a bite, bent hard by the line's tension while you fight a fish.
+      rodBob *= 0.85;
+      const t = hooked ? clamp(tension, 0, 1) : 0;
+      let tipX = 204;
+      let tipY = 152 + rodBob;
+      let cx = 300;
+      let cy = 250;
+      if (hooked) {
+        tipX = 209 + 5 * t;
+        tipY = 200 + 62 * t;
+        cx = 308 + 22 * t;
+        cy = 270 + 30 * t;
+      } else if (biting) {
+        tipX = 209;
+        tipY = 200;
+        cx = 308;
+        cy = 270;
+      }
+      if (hooked && run > 0 && !reduced) tipX += Math.sin(now * 40) * 2.5;
+      rx.strokeStyle = 'rgba(255,255,255,0.9)';
+      rx.lineWidth = hooked ? 1.4 : 1;
+      rx.beginPath();
+      rx.moveTo(tipX, tipY);
+      rx.lineTo(201, 306);
+      rx.stroke();
+      const flashOn = biting && (reduced || Math.floor(now * 10) % 2 === 0);
+      rx.strokeStyle = flashOn ? '#fff7a8' : '#1f2a33';
+      rx.lineWidth = hooked ? 4.5 : 4;
+      rx.lineCap = 'round';
+      rx.beginPath();
+      rx.moveTo(340, 384);
+      rx.quadraticCurveTo(cx, cy, tipX, tipY);
+      rx.stroke();
+      if (biting) {
+        const glow = rx.createRadialGradient(tipX, tipY, 0, tipX, tipY, 22);
+        glow.addColorStop(0, flashOn ? 'rgba(255,251,224,1)' : 'rgba(255,230,120,0.9)');
+        glow.addColorStop(0.3, 'rgba(255,243,107,0.8)');
+        glow.addColorStop(1, 'rgba(255,243,107,0)');
+        rx.fillStyle = glow;
+        rx.beginPath();
+        rx.arc(tipX, tipY, 22, 0, Math.PI * 2);
+        rx.fill();
+      } else {
+        ellipse(tipX, tipY, 3, 3, '#d23b2c');
+      }
+      // Cork grip, reel and your mittens
+      rx.strokeStyle = '#b5875a';
+      rx.lineWidth = 15;
+      rx.beginPath();
+      rx.moveTo(392, 438);
+      rx.lineTo(340, 384);
+      rx.stroke();
+      ellipse(350, 414, 15, 15, '#8e979f');
+      ellipse(350, 414, 6, 6, '#5c646b');
+      rx.fillStyle = '#3a3f46';
+      rx.fill(MITT1);
+      rx.fill(MITT2);
     }
-    const cs = getComputedStyle(root);
-    function getVar(name: string, fallback: string) {
-      return cs.getPropertyValue(name).trim() || fallback;
+    // A farmhouse-ale can on the ice (an original design: Speckled Heifer).
+    function drawCan() {
+      rx.save();
+      rx.translate(46, 236);
+      ellipse(22, 86, 30, 7, 'rgba(159,177,191,0.6)');
+      const can = rx.createLinearGradient(0, 0, 44, 0);
+      can.addColorStop(0, '#d9cfb6');
+      can.addColorStop(0.35, '#f6efdd');
+      can.addColorStop(1, '#cfc4a8');
+      rx.fillStyle = can;
+      rx.beginPath();
+      if (rx.roundRect) rx.roundRect(0, 6, 44, 80, 5);
+      else rx.rect(0, 6, 44, 80);
+      rx.fill();
+      ellipse(22, 6, 22, 5, '#c9ccd1');
+      ellipse(22, 6, 15, 3, '#9ea3aa');
+      rx.fillStyle = '#7a2a20';
+      rx.fillRect(0, 10, 44, 9);
+      rx.fillRect(0, 76, 44, 7);
+      rx.fillStyle = '#1b1b1b';
+      rx.fill(SPOTS);
+      rx.fillStyle = '#5f8a3a';
+      rx.fill(HILL);
+      rx.fillStyle = '#a8322a';
+      rx.fillRect(17, 48, 9, 8);
+      rx.fillStyle = '#7a2a20';
+      rx.beginPath();
+      rx.moveTo(15.5, 48.5);
+      rx.lineTo(21.5, 43);
+      rx.lineTo(27.5, 48.5);
+      rx.fill();
+      rx.fillStyle = '#3b2a1c';
+      rx.textAlign = 'center';
+      rx.textBaseline = 'alphabetic';
+      rx.font = '700 6.4px Georgia, serif';
+      rx.fillText('SPECKLED', 22, 37);
+      rx.fillText('HEIFER', 22, 44);
+      rx.font = 'italic 4.6px Georgia, serif';
+      rx.fillText('farmhouse ale', 22, 71);
+      rx.restore();
     }
 
     // ---- Input: wheel, swipe/drag, keys ----

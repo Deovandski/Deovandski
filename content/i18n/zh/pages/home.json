@@ -1615,10 +1615,6 @@
   "en": " Xbox ",
   "t": "Xbox"
  },
- "28c143b65e3d": {
-  "en": "<b data-astro-cid-o3poasna=\"\">Mode</b>: Low Power for less clutter, or Auto Zoom and Bottom Lock to split the dial, with the bottom 6 ft zoomed on the left.",
-  "t": "<b data-astro-cid-o3poasna=\"\">模式</b>：低功率能减少杂波；自动放大和锁定水底会把表盘分成两半，左边放大显示离水底 6 英尺的范围。"
- },
  "28e75153a2a3": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  4 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">570 小时</strong>  ·  4 款游戏  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">占我总时数的 2%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">占我总时数的 4%</span>"
@@ -3551,6 +3547,10 @@
   "en": "Play again",
   "t": "再玩一次"
  },
+ "576a18c0d25d": {
+  "en": "Low power + auto zoom",
+  "t": "低功率＋自动放大"
+ },
  "57d1b17da5e2": {
   "en": "World map of visited places",
   "t": "去过的地方的世界地图"
@@ -4710,6 +4710,10 @@
  "748ed75259c8": {
   "en": "Access is earned through behavior, never granted because someone asked. Time, attention and trust are finite; my attention is not public property. <strong>I will meet you in the middle. I will not live there alone.</strong>",
   "t": "接近我的资格要靠行为赢得，绝不因为有人开口就给。时间、注意力和信任都是有限的；我的注意力不是公共财产。<strong>我会和你各退一步，但我不会一个人待在那儿。</strong>"
+ },
+ "749d5106c88c": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Mode</b>: Normal in the middle. Turn it left for Low Power (much less clutter), and further left for Auto Zoom and Bottom Lock in Low Power; turn it right for Auto Zoom and Bottom Lock. Those split the dial, with the bottom 6 ft zoomed on the left.",
+  "t": "<b data-astro-cid-o3poasna=\"\">模式</b>：中间是普通。往左转是低功率（杂波少很多），再往左是低功率下的自动放大和锁定水底；往右转是自动放大和锁定水底。放大模式会把表盘分成两半，左边放大显示离水底 6 英尺的范围。"
  },
  "74a8c36c9678": {
   "en": "You fucking loser! The dino survived and flips you off.",
@@ -7950,6 +7954,10 @@
  "c92499e3e7ab": {
   "en": "8 games",
   "t": "8 款游戏"
+ },
+ "c92c63bf4549": {
+  "en": "Low power + bottom lock",
+  "t": "低功率＋锁定水底"
  },
  "c93e62e0ff43": {
   "en": " Steam + PC  ·  estimated ",
