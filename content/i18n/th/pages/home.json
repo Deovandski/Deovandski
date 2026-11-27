@@ -299,6 +299,10 @@
   "en": "Click or drag to draw. Right-click erases.",
   "t": "คลิกหรือลากเพื่อวาด คลิกขวาเพื่อลบ"
  },
+ "06e20f5a4426": {
+  "en": "Bottom lock",
+  "t": "ล็อกพื้น"
+ },
  "06ee9ade85e4": {
   "en": "Hellblade: Senua's Sacrifice",
   "t": "Hellblade: Senua's Sacrifice"
@@ -479,6 +483,10 @@
   "en": "Blog",
   "t": "บล็อก"
  },
+ "0ba0ef5404ec": {
+  "en": "Ice fishing",
+  "t": "ตกปลาบนน้ำแข็ง"
+ },
  "0bb27395d153": {
   "en": "231 h",
   "t": "231 ชม."
@@ -535,6 +543,10 @@
   "en": "Spring bass selfie",
   "t": "เซลฟีปลาเบสหน้าใบไม้ผลิ"
  },
+ "0d6b08d281da": {
+  "en": "Fish on! Reel up (scroll or swipe up), and ease off when it runs.",
+  "t": "ติดแล้ว! ม้วนสายขึ้น (เลื่อนหรือปัดขึ้น) และผ่อนเมื่อมันพุ่งหนี"
+ },
  "0d97f4d5801b": {
   "en": "Enlarge: Bathing in the Amazon",
   "t": "ขยาย: อาบน้ำในแอมะซอน"
@@ -563,6 +575,10 @@
   "en": " CS ",
   "t": "CS"
  },
+ "0e0c14386ba6": {
+  "en": "Low power",
+  "t": "กำลังต่ำ"
+ },
  "0e0f5c25719f": {
   "en": "Back to Aviation",
   "t": "กลับไปที่การบิน"
@@ -570,6 +586,10 @@
  "0e238a3f2870": {
   "en": "Reus",
   "t": "Reus"
+ },
+ "0e5ab5718d46": {
+  "en": "⇅ Reverse scroll",
+  "t": "⇅ กลับทิศการเลื่อน"
  },
  "0e6f86c4d72a": {
   "en": "<strong>Francois Naudé &amp; Luzelle Naudé</strong> (2024), “(Tat)who Am I? Tattoos as an Expression of Narrative Identity”: people use tattoos to explore and tell the story of who they are. <a href=\"https://www.psychologytoday.com/us/blog/head-games/202403/5-ways-your-tattoos-reveal-who-you-are\">Summary in <em>Psychology Today</em></a>",
@@ -783,6 +803,10 @@
   "en": "Vatican City",
   "t": "นครรัฐวาติกัน"
  },
+ "13876d38ea11": {
+  "en": "Barely anything shows: turn the Gain up.",
+  "t": "แทบไม่เห็นอะไรเลย: เพิ่มเกนขึ้น"
+ },
  "13a29a85064f": {
   "en": "Plot {plot}: empty. Plant {crop}.",
   "t": "แปลง {plot}: ว่าง ปลูก {crop}"
@@ -802,6 +826,10 @@
  "13e54ce09816": {
   "en": " PV ",
   "t": "PV"
+ },
+ "143fa4c4c81c": {
+  "en": "Walleye",
+  "t": "ปลาวอลอาย"
  },
  "145a01fb9391": {
   "en": "/min",
@@ -1287,6 +1315,10 @@
   "en": "Is this a cozy fire? ٩(◕‿◕｡)۶",
   "t": "นี่คือกองไฟอุ่น ๆ เหรอ? ٩(◕‿◕｡)۶"
  },
+ "218488ac2b05": {
+  "en": "Split screen: the whole hole on the right, the bottom 6 ft zoomed on the left.",
+  "t": "แบ่งจอ: ด้านขวาคือน้ำทั้งหมด ด้านซ้ายขยาย 6 ฟุตเหนือพื้น"
+ },
  "21bcdb7e16a8": {
   "en": "World &amp; fusion",
   "t": "เวิลด์มิวสิกและฟิวชัน"
@@ -1451,6 +1483,10 @@
   "en": "It’s also here for the same reason as the <a href=\"#gym\">Gym</a>. AuDHD people tend to get stuck inside their own homes and fall behind socially: home is safe, quiet and predictable, and the world outside costs energy. The research lines up with that too:",
   "t": "มันอยู่ตรงนี้ด้วยเหตุผลเดียวกับ<a href=\"#gym\">ยิม</a> คน AuDHD มักติดอยู่ในบ้านของตัวเองและตามไม่ทันทางสังคม: บ้านปลอดภัย เงียบ และคาดเดาได้ ส่วนโลกข้างนอกกินพลังงาน งานวิจัยก็สนับสนุนเรื่องนี้:"
  },
+ "262f737babf6": {
+  "en": "Too much: it spooked.",
+  "t": "แรงไป: มันตกใจหนีไปแล้ว"
+ },
  "2641c8ed7f11": {
   "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my dad’s 2014 BIDU songs as the music.",
   "t": "ลาที่ชอบผายลมวิ่ง กระโดด โขกหัว และผายลมผ่านแอมะซอนและทะเลทราย ร่างไว้ในปี 2014 เริ่มทำใน Unity ปี 2016 และทำเสร็จใน Godot ปี 2026 โดยใช้เพลง BIDU ที่พ่อของผมแต่งในปี 2014 เป็นดนตรีประกอบ"
@@ -1579,6 +1615,10 @@
   "en": " Xbox ",
   "t": "Xbox"
  },
+ "28c143b65e3d": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Mode</b>: Low Power for less clutter, or Auto Zoom and Bottom Lock to split the dial, with the bottom 6 ft zoomed on the left.",
+  "t": "<b data-astro-cid-o3poasna=\"\">โหมด</b>: กำลังต่ำเพื่อลดสัญญาณรบกวน หรือซูมอัตโนมัติและล็อกพื้นเพื่อแบ่งหน้าปัด โดยขยาย 6 ฟุตเหนือพื้นไว้ทางซ้าย"
+ },
  "28e75153a2a3": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  4 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">570 ชม.</strong>  ·  4 เกม  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% ของชั่วโมงทั้งหมด</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% ของชั่วโมงทั้งหมด</span>"
@@ -1654,6 +1694,10 @@
  "2a4d5402c166": {
   "en": " Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Spring 2014 · back in 2026</span> ",
   "t": "Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">ฤดูใบไม้ผลิ 2014 · กลับมาในปี 2026</span>"
+ },
+ "2a714ecd8093": {
+  "en": "Nothing bit yet: that rip spooked it.",
+  "t": "มันยังไม่กิน: การกระชากเมื่อกี้ทำให้มันตกใจหนี"
  },
  "2a7dbc5cf815": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 2: </span> Placeholder movie 2 ",
@@ -1831,6 +1875,10 @@
   "en": "One of my favorite isekai, and one of the OGs from before the torrent of copycats trying to milk the market dry.",
   "t": "หนึ่งในอนิเมะต่างโลกที่ผมชอบ และเป็นหนึ่งในรุ่นบุกเบิกก่อนที่ของลอกเลียนแบบจะทะลักเข้ามารีดตลาดจนแห้ง"
  },
+ "2ff5d5a41204": {
+  "en": "A green mark at {d} ft: a fish at the edge of the cone. Jig to call it in.",
+  "t": "ขีดสีเขียวที่ {d} ฟุต: ปลาอยู่ที่ขอบกรวยคลื่น ขยับเหยื่อเพื่อล่อมันเข้ามา"
+ },
  "30008d008dae": {
   "en": "Car rides!",
   "t": "นั่งรถเล่น!"
@@ -1850,6 +1898,14 @@
  "303d884de994": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Placeholder movie 17 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 17: </span> ภาพยนตร์ชั่วคราว 17"
+ },
+ "30472f63d677": {
+  "en": "{fish}, {len} in ({cm} cm)",
+  "t": "{fish} {len} นิ้ว ({cm} ซม.)"
+ },
+ "308079570015": {
+  "en": "Your catches",
+  "t": "ปลาที่คุณจับได้"
  },
  "3098add33361": {
   "en": "\nThat grew into HusbandOutWorld, a light novel series that took me to conventions, where I met a lot of people,\n          from artists to directors and publishers. It feels surreal how much this project pushed me to grow and challenge\n          myself. If you're curious, you can see my evolution through the Light Novel Afterwords.\n",
@@ -1914,6 +1970,10 @@
  "32096c2e0eff": {
   "en": " C ",
   "t": "C"
+ },
+ "3229477a180e": {
+  "en": "Sauger",
+  "t": "ปลาซอเกอร์"
  },
  "3239f318bd88": {
   "en": "Dropkick Murphys",
@@ -2071,6 +2131,10 @@
   "en": "+ 16 more games",
   "t": "+ อีก 16 เกม"
  },
+ "35aab70b60e7": {
+  "en": "It's running! Ease off.",
+  "t": "มันพุ่งหนี! ผ่อนสาย!"
+ },
  "35cf6a830c19": {
   "en": "Expert · 132 BPM",
   "t": "เซียน · 132 BPM"
@@ -2122,6 +2186,10 @@
  "375f856a96a7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder TV show 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 33: </span> รายการทีวีชั่วคราว 33"
+ },
+ "37669714846a": {
+  "en": "x{x}: 0 to {ft} ft",
+  "t": "x{x}: 0 ถึง {ft} ฟุต"
  },
  "377bcd643607": {
   "en": "BM",
@@ -2351,6 +2419,10 @@
   "en": "JT",
   "t": "JT"
  },
+ "3c09c310c6b2": {
+  "en": "Jig {d} ft",
+  "t": "เหยื่อที่ {d} ฟุต"
+ },
  "3c2e78721196": {
   "en": "The kind of anime that makes you go \"Oh! Didn't expect that!\", with a unique creative vision for portraying the struggles and feelings of adolescence. Unique!",
   "t": "อนิเมะแบบที่ทำให้คุณร้องว่า \"โอ้! ไม่คิดว่าจะเป็นแบบนี้!\" พร้อมวิสัยทัศน์สร้างสรรค์ที่ไม่เหมือนใครในการถ่ายทอดความดิ้นรนและความรู้สึกของวัยรุ่น ไม่ซ้ำใคร!"
@@ -2563,6 +2635,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder movie 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 10: </span> ภาพยนตร์ชั่วคราว 10"
  },
+ "417d7a4b988f": {
+  "en": "🔊 Sound on",
+  "t": "🔊 เปิดเสียง"
+ },
  "41e1360a1ebf": {
   "en": "Realm Grinder",
   "t": "Realm Grinder"
@@ -2670,6 +2746,10 @@
  "45d7b9f03f0a": {
   "en": "Body fat (yearly average)",
   "t": "ไขมันในร่างกาย (ค่าเฉลี่ยรายปี)"
+ },
+ "45e118d0563e": {
+  "en": "Normal",
+  "t": "ปกติ"
  },
  "45f08cb571cd": {
   "en": "<strong>Marcus Aurelius</strong>, <em>Meditations</em> 6.24: death brought Alexander the Great and his mule driver to the same state. <a href=\"https://en.wikisource.org/wiki/Marcus_Aurelius_(Haines_1916)/Book_6\">Text</a>",
@@ -2851,6 +2931,10 @@
   "en": "Daylight, especially in the morning, is what sets the body clock. More morning sun goes with an earlier, steadier sleep.",
   "t": "แสงกลางวัน โดยเฉพาะตอนเช้า คือสิ่งที่ตั้งนาฬิกาชีวิต ยิ่งได้แดดเช้ามาก ก็ยิ่งนอนเร็วขึ้นและสม่ำเสมอขึ้น"
  },
+ "4b2ee8531bcf": {
+  "en": "Grab a beer, and experience a flasher fish finder!",
+  "t": "หยิบเบียร์มาสักกระป๋อง แล้วมาลองเครื่องหาปลาแบบแฟลชเชอร์กัน!"
+ },
  "4b41ed494adc": {
   "en": " Steam + Xbox + PlayStation  ·  estimated ",
   "t": "Steam + Xbox + PlayStation  ·  ประมาณการ"
@@ -3007,6 +3091,10 @@
   "en": "Gamer",
   "t": "เกมเมอร์"
  },
+ "4e5e65f062ec": {
+  "en": "Caught: {fish}, {len} in ({cm} cm)!",
+  "t": "จับได้: {fish} {len} นิ้ว ({cm} ซม.)!"
+ },
  "4e735732ab92": {
   "en": "Puppy eyes still work",
   "t": "ตาลูกหมายังได้ผล"
@@ -3034,6 +3122,10 @@
  "4ebc18247e08": {
   "en": "Steam",
   "t": "Steam"
+ },
+ "4ec00394908f": {
+  "en": "How to play",
+  "t": "วิธีเล่น"
  },
  "4ec368ab9572": {
   "en": "<strong>Full commitment is not eternal commitment.</strong> If there’s movement, I work with imperfection. When people prove unworthy of your love, losing faith isn’t failure; it’s clarity. I steward living systems for a better future, and erase dead ones after extracting a mental model to detect this kind of rot early.",
@@ -3443,6 +3535,14 @@
   "en": "Psst! Stuck? Press me once for a freebie.",
   "t": "ชู่ว์! ติดอยู่เหรอ? กดผมหนึ่งครั้งรับตัวช่วยฟรี"
  },
+ "5748b8b683ba": {
+  "en": "Black crappie",
+  "t": "ปลาแครปปี้ดำ"
+ },
+ "57574efdd4f6": {
+  "en": "🔇 Sound off",
+  "t": "🔇 ปิดเสียง"
+ },
  "576347ec826f": {
   "en": "Europe",
   "t": "ยุโรป"
@@ -3495,6 +3595,10 @@
   "en": "Perfect World",
   "t": "Perfect World"
  },
+ "5874a684ac96": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Gain</b> sets how strong the marks show (about 3 to 4 here); too much and the dial fills with clutter. Press it to step through the 10 IR settings when another flasher interferes.",
+  "t": "<b data-astro-cid-o3poasna=\"\">เกน</b>กำหนดว่าขีดจะแสดงแรงแค่ไหน (ที่นี่ประมาณ 3 ถึง 4) ถ้ามากไปหน้าปัดจะเต็มไปด้วยสัญญาณรบกวน กดเพื่อสลับ IR 10 ระดับเมื่อแฟลชเชอร์เครื่องอื่นรบกวน"
+ },
  "58833ac67fd0": {
   "en": "Walkers of the Sacred Steps",
   "t": "ผู้เดินตามขั้นตอนศักดิ์สิทธิ์"
@@ -3510,6 +3614,10 @@
  "58b8da4b72d4": {
   "en": "7% of my hours",
   "t": "7% ของชั่วโมงทั้งหมด"
+ },
+ "58bb403e88cf": {
+  "en": "Northern pike",
+  "t": "ปลาไพค์เหนือ"
  },
  "58f7a8f2ec30": {
   "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n Body fat, yearly average: 2023, 32.9%; 2024, 36.8%; 2025, 38.0%; 2026, 35.4%. ",
@@ -3751,6 +3859,10 @@
   "en": "Camping",
   "t": "แคมป์ปิง"
  },
+ "5e9f48f66af0": {
+  "en": "Bite! Flick up hard to set the hook!",
+  "t": "กินเหยื่อแล้ว! ตวัดขึ้นแรงๆ เพื่อเกี่ยวเบ็ด!"
+ },
  "5ef1da7aa7f2": {
   "en": "Quite the stretch",
   "t": "ยืดเส้นได้สุด"
@@ -3863,6 +3975,10 @@
   "en": "Deovandski's Blog",
   "t": "บล็อกของ Deovandski"
  },
+ "6189fe36c4af": {
+  "en": "Turn the <b data-astro-cid-o3poasna=\"\">Range</b> knob to switch the flasher on. The bottom is at 28 ft here, so x2 (0 to 40 ft) fits it best.",
+  "t": "หมุนปุ่ม<b data-astro-cid-o3poasna=\"\">ระยะ</b>เพื่อเปิดแฟลชเชอร์ ที่นี่พื้นลึก 28 ฟุต x2 (0 ถึง 40 ฟุต) จึงเหมาะที่สุด"
+ },
  "618e3308c83d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 29: </span> Placeholder movie 29 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 29: </span> ภาพยนตร์ชั่วคราว 29"
@@ -3870,6 +3986,14 @@
  "618e487541ea": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman"
+ },
+ "61b142772297": {
+  "en": "Fishing hole: Up and Down move the jig, Space flicks the rod",
+  "t": "หลุมน้ำแข็ง: ปุ่มลูกศรขึ้นลงขยับเหยื่อ Space ตวัดคันเบ็ด"
+ },
+ "61d48f8ebddb": {
+  "en": "Ice fishing: turn your phone sideways",
+  "t": "ตกปลาบนน้ำแข็ง: หมุนมือถือเป็นแนวนอน"
  },
  "61db3a4f5dc3": {
   "en": "Kingdoms and Castles",
@@ -3918,6 +4042,14 @@
  "62dfe60deea3": {
   "en": "The numbers didn't load. Try again later.",
   "t": "โหลดตัวเลขไม่สำเร็จ ลองใหม่ภายหลัง"
+ },
+ "62f84c7b7a34": {
+  "en": "{n} of 10",
+  "t": "{n} จาก 10"
+ },
+ "63286f4f3a05": {
+  "en": "Bottom at {d} ft. Scroll or swipe down to drop your jig: it's the thin mark on the dial.",
+  "t": "พื้นอยู่ที่ {d} ฟุต เลื่อนหรือปัดลงเพื่อหย่อนเหยื่อ: เหยื่อคือขีดบางๆ บนหน้าปัด"
  },
  "633797165688": {
   "en": "Magical Mirai, Osaka (2014)",
@@ -4439,6 +4571,10 @@
   "en": "Enlarge: Crappie selfie",
   "t": "ขยาย: เซลฟีกับปลาแครปปี้"
  },
+ "70d7858359b2": {
+  "en": "Yellow perch",
+  "t": "ปลาเพิร์ชเหลือง"
+ },
  "70e3b3dcbb78": {
   "en": " NM ",
   "t": "NM"
@@ -4739,6 +4875,10 @@
   "en": "226 days",
   "t": "226 วัน"
  },
+ "78c0f941b201": {
+  "en": "Dashes running around the dial? A buddy's flasher is too close: press the Gain knob to step through the interference rejection (IR).",
+  "t": "มีขีดเล็กๆ วิ่งรอบหน้าปัดเหรอ? แฟลชเชอร์ของเพื่อนอยู่ใกล้เกินไป: กดปุ่มเกนเพื่อเปลี่ยนระดับตัดสัญญาณรบกวน (IR)"
+ },
  "78cc6006e09c": {
   "en": "Gym, 6:47am",
   "t": "ยิม 6:47 น."
@@ -4990,6 +5130,10 @@
  "7eb0cee888ab": {
   "en": "Min",
   "t": "นาที"
+ },
+ "7ebd2107485d": {
+  "en": "Turn the Range knob to switch the flasher on.",
+  "t": "หมุนปุ่มระยะเพื่อเปิดแฟลชเชอร์"
  },
  "7ec79775c355": {
   "en": "Every wrong answer is just a trip you still have to take.",
@@ -5483,6 +5627,10 @@
   "en": "Love it. Even the ecchi. Everything has a purpose, and I have nothing to complain about. If I had watched Mushoku Tensei before writing #HusbandOutWorld, I might not have written my story at all, because it's good enough to quench a lot of the thirst I had while consuming one isekai after another.",
   "t": "รักเลย แม้แต่ฉากเอจจิ ทุกอย่างมีจุดประสงค์ และผมไม่มีอะไรจะบ่น ถ้าผมได้ดูเกิดชาตินี้พี่ต้องเทพก่อนเขียน #HusbandOutWorld ผมอาจไม่เขียนเรื่องของตัวเองเลยก็ได้ เพราะมันดีพอจะดับกระหายที่ผมมีตอนดูอนิเมะต่างโลกเรื่องแล้วเรื่องเล่าได้เยอะมาก"
  },
+ "8c89e1c4e11c": {
+  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom. Wheel going the wrong way (natural scrolling)? Press <b data-astro-cid-o3poasna=\"\">Reverse scroll</b>.",
+  "t": "เลื่อนล้อเมาส์ (หรือปัดขึ้นลงบนแฟลชเชอร์หรือคันเบ็ด) เพื่อขยับเหยื่อ เหยื่อคือขีดบางๆ บนหน้าปัด ส่วนแถบสีแดงกว้างคือพื้น ล้อเลื่อนกลับทิศ (การเลื่อนแบบธรรมชาติ)? กด<b data-astro-cid-o3poasna=\"\">กลับทิศการเลื่อน</b>"
+ },
  "8c948d7947e0": {
   "en": "Hot",
   "t": "ร้อน"
@@ -5787,6 +5935,10 @@
   "en": "Garry's Mod",
   "t": "Garry's Mod"
  },
+ "93f579c09a3b": {
+  "en": "When the rod tip flashes (and your phone buzzes), flick up hard: a big, fast scroll up or swipe up, or Space. Too early and it spooks; too late and it spits the jig.",
+  "t": "เมื่อปลายคันเบ็ดกะพริบ (และมือถือสั่น) ให้ตวัดขึ้นแรงๆ: เลื่อนขึ้นเร็วและไกล ปัดขึ้น หรือกด Space เร็วไปมันจะตกใจ ช้าไปมันจะคายเหยื่อ"
+ },
  "93fc6888a695": {
   "en": "The Church's top recommendations are <strong>Sal Lebre</strong> and <strong>Mariza Churrasco D'Chef</strong>, for their consistency and their quality held steady over the years. Seasoned churrasco salt is permitted by the Church, but not every brand, for some add too much, and simplicity is at the core of our faith.",
   "t": "สิ่งที่ศาสนจักรแนะนำสูงสุดคือ <strong>Sal Lebre</strong> และ <strong>Mariza Churrasco D'Chef</strong> เพราะคุณภาพสม่ำเสมอมาหลายปี เกลือชูฮัสกูแบบปรุงรสศาสนจักรอนุญาต แต่ไม่ใช่ทุกยี่ห้อ เพราะบางยี่ห้อใส่มากเกินไป และความเรียบง่ายคือหัวใจแห่งศรัทธาของเรา"
@@ -5906,6 +6058,10 @@
  "96b6cea2d9d5": {
   "en": "God of War",
   "t": "God of War"
+ },
+ "96dd91cdcbe7": {
+  "en": "Gain",
+  "t": "เกน"
  },
  "96dedce974cf": {
   "en": "Enlarge: Failing to learn English",
@@ -6075,6 +6231,10 @@
   "en": "Am I that really interesting?",
   "t": "ผมน่าสนใจขนาดนั้นเลยเหรอ?"
  },
+ "9c2867f3a4f7": {
+  "en": "It shook the hook.",
+  "t": "มันสะบัดหลุดเบ็ด"
+ },
  "9c4a5310f68f": {
   "en": "Princess Fluffy of Guamá: Fluffy in a pink princess dress and a jeweled tiara, sitting in the back seat of a car",
   "t": "เจ้าหญิง Fluffy แห่งกวามา: Fluffy ในชุดเจ้าหญิงสีชมพูและมงกุฎประดับอัญมณี นั่งอยู่เบาะหลังรถ"
@@ -6118,6 +6278,10 @@
  "9d6c79478e4e": {
   "en": "Legendary reflexes!",
   "t": "ปฏิกิริยาในตำนาน!"
+ },
+ "9d89b2d84ac3": {
+  "en": "It's coming in: the mark turns orange, then red.",
+  "t": "มันกำลังมา: ขีดจะเปลี่ยนเป็นสีส้ม แล้วเป็นสีแดง"
  },
  "9d8a4e9da14d": {
   "en": "Slime Rancher",
@@ -6302,6 +6466,10 @@
  "a157d38de121": {
   "en": "Enlarge: Moar sleep",
   "t": "ขยาย: นอนอีกกก"
+ },
+ "a16c5bbe4bf9": {
+  "en": "Range",
+  "t": "ระยะ"
  },
  "a173e725607d": {
   "en": "Asia",
@@ -6519,6 +6687,10 @@
   "en": "5C",
   "t": "5C"
  },
+ "a6d49890ad7c": {
+  "en": "Jig to call fish in. A green mark at the edge of the cone turns orange, then red, as it comes to your jig. Then twitch it, or lift it slowly.",
+  "t": "ขยับเหยื่อเพื่อล่อปลา ขีดสีเขียวที่ขอบกรวยคลื่นจะเปลี่ยนเป็นสีส้ม แล้วเป็นสีแดง เมื่อมันเข้าใกล้เหยื่อ จากนั้นกระตุกเบาๆ หรือค่อยๆ ยกขึ้น"
+ },
  "a6df62f72604": {
   "en": " ← Back to the system ",
   "t": "← กลับไปที่ระบบ"
@@ -6563,9 +6735,17 @@
   "en": "Electronic &amp; synthwave",
   "t": "อิเล็กทรอนิกส์และซินธ์เวฟ"
  },
+ "a790b5f3cecb": {
+  "en": "IR {n}",
+  "t": "IR {n}"
+ },
  "a79aa4ea4d23": {
   "en": "Lust",
   "t": "ราคะ"
+ },
+ "a7b93d2128e8": {
+  "en": "Mode",
+  "t": "โหมด"
  },
  "a7bdce161e86": {
   "en": "Enlarge: Clingy",
@@ -6907,6 +7087,10 @@
   "en": "Guess what I'm gonna do",
   "t": "ทายสิว่าผมจะทำอะไร"
  },
+ "b0439c65e633": {
+  "en": "IR {n} cleared the interference.",
+  "t": "IR {n} ตัดสัญญาณรบกวนออกแล้ว"
+ },
  "b04af783d0ff": {
   "en": " Idle &amp; clickers ",
   "t": "เกม idle และเกมคลิก"
@@ -7031,6 +7215,10 @@
   "en": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">ที่ชอบจาก FITM 2025</span>"
  },
+ "b377868dc116": {
+  "en": "Keep reeling!",
+  "t": "ม้วนต่อไป!"
+ },
  "b38a99fe0694": {
   "en": "one rises as the other falls",
   "t": "ตัวหนึ่งขึ้นเมื่ออีกตัวลง"
@@ -7098,6 +7286,10 @@
  "b588aca7bb99": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (ขอให้โชคดีมีชัยในโลกแฟนตาซี!)"
+ },
+ "b5c2669931ed": {
+  "en": "It's on your jig: small twitches, or lift it slowly.",
+  "t": "มันอยู่ที่เหยื่อแล้ว: กระตุกเบาๆ หรือค่อยๆ ยกขึ้น"
  },
  "b61c12b736ff": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 1: </span> Sword Art Online ",
@@ -7515,6 +7707,10 @@
   "en": " D · Seasons ",
   "t": "D · ฤดูกาล"
  },
+ "c16fa30192fe": {
+  "en": "Reel it up, and ease off when it runs, or the line breaks.",
+  "t": "ม้วนสายขึ้น และผ่อนเมื่อมันพุ่งหนี ไม่งั้นสายจะขาด"
+ },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "247 ชม.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ประมาณการ</span>"
@@ -7831,6 +8027,10 @@
   "en": "21 h",
   "t": "21 ชม."
  },
+ "cb3b8b95ac08": {
+  "en": "Gain (press it for interference rejection)",
+  "t": "เกน (กดเพื่อตัดสัญญาณรบกวน)"
+ },
  "cb617c0ab9ee": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Placeholder TV show 6 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 6: </span> รายการทีวีชั่วคราว 6"
@@ -8003,6 +8203,10 @@
   "en": "Cult of the Lamb",
   "t": "Cult of the Lamb"
  },
+ "cf93b2a95f0d": {
+  "en": "No bottom on this range: turn the Range up.",
+  "t": "ระยะนี้มองไม่เห็นพื้น: เพิ่มระยะขึ้น"
+ },
  "cfcf0d7d152e": {
   "en": "Never wrestle with pigs. You both get dirty, and the pig likes it. <span class=\"newest\">New</span>",
   "t": "อย่าปล้ำกับหมูเด็ดขาด เปื้อนกันทั้งคู่ แต่หมูชอบ <span class=\"newest\">ใหม่</span>"
@@ -8058,6 +8262,10 @@
  "d09bdd281dfa": {
   "en": "Princess Fluffy of Guamá",
   "t": "เจ้าหญิง Fluffy แห่งกวามา"
+ },
+ "d0a6b073b147": {
+  "en": "Snap! The line broke.",
+  "t": "เปรี้ยง! สายขาดแล้ว"
  },
  "d0c12b6b5196": {
   "en": "REM sleep",
@@ -8167,6 +8375,10 @@
   "en": "Read my Vol 4 afterword",
   "t": "อ่านปัจฉิมลิขิตเล่ม 4 ของผม"
  },
+ "d35993abead4": {
+  "en": "Back to Fishing",
+  "t": "กลับไปที่ตกปลา"
+ },
  "d35c60400150": {
   "en": "87 h",
   "t": "87 ชม."
@@ -8202,6 +8414,10 @@
  "d3a2460e932b": {
   "en": "TS",
   "t": "TS"
+ },
+ "d3acd83e402c": {
+  "en": "Lots of clutter: turn the Gain down a little.",
+  "t": "สัญญาณรบกวนเยอะ: ลดเกนลงหน่อย"
  },
  "d3b572e24639": {
   "en": "Huehue, I can feel that thinking face from here.",
@@ -8735,6 +8951,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Shingeki no Kyojin (Attack on Titan) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 4: </span> Shingeki no Kyojin (ผ่าพิภพไททัน)"
  },
+ "e0d4f121e169": {
+  "en": "Too late: it spat the jig.",
+  "t": "ช้าไป: มันคายเหยื่อแล้ว"
+ },
  "e1038f5c447c": {
   "en": "More of my games on the Gamer tab",
   "t": "ดูเกมอื่นของผมได้ที่แท็บเกมเมอร์"
@@ -8827,9 +9047,17 @@
   "en": "Now",
   "t": "ตอนนี้"
  },
+ "e3bd01bce3c4": {
+  "en": "Tullibee",
+  "t": "ปลาทัลลิบี"
+ },
  "e3cb8bd6bf09": {
   "en": "Bedtime",
   "t": "เวลาเข้านอน"
+ },
+ "e3de5ab0ca4c": {
+  "en": "Off",
+  "t": "ปิด"
  },
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
@@ -9062,6 +9290,10 @@
  "ea924f72d31e": {
   "en": "Recovery",
   "t": "การฟื้นตัว"
+ },
+ "ea9676003762": {
+  "en": "Line",
+  "t": "สาย"
  },
  "eaa40e2587dc": {
   "en": "Distrito Federal",
@@ -9567,6 +9799,10 @@
   "en": " Shooters &amp; co-op ",
   "t": "เกมยิงและเล่นร่วมกัน"
  },
+ "fa2ca4c86063": {
+  "en": "Caught: {n}",
+  "t": "จับได้: {n}"
+ },
  "fa42321aea70": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Placeholder movie 26 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">อันดับ 26: </span> ภาพยนตร์ชั่วคราว 26"
@@ -9590,6 +9826,10 @@
  "faf65a9797bc": {
   "en": "With my autistic brain, it’s no surprise I love aviation (vehicles are one of the most common autistic special interests, and a plane is a flying pile of systems with firm rules; the research is in this tab’s Links box). I always loved planes and was going to be a pilot. But my parents worked in the industry and worried they were the ones steering me there. I grew up around it, even helping my mom on the SABRE system so we could go home sooner. They did the right thing by pushing me to make my own decision… and I ended up in software development.",
   "t": "ด้วยสมองออทิสติกของผม ไม่แปลกเลยที่ผมรักการบิน (ยานพาหนะเป็นหนึ่งในความสนใจพิเศษที่พบบ่อยที่สุดของคนออทิสติก และเครื่องบินก็คือกองระบบที่มีกฎแน่นอนที่บินได้ งานวิจัยอยู่ในกล่องลิงก์ของแท็บนี้) ผมรักเครื่องบินมาตลอดและตั้งใจจะเป็นนักบิน แต่พ่อแม่ทำงานในวงการนี้และกังวลว่าพวกท่านเป็นคนชักนำผมไปทางนั้น ผมโตมากับมัน ถึงขั้นช่วยแม่ใช้ระบบ SABRE เพื่อจะได้กลับบ้านเร็วขึ้น พวกท่านทำถูกแล้วที่ผลักดันให้ผมตัดสินใจเอง… และผมก็ลงเอยที่การพัฒนาซอฟต์แวร์"
+ },
+ "fb1a89e702bc": {
+  "en": "Auto zoom",
+  "t": "ซูมอัตโนมัติ"
  },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",

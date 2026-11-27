@@ -299,6 +299,10 @@
   "en": "Click or drag to draw. Right-click erases.",
   "t": "クリックかドラッグで描く。右クリックで消す。"
  },
+ "06e20f5a4426": {
+  "en": "Bottom lock",
+  "t": "ボトムロック"
+ },
  "06ee9ade85e4": {
   "en": "Hellblade: Senua's Sacrifice",
   "t": "Hellblade: Senua's Sacrifice"
@@ -479,6 +483,10 @@
   "en": "Blog",
   "t": "ブログ"
  },
+ "0ba0ef5404ec": {
+  "en": "Ice fishing",
+  "t": "氷上釣り"
+ },
  "0bb27395d153": {
   "en": "231 h",
   "t": "231 時間"
@@ -535,6 +543,10 @@
   "en": "Spring bass selfie",
   "t": "春のバス自撮り"
  },
+ "0d6b08d281da": {
+  "en": "Fish on! Reel up (scroll or swipe up), and ease off when it runs.",
+  "t": "ヒット！巻き上げろ（スクロールか上スワイプ）。魚が走ったら緩めて。"
+ },
  "0d97f4d5801b": {
   "en": "Enlarge: Bathing in the Amazon",
   "t": "拡大: アマゾンで水浴び"
@@ -563,6 +575,10 @@
   "en": " CS ",
   "t": "CS"
  },
+ "0e0c14386ba6": {
+  "en": "Low power",
+  "t": "ローパワー"
+ },
  "0e0f5c25719f": {
   "en": "Back to Aviation",
   "t": "航空に戻る"
@@ -570,6 +586,10 @@
  "0e238a3f2870": {
   "en": "Reus",
   "t": "Reus"
+ },
+ "0e5ab5718d46": {
+  "en": "⇅ Reverse scroll",
+  "t": "⇅ スクロール反転"
  },
  "0e6f86c4d72a": {
   "en": "<strong>Francois Naudé &amp; Luzelle Naudé</strong> (2024), “(Tat)who Am I? Tattoos as an Expression of Narrative Identity”: people use tattoos to explore and tell the story of who they are. <a href=\"https://www.psychologytoday.com/us/blog/head-games/202403/5-ways-your-tattoos-reveal-who-you-are\">Summary in <em>Psychology Today</em></a>",
@@ -783,6 +803,10 @@
   "en": "Vatican City",
   "t": "バチカン市国"
  },
+ "13876d38ea11": {
+  "en": "Barely anything shows: turn the Gain up.",
+  "t": "ほとんど何も映らない。ゲインを上げよう。"
+ },
  "13a29a85064f": {
   "en": "Plot {plot}: empty. Plant {crop}.",
   "t": "区画 {plot}：空き。{crop} を植えろ。"
@@ -802,6 +826,10 @@
  "13e54ce09816": {
   "en": " PV ",
   "t": "PV"
+ },
+ "143fa4c4c81c": {
+  "en": "Walleye",
+  "t": "ウォールアイ"
  },
  "145a01fb9391": {
   "en": "/min",
@@ -1287,6 +1315,10 @@
   "en": "Is this a cozy fire? ٩(◕‿◕｡)۶",
   "t": "これってぬくぬくの焚き火？٩(◕‿◕｡)۶"
  },
+ "218488ac2b05": {
+  "en": "Split screen: the whole hole on the right, the bottom 6 ft zoomed on the left.",
+  "t": "画面分割: 右に水中全体、左に底から6フィートを拡大表示。"
+ },
  "21bcdb7e16a8": {
   "en": "World &amp; fusion",
   "t": "ワールド＆フュージョン"
@@ -1451,6 +1483,10 @@
   "en": "It’s also here for the same reason as the <a href=\"#gym\">Gym</a>. AuDHD people tend to get stuck inside their own homes and fall behind socially: home is safe, quiet and predictable, and the world outside costs energy. The research lines up with that too:",
   "t": "ここにあるのは<a href=\"#gym\">ジム</a>と同じ理由でもある。AuDHDの人は家にこもりがちで、社会的に取り残されやすい。家は安全で静かで予測できるけれど、外の世界はエネルギーを食う。研究もそれを裏づけている："
  },
+ "262f737babf6": {
+  "en": "Too much: it spooked.",
+  "t": "やりすぎた。魚が逃げた。"
+ },
  "2641c8ed7f11": {
   "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my dad’s 2014 BIDU songs as the music.",
   "t": "おならをするロバが、アマゾンと砂漠を走り、跳び、頭突きし、おならをする。2014 年にスケッチし、2016 年に Unity で始め、2026 年に Godot で完成。音楽は親父が 2014 年に作った BIDU の曲。"
@@ -1579,6 +1615,10 @@
   "en": " Xbox ",
   "t": "Xbox"
  },
+ "28c143b65e3d": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Mode</b>: Low Power for less clutter, or Auto Zoom and Bottom Lock to split the dial, with the bottom 6 ft zoomed on the left.",
+  "t": "<b data-astro-cid-o3poasna=\"\">モード</b>: ノイズを減らすならローパワー。オートズームとボトムロックはダイヤルを分割して、左側に底から6フィートを拡大表示する。"
+ },
  "28e75153a2a3": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  4 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">570 時間</strong>  ·  4本  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">プレイ時間の2%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">プレイ時間の4%</span>"
@@ -1654,6 +1694,10 @@
  "2a4d5402c166": {
   "en": " Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Spring 2014 · back in 2026</span> ",
   "t": "Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">2014 年春 · 2026 年に復活</span>"
+ },
+ "2a714ecd8093": {
+  "en": "Nothing bit yet: that rip spooked it.",
+  "t": "まだ食ってなかった。今のあおりで逃げられた。"
  },
  "2a7dbc5cf815": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 2: </span> Placeholder movie 2 ",
@@ -1831,6 +1875,10 @@
   "en": "One of my favorite isekai, and one of the OGs from before the torrent of copycats trying to milk the market dry.",
   "t": "一番好きな異世界ものの一つで、市場を搾り尽くそうとするパクリの洪水より前からある元祖の一つだ。"
  },
+ "2ff5d5a41204": {
+  "en": "A green mark at {d} ft: a fish at the edge of the cone. Jig to call it in.",
+  "t": "{d}フィートに緑の印: 探知範囲の端に魚がいる。ジグを動かして呼び寄せよう。"
+ },
  "30008d008dae": {
   "en": "Car rides!",
   "t": "ドライブ！"
@@ -1850,6 +1898,14 @@
  "303d884de994": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Placeholder movie 17 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 17: </span> 仮の映画 17"
+ },
+ "30472f63d677": {
+  "en": "{fish}, {len} in ({cm} cm)",
+  "t": "{fish}、{len}インチ（{cm}cm）"
+ },
+ "308079570015": {
+  "en": "Your catches",
+  "t": "釣果"
  },
  "3098add33361": {
   "en": "\nThat grew into HusbandOutWorld, a light novel series that took me to conventions, where I met a lot of people,\n          from artists to directors and publishers. It feels surreal how much this project pushed me to grow and challenge\n          myself. If you're curious, you can see my evolution through the Light Novel Afterwords.\n",
@@ -1914,6 +1970,10 @@
  "32096c2e0eff": {
   "en": " C ",
   "t": "C"
+ },
+ "3229477a180e": {
+  "en": "Sauger",
+  "t": "ソーガー"
  },
  "3239f318bd88": {
   "en": "Dropkick Murphys",
@@ -2071,6 +2131,10 @@
   "en": "+ 16 more games",
   "t": "+ ほか16本"
  },
+ "35aab70b60e7": {
+  "en": "It's running! Ease off.",
+  "t": "走ってる！緩めて！"
+ },
  "35cf6a830c19": {
   "en": "Expert · 132 BPM",
   "t": "エキスパート · 132 BPM"
@@ -2122,6 +2186,10 @@
  "375f856a96a7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder TV show 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 33: </span> 仮のドラマ 33"
+ },
+ "37669714846a": {
+  "en": "x{x}: 0 to {ft} ft",
+  "t": "x{x}: 0〜{ft}フィート"
  },
  "377bcd643607": {
   "en": "BM",
@@ -2351,6 +2419,10 @@
   "en": "JT",
   "t": "JT"
  },
+ "3c09c310c6b2": {
+  "en": "Jig {d} ft",
+  "t": "ジグ {d}フィート"
+ },
  "3c2e78721196": {
   "en": "The kind of anime that makes you go \"Oh! Didn't expect that!\", with a unique creative vision for portraying the struggles and feelings of adolescence. Unique!",
   "t": "「おお！ それは予想外！」と言わせるタイプのアニメで、思春期の葛藤と感情を描く独特の創造的なビジョンがある。唯一無二！"
@@ -2563,6 +2635,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder movie 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 10: </span> 仮の映画 10"
  },
+ "417d7a4b988f": {
+  "en": "🔊 Sound on",
+  "t": "🔊 サウンド オン"
+ },
  "41e1360a1ebf": {
   "en": "Realm Grinder",
   "t": "Realm Grinder"
@@ -2670,6 +2746,10 @@
  "45d7b9f03f0a": {
   "en": "Body fat (yearly average)",
   "t": "体脂肪率（年平均）"
+ },
+ "45e118d0563e": {
+  "en": "Normal",
+  "t": "ノーマル"
  },
  "45f08cb571cd": {
   "en": "<strong>Marcus Aurelius</strong>, <em>Meditations</em> 6.24: death brought Alexander the Great and his mule driver to the same state. <a href=\"https://en.wikisource.org/wiki/Marcus_Aurelius_(Haines_1916)/Book_6\">Text</a>",
@@ -2851,6 +2931,10 @@
   "en": "Daylight, especially in the morning, is what sets the body clock. More morning sun goes with an earlier, steadier sleep.",
   "t": "日の光、特に朝の光が体内時計を合わせる。朝日を多く浴びるほど、早くて安定した睡眠につながる。"
  },
+ "4b2ee8531bcf": {
+  "en": "Grab a beer, and experience a flasher fish finder!",
+  "t": "ビールを片手に、フラッシャー魚探を体験しよう！"
+ },
  "4b41ed494adc": {
   "en": " Steam + Xbox + PlayStation  ·  estimated ",
   "t": "Steam + Xbox + PlayStation  ·  推定"
@@ -3007,6 +3091,10 @@
   "en": "Gamer",
   "t": "ゲーマー"
  },
+ "4e5e65f062ec": {
+  "en": "Caught: {fish}, {len} in ({cm} cm)!",
+  "t": "釣れた: {fish}、{len}インチ（{cm}cm）！"
+ },
  "4e735732ab92": {
   "en": "Puppy eyes still work",
   "t": "子犬の目はまだ効く"
@@ -3034,6 +3122,10 @@
  "4ebc18247e08": {
   "en": "Steam",
   "t": "Steam"
+ },
+ "4ec00394908f": {
+  "en": "How to play",
+  "t": "遊び方"
  },
  "4ec368ab9572": {
   "en": "<strong>Full commitment is not eternal commitment.</strong> If there’s movement, I work with imperfection. When people prove unworthy of your love, losing faith isn’t failure; it’s clarity. I steward living systems for a better future, and erase dead ones after extracting a mental model to detect this kind of rot early.",
@@ -3443,6 +3535,14 @@
   "en": "Psst! Stuck? Press me once for a freebie.",
   "t": "おい！ 困った？ 一回だけ俺を押せばお助けだ。"
  },
+ "5748b8b683ba": {
+  "en": "Black crappie",
+  "t": "ブラッククラッピー"
+ },
+ "57574efdd4f6": {
+  "en": "🔇 Sound off",
+  "t": "🔇 サウンド オフ"
+ },
  "576347ec826f": {
   "en": "Europe",
   "t": "ヨーロッパ"
@@ -3495,6 +3595,10 @@
   "en": "Perfect World",
   "t": "Perfect World"
  },
+ "5874a684ac96": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Gain</b> sets how strong the marks show (about 3 to 4 here); too much and the dial fills with clutter. Press it to step through the 10 IR settings when another flasher interferes.",
+  "t": "<b data-astro-cid-o3poasna=\"\">ゲイン</b>は印の映る強さ（ここでは3〜4くらい）。上げすぎるとダイヤルがノイズで埋まる。別のフラッシャーと混信したら、押して10段階のIRを切り替えよう。"
+ },
  "58833ac67fd0": {
   "en": "Walkers of the Sacred Steps",
   "t": "聖なる手順を歩む者"
@@ -3510,6 +3614,10 @@
  "58b8da4b72d4": {
   "en": "7% of my hours",
   "t": "プレイ時間の7%"
+ },
+ "58bb403e88cf": {
+  "en": "Northern pike",
+  "t": "ノーザンパイク"
  },
  "58f7a8f2ec30": {
   "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n Body fat, yearly average: 2023, 32.9%; 2024, 36.8%; 2025, 38.0%; 2026, 35.4%. ",
@@ -3751,6 +3859,10 @@
   "en": "Camping",
   "t": "キャンプ"
  },
+ "5e9f48f66af0": {
+  "en": "Bite! Flick up hard to set the hook!",
+  "t": "アタリだ！強くあおってフッキング！"
+ },
  "5ef1da7aa7f2": {
   "en": "Quite the stretch",
   "t": "すごい伸び"
@@ -3863,6 +3975,10 @@
   "en": "Deovandski's Blog",
   "t": "Deovandski のブログ"
  },
+ "6189fe36c4af": {
+  "en": "Turn the <b data-astro-cid-o3poasna=\"\">Range</b> knob to switch the flasher on. The bottom is at 28 ft here, so x2 (0 to 40 ft) fits it best.",
+  "t": "<b data-astro-cid-o3poasna=\"\">レンジ</b>のつまみを回してフラッシャーの電源を入れよう。ここの底は28フィートなので、x2（0〜40フィート）がぴったりだ。"
+ },
  "618e3308c83d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 29: </span> Placeholder movie 29 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 29: </span> 仮の映画 29"
@@ -3870,6 +3986,14 @@
  "618e487541ea": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman"
+ },
+ "61b142772297": {
+  "en": "Fishing hole: Up and Down move the jig, Space flicks the rod",
+  "t": "釣り穴: 上下キーでジグを動かし、スペースで竿をあおる"
+ },
+ "61d48f8ebddb": {
+  "en": "Ice fishing: turn your phone sideways",
+  "t": "氷上釣り：スマホを横向きに"
  },
  "61db3a4f5dc3": {
   "en": "Kingdoms and Castles",
@@ -3918,6 +4042,14 @@
  "62dfe60deea3": {
   "en": "The numbers didn't load. Try again later.",
   "t": "数値を読み込めませんでした。あとでもう一度お試しください。"
+ },
+ "62f84c7b7a34": {
+  "en": "{n} of 10",
+  "t": "{n} / 10"
+ },
+ "63286f4f3a05": {
+  "en": "Bottom at {d} ft. Scroll or swipe down to drop your jig: it's the thin mark on the dial.",
+  "t": "底は{d}フィート。スクロールか下スワイプでジグを落とそう。ダイヤルの細い印がジグだ。"
  },
  "633797165688": {
   "en": "Magical Mirai, Osaka (2014)",
@@ -4439,6 +4571,10 @@
   "en": "Enlarge: Crappie selfie",
   "t": "拡大: クラッピーと自撮り"
  },
+ "70d7858359b2": {
+  "en": "Yellow perch",
+  "t": "イエローパーチ"
+ },
  "70e3b3dcbb78": {
   "en": " NM ",
   "t": "NM"
@@ -4739,6 +4875,10 @@
   "en": "226 days",
   "t": "226日"
  },
+ "78c0f941b201": {
+  "en": "Dashes running around the dial? A buddy's flasher is too close: press the Gain knob to step through the interference rejection (IR).",
+  "t": "ダイヤルの上を点が走り回ってる？仲間のフラッシャーが近すぎる。ゲインのつまみを押して混信除去（IR）を切り替えよう。"
+ },
  "78cc6006e09c": {
   "en": "Gym, 6:47am",
   "t": "ジム、午前 6:47"
@@ -4990,6 +5130,10 @@
  "7eb0cee888ab": {
   "en": "Min",
   "t": "分"
+ },
+ "7ebd2107485d": {
+  "en": "Turn the Range knob to switch the flasher on.",
+  "t": "レンジのつまみを回してフラッシャーの電源を入れよう。"
  },
  "7ec79775c355": {
   "en": "Every wrong answer is just a trip you still have to take.",
@@ -5483,6 +5627,10 @@
   "en": "Love it. Even the ecchi. Everything has a purpose, and I have nothing to complain about. If I had watched Mushoku Tensei before writing #HusbandOutWorld, I might not have written my story at all, because it's good enough to quench a lot of the thirst I had while consuming one isekai after another.",
   "t": "大好き。エッチなところも含めて。すべてに目的があって、文句のつけようがない。#HusbandOutWorld を書く前に無職転生を見ていたら、自分の物語は書かなかったかもしれない。異世界ものを次から次へと消費していた頃の渇きを、かなり癒してくれるくらい良いからだ。"
  },
+ "8c89e1c4e11c": {
+  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom. Wheel going the wrong way (natural scrolling)? Press <b data-astro-cid-o3poasna=\"\">Reverse scroll</b>.",
+  "t": "マウスホイールをスクロール（またはフラッシャーか竿の上で上下にスワイプ）してジグを動かそう。ダイヤルの細い印がジグで、太い赤の帯が底だ。ホイールの向きが逆（ナチュラルスクロール）？ <b data-astro-cid-o3poasna=\"\">スクロール反転</b>を押そう。"
+ },
  "8c948d7947e0": {
   "en": "Hot",
   "t": "熱い"
@@ -5787,6 +5935,10 @@
   "en": "Garry's Mod",
   "t": "Garry's Mod"
  },
+ "93f579c09a3b": {
+  "en": "When the rod tip flashes (and your phone buzzes), flick up hard: a big, fast scroll up or swipe up, or Space. Too early and it spooks; too late and it spits the jig.",
+  "t": "竿先が光ったら（スマホなら振動も）、強くあおろう: 大きく速く上にスクロールか上スワイプ、またはスペース。早すぎると逃げられ、遅すぎるとジグを吐き出される。"
+ },
  "93fc6888a695": {
   "en": "The Church's top recommendations are <strong>Sal Lebre</strong> and <strong>Mariza Churrasco D'Chef</strong>, for their consistency and their quality held steady over the years. Seasoned churrasco salt is permitted by the Church, but not every brand, for some add too much, and simplicity is at the core of our faith.",
   "t": "教会が第一に勧めるのは<strong>Sal Lebre</strong>と<strong>Mariza Churrasco D'Chef</strong>である。年を経ても変わらぬ一貫性と品質ゆえに。味付きのシュハスコ塩も教会は認めるが、すべての銘柄ではない。入れすぎるものもあるゆえ。そして簡素こそ我らが信仰の核心なり。"
@@ -5906,6 +6058,10 @@
  "96b6cea2d9d5": {
   "en": "God of War",
   "t": "ゴッド・オブ・ウォー"
+ },
+ "96dd91cdcbe7": {
+  "en": "Gain",
+  "t": "ゲイン"
  },
  "96dedce974cf": {
   "en": "Enlarge: Failing to learn English",
@@ -6075,6 +6231,10 @@
   "en": "Am I that really interesting?",
   "t": "俺ってそんなに面白い？"
  },
+ "9c2867f3a4f7": {
+  "en": "It shook the hook.",
+  "t": "フックを外された。"
+ },
  "9c4a5310f68f": {
   "en": "Princess Fluffy of Guamá: Fluffy in a pink princess dress and a jeweled tiara, sitting in the back seat of a car",
   "t": "グアマーのプリンセス Fluffy：ピンクのプリンセスドレスと宝石のティアラを身につけ、車の後部座席に座る Fluffy"
@@ -6118,6 +6278,10 @@
  "9d6c79478e4e": {
   "en": "Legendary reflexes!",
   "t": "伝説の反射神経！"
+ },
+ "9d89b2d84ac3": {
+  "en": "It's coming in: the mark turns orange, then red.",
+  "t": "寄ってきた。印がオレンジ、そして赤に変わる。"
  },
  "9d8a4e9da14d": {
   "en": "Slime Rancher",
@@ -6302,6 +6466,10 @@
  "a157d38de121": {
   "en": "Enlarge: Moar sleep",
   "t": "拡大: もっとねんね"
+ },
+ "a16c5bbe4bf9": {
+  "en": "Range",
+  "t": "レンジ"
  },
  "a173e725607d": {
   "en": "Asia",
@@ -6519,6 +6687,10 @@
   "en": "5C",
   "t": "5C"
  },
+ "a6d49890ad7c": {
+  "en": "Jig to call fish in. A green mark at the edge of the cone turns orange, then red, as it comes to your jig. Then twitch it, or lift it slowly.",
+  "t": "ジグを動かして魚を寄せよう。探知範囲の端の緑の印は、ジグに近づくにつれてオレンジ、そして赤に変わる。そうしたら小刻みに揺らすか、ゆっくり持ち上げよう。"
+ },
  "a6df62f72604": {
   "en": " ← Back to the system ",
   "t": "← 星系に戻る"
@@ -6563,9 +6735,17 @@
   "en": "Electronic &amp; synthwave",
   "t": "エレクトロニック＆シンセウェイヴ"
  },
+ "a790b5f3cecb": {
+  "en": "IR {n}",
+  "t": "IR {n}"
+ },
  "a79aa4ea4d23": {
   "en": "Lust",
   "t": "欲望"
+ },
+ "a7b93d2128e8": {
+  "en": "Mode",
+  "t": "モード"
  },
  "a7bdce161e86": {
   "en": "Enlarge: Clingy",
@@ -6907,6 +7087,10 @@
   "en": "Guess what I'm gonna do",
   "t": "何をするか当ててみて"
  },
+ "b0439c65e633": {
+  "en": "IR {n} cleared the interference.",
+  "t": "IR {n}で混信が消えた。"
+ },
  "b04af783d0ff": {
   "en": " Idle &amp; clickers ",
   "t": "放置＆クリッカー"
@@ -7031,6 +7215,10 @@
   "en": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 お気に入り</span>"
  },
+ "b377868dc116": {
+  "en": "Keep reeling!",
+  "t": "巻き続けろ！"
+ },
  "b38a99fe0694": {
   "en": "one rises as the other falls",
   "t": "片方が上がるともう片方が下がる"
@@ -7098,6 +7286,10 @@
  "b588aca7bb99": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 9: </span> この素晴らしい世界に祝福を！"
+ },
+ "b5c2669931ed": {
+  "en": "It's on your jig: small twitches, or lift it slowly.",
+  "t": "ジグに食いつく寸前だ。小刻みに揺らすか、ゆっくり持ち上げよう。"
  },
  "b61c12b736ff": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 1: </span> Sword Art Online ",
@@ -7515,6 +7707,10 @@
   "en": " D · Seasons ",
   "t": "D · 季節"
  },
+ "c16fa30192fe": {
+  "en": "Reel it up, and ease off when it runs, or the line breaks.",
+  "t": "巻き上げよう。魚が走ったら緩めないとラインが切れる。"
+ },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "247 時間  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">推定</span>"
@@ -7831,6 +8027,10 @@
   "en": "21 h",
   "t": "21 時間"
  },
+ "cb3b8b95ac08": {
+  "en": "Gain (press it for interference rejection)",
+  "t": "ゲイン（押すと混信除去）"
+ },
  "cb617c0ab9ee": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Placeholder TV show 6 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 6: </span> 仮のドラマ 6"
@@ -8003,6 +8203,10 @@
   "en": "Cult of the Lamb",
   "t": "Cult of the Lamb"
  },
+ "cf93b2a95f0d": {
+  "en": "No bottom on this range: turn the Range up.",
+  "t": "このレンジでは底が見えない。レンジを上げよう。"
+ },
  "cfcf0d7d152e": {
   "en": "Never wrestle with pigs. You both get dirty, and the pig likes it. <span class=\"newest\">New</span>",
   "t": "豚とは決して取っ組み合うな。どっちも汚れるし、豚はそれが好きなんだ。<span class=\"newest\">新</span>"
@@ -8058,6 +8262,10 @@
  "d09bdd281dfa": {
   "en": "Princess Fluffy of Guamá",
   "t": "グアマーのプリンセス Fluffy"
+ },
+ "d0a6b073b147": {
+  "en": "Snap! The line broke.",
+  "t": "プツン！ラインが切れた。"
  },
  "d0c12b6b5196": {
   "en": "REM sleep",
@@ -8167,6 +8375,10 @@
   "en": "Read my Vol 4 afterword",
   "t": "俺の第 4 巻のあとがきを読む"
  },
+ "d35993abead4": {
+  "en": "Back to Fishing",
+  "t": "釣りに戻る"
+ },
  "d35c60400150": {
   "en": "87 h",
   "t": "87 時間"
@@ -8202,6 +8414,10 @@
  "d3a2460e932b": {
   "en": "TS",
   "t": "TS"
+ },
+ "d3acd83e402c": {
+  "en": "Lots of clutter: turn the Gain down a little.",
+  "t": "ノイズだらけだ。ゲインを少し下げよう。"
  },
  "d3b572e24639": {
   "en": "Huehue, I can feel that thinking face from here.",
@@ -8735,6 +8951,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Shingeki no Kyojin (Attack on Titan) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 4: </span> 進撃の巨人"
  },
+ "e0d4f121e169": {
+  "en": "Too late: it spat the jig.",
+  "t": "遅すぎた。ジグを吐き出された。"
+ },
  "e1038f5c447c": {
   "en": "More of my games on the Gamer tab",
   "t": "俺のほかのゲームは「ゲーマー」タブへ"
@@ -8827,9 +9047,17 @@
   "en": "Now",
   "t": "今"
  },
+ "e3bd01bce3c4": {
+  "en": "Tullibee",
+  "t": "タリビー"
+ },
  "e3cb8bd6bf09": {
   "en": "Bedtime",
   "t": "就寝時刻"
+ },
+ "e3de5ab0ca4c": {
+  "en": "Off",
+  "t": "オフ"
  },
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
@@ -9062,6 +9290,10 @@
  "ea924f72d31e": {
   "en": "Recovery",
   "t": "回復"
+ },
+ "ea9676003762": {
+  "en": "Line",
+  "t": "ライン"
  },
  "eaa40e2587dc": {
   "en": "Distrito Federal",
@@ -9567,6 +9799,10 @@
   "en": " Shooters &amp; co-op ",
   "t": "シューター＆協力プレイ"
  },
+ "fa2ca4c86063": {
+  "en": "Caught: {n}",
+  "t": "釣果: {n}"
+ },
  "fa42321aea70": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Placeholder movie 26 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 26: </span> 仮の映画 26"
@@ -9590,6 +9826,10 @@
  "faf65a9797bc": {
   "en": "With my autistic brain, it’s no surprise I love aviation (vehicles are one of the most common autistic special interests, and a plane is a flying pile of systems with firm rules; the research is in this tab’s Links box). I always loved planes and was going to be a pilot. But my parents worked in the industry and worried they were the ones steering me there. I grew up around it, even helping my mom on the SABRE system so we could go home sooner. They did the right thing by pushing me to make my own decision… and I ended up in software development.",
   "t": "俺の自閉症の脳からすれば、航空が大好きなのは当然だ（乗り物は自閉症の特別な興味で最もよくあるものの一つで、飛行機は確かなルールで動くシステムの空飛ぶかたまりだ。研究はこのタブのリンクにある）。ずっと飛行機が好きで、パイロットになるつもりだった。でも両親はこの業界で働いていて、自分たちが俺をその道へ導いているんじゃないかと心配した。俺はその環境で育ち、早く家に帰れるよう母さんの SABRE システムの作業を手伝ったりもした。二人は自分で決めるよう背中を押してくれた。それは正しかった……そして俺はソフトウェア開発に行き着いた。"
+ },
+ "fb1a89e702bc": {
+  "en": "Auto zoom",
+  "t": "オートズーム"
  },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",

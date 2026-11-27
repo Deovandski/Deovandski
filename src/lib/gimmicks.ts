@@ -17,6 +17,7 @@ export const GIMMICKS: GimmickInfo[] = [
   { id: 'dino-ambush', title: 'Dino Ambush', tab: 'gamer', tabName: 'Gamer' },
   { id: 'drum-kit', title: 'Drum kit', tab: 'musician', tabName: 'Musician' },
   { id: 'ecchi-meter', title: 'Ecchi-meter', tab: 'lust', tabName: 'Lust' },
+  { id: 'ice-fishing', title: 'Ice fishing', tab: 'fishing', tabName: 'Fishing', inline: true },
   { id: 'kitkot', title: 'KitKot', tab: 'influencer', tabName: 'Influencer', inline: true },
   { id: 'led-painting', title: 'LED painting', tab: 'painting', tabName: 'Painting' },
   { id: 'paper-plane', title: 'Paper plane', tab: 'aviation', tabName: 'Aviation' },

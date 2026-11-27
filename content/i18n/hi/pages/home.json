@@ -299,6 +299,10 @@
   "en": "Click or drag to draw. Right-click erases.",
   "t": "बनाने के लिए क्लिक या ड्रैग करो। राइट-क्लिक से मिटता है।"
  },
+ "06e20f5a4426": {
+  "en": "Bottom lock",
+  "t": "तल लॉक"
+ },
  "06ee9ade85e4": {
   "en": "Hellblade: Senua's Sacrifice",
   "t": "Hellblade: Senua's Sacrifice"
@@ -479,6 +483,10 @@
   "en": "Blog",
   "t": "ब्लॉग"
  },
+ "0ba0ef5404ec": {
+  "en": "Ice fishing",
+  "t": "बर्फ़ पर मछली पकड़ना"
+ },
  "0bb27395d153": {
   "en": "231 h",
   "t": "231 घं."
@@ -535,6 +543,10 @@
   "en": "Spring bass selfie",
   "t": "वसंत की बास सेल्फ़ी"
  },
+ "0d6b08d281da": {
+  "en": "Fish on! Reel up (scroll or swipe up), and ease off when it runs.",
+  "t": "मछली फँस गई! ऊपर लपेटो (ऊपर स्क्रॉल या स्वाइप करो), और जब वह भागे तो ढील दो।"
+ },
  "0d97f4d5801b": {
   "en": "Enlarge: Bathing in the Amazon",
   "t": "बड़ा करें: अमेज़न में नहाना"
@@ -563,6 +575,10 @@
   "en": " CS ",
   "t": "CS"
  },
+ "0e0c14386ba6": {
+  "en": "Low power",
+  "t": "कम पावर"
+ },
  "0e0f5c25719f": {
   "en": "Back to Aviation",
   "t": "विमानन पर वापस"
@@ -570,6 +586,10 @@
  "0e238a3f2870": {
   "en": "Reus",
   "t": "Reus"
+ },
+ "0e5ab5718d46": {
+  "en": "⇅ Reverse scroll",
+  "t": "⇅ स्क्रॉल उल्टा करो"
  },
  "0e6f86c4d72a": {
   "en": "<strong>Francois Naudé &amp; Luzelle Naudé</strong> (2024), “(Tat)who Am I? Tattoos as an Expression of Narrative Identity”: people use tattoos to explore and tell the story of who they are. <a href=\"https://www.psychologytoday.com/us/blog/head-games/202403/5-ways-your-tattoos-reveal-who-you-are\">Summary in <em>Psychology Today</em></a>",
@@ -783,6 +803,10 @@
   "en": "Vatican City",
   "t": "वेटिकन सिटी"
  },
+ "13876d38ea11": {
+  "en": "Barely anything shows: turn the Gain up.",
+  "t": "लगभग कुछ नहीं दिख रहा: गेन बढ़ाओ।"
+ },
  "13a29a85064f": {
   "en": "Plot {plot}: empty. Plant {crop}.",
   "t": "प्लॉट {plot}: खाली। {crop} लगाओ।"
@@ -802,6 +826,10 @@
  "13e54ce09816": {
   "en": " PV ",
   "t": "PV"
+ },
+ "143fa4c4c81c": {
+  "en": "Walleye",
+  "t": "वॉलआई"
  },
  "145a01fb9391": {
   "en": "/min",
@@ -1287,6 +1315,10 @@
   "en": "Is this a cozy fire? ٩(◕‿◕｡)۶",
   "t": "क्या यह कोई आरामदायक अलाव है? ٩(◕‿◕｡)۶"
  },
+ "218488ac2b05": {
+  "en": "Split screen: the whole hole on the right, the bottom 6 ft zoomed on the left.",
+  "t": "बँटी स्क्रीन: दाईं ओर पूरा पानी, बाईं ओर तल के ऊपर के आख़िरी 6 फ़ुट बड़े करके।"
+ },
  "21bcdb7e16a8": {
   "en": "World &amp; fusion",
   "t": "वर्ल्ड और फ़्यूज़न"
@@ -1451,6 +1483,10 @@
   "en": "It’s also here for the same reason as the <a href=\"#gym\">Gym</a>. AuDHD people tend to get stuck inside their own homes and fall behind socially: home is safe, quiet and predictable, and the world outside costs energy. The research lines up with that too:",
   "t": "यह यहाँ उसी वजह से भी है जिससे <a href=\"#gym\">जिम</a> यहाँ है। AuDHD लोग अक्सर अपने घर के अंदर ही अटक जाते हैं और सामाजिक रूप से पिछड़ जाते हैं: घर सुरक्षित, शांत और अनुमानित है, और बाहर की दुनिया ऊर्जा खाती है। शोध भी यही कहता है:"
  },
+ "262f737babf6": {
+  "en": "Too much: it spooked.",
+  "t": "ज़्यादा हो गया: वह डरकर भाग गई।"
+ },
  "2641c8ed7f11": {
   "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my dad’s 2014 BIDU songs as the music.",
   "t": "एक पादने वाला गधा अमेज़न और रेगिस्तान में दौड़ता, कूदता, सिर से टक्कर मारता और पादता है। 2014 में स्केच किया, 2016 में Unity में शुरू किया और 2026 में Godot में पूरा किया, संगीत में मेरे पिताजी के 2014 के BIDU गाने हैं।"
@@ -1579,6 +1615,10 @@
   "en": " Xbox ",
   "t": "Xbox"
  },
+ "28c143b65e3d": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Mode</b>: Low Power for less clutter, or Auto Zoom and Bottom Lock to split the dial, with the bottom 6 ft zoomed on the left.",
+  "t": "<b data-astro-cid-o3poasna=\"\">मोड</b>: कम गड़बड़ी के लिए कम पावर, या डायल बाँटने के लिए ऑटो ज़ूम और तल लॉक, जिसमें तल के ऊपर के आख़िरी 6 फ़ुट बाईं ओर बड़े दिखते हैं।"
+ },
  "28e75153a2a3": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  4 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">570 घं.</strong>  ·  4 गेम  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 2%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">मेरे घंटों का 4%</span>"
@@ -1654,6 +1694,10 @@
  "2a4d5402c166": {
   "en": " Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Spring 2014 · back in 2026</span> ",
   "t": "Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">वसंत 2014 · 2026 में वापस</span>"
+ },
+ "2a714ecd8093": {
+  "en": "Nothing bit yet: that rip spooked it.",
+  "t": "अभी काटा नहीं था: उस झटके ने उसे डरा दिया।"
  },
  "2a7dbc5cf815": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 2: </span> Placeholder movie 2 ",
@@ -1831,6 +1875,10 @@
   "en": "One of my favorite isekai, and one of the OGs from before the torrent of copycats trying to milk the market dry.",
   "t": "मेरे पसंदीदा इसेकाई में से एक, और बाज़ार को निचोड़ने वाली नक़लों की बाढ़ से पहले के असली पुरानों में से एक।"
  },
+ "2ff5d5a41204": {
+  "en": "A green mark at {d} ft: a fish at the edge of the cone. Jig to call it in.",
+  "t": "{d} फ़ुट पर हरा निशान: कोन के किनारे पर एक मछली। उसे बुलाने के लिए जिग हिलाओ।"
+ },
  "30008d008dae": {
   "en": "Car rides!",
   "t": "गाड़ी की सैर!"
@@ -1850,6 +1898,14 @@
  "303d884de994": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Placeholder movie 17 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 17: </span> अस्थायी फ़िल्म 17"
+ },
+ "30472f63d677": {
+  "en": "{fish}, {len} in ({cm} cm)",
+  "t": "{fish}, {len} इंच ({cm} सेमी)"
+ },
+ "308079570015": {
+  "en": "Your catches",
+  "t": "तुम्हारी पकड़"
  },
  "3098add33361": {
   "en": "\nThat grew into HusbandOutWorld, a light novel series that took me to conventions, where I met a lot of people,\n          from artists to directors and publishers. It feels surreal how much this project pushed me to grow and challenge\n          myself. If you're curious, you can see my evolution through the Light Novel Afterwords.\n",
@@ -1914,6 +1970,10 @@
  "32096c2e0eff": {
   "en": " C ",
   "t": "C"
+ },
+ "3229477a180e": {
+  "en": "Sauger",
+  "t": "सॉगर"
  },
  "3239f318bd88": {
   "en": "Dropkick Murphys",
@@ -2071,6 +2131,10 @@
   "en": "+ 16 more games",
   "t": "+ 16 और गेम"
  },
+ "35aab70b60e7": {
+  "en": "It's running! Ease off.",
+  "t": "वह भाग रही है! ढील दो!"
+ },
  "35cf6a830c19": {
   "en": "Expert · 132 BPM",
   "t": "एक्सपर्ट · 132 BPM"
@@ -2122,6 +2186,10 @@
  "375f856a96a7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder TV show 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 33: </span> अस्थायी टीवी शो 33"
+ },
+ "37669714846a": {
+  "en": "x{x}: 0 to {ft} ft",
+  "t": "x{x}: 0 से {ft} फ़ुट"
  },
  "377bcd643607": {
   "en": "BM",
@@ -2351,6 +2419,10 @@
   "en": "JT",
   "t": "JT"
  },
+ "3c09c310c6b2": {
+  "en": "Jig {d} ft",
+  "t": "जिग {d} फ़ुट पर"
+ },
  "3c2e78721196": {
   "en": "The kind of anime that makes you go \"Oh! Didn't expect that!\", with a unique creative vision for portraying the struggles and feelings of adolescence. Unique!",
   "t": "वह एनीमे जो तुम्हें कहने पर मजबूर करे \"अरे! यह तो सोचा नहीं था!\", किशोरावस्था के संघर्षों और भावनाओं को दिखाने की अनोखी रचनात्मक दृष्टि के साथ। अनोखा!"
@@ -2563,6 +2635,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder movie 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 10: </span> अस्थायी फ़िल्म 10"
  },
+ "417d7a4b988f": {
+  "en": "🔊 Sound on",
+  "t": "🔊 आवाज़ चालू"
+ },
  "41e1360a1ebf": {
   "en": "Realm Grinder",
   "t": "Realm Grinder"
@@ -2670,6 +2746,10 @@
  "45d7b9f03f0a": {
   "en": "Body fat (yearly average)",
   "t": "बॉडी फ़ैट (सालाना औसत)"
+ },
+ "45e118d0563e": {
+  "en": "Normal",
+  "t": "सामान्य"
  },
  "45f08cb571cd": {
   "en": "<strong>Marcus Aurelius</strong>, <em>Meditations</em> 6.24: death brought Alexander the Great and his mule driver to the same state. <a href=\"https://en.wikisource.org/wiki/Marcus_Aurelius_(Haines_1916)/Book_6\">Text</a>",
@@ -2851,6 +2931,10 @@
   "en": "Daylight, especially in the morning, is what sets the body clock. More morning sun goes with an earlier, steadier sleep.",
   "t": "दिन की रोशनी, ख़ासकर सुबह की, शरीर-घड़ी को सेट करती है। सुबह की ज़्यादा धूप के साथ जल्दी और ज़्यादा स्थिर नींद आती है।"
  },
+ "4b2ee8531bcf": {
+  "en": "Grab a beer, and experience a flasher fish finder!",
+  "t": "एक बियर उठाओ, और फ़्लैशर फ़िश फ़ाइंडर का मज़ा लो!"
+ },
  "4b41ed494adc": {
   "en": " Steam + Xbox + PlayStation  ·  estimated ",
   "t": "Steam + Xbox + PlayStation  ·  अनुमानित"
@@ -3007,6 +3091,10 @@
   "en": "Gamer",
   "t": "गेमर"
  },
+ "4e5e65f062ec": {
+  "en": "Caught: {fish}, {len} in ({cm} cm)!",
+  "t": "पकड़ी: {fish}, {len} इंच ({cm} सेमी)!"
+ },
  "4e735732ab92": {
   "en": "Puppy eyes still work",
   "t": "पिल्ले वाली आँखें अब भी काम करती हैं"
@@ -3034,6 +3122,10 @@
  "4ebc18247e08": {
   "en": "Steam",
   "t": "Steam"
+ },
+ "4ec00394908f": {
+  "en": "How to play",
+  "t": "कैसे खेलें"
  },
  "4ec368ab9572": {
   "en": "<strong>Full commitment is not eternal commitment.</strong> If there’s movement, I work with imperfection. When people prove unworthy of your love, losing faith isn’t failure; it’s clarity. I steward living systems for a better future, and erase dead ones after extracting a mental model to detect this kind of rot early.",
@@ -3443,6 +3535,14 @@
   "en": "Psst! Stuck? Press me once for a freebie.",
   "t": "श्श! अटक गए? एक मुफ़्त मदद के लिए मुझे एक बार दबाओ।"
  },
+ "5748b8b683ba": {
+  "en": "Black crappie",
+  "t": "ब्लैक क्रैपी"
+ },
+ "57574efdd4f6": {
+  "en": "🔇 Sound off",
+  "t": "🔇 आवाज़ बंद"
+ },
  "576347ec826f": {
   "en": "Europe",
   "t": "यूरोप"
@@ -3495,6 +3595,10 @@
   "en": "Perfect World",
   "t": "Perfect World"
  },
+ "5874a684ac96": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Gain</b> sets how strong the marks show (about 3 to 4 here); too much and the dial fills with clutter. Press it to step through the 10 IR settings when another flasher interferes.",
+  "t": "<b data-astro-cid-o3poasna=\"\">गेन</b> तय करता है कि निशान कितने तेज़ दिखें (यहाँ लगभग 3 से 4); ज़्यादा हो तो डायल गड़बड़ी से भर जाता है। जब कोई और फ़्लैशर दख़ल दे, तो 10 IR सेटिंग बदलने के लिए इसे दबाओ।"
+ },
  "58833ac67fd0": {
   "en": "Walkers of the Sacred Steps",
   "t": "पवित्र चरणों पर चलने वाले"
@@ -3510,6 +3614,10 @@
  "58b8da4b72d4": {
   "en": "7% of my hours",
   "t": "मेरे घंटों का 7%"
+ },
+ "58bb403e88cf": {
+  "en": "Northern pike",
+  "t": "नॉर्दर्न पाइक"
  },
  "58f7a8f2ec30": {
   "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n Body fat, yearly average: 2023, 32.9%; 2024, 36.8%; 2025, 38.0%; 2026, 35.4%. ",
@@ -3751,6 +3859,10 @@
   "en": "Camping",
   "t": "कैंपिंग"
  },
+ "5e9f48f66af0": {
+  "en": "Bite! Flick up hard to set the hook!",
+  "t": "काटा! काँटा फँसाने के लिए ज़ोर से ऊपर झटको!"
+ },
  "5ef1da7aa7f2": {
   "en": "Quite the stretch",
   "t": "क्या अंगड़ाई है"
@@ -3863,6 +3975,10 @@
   "en": "Deovandski's Blog",
   "t": "Deovandski का ब्लॉग"
  },
+ "6189fe36c4af": {
+  "en": "Turn the <b data-astro-cid-o3poasna=\"\">Range</b> knob to switch the flasher on. The bottom is at 28 ft here, so x2 (0 to 40 ft) fits it best.",
+  "t": "फ़्लैशर चालू करने के लिए <b data-astro-cid-o3poasna=\"\">रेंज</b> नॉब घुमाओ। यहाँ तल 28 फ़ुट पर है, इसलिए x2 (0 से 40 फ़ुट) सबसे ठीक है।"
+ },
  "618e3308c83d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 29: </span> Placeholder movie 29 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 29: </span> अस्थायी फ़िल्म 29"
@@ -3870,6 +3986,14 @@
  "618e487541ea": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman"
+ },
+ "61b142772297": {
+  "en": "Fishing hole: Up and Down move the jig, Space flicks the rod",
+  "t": "बर्फ़ का छेद: ऊपर और नीचे की कुंजियाँ जिग हिलाती हैं, स्पेस से छड़ी झटको"
+ },
+ "61d48f8ebddb": {
+  "en": "Ice fishing: turn your phone sideways",
+  "t": "बर्फ़ पर मछली पकड़ना: अपना फ़ोन आड़ा करो"
  },
  "61db3a4f5dc3": {
   "en": "Kingdoms and Castles",
@@ -3918,6 +4042,14 @@
  "62dfe60deea3": {
   "en": "The numbers didn't load. Try again later.",
   "t": "आँकड़े लोड नहीं हुए। बाद में फिर कोशिश करें।"
+ },
+ "62f84c7b7a34": {
+  "en": "{n} of 10",
+  "t": "10 में से {n}"
+ },
+ "63286f4f3a05": {
+  "en": "Bottom at {d} ft. Scroll or swipe down to drop your jig: it's the thin mark on the dial.",
+  "t": "तल {d} फ़ुट पर है। जिग नीचे डालने के लिए स्क्रॉल करो या नीचे स्वाइप करो: डायल पर पतला निशान वही है।"
  },
  "633797165688": {
   "en": "Magical Mirai, Osaka (2014)",
@@ -4439,6 +4571,10 @@
   "en": "Enlarge: Crappie selfie",
   "t": "बड़ा करें: क्रैपी के साथ सेल्फ़ी"
  },
+ "70d7858359b2": {
+  "en": "Yellow perch",
+  "t": "पीली पर्च"
+ },
  "70e3b3dcbb78": {
   "en": " NM ",
   "t": "NM"
@@ -4739,6 +4875,10 @@
   "en": "226 days",
   "t": "226 दिन"
  },
+ "78c0f941b201": {
+  "en": "Dashes running around the dial? A buddy's flasher is too close: press the Gain knob to step through the interference rejection (IR).",
+  "t": "डायल पर छोटी-छोटी लकीरें घूम रही हैं? किसी दोस्त का फ़्लैशर बहुत पास है: इंटरफ़ेरेंस रिजेक्शन (IR) बदलने के लिए गेन नॉब दबाओ।"
+ },
  "78cc6006e09c": {
   "en": "Gym, 6:47am",
   "t": "जिम, सुबह 6:47"
@@ -4990,6 +5130,10 @@
  "7eb0cee888ab": {
   "en": "Min",
   "t": "मिनट"
+ },
+ "7ebd2107485d": {
+  "en": "Turn the Range knob to switch the flasher on.",
+  "t": "फ़्लैशर चालू करने के लिए रेंज नॉब घुमाओ।"
  },
  "7ec79775c355": {
   "en": "Every wrong answer is just a trip you still have to take.",
@@ -5483,6 +5627,10 @@
   "en": "Love it. Even the ecchi. Everything has a purpose, and I have nothing to complain about. If I had watched Mushoku Tensei before writing #HusbandOutWorld, I might not have written my story at all, because it's good enough to quench a lot of the thirst I had while consuming one isekai after another.",
   "t": "इससे प्यार है। एच्ची से भी। हर चीज़ का एक मक़सद है, और मुझे कोई शिकायत नहीं। अगर मैंने #HusbandOutWorld लिखने से पहले Mushoku Tensei देखा होता, तो शायद मैं अपनी कहानी लिखता ही नहीं, क्योंकि यह इतना अच्छा है कि एक के बाद एक इसेकाई देखते हुए जो प्यास थी उसका बड़ा हिस्सा बुझा दे।"
  },
+ "8c89e1c4e11c": {
+  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom. Wheel going the wrong way (natural scrolling)? Press <b data-astro-cid-o3poasna=\"\">Reverse scroll</b>.",
+  "t": "जिग हिलाने के लिए माउस का पहिया स्क्रॉल करो (या फ़्लैशर या छड़ी पर ऊपर-नीचे स्वाइप करो)। डायल पर पतला निशान जिग है; चौड़ी लाल पट्टी तल है। पहिया उल्टी तरफ़ चल रहा है (नेचुरल स्क्रॉलिंग)? <b data-astro-cid-o3poasna=\"\">स्क्रॉल उल्टा करो</b> दबाओ।"
+ },
  "8c948d7947e0": {
   "en": "Hot",
   "t": "बहुत गरम"
@@ -5787,6 +5935,10 @@
   "en": "Garry's Mod",
   "t": "Garry's Mod"
  },
+ "93f579c09a3b": {
+  "en": "When the rod tip flashes (and your phone buzzes), flick up hard: a big, fast scroll up or swipe up, or Space. Too early and it spooks; too late and it spits the jig.",
+  "t": "जब छड़ी की नोक चमके (और फ़ोन काँपे), ज़ोर से ऊपर झटको: एक बड़ा, तेज़ ऊपर स्क्रॉल या ऊपर स्वाइप, या स्पेस। बहुत जल्दी तो वह डर जाती है; बहुत देर से तो वह जिग थूक देती है।"
+ },
  "93fc6888a695": {
   "en": "The Church's top recommendations are <strong>Sal Lebre</strong> and <strong>Mariza Churrasco D'Chef</strong>, for their consistency and their quality held steady over the years. Seasoned churrasco salt is permitted by the Church, but not every brand, for some add too much, and simplicity is at the core of our faith.",
   "t": "चर्च की सबसे बड़ी सिफ़ारिशें <strong>Sal Lebre</strong> और <strong>Mariza Churrasco D'Chef</strong> हैं, बरसों से उनकी एक-सी गुणवत्ता के लिए। मसालेदार शुहास्कू नमक की चर्च अनुमति देता है, पर हर ब्रांड की नहीं, क्योंकि कुछ बहुत ज़्यादा डालते हैं, और सादगी हमारी आस्था का मूल है।"
@@ -5906,6 +6058,10 @@
  "96b6cea2d9d5": {
   "en": "God of War",
   "t": "God of War"
+ },
+ "96dd91cdcbe7": {
+  "en": "Gain",
+  "t": "गेन"
  },
  "96dedce974cf": {
   "en": "Enlarge: Failing to learn English",
@@ -6075,6 +6231,10 @@
   "en": "Am I that really interesting?",
   "t": "क्या मैं सच में इतना दिलचस्प हूँ?"
  },
+ "9c2867f3a4f7": {
+  "en": "It shook the hook.",
+  "t": "उसने काँटा झटककर छुड़ा लिया।"
+ },
  "9c4a5310f68f": {
   "en": "Princess Fluffy of Guamá: Fluffy in a pink princess dress and a jeweled tiara, sitting in the back seat of a car",
   "t": "गुआमा की राजकुमारी Fluffy: गुलाबी राजकुमारी पोशाक और रत्नजड़ित टियारा में Fluffy, कार की पिछली सीट पर बैठी"
@@ -6118,6 +6278,10 @@
  "9d6c79478e4e": {
   "en": "Legendary reflexes!",
   "t": "पौराणिक रिफ्लेक्स!"
+ },
+ "9d89b2d84ac3": {
+  "en": "It's coming in: the mark turns orange, then red.",
+  "t": "वह आ रही है: निशान नारंगी, फिर लाल हो जाता है।"
  },
  "9d8a4e9da14d": {
   "en": "Slime Rancher",
@@ -6302,6 +6466,10 @@
  "a157d38de121": {
   "en": "Enlarge: Moar sleep",
   "t": "बड़ा करें: और नींददद"
+ },
+ "a16c5bbe4bf9": {
+  "en": "Range",
+  "t": "रेंज"
  },
  "a173e725607d": {
   "en": "Asia",
@@ -6519,6 +6687,10 @@
   "en": "5C",
   "t": "5C"
  },
+ "a6d49890ad7c": {
+  "en": "Jig to call fish in. A green mark at the edge of the cone turns orange, then red, as it comes to your jig. Then twitch it, or lift it slowly.",
+  "t": "मछलियों को बुलाने के लिए जिग हिलाओ। कोन के किनारे का हरा निशान तुम्हारे जिग के पास आते-आते नारंगी, फिर लाल हो जाता है। तब हल्के झटके दो, या धीरे-धीरे ऊपर उठाओ।"
+ },
  "a6df62f72604": {
   "en": " ← Back to the system ",
   "t": "← सौरमंडल पर वापस"
@@ -6563,9 +6735,17 @@
   "en": "Electronic &amp; synthwave",
   "t": "इलेक्ट्रॉनिक और सिंथवेव"
  },
+ "a790b5f3cecb": {
+  "en": "IR {n}",
+  "t": "IR {n}"
+ },
  "a79aa4ea4d23": {
   "en": "Lust",
   "t": "वासना"
+ },
+ "a7b93d2128e8": {
+  "en": "Mode",
+  "t": "मोड"
  },
  "a7bdce161e86": {
   "en": "Enlarge: Clingy",
@@ -6907,6 +7087,10 @@
   "en": "Guess what I'm gonna do",
   "t": "बताओ मैं क्या करने वाला हूँ"
  },
+ "b0439c65e633": {
+  "en": "IR {n} cleared the interference.",
+  "t": "IR {n} ने इंटरफ़ेरेंस हटा दिया।"
+ },
  "b04af783d0ff": {
   "en": " Idle &amp; clickers ",
   "t": "आइडल और क्लिकर"
@@ -7031,6 +7215,10 @@
   "en": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 के पसंदीदा</span>"
  },
+ "b377868dc116": {
+  "en": "Keep reeling!",
+  "t": "लपेटते रहो!"
+ },
  "b38a99fe0694": {
   "en": "one rises as the other falls",
   "t": "एक बढ़ता है तो दूसरा घटता है"
@@ -7098,6 +7286,10 @@
  "b588aca7bb99": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!)"
+ },
+ "b5c2669931ed": {
+  "en": "It's on your jig: small twitches, or lift it slowly.",
+  "t": "वह तुम्हारे जिग पर है: हल्के झटके दो, या धीरे-धीरे ऊपर उठाओ।"
  },
  "b61c12b736ff": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 1: </span> Sword Art Online ",
@@ -7515,6 +7707,10 @@
   "en": " D · Seasons ",
   "t": "D · मौसम"
  },
+ "c16fa30192fe": {
+  "en": "Reel it up, and ease off when it runs, or the line breaks.",
+  "t": "उसे ऊपर लपेटो, और जब वह भागे तो ढील दो, वरना डोर टूट जाएगी।"
+ },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "247 घं.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">अनुमानित</span>"
@@ -7831,6 +8027,10 @@
   "en": "21 h",
   "t": "21 घं."
  },
+ "cb3b8b95ac08": {
+  "en": "Gain (press it for interference rejection)",
+  "t": "गेन (इंटरफ़ेरेंस रिजेक्शन के लिए दबाओ)"
+ },
  "cb617c0ab9ee": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Placeholder TV show 6 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 6: </span> अस्थायी टीवी शो 6"
@@ -8003,6 +8203,10 @@
   "en": "Cult of the Lamb",
   "t": "Cult of the Lamb"
  },
+ "cf93b2a95f0d": {
+  "en": "No bottom on this range: turn the Range up.",
+  "t": "इस रेंज पर तल नहीं दिखता: रेंज बढ़ाओ।"
+ },
  "cfcf0d7d152e": {
   "en": "Never wrestle with pigs. You both get dirty, and the pig likes it. <span class=\"newest\">New</span>",
   "t": "सूअरों से कभी कुश्ती मत लड़ो। दोनों गंदे होते हो, और सूअर को मज़ा आता है। <span class=\"newest\">नया</span>"
@@ -8058,6 +8262,10 @@
  "d09bdd281dfa": {
   "en": "Princess Fluffy of Guamá",
   "t": "गुआमा की राजकुमारी Fluffy"
+ },
+ "d0a6b073b147": {
+  "en": "Snap! The line broke.",
+  "t": "चटाक! डोर टूट गई।"
  },
  "d0c12b6b5196": {
   "en": "REM sleep",
@@ -8167,6 +8375,10 @@
   "en": "Read my Vol 4 afterword",
   "t": "मेरा वॉल्यूम 4 का उपसंहार पढ़ो"
  },
+ "d35993abead4": {
+  "en": "Back to Fishing",
+  "t": "मछली पकड़ना पर वापस"
+ },
  "d35c60400150": {
   "en": "87 h",
   "t": "87 घं."
@@ -8202,6 +8414,10 @@
  "d3a2460e932b": {
   "en": "TS",
   "t": "TS"
+ },
+ "d3acd83e402c": {
+  "en": "Lots of clutter: turn the Gain down a little.",
+  "t": "बहुत गड़बड़ी है: गेन थोड़ा कम करो।"
  },
  "d3b572e24639": {
   "en": "Huehue, I can feel that thinking face from here.",
@@ -8735,6 +8951,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Shingeki no Kyojin (Attack on Titan) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 4: </span> Shingeki no Kyojin (Attack on Titan)"
  },
+ "e0d4f121e169": {
+  "en": "Too late: it spat the jig.",
+  "t": "बहुत देर हो गई: उसने जिग थूक दिया।"
+ },
  "e1038f5c447c": {
   "en": "More of my games on the Gamer tab",
   "t": "मेरे और गेम गेमर टैब पर"
@@ -8827,9 +9047,17 @@
   "en": "Now",
   "t": "अब"
  },
+ "e3bd01bce3c4": {
+  "en": "Tullibee",
+  "t": "टलिबी"
+ },
  "e3cb8bd6bf09": {
   "en": "Bedtime",
   "t": "सोने जाने का वक़्त"
+ },
+ "e3de5ab0ca4c": {
+  "en": "Off",
+  "t": "बंद"
  },
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
@@ -9062,6 +9290,10 @@
  "ea924f72d31e": {
   "en": "Recovery",
   "t": "रिकवरी"
+ },
+ "ea9676003762": {
+  "en": "Line",
+  "t": "डोर"
  },
  "eaa40e2587dc": {
   "en": "Distrito Federal",
@@ -9567,6 +9799,10 @@
   "en": " Shooters &amp; co-op ",
   "t": "शूटर और को-ऑप"
  },
+ "fa2ca4c86063": {
+  "en": "Caught: {n}",
+  "t": "पकड़ी गईं: {n}"
+ },
  "fa42321aea70": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Placeholder movie 26 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 26: </span> अस्थायी फ़िल्म 26"
@@ -9590,6 +9826,10 @@
  "faf65a9797bc": {
   "en": "With my autistic brain, it’s no surprise I love aviation (vehicles are one of the most common autistic special interests, and a plane is a flying pile of systems with firm rules; the research is in this tab’s Links box). I always loved planes and was going to be a pilot. But my parents worked in the industry and worried they were the ones steering me there. I grew up around it, even helping my mom on the SABRE system so we could go home sooner. They did the right thing by pushing me to make my own decision… and I ended up in software development.",
   "t": "मेरे ऑटिस्टिक दिमाग़ के साथ, इसमें कोई हैरानी नहीं कि मुझे विमानन से प्यार है (वाहन सबसे आम ऑटिस्टिक ख़ास रुचियों में से हैं, और हवाई जहाज़ पक्के नियमों वाले सिस्टमों का उड़ता हुआ ढेर है; शोध इस टैब के लिंक बॉक्स में है)। मुझे हमेशा से हवाई जहाज़ पसंद थे और मैं पायलट बनने वाला था। लेकिन मेरे माता-पिता इसी उद्योग में काम करते थे और उन्हें चिंता थी कि कहीं वही मुझे उस तरफ़ तो नहीं धकेल रहे। मैं इसी माहौल में बड़ा हुआ, यहाँ तक कि घर जल्दी जाने के लिए SABRE सिस्टम पर मम्मी की मदद भी करता था। उन्होंने मुझे अपना फ़ैसला खुद करने के लिए प्रेरित करके सही किया… और मैं सॉफ़्टवेयर डेवलपमेंट में आ गया।"
+ },
+ "fb1a89e702bc": {
+  "en": "Auto zoom",
+  "t": "ऑटो ज़ूम"
  },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",

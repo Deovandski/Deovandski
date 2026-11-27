@@ -44,6 +44,7 @@ and a project without translations just shows the English.
 | [LinksMenu.astro](LinksMenu.astro) | A drop-down box of link buttons, built from groups of buttons and separators (a line, optionally with a centred heading), opened by its own Links button or by one on the page. Works as an open box without JavaScript. | Every tab's links, from the Links button right of ▶ Play: Developer, Author, Gamer, Influencer, Musician, Anime, BOTW, Death, Mentor, Lust, D&D, Aviation |
 | [Breadcrumb.astro](Breadcrumb.astro) | A one-line breadcrumb trail that fits its width: the text shrinks to fit, and below a smallest size (11px) the items are cut with "…" instead (full text on hover). Drawn from `items`, or filled by a script. | The home page tab header (#266) |
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
+| [IceFlasher.astro](IceFlasher.astro) | Ice fishing with a working three-colour flasher (based on the Vexilar FL-18): the spinning-LED dial (red, orange, green), working Range, Mode and Gain knobs (press Gain for the 10 IR steps), the motor's whir and ping ticks (Web Audio), and the rod over the hole. Scroll or swipe to jig, flick hard when the rod tip flashes (phones buzz), then reel. | Fishing tab (#310) |
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
 | [KitKot.astro](KitKot.astro) | A parody social app idle game on a phone: post for views, likes and followers on a slot-machine schedule (near misses, a hidden hot post type, fatigue, streaks, energy). "Under the hood" names each trick, with sources. | Influencer tab |
 | [FireMeter.astro](FireMeter.astro) | A fireplace with bellows and a meter: each pump grows the fire, climbs the meter and shows a phrase for that level; maxing out "bonks" and resets. | Lust tab (ecchi-meter) |
@@ -677,6 +678,38 @@ give, bad? }] }]`. The crop drawings are built in for the ids `pearl`, `amethyst
 `sapphire` (a radish, grapes, a melon and a rose); other ids get the rose. Crops keep growing while the
 page is closed; the outcome is rolled the moment a crop is ripe, and a bad one shows as a wilted plant.
 Theme with `--farm-accent`, `--farm-soil`, `--farm-grass` and `--farm-text`.
+
+## IceFlasher
+
+```astro
+---
+import IceFlasher from './reusable/IceFlasher.astro';
+---
+<IceFlasher />
+<IceFlasher depth={32} />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `depth` | `28` | How deep the hole is, in feet (where the bottom shows). |
+| `class` | none | Extra class. |
+
+Ice fishing with a flasher, based on the Vexilar FL-18. The dial is the flasher's LED wheel: 0 at 12 o'clock, depth
+clockwise, red for strong returns, orange for medium, green for weak. The jig is the thin mark, the bottom the wide red
+band; fish come in green from the edge of the cone and turn red under the hole. The knobs work like the FL-18's: Range
+(Off, x1 to x10 of 20 ft; it also switches it on), Mode (Normal, Low Power, Auto Zoom and Bottom Lock, which split the
+dial with the bottom 6 ft zoomed on the left) and Gain (0 to 10; pressing it steps through the 10 interference-rejection
+settings, for when a "buddy's flasher" starts drawing dashes on the dial). Drag, scroll over or click a knob, or use the
+arrow keys and Enter.
+
+Play: the mouse wheel (or a swipe or drag on the flasher or the rod; Up and Down keys) moves the jig. Jig to call a fish
+in, twitch or lift slowly while it's on the jig, and when the rod tip flashes (`navigator.vibrate` buzzes phones), flick
+up hard: a big, fast scroll or swipe up (or Space). Then reel up, and ease off when it runs, or the line snaps. Six lake
+fish of the north with their own depths, sizes and fight; catches are listed for the visit (nothing is saved). Sound is
+made with the Web Audio API (motor whir, ping ticks, the drag's buzz, a splash) and starts with the flasher; one mute
+button. Pauses and goes quiet off screen. Reduced motion: no flicker or rod shake, and the rod tip glows instead of
+blinking. Theme with `--if-case`, `--if-accent`, `--if-sky`, `--if-water` and `--if-text`. Words the script writes live
+in `.ice-flasher__strings`.
 
 ## DinoAmbush
 
