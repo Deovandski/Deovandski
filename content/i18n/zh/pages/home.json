@@ -299,6 +299,10 @@
   "en": "Click or drag to draw. Right-click erases.",
   "t": "点击或拖动来画。右键擦除。"
  },
+ "06e20f5a4426": {
+  "en": "Bottom lock",
+  "t": "锁定水底"
+ },
  "06ee9ade85e4": {
   "en": "Hellblade: Senua's Sacrifice",
   "t": "地狱之刃：塞娜的献祭"
@@ -479,6 +483,10 @@
   "en": "Blog",
   "t": "博客"
  },
+ "0ba0ef5404ec": {
+  "en": "Ice fishing",
+  "t": "冰钓"
+ },
  "0bb27395d153": {
   "en": "231 h",
   "t": "231 小时"
@@ -535,6 +543,10 @@
   "en": "Spring bass selfie",
   "t": "春天的鲈鱼自拍"
  },
+ "0d6b08d281da": {
+  "en": "Fish on! Reel up (scroll or swipe up), and ease off when it runs.",
+  "t": "中鱼了！往上收线（向上滚动或向上滑动），它冲的时候就放松。"
+ },
  "0d97f4d5801b": {
   "en": "Enlarge: Bathing in the Amazon",
   "t": "放大: 在亚马孙河里洗澡"
@@ -562,6 +574,10 @@
  "0e0bd9224cae": {
   "en": " CS ",
   "t": "CS"
+ },
+ "0e0c14386ba6": {
+  "en": "Low power",
+  "t": "低功率"
  },
  "0e0f5c25719f": {
   "en": "Back to Aviation",
@@ -783,6 +799,10 @@
   "en": "Vatican City",
   "t": "梵蒂冈"
  },
+ "13876d38ea11": {
+  "en": "Barely anything shows: turn the Gain up.",
+  "t": "几乎什么都看不到：把增益调高。"
+ },
  "13a29a85064f": {
   "en": "Plot {plot}: empty. Plant {crop}.",
   "t": "地块 {plot}：空。种 {crop}。"
@@ -802,6 +822,10 @@
  "13e54ce09816": {
   "en": " PV ",
   "t": "PV"
+ },
+ "143fa4c4c81c": {
+  "en": "Walleye",
+  "t": "大眼梭鲈"
  },
  "145a01fb9391": {
   "en": "/min",
@@ -826,6 +850,10 @@
  "148bcf6b6644": {
   "en": "Deo's old TikTok profile, @deovandski: 732 followers, 118.5K likes, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, above a grid of video thumbnails",
   "t": "Deo 以前的 TikTok 主页 @deovandski：732 位粉丝、11.85 万个赞，简介“Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”，下面是一格格视频缩略图"
+ },
+ "149709b9683c": {
+  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom.",
+  "t": "滚动鼠标滚轮（或在探鱼器或鱼竿上上下滑动）来移动钓饵。表盘上细细的那道是钓饵，宽宽的红色带是水底。"
  },
  "149d7ab31b5c": {
   "en": "Go!",
@@ -1287,6 +1315,10 @@
   "en": "Is this a cozy fire? ٩(◕‿◕｡)۶",
   "t": "这是暖洋洋的小火堆吗？٩(◕‿◕｡)۶"
  },
+ "218488ac2b05": {
+  "en": "Split screen: the whole hole on the right, the bottom 6 ft zoomed on the left.",
+  "t": "分屏：右边是整个水层，左边放大显示离水底 6 英尺的范围。"
+ },
  "21bcdb7e16a8": {
   "en": "World &amp; fusion",
   "t": "世界与融合"
@@ -1451,6 +1483,10 @@
   "en": "It’s also here for the same reason as the <a href=\"#gym\">Gym</a>. AuDHD people tend to get stuck inside their own homes and fall behind socially: home is safe, quiet and predictable, and the world outside costs energy. The research lines up with that too:",
   "t": "它放在这里，也和<a href=\"#gym\">健身房</a>是同一个原因。AuDHD人士往往会困在自己家里，在社交上掉队：家里安全、安静、可预测，而外面的世界很耗能量。研究也印证了这一点："
  },
+ "262f737babf6": {
+  "en": "Too much: it spooked.",
+  "t": "动作太大：鱼被吓跑了。"
+ },
  "2641c8ed7f11": {
   "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my dad’s 2014 BIDU songs as the music.",
   "t": "一头会放屁的驴在亚马逊和沙漠里奔跑、跳跃、用头撞、放屁。2014 年画草图，2016 年用 Unity 开工，2026 年用 Godot 完成，配乐是我爸爸 2014 年写的 BIDU 歌曲。"
@@ -1579,6 +1615,10 @@
   "en": " Xbox ",
   "t": "Xbox"
  },
+ "28c143b65e3d": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Mode</b>: Low Power for less clutter, or Auto Zoom and Bottom Lock to split the dial, with the bottom 6 ft zoomed on the left.",
+  "t": "<b data-astro-cid-o3poasna=\"\">模式</b>：低功率能减少杂波；自动放大和锁定水底会把表盘分成两半，左边放大显示离水底 6 英尺的范围。"
+ },
  "28e75153a2a3": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  4 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">570 小时</strong>  ·  4 款游戏  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">占我总时数的 2%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">占我总时数的 4%</span>"
@@ -1614,6 +1654,10 @@
  "2984ff90b404": {
   "en": "Bad Bunny",
   "t": "Bad Bunny"
+ },
+ "2991c57c2a2e": {
+  "en": "Ice fishing with a flasher, based on the Vexilar FL-18. Turn it on, drop your jig, call a fish in and set the hook. Sound on!",
+  "t": "用探鱼器（闪光式声呐）冰钓，以 Vexilar FL-18 为原型。打开电源，放下钓饵，把鱼引过来，然后刺鱼。记得开声音！"
  },
  "29990da75615": {
   "en": " <span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #3: </span>Shisa Kanko <span lang=\"ja\" translate=\"no\" data-astro-cid-xtzphevd=\"\">(指差喚呼)</span> ",
@@ -1654,6 +1698,10 @@
  "2a4d5402c166": {
   "en": " Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Spring 2014 · back in 2026</span> ",
   "t": "Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">2014 年春 · 2026 年回归</span>"
+ },
+ "2a714ecd8093": {
+  "en": "Nothing bit yet: that rip spooked it.",
+  "t": "还没咬钩：这一挑把它吓跑了。"
  },
  "2a7dbc5cf815": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 2: </span> Placeholder movie 2 ",
@@ -1831,6 +1879,10 @@
   "en": "One of my favorite isekai, and one of the OGs from before the torrent of copycats trying to milk the market dry.",
   "t": "我最喜欢的异世界之一，也是那股想把市场榨干的模仿潮之前的元老之一。"
  },
+ "2ff5d5a41204": {
+  "en": "A green mark at {d} ft: a fish at the edge of the cone. Jig to call it in.",
+  "t": "{d} 英尺处有一道绿色标记：声呐锥边缘有条鱼。抖动钓饵把它引过来。"
+ },
  "30008d008dae": {
   "en": "Car rides!",
   "t": "兜风！"
@@ -1850,6 +1902,14 @@
  "303d884de994": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Placeholder movie 17 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 17: </span> 占位电影 17"
+ },
+ "30472f63d677": {
+  "en": "{fish}, {len} in ({cm} cm)",
+  "t": "{fish}，{len} 英寸（{cm} 厘米）"
+ },
+ "308079570015": {
+  "en": "Your catches",
+  "t": "你的钓获"
  },
  "3098add33361": {
   "en": "\nThat grew into HusbandOutWorld, a light novel series that took me to conventions, where I met a lot of people,\n          from artists to directors and publishers. It feels surreal how much this project pushed me to grow and challenge\n          myself. If you're curious, you can see my evolution through the Light Novel Afterwords.\n",
@@ -1914,6 +1974,10 @@
  "32096c2e0eff": {
   "en": " C ",
   "t": "C"
+ },
+ "3229477a180e": {
+  "en": "Sauger",
+  "t": "加拿大梭鲈"
  },
  "3239f318bd88": {
   "en": "Dropkick Murphys",
@@ -2071,6 +2135,10 @@
   "en": "+ 16 more games",
   "t": "+ 另外 16 款游戏"
  },
+ "35aab70b60e7": {
+  "en": "It's running! Ease off.",
+  "t": "它在冲！放松！"
+ },
  "35cf6a830c19": {
   "en": "Expert · 132 BPM",
   "t": "专家 · 132 BPM"
@@ -2122,6 +2190,10 @@
  "375f856a96a7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder TV show 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 33: </span> 占位剧集 33"
+ },
+ "37669714846a": {
+  "en": "x{x}: 0 to {ft} ft",
+  "t": "x{x}：0 到 {ft} 英尺"
  },
  "377bcd643607": {
   "en": "BM",
@@ -2351,6 +2423,10 @@
   "en": "JT",
   "t": "JT"
  },
+ "3c09c310c6b2": {
+  "en": "Jig {d} ft",
+  "t": "钓饵 {d} 英尺"
+ },
  "3c2e78721196": {
   "en": "The kind of anime that makes you go \"Oh! Didn't expect that!\", with a unique creative vision for portraying the struggles and feelings of adolescence. Unique!",
   "t": "那种让你忍不住“哇！没想到！”的动漫，用独特的创意视角描绘青春期的挣扎和情感。独一无二！"
@@ -2563,6 +2639,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder movie 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 10: </span> 占位电影 10"
  },
+ "417d7a4b988f": {
+  "en": "🔊 Sound on",
+  "t": "🔊 声音开"
+ },
  "41e1360a1ebf": {
   "en": "Realm Grinder",
   "t": "Realm Grinder"
@@ -2670,6 +2750,10 @@
  "45d7b9f03f0a": {
   "en": "Body fat (yearly average)",
   "t": "体脂率（年平均值）"
+ },
+ "45e118d0563e": {
+  "en": "Normal",
+  "t": "普通"
  },
  "45f08cb571cd": {
   "en": "<strong>Marcus Aurelius</strong>, <em>Meditations</em> 6.24: death brought Alexander the Great and his mule driver to the same state. <a href=\"https://en.wikisource.org/wiki/Marcus_Aurelius_(Haines_1916)/Book_6\">Text</a>",
@@ -3007,6 +3091,10 @@
   "en": "Gamer",
   "t": "玩家"
  },
+ "4e5e65f062ec": {
+  "en": "Caught: {fish}, {len} in ({cm} cm)!",
+  "t": "钓到了：{fish}，{len} 英寸（{cm} 厘米）！"
+ },
  "4e735732ab92": {
   "en": "Puppy eyes still work",
   "t": "狗狗眼还管用"
@@ -3034,6 +3122,10 @@
  "4ebc18247e08": {
   "en": "Steam",
   "t": "Steam"
+ },
+ "4ec00394908f": {
+  "en": "How to play",
+  "t": "玩法"
  },
  "4ec368ab9572": {
   "en": "<strong>Full commitment is not eternal commitment.</strong> If there’s movement, I work with imperfection. When people prove unworthy of your love, losing faith isn’t failure; it’s clarity. I steward living systems for a better future, and erase dead ones after extracting a mental model to detect this kind of rot early.",
@@ -3443,6 +3535,14 @@
   "en": "Psst! Stuck? Press me once for a freebie.",
   "t": "嘘！卡住了？点我一次，送你一个提示。"
  },
+ "5748b8b683ba": {
+  "en": "Black crappie",
+  "t": "黑莓鲈"
+ },
+ "57574efdd4f6": {
+  "en": "🔇 Sound off",
+  "t": "🔇 声音关"
+ },
  "576347ec826f": {
   "en": "Europe",
   "t": "欧洲"
@@ -3495,6 +3595,10 @@
   "en": "Perfect World",
   "t": "完美世界"
  },
+ "5874a684ac96": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Gain</b> sets how strong the marks show (about 3 to 4 here); too much and the dial fills with clutter. Press it to step through the 10 IR settings when another flasher interferes.",
+  "t": "<b data-astro-cid-o3poasna=\"\">增益</b>决定标记显示得多强（这里大约 3 到 4）；太高的话表盘会满是杂波。遇到别的探鱼器干扰时，按下它切换 10 档 IR。"
+ },
  "58833ac67fd0": {
   "en": "Walkers of the Sacred Steps",
   "t": "神圣步骤的践行者"
@@ -3510,6 +3614,10 @@
  "58b8da4b72d4": {
   "en": "7% of my hours",
   "t": "占我总时数的 7%"
+ },
+ "58bb403e88cf": {
+  "en": "Northern pike",
+  "t": "白斑狗鱼"
  },
  "58f7a8f2ec30": {
   "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n Body fat, yearly average: 2023, 32.9%; 2024, 36.8%; 2025, 38.0%; 2026, 35.4%. ",
@@ -3751,6 +3859,10 @@
   "en": "Camping",
   "t": "露营"
  },
+ "5e9f48f66af0": {
+  "en": "Bite! Flick up hard to set the hook!",
+  "t": "咬钩了！用力往上一挑，刺鱼！"
+ },
  "5ef1da7aa7f2": {
   "en": "Quite the stretch",
   "t": "伸了个大懒腰"
@@ -3863,6 +3975,10 @@
   "en": "Deovandski's Blog",
   "t": "Deovandski 的博客"
  },
+ "6189fe36c4af": {
+  "en": "Turn the <b data-astro-cid-o3poasna=\"\">Range</b> knob to switch the flasher on. The bottom is at 28 ft here, so x2 (0 to 40 ft) fits it best.",
+  "t": "转动<b data-astro-cid-o3poasna=\"\">量程</b>旋钮打开探鱼器。这里水底在 28 英尺，所以 x2（0 到 40 英尺）最合适。"
+ },
  "618e3308c83d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 29: </span> Placeholder movie 29 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 29: </span> 占位电影 29"
@@ -3870,6 +3986,14 @@
  "618e487541ea": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman"
+ },
+ "61b142772297": {
+  "en": "Fishing hole: Up and Down move the jig, Space flicks the rod",
+  "t": "冰洞：上下键移动钓饵，空格键挑竿"
+ },
+ "61d48f8ebddb": {
+  "en": "Ice fishing: turn your phone sideways",
+  "t": "冰钓：把手机横过来"
  },
  "61db3a4f5dc3": {
   "en": "Kingdoms and Castles",
@@ -3918,6 +4042,14 @@
  "62dfe60deea3": {
   "en": "The numbers didn't load. Try again later.",
   "t": "数字没有加载出来，请稍后再试。"
+ },
+ "62f84c7b7a34": {
+  "en": "{n} of 10",
+  "t": "{n} / 10"
+ },
+ "63286f4f3a05": {
+  "en": "Bottom at {d} ft. Scroll or swipe down to drop your jig: it's the thin mark on the dial.",
+  "t": "水底在 {d} 英尺。向下滚动或向下滑动来放下钓饵：表盘上细细的那道就是它。"
  },
  "633797165688": {
   "en": "Magical Mirai, Osaka (2014)",
@@ -4439,6 +4571,10 @@
   "en": "Enlarge: Crappie selfie",
   "t": "放大: 莓鲈自拍"
  },
+ "70d7858359b2": {
+  "en": "Yellow perch",
+  "t": "黄金鲈"
+ },
  "70e3b3dcbb78": {
   "en": " NM ",
   "t": "NM"
@@ -4739,6 +4875,10 @@
   "en": "226 days",
   "t": "226 天"
  },
+ "78c0f941b201": {
+  "en": "Dashes running around the dial? A buddy's flasher is too close: press the Gain knob to step through the interference rejection (IR).",
+  "t": "表盘上有小点在乱跑？朋友的探鱼器离得太近了：按一下增益旋钮，切换抗干扰（IR）档位。"
+ },
  "78cc6006e09c": {
   "en": "Gym, 6:47am",
   "t": "健身房，早上 6:47"
@@ -4990,6 +5130,10 @@
  "7eb0cee888ab": {
   "en": "Min",
   "t": "分"
+ },
+ "7ebd2107485d": {
+  "en": "Turn the Range knob to switch the flasher on.",
+  "t": "转动量程旋钮，打开探鱼器。"
  },
  "7ec79775c355": {
   "en": "Every wrong answer is just a trip you still have to take.",
@@ -5787,6 +5931,10 @@
   "en": "Garry's Mod",
   "t": "Garry's Mod"
  },
+ "93f579c09a3b": {
+  "en": "When the rod tip flashes (and your phone buzzes), flick up hard: a big, fast scroll up or swipe up, or Space. Too early and it spooks; too late and it spits the jig.",
+  "t": "竿梢闪光时（手机还会振动），用力往上一挑：快速大幅向上滚动或向上滑动，或者按空格键。太早会把鱼吓跑，太晚它会吐掉钓饵。"
+ },
  "93fc6888a695": {
   "en": "The Church's top recommendations are <strong>Sal Lebre</strong> and <strong>Mariza Churrasco D'Chef</strong>, for their consistency and their quality held steady over the years. Seasoned churrasco salt is permitted by the Church, but not every brand, for some add too much, and simplicity is at the core of our faith.",
   "t": "教会首推<strong>Sal Lebre</strong>和<strong>Mariza Churrasco D'Chef</strong>，因其多年如一的稳定与品质。教会允许使用调味烤肉盐，但并非每个牌子都行，因为有些添加得太多，而简朴乃我们信仰的核心。"
@@ -5906,6 +6054,10 @@
  "96b6cea2d9d5": {
   "en": "God of War",
   "t": "战神"
+ },
+ "96dd91cdcbe7": {
+  "en": "Gain",
+  "t": "增益"
  },
  "96dedce974cf": {
   "en": "Enlarge: Failing to learn English",
@@ -6075,6 +6227,10 @@
   "en": "Am I that really interesting?",
   "t": "我真有那么有意思吗？"
  },
+ "9c2867f3a4f7": {
+  "en": "It shook the hook.",
+  "t": "它脱钩了。"
+ },
  "9c4a5310f68f": {
   "en": "Princess Fluffy of Guamá: Fluffy in a pink princess dress and a jeweled tiara, sitting in the back seat of a car",
   "t": "瓜马的 Fluffy 公主：Fluffy 穿着粉色公主裙、戴着镶宝石的头冠，坐在汽车后座上"
@@ -6118,6 +6274,10 @@
  "9d6c79478e4e": {
   "en": "Legendary reflexes!",
   "t": "传说级反应！"
+ },
+ "9d89b2d84ac3": {
+  "en": "It's coming in: the mark turns orange, then red.",
+  "t": "它过来了：标记会变成橙色，然后变红。"
  },
  "9d8a4e9da14d": {
   "en": "Slime Rancher",
@@ -6302,6 +6462,10 @@
  "a157d38de121": {
   "en": "Enlarge: Moar sleep",
   "t": "放大: 还要睡"
+ },
+ "a16c5bbe4bf9": {
+  "en": "Range",
+  "t": "量程"
  },
  "a173e725607d": {
   "en": "Asia",
@@ -6519,6 +6683,10 @@
   "en": "5C",
   "t": "5C"
  },
+ "a6d49890ad7c": {
+  "en": "Jig to call fish in. A green mark at the edge of the cone turns orange, then red, as it comes to your jig. Then twitch it, or lift it slowly.",
+  "t": "抖动钓饵把鱼引过来。声呐锥边缘的绿色标记靠近钓饵时会变成橙色，然后变红。这时轻轻抖动，或者慢慢往上提。"
+ },
  "a6df62f72604": {
   "en": " ← Back to the system ",
   "t": "← 返回星系"
@@ -6563,9 +6731,17 @@
   "en": "Electronic &amp; synthwave",
   "t": "电子与合成波"
  },
+ "a790b5f3cecb": {
+  "en": "IR {n}",
+  "t": "IR {n}"
+ },
  "a79aa4ea4d23": {
   "en": "Lust",
   "t": "欲望"
+ },
+ "a7b93d2128e8": {
+  "en": "Mode",
+  "t": "模式"
  },
  "a7bdce161e86": {
   "en": "Enlarge: Clingy",
@@ -6907,6 +7083,10 @@
   "en": "Guess what I'm gonna do",
   "t": "猜猜我要干嘛"
  },
+ "b0439c65e633": {
+  "en": "IR {n} cleared the interference.",
+  "t": "IR {n} 消除了干扰。"
+ },
  "b04af783d0ff": {
   "en": " Idle &amp; clickers ",
   "t": "放置与点击"
@@ -7031,6 +7211,10 @@
   "en": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 最爱</span>"
  },
+ "b377868dc116": {
+  "en": "Keep reeling!",
+  "t": "继续收线！"
+ },
  "b38a99fe0694": {
   "en": "one rises as the other falls",
   "t": "一个上升时另一个下降"
@@ -7098,6 +7282,10 @@
  "b588aca7bb99": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (为美好的世界献上祝福！)"
+ },
+ "b5c2669931ed": {
+  "en": "It's on your jig: small twitches, or lift it slowly.",
+  "t": "它就在你的钓饵旁：轻轻抖动，或者慢慢往上提。"
  },
  "b61c12b736ff": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 1: </span> Sword Art Online ",
@@ -7515,6 +7703,10 @@
   "en": " D · Seasons ",
   "t": "D · 季节"
  },
+ "c16fa30192fe": {
+  "en": "Reel it up, and ease off when it runs, or the line breaks.",
+  "t": "把鱼收上来，它冲的时候要放松，不然线会断。"
+ },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "247 小时  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">估计</span>"
@@ -7831,6 +8023,10 @@
   "en": "21 h",
   "t": "21 小时"
  },
+ "cb3b8b95ac08": {
+  "en": "Gain (press it for interference rejection)",
+  "t": "增益（按下切换抗干扰）"
+ },
  "cb617c0ab9ee": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Placeholder TV show 6 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 6: </span> 占位剧集 6"
@@ -8003,6 +8199,10 @@
   "en": "Cult of the Lamb",
   "t": "咩咩启示录"
  },
+ "cf93b2a95f0d": {
+  "en": "No bottom on this range: turn the Range up.",
+  "t": "这个量程看不到水底：把量程调大。"
+ },
  "cfcf0d7d152e": {
   "en": "Never wrestle with pigs. You both get dirty, and the pig likes it. <span class=\"newest\">New</span>",
   "t": "永远别跟猪摔跤。你们俩都会弄脏，而猪还挺喜欢。<span class=\"newest\">新</span>"
@@ -8058,6 +8258,10 @@
  "d09bdd281dfa": {
   "en": "Princess Fluffy of Guamá",
   "t": "瓜马的 Fluffy 公主"
+ },
+ "d0a6b073b147": {
+  "en": "Snap! The line broke.",
+  "t": "啪！线断了。"
  },
  "d0c12b6b5196": {
   "en": "REM sleep",
@@ -8167,6 +8371,10 @@
   "en": "Read my Vol 4 afterword",
   "t": "读我的第 4 卷后记"
  },
+ "d35993abead4": {
+  "en": "Back to Fishing",
+  "t": "返回钓鱼"
+ },
  "d35c60400150": {
   "en": "87 h",
   "t": "87 小时"
@@ -8202,6 +8410,10 @@
  "d3a2460e932b": {
   "en": "TS",
   "t": "TS"
+ },
+ "d3acd83e402c": {
+  "en": "Lots of clutter: turn the Gain down a little.",
+  "t": "杂波太多：把增益调低一点。"
  },
  "d3b572e24639": {
   "en": "Huehue, I can feel that thinking face from here.",
@@ -8735,6 +8947,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Shingeki no Kyojin (Attack on Titan) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 4: </span> Shingeki no Kyojin (进击的巨人)"
  },
+ "e0d4f121e169": {
+  "en": "Too late: it spat the jig.",
+  "t": "太晚了：它把钓饵吐掉了。"
+ },
  "e1038f5c447c": {
   "en": "More of my games on the Gamer tab",
   "t": "我的更多游戏在“玩家”标签里"
@@ -8827,9 +9043,17 @@
   "en": "Now",
   "t": "现在"
  },
+ "e3bd01bce3c4": {
+  "en": "Tullibee",
+  "t": "白鲑"
+ },
  "e3cb8bd6bf09": {
   "en": "Bedtime",
   "t": "入睡时间"
+ },
+ "e3de5ab0ca4c": {
+  "en": "Off",
+  "t": "关"
  },
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
@@ -9062,6 +9286,10 @@
  "ea924f72d31e": {
   "en": "Recovery",
   "t": "恢复"
+ },
+ "ea9676003762": {
+  "en": "Line",
+  "t": "鱼线"
  },
  "eaa40e2587dc": {
   "en": "Distrito Federal",
@@ -9567,6 +9795,10 @@
   "en": " Shooters &amp; co-op ",
   "t": "射击与合作"
  },
+ "fa2ca4c86063": {
+  "en": "Caught: {n}",
+  "t": "钓获：{n}"
+ },
  "fa42321aea70": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Placeholder movie 26 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 26: </span> 占位电影 26"
@@ -9590,6 +9822,10 @@
  "faf65a9797bc": {
   "en": "With my autistic brain, it’s no surprise I love aviation (vehicles are one of the most common autistic special interests, and a plane is a flying pile of systems with firm rules; the research is in this tab’s Links box). I always loved planes and was going to be a pilot. But my parents worked in the industry and worried they were the ones steering me there. I grew up around it, even helping my mom on the SABRE system so we could go home sooner. They did the right thing by pushing me to make my own decision… and I ended up in software development.",
   "t": "以我这颗自闭症大脑，爱上航空毫不意外（交通工具是最常见的自闭症特殊兴趣之一，而飞机就是一堆规则明确的系统在天上飞；相关研究在这个标签的链接里）。我一直热爱飞机，本来是要当飞行员的。但我父母在这个行业工作，担心是他们把我往这条路上引。我在这个环境里长大，甚至帮妈妈操作 SABRE 系统，好让我们早点回家。他们鼓励我自己做决定，这是对的……结果我最后走上了软件开发。"
+ },
+ "fb1a89e702bc": {
+  "en": "Auto zoom",
+  "t": "自动放大"
  },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",

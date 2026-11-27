@@ -299,6 +299,10 @@
   "en": "Click or drag to draw. Right-click erases.",
   "t": "Bấm hoặc kéo để vẽ. Bấm chuột phải để xóa."
  },
+ "06e20f5a4426": {
+  "en": "Bottom lock",
+  "t": "Khóa đáy"
+ },
  "06ee9ade85e4": {
   "en": "Hellblade: Senua's Sacrifice",
   "t": "Hellblade: Senua's Sacrifice"
@@ -479,6 +483,10 @@
   "en": "Blog",
   "t": "Blog"
  },
+ "0ba0ef5404ec": {
+  "en": "Ice fishing",
+  "t": "Câu cá trên băng"
+ },
  "0bb27395d153": {
   "en": "231 h",
   "t": "231 h"
@@ -535,6 +543,10 @@
   "en": "Spring bass selfie",
   "t": "Tự sướng với cá vược mùa xuân"
  },
+ "0d6b08d281da": {
+  "en": "Fish on! Reel up (scroll or swipe up), and ease off when it runs.",
+  "t": "Dính cá! Quay dây lên (cuộn hoặc vuốt lên), và thả lỏng khi nó lao đi."
+ },
  "0d97f4d5801b": {
   "en": "Enlarge: Bathing in the Amazon",
   "t": "Phóng to: Tắm ở sông Amazon"
@@ -562,6 +574,10 @@
  "0e0bd9224cae": {
   "en": " CS ",
   "t": "CS"
+ },
+ "0e0c14386ba6": {
+  "en": "Low power",
+  "t": "Công suất thấp"
  },
  "0e0f5c25719f": {
   "en": "Back to Aviation",
@@ -783,6 +799,10 @@
   "en": "Vatican City",
   "t": "Thành Vatican"
  },
+ "13876d38ea11": {
+  "en": "Barely anything shows: turn the Gain up.",
+  "t": "Gần như không thấy gì: tăng Độ nhạy lên."
+ },
  "13a29a85064f": {
   "en": "Plot {plot}: empty. Plant {crop}.",
   "t": "Ô {plot}: trống. Trồng {crop}."
@@ -802,6 +822,10 @@
  "13e54ce09816": {
   "en": " PV ",
   "t": "PV"
+ },
+ "143fa4c4c81c": {
+  "en": "Walleye",
+  "t": "Cá walleye"
  },
  "145a01fb9391": {
   "en": "/min",
@@ -826,6 +850,10 @@
  "148bcf6b6644": {
   "en": "Deo's old TikTok profile, @deovandski: 732 followers, 118.5K likes, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, above a grid of video thumbnails",
   "t": "Hồ sơ TikTok cũ của Deo, @deovandski: 732 người theo dõi, 118,5 nghìn lượt thích, tiểu sử \"Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev\", phía trên là lưới ảnh thu nhỏ video"
+ },
+ "149709b9683c": {
+  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom.",
+  "t": "Cuộn con lăn chuột (hoặc vuốt lên xuống trên máy dò hay cần câu) để di chuyển mồi. Mồi là vạch mảnh trên mặt đồng hồ; dải đỏ rộng là đáy."
  },
  "149d7ab31b5c": {
   "en": "Go!",
@@ -1287,6 +1315,10 @@
   "en": "Is this a cozy fire? ٩(◕‿◕｡)۶",
   "t": "Đây là đống lửa ấm cúng à? ٩(◕‿◕｡)۶"
  },
+ "218488ac2b05": {
+  "en": "Split screen: the whole hole on the right, the bottom 6 ft zoomed on the left.",
+  "t": "Chia đôi màn hình: bên phải là cả cột nước, bên trái phóng to 6 ft sát đáy."
+ },
  "21bcdb7e16a8": {
   "en": "World &amp; fusion",
   "t": "World &amp; fusion"
@@ -1451,6 +1483,10 @@
   "en": "It’s also here for the same reason as the <a href=\"#gym\">Gym</a>. AuDHD people tend to get stuck inside their own homes and fall behind socially: home is safe, quiet and predictable, and the world outside costs energy. The research lines up with that too:",
   "t": "Nó cũng nằm ở đây vì cùng lý do với <a href=\"#gym\">Phòng gym</a>. Người AuDHD hay bị mắc kẹt trong chính ngôi nhà mình và tụt lại về mặt xã hội: nhà thì an toàn, yên tĩnh và đoán trước được, còn thế giới bên ngoài thì tốn năng lượng. Nghiên cứu cũng xác nhận điều này:"
  },
+ "262f737babf6": {
+  "en": "Too much: it spooked.",
+  "t": "Mạnh tay quá: nó sợ chạy mất."
+ },
  "2641c8ed7f11": {
   "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my dad’s 2014 BIDU songs as the music.",
   "t": "Một chú lừa hay đánh rắm chạy, nhảy, húc đầu và đánh rắm khắp Amazon và sa mạc. Phác thảo năm 2014, bắt đầu bằng Unity năm 2016 và hoàn thành bằng Godot năm 2026, với nhạc là các bài hát BIDU bố tôi viết năm 2014."
@@ -1579,6 +1615,10 @@
   "en": " Xbox ",
   "t": "Xbox"
  },
+ "28c143b65e3d": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Mode</b>: Low Power for less clutter, or Auto Zoom and Bottom Lock to split the dial, with the bottom 6 ft zoomed on the left.",
+  "t": "<b data-astro-cid-o3poasna=\"\">Chế độ</b>: Công suất thấp để bớt nhiễu, hoặc Tự phóng to và Khóa đáy để chia đôi mặt đồng hồ, bên trái phóng to 6 ft sát đáy."
+ },
  "28e75153a2a3": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  4 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  4 game  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% số giờ của tôi</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% số giờ của tôi</span>"
@@ -1614,6 +1654,10 @@
  "2984ff90b404": {
   "en": "Bad Bunny",
   "t": "Bad Bunny"
+ },
+ "2991c57c2a2e": {
+  "en": "Ice fishing with a flasher, based on the Vexilar FL-18. Turn it on, drop your jig, call a fish in and set the hook. Sound on!",
+  "t": "Câu cá trên băng với máy dò cá kiểu flasher, dựa theo Vexilar FL-18. Bật máy, thả mồi, dụ cá tới rồi giật móc. Nhớ bật tiếng!"
  },
  "29990da75615": {
   "en": " <span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #3: </span>Shisa Kanko <span lang=\"ja\" translate=\"no\" data-astro-cid-xtzphevd=\"\">(指差喚呼)</span> ",
@@ -1654,6 +1698,10 @@
  "2a4d5402c166": {
   "en": " Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Spring 2014 · back in 2026</span> ",
   "t": "Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Mùa xuân 2014 · trở lại năm 2026</span>"
+ },
+ "2a714ecd8093": {
+  "en": "Nothing bit yet: that rip spooked it.",
+  "t": "Nó chưa cắn: cú giật đó làm nó sợ chạy mất."
  },
  "2a7dbc5cf815": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 2: </span> Placeholder movie 2 ",
@@ -1831,6 +1879,10 @@
   "en": "One of my favorite isekai, and one of the OGs from before the torrent of copycats trying to milk the market dry.",
   "t": "Một trong những isekai tôi thích nhất, và là một trong những bộ khai phá từ trước làn sóng bắt chước cố vắt kiệt thị trường."
  },
+ "2ff5d5a41204": {
+  "en": "A green mark at {d} ft: a fish at the edge of the cone. Jig to call it in.",
+  "t": "Một vạch xanh lá ở {d} ft: một con cá ở rìa vùng sóng. Rung mồi để dụ nó tới."
+ },
  "30008d008dae": {
   "en": "Car rides!",
   "t": "Đi xe hơi!"
@@ -1850,6 +1902,14 @@
  "303d884de994": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Placeholder movie 17 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 17: </span> Phim tạm 17"
+ },
+ "30472f63d677": {
+  "en": "{fish}, {len} in ({cm} cm)",
+  "t": "{fish}, {len} inch ({cm} cm)"
+ },
+ "308079570015": {
+  "en": "Your catches",
+  "t": "Cá bạn đã câu"
  },
  "3098add33361": {
   "en": "\nThat grew into HusbandOutWorld, a light novel series that took me to conventions, where I met a lot of people,\n          from artists to directors and publishers. It feels surreal how much this project pushed me to grow and challenge\n          myself. If you're curious, you can see my evolution through the Light Novel Afterwords.\n",
@@ -1914,6 +1974,10 @@
  "32096c2e0eff": {
   "en": " C ",
   "t": "C"
+ },
+ "3229477a180e": {
+  "en": "Sauger",
+  "t": "Cá sauger"
  },
  "3239f318bd88": {
   "en": "Dropkick Murphys",
@@ -2071,6 +2135,10 @@
   "en": "+ 16 more games",
   "t": "+ 16 game nữa"
  },
+ "35aab70b60e7": {
+  "en": "It's running! Ease off.",
+  "t": "Nó đang lao đi! Thả lỏng!"
+ },
  "35cf6a830c19": {
   "en": "Expert · 132 BPM",
   "t": "Chuyên gia · 132 BPM"
@@ -2122,6 +2190,10 @@
  "375f856a96a7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder TV show 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 33: </span> Phim bộ tạm 33"
+ },
+ "37669714846a": {
+  "en": "x{x}: 0 to {ft} ft",
+  "t": "x{x}: 0 đến {ft} ft"
  },
  "377bcd643607": {
   "en": "BM",
@@ -2351,6 +2423,10 @@
   "en": "JT",
   "t": "JT"
  },
+ "3c09c310c6b2": {
+  "en": "Jig {d} ft",
+  "t": "Mồi ở {d} ft"
+ },
  "3c2e78721196": {
   "en": "The kind of anime that makes you go \"Oh! Didn't expect that!\", with a unique creative vision for portraying the struggles and feelings of adolescence. Unique!",
   "t": "Kiểu anime khiến bạn phải thốt lên \"Ồ! Không ngờ luôn!\", với một tầm nhìn sáng tạo độc đáo trong việc khắc họa những vật lộn và cảm xúc của tuổi dậy thì. Độc nhất!"
@@ -2563,6 +2639,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder movie 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 10: </span> Phim tạm 10"
  },
+ "417d7a4b988f": {
+  "en": "🔊 Sound on",
+  "t": "🔊 Bật tiếng"
+ },
  "41e1360a1ebf": {
   "en": "Realm Grinder",
   "t": "Realm Grinder"
@@ -2670,6 +2750,10 @@
  "45d7b9f03f0a": {
   "en": "Body fat (yearly average)",
   "t": "Mỡ cơ thể (trung bình năm)"
+ },
+ "45e118d0563e": {
+  "en": "Normal",
+  "t": "Thường"
  },
  "45f08cb571cd": {
   "en": "<strong>Marcus Aurelius</strong>, <em>Meditations</em> 6.24: death brought Alexander the Great and his mule driver to the same state. <a href=\"https://en.wikisource.org/wiki/Marcus_Aurelius_(Haines_1916)/Book_6\">Text</a>",
@@ -3007,6 +3091,10 @@
   "en": "Gamer",
   "t": "Game thủ"
  },
+ "4e5e65f062ec": {
+  "en": "Caught: {fish}, {len} in ({cm} cm)!",
+  "t": "Câu được: {fish}, {len} inch ({cm} cm)!"
+ },
  "4e735732ab92": {
   "en": "Puppy eyes still work",
   "t": "Ánh mắt cún con vẫn hiệu nghiệm"
@@ -3034,6 +3122,10 @@
  "4ebc18247e08": {
   "en": "Steam",
   "t": "Steam"
+ },
+ "4ec00394908f": {
+  "en": "How to play",
+  "t": "Cách chơi"
  },
  "4ec368ab9572": {
   "en": "<strong>Full commitment is not eternal commitment.</strong> If there’s movement, I work with imperfection. When people prove unworthy of your love, losing faith isn’t failure; it’s clarity. I steward living systems for a better future, and erase dead ones after extracting a mental model to detect this kind of rot early.",
@@ -3443,6 +3535,14 @@
   "en": "Psst! Stuck? Press me once for a freebie.",
   "t": "Suỵt! Bí à? Bấm mình một lần để được trợ giúp."
  },
+ "5748b8b683ba": {
+  "en": "Black crappie",
+  "t": "Cá crappie đen"
+ },
+ "57574efdd4f6": {
+  "en": "🔇 Sound off",
+  "t": "🔇 Tắt tiếng"
+ },
  "576347ec826f": {
   "en": "Europe",
   "t": "Châu Âu"
@@ -3495,6 +3595,10 @@
   "en": "Perfect World",
   "t": "Perfect World"
  },
+ "5874a684ac96": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Gain</b> sets how strong the marks show (about 3 to 4 here); too much and the dial fills with clutter. Press it to step through the 10 IR settings when another flasher interferes.",
+  "t": "<b data-astro-cid-o3poasna=\"\">Độ nhạy</b> quyết định các vạch hiện mạnh cỡ nào (ở đây khoảng 3 đến 4); quá cao thì mặt đồng hồ đầy nhiễu. Nhấn nó để chuyển qua 10 mức IR khi máy dò khác gây nhiễu."
+ },
  "58833ac67fd0": {
   "en": "Walkers of the Sacred Steps",
   "t": "Người bước theo các Bước Thiêng"
@@ -3510,6 +3614,10 @@
  "58b8da4b72d4": {
   "en": "7% of my hours",
   "t": "7% số giờ của tôi"
+ },
+ "58bb403e88cf": {
+  "en": "Northern pike",
+  "t": "Cá chó"
  },
  "58f7a8f2ec30": {
   "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n Body fat, yearly average: 2023, 32.9%; 2024, 36.8%; 2025, 38.0%; 2026, 35.4%. ",
@@ -3751,6 +3859,10 @@
   "en": "Camping",
   "t": "Cắm trại"
  },
+ "5e9f48f66af0": {
+  "en": "Bite! Flick up hard to set the hook!",
+  "t": "Cá cắn! Giật mạnh lên để móc!"
+ },
  "5ef1da7aa7f2": {
   "en": "Quite the stretch",
   "t": "Vươn vai ra trò"
@@ -3863,6 +3975,10 @@
   "en": "Deovandski's Blog",
   "t": "Blog của Deovandski"
  },
+ "6189fe36c4af": {
+  "en": "Turn the <b data-astro-cid-o3poasna=\"\">Range</b> knob to switch the flasher on. The bottom is at 28 ft here, so x2 (0 to 40 ft) fits it best.",
+  "t": "Xoay núm <b data-astro-cid-o3poasna=\"\">Phạm vi</b> để bật máy dò. Đáy ở đây sâu 28 ft, nên x2 (0 đến 40 ft) là hợp nhất."
+ },
  "618e3308c83d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 29: </span> Placeholder movie 29 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 29: </span> Phim tạm 29"
@@ -3870,6 +3986,14 @@
  "618e487541ea": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman"
+ },
+ "61b142772297": {
+  "en": "Fishing hole: Up and Down move the jig, Space flicks the rod",
+  "t": "Lỗ băng: phím lên và xuống di chuyển mồi, phím cách để giật cần"
+ },
+ "61d48f8ebddb": {
+  "en": "Ice fishing: turn your phone sideways",
+  "t": "Câu cá trên băng: xoay ngang điện thoại"
  },
  "61db3a4f5dc3": {
   "en": "Kingdoms and Castles",
@@ -3918,6 +4042,14 @@
  "62dfe60deea3": {
   "en": "The numbers didn't load. Try again later.",
   "t": "Không tải được số liệu. Thử lại sau nhé."
+ },
+ "62f84c7b7a34": {
+  "en": "{n} of 10",
+  "t": "{n} trên 10"
+ },
+ "63286f4f3a05": {
+  "en": "Bottom at {d} ft. Scroll or swipe down to drop your jig: it's the thin mark on the dial.",
+  "t": "Đáy ở {d} ft. Cuộn hoặc vuốt xuống để thả mồi: mồi là vạch mảnh trên mặt đồng hồ."
  },
  "633797165688": {
   "en": "Magical Mirai, Osaka (2014)",
@@ -4439,6 +4571,10 @@
   "en": "Enlarge: Crappie selfie",
   "t": "Phóng to: Tự sướng với cá crappie"
  },
+ "70d7858359b2": {
+  "en": "Yellow perch",
+  "t": "Cá rô vàng"
+ },
  "70e3b3dcbb78": {
   "en": " NM ",
   "t": "NM"
@@ -4739,6 +4875,10 @@
   "en": "226 days",
   "t": "226 ngày"
  },
+ "78c0f941b201": {
+  "en": "Dashes running around the dial? A buddy's flasher is too close: press the Gain knob to step through the interference rejection (IR).",
+  "t": "Có các gạch nhỏ chạy quanh mặt đồng hồ? Máy dò của bạn bè ở quá gần: nhấn núm Độ nhạy để chuyển mức chống nhiễu (IR)."
+ },
  "78cc6006e09c": {
   "en": "Gym, 6:47am",
   "t": "Phòng gym, 6:47 sáng"
@@ -4990,6 +5130,10 @@
  "7eb0cee888ab": {
   "en": "Min",
   "t": "Phút"
+ },
+ "7ebd2107485d": {
+  "en": "Turn the Range knob to switch the flasher on.",
+  "t": "Xoay núm Phạm vi để bật máy dò."
  },
  "7ec79775c355": {
   "en": "Every wrong answer is just a trip you still have to take.",
@@ -5787,6 +5931,10 @@
   "en": "Garry's Mod",
   "t": "Garry's Mod"
  },
+ "93f579c09a3b": {
+  "en": "When the rod tip flashes (and your phone buzzes), flick up hard: a big, fast scroll up or swipe up, or Space. Too early and it spooks; too late and it spits the jig.",
+  "t": "Khi đầu cần lóe sáng (và điện thoại rung), giật mạnh lên: cuộn lên thật nhanh và mạnh, vuốt lên, hoặc phím cách. Sớm quá thì cá sợ chạy; muộn quá thì nó nhả mồi."
+ },
  "93fc6888a695": {
   "en": "The Church's top recommendations are <strong>Sal Lebre</strong> and <strong>Mariza Churrasco D'Chef</strong>, for their consistency and their quality held steady over the years. Seasoned churrasco salt is permitted by the Church, but not every brand, for some add too much, and simplicity is at the core of our faith.",
   "t": "Những đề xuất hàng đầu của Giáo hội là <strong>Sal Lebre</strong> và <strong>Mariza Churrasco D'Chef</strong>, vì sự ổn định và chất lượng giữ vững qua nhiều năm. Muối churrasco tẩm gia vị được Giáo hội cho phép, nhưng không phải nhãn hiệu nào cũng vậy, vì có loại cho quá nhiều, mà sự giản dị là cốt lõi của đức tin chúng ta."
@@ -5906,6 +6054,10 @@
  "96b6cea2d9d5": {
   "en": "God of War",
   "t": "God of War"
+ },
+ "96dd91cdcbe7": {
+  "en": "Gain",
+  "t": "Độ nhạy"
  },
  "96dedce974cf": {
   "en": "Enlarge: Failing to learn English",
@@ -6075,6 +6227,10 @@
   "en": "Am I that really interesting?",
   "t": "Tôi thật sự thú vị đến thế sao?"
  },
+ "9c2867f3a4f7": {
+  "en": "It shook the hook.",
+  "t": "Nó giãy tuột lưỡi câu."
+ },
  "9c4a5310f68f": {
   "en": "Princess Fluffy of Guamá: Fluffy in a pink princess dress and a jeweled tiara, sitting in the back seat of a car",
   "t": "Công chúa Fluffy xứ Guamá: Fluffy mặc váy công chúa màu hồng và đội vương miện nạm ngọc, ngồi ở ghế sau xe hơi"
@@ -6118,6 +6274,10 @@
  "9d6c79478e4e": {
   "en": "Legendary reflexes!",
   "t": "Phản xạ huyền thoại!"
+ },
+ "9d89b2d84ac3": {
+  "en": "It's coming in: the mark turns orange, then red.",
+  "t": "Nó đang tới: vạch chuyển sang cam, rồi đỏ."
  },
  "9d8a4e9da14d": {
   "en": "Slime Rancher",
@@ -6302,6 +6462,10 @@
  "a157d38de121": {
   "en": "Enlarge: Moar sleep",
   "t": "Phóng to: Ngủ thêm nữaaa"
+ },
+ "a16c5bbe4bf9": {
+  "en": "Range",
+  "t": "Phạm vi"
  },
  "a173e725607d": {
   "en": "Asia",
@@ -6519,6 +6683,10 @@
   "en": "5C",
   "t": "5C"
  },
+ "a6d49890ad7c": {
+  "en": "Jig to call fish in. A green mark at the edge of the cone turns orange, then red, as it comes to your jig. Then twitch it, or lift it slowly.",
+  "t": "Rung mồi để dụ cá tới. Vạch xanh lá ở rìa vùng sóng sẽ chuyển sang cam rồi đỏ khi cá tới gần mồi. Lúc đó rung nhẹ, hoặc nhấc mồi lên từ từ."
+ },
  "a6df62f72604": {
   "en": " ← Back to the system ",
   "t": "← Về hệ hành tinh"
@@ -6563,9 +6731,17 @@
   "en": "Electronic &amp; synthwave",
   "t": "Electronic &amp; synthwave"
  },
+ "a790b5f3cecb": {
+  "en": "IR {n}",
+  "t": "IR {n}"
+ },
  "a79aa4ea4d23": {
   "en": "Lust",
   "t": "Dục vọng"
+ },
+ "a7b93d2128e8": {
+  "en": "Mode",
+  "t": "Chế độ"
  },
  "a7bdce161e86": {
   "en": "Enlarge: Clingy",
@@ -6907,6 +7083,10 @@
   "en": "Guess what I'm gonna do",
   "t": "Đoán xem tôi sắp làm gì"
  },
+ "b0439c65e633": {
+  "en": "IR {n} cleared the interference.",
+  "t": "IR {n} đã xóa nhiễu."
+ },
  "b04af783d0ff": {
   "en": " Idle &amp; clickers ",
   "t": "Idle &amp; clicker"
@@ -7031,6 +7211,10 @@
   "en": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">Yêu thích FITM 2025</span>"
  },
+ "b377868dc116": {
+  "en": "Keep reeling!",
+  "t": "Quay tiếp đi!"
+ },
  "b38a99fe0694": {
   "en": "one rises as the other falls",
   "t": "cái này tăng thì cái kia giảm"
@@ -7098,6 +7282,10 @@
  "b588aca7bb99": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!)"
+ },
+ "b5c2669931ed": {
+  "en": "It's on your jig: small twitches, or lift it slowly.",
+  "t": "Nó đang ở ngay mồi: rung nhẹ, hoặc nhấc mồi lên từ từ."
  },
  "b61c12b736ff": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 1: </span> Sword Art Online ",
@@ -7515,6 +7703,10 @@
   "en": " D · Seasons ",
   "t": "D · Các mùa"
  },
+ "c16fa30192fe": {
+  "en": "Reel it up, and ease off when it runs, or the line breaks.",
+  "t": "Quay cá lên, và thả lỏng khi nó lao đi, không thì đứt dây."
+ },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">ước tính</span>"
@@ -7831,6 +8023,10 @@
   "en": "21 h",
   "t": "21 h"
  },
+ "cb3b8b95ac08": {
+  "en": "Gain (press it for interference rejection)",
+  "t": "Độ nhạy (nhấn để chống nhiễu)"
+ },
  "cb617c0ab9ee": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Placeholder TV show 6 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 6: </span> Phim bộ tạm 6"
@@ -8003,6 +8199,10 @@
   "en": "Cult of the Lamb",
   "t": "Cult of the Lamb"
  },
+ "cf93b2a95f0d": {
+  "en": "No bottom on this range: turn the Range up.",
+  "t": "Ở phạm vi này không thấy đáy: tăng Phạm vi lên."
+ },
  "cfcf0d7d152e": {
   "en": "Never wrestle with pigs. You both get dirty, and the pig likes it. <span class=\"newest\">New</span>",
   "t": "Đừng bao giờ vật lộn với lợn. Cả hai đều bẩn, mà con lợn lại thích thế. <span class=\"newest\">Mới</span>"
@@ -8058,6 +8258,10 @@
  "d09bdd281dfa": {
   "en": "Princess Fluffy of Guamá",
   "t": "Công chúa Fluffy xứ Guamá"
+ },
+ "d0a6b073b147": {
+  "en": "Snap! The line broke.",
+  "t": "Phựt! Dây đứt rồi."
  },
  "d0c12b6b5196": {
   "en": "REM sleep",
@@ -8167,6 +8371,10 @@
   "en": "Read my Vol 4 afterword",
   "t": "Đọc lời bạt Vol 4 của tôi"
  },
+ "d35993abead4": {
+  "en": "Back to Fishing",
+  "t": "Quay lại Câu cá"
+ },
  "d35c60400150": {
   "en": "87 h",
   "t": "87 h"
@@ -8202,6 +8410,10 @@
  "d3a2460e932b": {
   "en": "TS",
   "t": "TS"
+ },
+ "d3acd83e402c": {
+  "en": "Lots of clutter: turn the Gain down a little.",
+  "t": "Nhiễu quá nhiều: giảm Độ nhạy một chút."
  },
  "d3b572e24639": {
   "en": "Huehue, I can feel that thinking face from here.",
@@ -8735,6 +8947,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Shingeki no Kyojin (Attack on Titan) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 4: </span> Shingeki no Kyojin (Attack on Titan)"
  },
+ "e0d4f121e169": {
+  "en": "Too late: it spat the jig.",
+  "t": "Muộn quá: nó nhả mồi rồi."
+ },
  "e1038f5c447c": {
   "en": "More of my games on the Gamer tab",
   "t": "Thêm game của mình ở thẻ Game thủ"
@@ -8827,9 +9043,17 @@
   "en": "Now",
   "t": "Hiện tại"
  },
+ "e3bd01bce3c4": {
+  "en": "Tullibee",
+  "t": "Cá tullibee"
+ },
  "e3cb8bd6bf09": {
   "en": "Bedtime",
   "t": "Giờ đi ngủ"
+ },
+ "e3de5ab0ca4c": {
+  "en": "Off",
+  "t": "Tắt"
  },
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
@@ -9062,6 +9286,10 @@
  "ea924f72d31e": {
   "en": "Recovery",
   "t": "Phục hồi"
+ },
+ "ea9676003762": {
+  "en": "Line",
+  "t": "Dây"
  },
  "eaa40e2587dc": {
   "en": "Distrito Federal",
@@ -9567,6 +9795,10 @@
   "en": " Shooters &amp; co-op ",
   "t": "Bắn súng &amp; co-op"
  },
+ "fa2ca4c86063": {
+  "en": "Caught: {n}",
+  "t": "Đã câu: {n}"
+ },
  "fa42321aea70": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Placeholder movie 26 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 26: </span> Phim tạm 26"
@@ -9590,6 +9822,10 @@
  "faf65a9797bc": {
   "en": "With my autistic brain, it’s no surprise I love aviation (vehicles are one of the most common autistic special interests, and a plane is a flying pile of systems with firm rules; the research is in this tab’s Links box). I always loved planes and was going to be a pilot. But my parents worked in the industry and worried they were the ones steering me there. I grew up around it, even helping my mom on the SABRE system so we could go home sooner. They did the right thing by pushing me to make my own decision… and I ended up in software development.",
   "t": "Với bộ não tự kỷ của tôi, chẳng có gì lạ khi tôi mê hàng không (xe cộ là một trong những mối quan tâm đặc biệt phổ biến nhất của người tự kỷ, và máy bay là cả một đống hệ thống có quy tắc chắc chắn biết bay; nghiên cứu nằm trong hộp liên kết của thẻ này). Tôi luôn yêu máy bay và từng định làm phi công. Nhưng bố mẹ tôi làm trong ngành và lo rằng chính họ đang đẩy tôi theo hướng đó. Tôi lớn lên trong môi trường ấy, thậm chí còn giúp mẹ trên hệ thống SABRE để cả nhà được về sớm. Họ đã làm đúng khi khuyến khích tôi tự quyết định… và cuối cùng tôi lại đi làm phát triển phần mềm."
+ },
+ "fb1a89e702bc": {
+  "en": "Auto zoom",
+  "t": "Tự phóng to"
  },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",

@@ -299,6 +299,10 @@
   "en": "Click or drag to draw. Right-click erases.",
   "t": "클릭하거나 드래그해서 그려. 오른쪽 클릭으로 지워."
  },
+ "06e20f5a4426": {
+  "en": "Bottom lock",
+  "t": "바닥 고정"
+ },
  "06ee9ade85e4": {
   "en": "Hellblade: Senua's Sacrifice",
   "t": "Hellblade: Senua's Sacrifice"
@@ -479,6 +483,10 @@
   "en": "Blog",
   "t": "블로그"
  },
+ "0ba0ef5404ec": {
+  "en": "Ice fishing",
+  "t": "얼음낚시"
+ },
  "0bb27395d153": {
   "en": "231 h",
   "t": "231 시간"
@@ -535,6 +543,10 @@
   "en": "Spring bass selfie",
   "t": "봄 배스 셀카"
  },
+ "0d6b08d281da": {
+  "en": "Fish on! Reel up (scroll or swipe up), and ease off when it runs.",
+  "t": "걸렸다! 감아 올려(위로 스크롤이나 스와이프), 차고 나가면 풀어 줘."
+ },
  "0d97f4d5801b": {
   "en": "Enlarge: Bathing in the Amazon",
   "t": "확대: 아마존에서 목욕"
@@ -562,6 +574,10 @@
  "0e0bd9224cae": {
   "en": " CS ",
   "t": "CS"
+ },
+ "0e0c14386ba6": {
+  "en": "Low power",
+  "t": "저전력"
  },
  "0e0f5c25719f": {
   "en": "Back to Aviation",
@@ -783,6 +799,10 @@
   "en": "Vatican City",
   "t": "바티칸 시국"
  },
+ "13876d38ea11": {
+  "en": "Barely anything shows: turn the Gain up.",
+  "t": "거의 아무것도 안 보여: 게인을 올려."
+ },
  "13a29a85064f": {
   "en": "Plot {plot}: empty. Plant {crop}.",
   "t": "구획 {plot}: 비어 있음. {crop} 심기."
@@ -802,6 +822,10 @@
  "13e54ce09816": {
   "en": " PV ",
   "t": "PV"
+ },
+ "143fa4c4c81c": {
+  "en": "Walleye",
+  "t": "월아이"
  },
  "145a01fb9391": {
   "en": "/min",
@@ -826,6 +850,10 @@
  "148bcf6b6644": {
   "en": "Deo's old TikTok profile, @deovandski: 732 followers, 118.5K likes, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, above a grid of video thumbnails",
   "t": "Deo의 옛 TikTok 프로필 @deovandski: 팔로워 732명, 좋아요 11.85만 개, 자기소개 \"Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev\", 그 아래 영상 썸네일 격자"
+ },
+ "149709b9683c": {
+  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom.",
+  "t": "마우스 휠을 스크롤해서(또는 플래셔나 낚싯대 위에서 위아래로 스와이프해서) 지그를 움직여. 다이얼의 가는 표시가 지그, 넓은 빨간 띠가 바닥이야."
  },
  "149d7ab31b5c": {
   "en": "Go!",
@@ -1287,6 +1315,10 @@
   "en": "Is this a cozy fire? ٩(◕‿◕｡)۶",
   "t": "이거 아늑한 모닥불이야? ٩(◕‿◕｡)۶"
  },
+ "218488ac2b05": {
+  "en": "Split screen: the whole hole on the right, the bottom 6 ft zoomed on the left.",
+  "t": "화면 분할: 오른쪽은 수심 전체, 왼쪽은 바닥 위 6피트를 확대해서 보여 줘."
+ },
  "21bcdb7e16a8": {
   "en": "World &amp; fusion",
   "t": "월드 &amp; 퓨전"
@@ -1451,6 +1483,10 @@
   "en": "It’s also here for the same reason as the <a href=\"#gym\">Gym</a>. AuDHD people tend to get stuck inside their own homes and fall behind socially: home is safe, quiet and predictable, and the world outside costs energy. The research lines up with that too:",
   "t": "여기 있는 이유는 <a href=\"#gym\">헬스장</a>과도 같다. AuDHD인 사람은 집 안에 갇혀 사회적으로 뒤처지기 쉽다. 집은 안전하고 조용하고 예측 가능하지만, 바깥세상은 에너지를 잡아먹는다. 연구도 이를 뒷받침한다:"
  },
+ "262f737babf6": {
+  "en": "Too much: it spooked.",
+  "t": "너무 과했어: 놀라서 도망갔어."
+ },
  "2641c8ed7f11": {
   "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my dad’s 2014 BIDU songs as the music.",
   "t": "방귀 뀌는 당나귀가 아마존과 사막을 달리고, 뛰고, 박치기하고, 방귀를 뀐다. 2014년에 스케치하고, 2016년에 Unity로 시작해 2026년에 Godot으로 완성했으며, 음악은 아버지가 2014년에 만든 BIDU 노래다."
@@ -1579,6 +1615,10 @@
   "en": " Xbox ",
   "t": "Xbox"
  },
+ "28c143b65e3d": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Mode</b>: Low Power for less clutter, or Auto Zoom and Bottom Lock to split the dial, with the bottom 6 ft zoomed on the left.",
+  "t": "<b data-astro-cid-o3poasna=\"\">모드</b>: 잡음을 줄이려면 저전력, 오토 줌과 바닥 고정은 다이얼을 나눠서 왼쪽에 바닥 위 6피트를 확대해 보여 줘."
+ },
  "28e75153a2a3": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  4 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">570 시간</strong>  ·  게임 4개  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">내 시간의 2%</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">내 시간의 4%</span>"
@@ -1614,6 +1654,10 @@
  "2984ff90b404": {
   "en": "Bad Bunny",
   "t": "Bad Bunny"
+ },
+ "2991c57c2a2e": {
+  "en": "Ice fishing with a flasher, based on the Vexilar FL-18. Turn it on, drop your jig, call a fish in and set the hook. Sound on!",
+  "t": "플래셔(어군탐지기)로 하는 얼음낚시, Vexilar FL-18을 본떴어. 전원을 켜고, 지그를 내리고, 물고기를 불러서 챔질! 소리는 켜고!"
  },
  "29990da75615": {
   "en": " <span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #3: </span>Shisa Kanko <span lang=\"ja\" translate=\"no\" data-astro-cid-xtzphevd=\"\">(指差喚呼)</span> ",
@@ -1654,6 +1698,10 @@
  "2a4d5402c166": {
   "en": " Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Spring 2014 · back in 2026</span> ",
   "t": "Superb Hawk <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">2014년 봄 · 2026년 부활</span>"
+ },
+ "2a714ecd8093": {
+  "en": "Nothing bit yet: that rip spooked it.",
+  "t": "아직 안 물었는데: 방금 챔질에 놀라 도망갔어."
  },
  "2a7dbc5cf815": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 2: </span> Placeholder movie 2 ",
@@ -1831,6 +1879,10 @@
   "en": "One of my favorite isekai, and one of the OGs from before the torrent of copycats trying to milk the market dry.",
   "t": "내가 좋아하는 이세계물 중 하나이자, 시장을 바닥까지 짜내려는 아류작들이 쏟아지기 전의 원조 중 하나야."
  },
+ "2ff5d5a41204": {
+  "en": "A green mark at {d} ft: a fish at the edge of the cone. Jig to call it in.",
+  "t": "{d}피트에 초록 표시: 탐지 범위 가장자리에 물고기가 있어. 지그를 흔들어 불러와."
+ },
  "30008d008dae": {
   "en": "Car rides!",
   "t": "드라이브!"
@@ -1850,6 +1902,14 @@
  "303d884de994": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Placeholder movie 17 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 17: </span> 임시 영화 17"
+ },
+ "30472f63d677": {
+  "en": "{fish}, {len} in ({cm} cm)",
+  "t": "{fish}, {len}인치({cm}cm)"
+ },
+ "308079570015": {
+  "en": "Your catches",
+  "t": "내 조과"
  },
  "3098add33361": {
   "en": "\nThat grew into HusbandOutWorld, a light novel series that took me to conventions, where I met a lot of people,\n          from artists to directors and publishers. It feels surreal how much this project pushed me to grow and challenge\n          myself. If you're curious, you can see my evolution through the Light Novel Afterwords.\n",
@@ -1914,6 +1974,10 @@
  "32096c2e0eff": {
   "en": " C ",
   "t": "C"
+ },
+ "3229477a180e": {
+  "en": "Sauger",
+  "t": "소거"
  },
  "3239f318bd88": {
   "en": "Dropkick Murphys",
@@ -2071,6 +2135,10 @@
   "en": "+ 16 more games",
   "t": "+ 게임 16개 더"
  },
+ "35aab70b60e7": {
+  "en": "It's running! Ease off.",
+  "t": "차고 나간다! 풀어 줘!"
+ },
  "35cf6a830c19": {
   "en": "Expert · 132 BPM",
   "t": "전문가 · 132 BPM"
@@ -2122,6 +2190,10 @@
  "375f856a96a7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder TV show 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 33: </span> 임시 TV 프로그램 33"
+ },
+ "37669714846a": {
+  "en": "x{x}: 0 to {ft} ft",
+  "t": "x{x}: 0~{ft}피트"
  },
  "377bcd643607": {
   "en": "BM",
@@ -2351,6 +2423,10 @@
   "en": "JT",
   "t": "JT"
  },
+ "3c09c310c6b2": {
+  "en": "Jig {d} ft",
+  "t": "지그 {d}피트"
+ },
  "3c2e78721196": {
   "en": "The kind of anime that makes you go \"Oh! Didn't expect that!\", with a unique creative vision for portraying the struggles and feelings of adolescence. Unique!",
   "t": "\"오! 이건 예상 못 했는데!\" 하게 만드는 애니. 사춘기의 고민과 감정을 그려 내는 독창적인 비전이 있어. 독특해!"
@@ -2563,6 +2639,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> Placeholder movie 10 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 10: </span> 임시 영화 10"
  },
+ "417d7a4b988f": {
+  "en": "🔊 Sound on",
+  "t": "🔊 소리 켬"
+ },
  "41e1360a1ebf": {
   "en": "Realm Grinder",
   "t": "Realm Grinder"
@@ -2670,6 +2750,10 @@
  "45d7b9f03f0a": {
   "en": "Body fat (yearly average)",
   "t": "체지방률(연평균)"
+ },
+ "45e118d0563e": {
+  "en": "Normal",
+  "t": "노멀"
  },
  "45f08cb571cd": {
   "en": "<strong>Marcus Aurelius</strong>, <em>Meditations</em> 6.24: death brought Alexander the Great and his mule driver to the same state. <a href=\"https://en.wikisource.org/wiki/Marcus_Aurelius_(Haines_1916)/Book_6\">Text</a>",
@@ -3007,6 +3091,10 @@
   "en": "Gamer",
   "t": "게이머"
  },
+ "4e5e65f062ec": {
+  "en": "Caught: {fish}, {len} in ({cm} cm)!",
+  "t": "잡았다: {fish}, {len}인치({cm}cm)!"
+ },
  "4e735732ab92": {
   "en": "Puppy eyes still work",
   "t": "강아지 눈빛 아직 통해"
@@ -3034,6 +3122,10 @@
  "4ebc18247e08": {
   "en": "Steam",
   "t": "Steam"
+ },
+ "4ec00394908f": {
+  "en": "How to play",
+  "t": "플레이 방법"
  },
  "4ec368ab9572": {
   "en": "<strong>Full commitment is not eternal commitment.</strong> If there’s movement, I work with imperfection. When people prove unworthy of your love, losing faith isn’t failure; it’s clarity. I steward living systems for a better future, and erase dead ones after extracting a mental model to detect this kind of rot early.",
@@ -3443,6 +3535,14 @@
   "en": "Psst! Stuck? Press me once for a freebie.",
   "t": "쉿! 막혔어? 나를 한 번 누르면 찬스를 줄게."
  },
+ "5748b8b683ba": {
+  "en": "Black crappie",
+  "t": "블랙 크래피"
+ },
+ "57574efdd4f6": {
+  "en": "🔇 Sound off",
+  "t": "🔇 소리 끔"
+ },
  "576347ec826f": {
   "en": "Europe",
   "t": "유럽"
@@ -3495,6 +3595,10 @@
   "en": "Perfect World",
   "t": "퍼펙트 월드"
  },
+ "5874a684ac96": {
+  "en": "<b data-astro-cid-o3poasna=\"\">Gain</b> sets how strong the marks show (about 3 to 4 here); too much and the dial fills with clutter. Press it to step through the 10 IR settings when another flasher interferes.",
+  "t": "<b data-astro-cid-o3poasna=\"\">게인</b>은 표시가 얼마나 세게 보일지 정해(여기선 3~4 정도). 너무 높으면 다이얼이 잡음으로 가득 차. 다른 플래셔가 간섭하면 눌러서 10단계 IR을 바꿔."
+ },
  "58833ac67fd0": {
   "en": "Walkers of the Sacred Steps",
   "t": "신성한 단계를 걷는 자들"
@@ -3510,6 +3614,10 @@
  "58b8da4b72d4": {
   "en": "7% of my hours",
   "t": "내 시간의 7%"
+ },
+ "58bb403e88cf": {
+  "en": "Northern pike",
+  "t": "노던 파이크"
  },
  "58f7a8f2ec30": {
   "en": "\nWeight by year: 2016, 300 pounds; 2017, 220 pounds; 2018, 230 pounds; 2019, 240 pounds; 2020, 260 pounds; 2021, 230 pounds; 2022, 245 pounds; 2023, 260 pounds; 2024, 250 pounds; 2025, 260 pounds; 2026, 225 pounds. Goal: 200 pounds.\n Body fat, yearly average: 2023, 32.9%; 2024, 36.8%; 2025, 38.0%; 2026, 35.4%. ",
@@ -3751,6 +3859,10 @@
   "en": "Camping",
   "t": "캠핑"
  },
+ "5e9f48f66af0": {
+  "en": "Bite! Flick up hard to set the hook!",
+  "t": "입질! 세게 챔질해!"
+ },
  "5ef1da7aa7f2": {
   "en": "Quite the stretch",
   "t": "대단한 스트레칭"
@@ -3863,6 +3975,10 @@
   "en": "Deovandski's Blog",
   "t": "Deovandski의 블로그"
  },
+ "6189fe36c4af": {
+  "en": "Turn the <b data-astro-cid-o3poasna=\"\">Range</b> knob to switch the flasher on. The bottom is at 28 ft here, so x2 (0 to 40 ft) fits it best.",
+  "t": "<b data-astro-cid-o3poasna=\"\">레인지</b> 노브를 돌려 플래셔를 켜. 여기 바닥은 28피트라서 x2(0~40피트)가 딱 맞아."
+ },
  "618e3308c83d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 29: </span> Placeholder movie 29 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 29: </span> 임시 영화 29"
@@ -3870,6 +3986,14 @@
  "618e487541ea": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#11: </span>Best of the Worst: LA Wars, Unmasking the Idol, and Robowoman"
+ },
+ "61b142772297": {
+  "en": "Fishing hole: Up and Down move the jig, Space flicks the rod",
+  "t": "얼음 구멍: 위아래 키로 지그를 움직이고, 스페이스로 챔질"
+ },
+ "61d48f8ebddb": {
+  "en": "Ice fishing: turn your phone sideways",
+  "t": "얼음낚시: 휴대폰을 가로로 돌려 줘"
  },
  "61db3a4f5dc3": {
   "en": "Kingdoms and Castles",
@@ -3918,6 +4042,14 @@
  "62dfe60deea3": {
   "en": "The numbers didn't load. Try again later.",
   "t": "숫자를 불러오지 못했어요. 나중에 다시 해 보세요."
+ },
+ "62f84c7b7a34": {
+  "en": "{n} of 10",
+  "t": "{n} / 10"
+ },
+ "63286f4f3a05": {
+  "en": "Bottom at {d} ft. Scroll or swipe down to drop your jig: it's the thin mark on the dial.",
+  "t": "바닥은 {d}피트. 스크롤하거나 아래로 스와이프해서 지그를 내려: 다이얼의 가는 표시가 지그야."
  },
  "633797165688": {
   "en": "Magical Mirai, Osaka (2014)",
@@ -4439,6 +4571,10 @@
   "en": "Enlarge: Crappie selfie",
   "t": "확대: 크래피 셀카"
  },
+ "70d7858359b2": {
+  "en": "Yellow perch",
+  "t": "옐로 퍼치"
+ },
  "70e3b3dcbb78": {
   "en": " NM ",
   "t": "NM"
@@ -4739,6 +4875,10 @@
   "en": "226 days",
   "t": "226일"
  },
+ "78c0f941b201": {
+  "en": "Dashes running around the dial? A buddy's flasher is too close: press the Gain knob to step through the interference rejection (IR).",
+  "t": "다이얼 위로 점들이 돌아다녀? 친구 플래셔가 너무 가까워: 게인 노브를 눌러 간섭 제거(IR) 단계를 바꿔."
+ },
  "78cc6006e09c": {
   "en": "Gym, 6:47am",
   "t": "헬스장, 오전 6:47"
@@ -4990,6 +5130,10 @@
  "7eb0cee888ab": {
   "en": "Min",
   "t": "분"
+ },
+ "7ebd2107485d": {
+  "en": "Turn the Range knob to switch the flasher on.",
+  "t": "레인지 노브를 돌려 플래셔를 켜."
  },
  "7ec79775c355": {
   "en": "Every wrong answer is just a trip you still have to take.",
@@ -5787,6 +5931,10 @@
   "en": "Garry's Mod",
   "t": "Garry's Mod"
  },
+ "93f579c09a3b": {
+  "en": "When the rod tip flashes (and your phone buzzes), flick up hard: a big, fast scroll up or swipe up, or Space. Too early and it spooks; too late and it spits the jig.",
+  "t": "초릿대 끝이 번쩍이면(폰이면 진동도), 세게 챔질해: 크고 빠르게 위로 스크롤하거나 위로 스와이프, 또는 스페이스. 너무 빠르면 도망가고, 너무 늦으면 지그를 뱉어."
+ },
  "93fc6888a695": {
   "en": "The Church's top recommendations are <strong>Sal Lebre</strong> and <strong>Mariza Churrasco D'Chef</strong>, for their consistency and their quality held steady over the years. Seasoned churrasco salt is permitted by the Church, but not every brand, for some add too much, and simplicity is at the core of our faith.",
   "t": "교회가 가장 권하는 것은 <strong>Sal Lebre</strong>와 <strong>Mariza Churrasco D'Chef</strong>이니, 여러 해 동안 한결같은 품질을 지켜 왔기 때문이니라. 양념한 슈하스코 소금도 교회가 허락하나, 모든 상표는 아니니라. 어떤 것은 너무 많이 넣으며, 단순함이 우리 신앙의 핵심이기 때문이니라."
@@ -5906,6 +6054,10 @@
  "96b6cea2d9d5": {
   "en": "God of War",
   "t": "갓 오브 워"
+ },
+ "96dd91cdcbe7": {
+  "en": "Gain",
+  "t": "게인"
  },
  "96dedce974cf": {
   "en": "Enlarge: Failing to learn English",
@@ -6075,6 +6227,10 @@
   "en": "Am I that really interesting?",
   "t": "내가 그렇게까지 흥미로워?"
  },
+ "9c2867f3a4f7": {
+  "en": "It shook the hook.",
+  "t": "바늘을 털어 냈어."
+ },
  "9c4a5310f68f": {
   "en": "Princess Fluffy of Guamá: Fluffy in a pink princess dress and a jeweled tiara, sitting in the back seat of a car",
   "t": "과마의 Fluffy 공주: 분홍 공주 드레스에 보석 티아라를 쓰고 차 뒷좌석에 앉아 있는 Fluffy"
@@ -6118,6 +6274,10 @@
  "9d6c79478e4e": {
   "en": "Legendary reflexes!",
   "t": "전설적인 반사신경!"
+ },
+ "9d89b2d84ac3": {
+  "en": "It's coming in: the mark turns orange, then red.",
+  "t": "다가오고 있어: 표시가 주황색, 그다음 빨간색으로 바뀌어."
  },
  "9d8a4e9da14d": {
   "en": "Slime Rancher",
@@ -6302,6 +6462,10 @@
  "a157d38de121": {
   "en": "Enlarge: Moar sleep",
   "t": "확대: 더 자아아"
+ },
+ "a16c5bbe4bf9": {
+  "en": "Range",
+  "t": "레인지"
  },
  "a173e725607d": {
   "en": "Asia",
@@ -6519,6 +6683,10 @@
   "en": "5C",
   "t": "5C"
  },
+ "a6d49890ad7c": {
+  "en": "Jig to call fish in. A green mark at the edge of the cone turns orange, then red, as it comes to your jig. Then twitch it, or lift it slowly.",
+  "t": "지그를 흔들어 물고기를 불러와. 탐지 범위 가장자리의 초록 표시가 지그로 다가오면서 주황, 그다음 빨강으로 바뀌어. 그러면 살짝 흔들거나 천천히 들어 올려."
+ },
  "a6df62f72604": {
   "en": " ← Back to the system ",
   "t": "← 항성계로 돌아가기"
@@ -6563,9 +6731,17 @@
   "en": "Electronic &amp; synthwave",
   "t": "일렉트로닉 &amp; 신스웨이브"
  },
+ "a790b5f3cecb": {
+  "en": "IR {n}",
+  "t": "IR {n}"
+ },
  "a79aa4ea4d23": {
   "en": "Lust",
   "t": "욕망"
+ },
+ "a7b93d2128e8": {
+  "en": "Mode",
+  "t": "모드"
  },
  "a7bdce161e86": {
   "en": "Enlarge: Clingy",
@@ -6907,6 +7083,10 @@
   "en": "Guess what I'm gonna do",
   "t": "내가 뭐 할지 맞혀 봐"
  },
+ "b0439c65e633": {
+  "en": "IR {n} cleared the interference.",
+  "t": "IR {n}로 간섭이 사라졌어."
+ },
  "b04af783d0ff": {
   "en": " Idle &amp; clickers ",
   "t": "방치형 &amp; 클리커"
@@ -7031,6 +7211,10 @@
   "en": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 Favs</span>",
   "t": "Majesties<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">FITM 2025 최애</span>"
  },
+ "b377868dc116": {
+  "en": "Keep reeling!",
+  "t": "계속 감아!"
+ },
  "b38a99fe0694": {
   "en": "one rises as the other falls",
   "t": "하나가 오르면 다른 하나는 내려감"
@@ -7098,6 +7282,10 @@
  "b588aca7bb99": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (KonoSuba: God's Blessing on This Wonderful World!) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 9: </span> Kono Subarashii Sekai ni Shukufuku wo! (이 멋진 세계에 축복을!)"
+ },
+ "b5c2669931ed": {
+  "en": "It's on your jig: small twitches, or lift it slowly.",
+  "t": "지그 바로 앞이야: 살짝살짝 흔들거나, 천천히 들어 올려."
  },
  "b61c12b736ff": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 1: </span> Sword Art Online ",
@@ -7515,6 +7703,10 @@
   "en": " D · Seasons ",
   "t": "D · 계절"
  },
+ "c16fa30192fe": {
+  "en": "Reel it up, and ease off when it runs, or the line breaks.",
+  "t": "감아 올리고, 차고 나가면 풀어 줘. 안 그러면 줄이 끊어져."
+ },
  "c195939d360a": {
   "en": " 247 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "247 시간  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">추정</span>"
@@ -7831,6 +8023,10 @@
   "en": "21 h",
   "t": "21 시간"
  },
+ "cb3b8b95ac08": {
+  "en": "Gain (press it for interference rejection)",
+  "t": "게인(누르면 간섭 제거)"
+ },
  "cb617c0ab9ee": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 6: </span> Placeholder TV show 6 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 6: </span> 임시 TV 프로그램 6"
@@ -8003,6 +8199,10 @@
   "en": "Cult of the Lamb",
   "t": "Cult of the Lamb"
  },
+ "cf93b2a95f0d": {
+  "en": "No bottom on this range: turn the Range up.",
+  "t": "이 레인지에선 바닥이 안 보여: 레인지를 올려."
+ },
  "cfcf0d7d152e": {
   "en": "Never wrestle with pigs. You both get dirty, and the pig likes it. <span class=\"newest\">New</span>",
   "t": "돼지와는 절대 씨름하지 마. 둘 다 더러워지는데, 돼지는 그걸 좋아해. <span class=\"newest\">NEW</span>"
@@ -8058,6 +8258,10 @@
  "d09bdd281dfa": {
   "en": "Princess Fluffy of Guamá",
   "t": "과마의 Fluffy 공주"
+ },
+ "d0a6b073b147": {
+  "en": "Snap! The line broke.",
+  "t": "툭! 줄이 끊어졌어."
  },
  "d0c12b6b5196": {
   "en": "REM sleep",
@@ -8167,6 +8371,10 @@
   "en": "Read my Vol 4 afterword",
   "t": "내 4권 후기 읽기"
  },
+ "d35993abead4": {
+  "en": "Back to Fishing",
+  "t": "낚시로 돌아가기"
+ },
  "d35c60400150": {
   "en": "87 h",
   "t": "87 시간"
@@ -8202,6 +8410,10 @@
  "d3a2460e932b": {
   "en": "TS",
   "t": "TS"
+ },
+ "d3acd83e402c": {
+  "en": "Lots of clutter: turn the Gain down a little.",
+  "t": "잡음이 너무 많아: 게인을 조금 내려."
  },
  "d3b572e24639": {
   "en": "Huehue, I can feel that thinking face from here.",
@@ -8735,6 +8947,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Shingeki no Kyojin (Attack on Titan) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 4: </span> Shingeki no Kyojin (진격의 거인)"
  },
+ "e0d4f121e169": {
+  "en": "Too late: it spat the jig.",
+  "t": "너무 늦었어: 지그를 뱉어 버렸어."
+ },
  "e1038f5c447c": {
   "en": "More of my games on the Gamer tab",
   "t": "내 다른 게임은 게이머 탭에서"
@@ -8827,9 +9043,17 @@
   "en": "Now",
   "t": "지금"
  },
+ "e3bd01bce3c4": {
+  "en": "Tullibee",
+  "t": "털리비"
+ },
  "e3cb8bd6bf09": {
   "en": "Bedtime",
   "t": "취침 시각"
+ },
+ "e3de5ab0ca4c": {
+  "en": "Off",
+  "t": "꺼짐"
  },
  "e41e31dc846f": {
   "en": "Throw Bird, costs 3 mana (key 2)",
@@ -9062,6 +9286,10 @@
  "ea924f72d31e": {
   "en": "Recovery",
   "t": "회복"
+ },
+ "ea9676003762": {
+  "en": "Line",
+  "t": "줄"
  },
  "eaa40e2587dc": {
   "en": "Distrito Federal",
@@ -9567,6 +9795,10 @@
   "en": " Shooters &amp; co-op ",
   "t": "슈터 &amp; 협동"
  },
+ "fa2ca4c86063": {
+  "en": "Caught: {n}",
+  "t": "조과: {n}"
+ },
  "fa42321aea70": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Placeholder movie 26 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 26: </span> 임시 영화 26"
@@ -9590,6 +9822,10 @@
  "faf65a9797bc": {
   "en": "With my autistic brain, it’s no surprise I love aviation (vehicles are one of the most common autistic special interests, and a plane is a flying pile of systems with firm rules; the research is in this tab’s Links box). I always loved planes and was going to be a pilot. But my parents worked in the industry and worried they were the ones steering me there. I grew up around it, even helping my mom on the SABRE system so we could go home sooner. They did the right thing by pushing me to make my own decision… and I ended up in software development.",
   "t": "자폐인 내 뇌를 생각하면, 내가 항공을 사랑하는 건 놀랍지 않지(탈것은 가장 흔한 자폐인의 특별한 관심사 중 하나고, 비행기는 규칙이 확실한 시스템들이 하늘을 나는 덩어리야. 연구는 이 탭의 링크에 있어). 난 늘 비행기를 사랑했고 조종사가 될 생각이었어. 그런데 부모님이 업계에서 일하셨고, 자신들이 날 그쪽으로 몰아가는 건 아닐까 걱정하셨어. 난 그 환경에서 자랐고, 집에 일찍 가려고 엄마의 SABRE 시스템 일을 돕기까지 했지. 부모님은 내가 스스로 결정하도록 밀어 주는 옳은 일을 하셨고… 난 결국 소프트웨어 개발로 왔어."
+ },
+ "fb1a89e702bc": {
+  "en": "Auto zoom",
+  "t": "오토 줌"
  },
  "fb20e5b0188c": {
   "en": "Enlarge: When the catnip hits just right",

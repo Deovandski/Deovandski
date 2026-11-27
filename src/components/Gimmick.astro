@@ -6,6 +6,7 @@ import DinoAmbush from './reusable/DinoAmbush.astro';
 import DrawingPad from './reusable/DrawingPad.astro';
 import DrumKit from './reusable/DrumKit.astro';
 import FireMeter from './reusable/FireMeter.astro';
+import IceFlasher from './reusable/IceFlasher.astro';
 import IsoFarm from './reusable/IsoFarm.astro';
 import KitKot from './reusable/KitKot.astro';
 import LedMatrix from './reusable/LedMatrix.astro';
@@ -82,6 +83,7 @@ const trip = id === 'where-was-deo' ? await travelQuiz() : null;
 }
 {id === 'dice-tray' && <DiceTray label="Roll the dice" />}
 {id === 'dino-ambush' && <DinoAmbush />}
+{id === 'ice-fishing' && <IceFlasher depth={28} />}
 {id === 'drum-kit' && <DrumKit label="Virtual drum kit" />}
 {id === 'ecchi-meter' && <FireMeter stages={ecchi.stages} label={ecchi.label} button="Pump the bellows" />}
 {id === 'kitkot' && <KitKot name="Deovandski Skibinski Junior" handle="deovandski" bio="Author, x++ dev, chasing the algorithm" />}

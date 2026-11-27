@@ -1,0 +1,1524 @@
+---
+/**
+ * IceFlasher: ice fishing with a three-colour flasher, based on the Vexilar FL-18. The dial is the
+ * flasher's spinning-LED wheel: 0 (the ice) at 12 o'clock, depth going clockwise, red for strong
+ * returns, orange for medium and green for weak. Your jig is the thin mark, the bottom is the wide red
+ * band, and fish show up as marks that turn from green (edge of the cone) to red (right under the hole)
+ * as they come in. Beside it, the rod over the hole.
+ *
+ * Play: scroll the mouse wheel (or swipe up and down, or drag) to move the jig. Jig to call a fish in,
+ * twitch it or lift it slowly, and when the rod tip flashes (phones also buzz), flick up hard: a big,
+ * fast scroll or swipe up (or Space). Then reel up, and ease off when it runs, or the line breaks.
+ *
+ * The knobs work like the FL-18's: Range (Off, x1 to x10, which also turns it on), Mode (Normal, Low
+ * Power, Auto Zoom and Bottom Lock, which split the dial with the bottom 6 ft zoomed on the left) and
+ * Gain (0 to 10; press it to step through the 10 interference-rejection settings). Drag, scroll over
+ * or click a knob, or focus it and use the arrow keys (Enter presses it).
+ *
+ * The sound is made with the Web Audio API (no samples): the wheel's motor whir, the ping ticks, the
+ * reel's drag when a fish runs, a splash when one lands. It starts with the flasher and has a mute
+ * button.
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
+ * Copy this one file into any Astro project. See README.md in this folder.
+ *
+ *   <IceFlasher />
+ *   <IceFlasher depth={32} />
+ *
+ * Props:
+ *   depth   how deep the hole is, in feet (the bottom). Default 28.
+ *
+ * Theming (CSS custom properties): --if-case (the flasher's case, default #23262c), --if-accent
+ * (buttons and the tension bar, #39c5bb), --if-sky and --if-water (the rod's scene, #cfe3f2 and
+ * #0d2a3f), --if-text (inherit).
+ *
+ * Words the script shows (hints, the catches, the knobs' values) are written into a hidden
+ * .ice-flasher__strings block, so a translated copy of the page translates them too.
+ *
+ * Accessible: the knobs are sliders (arrow keys, Home, End; Enter presses them); the fishing hole
+ * takes the keyboard too (Up and Down move the jig, Space flicks); what the flasher shows and what the
+ * fish does is announced. Reduced motion: no flicker or rod shake; the rod tip glows instead of
+ * blinking. The game pauses (and goes quiet) when it's off screen or its tab closes.
+ */
+interface Props {
+  depth?: number;
+  class?: string;
+}
+const { depth = 28, class: className } = Astro.props;
+// What the script writes while you play. It lives in the page so the site's translations reach it.
+const strings: Record<string, string> = {
+  off: 'Off',
+  normal: 'Normal',
+  lp: 'Low power',
+  az: 'Auto zoom',
+  bl: 'Bottom lock',
+  rangeText: 'x{x}: 0 to {ft} ft',
+  gainText: '{n} of 10',
+  irText: 'IR {n}',
+  jigAt: 'Jig {d} ft',
+  caught: 'Caught: {n}',
+  soundOn: '🔊 Sound on',
+  soundOff: '🔇 Sound off',
+  walleye: 'Walleye',
+  sauger: 'Sauger',
+  perch: 'Yellow perch',
+  tullibee: 'Tullibee',
+  pike: 'Northern pike',
+  crappie: 'Black crappie',
+  hintOff: 'Turn the Range knob to switch the flasher on.',
+  hintOn: "Bottom at {d} ft. Scroll or swipe down to drop your jig: it's the thin mark on the dial.",
+  hintNoBottom: 'No bottom on this range: turn the Range up.',
+  hintZoom: 'Split screen: the whole hole on the right, the bottom 6 ft zoomed on the left.',
+  hintLow: 'Barely anything shows: turn the Gain up.',
+  hintHigh: 'Lots of clutter: turn the Gain down a little.',
+  hintInterference: "Dashes running around the dial? A buddy's flasher is too close: press the Gain knob to step through the interference rejection (IR).",
+  hintCleared: 'IR {n} cleared the interference.',
+  fishEdge: 'A green mark at {d} ft: a fish at the edge of the cone. Jig to call it in.',
+  fishComing: "It's coming in: the mark turns orange, then red.",
+  fishOnJig: "It's on your jig: small twitches, or lift it slowly.",
+  bite: 'Bite! Flick up hard to set the hook!',
+  spat: 'Too late: it spat the jig.',
+  spooked: 'Too much: it spooked.',
+  ripped: 'Nothing bit yet: that rip spooked it.',
+  hooked: 'Fish on! Reel up (scroll or swipe up), and ease off when it runs.',
+  running: "It's running! Ease off.",
+  keepReeling: 'Keep reeling!',
+  snapped: 'Snap! The line broke.',
+  shook: 'It shook the hook.',
+  landed: 'Caught: {fish}, {len} in ({cm} cm)!',
+  logEntry: '{fish}, {len} in ({cm} cm)',
+};
+---
+
+<div class:list={['ice-flasher', className]} data-depth={depth}>
+  <div class="ice-flasher__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
+  <div
+    class="ice-flasher__stage"
+    tabindex="0"
+    role="group"
+    aria-label="Fishing hole: Up and Down move the jig, Space flicks the rod"
+  >
+    <div class="ice-flasher__unit" dir="ltr">
+      <canvas class="ice-flasher__dial" dir="ltr" aria-hidden="true"></canvas>
+      <div class="ice-flasher__panel">
+        <div class="ice-flasher__knob-wrap">
+          <div class="ice-flasher__knob" role="slider" tabindex="0" data-knob="range" aria-label="Range" aria-valuemin="0" aria-valuemax="5" aria-valuenow="0">
+            <span class="ice-flasher__cap"></span>
+          </div>
+          <span class="ice-flasher__knob-name">Range</span>
+          <span class="ice-flasher__knob-val" aria-hidden="true"></span>
+        </div>
+        <div class="ice-flasher__knob-wrap">
+          <div class="ice-flasher__knob" role="slider" tabindex="0" data-knob="mode" aria-label="Mode" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0">
+            <span class="ice-flasher__cap"></span>
+          </div>
+          <span class="ice-flasher__knob-name">Mode</span>
+          <span class="ice-flasher__knob-val" aria-hidden="true"></span>
+        </div>
+        <div class="ice-flasher__knob-wrap">
+          <div class="ice-flasher__knob" role="slider" tabindex="0" data-knob="gain" aria-label="Gain (press it for interference rejection)" aria-valuemin="0" aria-valuemax="10" aria-valuenow="4">
+            <span class="ice-flasher__cap"></span>
+          </div>
+          <span class="ice-flasher__knob-name">Gain</span>
+          <span class="ice-flasher__knob-val" aria-hidden="true"></span>
+        </div>
+      </div>
+    </div>
+    <div class="ice-flasher__hole">
+      <canvas class="ice-flasher__rod" aria-hidden="true"></canvas>
+    </div>
+  </div>
+  <div class="ice-flasher__bar">
+    <span class="ice-flasher__jig" aria-hidden="true"></span>
+    <span class="ice-flasher__tension" hidden aria-hidden="true"><span>Line</span><i></i></span>
+    <span class="ice-flasher__count" aria-hidden="true"></span>
+    <button type="button" class="ice-flasher__mute" aria-pressed="false"></button>
+  </div>
+  <p class="ice-flasher__status" role="status" aria-live="polite"></p>
+  <ol class="ice-flasher__log" aria-label="Your catches"></ol>
+  <details class="ice-flasher__how">
+    <summary>How to play</summary>
+    <ul>
+      <li>Turn the <b>Range</b> knob to switch the flasher on. The bottom is at {depth} ft here, so x2 (0 to 40 ft) fits it best.</li>
+      <li>Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom.</li>
+      <li>Jig to call fish in. A green mark at the edge of the cone turns orange, then red, as it comes to your jig. Then twitch it, or lift it slowly.</li>
+      <li>When the rod tip flashes (and your phone buzzes), flick up hard: a big, fast scroll up or swipe up, or Space. Too early and it spooks; too late and it spits the jig.</li>
+      <li>Reel it up, and ease off when it runs, or the line breaks.</li>
+      <li><b>Gain</b> sets how strong the marks show (about 3 to 4 here); too much and the dial fills with clutter. Press it to step through the 10 IR settings when another flasher interferes.</li>
+      <li><b>Mode</b>: Low Power for less clutter, or Auto Zoom and Bottom Lock to split the dial, with the bottom 6 ft zoomed on the left.</li>
+    </ul>
+  </details>
+</div>
+
+<style>
+  .ice-flasher {
+    --_case: var(--if-case, #23262c);
+    --_accent: var(--if-accent, #39c5bb);
+    --_sky: var(--if-sky, #cfe3f2);
+    --_water: var(--if-water, #0d2a3f);
+    color: var(--if-text, inherit);
+    max-width: 640px;
+    container: ice-flasher / inline-size;
+    margin: 0 auto;
+  }
+  .ice-flasher__stage {
+    display: flex;
+    gap: 12px;
+    align-items: stretch;
+    touch-action: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    border-radius: 20px;
+    outline-offset: 3px;
+  }
+  .ice-flasher__stage:focus-visible {
+    outline: 3px solid var(--_accent);
+  }
+  .ice-flasher__unit {
+    flex: 0 1 330px;
+    min-width: 0;
+    padding: 10px 10px 8px;
+    border-radius: 20px;
+    background: linear-gradient(160deg, color-mix(in srgb, var(--_case) 80%, #fff), var(--_case) 40%, color-mix(in srgb, var(--_case) 70%, #000));
+    box-shadow:
+      0 6px 18px rgba(0, 0, 0, 0.35),
+      inset 0 1px 0 rgba(255, 255, 255, 0.15);
+  }
+  .ice-flasher__dial {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+  .ice-flasher__panel {
+    display: flex;
+    justify-content: space-around;
+    gap: 6px;
+    margin-top: 8px;
+  }
+  .ice-flasher__knob-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    min-width: 0;
+    flex: 1 1 0;
+  }
+  .ice-flasher__knob {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: grab;
+    touch-action: none;
+    background: repeating-conic-gradient(from -135deg, rgba(255, 255, 255, 0.55) 0 2deg, transparent 2deg 27deg);
+    -webkit-mask: radial-gradient(circle, #000 0 100%);
+    outline-offset: 2px;
+  }
+  .ice-flasher__knob:active {
+    cursor: grabbing;
+  }
+  .ice-flasher__knob:focus-visible {
+    outline: 3px solid var(--_accent);
+  }
+  .ice-flasher__cap {
+    position: absolute;
+    inset: 6px;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 35% 30%, #6b707b, #2a2d33 60%, #121316),
+      #222;
+    box-shadow:
+      0 2px 4px rgba(0, 0, 0, 0.6),
+      inset 0 0 0 2px rgba(0, 0, 0, 0.4);
+    transform: rotate(var(--turn, -135deg));
+    transition: transform 0.12s ease-out;
+  }
+  .ice-flasher__cap::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 3px;
+    width: 4px;
+    height: 12px;
+    margin-left: -2px;
+    border-radius: 2px;
+    background: #f2f2f2;
+  }
+  .ice-flasher__knob.is-pressed .ice-flasher__cap {
+    inset: 8px;
+  }
+  .ice-flasher__knob-name {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #e9e9e9;
+  }
+  .ice-flasher__knob-val {
+    font: 600 11px/1.2 ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: #ffb347;
+    text-align: center;
+    min-height: 1.2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+  }
+  .ice-flasher__hole {
+    flex: 1 1 140px;
+    min-width: 110px;
+    border-radius: 20px;
+    overflow: hidden;
+    background: var(--_water);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+  .ice-flasher__rod {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .ice-flasher__bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px 14px;
+    margin-top: 10px;
+    font-weight: 600;
+  }
+  .ice-flasher__jig {
+    font-variant-numeric: tabular-nums;
+  }
+  .ice-flasher__tension {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .ice-flasher__tension[hidden] {
+    display: none;
+  }
+  .ice-flasher__tension i {
+    display: block;
+    width: 90px;
+    height: 10px;
+    border-radius: 5px;
+    background: linear-gradient(90deg, var(--_accent) calc(var(--t, 0) * 100%), rgba(127, 127, 127, 0.3) 0);
+  }
+  .ice-flasher__tension.is-high i {
+    background: linear-gradient(90deg, #e5484d calc(var(--t, 0) * 100%), rgba(127, 127, 127, 0.3) 0);
+  }
+  .ice-flasher__mute {
+    margin-inline-start: auto;
+    padding: 4px 12px;
+    border: 2px solid var(--_accent);
+    border-radius: 999px;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 0.9em;
+    cursor: pointer;
+  }
+  .ice-flasher__mute[aria-pressed='true'] {
+    opacity: 0.7;
+  }
+  .ice-flasher__status {
+    min-height: 2.8em;
+    margin: 8px 0 4px;
+  }
+  .ice-flasher__log {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin: 0 0 8px;
+    padding: 0;
+    list-style: none;
+  }
+  .ice-flasher__log:empty {
+    display: none;
+  }
+  .ice-flasher__log li {
+    padding: 2px 10px;
+    border-radius: 999px;
+    background: color-mix(in srgb, var(--_accent) 22%, transparent);
+    font-size: 0.9em;
+  }
+  .ice-flasher__how summary {
+    cursor: pointer;
+    font-weight: 700;
+  }
+  .ice-flasher__how ul {
+    margin: 6px 0 0;
+    padding-inline-start: 1.3em;
+  }
+  .ice-flasher__how li + li {
+    margin-top: 4px;
+  }
+  /* Narrow: the flasher takes the whole width, the rod sits under it. */
+  @container ice-flasher (max-width: 460px) {
+    .ice-flasher__stage {
+      flex-direction: column;
+      gap: 8px;
+    }
+    .ice-flasher__unit {
+      flex: none;
+      width: 100%;
+      max-width: 330px;
+      align-self: center;
+      box-sizing: border-box;
+    }
+    .ice-flasher__hole {
+      flex: none;
+      height: 130px;
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .ice-flasher__cap {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  type Kind = 'walleye' | 'sauger' | 'perch' | 'tullibee' | 'pike' | 'crappie';
+  type State = 'roam' | 'look' | 'nose' | 'bite' | 'hooked' | 'gone';
+  type Fish = {
+    kind: Kind;
+    d: number; // depth, ft
+    cone: number; // 0 = edge of the cone, 1 = right under the hole
+    size: number; // 0..1 within its species
+    state: State;
+    t: number; // seconds in this state
+    life: number; // seconds left before a roaming fish swims off
+    interest: number;
+    drift: number;
+    told: boolean;
+    leaving: boolean;
+  };
+
+  // Lake fish of the north (Minnesota ice fishing). band: where it holds, in ft above the bottom.
+  // power: how hard it fights. speed: ft/s it swims to the jig. bite: how quickly it makes up its mind.
+  const SPECIES: Record<Kind, { weight: number; min: number; max: number; band: [number, number]; power: number; speed: number; bite: number }> = {
+    walleye: { weight: 34, min: 14, max: 27, band: [0, 4], power: 0.55, speed: 2.6, bite: 1 },
+    sauger: { weight: 18, min: 12, max: 19, band: [0, 3], power: 0.45, speed: 2.4, bite: 1.1 },
+    perch: { weight: 24, min: 7, max: 13, band: [0, 2.5], power: 0.25, speed: 2.2, bite: 1.5 },
+    tullibee: { weight: 10, min: 12, max: 19, band: [8, 18], power: 0.4, speed: 3, bite: 1.1 },
+    pike: { weight: 8, min: 22, max: 38, band: [3, 16], power: 0.95, speed: 4, bite: 0.8 },
+    crappie: { weight: 6, min: 9, max: 14, band: [6, 14], power: 0.3, speed: 2, bite: 1.2 },
+  };
+  const RANGES = [0, 1, 2, 3, 4, 10]; // x multiplier of 20 ft; 0 is Off
+  const MODES = ['normal', 'lp', 'az', 'bl'] as const;
+  const RED = '#ff2b1c';
+  const ORANGE = '#ff9a1a';
+  const GREEN = '#3dff52';
+  const ZOOM_FROM = (210 / 360) * Math.PI * 2; // 7 o'clock, the bottom in the zoom view
+  const ZOOM_SPAN = (140 / 360) * Math.PI * 2; // 6 ft of zoom
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // One sound engine for the page (one AudioContext), shared by every flasher on it.
+  const snd = {
+    ctx: null as AudioContext | null,
+    noise: null as AudioBuffer | null,
+    get(): AudioContext | null {
+      if (!this.ctx) {
+        try {
+          const AC = window.AudioContext || (window as unknown as { webkitAudioContext: typeof AudioContext }).webkitAudioContext;
+          this.ctx = new AC();
+          const c = this.ctx;
+          this.noise = c.createBuffer(1, c.sampleRate, c.sampleRate);
+          const d = this.noise.getChannelData(0);
+          for (let i = 0; i < d.length; i++) d[i] = Math.random() * 2 - 1;
+        } catch {
+          return null;
+        }
+      }
+      if (this.ctx.state === 'suspended') void this.ctx.resume().catch(() => {});
+      return this.ctx;
+    },
+  };
+
+  const rand = (a: number, b: number) => a + Math.random() * (b - a);
+  const clamp = (v: number, a: number, b: number) => Math.min(b, Math.max(a, v));
+
+  document.querySelectorAll<HTMLElement>('.ice-flasher').forEach((root) => {
+    const D = Number(root.dataset.depth) || 28;
+    const stage = root.querySelector<HTMLElement>('.ice-flasher__stage')!;
+    const dial = root.querySelector<HTMLCanvasElement>('.ice-flasher__dial')!;
+    const rodCv = root.querySelector<HTMLCanvasElement>('.ice-flasher__rod')!;
+    const dx = dial.getContext('2d')!;
+    const rx = rodCv.getContext('2d')!;
+    const status = root.querySelector<HTMLElement>('.ice-flasher__status')!;
+    const jigEl = root.querySelector<HTMLElement>('.ice-flasher__jig')!;
+    const countEl = root.querySelector<HTMLElement>('.ice-flasher__count')!;
+    const tensionEl = root.querySelector<HTMLElement>('.ice-flasher__tension')!;
+    const logEl = root.querySelector<HTMLElement>('.ice-flasher__log')!;
+    const muteBtn = root.querySelector<HTMLButtonElement>('.ice-flasher__mute')!;
+    const knobs = Object.fromEntries(
+      [...root.querySelectorAll<HTMLElement>('.ice-flasher__knob')].map((k) => [k.dataset.knob!, k]),
+    ) as Record<'range' | 'mode' | 'gain', HTMLElement>;
+
+    const msg = (key: string, vars: Record<string, string | number> = {}) =>
+      (root.querySelector(`.ice-flasher__strings [data-k="${key}"]`)?.textContent ?? key).replace(/\{(\w+)\}/g, (m, k) =>
+        k in vars ? String(vars[k]) : m,
+      );
+    const lang = document.documentElement.lang || 'en';
+    const num = (n: number, digits = 0) => n.toLocaleString(lang, { maximumFractionDigits: digits, minimumFractionDigits: digits });
+
+    // ---- State ----
+    let range = 0; // index into RANGES
+    let mode = 0;
+    let gain = 4;
+    let ir = 1;
+    const irGood = 2 + Math.floor(Math.random() * 9); // 2..10
+    let interference = false;
+    let interferenceIn = rand(12, 25); // seconds of flasher-on time until a buddy turns his on
+    let interferenceTold = false;
+    let jig = 3;
+    let fishes: Fish[] = [];
+    let spawnIn = rand(3, 6);
+    let hooked: Fish | null = null;
+    let tension = 0;
+    let run = 0; // seconds of the current run left
+    let idle = 0; // seconds since the last reel during a fight
+    let keepTold = false;
+    let biteFlash = 0; // seconds of rod-tip flash left
+    let catches = 0;
+    let muted = false;
+    let now = 0; // game clock, seconds
+    const moves: { t: number; dy: number }[] = []; // recent jig moves (+ is down)
+    const ups: { t: number; px: number }[] = []; // recent upward flick input, for the hookset
+    let flickAt = -9;
+    let lastHint = '';
+    let toldBottom = false;
+    let toldClutter = false;
+    let toldLow = false;
+    let toldNoBottom = false;
+    let toldZoom = false;
+    let lastSay = 0;
+
+    const rangeFt = () => RANGES[range] * 20;
+    const on = () => range > 0;
+    const zoomed = () => on() && (MODES[mode] === 'az' || MODES[mode] === 'bl');
+
+    function say(key: string, vars: Record<string, string | number> = {}, force = false) {
+      const text = msg(key, vars);
+      if (!force && text === lastHint) return;
+      lastHint = text;
+      lastSay = now;
+      status.textContent = text;
+    }
+
+    // ---- Sound ----
+    let motor: { stop: () => void } | null = null;
+    let master: GainNode | null = null;
+    let tickAt = 0;
+    let dragAt = 0;
+    let lastCrank = 0;
+
+    function out(): GainNode | null {
+      const c = snd.get();
+      if (!c) return null;
+      if (!master) {
+        master = c.createGain();
+        master.gain.value = muted ? 0 : 0.6;
+        master.connect(c.destination);
+      }
+      return master;
+    }
+    function noise(t: number, dur: number, peak: number, type: BiquadFilterType, freq: number, q = 0.8) {
+      const c = snd.ctx;
+      const m = out();
+      if (!c || !m || !snd.noise) return;
+      const src = c.createBufferSource();
+      src.buffer = snd.noise;
+      src.loop = dur > 0.9;
+      const f = c.createBiquadFilter();
+      f.type = type;
+      f.frequency.value = freq;
+      f.Q.value = q;
+      const g = c.createGain();
+      g.gain.setValueAtTime(peak, t);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      src.connect(f).connect(g).connect(m);
+      src.start(t, Math.random() * 0.5);
+      src.stop(t + dur + 0.05);
+    }
+    // The wheel's motor: a low whir with a little buzz and brush hiss, spinning up when it turns on.
+    function motorOn() {
+      const c = snd.get();
+      const m = out();
+      if (!c || !m || motor) return;
+      const t = c.currentTime;
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, t);
+      g.gain.exponentialRampToValueAtTime(0.05, t + 0.5);
+      g.connect(m);
+      const lp = c.createBiquadFilter();
+      lp.type = 'lowpass';
+      lp.frequency.value = 900;
+      lp.connect(g);
+      const o1 = c.createOscillator();
+      o1.type = 'sawtooth';
+      o1.frequency.setValueAtTime(25, t);
+      o1.frequency.exponentialRampToValueAtTime(118, t + 0.8);
+      const o2 = c.createOscillator();
+      o2.type = 'triangle';
+      o2.frequency.setValueAtTime(50, t);
+      o2.frequency.exponentialRampToValueAtTime(355, t + 0.8);
+      const o2g = c.createGain();
+      o2g.gain.value = 0.35;
+      // A slow wobble, like a real motor's.
+      const lfo = c.createOscillator();
+      lfo.frequency.value = 5.5;
+      const lfoG = c.createGain();
+      lfoG.gain.value = 2.5;
+      lfo.connect(lfoG).connect(o1.frequency);
+      o1.connect(lp);
+      o2.connect(o2g).connect(lp);
+      const hiss = c.createBufferSource();
+      hiss.buffer = snd.noise;
+      hiss.loop = true;
+      const bp = c.createBiquadFilter();
+      bp.type = 'bandpass';
+      bp.frequency.value = 2600;
+      bp.Q.value = 1.2;
+      const hg = c.createGain();
+      hg.gain.value = 0.25;
+      hiss.connect(bp).connect(hg).connect(g);
+      [o1, o2, lfo, hiss].forEach((n) => n.start(t));
+      tickAt = t + 0.4;
+      motor = {
+        stop: () => {
+          const s = c.currentTime;
+          o1.frequency.cancelScheduledValues(s);
+          o1.frequency.setValueAtTime(o1.frequency.value, s);
+          o1.frequency.exponentialRampToValueAtTime(20, s + 0.7);
+          o2.frequency.cancelScheduledValues(s);
+          o2.frequency.setValueAtTime(o2.frequency.value, s);
+          o2.frequency.exponentialRampToValueAtTime(40, s + 0.7);
+          g.gain.cancelScheduledValues(s);
+          g.gain.setValueAtTime(g.gain.value, s);
+          g.gain.exponentialRampToValueAtTime(0.0001, s + 0.7);
+          [o1, o2, lfo, hiss].forEach((n) => n.stop(s + 0.75));
+        },
+      };
+    }
+    function motorOff() {
+      motor?.stop();
+      motor = null;
+    }
+    function crank() {
+      const c = snd.ctx;
+      if (!c || now - lastCrank < 0.05) return;
+      lastCrank = now;
+      noise(c.currentTime, 0.02, 0.12, 'bandpass', 3200, 4);
+    }
+    function splash() {
+      const c = snd.ctx;
+      if (!c) return;
+      noise(c.currentTime, 0.6, 0.35, 'lowpass', 1200);
+      noise(c.currentTime + 0.05, 0.35, 0.2, 'bandpass', 600, 1.5);
+    }
+    function snap() {
+      const c = snd.get();
+      const m = out();
+      if (!c || !m) return;
+      noise(c.currentTime, 0.05, 0.5, 'highpass', 2500);
+      const o = c.createOscillator();
+      const g = c.createGain();
+      o.frequency.setValueAtTime(900, c.currentTime);
+      o.frequency.exponentialRampToValueAtTime(120, c.currentTime + 0.25);
+      g.gain.setValueAtTime(0.12, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.3);
+      o.connect(g).connect(m);
+      o.start();
+      o.stop(c.currentTime + 0.32);
+    }
+    // Scheduled each frame: the ping ticks while it's on, the drag's buzz while a fish runs.
+    function soundFrame() {
+      const c = snd.ctx;
+      if (!c || c.state !== 'running') return;
+      const ahead = c.currentTime + 0.12;
+      if (motor) {
+        const rate = [0, 16, 12, 10, 8, 5][range];
+        if (tickAt < c.currentTime) tickAt = c.currentTime;
+        while (tickAt < ahead) {
+          noise(tickAt, 0.012, 0.09, 'highpass', 3800);
+          tickAt += 1 / rate;
+        }
+      }
+      if (run > 0) {
+        if (dragAt < c.currentTime) dragAt = c.currentTime;
+        while (dragAt < ahead) {
+          noise(dragAt, 0.018, 0.16, 'bandpass', 2400, 3);
+          dragAt += 1 / 38;
+        }
+      }
+    }
+    function setMuted(m: boolean) {
+      muted = m;
+      muteBtn.setAttribute('aria-pressed', String(m));
+      muteBtn.textContent = msg(m ? 'soundOff' : 'soundOn');
+      if (master && snd.ctx) master.gain.setTargetAtTime(m ? 0 : 0.6, snd.ctx.currentTime, 0.05);
+    }
+    muteBtn.addEventListener('click', () => {
+      snd.get();
+      setMuted(!muted);
+    });
+
+    // ---- Knobs ----
+    const knobMax = { range: 5, mode: 3, gain: 10 };
+    const knobWheel: Record<string, number> = {};
+    function knobText(name: 'range' | 'mode' | 'gain') {
+      if (name === 'range') return range ? msg('rangeText', { x: RANGES[range], ft: rangeFt() }) : msg('off');
+      if (name === 'mode') return msg(MODES[mode]);
+      return msg('gainText', { n: gain });
+    }
+    function knobShort(name: 'range' | 'mode' | 'gain') {
+      if (name === 'range') return range ? `x${RANGES[range]} · ${rangeFt()}` : msg('off');
+      if (name === 'mode') return ['N', 'LP', 'AZ', 'BL'][mode];
+      return `${gain} · ${msg('irText', { n: ir })}`;
+    }
+    function renderKnobs() {
+      for (const name of ['range', 'mode', 'gain'] as const) {
+        const k = knobs[name];
+        const v = name === 'range' ? range : name === 'mode' ? mode : gain;
+        k.setAttribute('aria-valuenow', String(v));
+        k.setAttribute('aria-valuetext', name === 'gain' ? `${knobText('gain')}, ${msg('irText', { n: ir })}` : knobText(name));
+        k.querySelector<HTMLElement>('.ice-flasher__cap')!.style.setProperty('--turn', `${-135 + (v / knobMax[name]) * 270}deg`);
+        k.parentElement!.querySelector<HTMLElement>('.ice-flasher__knob-val')!.textContent = knobShort(name);
+      }
+    }
+    function setKnob(name: 'range' | 'mode' | 'gain', v: number) {
+      v = clamp(Math.round(v), 0, knobMax[name]);
+      if (name === 'range') {
+        if (v === range) return;
+        const was = on();
+        range = v;
+        if (!was && on()) {
+          motorOn();
+          ir = 1; // the FL-18 starts at IR 1 every time it's switched on
+        } else if (was && !on()) {
+          motorOff();
+        }
+        toldNoBottom = false;
+      } else if (name === 'mode') {
+        mode = v;
+        if (zoomed() && !toldZoom) {
+          toldZoom = true;
+          say('hintZoom');
+        }
+      } else {
+        gain = v;
+      }
+      renderKnobs();
+      hints();
+    }
+    function pressGain() {
+      if (!on()) return;
+      ir = (ir % 10) + 1;
+      knobs.gain.classList.add('is-pressed');
+      setTimeout(() => knobs.gain.classList.remove('is-pressed'), 140);
+      const c = snd.get();
+      if (c) noise(c.currentTime, 0.03, 0.25, 'bandpass', 1500, 2);
+      renderKnobs();
+      if (interference && ir === irGood) say('hintCleared', { n: ir }, true);
+      else status.textContent = msg('irText', { n: ir });
+    }
+    for (const name of ['range', 'mode', 'gain'] as const) {
+      const k = knobs[name];
+      const get = () => (name === 'range' ? range : name === 'mode' ? mode : gain);
+      let startY = 0;
+      let startX = 0;
+      let startV = 0;
+      let moved = false;
+      let dragging = false;
+      k.addEventListener('pointerdown', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        k.focus();
+        k.setPointerCapture(e.pointerId);
+        snd.get();
+        dragging = true;
+        moved = false;
+        startY = e.clientY;
+        startX = e.clientX;
+        startV = get();
+      });
+      k.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        const d = startY - e.clientY + (e.clientX - startX);
+        if (Math.abs(d) > 5) moved = true;
+        if (moved) setKnob(name, startV + d / (name === 'gain' ? 14 : 24));
+      });
+      const end = () => {
+        if (!dragging) return;
+        dragging = false;
+        if (!moved) {
+          if (name === 'gain') pressGain();
+          else setKnob(name, (get() + 1) % (knobMax[name] + 1));
+        }
+      };
+      k.addEventListener('pointerup', end);
+      k.addEventListener('pointercancel', () => (dragging = false));
+      k.addEventListener(
+        'wheel',
+        (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          knobWheel[name] = (knobWheel[name] || 0) + e.deltaY;
+          if (Math.abs(knobWheel[name]) >= 40) {
+            setKnob(name, get() + (knobWheel[name] < 0 ? 1 : -1));
+            knobWheel[name] = 0;
+          }
+        },
+        { passive: false },
+      );
+      k.addEventListener('keydown', (e) => {
+        const v = get();
+        let to: number | null = null;
+        if (e.key === 'ArrowUp' || e.key === 'ArrowRight' || e.key === 'PageUp') to = v + 1;
+        else if (e.key === 'ArrowDown' || e.key === 'ArrowLeft' || e.key === 'PageDown') to = v - 1;
+        else if (e.key === 'Home') to = 0;
+        else if (e.key === 'End') to = knobMax[name];
+        else if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          e.stopPropagation();
+          snd.get();
+          if (name === 'gain') pressGain();
+          else setKnob(name, (v + 1) % (knobMax[name] + 1));
+          return;
+        }
+        if (to === null) return;
+        e.preventDefault();
+        e.stopPropagation();
+        snd.get();
+        setKnob(name, to);
+      });
+    }
+    // ---- The jig ----
+    function moveJig(dy: number) {
+      const before = jig;
+      jig = clamp(jig + dy, 0, D - 0.3);
+      const real = jig - before;
+      if (real) moves.push({ t: now, dy: real });
+      if (hooked) reel(-dy);
+    }
+    function activity(window: number) {
+      let path = 0;
+      let net = 0;
+      for (const m of moves) {
+        if (now - m.t <= window) {
+          path += Math.abs(m.dy);
+          net += m.dy;
+        }
+      }
+      return { path, net };
+    }
+    function upInput(px: number, need: number) {
+      if (px > 0) ups.push({ t: performance.now(), px });
+      const t = performance.now();
+      while (ups.length && t - ups[0].t > 250) ups.shift();
+      const sum = ups.reduce((s, u) => s + u.px, 0);
+      if (sum >= need && now - flickAt > 0.5) {
+        ups.length = 0;
+        flick();
+      }
+    }
+
+    // The big flick: sets the hook on a bite; any other time it rips the jig up and spooks close fish.
+    function flick() {
+      flickAt = now;
+      const biter = fishes.find((f) => f.state === 'bite');
+      if (biter) {
+        hooked = biter;
+        biter.state = 'hooked';
+        biter.t = 0;
+        biter.cone = 1;
+        tension = 0.2;
+        run = 0;
+        idle = 0;
+        keepTold = false;
+        biteFlash = 0;
+        navigator.vibrate?.(40);
+        tensionEl.hidden = false;
+        say('hooked', {}, true);
+        return;
+      }
+      if (hooked) {
+        reel(1.2);
+        return;
+      }
+      moveJig(-2.5);
+      for (const f of fishes) {
+        if ((f.state === 'nose' || f.state === 'look') && Math.random() < (f.state === 'nose' ? 0.75 : 0.45)) {
+          spook(f);
+          say('ripped', {}, true);
+        }
+      }
+    }
+    function spook(f: Fish) {
+      f.state = 'gone';
+      f.leaving = true;
+      f.t = 0;
+    }
+
+    // ---- Fighting a fish ----
+    function reel(ft: number) {
+      if (!hooked) return;
+      const sp = SPECIES[hooked.kind];
+      if (ft > 0) {
+        idle = 0;
+        keepTold = false;
+        crank();
+        const gainUp = run > 0 ? ft * 0.25 : ft;
+        hooked.d = Math.max(0, hooked.d - gainUp);
+        tension += ft * (run > 0 ? 0.32 : 0.035) * (0.6 + sp.power);
+      } else if (ft < 0) {
+        // Giving line: the fish takes it, and the line goes slack.
+        hooked.d = Math.min(D - 0.4, hooked.d - ft * 0.6);
+        tension = Math.max(0, tension + ft * 0.12);
+      }
+      jig = hooked.d;
+    }
+    function endFight() {
+      hooked = null;
+      run = 0;
+      tension = 0;
+      tensionEl.hidden = true;
+      spawnIn = rand(3, 7);
+    }
+    function land(f: Fish) {
+      const sp = SPECIES[f.kind];
+      const len = Math.round(sp.min + f.size * (sp.max - sp.min));
+      const cm = Math.round(len * 2.54);
+      const name = msg(f.kind);
+      catches++;
+      say('landed', { fish: name, len: num(len), cm: num(cm) }, true);
+      const li = document.createElement('li');
+      li.textContent = `🐟 ${msg('logEntry', { fish: name, len: num(len), cm: num(cm) })}`;
+      logEl.prepend(li);
+      while (logEl.children.length > 12) logEl.lastElementChild!.remove();
+      countEl.textContent = msg('caught', { n: num(catches) });
+      splash();
+      navigator.vibrate?.([30, 40, 30]);
+      fishes = fishes.filter((x) => x !== f);
+      jig = 2;
+      endFight();
+    }
+
+    // ---- Fish ----
+    function spawn() {
+      const total = Object.values(SPECIES).reduce((s, x) => s + x.weight, 0);
+      let pick = Math.random() * total;
+      let kind: Kind = 'walleye';
+      for (const [k, v] of Object.entries(SPECIES) as [Kind, (typeof SPECIES)[Kind]][]) {
+        pick -= v.weight;
+        if (pick <= 0) {
+          kind = k;
+          break;
+        }
+      }
+      const sp = SPECIES[kind];
+      const above = rand(sp.band[0], Math.min(sp.band[1], D - 3));
+      const size = Math.pow(Math.random(), 1.6); // big ones are rarer
+      fishes.push({
+        kind,
+        d: clamp(D - 0.6 - above, 2, D - 0.6),
+        cone: rand(0, 0.12),
+        size,
+        state: 'roam',
+        t: 0,
+        life: rand(10, 18),
+        interest: 0,
+        drift: rand(-0.3, 0.3),
+        told: false,
+        leaving: false,
+      });
+    }
+
+    function step(dt: number) {
+      now += dt;
+      while (moves.length && now - moves[0].t > 2) moves.shift();
+      const a1 = activity(1);
+      const a03 = activity(0.3);
+      const moving = a1.path > 0.3;
+      const gentle = moving && a1.path < 6;
+      const wild = a03.path > 5;
+      const lifting = a1.net < -0.4 && a1.net > -3.5;
+
+      if (on()) {
+        interferenceIn -= dt;
+        if (interferenceIn <= 0 && !interference) interference = true;
+      }
+      biteFlash = Math.max(0, biteFlash - dt);
+
+      if (!hooked) {
+        spawnIn -= dt;
+        if (spawnIn <= 0 && fishes.length < 2) {
+          spawn();
+          spawnIn = rand(5, 11);
+        }
+      }
+
+      for (const f of fishes) {
+        const sp = SPECIES[f.kind];
+        f.t += dt;
+        const gap = jig - f.d;
+        if (f.state === 'roam') {
+          f.life -= dt;
+          f.d = clamp(f.d + f.drift * dt, 1.5, D - 0.6);
+          if (Math.random() < dt * 0.3) f.drift = rand(-0.4, 0.4);
+          f.cone = clamp(f.cone + rand(-0.05, 0.05) * dt * 4, 0, 0.25);
+          if (f.life <= 0) spook(f);
+          else if (Math.abs(gap) < 9 && Math.random() < dt * (moving ? 0.7 : 0.08)) {
+            f.state = 'look';
+            f.t = 0;
+            if (on() && fishes.every((x) => x === f || x.state === 'roam')) say('fishComing');
+          }
+          if (!f.told && on() && f.t > 0.8 && !hooked) {
+            f.told = true;
+            say('fishEdge', { d: num(Math.round(f.d)) });
+          }
+        } else if (f.state === 'look') {
+          f.d += clamp(gap, -sp.speed * dt, sp.speed * dt);
+          f.cone = Math.min(1, f.cone + dt * 0.45);
+          if (wild && Math.random() < 0.5) {
+            spook(f);
+            if (on()) say('spooked', {}, true);
+          } else if (Math.abs(gap) > 13 || f.t > 12) {
+            f.state = 'roam';
+            f.life = rand(4, 8);
+          } else if (Math.abs(gap) < 0.8 && f.cone > 0.6) {
+            f.state = 'nose';
+            f.t = 0;
+            f.interest = 0;
+            if (on()) say('fishOnJig');
+          }
+        } else if (f.state === 'nose') {
+          f.d += clamp(gap, -sp.speed * 1.2 * dt, sp.speed * 1.2 * dt);
+          f.cone = Math.min(1, f.cone + dt);
+          if (wild) {
+            if (Math.random() < 0.6) {
+              spook(f);
+              if (on()) say('spooked', {}, true);
+            }
+            continue;
+          }
+          if (Math.abs(gap) > 2.5) {
+            f.state = 'look';
+            f.t = 0;
+            continue;
+          }
+          f.interest += dt * (gentle ? 0.42 : 0.18) * (lifting ? 1.8 : 1) * sp.bite;
+          if (f.t > 14) {
+            spook(f);
+          } else if (f.interest >= 1 && Math.random() < dt * 2.5 && !fishes.some((x) => x.state === 'bite')) {
+            f.state = 'bite';
+            f.t = 0;
+            biteFlash = 0.9;
+            navigator.vibrate?.([90, 50, 160]);
+            say('bite', {}, true);
+            const c = snd.ctx;
+            if (c) noise(c.currentTime, 0.04, 0.3, 'bandpass', 900, 3);
+          }
+        } else if (f.state === 'bite') {
+          f.d = jig;
+          if (f.t > 0.9) {
+            spook(f);
+            say('spat', {}, true);
+          }
+        } else if (f.state === 'hooked') {
+          // Runs: the fish pulls down; reeling then strains the line.
+          if (run > 0) {
+            run -= dt;
+            f.d = Math.min(D - 0.4, f.d + sp.power * 5 * dt);
+            jig = f.d;
+          } else if (Math.random() < dt * (0.15 + sp.power * 0.45) && f.d > 2) {
+            run = rand(0.5, 0.7 + sp.power * 1.1);
+            navigator.vibrate?.(30);
+            say('running', {}, true);
+          } else if (now - lastSay > 1.2 && lastHint === msg('running')) {
+            say('hooked', {}, true);
+          }
+          tension = Math.max(0, tension - dt * (run > 0 ? 0.05 : 0.3));
+          idle += dt;
+          if (idle > 2.5 && !keepTold && run <= 0) {
+            keepTold = true;
+            say('keepReeling', {}, true);
+          }
+          if (tension >= 1) {
+            snap();
+            navigator.vibrate?.(120);
+            say('snapped', {}, true);
+            fishes = fishes.filter((x) => x !== f);
+            jig = 3;
+            endFight();
+            break;
+          }
+          if (idle > 5 && run <= 0 && Math.random() < dt * 0.4) {
+            say('shook', {}, true);
+            fishes = fishes.filter((x) => x !== f);
+            endFight();
+            break;
+          }
+          if (f.d <= 0.6) {
+            land(f);
+            break;
+          }
+        }
+      }
+      // Spooked fish fade to the edge of the cone and leave.
+      for (const f of fishes) {
+        if (f.state === 'gone') {
+          f.cone -= dt * 1.4;
+          f.d = clamp(f.d + dt * (Math.random() - 0.5) * 6, 1, D - 0.5);
+        }
+      }
+      fishes = fishes.filter((f) => f.state !== 'gone' || f.cone > -0.1);
+      tensionEl.style.setProperty('--t', String(clamp(tension, 0, 1)));
+      tensionEl.classList.toggle('is-high', tension > 0.7);
+      hints();
+    }
+
+    function hints() {
+      if (hooked || fishes.some((f) => f.state === 'bite')) return;
+      if (!on()) {
+        if (now - lastSay > 6 || !lastHint) say('hintOff');
+        return;
+      }
+      if (rangeFt() < D) {
+        if (!toldNoBottom) {
+          toldNoBottom = true;
+          say('hintNoBottom', {}, true);
+        }
+        return;
+      }
+      if (!toldBottom) {
+        toldBottom = true;
+        say('hintOn', { d: num(D) });
+        return;
+      }
+      if (interference && ir !== irGood && !interferenceTold && now - lastSay > 3) {
+        interferenceTold = true;
+        say('hintInterference', {}, true);
+        return;
+      }
+      if (gain >= 8 && !toldClutter && now - lastSay > 2) {
+        toldClutter = true;
+        say('hintHigh');
+      } else if (gain <= 1 && !toldLow && now - lastSay > 2) {
+        toldLow = true;
+        say('hintLow');
+      }
+      if (gain < 8) toldClutter = false;
+      if (gain > 1) toldLow = false;
+    }
+
+    // ---- Drawing the dial ----
+    let dialSize = 0;
+    let rodW = 0;
+    let rodH = 0;
+    function size() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const w = dial.clientWidth;
+      if (w && Math.round(w * dpr) !== dial.width) {
+        dial.width = dial.height = Math.round(w * dpr);
+        dx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      dialSize = w;
+      const rw = rodCv.clientWidth;
+      const rh = rodCv.clientHeight;
+      if (rw && rh && (Math.round(rw * dpr) !== rodCv.width || Math.round(rh * dpr) !== rodCv.height)) {
+        rodCv.width = Math.round(rw * dpr);
+        rodCv.height = Math.round(rh * dpr);
+        rx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+      rodW = rw;
+      rodH = rh;
+      return w > 0;
+    }
+
+    // Signal strength seen on the dial (before colours): gain, power, how far the sound travelled.
+    const seen = (s: number, d: number) => {
+      const lp = MODES[mode] === 'lp' ? 0.6 : 1;
+      return s * (0.25 + 2 * (gain / 10)) * lp * (1 - d / 160);
+    };
+    let speckles: { a: number; i: number; zoom: boolean }[] = [];
+    let speckAt = 0;
+    let interPhase = 0;
+
+    type Mark = { d: number; i: number; w: number; lead?: boolean }; // lead: starts at d and grows deeper (the bottom)
+    function drawDial(dt: number) {
+      const S = dialSize;
+      if (!S) return;
+      const c = S / 2;
+      const R = S / 2 - 1;
+      dx.clearRect(0, 0, S, S);
+      // Bezel and face
+      const bez = dx.createRadialGradient(c, c, R * 0.7, c, c, R);
+      bez.addColorStop(0, '#1a1b1f');
+      bez.addColorStop(0.92, '#3a3d44');
+      bez.addColorStop(1, '#0b0c0e');
+      dx.fillStyle = bez;
+      dx.beginPath();
+      dx.arc(c, c, R, 0, Math.PI * 2);
+      dx.fill();
+      dx.fillStyle = '#050607';
+      dx.beginPath();
+      dx.arc(c, c, R * 0.86, 0, Math.PI * 2);
+      dx.fill();
+      const rOut = R * 0.84;
+      const rIn = R * 0.6;
+      const rLed0 = R * 0.62;
+      const rLed1 = R * 0.78;
+      const zoom = zoomed();
+      // The depth scale: white around the outside (read x the range), yellow inside for the split screen.
+      dx.save();
+      dx.translate(c, c);
+      dx.textAlign = 'center';
+      dx.textBaseline = 'middle';
+      for (let i = 0; i < 20; i++) {
+        const a = (i / 20) * Math.PI * 2 - Math.PI / 2;
+        const major = i % 5 === 0;
+        dx.strokeStyle = on() ? 'rgba(255,255,255,0.85)' : 'rgba(255,255,255,0.35)';
+        dx.lineWidth = major ? 2 : 1;
+        dx.beginPath();
+        dx.moveTo(Math.cos(a) * rOut, Math.sin(a) * rOut);
+        dx.lineTo(Math.cos(a) * (rOut + (major ? R * 0.06 : R * 0.035)), Math.sin(a) * (rOut + (major ? R * 0.06 : R * 0.035)));
+        dx.stroke();
+      }
+      dx.font = `700 ${Math.max(9, R * 0.085)}px system-ui, sans-serif`;
+      dx.fillStyle = on() ? '#f4f4f4' : 'rgba(255,255,255,0.4)';
+      for (const n of [0, 5, 10, 15]) {
+        const a = (n / 20) * Math.PI * 2 - Math.PI / 2;
+        dx.fillText(String(n), Math.cos(a) * (R * 0.935 - R * 0.0), Math.sin(a) * R * 0.935);
+      }
+      // Inner yellow scale: 0-20 on the right half, 0-6 ft of zoom on the left.
+      dx.font = `600 ${Math.max(8, R * 0.062)}px system-ui, sans-serif`;
+      dx.fillStyle = zoom ? '#ffd23f' : 'rgba(255, 210, 63, 0.28)';
+      dx.strokeStyle = dx.fillStyle;
+      for (const n of [0, 5, 10, 15, 20]) {
+        const a = (n / 20) * Math.PI - Math.PI / 2;
+        dx.fillText(String(n), Math.cos(a) * rIn * 0.86, Math.sin(a) * rIn * 0.86);
+      }
+      for (let n = 0; n <= 6; n++) {
+        const a = ZOOM_FROM + (n / 6) * ZOOM_SPAN - Math.PI / 2;
+        if (n % 2 === 0) dx.fillText(String(n), Math.cos(a) * rIn * 0.86, Math.sin(a) * rIn * 0.86);
+        else {
+          dx.beginPath();
+          dx.arc(Math.cos(a) * rIn * 0.86, Math.sin(a) * rIn * 0.86, 1.4, 0, Math.PI * 2);
+          dx.fill();
+        }
+      }
+      // The LED track, faint.
+      dx.strokeStyle = 'rgba(255,255,255,0.05)';
+      dx.lineWidth = rLed1 - rLed0;
+      dx.beginPath();
+      dx.arc(0, 0, (rLed0 + rLed1) / 2, 0, Math.PI * 2);
+      dx.stroke();
+      if (zoom) {
+        // The split line between the two halves.
+        dx.strokeStyle = 'rgba(255, 210, 63, 0.35)';
+        dx.lineWidth = 1;
+        dx.beginPath();
+        dx.moveTo(0, -rOut);
+        dx.lineTo(0, -rIn * 0.7);
+        dx.moveTo(0, rOut);
+        dx.lineTo(0, rIn * 0.7);
+        dx.stroke();
+      }
+      dx.restore();
+
+      // The centre: a little hub with the label.
+      dx.fillStyle = '#121317';
+      dx.beginPath();
+      dx.arc(c, c, rIn * 0.62, 0, Math.PI * 2);
+      dx.fill();
+      dx.fillStyle = on() ? 'rgba(255,255,255,0.55)' : 'rgba(255,255,255,0.25)';
+      dx.font = `700 ${Math.max(7, R * 0.055)}px system-ui, sans-serif`;
+      dx.textAlign = 'center';
+      dx.textBaseline = 'middle';
+      dx.fillText('3-COLOR', c, c - R * 0.05);
+      dx.fillText('FLASHER', c, c + R * 0.05);
+      if (on()) {
+        dx.fillStyle = '#ffb347';
+        dx.font = `700 ${Math.max(8, R * 0.07)}px ui-monospace, monospace`;
+        dx.fillText(`x${RANGES[range]}`, c, c + R * 0.17);
+      }
+      if (!on()) return;
+
+      // ---- The marks ----
+      const max = rangeFt();
+      const full = (d: number) => (zoom ? (d / max) * Math.PI : (d / max) * Math.PI * 2);
+      const perFt = zoom ? Math.PI / max : (Math.PI * 2) / max;
+      const zoomPerFt = ZOOM_SPAN / 6;
+      const marks: Mark[] = [];
+      // The surface (the transducer's ring-down at 0) and the bottom.
+      marks.push({ d: 0, i: seen(0.85, 0) + 0.2, w: 0.9 });
+      if (D <= max) marks.push({ d: D, i: seen(1.25, D), w: 1.6 + gain * 0.12, lead: true });
+      marks.push({ d: jig, i: seen(0.45, jig), w: 0.35 });
+      for (const f of fishes) {
+        const fade = f.state === 'gone' ? clamp((f.cone + 0.1) / 0.5, 0, 1) : 1;
+        const strength = (0.28 + 0.62 * clamp(f.cone, 0, 1)) * (0.75 + f.size * 0.5) * (f.kind === 'pike' ? 1.15 : 1) * fade;
+        if (fade > 0) marks.push({ d: f.d, i: seen(strength, f.d), w: 0.5 + f.size * 0.6 + (f.kind === 'pike' ? 0.5 : 0) });
+      }
+      const glow = reduced ? 1 : rand(0.85, 1);
+      // floor: the zoom view never spills past 6 o'clock into the full view.
+      const arcAt = (a: number, w: number, color: string, alpha: number, floor = -Infinity, ceil = Infinity) => {
+        const from = Math.max(a - w / 2, floor);
+        const to = Math.min(a + w / 2, ceil);
+        if (from >= to) return;
+        dx.globalAlpha = alpha;
+        dx.strokeStyle = color;
+        dx.shadowColor = color;
+        dx.beginPath();
+        dx.arc(c, c, (rLed0 + rLed1) / 2, from - Math.PI / 2, to - Math.PI / 2);
+        dx.stroke();
+      };
+      dx.save();
+      dx.lineWidth = rLed1 - rLed0;
+      dx.lineCap = 'butt';
+      dx.shadowBlur = R * 0.05;
+      const layers: [string, number, number][] = [
+        [GREEN, 0.12, 1.25],
+        [ORANGE, 0.36, 0.75],
+        [RED, 0.66, 0.42],
+      ];
+      for (const [color, min, scale] of layers) {
+        for (const m of marks) {
+          if (m.i < min || m.d > max) continue;
+          const w = Math.max(0.018, m.w * perFt * scale * (0.6 + Math.min(m.i, 1.6) * 0.5));
+          arcAt(full(m.d) + (m.lead ? w / 2 : 0), w, color, glow, zoom ? 0 : -Infinity, zoom ? Math.PI * 0.99 : Infinity);
+          // In the split screen, anything in the bottom 6 ft shows again, bigger, on the left.
+          const above = D - m.d;
+          if (zoom && D <= max && above >= -0.2 && above <= 6.2) {
+            const wz = Math.max(0.022, m.w * zoomPerFt * scale * (0.6 + Math.min(m.i, 1.6) * 0.5) * 0.6);
+            arcAt(ZOOM_FROM + clamp(above, 0, 6) * zoomPerFt - (m.lead ? wz / 2 : 0), wz, color, glow, Math.PI * 1.04);
+          }
+        }
+      }
+      // Clutter at high gain (less in Low Power), refreshed fast like the real wheel.
+      const clutter = Math.max(0, gain - 6) / 4 * (MODES[mode] === 'lp' ? 0.4 : 1);
+      speckAt -= dt;
+      if (speckAt <= 0) {
+        speckAt = reduced ? 0.5 : 0.05;
+        speckles = [];
+        const n = Math.round(clutter * 26);
+        for (let i = 0; i < n; i++) speckles.push({ a: Math.random() * Math.PI * (zoom ? 1 : 2), i: Math.random() * clutter, zoom: false });
+        // Surface clutter grows with gain too.
+        for (let i = 0; i < Math.round(clutter * 6); i++) speckles.push({ a: rand(0, 3.5) * perFt, i: 0.5 + Math.random() * 0.4, zoom: false });
+      }
+      for (const s of speckles) arcAt(s.a, 0.02, s.i > 0.6 ? ORANGE : GREEN, 0.8 * glow);
+      // Interference from a buddy's flasher: dashes that crawl around the dial, until IR fixes it.
+      if (interference) {
+        const off = Math.abs(ir - irGood);
+        const amount = off === 0 ? 0 : clamp(off / 3, 0.35, 1);
+        if (amount > 0) {
+          interPhase += dt * (reduced ? 0.4 : 2.2) * (1 + off * 0.1);
+          const n = Math.round(4 + amount * 8);
+          for (let i = 0; i < n; i++) {
+            const a = (interPhase * (1 + (i % 3) * 0.13) + i * 2.399) % (Math.PI * 2);
+            arcAt(a, 0.03, i % 4 === 0 ? ORANGE : GREEN, 0.85 * amount);
+          }
+        }
+      }
+      dx.restore();
+      dx.globalAlpha = 1;
+    }
+
+    // ---- Drawing the rod over the hole ----
+    function drawRod() {
+      const W = rodW;
+      const H = rodH;
+      if (!W || !H) return;
+      rx.clearRect(0, 0, W, H);
+      const iceTop = H * 0.3;
+      const iceBot = H * 0.37;
+      const holeX = W * 0.36;
+      const holeW = Math.max(12, W * 0.12);
+      // Sky, snow, ice, water
+      const sky = rx.createLinearGradient(0, 0, 0, iceTop);
+      sky.addColorStop(0, getVar('--_sky', '#cfe3f2'));
+      sky.addColorStop(1, '#f3f8fc');
+      rx.fillStyle = sky;
+      rx.fillRect(0, 0, W, iceTop);
+      const water = rx.createLinearGradient(0, iceBot, 0, H);
+      water.addColorStop(0, '#1d5a80');
+      water.addColorStop(1, getVar('--_water', '#0d2a3f'));
+      rx.fillStyle = water;
+      rx.fillRect(0, iceBot, W, H - iceBot);
+      rx.fillStyle = '#dbeef8';
+      rx.fillRect(0, iceTop, W, iceBot - iceTop);
+      rx.fillStyle = '#ffffff';
+      rx.fillRect(0, iceTop - 4, W, 5);
+      // The hole
+      rx.fillStyle = '#173f5c';
+      rx.fillRect(holeX - holeW / 2, iceTop - 2, holeW, iceBot - iceTop + 2);
+      // The bottom
+      const bottomY = H - 10;
+      rx.fillStyle = '#3b2f22';
+      rx.beginPath();
+      rx.moveTo(0, bottomY + 2);
+      for (let x = 0; x <= W; x += 12) rx.lineTo(x, bottomY + Math.sin(x * 0.11) * 3);
+      rx.lineTo(W, H);
+      rx.lineTo(0, H);
+      rx.fill();
+      // The rod: handle on the right, tip over the hole, bending with the line's tension.
+      const shake = hooked && run > 0 && !reduced ? Math.sin(now * 40) * 2.5 : 0;
+      const bend = hooked ? 0.25 + tension * 0.9 : biteFlash > 0 ? 0.35 : 0;
+      const hx = W * 0.94;
+      const hy = H * 0.24;
+      const tx = holeX + bend * W * 0.04;
+      const ty = H * 0.08 + bend * H * 0.14 + shake;
+      const mx = (hx + tx) / 2;
+      const my = Math.min(hy, ty) - H * 0.04 + bend * H * 0.02;
+      const flashOn = biteFlash > 0 && (reduced || Math.floor(now * 10) % 2 === 0);
+      rx.lineCap = 'round';
+      rx.strokeStyle = flashOn ? '#fff7a8' : '#20262e';
+      rx.lineWidth = 4;
+      rx.beginPath();
+      rx.moveTo(hx, hy);
+      rx.quadraticCurveTo(mx, my, tx, ty);
+      rx.stroke();
+      rx.strokeStyle = '#7a4b2a';
+      rx.lineWidth = 7;
+      rx.beginPath();
+      rx.moveTo(hx, hy);
+      rx.lineTo(hx - W * 0.12, hy - H * 0.01);
+      rx.stroke();
+      rx.fillStyle = '#9aa3ad';
+      rx.beginPath();
+      rx.arc(hx - W * 0.07, hy + 6, 5, 0, Math.PI * 2);
+      rx.fill();
+      // The line down to the jig
+      const jy = iceBot + 4 + (jig / D) * (bottomY - iceBot - 8);
+      rx.strokeStyle = 'rgba(255,255,255,0.8)';
+      rx.lineWidth = 1;
+      rx.beginPath();
+      rx.moveTo(tx, ty);
+      rx.lineTo(holeX, iceTop);
+      rx.lineTo(holeX, jy);
+      rx.stroke();
+      rx.fillStyle = hooked ? '#ff7a3a' : '#ffb347';
+      rx.beginPath();
+      rx.arc(holeX, jy, hooked ? 4 + SPECIES[hooked.kind].power * 3 : 3, 0, Math.PI * 2);
+      rx.fill();
+      // The tip flashes on a bite.
+      if (biteFlash > 0) {
+        rx.save();
+        rx.shadowColor = '#fff36b';
+        rx.shadowBlur = 18;
+        rx.fillStyle = flashOn ? '#fffbe0' : '#ffd23f';
+        rx.beginPath();
+        rx.arc(tx, ty, flashOn ? 8 : 6, 0, Math.PI * 2);
+        rx.fill();
+        rx.restore();
+      }
+    }
+    const cs = getComputedStyle(root);
+    function getVar(name: string, fallback: string) {
+      return cs.getPropertyValue(name).trim() || fallback;
+    }
+
+    // ---- Input: wheel, swipe/drag, keys ----
+    stage.addEventListener(
+      'wheel',
+      (e) => {
+        if ((e.target as HTMLElement).closest('.ice-flasher__knob')) return;
+        e.preventDefault();
+        // Lines (Firefox) and pages count like Chrome's 100px notch.
+        const px = e.deltaY * (e.deltaMode === 1 ? 33 : e.deltaMode === 2 ? 400 : 1);
+        moveJig(clamp(px * 0.018, -3, 3));
+        upInput(-px, 240);
+      },
+      { passive: false },
+    );
+    let swipe: { id: number; y: number } | null = null;
+    stage.addEventListener('pointerdown', (e) => {
+      if ((e.target as HTMLElement).closest('.ice-flasher__knob')) return;
+      snd.get();
+      stage.focus({ preventScroll: true });
+      swipe = { id: e.pointerId, y: e.clientY };
+      stage.setPointerCapture(e.pointerId);
+    });
+    stage.addEventListener('pointermove', (e) => {
+      if (!swipe || e.pointerId !== swipe.id) return;
+      const dy = e.clientY - swipe.y;
+      swipe.y = e.clientY;
+      moveJig(clamp(dy * 0.07, -3, 3));
+      upInput(-dy, 75);
+    });
+    const endSwipe = () => (swipe = null);
+    stage.addEventListener('pointerup', endSwipe);
+    stage.addEventListener('pointercancel', endSwipe);
+    stage.addEventListener('keydown', (e) => {
+      if (e.target !== stage) return;
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        snd.get();
+        moveJig(e.key === 'ArrowDown' ? 0.8 : -0.8);
+      } else if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        snd.get();
+        if (!e.repeat) flick();
+      }
+    });
+
+    // ---- The loop: runs only while the game is on screen ----
+    let visible = false;
+    let running = false;
+    let last = 0;
+    let lastJigText = '';
+    function frame(t: number) {
+      const live = visible && !!root.offsetParent && document.visibilityState === 'visible';
+      if (!live) {
+        running = false;
+        root.classList.remove('is-live-audio');
+        // Quiet once no flasher on the page is playing.
+        if (snd.ctx && snd.ctx.state === 'running' && !document.querySelector('.ice-flasher.is-live-audio')) void snd.ctx.suspend();
+        return;
+      }
+      root.classList.add('is-live-audio');
+      if (snd.ctx && snd.ctx.state === 'suspended' && motor) void snd.ctx.resume().catch(() => {});
+      const dt = Math.min(0.05, (t - last) / 1000);
+      last = t;
+      step(dt);
+      size();
+      drawDial(dt);
+      drawRod();
+      soundFrame();
+      const jt = msg('jigAt', { d: num(jig, 1) });
+      if (jt !== lastJigText) {
+        lastJigText = jt;
+        jigEl.textContent = jt;
+      }
+      requestAnimationFrame(frame);
+    }
+    function start() {
+      if (running) return;
+      running = true;
+      last = performance.now();
+      requestAnimationFrame(frame);
+    }
+    new IntersectionObserver((entries) => {
+      visible = entries[0].isIntersecting;
+      if (visible) start();
+    }).observe(stage);
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible' && visible) start();
+    });
+    // The tab or FastTab opening makes it visible without a scroll.
+    new ResizeObserver(() => {
+      if (visible) start();
+    }).observe(stage);
+
+    countEl.textContent = msg('caught', { n: num(0) });
+    setMuted(false);
+    renderKnobs();
+    say('hintOff');
+    size();
+    drawDial(0);
+    drawRod();
+  });
+</script>
