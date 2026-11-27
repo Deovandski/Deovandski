@@ -1991,6 +1991,10 @@
   "en": "Each planet is a category, sized by its hours. Press one to fly in.",
   "t": "كل كوكب فئة، وحجمه ساعاتها. اضغط على واحد لتقترب منه."
  },
+ "2d55e3ee144b": {
+  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. Going with the flow is very ADHD of me: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC7543022/\">adults with ADHD tend to prefer the loose, unstructured side of creativity</a>. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
+  "t": "مثل أمي، لا أتبع الوصفات ولا أدوّن شيئًا. الانسياب مع اللحظة من صميم الـADHD عندي: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC7543022/\">يميل البالغون المصابون بالـADHD إلى تفضيل الجانب الحر غير المنظم من الإبداع</a>. لكني ألتقط الصور لأحاول إعادة الطبق لاحقًا إن خرج لذيذًا جدًا! وهذا يجعل كل وجبة مميزة على ما أظن! <a href=\"#churrasco\">الشوراسكو</a> يستحق جانبًا مستقلًا! أحب الطعام بكل أشكاله وأنواعه، لكن لدي حدود، منها أنني لا أستطيع أكل التوفو النتن."
+ },
  "2d5647a3618b": {
   "en": "Spain makes more olive oil than any other country in the world.",
   "t": "تنتج إسبانيا زيت زيتون أكثر من أي بلد آخر في العالم."
@@ -6327,6 +6331,10 @@
   "en": "59 h",
   "t": "59 س"
  },
+ "8a9b327bd9ed": {
+  "en": "<a href=\"https://www.youtube.com/@calebhammer\">Caleb Hammer</a> would be proud that most of my meals come from my own kitchen, if we zoom into the financial aspect of it, but for me, it’s about making home feel like home.",
+  "t": "سيفخر <a href=\"https://www.youtube.com/@calebhammer\">Caleb Hammer</a> بأن معظم وجباتي تأتي من مطبخي، إذا نظرنا إلى الجانب المالي، لكن بالنسبة لي، الأمر يتعلق بجعل البيت يشعر كأنه بيت."
+ },
  "8ab725154ab3": {
   "en": "2016 nearly took everything I had worked so hard for, all because of someone else’s screw-up. It felt like being a kid building a sandcastle while some asshole walks by and kicks it, then watching everything you built turn to nothing. It sucked. It nearly drove me to end it all (as I talk about on the <a href=\"#death\">Death tab</a>). Yet I survived the worst, pulled myself out of the misery, and rebuilt.",
   "t": "كاد عام 2016 أن يأخذ كل ما عملت بجد من أجله، وكل ذلك بسبب خطأ شخص آخر. كان الأمر أشبه بطفل يبني قلعة رملية فيمرّ أحد الأوغاد ويركلها، ثم يشاهد كل ما بناه يتحول إلى لا شيء. كان ذلك مقرفًا. كاد يدفعني إلى إنهاء كل شيء (كما أتحدث في <a href=\"#death\">تبويب الموت</a>). ومع ذلك نجوت من الأسوأ، وانتشلت نفسي من البؤس، وأعدت البناء."
@@ -8390,6 +8398,10 @@
  "b983f42a870b": {
   "en": "Back to Painting",
   "t": "العودة إلى الرسم"
+ },
+ "b9a0df6e851a": {
+  "en": "Cooking sits under Hearth because cooking at home is an essential piece that makes home, homie. Except deep fried stuff! I don’t do that at home, as I have a sensitive nose. That’s the AuDHD in me: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4407326/\">autistic adults pick up smells more easily</a>, and <a href=\"https://pubmed.ncbi.nlm.nih.gov/28371743/\">sensory hypersensitivity is a core part of adult ADHD too</a>.",
+  "t": "الطبخ موجود تحت «الدار» لأن الطبخ في البيت جزء أساسي يجعل البيت بيتًا. ما عدا المقليات! لا أقليها في البيت لأن أنفي حساس. هذا هو الـAuDHD فيّ: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4407326/\">البالغون المصابون بالتوحد يلتقطون الروائح بسهولة أكبر</a>، و<a href=\"https://pubmed.ncbi.nlm.nih.gov/28371743/\">فرط الحساسية الحسية جزء أساسي من الـADHD لدى البالغين أيضًا</a>."
  },
  "b9a2ffa6496c": {
   "en": "Let's go",
@@ -10574,10 +10586,6 @@
  "ec35596f3bd2": {
   "en": "Enlarge: Painting or drawing, 02/25/2013",
   "t": "تكبير: لوحة أو رسم, 25/2/2013"
- },
- "ec3a6e3e8b5d": {
-  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
-  "t": "مثل أمي، لا أتبع الوصفات ولا أدوّن شيئًا. لكني ألتقط الصور لأحاول إعادة الطبق لاحقًا إن خرج لذيذًا جدًا! وهذا يجعل كل وجبة مميزة على ما أظن! <a href=\"#churrasco\">الشوراسكو</a> يستحق جانبًا مستقلًا! أحب الطعام بكل أشكاله وأنواعه، لكن لدي حدود، منها أنني لا أستطيع أكل التوفو النتن."
  },
  "ec636d8aedbe": {
   "en": "Steak and onions with black-eyed peas",

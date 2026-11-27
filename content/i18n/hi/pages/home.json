@@ -1991,6 +1991,10 @@
   "en": "Each planet is a category, sized by its hours. Press one to fly in.",
   "t": "हर ग्रह एक श्रेणी है, घंटों के हिसाब से बड़ा। पास जाने के लिए किसी एक को दबाएँ।"
  },
+ "2d55e3ee144b": {
+  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. Going with the flow is very ADHD of me: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC7543022/\">adults with ADHD tend to prefer the loose, unstructured side of creativity</a>. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
+  "t": "मेरी माँ की तरह, मैं रेसिपी नहीं देखता और कुछ लिखकर नहीं रखता। बहाव के साथ चलना बिल्कुल मेरा ADHD वाला अंदाज़ है: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC7543022/\">ADHD वाले वयस्क रचनात्मकता का खुला, बिना ढाँचे वाला पहलू ज़्यादा पसंद करते हैं</a>। हाँ, फ़ोटो ज़रूर खींचता हूँ, ताकि अगर कुछ बहुत बढ़िया बने तो बाद में फिर से बना सकूँ! मेरे हिसाब से इससे हर खाना ख़ास बन जाता है! <a href=\"#churrasco\">शुहास्को</a> अपने अलग पहलू का हक़दार है! मुझे हर तरह और हर रूप का खाना पसंद है, पर कुछ हदें भी हैं, जैसे बदबूदार टोफ़ू मुझसे खाया ही नहीं जाता।"
+ },
  "2d5647a3618b": {
   "en": "Spain makes more olive oil than any other country in the world.",
   "t": "स्पेन दुनिया के किसी भी देश से ज़्यादा जैतून का तेल बनाता है।"
@@ -6327,6 +6331,10 @@
   "en": "59 h",
   "t": "59 घं."
  },
+ "8a9b327bd9ed": {
+  "en": "<a href=\"https://www.youtube.com/@calebhammer\">Caleb Hammer</a> would be proud that most of my meals come from my own kitchen, if we zoom into the financial aspect of it, but for me, it’s about making home feel like home.",
+  "t": "अगर पैसों के पहलू से देखें, तो <a href=\"https://www.youtube.com/@calebhammer\">Caleb Hammer</a> को गर्व होगा कि मेरा ज़्यादातर खाना मेरी अपनी रसोई से आता है, पर मेरे लिए बात घर को घर जैसा महसूस कराने की है।"
+ },
  "8ab725154ab3": {
   "en": "2016 nearly took everything I had worked so hard for, all because of someone else’s screw-up. It felt like being a kid building a sandcastle while some asshole walks by and kicks it, then watching everything you built turn to nothing. It sucked. It nearly drove me to end it all (as I talk about on the <a href=\"#death\">Death tab</a>). Yet I survived the worst, pulled myself out of the misery, and rebuilt.",
   "t": "2016 ने लगभग वह सब छीन लिया जिसके लिए मैंने इतनी मेहनत की थी, और वह भी किसी और की गड़बड़ी की वजह से। ऐसा लगा जैसे कोई बच्चा रेत का महल बना रहा हो और कोई कमीना पास से गुज़रते हुए उसे लात मार दे, और फिर तुम अपना बनाया सब कुछ मिट्टी होते देखो। बहुत बुरा था। उसने मुझे लगभग सब कुछ ख़त्म करने की ओर धकेल दिया (जैसा मैं <a href=\"#death\">मौत टैब</a> पर बताता हूँ)। फिर भी मैं सबसे बुरे दौर से बच निकला, खुद को उस दुख से बाहर खींचा, और फिर से बनाया।"
@@ -8390,6 +8398,10 @@
  "b983f42a870b": {
   "en": "Back to Painting",
   "t": "पेंटिंग पर वापस"
+ },
+ "b9a0df6e851a": {
+  "en": "Cooking sits under Hearth because cooking at home is an essential piece that makes home, homie. Except deep fried stuff! I don’t do that at home, as I have a sensitive nose. That’s the AuDHD in me: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4407326/\">autistic adults pick up smells more easily</a>, and <a href=\"https://pubmed.ncbi.nlm.nih.gov/28371743/\">sensory hypersensitivity is a core part of adult ADHD too</a>.",
+  "t": "कुकिंग घर-आँगन में इसलिए है क्योंकि घर पर खाना बनाना वह ज़रूरी हिस्सा है जो घर को घर जैसा बनाता है। डीप फ़्राई को छोड़कर! वह मैं घर पर नहीं करता, क्योंकि मेरी नाक संवेदनशील है। यह मेरे अंदर का AuDHD है: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4407326/\">ऑटिस्टिक वयस्क गंध ज़्यादा आसानी से पकड़ लेते हैं</a>, और <a href=\"https://pubmed.ncbi.nlm.nih.gov/28371743/\">संवेदी अतिसंवेदनशीलता वयस्क ADHD का भी अहम हिस्सा है</a>।"
  },
  "b9a2ffa6496c": {
   "en": "Let's go",
@@ -10574,10 +10586,6 @@
  "ec35596f3bd2": {
   "en": "Enlarge: Painting or drawing, 02/25/2013",
   "t": "बड़ा करें: पेंटिंग या स्केच, 25/2/2013"
- },
- "ec3a6e3e8b5d": {
-  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
-  "t": "मेरी माँ की तरह, मैं रेसिपी नहीं देखता और कुछ लिखकर नहीं रखता। हाँ, फ़ोटो ज़रूर खींचता हूँ, ताकि अगर कुछ बहुत बढ़िया बने तो बाद में फिर से बना सकूँ! मेरे हिसाब से इससे हर खाना ख़ास बन जाता है! <a href=\"#churrasco\">शुहास्को</a> अपने अलग पहलू का हक़दार है! मुझे हर तरह और हर रूप का खाना पसंद है, पर कुछ हदें भी हैं, जैसे बदबूदार टोफ़ू मुझसे खाया ही नहीं जाता।"
  },
  "ec636d8aedbe": {
   "en": "Steak and onions with black-eyed peas",
