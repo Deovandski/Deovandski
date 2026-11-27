@@ -5,6 +5,8 @@
 // shortcut and works offline (public/sw.js). Deo also uses it for UX prototypes and ideas.
 // Each gimmick uses the same save as on its tab, so the pets, the farm and personal bests carry over.
 // To add a gimmick: see src/lib/gimmicks.ts (the list sorts itself).
+// Share code (#316): the address keeps ?open=<code>, which FastTabs are open (a bit per gimmick, by its permanent
+// number `n`, written in base 36), so a link opens the same ones for whoever gets it.
 import Base from '../layouts/Base.astro';
 import FastTab from '../components/reusable/FastTab.astro';
 import Gimmick from '../components/Gimmick.astro';
@@ -21,6 +23,7 @@ const games = [...GIMMICKS].sort((a, b) => a.title.localeCompare(b.title, 'en', 
       <h1>Playground</h1>
       <p class="gaming__lede">If you're just here for the interactive stuff, then you're in the right spot. Deo also uses this page as a dumping ground for UX prototypes, ideas, etc.</p>
       <p>Open one to play. They save in this browser only, the same saves as on their tabs, and this page works offline once the app is installed.</p>
+      <p>The address keeps track of which ones are open, so you can share a link with the same games open.</p>
       <div class="gaming__toolbar">
         <button type="button" data-fasttabs="open">Expand all</button>
         <button type="button" data-fasttabs="close">Collapse all</button>
@@ -30,7 +33,7 @@ const games = [...GIMMICKS].sort((a, b) => a.title.localeCompare(b.title, 'en', 
     <div class="gaming__tabs">
       {
         games.map((g) => (
-          <FastTab title={`${g.title} (${g.tabName} facet)`} id={g.id} data-gimmick-id={g.id} data-summary-base="">
+          <FastTab title={`${g.title} (${g.tabName} facet)`} id={g.id} data-gimmick-id={g.id} data-bit={g.n} data-summary-base="">
             <Fragment slot="title">
               {g.title} (<a href={url(`/#${g.tab}`)}>{g.tabName}</a> facet)
             </Fragment>
@@ -89,4 +92,37 @@ const games = [...GIMMICKS].sort((a, b) => a.title.localeCompare(b.title, 'en', 
   refreshGimmickSummaries();
   // Update when a FastTab closes (the summary shows again), after the game may have saved.
   document.querySelectorAll('details.fasttab').forEach((d) => d.addEventListener('toggle', () => setTimeout(refreshGimmickSummaries, 50)));
+
+  // Share code (#316): ?open=<code> lists the open FastTabs as bits (bit n = the gimmick numbered n in
+  // src/lib/gimmicks.ts), written in base 36. Opening a link with it opens those; opening or closing one updates it.
+  const tabs = [...document.querySelectorAll<HTMLDetailsElement>('details.fasttab[data-bit]')];
+  const fromCode = (code: string) => {
+    let mask = 0n;
+    for (const ch of code.toLowerCase()) {
+      const d = parseInt(ch, 36);
+      if (Number.isNaN(d)) return 0n;
+      mask = mask * 36n + BigInt(d);
+    }
+    return mask;
+  };
+  const code = new URLSearchParams(location.search).get('open');
+  if (code) {
+    const mask = fromCode(code);
+    for (const t of tabs) if ((mask >> BigInt(t.dataset.bit!)) & 1n) t.open = true;
+  }
+  let pending = 0;
+  const writeCode = () => {
+    let mask = 0n;
+    for (const t of tabs) if (t.open) mask |= 1n << BigInt(t.dataset.bit!);
+    const u = new URL(location.href);
+    if (mask) u.searchParams.set('open', mask.toString(36));
+    else u.searchParams.delete('open');
+    if (u.href !== location.href) history.replaceState(history.state, '', u);
+  };
+  // "Expand all" toggles every FastTab at once: write the code once, after the last one.
+  for (const t of tabs)
+    t.addEventListener('toggle', () => {
+      cancelAnimationFrame(pending);
+      pending = requestAnimationFrame(writeCode);
+    });
 </script>

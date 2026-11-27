@@ -2,6 +2,9 @@
 import { Image, getImage } from 'astro:assets';
 import Base from '../layouts/Base.astro';
 import GimmickPlay from '../components/GimmickPlay.astro';
+import FastTab from '../components/reusable/FastTab.astro';
+import ThemeGallery from '../components/reusable/ThemeGallery.astro';
+import '@fontsource/im-fell-english/400-italic.css';
 import Ranking from '../components/Ranking.astro';
 import TravelerFacet from '../components/TravelerFacet.astro';
 import MentorFacet from '../components/MentorFacet.astro';
@@ -38,6 +41,8 @@ import { Content as DeathSources } from '../../content/death-sources.md';
 import { Content as AviationSources } from '../../content/aviation-sources.md';
 import { Content as FishingStory } from '../../content/fishing/story.md';
 import { Content as FishingMore } from '../../content/fishing/more.md';
+import { Content as PhotoStory } from '../../content/photography/story.md';
+import { Content as PhotoCritique } from '../../content/photography/critique.md';
 import { Content as TattooSources } from '../../content/tattoo-sources.md';
 import { Content as MentorSources } from '../../content/mentor-sources.md';
 import YouTube from '../components/reusable/YouTube.astro';
@@ -47,7 +52,7 @@ import stickyNotes from '../../content/pm/2023-03-20-sticky-note-madness.jpg';
 import influencerShot from '../../content/influencer/Screenshot_20260803-210132.png';
 // The screenshot links to a large webp copy (the photo viewer opens it), not the original PNG.
 const influencerFull = (await getImage({ src: influencerShot, width: Math.min(1800, influencerShot.width), format: 'webp', quality: 85 })).src;
-import { loadGallery } from '../lib/gallery';
+import { loadGallery, loadThemes } from '../lib/gallery';
 import { photoDate } from '../lib/photoDate';
 import { resolve } from 'node:path';
 import { existsSync, readFileSync } from 'node:fs';
@@ -282,6 +287,7 @@ const facets: { id: string; icon: string; label: string; sortAs?: string; subs?:
   { id: 'musician', icon: '🎶', label: 'Musician' },
   { id: 'painting', icon: '🖌️', label: 'Painting/Drawing' },
   { id: 'pets', icon: '🐾', label: 'Pets' },
+  { id: 'photographer', icon: '📷', label: 'Photographer' },
   { id: 'potato', icon: '🥔', label: 'Potato', subs: [
     { id: 'movies', icon: '🎬', label: 'Movies', hash: '#potato-movies' },
     { id: 'tv', icon: '📺', label: 'TV shows', hash: '#potato' },
@@ -300,7 +306,7 @@ const facets: { id: string; icon: string; label: string; sortAs?: string; subs?:
 // No facet opens by default: visitors grow a branch, then pick a facet.
 const branches = [
   { id: 'craft', icon: '💼', label: 'Craft', blurb: 'What Deo builds, writes, plays and paints.', facets: ['author', 'dev', 'influencer', 'musician', 'painting', 'pm'] },
-  { id: 'explorer', icon: '🌏', label: 'Explorer', blurb: 'Where Deo goes and the languages he speaks there.', facets: ['aviation', 'camping', 'fishing', 'multilingual', 'traveler'] },
+  { id: 'explorer', icon: '🌏', label: 'Explorer', blurb: 'Where Deo goes and the languages he speaks there.', facets: ['aviation', 'camping', 'fishing', 'multilingual', 'photographer', 'traveler'] },
   { id: 'frontrow', icon: '🎟️', label: 'Front Row', blurb: 'What Deo watches: live shows, the diva herself, anime, and the movies and TV worth (or not worth) the time.', facets: ['anime', 'botw', 'concert', 'miku', 'potato', 'theater'] },
   { id: 'hearth', icon: '🏡', label: 'Hearth', blurb: 'Family, pets, the grill, the kitchen, and the body that carries it all.', facets: ['biomarkers', 'churrasco', 'cooking', 'family', 'pets'] },
   { id: 'philosophy', icon: '🧭', label: 'Philosophy', blurb: 'How Deo thinks: mortality, mentoring, discipline, desire and ink.', facets: ['cycling', 'death', 'gym', 'lust', 'mentor', 'tattoo'] },
@@ -357,21 +363,23 @@ const concertWishlist = loadSections('content/concerts-wishlist.md', 'content/co
 const theater = loadSections('content/theater.md', 'content/theater');
 const theaterWishlist = loadSections('content/theater-wishlist.md', 'content/theater');
 const fishing = loadGallery('content/fishing', 'Fishing');
+const photography = loadThemes('content/photography', 'Photo');
 // Painting/Drawing: each picture captioned with the date it was taken (photo metadata, else filename).
 // Pictures with neither can get an approximate day in content/painting/_dates.md, shown as "Circa Q1 2013".
 // Oldest first so it reads as a progression; undated ones go last, in filename order.
 const circa = new Map(
   [...(existsSync('content/painting/_dates.md') ? readFileSync('content/painting/_dates.md', 'utf8') : '')
     .replace(/<!--[\s\S]*?-->/g, '')
-    .matchAll(/^- +(.+?): *(\d{4})-(\d{2})-(\d{2}) *$/gm)].map((m) => [m[1].trim(), `${m[2]}-${m[3]}-${m[4]}`]),
+    .matchAll(/^- +(.+?): *(\d{4})(?:-(\d{2})-(\d{2}))? *$/gm)].map((m) => [m[1].trim(), m[3] ? `${m[2]}-${m[3]}-${m[4]}` : m[2]]),
 );
-const quarterOf = (iso: string) => `Circa Q${Math.ceil(Number(iso.slice(5, 7)) / 3)} ${iso.slice(0, 4)}`;
+// "2013-02-03" shows as "Circa Q1 2013"; a year alone ("2013") as "Circa 2013", sorted after that year's dated pictures.
+const quarterOf = (iso: string) => (iso.length === 4 ? `Circa ${iso}` : `Circa Q${Math.ceil(Number(iso.slice(5, 7)) / 3)} ${iso.slice(0, 4)}`);
 const painting = (
   await Promise.all(
     loadGallery('content/painting', 'Painting or drawing').photos.map(async (p) => {
       const date = await photoDate(resolve('content/painting', p.file), p.file);
       const approx = date ? undefined : circa.get(p.file);
-      return { src: p.src, file: p.file, alt: 'Painting or drawing', date, dateLabel: approx && quarterOf(approx), sortKey: date ?? approx ?? '9999' };
+      return { src: p.src, file: p.file, alt: 'Painting or drawing', date, dateLabel: approx && quarterOf(approx), sortKey: date ?? (approx && approx.length === 4 ? `${approx}-99` : approx) ?? '9999' };
     }),
   )
 ).sort((a, b) => a.sortKey.localeCompare(b.sortKey) || a.file.localeCompare(b.file, undefined, { numeric: true }));
@@ -769,6 +777,37 @@ const nf = new Intl.NumberFormat('en-US');
       <GimmickPlay tab="traveler" />
       <LinksMenu id="traveler-links" toggle="external" items={travelerLinks} />
       <TravelerFacet />
+    </section>
+
+    <section class="panel" role="region" id="panel-photographer" aria-labelledby="tab-photographer" tabindex="0" hidden>
+      <LinksMenu
+        id="photographer-links"
+        toggle="external"
+        items={[
+          { separator: 'The cameras' },
+          {
+            links: [
+              { href: 'https://store.google.com/product/pixel_8_pro_specs', label: 'Pixel 8 Pro tech specs' },
+              { href: 'https://www.dpreview.com/reviews/sonydslra350/20', label: 'Sony DSLR-A350 specs' },
+            ],
+          },
+          { separator: 'Kindred spirits (per the critic)' },
+          {
+            style: 'secondary',
+            links: [
+              { href: 'https://en.wikipedia.org/wiki/Peter_Lik', label: 'Peter Lik' },
+              { href: 'https://en.wikipedia.org/wiki/Saul_Leiter', label: 'Saul Leiter' },
+            ],
+          },
+        ]}
+      />
+      <div class="story">
+        <PhotoStory />
+      </div>
+      <FastTab title="The critic's appraisal (by Claude)" summary="Overly fancy, by request" id="photographer-critique" class="critique">
+        <div class="critique__text"><PhotoCritique /></div>
+      </FastTab>
+      <ThemeGallery themes={[photography.all, ...photography.themes]} name="photographer" label="Pick a theme" empty="Photos are on their way." />
     </section>
 
     <section class="panel" role="region" id="panel-fishing" aria-labelledby="tab-fishing" tabindex="0" hidden>
@@ -1310,6 +1349,11 @@ const nf = new Intl.NumberFormat('en-US');
   .panel > :last-child { margin-bottom: 0; }
 
   .story { max-width: var(--measure); }
+  /* Photographer: Claude's over-the-top critique, in italics, in IM Fell English (already used by Churrasco). */
+  .critique { max-width: var(--measure); margin: 1.25rem 0 1.5rem; --fasttab-accent: var(--teal); --fasttab-muted: var(--muted); }
+  .critique__text { font-family: 'IM Fell English', Georgia, 'Times New Roman', serif; font-style: italic; font-size: 1.12rem; line-height: 1.6; }
+  .critique__text :global(p) { margin: 0 0 0.9rem; }
+  .critique__text :global(em) { font-style: normal; }
   .story .pills { margin-top: 1.5rem; }
   .dev-headline {
     font-family: var(--font-display);

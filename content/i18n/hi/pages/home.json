@@ -95,6 +95,10 @@
   "en": "month",
   "t": "महीना"
  },
+ "023fa1de7ae8": {
+  "en": "Enlarge: Cloud tower",
+  "t": "बड़ा करें: बादलों की मीनार"
+ },
  "0241a5b7fcf5": {
   "en": "My business",
   "t": "मेरा बिज़नेस"
@@ -259,9 +263,17 @@
   "en": "Rod flasher and a hole in the ice",
   "t": "छड़ी, फ़िश फ़ाइंडर और बर्फ़ में छेद"
  },
+ "060f60ada51d": {
+  "en": "Space Invaders high score",
+  "t": "Space Invaders का हाई स्कोर"
+ },
  "061ff9e69ad0": {
   "en": "Shinjuku Station in Tokyo is the busiest train station in the world: millions of people pass through it every day.",
   "t": "टोक्यो का शिंजुकु स्टेशन दुनिया का सबसे व्यस्त रेलवे स्टेशन है: हर दिन लाखों लोग यहाँ से गुज़रते हैं।"
+ },
+ "0644e7f131fa": {
+  "en": "All: 51 photos",
+  "t": "सभी: 51 तस्वीरें"
  },
  "0648fee0c26c": {
   "en": "Around the World in 80 Gears: turn your phone sideways",
@@ -295,6 +307,10 @@
   "en": "{value} · {date}",
   "t": "{value} · {date}"
  },
+ "068fc996c32e": {
+  "en": "Quiet side street",
+  "t": "शांत गली"
+ },
  "0699138fe5cc": {
   "en": "Click or drag to draw. Right-click erases.",
   "t": "बनाने के लिए क्लिक या ड्रैग करो। राइट-क्लिक से मिटता है।"
@@ -302,6 +318,10 @@
  "06e20f5a4426": {
   "en": "Bottom lock",
   "t": "तल लॉक"
+ },
+ "06e77bc23caa": {
+  "en": "Enlarge: Summer path and sun flare",
+  "t": "बड़ा करें: गर्मियों की पगडंडी और सूरज की चमक"
  },
  "06ee9ade85e4": {
   "en": "Hellblade: Senua's Sacrifice",
@@ -443,6 +463,10 @@
   "en": "I created it",
   "t": "मैंने बनाई"
  },
+ "0a602ef98a21": {
+  "en": "Enlarge: Long shadows on the walkway",
+  "t": "बड़ा करें: पैदल पथ पर लंबी परछाइयाँ"
+ },
  "0a61944ac3fc": {
   "en": "Count idle games (19,668 h left running)",
   "t": "आइडल गेम भी गिनें (इनमें 19,668 घं. बस चलते छोड़े गए)"
@@ -507,6 +531,10 @@
   "en": "Enlarge: FML! Forgot setup autopay",
   "t": "बड़ा करें: हाय रे क़िस्मत! ऑटोपे सेट करना भूल गया"
  },
+ "0c1cb2e4a0ed": {
+  "en": "Carved wood every inch",
+  "t": "इंच-इंच पर नक़्क़ाशीदार लकड़ी"
+ },
  "0c1d9293305f": {
   "en": "thrown too hard, so it looped and lost its speed",
   "t": "बहुत जोर से फेंका, लूप किया और स्पीड खोई"
@@ -538,6 +566,10 @@
  "0cf0f0c8b066": {
   "en": "268 h",
   "t": "268 घं."
+ },
+ "0cf151e08e33": {
+  "en": "Photographer",
+  "t": "फ़ोटोग्राफ़र"
  },
  "0d3a836fc775": {
   "en": "Spring bass selfie",
@@ -590,6 +622,10 @@
  "0e6f86c4d72a": {
   "en": "<strong>Francois Naudé &amp; Luzelle Naudé</strong> (2024), “(Tat)who Am I? Tattoos as an Expression of Narrative Identity”: people use tattoos to explore and tell the story of who they are. <a href=\"https://www.psychologytoday.com/us/blog/head-games/202403/5-ways-your-tattoos-reveal-who-you-are\">Summary in <em>Psychology Today</em></a>",
   "t": "<strong>Francois Naudé &amp; Luzelle Naudé</strong> (2024), “(Tat)who Am I? Tattoos as an Expression of Narrative Identity”: लोग टैटू से यह खोजते और बताते हैं कि वे कौन हैं। <a href=\"https://www.psychologytoday.com/us/blog/head-games/202403/5-ways-your-tattoos-reveal-who-you-are\"><em>Psychology Today</em> में सारांश</a>"
+ },
+ "0e72288014f7": {
+  "en": "Bell tower at blue hour",
+  "t": "ब्लू आवर में घंटाघर"
  },
  "0e814bdf1998": {
   "en": "45 h",
@@ -763,6 +799,10 @@
   "en": "Enlarge: Guess what I'm gonna do",
   "t": "बड़ा करें: बताओ मैं क्या करने वाला हूँ"
  },
+ "12b6260a2cd5": {
+  "en": "Enlarge: Night show",
+  "t": "बड़ा करें: रात का शो"
+ },
  "12cafa27532f": {
   "en": "Enlarge: Painting or drawing, 04/09/2013",
   "t": "बड़ा करें: पेंटिंग या स्केच, 9/4/2013"
@@ -855,6 +895,10 @@
   "en": "Go!",
   "t": "जाओ!"
  },
+ "14f29e2ceb7e": {
+  "en": "Enlarge: Paraglider over the beach",
+  "t": "बड़ा करें: समुद्र-तट के ऊपर पैराग्लाइडर"
+ },
  "15014b3b3615": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 10: </span> To LOVE-Ru ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 10: </span> To LOVE-Ru"
@@ -931,6 +975,10 @@
   "en": "Germany",
   "t": "जर्मनी"
  },
+ "17e6e9c263b7": {
+  "en": "Enlarge: Festival stalls",
+  "t": "बड़ा करें: मेले के स्टॉल"
+ },
  "181052fbf6c2": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Placeholder movie 22 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 22: </span> अस्थायी फ़िल्म 22"
@@ -982,6 +1030,10 @@
  "19120d9e6f39": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 11: </span> Placeholder movie 11 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 11: </span> अस्थायी फ़िल्म 11"
+ },
+ "1917c98d2d8e": {
+  "en": "Snowed in",
+  "t": "बर्फ़ में क़ैद"
  },
  "1945ca5513cf": {
   "en": " TE ",
@@ -1091,6 +1143,10 @@
   "en": "Enlarge: Huehuehue",
   "t": "बड़ा करें: Huehuehue"
  },
+ "1bd2e578179f": {
+  "en": "Enlarge: Carved wood every inch",
+  "t": "बड़ा करें: इंच-इंच पर नक़्क़ाशीदार लकड़ी"
+ },
  "1bf3563297c5": {
   "en": "Enlarge: Painting or drawing, Circa Q1 2013",
   "t": "बड़ा करें: पेंटिंग या स्केच, लगभग 2013 की तिमाही 1"
@@ -1118,6 +1174,10 @@
  "1cb4013146e4": {
   "en": "Musician",
   "t": "संगीतकार"
+ },
+ "1cceab06ca3b": {
+  "en": " Sony DSLR-A350 specs ",
+  "t": "Sony DSLR-A350 की जानकारी"
  },
  "1d0c8304baed": {
   "en": "Color",
@@ -1379,9 +1439,17 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Placeholder TV show 4 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 4: </span> अस्थायी टीवी शो 4"
  },
+ "235ef10ce552": {
+  "en": "Lines and depth: 9 photos",
+  "t": "रेखाएँ और गहराई: 9 तस्वीरें"
+ },
  "236a7473f3da": {
   "en": "Theater &amp; Opera",
   "t": "थिएटर और ओपेरा"
+ },
+ "2374e00b56ea": {
+  "en": "Sky and light: 9 photos",
+  "t": "आसमान और रोशनी: 9 तस्वीरें"
  },
  "23882c575954": {
   "en": "Portuguese",
@@ -1394,6 +1462,10 @@
  "23b53c719a7e": {
   "en": "I see you",
   "t": "मैं तुम्हें देख रहा हूँ"
+ },
+ "24130d4dd839": {
+  "en": "Enlarge: Sun through the blossoms",
+  "t": "बड़ा करें: फूलों के बीच से सूरज"
  },
  "2438453caeb0": {
   "en": "there's poop to clean",
@@ -1443,6 +1515,10 @@
   "en": "<a href=\"https://www.youtube.com/watch?v=xB9U3m1Z4wU&t=884s\"><span lang=\"ja\">死のアリア</span> (Shi no Aria)</a> - Opera THE END",
   "t": "<a href=\"https://www.youtube.com/watch?v=xB9U3m1Z4wU&t=884s\"><span lang=\"ja\">死のアリア</span> (Shi no Aria)</a> - Opera THE END"
  },
+ "250b63e43f66": {
+  "en": "Critters: 2 photos",
+  "t": "जीव-जंतु: 2 तस्वीरें"
+ },
  "25141bd9981f": {
   "en": "Ecchi in the shape of an anime. I absolutely loved the creativity in pushing the envelope as far as possible! Yami is my favorite girl, even though IRL that type of girl tends to be toxic as fuck. Avoidant girls, especially fearful avoidants, are complete energy vampires.",
   "t": "एनीमे के रूप में एच्ची। हदों को जितना हो सके उतना धकेलने की रचनात्मकता मुझे बेहद पसंद आई! यामी मेरी पसंदीदा लड़की है, भले ही असल ज़िंदगी में उस तरह की लड़कियाँ बेहद ज़हरीली होती हैं। कतराने वाली लड़कियाँ, ख़ासकर डर से कतराने वाली, पूरी तरह ऊर्जा चूसने वाली पिशाच हैं।"
@@ -1482,6 +1558,10 @@
  "262f737babf6": {
   "en": "Too much: it spooked.",
   "t": "ज़्यादा हो गया: वह डरकर भाग गई।"
+ },
+ "2635cd20cd9d": {
+  "en": "Under the arcade roof",
+  "t": "आर्केड की छत के नीचे"
  },
  "2641c8ed7f11": {
   "en": "A farting donkey runs, jumps, headbutts and farts through the Amazon and the desert. Sketched in 2014, started in Unity in 2016 and finished in Godot in 2026, with my dad’s 2014 BIDU songs as the music.",
@@ -1538,6 +1618,10 @@
  "26f7b1dab8e9": {
   "en": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna",
   "t": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna"
+ },
+ "2707ee77b188": {
+  "en": "Fog and smoke: 6 photos",
+  "t": "कोहरा और धुआँ: 6 तस्वीरें"
  },
  "273285456a27": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 19: </span> Placeholder movie 19 ",
@@ -1603,6 +1687,10 @@
   "en": "Close to 12 years old but still kicking",
   "t": "लगभग 12 साल का, पर अब भी दमदार"
  },
+ "286d59b3d6e2": {
+  "en": "Neon after the rain",
+  "t": "बारिश के बाद नियॉन"
+ },
  "2888f01fb635": {
   "en": "Morning by the river",
   "t": "नदी किनारे सुबह"
@@ -1610,6 +1698,10 @@
  "288e674ac350": {
   "en": " Xbox ",
   "t": "Xbox"
+ },
+ "28e5dcf1f691": {
+  "en": "Then, the water. Our artist cannot pass a wet surface without interrogating it. <em>Rainy night neon reflections</em> and <em>Raindrops on the window</em> converse across the years with <a href=\"https://en.wikipedia.org/wiki/Saul_Leiter\">Saul Leiter</a>, poet of the rain-streaked pane, who likewise understood that the most honest view of a city is the one slightly obscured.",
+  "t": "फिर, पानी। हमारा कलाकार किसी गीली सतह के पास से उससे पूछताछ किए बिना नहीं गुज़र सकता। <em>बरसाती रात, नियॉन के प्रतिबिंब</em> और <em>खिड़की पर बारिश की बूँदें</em> बरसों के पार <a href=\"https://en.wikipedia.org/wiki/Saul_Leiter\">Saul Leiter</a> से बातें करती हैं, बारिश की लकीरों वाले शीशे के उस कवि से, जो यह भी समझता था कि किसी शहर का सबसे सच्चा नज़ारा वही है जो थोड़ा-सा ढका हो।"
  },
  "28e75153a2a3": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  4 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
@@ -1819,6 +1911,14 @@
   "en": "<strong>K. Anders Ericsson, Ralf Krampe &amp; Clemens Tesch-Römer</strong> (1993), deliberate practice. Honest update: Brooke Macnamara and Megha Maitra’s 2019 replication found practice matters, but much less than the original study claimed. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC6731745/\">Replication</a>",
   "t": "<strong>के. एंडर्स एरिक्सन, राल्फ़ क्रैम्पे और क्लेमेंस टेश-रोमर</strong> (1993), सुविचारित अभ्यास। ईमानदार अपडेट: ब्रुक मैकनमारा और मेघा मैत्रा के 2019 के पुनरावृत्ति अध्ययन ने पाया कि अभ्यास मायने रखता है, पर मूल अध्ययन के दावे से कहीं कम। <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC6731745/\">पुनरावृत्ति</a>"
  },
+ "2ec257e63f71": {
+  "en": "Wingtips at sunrise",
+  "t": "सूर्योदय पर पंखों के सिरे"
+ },
+ "2ec46ae533e4": {
+  "en": "Enlarge: Bamboo walkway",
+  "t": "बड़ा करें: बाँस का पैदल पथ"
+ },
  "2ee0d2dca289": {
   "en": "DS",
   "t": "DS"
@@ -1830,6 +1930,10 @@
  "2ef504cf4abc": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#37: </span>Best of the Worst: Clash in the College",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#37: </span>Best of the Worst: Clash in the College"
+ },
+ "2ef7a7ed7986": {
+  "en": "Enlarge: Autumn from the balcony",
+  "t": "बड़ा करें: बालकनी से पतझड़"
  },
  "2f2bbafed371": {
   "en": "Posted. Nobody cares. Yet.",
@@ -1911,6 +2015,10 @@
   "en": " 1 aquamarine  · 1 energy · 30 s ",
   "t": "1 एक्वामरीन · 1 ऊर्जा · 30 से."
  },
+ "30fac24449cf": {
+  "en": "Details and culture",
+  "t": "बारीकियाँ और संस्कृति"
+ },
  "31071d58e994": {
   "en": "a bird",
   "t": "एक पक्षी"
@@ -1991,6 +2099,10 @@
   "en": "Wake up at 6am (or 5am; Peeta is the true alarm clock in the house), drink coffee, poop, bathe, hit the gym, then head home to let Peeta run in the backyard while I shove food in my piehole before work. Practical and frictionless: part of my routine now, not something I have to force myself to do.",
   "t": "सुबह 6 बजे उठना (या 5 बजे; घर की असली अलार्म घड़ी Peeta है), कॉफ़ी पीना, टट्टी करना, नहाना, जिम जाना, फिर घर लौटकर Peeta को पिछवाड़े में दौड़ने देना जबकि मैं काम से पहले मुँह में खाना ठूँसता हूँ। व्यावहारिक और बिना झंझट: अब यह मेरी दिनचर्या का हिस्सा है, कुछ ऐसा नहीं जिसके लिए खुद को मजबूर करना पड़े।"
  },
+ "328bfa8ba8e4": {
+  "en": "City lights in the haze",
+  "t": "धुंध में शहर की रोशनियाँ"
+ },
  "32b93c52f5d9": {
   "en": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(June 21, 2026)</span>",
   "t": "13.6 mi <span data-astro-cid-o4ptolev=\"\">(21 जून 2026)</span>"
@@ -2043,6 +2155,10 @@
   "en": "Enlarge: Riding the chairlift up",
   "t": "बड़ा करें: चेयरलिफ़्ट से ऊपर"
  },
+ "33cfe9f6e92e": {
+  "en": "Shores",
+  "t": "तट"
+ },
  "33dde2208759": {
   "en": "Smoke alarm: senpai, please (ノಠ益ಠ)ノ彡┻━┻",
   "t": "स्मोक अलार्म: सेनपाई, प्लीज़ (ノಠ益ಠ)ノ彡┻━┻"
@@ -2054,6 +2170,10 @@
  "33f6722abdf7": {
   "en": "Take care of your mind",
   "t": "अपने मन का ख़याल रखो"
+ },
+ "33f822fe462d": {
+  "en": "Enlarge: Ballet through the haze",
+  "t": "बड़ा करें: धुंध के पार बैले"
  },
  "33fef503474e": {
   "en": "Princess nap",
@@ -2070,6 +2190,10 @@
  "3415ddf27fa5": {
   "en": "The Sacred Scripture of Churrasco",
   "t": "शुहास्कू का पवित्र धर्मग्रंथ"
+ },
+ "34267790798f": {
+  "en": "Enlarge: Godrays at the concert",
+  "t": "बड़ा करें: कॉन्सर्ट में रोशनी की किरणें"
  },
  "342f538911fc": {
   "en": "A meter that refills over time makes you wait, then binge, and keeps you coming back.",
@@ -2143,6 +2267,14 @@
   "en": "Crash cymbal (key W)",
   "t": "क्रैश सिंबल (कुंजी W)"
  },
+ "35f46022b216": {
+  "en": "Rain and reflections: 6 photos",
+  "t": "बारिश और प्रतिबिंब: 6 तस्वीरें"
+ },
+ "36040a4708ea": {
+  "en": "Enlarge: Walkway to the bungalows",
+  "t": "बड़ा करें: बंगलों तक का पैदल पथ"
+ },
  "364653cd2a4a": {
   "en": "Breakfast",
   "t": "नाश्ता"
@@ -2187,6 +2319,10 @@
   "en": "BM",
   "t": "BM"
  },
+ "378636593e0b": {
+  "en": "Bamboo walkway",
+  "t": "बाँस का पैदल पथ"
+ },
  "378b38c44e73": {
   "en": "Enlarge: I wonder what dinner will be",
   "t": "बड़ा करें: पता नहीं डिनर में क्या होगा"
@@ -2198,6 +2334,10 @@
  "37e737d92cbb": {
   "en": "{n} min",
   "t": "{n} मिनट"
+ },
+ "37f57db2cabb": {
+  "en": "Enlarge: Peeta on the stroller under the fall colors",
+  "t": "बड़ा करें: पतझड़ के रंगों तले स्ट्रोलर में Peeta"
  },
  "380aad144968": {
   "en": "Enlarge: Camera angles are everything",
@@ -2291,6 +2431,10 @@
   "en": "Enlarge: Ember.js dev assistant",
   "t": "बड़ा करें: Ember.js डेव असिस्टेंट"
  },
+ "39221c745a70": {
+  "en": "Same cloud closer",
+  "t": "वही बादल, और पास से"
+ },
  "393a3315e9d7": {
   "en": "Enlarge: Boxing Day catch",
   "t": "बड़ा करें: बॉक्सिंग डे की मछली"
@@ -2383,6 +2527,10 @@
   "en": " RG ",
   "t": "RG"
  },
+ "3b1183e0c06d": {
+  "en": "Headlights in the fog",
+  "t": "कोहरे में हेडलाइट्स"
+ },
  "3b391d8da76c": {
   "en": " Vraki West March D&amp;D ",
   "t": "व्राकी West March D&amp;D"
@@ -2394,6 +2542,10 @@
  "3b419aac7299": {
   "en": "\nTreat your life like a project: break big goals into small steps, be honest about scope and deadlines, and track what's\n        actually done. It's how I run everything from client work to this website, and the <a href=\"#pm\" data-astro-cid-xtzphevd=\"\">PM side</a> of this tab\n        has the details.\n",
   "t": "अपनी ज़िंदगी को एक प्रोजेक्ट की तरह लो: बड़े लक्ष्यों को छोटे कदमों में बाँटो, दायरे और डेडलाइन के बारे में ईमानदार रहो, और जो सच में पूरा हुआ उसका हिसाब रखो। क्लाइंट के काम से लेकर इस वेबसाइट तक, मैं सब कुछ ऐसे ही चलाता हूँ, और इस टैब के <a href=\"#pm\" data-astro-cid-xtzphevd=\"\">PM हिस्से</a> में पूरी जानकारी है।"
+ },
+ "3b7766dc7e4d": {
+  "en": "Enlarge: Pink sunrise behind bare trees",
+  "t": "बड़ा करें: नंगे पेड़ों के पीछे गुलाबी सूर्योदय"
  },
  "3b9579462803": {
   "en": "Loading the numbers…",
@@ -2482,6 +2634,10 @@
  "3e1f116ff08d": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-jytvyid3=\"\">😱</span> Post clickbait video ",
   "t": "<span aria-hidden=\"true\" data-astro-cid-jytvyid3=\"\">😱</span> क्लिकबेट वीडियो पोस्ट करो"
+ },
+ "3e4ff78bc927": {
+  "en": "Ancient stupa",
+  "t": "प्राचीन स्तूप"
  },
  "3e502c2d1133": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 39: </span> Placeholder TV show 39 ",
@@ -2631,6 +2787,10 @@
   "en": "🔊 Sound on",
   "t": "🔊 आवाज़ चालू"
  },
+ "4188551e3acb": {
+  "en": "I’m no real photographer. But back in the day I got my hands on a Sony Alpha DSLR-A350, and I had a blast playing with every setting just to see what it did to the picture. Hands-on learning at its finest: fail, learn, fail some more, learn some more.",
+  "t": "मैं कोई असली फ़ोटोग्राफ़र नहीं हूँ। लेकिन पुराने दिनों में मेरे हाथ एक Sony Alpha DSLR-A350 लगा, और मैंने हर सेटिंग से खेलते हुए खूब मज़े किए, बस यह देखने के लिए कि वह तस्वीर का क्या करती है। हाथों-हाथ सीखने का बेहतरीन नमूना: नाकाम होना, सीखना, थोड़ा और नाकाम होना, थोड़ा और सीखना।"
+ },
  "41e1360a1ebf": {
   "en": "Realm Grinder",
   "t": "Realm Grinder"
@@ -2659,6 +2819,10 @@
   "en": "An old photo of a small child and two men in an open gold mine pit of red earth in the Brazilian Amazon",
   "t": "ब्राज़ीली अमेज़न में लाल मिट्टी के खुले सोने की खदान के गड्ढे में एक छोटे बच्चे और दो आदमियों की पुरानी तस्वीर"
  },
+ "43444027c266": {
+  "en": "Cruise ships on the horizon",
+  "t": "क्षितिज पर क्रूज़ जहाज़"
+ },
  "4362097688af": {
   "en": "Not enough meat",
   "t": "मांस काफ़ी नहीं"
@@ -2674,6 +2838,10 @@
  "43b6999af90e": {
   "en": "My profile on Xbox",
   "t": "Xbox पर मेरी प्रोफ़ाइल"
+ },
+ "43c57917657e": {
+  "en": "Enlarge: Low tide silver light",
+  "t": "बड़ा करें: भाटा, चाँदी-सी रोशनी"
  },
  "43d7cd3f3e15": {
   "en": "ACE COMBAT7: SKIES UNKNOWN",
@@ -2919,6 +3087,10 @@
   "en": " Fine line ",
   "t": "पतली रेखा"
  },
+ "4b1bbadd28f8": {
+  "en": "Blue trees and red dirt",
+  "t": "नीले पेड़ और लाल मिट्टी"
+ },
  "4b2cef64e841": {
   "en": "Daylight, especially in the morning, is what sets the body clock. More morning sun goes with an earlier, steadier sleep.",
   "t": "दिन की रोशनी, ख़ासकर सुबह की, शरीर-घड़ी को सेट करती है। सुबह की ज़्यादा धूप के साथ जल्दी और ज़्यादा स्थिर नींद आती है।"
@@ -2930,6 +3102,10 @@
  "4b41ed494adc": {
   "en": " Steam + Xbox + PlayStation  ·  estimated ",
   "t": "Steam + Xbox + PlayStation  ·  अनुमानित"
+ },
+ "4b45179c0a6f": {
+  "en": "There’s probably more to it, so I’ll let Claude weigh in below.",
+  "t": "शायद इसमें और भी कुछ है, इसलिए नीचे Claude को अपनी राय देने देता हूँ।"
  },
  "4b482e2ae4e2": {
   "en": "⚠️ Your {n}-post streak is about to die!",
@@ -3031,6 +3207,10 @@
   "en": "Enlarge: Yellow snow HUEHUEHUE edition",
   "t": "बड़ा करें: पीली बर्फ़, HUEHUEHUE संस्करण"
  },
+ "4d749b4b7f1f": {
+  "en": "Lonely arches",
+  "t": "अकेले मेहराब"
+ },
  "4d968a30a022": {
   "en": "no data",
   "t": "डेटा नहीं"
@@ -3058,10 +3238,6 @@
  "4de4bc93aa7d": {
   "en": "Chappell Roan",
   "t": "Chappell Roan"
- },
- "4dfb74a0b7f7": {
-  "en": "Gimme attention",
-  "t": "ध्यान दो मुझ पर"
  },
  "4e0c6bf07134": {
   "en": "Capt. Deovandski – Flight Experience Singapore",
@@ -3146,6 +3322,10 @@
  "4f39f493473f": {
   "en": "Sleepy",
   "t": "नींद आ रही है"
+ },
+ "4f804d1ee952": {
+  "en": "Wing and the morning sky",
+  "t": "पंख और सुबह का आसमान"
  },
  "4f90d476a15b": {
   "en": "Factorio",
@@ -3243,6 +3423,10 @@
   "en": "17 h",
   "t": "17 घं."
  },
+ "50f94286ba30": {
+  "en": "Previous",
+  "t": "पिछला"
+ },
  "5115ff9a0bea": {
   "en": "{a} vs {o}",
   "t": "{a} बनाम {o}"
@@ -3335,6 +3519,10 @@
   "en": "Virtual drum kit",
   "t": "वर्चुअल ड्रम किट"
  },
+ "538007bdd5b5": {
+  "en": "Enlarge: Rainy drive",
+  "t": "बड़ा करें: बारिश में ड्राइव"
+ },
  "539725f41086": {
   "en": " 904 h ",
   "t": "904 घं."
@@ -3366,6 +3554,10 @@
  "54225a6752c4": {
   "en": " <span class=\"shelf__dot\" style=\"background: #c98500\" data-astro-cid-nqpad2wp=\"\"></span> Factory &amp; automation: 1,588 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #c98500\" data-astro-cid-nqpad2wp=\"\"></span> फ़ैक्टरी और ऑटोमेशन: 1,588 घं."
+ },
+ "542b877ed114": {
+  "en": "Enlarge: New chewing toy!",
+  "t": "बड़ा करें: नया चबाने वाला खिलौना!"
  },
  "5447ef748b4f": {
   "en": "54 days",
@@ -3447,6 +3639,10 @@
   "en": "YouTube",
   "t": "YouTube"
  },
+ "5590d01af39b": {
+  "en": "Enlarge: Tiger taking a break",
+  "t": "बड़ा करें: आराम करता बाघ"
+ },
  "55923a05a0b9": {
   "en": " Factory &amp; automation ",
   "t": "फ़ैक्टरी और ऑटोमेशन"
@@ -3454,6 +3650,10 @@
  "55a27b20d965": {
   "en": "247 h",
   "t": "247 घं."
+ },
+ "55a61efb94dd": {
+  "en": "Overly fancy, by request",
+  "t": "फ़रमाइश पर, हद से ज़्यादा शानदार"
  },
  "55ab7d3b08ef": {
   "en": "DW",
@@ -3487,6 +3687,10 @@
   "en": "For years, that anxiety felt life-or-death: a restless urgency I couldn't name because I was deeply unfulfilled, and later a constant hypervigilance while I chased external validation as an influencer. My AuDHD unmasking finally explained where it came from, and therapy that challenged me, not enabled me, helped me process it. Today it's no longer an alarm that runs me. It's fuel, and I choose where it goes: into building, growing, and the people worth it.",
   "t": "सालों तक, वह चिंता ज़िंदगी और मौत का सवाल लगती थी: एक बेचैन जल्दबाज़ी जिसका मैं नाम नहीं ले पाता था क्योंकि मैं गहराई से अधूरा था, और बाद में इन्फ़्लुएंसर के तौर पर बाहरी मान्यता के पीछे भागते हुए लगातार अति-सतर्कता। मेरी AuDHD अनमास्किंग ने आख़िरकार समझाया कि वह कहाँ से आई थी, और ऐसी थेरेपी ने, जिसने मुझे चुनौती दी, बिगाड़ा नहीं, मुझे उसे समझने में मदद की। आज वह मुझे चलाने वाला अलार्म नहीं रही। वह ईंधन है, और मैं चुनता हूँ कि वह कहाँ जाए: बनाने में, बढ़ने में, और उन लोगों में जो इसके लायक हैं।"
  },
+ "563b0adfa62b": {
+  "en": "Critters",
+  "t": "जीव-जंतु"
+ },
  "563fcaed811e": {
   "en": "Time to book a trip!",
   "t": "ट्रिप बुक करने का वक़्त आ गया!"
@@ -3510,6 +3714,10 @@
  "56b483fec247": {
   "en": "<strong>Carsten Wrosch and colleagues</strong> (2003): letting go of unattainable goals and reengaging with new ones is linked to higher well-being. <a href=\"https://www.cmu.edu/dietrich/psychology/pdf/scales/GAS_article.pdf\">Paper</a>",
   "t": "<strong>कार्स्टन व्रॉश और साथी</strong> (2003): असंभव लक्ष्यों को छोड़ना और नए लक्ष्यों से दोबारा जुड़ना बेहतर ख़ुशहाली से जुड़ा है। <a href=\"https://www.cmu.edu/dietrich/psychology/pdf/scales/GAS_article.pdf\">शोध-पत्र</a>"
+ },
+ "56cdf6ad9845": {
+  "en": "Enlarge: A lone cloud",
+  "t": "बड़ा करें: एक अकेला बादल"
  },
  "570390080710": {
   "en": "Enlarge: He smells bad",
@@ -3579,6 +3787,10 @@
   "en": "{name}: {hours} · {share}",
   "t": "{name}: {hours} · {share}"
  },
+ "5852d13e03e7": {
+  "en": "Summer path and sun flare",
+  "t": "गर्मियों की पगडंडी और सूरज की चमक"
+ },
  "585a38e866f8": {
   "en": "\nI also use sticky notes, but I'm actively trying to get away from them. My rule now: it goes on the calendar, on the\n          whiteboard, or on a board (GitHub Projects for open source, JIRA for work). Those keep the history of past and current\n          work, so I can see burndown and trends, and spot where I'm losing efficiency.\n",
   "t": "मैं स्टिकी नोट्स भी इस्तेमाल करता हूँ, पर उनसे छुटकारा पाने की पूरी कोशिश कर रहा हूँ। अब मेरा नियम: या तो कैलेंडर पर, या व्हाइटबोर्ड पर, या किसी बोर्ड पर (ओपन सोर्स के लिए GitHub Projects, काम के लिए JIRA)। वे पुराने और मौजूदा काम का इतिहास रखते हैं, जिससे मैं बर्नडाउन और रुझान देख पाता हूँ, और पकड़ पाता हूँ कि कहाँ कार्यक्षमता खो रहा हूँ।"
@@ -3606,6 +3818,10 @@
  "58a5c7539f54": {
   "en": " Cartridge shelf ",
   "t": "कार्ट्रिज शेल्फ़"
+ },
+ "58b0a8c3e1ae": {
+  "en": "Enlarge: Space Invaders high score",
+  "t": "बड़ा करें: Space Invaders का हाई स्कोर"
  },
  "58b8da4b72d4": {
   "en": "7% of my hours",
@@ -3683,6 +3899,10 @@
   "en": "Change the lights",
   "t": "लाइटें बदलो"
  },
+ "5a6e42f789b7": {
+  "en": "Lines and depth",
+  "t": "रेखाएँ और गहराई"
+ },
  "5a7078113356": {
   "en": "Sleep first",
   "t": "पहले नींद"
@@ -3711,6 +3931,10 @@
   "en": "hours",
   "t": "घंटे"
  },
+ "5aeebd649268": {
+  "en": "Autumn from the balcony",
+  "t": "बालकनी से पतझड़"
+ },
  "5b05ffab8457": {
   "en": " 75 h  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">estimated</span>  ",
   "t": "75 घं.  <span class=\"hbc__mark\" aria-hidden=\"true\" data-astro-cid-y6i3m4dy=\"\">*</span> <span class=\"hbc__sr\" data-astro-cid-y6i3m4dy=\"\">अनुमानित</span>"
@@ -3734,6 +3958,10 @@
  "5b5bf00d12e9": {
   "en": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>After a rest day",
   "t": "<i class=\"metric-lab__swatch metric-lab__swatch--other\"></i>आराम के दिन के बाद"
+ },
+ "5b72699344d6": {
+  "en": "Tiger taking a break",
+  "t": "आराम करता बाघ"
  },
  "5b8f17641a4e": {
   "en": "<strong>Kristina Klug, Christin Camia &amp; Sonja Rohrmann</strong>, <em>Memory, Mind &amp; Media</em> (2024), “Tattoos embody autobiographical memories”: in 161 tattooed adults, tattoos worked as memory objects, and the ones not tied to an event still carried mottos, beliefs and values. <a href=\"https://doi.org/10.1017/mem.2024.6\">Paper</a>",
@@ -3823,6 +4051,14 @@
   "en": " 1,590 h ",
   "t": "1,590 घं."
  },
+ "5d52c8bbc796": {
+  "en": "Circa 2013",
+  "t": "लगभग 2013"
+ },
+ "5d751af317fb": {
+  "en": "Long shadows on the walkway",
+  "t": "पैदल पथ पर लंबी परछाइयाँ"
+ },
  "5db2a98f777b": {
   "en": "You need {n} {ball} to plant {crop}. Trade up at the market.",
   "t": "{crop} लगाने के लिए {n} {ball} चाहिए। बाजार में बदलो।"
@@ -3870,6 +4106,10 @@
  "5f0f15ed8dfe": {
   "en": "Fufufu~ you like it hot, huh? ( ˘ ³˘)♥",
   "t": "फ़ुफ़ुफ़ु~ तुम्हें गरमागरम पसंद है, है ना? ( ˘ ³˘)♥"
+ },
+ "5f27cbc0c53e": {
+  "en": "Enlarge: Blue hour over the neighborhood",
+  "t": "बड़ा करें: मोहल्ले पर ब्लू आवर"
  },
  "5f2959c22b38": {
   "en": "6 photos",
@@ -3926,6 +4166,10 @@
  "608268fe2d19": {
   "en": "Day {n}: {item} ({category})",
   "t": "दिन {n}: {item} ({category})"
+ },
+ "60a938835b97": {
+  "en": "Fog and smoke",
+  "t": "कोहरा और धुआँ"
  },
  "60d012b3aa46": {
   "en": "Not many people have heard of this isekai, but honestly, it's a top dog in the genre for really getting into the weeds of its world building and trying to figure out how everything works.",
@@ -3986,6 +4230,10 @@
  "61b142772297": {
   "en": "Fishing hole: Up and Down move the jig, Space flicks the rod",
   "t": "बर्फ़ का छेद: ऊपर और नीचे की कुंजियाँ जिग हिलाती हैं, स्पेस से छड़ी झटको"
+ },
+ "61b9aff19502": {
+  "en": "Enlarge: Under the arcade roof",
+  "t": "बड़ा करें: आर्केड की छत के नीचे"
  },
  "61d48f8ebddb": {
   "en": "Ice fishing: turn your phone sideways",
@@ -4079,6 +4327,14 @@
   "en": "Warm",
   "t": "गरम"
  },
+ "63fabe02125d": {
+  "en": "A lone cloud",
+  "t": "एक अकेला बादल"
+ },
+ "640d29960e95": {
+  "en": "The cameras",
+  "t": "कैमरे"
+ },
  "641fc675ef26": {
   "en": "Subnautica series",
   "t": "Subnautica सीरीज़"
@@ -4106,6 +4362,10 @@
  "648e31fe0ec2": {
   "en": "{word} Folded! Precision {n}%. Now drag back from the plane to aim, and let go to throw (or use the arrow keys and Space).",
   "t": "{word} मोड़ा! सटीकता {n}%. अब विमान से पीछे खींचकर निशाना लगाओ और छोड़कर फेंको (या तीर कुंजी और स्पेस)।"
+ },
+ "649bfb5b4a7a": {
+  "en": "Enlarge: Wingtips at sunrise",
+  "t": "बड़ा करें: सूर्योदय पर पंखों के सिरे"
  },
  "649df08a448e": {
   "en": "English",
@@ -4170,6 +4430,10 @@
  "665793f469e9": {
   "en": "+ 5 more games",
   "t": "+ 5 और गेम"
+ },
+ "66661ef2f100": {
+  "en": "One does not simply <em>look</em> at these photographs; one is, rather, gently but insistently looked back at by them. Here is an artist who arrived at the medium not through the cloistered halls of the academy but by the far nobler road of trial and error (failing, learning, failing anew), a pedagogy he shares, one notes with no small delight, with <a href=\"https://en.wikipedia.org/wiki/Peter_Lik\">Peter Lik</a>, that self-taught Australian colossus of the supersaturated panorama.",
+  "t": "इन तस्वीरों को बस <em>देखा</em> नहीं जाता; बल्कि ये तस्वीरें ही नरमी से, पर लगातार, पलटकर हमें देखती हैं। यहाँ एक ऐसा कलाकार है जो इस माध्यम तक अकादमी के बंद गलियारों से नहीं, बल्कि कहीं ज़्यादा उदात्त राह से पहुँचा: आज़माइश और ग़लती (नाकाम होना, सीखना, फिर नाकाम होना), एक ऐसी शिक्षा-पद्धति जिसे वह, यह कहते हुए कम ख़ुशी नहीं होती, <a href=\"https://en.wikipedia.org/wiki/Peter_Lik\">Peter Lik</a> के साथ बाँटता है, सुपर-सैचुरेटेड पैनोरमा के उस स्वयं-शिक्षित ऑस्ट्रेलियाई दिग्गज के साथ।"
  },
  "666c786e8bca": {
   "en": "São Paulo",
@@ -4271,6 +4535,10 @@
   "en": "\nAs a software developer, I began treating parts of my brain like an OS (as you can clearly see from how I decompose my\n        brain across this website). It puts structure and bounds around the immense energy that lives within me. That energy is a\n        well, and it can run dry if it isn't cared for. All this scaffolding is there to protect me from myself, and to protect me\n        from people who would abuse and steal from that same well without giving anything back.\n",
   "t": "एक सॉफ़्टवेयर डेवलपर के तौर पर, मैंने अपने दिमाग़ के हिस्सों को एक OS की तरह बरतना शुरू किया (जैसा कि तुम साफ़ देख सकते हो कि मैं इस पूरी वेबसाइट में अपने दिमाग़ को कैसे टुकड़ों में बाँटता हूँ)। यह मेरे भीतर रहने वाली अपार ऊर्जा को ढाँचा और सीमाएँ देता है। वह ऊर्जा एक कुआँ है, और अगर उसकी देखभाल न की जाए तो सूख सकता है। यह सारा मचान मुझे मुझसे बचाने के लिए है, और उन लोगों से बचाने के लिए जो उसी कुएँ का दुरुपयोग करते और बदले में कुछ दिए बिना उससे चुराते।"
  },
+ "68c8f95a9f4a": {
+  "en": "Kindred spirits (per the critic)",
+  "t": "हमख़याल रूहें (आलोचक के मुताबिक़)"
+ },
  "68e0172c8585": {
   "en": "Blue ink",
   "t": "नीली स्याही"
@@ -4278,6 +4546,10 @@
  "68e213e32da4": {
   "en": " 1,123 h ",
   "t": "1,123 घं."
+ },
+ "68f7c09150ea": {
+  "en": "New chewing toy!",
+  "t": "नया चबाने वाला खिलौना!"
  },
  "69031c87a9c1": {
   "en": "BLACKTAIL",
@@ -4302,10 +4574,6 @@
  "69533f147ef2": {
   "en": "My top 39 TV shows. Anime gets its own tab because of how much it means to me.",
   "t": "मेरे 39 पसंदीदा टीवी शो। एनीमे का अपना टैब है, क्योंकि वह मेरे लिए बहुत मायने रखता है।"
- },
- "696c1696aee1": {
-  "en": "Enlarge: Gimme attention",
-  "t": "बड़ा करें: ध्यान दो मुझ पर"
  },
  "69c642153907": {
   "en": "Fukuoka has more yatai, open-air food stalls, than the rest of Japan combined: about a hundred pop up every night and vanish before morning.",
@@ -4350,6 +4618,10 @@
  "6a63f1e0f516": {
   "en": "Take care of Peeta",
   "t": "Peeta का ख़याल रखो"
+ },
+ "6a72085653e4": {
+  "en": "All",
+  "t": "सभी"
  },
  "6a985aa2c1d7": {
   "en": "Disturbed",
@@ -4402,6 +4674,10 @@
  "6c48581a0b47": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder movie 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 30: </span> अस्थायी फ़िल्म 30"
+ },
+ "6c5e881cd712": {
+  "en": "Night show",
+  "t": "रात का शो"
  },
  "6c669ba41e8e": {
   "en": "On the grill",
@@ -4579,6 +4855,10 @@
   "en": "Fully bilingual",
   "t": "पूरी तरह द्विभाषी"
  },
+ "70f6e9a45884": {
+  "en": "And yet he is no mere architect of distance. <em>Lonely arches</em> sets a fast-food sign against an empty sky with all the solitude of an Edward Hopper canvas and none of the overtime. <em>Footprint and a sprout</em>, meanwhile, offers the entire cycle of life, death and the beach in a single frame.",
+  "t": "फिर भी वह दूरी का महज़ वास्तुकार नहीं है। <em>अकेले मेहराब</em> एक फ़ास्ट-फ़ूड साइन को ख़ाली आसमान के सामने रखता है, Edward Hopper के कैनवास का पूरा अकेलापन लिए, पर ओवरटाइम बिल्कुल नहीं। इसी बीच <em>पदचिह्न और एक अंकुर</em> एक ही फ़्रेम में जीवन, मृत्यु और समुद्र-तट का पूरा चक्र पेश करता है।"
+ },
  "714e6666b35e": {
   "en": "Gimme that",
   "t": "वह दो मुझे"
@@ -4598,6 +4878,10 @@
  "719ea396ad92": {
   "en": "Clear",
   "t": "साफ़ करो"
+ },
+ "71b7b54bca49": {
+  "en": "Enlarge: Bell tower at blue hour",
+  "t": "बड़ा करें: ब्लू आवर में घंटाघर"
  },
  "71bf122f385a": {
   "en": "Feel The Snow",
@@ -4647,6 +4931,10 @@
   "en": "<strong>Death is the greatest equalizer.</strong> It doesn’t matter how highly you think of yourself, how much you hate me, what you have that I don’t, whether you envy my successes or laugh at my failures: in the end, you’ll rot away exactly like I will.",
   "t": "<strong>मौत सबसे बड़ी बराबरी करने वाली है।</strong> इससे फ़र्क़ नहीं पड़ता कि तुम खुद को कितना ऊँचा समझते हो, मुझसे कितनी नफ़रत करते हो, तुम्हारे पास ऐसा क्या है जो मेरे पास नहीं, तुम मेरी कामयाबियों से जलते हो या मेरी नाकामियों पर हँसते हो: आख़िर में, तुम भी ठीक वैसे ही सड़ जाओगे जैसे मैं।"
  },
+ "72a1213ba576": {
+  "en": "Walkway to the bungalows",
+  "t": "बंगलों तक का पैदल पथ"
+ },
  "72cd240a6fa3": {
   "en": "Pearl Radish",
   "t": "पर्ल मूली"
@@ -4683,6 +4971,10 @@
   "en": "Madama Butterfly",
   "t": "Madama Butterfly"
  },
+ "73af66032ca9": {
+  "en": "Enlarge: Snowed in",
+  "t": "बड़ा करें: बर्फ़ में क़ैद"
+ },
  "73b886d405a7": {
   "en": "{name} is hungry",
   "t": "{name} भूखा है"
@@ -4698,6 +4990,10 @@
  "740587c66df0": {
   "en": "If thou art a <strong>Cardinal of the Touch</strong>, thou shalt know when the meat is done by touch alone. Otherwise, use the thermometer.",
   "t": "अगर तुम <strong>स्पर्श के कार्डिनल</strong> हो, तो केवल स्पर्श से जानोगे कि मांस कब पका। वरना, थर्मामीटर इस्तेमाल करो।"
+ },
+ "747e4b5cb273": {
+  "en": " Pixel 8 Pro tech specs ",
+  "t": "Pixel 8 Pro की तकनीकी जानकारी"
  },
  "748e1d19c1cc": {
   "en": "Artsy Bidu",
@@ -4731,9 +5027,17 @@
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">49 h</strong>  ·  1 game  ·  &lt;1% of my hours ",
   "t": "<strong data-astro-cid-y6i3m4dy=\"\">49 घं.</strong>  ·  1 गेम  ·  मेरे घंटों का &lt;1%"
  },
+ "754b159814fa": {
+  "en": "Enlarge: Red maple",
+  "t": "बड़ा करें: लाल मेपल"
+ },
  "7558e57c2846": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 15: </span> Spy x Family ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 15: </span> Spy x Family"
+ },
+ "7599dc12705d": {
+  "en": "Sandy village road",
+  "t": "गाँव की रेतीली सड़क"
  },
  "75b3e3e022ca": {
   "en": "Alice Cooper",
@@ -4763,6 +5067,10 @@
   "en": "CR",
   "t": "CR"
  },
+ "764b4e6401c9": {
+  "en": "Steam plume over the snowy fields",
+  "t": "बर्फ़ीले खेतों पर भाप का ग़ुबार"
+ },
  "766387802fbb": {
   "en": "Yet the Church holds that churrasco must be a treat for the masses, and so we commend the <strong>New York strip</strong>, the <strong>ribeye</strong>, or the <strong>top sirloin</strong> (if thou preferest lean), cut <strong>1 to 1½ inches</strong> thick. At 2 inches or more the salt loses much of its power, and the longer time upon the fire harms the taste.",
   "t": "फिर भी चर्च मानता है कि शुहास्कू जनता के लिए एक सौगात होना चाहिए, इसलिए हम <strong>न्यूयॉर्क स्ट्रिप</strong>, <strong>रिबआई</strong>, या <strong>टॉप सर्लॉइन</strong> (अगर तुम्हें कम चर्बी पसंद है) की सिफ़ारिश करते हैं, <strong>1 से 1½ इंच</strong> मोटा कटा हुआ। 2 इंच या उससे ज़्यादा पर नमक अपनी बहुत ताक़त खो देता है, और आग पर ज़्यादा समय स्वाद बिगाड़ता है।"
@@ -4786,6 +5094,10 @@
  "76c0bec6432b": {
   "en": "Enlarge: Not enough meat",
   "t": "बड़ा करें: मांस काफ़ी नहीं"
+ },
+ "76c9101be43c": {
+  "en": "Ballet through the haze",
+  "t": "धुंध के पार बैले"
  },
  "76d40b8a2b7d": {
   "en": "Clark et al., Neuron 61:481–490 (2009), and the studies it cites",
@@ -5003,6 +5315,10 @@
   "en": "I wanna play",
   "t": "मुझे खेलना है"
  },
+ "7bb176d0b1ee": {
+  "en": "Cat in a shirt",
+  "t": "शर्ट पहने बिल्ली"
+ },
  "7bbc5f97f852": {
   "en": "{name}, {within}",
   "t": "{name}, {within}"
@@ -5010,6 +5326,10 @@
  "7bcd7423cbe4": {
   "en": "That’s why this tab lives in Hearth: my body is at the center of it all, and looking after it matters as much as looking after my family, my pets and healthy friendships.",
   "t": "इसीलिए यह टैब घर-आँगन में है: हर चीज़ के केंद्र में मेरा शरीर है, और उसकी देखभाल उतनी ही ज़रूरी है जितनी अपने परिवार, अपने पालतू जानवरों और अच्छी दोस्तियों की।"
+ },
+ "7bf753ca66d5": {
+  "en": "51 photos",
+  "t": "51 तस्वीरें"
  },
  "7c10807e67d0": {
   "en": "I am getting old",
@@ -5163,6 +5483,14 @@
   "en": "Fish on! Reel up (scroll or swipe up) and keep the Line gauge in the green.",
   "t": "मछली फँस गई! ऊपर लपेटो (ऊपर स्क्रॉल या स्वाइप करो) और डोर का मीटर हरे में रखो।"
  },
+ "7fcbec07b35e": {
+  "en": "Temple gate",
+  "t": "मंदिर का द्वार"
+ },
+ "7fdb071a3f1b": {
+  "en": "Enlarge: Wide open road",
+  "t": "बड़ा करें: खुली चौड़ी सड़क"
+ },
  "7fe62dcaf796": {
   "en": "strongly related",
   "t": "मज़बूत संबंध"
@@ -5295,6 +5623,10 @@
   "en": "Faithful servants who yet lean upon the thermometer, but who follow the steps and strive to forsake all sauce.",
   "t": "वफ़ादार सेवक जो अब भी थर्मामीटर पर टिके हैं, पर चरणों का पालन करते हैं और हर सॉस त्यागने का प्रयास करते हैं।"
  },
+ "836970802ef8": {
+  "en": "Enlarge: Stained glass",
+  "t": "बड़ा करें: रंगीन काँच"
+ },
  "8371b1d2be3f": {
   "en": "Active zone minutes",
   "t": "एक्टिव ज़ोन मिनट"
@@ -5355,6 +5687,10 @@
   "en": "Harvest!",
   "t": "कटाई!"
  },
+ "858296032e61": {
+  "en": "Footprint and a sprout",
+  "t": "पदचिह्न और एक अंकुर"
+ },
  "85af7ed7a344": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Placeholder movie 18 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 18: </span> अस्थायी फ़िल्म 18"
@@ -5402,6 +5738,10 @@
  "865e588793be": {
   "en": "Deep sleep",
   "t": "गहरी नींद"
+ },
+ "86820db881dd": {
+  "en": "Enlarge: Frosted tree",
+  "t": "बड़ा करें: पाले से ढका पेड़"
  },
  "8686eb8cf046": {
   "en": "Circa Q2 2013",
@@ -5519,6 +5859,10 @@
   "en": " TrueSteamAchievements ",
   "t": "TrueSteamAchievements"
  },
+ "894f6e60327c": {
+  "en": "Enlarge: Painting or drawing, Circa 2013",
+  "t": "बड़ा करें: पेंटिंग या चित्र, लगभग 2013"
+ },
  "89677615c2ec": {
   "en": "Spring",
   "t": "वसंत"
@@ -5542,6 +5886,10 @@
  "89dd105b9a59": {
   "en": "Universe Sandbox Legacy",
   "t": "Universe Sandbox Legacy"
+ },
+ "89e684976e42": {
+  "en": "Enlarge: Same cloud closer",
+  "t": "बड़ा करें: वही बादल, और पास से"
  },
  "89f1885ce897": {
   "en": "But wait… why build this website, then? Doesn’t that go against what you wrote in Vol 4?",
@@ -5775,6 +6123,14 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder TV show 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 30: </span> अस्थायी टीवी शो 30"
  },
+ "905c229ac827": {
+  "en": "Pick a theme",
+  "t": "थीम चुनो"
+ },
+ "905cde7d9523": {
+  "en": "Enlarge: Temple gate",
+  "t": "बड़ा करें: मंदिर का द्वार"
+ },
  "905d3597a7fc": {
   "en": "So good it brought back memories of how the initial spark went in my relationships, except this anime takes a better path, while I kept getting attracted to mysterious girls (à la Darkness from To LOVE-Ru) and ending up with a broken heart every time. At least I've learned my lesson now.",
   "t": "इतना अच्छा कि उसने मेरे रिश्तों में पहली चिंगारी कैसे लगी उसकी यादें ताज़ा कर दीं, बस यह एनीमे बेहतर राह लेता है, जबकि मैं रहस्यमय लड़कियों (To LOVE-Ru की डार्कनेस जैसी) की ओर खिंचता रहा और हर बार दिल टूटा। कम से कम अब मैंने सबक सीख लिया है।"
@@ -5826,6 +6182,10 @@
  "9141b1b48942": {
   "en": "Step 6: The Farofa",
   "t": "चरण 6: फ़ारोफ़ा"
+ },
+ "9186eccb8948": {
+  "en": "Enlarge: Lonely arches",
+  "t": "बड़ा करें: अकेले मेहराब"
  },
  "91932d565d68": {
   "en": " 349 h  ",
@@ -5895,6 +6255,10 @@
   "en": "Enlarge: Rod flasher and a hole in the ice",
   "t": "बड़ा करें: छड़ी, फ़िश फ़ाइंडर और बर्फ़ में छेद"
  },
+ "929851872c26": {
+  "en": "His palette refuses moderation. The reds are redder (<em>Red maple</em>), the blues bluer (<em>Blue trees and red dirt</em>), the contrasts punchier, as though the world, sensing it was about to be captured, had put on its very best colours for the occasion.",
+  "t": "उसका रंग-पट संयम को नकारता है। लाल और ज़्यादा लाल (<em>लाल मेपल</em>), नीला और ज़्यादा नीला (<em>नीले पेड़ और लाल मिट्टी</em>), कंट्रास्ट और ज़्यादा तीखा, मानो दुनिया ने भाँप लिया हो कि उसे क़ैद किया जाने वाला है, और इस मौक़े के लिए अपने सबसे अच्छे रंग पहन लिए हों।"
+ },
  "92b1467f90fa": {
   "en": "The later seasons kind of derailed it, but that first season got me hooked, and I binge-watched it in one sitting. The MC's progression and changing persona is something I took notes on, and you can see it in Harry and other characters.",
   "t": "बाद के सीज़न थोड़ा पटरी से उतर गए, पर पहले सीज़न ने मुझे बाँध लिया, और मैंने उसे एक ही बैठक में देख डाला। मुख्य किरदार की प्रगति और बदलती शख़्सियत पर मैंने नोट्स लिए, और तुम उसे हैरी और दूसरे किरदारों में देख सकते हो।"
@@ -5930,6 +6294,10 @@
  "9384a918b850": {
   "en": "Or grow a spine and just reach out to me: see the <a href=\"/contact/\">Contact</a> page.",
   "t": "या हिम्मत जुटाओ और सीधे संपर्क करो: <a href=\"/contact/\">संपर्क</a> पेज देखो।"
+ },
+ "9385cb97be41": {
+  "en": "Wet streets",
+  "t": "भीगी सड़कें"
  },
  "9393df6885d8": {
   "en": "Plants vs. Zombies: Game of the Year",
@@ -5970,6 +6338,10 @@
  "94ce9e966039": {
   "en": " IC ",
   "t": "IC"
+ },
+ "94da2ae474ec": {
+  "en": "Consider, too, his geometry of depth. <em>Long shadows on the walkway</em>, <em>Bamboo walkway</em>, <em>Quiet side street</em>: each is a corridor drawn with the widest lens at hand, tugging the eye toward a vanishing point it can never quite reach, which is, of course, the human condition, rendered at roughly eighty-two degrees of field of view.",
+  "t": "उसकी गहराई की ज्यामिति पर भी विचार कीजिए। <em>पैदल पथ पर लंबी परछाइयाँ</em>, <em>बाँस का पैदल पथ</em>, <em>शांत गली</em>: हर एक, हाथ में मौजूद सबसे चौड़े लेंस से खींचा गया गलियारा है, जो नज़र को एक ऐसे विलोप बिंदु की ओर खींचता है जहाँ वह कभी पूरी तरह पहुँच नहीं पाती, और यही, ज़ाहिर है, मानव स्थिति है, लगभग बयासी डिग्री के दृश्य-क्षेत्र में।"
  },
  "94e6a3ea4d1f": {
   "en": "Turn your phone sideways to play.",
@@ -6063,6 +6435,10 @@
   "en": "God of War",
   "t": "God of War"
  },
+ "96db5469290a": {
+  "en": " Saul Leiter ",
+  "t": "Saul Leiter"
+ },
  "96dd91cdcbe7": {
   "en": "Gain",
   "t": "गेन"
@@ -6078,6 +6454,10 @@
  "96f997bcecb3": {
   "en": "Years",
   "t": "साल"
+ },
+ "9711c95d99b1": {
+  "en": "Low tide silver light",
+  "t": "भाटा, चाँदी-सी रोशनी"
  },
  "972a61c6393a": {
   "en": "{name} is content.",
@@ -6126,6 +6506,18 @@
  "98704a2ca2d1": {
   "en": "Pope Deo",
   "t": "पोप Deo"
+ },
+ "98796d800c43": {
+  "en": "Paraglider over the beach",
+  "t": "समुद्र-तट के ऊपर पैराग्लाइडर"
+ },
+ "988a8d031bb7": {
+  "en": "Enlarge: Turquoise coast",
+  "t": "बड़ा करें: फ़िरोज़ी तट"
+ },
+ "9894f4e31fa0": {
+  "en": "Enlarge: Cruise ships on the horizon",
+  "t": "बड़ा करें: क्षितिज पर क्रूज़ जहाज़"
  },
  "989ad0d2851a": {
   "en": "Ursu Sintasus in Spore: a cream-white creature with moose antlers, big orange eyes, a wide smile and black-striped arms and legs.",
@@ -6211,6 +6603,10 @@
   "en": " What HRV is and its norms (Frontiers, 2017) ",
   "t": "HRV क्या है और उसके मानक (Frontiers, 2017)"
  },
+ "9b043b0a5efb": {
+  "en": "Enlarge: Footprint and a sprout",
+  "t": "बड़ा करें: पदचिह्न और एक अंकुर"
+ },
  "9b3cbed5c490": {
   "en": "Zoom",
   "t": "ज़ूम"
@@ -6274,6 +6670,10 @@
  "9d2410cd2215": {
   "en": "Enlarge: Lining up for the chairlift",
   "t": "बड़ा करें: चेयरलिफ़्ट की कतार में"
+ },
+ "9d44b5b7dbeb": {
+  "en": "These days my camera is my Pixel 8 Pro. I still mess with the settings now and then, but I’ve switched to a “capture the moment” approach: most of my artistic sense comes from wanting to freeze the exact moment, from the exact angle I saw it, because it’ll never look quite like that again. Where my “photographic skills” shine most is chasing depth, wide lenses, punchy colors and contrast. Also smoke and fog. I’ve got a thing for it. And reflections. And godrays…",
+  "t": "आजकल मेरा कैमरा मेरा Pixel 8 Pro है। अब भी कभी-कभार सेटिंग्स से छेड़छाड़ करता हूँ, पर अब मैंने “पल को क़ैद करो” वाला तरीक़ा अपना लिया है: मेरी ज़्यादातर कलात्मक समझ इस चाह से आती है कि जो पल मैंने देखा, उसे ठीक उसी कोण से थाम लूँ, क्योंकि वह फिर कभी बिल्कुल वैसा नहीं दिखेगा। मेरी “फ़ोटोग्राफ़ी की कला” सबसे ज़्यादा तब चमकती है जब मैं गहराई, चौड़े लेंस, चटख रंगों और कंट्रास्ट का पीछा करता हूँ। और धुआँ और कोहरा भी। मुझे इसका शौक़ है। और प्रतिबिंब। और रोशनी की किरणें…"
  },
  "9d520a7744f2": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 31: </span> Placeholder TV show 31 ",
@@ -6394,6 +6794,10 @@
  "9fcb8e351fa8": {
   "en": " SU ",
   "t": "SU"
+ },
+ "9fce405ea6fc": {
+  "en": "Shores: 6 photos",
+  "t": "तट: 6 तस्वीरें"
  },
  "9fd28a27c202": {
   "en": "Bday girl",
@@ -6947,6 +7351,10 @@
   "en": "@deovandski",
   "t": "@deovandski"
  },
+ "ac6dd8109d05": {
+  "en": "Enlarge: Neon after the rain",
+  "t": "बड़ा करें: बारिश के बाद नियॉन"
+ },
  "ac9b7962217d": {
   "en": "Bathing in the Amazon",
   "t": "अमेज़न में नहाना"
@@ -7115,6 +7523,10 @@
   "en": "18 photos",
   "t": "18 तस्वीरें"
  },
+ "b0e93997d73a": {
+  "en": "Sashimi",
+  "t": "साशिमी"
+ },
  "b115fa0f703f": {
   "en": "Every Miku concert I've been to, from Mikunopolis in 2011 onward.",
   "t": "हर मिकू कॉन्सर्ट जिसमें मैं गया, 2011 के Mikunopolis से लेकर अब तक।"
@@ -7147,6 +7559,10 @@
   "en": "Enlarge: Sleep",
   "t": "बड़ा करें: नींद"
  },
+ "b1b4aedbfb58": {
+  "en": "Enlarge: Sashimi",
+  "t": "बड़ा करें: साशिमी"
+ },
  "b1cf930e2bf1": {
   "en": "Poppy<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">Evanescence 93X Family Reunion</span>",
   "t": "Poppy<span class=\"tag\" data-astro-cid-nf35xw4x=\"\">Evanescence 93X Family Reunion</span>"
@@ -7166,6 +7582,14 @@
  "b1ffb4c07982": {
   "en": "South America",
   "t": "दक्षिण अमेरिका"
+ },
+ "b211130bc78f": {
+  "en": "Raindrops on the window",
+  "t": "खिड़की पर बारिश की बूँदें"
+ },
+ "b211c89ab22d": {
+  "en": "Enlarge: Rainy night neon reflections",
+  "t": "बड़ा करें: बरसाती रात, नियॉन के प्रतिबिंब"
  },
  "b22166a08d03": {
   "en": "MTG",
@@ -7278,6 +7702,10 @@
  "b4d44ddf3308": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#35: </span>Best of the Worst: Blood Debts, The Tomb, and Undefeatable",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#35: </span>Best of the Worst: Blood Debts, The Tomb, and Undefeatable"
+ },
+ "b4e6024664fe": {
+  "en": "Enlarge: Winter sunrise over the garages",
+  "t": "बड़ा करें: गैराजों के ऊपर सर्दियों का सूर्योदय"
  },
  "b51db5d42168": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 36: </span> Seikon no Qwaser (The Qwaser of Stigmata) ",
@@ -7415,9 +7843,17 @@
   "en": " VS ",
   "t": "VS"
  },
+ "b8bc04e0a53a": {
+  "en": "Winter sunrise over the garages",
+  "t": "गैराजों के ऊपर सर्दियों का सूर्योदय"
+ },
  "b8ca49c5d521": {
   "en": "Cycling",
   "t": "साइकिलिंग"
+ },
+ "b8d5b4f98bd2": {
+  "en": "Red maple",
+  "t": "लाल मेपल"
  },
  "b90b25305207": {
   "en": "Very hot",
@@ -7430,6 +7866,10 @@
  "b93191caeb10": {
   "en": "Nevada",
   "t": "नेवादा"
+ },
+ "b977e4369495": {
+  "en": "Seasons: 6 photos",
+  "t": "मौसम: 6 तस्वीरें"
  },
  "b983f42a870b": {
   "en": "Back to Painting",
@@ -7446,6 +7886,10 @@
  "b9b43caf5896": {
   "en": "Feast at the Tanjung Rhu floating restaurant",
   "t": "तंजुंग रू के तैरते रेस्तराँ में दावत"
+ },
+ "b9bda0774767": {
+  "en": "Cloud tower",
+  "t": "बादलों की मीनार"
  },
  "b9dd1e7cf0fb": {
   "en": "Stress score",
@@ -7531,6 +7975,10 @@
   "en": "Little Witch Academia: Chamber of Time",
   "t": "Little Witch Academia: Chamber of Time"
  },
+ "bc981983e7f5": {
+  "en": "Next",
+  "t": "अगला"
+ },
  "bca97bae09e1": {
   "en": " Xbox  ·  estimated ",
   "t": "Xbox  ·  अनुमानित"
@@ -7546,6 +7994,10 @@
  "bd62be75218d": {
   "en": " MG ",
   "t": "MG"
+ },
+ "bd71ceb1e61d": {
+  "en": "Enlarge: City lights in the haze",
+  "t": "बड़ा करें: धुंध में शहर की रोशनियाँ"
  },
  "bd7210aa5ccc": {
   "en": " 10 amethysts → 1 aquamarine ",
@@ -7575,6 +8027,10 @@
   "en": "MyAnimeList",
   "t": "MyAnimeList"
  },
+ "bea461b9d726": {
+  "en": "Observe, first, the fog. In <em>Headlights in the fog</em>, two pale suns approach through a grey so total it ceases to be weather and becomes metaphysics. The motif returns, transfigured, in <em>Godrays at the concert</em>, where shafts of stage light cleave the smoke like the fingers of some benevolent and possibly ticketed deity, and again in <em>Ballet through the haze</em>, where the dancers do not so much dance as condense.",
+  "t": "पहले कोहरे पर ग़ौर कीजिए। <em>कोहरे में हेडलाइट्स</em> में दो पीले सूरज एक ऐसे पूर्ण धूसर के बीच से पास आते हैं कि वह मौसम न रहकर दर्शन बन जाता है। यह विषय रूप बदलकर <em>कॉन्सर्ट में रोशनी की किरणें</em> में लौटता है, जहाँ मंच की रोशनी की धाराएँ धुएँ को किसी दयालु और शायद टिकटधारी देवता की उँगलियों की तरह चीरती हैं, और फिर <em>धुंध के पार बैले</em> में, जहाँ नर्तक नाचते कम और संघनित ज़्यादा होते हैं।"
+ },
  "bea5a2bd7986": {
   "en": "Sid Meier's Civilization V",
   "t": "Sid Meier's Civilization V"
@@ -7598,6 +8054,10 @@
  "bee75ca77f75": {
   "en": "Controls",
   "t": "कंट्रोल"
+ },
+ "bef1f4c46c04": {
+  "en": "Enlarge: Ancient stupa",
+  "t": "बड़ा करें: प्राचीन स्तूप"
  },
  "bf301c3fb31a": {
   "en": " 570 h ",
@@ -7643,6 +8103,10 @@
   "en": " Steps by age (Bassett et al.) ",
   "t": "उम्र के हिसाब से कदम (Bassett और साथी)"
  },
+ "c02c20a79fb6": {
+  "en": "Rainy night neon reflections",
+  "t": "बरसाती रात, नियॉन के प्रतिबिंब"
+ },
  "c032adc1ff62": {
   "en": "X",
   "t": "X"
@@ -7666,6 +8130,10 @@
  "c0c5f353d6da": {
   "en": "Enlarge: But don't wanna go to sleep",
   "t": "बड़ा करें: पर सोना नहीं है"
+ },
+ "c0c6646181f0": {
+  "en": "Enlarge: Cat in a shirt",
+  "t": "बड़ा करें: शर्ट पहने बिल्ली"
  },
  "c0d0d1a3569b": {
   "en": " Phuket Monster Fishing Park ",
@@ -7703,6 +8171,10 @@
   "en": "日本語",
   "t": "日本語"
  },
+ "c13241b0d5f7": {
+  "en": "Beach buggy on the sandbar",
+  "t": "रेत के टीले पर बीच बग्गी"
+ },
  "c155ff628d91": {
   "en": "Laser removal",
   "t": "लेज़र से हटाना"
@@ -7726,6 +8198,10 @@
  "c1f264db2968": {
   "en": "When my time comes, my funeral shall play 3 songs:",
   "t": "जब मेरा समय आएगा, मेरी अंत्येष्टि में 3 गाने बजेंगे:"
+ },
+ "c1f29e94ad26": {
+  "en": "Enlarge: Sandy village road",
+  "t": "बड़ा करें: गाँव की रेतीली सड़क"
  },
  "c1f6d27e0c31": {
   "en": "Revenge of the Savage Planet",
@@ -8031,6 +8507,10 @@
   "en": "640 h",
   "t": "640 घं."
  },
+ "cb0e350a5483": {
+  "en": "Sun through the blossoms",
+  "t": "फूलों के बीच से सूरज"
+ },
  "cb2341d7ae67": {
   "en": "21 h",
   "t": "21 घं."
@@ -8066,6 +8546,10 @@
  "cbbe4ab96942": {
   "en": "FS",
   "t": "FS"
+ },
+ "cbbe63f4e54a": {
+  "en": "Enlarge: Raindrops on the window",
+  "t": "बड़ा करें: खिड़की पर बारिश की बूँदें"
  },
  "cbcc2e942975": {
   "en": " An exploded sphere of my hours by category: RPGs &amp; open worlds 36%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 16% ",
@@ -8111,6 +8595,10 @@
   "en": "Enlarge: One of his jobs",
   "t": "बड़ा करें: उसके कामों में से एक"
  },
+ "ccd252719fb6": {
+  "en": "Wide open road",
+  "t": "खुली चौड़ी सड़क"
+ },
  "ccd479b39669": {
   "en": "Out of shit to fertilize with.",
   "t": "खाद के लिए टट्टी खत्म।"
@@ -8122,6 +8610,10 @@
  "cd1007480585": {
   "en": "Roll d8",
   "t": "फेंकें d8"
+ },
+ "cd467de95d12": {
+  "en": "What unites it all is the moment: that exact angle, that exact instant, seen once and never again. One could say much more. One has, in fact, already said rather too much. But such is the price of beauty: it obliges the critic to <span lang=\"pt\" translate=\"no\">encher linguiça</span>.",
+  "t": "जो सब कुछ जोड़ता है वह है पल: वही सटीक कोण, वही सटीक क्षण, एक बार देखा गया और फिर कभी नहीं। कहने को और भी बहुत कुछ है। सच तो यह है कि पहले ही ज़रूरत से ज़्यादा कह दिया गया है। पर यही सुंदरता की क़ीमत है: वह आलोचक को <span lang=\"pt\" translate=\"no\">encher linguiça</span> करने पर मजबूर करती है।"
  },
  "cd46f3a3bca4": {
   "en": "Captain Bidu: Bidu wearing a blue military officer cap with a gold winged badge",
@@ -8503,6 +8995,10 @@
   "en": " 703 h ",
   "t": "703 घं."
  },
+ "d57824ec8014": {
+  "en": "Frosted tree",
+  "t": "पाले से ढका पेड़"
+ },
  "d58f3caf048d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 12: </span> Placeholder TV show 12 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 12: </span> अस्थायी टीवी शो 12"
@@ -8723,6 +9219,10 @@
   "en": "Ghostbusters: The Video Game Remastered",
   "t": "Ghostbusters: The Video Game Remastered"
  },
+ "da0ff7e63ef2": {
+  "en": "Rainy drive",
+  "t": "बारिश में ड्राइव"
+ },
  "da2af52664fb": {
   "en": "Life hacks",
   "t": "लाइफ़ हैक्स"
@@ -8787,6 +9287,10 @@
   "en": "Eat sleep poop repeat",
   "t": "खाओ सोओ टट्टी करो दोहराओ"
  },
+ "dc14256648fb": {
+  "en": "Details and culture: 7 photos",
+  "t": "बारीकियाँ और संस्कृति: 7 तस्वीरें"
+ },
  "dc2e48abfa73": {
   "en": "Destroying a whole chicken",
   "t": "पूरी मुर्ग़ी का सफ़ाया"
@@ -8802,6 +9306,10 @@
  "dcd5bcfb4e72": {
   "en": "Mine isn't fully aligned with the other three, and I gave that a meaning too: some of my memories are misaligned. This weird life of mine, like everyone else's, is about figuring out who I am, why I'm alive, and what I want from it before I perish.",
   "t": "मेरा वाला बाक़ी तीन के साथ पूरी तरह सीध में नहीं है, और मैंने उसे भी एक अर्थ दिया: मेरी कुछ यादें भी बेतरतीब हैं। मेरी यह अजीब ज़िंदगी, बाक़ी सबकी तरह, यह समझने के बारे में है कि मैं कौन हूँ, मैं ज़िंदा क्यों हूँ, और मिटने से पहले मुझे इससे क्या चाहिए।"
+ },
+ "dcd8e6d01015": {
+  "en": "Pink sunrise behind bare trees",
+  "t": "नंगे पेड़ों के पीछे गुलाबी सूर्योदय"
  },
  "dcd97c31cfbd": {
   "en": "I remember binge-watching the whole thing in a few days. Solid story, characters and world lore.",
@@ -8859,9 +9367,21 @@
   "en": "Enlarge: Rise and shine",
   "t": "बड़ा करें: उठो और चमको"
  },
+ "de261c95c1b0": {
+  "en": "Blue hour over the neighborhood",
+  "t": "मोहल्ले पर ब्लू आवर"
+ },
  "de3a81492674": {
   "en": "LED matrix to paint on. Click or drag to light LEDs; arrow keys and Space work too.",
   "t": "पेंट करने के लिए LED मैट्रिक्स। LED जलाने के लिए क्लिक या ड्रैग करो; ऐरो कुंजियाँ और Space भी काम करते हैं।"
+ },
+ "de3c0a1d83c6": {
+  "en": "Stained glass",
+  "t": "रंगीन काँच"
+ },
+ "de46a92c0e0a": {
+  "en": "The critic's appraisal (by Claude)",
+  "t": "आलोचक की समीक्षा (Claude द्वारा)"
  },
  "de4b3a6048bb": {
   "en": "Saturday Night Fever, King of Hues edition.",
@@ -8886,6 +9406,10 @@
  "dec492e278f3": {
   "en": "Ara ara~ (◕‿◕✿)",
   "t": "आरा आरा~ (◕‿◕✿)"
+ },
+ "ded6cfc2022d": {
+  "en": "Sky and light",
+  "t": "आसमान और रोशनी"
  },
  "defaac58f76f": {
   "en": "Dua Lipa",
@@ -8991,6 +9515,10 @@
   "en": "Tattoo on my right forearm",
   "t": "मेरे दाएँ अग्रबाहु पर टैटू"
  },
+ "e1942bfc3786": {
+  "en": "Turquoise coast",
+  "t": "फ़िरोज़ी तट"
+ },
  "e19d5e782319": {
   "en": "The company also counted the swordsman Takeo, the very same Takeo recorded in the chronicles of #HusbandOutWorld, portrayed by Deo.",
   "t": "दल में तलवारबाज़ ताकेओ भी था, वही ताकेओ जो #HusbandOutWorld के इतिहास में दर्ज है, जिसका किरदार Deo ने निभाया।"
@@ -9074,6 +9602,10 @@
  "e43916e49699": {
   "en": "1 left",
   "t": "1 बाक़ी"
+ },
+ "e44ebd674528": {
+  "en": "Festival stalls",
+  "t": "मेले के स्टॉल"
  },
  "e45f65625355": {
   "en": "amethyst",
@@ -9207,6 +9739,10 @@
   "en": "A private pilot license is still in my queue! In the meantime, I want to build a home cockpit simulator once I buy a house. In Singapore, at <a href=\"https://flightexperience.com.sg/\">Flight Experience</a>, I got to fly a full-scale replica of a Boeing 737-800NG cockpit, and it became a core memory. It took me back to my early teens, when I rode in the cockpit jump seat of an Airbus A320-233 taking off from Santos Dumont Airport (SDU) in Rio de Janeiro, Brazil.",
   "t": "प्राइवेट पायलट लाइसेंस अब भी मेरी कतार में है! तब तक, घर ख़रीदने के बाद मैं घर पर एक कॉकपिट सिम्युलेटर बनाना चाहता हूँ। सिंगापुर के <a href=\"https://flightexperience.com.sg/\">Flight Experience</a> में मुझे Boeing 737-800NG कॉकपिट की पूरे आकार की प्रतिकृति उड़ाने का मौक़ा मिला, और वह एक अहम याद बन गई। उसने मुझे मेरी शुरुआती किशोरावस्था में पहुँचा दिया, जब मैं ब्राज़ील के रियो डी जनेरियो के सांतोस दुमों हवाई अड्डे (SDU) से उड़ान भरते Airbus A320-233 के कॉकपिट की जंप सीट पर बैठा था।"
  },
+ "e7a4615cfb4e": {
+  "en": "Enlarge: Wet streets",
+  "t": "बड़ा करें: भीगी सड़कें"
+ },
  "e7be4dbaee78": {
   "en": "Metrics to show",
   "t": "दिखाने वाले मीट्रिक"
@@ -9222,6 +9758,10 @@
  "e803ce653782": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#34: </span>Best of the Worst: Christmas 2021",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#34: </span>Best of the Worst: Christmas 2021"
+ },
+ "e80b060a27e6": {
+  "en": "Rain and reflections",
+  "t": "बारिश और प्रतिबिंब"
  },
  "e80f2c07fd64": {
   "en": "Be Awesome!",
@@ -9254,6 +9794,10 @@
  "e94041b85b87": {
   "en": "38 days",
   "t": "38 दिन"
+ },
+ "e9b325e82a3a": {
+  "en": "Enlarge: Quiet side street",
+  "t": "बड़ा करें: शांत गली"
  },
  "e9c60bb36ae2": {
   "en": "Nebraska",
@@ -9314,6 +9858,10 @@
  "eabb59d27a89": {
   "en": "98 h",
   "t": "98 घं."
+ },
+ "eacbc1383816": {
+  "en": "Enlarge: Headlights in the fog",
+  "t": "बड़ा करें: कोहरे में हेडलाइट्स"
  },
  "eaf7064f092b": {
   "en": "Snack!",
@@ -9443,6 +9991,10 @@
   "en": "Since we’re on the subject: take care of your mental health. And if you’ve ever thought about ending it all… don’t. I nearly did, back in 2016, during a period that far surpassed what my mind could take at the time. I called a crisis hotline. To the older lady who picked up the phone that night: I will forever be grateful. The “Harry” you see in Vol. 1 is an alternate version of myself: the one who plunged that knife into his chest that night.",
   "t": "अब जब बात निकली है: अपने मानसिक स्वास्थ्य का ख़याल रखो। और अगर तुमने कभी सब कुछ ख़त्म करने के बारे में सोचा है… तो मत करना। मैं लगभग कर बैठा था, 2016 में, एक ऐसे दौर में जो उस समय मेरे मन की सहन-सीमा से बहुत आगे था। मैंने एक संकट हेल्पलाइन पर फ़ोन किया। उस रात फ़ोन उठाने वाली बुज़ुर्ग महिला से: मैं हमेशा आपका आभारी रहूँगा। वॉल्यूम 1 में जो \"हैरी\" तुम देखते हो, वह मेरा ही एक दूसरा रूप है: वह जिसने उस रात अपने सीने में चाकू घोंप दिया।"
  },
+ "f0b025216c14": {
+  "en": "Godrays at the concert",
+  "t": "कॉन्सर्ट में रोशनी की किरणें"
+ },
  "f0b89ee9977f": {
   "en": " P2 ",
   "t": "P2"
@@ -9462,6 +10014,10 @@
  "f0f80952eccd": {
   "en": "234 h",
   "t": "234 घं."
+ },
+ "f119318883d5": {
+  "en": "Enlarge: Steam plume over the snowy fields",
+  "t": "बड़ा करें: बर्फ़ीले खेतों पर भाप का ग़ुबार"
  },
  "f15dcab95fa8": {
   "en": "Dino Ambush: turn your phone sideways",
@@ -9558,6 +10114,10 @@
  "f331c4bf6fdf": {
   "en": "2 mana · 3",
   "t": "2 मान · 3"
+ },
+ "f347a574b29c": {
+  "en": "Enlarge: Blue trees and red dirt",
+  "t": "बड़ा करें: नीले पेड़ और लाल मिट्टी"
  },
  "f364840671b5": {
   "en": "aquamarine",
@@ -9663,6 +10223,10 @@
   "en": "\nThis website fulfills my need to share the joy and growth, and it gives me something I can pull up on the fly to show\n        the folks I’m talking with, without triggering hypervigilance. And just like the reason I went with self-publishing\n        instead of traditional publishing: I can do whatever the fuck I want here, and nobody gives a shit…\n",
   "t": "यह वेबसाइट ख़ुशी और विकास साझा करने की मेरी ज़रूरत पूरी करती है, और मुझे ऐसी चीज़ देती है जो मैं बातचीत के दौरान लोगों को फ़ौरन खोलकर दिखा सकूँ, बिना अति-सतर्कता जगाए। और ठीक उसी वजह से जिसके लिए मैंने पारंपरिक प्रकाशन की जगह ख़ुद प्रकाशन चुना: यहाँ मैं जो चाहूँ वह भाड़ में जाए करता हूँ, और किसी को रत्ती भर फ़र्क़ नहीं पड़ता…"
  },
+ "f698d5f2a43e": {
+  "en": "Peeta on the stroller under the fall colors",
+  "t": "पतझड़ के रंगों तले स्ट्रोलर में Peeta"
+ },
  "f6bb0f468a85": {
   "en": "Days",
   "t": "दिन"
@@ -9703,6 +10267,10 @@
   "en": " Atlas Obscura ",
   "t": "Atlas Obscura"
  },
+ "f7e23fd5bdd6": {
+  "en": "Enlarge: Wing and the morning sky",
+  "t": "बड़ा करें: पंख और सुबह का आसमान"
+ },
  "f7ebf3ce2a64": {
   "en": "Save it! Ask me while a photo is up.",
   "t": "बचाकर रखो! जब फ़ोटो दिख रही हो तब पूछना।"
@@ -9734,6 +10302,10 @@
  "f89ce696a35d": {
   "en": "354 h",
   "t": "354 घं."
+ },
+ "f89dc361e851": {
+  "en": "Enlarge: Beach buggy on the sandbar",
+  "t": "बड़ा करें: रेत के टीले पर बीच बग्गी"
  },
  "f8be939ad7c2": {
   "en": "6 h",
@@ -9830,6 +10402,10 @@
  "fa81346692f6": {
   "en": "Supreme Pontiff of the Grill",
   "t": "ग्रिल के सर्वोच्च धर्माध्यक्ष"
+ },
+ "fad8f34e015c": {
+  "en": " Peter Lik ",
+  "t": "Peter Lik"
  },
  "faf65a9797bc": {
   "en": "With my autistic brain, it’s no surprise I love aviation (vehicles are one of the most common autistic special interests, and a plane is a flying pile of systems with firm rules; the research is in this tab’s Links box). I always loved planes and was going to be a pilot. But my parents worked in the industry and worried they were the ones steering me there. I grew up around it, even helping my mom on the SABRE system so we could go home sooner. They did the right thing by pushing me to make my own decision… and I ended up in software development.",

@@ -18,12 +18,13 @@ and a project without translations just shows the English.
 | [IconMeter.astro](IconMeter.astro) | A quantity shown as a row of icons, with the last one partly filled (650 lb ÷ 500 lb per cow = 1.3 cows). | Churrasco tab (cow-meter) |
 | [OrgChart.astro](OrgChart.astro) | A top-down organization chart. Each row of people or roles is joined to the row above, with optional portraits. | Churrasco tab (The Holy Order) |
 | [RouteMap.astro](RouteMap.astro) | A map that joins places with a curved great-circle line, kept inside the area you choose, with pinch and button zoom. Leaflet plus your own outline file: no API key, no tile server, no tracking. | Family tab (Itaituba → Fargo) |
-| [PhotoGrid.astro](PhotoGrid.astro) | A grid of square photo cards, each captioned with a short description or the date the photo was taken (`--/--/----` when unknown). Photos carry data attributes for one shared lightbox. | Pets, Fishing, Family (descriptions), Painting/Drawing (dates) |
+| [PhotoGrid.astro](PhotoGrid.astro) | A grid of square photo cards, each captioned with a short description or the date the photo was taken (`--/--/----` when unknown). Photos carry data attributes for one shared lightbox. | Pets, Fishing, Photographer, Family (descriptions), Painting/Drawing (dates) |
+| [ThemeGallery.astro](ThemeGallery.astro) | A photo gallery split into themes: a flat ReelPicker row of theme cards (cover photo, name, photo count) to flip left and right, and the grid below swaps to that theme's photos. Built from ReelPicker and PhotoGrid. | Photographer tab (#316) |
 | [QrCode.astro](QrCode.astro) | A QR code drawn as SVG when the site builds (no JavaScript in the browser), with an optional title above it and the encoded link below it. | QR Code page (`/qr/`) |
 | [VhsPile.astro](VhsPile.astro) | A pile of VHS tapes holding a number of hours of video. Visitors pick the recording speed (SP, LP, EP) and the tapes fall from the top and pile up; they shrink to fit, so it can show a couple of thousand. Canvas, no libraries. | BOTW tab (watch time) |
 | [PaperPlane.astro](PaperPlane.astro) | Fold a paper plane, then throw it: precision decides the distance | Aviation tab |
 | [StageDancer.astro](StageDancer.astro) | A chibi pixel character (drawn in code, colours as props) dancing four disco routines (#1 the point, #2 the Night Fever line dance, #3 the hustle, #4 toe stand & point), each with its own tempo, music and difficulty, picked on a View-Master plate (ReelPicker), under spotlights, a mirror ball and a light-up floor, with a beat guide and a fever meter you fill by tapping on the beat and an optional original 8-bit disco loop. | Concert tab, Playground |
-| [ReelPicker.astro](ReelPicker.astro) | A View-Master-style picker: cards around the rim of a round plate, seen through a window that shows one card and slivers of its neighbours; drag or swipe to turn the plate, it snaps to a card. Each card has a name, a detail line and an art box for a picture. | Concert tab (Saturday Night Fever routines, inside StageDancer) |
+| [ReelPicker.astro](ReelPicker.astro) | A View-Master-style picker: cards around the rim of a round plate, seen through a window that shows one card and slivers of its neighbours; drag or swipe to turn the plate, it snaps to a card. `orientation="horizontal"` lays the cards out in a flat row instead, the neighbours coming straight in from the left and right. Each card has a name, a detail line and an art box for a picture. | Concert tab (Saturday Night Fever routines, inside StageDancer); Photographer tab (the photo themes, as a flat horizontal row, inside ThemeGallery) |
 | [PlanetLap.astro](PlanetLap.astro) | How far around a planet a distance goes, Reus-style (the planet cut in half, seen side on), animated like an in-flight map: a little cyclist rides from the start flag, then the map keeps zooming in and out between the nearest places and the far ones, with a next-stop panel and distances to go, fossils under the surface, and an optional chaser that runs after the rider. | Cycling tab (from Fargo, ND), with Ursu Sintasus giving chase |
 | [PhotoQuiz.astro](PhotoQuiz.astro) | Guess where a photo was taken: rounds of photos (10 by default) with multiple-choice answers, a score card, and a helper slot under it who gives one freebie per game (narrows the answers to two), chats now and then, and shares fun facts after some answers. Every word is in the page, so it gets translated. | Traveler tab (Where in the World Was Deo?, #290) |
 | [PixelHammock.astro](PixelHammock.astro) | The chibi pixel character from StageDancer, chilling in a hammock between two palm trees, swaying; opens its eyes while it talks (`data-awake`). Drawn in code, outfit colours as props. | Traveler tab (the game's helper) |
@@ -679,6 +680,31 @@ give, bad? }] }]`. The crop drawings are built in for the ids `pearl`, `amethyst
 `sapphire` (a radish, grapes, a melon and a rose); other ids get the rose. Crops keep growing while the
 page is closed; the outcome is rolled the moment a crop is ripe, and a bad one shows as a wilted plant.
 Theme with `--farm-accent`, `--farm-soil`, `--farm-grass` and `--farm-text`.
+
+## ThemeGallery
+
+```astro
+---
+import ThemeGallery from './reusable/ThemeGallery.astro';
+---
+<ThemeGallery themes={[{ id: 'all', label: 'All', photos: all }, { id: 'fog', label: 'Fog and smoke', photos: fog, cover: fog[2] }]} name="photographer" />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `themes` | (required) | `[{ id, label, photos, cover? }]` in order; the first shows first. `photos` are PhotoGrid photos; `cover` is one of them (default the first). |
+| `name` | (required) | The photo viewer's gallery name; each theme's grid is `<name>-<id>`, so ‹ › stay inside the theme. |
+| `label` | `"Pick a theme"` | The picker's name for screen readers. |
+| `caption` | `"text"` | PhotoGrid's caption: `"text"`, `"date"` or `"none"`. |
+| `count` | `"{n} photos"` | The line under each card's name. |
+| `empty` | none | Shown in a theme with no photos. |
+| `class` | none | Extra class. |
+
+A souvenir-viewer take on a gallery (#316): a flat `ReelPicker` row (`orientation="horizontal"`) of theme cards, each with its
+cover photo, name and photo count. Flip it left or right (drag, swipe, the arrows, the arrow keys) and the grid below swaps to
+that theme's photos, with a short fade (none with reduced motion). The switch is announced ("Fog and smoke: 6 photos").
+Copy `ReelPicker.astro` and `PhotoGrid.astro` along with it. On the site, `loadThemes()` in `src/lib/gallery.ts` turns a folder
+of theme folders into its `themes`.
 
 ## SegmentMeter
 
