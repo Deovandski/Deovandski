@@ -2015,10 +2015,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 33: </span> Placeholder TV show 33 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 33: </span> अस्थायी टीवी शो 33"
  },
- "37785f712a45": {
-  "en": "\nDefinitely I do not have enough dexterity to really get where I want, but fortunately I know the right people with\n          the skills to help transform my ideas into reality. Regardless, I still push myself to at least try!\n",
-  "t": "पक्का है कि मेरे हाथों में इतनी कारीगरी नहीं कि मैं वहाँ तक पहुँच सकूँ जहाँ पहुँचना चाहता हूँ, पर ख़ुशक़िस्मती से मैं ऐसे सही लोगों को जानता हूँ जिनके हुनर मेरे आइडियाज़ को हक़ीक़त में बदलने में मदद करते हैं। फिर भी, मैं खुद को कम से कम कोशिश करने के लिए धकेलता रहता हूँ!"
- },
  "377bcd643607": {
   "en": "BM",
   "t": "BM"
@@ -2971,6 +2967,10 @@
   "en": "12 h",
   "t": "12 घं."
  },
+ "50b7d95c7fe1": {
+  "en": "Meanwhile, I can use AI to turn random, interesting ideas into fun songs! Just like anyone else! 🥳",
+  "t": "तब तक, मैं AI से बेतरतीब, दिलचस्प आइडियाज़ को मज़ेदार गानों में बदल सकता हूँ! बिल्कुल बाक़ी सबकी तरह! 🥳"
+ },
  "50b9e78177f3": {
   "en": "categories",
   "t": "श्रेणियाँ"
@@ -3502,6 +3502,10 @@
  "5cc0ae78fa2e": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 26: </span> Goblin Slayer ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 26: </span> Goblin Slayer"
+ },
+ "5cc136c341b5": {
+  "en": "\nDefinitely I do not have enough dexterity to really get where I want in terms of this skill as I've approach my natural\n          upper limit in this skill, but fortunately I know the right people with the skills to help transform my ideas into reality. Regardless, I still push myself to at least try!\n",
+  "t": "पक्का है कि इस हुनर में मेरे हाथों में इतनी कारीगरी नहीं कि मैं वहाँ तक पहुँच सकूँ जहाँ पहुँचना चाहता हूँ, क्योंकि इस हुनर में मैं अपनी स्वाभाविक ऊपरी सीमा के क़रीब पहुँच चुका हूँ, पर ख़ुशक़िस्मती से मैं ऐसे सही लोगों को जानता हूँ जिनके हुनर मेरे आइडियाज़ को हक़ीक़त में बदलने में मदद करते हैं। फिर भी, मैं खुद को कम से कम कोशिश करने के लिए धकेलता रहता हूँ!"
  },
  "5cca6659e037": {
   "en": "Enlarge: Lazy",
@@ -6242,10 +6246,6 @@
  "a806382f8448": {
   "en": "Time left until March 9, 2076, 3:39:39 AM Central",
   "t": "9 मार्च 2076, सुबह 3:39:39 (सेंट्रल टाइम) तक बचा समय"
- },
- "a8129b5acff2": {
-  "en": "Meanwhile, I can use AI to turn random, interesting ideas into fun songs!",
-  "t": "तब तक, मैं AI से बेतरतीब, दिलचस्प आइडियाज़ को मज़ेदार गानों में बदल सकता हूँ!"
  },
  "a825e0de2fec": {
   "en": "Enlarge: Succulent Chinese meal",
