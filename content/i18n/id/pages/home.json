@@ -587,6 +587,10 @@
   "en": "Reus",
   "t": "Reus"
  },
+ "0e5ab5718d46": {
+  "en": "⇅ Reverse scroll",
+  "t": "⇅ Balik arah gulir"
+ },
  "0e6f86c4d72a": {
   "en": "<strong>Francois Naudé &amp; Luzelle Naudé</strong> (2024), “(Tat)who Am I? Tattoos as an Expression of Narrative Identity”: people use tattoos to explore and tell the story of who they are. <a href=\"https://www.psychologytoday.com/us/blog/head-games/202403/5-ways-your-tattoos-reveal-who-you-are\">Summary in <em>Psychology Today</em></a>",
   "t": "<strong>Francois Naudé &amp; Luzelle Naudé</strong> (2024), “(Tat)who Am I? Tattoos as an Expression of Narrative Identity”: orang menggunakan tato untuk menjelajahi dan menceritakan kisah tentang siapa diri mereka. <a href=\"https://www.psychologytoday.com/us/blog/head-games/202403/5-ways-your-tattoos-reveal-who-you-are\">Ringkasan di <em>Psychology Today</em></a>"
@@ -850,10 +854,6 @@
  "148bcf6b6644": {
   "en": "Deo's old TikTok profile, @deovandski: 732 followers, 118.5K likes, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, above a grid of video thumbnails",
   "t": "Profil TikTok lama Deo, @deovandski: 732 pengikut, 118,5 rb suka, bio \"Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev\", di atas kisi thumbnail video"
- },
- "149709b9683c": {
-  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom.",
-  "t": "Gulir roda mouse (atau geser ke atas dan bawah di flasher atau joran) untuk menggerakkan jig. Itu tanda tipis di dial; pita merah yang lebar adalah dasar."
  },
  "149d7ab31b5c": {
   "en": "Go!",
@@ -1654,10 +1654,6 @@
  "2984ff90b404": {
   "en": "Bad Bunny",
   "t": "Bad Bunny"
- },
- "2991c57c2a2e": {
-  "en": "Ice fishing with a flasher, based on the Vexilar FL-18. Turn it on, drop your jig, call a fish in and set the hook. Sound on!",
-  "t": "Memancing di es pakai flasher (pencari ikan), berdasarkan Vexilar FL-18. Nyalakan, turunkan jig, pancing ikan mendekat, lalu sentak kailnya. Nyalakan suaranya!"
  },
  "29990da75615": {
   "en": " <span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #3: </span>Shisa Kanko <span lang=\"ja\" translate=\"no\" data-astro-cid-xtzphevd=\"\">(指差喚呼)</span> ",
@@ -2934,6 +2930,10 @@
  "4b2cef64e841": {
   "en": "Daylight, especially in the morning, is what sets the body clock. More morning sun goes with an earlier, steadier sleep.",
   "t": "Cahaya siang, terutama pagi hari, adalah yang mengatur jam biologis. Lebih banyak matahari pagi sejalan dengan tidur yang lebih awal dan lebih stabil."
+ },
+ "4b2ee8531bcf": {
+  "en": "Grab a beer, and experience a flasher fish finder!",
+  "t": "Ambil sebotol bir, dan rasakan serunya pencari ikan flasher!"
  },
  "4b41ed494adc": {
   "en": " Steam + Xbox + PlayStation  ·  estimated ",
@@ -5626,6 +5626,10 @@
  "8c6954624ffd": {
   "en": "Love it. Even the ecchi. Everything has a purpose, and I have nothing to complain about. If I had watched Mushoku Tensei before writing #HusbandOutWorld, I might not have written my story at all, because it's good enough to quench a lot of the thirst I had while consuming one isekai after another.",
   "t": "Suka banget. Bahkan ecchinya. Semuanya punya tujuan, dan tidak ada yang bisa kukeluhkan. Kalau aku menonton Mushoku Tensei sebelum menulis #HusbandOutWorld, mungkin aku tidak menulis ceritaku sama sekali, karena ia cukup bagus untuk memuaskan banyak dahaga yang kurasakan saat melahap isekai satu demi satu."
+ },
+ "8c89e1c4e11c": {
+  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom. Wheel going the wrong way (natural scrolling)? Press <b data-astro-cid-o3poasna=\"\">Reverse scroll</b>.",
+  "t": "Gulir roda mouse (atau geser ke atas dan bawah di flasher atau joran) untuk menggerakkan jig. Itu tanda tipis di dial; pita merah yang lebar adalah dasar. Roda bergerak ke arah yang salah (gulir alami)? Tekan <b data-astro-cid-o3poasna=\"\">Balik arah gulir</b>."
  },
  "8c948d7947e0": {
   "en": "Hot",

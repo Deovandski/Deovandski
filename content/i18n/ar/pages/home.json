@@ -587,6 +587,10 @@
   "en": "Reus",
   "t": "Reus"
  },
+ "0e5ab5718d46": {
+  "en": "⇅ Reverse scroll",
+  "t": "⇅ عكس التمرير"
+ },
  "0e6f86c4d72a": {
   "en": "<strong>Francois Naudé &amp; Luzelle Naudé</strong> (2024), “(Tat)who Am I? Tattoos as an Expression of Narrative Identity”: people use tattoos to explore and tell the story of who they are. <a href=\"https://www.psychologytoday.com/us/blog/head-games/202403/5-ways-your-tattoos-reveal-who-you-are\">Summary in <em>Psychology Today</em></a>",
   "t": "<strong>Francois Naudé &amp; Luzelle Naudé</strong> (2024), “(Tat)who Am I? Tattoos as an Expression of Narrative Identity”: يستخدم الناس الوشوم لاستكشاف من هم وسرد قصتهم. <a href=\"https://www.psychologytoday.com/us/blog/head-games/202403/5-ways-your-tattoos-reveal-who-you-are\">ملخّص في <em>Psychology Today</em></a>"
@@ -850,10 +854,6 @@
  "148bcf6b6644": {
   "en": "Deo's old TikTok profile, @deovandski: 732 followers, 118.5K likes, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, above a grid of video thumbnails",
   "t": "ملف Deo القديم على TikTok، ‎@deovandski: ‏732 متابعًا، و118.5 ألف إعجاب، ونبذة «Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev»، فوق شبكة من الصور المصغّرة للفيديوهات"
- },
- "149709b9683c": {
-  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom.",
-  "t": "مرّر عجلة الفأرة (أو اسحب لأعلى ولأسفل على الفلاشر أو الصنارة) لتحريك الطُّعم. إنه العلامة الرفيعة على القرص؛ والشريط الأحمر العريض هو القاع."
  },
  "149d7ab31b5c": {
   "en": "Go!",
@@ -1654,10 +1654,6 @@
  "2984ff90b404": {
   "en": "Bad Bunny",
   "t": "Bad Bunny"
- },
- "2991c57c2a2e": {
-  "en": "Ice fishing with a flasher, based on the Vexilar FL-18. Turn it on, drop your jig, call a fish in and set the hook. Sound on!",
-  "t": "الصيد على الجليد بجهاز فلاشر (كاشف أسماك)، مستوحى من Vexilar FL-18. شغّله، وأنزل الطُّعم، واجذب سمكة، ثم اغرز الصنارة. شغّل الصوت!"
  },
  "29990da75615": {
   "en": " <span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #3: </span>Shisa Kanko <span lang=\"ja\" translate=\"no\" data-astro-cid-xtzphevd=\"\">(指差喚呼)</span> ",
@@ -2934,6 +2930,10 @@
  "4b2cef64e841": {
   "en": "Daylight, especially in the morning, is what sets the body clock. More morning sun goes with an earlier, steadier sleep.",
   "t": "ضوء النهار، وخاصة في الصباح، هو ما يضبط الساعة البيولوجية. المزيد من شمس الصباح يرافقه نوم أبكر وأكثر انتظامًا."
+ },
+ "4b2ee8531bcf": {
+  "en": "Grab a beer, and experience a flasher fish finder!",
+  "t": "أمسك علبة بيرة، وجرّب جهاز فلاشر لكشف الأسماك!"
  },
  "4b41ed494adc": {
   "en": " Steam + Xbox + PlayStation  ·  estimated ",
@@ -5626,6 +5626,10 @@
  "8c6954624ffd": {
   "en": "Love it. Even the ecchi. Everything has a purpose, and I have nothing to complain about. If I had watched Mushoku Tensei before writing #HusbandOutWorld, I might not have written my story at all, because it's good enough to quench a lot of the thirst I had while consuming one isekai after another.",
   "t": "أحبه. حتى الإيتشي. لكل شيء غاية، وليس لدي ما أشتكي منه. لو شاهدت Mushoku Tensei قبل أن أكتب #HusbandOutWorld، لربما لم أكتب قصتي أصلًا، لأنه جيد بما يكفي ليروي كثيرًا من العطش الذي كان لديّ وأنا أستهلك إيسيكاي تلو الآخر."
+ },
+ "8c89e1c4e11c": {
+  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom. Wheel going the wrong way (natural scrolling)? Press <b data-astro-cid-o3poasna=\"\">Reverse scroll</b>.",
+  "t": "مرّر عجلة الفأرة (أو اسحب لأعلى ولأسفل على الفلاشر أو الصنارة) لتحريك الطُّعم. إنه العلامة الرفيعة على القرص؛ والشريط الأحمر العريض هو القاع. العجلة تتحرك في الاتجاه الخطأ (التمرير الطبيعي)؟ اضغط <b data-astro-cid-o3poasna=\"\">عكس التمرير</b>."
  },
  "8c948d7947e0": {
   "en": "Hot",

@@ -587,6 +587,10 @@
   "en": "Reus",
   "t": "Reus"
  },
+ "0e5ab5718d46": {
+  "en": "⇅ Reverse scroll",
+  "t": "⇅ 反转滚动"
+ },
  "0e6f86c4d72a": {
   "en": "<strong>Francois Naudé &amp; Luzelle Naudé</strong> (2024), “(Tat)who Am I? Tattoos as an Expression of Narrative Identity”: people use tattoos to explore and tell the story of who they are. <a href=\"https://www.psychologytoday.com/us/blog/head-games/202403/5-ways-your-tattoos-reveal-who-you-are\">Summary in <em>Psychology Today</em></a>",
   "t": "<strong>Francois Naudé &amp; Luzelle Naudé</strong> (2024), “(Tat)who Am I? Tattoos as an Expression of Narrative Identity”：人们用纹身来探索并讲述自己是谁的故事。 <a href=\"https://www.psychologytoday.com/us/blog/head-games/202403/5-ways-your-tattoos-reveal-who-you-are\"><em>Psychology Today</em> 上的摘要</a>"
@@ -850,10 +854,6 @@
  "148bcf6b6644": {
   "en": "Deo's old TikTok profile, @deovandski: 732 followers, 118.5K likes, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, above a grid of video thumbnails",
   "t": "Deo 以前的 TikTok 主页 @deovandski：732 位粉丝、11.85 万个赞，简介“Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”，下面是一格格视频缩略图"
- },
- "149709b9683c": {
-  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom.",
-  "t": "滚动鼠标滚轮（或在探鱼器或鱼竿上上下滑动）来移动钓饵。表盘上细细的那道是钓饵，宽宽的红色带是水底。"
  },
  "149d7ab31b5c": {
   "en": "Go!",
@@ -1654,10 +1654,6 @@
  "2984ff90b404": {
   "en": "Bad Bunny",
   "t": "Bad Bunny"
- },
- "2991c57c2a2e": {
-  "en": "Ice fishing with a flasher, based on the Vexilar FL-18. Turn it on, drop your jig, call a fish in and set the hook. Sound on!",
-  "t": "用探鱼器（闪光式声呐）冰钓，以 Vexilar FL-18 为原型。打开电源，放下钓饵，把鱼引过来，然后刺鱼。记得开声音！"
  },
  "29990da75615": {
   "en": " <span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #3: </span>Shisa Kanko <span lang=\"ja\" translate=\"no\" data-astro-cid-xtzphevd=\"\">(指差喚呼)</span> ",
@@ -2934,6 +2930,10 @@
  "4b2cef64e841": {
   "en": "Daylight, especially in the morning, is what sets the body clock. More morning sun goes with an earlier, steadier sleep.",
   "t": "日光，尤其是早晨的日光，是校准生物钟的关键。早晨晒太阳越多，睡得越早、越稳定。"
+ },
+ "4b2ee8531bcf": {
+  "en": "Grab a beer, and experience a flasher fish finder!",
+  "t": "拿瓶啤酒，来体验一下闪光式探鱼器吧！"
  },
  "4b41ed494adc": {
   "en": " Steam + Xbox + PlayStation  ·  estimated ",
@@ -5626,6 +5626,10 @@
  "8c6954624ffd": {
   "en": "Love it. Even the ecchi. Everything has a purpose, and I have nothing to complain about. If I had watched Mushoku Tensei before writing #HusbandOutWorld, I might not have written my story at all, because it's good enough to quench a lot of the thirst I had while consuming one isekai after another.",
   "t": "超爱。连工口部分也是。每样东西都有其目的，我没什么可抱怨的。如果我在写 #HusbandOutWorld 之前看了无职转生，我可能根本就不会写我的故事了，因为它好到足以解掉我一部接一部啃异世界时积攒的大半饥渴。"
+ },
+ "8c89e1c4e11c": {
+  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom. Wheel going the wrong way (natural scrolling)? Press <b data-astro-cid-o3poasna=\"\">Reverse scroll</b>.",
+  "t": "滚动鼠标滚轮（或在探鱼器或鱼竿上上下滑动）来移动钓饵。表盘上细细的那道是钓饵，宽宽的红色带是水底。滚轮方向反了（自然滚动）？按<b data-astro-cid-o3poasna=\"\">反转滚动</b>。"
  },
  "8c948d7947e0": {
   "en": "Hot",

@@ -28,6 +28,8 @@
  * Props:
  *   depth   how deep the hole is, in feet (the bottom). Default 28.
  *
+ * Reverse scroll flips the mouse wheel, for natural scrolling. You get 1.3 s to set the hook (BITE_WINDOW).
+ *
  * Theming (CSS custom properties): --if-case (the flasher's case, default #23262c), --if-accent
  * (buttons and the tension bar, #39c5bb), --if-sky and --if-water (the rod's scene, #cfe3f2 and
  * #0d2a3f), --if-text (inherit).
@@ -132,6 +134,7 @@ const strings: Record<string, string> = {
     <span class="ice-flasher__jig" aria-hidden="true"></span>
     <span class="ice-flasher__tension" hidden aria-hidden="true"><span>Line</span><i></i></span>
     <span class="ice-flasher__count" aria-hidden="true"></span>
+    <button type="button" class="ice-flasher__flip" aria-pressed="false">⇅ Reverse scroll</button>
     <button type="button" class="ice-flasher__mute" aria-pressed="false"></button>
   </div>
   <p class="ice-flasher__status" role="status" aria-live="polite"></p>
@@ -140,7 +143,7 @@ const strings: Record<string, string> = {
     <summary>How to play</summary>
     <ul>
       <li>Turn the <b>Range</b> knob to switch the flasher on. The bottom is at {depth} ft here, so x2 (0 to 40 ft) fits it best.</li>
-      <li>Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom.</li>
+      <li>Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom. Wheel going the wrong way (natural scrolling)? Press <b>Reverse scroll</b>.</li>
       <li>Jig to call fish in. A green mark at the edge of the cone turns orange, then red, as it comes to your jig. Then twitch it, or lift it slowly.</li>
       <li>When the rod tip flashes (and your phone buzzes), flick up hard: a big, fast scroll up or swipe up, or Space. Too early and it spooks; too late and it spits the jig.</li>
       <li>Reel it up, and ease off when it runs, or the line breaks.</li>
@@ -308,8 +311,11 @@ const strings: Record<string, string> = {
   .ice-flasher__tension.is-high i {
     background: linear-gradient(90deg, #e5484d calc(var(--t, 0) * 100%), rgba(127, 127, 127, 0.3) 0);
   }
-  .ice-flasher__mute {
+  .ice-flasher__flip {
     margin-inline-start: auto;
+  }
+  .ice-flasher__flip,
+  .ice-flasher__mute {
     padding: 4px 12px;
     border: 2px solid var(--_accent);
     border-radius: 999px;
@@ -321,6 +327,9 @@ const strings: Record<string, string> = {
   }
   .ice-flasher__mute[aria-pressed='true'] {
     opacity: 0.7;
+  }
+  .ice-flasher__flip[aria-pressed='true'] {
+    background: color-mix(in srgb, var(--_accent) 30%, transparent);
   }
   .ice-flasher__status {
     min-height: 2.8em;
@@ -413,6 +422,7 @@ const strings: Record<string, string> = {
   const GREEN = '#3dff52';
   const ZOOM_FROM = (210 / 360) * Math.PI * 2; // 7 o'clock, the bottom in the zoom view
   const ZOOM_SPAN = (140 / 360) * Math.PI * 2; // 6 ft of zoom
+  const BITE_WINDOW = 1.3; // seconds to set the hook once it bites
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // One sound engine for the page (one AudioContext), shared by every flasher on it.
@@ -453,6 +463,7 @@ const strings: Record<string, string> = {
     const tensionEl = root.querySelector<HTMLElement>('.ice-flasher__tension')!;
     const logEl = root.querySelector<HTMLElement>('.ice-flasher__log')!;
     const muteBtn = root.querySelector<HTMLButtonElement>('.ice-flasher__mute')!;
+    const flipBtn = root.querySelector<HTMLButtonElement>('.ice-flasher__flip')!;
     const knobs = Object.fromEntries(
       [...root.querySelectorAll<HTMLElement>('.ice-flasher__knob')].map((k) => [k.dataset.knob!, k]),
     ) as Record<'range' | 'mode' | 'gain', HTMLElement>;
@@ -484,6 +495,7 @@ const strings: Record<string, string> = {
     let biteFlash = 0; // seconds of rod-tip flash left
     let catches = 0;
     let muted = false;
+    let flipped = false; // reverse the mouse wheel (for natural scrolling on a Mac trackpad)
     let now = 0; // game clock, seconds
     const moves: { t: number; dy: number }[] = []; // recent jig moves (+ is down)
     const ups: { t: number; px: number }[] = []; // recent upward flick input, for the hookset
@@ -543,7 +555,9 @@ const strings: Record<string, string> = {
       src.start(t, Math.random() * 0.5);
       src.stop(t + dur + 0.05);
     }
-    // The wheel's motor: a low whir with a little buzz and brush hiss, spinning up when it turns on.
+    // The hum it makes while it's on, modelled on a recording of a real Vexilar: a 40 Hz buzz whose
+    // overtones ring loudest around 400-440 Hz and 720-760 Hz, plus faint tones at 3 kHz and 13.5 kHz
+    // that pulse 80 times a second. It spins up when switched on and winds down when switched off.
     function motorOn() {
       const c = snd.get();
       const m = out();
@@ -551,55 +565,57 @@ const strings: Record<string, string> = {
       const t = c.currentTime;
       const g = c.createGain();
       g.gain.setValueAtTime(0.0001, t);
-      g.gain.exponentialRampToValueAtTime(0.05, t + 0.5);
+      g.gain.exponentialRampToValueAtTime(0.22, t + 0.6);
       g.connect(m);
-      const lp = c.createBiquadFilter();
-      lp.type = 'lowpass';
-      lp.frequency.value = 900;
-      lp.connect(g);
-      const o1 = c.createOscillator();
-      o1.type = 'sawtooth';
-      o1.frequency.setValueAtTime(25, t);
-      o1.frequency.exponentialRampToValueAtTime(118, t + 0.8);
-      const o2 = c.createOscillator();
-      o2.type = 'triangle';
-      o2.frequency.setValueAtTime(50, t);
-      o2.frequency.exponentialRampToValueAtTime(355, t + 0.8);
-      const o2g = c.createGain();
-      o2g.gain.value = 0.35;
-      // A slow wobble, like a real motor's.
-      const lfo = c.createOscillator();
-      lfo.frequency.value = 5.5;
-      const lfoG = c.createGain();
-      lfoG.gain.value = 2.5;
-      lfo.connect(lfoG).connect(o1.frequency);
-      o1.connect(lp);
-      o2.connect(o2g).connect(lp);
-      const hiss = c.createBufferSource();
-      hiss.buffer = snd.noise;
-      hiss.loop = true;
-      const bp = c.createBiquadFilter();
-      bp.type = 'bandpass';
-      bp.frequency.value = 2600;
-      bp.Q.value = 1.2;
-      const hg = c.createGain();
-      hg.gain.value = 0.25;
-      hiss.connect(bp).connect(hg).connect(g);
-      [o1, o2, lfo, hiss].forEach((n) => n.start(t));
-      tickAt = t + 0.4;
+      const nodes: AudioScheduledSourceNode[] = [];
+      const spin = (o: OscillatorNode, hz: number) => {
+        o.frequency.setValueAtTime(hz * 0.35, t);
+        o.frequency.exponentialRampToValueAtTime(hz, t + 0.8);
+        nodes.push(o);
+      };
+      // The 40 Hz buzz: one oscillator whose overtones have the loudness measured in the recording
+      // (dB for 40, 80, 120 … 1000 Hz), so the resonances come out where the real one has them.
+      const DB = [-11, -20, -21, -32, -33, -26, -26, -23, -7, -4, 0, -11, -17, -24, -26, -31, -16, -6, -9, -17, -15, -22, -12, -18, -22];
+      const real = new Float32Array(DB.length + 1);
+      const imag = new Float32Array(DB.length + 1);
+      DB.forEach((db, k) => (imag[k + 1] = Math.pow(10, db / 20)));
+      const buzz = c.createOscillator();
+      buzz.setPeriodicWave(c.createPeriodicWave(real, imag));
+      spin(buzz, 40);
+      buzz.connect(g);
+      // The faint tones, pulsing at 80 Hz.
+      const pulse = c.createOscillator();
+      pulse.type = 'sine';
+      spin(pulse, 80);
+      for (const [hz, lvl] of [
+        [3000, 0.16],
+        [13500, 0.08],
+      ]) {
+        const tone = c.createOscillator();
+        tone.type = 'sine';
+        spin(tone, hz);
+        const am = c.createGain();
+        am.gain.value = lvl * 0.5;
+        const depth = c.createGain();
+        depth.gain.value = lvl * 0.5;
+        pulse.connect(depth).connect(am.gain);
+        tone.connect(am).connect(g);
+      }
+      nodes.forEach((n) => n.start(t));
+      tickAt = t + 0.5;
       motor = {
         stop: () => {
           const s = c.currentTime;
-          o1.frequency.cancelScheduledValues(s);
-          o1.frequency.setValueAtTime(o1.frequency.value, s);
-          o1.frequency.exponentialRampToValueAtTime(20, s + 0.7);
-          o2.frequency.cancelScheduledValues(s);
-          o2.frequency.setValueAtTime(o2.frequency.value, s);
-          o2.frequency.exponentialRampToValueAtTime(40, s + 0.7);
+          for (const n of nodes) {
+            const o = n as OscillatorNode;
+            o.frequency.cancelScheduledValues(s);
+            o.frequency.setValueAtTime(o.frequency.value, s);
+            o.frequency.exponentialRampToValueAtTime(Math.max(1, o.frequency.value * 0.3), s + 0.7);
+            o.stop(s + 0.75);
+          }
           g.gain.cancelScheduledValues(s);
           g.gain.setValueAtTime(g.gain.value, s);
           g.gain.exponentialRampToValueAtTime(0.0001, s + 0.7);
-          [o1, o2, lfo, hiss].forEach((n) => n.stop(s + 0.75));
         },
       };
     }
@@ -640,10 +656,10 @@ const strings: Record<string, string> = {
       if (!c || c.state !== 'running') return;
       const ahead = c.currentTime + 0.12;
       if (motor) {
-        const rate = [0, 16, 12, 10, 8, 5][range];
+        const rate = [0, 9, 7, 6, 5, 3][range]; // pings a second (about 7 in the recording)
         if (tickAt < c.currentTime) tickAt = c.currentTime;
         while (tickAt < ahead) {
-          noise(tickAt, 0.012, 0.09, 'highpass', 3800);
+          noise(tickAt, 0.01, 0.035, 'highpass', 5000);
           tickAt += 1 / rate;
         }
       }
@@ -661,6 +677,10 @@ const strings: Record<string, string> = {
       muteBtn.textContent = msg(m ? 'soundOff' : 'soundOn');
       if (master && snd.ctx) master.gain.setTargetAtTime(m ? 0 : 0.6, snd.ctx.currentTime, 0.05);
     }
+    flipBtn.addEventListener('click', () => {
+      flipped = !flipped;
+      flipBtn.setAttribute('aria-pressed', String(flipped));
+    });
     muteBtn.addEventListener('click', () => {
       snd.get();
       setMuted(!muted);
@@ -1016,7 +1036,7 @@ const strings: Record<string, string> = {
           } else if (f.interest >= 1 && Math.random() < dt * 2.5 && !fishes.some((x) => x.state === 'bite')) {
             f.state = 'bite';
             f.t = 0;
-            biteFlash = 0.9;
+            biteFlash = BITE_WINDOW;
             navigator.vibrate?.([90, 50, 160]);
             say('bite', {}, true);
             const c = snd.ctx;
@@ -1024,7 +1044,7 @@ const strings: Record<string, string> = {
           }
         } else if (f.state === 'bite') {
           f.d = jig;
-          if (f.t > 0.9) {
+          if (f.t > BITE_WINDOW) {
             spook(f);
             say('spat', {}, true);
           }
@@ -1428,7 +1448,7 @@ const strings: Record<string, string> = {
         if ((e.target as HTMLElement).closest('.ice-flasher__knob')) return;
         e.preventDefault();
         // Lines (Firefox) and pages count like Chrome's 100px notch.
-        const px = e.deltaY * (e.deltaMode === 1 ? 33 : e.deltaMode === 2 ? 400 : 1);
+        const px = e.deltaY * (e.deltaMode === 1 ? 33 : e.deltaMode === 2 ? 400 : 1) * (flipped ? -1 : 1);
         moveJig(clamp(px * 0.018, -3, 3));
         upInput(-px, 240);
       },

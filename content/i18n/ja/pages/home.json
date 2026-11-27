@@ -587,6 +587,10 @@
   "en": "Reus",
   "t": "Reus"
  },
+ "0e5ab5718d46": {
+  "en": "⇅ Reverse scroll",
+  "t": "⇅ スクロール反転"
+ },
  "0e6f86c4d72a": {
   "en": "<strong>Francois Naudé &amp; Luzelle Naudé</strong> (2024), “(Tat)who Am I? Tattoos as an Expression of Narrative Identity”: people use tattoos to explore and tell the story of who they are. <a href=\"https://www.psychologytoday.com/us/blog/head-games/202403/5-ways-your-tattoos-reveal-who-you-are\">Summary in <em>Psychology Today</em></a>",
   "t": "<strong>Francois Naudé &amp; Luzelle Naudé</strong> (2024), “(Tat)who Am I? Tattoos as an Expression of Narrative Identity”：人はタトゥーを使って、自分が誰なのかを探り、その物語を語る。 <a href=\"https://www.psychologytoday.com/us/blog/head-games/202403/5-ways-your-tattoos-reveal-who-you-are\"><em>Psychology Today</em> の要約</a>"
@@ -850,10 +854,6 @@
  "148bcf6b6644": {
   "en": "Deo's old TikTok profile, @deovandski: 732 followers, 118.5K likes, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, above a grid of video thumbnails",
   "t": "Deo の昔の TikTok プロフィール @deovandski：フォロワー 732 人、いいね 11.85 万、自己紹介「Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev」、その下に動画サムネイルの格子"
- },
- "149709b9683c": {
-  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom.",
-  "t": "マウスホイールをスクロール（またはフラッシャーか竿の上で上下にスワイプ）してジグを動かそう。ダイヤルの細い印がジグで、太い赤の帯が底だ。"
  },
  "149d7ab31b5c": {
   "en": "Go!",
@@ -1654,10 +1654,6 @@
  "2984ff90b404": {
   "en": "Bad Bunny",
   "t": "Bad Bunny"
- },
- "2991c57c2a2e": {
-  "en": "Ice fishing with a flasher, based on the Vexilar FL-18. Turn it on, drop your jig, call a fish in and set the hook. Sound on!",
-  "t": "魚群探知機（フラッシャー）で氷上釣り。Vexilar FL-18がモデルだ。電源を入れて、ジグを落として、魚を寄せてフッキング。サウンドはオンで！"
  },
  "29990da75615": {
   "en": " <span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #3: </span>Shisa Kanko <span lang=\"ja\" translate=\"no\" data-astro-cid-xtzphevd=\"\">(指差喚呼)</span> ",
@@ -2934,6 +2930,10 @@
  "4b2cef64e841": {
   "en": "Daylight, especially in the morning, is what sets the body clock. More morning sun goes with an earlier, steadier sleep.",
   "t": "日の光、特に朝の光が体内時計を合わせる。朝日を多く浴びるほど、早くて安定した睡眠につながる。"
+ },
+ "4b2ee8531bcf": {
+  "en": "Grab a beer, and experience a flasher fish finder!",
+  "t": "ビールを片手に、フラッシャー魚探を体験しよう！"
  },
  "4b41ed494adc": {
   "en": " Steam + Xbox + PlayStation  ·  estimated ",
@@ -5626,6 +5626,10 @@
  "8c6954624ffd": {
   "en": "Love it. Even the ecchi. Everything has a purpose, and I have nothing to complain about. If I had watched Mushoku Tensei before writing #HusbandOutWorld, I might not have written my story at all, because it's good enough to quench a lot of the thirst I had while consuming one isekai after another.",
   "t": "大好き。エッチなところも含めて。すべてに目的があって、文句のつけようがない。#HusbandOutWorld を書く前に無職転生を見ていたら、自分の物語は書かなかったかもしれない。異世界ものを次から次へと消費していた頃の渇きを、かなり癒してくれるくらい良いからだ。"
+ },
+ "8c89e1c4e11c": {
+  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom. Wheel going the wrong way (natural scrolling)? Press <b data-astro-cid-o3poasna=\"\">Reverse scroll</b>.",
+  "t": "マウスホイールをスクロール（またはフラッシャーか竿の上で上下にスワイプ）してジグを動かそう。ダイヤルの細い印がジグで、太い赤の帯が底だ。ホイールの向きが逆（ナチュラルスクロール）？ <b data-astro-cid-o3poasna=\"\">スクロール反転</b>を押そう。"
  },
  "8c948d7947e0": {
   "en": "Hot",

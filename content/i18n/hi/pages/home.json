@@ -587,6 +587,10 @@
   "en": "Reus",
   "t": "Reus"
  },
+ "0e5ab5718d46": {
+  "en": "⇅ Reverse scroll",
+  "t": "⇅ स्क्रॉल उल्टा करो"
+ },
  "0e6f86c4d72a": {
   "en": "<strong>Francois Naudé &amp; Luzelle Naudé</strong> (2024), “(Tat)who Am I? Tattoos as an Expression of Narrative Identity”: people use tattoos to explore and tell the story of who they are. <a href=\"https://www.psychologytoday.com/us/blog/head-games/202403/5-ways-your-tattoos-reveal-who-you-are\">Summary in <em>Psychology Today</em></a>",
   "t": "<strong>Francois Naudé &amp; Luzelle Naudé</strong> (2024), “(Tat)who Am I? Tattoos as an Expression of Narrative Identity”: लोग टैटू से यह खोजते और बताते हैं कि वे कौन हैं। <a href=\"https://www.psychologytoday.com/us/blog/head-games/202403/5-ways-your-tattoos-reveal-who-you-are\"><em>Psychology Today</em> में सारांश</a>"
@@ -850,10 +854,6 @@
  "148bcf6b6644": {
   "en": "Deo's old TikTok profile, @deovandski: 732 followers, 118.5K likes, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, above a grid of video thumbnails",
   "t": "Deo की पुरानी TikTok प्रोफ़ाइल, @deovandski: 732 फ़ॉलोअर, 118.5K लाइक, बायो \"Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev\", वीडियो थंबनेल के ग्रिड के ऊपर"
- },
- "149709b9683c": {
-  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom.",
-  "t": "जिग हिलाने के लिए माउस का पहिया स्क्रॉल करो (या फ़्लैशर या छड़ी पर ऊपर-नीचे स्वाइप करो)। डायल पर पतला निशान जिग है; चौड़ी लाल पट्टी तल है।"
  },
  "149d7ab31b5c": {
   "en": "Go!",
@@ -1654,10 +1654,6 @@
  "2984ff90b404": {
   "en": "Bad Bunny",
   "t": "Bad Bunny"
- },
- "2991c57c2a2e": {
-  "en": "Ice fishing with a flasher, based on the Vexilar FL-18. Turn it on, drop your jig, call a fish in and set the hook. Sound on!",
-  "t": "फ़्लैशर (मछली खोजने वाले सोनार) के साथ बर्फ़ पर मछली पकड़ना, Vexilar FL-18 पर आधारित। इसे चालू करो, जिग नीचे डालो, मछली को पास बुलाओ और काँटा फँसाओ। आवाज़ चालू रखना!"
  },
  "29990da75615": {
   "en": " <span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #3: </span>Shisa Kanko <span lang=\"ja\" translate=\"no\" data-astro-cid-xtzphevd=\"\">(指差喚呼)</span> ",
@@ -2934,6 +2930,10 @@
  "4b2cef64e841": {
   "en": "Daylight, especially in the morning, is what sets the body clock. More morning sun goes with an earlier, steadier sleep.",
   "t": "दिन की रोशनी, ख़ासकर सुबह की, शरीर-घड़ी को सेट करती है। सुबह की ज़्यादा धूप के साथ जल्दी और ज़्यादा स्थिर नींद आती है।"
+ },
+ "4b2ee8531bcf": {
+  "en": "Grab a beer, and experience a flasher fish finder!",
+  "t": "एक बियर उठाओ, और फ़्लैशर फ़िश फ़ाइंडर का मज़ा लो!"
  },
  "4b41ed494adc": {
   "en": " Steam + Xbox + PlayStation  ·  estimated ",
@@ -5626,6 +5626,10 @@
  "8c6954624ffd": {
   "en": "Love it. Even the ecchi. Everything has a purpose, and I have nothing to complain about. If I had watched Mushoku Tensei before writing #HusbandOutWorld, I might not have written my story at all, because it's good enough to quench a lot of the thirst I had while consuming one isekai after another.",
   "t": "इससे प्यार है। एच्ची से भी। हर चीज़ का एक मक़सद है, और मुझे कोई शिकायत नहीं। अगर मैंने #HusbandOutWorld लिखने से पहले Mushoku Tensei देखा होता, तो शायद मैं अपनी कहानी लिखता ही नहीं, क्योंकि यह इतना अच्छा है कि एक के बाद एक इसेकाई देखते हुए जो प्यास थी उसका बड़ा हिस्सा बुझा दे।"
+ },
+ "8c89e1c4e11c": {
+  "en": "Scroll the mouse wheel (or swipe up and down on the flasher or the rod) to move your jig. It's the thin mark on the dial; the wide red band is the bottom. Wheel going the wrong way (natural scrolling)? Press <b data-astro-cid-o3poasna=\"\">Reverse scroll</b>.",
+  "t": "जिग हिलाने के लिए माउस का पहिया स्क्रॉल करो (या फ़्लैशर या छड़ी पर ऊपर-नीचे स्वाइप करो)। डायल पर पतला निशान जिग है; चौड़ी लाल पट्टी तल है। पहिया उल्टी तरफ़ चल रहा है (नेचुरल स्क्रॉलिंग)? <b data-astro-cid-o3poasna=\"\">स्क्रॉल उल्टा करो</b> दबाओ।"
  },
  "8c948d7947e0": {
   "en": "Hot",
