@@ -11,6 +11,7 @@ import IsoFarm from './reusable/IsoFarm.astro';
 import KitKot from './reusable/KitKot.astro';
 import LedMatrix from './reusable/LedMatrix.astro';
 import PaperPlane from './reusable/PaperPlane.astro';
+import PerfectEgg from './reusable/PerfectEgg.astro';
 import PlanetLap from './reusable/PlanetLap.astro';
 import PhotoQuiz from './reusable/PhotoQuiz.astro';
 import PhotoShoot from './reusable/PhotoShoot.astro';
@@ -90,6 +91,7 @@ const trip = id === 'where-was-deo' ? await travelQuiz() : null;
 {id === 'kitkot' && <KitKot name="Deovandski Skibinski Junior" handle="deovandski" bio="Author, x++ dev, chasing the algorithm" />}
 {id === 'led-painting' && <LedMatrix label="LED matrix to paint on. Click or drag to light LEDs; arrow keys and Space work too." />}
 {id === 'paper-plane' && <PaperPlane />}
+{id === 'perfect-egg' && <PerfectEgg saveKey="perfect-egg" />}
 {id === 'photo-shoot' && <PhotoShoot stamp="deovandski.com" label="A photo shoot through a camera: chibi pixel Deo in his yellow king&apos;s robes holds the pose you pick, in front of the background you pick." />}
 {
   id === 'pixel-pets' && (

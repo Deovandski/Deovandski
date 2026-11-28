@@ -147,6 +147,18 @@ on Potato.
   branch shows the rest again, and pressing it once more folds everything up.
 - `PillSwitch` (#272) is still the switch *inside* a component, like the Biomarker Lab's views in `MetricLab`.
 
+## Saved in the browser
+
+Anything a game or setting keeps between visits (high scores, progress, a sound on/off) is saved in the browser's local
+storage, never in a cookie, and never sent anywhere (Deo, #142).
+
+- **One list:** every key is in `src/lib/saves.ts` (`SAVES`), with what it holds.
+- **Transparent:** each key is named in [PRIVACY.md](PRIVACY.md), and /debug/ shows each one with what's saved in this
+  browser. The build stops if a key in `SAVES` is missing from PRIVACY.md.
+- **New game?** If it has a high score or progress worth keeping, save it: add its key to `SAVES` and PRIVACY.md, take
+  the key as a `saveKey` prop (`''` saves nothing), wrap reads and writes in try/catch (private mode), and give it a
+  live summary in `src/scripts/gimmickSummaries.ts`.
+
 ## Website settings
 
 The gear (top right of the header, `src/components/SettingsMenu.astro`) opens Settings: **Language**, "Want a language

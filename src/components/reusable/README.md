@@ -47,6 +47,7 @@ and a project without translations just shows the English.
 | [Breadcrumb.astro](Breadcrumb.astro) | A one-line breadcrumb trail that fits its width: the text shrinks to fit, and below a smallest size (11px) the items are cut with "…" instead (full text on hover). Drawn from `items`, or filled by a script. | The home page tab header (#266) |
 | [DinoAmbush.astro](DinoAmbush.astro) | The endless-runner dino, reversed: the dino dodges on its own, you spend mana throwing cactus, birds, rocks and dinos at it. Win or get flipped off. | Gamer tab |
 | [IceFlasher.astro](IceFlasher.astro) | Ice fishing with a working three-colour flasher (based on the Vexilar FL-18): the spinning-LED dial (red, orange, green), working Range, Mode and Gain knobs (press Gain for the 10 IR steps), the motor's whir and ping ticks (Web Audio), and a first-person view of the hole with your rod and a beer on the ice. Scroll or swipe to jig, flick hard when the rod tip flashes (phones buzz), then reel, keeping the Line gauge (SegmentMeter) in the green. | Fishing tab (#310) |
+| [PerfectEgg.astro](PerfectEgg.astro) + [pixel-deo/sprite.ts](pixel-deo/sprite.ts) | Cook the perfect egg, a tapping mini-game inspired by Rayman Raving Rabbids: pick Sunny side up, Scrambled, Soft-boiled or Omelette and cook it in 4 steps, each one of six tap mechanics (the beat, mash and hold the heat, hold and release, wait for the big sizzle, stop the swing, tap an exact count). Misses fill one Chaos meter for the whole run: full on a heat step means black smoke and a smoke alarm, otherwise a kaboom. A finished egg gets 0 to 3 stars; pixel Deo reacts beside the pan. Saves the best rating per egg in local storage. | Cooking tab (#142) |
 | [PhotoShoot.astro](PhotoShoot.astro) + [pixel-deo/sprite.ts](pixel-deo/sprite.ts) | A photo shoot through a camera: chibi pixel Deo holds one of 9 meme poses in front of one of 9 backgrounds. The camera body sets ISO, shutter speed and aperture (an exposure meter; background blur; hand shake), the lens (fisheye to 200mm, aimed with arrows), white balance and a filter. Shots go onto a 24-photo roll: ↓ saves a PNG; sliding the film door latch (a knurled knob, like an old film camera's) all the way downloads them all as a .zip and loads a fresh roll. | Photographer tab (#318) |
 | [SegmentMeter.astro](SegmentMeter.astro) | A column of lit segments like a graphic-equalizer bar: a level lit from the bottom up (fill), or a scale with one lit segment (marker), one colour or one per segment, updated live through `data-value`. Taken from the Multilingual tab's language levels. | Multilingual tab (language levels), ice fishing (the Line gauge, #314) |
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
@@ -707,6 +708,49 @@ cover photo, name and photo count. Flip it left or right (drag, swipe, the arrow
 that theme's photos, with a short fade (none with reduced motion). The switch is announced ("Fog and smoke: 6 photos").
 Copy `ReelPicker.astro` and `PhotoGrid.astro` along with it. On the site, `loadThemes()` in `src/lib/gallery.ts` turns a folder
 of theme folders into its `themes`.
+
+## PerfectEgg
+
+```astro
+---
+import PerfectEgg from './reusable/PerfectEgg.astro';
+---
+<PerfectEgg />
+<PerfectEgg saveKey="" />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `saveKey` | `'perfect-egg'` | Local storage key for the best rating per egg and the sound setting. `''` saves nothing. |
+| `label` | a short description | What it is, for screen readers. |
+| `class` | none | Extra class. |
+
+A tapping mini-game in the spirit of Rayman Raving Rabbids (loud, silly, one tap to try again), with cooking ideas from
+Metal Gear Solid 4 (Sunny's eggs, the pan seen from above) and Like a Dragon: Ishin (heat, pouring and grilling). Pick an
+egg: Sunny side up (Easy), Scrambled or Soft-boiled (Medium), Omelette (Hard). Each has 4 steps, and each step is one of
+six mechanics:
+
+| Mechanic | What you do | Used for |
+|---|---|---|
+| Beat | Tap as cues cross the line (left and right for whisking, one button for timer ticks) | Whisk, six and a half minutes, catching the flip |
+| Heat | Mash to push the flame into the green band, then keep it there; taps on the beat push harder | Stir on the heat, boil the water |
+| Hold | Hold to fill the gauge, let go in the zone | Butter the pan, lower the egg |
+| Cue | Small sizzles are a trap; tap when the big one shows | Fry, swirl and set |
+| Swing | Stop a swinging needle in the sweet spot | Crack, plate, the flip |
+| Count | Tap exactly N times before the clock runs out | Ice bath and peel |
+
+Every tap is Perfect, Good or Miss. Misses (and running the heat too high) fill one Chaos meter for the whole run, and
+Perfects take a little off. If it fills on a heat step, black smoke and a smoke alarm end the run; on any other step, a
+kaboom with yolk on the screen. A finished egg gets 0 to 3 stars, the average of its steps; 3 stars says "You cooked
+them right." Pixel Deo (from `pixel-deo/sprite.ts`) stands beside the pan: hands on hips, a thumbs up on a Perfect, a
+shrug on a miss, soot all over after a blow-up.
+
+Controls: the big button (Space or Enter, or a tap; hold it for Hold), and for whisking a left and a right button (F
+and J, or the arrow keys). It plays upright on phones, with the buttons at the bottom. Sound is Web Audio (no files) and
+has an on/off button. Saved in local storage under `saveKey`: `{ best: { <egg>: rating }, sound }`, nothing else, never
+sent. Accessible: real buttons; each step's instructions, its stars and the ending are announced. Reduced motion: no
+screen shake. Words the script writes are in a hidden `.perfect-egg__strings` block, so they're translated with the
+page. Theming: `--perfect-egg-accent`, `--perfect-egg-bg`.
 
 ## PhotoShoot
 

@@ -1,0 +1,1486 @@
+---
+/**
+ * PerfectEgg: "Cook the perfect egg", a tapping mini-game (#142). Pick an egg (Sunny side up, Scrambled, Soft-boiled,
+ * Omelette); each has 4 steps, and each step is one of six tap mechanics:
+ *   beat   tap as cues cross a line (two buttons for whisking, one for timer ticks)     from Rayman Raving Rabbids' dance games
+ *   heat   mash a flame into the green band, then keep it there; on-beat taps push more  from Like a Dragon: Ishin's heating
+ *   hold   hold to fill a gauge, let go in the small zone                                  from Ishin's pouring
+ *   cue    small sizzles first; tap when the big one shows                                from Ishin's grilling embers
+ *   swing  stop a swinging needle in the sweet spot (the precision part)                 a classic timing bar
+ *   count  tap an exact number of times before the clock runs out                         Rabbids-style button counting
+ * Every tap is Perfect, Good or Miss. Misses fill one Chaos meter for the whole run: if it fills on a heat step, black
+ * smoke and a smoke alarm end the run; on any other step, a kaboom (yolk on the screen). Rabbids-style: loud, silly,
+ * one tap to try again. A finished egg is rated 0 to 3 stars (the average of its steps); 3 is "You cooked them
+ * right.", a nod to Sunny's eggs in Metal Gear Solid 4. The pan is seen from above, like that game's chapter openers.
+ *
+ * Pixel Deo (pixel-deo/sprite.ts, the same character as StageDancer and PhotoShoot) reacts at the side: hands on hips,
+ * a thumbs up on a Perfect, a shrug on a miss, soot all over at the end of a bad run.
+ *
+ * Reusable on purpose: no site imports, no site CSS needed, safe to use several times on a page. Copy this file and
+ * pixel-deo/sprite.ts into any Astro project. See README.md in this folder.
+ *
+ *   <PerfectEgg />
+ *   <PerfectEgg saveKey="perfect-egg" label="Cook the perfect egg" />
+ *
+ * Props:
+ *   saveKey  local storage key for the best rating per egg and the sound setting ('' saves nothing). Default 'perfect-egg'.
+ *   label    what it is, for screen readers.
+ *
+ * Theming (CSS custom properties): --perfect-egg-accent (default #f6b81c), --perfect-egg-bg (default #17181c).
+ *
+ * Controls: one big button (Space or Enter, or a tap), and for whisking a left and a right one (F and J, or the arrow
+ * keys). Holding works with the pointer and with Space. Accessible: real buttons; each step's instructions, its stars
+ * and the ending are announced. Reduced motion: no screen shake; the endings fade in. Sound (Web Audio, no files) can be
+ * turned off, and that choice is saved with the best ratings.
+ */
+import { DEFAULT_COLORS } from './pixel-deo/sprite';
+
+interface Props {
+  saveKey?: string;
+  label?: string;
+  class?: string;
+}
+const { saveKey = 'perfect-egg', label = 'Cook the perfect egg: a tapping mini-game.', class: className } = Astro.props;
+
+type Part = { m: 'beat' | 'heat' | 'hold' | 'cue' | 'swing' | 'count'; n?: number; bpm?: number; lr?: boolean; speed?: number; rate?: number; hold?: number; time?: number };
+type Step = { name: string; hint: string; scene: string; heat?: boolean; parts: Part[] };
+type Method = { id: string; name: string; level: string; art: string; vessel: 'pan' | 'pot'; steps: Step[] };
+const CRACK = 'Tap Stop! as the egg meets the rim.';
+const WHISK = 'Tap the side each bubble comes from as it crosses the line.';
+const PLATE = 'Tap Stop! when the egg is over the plate.';
+const methods: Method[] = [
+  {
+    id: 'sunny', name: 'Sunny side up', level: 'Easy', vessel: 'pan',
+    art: 'radial-gradient(circle at 50% 50%, #f6b81c 0 22%, #fff4dc 23% 60%, #2d2e35 61%)',
+    steps: [
+      { name: 'Crack it', hint: CRACK, scene: 'crack', parts: [{ m: 'swing', n: 1, speed: 0.8 }] },
+      { name: 'Butter the pan', hint: 'Hold, and let go in the sizzle zone.', scene: 'butter', parts: [{ m: 'hold', rate: 1 }] },
+      { name: 'Fry', hint: 'Small sizzles are a trap: tap when the big sizzle shows.', scene: 'fry', heat: true, parts: [{ m: 'cue', n: 2 }] },
+      { name: 'Plate it', hint: PLATE, scene: 'plate', parts: [{ m: 'swing', n: 1, speed: 0.9 }] },
+    ],
+  },
+  {
+    id: 'scrambled', name: 'Scrambled', level: 'Medium', vessel: 'pan',
+    art: 'radial-gradient(circle at 40% 40%, #ffd96a 0 30%, #f6b81c 31% 58%, #2d2e35 59%)',
+    steps: [
+      { name: 'Crack it', hint: CRACK, scene: 'crack', parts: [{ m: 'swing', n: 1, speed: 1 }] },
+      { name: 'Whisk', hint: WHISK, scene: 'whisk', parts: [{ m: 'beat', n: 16, bpm: 112, lr: true }] },
+      { name: 'Stir on the heat', hint: 'Mash to push the flame into the green band, then keep it there. Taps on the beat push harder.', scene: 'stir', heat: true, parts: [{ m: 'heat', hold: 5 }] },
+      { name: 'Plate it', hint: PLATE, scene: 'plate', parts: [{ m: 'swing', n: 1, speed: 1.1 }] },
+    ],
+  },
+  {
+    id: 'boiled', name: 'Soft-boiled', level: 'Medium', vessel: 'pot',
+    art: 'radial-gradient(circle at 50% 55%, #f39a1b 0 18%, #fff4dc 19% 45%, #e9e4d6 46% 58%, #2d2e35 59%)',
+    steps: [
+      { name: 'Boil the water', hint: 'Mash until the water rolls: fill the flame to the green band.', scene: 'boil', heat: true, parts: [{ m: 'heat', hold: 0 }] },
+      { name: 'Lower the egg', hint: 'Hold, and let go gently in the zone.', scene: 'lower', parts: [{ m: 'hold', rate: 0.75 }] },
+      { name: 'Six and a half minutes', hint: 'Tap on every tick of the timer.', scene: 'timer', heat: true, parts: [{ m: 'beat', n: 12, bpm: 100 }] },
+      { name: 'Ice bath and peel', hint: 'Peel exactly 5 times before the clock runs out.', scene: 'peel', parts: [{ m: 'count', n: 5, time: 3 }] },
+    ],
+  },
+  {
+    id: 'omelette', name: 'Omelette', level: 'Hard', vessel: 'pan',
+    art: 'radial-gradient(ellipse 60% 40% at 50% 50%, #ffd96a 0 70%, #2d2e35 71%)',
+    steps: [
+      { name: 'Crack three', hint: 'Stop the swing three times. It gets faster.', scene: 'crack', parts: [{ m: 'swing', n: 3, speed: 1.15 }] },
+      { name: 'Whisk', hint: WHISK, scene: 'whisk', parts: [{ m: 'beat', n: 20, bpm: 128, lr: true }] },
+      { name: 'Swirl and set', hint: 'Tap each time a big bubble pops, not the small ones.', scene: 'swirl', heat: true, parts: [{ m: 'cue', n: 3 }] },
+      { name: 'The flip', hint: 'Stop the swing to flip, then catch it on the beat.', scene: 'flip', parts: [{ m: 'swing', n: 1, speed: 1.5 }, { m: 'beat', n: 4, bpm: 120 }] },
+    ],
+  },
+];
+// Numbers for the script; every word goes in the page (below) so the site's translations reach it.
+const config = methods.map((m) => ({ id: m.id, vessel: m.vessel, steps: m.steps.map((s) => ({ scene: s.scene, heat: !!s.heat, parts: s.parts })) }));
+const strings: Record<string, string> = {
+  ...Object.fromEntries(methods.flatMap((m, i) => [[`m${i}`, m.name], ...m.steps.flatMap((s, j) => [[`m${i}s${j}`, s.name], [`m${i}h${j}`, s.hint]])])),
+  stepOf: 'Step {n} of {total}',
+  perfect: 'Perfect!', good: 'Good', miss: 'Miss', splat: 'Splat!', early: 'Too early!', burnt: 'Burnt!', hot: 'Too hot!',
+  raw: 'Still raw!', spill: 'Spilled!', shell: 'Shell in the pan!', salty: 'Way off!', go: 'Go!',
+  bStop: 'Stop!', bHold: 'Hold', bTap: 'Tap!', bMash: 'Mash!', bPeel: 'Peel!', bWhiskL: '◀ Whisk', bWhiskR: 'Whisk ▶',
+  starsSay: '{step}: {stars} of 3 stars.',
+  t3: 'You cooked them right.', t2: 'Tasty egg!', t1: 'Edible. Barely.', t0: 'Even Peeta wouldn’t eat that.',
+  rating: 'Rating: {r} of 3',
+  best: 'Best: {r} of 3', newBest: 'New best!',
+  boom: 'KABOOM!', boomSub: 'Yolk on the ceiling. One more try?',
+  smoke: 'BEEP! BEEP! BEEP!', smokeSub: 'The smoke alarm says hi. Open a window and try again.',
+  dIdle: 'Show me what you’ve got, chef.', dGood: 'Huehuehue, look at that!', dBad: 'Smells like burnt hopes…',
+  dBoom: 'My kitchen!', dSmoke: 'Cough… cough…', dDone: 'Chef’s kiss!', dMeh: 'We don’t talk about this one.',
+  soundOn: 'Sound: on', soundOff: 'Sound: off',
+  count: '{n} of {total}',
+  summary: 'Best egg: {n} of 3 stars',
+};
+const uid = `egg${Math.random().toString(36).slice(2, 8)}`;
+---
+
+<div
+  class:list={['perfect-egg', className]}
+  data-perfect-egg
+  data-save={saveKey}
+  data-config={JSON.stringify(config)}
+  data-colors={JSON.stringify(DEFAULT_COLORS)}
+  role="group"
+  aria-label={label}
+>
+  <div class="perfect-egg__strings" hidden data-llms-skip>
+    {Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}
+  </div>
+  <p class="perfect-egg__sr" aria-live="polite" data-say></p>
+
+  <div class="perfect-egg__pick" data-pick>
+    <div class="perfect-egg__pickhead">
+      <h3 class="perfect-egg__title" id={`${uid}-t`}>How do you want your egg?</h3>
+      <button type="button" class="perfect-egg__sound" data-sound aria-pressed="true">Sound: on</button>
+    </div>
+    <div class="perfect-egg__methods" role="list" aria-labelledby={`${uid}-t`}>
+      {
+        methods.map((m, i) => (
+          <button type="button" class="perfect-egg__method" data-method={i} role="listitem">
+            <span class="perfect-egg__art" aria-hidden="true" style={`background:${m.art}`} />
+            <span class="perfect-egg__mname">{m.name}</span>
+            <span class={`perfect-egg__level perfect-egg__level--${m.level.toLowerCase()}`}>{m.level}</span>
+            <span class="perfect-egg__mbest" data-best={m.id} />
+          </button>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="perfect-egg__play" data-play hidden>
+    <div class="perfect-egg__head">
+      <span class="perfect-egg__mtitle" data-mtitle></span>
+      <span class="perfect-egg__steptitle" data-steptitle></span>
+      <ol class="perfect-egg__chips" data-chips aria-hidden="true"></ol>
+    </div>
+    <div class="perfect-egg__main">
+      <div class="perfect-egg__stage" data-stage>
+        <canvas width="360" height="360" data-pan aria-hidden="true"></canvas>
+        <span class="perfect-egg__callout" data-callout aria-hidden="true"></span>
+        <div class="perfect-egg__end" data-end hidden>
+          <span class="perfect-egg__endtitle" data-endtitle></span>
+          <span class="perfect-egg__endstars" data-endstars aria-hidden="true"></span>
+          <span class="perfect-egg__endsub" data-endsub></span>
+          <span class="perfect-egg__endbest" data-endbest></span>
+          <span class="perfect-egg__endbtns">
+            <button type="button" class="perfect-egg__btn perfect-egg__btn--main" data-again>Again</button>
+            <button type="button" class="perfect-egg__btn" data-another>Another egg</button>
+          </span>
+        </div>
+      </div>
+      <div class="perfect-egg__side">
+        <div class="perfect-egg__deo">
+          <canvas width="120" height="162" data-deo aria-hidden="true"></canvas>
+          <div class="perfect-egg__deoright">
+            <span class="perfect-egg__deoline" data-deoline></span>
+            <span class="perfect-egg__chaoslabel" id={`${uid}-c`}>Chaos</span>
+            <span class="perfect-egg__chaos" role="meter" aria-labelledby={`${uid}-c`} aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-chaos><span data-chaosfill></span></span>
+          </div>
+        </div>
+        <p class="perfect-egg__hint" data-hint></p>
+        <canvas class="perfect-egg__widget" width="520" height="120" data-widget aria-hidden="true"></canvas>
+        <div class="perfect-egg__btns" data-btns>
+          <button type="button" class="perfect-egg__btn perfect-egg__btn--big" data-press="C">Tap!</button>
+          <button type="button" class="perfect-egg__btn perfect-egg__btn--big" data-press="L" hidden>◀ Whisk</button>
+          <button type="button" class="perfect-egg__btn perfect-egg__btn--big" data-press="R" hidden>Whisk ▶</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .perfect-egg {
+    --_accent: var(--perfect-egg-accent, #f6b81c);
+    --_bg: var(--perfect-egg-bg, #17181c);
+    container-type: inline-size;
+    position: relative;
+    padding: 1rem;
+    border-radius: 18px;
+    background: var(--_bg);
+    color: #fff4dc;
+    overflow: hidden;
+  }
+  .perfect-egg [hidden] {
+    display: none !important;
+  }
+  .perfect-egg__sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    margin: 0;
+  }
+  .perfect-egg__pickhead,
+  .perfect-egg__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.4rem 0.9rem;
+    margin-bottom: 0.9rem;
+  }
+  .perfect-egg__title {
+    margin: 0;
+    flex: 1;
+    font-size: 1.3rem;
+    color: var(--_accent);
+  }
+  .perfect-egg__sound {
+    min-height: 40px;
+    padding: 0 0.9rem;
+    border-radius: 20px;
+    border: 2px solid #4a4b52;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .perfect-egg__methods {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.7rem;
+  }
+  @container (min-width: 640px) {
+    .perfect-egg__methods {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+  .perfect-egg__method {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.9rem 0.6rem;
+    border-radius: 16px;
+    border: 3px solid #3a3b42;
+    background: #222329;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+  }
+  .perfect-egg__method:hover,
+  .perfect-egg__method:focus-visible {
+    border-color: var(--_accent);
+  }
+  .perfect-egg__art {
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+  }
+  .perfect-egg__mname {
+    font-weight: 800;
+    font-size: 1rem;
+  }
+  .perfect-egg__level {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .perfect-egg__level--easy {
+    color: #9fd36b;
+  }
+  .perfect-egg__level--medium {
+    color: var(--_accent);
+  }
+  .perfect-egg__level--hard {
+    color: #ff7a63;
+  }
+  .perfect-egg__mbest {
+    min-height: 1.2em;
+    font-size: 0.85rem;
+    color: var(--_accent);
+  }
+  .perfect-egg__mtitle {
+    font-weight: 800;
+    font-size: 1.15rem;
+    color: var(--_accent);
+  }
+  .perfect-egg__steptitle {
+    font-size: 0.95rem;
+    color: #d8cfbb;
+  }
+  .perfect-egg__chips {
+    display: flex;
+    gap: 4px;
+    margin: 0 0 0 auto;
+    padding: 0;
+    list-style: none;
+  }
+  .perfect-egg__chips :global(li) {
+    width: 30px;
+    height: 8px;
+    border-radius: 4px;
+    background: #2f3037;
+  }
+  .perfect-egg__chips :global(li.is-now) {
+    background: var(--_accent);
+  }
+  .perfect-egg__chips :global(li.is-done) {
+    background: #5aa05e;
+  }
+  .perfect-egg__main {
+    display: grid;
+    gap: 0.9rem;
+    grid-template-columns: minmax(0, 1fr);
+  }
+  @container (min-width: 640px) {
+    .perfect-egg__main {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
+      align-items: start;
+    }
+  }
+  .perfect-egg__stage {
+    position: relative;
+    width: min(100%, 420px, 44dvh);
+    aspect-ratio: 1;
+    justify-self: center;
+    border-radius: 16px;
+    overflow: hidden;
+    background: radial-gradient(circle at 50% 50%, #26272d 0 62%, #121316 63%);
+  }
+  .perfect-egg__stage canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .perfect-egg__stage.is-shake {
+    animation: perfect-egg-shake 0.4s;
+  }
+  @keyframes perfect-egg-shake {
+    20% {
+      transform: translate(-6px, 3px);
+    }
+    40% {
+      transform: translate(5px, -4px);
+    }
+    60% {
+      transform: translate(-4px, -2px);
+    }
+    80% {
+      transform: translate(3px, 3px);
+    }
+  }
+  .perfect-egg__callout {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0.6rem;
+    text-align: center;
+    font-size: clamp(1.3rem, 5cqi, 2rem);
+    font-weight: 900;
+    text-shadow: 0 3px 0 #000;
+    pointer-events: none;
+  }
+  .perfect-egg__callout.is-pop {
+    animation: perfect-egg-pop 0.35s ease-out;
+  }
+  @keyframes perfect-egg-pop {
+    from {
+      transform: scale(1.4);
+      opacity: 0.4;
+    }
+  }
+  .perfect-egg__end {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    padding: 1rem;
+    text-align: center;
+    animation: perfect-egg-fade 0.5s ease-out;
+  }
+  @keyframes perfect-egg-fade {
+    from {
+      opacity: 0;
+    }
+  }
+  .perfect-egg__end.is-done {
+    background: rgb(20 32 20 / 0.9);
+  }
+  .perfect-egg__end.is-smoke {
+    background:
+      radial-gradient(circle at 28% 30%, #3b3b3e 0 20%, transparent 21%),
+      radial-gradient(circle at 72% 26%, #2c2c2f 0 24%, transparent 25%),
+      radial-gradient(circle at 50% 60%, #232325 0 34%, transparent 35%),
+      rgb(14 14 16 / 0.94);
+  }
+  .perfect-egg__end.is-boom {
+    background:
+      radial-gradient(circle at 24% 28%, #f6b81c 0 10%, transparent 11%),
+      radial-gradient(circle at 74% 22%, #ffd96a 0 8%, transparent 9%),
+      radial-gradient(circle at 60% 64%, #f6b81c 0 13%, transparent 14%),
+      radial-gradient(circle at 18% 78%, #fff4dc 0 9%, transparent 10%),
+      radial-gradient(circle at 84% 80%, #f39a1b 0 7%, transparent 8%),
+      rgb(38 32 26 / 0.9);
+  }
+  .perfect-egg__endtitle {
+    font-size: clamp(1.5rem, 6cqi, 2.4rem);
+    font-weight: 900;
+    text-shadow: 0 3px 0 #000;
+  }
+  .perfect-egg__end.is-smoke .perfect-egg__endtitle {
+    padding: 0.2rem 0.8rem;
+    border-radius: 10px;
+    background: #e5482d;
+    text-shadow: none;
+    font-size: clamp(1.1rem, 4cqi, 1.6rem);
+  }
+  .perfect-egg__endstars {
+    font-size: 2rem;
+    letter-spacing: 0.3rem;
+    color: var(--_accent);
+  }
+  .perfect-egg__endsub,
+  .perfect-egg__endbest {
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  .perfect-egg__endbest {
+    color: var(--_accent);
+  }
+  .perfect-egg__endbtns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+  }
+  .perfect-egg__side {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    min-width: 0;
+  }
+  .perfect-egg__deo {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .perfect-egg__deo canvas {
+    width: 80px;
+    height: 108px;
+    image-rendering: pixelated;
+    flex: none;
+  }
+  .perfect-egg__deoright {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-width: 0;
+  }
+  .perfect-egg__deoline {
+    font-weight: 700;
+    min-height: 1.3em;
+  }
+  .perfect-egg__chaoslabel {
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #c9c0ad;
+  }
+  .perfect-egg__chaos {
+    display: block;
+    height: 16px;
+    border-radius: 8px;
+    background: #2a2b31;
+    overflow: hidden;
+  }
+  .perfect-egg__chaos span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--_accent), #e5482d 70%, #444);
+    transition: width 0.2s;
+  }
+  .perfect-egg__hint {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: #e6dcc6;
+  }
+  .perfect-egg__widget {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    background: #222329;
+  }
+  .perfect-egg__btns {
+    display: flex;
+    gap: 0.6rem;
+  }
+  .perfect-egg__btn {
+    min-height: 44px;
+    padding: 0 1rem;
+    border-radius: 22px;
+    border: 2px solid #4a4b52;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .perfect-egg__btn--main {
+    border: 0;
+    background: var(--_accent);
+    color: #17181c;
+  }
+  .perfect-egg__btn--big {
+    flex: 1;
+    min-height: 96px;
+    border: 0;
+    border-radius: 18px;
+    background: var(--_accent);
+    color: #17181c;
+    font-size: 1.4rem;
+    font-weight: 900;
+    box-shadow: 0 6px 0 #a87a08;
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .perfect-egg__btn--big.is-down {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #a87a08;
+  }
+  @container (max-width: 639px) {
+    .perfect-egg__btn--big {
+      min-height: 120px;
+    }
+  }
+  .perfect-egg button:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .perfect-egg__stage.is-shake,
+    .perfect-egg__callout.is-pop {
+      animation: none;
+    }
+    .perfect-egg__chaos span {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  import { render, GW, GH, type Pose, type Colors } from './pixel-deo/sprite';
+
+  type Part = { m: 'beat' | 'heat' | 'hold' | 'cue' | 'swing' | 'count'; n?: number; bpm?: number; lr?: boolean; speed?: number; rate?: number; hold?: number; time?: number };
+  type StepCfg = { scene: string; heat: boolean; parts: Part[] };
+  type MethodCfg = { id: string; vessel: 'pan' | 'pot'; steps: StepCfg[] };
+  type Judge = 'perfect' | 'good' | 'miss';
+  type Side = 'C' | 'L' | 'R';
+
+  // Deo's reactions, drawn with the shared sprite.
+  const POSES: Record<string, Pose> = {
+    idle: { r: { elbow: [5, 5], hand: [1, 9] }, l: { elbow: [-5, 5], hand: [-1, 9] }, hip: 0, lean: 0, legs: 2 },
+    cheer: { r: { elbow: [8, 2], hand: [6, -8] }, l: { hand: [-4, 10] }, hip: 2, lean: 1, legs: 2, grin: true },
+    thumbs: { r: { elbow: [5, 6], hand: [8, -1], thumb: true }, l: { hand: [-4, 10] }, hip: 0, lean: 0, legs: 2, grin: true },
+    shrug: { r: { elbow: [6, 5], hand: [11, -3] }, l: { elbow: [-6, 5], hand: [-11, -3] }, hip: 0, lean: 0, legs: 2, bob: -1 },
+  };
+  const SOOT: Partial<Colors> = { skin: '#6b6158', robe: '#7d7562', pattern: '#3a3a3a', hem: '#8a8a8a', boots: '#6e6a5a', hatTrim: '#6a6150' };
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-perfect-egg]')) {
+    const $ = <T extends Element = HTMLElement>(s: string) => root.querySelector<T>(s)!;
+    const $$ = <T extends Element = HTMLElement>(s: string) => [...root.querySelectorAll<T>(s)];
+    const words: Record<string, string> = {};
+    for (const s of $$('[data-k]')) words[s.dataset.k!] = s.textContent ?? '';
+    const msg = (k: string, v: Record<string, string | number> = {}) => (words[k] ?? k).replace(/\{(\w+)\}/g, (_, x) => String(v[x] ?? ''));
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const METHODS: MethodCfg[] = JSON.parse(root.dataset.config!);
+    const colors: Colors = JSON.parse(root.dataset.colors!);
+    const saveKey = root.dataset.save ?? '';
+    const pan = $<HTMLCanvasElement>('[data-pan]').getContext('2d')!;
+    const wg = $<HTMLCanvasElement>('[data-widget]').getContext('2d')!;
+    const dg = $<HTMLCanvasElement>('[data-deo]').getContext('2d')!;
+    // Gauges are drawn left to right everywhere; their words follow the page (right-aligned in Arabic).
+    const rtl = getComputedStyle(root).direction === 'rtl';
+    const label = (text: string, y: number, px: number, color: string) => {
+      wg.save();
+      wg.direction = rtl ? 'rtl' : 'ltr';
+      wg.textAlign = rtl ? 'right' : 'left';
+      wg.font = `bold ${px}px system-ui, sans-serif`;
+      wg.fillStyle = color;
+      wg.fillText(text, rtl ? 520 - 20 : 20, y);
+      wg.restore();
+    };
+
+    // ---- Saves: best rating per egg and the sound setting, in this browser only.
+    type Save = { best: Record<string, number>; sound: boolean };
+    let save: Save = { best: {}, sound: true };
+    try {
+      if (saveKey) save = { ...save, ...JSON.parse(localStorage.getItem(saveKey) || '{}') };
+    } catch {
+      /* private mode: play without saving */
+    }
+    const store = () => {
+      try {
+        if (saveKey) localStorage.setItem(saveKey, JSON.stringify(save));
+      } catch {
+        /* storage full or blocked */
+      }
+    };
+    const starText = (r: number) => '★'.repeat(Math.round(r)) + '☆'.repeat(3 - Math.round(r));
+    const fmt = (r: number) => (Math.round(r * 10) / 10).toString();
+    const showBests = () => {
+      for (const el of $$('[data-best]')) {
+        const r = save.best[el.dataset.best!];
+        el.textContent = r === undefined ? '' : `${starText(r)} ${msg('best', { r: fmt(r) })}`;
+      }
+      const sb = $('[data-sound]');
+      sb.textContent = msg(save.sound ? 'soundOn' : 'soundOff');
+      sb.setAttribute('aria-pressed', String(save.sound));
+    };
+
+    // ---- Sound (Web Audio, made on the fly).
+    let audio: AudioContext | null = null;
+    let sizzle: { g: GainNode; src: AudioBufferSourceNode } | null = null;
+    const ac = () => {
+      if (!save.sound) return null;
+      try {
+        audio ??= new AudioContext();
+        if (audio.state === 'suspended') audio.resume();
+        return audio;
+      } catch {
+        return null;
+      }
+    };
+    const tone = (freq: number, dur: number, type: OscillatorType = 'sine', vol = 0.15, to?: number) => {
+      const a = ac();
+      if (!a) return;
+      const t = a.currentTime;
+      const o = a.createOscillator();
+      const g = a.createGain();
+      o.type = type;
+      o.frequency.setValueAtTime(freq, t);
+      if (to) o.frequency.exponentialRampToValueAtTime(to, t + dur);
+      g.gain.setValueAtTime(vol, t);
+      g.gain.exponentialRampToValueAtTime(0.0001, t + dur);
+      o.connect(g).connect(a.destination);
+      o.start(t);
+      o.stop(t + dur + 0.02);
+    };
+    const noise = (dur: number, freq: number, vol = 0.3, type: BiquadFilterType = 'lowpass') => {
+      const a = ac();
+      if (!a) return;
+      const t = a.currentTime;
+      const buf = a.createBuffer(1, Math.ceil(a.sampleRate * dur), a.sampleRate);
+      const ch = buf.getChannelData(0);
+      for (let i = 0; i < ch.length; i++) ch[i] = (Math.random() * 2 - 1) * (1 - i / ch.length);
+      const src = a.createBufferSource();
+      src.buffer = buf;
+      const f = a.createBiquadFilter();
+      f.type = type;
+      f.frequency.value = freq;
+      const g = a.createGain();
+      g.gain.value = vol;
+      src.connect(f).connect(g).connect(a.destination);
+      src.start(t);
+    };
+    const sfx = {
+      perfect: () => (tone(880, 0.09, 'triangle', 0.14), setTimeout(() => tone(1320, 0.12, 'triangle', 0.12), 70)),
+      good: () => tone(660, 0.1, 'triangle', 0.12),
+      miss: () => noise(0.18, 500, 0.35),
+      tick: () => tone(1200, 0.04, 'square', 0.05),
+      boom: () => (noise(0.9, 300, 0.9), tone(140, 0.8, 'sine', 0.5, 40)),
+      alarm: () => [0, 1, 2, 3, 4, 5].forEach((i) => setTimeout(() => tone(3100, 0.12, 'square', 0.08), i * 220)),
+      done: () => [523, 659, 784, 1047].forEach((f, i) => setTimeout(() => tone(f, 0.16, 'triangle', 0.12), i * 110)),
+    };
+    const sizzleOn = (on: boolean) => {
+      const a = on ? ac() : audio;
+      if (!a) return;
+      if (on && !sizzle) {
+        const buf = a.createBuffer(1, a.sampleRate * 2, a.sampleRate);
+        const ch = buf.getChannelData(0);
+        for (let i = 0; i < ch.length; i++) ch[i] = (Math.random() * 2 - 1) * (Math.random() < 0.02 ? 1 : 0.35);
+        const src = a.createBufferSource();
+        src.buffer = buf;
+        src.loop = true;
+        const f = a.createBiquadFilter();
+        f.type = 'bandpass';
+        f.frequency.value = 4200;
+        const g = a.createGain();
+        g.gain.value = 0.05;
+        src.connect(f).connect(g).connect(a.destination);
+        src.start();
+        sizzle = { g, src };
+      } else if (!on && sizzle) {
+        sizzle.src.stop();
+        sizzle = null;
+      }
+    };
+
+    // ---- Deo.
+    let deoPose = 'idle';
+    let deoSoot = false;
+    let deoUntil = 0;
+    const drawDeo = () => {
+      dg.clearRect(0, 0, 120, 162);
+      const grid = render(POSES[deoPose], deoSoot ? { ...colors, ...SOOT } : colors);
+      for (let y = 0; y < GH; y++)
+        for (let x = 0; x < GW; x++) {
+          const c = grid[y][x];
+          if (!c) continue;
+          dg.fillStyle = c;
+          dg.fillRect(x * 3, y * 3, 3, 3);
+        }
+    };
+    const react = (pose: string, line: string, ms = 900) => {
+      deoPose = pose;
+      deoUntil = ms ? performance.now() + ms : Infinity;
+      $('[data-deoline]').textContent = msg(line);
+      drawDeo();
+    };
+
+    // ---- A run.
+    let method = 0;
+    let stepIdx = 0;
+    let partIdx = 0;
+    let chaos = 0;
+    let stepScores: number[] = [];
+    let partScores: number[] = [];
+    let running = false;
+    let part: PartRun | null = null;
+    let splats: { x: number; y: number; r: number }[] = [];
+    let flare = 0;
+    let shells = 0;
+    const say = (t: string) => ($('[data-say]').textContent = t);
+    const callout = (k: string) => {
+      const c = $('[data-callout]');
+      c.textContent = msg(k);
+      c.classList.remove('is-pop');
+      void c.offsetWidth;
+      c.classList.add('is-pop');
+    };
+    const setChaos = (v: number) => {
+      chaos = Math.max(0, Math.min(100, v));
+      $('[data-chaosfill]').style.width = `${chaos}%`;
+      $('[data-chaos]').setAttribute('aria-valuenow', String(Math.round(chaos)));
+      if (chaos >= 100 && running) blowUp();
+    };
+    // One judged tap: the callout, the sound, Deo, and the chaos meter.
+    const judge = (j: Judge, word: string, add = 12) => {
+      callout(word);
+      if (j === 'perfect') (sfx.perfect(), react('thumbs', 'dGood'), setChaos(chaos - 3));
+      else if (j === 'good') (sfx.good(), react('idle', 'dIdle', 0));
+      else {
+        sfx.miss();
+        react('shrug', 'dBad');
+        splats.push({ x: 60 + Math.random() * 240, y: 60 + Math.random() * 240, r: 8 + Math.random() * 14 });
+        setChaos(chaos + add);
+      }
+    };
+
+    // ---- The six mechanics. Each draws its own gauge in the widget and reports a 0..1 score when it's done.
+    type PartRun = { lr: boolean; button: string; press(side: Side, t: number): void; release?(t: number): void; tick(t: number): boolean; draw(t: number): void; score(): number; progress(): number };
+    const W = 520;
+    const H = 120;
+    const zoneBar = (x: number, y: number, w: number, h: number, c: number, perfect: number, good: number) => {
+      wg.fillStyle = '#34353c';
+      wg.fillRect(x, y, w, h);
+      wg.fillStyle = '#5aa05e';
+      wg.fillRect(x + (c - good) * w, y, good * 2 * w, h);
+      wg.fillStyle = '#9fd36b';
+      wg.fillRect(x + (c - perfect) * w, y, perfect * 2 * w, h);
+    };
+    function swing(p: Part, t0: number): PartRun {
+      const n = p.n ?? 1;
+      let done = 0;
+      let sum = 0;
+      let start = t0 + 500;
+      let pauseUntil = 0;
+      const pos = (t: number) => {
+        const speed = (p.speed ?? 1) * (1 + 0.25 * done);
+        return (Math.sin(((t - start) / 1000) * Math.PI * 2 * 0.5 * speed - Math.PI / 2) + 1) / 2;
+      };
+      const next = (t: number, s: number) => {
+        sum += s;
+        done++;
+        pauseUntil = t + 550;
+        start = t + 550;
+      };
+      return {
+        lr: false,
+        button: 'bStop',
+        press(_s, t) {
+          if (t < pauseUntil || t < start) return;
+          const d = Math.abs(pos(t) - 0.5);
+          if (d < 0.07) (judge('perfect', 'perfect'), next(t, 1));
+          else if (d < 0.16) (judge('good', 'good'), next(t, 0.6));
+          else (judge('miss', stepCfg().scene === 'crack' ? 'shell' : 'splat', 18), shells++, next(t, 0));
+        },
+        tick(t) {
+          if (t > start + 7000 && t > pauseUntil) (judge('miss', 'miss', 14), next(t, 0));
+          return done >= n && t >= pauseUntil;
+        },
+        draw(t) {
+          zoneBar(20, 52, W - 40, 26, 0.5, 0.07, 0.16);
+          const x = 20 + (t < pauseUntil ? 0.5 : pos(t)) * (W - 40);
+          wg.fillStyle = '#fff4dc';
+          wg.fillRect(x - 3, 36, 6, 58);
+          label(msg('count', { n: Math.min(done + 1, n), total: n }), 30, 28, '#c9c0ad');
+        },
+        score: () => sum / n,
+        progress: () => done / n,
+        // the swinging egg on the stage follows the needle
+        ...{ swingPos: (t: number) => (t < pauseUntil ? 0.5 : pos(t)) },
+      } as PartRun & { swingPos(t: number): number };
+    }
+    function hold(p: Part, t0: number): PartRun {
+      const target = 0.6 + Math.random() * 0.2;
+      let g = 0;
+      let held = false;
+      let last = t0;
+      let result: number | null = null;
+      let endAt = 0;
+      const finish = (t: number, j: Judge, w: string, s: number) => {
+        judge(j, w, 20);
+        result = s;
+        endAt = t + 700;
+      };
+      return {
+        lr: false,
+        button: 'bHold',
+        press(_s, t) {
+          if (result === null) (held = true), (last = t);
+        },
+        release(t) {
+          if (!held || result !== null) return;
+          held = false;
+          const d = Math.abs(g - target);
+          if (d < 0.05) finish(t, 'perfect', 'perfect', 1);
+          else if (d < 0.12) finish(t, 'good', 'good', 0.6);
+          else finish(t, 'miss', g < target ? 'raw' : 'spill', 0);
+        },
+        tick(t) {
+          if (held && result === null) {
+            g += ((t - last) / 1000) * (p.rate ?? 1) * (0.22 + g * 1.1);
+            if (g >= 1) (g = 1, (held = false), finish(t, 'miss', 'spill', 0));
+          }
+          last = t;
+          if (result === null && !held && t > t0 + 8000) finish(t, 'miss', 'raw', 0);
+          return result !== null && t > endAt;
+        },
+        draw() {
+          zoneBar(20, 46, W - 40, 34, target, 0.05, 0.12);
+          wg.fillStyle = '#f6b81c';
+          wg.fillRect(20, 46, g * (W - 40), 34);
+          wg.fillStyle = '#fff4dc';
+          wg.fillRect(20 + target * (W - 40) - 1, 38, 2, 50);
+        },
+        score: () => result ?? 0,
+        progress: () => g,
+      };
+    }
+    function cue(p: Part, t0: number): PartRun {
+      const n = p.n ?? 2;
+      let done = 0;
+      let sum = 0;
+      let bigAt = t0 + 1200 + Math.random() * 1800;
+      let sparks: { x: number; at: number }[] = [];
+      let nextSpark = t0 + 300;
+      const WINDOW = 520;
+      const nextBig = (t: number) => (bigAt = t + 1300 + Math.random() * 2000);
+      return {
+        lr: false,
+        button: 'bTap',
+        press(_s, t) {
+          if (done >= n) return;
+          const dt = t - bigAt;
+          if (dt < 0) return judge('miss', 'early', 6);
+          sum += dt < 260 ? 1 : 0.6;
+          judge(dt < 260 ? 'perfect' : 'good', dt < 260 ? 'perfect' : 'good');
+          done++;
+          nextBig(t);
+        },
+        tick(t) {
+          if (t > nextSpark) {
+            sparks.push({ x: 40 + Math.random() * (W - 80), at: t });
+            nextSpark = t + 220 + Math.random() * 300;
+          }
+          sparks = sparks.filter((s) => t - s.at < 400);
+          if (done < n && t - bigAt > WINDOW) {
+            judge('miss', 'burnt', 14);
+            done++;
+            nextBig(t);
+          }
+          return done >= n;
+        },
+        draw(t) {
+          for (const s of sparks) {
+            wg.fillStyle = `rgb(255 220 140 / ${1 - (t - s.at) / 400})`;
+            wg.beginPath();
+            wg.arc(s.x, 60, 5, 0, Math.PI * 2);
+            wg.fill();
+          }
+          if (t >= bigAt && t - bigAt <= WINDOW) {
+            const k = 1 - (t - bigAt) / WINDOW;
+            wg.fillStyle = '#fff4dc';
+            star(wg, W / 2, 60, 22 + 16 * k, 10 + 6 * k);
+          }
+          label(msg('count', { n: Math.min(done + 1, n), total: n }), 30, 28, '#c9c0ad');
+        },
+        score: () => sum / n,
+        progress: () => done / n,
+        ...{ bigNow: (t: number) => t >= bigAt && t - bigAt <= WINDOW },
+      } as PartRun & { bigNow(t: number): boolean };
+    }
+    function beat(p: Part, t0: number): PartRun {
+      const n = p.n ?? 12;
+      const gap = 60000 / (p.bpm ?? 110);
+      const TRAVEL = 2000;
+      const notes = Array.from({ length: n }, (_, i) => ({ t: t0 + 1600 + i * gap, side: (p.lr ? (i % 2 ? 'R' : 'L') : 'C') as Side, hit: false, gone: false, ticked: false }));
+      let sum = 0;
+      return {
+        lr: !!p.lr,
+        button: 'bTap',
+        press(side, t) {
+          const note = notes.find((x) => !x.hit && !x.gone && Math.abs(t - x.t) < 260);
+          if (!note) return judge('miss', 'splat', 6);
+          if (note.side !== side) return (note.hit = true), judge('miss', 'miss', 10);
+          const d = Math.abs(t - note.t);
+          note.hit = true;
+          if (d < 85) (sum += 1), judge('perfect', 'perfect');
+          else if (d < 180) (sum += 0.6), judge('good', 'good');
+          else judge('miss', 'miss', 10);
+        },
+        tick(t) {
+          for (const x of notes) {
+            if (!x.ticked && t >= x.t) {
+              x.ticked = true;
+              if (!p.lr) sfx.tick();
+            }
+            if (!x.hit && !x.gone && t - x.t > 180) {
+              x.gone = true;
+              judge('miss', 'miss', 10);
+            }
+          }
+          return notes.every((x) => x.hit || x.gone) && t > notes[n - 1].t + 300;
+        },
+        draw(t) {
+          const lineX = 60;
+          wg.fillStyle = '#3a3b42';
+          wg.fillRect(0, H / 2 - 1, W, 2);
+          wg.fillStyle = '#f6b81c';
+          wg.fillRect(lineX - 3, 8, 6, H - 16);
+          for (const x of notes) {
+            if (x.hit || x.gone) continue;
+            const px = lineX + ((x.t - t) / TRAVEL) * (W - lineX);
+            if (px > W + 20) continue;
+            const py = x.side === 'L' ? 32 : x.side === 'R' ? 88 : 60;
+            wg.fillStyle = x.side === 'R' ? '#f6b81c' : '#fff4dc';
+            wg.beginPath();
+            wg.arc(px, py, 18, 0, Math.PI * 2);
+            wg.fill();
+            wg.fillStyle = '#17181c';
+            wg.font = 'bold 18px system-ui, sans-serif';
+            wg.textAlign = 'center';
+            wg.textBaseline = 'middle';
+            wg.fillText(x.side === 'L' ? '◀' : x.side === 'R' ? '▶' : '●', px, py + 1);
+            wg.textAlign = 'start';
+            wg.textBaseline = 'alphabetic';
+          }
+        },
+        score: () => sum / n,
+        progress: () => notes.filter((x) => x.hit || x.gone).length / n,
+      };
+    }
+    function heat(p: Part, t0: number): PartRun {
+      const holdFor = (p.hold ?? 5) * 1000;
+      const band = holdFor ? [0.6, 0.8] : [0.82, 1];
+      let level = 0;
+      let phase: 'up' | 'hold' | 'done' = 'up';
+      let holdStart = 0;
+      let inBand = 0;
+      let last = t0;
+      let result = 0;
+      let endAt = 0;
+      const BEAT = 500;
+      const end = (t: number, s: number) => {
+        result = s;
+        phase = 'done';
+        endAt = t + 700;
+      };
+      return {
+        lr: false,
+        button: 'bMash',
+        press(_s, t) {
+          if (phase === 'done') return;
+          const onBeat = phase === 'hold' && Math.abs(((t - holdStart) % BEAT) - BEAT / 2) > BEAT / 2 - 90;
+          level = Math.min(1.05, level + (phase === 'up' ? 0.075 : onBeat ? 0.07 : 0.035));
+          if (onBeat) callout('perfect');
+        },
+        tick(t) {
+          const dt = (t - last) / 1000;
+          last = t;
+          if (phase === 'done') return t > endAt;
+          level = Math.max(0, level - dt * (phase === 'up' ? 0.16 : 0.22));
+          if (phase === 'up') {
+            if (level >= band[0]) {
+              if (!holdFor) {
+                const took = t - t0;
+                const s = took < 2600 ? 1 : took < 4000 ? 0.6 : 0.3;
+                judge(s === 1 ? 'perfect' : 'good', s === 1 ? 'perfect' : 'good');
+                end(t, s);
+              } else {
+                phase = 'hold';
+                holdStart = t;
+                callout('go');
+              }
+            } else if (t - t0 > 6500) {
+              judge('miss', 'raw', 18);
+              end(t, 0);
+            }
+          } else {
+            if (level >= band[0] && level <= band[1]) inBand += dt * 1000;
+            flare = level > 0.9 ? Math.min(1, flare + dt * 3) : Math.max(0, flare - dt * 2);
+            if (level > 0.92) setChaos(chaos + dt * 14);
+            if (t - holdStart >= holdFor) {
+              const s = inBand / holdFor;
+              const j: Judge = s > 0.8 ? 'perfect' : s > 0.5 ? 'good' : 'miss';
+              judge(j, j === 'miss' ? (level > 0.8 ? 'hot' : 'raw') : j, 10);
+              end(t, s > 0.8 ? 1 : s > 0.5 ? 0.6 : s * 0.5);
+            }
+          }
+          return false;
+        },
+        draw(t) {
+          wg.fillStyle = '#34353c';
+          wg.fillRect(20, 46, W - 40, 34);
+          wg.fillStyle = '#5aa05e';
+          wg.fillRect(20 + band[0] * (W - 40), 46, (band[1] - band[0]) * (W - 40), 34);
+          const grad = wg.createLinearGradient(20, 0, W - 20, 0);
+          grad.addColorStop(0, '#f6b81c');
+          grad.addColorStop(1, '#e5482d');
+          wg.fillStyle = grad;
+          wg.fillRect(20, 52, Math.min(1, level) * (W - 40), 22);
+          if (phase === 'hold') {
+            const k = ((t - holdStart) % BEAT) / BEAT;
+            wg.fillStyle = `rgb(255 244 220 / ${1 - k})`;
+            wg.beginPath();
+            wg.arc(W - 30, 24, 10, 0, Math.PI * 2);
+            wg.fill();
+            wg.fillStyle = '#c9c0ad';
+            wg.fillRect(20, 96, (1 - (t - holdStart) / holdFor) * (W - 40), 6);
+          }
+        },
+        score: () => result,
+        progress: () => level,
+      };
+    }
+    function count(p: Part, t0: number): PartRun {
+      const n = p.n ?? 5;
+      const limit = (p.time ?? 3) * 1000;
+      let taps = 0;
+      let result: number | null = null;
+      let endAt = 0;
+      return {
+        lr: false,
+        button: 'bPeel',
+        press() {
+          if (result === null) (taps++, sfx.tick());
+        },
+        tick(t) {
+          if (result === null && t - t0 > limit + 600) {
+            const d = Math.abs(taps - n);
+            result = d === 0 ? 1 : d === 1 ? 0.6 : 0;
+            judge(d === 0 ? 'perfect' : d === 1 ? 'good' : 'miss', d === 0 ? 'perfect' : d === 1 ? 'good' : 'salty', 20);
+            endAt = t + 700;
+          }
+          return result !== null && t > endAt;
+        },
+        draw(t) {
+          label(msg('count', { n: taps, total: n }), 72, 40, '#fff4dc');
+          wg.fillStyle = '#34353c';
+          wg.fillRect(20, 96, W - 40, 8);
+          wg.fillStyle = '#f6b81c';
+          wg.fillRect(20, 96, Math.max(0, 1 - (t - t0 - 600) / limit) * (W - 40), 8);
+        },
+        score: () => result ?? 0,
+        progress: () => Math.min(1, taps / n),
+      };
+    }
+    function star(g: CanvasRenderingContext2D, x: number, y: number, R: number, r: number) {
+      g.beginPath();
+      for (let i = 0; i < 10; i++) {
+        const a = (i * Math.PI) / 5 - Math.PI / 2;
+        const rr = i % 2 ? r : R;
+        g.lineTo(x + Math.cos(a) * rr, y + Math.sin(a) * rr);
+      }
+      g.closePath();
+      g.fill();
+    }
+    const MAKERS = { swing, hold, cue, beat, heat, count };
+    const stepCfg = () => METHODS[method].steps[Math.min(stepIdx, 3)];
+
+    // ---- The stage: the pan (or pot) seen from above.
+    const circle = (x: number, y: number, r: number, c: string) => {
+      pan.fillStyle = c;
+      pan.beginPath();
+      pan.arc(x, y, r, 0, Math.PI * 2);
+      pan.fill();
+    };
+    const vesselPan = () => {
+      pan.fillStyle = '#3a3b42';
+      pan.fillRect(160, 300, 40, 60);
+      circle(180, 180, 150, '#2b2c31');
+      circle(180, 180, 132, '#3c3d44');
+    };
+    const vesselPot = (bubbles: number, t: number) => {
+      circle(180, 180, 150, '#9aa0a8');
+      circle(180, 180, 136, '#5f7b8c');
+      for (let i = 0; i < bubbles; i++) {
+        const a = i * 2.4 + t / 700;
+        const r = 30 + ((i * 37) % 90);
+        circle(180 + Math.cos(a) * r, 180 + Math.sin(a) * r, 3 + ((t / 90 + i * 7) % 6), 'rgb(220 235 245 / .7)');
+      }
+    };
+    const friedEgg = (x: number, y: number, done: number, burnt: number) => {
+      const white = `rgb(${255 - burnt * 120} ${250 - burnt * 140} ${235 - burnt * 150} / ${0.55 + done * 0.45})`;
+      pan.fillStyle = white;
+      pan.beginPath();
+      pan.ellipse(x, y, 78, 66, 0.3, 0, Math.PI * 2);
+      pan.fill();
+      if (done > 0.3) {
+        pan.strokeStyle = `rgb(${200 - burnt * 120} ${130 - burnt * 90} 40 / ${done})`;
+        pan.lineWidth = 6;
+        pan.stroke();
+      }
+      circle(x + 6, y - 4, 24, burnt > 0.6 ? '#8a5a12' : '#f6b81c');
+      circle(x, y - 10, 8, 'rgb(255 255 255 / .35)');
+    };
+    const eggShell = (x: number, y: number) => {
+      pan.fillStyle = '#f4ead7';
+      pan.beginPath();
+      pan.ellipse(x, y, 26, 34, 0.2, 0, Math.PI * 2);
+      pan.fill();
+      pan.fillStyle = 'rgb(0 0 0 / .12)';
+      pan.beginPath();
+      pan.ellipse(x + 8, y + 8, 14, 20, 0.2, 0, Math.PI * 2);
+      pan.fill();
+    };
+    const plate = (x: number, y: number) => {
+      circle(x, y, 120, '#e9e4d6');
+      circle(x, y, 96, '#ffffff');
+    };
+    function drawStage(t: number) {
+      pan.clearRect(0, 0, 360, 360);
+      const s = stepCfg();
+      const m = METHODS[method];
+      const prog = part?.progress() ?? 1;
+      const burnt = Math.max(0, (chaos - 55) / 45);
+      const scene = s.scene;
+      const done = (k: string) => METHODS[method].steps.findIndex((x) => x.scene === k) < stepIdx;
+      if (scene === 'whisk') {
+        circle(180, 180, 140, '#d9e4ea');
+        circle(180, 180, 118, '#eef4f7');
+        pan.save();
+        pan.translate(180, 180);
+        pan.rotate(prog * 12);
+        circle(0, 0, 96, '#f6b81c');
+        pan.strokeStyle = 'rgb(255 244 200 / .8)';
+        pan.lineWidth = 6;
+        for (let i = 0; i < 3; i++) {
+          pan.beginPath();
+          pan.arc(0, 0, 30 + i * 22, 0.3 + i, 2.2 + i);
+          pan.stroke();
+        }
+        pan.restore();
+      } else if (scene === 'peel') {
+        circle(180, 180, 150, '#cfe3ee');
+        circle(180, 180, 136, '#e5f2f8');
+        for (let i = 0; i < 6; i++) pan.fillRect(70 + ((i * 53) % 220), 80 + ((i * 71) % 190), 26, 26);
+        pan.fillStyle = 'rgb(255 255 255 / .8)';
+        eggShell(180, 180);
+        pan.fillStyle = '#ffffff';
+        pan.beginPath();
+        pan.ellipse(180, 180, 24 * prog + 2, 32 * prog + 2, 0.2, 0, Math.PI * 2);
+        pan.fill();
+      } else if (m.vessel === 'pot') {
+        const lvl = scene === 'boil' ? prog : 1;
+        vesselPot(Math.round(lvl * 22), t);
+        if (scene === 'lower') eggShell(180, 40 + prog * 140);
+        if (scene === 'timer') {
+          eggShell(180, 180);
+          circle(290, 70, 46, '#fff4dc');
+          pan.strokeStyle = '#17181c';
+          pan.lineWidth = 5;
+          pan.beginPath();
+          pan.moveTo(290, 70);
+          const a = prog * Math.PI * 2 - Math.PI / 2;
+          pan.lineTo(290 + Math.cos(a) * 36, 70 + Math.sin(a) * 36);
+          pan.stroke();
+        }
+      } else if (scene === 'plate') {
+        plate(180, 180);
+        const sx = (part as unknown as { swingPos?(t: number): number })?.swingPos?.(t) ?? 0.5;
+        const x = running && part ? 60 + sx * 240 : 180;
+        if (m.id === 'scrambled') {
+          for (let i = 0; i < 9; i++) circle(x - 40 + ((i * 29) % 80), 160 + ((i * 17) % 50), 16, burnt > 0.5 ? '#b08a2a' : '#ffd96a');
+        } else friedEgg(x, 180, 1, burnt);
+      } else {
+        vesselPan();
+        if (scene === 'crack') {
+          const sx = (part as unknown as { swingPos?(t: number): number })?.swingPos?.(t) ?? 0.5;
+          const cracked = Math.round((part?.progress() ?? 1) * (stepCfg().parts[0].n ?? 1));
+          for (let i = 0; i < cracked; i++) friedEgg(150 + i * 30, 190 + i * 10, 0, 0);
+          eggShell(60 + sx * 240, 46);
+        } else if (scene === 'butter') {
+          friedEgg(180, 190, 0, 0);
+          const b = 1 - prog;
+          pan.fillStyle = '#ffe58a';
+          pan.fillRect(250 - 22 * b, 110 - 16 * b, 44 * b + 4, 32 * b + 4);
+        } else if (scene === 'fry') friedEgg(180, 190, prog, burnt);
+        else if (scene === 'stir') {
+          const n = 4 + Math.round(prog * 14);
+          for (let i = 0; i < n; i++) circle(110 + ((i * 47) % 140), 120 + ((i * 61) % 130), 16, burnt > 0.5 ? '#b08a2a' : '#ffd96a');
+        } else if (scene === 'swirl' || scene === 'flip') {
+          const big = (part as unknown as { bigNow?(t: number): boolean })?.bigNow?.(t);
+          pan.fillStyle = burnt > 0.5 ? '#b89238' : '#ffd96a';
+          if (scene === 'flip' && done('swirl') && (partIdx > 0 || !running)) {
+            pan.beginPath();
+            pan.arc(180, 180, 110, 0.2, Math.PI + 0.2);
+            pan.closePath();
+            pan.fill();
+          } else {
+            circle(180, 180, 116, pan.fillStyle as string);
+            for (let i = 0; i < 7; i++) circle(110 + ((i * 59) % 150), 120 + ((i * 43) % 130), 5, 'rgb(255 255 255 / .5)');
+            if (big) circle(180, 180, 26, 'rgb(255 255 255 / .85)');
+          }
+        }
+      }
+      // flames when the heat runs too high, smoke as chaos builds, and splats from misses
+      if (flare > 0 && s.heat) {
+        pan.fillStyle = `rgb(255 120 30 / ${flare * 0.7})`;
+        for (let i = 0; i < 18; i++) {
+          const a = (i / 18) * Math.PI * 2 + t / 300;
+          circle(180 + Math.cos(a) * 150, 180 + Math.sin(a) * 150, 14 + Math.sin(t / 80 + i) * 4, pan.fillStyle as string);
+        }
+      }
+      if (chaos > 40) {
+        for (let i = 0; i < 8; i++) {
+          const k = ((t / 2400 + i / 8) % 1);
+          circle(100 + ((i * 41) % 160), 300 - k * 280, 20 + k * 40, `rgb(60 60 64 / ${((chaos - 40) / 60) * 0.5 * (1 - k)})`);
+        }
+      }
+      for (const sp of splats) circle(sp.x, sp.y, sp.r, 'rgb(246 184 28 / .85)');
+    }
+
+    // ---- Flow.
+    const showButtons = (p: PartRun | null) => {
+      const lr = !!p?.lr;
+      $('[data-press="C"]').hidden = lr;
+      $('[data-press="L"]').hidden = !lr;
+      $('[data-press="R"]').hidden = !lr;
+      if (p && !lr) $('[data-press="C"]').textContent = msg(p.button);
+    };
+    const chips = () => {
+      const ol = $('[data-chips]');
+      ol.replaceChildren(
+        ...METHODS[method].steps.map((_, i) => {
+          const li = document.createElement('li');
+          if (i < stepIdx) li.className = 'is-done';
+          if (i === stepIdx && running) li.className = 'is-now';
+          return li;
+        }),
+      );
+    };
+    function startStep(t: number) {
+      const s = stepCfg();
+      partIdx = 0;
+      partScores = [];
+      splats = [];
+      flare = 0;
+      $('[data-steptitle]').textContent = `${msg('stepOf', { n: stepIdx + 1, total: 4 })} · ${msg(`m${method}s${stepIdx}`)}`;
+      $('[data-hint]').textContent = msg(`m${method}h${stepIdx}`);
+      say(`${msg('stepOf', { n: stepIdx + 1, total: 4 })}: ${msg(`m${method}s${stepIdx}`)}. ${msg(`m${method}h${stepIdx}`)}`);
+      chips();
+      sizzleOn(s.heat || METHODS[method].vessel === 'pan');
+      startPart(t);
+    }
+    function startPart(t: number) {
+      const p = stepCfg().parts[partIdx];
+      part = MAKERS[p.m](p, t);
+      showButtons(part);
+    }
+    function endPart(t: number) {
+      if (!running || !part) return;
+      partScores.push(part.score());
+      partIdx++;
+      if (partIdx < stepCfg().parts.length) return startPart(t);
+      const sc = partScores.reduce((a, b) => a + b, 0) / partScores.length;
+      const stars = sc >= 0.85 ? 3 : sc >= 0.6 ? 2 : sc >= 0.3 ? 1 : 0;
+      stepScores.push(stars);
+      say(msg('starsSay', { step: msg(`m${method}s${stepIdx}`), stars }));
+      stepIdx++;
+      if (stepIdx >= 4) return finish();
+      startStep(t + 400);
+    }
+    function stopRun() {
+      running = false;
+      part = null;
+      sizzleOn(false);
+      showButtons(null);
+      $('[data-press="C"]').hidden = true;
+      chips();
+    }
+    function endScreen(kind: 'done' | 'smoke' | 'boom', title: string, stars: string, sub: string, best: string) {
+      $('[data-callout]').textContent = '';
+      const e = $('[data-end]');
+      e.className = `perfect-egg__end is-${kind}`;
+      e.hidden = false;
+      $('[data-endtitle]').textContent = title;
+      $('[data-endstars]').textContent = stars;
+      $('[data-endsub]').textContent = sub;
+      $('[data-endbest]').textContent = best;
+      say(`${title} ${sub} ${best}`);
+      $<HTMLButtonElement>('[data-again]').focus();
+    }
+    function finish() {
+      const r = stepScores.reduce((a, b) => a + b, 0) / 4;
+      stopRun();
+      const id = METHODS[method].id;
+      const prev = save.best[id];
+      const isBest = prev === undefined || r > prev;
+      if (isBest) {
+        save.best[id] = r;
+        store();
+      }
+      sfx.done();
+      const tier = Math.round(r); // the same rounding as the stars
+      react(tier >= 2 ? 'cheer' : 'shrug', tier >= 2 ? 'dDone' : 'dMeh', 0);
+      endScreen('done', msg(`t${tier}`), starText(r), msg('rating', { r: fmt(r) }), isBest ? msg('newBest') : msg('best', { r: fmt(prev!) }));
+    }
+    function blowUp() {
+      const smoke = stepCfg().heat;
+      stopRun();
+      deoSoot = true;
+      react('shrug', smoke ? 'dSmoke' : 'dBoom', 0);
+      if (smoke) sfx.alarm();
+      else {
+        sfx.boom();
+        try {
+          navigator.vibrate?.(250);
+        } catch {
+          /* no vibration */
+        }
+        if (!reduced) {
+          const st = $('[data-stage]');
+          st.classList.remove('is-shake');
+          void st.offsetWidth;
+          st.classList.add('is-shake');
+        }
+      }
+      endScreen(smoke ? 'smoke' : 'boom', msg(smoke ? 'smoke' : 'boom'), '', msg(smoke ? 'smokeSub' : 'boomSub'), '');
+    }
+    function begin(i: number) {
+      method = i;
+      stepIdx = 0;
+      stepScores = [];
+      shells = 0;
+      deoSoot = false;
+      setChaos(0);
+      $('[data-pick]').hidden = true;
+      $('[data-play]').hidden = false;
+      $('[data-end]').hidden = true;
+      $('[data-mtitle]').textContent = msg(`m${i}`);
+      react('idle', 'dIdle', 0);
+      running = true;
+      startStep(performance.now());
+      $<HTMLButtonElement>('[data-press="C"]').hidden || $<HTMLButtonElement>('[data-press="C"]').focus();
+      if (!$<HTMLButtonElement>('[data-press="L"]').hidden) $<HTMLButtonElement>('[data-press="L"]').focus();
+      loop();
+    }
+    function toPick() {
+      stopRun();
+      $('[data-play]').hidden = true;
+      $('[data-pick]').hidden = false;
+      showBests();
+      $<HTMLButtonElement>(`[data-method="${method}"]`).focus();
+    }
+    let raf = 0;
+    function loop() {
+      cancelAnimationFrame(raf);
+      const frame = () => {
+        const t = performance.now();
+        if (running && part) {
+          if (part.tick(t)) endPart(t);
+          if (deoUntil !== Infinity && t > deoUntil && deoPose !== 'idle') react('idle', chaos > 60 ? 'dBad' : 'dIdle', 0);
+        }
+        wg.clearRect(0, 0, W, H);
+        if (running && part) part.draw(t);
+        drawStage(t);
+        if (running || !$('[data-end]').hidden) raf = requestAnimationFrame(frame);
+      };
+      raf = requestAnimationFrame(frame);
+    }
+
+    // ---- Input: pointer and keys; a click with no pointer first (a screen reader, Enter on the button) counts as a tap.
+    let lastPointer = 0;
+    const down = (side: Side) => {
+      if (!running || !part) return;
+      ac();
+      part.press(side, performance.now());
+    };
+    const up = () => running && part?.release?.(performance.now());
+    for (const b of $$<HTMLButtonElement>('[data-press]')) {
+      const side = b.dataset.press as Side;
+      b.addEventListener('pointerdown', (e) => {
+        e.preventDefault();
+        lastPointer = performance.now();
+        b.classList.add('is-down');
+        down(side);
+      });
+      const lift = () => {
+        if (!b.classList.contains('is-down')) return;
+        b.classList.remove('is-down');
+        up();
+      };
+      b.addEventListener('pointerup', lift);
+      b.addEventListener('pointerleave', lift);
+      b.addEventListener('pointercancel', lift);
+      b.addEventListener('click', (e) => {
+        if (e.detail === 0 && performance.now() - lastPointer > 400) (down(side), up());
+      });
+      b.addEventListener('contextmenu', (e) => e.preventDefault());
+    }
+    const KEYS: Record<string, Side> = { ' ': 'C', Enter: 'C', f: 'L', F: 'L', ArrowLeft: 'L', j: 'R', J: 'R', ArrowRight: 'R' };
+    root.addEventListener('keydown', (e) => {
+      if (!running || !part) return;
+      let side = KEYS[e.key];
+      if (!side) return;
+      if (part.lr && side === 'C') return;
+      if (!part.lr) side = 'C';
+      e.preventDefault();
+      lastPointer = performance.now();
+      if (e.repeat) return;
+      down(side);
+    });
+    root.addEventListener('keyup', (e) => {
+      if (running && KEYS[e.key]) up();
+    });
+
+    for (const b of $$<HTMLButtonElement>('[data-method]')) b.addEventListener('click', () => begin(Number(b.dataset.method)));
+    $('[data-again]').addEventListener('click', () => begin(method));
+    $('[data-another]').addEventListener('click', toPick);
+    $('[data-sound]').addEventListener('click', () => {
+      save.sound = !save.sound;
+      store();
+      showBests();
+    });
+    // Stop the sizzle (and the frames) while the game is hidden.
+    new IntersectionObserver(([e]) => {
+      if (!e.isIntersecting) sizzleOn(false);
+      else if (running) sizzleOn(stepCfg().heat || METHODS[method].vessel === 'pan');
+    }).observe(root);
+    showBests();
+    drawDeo();
+  }
+</script>

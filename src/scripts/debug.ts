@@ -172,6 +172,19 @@ async function fromBrowser(): Promise<void> {
   const cookies = document.cookie ? document.cookie.split(';').map((c) => c.split('=')[0].trim()) : [];
   set('cookies', `${navigator.cookieEnabled ? 'enabled' : 'blocked'} · ${cookies.length ? cookies.join(', ') : 'none set by this site'}`);
   set('local', storageSummary(localStorage));
+  // SAVES: each save the site keeps (src/lib/saves.ts), if this browser has it: its key, its size, its value (shortened).
+  term?.querySelectorAll<HTMLElement>('[data-save]').forEach((row) => {
+    const key = row.dataset.save!;
+    try {
+      const keys = row.dataset.prefix !== undefined
+        ? Array.from({ length: localStorage.length }, (_, i) => localStorage.key(i)!).filter((k) => k.startsWith(key))
+        : localStorage.getItem(key) !== null ? [key] : [];
+      if (!keys.length) return set(`save:${key}`, `${key} · ${word('none')}`);
+      const size = keys.reduce((n, k) => n + k.length + (localStorage.getItem(k)?.length ?? 0), 0);
+      const value = keys.length === 1 ? localStorage.getItem(keys[0])! : keys.join(', ');
+      set(`save:${key}`, `${keys.length === 1 ? keys[0] : key + '*'} · ${bytes(size * 2)} · ${value.length > 60 ? value.slice(0, 57) + '...' : value}`);
+    } catch { set(`save:${key}`, NA); }
+  });
   set('session', storageSummary(sessionStorage));
   set('screen', `${screen.width}×${screen.height} · ${screen.colorDepth}-bit colour${screen.orientation ? ` · ${screen.orientation.type}` : ''}`);
   set('dpr', `${devicePixelRatio}×`);

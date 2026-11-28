@@ -8,6 +8,13 @@
 // To add a line: ['Label', 'key'] in `sections` below, then set('key', value) in src/scripts/debug.ts.
 import Base from '../layouts/Base.astro';
 import TerminalScreen from '../components/reusable/TerminalScreen.astro';
+import { readFileSync } from 'node:fs';
+import { SAVES } from '../lib/saves';
+
+// Every save the site keeps (src/lib/saves.ts) must be named in PRIVACY.md: the build stops otherwise.
+const privacy = readFileSync('PRIVACY.md', 'utf8');
+const unlisted = SAVES.filter((s) => !privacy.includes(`\`${s.key}`));
+if (unlisted.length) throw new Error(`PRIVACY.md doesn't name these saves from src/lib/saves.ts: ${unlisted.map((s) => s.key).join(', ')}`);
 
 type Row = [label: string, key: string];
 /** "== CODE =================", every heading the same width. */
@@ -59,6 +66,12 @@ const sections: { title: string; rows: Row[] }[] = [
           <div class="term-row" data-row={key}><span class="term-k">{label}</span><span class="term-v" data-v={key}>...</span></div>
         ))}
       </>
+    ))}
+    <div class="term-gap"></div>
+    <div class="term-h">{heading('SAVES')}</div>
+    <div class="term-dim">Kept in this browser's local storage only: never a cookie, never sent anywhere.</div>
+    {SAVES.map((s) => (
+      <div class="term-row" data-save={s.key} data-prefix={s.prefix ? '' : undefined}><span class="term-k">{s.label}</span><span class="term-v" data-v={`save:${s.key}`}>...</span></div>
     ))}
     <div class="term-gap"></div>
     <div class="term-h">{heading('LANGUAGES')}</div>
