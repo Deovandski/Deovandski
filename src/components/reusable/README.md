@@ -58,7 +58,7 @@ and a project without translations just shows the English.
 | [WhackAMole.astro](WhackAMole.astro) | Whack-a-mole in the corners of the screen: a character pops up, you whack it (click, tap or keys 1–4) before it hides, faster and faster for 30 s. | Miku tab (Whack-a-Miku) |
 | [DrawingPad.astro](DrawingPad.astro) | A surface to draw on with a pen: ink colours, needle sizes, eraser, clear and download. Ships as a tattoo practice skin; the surface, colours and sizes are props. | Tattoo tab |
 | [DrumKit.astro](DrumKit.astro) | A drum kit seen from above: tap or click (multi-touch) or use the keyboard. Sounds made with the Web Audio API, no samples. | Musician tab |
-| [LedMatrix.astro](LedMatrix.astro) | A grid of round LEDs to draw on (click, drag, right-click erases, keyboard too), sized to fit the width. Starts with a stick figure and "Huehuehue" (or "Hue"). From the LED Matrix Manager site. | Painting tab |
+| [LedMatrix.astro](LedMatrix.astro) | A grid of round LEDs to draw on (click, drag, right-click erases, keyboard too), sized to fit the width. Starts with a stick figure and "Huehuehue" (or "Hue"). Clear, Reset, and Download (a PNG of the painting, glow included). From the LED Matrix Manager site. | Painting tab |
 | [DiceTray.astro](DiceTray.astro) | A row of dice (d4 to d20), each tumbling in its own sunken pit when clicked, with a Roll all button and total. Miku colours by default. | D&D tab |
 | [FastTab.astro](FastTab.astro) | A collapsible section in the style of D365 F&O FastTabs: bold title, summary fields on the right while collapsed, a chevron, and optional Expand all / Collapse all buttons. Built on `<details>`, so it works without JavaScript. | Playground page (one per gimmick, titled "Name (Tab facet)" through the `title` slot) |
 | [PhotoViewer.astro](PhotoViewer.astro) | The one photo viewer (lightbox) for a page: every content picture, gallery button and link to an image file opens in it, with its caption and date; ‹ › between pictures. Put it once in the layout. | Every page (in `Base.astro`) |
@@ -1118,6 +1118,10 @@ Click or tap toggles an LED, press-and-drag paints, right-click or Ctrl-click er
 cursor and Space toggles. Clear and Reset buttons. Theme with `--led-on`, `--led-off`, `--led-glow`,
 `--led-bg` and `--led-accent`.
 
+
+**Download** (#332) saves the painting as `led-painting-YYYY-MM-DD.png`: drawn in the page on a canvas at 3× from the LEDs
+themselves, with their own colours (`--led-on`, `--led-off`, `--led-bg`) and a soft glow on the lit ones. Nothing is uploaded or
+saved in the browser, and the result is announced ("Saved led-painting-….png").
 ## DiceTray
 
 ```astro

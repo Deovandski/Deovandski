@@ -9599,6 +9599,10 @@
   "en": "Next stop: {place} · {distance} to go",
   "t": "จุดหมายถัดไป: {place} · อีก {distance}"
  },
+ "c8eac89c05ab": {
+  "en": "⬇ Download",
+  "t": "⬇ ดาวน์โหลด"
+ },
  "c92472adceec": {
   "en": "28 photos",
   "t": "28 รูป"
@@ -10354,6 +10358,10 @@
  "d7a501f83242": {
   "en": "Expert",
   "t": "เซียน"
+ },
+ "d7ad08a0673d": {
+  "en": "Saved {file}",
+  "t": "บันทึก {file} แล้ว"
  },
  "d7b63648b152": {
   "en": "The Wizard Deo Solutions logo: a black-and-white cat in a blue wizard hat, holding a glowing crystal staff",
