@@ -18,7 +18,7 @@ Edit and push; the Concert tab rebuilds from this file.
 
 ## Classical
 
-- The Four Seasons: [Philadelphia Orchestra](https://philorch.ensembleartsphilly.org/tickets-and-events/2025-26-season/the-four-seasons)
+- The Four Seasons: Philadelphia Orchestra
 
 ## Country
 

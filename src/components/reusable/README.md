@@ -52,6 +52,7 @@ and a project without translations just shows the English.
 | [SegmentMeter.astro](SegmentMeter.astro) | A column of lit segments like a graphic-equalizer bar: a level lit from the bottom up (fill), or a scale with one lit segment (marker), one colour or one per segment, updated live through `data-value`. Taken from the Multilingual tab's language levels. | Multilingual tab (language levels), ice fishing (the Line gauge, #314) |
 | [PixelPet.astro](PixelPet.astro) | A little virtual pet in an egg-shaped handheld: feed, pet, play and clean up poop. Drawn from shapes on a 32×32 pixel grid; saves in the browser. | Pets tab (Bidu, Fluffy, Peeta) |
 | [KitKot.astro](KitKot.astro) | A parody social app idle game on a phone: post for views, likes and followers on a slot-machine schedule (near misses, a hidden hot post type, fatigue, streaks, energy). "Under the hood" names each trick, with sources. | Influencer tab |
+| [KitKotHood.astro](KitKotHood.astro) + [kitkot/tricks.ts](kitkot/tricks.ts) | KitKot's "Under the hood" list (each trick a social app plays on you, with its source) placed elsewhere on the page, laid out like SourceList; the tricks light up there while KitKot is played. | Influencer tab's Links box (#328) |
 | [FireMeter.astro](FireMeter.astro) | A fireplace with bellows and a meter: each pump grows the fire, climbs the meter and shows a phrase for that level; maxing out "bonks" and resets. | Lust tab (ecchi-meter) |
 | [WhackAMole.astro](WhackAMole.astro) | Whack-a-mole in the corners of the screen: a character pops up, you whack it (click, tap or keys 1–4) before it hides, faster and faster for 30 s. | Miku tab (Whack-a-Miku) |
 | [DrawingPad.astro](DrawingPad.astro) | A surface to draw on with a pen: ink colours, needle sizes, eraser, clear and download. Ships as a tattoo practice skin; the surface, colours and sizes are props. | Tattoo tab |
@@ -740,6 +741,10 @@ six mechanics:
 | Swing | Stop a swinging needle in the sweet spot | Crack, plate, the flip |
 | Count | Tap exactly N times before the clock runs out | Ice bath and peel |
 
+Between steps the tap buttons go away and a big green **Go!** shows on the pan, with the next step's instructions
+under Deo. It wakes after a moment, so taps still landing from the last step can't press it, and the next step starts
+when you press it (Space or Enter work too; it takes the focus).
+
 Every tap is Perfect, Good or Miss. Misses (and running the heat too high) fill one Chaos meter for the whole run, and
 Perfects take a little off. If it fills on a heat step, black smoke and a smoke alarm end the run; on any other step, a
 kaboom with yolk on the screen. A finished egg gets 0 to 3 stars, the average of its steps; 3 stars says "You cooked
@@ -955,6 +960,7 @@ import KitKot from './reusable/KitKot.astro';
 | `bio` | `"Posting into the void"` | Line under the name. |
 | `start` | `{ following: 39, followers: 39, likes: 39, views: 3900 }` | Numbers at the start. |
 | `energyMax` | `10` | Energy bars (1 per post, 1 back per second). |
+| `hood` | none | The id of a `KitKotHood` elsewhere on the page. When it's there, the game lights up the tricks in it and drops its own "Under the hood" list; when it isn't (the Playground), its own list stays. |
 | `class` | none | Extra class. |
 
 A parody social app ("KitKot") on a phone: four post buttons roll for views, likes and followers on a
@@ -964,6 +970,27 @@ a fake "Trending" badge and a moving follower goal. "Under the hood" explains ea
 with sources. "Log off and touch grass" shows how long you spent and resets. Nothing is saved. Theme with
 `--kk-accent`, `--kk-accent-2` and `--kk-bg`.
 
+
+## KitKotHood
+
+```astro
+---
+import KitKotHood from './reusable/KitKotHood.astro';
+---
+<KitKotHood id="kitkot-hood" />
+<KitKot name="…" handle="…" hood="kitkot-hood" />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `id` | (required) | The id KitKot's `hood` prop points at. |
+| `title` | `"Under the hood: how it hooks you"` | The heading above the list. |
+| `level` | `4` | That heading's level for screen readers (2 to 6). |
+
+KitKot's trick list, one source with KitKot (`kitkot/tricks.ts`), for a place away from the game, like a tab's Links box
+(the Influencer tab's, #328). Each line: the trick in bold, what it does, and its source. While KitKot is played, the trick
+that fires lights up here (`--kk-accent`). Laid out and themed like SourceList (`--sources-title`, `--sources-text`,
+`--sources-name`, `--sources-line`), so it sits well under a reading list. Reduced motion: no fade on the highlight.
 ## FireMeter
 
 ```astro
@@ -1167,6 +1194,9 @@ size. Theme with `--photo-viewer-accent`, `--photo-viewer-bg`, `--photo-viewer-t
 `--photo-viewer-muted` and `--photo-viewer-backdrop`. Keyboard: Tab to a picture, then Enter or Space;
 ← → move between pictures; Esc closes and returns focus.
 
+
+Links to an image file work inside SVG too (an SVG `<a href>` around an `<image>`, like the Gym tab's timeline pins): before #328
+the viewer only read HTML links, so those opened nothing. The caption comes from the link's `aria-label`.
 ## SourceList
 
 A reading list of the people and works a page builds on, with an optional title. Each item is one line: the

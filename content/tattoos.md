@@ -20,14 +20,14 @@ Edit and push; the Tattoo Facet tab rebuilds from this file.
 - ᚷ Gebo: Nordic rune representing gift, exchange, reciprocity, partnership, and mutual obligations.
 - ᛟ Othala: Nordic rune associated with heritage, ancestry, inheritance, homeland, and legacy.
   Mine isn't fully aligned with the other three, and I gave that a meaning too: some of my memories are misaligned. This weird life of mine, like everyone else's, is about figuring out who I am, why I'm alive, and what I want from it before I perish.
-- [vraki] Be Awesome!: Left wrist, written in [Vraki](https://deovandski.github.io/vraki-windows/). It says exactly that because it condenses the four runes above into a single goal: be true to myself. That means knowing myself, my inner structure, and my moral compass. This is my autistic side.
+- [vraki] Be Awesome!: Left wrist, written in Vraki. It says exactly that because it condenses the four runes above into a single goal: be true to myself. That means knowing myself, my inner structure, and my moral compass. This is my autistic side.
 
 ## Right forearm
 
 - 初音ミク Hatsune Miku: Miku's name in Japanese. Miku-chan (ミクちゃん) is a cornerstone of my life, tied to the things that drive me: ambition, technology, collaboration and community. She also stands for my passion, my drive, and the anxiety side of my personality.
   For years, that anxiety felt life-or-death: a restless urgency I couldn't name because I was deeply unfulfilled, and later a constant hypervigilance while I chased external validation as an influencer. My AuDHD unmasking finally explained where it came from, and therapy that challenged me, not enabled me, helped me process it. Today it's no longer an alarm that runs me. It's fuel, and I choose where it goes: into building, growing, and the people worth it.
   The tattoo is mirrored. That used to bring me shame, until I realized it's a matter of perspective: under some conditions it looks perfect, and under others it doesn't. That gap became a lesson in mindset and in how you choose to see things.
-- [vraki] Do Better!: Right wrist, written in [Vraki](https://deovandski.github.io/vraki-windows/). This side ties to my ambition, collaboration, and community: striving to learn and always growing. This is my ADHD side to the core.
+- [vraki] Do Better!: Right wrist, written in Vraki. This side ties to my ambition, collaboration, and community: striving to learn and always growing. This is my ADHD side to the core.
 
 ## Chest
 

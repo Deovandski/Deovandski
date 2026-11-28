@@ -17,7 +17,7 @@ Edit and push; the BOTW tab rebuilds from this file.
 
 > These RedLetterMedia hacks always brings me joy with the BOTWs! If one of them ever stumbles here, fucking invite me to the show to commiserate watching horrible VHS videos! I'd love that! I can even make [Churrasco](#churrasco) in exchange for Spotted Cow.
 
-> Having these guys on in the background while I code is rather soothing. A strange thing for my autism to get hooked on, but it clearly works. Same thing with the Skyrim soundtrack and rain in the background whenever I focus on [#HusbandOutWorld](https://www.husbandoutworld.com/) stuff.
+> Having these guys on in the background while I code is rather soothing. A strange thing for my autism to get hooked on, but it clearly works. Same thing with the Skyrim soundtrack and rain in the background whenever I focus on #HusbandOutWorld stuff.
 
 <!-- Your 39 picks go below this line. -->
 <!-- Ranked from Deo's YouTube watch history (Google Takeout, Dec 15, 2019 to Nov 20, 2026) with scripts/botw-from-history.mjs. -->

@@ -5,7 +5,7 @@ Our family came from nothing. I was born in a random gold mine in the Brazilian 
 
 My parents and I are always there for each other, but we don't enable each other. We challenge each other to grow and do better.
 
-We have the [chimarrão](https://en.wikipedia.org/wiki/Mate_%28drink%29) ritual. In the morning, we gather for it to discuss matters, sync up and make sure we're all on the same page. We also analyze past events and call each other out, so there's no rumination or resentment, only a chance for growth.
+We have the chimarrão ritual. In the morning, we gather for it to discuss matters, sync up and make sure we're all on the same page. We also analyze past events and call each other out, so there's no rumination or resentment, only a chance for growth.
 
 ![Deo's hand holding a cup of chimarrão with its metal straw, a black cat curled up on a striped blanket behind it](familyChimarraoGather)
 

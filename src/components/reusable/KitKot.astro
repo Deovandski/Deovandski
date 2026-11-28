@@ -7,8 +7,8 @@
  * then starts to leave. An "Under the hood" toggle names each trick as it happens, with sources.
  * "KitKot" is a made-up parody app.
  *
- * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
- * Copy this one file into any Astro project. See README.md in this folder.
+ * Reusable on purpose: imports only kitkot/tricks.ts (the trick list), no site CSS needed, safe to use several times on
+ * a page. Copy this file and kitkot/tricks.ts into any Astro project (and KitKotHood.astro to place the list elsewhere). See README.md in this folder.
  *
  *   <KitKot name="Deovandski Skibinski Junior" handle="deovandski" />
  *
@@ -17,6 +17,9 @@
  *   bio            line under the name. Default "Posting into the void".
  *   start          { following, followers, likes, views } at the start. Default 39, 39, 39, 3900.
  *   energyMax      energy bars. Default 10.
+ *   hood           the id of a KitKotHood elsewhere on the page (a tab's Links box, say). When it's on the page, the
+ *                  game lights up the tricks there and drops its own "Under the hood" list; when it isn't (the
+ *                  Playground), its own list stays. Default: none (its own list).
  *
  * Theming (CSS custom properties): --kk-accent (default #fe2c55), --kk-accent-2 (#25f4ee), --kk-bg.
  *
@@ -24,12 +27,14 @@
  * are announced, small ones aren't (so a screen reader isn't flooded). Reduced motion: no shaking
  * or counting animations. Nothing is saved: the "career" lasts for the visit.
  */
+import { KITKOT_TRICKS } from './kitkot/tricks';
 interface Props {
   name: string;
   handle: string;
   bio?: string;
   start?: { following: number; followers: number; likes: number; views: number };
   energyMax?: number;
+  hood?: string;
   class?: string;
 }
 const {
@@ -38,6 +43,7 @@ const {
   bio = 'Posting into the void',
   start = { following: 39, followers: 39, likes: 39, views: 3900 },
   energyMax = 10,
+  hood,
   class: className,
 } = Astro.props;
 const nf = new Intl.NumberFormat('en-US');
@@ -52,57 +58,8 @@ const posts = [
   { id: 'pics', label: 'Post pictures', icon: '📸' },
   { id: 'random', label: 'Post random shit', icon: '💩' },
 ];
-// What each trick is, shown in "Under the hood" and lit up when it fires.
-const tricks = [
-  {
-    id: 'variable',
-    name: 'Variable rewards',
-    text: 'Results are random: usually small, sometimes nothing, rarely huge. Unpredictable rewards are the hardest habit to quit (a variable-ratio schedule).',
-    source: 'Ferster & Skinner, Schedules of Reinforcement (1957)',
-  },
-  {
-    id: 'nearmiss',
-    name: 'Near miss',
-    text: '"Almost went viral!" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses.',
-    source: 'Clark et al., Neuron 61:481–490 (2009), and the studies it cites',
-  },
-  {
-    id: 'reward',
-    name: 'Reward learning',
-    text: 'People post more right after a batch of likes, spacing posts to chase the best rate of likes, like an animal in a Skinner box.',
-    source: 'Lindström et al., Nature Communications 12:1311 (2021)',
-  },
-  {
-    id: 'hot',
-    name: 'The algorithm',
-    text: 'One kind of post secretly pays better, and it changes without warning, so you keep trying everything.',
-    source: 'Same variable-reward idea, applied to what to post',
-  },
-  {
-    id: 'fatigue',
-    name: 'Diminishing returns',
-    text: 'Repeat yourself and each post pays less, then starts to cost you followers. The treadmill speeds up.',
-    source: 'Hedonic adaptation / audience fatigue',
-  },
-  {
-    id: 'streak',
-    name: 'Streaks and loss aversion',
-    text: 'A streak you could lose feels worse than one you never had. Losing hurts about twice as much as winning feels good.',
-    source: 'Kahneman & Tversky, Prospect Theory (1979)',
-  },
-  {
-    id: 'drip',
-    name: 'Notification drip',
-    text: 'Likes trickle in a few at a time after you post, so you keep checking.',
-    source: 'Schüll, Addiction by Design (2012), on how slot machines are tuned',
-  },
-  {
-    id: 'energy',
-    name: 'Energy timers',
-    text: 'A meter that refills over time makes you wait, then binge, and keeps you coming back.',
-    source: 'Common free-to-play design',
-  },
-];
+// What each trick is, shown in "Under the hood" and lit up when it fires (one source: kitkot/tricks.ts).
+const tricks = KITKOT_TRICKS;
 // What the script writes. It lives in the page so the site's translations reach it.
 const strings: Record<string, string> = {
   near0: 'Almost went viral! 97% to the For You page.',
@@ -142,6 +99,7 @@ const strings: Record<string, string> = {
 
 <div
   class:list={['kitkot', className]}
+  data-hood={hood}
   data-start={JSON.stringify(start)}
   data-energy={energyMax}
 >
@@ -451,7 +409,10 @@ const strings: Record<string, string> = {
       (root.querySelector(`.kitkot__strings [data-k="${key}"]`)?.textContent ?? key).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? String(vars[k]) : m));
     const NEAR = [0, 1, 2, 3].map((i) => msg(`near${i}`));
     const NOTHING = [0, 1, 2, 3].map((i) => msg(`nothing${i}`));
-    const hood = root.querySelector<HTMLDetailsElement>('.kitkot__hood')!;
+    // "Under the hood": a KitKotHood elsewhere on the page when there is one (then the game's own list goes), else its own.
+    const outside = root.dataset.hood ? document.getElementById(root.dataset.hood) : null;
+    if (outside) root.querySelector('.kitkot__hood')?.remove();
+    const hood = outside ?? root.querySelector<HTMLElement>('.kitkot__hood')!;
 
     let energy = energyMax;
     let hot = pick(Object.keys(KINDS));

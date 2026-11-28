@@ -8,6 +8,8 @@
  *   cue    small sizzles first; tap when the big one shows                                from Ishin's grilling embers
  *   swing  stop a swinging needle in the sweet spot (the precision part)                 a classic timing bar
  *   count  tap an exact number of times before the clock runs out                         Rabbids-style button counting
+ * Between steps the tap buttons go away and a green Go! button shows on the pan with the next step's instructions; it
+ * wakes after a moment (taps still landing from the last step can't press it), and the next step starts when it's pressed.
  * Every tap is Perfect, Good or Miss. Misses fill one Chaos meter for the whole run: if it fills on a heat step, black
  * smoke and a smoke alarm end the run; on any other step, a kaboom (yolk on the screen). Rabbids-style: loud, silly,
  * one tap to try again. A finished egg is rated 0 to 3 stars (the average of its steps); 3 is "You cooked them
@@ -108,6 +110,7 @@ const strings: Record<string, string> = {
   dBoom: 'My kitchen!', dSmoke: 'Cough… cough…', dDone: 'Chef’s kiss!', dMeh: 'We don’t talk about this one.',
   soundOn: 'Sound: on', soundOff: 'Sound: off',
   count: '{n} of {total}',
+  next: 'Next: {step}. {hint} Press Go! when you’re ready.',
   summary: 'Best egg: {n} of 3 stars',
 };
 const uid = `egg${Math.random().toString(36).slice(2, 8)}`;
@@ -156,6 +159,7 @@ const uid = `egg${Math.random().toString(36).slice(2, 8)}`;
       <div class="perfect-egg__stage" data-stage>
         <canvas width="360" height="360" data-pan aria-hidden="true"></canvas>
         <span class="perfect-egg__callout" data-callout aria-hidden="true"></span>
+        <button type="button" class="perfect-egg__go" data-go hidden>Go!</button>
         <div class="perfect-egg__end" data-end hidden>
           <span class="perfect-egg__endtitle" data-endtitle></span>
           <span class="perfect-egg__endstars" data-endstars aria-hidden="true"></span>
@@ -381,6 +385,33 @@ const uid = `egg${Math.random().toString(36).slice(2, 8)}`;
       transform: scale(1.4);
       opacity: 0.4;
     }
+  }
+  .perfect-egg__go {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    min-width: 9rem;
+    min-height: 4.5rem;
+    padding: 0 1.6rem;
+    border: 0;
+    border-radius: 999px;
+    background: #2fa84f;
+    color: #fff;
+    font: inherit;
+    font-size: clamp(1.6rem, 7cqi, 2.4rem);
+    font-weight: 900;
+    box-shadow: 0 6px 0 #1d6e33;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    touch-action: manipulation;
+  }
+  .perfect-egg__go:disabled {
+    opacity: 0.45;
+    cursor: default;
+  }
+  .perfect-egg__go:not(:disabled):active {
+    transform: translate(-50%, calc(-50% + 4px));
+    box-shadow: 0 2px 0 #1d6e33;
   }
   .perfect-egg__end {
     position: absolute;
@@ -747,6 +778,7 @@ const uid = `egg${Math.random().toString(36).slice(2, 8)}`;
     let stepScores: number[] = [];
     let partScores: number[] = [];
     let running = false;
+    let waiting = false; // between steps, until Go! is pressed
     let part: PartRun | null = null;
     let splats: { x: number; y: number; r: number }[] = [];
     let flare = 0;
@@ -1174,7 +1206,7 @@ const uid = `egg${Math.random().toString(36).slice(2, 8)}`;
       pan.clearRect(0, 0, 360, 360);
       const s = stepCfg();
       const m = METHODS[method];
-      const prog = part?.progress() ?? 1;
+      const prog = part?.progress() ?? (waiting ? 0 : 1);
       const burnt = Math.max(0, (chaos - 55) / 45);
       const scene = s.scene;
       const done = (k: string) => METHODS[method].steps.findIndex((x) => x.scene === k) < stepIdx;
@@ -1292,14 +1324,48 @@ const uid = `egg${Math.random().toString(36).slice(2, 8)}`;
         }),
       );
     };
+    const stepText = () => {
+      $('[data-steptitle]').textContent = `${msg('stepOf', { n: stepIdx + 1, total: 4 })} · ${msg(`m${method}s${stepIdx}`)}`;
+      $('[data-hint]').textContent = msg(`m${method}h${stepIdx}`);
+    };
+    // Between steps: the tap buttons go away and Go! shows on the pan. It wakes after a moment, so taps still landing
+    // from the last step can't start the next one by accident.
+    let goTimer = 0;
+    function waitForGo() {
+      part = null;
+      waiting = true;
+      splats = [];
+      flare = 0;
+      sizzleOn(false);
+      for (const b of $$('[data-press]')) (b.hidden = true), b.classList.remove('is-down');
+      stepText();
+      chips();
+      const go = $<HTMLButtonElement>('[data-go]');
+      go.hidden = false;
+      go.disabled = true;
+      clearTimeout(goTimer);
+      goTimer = window.setTimeout(() => {
+        go.disabled = false;
+        go.focus();
+      }, 650);
+      say(msg('next', { step: msg(`m${method}s${stepIdx}`), hint: msg(`m${method}h${stepIdx}`) }));
+    }
+    function pressGo() {
+      const go = $<HTMLButtonElement>('[data-go]');
+      if (!waiting || go.disabled) return;
+      waiting = false;
+      go.hidden = true;
+      startStep(performance.now());
+      const first = $$<HTMLButtonElement>('[data-press]').find((b) => !b.hidden);
+      first?.focus();
+    }
     function startStep(t: number) {
       const s = stepCfg();
       partIdx = 0;
       partScores = [];
       splats = [];
       flare = 0;
-      $('[data-steptitle]').textContent = `${msg('stepOf', { n: stepIdx + 1, total: 4 })} · ${msg(`m${method}s${stepIdx}`)}`;
-      $('[data-hint]').textContent = msg(`m${method}h${stepIdx}`);
+      stepText();
       say(`${msg('stepOf', { n: stepIdx + 1, total: 4 })}: ${msg(`m${method}s${stepIdx}`)}. ${msg(`m${method}h${stepIdx}`)}`);
       chips();
       sizzleOn(s.heat || METHODS[method].vessel === 'pan');
@@ -1321,10 +1387,13 @@ const uid = `egg${Math.random().toString(36).slice(2, 8)}`;
       say(msg('starsSay', { step: msg(`m${method}s${stepIdx}`), stars }));
       stepIdx++;
       if (stepIdx >= 4) return finish();
-      startStep(t + 400);
+      waitForGo();
     }
     function stopRun() {
       running = false;
+      waiting = false;
+      clearTimeout(goTimer);
+      $('[data-go]').hidden = true;
       part = null;
       sizzleOn(false);
       showButtons(null);
@@ -1470,6 +1539,7 @@ const uid = `egg${Math.random().toString(36).slice(2, 8)}`;
     for (const b of $$<HTMLButtonElement>('[data-method]')) b.addEventListener('click', () => begin(Number(b.dataset.method)));
     $('[data-again]').addEventListener('click', () => begin(method));
     $('[data-another]').addEventListener('click', toPick);
+    $('[data-go]').addEventListener('click', pressGo);
     $('[data-sound]').addEventListener('click', () => {
       save.sound = !save.sound;
       store();
