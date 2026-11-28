@@ -1,0 +1,948 @@
+---
+/**
+ * RepoPulse: a dashboard of an account's GitHub repos (#334), drawn from the file scripts/github-stats.mjs pulls
+ * (`npm run github`, like the Steam, Xbox and Takeout pulls). Pick "All active repos" or one repo; the tiles and charts
+ * follow the pick:
+ *   tiles      commits, issues closed (and open), pull requests merged, median time to close an issue and to merge a
+ *              pull request, longest streak of days with commits, and the share of commits co-authored with Claude.
+ *   charts     commits per week (52 weeks), lines added and deleted per week, when the commits happen (weekday × hour),
+ *              languages, and, for all repos, a year of commits day by day and a table of the repos.
+ *   History    repos with no push in a year: when each one ran (first to last commit) and commits per year.
+ * "As of …" says when the data was pulled. Built for the Management tab's ▶ Play.
+ *
+ * Reusable on purpose: no imports; give it the pulled data and it draws itself (SVG, in the page's language).
+ *
+ *   ---
+ *   import stats from '../../content/pm/github-stats.json';
+ *   ---
+ *   <RepoPulse data={stats} />
+ *
+ * Props:
+ *   data   the file github-stats.mjs writes: { fetched, tz, days, streak, medianCloseHours, medianMergeHours, repos }.
+ *   label  what it is, for screen readers.
+ *
+ * Colours (checked with the dataviz palette validator on the dark surface, #334): bars --rp-mark (#00a99c); lines deleted
+ * --rp-mark-2 (#d36c00), the opposite of added (teal); heatmaps a five-step one-hue teal ramp (--rp-1 … --rp-5) over
+ * --rp-empty. Text, axes and the surface take --rp-text, --rp-muted, --rp-line, --rp-surface.
+ *
+ * Accessible: the repo pick is a real <select>; every chart has a caption and a "Show the numbers" table, so nothing is
+ * only in a tooltip; tooltips also show on keyboard focus of the chart. No animation. Words the script writes are in a
+ * hidden .rp__strings block, so the site's translations reach them; repo names and numbers aren't translated.
+ */
+interface Repo {
+  name: string;
+  active: boolean;
+  [k: string]: unknown;
+}
+interface Props {
+  data: { fetched: string; repos: Repo[]; [k: string]: unknown } | null;
+  label?: string;
+  class?: string;
+}
+const { data, label = 'GitHub stats for my repos', class: className } = Astro.props;
+const active = data?.repos.filter((r) => r.active) ?? [];
+const history = data?.repos.filter((r) => !r.active) ?? [];
+const strings: Record<string, string> = {
+  asOf: 'As of {date}',
+  all: 'All active repos',
+  open: '{n} open',
+  of: '{n} of {total} commits',
+  fromTo: '{from} to {to}',
+  days: '{n} days',
+  day: '1 day',
+  hours: '{n} h',
+  minutes: '{n} min',
+  none: '—',
+  commitOne: '1 commit',
+  commitMany: '{n} commits',
+  tipWeek: 'Week of {date}: {c}',
+  tipLines: 'Week of {date}: +{add} / −{del} lines',
+  tipPunch: '{day}, {hour}:00: {c}',
+  tipDay: '{date}: {c}',
+  tipLang: '{name}: {pct}',
+  tipYear: '{year}: {c}',
+  tipSpan: '{name}: {from} to {to}, {c}',
+  other: 'Other',
+  week: 'Week of',
+  commits: 'Commits',
+  added: 'Added',
+  deleted: 'Deleted',
+  day_: 'Day',
+  hour: 'Hour',
+  language: 'Language',
+  share: 'Share',
+  month: 'Month',
+  year: 'Year',
+  repo: 'Repo',
+  first: 'First commit',
+  last: 'Last commit',
+  stale: '(last numbers kept: GitHub didn’t answer)',
+};
+---
+
+<section class:list={['rp', className]} data-repo-pulse data-stats={data ? JSON.stringify(data) : ''} aria-label={label} data-llms-skip>
+  <div class="rp__strings" hidden>
+    {Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}
+  </div>
+  {
+    !data ? (
+      <p class="rp__empty">Stats are on their way.</p>
+    ) : (
+      <>
+        <div class="rp__head">
+          <label class="rp__pick">
+            <span>Repo</span>
+            <select data-pick>
+              <option value="" data-all>All active repos</option>
+              {active.map((r) => (
+                <option value={r.name} translate="no">
+                  {r.name}
+                </option>
+              ))}
+            </select>
+          </label>
+          <p class="rp__asof">
+            <time data-asof datetime={data.fetched} />
+          </p>
+        </div>
+        <p class="rp__about" data-about hidden />
+
+        <div class="rp__tiles">
+          <div class="rp__tile">
+            <span class="rp__tl">Commits</span>
+            <span class="rp__tv" data-t="commits" />
+          </div>
+          <div class="rp__tile">
+            <span class="rp__tl">Issues closed</span>
+            <span class="rp__tv" data-t="issues" />
+            <span class="rp__ts" data-t="issuesOpen" />
+          </div>
+          <div class="rp__tile">
+            <span class="rp__tl">Pull requests merged</span>
+            <span class="rp__tv" data-t="prs" />
+          </div>
+          <div class="rp__tile">
+            <span class="rp__tl">Median time to close an issue</span>
+            <span class="rp__tv" data-t="close" />
+          </div>
+          <div class="rp__tile">
+            <span class="rp__tl">Median time to merge a pull request</span>
+            <span class="rp__tv" data-t="merge" />
+          </div>
+          <div class="rp__tile">
+            <span class="rp__tl">Longest streak</span>
+            <span class="rp__tv" data-t="streak" />
+            <span class="rp__ts" data-t="streakSpan" />
+          </div>
+          <div class="rp__tile">
+            <span class="rp__tl">Co-authored with Claude</span>
+            <span class="rp__tv" data-t="claude" />
+            <span class="rp__ts" data-t="claudeOf" />
+            <span class="rp__meter" aria-hidden="true"><span data-t="claudeBar" /></span>
+          </div>
+        </div>
+
+        <div class="rp__charts">
+          <figure class="rp__card" data-chart="weeks">
+            <figcaption>Commits per week, last 52 weeks</figcaption>
+            <div class="rp__plot" tabindex="0" />
+            <details class="rp__table">
+              <summary>Show the numbers</summary>
+              <div />
+            </details>
+          </figure>
+          <figure class="rp__card" data-chart="lines">
+            <figcaption>
+              Lines added and deleted per week
+              <span class="rp__legend" aria-hidden="true">
+                <i class="rp__sw rp__sw--add" /> <span data-word="added">Added</span> <i class="rp__sw rp__sw--del" />
+                <span data-word="deleted">Deleted</span>
+              </span>
+            </figcaption>
+            <div class="rp__plot" tabindex="0" />
+            <details class="rp__table">
+              <summary>Show the numbers</summary>
+              <div />
+            </details>
+          </figure>
+          <figure class="rp__card" data-chart="punch">
+            <figcaption>When the commits happen (Central time)</figcaption>
+            <div class="rp__plot" tabindex="0" />
+            <p class="rp__scale" aria-hidden="true">
+              <span>Fewer</span><i style="background:var(--rp-empty,#18224a)" /><i style="background:var(--rp-1,#225a54)" /><i
+                style="background:var(--rp-2,#277b72)"
+              /><i style="background:var(--rp-3,#2fa094)" /><i style="background:var(--rp-4,#3bcabb)" /><i
+                style="background:var(--rp-5,#85ede0)"
+              /><span>More</span>
+            </p>
+            <details class="rp__table">
+              <summary>Show the numbers</summary>
+              <div />
+            </details>
+          </figure>
+          <figure class="rp__card" data-chart="langs">
+            <figcaption>Languages (share of code)</figcaption>
+            <div class="rp__plot" tabindex="0" />
+            <details class="rp__table">
+              <summary>Show the numbers</summary>
+              <div />
+            </details>
+          </figure>
+          <figure class="rp__card rp__card--wide" data-chart="year" data-only-all>
+            <figcaption>A year of commits, all repos, day by day</figcaption>
+            <div class="rp__plot" tabindex="0" />
+            <details class="rp__table">
+              <summary>Show the numbers</summary>
+              <div />
+            </details>
+          </figure>
+          <figure class="rp__card rp__card--wide" data-chart="board" data-only-all>
+            <figcaption>The active repos</figcaption>
+            <div class="rp__board" />
+          </figure>
+        </div>
+
+        {
+          history.length > 0 && (
+            <div class="rp__history">
+              <h3 class="rp__h">History</h3>
+              <p class="rp__note">Repos with no push in the past year: where it all started.</p>
+              <div class="rp__charts">
+                <figure class="rp__card rp__card--wide" data-chart="spans">
+                  <figcaption>When each one ran, from first to last commit</figcaption>
+                  <div class="rp__plot" tabindex="0" />
+                  <details class="rp__table">
+                    <summary>Show the numbers</summary>
+                    <div />
+                  </details>
+                </figure>
+                <figure class="rp__card rp__card--wide" data-chart="years">
+                  <figcaption>Commits per year, every repo</figcaption>
+                  <div class="rp__plot" tabindex="0" />
+                  <details class="rp__table">
+                    <summary>Show the numbers</summary>
+                    <div />
+                  </details>
+                </figure>
+              </div>
+            </div>
+          )
+        }
+        <div class="rp__tip" role="tooltip" hidden data-tipbox />
+      </>
+    )
+  }
+</section>
+
+<style>
+  .rp {
+    --_mark: var(--rp-mark, #00a99c);
+    --_mark2: var(--rp-mark-2, #d36c00);
+    --_text: var(--rp-text, #e6edf3);
+    --_muted: var(--rp-muted, #9aa8bb);
+    --_line: var(--rp-line, rgba(190, 200, 209, 0.14));
+    --_surface: var(--rp-surface, #0e1636);
+    position: relative;
+    container-type: inline-size;
+    color: var(--_text);
+  }
+  .rp [hidden] {
+    display: none !important;
+  }
+  .rp__empty {
+    color: var(--_muted);
+  }
+  .rp__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.6rem 1rem;
+    margin-bottom: 0.8rem;
+  }
+  .rp__pick {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+  }
+  .rp__pick select {
+    min-height: 40px;
+    max-width: 70vw;
+    padding: 0 0.7rem;
+    border-radius: 10px;
+    border: 1px solid var(--_line);
+    background: var(--_surface);
+    color: var(--_text);
+    font: inherit;
+    font-weight: 600;
+  }
+  .rp__asof {
+    margin: 0;
+    color: var(--_muted);
+    font-size: 0.9em;
+  }
+  .rp__about {
+    margin: -0.2rem 0 0.9rem;
+    color: var(--_muted);
+  }
+  .rp__about :global(a) {
+    color: var(--_mark);
+  }
+  .rp__tiles {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+  }
+  .rp__tile {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.7rem 0.8rem;
+    border-radius: 12px;
+    background: var(--_surface);
+    border: 1px solid var(--_line);
+  }
+  .rp__tl {
+    font-size: 0.8em;
+    color: var(--_muted);
+    line-height: 1.25;
+  }
+  .rp__tv {
+    font-size: 1.6em;
+    font-weight: 800;
+    line-height: 1.1;
+  }
+  .rp__ts {
+    font-size: 0.8em;
+    color: var(--_muted);
+  }
+  .rp__meter {
+    display: block;
+    height: 6px;
+    margin-top: 0.3rem;
+    border-radius: 3px;
+    background: var(--rp-empty, #18224a);
+    overflow: hidden;
+  }
+  .rp__meter span {
+    display: block;
+    height: 100%;
+    background: var(--_mark);
+    border-radius: 3px;
+  }
+  .rp__charts {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.8rem;
+  }
+  @container (min-width: 760px) {
+    .rp__tiles {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .rp__charts {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .rp__card--wide {
+      grid-column: 1 / -1;
+    }
+  }
+  .rp__card {
+    margin: 0;
+    padding: 0.8rem 0.9rem;
+    border-radius: 14px;
+    background: var(--_surface);
+    border: 1px solid var(--_line);
+    min-width: 0;
+  }
+  .rp__card figcaption {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.3rem 0.8rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  .rp__legend {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 400;
+    font-size: 0.85em;
+    color: var(--_muted);
+  }
+  .rp__sw {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 3px;
+  }
+  .rp__sw--add {
+    background: var(--_mark);
+  }
+  .rp__sw--del {
+    background: var(--_mark2);
+    margin-inline-start: 0.4rem;
+  }
+  .rp__plot {
+    border-radius: 6px;
+  }
+  .rp__plot:focus-visible {
+    outline: 2px solid var(--_mark);
+    outline-offset: 3px;
+  }
+  /* Time runs left to right on every page (Arabic too): the plots are laid out left to right. */
+  .rp__plot {
+    overflow-x: auto;
+    direction: ltr;
+  }
+  .rp__plot :global(svg) {
+    display: block;
+    max-width: none;
+    overflow: visible;
+  }
+  .rp__plot :global(.rp-hit) {
+    fill: transparent;
+  }
+  .rp__plot :global(.rp-hit:hover),
+  .rp__plot :global(.rp-hit.is-on) {
+    fill: rgba(255, 255, 255, 0.08);
+  }
+  .rp__plot :global(text) {
+    fill: var(--_muted);
+    font-size: 11px;
+    font-family: inherit;
+  }
+  .rp__plot :global(.rp-grid) {
+    stroke: var(--_line);
+    stroke-width: 1;
+  }
+  .rp__plot :global(.rp-zero) {
+    stroke: var(--_muted);
+    stroke-width: 1;
+  }
+  .rp__plot :global([data-tip]:not(.rp-hit):hover),
+  .rp__plot :global([data-tip].is-on:not(.rp-hit)) {
+    stroke: var(--_text);
+    stroke-width: 1.5;
+  }
+  .rp__scale {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    margin: 0.4rem 0 0;
+    font-size: 0.8em;
+    color: var(--_muted);
+  }
+  .rp__scale i {
+    width: 14px;
+    height: 10px;
+    border-radius: 2px;
+  }
+  .rp__scale span:first-child {
+    margin-inline-end: 0.3rem;
+  }
+  .rp__scale span:last-child {
+    margin-inline-start: 0.3rem;
+  }
+  .rp__table {
+    margin-top: 0.5rem;
+    font-size: 0.85em;
+  }
+  .rp__table summary {
+    cursor: pointer;
+    color: var(--_muted);
+  }
+  .rp__table :global(table),
+  .rp__board :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    font-variant-numeric: tabular-nums;
+  }
+  .rp__table :global(div) {
+    max-height: 16rem;
+    overflow: auto;
+    margin-top: 0.4rem;
+  }
+  .rp__table :global(th),
+  .rp__table :global(td),
+  .rp__board :global(th),
+  .rp__board :global(td) {
+    padding: 0.3rem 0.5rem;
+    border-bottom: 1px solid var(--_line);
+    text-align: end;
+    white-space: nowrap;
+  }
+  .rp__table :global(th:first-child),
+  .rp__table :global(td:first-child),
+  .rp__board :global(th:first-child),
+  .rp__board :global(td:first-child) {
+    text-align: start;
+  }
+  .rp__board {
+    overflow-x: auto;
+  }
+  .rp__board :global(th) {
+    color: var(--_muted);
+    font-weight: 600;
+  }
+  .rp__board :global(button) {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--_mark);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    text-align: start;
+  }
+  .rp__board :global(button:focus-visible) {
+    outline: 2px solid var(--_mark);
+    outline-offset: 2px;
+  }
+  .rp__history {
+    margin-top: 1.4rem;
+  }
+  .rp__h {
+    margin: 0 0 0.2rem;
+  }
+  .rp__note {
+    margin: 0 0 0.8rem;
+    color: var(--_muted);
+  }
+  .rp__tip {
+    position: absolute;
+    z-index: 3;
+    max-width: 16rem;
+    padding: 0.35rem 0.55rem;
+    border-radius: 8px;
+    background: #000;
+    border: 1px solid var(--_line);
+    color: var(--_text);
+    font-size: 0.85em;
+    pointer-events: none;
+    transform: translate(-50%, calc(-100% - 10px));
+    white-space: nowrap;
+  }
+</style>
+
+<script>
+  type Lines = { add: number; del: number };
+  type Repo = {
+    name: string;
+    url: string;
+    description: string;
+    homepage: string | null;
+    active: boolean;
+    stale?: boolean;
+    languages: { name: string; bytes: number }[];
+    commits: number;
+    claude: number;
+    weeks: number[];
+    lines: Lines[];
+    punch: number[][];
+    streak: { days: number; from: string | null; to: string | null };
+    lastCommit: string | null;
+    firstCommit: string | null;
+    pushed: string;
+    years: Record<string, { commits: number }>;
+    issues: { open: number; closed: number; medianCloseHours: number | null };
+    prs: { open: number; merged: number; closed: number; medianMergeHours: number | null };
+  };
+  type Stats = {
+    fetched: string;
+    days: { from: string; counts: number[] };
+    streak: Repo['streak'];
+    medianCloseHours: number | null;
+    medianMergeHours: number | null;
+    repos: Repo[];
+  };
+  const NS = 'http://www.w3.org/2000/svg';
+  const RAMP = ['var(--rp-empty,#18224a)', 'var(--rp-1,#225a54)', 'var(--rp-2,#277b72)', 'var(--rp-3,#2fa094)', 'var(--rp-4,#3bcabb)', 'var(--rp-5,#85ede0)'];
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-repo-pulse]')) {
+    if (!root.dataset.stats) continue;
+    const S: Stats = JSON.parse(root.dataset.stats);
+    const $ = <T extends Element = HTMLElement>(s: string) => root.querySelector<T>(s)!;
+    const words: Record<string, string> = {};
+    for (const s of root.querySelectorAll<HTMLElement>('.rp__strings [data-k]')) words[s.dataset.k!] = s.textContent ?? '';
+    const msg = (k: string, v: Record<string, string | number> = {}) => (words[k] ?? k).replace(/\{(\w+)\}/g, (_, x) => String(v[x] ?? ''));
+    const lang = document.documentElement.lang || 'en';
+    const num = (n: number) => n.toLocaleString(lang);
+    const cm = (n: number) => (n === 1 ? msg('commitOne') : msg('commitMany', { n: num(n) }));
+    const pct = (n: number) => n.toLocaleString(lang, { style: 'percent', maximumFractionDigits: 0 });
+    const dayOf = (iso: string) => new Date(`${iso}T12:00:00Z`);
+    const fmtDay = (iso: string, opts: Intl.DateTimeFormatOptions = { month: 'short', day: 'numeric', year: 'numeric' }) =>
+      dayOf(iso).toLocaleDateString(lang, { ...opts, timeZone: 'UTC' });
+    const dur = (h: number | null) =>
+      h == null ? msg('none') : h < 1 ? msg('minutes', { n: num(Math.max(1, Math.round(h * 60))) }) : h < 48 ? msg('hours', { n: (Math.round(h * 10) / 10).toLocaleString(lang) }) : Math.round(h / 24) === 1 ? msg('day') : msg('days', { n: num(Math.round(h / 24)) });
+    const weekdays = Array.from({ length: 7 }, (_, i) => new Date(Date.UTC(2023, 0, 1 + i)).toLocaleDateString(lang, { weekday: 'short', timeZone: 'UTC' }));
+    const addDays = (iso: string, n: number) => new Date(Date.parse(`${iso}T00:00:00Z`) + n * 86400000).toISOString().slice(0, 10);
+    const lastDay = addDays(S.days.from, S.days.counts.length - 1);
+    const weekStart = (i: number) => addDays(lastDay, -(51 - i) * 7 - 6); // week i of 52 (0 = oldest), Sunday
+
+    const asOf = $<HTMLTimeElement>('[data-asof]');
+    asOf.textContent = msg('asOf', { date: new Date(S.fetched).toLocaleString(lang, { dateStyle: 'medium', timeStyle: 'short' }) });
+
+    const activeRepos = S.repos.filter((r) => r.active);
+    const sum = (xs: number[]) => xs.reduce((a, b) => a + b, 0);
+    // "All active repos": the repos added together.
+    const all: Repo = {
+      name: '',
+      url: '',
+      description: '',
+      homepage: null,
+      active: true,
+      languages: Object.entries(
+        activeRepos.flatMap((r) => r.languages).reduce<Record<string, number>>((m, l) => ((m[l.name] = (m[l.name] ?? 0) + l.bytes), m), {}),
+      )
+        .map(([name, bytes]) => ({ name, bytes }))
+        .sort((a, b) => b.bytes - a.bytes),
+      commits: sum(activeRepos.map((r) => r.commits)),
+      claude: sum(activeRepos.map((r) => r.claude)),
+      weeks: Array.from({ length: 52 }, (_, i) => sum(activeRepos.map((r) => r.weeks[i] ?? 0))),
+      lines: Array.from({ length: 52 }, (_, i) => ({ add: sum(activeRepos.map((r) => r.lines[i]?.add ?? 0)), del: sum(activeRepos.map((r) => r.lines[i]?.del ?? 0)) })),
+      punch: Array.from({ length: 7 }, (_, d) => Array.from({ length: 24 }, (_, h) => sum(activeRepos.map((r) => r.punch[d][h])))),
+      streak: S.streak,
+      lastCommit: null,
+      firstCommit: null,
+      pushed: '',
+      years: {},
+      issues: { open: sum(activeRepos.map((r) => r.issues.open)), closed: sum(activeRepos.map((r) => r.issues.closed)), medianCloseHours: S.medianCloseHours },
+      prs: { open: 0, merged: sum(activeRepos.map((r) => r.prs.merged)), closed: 0, medianMergeHours: S.medianMergeHours },
+    };
+
+    // ---- Drawing helpers.
+    const el = (tag: string, attrs: Record<string, string | number> = {}, parent?: Element) => {
+      const e = document.createElementNS(NS, tag);
+      for (const [k, v] of Object.entries(attrs)) e.setAttribute(k, String(v));
+      parent?.appendChild(e);
+      return e;
+    };
+    const svg = (w: number, h: number, label: string) => el('svg', { viewBox: `0 0 ${w} ${h}`, width: w, height: h, role: 'img', 'aria-label': label });
+    // Charts are drawn at the width they have on screen, so their text is real 11px text (redrawn when it changes).
+    const width = (box: HTMLElement, min = 220) => Math.max(min, Math.round(box.clientWidth || 640));
+    // A see-through column over the whole plot height: the hover and focus target for a thin bar.
+    const hit = (s: Element, x: number, w: number, top: number, bottom: number, tip: string) =>
+      el('rect', { x, y: top, width: w, height: bottom - top, class: 'rp-hit', 'data-tip': tip }, s);
+    const caption = (fig: HTMLElement) => fig.querySelector('figcaption')?.firstChild?.textContent?.trim() ?? '';
+    // A rounded data end on the value side only (4px), the end at the baseline square.
+    const bar = (x: number, y: number, w: number, h: number, up = true) => {
+      const r = Math.min(4, w / 2, Math.abs(h));
+      if (h <= 0) return '';
+      return up
+        ? `M${x},${y + h}V${y + r}Q${x},${y} ${x + r},${y}H${x + w - r}Q${x + w},${y} ${x + w},${y + r}V${y + h}Z`
+        : `M${x},${y}V${y + h - r}Q${x},${y + h} ${x + r},${y + h}H${x + w - r}Q${x + w},${y + h} ${x + w},${y + h - r}V${y}Z`;
+    };
+    const niceMax = (m: number) => {
+      if (m <= 4) return 4;
+      const p = 10 ** Math.floor(Math.log10(m));
+      return [1, 2, 2.5, 5, 10].map((k) => k * p).find((v) => v >= m)!;
+    };
+    const table = (fig: HTMLElement, head: string[], rows: (string | number)[][]) => {
+      const box = fig.querySelector('.rp__table div');
+      if (!box) return;
+      const t = document.createElement('table');
+      const tr = t.createTHead().insertRow();
+      for (const h of head) tr.appendChild(Object.assign(document.createElement('th'), { textContent: h, scope: 'col' }));
+      const body = t.createTBody();
+      for (const r of rows) {
+        const row = body.insertRow();
+        r.forEach((c) => (row.insertCell().textContent = typeof c === 'number' ? num(c) : c));
+      }
+      box.replaceChildren(t);
+    };
+    const plot = (name: string) => {
+      const fig = $<HTMLElement>(`[data-chart="${name}"]`);
+      return { fig, box: fig.querySelector<HTMLElement>('.rp__plot')! };
+    };
+
+    // Columns over the 52 weeks, with month labels and a light grid.
+    function weeks(r: Repo) {
+      const { fig, box } = plot('weeks');
+      const W = width(box), H = 190, L = 34, B = 22, T = 8;
+      const max = niceMax(Math.max(...r.weeks, 1));
+      const s = svg(W, H, caption(fig));
+      for (let i = 0; i <= 2; i++) {
+        const y = T + ((H - T - B) * i) / 2;
+        el('line', { x1: L, x2: W, y1: y, y2: y, class: 'rp-grid' }, s);
+        el('text', { x: L - 6, y: y + 4, 'text-anchor': 'end' }, s).textContent = num((max * (2 - i)) / 2);
+      }
+      const bw = (W - L) / 52;
+      r.weeks.forEach((n, i) => {
+        const h = ((H - T - B) * n) / max;
+        const x = L + i * bw + 1;
+        if (h) el('path', { d: bar(x, H - B - h, bw - 2, h), fill: 'var(--rp-mark,#00a99c)' }, s);
+        hit(s, x - 1, bw, T, H - B, msg('tipWeek', { date: fmtDay(weekStart(i), { month: 'short', day: 'numeric' }), c: cm(n) }));
+        const ws = weekStart(i);
+        if (ws.slice(8) <= '07' && (W > 520 || Number(ws.slice(5, 7)) % 2)) el('text', x > W - 28 ? { x: W, y: H - 6, 'text-anchor': 'end' } : { x, y: H - 6 }, s).textContent = fmtDay(ws, { month: 'short' });
+      });
+      el('line', { x1: L, x2: W, y1: H - B, y2: H - B, class: 'rp-zero' }, s);
+      box.replaceChildren(s);
+      table(fig, [msg('week'), msg('commits')], r.weeks.map((n, i) => [fmtDay(weekStart(i)), n]).reverse());
+    }
+    // Added up from the zero line (teal), deleted down from it (orange): one scale for both.
+    function lines(r: Repo) {
+      const { fig, box } = plot('lines');
+      const W = width(box), H = 200, L = 52, B = 22, T = 8;
+      const max = niceMax(Math.max(...r.lines.map((l) => Math.max(l.add, l.del)), 1));
+      const s = svg(W, H, caption(fig));
+      const mid = T + (H - T - B) / 2;
+      const half = (H - T - B) / 2;
+      for (const [y, v] of [[T, max], [mid, 0], [H - B, max]] as const) {
+        el('line', { x1: L, x2: W, y1: y, y2: y, class: v === 0 ? 'rp-zero' : 'rp-grid' }, s);
+        el('text', { x: L - 6, y: y + 4, 'text-anchor': 'end' }, s).textContent = v ? (y === T ? '+' : '−') + v.toLocaleString(lang, { notation: 'compact' }) : '0';
+      }
+      const bw = (W - L) / 52;
+      r.lines.forEach((l, i) => {
+        const x = L + i * bw + 1;
+        const tip = msg('tipLines', { date: fmtDay(weekStart(i), { month: 'short', day: 'numeric' }), add: num(l.add), del: num(l.del) });
+        const ha = (half * l.add) / max;
+        const hd = (half * l.del) / max;
+        if (ha > 1) el('path', { d: bar(x, mid - ha, bw - 2, ha - 1), fill: 'var(--rp-mark,#00a99c)' }, s);
+        if (hd > 1) el('path', { d: bar(x, mid + 1, bw - 2, hd - 1, false), fill: 'var(--rp-mark-2,#d36c00)' }, s);
+        hit(s, x - 1, bw, T, H - B, tip);
+        const ws = weekStart(i);
+        if (ws.slice(8) <= '07' && (W > 520 || Number(ws.slice(5, 7)) % 2)) el('text', x > W - 28 ? { x: W, y: H - 6, 'text-anchor': 'end' } : { x, y: H - 6 }, s).textContent = fmtDay(ws, { month: 'short' });
+      });
+      box.replaceChildren(s);
+      table(fig, [msg('week'), msg('added'), msg('deleted')], r.lines.map((l, i) => [fmtDay(weekStart(i)), l.add, l.del]).reverse());
+    }
+    // A grid of cells shaded by a one-hue ramp: 0 is empty, the rest in five steps up to the busiest cell.
+    const shade = (n: number, max: number) => RAMP[n ? Math.min(5, Math.ceil((n / max) * 5)) : 0];
+    function punch(r: Repo) {
+      const { fig, box } = plot('punch');
+      const W = width(box), L = 40, T = 4, cell = Math.min((W - L) / 24, 34), H = T + cell * 7 + 18;
+      const max = Math.max(...r.punch.flat(), 1);
+      const s = svg(W, H, caption(fig));
+      r.punch.forEach((row, d) => {
+        el('text', { x: L - 6, y: T + d * cell + cell / 2 + 4, 'text-anchor': 'end' }, s).textContent = weekdays[d];
+        row.forEach((n, h) => {
+          el('rect', { x: L + h * cell + 1, y: T + d * cell + 1, width: cell - 2, height: cell - 2, rx: 3, fill: shade(n, max), 'data-tip': msg('tipPunch', { day: weekdays[d], hour: String(h).padStart(2, '0'), c: cm(n) }) }, s);
+        });
+      });
+      for (const h of [0, 6, 12, 18, 23]) el('text', { x: L + h * cell + cell / 2, y: H - 4, 'text-anchor': 'middle' }, s).textContent = String(h).padStart(2, '0');
+      box.replaceChildren(s);
+      table(fig, [msg('hour'), ...weekdays], Array.from({ length: 24 }, (_, h) => [`${String(h).padStart(2, '0')}:00`, ...r.punch.map((row) => row[h])]));
+    }
+    // Languages: ranked bars in one colour, the top six and the rest as "Other".
+    function langs(r: Repo) {
+      const { fig, box } = plot('langs');
+      const total = sum(r.languages.map((l) => l.bytes)) || 1;
+      const top = r.languages.slice(0, 6).map((l) => ({ name: l.name, share: l.bytes / total }));
+      const rest = 1 - sum(top.map((l) => l.share));
+      if (rest > 0.0005) top.push({ name: msg('other'), share: rest });
+      const W = width(box), row = 26, L = Math.min(130, W * 0.32), H = Math.max(1, top.length) * row;
+      const s = svg(W, H, caption(fig));
+      top.forEach((l, i) => {
+        const y = i * row;
+        const t = el('text', { x: L - 8, y: y + row / 2 + 4, 'text-anchor': 'end' }, s);
+        t.textContent = l.name;
+        t.setAttribute('translate', 'no');
+        const w = Math.max(2, (W - L - 50) * (l.share / top[0].share));
+        el('path', { d: `M${L},${y + 4}H${L + w - 4}Q${L + w},${y + 4} ${L + w},${y + 8}V${y + row - 8}Q${L + w},${y + row - 4} ${L + w - 4},${y + row - 4}H${L}Z`, fill: 'var(--rp-mark,#00a99c)', 'data-tip': msg('tipLang', { name: l.name, pct: pct(l.share) }) }, s);
+        el('text', { x: L + w + 6, y: y + row / 2 + 4 }, s).textContent = pct(l.share);
+      });
+      box.replaceChildren(s);
+      table(fig, [msg('language'), msg('share')], top.map((l) => [l.name, pct(l.share)]));
+    }
+    // A year day by day, like GitHub's contribution grid: weeks across, Sunday to Saturday down.
+    function year() {
+      const { fig, box } = plot('year');
+      const n = S.days.counts.length, weeksN = Math.ceil(n / 7);
+      const W = width(box, 640), L = 52, T = 16, cell = Math.min((W - L) / weeksN, 22), H = T + cell * 7 + 4;
+      const max = Math.max(...S.days.counts, 1);
+      const s = svg(W, H, caption(fig));
+      for (const d of [1, 3, 5]) el('text', { x: L - 6, y: T + d * cell + cell / 2 + 4, 'text-anchor': 'end' }, s).textContent = weekdays[d];
+      S.days.counts.forEach((c, i) => {
+        const day = addDays(S.days.from, i);
+        const w = Math.floor(i / 7), d = i % 7;
+        el('rect', { x: L + w * cell + 1, y: T + d * cell + 1, width: cell - 2, height: cell - 2, rx: 2, fill: shade(c, max), 'data-tip': msg('tipDay', { date: fmtDay(day), c: cm(c) }) }, s);
+        if (d === 0 && day.slice(8) <= '07') el('text', { x: L + w * cell, y: T - 5 }, s).textContent = fmtDay(day, { month: 'short' });
+      });
+      box.replaceChildren(s);
+      box.scrollLeft = box.scrollWidth; // narrow screens scroll; start on the newest weeks
+      const months = new Map<string, number>();
+      S.days.counts.forEach((c, i) => {
+        const m = addDays(S.days.from, i).slice(0, 7);
+        months.set(m, (months.get(m) ?? 0) + c);
+      });
+      table(fig, [msg('month'), msg('commits')], [...months].map(([m, c]) => [fmtDay(`${m}-01`, { month: 'long', year: 'numeric' }), c]).reverse());
+    }
+    // The active repos side by side; a name picks that repo.
+    function board() {
+      const box = $('.rp__board');
+      const t = document.createElement('table');
+      const head = [msg('repo'), msg('commits'), $('[data-t="issues"]').previousElementSibling?.textContent ?? '', $('[data-t="prs"]').previousElementSibling?.textContent ?? '', $('[data-t="claude"]').previousElementSibling?.textContent ?? '', msg('last')];
+      const tr = t.createTHead().insertRow();
+      for (const h of head) tr.appendChild(Object.assign(document.createElement('th'), { textContent: h, scope: 'col' }));
+      const body = t.createTBody();
+      for (const r of activeRepos) {
+        const row = body.insertRow();
+        const b = document.createElement('button');
+        b.type = 'button';
+        b.textContent = r.name;
+        b.translate = false;
+        b.addEventListener('click', () => pick(r.name, true));
+        row.insertCell().append(b);
+        for (const c of [num(r.commits), num(r.issues.closed), num(r.prs.merged), r.commits ? pct(r.claude / r.commits) : msg('none'), r.lastCommit ? fmtDay(r.lastCommit.slice(0, 10)) : msg('none')]) row.insertCell().textContent = c;
+      }
+      box.replaceChildren(t);
+    }
+    // History: a bar per repo from its first to its last commit, on a shared year axis.
+    function spans() {
+      const fig = root.querySelector<HTMLElement>('[data-chart="spans"]');
+      if (!fig) return;
+      const box = fig.querySelector<HTMLElement>('.rp__plot')!;
+      const list = S.repos.filter((r) => !r.active && r.firstCommit).sort((a, b) => Date.parse(a.firstCommit!) - Date.parse(b.firstCommit!));
+      const y0 = Math.min(...list.map((r) => new Date(r.firstCommit!).getUTCFullYear()));
+      const y1 = Math.max(...list.map((r) => new Date(r.lastCommit!).getUTCFullYear())) + 1;
+      const W = width(box, 560), L = Math.min(210, W * 0.32), row = 26, T = 18, H = T + list.length * row;
+      const x = (iso: string) => L + ((Date.parse(iso) - Date.UTC(y0, 0, 1)) / (Date.UTC(y1, 0, 1) - Date.UTC(y0, 0, 1))) * (W - L - 10);
+      const s = svg(W, H, caption(fig));
+      for (let y = y0; y <= y1; y++) {
+        const px = x(`${y}-01-01T00:00:00Z`);
+        el('line', { x1: px, x2: px, y1: T - 4, y2: H, class: 'rp-grid' }, s);
+        if (y < y1) el('text', { x: px + 3, y: T - 6 }, s).textContent = String(y);
+      }
+      list.forEach((r, i) => {
+        const y = T + i * row;
+        const t = el('text', { x: L - 8, y: y + row / 2 + 4, 'text-anchor': 'end' }, s);
+        t.textContent = r.name;
+        t.setAttribute('translate', 'no');
+        const a = x(r.firstCommit!), b = Math.max(x(r.lastCommit!), a + 6);
+        el('rect', { x: a, y: y + 6, width: b - a, height: row - 12, rx: 4, fill: 'var(--rp-mark,#00a99c)', 'data-tip': msg('tipSpan', { name: r.name, from: fmtDay(r.firstCommit!.slice(0, 10)), to: fmtDay(r.lastCommit!.slice(0, 10)), c: cm(r.commits) }) }, s);
+      });
+      box.replaceChildren(s);
+      table(fig, [msg('repo'), msg('first'), msg('last'), msg('commits')], list.map((r) => [r.name, fmtDay(r.firstCommit!.slice(0, 10)), fmtDay(r.lastCommit!.slice(0, 10)), r.commits]));
+    }
+    // Commits per year across every repo, active ones included: the whole story in one row of columns.
+    function years() {
+      const fig = root.querySelector<HTMLElement>('[data-chart="years"]');
+      if (!fig) return;
+      const box = fig.querySelector<HTMLElement>('.rp__plot')!;
+      const totals = new Map<number, number>();
+      for (const r of S.repos) for (const [y, v] of Object.entries(r.years)) totals.set(Number(y), (totals.get(Number(y)) ?? 0) + v.commits);
+      const ys = [...totals.keys()];
+      const lo = Math.min(...ys), hi = Math.max(...ys);
+      const list = Array.from({ length: hi - lo + 1 }, (_, i) => ({ year: lo + i, n: totals.get(lo + i) ?? 0 }));
+      const W = width(box), H = 200, L = 40, B = 22, T = 18;
+      const max = niceMax(Math.max(...list.map((d) => d.n), 1));
+      const s = svg(W, H, caption(fig));
+      for (let i = 0; i <= 2; i++) {
+        const y = T + ((H - T - B) * i) / 2;
+        el('line', { x1: L, x2: W, y1: y, y2: y, class: 'rp-grid' }, s);
+        el('text', { x: L - 6, y: y + 4, 'text-anchor': 'end' }, s).textContent = num((max * (2 - i)) / 2);
+      }
+      const bw = (W - L) / list.length;
+      list.forEach((d, i) => {
+        const h = ((H - T - B) * d.n) / max;
+        const x = L + i * bw + bw * 0.15;
+        if (h) el('path', { d: bar(x, H - B - h, bw * 0.7, h), fill: 'var(--rp-mark,#00a99c)' }, s);
+        hit(s, L + i * bw, bw, T, H - B, msg('tipYear', { year: d.year, c: cm(d.n) }));
+        if (bw > 34 || i % 2 === list.length % 2) el('text', { x: x + bw * 0.35, y: H - 6, 'text-anchor': 'middle' }, s).textContent = String(d.year);
+        if (d.n && (d.n === Math.max(...list.map((z) => z.n)) || i === list.length - 1)) el('text', { x: x + bw * 0.35, y: H - B - h - 5, 'text-anchor': 'middle' }, s).textContent = num(d.n);
+      });
+      el('line', { x1: L, x2: W, y1: H - B, y2: H - B, class: 'rp-zero' }, s);
+      box.replaceChildren(s);
+      table(fig, [msg('year'), msg('commits')], list.map((d) => [String(d.year), d.n]).reverse());
+    }
+
+    // ---- The pick: every tile and chart follows it.
+    const t = (k: string) => $(`[data-t="${k}"]`);
+    function show(r: Repo, isAll: boolean) {
+      t('commits').textContent = num(r.commits);
+      t('issues').textContent = num(r.issues.closed);
+      t('issuesOpen').textContent = msg('open', { n: num(r.issues.open) });
+      t('prs').textContent = num(r.prs.merged);
+      t('close').textContent = dur(r.issues.medianCloseHours);
+      t('merge').textContent = dur(r.prs.medianMergeHours);
+      t('streak').textContent = r.streak.days === 1 ? msg('day') : msg('days', { n: num(r.streak.days) });
+      t('streakSpan').textContent = r.streak.from ? msg('fromTo', { from: fmtDay(r.streak.from, { month: 'short', day: 'numeric' }), to: fmtDay(r.streak.to!) }) : '';
+      const share = r.commits ? r.claude / r.commits : 0;
+      t('claude').textContent = pct(share);
+      t('claudeOf').textContent = msg('of', { n: num(r.claude), total: num(r.commits) });
+      t('claudeBar').style.width = `${share * 100}%`;
+      const about = $('[data-about]');
+      about.hidden = isAll;
+      if (!isAll) {
+        about.replaceChildren();
+        if (r.description) about.append(Object.assign(document.createElement('span'), { textContent: `${r.description} ` }));
+        const a = Object.assign(document.createElement('a'), { href: r.url, textContent: 'GitHub ↗' });
+        about.append(a);
+        if (r.stale) about.append(` ${msg('stale')}`);
+      }
+      for (const f of root.querySelectorAll<HTMLElement>('[data-only-all]')) f.hidden = !isAll;
+      weeks(r);
+      lines(r);
+      punch(r);
+      langs(r);
+    }
+    const sel = $<HTMLSelectElement>('[data-pick]');
+    function pick(name: string, scroll = false) {
+      sel.value = name;
+      const r = activeRepos.find((x) => x.name === name);
+      show(r ?? all, !r);
+      if (scroll) sel.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    }
+    sel.addEventListener('change', () => pick(sel.value));
+
+    // ---- Tooltips: on hover, and on keyboard focus of a chart (arrow keys step through its marks).
+    const tip = $('[data-tipbox]');
+    const showTip = (target: Element) => {
+      const text = target.getAttribute('data-tip');
+      if (!text) return;
+      const a = target.getBoundingClientRect(), b = root.getBoundingClientRect();
+      tip.textContent = text;
+      tip.hidden = false;
+      const x = Math.min(Math.max(a.left + a.width / 2 - b.left, 80), b.width - 80);
+      tip.style.left = `${x}px`;
+      tip.style.top = `${a.top - b.top}px`;
+    };
+    const hideTip = () => (tip.hidden = true);
+    root.addEventListener('pointerover', (e) => {
+      const m = (e.target as Element).closest('.rp__plot [data-tip]');
+      if (m) showTip(m);
+    });
+    root.addEventListener('pointerout', (e) => {
+      if ((e.target as Element).closest('.rp__plot [data-tip]')) hideTip();
+    });
+    for (const p of root.querySelectorAll<HTMLElement>('.rp__plot')) {
+      let i = -1;
+      p.addEventListener('keydown', (e) => {
+        const marks = [...p.querySelectorAll('[data-tip]')];
+        if (!marks.length || !['ArrowRight', 'ArrowLeft', 'ArrowDown', 'ArrowUp', 'Home', 'End'].includes(e.key)) return;
+        e.preventDefault();
+        marks[i]?.classList.remove('is-on');
+        i = e.key === 'Home' ? 0 : e.key === 'End' ? marks.length - 1 : Math.max(0, Math.min(marks.length - 1, i + (e.key === 'ArrowRight' || e.key === 'ArrowDown' ? 1 : -1)));
+        marks[i].classList.add('is-on');
+        showTip(marks[i]);
+      });
+      p.addEventListener('blur', () => {
+        p.querySelector('.is-on')?.classList.remove('is-on');
+        i = -1;
+        hideTip();
+      });
+    }
+
+    // Charts drawn once the dashboard is on screen (a closed ▶ Play box has no width yet; SVG scales anyway).
+    const draw = () => {
+      year();
+      spans();
+      years();
+      pick(sel.value);
+    };
+    board();
+    draw();
+    let lastW = root.clientWidth;
+    let frame = 0;
+    new ResizeObserver(() => {
+      if (root.clientWidth === lastW) return;
+      lastW = root.clientWidth;
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(draw);
+    }).observe(root);
+  }
+</script>

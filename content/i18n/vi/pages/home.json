@@ -227,6 +227,10 @@
   "en": "331 h",
   "t": "331 h"
  },
+ "0432bdac943b": {
+  "en": "Pull requests merged",
+  "t": "Pull request đã gộp"
+ },
  "0446c388357c": {
   "en": " Sphere ",
   "t": "Khối cầu"
@@ -234,6 +238,10 @@
  "0455df4b7952": {
   "en": "Can I haz",
   "t": "Cho xin được hông"
+ },
+ "046f3e92e5e8": {
+  "en": "Commits per year, every repo",
+  "t": "Commit mỗi năm, mọi repo"
  },
  "046fa1a6bc47": {
   "en": "Nothing to clean.",
@@ -379,6 +387,10 @@
   "en": "Hellblade: Senua's Sacrifice",
   "t": "Hellblade: Senua's Sacrifice"
  },
+ "06f3df106dbd": {
+  "en": "{from} to {to}",
+  "t": "{from} đến {to}"
+ },
  "070927600afb": {
   "en": "Aim up",
   "t": "Lên trên"
@@ -411,6 +423,10 @@
   "en": "Cleaning the catch",
   "t": "Làm sạch cá"
  },
+ "076daa55e11f": {
+  "en": "{name}: {pct}",
+  "t": "{name}: {pct}"
+ },
  "07813f7ab23c": {
   "en": "SKALD",
   "t": "SKALD"
@@ -442,6 +458,10 @@
  "081cdfcf8c8f": {
   "en": " <span class=\"step__num\" data-astro-cid-uswg2a56=\"\">IV.</span> Endure the Fire ",
   "t": "<span class=\"step__num\" data-astro-cid-uswg2a56=\"\">IV.</span> Chịu đựng Lửa"
+ },
+ "082bc378cd60": {
+  "en": "Month",
+  "t": "Tháng"
  },
  "083ac934d137": {
   "en": "<strong>Rebecca Hymas, Johanna C. Badcock &amp; Elizabeth Milne</strong>, <em>Review Journal of Autism and Developmental Disorders</em> (2024), “Loneliness in Autism and Its Association with Anxiety and Depression”: across 23 studies, autistic people reported much more loneliness than neurotypical people, and loneliness went with anxiety and, more strongly, depression. <a href=\"https://doi.org/10.1007/s40489-022-00330-w\">Paper</a>",
@@ -483,6 +503,10 @@
   "en": "The mantras",
   "t": "Những câu thần chú"
  },
+ "08d33b6987c6": {
+  "en": "{n} of {total} commits",
+  "t": "{n} trên {total} commit"
+ },
  "090ea7b9d790": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder TV show 32 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 32: </span> Phim bộ tạm 32"
@@ -523,6 +547,10 @@
   "en": "The shared template for all my repos: AI disclosure, language support, website compilation, and more.",
   "t": "Mẫu dùng chung cho tất cả repo của tôi: công khai việc dùng AI, hỗ trợ ngôn ngữ, biên dịch trang web và nhiều thứ khác."
  },
+ "09ca55ca52d2": {
+  "en": "Share",
+  "t": "Tỷ lệ"
+ },
  "09e6b0bc6229": {
   "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,435 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPG &amp; thế giới mở: 5,435 h"
@@ -538,6 +566,10 @@
  "0a4020c7d439": {
   "en": "I created it",
   "t": "Tôi tạo ra nó"
+ },
+ "0a58c624ea12": {
+  "en": "Stats for my GitHub repos: commits, issues, pull requests, languages and when I code",
+  "t": "Thống kê các repo GitHub của tôi: commit, issue, pull request, ngôn ngữ và lúc tôi viết code"
  },
  "0a602ef98a21": {
   "en": "Enlarge: Long shadows on the walkway",
@@ -870,6 +902,10 @@
  "11414723e940": {
   "en": "169 h",
   "t": "169 h"
+ },
+ "115b12237e2f": {
+  "en": "Week of {date}: +{add} / −{del} lines",
+  "t": "Tuần {date}: +{add} / −{del} dòng"
  },
  "116a5734b684": {
   "en": "not counted",
@@ -1231,6 +1267,10 @@
   "en": "Enlarge: Deep fried walleye time",
   "t": "Phóng to: Giờ ăn cá walleye chiên"
  },
+ "19fe3efe3a95": {
+  "en": "Mission control for my GitHub: commits, issues, pull requests, languages and when I code, for every repo, pulled from GitHub.",
+  "t": "Trung tâm điều khiển GitHub của tôi: commit, issue, pull request, ngôn ngữ và lúc tôi viết code, cho mọi repo, lấy từ GitHub."
+ },
  "1a033dcc86e5": {
   "en": "My 2014 college game (XNA for Windows Phone), brought back in Godot. Hold to fly up, let go to glide, eat or starve. Play the 2014 version as it was, or the full game its design document planned.",
   "t": "Trò chơi thời đại học năm 2014 của tôi (XNA cho Windows Phone), được hồi sinh trong Godot. Giữ để bay lên, thả để lướt, ăn hoặc chết đói. Chơi bản 2014 như nguyên gốc, hoặc bản đầy đủ mà tài liệu thiết kế đã lên kế hoạch."
@@ -1274,6 +1314,10 @@
  "1a68ba446a35": {
   "en": "Little Big Workshop",
   "t": "Little Big Workshop"
+ },
+ "1a8ce3a33e4b": {
+  "en": "All active repos",
+  "t": "Mọi repo đang hoạt động"
  },
  "1ad741f3bb04": {
   "en": "Salty doggo",
@@ -1366,6 +1410,10 @@
  "1d43a97217e1": {
   "en": "Bass on the pontoon",
   "t": "Cá vược trên thuyền phao"
+ },
+ "1d948d5579c6": {
+  "en": "First commit",
+  "t": "Commit đầu tiên"
  },
  "1d9715eead3d": {
   "en": " Training guided by HRV (meta-analysis, 2020) ",
@@ -1686,6 +1734,10 @@
  "23b53c719a7e": {
   "en": "I see you",
   "t": "Thấy rồi nhé"
+ },
+ "23c25594de7a": {
+  "en": "{n} commits",
+  "t": "{n} commit"
  },
  "24037838f36c": {
   "en": "Enlarge: Drumsticks in the air fryer",
@@ -2095,6 +2147,10 @@
   "en": "{name} by month, one line per year",
   "t": "{name} theo tháng, mỗi năm một đường"
  },
+ "2c461304ec37": {
+  "en": "As of {date}",
+  "t": "Tính đến {date}"
+ },
  "2c6f37232fe8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Nanatsu no Taizai (The Seven Deadly Sins) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 22: </span> Nanatsu no Taizai (The Seven Deadly Sins)"
@@ -2139,6 +2195,10 @@
   "en": "How do I plan for travel?",
   "t": "Mình lên kế hoạch du lịch thế nào?"
  },
+ "2d8a6f7c3446": {
+  "en": "1 day",
+  "t": "1 ngày"
+ },
  "2d8bdb9ce539": {
   "en": "\nAt home, a whiteboard holds my major goals and anything that isn't tied to a date. If it is tied to a date, it goes on\n          the calendar; how I keep 5+ calendars in one place is <a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">Life hack #2: Calendar bound</a>.\n",
   "t": "Ở nhà, một tấm bảng trắng ghi các mục tiêu lớn của tôi và mọi thứ không gắn với ngày cụ thể. Nếu gắn với ngày, nó vào lịch; cách tôi gom hơn 5 cuốn lịch về một chỗ là <a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">Mẹo sống số 2: Bám theo lịch</a>."
@@ -2162,6 +2222,10 @@
  "2e0d678e73fb": {
   "en": "Savlonic",
   "t": "Savlonic"
+ },
+ "2e1d9152e7d7": {
+  "en": "1 commit",
+  "t": "1 commit"
  },
  "2e34036d167c": {
   "en": "Lord Peeta of Tuxford: Peeta as a king in a royal red, blue and gold robe with an ermine-trimmed cape (AI-generated)",
@@ -2254,6 +2318,10 @@
  "301c9293e857": {
   "en": "LED painting: turn your phone sideways",
   "t": "Vẽ LED: xoay ngang điện thoại"
+ },
+ "3025ccd42b92": {
+  "en": "{n} h",
+  "t": "{n} giờ"
  },
  "302f34692c38": {
   "en": "9 photos",
@@ -3159,6 +3227,10 @@
   "en": "I took these photos and I still squint at some of them.",
   "t": "Mấy tấm ảnh này mình tự chụp mà vẫn phải nheo mắt nhìn vài tấm."
  },
+ "410fff7be2cf": {
+  "en": "{day}, {hour}:00: {c}",
+  "t": "{day}, {hour}:00: {c}"
+ },
  "414a017a79c7": {
   "en": "<strong>Peace is not passivity.</strong> A boundary without enforcement is a request. Compassion can explain behavior without absorbing it, and standing idle while someone self-destructs is idiot compassion, not peace. Say your piece, then walk away.",
   "t": "<strong>Bình yên không phải là thụ động.</strong> Một ranh giới không được thực thi chỉ là một lời đề nghị. Lòng trắc ẩn có thể giải thích hành vi mà không hấp thụ nó, và khoanh tay đứng nhìn ai đó tự hủy hoại là lòng trắc ẩn ngu ngốc, không phải bình yên. Nói điều cần nói, rồi bước đi."
@@ -3258,6 +3330,10 @@
  "43eb964be6dd": {
   "en": "FEVER!",
   "t": "CƠN SỐT!"
+ },
+ "441bda6cd856": {
+  "en": "Deleted",
+  "t": "Xóa"
  },
  "4450ba4816bd": {
   "en": "Step 3: Prepare the Altar and Anoint the Meat",
@@ -3563,6 +3639,10 @@
   "en": "12 photos",
   "t": "12 ảnh"
  },
+ "4bab2d8fe13f": {
+  "en": "More",
+  "t": "Nhiều"
+ },
  "4bca447154dc": {
   "en": "Seared tuna steaks",
   "t": "Bít tết cá ngừ áp chảo"
@@ -3586,6 +3666,10 @@
  "4c1c703b94bd": {
   "en": "The point",
   "t": "Chỉ tay"
+ },
+ "4c1e601c40b8": {
+  "en": "{year}: {c}",
+  "t": "Năm {year}: {c}"
  },
  "4c1f1c138390": {
   "en": "Not bad!",
@@ -4291,6 +4375,10 @@
   "en": " RC ",
   "t": "RC"
  },
+ "5800ffeacb56": {
+  "en": "Longest streak",
+  "t": "Chuỗi dài nhất"
+ },
  "58114849f7f6": {
   "en": "Hip-hop &amp; rap",
   "t": "Hip-hop &amp; rap"
@@ -4687,6 +4775,10 @@
   "en": "678 h",
   "t": "678 h"
  },
+ "5f5b1f3cfb7f": {
+  "en": "(last numbers kept: GitHub didn’t answer)",
+  "t": "(giữ số liệu lần trước: GitHub không phản hồi)"
+ },
  "5f6b51fd50fd": {
   "en": "Opens your browser's print window. Pick \"Save as PDF\".",
   "t": "Mở cửa sổ in của trình duyệt. Chọn \"Lưu dưới dạng PDF\"."
@@ -4750,6 +4842,10 @@
  "6118946bae36": {
   "en": "\nBecause if I'm spending too much time on something, is it worth doing? And what can I do about it? That kind of data\n          helps me improve my workflows, my tools and my skill set. Being efficient with my time gives me more time for everything\n          else in life, including rest.\n",
   "t": "Vì nếu tôi tốn quá nhiều thời gian cho một việc, liệu nó có đáng làm không? Và tôi có thể làm gì với nó? Những dữ liệu như vậy giúp tôi cải thiện quy trình, công cụ và kỹ năng. Dùng thời gian hiệu quả cho tôi thêm thời gian cho mọi thứ khác trong đời, kể cả nghỉ ngơi."
+ },
+ "6122d0e87c5c": {
+  "en": "Show the numbers",
+  "t": "Hiện số liệu"
  },
  "612d8acb6101": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#26: </span>Best of the Worst: Dragon Hunt, Tartarus, and Born into Mafia",
@@ -4854,6 +4950,10 @@
  "62dfe60deea3": {
   "en": "The numbers didn't load. Try again later.",
   "t": "Không tải được số liệu. Thử lại sau nhé."
+ },
+ "62f0f1bc19bc": {
+  "en": "Week of",
+  "t": "Tuần"
  },
  "62f84c7b7a34": {
   "en": "{n} of 10",
@@ -5603,6 +5703,10 @@
   "en": "I've learned a lot more about narcissism recently, and boy, Light Yagami was really well written, alongside the other characters.",
   "t": "Gần đây tôi đã tìm hiểu nhiều hơn về chứng ái kỷ, và trời ơi, Light Yagami được viết thật sự quá hay, cùng với các nhân vật khác."
  },
+ "726a4ea9ddaf": {
+  "en": "Week of {date}: {c}",
+  "t": "Tuần {date}: {c}"
+ },
  "7270a0611994": {
   "en": " <strong data-astro-cid-4uymxnsz=\"\">≈ 1.3</strong> cows have become food <span class=\"icon-meter__note\" data-astro-cid-4uymxnsz=\"\">At about 500 lb (227 kg) of take-home beef per cow.</span> ",
   "t": "<strong data-astro-cid-4uymxnsz=\"\">≈ 1,3</strong> con bò đã thành đồ ăn <span class=\"icon-meter__note\" data-astro-cid-4uymxnsz=\"\">Tính khoảng 500 lb (227 kg) thịt bò mang về mỗi con.</span>"
@@ -5679,6 +5783,10 @@
   "en": "Type like a hacker",
   "t": "Gõ phím như hacker"
  },
+ "74536b5173ae": {
+  "en": "Commits",
+  "t": "Commit"
+ },
  "747e4b5cb273": {
   "en": " Pixel 8 Pro tech specs ",
   "t": "Thông số kỹ thuật Pixel 8 Pro"
@@ -5726,6 +5834,10 @@
  "7562fb66d590": {
   "en": "Sriracha maple bacon jerky",
   "t": "Thịt xông khói sấy khô vị Sriracha phong"
+ },
+ "758b43c3de8f": {
+  "en": "{name}: {from} to {to}, {c}",
+  "t": "{name}: {from} đến {to}, {c}"
  },
  "7599dc12705d": {
   "en": "Sandy village road",
@@ -6207,6 +6319,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Monogatari ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Hạng 17: </span> Monogatari"
  },
+ "7ee24f0bc533": {
+  "en": "Back to Management",
+  "t": "Quay lại Quản lý"
+ },
  "7f09aca0998e": {
   "en": "clickbait video",
   "t": "video giật tít"
@@ -6270,6 +6386,10 @@
  "80ad7e3d1940": {
   "en": "Squirreled Away",
   "t": "Squirreled Away"
+ },
+ "80af725687ad": {
+  "en": "Commits per week, last 52 weeks",
+  "t": "Commit mỗi tuần, 52 tuần gần nhất"
  },
  "80c9de545946": {
   "en": "Do Better!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (written in Vraki)</span>",
@@ -6346,6 +6466,10 @@
  "8271900678e6": {
   "en": "Enlarge: Destroying a whole chicken",
   "t": "Phóng to: Xử nguyên một con gà"
+ },
+ "82acef957ec1": {
+  "en": "When each one ran, from first to last commit",
+  "t": "Mỗi repo hoạt động khi nào, từ commit đầu đến commit cuối"
  },
  "82af22fd64e6": {
   "en": " West March D&amp;D Campaign ",
@@ -6719,6 +6843,10 @@
   "en": "All clean.",
   "t": "Sạch hết."
  },
+ "8b35e7710985": {
+  "en": "Median time to merge a pull request",
+  "t": "Thời gian trung vị để gộp một pull request"
+ },
  "8b3ee45765e5": {
   "en": "Explorer",
   "t": "Nhà thám hiểm"
@@ -6979,6 +7107,10 @@
   "en": "I was laughing out loud at how committed and no-shits-given they were to the bit. That's true artistic integrity.",
   "t": "Tôi cười phá lên vì họ cam kết hết mình và bất cần đến mức nào với trò đùa. Đó mới là sự chính trực nghệ thuật thật sự."
  },
+ "90ccd6497400": {
+  "en": "History",
+  "t": "Lịch sử"
+ },
  "90ebaebaa5f0": {
   "en": "My Suno songs",
   "t": "Các bài hát Suno của tôi"
@@ -7050,6 +7182,10 @@
  "9239c22d1d1c": {
   "en": "Japanese",
   "t": "Tiếng Nhật"
+ },
+ "923ee88d27d1": {
+  "en": "{n} open",
+  "t": "{n} đang mở"
  },
  "924da8b766b4": {
   "en": "Floor tom (key G)",
@@ -7194,6 +7330,10 @@
  "955b7068c35b": {
   "en": "Row {row}, column {col} on",
   "t": "Hàng {row}, cột {col} bật"
+ },
+ "95610dc021f9": {
+  "en": "\nLines added and deleted per week\n<span class=\"rp__legend\" aria-hidden=\"true\" data-astro-cid-lk2yyrml=\"\"> <i class=\"rp__sw rp__sw--add\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"added\" data-astro-cid-lk2yyrml=\"\">Added</span> <i class=\"rp__sw rp__sw--del\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"deleted\" data-astro-cid-lk2yyrml=\"\">Deleted</span> </span> ",
+  "t": "Dòng thêm và xóa mỗi tuần <span class=\"rp__legend\" aria-hidden=\"true\" data-astro-cid-lk2yyrml=\"\"> <i class=\"rp__sw rp__sw--add\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"added\" data-astro-cid-lk2yyrml=\"\">Thêm</span> <i class=\"rp__sw rp__sw--del\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"deleted\" data-astro-cid-lk2yyrml=\"\">Xóa</span> </span>"
  },
  "956ce2248d60": {
   "en": "Slide the latch all the way to open the film door.",
@@ -7378,6 +7518,10 @@
  "98796d800c43": {
   "en": "Paraglider over the beach",
   "t": "Dù lượn trên bãi biển"
+ },
+ "987b9ced08d4": {
+  "en": "Day",
+  "t": "Thứ"
  },
  "988a8d031bb7": {
   "en": "Enlarge: Turquoise coast",
@@ -7639,6 +7783,10 @@
   "en": "Hours",
   "t": "Giờ"
  },
+ "9e3a8c4190d5": {
+  "en": "Issues closed",
+  "t": "Issue đã đóng"
+ },
  "9e4dc992f238": {
   "en": "Autism and airplanes",
   "t": "Tự kỷ và máy bay"
@@ -7798,6 +7946,10 @@
  "a11f62752ca1": {
   "en": "16% of my hours",
   "t": "16% số giờ của tôi"
+ },
+ "a12b32e07960": {
+  "en": "Languages (share of code)",
+  "t": "Ngôn ngữ (tỷ lệ code)"
  },
  "a136fd1bab04": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder movie 27 ",
@@ -8463,6 +8615,10 @@
   "en": "So close! Your post was one share away from blowing up.",
   "t": "Gần quá! Bài của bạn chỉ còn một share là nổ."
  },
+ "af032e0aa425": {
+  "en": "Repos with no push in the past year: where it all started.",
+  "t": "Các repo không có push trong năm qua: nơi mọi thứ bắt đầu."
+ },
  "af38615beb76": {
   "en": "The facets that fulfill Deo",
   "t": "Những khía cạnh làm nên Deo"
@@ -8791,6 +8947,10 @@
   "en": " A2 ",
   "t": "A2"
  },
+ "b62b7c21efb9": {
+  "en": "The active repos",
+  "t": "Các repo đang hoạt động"
+ },
  "b644ea23206d": {
   "en": "\nThe algorithm is truly toxic, so much so that I don’t even have a fake/alt account. If you want to share memes with me,\n        share YouTube Shorts/videos on RCS.\n",
   "t": "Thuật toán thật sự độc hại, đến mức tôi còn không có tài khoản ảo hay tài khoản phụ. Nếu muốn chia sẻ meme với tôi, hãy gửi YouTube Shorts/video qua RCS."
@@ -8802,6 +8962,10 @@
  "b67933f00f5e": {
   "en": "My kokoro can't take this (/▽＼*)｡o○♡",
   "t": "Kokoro của tôi không chịu nổi (/▽＼*)｡o○♡"
+ },
+ "b68734c25910": {
+  "en": "Added",
+  "t": "Thêm"
  },
  "b6a818d021a2": {
   "en": "19 games",
@@ -9167,6 +9331,10 @@
   "en": "Fold 2 of 5: now the top-right corner to the same dot.",
   "t": "Gấp 2/5: giờ góc trên phải đến cùng chấm."
  },
+ "bece31449371": {
+  "en": "Co-authored with Claude",
+  "t": "Đồng tác giả với Claude"
+ },
  "bed1cd8de831": {
   "en": "Enlarge: Fillets ready",
   "t": "Phóng to: Phi lê xong rồi"
@@ -9355,6 +9523,10 @@
   "en": "The Planet Crafter",
   "t": "The Planet Crafter"
  },
+ "c22e246b7090": {
+  "en": "Median time to close an issue",
+  "t": "Thời gian trung vị để đóng một issue"
+ },
  "c234408a9708": {
   "en": "Enlarge: Painting or drawing, 04/16/2013",
   "t": "Phóng to: Tranh vẽ hoặc phác họa, 16/04/2013"
@@ -9402,6 +9574,10 @@
  "c379a5b7a656": {
   "en": "Hi-hat (key A)",
   "t": "Hi-hat (phím A)"
+ },
+ "c37cf838b0b9": {
+  "en": "Hour",
+  "t": "Giờ"
  },
  "c39ee79efd93": {
   "en": "Tattoo practice skin",
@@ -9543,6 +9719,10 @@
   "en": "Lord Peeta of Tuxford",
   "t": "Lãnh chúa Peeta xứ Tuxford"
  },
+ "c752c6dea2f9": {
+  "en": "{n} days",
+  "t": "{n} ngày"
+ },
  "c75ac3fad137": {
   "en": "{n}s left",
   "t": "Còn {n} giây"
@@ -9602,6 +9782,10 @@
  "c8eac89c05ab": {
   "en": "⬇ Download",
   "t": "⬇ Tải xuống"
+ },
+ "c8eca5b5c868": {
+  "en": "A year of commits, all repos, day by day",
+  "t": "Một năm commit, mọi repo, từng ngày"
  },
  "c92472adceec": {
   "en": "28 photos",
@@ -9987,6 +10171,10 @@
   "en": "REM sleep",
   "t": "Ngủ REM"
  },
+ "d0cac73dc924": {
+  "en": "Last commit",
+  "t": "Commit cuối cùng"
+ },
  "d10c715f8aa9": {
   "en": "Way off!",
   "t": "Lệch xa quá!"
@@ -10298,6 +10486,10 @@
  "d6c30a192b3e": {
   "en": "ARK: Survival Evolved",
   "t": "ARK: Survival Evolved"
+ },
+ "d6d29597665d": {
+  "en": "{date}: {c}",
+  "t": "{date}: {c}"
  },
  "d6fbd8d27ba3": {
   "en": "A photo shoot through a camera: chibi pixel Deo in his yellow king's robes holds the pose you pick, in front of the background you pick.",
@@ -11115,6 +11307,10 @@
   "en": "Metrics to show",
   "t": "Các chỉ số hiển thị"
  },
+ "e7c9aab3683f": {
+  "en": "Fewer",
+  "t": "Ít"
+ },
  "e7d901178492": {
   "en": "Pork shoulder on the smoker",
   "t": "Vai heo trên lò hun khói"
@@ -11343,6 +11539,10 @@
   "en": "Enlarge: A bacon-wrapped filet, sliced",
   "t": "Phóng to: Một miếng phi lê cuộn thịt xông khói, cắt lát"
  },
+ "ed8a6658c262": {
+  "en": "When the commits happen (Central time)",
+  "t": "Lúc commit diễn ra (giờ miền Trung Hoa Kỳ)"
+ },
  "ed8d6e99dc88": {
   "en": "BONK! 🔨 Go to horny jail. (ﾉ´ｰ`)ﾉ",
   "t": "BONK! 🔨 Vào tù biến thái đi. (ﾉ´ｰ`)ﾉ"
@@ -11422,6 +11622,10 @@
  "f0c3ff890745": {
   "en": "{n} of {max}",
   "t": "{n} trên {max}"
+ },
+ "f0ecd7c899e5": {
+  "en": "GitHub mission control",
+  "t": "Trung tâm điều khiển GitHub"
  },
  "f0f21ca1cb3a": {
   "en": "Cozy & life sims",
@@ -11678,6 +11882,10 @@
  "f69192726c6c": {
   "en": "\nThis website fulfills my need to share the joy and growth, and it gives me something I can pull up on the fly to show\n        the folks I’m talking with, without triggering hypervigilance. And just like the reason I went with self-publishing\n        instead of traditional publishing: I can do whatever the fuck I want here, and nobody gives a shit…\n",
   "t": "Trang web này đáp ứng nhu cầu chia sẻ niềm vui và sự trưởng thành của tôi, và cho tôi thứ có thể mở ra ngay để khoe với những người tôi đang trò chuyện, mà không kích hoạt trạng thái cảnh giác quá mức. Và cũng như lý do tôi chọn tự xuất bản thay vì xuất bản truyền thống: ở đây tôi muốn làm cái quái gì thì làm, và chẳng ai thèm quan tâm…"
+ },
+ "f69557c6366e": {
+  "en": "GitHub mission control: turn your phone sideways",
+  "t": "Trung tâm điều khiển GitHub: xoay ngang điện thoại"
  },
  "f698d5f2a43e": {
   "en": "Peeta on the stroller under the fall colors",

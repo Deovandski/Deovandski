@@ -227,6 +227,10 @@
   "en": "331 h",
   "t": "331 小时"
  },
+ "0432bdac943b": {
+  "en": "Pull requests merged",
+  "t": "已合并的拉取请求"
+ },
  "0446c388357c": {
   "en": " Sphere ",
   "t": "球体"
@@ -234,6 +238,10 @@
  "0455df4b7952": {
   "en": "Can I haz",
   "t": "可以给我吗"
+ },
+ "046f3e92e5e8": {
+  "en": "Commits per year, every repo",
+  "t": "每年的提交，所有仓库"
  },
  "046fa1a6bc47": {
   "en": "Nothing to clean.",
@@ -379,6 +387,10 @@
   "en": "Hellblade: Senua's Sacrifice",
   "t": "地狱之刃：塞娜的献祭"
  },
+ "06f3df106dbd": {
+  "en": "{from} to {to}",
+  "t": "{from} 至 {to}"
+ },
  "070927600afb": {
   "en": "Aim up",
   "t": "向上"
@@ -411,6 +423,10 @@
   "en": "Cleaning the catch",
   "t": "处理渔获"
  },
+ "076daa55e11f": {
+  "en": "{name}: {pct}",
+  "t": "{name}：{pct}"
+ },
  "07813f7ab23c": {
   "en": "SKALD",
   "t": "SKALD"
@@ -442,6 +458,10 @@
  "081cdfcf8c8f": {
   "en": " <span class=\"step__num\" data-astro-cid-uswg2a56=\"\">IV.</span> Endure the Fire ",
   "t": "<span class=\"step__num\" data-astro-cid-uswg2a56=\"\">四、</span>忍受烈火"
+ },
+ "082bc378cd60": {
+  "en": "Month",
+  "t": "月份"
  },
  "083ac934d137": {
   "en": "<strong>Rebecca Hymas, Johanna C. Badcock &amp; Elizabeth Milne</strong>, <em>Review Journal of Autism and Developmental Disorders</em> (2024), “Loneliness in Autism and Its Association with Anxiety and Depression”: across 23 studies, autistic people reported much more loneliness than neurotypical people, and loneliness went with anxiety and, more strongly, depression. <a href=\"https://doi.org/10.1007/s40489-022-00330-w\">Paper</a>",
@@ -483,6 +503,10 @@
   "en": "The mantras",
   "t": "信条"
  },
+ "08d33b6987c6": {
+  "en": "{n} of {total} commits",
+  "t": "{total} 次提交中的 {n} 次"
+ },
  "090ea7b9d790": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder TV show 32 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 32: </span> 占位剧集 32"
@@ -523,6 +547,10 @@
   "en": "The shared template for all my repos: AI disclosure, language support, website compilation, and more.",
   "t": "我所有代码仓库共用的模板：AI 使用披露、多语言支持、网站编译等等。"
  },
+ "09ca55ca52d2": {
+  "en": "Share",
+  "t": "占比"
+ },
  "09e6b0bc6229": {
   "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,435 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> 角色扮演与开放世界: 5,435 小时"
@@ -538,6 +566,10 @@
  "0a4020c7d439": {
   "en": "I created it",
   "t": "我创造的"
+ },
+ "0a58c624ea12": {
+  "en": "Stats for my GitHub repos: commits, issues, pull requests, languages and when I code",
+  "t": "我的 GitHub 仓库统计：提交、议题、拉取请求、语言和写代码的时间"
  },
  "0a602ef98a21": {
   "en": "Enlarge: Long shadows on the walkway",
@@ -870,6 +902,10 @@
  "11414723e940": {
   "en": "169 h",
   "t": "169 小时"
+ },
+ "115b12237e2f": {
+  "en": "Week of {date}: +{add} / −{del} lines",
+  "t": "{date} 那一周：+{add} / −{del} 行"
  },
  "116a5734b684": {
   "en": "not counted",
@@ -1231,6 +1267,10 @@
   "en": "Enlarge: Deep fried walleye time",
   "t": "放大: 炸大眼梭鲈时间"
  },
+ "19fe3efe3a95": {
+  "en": "Mission control for my GitHub: commits, issues, pull requests, languages and when I code, for every repo, pulled from GitHub.",
+  "t": "我的 GitHub 任务控制中心：每个仓库的提交、议题、拉取请求、语言和写代码的时间，从 GitHub 拉取。"
+ },
  "1a033dcc86e5": {
   "en": "My 2014 college game (XNA for Windows Phone), brought back in Godot. Hold to fly up, let go to glide, eat or starve. Play the 2014 version as it was, or the full game its design document planned.",
   "t": "我 2014 年的大学课程游戏（Windows Phone 上的 XNA），用 Godot 重新带回来。按住向上飞，松开滑翔，不吃就饿死。可以玩原汁原味的 2014 版，也可以玩设计文档里规划的完整版。"
@@ -1274,6 +1314,10 @@
  "1a68ba446a35": {
   "en": "Little Big Workshop",
   "t": "Little Big Workshop"
+ },
+ "1a8ce3a33e4b": {
+  "en": "All active repos",
+  "t": "所有活跃仓库"
  },
  "1ad741f3bb04": {
   "en": "Salty doggo",
@@ -1366,6 +1410,10 @@
  "1d43a97217e1": {
   "en": "Bass on the pontoon",
   "t": "游艇上的鲈鱼"
+ },
+ "1d948d5579c6": {
+  "en": "First commit",
+  "t": "首次提交"
  },
  "1d9715eead3d": {
   "en": " Training guided by HRV (meta-analysis, 2020) ",
@@ -1686,6 +1734,10 @@
  "23b53c719a7e": {
   "en": "I see you",
   "t": "我看见你了"
+ },
+ "23c25594de7a": {
+  "en": "{n} commits",
+  "t": "{n} 次提交"
  },
  "24037838f36c": {
   "en": "Enlarge: Drumsticks in the air fryer",
@@ -2095,6 +2147,10 @@
   "en": "{name} by month, one line per year",
   "t": "{name}按月，每年一条线"
  },
+ "2c461304ec37": {
+  "en": "As of {date}",
+  "t": "截至 {date}"
+ },
  "2c6f37232fe8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Nanatsu no Taizai (The Seven Deadly Sins) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 22: </span> Nanatsu no Taizai (七大罪)"
@@ -2139,6 +2195,10 @@
   "en": "How do I plan for travel?",
   "t": "我怎么规划旅行？"
  },
+ "2d8a6f7c3446": {
+  "en": "1 day",
+  "t": "1 天"
+ },
  "2d8bdb9ce539": {
   "en": "\nAt home, a whiteboard holds my major goals and anything that isn't tied to a date. If it is tied to a date, it goes on\n          the calendar; how I keep 5+ calendars in one place is <a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">Life hack #2: Calendar bound</a>.\n",
   "t": "在家里，一块白板记着我的主要目标和所有不跟日期挂钩的事。跟日期挂钩的就进日历；我怎么把 5 个以上的日历合到一处，见<a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">生活妙招 #2：一切进日历</a>。"
@@ -2162,6 +2222,10 @@
  "2e0d678e73fb": {
   "en": "Savlonic",
   "t": "Savlonic"
+ },
+ "2e1d9152e7d7": {
+  "en": "1 commit",
+  "t": "1 次提交"
  },
  "2e34036d167c": {
   "en": "Lord Peeta of Tuxford: Peeta as a king in a royal red, blue and gold robe with an ermine-trimmed cape (AI-generated)",
@@ -2254,6 +2318,10 @@
  "301c9293e857": {
   "en": "LED painting: turn your phone sideways",
   "t": "LED 绘画：把手机横过来"
+ },
+ "3025ccd42b92": {
+  "en": "{n} h",
+  "t": "{n} 小时"
  },
  "302f34692c38": {
   "en": "9 photos",
@@ -3159,6 +3227,10 @@
   "en": "I took these photos and I still squint at some of them.",
   "t": "这些照片是我拍的，有些我现在还得眯着眼看。"
  },
+ "410fff7be2cf": {
+  "en": "{day}, {hour}:00: {c}",
+  "t": "{day} {hour}:00：{c}"
+ },
  "414a017a79c7": {
   "en": "<strong>Peace is not passivity.</strong> A boundary without enforcement is a request. Compassion can explain behavior without absorbing it, and standing idle while someone self-destructs is idiot compassion, not peace. Say your piece, then walk away.",
   "t": "<strong>平和不是被动。</strong>不执行的边界只是一个请求。同情可以解释行为，却不必吸收它；眼睁睁看着别人自我毁灭是愚痴的慈悲，不是平和。把该说的说完，然后离开。"
@@ -3258,6 +3330,10 @@
  "43eb964be6dd": {
   "en": "FEVER!",
   "t": "狂热！"
+ },
+ "441bda6cd856": {
+  "en": "Deleted",
+  "t": "删除"
  },
  "4450ba4816bd": {
   "en": "Step 3: Prepare the Altar and Anoint the Meat",
@@ -3563,6 +3639,10 @@
   "en": "12 photos",
   "t": "12 张照片"
  },
+ "4bab2d8fe13f": {
+  "en": "More",
+  "t": "较多"
+ },
  "4bca447154dc": {
   "en": "Seared tuna steaks",
   "t": "香煎金枪鱼排"
@@ -3586,6 +3666,10 @@
  "4c1c703b94bd": {
   "en": "The point",
   "t": "指天"
+ },
+ "4c1e601c40b8": {
+  "en": "{year}: {c}",
+  "t": "{year} 年：{c}"
  },
  "4c1f1c138390": {
   "en": "Not bad!",
@@ -4291,6 +4375,10 @@
   "en": " RC ",
   "t": "RC"
  },
+ "5800ffeacb56": {
+  "en": "Longest streak",
+  "t": "最长连续天数"
+ },
  "58114849f7f6": {
   "en": "Hip-hop &amp; rap",
   "t": "嘻哈与说唱"
@@ -4687,6 +4775,10 @@
   "en": "678 h",
   "t": "678 小时"
  },
+ "5f5b1f3cfb7f": {
+  "en": "(last numbers kept: GitHub didn’t answer)",
+  "t": "（显示上次的数据：GitHub 没有响应）"
+ },
  "5f6b51fd50fd": {
   "en": "Opens your browser's print window. Pick \"Save as PDF\".",
   "t": "打开浏览器的打印窗口。选择“另存为 PDF”。"
@@ -4750,6 +4842,10 @@
  "6118946bae36": {
   "en": "\nBecause if I'm spending too much time on something, is it worth doing? And what can I do about it? That kind of data\n          helps me improve my workflows, my tools and my skill set. Being efficient with my time gives me more time for everything\n          else in life, including rest.\n",
   "t": "因为如果我在某件事上花了太多时间，它值得做吗？我又能怎么办？这类数据帮我改进工作流程、工具和技能。高效利用时间，让我有更多时间做生活中的其他事，包括休息。"
+ },
+ "6122d0e87c5c": {
+  "en": "Show the numbers",
+  "t": "显示数据"
  },
  "612d8acb6101": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#26: </span>Best of the Worst: Dragon Hunt, Tartarus, and Born into Mafia",
@@ -4854,6 +4950,10 @@
  "62dfe60deea3": {
   "en": "The numbers didn't load. Try again later.",
   "t": "数字没有加载出来，请稍后再试。"
+ },
+ "62f0f1bc19bc": {
+  "en": "Week of",
+  "t": "周起始日"
  },
  "62f84c7b7a34": {
   "en": "{n} of 10",
@@ -5603,6 +5703,10 @@
   "en": "I've learned a lot more about narcissism recently, and boy, Light Yagami was really well written, alongside the other characters.",
   "t": "我最近对自恋了解了很多，天哪，夜神月写得真好，其他角色也是。"
  },
+ "726a4ea9ddaf": {
+  "en": "Week of {date}: {c}",
+  "t": "{date} 那一周：{c}"
+ },
  "7270a0611994": {
   "en": " <strong data-astro-cid-4uymxnsz=\"\">≈ 1.3</strong> cows have become food <span class=\"icon-meter__note\" data-astro-cid-4uymxnsz=\"\">At about 500 lb (227 kg) of take-home beef per cow.</span> ",
   "t": "<strong data-astro-cid-4uymxnsz=\"\">≈ 1.3</strong> 头牛已经变成了食物 <span class=\"icon-meter__note\" data-astro-cid-4uymxnsz=\"\">按每头牛约 500 磅（227 公斤）可带回家的牛肉计算。</span>"
@@ -5679,6 +5783,10 @@
   "en": "Type like a hacker",
   "t": "像黑客一样打字"
  },
+ "74536b5173ae": {
+  "en": "Commits",
+  "t": "提交"
+ },
  "747e4b5cb273": {
   "en": " Pixel 8 Pro tech specs ",
   "t": "Pixel 8 Pro 技术规格"
@@ -5726,6 +5834,10 @@
  "7562fb66d590": {
   "en": "Sriracha maple bacon jerky",
   "t": "Sriracha 枫糖培根干"
+ },
+ "758b43c3de8f": {
+  "en": "{name}: {from} to {to}, {c}",
+  "t": "{name}：{from} 至 {to}，{c}"
  },
  "7599dc12705d": {
   "en": "Sandy village road",
@@ -6207,6 +6319,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Monogatari ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">排名 17: </span> Monogatari (物语系列)"
  },
+ "7ee24f0bc533": {
+  "en": "Back to Management",
+  "t": "返回管理"
+ },
  "7f09aca0998e": {
   "en": "clickbait video",
   "t": "标题党视频"
@@ -6270,6 +6386,10 @@
  "80ad7e3d1940": {
   "en": "Squirreled Away",
   "t": "Squirreled Away"
+ },
+ "80af725687ad": {
+  "en": "Commits per week, last 52 weeks",
+  "t": "每周提交，最近 52 周"
  },
  "80c9de545946": {
   "en": "Do Better!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (written in Vraki)</span>",
@@ -6346,6 +6466,10 @@
  "8271900678e6": {
   "en": "Enlarge: Destroying a whole chicken",
   "t": "放大: 干掉一整只鸡"
+ },
+ "82acef957ec1": {
+  "en": "When each one ran, from first to last commit",
+  "t": "每个仓库的活跃期，从首次到最后一次提交"
  },
  "82af22fd64e6": {
   "en": " West March D&amp;D Campaign ",
@@ -6719,6 +6843,10 @@
   "en": "All clean.",
   "t": "全干净了。"
  },
+ "8b35e7710985": {
+  "en": "Median time to merge a pull request",
+  "t": "合并拉取请求的中位时间"
+ },
  "8b3ee45765e5": {
   "en": "Explorer",
   "t": "探险家"
@@ -6979,6 +7107,10 @@
   "en": "I was laughing out loud at how committed and no-shits-given they were to the bit. That's true artistic integrity.",
   "t": "看他们对这个梗投入得那么彻底、那么毫不在乎，我笑出了声。这才是真正的艺术操守。"
  },
+ "90ccd6497400": {
+  "en": "History",
+  "t": "历史"
+ },
  "90ebaebaa5f0": {
   "en": "My Suno songs",
   "t": "我的 Suno 歌曲"
@@ -7050,6 +7182,10 @@
  "9239c22d1d1c": {
   "en": "Japanese",
   "t": "日语"
+ },
+ "923ee88d27d1": {
+  "en": "{n} open",
+  "t": "{n} 个未关闭"
  },
  "924da8b766b4": {
   "en": "Floor tom (key G)",
@@ -7194,6 +7330,10 @@
  "955b7068c35b": {
   "en": "Row {row}, column {col} on",
   "t": "第 {row} 行，第 {col} 列 开"
+ },
+ "95610dc021f9": {
+  "en": "\nLines added and deleted per week\n<span class=\"rp__legend\" aria-hidden=\"true\" data-astro-cid-lk2yyrml=\"\"> <i class=\"rp__sw rp__sw--add\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"added\" data-astro-cid-lk2yyrml=\"\">Added</span> <i class=\"rp__sw rp__sw--del\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"deleted\" data-astro-cid-lk2yyrml=\"\">Deleted</span> </span> ",
+  "t": "每周新增与删除的行数 <span class=\"rp__legend\" aria-hidden=\"true\" data-astro-cid-lk2yyrml=\"\"> <i class=\"rp__sw rp__sw--add\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"added\" data-astro-cid-lk2yyrml=\"\">新增</span> <i class=\"rp__sw rp__sw--del\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"deleted\" data-astro-cid-lk2yyrml=\"\">删除</span> </span>"
  },
  "956ce2248d60": {
   "en": "Slide the latch all the way to open the film door.",
@@ -7378,6 +7518,10 @@
  "98796d800c43": {
   "en": "Paraglider over the beach",
   "t": "海滩上空的滑翔伞"
+ },
+ "987b9ced08d4": {
+  "en": "Day",
+  "t": "星期"
  },
  "988a8d031bb7": {
   "en": "Enlarge: Turquoise coast",
@@ -7639,6 +7783,10 @@
   "en": "Hours",
   "t": "时"
  },
+ "9e3a8c4190d5": {
+  "en": "Issues closed",
+  "t": "已关闭的议题"
+ },
  "9e4dc992f238": {
   "en": "Autism and airplanes",
   "t": "自闭症与飞机"
@@ -7798,6 +7946,10 @@
  "a11f62752ca1": {
   "en": "16% of my hours",
   "t": "占我总时数的 16%"
+ },
+ "a12b32e07960": {
+  "en": "Languages (share of code)",
+  "t": "语言（代码占比）"
  },
  "a136fd1bab04": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder movie 27 ",
@@ -8463,6 +8615,10 @@
   "en": "So close! Your post was one share away from blowing up.",
   "t": "好近！你的帖子只差一次分享就爆了。"
  },
+ "af032e0aa425": {
+  "en": "Repos with no push in the past year: where it all started.",
+  "t": "过去一年没有推送的仓库：一切开始的地方。"
+ },
  "af38615beb76": {
   "en": "The facets that fulfill Deo",
   "t": "成就 Deo 的那些侧面"
@@ -8791,6 +8947,10 @@
   "en": " A2 ",
   "t": "A2"
  },
+ "b62b7c21efb9": {
+  "en": "The active repos",
+  "t": "活跃的仓库"
+ },
  "b644ea23206d": {
   "en": "\nThe algorithm is truly toxic, so much so that I don’t even have a fake/alt account. If you want to share memes with me,\n        share YouTube Shorts/videos on RCS.\n",
   "t": "算法真的很毒，毒到我连小号都没有。想跟我分享梗图的话，用 RCS 发 YouTube Shorts/视频给我。"
@@ -8802,6 +8962,10 @@
  "b67933f00f5e": {
   "en": "My kokoro can't take this (/▽＼*)｡o○♡",
   "t": "我的小心脏受不了了 (/▽＼*)｡o○♡"
+ },
+ "b68734c25910": {
+  "en": "Added",
+  "t": "新增"
  },
  "b6a818d021a2": {
   "en": "19 games",
@@ -9167,6 +9331,10 @@
   "en": "Fold 2 of 5: now the top-right corner to the same dot.",
   "t": "第 2/5 折：现在把右上角拖到同一点。"
  },
+ "bece31449371": {
+  "en": "Co-authored with Claude",
+  "t": "与 Claude 共同完成"
+ },
  "bed1cd8de831": {
   "en": "Enlarge: Fillets ready",
   "t": "放大: 鱼片准备好了"
@@ -9355,6 +9523,10 @@
   "en": "The Planet Crafter",
   "t": "星球工匠"
  },
+ "c22e246b7090": {
+  "en": "Median time to close an issue",
+  "t": "关闭议题的中位时间"
+ },
  "c234408a9708": {
   "en": "Enlarge: Painting or drawing, 04/16/2013",
   "t": "放大: 绘画或素描, 2013年4月16日"
@@ -9402,6 +9574,10 @@
  "c379a5b7a656": {
   "en": "Hi-hat (key A)",
   "t": "踩镲（按键 A）"
+ },
+ "c37cf838b0b9": {
+  "en": "Hour",
+  "t": "小时"
  },
  "c39ee79efd93": {
   "en": "Tattoo practice skin",
@@ -9543,6 +9719,10 @@
   "en": "Lord Peeta of Tuxford",
   "t": "塔克斯福德的 Peeta 领主"
  },
+ "c752c6dea2f9": {
+  "en": "{n} days",
+  "t": "{n} 天"
+ },
  "c75ac3fad137": {
   "en": "{n}s left",
   "t": "还剩 {n} 秒"
@@ -9602,6 +9782,10 @@
  "c8eac89c05ab": {
   "en": "⬇ Download",
   "t": "⬇ 下载"
+ },
+ "c8eca5b5c868": {
+  "en": "A year of commits, all repos, day by day",
+  "t": "一年的提交，所有仓库，按天"
  },
  "c92472adceec": {
   "en": "28 photos",
@@ -9987,6 +10171,10 @@
   "en": "REM sleep",
   "t": "快速眼动睡眠"
  },
+ "d0cac73dc924": {
+  "en": "Last commit",
+  "t": "最后提交"
+ },
  "d10c715f8aa9": {
   "en": "Way off!",
   "t": "差太远了！"
@@ -10298,6 +10486,10 @@
  "d6c30a192b3e": {
   "en": "ARK: Survival Evolved",
   "t": "方舟：生存进化"
+ },
+ "d6d29597665d": {
+  "en": "{date}: {c}",
+  "t": "{date}：{c}"
  },
  "d6fbd8d27ba3": {
   "en": "A photo shoot through a camera: chibi pixel Deo in his yellow king's robes holds the pose you pick, in front of the background you pick.",
@@ -11115,6 +11307,10 @@
   "en": "Metrics to show",
   "t": "要显示的指标"
  },
+ "e7c9aab3683f": {
+  "en": "Fewer",
+  "t": "较少"
+ },
  "e7d901178492": {
   "en": "Pork shoulder on the smoker",
   "t": "烟熏炉上的猪肩肉"
@@ -11343,6 +11539,10 @@
   "en": "Enlarge: A bacon-wrapped filet, sliced",
   "t": "放大: 切开的培根卷菲力"
  },
+ "ed8a6658c262": {
+  "en": "When the commits happen (Central time)",
+  "t": "提交发生的时间（美国中部时间）"
+ },
  "ed8d6e99dc88": {
   "en": "BONK! 🔨 Go to horny jail. (ﾉ´ｰ`)ﾉ",
   "t": "咚！🔨 进色狼监狱去吧。(ﾉ´ｰ`)ﾉ"
@@ -11422,6 +11622,10 @@
  "f0c3ff890745": {
   "en": "{n} of {max}",
   "t": "{n}/{max}"
+ },
+ "f0ecd7c899e5": {
+  "en": "GitHub mission control",
+  "t": "GitHub 任务控制中心"
  },
  "f0f21ca1cb3a": {
   "en": "Cozy & life sims",
@@ -11678,6 +11882,10 @@
  "f69192726c6c": {
   "en": "\nThis website fulfills my need to share the joy and growth, and it gives me something I can pull up on the fly to show\n        the folks I’m talking with, without triggering hypervigilance. And just like the reason I went with self-publishing\n        instead of traditional publishing: I can do whatever the fuck I want here, and nobody gives a shit…\n",
   "t": "这个网站满足了我分享快乐和成长的需要，也让我有个东西能随时拿出来给聊天的人看，而不会触发过度警觉。就像我选择自出版而不是传统出版的原因一样：我在这里想干什么就干什么，没人他妈的在乎……"
+ },
+ "f69557c6366e": {
+  "en": "GitHub mission control: turn your phone sideways",
+  "t": "GitHub 任务控制中心：把手机横过来"
  },
  "f698d5f2a43e": {
   "en": "Peeta on the stroller under the fall colors",

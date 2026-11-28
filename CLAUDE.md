@@ -208,6 +208,18 @@ The health numbers come from Deo's Google Health export, refreshed about once a 
   out, even if a future export makes them easy. Adding any metric is Deo's call.
 - **The privacy check must pass** (`npm run takeout -- --check`) before those files are committed.
 
+## GitHub stats (Management ▶ Play)
+
+The Management tab's GitHub mission control (`RepoPulse`, #334) reads `content/pm/github-stats.json`, a data pull like
+Steam, Xbox and Takeout: run `npm run github` (it uses `$GITHUB_TOKEN`, or your `gh` login) and commit the file. Nothing
+calls GitHub at build time; the dashboard shows "As of …" and /debug/ shows when it was pulled.
+
+- **Which repos:** every repo Deo owns, forks left out. `content/pm/github-repos.json` sets the order and is the whole list
+  when the token can't list an account's repos (a Claude session). Repos pushed in the last 12 months are active; the rest
+  are History.
+- **Public numbers only:** counts, dates, languages and weekly totals. No code, no file names, nobody else's details.
+- **Kanban board columns** would need a token with `read:project`; not pulled today.
+
 ## Building
 
 ```sh

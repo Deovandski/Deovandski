@@ -95,6 +95,7 @@ const data = {
   steam: readJson('content/gaming/steam-games.json')?.exported ?? null,
   xbox: readJson('content/gaming/xbox-games.json')?.exported ?? null,
   takeout: readJson('content/biomarkers/daily.json')?.exported ?? readJson('content/cycling/rides.json')?.exported ?? null,
+  github: readJson('content/pm/github-stats.json')?.fetched?.slice(0, 10) ?? null,
 };
 
 fs.writeFileSync(path.join(OUT, 'stats.json'), JSON.stringify({ code, site, data, i18n }, null, 1) + '\n');
