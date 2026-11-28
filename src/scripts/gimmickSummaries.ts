@@ -41,6 +41,8 @@ const live: Record<string, (el: HTMLElement) => string | null> = {
   'ice-fishing': (el) => fromSave(el, 'ice-fishing', (s) => s.total),
   'saturday-night-fever': (el) => fromSave(el, 'saturday-night-fever', (s) => Math.max(0, ...Object.values((s.best ?? {}) as Record<string, number>).map(Number))),
   'dino-ambush': (el) => fromSave(el, 'dino-ambush', (s) => s.won),
+  'terminal-typer': (el) =>
+    fromSave(el, 'terminal-typer', (s) => Math.max(0, ...Object.values((s.best ?? {}) as Record<string, { wpm: number }>).map((b) => Number(b.wpm)))),
   'balls-farm': (el) => {
     try {
       const farm = JSON.parse(read('balls-farm') ?? 'null');

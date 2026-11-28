@@ -31,6 +31,7 @@ and a project without translations just shows the English.
 | [PixelHammock.astro](PixelHammock.astro) | The chibi pixel character from StageDancer, chilling in a hammock between two palm trees, swaying; opens its eyes while it talks (`data-awake`). Drawn in code, outfit colours as props. | Traveler tab (the game's helper) |
 | [InstallApp.astro](InstallApp.astro) | An "Install app" button for an installable site (PWA): shown only when the browser can install it right now, otherwise a short line on how (open in Chrome on Android, Share → Add to Home Screen on iPhone), and "You're using the installed app" inside the app. | Settings menu (#292) |
 | [TerminalScreen.astro](TerminalScreen.astro) | An old-school computer terminal (green on black, amber headings, scan lines, blinking cursor) that types its text out one character at a time, fast. Click or any key shows it all; reduced motion shows it all at once. Copied unchanged from Deovandski-repo-template (template#19). | Stats for nerds (`/debug/`, #306) |
+| [TerminalTyper.astro](TerminalTyper.astro) | A terminal-themed typing game: pick 10, 20 or 30 words, type each one as it shows up (the next only appears once it's right), then get words per minute, accuracy, time, your fastest word and a hacker rank. Phone-friendly: letters and spaces only, case and accents don't count, autocorrect off. Saves the best run per length. Grew out of Deo Keyboard Tester, dressed like TerminalScreen. | Developer tab (#330) |
 | [ProjectCards.astro](ProjectCards.astro) | A grid of cards, each with a screenshot (or a plain panel), a title with an optional date line, a short explainer and link buttons; the screenshot opens in the photo viewer. | Developer tab (Wizard Deo Solutions, the games, #294) |
 | [ArcadeButton.astro](ArcadeButton.astro) | A big, chunky, old-school push button with one emoji on its cap and a click sound; it sinks when pressed, and as a toggle it stays down and lit while on. | Concert tab (Saturday Night Fever: music, pause, lights) |
 | [YouTube.astro](YouTube.astro) | A privacy-friendly YouTube embed: nothing loads from YouTube until play is pressed, then it plays from youtube-nocookie.com; pauses itself when hidden. 16:9 videos and 9:16 Shorts. | Aviation tab, Cycling tab ("Ridin' with Peeta") |
@@ -1346,6 +1347,40 @@ always left to right and `translate="no"` (on an Arabic page, also give it `text
 with `--term-bg`, `--term-ink`, `--term-dim`, `--term-amber`, `--term-warn`, `--term-font`, `--term-size`,
 `--term-size-phone`, `--term-key` and `--term-key-phone`.
 
+
+## TerminalTyper
+
+```astro
+---
+import TerminalTyper from './reusable/TerminalTyper.astro';
+---
+<TerminalTyper words={['Nari Gel', 'Crazed Muckman', 'Churrasco']} />
+<TerminalTyper words={pool} lengths={[5, 10]} saveKey="" host="me@example" />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `words` | (required) | The word pool. Letters and spaces only; anything else is dropped. Each run draws from it at random, never the same word twice in a row. |
+| `lengths` | `[10, 20, 30]` | The run lengths to pick from. |
+| `saveKey` | `'terminal-typer'` | Local storage key for the best run per length, `{ best: { <length>: { wpm, acc } } }` (`''` saves nothing). |
+| `host` | `'deo@deovandski'` | The user@host in the title bar and prompt. |
+| `label` | a short description | What it is, for screen readers. |
+| `class` | none | Extra class. |
+
+A typing game in a terminal, made from Deo's first Claude Code project (Deo Keyboard Tester) and dressed like
+TerminalScreen (green on black, amber for the prompt and headings, faint scan lines). Pick a length, press Start, and
+type: each letter turns green when it's right and red when it isn't, with an amber cursor under the next one. The next
+word only appears once the current one is right (a space after it is fine). Finished words scroll up with how long each
+took. At the end: ACCESS GRANTED, words per minute (characters ÷ 5, from the first keystroke), accuracy (keystrokes that
+matched), time, the fastest word, typos, a rank (grandma mode, hunt and peck, script kiddie no more, elite hacker) and the
+best for that length.
+
+Phones: the words use letters and spaces only, so nothing needs the symbols page or a long press; case and accents don't
+count (`chimarrao` types *Chimarrão*); the hidden input turns off autocorrect, autocapitalize and spellcheck, and is 16px
+so iOS doesn't zoom. Tapping the screen brings the keyboard up. Keyboard: Enter starts, Esc stops a run, Enter plays again.
+Accessible: real buttons; each word and the result are announced. Reduced motion: the cursor doesn't blink. The words to
+type are `translate="no"`; the game's own words are in a hidden `.tt__strings` block, so they're translated with the page.
+Theming: `--tt-bg`, `--tt-ink`, `--tt-dim`, `--tt-amber`, `--tt-bad`, `--tt-font`.
 ## ProjectCards
 
 A grid of cards: a screenshot on top (it opens bigger in the photo viewer), a title with an optional date line, a short

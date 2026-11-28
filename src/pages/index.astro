@@ -39,6 +39,7 @@ import shotGassyDonkey from '../assets/developer/gassy-donkey.png';
 import shotSinoi from '../assets/developer/sinoi-the-fisherman.png';
 import shotWds from '../assets/developer/wizard-deo-solutions.jpg';
 import shotLedMatrix from '../assets/developer/led-matrix-manager.jpg';
+import shotKeyboardTester from '../assets/developer/deo-keyboard-tester.png';
 import { Content as DeathSources } from '../../content/death-sources.md';
 import { Content as AviationSources } from '../../content/aviation-sources.md';
 import { Content as FishingStory } from '../../content/fishing/story.md';
@@ -110,6 +111,14 @@ const softwareCards = [
       { href: 'https://apps.microsoft.com/detail/9PF263W0KCSF?mode=direct', label: 'Microsoft Store' },
       { href: 'https://github.com/Deovandski/Deo-s-Framework16-LED-Matrix-Manager', label: 'GitHub' },
     ],
+  },
+  {
+    title: 'Deo Keyboard Tester',
+    date: 'October 2026 · my first Claude Code project',
+    image: shotKeyboardTester,
+    alt: 'Deo Keyboard Tester: a full-size keyboard on screen in teal, silver and pink, with the keys pressed so far glowing teal, a keystroke roll and a progress bar',
+    text: 'The first project I built with Claude Code, to learn it and brush up on React.js: a keyboard tester in Miku colours. Press every key until the whole board glows teal, watch a piano-roll of your keystrokes, and check for double presses and how many keys your board takes at once. In Chrome it also reads the OS layout and the keyboard’s USB details. It grew into the Type like a hacker game behind ▶ Play.',
+    links: [{ href: 'https://github.com/Deovandski/Deo-keyboard-tester', label: 'GitHub' }],
   },
 ];
 const gameCards = [
@@ -590,6 +599,9 @@ const nf = new Intl.NumberFormat('en-US');
     <span hidden data-play-label="play">Play</span><span hidden data-play-label="hide">Hide</span>
 
     <section class="panel" role="region" id="panel-dev" aria-labelledby="tab-dev" tabindex="0" hidden>
+      <GimmickPlay tab="dev">
+        <p slot="intro">Hack the terminal: type each word as it shows up, as fast and clean as you can. Words come from this site and #HusbandOutWorld.</p>
+      </GimmickPlay>
       <LinksMenu
         id="dev-links"
         toggle="external"

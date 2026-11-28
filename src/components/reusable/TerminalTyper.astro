@@ -1,0 +1,557 @@
+---
+/**
+ * TerminalTyper: a terminal-themed typing game (#330). Pick 10, 20 or 30 words; each one shows up on the screen, and the
+ * next only appears once it's typed right. At the end: words per minute, accuracy and time, with the best for each
+ * length saved in this browser. Grew out of Deo's first Claude Code project, Deo Keyboard Tester
+ * (github.com/Deovandski/Deo-keyboard-tester), and dressed like the /debug/ terminal (TerminalScreen, in this folder).
+ *
+ * Built for phones too: the words are letters and spaces only, case and accents don't count ("chimarrao" types
+ * "Chimarrão"), and autocorrect, autocapitalize and spellcheck are off, so nobody has to switch keyboard pages or
+ * long-press a key. Tap the screen to bring up the keyboard. A space typed after a word (out of habit) is ignored.
+ *
+ * Reusable on purpose: no imports, no site CSS needed, safe to use several times on a page.
+ *
+ *   <TerminalTyper words={['Nari Gel', 'Crazed Muckman', 'Churrasco']} />
+ *   <TerminalTyper words={pool} lengths={[5, 10]} saveKey="" host="me@example" />
+ *
+ * Props:
+ *   words    the word pool (letters and spaces; others are dropped). Each run draws its words from it at random.
+ *   lengths  the run lengths to pick from. Default [10, 20, 30].
+ *   saveKey  local storage key for the best run per length ('' saves nothing). Default 'terminal-typer'. Only the
+ *            numbers are kept, in this browser; they're never sent anywhere.
+ *   host     the user@host in the title bar and prompt. Default 'deo@deovandski'.
+ *   label    what it is, for screen readers.
+ *
+ * Theming: --tt-bg (#000), --tt-ink (#39ff14), --tt-dim (#1f9e0e), --tt-amber (#ffb000), --tt-bad (#ff4d4d),
+ * --tt-font (monospace stack). The same names and colours as TerminalScreen's --term-* ones.
+ *
+ * The title bar, the stats, the word and the log read left to right on every page (Arabic too): they're machine output.
+ * Keyboard: Enter starts, Esc stops a run, Enter after a run plays again. Accessible: real buttons; each word is
+ * announced, and so is the result. Reduced motion: the cursor doesn't blink. Words the script writes are in a hidden
+ * .tt__strings block, so the site's translations reach them; the words to type are never translated.
+ */
+interface Props {
+  words: string[];
+  lengths?: number[];
+  saveKey?: string;
+  host?: string;
+  label?: string;
+  class?: string;
+}
+const {
+  words,
+  lengths = [10, 20, 30],
+  saveKey = 'terminal-typer',
+  host = 'deo@deovandski',
+  label = 'A typing game in a terminal: type each word as it shows up.',
+  class: className,
+} = Astro.props;
+// Letters (accents included) and spaces only, so every word types on a phone's first keyboard page.
+const pool = [...new Set(words.map((w) => w.replace(/\s+/g, ' ').trim()).filter((w) => /^[\p{L} ]+$/u.test(w)))];
+const strings: Record<string, string> = {
+  word: 'Word {n} of {total}: {word}',
+  type: 'Type: {word}',
+  granted: 'ACCESS GRANTED',
+  r3: 'Rank: elite hacker.',
+  r2: 'Rank: script kiddie no more.',
+  r1: 'Rank: hunt and peck.',
+  r0: 'Rank: grandma mode.',
+  best: 'Best for {len} words: {wpm} WPM, {acc}%',
+  newBest: 'New best for {len} words!',
+  result: '{wpm} WPM, {acc}% accuracy, {time} seconds.',
+  fastest: 'Fastest word: {word} ({ms} ms)',
+  typos: 'Typos: {n}',
+  summary: 'Best: {n} WPM',
+};
+const uid = `tt${Math.random().toString(36).slice(2, 8)}`;
+---
+
+<div
+  class:list={['tt', className]}
+  data-terminal-typer
+  data-words={JSON.stringify(pool)}
+  data-save={saveKey}
+  role="group"
+  aria-label={label}
+>
+  <div class="tt__strings" hidden data-llms-skip>
+    {Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}
+  </div>
+  <div class="tt__bar" dir="ltr" aria-hidden="true">
+    <span class="tt__dots"><i></i><i></i><i></i></span>
+    <span translate="no">{host}: ~/type</span>
+  </div>
+  <div class="tt__screen" data-screen>
+    <p class="tt__sr" aria-live="polite" data-say></p>
+
+    <div data-menu>
+      <p class="tt__line"><span class="tt__prompt" translate="no">{host}:~$</span> <span translate="no">./type --words <span data-len>{lengths[0]}</span></span></p>
+      <p class="tt__dim">Type each word as it shows up, as fast and as clean as you can. The next word only appears once this one is right. Case and accents don't count.</p>
+      <p class="tt__h">How many words?</p>
+      <div class="tt__lengths" role="group" aria-labelledby={`${uid}-n`}>
+        <span id={`${uid}-n`} class="tt__sr">How many words?</span>
+        {
+          lengths.map((n, i) => (
+            <button type="button" class="tt__btn" data-length={n} aria-pressed={i === 0 ? 'true' : 'false'}>
+              [ {n} ]
+            </button>
+          ))
+        }
+      </div>
+      <button type="button" class="tt__btn tt__btn--go" data-start>&gt; Start</button>
+      <p class="tt__dim tt__best" data-best></p>
+    </div>
+
+    <div class="tt__run" data-run hidden>
+      <p class="tt__hud" translate="no" dir="ltr" aria-hidden="true">
+        <span data-n>1</span>/<span data-total>10</span> · <span data-wpm>0</span> WPM · <span data-acc>100</span>%
+      </p>
+      <ol class="tt__log" data-log dir="ltr" aria-hidden="true"></ol>
+      <div class="tt__stage" dir="ltr">
+        <p class="tt__word" data-word translate="no" aria-hidden="true"></p>
+        <input
+          class="tt__input"
+          data-input
+          type="text"
+          inputmode="text"
+          autocomplete="off"
+          autocapitalize="off"
+          autocorrect="off"
+          spellcheck="false"
+          enterkeyhint="next"
+        />
+      </div>
+      <p class="tt__dim tt__hint" data-hint>Tap here to bring up your keyboard. Esc stops.</p>
+    </div>
+
+    <div class="tt__end" data-end hidden>
+      <p class="tt__granted" data-granted></p>
+      <p class="tt__line" data-result></p>
+      <p class="tt__dim" data-rank></p>
+      <p class="tt__dim" data-fastest></p>
+      <p class="tt__dim" data-typos></p>
+      <p class="tt__amber" data-endbest></p>
+      <div class="tt__lengths">
+        <button type="button" class="tt__btn tt__btn--go" data-again>&gt; Again</button>
+        <button type="button" class="tt__btn" data-menu-btn>&gt; Change length</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  .tt {
+    --_ink: var(--tt-ink, #39ff14);
+    --_dim: var(--tt-dim, #1f9e0e);
+    --_amber: var(--tt-amber, #ffb000);
+    --_bad: var(--tt-bad, #ff4d4d);
+    container-type: inline-size;
+    border-radius: 12px;
+    border: 1px solid color-mix(in srgb, var(--_ink) 30%, transparent);
+    background: var(--tt-bg, #000);
+    color: var(--_ink);
+    font: 15px/1.55 var(--tt-font, ui-monospace, 'Cascadia Mono', 'SFMono-Regular', Consolas, 'Liberation Mono', monospace);
+    overflow: hidden;
+  }
+  .tt [hidden] {
+    display: none !important;
+  }
+  .tt__sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+  .tt__bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 12px;
+    border-bottom: 1px solid color-mix(in srgb, var(--_ink) 20%, transparent);
+    font-size: 12px;
+    color: var(--_dim);
+  }
+  .tt__dots {
+    display: flex;
+    gap: 6px;
+  }
+  .tt__dots i {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: color-mix(in srgb, var(--_ink) 35%, transparent);
+  }
+  .tt__screen {
+    position: relative;
+    min-height: 19rem;
+    padding: 16px 18px 20px;
+    background: repeating-linear-gradient(to bottom, transparent 0 2px, color-mix(in srgb, var(--_ink) 4%, transparent) 2px 3px);
+  }
+  .tt p {
+    max-width: none;
+    margin: 0 0 0.6rem;
+  }
+  .tt__prompt {
+    color: var(--_amber);
+  }
+  .tt__dim {
+    color: var(--_dim);
+  }
+  .tt__amber,
+  .tt__h {
+    color: var(--_amber);
+  }
+  .tt__h {
+    margin-top: 1rem !important;
+  }
+  .tt__lengths {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin: 0.4rem 0 1rem;
+  }
+  .tt__btn {
+    min-height: 44px;
+    padding: 0 1rem;
+    border: 1px solid var(--_dim);
+    border-radius: 6px;
+    background: transparent;
+    color: var(--_ink);
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .tt__btn[aria-pressed='true'] {
+    background: var(--_ink);
+    color: #000;
+    border-color: var(--_ink);
+  }
+  .tt__btn--go {
+    border-color: var(--_amber);
+    color: var(--_amber);
+  }
+  .tt__btn:hover {
+    border-color: var(--_ink);
+  }
+  .tt__btn:focus-visible {
+    outline: 2px solid var(--_amber);
+    outline-offset: 2px;
+  }
+  /* Machine output (dir="ltr" in the markup) sits on the left on every page. */
+  .tt__bar,
+  .tt__hud,
+  .tt__log,
+  .tt__stage {
+    text-align: left;
+  }
+  .tt__hud {
+    color: var(--_amber);
+    font-variant-numeric: tabular-nums;
+  }
+  .tt__log {
+    list-style: none;
+    margin: 0 0 0.4rem;
+    padding: 0;
+    min-height: 5.6em;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: var(--_dim);
+    font-size: 0.9em;
+  }
+  .tt__log :global(li)::before {
+    content: '✔ ';
+  }
+  .tt__log :global(.tt__ms) {
+    opacity: 0.7;
+  }
+  .tt__stage {
+    position: relative;
+    padding: 0.8rem 0;
+    border-block: 1px dashed color-mix(in srgb, var(--_ink) 25%, transparent);
+    cursor: text;
+  }
+  .tt__word {
+    margin: 0 !important;
+    min-height: 1.3em;
+    font-size: clamp(1.6rem, 7cqi, 2.6rem);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    overflow-wrap: anywhere;
+    color: color-mix(in srgb, var(--_ink) 45%, transparent);
+  }
+  .tt__word :global(.is-ok) {
+    color: var(--_ink);
+    text-shadow: 0 0 8px color-mix(in srgb, var(--_ink) 60%, transparent);
+  }
+  .tt__word :global(.is-bad) {
+    color: var(--_bad);
+    text-decoration: underline;
+  }
+  .tt__word :global(.is-caret) {
+    box-shadow: inset 0 -0.14em 0 var(--_amber);
+    animation: tt-blink 1s steps(1) infinite;
+  }
+  @keyframes tt-blink {
+    50% {
+      box-shadow: none;
+    }
+  }
+  /* The input covers the word, invisible: a tap anywhere on it brings up the keyboard. 16px stops iOS zooming in. */
+  .tt__input {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    font-size: 16px;
+    border: 0;
+    caret-color: transparent;
+  }
+  .tt__stage:focus-within {
+    border-color: var(--_amber);
+  }
+  .tt__hint {
+    margin-top: 0.6rem !important;
+    font-size: 0.85em;
+  }
+  .tt__granted {
+    font-size: clamp(1.4rem, 6cqi, 2.2rem);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-shadow: 0 0 10px color-mix(in srgb, var(--_ink) 60%, transparent);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tt__word :global(.is-caret) {
+      animation: none;
+    }
+  }
+</style>
+
+<script>
+  // Case and accents don't count: "chimarrao" types "Chimarrão".
+  const fold = (s: string) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase().replace(/\s+/g, ' ');
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-terminal-typer]')) {
+    const $ = <T extends Element = HTMLElement>(s: string) => root.querySelector<T>(s)!;
+    const words: Record<string, string> = {};
+    for (const s of root.querySelectorAll<HTMLElement>('.tt__strings [data-k]')) words[s.dataset.k!] = s.textContent ?? '';
+    const msg = (k: string, v: Record<string, string | number> = {}) => (words[k] ?? k).replace(/\{(\w+)\}/g, (_, x) => String(v[x] ?? ''));
+    const pool: string[] = JSON.parse(root.dataset.words || '[]');
+    const saveKey = root.dataset.save ?? '';
+    const input = $<HTMLInputElement>('[data-input]');
+    const wordEl = $('[data-word]');
+    const log = $('[data-log]');
+    const say = (t: string) => ($('[data-say]').textContent = t);
+    const nf = (n: number) => n.toLocaleString(document.documentElement.lang || 'en', { maximumFractionDigits: 0 });
+
+    // The best run per length, in this browser only (never sent anywhere).
+    type Best = Record<string, { wpm: number; acc: number }>;
+    let best: Best = {};
+    try {
+      if (saveKey) best = JSON.parse(localStorage.getItem(saveKey) || '{}').best ?? {};
+    } catch {
+      /* private mode: nothing is kept */
+    }
+    let length = Number($<HTMLButtonElement>('[data-length]').dataset.length) || 10;
+    const showBest = () => {
+      const b = best[length];
+      $('[data-best]').textContent = b ? msg('best', { len: length, wpm: nf(b.wpm), acc: nf(b.acc) }) : '';
+      $('[data-len]').textContent = String(length);
+    };
+
+    // A run.
+    let list: string[] = [];
+    let idx = 0;
+    let started = 0; // the first keystroke
+    let wordStart = 0;
+    let typedLen = 0; // folded length of the input, to count new keystrokes
+    let keys = 0;
+    let typos = 0;
+    let chars = 0; // characters of the finished words (and the spaces between them)
+    let fastest = { word: '', ms: Infinity };
+    let ticker = 0;
+    let running = false;
+
+    const pick = (n: number) => {
+      const out: string[] = [];
+      let bag: string[] = [];
+      while (out.length < n) {
+        if (!bag.length) bag = [...pool].sort(() => Math.random() - 0.5);
+        const w = bag.pop()!;
+        if (out[out.length - 1] !== w) out.push(w);
+      }
+      return out;
+    };
+    const wpm = (now: number) => (started ? chars / 5 / Math.max((now - started) / 60000, 1 / 600) : 0);
+    const acc = () => (keys ? ((keys - typos) / keys) * 100 : 100);
+    const hud = () => {
+      $('[data-n]').textContent = String(Math.min(idx + 1, list.length));
+      $('[data-total]').textContent = String(list.length);
+      $('[data-wpm]').textContent = nf(wpm(performance.now()));
+      $('[data-acc]').textContent = nf(acc());
+    };
+    // The current word, letter by letter: green when right, red when wrong, the cursor under the next one.
+    const draw = () => {
+      const target = list[idx];
+      const typed = fold(input.value);
+      const t = [...target];
+      const f = [...fold(target)];
+      const spans = t.map((ch, i) => {
+        const s = document.createElement('span');
+        s.textContent = ch;
+        if (i < typed.length) s.className = typed[i] === f[i] ? 'is-ok' : 'is-bad';
+        else if (i === typed.length) s.className = 'is-caret';
+        return s;
+      });
+      if (typed.length > t.length) {
+        const extra = document.createElement('span');
+        extra.className = 'is-bad';
+        extra.textContent = input.value.slice(t.length);
+        spans.push(extra);
+      }
+      wordEl.replaceChildren(...spans);
+    };
+    const showWord = () => {
+      input.value = '';
+      typedLen = 0;
+      wordStart = performance.now();
+      input.setAttribute('aria-label', msg('type', { word: list[idx] }));
+      say(msg('word', { n: idx + 1, total: list.length, word: list[idx] }));
+      draw();
+      hud();
+    };
+    function start() {
+      list = pick(length);
+      idx = 0;
+      started = 0;
+      keys = 0;
+      typos = 0;
+      chars = 0;
+      fastest = { word: '', ms: Infinity };
+      log.replaceChildren();
+      running = true;
+      $('[data-menu]').hidden = true;
+      $('[data-end]').hidden = true;
+      $('[data-run]').hidden = false;
+      $('[data-hint]').hidden = false;
+      showWord();
+      input.focus();
+      clearInterval(ticker);
+      ticker = window.setInterval(hud, 250);
+    }
+    function stop() {
+      running = false;
+      clearInterval(ticker);
+      input.blur();
+    }
+    function toMenu() {
+      stop();
+      $('[data-run]').hidden = true;
+      $('[data-end]').hidden = true;
+      $('[data-menu]').hidden = false;
+      showBest();
+      $<HTMLButtonElement>(`[data-length="${length}"]`).focus();
+    }
+    function finish() {
+      const now = performance.now();
+      stop();
+      const w = Math.round(wpm(now));
+      const a = Math.round(acc());
+      const secs = Math.round((now - started) / 100) / 10;
+      const prev = best[length];
+      const isBest = !prev || w > prev.wpm || (w === prev.wpm && a > prev.acc);
+      if (isBest) {
+        best[length] = { wpm: w, acc: a };
+        try {
+          if (saveKey) localStorage.setItem(saveKey, JSON.stringify({ best }));
+        } catch {
+          /* storage blocked */
+        }
+      }
+      $('[data-run]').hidden = true;
+      $('[data-end]').hidden = false;
+      $('[data-granted]').textContent = `> ${msg('granted')}`;
+      const result = msg('result', { wpm: nf(w), acc: nf(a), time: secs.toLocaleString(document.documentElement.lang || 'en') });
+      $('[data-result]').textContent = result;
+      const rank = msg(w >= 70 ? 'r3' : w >= 45 ? 'r2' : w >= 25 ? 'r1' : 'r0');
+      $('[data-rank]').textContent = rank;
+      $('[data-fastest]').textContent = fastest.word ? msg('fastest', { word: fastest.word, ms: nf(fastest.ms) }) : '';
+      $('[data-typos]').textContent = msg('typos', { n: typos });
+      const b = best[length];
+      $('[data-endbest]').textContent = isBest ? msg('newBest', { len: length }) : msg('best', { len: length, wpm: nf(b.wpm), acc: nf(b.acc) });
+      say(`${msg('granted')}. ${result} ${rank} ${$('[data-endbest]').textContent}`);
+      $<HTMLButtonElement>('[data-again]').focus();
+    }
+
+    input.addEventListener('input', () => {
+      if (!running) return;
+      const now = performance.now();
+      if (!started) {
+        started = now;
+        wordStart = now;
+      }
+      // A space typed out of habit after the last word lands here first: drop it (it isn't a typo).
+      if (/^\s/.test(input.value)) {
+        input.value = input.value.replace(/^\s+/, '');
+        typedLen = Math.min(typedLen, fold(input.value).length);
+      }
+      const target = fold(list[idx]);
+      const typed = fold(input.value);
+      // Each new character is a keystroke; one that doesn't match the word there is a typo.
+      for (let i = typedLen; i < typed.length; i++) {
+        keys++;
+        if (typed[i] !== target[i] && !(i === target.length && typed[i] === ' ')) typos++;
+      }
+      typedLen = typed.length;
+      // Done once it matches (a space typed after the word is fine).
+      if (typed.trimEnd() === target) {
+        const ms = Math.round(now - wordStart);
+        if (ms < fastest.ms) fastest = { word: list[idx], ms };
+        chars += list[idx].length + (idx > 0 ? 1 : 0);
+        const li = document.createElement('li');
+        li.translate = false;
+        li.append(`${list[idx]} `);
+        const t = document.createElement('span');
+        t.className = 'tt__ms';
+        t.textContent = `${nf(ms)} ms`;
+        li.append(t);
+        log.append(li);
+        while (log.children.length > 4) log.firstElementChild!.remove();
+        idx++;
+        if (idx >= list.length) return finish();
+        return showWord();
+      }
+      draw();
+      hud();
+    });
+    input.addEventListener('keydown', (e) => {
+      // Esc ends the run only (it doesn't also close a box the game sits in).
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        e.stopPropagation();
+        toMenu();
+      }
+    });
+    // A tap anywhere on the screen during a run brings the keyboard back.
+    $('[data-screen]').addEventListener('click', (e) => {
+      if (running && !(e.target as HTMLElement).closest('button')) input.focus();
+    });
+    input.addEventListener('focus', () => ($('[data-hint]').hidden = true));
+    input.addEventListener('blur', () => running && ($('[data-hint]').hidden = false));
+
+    for (const b of root.querySelectorAll<HTMLButtonElement>('[data-length]')) {
+      b.addEventListener('click', () => {
+        length = Number(b.dataset.length);
+        for (const x of root.querySelectorAll('[data-length]')) x.setAttribute('aria-pressed', String(x === b));
+        showBest();
+      });
+    }
+    $('[data-start]').addEventListener('click', start);
+    $('[data-again]').addEventListener('click', start);
+    $('[data-menu-btn]').addEventListener('click', toMenu);
+    showBest();
+  }
+</script>
