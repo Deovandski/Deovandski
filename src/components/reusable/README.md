@@ -25,6 +25,7 @@ and a project without translations just shows the English.
 | [VhsPile.astro](VhsPile.astro) | A pile of VHS tapes holding a number of hours of video. Visitors pick the recording speed (SP, LP, EP) and the tapes fall from the top and pile up; they shrink to fit, so it can show a couple of thousand. Canvas, no libraries. | BOTW tab (watch time) |
 | [PaperPlane.astro](PaperPlane.astro) | Fold a paper plane, then throw it: precision decides the distance | Aviation tab |
 | [StageDancer.astro](StageDancer.astro) + [pixel-deo/sprite.ts](pixel-deo/sprite.ts) | A chibi pixel character (drawn in code by `pixel-deo/sprite.ts`, shared with PhotoShoot; colours as props) dancing four disco routines (#1 the point, #2 the Night Fever line dance, #3 the hustle, #4 toe stand & point), each with its own tempo, music and difficulty, picked on a View-Master plate (ReelPicker), under spotlights, a mirror ball and a light-up floor, with a beat guide and a fever meter you fill by tapping on the beat and an optional original 8-bit disco loop. | Concert tab, Playground |
+| [RepoPulse.astro](RepoPulse.astro) | A dashboard of an account's GitHub repos from a data pull (`scripts/github-stats.mjs`): pick all active repos or one; tiles (commits, issues, pull requests, median time to close and merge, longest streak, share co-authored with Claude) and charts (commits per week, lines added and deleted, weekday × hour heatmap, languages, a year day by day, a table of repos), plus a History section (when each old repo ran, commits per year). "As of …" says when it was pulled. Every chart has a "Show the numbers" table; colours checked with the dataviz validator. | Management tab (#334) |
 | [ReelPicker.astro](ReelPicker.astro) | A View-Master-style picker: cards around the rim of a round plate, seen through a window that shows one card and slivers of its neighbours; drag or swipe to turn the plate, it snaps to a card. `orientation="horizontal"` lays the cards out in a flat row instead, the neighbours coming straight in from the left and right. Each card has a name, a detail line and an art box for a picture. | Concert tab (Saturday Night Fever routines, inside StageDancer); Photographer tab (the photo themes, as a flat horizontal row, inside ThemeGallery) |
 | [PlanetLap.astro](PlanetLap.astro) | How far around a planet a distance goes, Reus-style (the planet cut in half, seen side on), animated like an in-flight map: a little cyclist rides from the start flag, then the map keeps zooming in and out between the nearest places and the far ones, with a next-stop panel and distances to go, fossils under the surface, and an optional chaser that runs after the rider. | Cycling tab (from Fargo, ND), with Ursu Sintasus giving chase |
 | [PhotoQuiz.astro](PhotoQuiz.astro) | Guess where a photo was taken: rounds of photos (10 by default) with multiple-choice answers, a score card, and a helper slot under it who gives one freebie per game (narrows the answers to two), chats now and then, and shares fun facts after some answers. Every word is in the page, so it gets translated. | Traveler tab (Where in the World Was Deo?, #290) |
@@ -492,6 +493,36 @@ straight up, a lean, a kick). A **fever meter** on the right fills a little ever
 stage (or press Space/Enter on it) on the beat; at 100 it hits **FEVER!** and the whole floor lights up for
 8 beats. **🎵** plays the routine's own original 8-bit disco loop (Web Audio, no files; not any existing song) in
 time with the dance; it stops when the dance pauses or the stage is hidden.
+
+## RepoPulse
+
+```astro
+---
+import RepoPulse from './reusable/RepoPulse.astro';
+import stats from '../../content/pm/github-stats.json';
+---
+<RepoPulse data={stats} />
+```
+
+| Prop | Default | |
+|---|---|---|
+| `data` | (required) | The file `scripts/github-stats.mjs` writes (`npm run github`): `{ fetched, tz, days, streak, medianCloseHours, medianMergeHours, repos }`. `null` shows "Stats are on their way." |
+| `label` | a short description | What it is, for screen readers. |
+| `class` | none | Extra class. |
+
+GitHub stats as a dashboard, drawn in the page (SVG, at the width it has, redrawn when that changes). One filter, a
+`<select>` of "All active repos" and each active repo, drives the tiles and the four charts: commits per week over 52
+weeks, lines added (up, teal) and deleted (down, orange) per week, a weekday × hour heatmap of when commits happen, and
+languages as ranked bars (top six and Other). "All active repos" adds a year of commits day by day (like GitHub's grid)
+and a table of the repos, where a name picks that repo. The History section shows the repos with no push in a year: a
+bar from each one's first to last commit on a shared year axis, and commits per year across every repo.
+
+Tooltips show on hover and on keyboard focus (arrow keys, Home and End step through a chart's marks), over a
+full-height hover area per column so thin bars are easy to hit; every chart also has a "Show the numbers" table, so no
+value is only in a tooltip. Dates, weekdays and numbers are in the page's language; repo and language names aren't
+translated. Colours, checked with the dataviz palette validator against the dark surface: bars `--rp-mark` (#00a99c),
+lines deleted `--rp-mark-2` (#d36c00), heatmaps a five-step one-hue teal ramp `--rp-1` … `--rp-5` over `--rp-empty`; text
+and lines `--rp-text`, `--rp-muted`, `--rp-line`, `--rp-surface`. No animation.
 
 ## ReelPicker
 

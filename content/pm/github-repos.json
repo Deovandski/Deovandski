@@ -1,0 +1,24 @@
+{
+  "_about": "The repos the Management tab's ▶ Play shows (#334). scripts/github-stats.mjs (npm run github) lists every repo Deovandski owns, forks left out; this list sets the order (any repo not here comes after, newest push first) and is the whole list when the token can't list an account's repos. Repos pushed in the last 12 months are active; the rest go in History.",
+  "owner": "Deovandski",
+  "repos": [
+    "Deovandski",
+    "HusbandOutWorld",
+    "Sinoi-the-fisherman",
+    "Vraki-West-March-Campaign-D-D",
+    "vraki-windows",
+    "Deovandski-repo-template",
+    "gassy-donkey",
+    "Superb-Hawk",
+    "Deo-s-Framework16-LED-Matrix-Manager",
+    "Deo-keyboard-tester",
+    "deo-embercli-website",
+    "Deo-ASPNET5-API-Workshop",
+    "monitor-fluffy",
+    "vocaloid-radio-android",
+    "DSP_KOS",
+    "vocaloid-radio-windows",
+    "deo-embercli-guide",
+    "fakktion"
+  ]
+}

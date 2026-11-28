@@ -16,6 +16,7 @@ import PlanetLap from './reusable/PlanetLap.astro';
 import PhotoQuiz from './reusable/PhotoQuiz.astro';
 import PhotoShoot from './reusable/PhotoShoot.astro';
 import PixelHammock from './reusable/PixelHammock.astro';
+import RepoPulse from './reusable/RepoPulse.astro';
 import { travelQuiz } from '../lib/travelQuiz';
 import EasterEggBanner from './reusable/EasterEggBanner.astro';
 import UrsuSprite from './UrsuSprite.astro';
@@ -28,6 +29,7 @@ import WhackAMole from './reusable/WhackAMole.astro';
 import whackSprite from '../assets/whack-a-miku/whack-a-miku.png';
 import farm from '../../content/mentor-farm.json';
 import typingWords from '../../content/typing-words.json';
+import githubStats from '../../content/pm/github-stats.json';
 import ecchi from '../../content/lust-meter.json';
 import botwStats from '../../content/botw-stats.json';
 import { PIXEL_PETS } from '../lib/pixelPets';
@@ -109,6 +111,7 @@ const trip = id === 'where-was-deo' ? await travelQuiz() : null;
     <StageDancer saveKey="saturday-night-fever" label="Chibi pixel Deo in his yellow king&apos;s robes and crown hat, dancing the Saturday Night Fever disco point under flashing stage lights." />
   )
 }
+{id === 'repo-pulse' && <RepoPulse data={githubStats} label="Stats for my GitHub repos: commits, issues, pull requests, languages and when I code" />}
 {id === 'terminal-typer' && <TerminalTyper words={[...typingWords.husbandoutworld, ...typingWords.deovandski]} saveKey="terminal-typer" />}
 {id === 'tattoo-skin' && <DrawingPad label="Practice skin. Draw a tattoo on it with the tattoo pen." />}
 {

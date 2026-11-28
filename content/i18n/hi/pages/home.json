@@ -227,6 +227,10 @@
   "en": "331 h",
   "t": "331 घं."
  },
+ "0432bdac943b": {
+  "en": "Pull requests merged",
+  "t": "मर्ज किए गए पुल रिक्वेस्ट"
+ },
  "0446c388357c": {
   "en": " Sphere ",
   "t": "गोला"
@@ -234,6 +238,10 @@
  "0455df4b7952": {
   "en": "Can I haz",
   "t": "मुझे मिल सकता है?"
+ },
+ "046f3e92e5e8": {
+  "en": "Commits per year, every repo",
+  "t": "हर साल के कमिट, सभी रिपो"
  },
  "046fa1a6bc47": {
   "en": "Nothing to clean.",
@@ -379,6 +387,10 @@
   "en": "Hellblade: Senua's Sacrifice",
   "t": "Hellblade: Senua's Sacrifice"
  },
+ "06f3df106dbd": {
+  "en": "{from} to {to}",
+  "t": "{from} से {to}"
+ },
  "070927600afb": {
   "en": "Aim up",
   "t": "ऊपर"
@@ -411,6 +423,10 @@
   "en": "Cleaning the catch",
   "t": "मछली साफ़ करना"
  },
+ "076daa55e11f": {
+  "en": "{name}: {pct}",
+  "t": "{name}: {pct}"
+ },
  "07813f7ab23c": {
   "en": "SKALD",
   "t": "SKALD"
@@ -442,6 +458,10 @@
  "081cdfcf8c8f": {
   "en": " <span class=\"step__num\" data-astro-cid-uswg2a56=\"\">IV.</span> Endure the Fire ",
   "t": "<span class=\"step__num\" data-astro-cid-uswg2a56=\"\">IV.</span> आग को सहो"
+ },
+ "082bc378cd60": {
+  "en": "Month",
+  "t": "महीना"
  },
  "083ac934d137": {
   "en": "<strong>Rebecca Hymas, Johanna C. Badcock &amp; Elizabeth Milne</strong>, <em>Review Journal of Autism and Developmental Disorders</em> (2024), “Loneliness in Autism and Its Association with Anxiety and Depression”: across 23 studies, autistic people reported much more loneliness than neurotypical people, and loneliness went with anxiety and, more strongly, depression. <a href=\"https://doi.org/10.1007/s40489-022-00330-w\">Paper</a>",
@@ -483,6 +503,10 @@
   "en": "The mantras",
   "t": "मंत्र"
  },
+ "08d33b6987c6": {
+  "en": "{n} of {total} commits",
+  "t": "{total} में से {n} कमिट"
+ },
  "090ea7b9d790": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder TV show 32 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 32: </span> अस्थायी टीवी शो 32"
@@ -523,6 +547,10 @@
   "en": "The shared template for all my repos: AI disclosure, language support, website compilation, and more.",
   "t": "मेरे सभी रिपो का साझा टेम्पलेट: AI का खुलासा, भाषा सपोर्ट, वेबसाइट कंपाइल करना, और भी बहुत कुछ।"
  },
+ "09ca55ca52d2": {
+  "en": "Share",
+  "t": "हिस्सा"
+ },
  "09e6b0bc6229": {
   "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,435 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPG और ओपन वर्ल्ड: 5,435 घं."
@@ -538,6 +566,10 @@
  "0a4020c7d439": {
   "en": "I created it",
   "t": "मैंने बनाई"
+ },
+ "0a58c624ea12": {
+  "en": "Stats for my GitHub repos: commits, issues, pull requests, languages and when I code",
+  "t": "मेरे GitHub रिपो के आँकड़े: कमिट, इश्यू, पुल रिक्वेस्ट, भाषाएँ और मैं कब कोड करता हूँ"
  },
  "0a602ef98a21": {
   "en": "Enlarge: Long shadows on the walkway",
@@ -870,6 +902,10 @@
  "11414723e940": {
   "en": "169 h",
   "t": "169 घं."
+ },
+ "115b12237e2f": {
+  "en": "Week of {date}: +{add} / −{del} lines",
+  "t": "{date} वाला हफ़्ता: +{add} / −{del} पंक्तियाँ"
  },
  "116a5734b684": {
   "en": "not counted",
@@ -1231,6 +1267,10 @@
   "en": "Enlarge: Deep fried walleye time",
   "t": "बड़ा करें: तली हुई वॉलआई का समय"
  },
+ "19fe3efe3a95": {
+  "en": "Mission control for my GitHub: commits, issues, pull requests, languages and when I code, for every repo, pulled from GitHub.",
+  "t": "मेरे GitHub का मिशन कंट्रोल: हर रिपो के कमिट, इश्यू, पुल रिक्वेस्ट, भाषाएँ और मैं कब कोड करता हूँ, सीधे GitHub से।"
+ },
  "1a033dcc86e5": {
   "en": "My 2014 college game (XNA for Windows Phone), brought back in Godot. Hold to fly up, let go to glide, eat or starve. Play the 2014 version as it was, or the full game its design document planned.",
   "t": "मेरा 2014 का कॉलेज गेम (Windows Phone के लिए XNA), Godot में वापस लाया गया। ऊपर उड़ने के लिए दबाए रखें, ग्लाइड करने के लिए छोड़ें, खाओ वरना भूखे मरो। 2014 वाला संस्करण जैसा था वैसा खेलें, या वह पूरा गेम जो उसके डिज़ाइन दस्तावेज़ ने सोचा था।"
@@ -1274,6 +1314,10 @@
  "1a68ba446a35": {
   "en": "Little Big Workshop",
   "t": "Little Big Workshop"
+ },
+ "1a8ce3a33e4b": {
+  "en": "All active repos",
+  "t": "सभी सक्रिय रिपो"
  },
  "1ad741f3bb04": {
   "en": "Salty doggo",
@@ -1366,6 +1410,10 @@
  "1d43a97217e1": {
   "en": "Bass on the pontoon",
   "t": "पोंटून नाव पर बास"
+ },
+ "1d948d5579c6": {
+  "en": "First commit",
+  "t": "पहला कमिट"
  },
  "1d9715eead3d": {
   "en": " Training guided by HRV (meta-analysis, 2020) ",
@@ -1686,6 +1734,10 @@
  "23b53c719a7e": {
   "en": "I see you",
   "t": "मैं तुम्हें देख रहा हूँ"
+ },
+ "23c25594de7a": {
+  "en": "{n} commits",
+  "t": "{n} कमिट"
  },
  "24037838f36c": {
   "en": "Enlarge: Drumsticks in the air fryer",
@@ -2095,6 +2147,10 @@
   "en": "{name} by month, one line per year",
   "t": "महीने के हिसाब से {name}, हर साल एक रेखा"
  },
+ "2c461304ec37": {
+  "en": "As of {date}",
+  "t": "{date} तक"
+ },
  "2c6f37232fe8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Nanatsu no Taizai (The Seven Deadly Sins) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 22: </span> Nanatsu no Taizai (The Seven Deadly Sins)"
@@ -2139,6 +2195,10 @@
   "en": "How do I plan for travel?",
   "t": "मैं यात्रा की योजना कैसे बनाता हूँ?"
  },
+ "2d8a6f7c3446": {
+  "en": "1 day",
+  "t": "1 दिन"
+ },
  "2d8bdb9ce539": {
   "en": "\nAt home, a whiteboard holds my major goals and anything that isn't tied to a date. If it is tied to a date, it goes on\n          the calendar; how I keep 5+ calendars in one place is <a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">Life hack #2: Calendar bound</a>.\n",
   "t": "घर पर एक व्हाइटबोर्ड पर मेरे बड़े लक्ष्य और वह सब रहता है जो किसी तारीख से बँधा नहीं है। अगर तारीख से बँधा है, तो कैलेंडर में जाता है; 5 से ज़्यादा कैलेंडर एक जगह कैसे रखता हूँ, वह <a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">लाइफ़ हैक #2: कैलेंडर से बँधा</a> में है।"
@@ -2162,6 +2222,10 @@
  "2e0d678e73fb": {
   "en": "Savlonic",
   "t": "Savlonic"
+ },
+ "2e1d9152e7d7": {
+  "en": "1 commit",
+  "t": "1 कमिट"
  },
  "2e34036d167c": {
   "en": "Lord Peeta of Tuxford: Peeta as a king in a royal red, blue and gold robe with an ermine-trimmed cape (AI-generated)",
@@ -2254,6 +2318,10 @@
  "301c9293e857": {
   "en": "LED painting: turn your phone sideways",
   "t": "LED पेंटिंग: अपना फ़ोन आड़ा करो"
+ },
+ "3025ccd42b92": {
+  "en": "{n} h",
+  "t": "{n} घंटे"
  },
  "302f34692c38": {
   "en": "9 photos",
@@ -3159,6 +3227,10 @@
   "en": "I took these photos and I still squint at some of them.",
   "t": "ये फ़ोटो मैंने ही ली हैं, फिर भी कुछ को आँखें सिकोड़कर देखता हूँ।"
  },
+ "410fff7be2cf": {
+  "en": "{day}, {hour}:00: {c}",
+  "t": "{day}, {hour}:00: {c}"
+ },
  "414a017a79c7": {
   "en": "<strong>Peace is not passivity.</strong> A boundary without enforcement is a request. Compassion can explain behavior without absorbing it, and standing idle while someone self-destructs is idiot compassion, not peace. Say your piece, then walk away.",
   "t": "<strong>शांति निष्क्रियता नहीं है।</strong> जिस सीमा को लागू न किया जाए वह बस एक गुज़ारिश है। करुणा व्यवहार को सोखे बिना समझा सकती है, और किसी को खुद को बर्बाद करते देखकर हाथ पर हाथ धरे खड़े रहना मूर्ख करुणा है, शांति नहीं। अपनी बात कहो, फिर चले जाओ।"
@@ -3258,6 +3330,10 @@
  "43eb964be6dd": {
   "en": "FEVER!",
   "t": "फ़ीवर!"
+ },
+ "441bda6cd856": {
+  "en": "Deleted",
+  "t": "हटाई गईं"
  },
  "4450ba4816bd": {
   "en": "Step 3: Prepare the Altar and Anoint the Meat",
@@ -3563,6 +3639,10 @@
   "en": "12 photos",
   "t": "12 तस्वीरें"
  },
+ "4bab2d8fe13f": {
+  "en": "More",
+  "t": "ज़्यादा"
+ },
  "4bca447154dc": {
   "en": "Seared tuna steaks",
   "t": "सेंके हुए ट्यूना स्टेक"
@@ -3586,6 +3666,10 @@
  "4c1c703b94bd": {
   "en": "The point",
   "t": "पॉइंट"
+ },
+ "4c1e601c40b8": {
+  "en": "{year}: {c}",
+  "t": "{year}: {c}"
  },
  "4c1f1c138390": {
   "en": "Not bad!",
@@ -4291,6 +4375,10 @@
   "en": " RC ",
   "t": "RC"
  },
+ "5800ffeacb56": {
+  "en": "Longest streak",
+  "t": "सबसे लंबा सिलसिला"
+ },
  "58114849f7f6": {
   "en": "Hip-hop &amp; rap",
   "t": "हिप-हॉप और रैप"
@@ -4687,6 +4775,10 @@
   "en": "678 h",
   "t": "678 घं."
  },
+ "5f5b1f3cfb7f": {
+  "en": "(last numbers kept: GitHub didn’t answer)",
+  "t": "(पिछले आँकड़े रखे गए: GitHub ने जवाब नहीं दिया)"
+ },
  "5f6b51fd50fd": {
   "en": "Opens your browser's print window. Pick \"Save as PDF\".",
   "t": "तुम्हारे ब्राउज़र की प्रिंट विंडो खुलती है। \"PDF के रूप में सहेजें\" चुनो।"
@@ -4750,6 +4842,10 @@
  "6118946bae36": {
   "en": "\nBecause if I'm spending too much time on something, is it worth doing? And what can I do about it? That kind of data\n          helps me improve my workflows, my tools and my skill set. Being efficient with my time gives me more time for everything\n          else in life, including rest.\n",
   "t": "क्योंकि अगर मैं किसी चीज़ पर ज़रूरत से ज़्यादा समय लगा रहा हूँ, तो क्या वह करने लायक है? और मैं उसके बारे में क्या कर सकता हूँ? इस तरह का डेटा मुझे अपने काम करने के तरीके, अपने टूल और अपने हुनर सुधारने में मदद करता है। समय का कुशल इस्तेमाल मुझे ज़िंदगी की बाकी हर चीज़ के लिए, आराम समेत, ज़्यादा समय देता है।"
+ },
+ "6122d0e87c5c": {
+  "en": "Show the numbers",
+  "t": "आँकड़े दिखाओ"
  },
  "612d8acb6101": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#26: </span>Best of the Worst: Dragon Hunt, Tartarus, and Born into Mafia",
@@ -4854,6 +4950,10 @@
  "62dfe60deea3": {
   "en": "The numbers didn't load. Try again later.",
   "t": "आँकड़े लोड नहीं हुए। बाद में फिर कोशिश करें।"
+ },
+ "62f0f1bc19bc": {
+  "en": "Week of",
+  "t": "हफ़्ता"
  },
  "62f84c7b7a34": {
   "en": "{n} of 10",
@@ -5603,6 +5703,10 @@
   "en": "I've learned a lot more about narcissism recently, and boy, Light Yagami was really well written, alongside the other characters.",
   "t": "मैंने हाल में आत्ममुग्धता (नार्सिसिज़्म) के बारे में बहुत कुछ सीखा है, और भई, लाइट यागामी बाक़ी किरदारों के साथ सच में बहुत अच्छी तरह लिखा गया था।"
  },
+ "726a4ea9ddaf": {
+  "en": "Week of {date}: {c}",
+  "t": "{date} वाला हफ़्ता: {c}"
+ },
  "7270a0611994": {
   "en": " <strong data-astro-cid-4uymxnsz=\"\">≈ 1.3</strong> cows have become food <span class=\"icon-meter__note\" data-astro-cid-4uymxnsz=\"\">At about 500 lb (227 kg) of take-home beef per cow.</span> ",
   "t": "<strong data-astro-cid-4uymxnsz=\"\">≈ 1.3</strong> गायें भोजन बन चुकी हैं <span class=\"icon-meter__note\" data-astro-cid-4uymxnsz=\"\">हर गाय से लगभग 500 पाउंड (227 किग्रा) घर ले जाने लायक बीफ़ के हिसाब से।</span>"
@@ -5679,6 +5783,10 @@
   "en": "Type like a hacker",
   "t": "हैकर की तरह टाइप करो"
  },
+ "74536b5173ae": {
+  "en": "Commits",
+  "t": "कमिट"
+ },
  "747e4b5cb273": {
   "en": " Pixel 8 Pro tech specs ",
   "t": "Pixel 8 Pro की तकनीकी जानकारी"
@@ -5726,6 +5834,10 @@
  "7562fb66d590": {
   "en": "Sriracha maple bacon jerky",
   "t": "Sriracha मेपल बेकन जर्की"
+ },
+ "758b43c3de8f": {
+  "en": "{name}: {from} to {to}, {c}",
+  "t": "{name}: {from} से {to}, {c}"
  },
  "7599dc12705d": {
   "en": "Sandy village road",
@@ -6207,6 +6319,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Monogatari ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 17: </span> Monogatari"
  },
+ "7ee24f0bc533": {
+  "en": "Back to Management",
+  "t": "प्रबंधन पर वापस"
+ },
  "7f09aca0998e": {
   "en": "clickbait video",
   "t": "क्लिकबेट वीडियो"
@@ -6270,6 +6386,10 @@
  "80ad7e3d1940": {
   "en": "Squirreled Away",
   "t": "Squirreled Away"
+ },
+ "80af725687ad": {
+  "en": "Commits per week, last 52 weeks",
+  "t": "हर हफ़्ते के कमिट, पिछले 52 हफ़्ते"
  },
  "80c9de545946": {
   "en": "Do Better!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (written in Vraki)</span>",
@@ -6346,6 +6466,10 @@
  "8271900678e6": {
   "en": "Enlarge: Destroying a whole chicken",
   "t": "बड़ा करें: पूरी मुर्ग़ी का सफ़ाया"
+ },
+ "82acef957ec1": {
+  "en": "When each one ran, from first to last commit",
+  "t": "हर रिपो कब चला, पहले से आख़िरी कमिट तक"
  },
  "82af22fd64e6": {
   "en": " West March D&amp;D Campaign ",
@@ -6719,6 +6843,10 @@
   "en": "All clean.",
   "t": "सब साफ।"
  },
+ "8b35e7710985": {
+  "en": "Median time to merge a pull request",
+  "t": "पुल रिक्वेस्ट मर्ज होने का मध्य समय"
+ },
  "8b3ee45765e5": {
   "en": "Explorer",
   "t": "खोजी"
@@ -6979,6 +7107,10 @@
   "en": "I was laughing out loud at how committed and no-shits-given they were to the bit. That's true artistic integrity.",
   "t": "मैं ज़ोर-ज़ोर से हँस रहा था कि वे उस मज़ाक़ के प्रति कितने समर्पित और कितने बेपरवाह थे। यही सच्ची कलात्मक ईमानदारी है।"
  },
+ "90ccd6497400": {
+  "en": "History",
+  "t": "इतिहास"
+ },
  "90ebaebaa5f0": {
   "en": "My Suno songs",
   "t": "मेरे Suno गाने"
@@ -7050,6 +7182,10 @@
  "9239c22d1d1c": {
   "en": "Japanese",
   "t": "जापानी"
+ },
+ "923ee88d27d1": {
+  "en": "{n} open",
+  "t": "{n} खुले"
  },
  "924da8b766b4": {
   "en": "Floor tom (key G)",
@@ -7194,6 +7330,10 @@
  "955b7068c35b": {
   "en": "Row {row}, column {col} on",
   "t": "पंक्ति {row}, कॉलम {col} ऑन"
+ },
+ "95610dc021f9": {
+  "en": "\nLines added and deleted per week\n<span class=\"rp__legend\" aria-hidden=\"true\" data-astro-cid-lk2yyrml=\"\"> <i class=\"rp__sw rp__sw--add\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"added\" data-astro-cid-lk2yyrml=\"\">Added</span> <i class=\"rp__sw rp__sw--del\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"deleted\" data-astro-cid-lk2yyrml=\"\">Deleted</span> </span> ",
+  "t": "हर हफ़्ते जोड़ी और हटाई गई पंक्तियाँ <span class=\"rp__legend\" aria-hidden=\"true\" data-astro-cid-lk2yyrml=\"\"> <i class=\"rp__sw rp__sw--add\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"added\" data-astro-cid-lk2yyrml=\"\">जोड़ी गईं</span> <i class=\"rp__sw rp__sw--del\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"deleted\" data-astro-cid-lk2yyrml=\"\">हटाई गईं</span> </span>"
  },
  "956ce2248d60": {
   "en": "Slide the latch all the way to open the film door.",
@@ -7378,6 +7518,10 @@
  "98796d800c43": {
   "en": "Paraglider over the beach",
   "t": "समुद्र-तट के ऊपर पैराग्लाइडर"
+ },
+ "987b9ced08d4": {
+  "en": "Day",
+  "t": "दिन"
  },
  "988a8d031bb7": {
   "en": "Enlarge: Turquoise coast",
@@ -7639,6 +7783,10 @@
   "en": "Hours",
   "t": "घंटे"
  },
+ "9e3a8c4190d5": {
+  "en": "Issues closed",
+  "t": "बंद किए गए इश्यू"
+ },
  "9e4dc992f238": {
   "en": "Autism and airplanes",
   "t": "ऑटिज़्म और हवाई जहाज़"
@@ -7798,6 +7946,10 @@
  "a11f62752ca1": {
   "en": "16% of my hours",
   "t": "मेरे घंटों का 16%"
+ },
+ "a12b32e07960": {
+  "en": "Languages (share of code)",
+  "t": "भाषाएँ (कोड में हिस्सा)"
  },
  "a136fd1bab04": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder movie 27 ",
@@ -8463,6 +8615,10 @@
   "en": "So close! Your post was one share away from blowing up.",
   "t": "इतना करीब! तुम्हारा पोस्ट बस एक शेयर से वायरल होने से चूक गया।"
  },
+ "af032e0aa425": {
+  "en": "Repos with no push in the past year: where it all started.",
+  "t": "पिछले एक साल में बिना पुश वाले रिपो: जहाँ से सब शुरू हुआ।"
+ },
  "af38615beb76": {
   "en": "The facets that fulfill Deo",
   "t": "वे पहलू जो Deo को पूरा करते हैं"
@@ -8791,6 +8947,10 @@
   "en": " A2 ",
   "t": "A2"
  },
+ "b62b7c21efb9": {
+  "en": "The active repos",
+  "t": "सक्रिय रिपो"
+ },
  "b644ea23206d": {
   "en": "\nThe algorithm is truly toxic, so much so that I don’t even have a fake/alt account. If you want to share memes with me,\n        share YouTube Shorts/videos on RCS.\n",
   "t": "एल्गोरिदम सच में ज़हरीला है, इतना कि मेरा कोई फ़र्ज़ी या दूसरा अकाउंट तक नहीं है। अगर मुझसे मीम साझा करना चाहते हो, तो RCS पर YouTube Shorts/वीडियो भेजो।"
@@ -8802,6 +8962,10 @@
  "b67933f00f5e": {
   "en": "My kokoro can't take this (/▽＼*)｡o○♡",
   "t": "मेरा कोकोरो यह नहीं सह सकता (/▽＼*)｡o○♡"
+ },
+ "b68734c25910": {
+  "en": "Added",
+  "t": "जोड़ी गईं"
  },
  "b6a818d021a2": {
   "en": "19 games",
@@ -9167,6 +9331,10 @@
   "en": "Fold 2 of 5: now the top-right corner to the same dot.",
   "t": "मोड़ 2/5: अब ऊपरी-दाएँ कोने को उसी बिंदु तक।"
  },
+ "bece31449371": {
+  "en": "Co-authored with Claude",
+  "t": "Claude के साथ मिलकर लिखे"
+ },
  "bed1cd8de831": {
   "en": "Enlarge: Fillets ready",
   "t": "बड़ा करें: फ़िले तैयार"
@@ -9355,6 +9523,10 @@
   "en": "The Planet Crafter",
   "t": "The Planet Crafter"
  },
+ "c22e246b7090": {
+  "en": "Median time to close an issue",
+  "t": "इश्यू बंद होने का मध्य समय"
+ },
  "c234408a9708": {
   "en": "Enlarge: Painting or drawing, 04/16/2013",
   "t": "बड़ा करें: पेंटिंग या स्केच, 16/4/2013"
@@ -9402,6 +9574,10 @@
  "c379a5b7a656": {
   "en": "Hi-hat (key A)",
   "t": "हाई-हैट (कुंजी A)"
+ },
+ "c37cf838b0b9": {
+  "en": "Hour",
+  "t": "घंटा"
  },
  "c39ee79efd93": {
   "en": "Tattoo practice skin",
@@ -9543,6 +9719,10 @@
   "en": "Lord Peeta of Tuxford",
   "t": "टक्सफ़ोर्ड के लॉर्ड Peeta"
  },
+ "c752c6dea2f9": {
+  "en": "{n} days",
+  "t": "{n} दिन"
+ },
  "c75ac3fad137": {
   "en": "{n}s left",
   "t": "{n} सेकंड बाकी"
@@ -9602,6 +9782,10 @@
  "c8eac89c05ab": {
   "en": "⬇ Download",
   "t": "⬇ डाउनलोड"
+ },
+ "c8eca5b5c868": {
+  "en": "A year of commits, all repos, day by day",
+  "t": "एक साल के कमिट, सभी रिपो, दिन-ब-दिन"
  },
  "c92472adceec": {
   "en": "28 photos",
@@ -9987,6 +10171,10 @@
   "en": "REM sleep",
   "t": "REM नींद"
  },
+ "d0cac73dc924": {
+  "en": "Last commit",
+  "t": "आख़िरी कमिट"
+ },
  "d10c715f8aa9": {
   "en": "Way off!",
   "t": "बहुत दूर!"
@@ -10298,6 +10486,10 @@
  "d6c30a192b3e": {
   "en": "ARK: Survival Evolved",
   "t": "ARK: Survival Evolved"
+ },
+ "d6d29597665d": {
+  "en": "{date}: {c}",
+  "t": "{date}: {c}"
  },
  "d6fbd8d27ba3": {
   "en": "A photo shoot through a camera: chibi pixel Deo in his yellow king's robes holds the pose you pick, in front of the background you pick.",
@@ -11115,6 +11307,10 @@
   "en": "Metrics to show",
   "t": "दिखाने वाले मीट्रिक"
  },
+ "e7c9aab3683f": {
+  "en": "Fewer",
+  "t": "कम"
+ },
  "e7d901178492": {
   "en": "Pork shoulder on the smoker",
   "t": "स्मोकर पर पोर्क शोल्डर"
@@ -11343,6 +11539,10 @@
   "en": "Enlarge: A bacon-wrapped filet, sliced",
   "t": "बड़ा करें: बेकन में लिपटा फ़िले, कटा हुआ"
  },
+ "ed8a6658c262": {
+  "en": "When the commits happen (Central time)",
+  "t": "कमिट कब होते हैं (अमेरिका का सेंट्रल समय)"
+ },
  "ed8d6e99dc88": {
   "en": "BONK! 🔨 Go to horny jail. (ﾉ´ｰ`)ﾉ",
   "t": "बोंक! 🔨 ठरकी जेल जाओ। (ﾉ´ｰ`)ﾉ"
@@ -11422,6 +11622,10 @@
  "f0c3ff890745": {
   "en": "{n} of {max}",
   "t": "{max} में से {n}"
+ },
+ "f0ecd7c899e5": {
+  "en": "GitHub mission control",
+  "t": "GitHub मिशन कंट्रोल"
  },
  "f0f21ca1cb3a": {
   "en": "Cozy & life sims",
@@ -11678,6 +11882,10 @@
  "f69192726c6c": {
   "en": "\nThis website fulfills my need to share the joy and growth, and it gives me something I can pull up on the fly to show\n        the folks I’m talking with, without triggering hypervigilance. And just like the reason I went with self-publishing\n        instead of traditional publishing: I can do whatever the fuck I want here, and nobody gives a shit…\n",
   "t": "यह वेबसाइट ख़ुशी और विकास साझा करने की मेरी ज़रूरत पूरी करती है, और मुझे ऐसी चीज़ देती है जो मैं बातचीत के दौरान लोगों को फ़ौरन खोलकर दिखा सकूँ, बिना अति-सतर्कता जगाए। और ठीक उसी वजह से जिसके लिए मैंने पारंपरिक प्रकाशन की जगह ख़ुद प्रकाशन चुना: यहाँ मैं जो चाहूँ वह भाड़ में जाए करता हूँ, और किसी को रत्ती भर फ़र्क़ नहीं पड़ता…"
+ },
+ "f69557c6366e": {
+  "en": "GitHub mission control: turn your phone sideways",
+  "t": "GitHub मिशन कंट्रोल: अपना फ़ोन आड़ा करो"
  },
  "f698d5f2a43e": {
   "en": "Peeta on the stroller under the fall colors",

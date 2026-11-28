@@ -227,6 +227,10 @@
   "en": "331 h",
   "t": "331 h"
  },
+ "0432bdac943b": {
+  "en": "Pull requests merged",
+  "t": "Pull requests fusionados"
+ },
  "0446c388357c": {
   "en": " Sphere ",
   "t": "Esfera"
@@ -234,6 +238,10 @@
  "0455df4b7952": {
   "en": "Can I haz",
   "t": "¿Me lo das?"
+ },
+ "046f3e92e5e8": {
+  "en": "Commits per year, every repo",
+  "t": "Commits por año, todos los repositorios"
  },
  "046fa1a6bc47": {
   "en": "Nothing to clean.",
@@ -379,6 +387,10 @@
   "en": "Hellblade: Senua's Sacrifice",
   "t": "Hellblade: Senua's Sacrifice"
  },
+ "06f3df106dbd": {
+  "en": "{from} to {to}",
+  "t": "{from} a {to}"
+ },
  "070927600afb": {
   "en": "Aim up",
   "t": "Apuntar arriba"
@@ -411,6 +423,10 @@
   "en": "Cleaning the catch",
   "t": "Limpiando la captura"
  },
+ "076daa55e11f": {
+  "en": "{name}: {pct}",
+  "t": "{name}: {pct}"
+ },
  "07813f7ab23c": {
   "en": "SKALD",
   "t": "SKALD"
@@ -442,6 +458,10 @@
  "081cdfcf8c8f": {
   "en": " <span class=\"step__num\" data-astro-cid-uswg2a56=\"\">IV.</span> Endure the Fire ",
   "t": "<span class=\"step__num\" data-astro-cid-uswg2a56=\"\">IV.</span> Soporta el Fuego"
+ },
+ "082bc378cd60": {
+  "en": "Month",
+  "t": "Mes"
  },
  "083ac934d137": {
   "en": "<strong>Rebecca Hymas, Johanna C. Badcock &amp; Elizabeth Milne</strong>, <em>Review Journal of Autism and Developmental Disorders</em> (2024), “Loneliness in Autism and Its Association with Anxiety and Depression”: across 23 studies, autistic people reported much more loneliness than neurotypical people, and loneliness went with anxiety and, more strongly, depression. <a href=\"https://doi.org/10.1007/s40489-022-00330-w\">Paper</a>",
@@ -483,6 +503,10 @@
   "en": "The mantras",
   "t": "Los mantras"
  },
+ "08d33b6987c6": {
+  "en": "{n} of {total} commits",
+  "t": "{n} de {total} commits"
+ },
  "090ea7b9d790": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder TV show 32 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Puesto 32: </span> Serie provisional 32"
@@ -523,6 +547,10 @@
   "en": "The shared template for all my repos: AI disclosure, language support, website compilation, and more.",
   "t": "La plantilla compartida de todos mis repositorios: divulgación del uso de IA, soporte de idiomas, compilación de la web y más."
  },
+ "09ca55ca52d2": {
+  "en": "Share",
+  "t": "Proporción"
+ },
  "09e6b0bc6229": {
   "en": " <span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPGs &amp; open worlds: 5,435 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #3987e5\" data-astro-cid-nqpad2wp=\"\"></span> RPG y mundos abiertos: 5,435 h"
@@ -538,6 +566,10 @@
  "0a4020c7d439": {
   "en": "I created it",
   "t": "Lo creé yo"
+ },
+ "0a58c624ea12": {
+  "en": "Stats for my GitHub repos: commits, issues, pull requests, languages and when I code",
+  "t": "Estadísticas de mis repositorios de GitHub: commits, issues, pull requests, lenguajes y cuándo programo"
  },
  "0a602ef98a21": {
   "en": "Enlarge: Long shadows on the walkway",
@@ -870,6 +902,10 @@
  "11414723e940": {
   "en": "169 h",
   "t": "169 h"
+ },
+ "115b12237e2f": {
+  "en": "Week of {date}: +{add} / −{del} lines",
+  "t": "Semana del {date}: +{add} / −{del} líneas"
  },
  "116a5734b684": {
   "en": "not counted",
@@ -1231,6 +1267,10 @@
   "en": "Enlarge: Deep fried walleye time",
   "t": "Ampliar: Hora del walleye frito"
  },
+ "19fe3efe3a95": {
+  "en": "Mission control for my GitHub: commits, issues, pull requests, languages and when I code, for every repo, pulled from GitHub.",
+  "t": "El centro de control de mi GitHub: commits, issues, pull requests, lenguajes y cuándo programo, de cada repositorio, sacados de GitHub."
+ },
  "1a033dcc86e5": {
   "en": "My 2014 college game (XNA for Windows Phone), brought back in Godot. Hold to fly up, let go to glide, eat or starve. Play the 2014 version as it was, or the full game its design document planned.",
   "t": "Mi juego de la universidad de 2014 (XNA para Windows Phone), recuperado en Godot. Mantén pulsado para subir, suelta para planear, come o pasa hambre. Juega la versión de 2014 tal como era, o el juego completo que planeaba su documento de diseño."
@@ -1274,6 +1314,10 @@
  "1a68ba446a35": {
   "en": "Little Big Workshop",
   "t": "Little Big Workshop"
+ },
+ "1a8ce3a33e4b": {
+  "en": "All active repos",
+  "t": "Todos los repositorios activos"
  },
  "1ad741f3bb04": {
   "en": "Salty doggo",
@@ -1366,6 +1410,10 @@
  "1d43a97217e1": {
   "en": "Bass on the pontoon",
   "t": "Lubina negra en la barca"
+ },
+ "1d948d5579c6": {
+  "en": "First commit",
+  "t": "Primer commit"
  },
  "1d9715eead3d": {
   "en": " Training guided by HRV (meta-analysis, 2020) ",
@@ -1686,6 +1734,10 @@
  "23b53c719a7e": {
   "en": "I see you",
   "t": "Te veo"
+ },
+ "23c25594de7a": {
+  "en": "{n} commits",
+  "t": "{n} commits"
  },
  "24037838f36c": {
   "en": "Enlarge: Drumsticks in the air fryer",
@@ -2095,6 +2147,10 @@
   "en": "{name} by month, one line per year",
   "t": "{name} mes a mes, una línea por año"
  },
+ "2c461304ec37": {
+  "en": "As of {date}",
+  "t": "A {date}"
+ },
  "2c6f37232fe8": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 22: </span> Nanatsu no Taizai (The Seven Deadly Sins) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Puesto 22: </span> Nanatsu no Taizai (Los siete pecados capitales)"
@@ -2139,6 +2195,10 @@
   "en": "How do I plan for travel?",
   "t": "¿Cómo planifico un viaje?"
  },
+ "2d8a6f7c3446": {
+  "en": "1 day",
+  "t": "1 día"
+ },
  "2d8bdb9ce539": {
   "en": "\nAt home, a whiteboard holds my major goals and anything that isn't tied to a date. If it is tied to a date, it goes on\n          the calendar; how I keep 5+ calendars in one place is <a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">Life hack #2: Calendar bound</a>.\n",
   "t": "En casa, una pizarra blanca guarda mis objetivos principales y todo lo que no está atado a una fecha. Si está atado a una fecha, va al calendario; cómo tengo más de 5 calendarios en un solo sitio es el <a href=\"#life-hacks\" data-astro-cid-j7pv25f6=\"\">Truco de vida n.º 2: Atado al calendario</a>."
@@ -2162,6 +2222,10 @@
  "2e0d678e73fb": {
   "en": "Savlonic",
   "t": "Savlonic"
+ },
+ "2e1d9152e7d7": {
+  "en": "1 commit",
+  "t": "1 commit"
  },
  "2e34036d167c": {
   "en": "Lord Peeta of Tuxford: Peeta as a king in a royal red, blue and gold robe with an ermine-trimmed cape (AI-generated)",
@@ -2254,6 +2318,10 @@
  "301c9293e857": {
   "en": "LED painting: turn your phone sideways",
   "t": "Pintura LED: pon el móvil en horizontal"
+ },
+ "3025ccd42b92": {
+  "en": "{n} h",
+  "t": "{n} h"
  },
  "302f34692c38": {
   "en": "9 photos",
@@ -3159,6 +3227,10 @@
   "en": "I took these photos and I still squint at some of them.",
   "t": "Las fotos las hice yo y aun así hay algunas que miro entornando los ojos."
  },
+ "410fff7be2cf": {
+  "en": "{day}, {hour}:00: {c}",
+  "t": "{day}, {hour}:00: {c}"
+ },
  "414a017a79c7": {
   "en": "<strong>Peace is not passivity.</strong> A boundary without enforcement is a request. Compassion can explain behavior without absorbing it, and standing idle while someone self-destructs is idiot compassion, not peace. Say your piece, then walk away.",
   "t": "<strong>La paz no es pasividad.</strong> Un límite que no se hace cumplir es una petición. La compasión puede explicar un comportamiento sin absorberlo, y quedarse de brazos cruzados mientras alguien se autodestruye es compasión idiota, no paz. Di lo que tengas que decir y vete."
@@ -3258,6 +3330,10 @@
  "43eb964be6dd": {
   "en": "FEVER!",
   "t": "¡FIEBRE!"
+ },
+ "441bda6cd856": {
+  "en": "Deleted",
+  "t": "Eliminadas"
  },
  "4450ba4816bd": {
   "en": "Step 3: Prepare the Altar and Anoint the Meat",
@@ -3563,6 +3639,10 @@
   "en": "12 photos",
   "t": "12 fotos"
  },
+ "4bab2d8fe13f": {
+  "en": "More",
+  "t": "Más"
+ },
  "4bca447154dc": {
   "en": "Seared tuna steaks",
   "t": "Filetes de atún a la plancha"
@@ -3586,6 +3666,10 @@
  "4c1c703b94bd": {
   "en": "The point",
   "t": "El dedo al cielo"
+ },
+ "4c1e601c40b8": {
+  "en": "{year}: {c}",
+  "t": "{year}: {c}"
  },
  "4c1f1c138390": {
   "en": "Not bad!",
@@ -4291,6 +4375,10 @@
   "en": " RC ",
   "t": "RC"
  },
+ "5800ffeacb56": {
+  "en": "Longest streak",
+  "t": "Racha más larga"
+ },
  "58114849f7f6": {
   "en": "Hip-hop &amp; rap",
   "t": "Hip-hop y rap"
@@ -4687,6 +4775,10 @@
   "en": "678 h",
   "t": "678 h"
  },
+ "5f5b1f3cfb7f": {
+  "en": "(last numbers kept: GitHub didn’t answer)",
+  "t": "(se mantienen los últimos números: GitHub no respondió)"
+ },
  "5f6b51fd50fd": {
   "en": "Opens your browser's print window. Pick \"Save as PDF\".",
   "t": "Abre la ventana de impresión del navegador. Elige \"Guardar como PDF\"."
@@ -4750,6 +4842,10 @@
  "6118946bae36": {
   "en": "\nBecause if I'm spending too much time on something, is it worth doing? And what can I do about it? That kind of data\n          helps me improve my workflows, my tools and my skill set. Being efficient with my time gives me more time for everything\n          else in life, including rest.\n",
   "t": "Porque si estoy dedicando demasiado tiempo a algo, ¿merece la pena hacerlo? ¿Y qué puedo hacer al respecto? Ese tipo de datos me ayuda a mejorar mis flujos de trabajo, mis herramientas y mis habilidades. Ser eficiente con mi tiempo me da más tiempo para todo lo demás en la vida, descanso incluido."
+ },
+ "6122d0e87c5c": {
+  "en": "Show the numbers",
+  "t": "Mostrar los números"
  },
  "612d8acb6101": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#26: </span>Best of the Worst: Dragon Hunt, Tartarus, and Born into Mafia",
@@ -4854,6 +4950,10 @@
  "62dfe60deea3": {
   "en": "The numbers didn't load. Try again later.",
   "t": "Los números no se han cargado. Inténtalo más tarde."
+ },
+ "62f0f1bc19bc": {
+  "en": "Week of",
+  "t": "Semana del"
  },
  "62f84c7b7a34": {
   "en": "{n} of 10",
@@ -5603,6 +5703,10 @@
   "en": "I've learned a lot more about narcissism recently, and boy, Light Yagami was really well written, alongside the other characters.",
   "t": "Últimamente he aprendido mucho más sobre el narcisismo y, madre mía, Light Yagami estaba muy bien escrito, igual que el resto de personajes."
  },
+ "726a4ea9ddaf": {
+  "en": "Week of {date}: {c}",
+  "t": "Semana del {date}: {c}"
+ },
  "7270a0611994": {
   "en": " <strong data-astro-cid-4uymxnsz=\"\">≈ 1.3</strong> cows have become food <span class=\"icon-meter__note\" data-astro-cid-4uymxnsz=\"\">At about 500 lb (227 kg) of take-home beef per cow.</span> ",
   "t": "<strong data-astro-cid-4uymxnsz=\"\">≈ 1,3</strong> vacas se han convertido en comida <span class=\"icon-meter__note\" data-astro-cid-4uymxnsz=\"\">Contando unas 500 lb (227 kg) de carne aprovechable por vaca.</span>"
@@ -5679,6 +5783,10 @@
   "en": "Type like a hacker",
   "t": "Teclea como un hacker"
  },
+ "74536b5173ae": {
+  "en": "Commits",
+  "t": "Commits"
+ },
  "747e4b5cb273": {
   "en": " Pixel 8 Pro tech specs ",
   "t": "Especificaciones técnicas del Pixel 8 Pro"
@@ -5726,6 +5834,10 @@
  "7562fb66d590": {
   "en": "Sriracha maple bacon jerky",
   "t": "Cecina de beicon con Sriracha y arce"
+ },
+ "758b43c3de8f": {
+  "en": "{name}: {from} to {to}, {c}",
+  "t": "{name}: {from} a {to}, {c}"
  },
  "7599dc12705d": {
   "en": "Sandy village road",
@@ -6207,6 +6319,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Monogatari ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Puesto 17: </span> Monogatari"
  },
+ "7ee24f0bc533": {
+  "en": "Back to Management",
+  "t": "Volver a Gestión"
+ },
  "7f09aca0998e": {
   "en": "clickbait video",
   "t": "vídeo clickbait"
@@ -6270,6 +6386,10 @@
  "80ad7e3d1940": {
   "en": "Squirreled Away",
   "t": "Squirreled Away"
+ },
+ "80af725687ad": {
+  "en": "Commits per week, last 52 weeks",
+  "t": "Commits por semana, últimas 52 semanas"
  },
  "80c9de545946": {
   "en": "Do Better!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (written in Vraki)</span>",
@@ -6346,6 +6466,10 @@
  "8271900678e6": {
   "en": "Enlarge: Destroying a whole chicken",
   "t": "Ampliar: Destrozando un pollo entero"
+ },
+ "82acef957ec1": {
+  "en": "When each one ran, from first to last commit",
+  "t": "Cuándo estuvo activo cada uno, del primer al último commit"
  },
  "82af22fd64e6": {
   "en": " West March D&amp;D Campaign ",
@@ -6719,6 +6843,10 @@
   "en": "All clean.",
   "t": "Todo limpio."
  },
+ "8b35e7710985": {
+  "en": "Median time to merge a pull request",
+  "t": "Tiempo mediano en fusionar un pull request"
+ },
  "8b3ee45765e5": {
   "en": "Explorer",
   "t": "Explorador"
@@ -6979,6 +7107,10 @@
   "en": "I was laughing out loud at how committed and no-shits-given they were to the bit. That's true artistic integrity.",
   "t": "Me reía a carcajadas de lo comprometidos que estaban con el chiste y de lo poco que les importaba todo. Eso es integridad artística de verdad."
  },
+ "90ccd6497400": {
+  "en": "History",
+  "t": "Historia"
+ },
  "90ebaebaa5f0": {
   "en": "My Suno songs",
   "t": "Mis canciones de Suno"
@@ -7050,6 +7182,10 @@
  "9239c22d1d1c": {
   "en": "Japanese",
   "t": "Japonés"
+ },
+ "923ee88d27d1": {
+  "en": "{n} open",
+  "t": "{n} abiertas"
  },
  "924da8b766b4": {
   "en": "Floor tom (key G)",
@@ -7194,6 +7330,10 @@
  "955b7068c35b": {
   "en": "Row {row}, column {col} on",
   "t": "Fila {row}, columna {col} encendida"
+ },
+ "95610dc021f9": {
+  "en": "\nLines added and deleted per week\n<span class=\"rp__legend\" aria-hidden=\"true\" data-astro-cid-lk2yyrml=\"\"> <i class=\"rp__sw rp__sw--add\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"added\" data-astro-cid-lk2yyrml=\"\">Added</span> <i class=\"rp__sw rp__sw--del\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"deleted\" data-astro-cid-lk2yyrml=\"\">Deleted</span> </span> ",
+  "t": "Líneas añadidas y eliminadas por semana <span class=\"rp__legend\" aria-hidden=\"true\" data-astro-cid-lk2yyrml=\"\"> <i class=\"rp__sw rp__sw--add\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"added\" data-astro-cid-lk2yyrml=\"\">Añadidas</span> <i class=\"rp__sw rp__sw--del\" data-astro-cid-lk2yyrml=\"\"></i> <span data-word=\"deleted\" data-astro-cid-lk2yyrml=\"\">Eliminadas</span> </span>"
  },
  "956ce2248d60": {
   "en": "Slide the latch all the way to open the film door.",
@@ -7378,6 +7518,10 @@
  "98796d800c43": {
   "en": "Paraglider over the beach",
   "t": "Parapente sobre la playa"
+ },
+ "987b9ced08d4": {
+  "en": "Day",
+  "t": "Día"
  },
  "988a8d031bb7": {
   "en": "Enlarge: Turquoise coast",
@@ -7639,6 +7783,10 @@
   "en": "Hours",
   "t": "Horas"
  },
+ "9e3a8c4190d5": {
+  "en": "Issues closed",
+  "t": "Issues cerradas"
+ },
  "9e4dc992f238": {
   "en": "Autism and airplanes",
   "t": "Autismo y aviones"
@@ -7798,6 +7946,10 @@
  "a11f62752ca1": {
   "en": "16% of my hours",
   "t": "16% de mis horas"
+ },
+ "a12b32e07960": {
+  "en": "Languages (share of code)",
+  "t": "Lenguajes (proporción del código)"
  },
  "a136fd1bab04": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder movie 27 ",
@@ -8463,6 +8615,10 @@
   "en": "So close! Your post was one share away from blowing up.",
   "t": "¡Tan cerca! Tu post estaba a un share de explotar."
  },
+ "af032e0aa425": {
+  "en": "Repos with no push in the past year: where it all started.",
+  "t": "Repositorios sin push en el último año: donde empezó todo."
+ },
  "af38615beb76": {
   "en": "The facets that fulfill Deo",
   "t": "Las facetas que llenan a Deo"
@@ -8791,6 +8947,10 @@
   "en": " A2 ",
   "t": "A2"
  },
+ "b62b7c21efb9": {
+  "en": "The active repos",
+  "t": "Los repositorios activos"
+ },
  "b644ea23206d": {
   "en": "\nThe algorithm is truly toxic, so much so that I don’t even have a fake/alt account. If you want to share memes with me,\n        share YouTube Shorts/videos on RCS.\n",
   "t": "El algoritmo es tóxico de verdad, tanto que ni siquiera tengo una cuenta falsa o secundaria. Si quieres compartir memes conmigo, comparte Shorts o vídeos de YouTube por RCS."
@@ -8802,6 +8962,10 @@
  "b67933f00f5e": {
   "en": "My kokoro can't take this (/▽＼*)｡o○♡",
   "t": "Mi kokoro no puede con esto (/▽＼*)｡o○♡"
+ },
+ "b68734c25910": {
+  "en": "Added",
+  "t": "Añadidas"
  },
  "b6a818d021a2": {
   "en": "19 games",
@@ -9167,6 +9331,10 @@
   "en": "Fold 2 of 5: now the top-right corner to the same dot.",
   "t": "Pliegue 2 de 5: ahora la esquina superior derecha al mismo punto."
  },
+ "bece31449371": {
+  "en": "Co-authored with Claude",
+  "t": "Coescrito con Claude"
+ },
  "bed1cd8de831": {
   "en": "Enlarge: Fillets ready",
   "t": "Ampliar: Filetes listos"
@@ -9355,6 +9523,10 @@
   "en": "The Planet Crafter",
   "t": "The Planet Crafter"
  },
+ "c22e246b7090": {
+  "en": "Median time to close an issue",
+  "t": "Tiempo mediano en cerrar una issue"
+ },
  "c234408a9708": {
   "en": "Enlarge: Painting or drawing, 04/16/2013",
   "t": "Ampliar: Pintura o dibujo, 16/04/2013"
@@ -9402,6 +9574,10 @@
  "c379a5b7a656": {
   "en": "Hi-hat (key A)",
   "t": "Charles (tecla A)"
+ },
+ "c37cf838b0b9": {
+  "en": "Hour",
+  "t": "Hora"
  },
  "c39ee79efd93": {
   "en": "Tattoo practice skin",
@@ -9543,6 +9719,10 @@
   "en": "Lord Peeta of Tuxford",
   "t": "Lord Peeta de Tuxford"
  },
+ "c752c6dea2f9": {
+  "en": "{n} days",
+  "t": "{n} días"
+ },
  "c75ac3fad137": {
   "en": "{n}s left",
   "t": "Quedan {n} s"
@@ -9602,6 +9782,10 @@
  "c8eac89c05ab": {
   "en": "⬇ Download",
   "t": "⬇ Descargar"
+ },
+ "c8eca5b5c868": {
+  "en": "A year of commits, all repos, day by day",
+  "t": "Un año de commits, todos los repositorios, día a día"
  },
  "c92472adceec": {
   "en": "28 photos",
@@ -9987,6 +10171,10 @@
   "en": "REM sleep",
   "t": "Sueño REM"
  },
+ "d0cac73dc924": {
+  "en": "Last commit",
+  "t": "Último commit"
+ },
  "d10c715f8aa9": {
   "en": "Way off!",
   "t": "¡Muy lejos!"
@@ -10298,6 +10486,10 @@
  "d6c30a192b3e": {
   "en": "ARK: Survival Evolved",
   "t": "ARK: Survival Evolved"
+ },
+ "d6d29597665d": {
+  "en": "{date}: {c}",
+  "t": "{date}: {c}"
  },
  "d6fbd8d27ba3": {
   "en": "A photo shoot through a camera: chibi pixel Deo in his yellow king's robes holds the pose you pick, in front of the background you pick.",
@@ -11115,6 +11307,10 @@
   "en": "Metrics to show",
   "t": "Métricas que mostrar"
  },
+ "e7c9aab3683f": {
+  "en": "Fewer",
+  "t": "Menos"
+ },
  "e7d901178492": {
   "en": "Pork shoulder on the smoker",
   "t": "Paletilla de cerdo en el ahumador"
@@ -11343,6 +11539,10 @@
   "en": "Enlarge: A bacon-wrapped filet, sliced",
   "t": "Ampliar: Un solomillo envuelto en beicon, cortado"
  },
+ "ed8a6658c262": {
+  "en": "When the commits happen (Central time)",
+  "t": "Cuándo se hacen los commits (hora central de EE. UU.)"
+ },
  "ed8d6e99dc88": {
   "en": "BONK! 🔨 Go to horny jail. (ﾉ´ｰ`)ﾉ",
   "t": "¡BONK! 🔨 A la cárcel de los salidos. (ﾉ´ｰ`)ﾉ"
@@ -11422,6 +11622,10 @@
  "f0c3ff890745": {
   "en": "{n} of {max}",
   "t": "{n} de {max}"
+ },
+ "f0ecd7c899e5": {
+  "en": "GitHub mission control",
+  "t": "Centro de control de GitHub"
  },
  "f0f21ca1cb3a": {
   "en": "Cozy & life sims",
@@ -11678,6 +11882,10 @@
  "f69192726c6c": {
   "en": "\nThis website fulfills my need to share the joy and growth, and it gives me something I can pull up on the fly to show\n        the folks I’m talking with, without triggering hypervigilance. And just like the reason I went with self-publishing\n        instead of traditional publishing: I can do whatever the fuck I want here, and nobody gives a shit…\n",
   "t": "Esta web cubre mi necesidad de compartir la alegría y el crecimiento, y me da algo que puedo sacar sobre la marcha para enseñárselo a la gente con la que hablo, sin disparar la hipervigilancia. Y por la misma razón por la que elegí la autopublicación en vez de una editorial tradicional: aquí puedo hacer lo que me dé la puta gana, y a nadie le importa una mierda…"
+ },
+ "f69557c6366e": {
+  "en": "GitHub mission control: turn your phone sideways",
+  "t": "Centro de control de GitHub: pon el móvil en horizontal"
  },
  "f698d5f2a43e": {
   "en": "Peeta on the stroller under the fall colors",

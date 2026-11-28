@@ -26,6 +26,7 @@ export const GIMMICKS: GimmickInfo[] = [
   { id: 'perfect-egg', title: 'Cook the perfect egg', tab: 'cooking', tabName: 'Cooking', inline: true, n: 18 },
   { id: 'photo-shoot', title: 'Photo shoot', tab: 'photographer', tabName: 'Photographer', n: 17 },
   { id: 'pixel-pets', title: 'Pixel pets', tab: 'pets', tabName: 'Pets', n: 11 },
+  { id: 'repo-pulse', title: 'GitHub mission control', tab: 'pm', tabName: 'Management', inline: true, n: 20 },
   { id: 'saturday-night-fever', title: 'Saturday Night Fever', tab: 'concert', tabName: 'Concert', inline: true, n: 12 },
   { id: 'tattoo-skin', title: 'Tattoo practice skin', tab: 'tattoo', tabName: 'Tattoo', n: 13 },
   { id: 'terminal-typer', title: 'Type like a hacker', tab: 'dev', tabName: 'Developer', inline: true, n: 19 },

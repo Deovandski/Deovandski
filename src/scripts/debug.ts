@@ -19,7 +19,7 @@ interface Stats {
     url: string | null; pages: number; languages: number; branches: number; tabs: number; subTabs: number; reusable: number;
     files: number; bytes: number; byType: Record<string, { files: number; bytes: number }>; serviceWorker: string | null;
   };
-  data: { steam: string | null; xbox: string | null; takeout: string | null };
+  data: { steam: string | null; xbox: string | null; takeout: string | null; github: string | null };
   i18n: {
     english: { pages: number; segments: number; words: number }; indexCoverage: number;
     languages: { code: string; name: string; dir: string; percent: number; words: number; segments: number; pagesIndexed: number }[];
@@ -91,7 +91,7 @@ async function fromStats(): Promise<void> {
   set('pr', code.pr ? `#${code.pr}` : NA, code.prUrl);
   set('run', code.run ? `#${code.run}` : NA, code.runUrl);
   set('tools', Object.entries(code.tools).filter(([, v]) => v).map(([k, v]) => `${k} ${String(v).replace(/^v/, '')}`).join(' · '));
-  set('data', [['Steam', data.steam], ['Xbox', data.xbox], ['Google Takeout', data.takeout]].map(([k, v]) => `${k} ${v ?? NA}`).join(' · '));
+  set('data', [['Steam', data.steam], ['Xbox', data.xbox], ['Google Takeout', data.takeout], ['GitHub', data.github]].map(([k, v]) => `${k} ${v ?? NA}`).join(' · '));
 
   set('siteUrl', site.url ?? NA, site.url);
   set('pages', `${site.pages} × ${site.languages} languages`);
