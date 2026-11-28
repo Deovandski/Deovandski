@@ -6,8 +6,11 @@ keeps, it keeps in your own browser, and clearing the site's data removes all of
 **Settings.** The Settings menu (the gear, top right) saves your Language and Vraki mode choices in your browser's local
 storage, under `deovandski-site`, so they stick between visits.
 
-**Games.** A few games behind ▶ Play keep your progress in local storage, in this browser only: the paper plane's best
-distance (`paper-plane-best`), the Balls farm (`balls-farm`) and the pixel pets (`pixel-pet:<name>`).
+**Games.** Games behind ▶ Play keep what's worth keeping (high scores, progress, their own settings) in local storage,
+in this browser only: never in a cookie, never sent anywhere. Today that's the paper plane's best distance
+(`paper-plane-best`), the Balls farm (`balls-farm`), the pixel pets (`pixel-pet:<name>`) and Cook the perfect egg's best
+rating per egg and its sound setting (`perfect-egg`). Stats for nerds (Settings › DEBUG, `/debug/`) lists every one of
+them, with what this browser holds for each.
 
 **Where you came from.** A link with `?src=…` (like `?src=LinkedIn`) is remembered for the visit in session storage
 (`src`), so the page can show or hide a few things for that audience. It's forgotten when you close the tab.

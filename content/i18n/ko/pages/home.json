@@ -131,6 +131,10 @@
   "en": "Enlarge: Feast at the Tanjung Rhu floating restaurant",
   "t": "확대: 탄중 루 수상 식당에서 만찬"
  },
+ "0268d193f787": {
+  "en": "Shell in the pan!",
+  "t": "껍질이 팬에!"
+ },
  "026d0912a966": {
   "en": "Deo in 2024 on stage holding a book award certificate",
   "t": "2024년, 무대 위에서 도서상 증서를 들고 있는 Deo"
@@ -311,6 +315,10 @@
   "en": "Rise and shine",
   "t": "일어나서 빛나라"
  },
+ "0652cf98045b": {
+  "en": "Best: {r} of 3",
+  "t": "최고: {r}/3"
+ },
  "06576556d1ad": {
   "en": "R",
   "t": "R"
@@ -402,6 +410,10 @@
  "078833d181b7": {
   "en": "That’s how I lost nearly 80 lb in one year. I didn’t know it then, but I was in pure survival mode. As I stabilized, the weight rebounded. And as you can see in the chart, I kept cycling between highs and lows, which actually maps to my mental health too: unfulfillment, then hyperfocus on something that acted like a band-aid, and once that ran out of fuel, the cycle started again. I was stuck, and I didn’t know I was stuck. For someone striving to be self-aware, I truly couldn’t see the box that had existed around me since I was a kid: the masking, trying to appear so-called normal. In 2025, I was back at 260 lb, where it seemed to settle while I became a technical architect certified in F&amp;O and Power Platform and kept making steady progress on my novel series, convention runs, and more.",
   "t": "그렇게 해서 1년 만에 거의 80파운드를 뺐어. 그땐 몰랐지만, 난 완전히 생존 모드였어. 안정되면서 체중은 다시 늘었어. 그리고 차트에서 보이듯, 난 계속 높아졌다 낮아졌다를 반복했는데, 그게 사실 내 정신 건강과도 맞아떨어져: 채워지지 않음, 그다음엔 반창고 역할을 하는 무언가에 과몰입, 그리고 그 연료가 바닥나면 사이클이 다시 시작. 난 갇혀 있었고, 갇혀 있다는 것도 몰랐어. 자기 인식을 추구한다는 사람으로서, 어릴 때부터 날 둘러싸고 있던 상자를 정말로 보지 못했어: 마스킹, 이른바 정상처럼 보이려는 노력. 2025년엔 다시 260파운드였고, 체중은 거기서 자리 잡은 듯했어. 그동안 난 F&amp;O와 Power Platform 자격을 갖춘 기술 아키텍트가 됐고, 소설 시리즈와 컨벤션 순회 등에서 꾸준히 진전을 이어 갔어."
+ },
+ "07a5246cb3c5": {
+  "en": "Tasty egg!",
+  "t": "맛있는 달걀!"
  },
  "07c6c2071295": {
   "en": "Let me go",
@@ -538,6 +550,10 @@
  "0aa003687b00": {
   "en": "<strong>Rachel Grove, Rosa A. Hoekstra, Marlies Wierda &amp; Sander Begeer</strong>, <em>Autism Research</em> (2018): most autistic adults had more than one special interest, and the ones driven by them reported higher wellbeing. <a href=\"https://pubmed.ncbi.nlm.nih.gov/29427546/\">Abstract</a>",
   "t": "<strong>Rachel Grove, Rosa A. Hoekstra, Marlies Wierda &amp; Sander Begeer</strong>, <em>Autism Research</em> (2018): 자폐 성인 대부분은 특별한 관심사가 여러 개였고, 그 관심사에 이끌리는 사람일수록 행복도가 높았다. <a href=\"https://pubmed.ncbi.nlm.nih.gov/29427546/\">초록</a>"
+ },
+ "0ae2bb84d4d2": {
+  "en": "New best!",
+  "t": "최고 기록!"
  },
  "0afbd329b621": {
   "en": "People can open doors, but nobody walks through them using your legs. Potential earns encouragement, not applause. <strong>Sustained growth is what earns the praise.</strong>",
@@ -715,6 +731,10 @@
   "en": "Like a Dragon: Pirate Yakuza in Hawaii",
   "t": "용과 같이 8 외전 Pirates in Hawaii"
  },
+ "0e9f7be095c3": {
+  "en": "{n} of {total}",
+  "t": "{n}/{total}"
+ },
  "0f197bc2e46c": {
   "en": "Cardio fitness (estimated VO₂ max)",
   "t": "심폐 체력(추정 VO₂ max)"
@@ -790,6 +810,10 @@
  "1043005d984c": {
   "en": "Walk time or more like I stay in the stroller",
   "t": "산책 시간, 이라기보단 난 유모차에 있음"
+ },
+ "1048a07f14aa": {
+  "en": "{step}: {stars} of 3 stars.",
+  "t": "{step}: 별 {stars}/3개."
  },
  "10551eef4bdd": {
   "en": "Enlarge: Lake of the Woods here we come",
@@ -898,6 +922,10 @@
  "132a0149f337": {
   "en": "they rise together",
   "t": "함께 올라감"
+ },
+ "132f706c4543": {
+  "en": "Omelette",
+  "t": "오믈렛"
  },
  "133762fdd79a": {
   "en": "Who's that running after the bike?",
@@ -1011,6 +1039,10 @@
   "en": "Tattoo tools",
   "t": "타투 도구"
  },
+ "165f2c60b6f0": {
+  "en": "Best egg: {n} of 3 stars",
+  "t": "최고의 달걀: 별 {n}/3개"
+ },
  "166b41be7d18": {
   "en": "Enlarge: Cuscus",
   "t": "확대: 쿠스쿠스"
@@ -1055,9 +1087,17 @@
   "en": "2 mana · 1",
   "t": "마나 2 · 1"
  },
+ "17a942796614": {
+  "en": "Mash to push the flame into the green band, then keep it there. Taps on the beat push harder.",
+  "t": "연타해서 불꽃을 초록 띠까지 올리고 거기서 유지해. 박자에 맞춘 탭은 더 세게 올려."
+ },
  "17b08ffe42a2": {
   "en": "Easy · 100 BPM",
   "t": "쉬움 · 100 BPM"
+ },
+ "17cd29601df0": {
+  "en": "Too hot!",
+  "t": "너무 뜨거워!"
  },
  "17d49e2467c8": {
   "en": "55 h",
@@ -1303,6 +1343,10 @@
   "en": " Training guided by HRV (meta-analysis, 2020) ",
   "t": "심박 변이도에 맞춘 훈련 (메타분석, 2020)"
  },
+ "1d997269a246": {
+  "en": "Tap Stop! as the egg meets the rim.",
+  "t": "달걀이 가장자리에 닿을 때 \"멈춰!\"를 탭해."
+ },
  "1da305d68390": {
   "en": "Sec",
   "t": "초"
@@ -1342,6 +1386,10 @@
  "1ece8a2f722b": {
   "en": "Men my age",
   "t": "내 나이 또래 남성"
+ },
+ "1ecf45eb5580": {
+  "en": "Stop the swing three times. It gets faster.",
+  "t": "바늘을 세 번 멈춰. 점점 빨라져."
  },
  "1ed928e6b267": {
   "en": "Still tired",
@@ -1499,6 +1547,10 @@
   "en": "Enlarge: Gossipy old lady",
   "t": "확대: 수다쟁이 할머니"
  },
+ "21d7f98beb01": {
+  "en": "Peel!",
+  "t": "까기!"
+ },
  "21e6d57bc338": {
   "en": "Bare tree against a pink sunrise",
   "t": "분홍빛 일출 속 앙상한 나무"
@@ -1615,6 +1667,10 @@
   "en": "a cactus",
   "t": "선인장"
  },
+ "245c05fa1233": {
+  "en": "Soft-boiled",
+  "t": "반숙 삶은 달걀"
+ },
  "24615d93d230": {
   "en": "Winter",
   "t": "겨울"
@@ -1687,6 +1743,10 @@
   "en": "Dino Ambush",
   "t": "공룡 매복"
  },
+ "2562ca674d6a": {
+  "en": "Chaos",
+  "t": "혼돈"
+ },
  "2580fef1e7d3": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#32: </span>Best of the Worst: Pocket Ninjas, Cyclone, and Dangerous Men",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#32: </span>Best of the Worst: Pocket Ninjas, Cyclone, and Dangerous Men"
@@ -1751,6 +1811,10 @@
   "en": "A pile of 1,166 VHS tapes",
   "t": "VHS 테이프 1,166개 더미"
  },
+ "26c8ba027c7b": {
+  "en": "Even Peeta wouldn’t eat that.",
+  "t": "Peeta도 그건 안 먹을걸."
+ },
  "26cc3217be64": {
   "en": "ms",
   "t": "ms"
@@ -1798,6 +1862,10 @@
  "278cc325dfd3": {
   "en": "Trending… in your apartment.",
   "t": "트렌딩… 네 아파트에서."
+ },
+ "27966afcb7c5": {
+  "en": "Enlarge: Painting or drawing, 08/07/2019",
+  "t": "확대: 그림 또는 스케치, 2019년 8월 7일"
  },
  "27b48cf9ae90": {
   "en": "That's {tapes} VHS tapes recorded in {mode} ({perTape} hours per T-120 tape).",
@@ -2395,6 +2463,10 @@
   "en": "2,941 h",
   "t": "2,941 시간"
  },
+ "34be1de5fae8": {
+  "en": "Show me what you’ve got, chef.",
+  "t": "실력 좀 보여 줘, 셰프."
+ },
  "34c09a1c9da3": {
   "en": "This anime reminded me of a girl I got close to once. I was undiagnosed autistic, and she was even more autistic than me. We couldn't figure it out, she had tons of baggage, and you can't fix someone else's shit.",
   "t": "이 애니는 예전에 가까워졌던 한 여자를 떠올리게 했어. 난 진단받지 않은 자폐였고, 그녀는 나보다 더 자폐였어. 우린 답을 찾지 못했고, 그녀에겐 짐이 산더미였고, 남의 똥은 네가 치워 줄 수 없어."
@@ -2415,6 +2487,10 @@
   "en": "Hide",
   "t": "숨기기"
  },
+ "355915c9fcf5": {
+  "en": "Back to Cooking",
+  "t": "요리로 돌아가기"
+ },
  "35733de5d39f": {
   "en": "Dice tray",
   "t": "주사위 트레이"
@@ -2426,6 +2502,10 @@
  "35aab70b60e7": {
   "en": "It's running! Ease off.",
   "t": "차고 나간다! 풀어 줘!"
+ },
+ "35c7f0acf757": {
+  "en": "Yolk on the ceiling. One more try?",
+  "t": "노른자가 천장에. 한 번 더?"
  },
  "35cf6a830c19": {
   "en": "Expert · 132 BPM",
@@ -2462,6 +2542,10 @@
  "36493dcc05bf": {
   "en": " KH ",
   "t": "KH"
+ },
+ "367e37eead05": {
+  "en": "Ice bath and peel",
+  "t": "얼음물에 담그고 껍질 까기"
  },
  "369f350188dc": {
   "en": "The Witcher in Concert",
@@ -2519,6 +2603,10 @@
   "en": "Enlarge: Painting or drawing, 02/19/2013",
   "t": "확대: 그림 또는 스케치, 2013년 2월 19일"
  },
+ "37e288767f1f": {
+  "en": "Crack it",
+  "t": "깨기"
+ },
  "37e737d92cbb": {
   "en": "{n} min",
   "t": "{n}분"
@@ -2574,6 +2662,10 @@
  "387d7a59dbaa": {
   "en": " ON ",
   "t": "ON"
+ },
+ "38894794e548": {
+  "en": "Stop the swing to flip, then catch it on the beat.",
+  "t": "바늘을 멈춰서 뒤집고, 박자에 맞춰 받아."
  },
  "389af4918764": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 8: </span> Placeholder movie 8 ",
@@ -2763,6 +2855,10 @@
   "en": "Loading the numbers…",
   "t": "숫자를 불러오는 중…"
  },
+ "3b97e88eff6e": {
+  "en": "Edible. Barely.",
+  "t": "먹을 수는 있어. 겨우."
+ },
  "3b9b88d1447d": {
   "en": " <span class=\"shelf__dot\" style=\"background: #0ca30c\" data-astro-cid-nqpad2wp=\"\"></span> Cozy &amp; life sims: 904 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #0ca30c\" data-astro-cid-nqpad2wp=\"\"></span> 힐링 &amp; 생활 시뮬레이션: 904 시간"
@@ -2770,6 +2866,10 @@
  "3bc2370dce47": {
   "en": "Enlarge: Princess Fluffy of Guamá: Fluffy in a pink princess dress and a jeweled tiara, sitting in the back seat of a car",
   "t": "확대: 과마의 Fluffy 공주: 분홍 공주 드레스에 보석 티아라를 쓰고 차 뒷좌석에 앉아 있는 Fluffy"
+ },
+ "3bd32832287a": {
+  "en": "Hold",
+  "t": "누르기"
  },
  "3bef8d68c6bf": {
   "en": "JT",
@@ -2858,6 +2958,10 @@
  "3e1f116ff08d": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-jytvyid3=\"\">😱</span> Post clickbait video ",
   "t": "<span aria-hidden=\"true\" data-astro-cid-jytvyid3=\"\">😱</span> 낚시성 영상 올리기"
+ },
+ "3e258a1557f6": {
+  "en": "Still raw!",
+  "t": "아직 날것!"
  },
  "3e4ff78bc927": {
   "en": "Ancient stupa",
@@ -3130,6 +3234,10 @@
  "44ebe8475cd2": {
   "en": "Fixed my fatty liver.\n<ul>\n<li>Cut alcohol. I rarely drink anymore, and when I do, it’s because it’s actually tasty, I’m hanging out with people, and I feel like it.</li>\n<li>Cut carbs.</li>\n<li>Took NAC, milk thistle, curcumin, and most importantly, omega-3. I take vitamins every day but spread them out, never back-to-back, to avoid unnecessary doses: too much of a good thing is bad.</li>\n</ul>\n",
   "t": "지방간을 고쳤어. <ul> <li>술을 줄였어. 이제 거의 안 마시고, 마실 땐 진짜 맛있고, 사람들과 어울리고, 마시고 싶을 때야.</li> <li>탄수화물을 줄였어.</li> <li>NAC, 밀크씨슬, 커큐민, 그리고 가장 중요한 오메가-3를 먹었어. 비타민은 매일 먹지만 나눠서, 절대 연달아 먹지 않아. 불필요한 양을 피하려고: 좋은 것도 지나치면 나빠.</li> </ul>"
+ },
+ "44f53c18c097": {
+  "en": "Fry",
+  "t": "굽기"
  },
  "44fa4628d8ef": {
   "en": "Folk",
@@ -3515,6 +3623,10 @@
   "en": "Chappell Roan",
   "t": "Chappell Roan"
  },
+ "4dece85142d2": {
+  "en": "Huehuehue, look at that!",
+  "t": "후에후에후에, 이거 봐!"
+ },
  "4e0c6bf07134": {
   "en": "Capt. Deovandski – Flight Experience Singapore",
   "t": "Capt. Deovandski – Flight Experience Singapore"
@@ -3723,6 +3835,10 @@
   "en": "Previous",
   "t": "이전"
  },
+ "50fccbbd810f": {
+  "en": "Chef’s kiss!",
+  "t": "셰프의 키스!"
+ },
  "5115ff9a0bea": {
   "en": "{a} vs {o}",
   "t": "{a} 대 {o}"
@@ -3806,6 +3922,10 @@
  "52cdbe99ece4": {
   "en": "I plan to explore more mountain biking, but nothing of the hard or extreme routes: I value still having my teeth, and I was not born with high dexterity (as you can clearly see in my <a href=\"#painting\">paintings</a>).",
   "t": "산악자전거는 더 탐험할 계획이지만, 어렵거나 극한의 코스는 전혀 아니다. 아직 이를 지키고 싶고, 나는 타고난 손재주가 좋지 않다(<a href=\"#painting\">그림</a>을 보면 확실히 알 수 있다)."
+ },
+ "52f3d65ebdcb": {
+  "en": "Burnt!",
+  "t": "탔다!"
  },
  "5313811b19de": {
   "en": "Scaling up weight training and chasing 200 lb. Sometimes the weight swings, and that’s part of the journey: sleep quality, blood metrics, mental health, and body fat % are all part of the calculation. As long as I keep making progress and stay healthy, I won’t crack the whip on my fat arse to push harder.",
@@ -4847,6 +4967,10 @@
   "en": "Snare (key S)",
   "t": "스네어 (S 키)"
  },
+ "6726b1dd00e0": {
+  "en": "Scrambled",
+  "t": "스크램블"
+ },
  "67521ab40c04": {
   "en": "39 photos",
   "t": "사진 39장"
@@ -5143,6 +5267,10 @@
   "en": "Enlarge: Sunfish and sunshine",
   "t": "확대: 선피시와 햇살"
  },
+ "6da07e3a43de": {
+  "en": "Cook the perfect egg",
+  "t": "완벽한 달걀 요리"
+ },
  "6da2d12faf76": {
   "en": "Campsites are on their way.",
   "t": "캠핑장은 준비 중이야."
@@ -5371,6 +5499,10 @@
   "en": "<strong>Death is the greatest equalizer.</strong> It doesn’t matter how highly you think of yourself, how much you hate me, what you have that I don’t, whether you envy my successes or laugh at my failures: in the end, you’ll rot away exactly like I will.",
   "t": "<strong>죽음은 가장 위대한 평등의 도구야.</strong> 네가 너 자신을 얼마나 높게 보든, 날 얼마나 싫어하든, 내게 없는 걸 네가 가졌든, 내 성공을 질투하든 내 실패를 비웃든 상관없어: 결국 너도 나랑 똑같이 썩어 없어질 거야."
  },
+ "729ab789a8e4": {
+  "en": "Small sizzles are a trap: tap when the big sizzle shows.",
+  "t": "작은 지글지글은 함정: 큰 지글지글이 보일 때 탭해."
+ },
  "72a1213ba576": {
   "en": "Walkway to the bungalows",
   "t": "방갈로로 가는 산책로"
@@ -5555,6 +5687,10 @@
   "en": "Ballet through the haze",
   "t": "안개 너머의 발레"
  },
+ "76cd4e6454a1": {
+  "en": "Swirl and set",
+  "t": "돌려서 익히기"
+ },
  "76d40b8a2b7d": {
   "en": "Clark et al., Neuron 61:481–490 (2009), and the studies it cites",
   "t": "Clark et al., Neuron 61:481–490 (2009), and the studies it cites"
@@ -5627,6 +5763,10 @@
   "en": " GE ",
   "t": "GE"
  },
+ "784556f99cb9": {
+  "en": "Mash!",
+  "t": "연타!"
+ },
  "785ddeb6d249": {
   "en": "Clicker Heroes series",
   "t": "Clicker Heroes 시리즈"
@@ -5655,6 +5795,10 @@
   "en": "530 h",
   "t": "530 시간"
  },
+ "78cee4b898d5": {
+  "en": "Step {n} of {total}",
+  "t": "{total}단계 중 {n}단계"
+ },
  "78eaabf4a629": {
   "en": "Followers",
   "t": "팔로워"
@@ -5682,6 +5826,10 @@
  "7958bacf5b59": {
   "en": "Back to Lust",
   "t": "욕망으로 돌아가기"
+ },
+ "795a1dded33f": {
+  "en": "We don’t talk about this one.",
+  "t": "이건 없던 걸로 하자."
  },
  "797264df8fca": {
   "en": "<strong>Erik Erikson</strong>, generativity: caring for what will outlive you. Its virtue is care. <a href=\"https://link.springer.com/referenceworkentry/10.1007/978-0-387-79061-9_1218\">Reference</a>",
@@ -5730,6 +5878,10 @@
  "7a6101d8f3cd": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#20: </span>Best of the Worst: Halloween 2023"
+ },
+ "7a97934e1322": {
+  "en": "Perfect!",
+  "t": "퍼펙트!"
  },
  "7a991ab38eae": {
   "en": "I farted",
@@ -5986,6 +6138,10 @@
  "80745b6662b3": {
   "en": "Enlarge: Steak and onions with black-eyed peas",
   "t": "확대: 스테이크와 양파, 동부콩 곁들임"
+ },
+ "808022c59d79": {
+  "en": "Stop!",
+  "t": "멈춰!"
  },
  "80ad7e3d1940": {
   "en": "Squirreled Away",
@@ -6551,6 +6707,10 @@
   "en": "High On Life",
   "t": "High On Life"
  },
+ "8e33e8618772": {
+  "en": "Enlarge: Painting or drawing, 10/24/2017",
+  "t": "확대: 그림 또는 스케치, 2017년 10월 24일"
+ },
  "8e38c2784d21": {
   "en": "Much tired",
   "t": "매우 피곤"
@@ -6587,6 +6747,10 @@
   "en": "If you miss this one, I'm telling Peeta.",
   "t": "이거 틀리면 Peeta한테 이를 거야."
  },
+ "8ee73e5d31bd": {
+  "en": "KABOOM!",
+  "t": "콰광!"
+ },
  "8ef4196cef6e": {
   "en": "Enlarge: Ready for a walk",
   "t": "확대: 산책 준비 완료"
@@ -6594,6 +6758,10 @@
  "8f21ad742d6a": {
   "en": "<strong>Peter Gollwitzer</strong>, implementation intentions (“if X happens, then I will do Y”). His 2006 meta-analysis with Paschal Sheeran, across 94 tests, found a medium-to-large effect on reaching goals. <a href=\"https://www.decisionskills.com/uploads/5/1/6/0/5160560/2006_gollwitzersheeran_implementation_intentions.pdf\">Paper</a>",
   "t": "<strong>페터 골비처</strong>, 실행 의도(\"X가 일어나면, Y를 하겠다\"). 패스컬 시런과 함께한 2006년 메타분석은 94개 검증에 걸쳐 목표 달성에 중간에서 큰 효과를 발견했다. <a href=\"https://www.decisionskills.com/uploads/5/1/6/0/5160560/2006_gollwitzersheeran_implementation_intentions.pdf\">논문</a>"
+ },
+ "8f4fd12f67bb": {
+  "en": "The smoke alarm says hi. Open a window and try again.",
+  "t": "화재경보기가 인사하네. 창문 열고 다시 해 봐."
  },
  "8f53876c891d": {
   "en": "Take your time. This hammock has no hard commitments.",
@@ -6627,6 +6795,10 @@
   "en": " DO ",
   "t": "DO"
  },
+ "8ff0b5b39489": {
+  "en": "Butter the pan",
+  "t": "팬에 버터"
+ },
  "8ffa16d4ad7d": {
   "en": "Enlarge: More mango!",
   "t": "확대: 망고 더!"
@@ -6638,6 +6810,10 @@
  "9049b3f8b99c": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 30: </span> Placeholder TV show 30 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 30: </span> 임시 TV 프로그램 30"
+ },
+ "904e1e9ad556": {
+  "en": "Whisk",
+  "t": "휘젓기"
  },
  "905c229ac827": {
   "en": "Pick a theme",
@@ -6662,6 +6838,10 @@
  "9074a56ad43b": {
   "en": "The Witcher 3: Wild Hunt — Remastered",
   "t": "위쳐 3: 와일드 헌트"
+ },
+ "907ab8c79a08": {
+  "en": "Sound: on",
+  "t": "소리: 켬"
  },
  "907ba6a6a3ad": {
   "en": "Hearth",
@@ -7047,6 +7227,14 @@
   "en": "Texas",
   "t": "텍사스"
  },
+ "9833983de715": {
+  "en": "Tap each time a big bubble pops, not the small ones.",
+  "t": "큰 거품이 터질 때마다 탭해, 작은 건 말고."
+ },
+ "983b73104f51": {
+  "en": "Pick an egg and cook it step by step: tap on the beat, stop the swing, mind the heat. Too many misses and it all goes up in smoke.",
+  "t": "달걀을 고르고 한 단계씩 요리해 봐: 박자에 맞춰 탭하고, 흔들리는 바늘을 멈추고, 불 조절에 신경 써. 너무 많이 놓치면 전부 연기가 돼."
+ },
  "9848f4636e3a": {
   "en": "Details and culture: 10 photos",
   "t": "디테일과 문화: 사진 10장"
@@ -7103,9 +7291,17 @@
   "en": "Anno 2070",
   "t": "Anno 2070"
  },
+ "996bc5061e43": {
+  "en": "My kitchen!",
+  "t": "내 부엌!"
+ },
  "998896860e5d": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder TV show 27 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 27: </span> 임시 TV 프로그램 27"
+ },
+ "998dab71decb": {
+  "en": "Crack three",
+  "t": "세 개 깨기"
  },
  "99adcab28725": {
   "en": "Craft",
@@ -7126,6 +7322,10 @@
  "9a26193e6330": {
   "en": " Tripadvisor ",
   "t": "Tripadvisor"
+ },
+ "9a347eb139ec": {
+  "en": "Plate it",
+  "t": "담기"
  },
  "9a4013425ae8": {
   "en": "Now then, matey: which o' these bilge rats be Deo? Make yer guess, and make it quick. See that spiky beast risin' from the waves? Aye. The whole crew met their final fate in the guts o' that giant turtle. Yo ho!",
@@ -7183,6 +7383,10 @@
   "en": "Glad I don't pay rent",
   "t": "월세 안 내서 다행"
  },
+ "9bbbb5d3f585": {
+  "en": "Sunny side up",
+  "t": "서니 사이드 업"
+ },
  "9bde795b72be": {
   "en": "Latin",
   "t": "라틴"
@@ -7227,6 +7431,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 7: </span> Placeholder movie 7 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 7: </span> 임시 영화 7"
  },
+ "9caf4d40faee": {
+  "en": "Whisk ▶",
+  "t": "휘젓기 ▶"
+ },
  "9ce8a73a39d0": {
   "en": "<strong>Fill in the chunks.</strong> I search for things to do around there and fill each time chunk with 1–3 things, based on proximity. If something is important or very desirable, it becomes a hard commitment. It’s okay to keep a few things in the backlog, saved in case we have more time than planned. The same way, if we run out of time or energy, we can pop things out of the chunks and reorder them, or move them to the backlog for a future trip.",
   "t": "<strong>덩어리를 채운다.</strong>주변에서 할 만한 걸 찾아서, 거리를 기준으로 각 시간 덩어리에 1~3개씩 넣어. 중요하거나 정말 하고 싶은 건 확정 일정으로 바꿔. 계획보다 시간이 남을 때를 대비해 몇 개는 백로그에 남겨 둬도 괜찮아. 마찬가지로 시간이나 체력이 바닥나면, 덩어리에서 빼서 순서를 바꾸거나 다음 여행을 위해 백로그로 옮기면 돼."
@@ -7254,6 +7462,10 @@
  "9d6c79478e4e": {
   "en": "Legendary reflexes!",
   "t": "전설적인 반사신경!"
+ },
+ "9d6e4164f1f1": {
+  "en": "Lower the egg",
+  "t": "달걀 넣기"
  },
  "9d89b2d84ac3": {
   "en": "It's coming in: the mark turns orange, then red.",
@@ -7739,6 +7951,10 @@
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#3: </span>Best of the Worst: Wheel of the Worst #24"
  },
+ "a761702588f2": {
+  "en": "Six and a half minutes",
+  "t": "6분 30초"
+ },
  "a766bb2ac493": {
   "en": "345 h",
   "t": "345 시간"
@@ -7827,6 +8043,10 @@
   "en": "Portuguese: 10 of 10, Fully bilingual",
   "t": "포르투갈어: 10점 만점에 10점, 완벽한 이중 언어"
  },
+ "a939ad54a170": {
+  "en": "Too early!",
+  "t": "너무 빨라!"
+ },
  "a94555ea7a3b": {
   "en": "Enlarge: Did I undersleep or oversleep",
   "t": "확대: 덜 잔 건가 더 잔 건가"
@@ -7878,6 +8098,10 @@
  "aa6474114ad4": {
   "en": "And back to tired",
   "t": "그리고 다시 피곤"
+ },
+ "aa751ace41b7": {
+  "en": "Cook the perfect egg: turn your phone sideways",
+  "t": "완벽한 달걀 요리: 휴대폰을 가로로 돌려 줘"
  },
  "aa993a59a2ef": {
   "en": "The Invincible",
@@ -8019,6 +8243,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 13: </span> Placeholder TV show 13 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 13: </span> 임시 TV 프로그램 13"
  },
+ "adae78b1ec6e": {
+  "en": "Another egg",
+  "t": "다른 달걀"
+ },
  "adc0752adbfd": {
   "en": "Cooking",
   "t": "요리"
@@ -8034,6 +8262,10 @@
  "ade7e6d0292a": {
   "en": "8 photos",
   "t": "사진 8장"
+ },
+ "adf4a259e705": {
+  "en": "The flip",
+  "t": "뒤집기"
  },
  "adf5e8bc16c6": {
   "en": "16mm",
@@ -8086,6 +8318,10 @@
  "aeced9ca89fc": {
   "en": "CHRONO TRIGGER",
   "t": "크로노 트리거"
+ },
+ "aed2e6ffda07": {
+  "en": "BEEP! BEEP! BEEP!",
+  "t": "삐! 삐! 삐!"
  },
  "aed6b9811801": {
   "en": "So close! Your post was one share away from blowing up.",
@@ -8199,6 +8435,10 @@
   "en": "Enlarge: Can we fry those up",
   "t": "확대: 저거 튀겨 먹을 수 있어?"
  },
+ "b1781fbf5313": {
+  "en": "Rating: {r} of 3",
+  "t": "평가: {r}/3"
+ },
  "b18ec7723328": {
   "en": "Enlarge: Sleep",
   "t": "확대: 잠"
@@ -8283,6 +8523,10 @@
   "en": "Enlarge: Pork with sourdough bread and Kewpie mayo",
   "t": "확대: 사워도우 빵과 Kewpie 마요를 곁들인 돼지고기"
  },
+ "b2d58830bbea": {
+  "en": "Spilled!",
+  "t": "쏟았다!"
+ },
  "b2d879e09416": {
   "en": "Plantera",
   "t": "Plantera"
@@ -8339,6 +8583,10 @@
   "en": "Enlarge: Painting or drawing, 05/02/2013",
   "t": "확대: 그림 또는 스케치, 2013년 5월 2일"
  },
+ "b4a228225f62": {
+  "en": "Smells like burnt hopes…",
+  "t": "타 버린 희망 냄새가 나…"
+ },
  "b4a3a6532393": {
   "en": "Throw Rock, costs 2 mana (key 3)",
   "t": "바위 던지기, 마나 2 소모 (3번 키)"
@@ -8387,6 +8635,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 1: </span> Sword Art Online ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 1: </span> Sword Art Online (소드 아트 온라인)"
  },
+ "b62a3583dfbf": {
+  "en": "Boil the water",
+  "t": "물 끓이기"
+ },
  "b62a4d0e1ffc": {
   "en": " A2 ",
   "t": "A2"
@@ -8434,6 +8686,10 @@
  "b70db6384e32": {
   "en": "It sits on my heart chakra, equally spaced from my left and right forearms, because I'm always listening to the two driving forces within me. I use them alongside my intuition to take the best path forward, for myself and for the ones I care about and am responsible for.",
   "t": "왼쪽과 오른쪽 팔뚝에서 같은 거리에 있는 심장 차크라 위에 있어. 난 내 안의 두 원동력에 늘 귀를 기울이니까. 그 둘을 직감과 함께 써서, 나 자신과 내가 아끼고 책임지는 사람들을 위해 가장 좋은 길로 나아가."
+ },
+ "b7343614c93f": {
+  "en": "Sound: off",
+  "t": "소리: 끔"
  },
  "b73f78fc271e": {
   "en": "Giselle",
@@ -8515,6 +8771,10 @@
   "en": "Red maple",
   "t": "붉은 단풍나무"
  },
+ "b8fc125b9656": {
+  "en": "Peel exactly 5 times before the clock runs out.",
+  "t": "시간이 끝나기 전에 딱 5번 까."
+ },
  "b90b25305207": {
   "en": "Very hot",
   "t": "아주 뜨거움"
@@ -8554,6 +8814,10 @@
  "b9dd1e7cf0fb": {
   "en": "Stress score",
   "t": "스트레스 점수"
+ },
+ "b9f6aaf89ad6": {
+  "en": "Cough… cough…",
+  "t": "콜록… 콜록…"
  },
  "ba01865809b3": {
   "en": "Back to Concert",
@@ -8602,6 +8866,10 @@
  "bb1e86946aa1": {
   "en": "Rides from my Google Health export, updated on November 26, 2026.",
   "t": "라이딩 기록은 내 Google Health 내보내기에서, 2026년 11월 26일 업데이트."
+ },
+ "bb25529b775e": {
+  "en": "◀ Whisk",
+  "t": "◀ 휘젓기"
  },
  "bb395b5f1d5e": {
   "en": "101 days",
@@ -8670,6 +8938,10 @@
  "bcf9f12dccef": {
   "en": " Days of my life ",
   "t": "내 인생의 날들"
+ },
+ "bd234a44fc67": {
+  "en": "Tap!",
+  "t": "탭!"
  },
  "bd62be75218d": {
   "en": " MG ",
@@ -8806,6 +9078,10 @@
  "c03b4f70bb93": {
   "en": "11% of my hours",
   "t": "내 시간의 11%"
+ },
+ "c045973b70c5": {
+  "en": "Stir on the heat",
+  "t": "불 위에서 젓기"
  },
  "c05c3582ef8a": {
   "en": "Chibi pixel Deo in his yellow king's robes and crown hat, dancing the Saturday Night Fever disco point under flashing stage lights.",
@@ -8967,6 +9243,10 @@
   "en": "Tattoo practice skin",
   "t": "타투 연습용 피부"
  },
+ "c3d117f5e069": {
+  "en": "Cook the perfect egg: a tapping mini-game.",
+  "t": "완벽한 달걀 요리: 탭으로 하는 미니게임."
+ },
  "c3eb3d341e29": {
   "en": "Enlarge: Gotta look pretty for PetSmart",
   "t": "확대: PetSmart 가려면 예뻐야지"
@@ -8978,6 +9258,10 @@
  "c4385e969a8c": {
   "en": "Movement creates evidence. Refuse limbo: prefer an honest no to a manipulative maybe. Feelings are telemetry. <strong>When intuition and evidence point the same way, ignoring them is just fear dressed up as logic.</strong> Move.",
   "t": "움직임이 증거를 만든다. 어정쩡한 상태를 거부해: 조종하려 드는 \"아마도\"보다 정직한 \"아니\"를 택해. 감정은 계측 데이터다. <strong>직감과 증거가 같은 방향을 가리킬 때, 그걸 무시하는 건 논리로 변장한 두려움일 뿐이다.</strong> 움직여."
+ },
+ "c445ce5affae": {
+  "en": "Tap the side each bubble comes from as it crosses the line.",
+  "t": "거품이 선을 지날 때 그 거품이 온 쪽을 탭해."
  },
  "c46451ea184b": {
   "en": "That one has all the fertilizer it can take ({max}).",
@@ -9175,6 +9459,10 @@
   "en": "Harvested {crop}: {what}!",
   "t": "{crop} 수확: {what}!"
  },
+ "ca159e85a56a": {
+  "en": "Tap on every tick of the timer.",
+  "t": "타이머가 똑딱일 때마다 탭해."
+ },
  "ca23f2af91b8": {
   "en": "My parents and I are always there for each other, but we don't enable each other. We challenge each other to grow and do better.",
   "t": "부모님과 난 늘 서로의 곁에 있지만, 서로를 오냐오냐하지는 않아. 서로 성장하고 더 잘하도록 자극하지."
@@ -9278,6 +9566,10 @@
  "cbcc2e942975": {
   "en": " An exploded sphere of my hours by category: RPGs &amp; open worlds 36%, City, colony &amp; strategy 11%, Survival &amp; crafting 11%, Factory &amp; automation 11%, Space &amp; flight 9%, Cozy &amp; life sims 6%, Other 16% ",
   "t": "카테고리별 플레이 시간을 쪼갠 구: RPG &amp; 오픈 월드 36%, 도시, 식민지 &amp; 전략 11%, 생존 &amp; 제작 11%, 공장 &amp; 자동화 11%, 우주 &amp; 비행 9%, 힐링 &amp; 생활 시뮬레이션 6%, 기타 16%"
+ },
+ "cbdb687d8b05": {
+  "en": "Hold, and let go gently in the zone.",
+  "t": "누르고 있다가 구역에서 살짝 떼."
  },
  "cbe35333fcf5": {
   "en": "\nAnd as to why? Read my <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld Vol 4 afterword</a>.\n",
@@ -9515,6 +9807,10 @@
   "en": "REM sleep",
   "t": "렘수면"
  },
+ "d10c715f8aa9": {
+  "en": "Way off!",
+  "t": "완전 빗나감!"
+ },
  "d10ea06bc3fc": {
   "en": "Hue throne room",
   "t": "후에 옥좌의 방"
@@ -9734,6 +10030,10 @@
  "d499fe679d0f": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 35: </span> Placeholder TV show 35 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 35: </span> 임시 TV 프로그램 35"
+ },
+ "d4a990ab4601": {
+  "en": "How do you want your egg?",
+  "t": "달걀 어떻게 해 줄까?"
  },
  "d4aea162d4bc": {
   "en": "Photo shoot: turn your phone sideways",
@@ -10002,6 +10302,10 @@
  "d9ecc35c78dd": {
   "en": "Scream Collector",
   "t": "Scream Collector"
+ },
+ "da05c118086a": {
+  "en": "Mash until the water rolls: fill the flame to the green band.",
+  "t": "물이 펄펄 끓을 때까지 연타: 불꽃을 초록 띠까지 채워."
  },
  "da0ec5bcf4c4": {
   "en": "Ghostbusters: The Video Game Remastered",
@@ -10495,6 +10799,10 @@
   "en": "+ 21 more games",
   "t": "+ 게임 21개 더"
  },
+ "e5f57adc2813": {
+  "en": "Splat!",
+  "t": "철퍽!"
+ },
  "e5fabe58e839": {
   "en": "Singin' in the Rain",
   "t": "사랑은 비를 타고"
@@ -10550,6 +10858,10 @@
  "e75ea941f509": {
   "en": "Enlarge: Caught one!",
   "t": "확대: 잡았다!"
+ },
+ "e763d92c95b5": {
+  "en": "Miss",
+  "t": "미스"
  },
  "e76dbe835acf": {
   "en": "Miku's name in Japanese. Miku-chan (ミクちゃん) is a cornerstone of my life, tied to the things that drive me: ambition, technology, collaboration and community. She also stands for my passion, my drive, and the anxiety side of my personality.",
@@ -10823,6 +11135,10 @@
   "en": "Time! You whacked {hits} {name} and missed {misses}. {verdict}",
   "t": "시간 종료! {hits}마리 {name}을(를) 때리고 {misses}마리 놓쳤어. {verdict}"
  },
+ "ee8eaf5b15f9": {
+  "en": "Tap Stop! when the egg is over the plate.",
+  "t": "달걀이 접시 위에 오면 \"멈춰!\"를 탭해."
+ },
  "ee9f4373eeab": {
   "en": "Keeper of the Sacred Salt and of the secret ways of the Touch.",
   "t": "신성한 소금과 손끝의 비밀 방식을 지키는 자."
@@ -10918,6 +11234,10 @@
  "f1d1b324ae97": {
   "en": "Dev History",
   "t": "개발 이력"
+ },
+ "f1d7c6f32dbb": {
+  "en": "Hold, and let go in the sizzle zone.",
+  "t": "누르고 있다가 지글지글 구역에서 떼."
  },
  "f201ce825e65": {
   "en": "40 h",
@@ -11367,6 +11687,10 @@
   "en": "Kaydy Cain",
   "t": "Kaydy Cain"
  },
+ "fcd761054089": {
+  "en": "Again",
+  "t": "다시"
+ },
  "fce1919eec49": {
   "en": "But don't wanna go to sleep",
   "t": "근데 자기 싫어"
@@ -11510,6 +11834,10 @@
  "ffe8eb5ee020": {
   "en": "Seasoned and ready",
   "t": "양념 완료"
+ },
+ "fff1a581dffd": {
+  "en": "You cooked them right.",
+  "t": "제대로 요리했어."
  },
  "fff4a50e8428": {
   "en": "Đà Nẵng",

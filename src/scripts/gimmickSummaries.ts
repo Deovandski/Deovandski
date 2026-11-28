@@ -18,6 +18,14 @@ const live: Record<string, (el: HTMLElement) => string | null> = {
     const best = Number(read('paper-plane-best'));
     return best > 0 ? word(el, 'summary', 'Best {n} m', best.toFixed(1)) : null;
   },
+  'perfect-egg': (el) => {
+    try {
+      const best = Object.values(JSON.parse(read('perfect-egg') ?? '{}').best ?? {}).map(Number);
+      return best.length ? word(el, 'summary', 'Best egg: {n} of 3 stars', Math.round(Math.max(...best) * 10) / 10) : null;
+    } catch {
+      return null;
+    }
+  },
   'balls-farm': (el) => {
     try {
       const farm = JSON.parse(read('balls-farm') ?? 'null');
