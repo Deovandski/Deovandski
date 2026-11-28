@@ -22,10 +22,12 @@ import UrsuSprite from './UrsuSprite.astro';
 import { url } from '../lib/url';
 import PixelPet from './reusable/PixelPet.astro';
 import StageDancer from './reusable/StageDancer.astro';
+import TerminalTyper from './reusable/TerminalTyper.astro';
 import VhsPile from './reusable/VhsPile.astro';
 import WhackAMole from './reusable/WhackAMole.astro';
 import whackSprite from '../assets/whack-a-miku/whack-a-miku.png';
 import farm from '../../content/mentor-farm.json';
+import typingWords from '../../content/typing-words.json';
 import ecchi from '../../content/lust-meter.json';
 import botwStats from '../../content/botw-stats.json';
 import { PIXEL_PETS } from '../lib/pixelPets';
@@ -107,6 +109,7 @@ const trip = id === 'where-was-deo' ? await travelQuiz() : null;
     <StageDancer saveKey="saturday-night-fever" label="Chibi pixel Deo in his yellow king&apos;s robes and crown hat, dancing the Saturday Night Fever disco point under flashing stage lights." />
   )
 }
+{id === 'terminal-typer' && <TerminalTyper words={[...typingWords.husbandoutworld, ...typingWords.deovandski]} saveKey="terminal-typer" />}
 {id === 'tattoo-skin' && <DrawingPad label="Practice skin. Draw a tattoo on it with the tattoo pen." />}
 {
   id === 'vhs-pile' && (

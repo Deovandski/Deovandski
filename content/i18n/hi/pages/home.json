@@ -487,6 +487,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder TV show 32 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">रैंक 32: </span> अस्थायी टीवी शो 32"
  },
+ "091d7d54d819": {
+  "en": "Type: {word}",
+  "t": "टाइप करो: {word}"
+ },
  "09284e3db63b": {
   "en": "Deyr fé, deyja frændr, deyr sjalfr it sama;<br>en orðstírr deyr aldregi, hveim er sér góðan getr.",
   "t": "Deyr fé, deyja frændr, deyr sjalfr it sama;<br>en orðstírr deyr aldregi, hveim er sér góðan getr."
@@ -1010,6 +1014,10 @@
  "148bcf6b6644": {
   "en": "Deo's old TikTok profile, @deovandski: 732 followers, 118.5K likes, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, above a grid of video thumbnails",
   "t": "Deo की पुरानी TikTok प्रोफ़ाइल, @deovandski: 732 फ़ॉलोअर, 118.5K लाइक, बायो \"Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev\", वीडियो थंबनेल के ग्रिड के ऊपर"
+ },
+ "149b8a51f5ba": {
+  "en": "&gt; Change length",
+  "t": "&gt; लंबाई बदलो"
  },
  "149d7ab31b5c": {
   "en": "Go!",
@@ -1619,6 +1627,10 @@
   "en": "You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it's still in the air) and take it down before you run dry.",
   "t": "बाधाएँ तुम हो। डायनो दौड़ता है। तुम उस पर चीज़ें फेंकते हो। अब से हर सेकंड मान बढ़ता है; अपने वार का समय साधो (जब वह हवा में हो तभी पकड़ो) और मान ख़त्म होने से पहले उसे गिरा दो।"
  },
+ "22c28dae3b22": {
+  "en": "Fastest word: {word} ({ms} ms)",
+  "t": "सबसे तेज़ शब्द: {word} ({ms} ms)"
+ },
  "22db4557409d": {
   "en": " Xbox + PlayStation  ·  estimated ",
   "t": "Xbox + PlayStation  ·  अनुमानित"
@@ -1986,6 +1998,14 @@
  "29990da75615": {
   "en": " <span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #3: </span>Shisa Kanko <span lang=\"ja\" translate=\"no\" data-astro-cid-xtzphevd=\"\">(指差喚呼)</span> ",
   "t": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">लाइफ़ हैक #3: </span>शिसा कांको <span lang=\"ja\" translate=\"no\" data-astro-cid-xtzphevd=\"\">(指差喚呼)</span>"
+ },
+ "29aa635ef1ef": {
+  "en": "The first project I built with Claude Code, to learn it and brush up on React.js: a keyboard tester in Miku colours. Press every key until the whole board glows teal, watch a piano-roll of your keystrokes, and check for double presses and how many keys your board takes at once. In Chrome it also reads the OS layout and the keyboard’s USB details. It grew into the Type like a hacker game behind ▶ Play.",
+  "t": "Claude Code से बनाया मेरा पहला प्रोजेक्ट, उसे सीखने और अपना React.js फिर से चमकाने के लिए: मिकू के रंगों वाला कीबोर्ड टेस्टर। हर कुंजी दबाओ जब तक पूरा कीबोर्ड टील न चमके, अपने कीस्ट्रोक का पियानो-रोल देखो, और डबल-प्रेस और एक साथ कितनी कुंजियाँ चलती हैं यह जाँचो। Chrome में यह OS का लेआउट और कीबोर्ड की USB जानकारी भी पढ़ता है। यही आगे चलकर ▶ Play वाला हैकर की तरह टाइप करो गेम बना।"
+ },
+ "29d99644fa2f": {
+  "en": "Best: {n} WPM",
+  "t": "सबसे अच्छा: {n} WPM"
  },
  "29e6444c3c62": {
   "en": "Brooks &amp; Dunn",
@@ -2818,6 +2838,10 @@
  "3aa7e2bfd3d3": {
   "en": "One square per day, one row per year. The brighter the square, the higher the number. A colored edge marks each exercise day. Faded squares are days outside your filters.",
   "t": "हर दिन एक खाना, हर साल एक पंक्ति। खाना जितना चमकीला, आँकड़ा उतना ऊँचा। रंगीन किनारा हर व्यायाम वाले दिन को दिखाता है। फीके खाने आपके फ़िल्टर से बाहर के दिन हैं।"
+ },
+ "3aabbac79453": {
+  "en": "Rank: elite hacker.",
+  "t": "रैंक: एलीट हैकर।"
  },
  "3aaff43b4038": {
   "en": " UH ",
@@ -3771,6 +3795,10 @@
   "en": "Sleepy",
   "t": "नींद आ रही है"
  },
+ "4f79714c2761": {
+  "en": "Rank: grandma mode.",
+  "t": "रैंक: दादी मोड।"
+ },
  "4f804d1ee952": {
   "en": "Wing and the morning sky",
   "t": "पंख और सुबह का आसमान"
@@ -4178,6 +4206,10 @@
  "5656b9b79b03": {
   "en": "Wednesday",
   "t": "बुधवार"
+ },
+ "565dab178b84": {
+  "en": "A typing game in a terminal: type each word as it shows up.",
+  "t": "टर्मिनल में टाइपिंग गेम: हर शब्द दिखते ही टाइप करो।"
  },
  "5675306240db": {
   "en": "The Icelandic compass symbol, associated with guidance and finding one's way. I intentionally placed its center point over a single long white hair that I consider mystical.",
@@ -5155,6 +5187,10 @@
   "en": "My top 39 TV shows. Anime gets its own tab because of how much it means to me.",
   "t": "मेरे 39 पसंदीदा टीवी शो। एनीमे का अपना टैब है, क्योंकि वह मेरे लिए बहुत मायने रखता है।"
  },
+ "69a0fbf3e13c": {
+  "en": "ACCESS GRANTED",
+  "t": "एक्सेस मिल गया"
+ },
  "69c642153907": {
   "en": "Fukuoka has more yatai, open-air food stalls, than the rest of Japan combined: about a hundred pop up every night and vanish before morning.",
   "t": "फ़ुकुओका में बाक़ी पूरे जापान को मिलाकर भी ज़्यादा याताई, यानी खुले में खाने के स्टॉल, हैं: लगभग सौ हर रात लगते हैं और सुबह से पहले ग़ायब हो जाते हैं।"
@@ -5283,6 +5319,10 @@
   "en": "Vraki<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (written in Vraki)</span>",
   "t": "व्राकी<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (व्राकी लिपि में लिखा)</span>"
  },
+ "6c846bf839ce": {
+  "en": "Tap here to bring up your keyboard. Esc stops.",
+  "t": "कीबोर्ड लाने के लिए यहाँ टैप करो। Esc से रुकता है।"
+ },
  "6c9a005a2b28": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10"
@@ -5379,6 +5419,10 @@
   "en": "MB",
   "t": "MB"
  },
+ "6e9803b365fa": {
+  "en": "&gt; Again",
+  "t": "&gt; फिर से"
+ },
  "6edd44939f5a": {
   "en": "Where was this photo taken?",
   "t": "यह फ़ोटो कहाँ ली गई थी?"
@@ -5410,6 +5454,10 @@
  "6f683304f3df": {
   "en": "Success Kid",
   "t": "सक्सेस किड"
+ },
+ "6fabf877a966": {
+  "en": "Hack the terminal: type each word as it shows up, as fast and clean as you can. Words come from this site and #HusbandOutWorld.",
+  "t": "टर्मिनल हैक करो: हर शब्द दिखते ही जितना तेज़ और साफ़ हो सके टाइप करो। शब्द इस साइट और #HusbandOutWorld से हैं।"
  },
  "6ff33102b1c6": {
   "en": "Wishlist",
@@ -5626,6 +5674,10 @@
  "740587c66df0": {
   "en": "If thou art a <strong>Cardinal of the Touch</strong>, thou shalt know when the meat is done by touch alone. Otherwise, use the thermometer.",
   "t": "अगर तुम <strong>स्पर्श के कार्डिनल</strong> हो, तो केवल स्पर्श से जानोगे कि मांस कब पका। वरना, थर्मामीटर इस्तेमाल करो।"
+ },
+ "7451b60c1e24": {
+  "en": "Type like a hacker",
+  "t": "हैकर की तरह टाइप करो"
  },
  "747e4b5cb273": {
   "en": " Pixel 8 Pro tech specs ",
@@ -6222,6 +6274,10 @@
  "80c9de545946": {
   "en": "Do Better!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (written in Vraki)</span>",
   "t": "Do Better!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (व्राकी लिपि में लिखा)</span>"
+ },
+ "80cca7aca48a": {
+  "en": "Type like a hacker: turn your phone sideways",
+  "t": "हैकर की तरह टाइप करो: अपना फ़ोन आड़ा करो"
  },
  "80cdcf834adc": {
   "en": "Enlarge: Extra-crunchy breaded fillet",
@@ -7187,6 +7243,10 @@
   "en": " Survival &amp; crafting ",
   "t": "सर्वाइवल और क्राफ़्टिंग"
  },
+ "966e68d10967": {
+  "en": "Back to Developer",
+  "t": "डेवलपर पर वापस"
+ },
  "967cc1c07fba": {
   "en": " <span class=\"shelf__dot\" style=\"background: #d55181\" data-astro-cid-nqpad2wp=\"\"></span> Idle &amp; clickers: 19,668 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #d55181\" data-astro-cid-nqpad2wp=\"\"></span> आइडल और क्लिकर: 19,668 घं."
@@ -7326,6 +7386,10 @@
  "9894f4e31fa0": {
   "en": "Enlarge: Cruise ships on the horizon",
   "t": "बड़ा करें: क्षितिज पर क्रूज़ जहाज़"
+ },
+ "98994d18a884": {
+  "en": "Deo Keyboard Tester: a full-size keyboard on screen in teal, silver and pink, with the keys pressed so far glowing teal, a keystroke roll and a progress bar",
+  "t": "Deo Keyboard Tester: स्क्रीन पर फ़ुल-साइज़ कीबोर्ड, टील, सिल्वर और गुलाबी रंगों में, अब तक दबाई गई कुंजियाँ टील चमकती हैं, साथ में कीस्ट्रोक रोल और प्रगति पट्टी"
  },
  "989ad0d2851a": {
   "en": "Ursu Sintasus in Spore: a cream-white creature with moose antlers, big orange eyes, a wide smile and black-striped arms and legs.",
@@ -7538,6 +7602,10 @@
  "9db746ec5820": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#16: </span>Best of the Worst: Jack-O, Rock n' Roll Nightmare, and Shark Exorcist",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#16: </span>Best of the Worst: Jack-O, Rock n' Roll Nightmare, and Shark Exorcist"
+ },
+ "9dbda63d31a6": {
+  "en": "New best for {len} words!",
+  "t": "{len} शब्दों का नया रिकॉर्ड!"
  },
  "9dbfccdd9baa": {
   "en": "🔥 {n}-post streak! Don't break it!",
@@ -8539,6 +8607,10 @@
   "en": "South America",
   "t": "दक्षिण अमेरिका"
  },
+ "b204db65193a": {
+  "en": "Word {n} of {total}: {word}",
+  "t": "शब्द {n} / {total}: {word}"
+ },
  "b20c3b6f0b9d": {
   "en": "More of my story in the light novel afterwords at husbandoutworld.com.",
   "t": "मेरी और कहानी husbandoutworld.com पर लाइट नॉवेल के उपसंहारों में।"
@@ -8999,6 +9071,10 @@
   "en": "Next",
   "t": "अगला"
  },
+ "bca0792b6f4f": {
+  "en": "Typos: {n}",
+  "t": "गलत टाइप: {n}"
+ },
  "bca97bae09e1": {
   "en": " Xbox  ·  estimated ",
   "t": "Xbox  ·  अनुमानित"
@@ -9014,6 +9090,10 @@
  "bcf9f12dccef": {
   "en": " Days of my life ",
   "t": "मेरी ज़िंदगी के दिन"
+ },
+ "bd1693af5c1a": {
+  "en": "&gt; Start",
+  "t": "&gt; शुरू करो"
  },
  "bd234a44fc67": {
   "en": "Tap!",
@@ -9098,6 +9178,10 @@
  "bef1f4c46c04": {
   "en": "Enlarge: Ancient stupa",
   "t": "बड़ा करें: प्राचीन स्तूप"
+ },
+ "bf283b5225d9": {
+  "en": "How many words?",
+  "t": "कितने शब्द?"
  },
  "bf301c3fb31a": {
   "en": " 570 h ",
@@ -9230,6 +9314,10 @@
  "c169b50f6151": {
   "en": " D · Seasons ",
   "t": "D · मौसम"
+ },
+ "c18e26cf2987": {
+  "en": "{wpm} WPM, {acc}% accuracy, {time} seconds.",
+  "t": "{wpm} WPM, {acc}% सटीकता, {time} सेकंड।"
  },
  "c1947f39235d": {
   "en": "Camera settings",
@@ -9486,6 +9574,10 @@
  "c7c4bc97cb6b": {
   "en": "Solen Zara",
   "t": "Solen Zara"
+ },
+ "c86a7f08f305": {
+  "en": "Rank: script kiddie no more.",
+  "t": "रैंक: अब स्क्रिप्ट किडी नहीं।"
  },
  "c886f4fa5cd8": {
   "en": "Praise the source of the beef thou art eating. Thank the soul that was given for thy enjoyment and for thy nourishment.",
@@ -10306,6 +10398,10 @@
  "d874fc40c2c3": {
   "en": " HO ",
   "t": "HO"
+ },
+ "d87d4a84afb2": {
+  "en": "Type each word as it shows up, as fast and as clean as you can. The next word only appears once this one is right. Case and accents don't count.",
+  "t": "हर शब्द दिखते ही जितना तेज़ और साफ़ हो सके टाइप करो। अगला शब्द तभी आएगा जब यह सही हो जाए। बड़े-छोटे अक्षर और एक्सेंट नहीं गिने जाते।"
  },
  "d8a609a8996e": {
   "en": "Shoutout to Unlimited Blade Works, and especially Heaven's Feel. Grounded world rules, and each branch of the story is truly unique.",
@@ -11335,6 +11431,10 @@
   "en": "Enlarge: Steam plume over the snowy fields",
   "t": "बड़ा करें: बर्फ़ीले खेतों पर भाप का ग़ुबार"
  },
+ "f11ba0114af7": {
+  "en": "Best for {len} words: {wpm} WPM, {acc}%",
+  "t": "{len} शब्दों का सबसे अच्छा: {wpm} WPM, {acc}%"
+ },
  "f15dcab95fa8": {
   "en": "Dino Ambush: turn your phone sideways",
   "t": "डायनो पर घात: अपना फ़ोन आड़ा करो"
@@ -11791,6 +11891,10 @@
   "en": "32 h",
   "t": "32 घं."
  },
+ "fb8bbc367e08": {
+  "en": " Deo Keyboard Tester <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">October 2026 · my first Claude Code project</span> ",
+  "t": "Deo Keyboard Tester <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">अक्टूबर 2026 · मेरा पहला Claude Code प्रोजेक्ट</span>"
+ },
  "fb9def26ced0": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">🍖</span> Feed ",
   "t": "<span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">🍖</span> खिलाओ"
@@ -11890,6 +11994,10 @@
  "fdee7e9f221d": {
   "en": "Drum kit",
   "t": "ड्रम किट"
+ },
+ "fe633f3fa349": {
+  "en": "Rank: hunt and peck.",
+  "t": "रैंक: एक उँगली से टाइपिंग।"
  },
  "fe70fc1809e8": {
   "en": "Peeta watching the big screen",

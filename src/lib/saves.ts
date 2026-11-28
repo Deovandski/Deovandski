@@ -22,4 +22,5 @@ export const SAVES: SaveInfo[] = [
   { key: 'ice-fishing', label: 'Ice fishing', holds: 'fish caught, the biggest, sound and reverse scroll' },
   { key: 'saturday-night-fever', label: 'Night Fever', holds: 'best on-beat streak per routine, music on or off' },
   { key: 'dino-ambush', label: 'Dino Ambush', holds: 'rounds won and lost' },
+  { key: 'terminal-typer', label: 'Type like a hacker', holds: 'best WPM and accuracy per length' },
 ];

@@ -16,7 +16,8 @@ in this browser only: never in a cookie, never sent anywhere. Today that's:
 - Where in the World Was Deo?'s best score (`where-was-deo`);
 - Ice fishing's count of fish caught, the biggest one, and its Sound and Reverse scroll buttons (`ice-fishing`);
 - Saturday Night Fever's best on-beat streak per routine and its music button (`saturday-night-fever`);
-- Dino Ambush's rounds won and lost (`dino-ambush`).
+- Dino Ambush's rounds won and lost (`dino-ambush`);
+- Type like a hacker's best words per minute and accuracy for 10, 20 and 30 words (`terminal-typer`).
 
 Stats for nerds (Settings › DEBUG, `/debug/`) lists every one of
 them, with what this browser holds for each.

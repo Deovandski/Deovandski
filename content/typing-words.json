@@ -1,0 +1,27 @@
+{
+  "_about": "Words for the Developer tab's typing game (TerminalTyper, #330). Letters and spaces only, so they type on a phone's first keyboard page (accents are fine: case and accents don't count when typing). husbandoutworld: names from the #HusbandOutWorld World Lore, spelled as in HusbandOutWorld's glossaries. deovandski: names from this website.",
+  "husbandoutworld": [
+    "Nari Gel", "Nari Bomb", "Nari Stone", "Nari Worm", "Nari Caverns", "Crazed Muckman", "Walking Heart", "Wood People",
+    "Trunk People", "Fost Stone", "Fost Lamp", "Soul Tree", "Soul Energy", "Sigil Ring", "Sanbi", "True Sanbi King",
+    "Sanbi Beer", "Fii Water", "Bone Sack", "Minari", "Winga", "Red Winga", "Big Wingas",
+    "Cruro", "Cruroland", "Soreno", "Lab Soreno", "Wozen", "Blue Wozens", "Bagarisa", "Brunto", "Naked Bruntos",
+    "Sand Worm", "Lishie", "Yabuca", "Fihi", "Ptaina", "Sinoi", "Vraki", "Forway", "Forway News", "Deltacross",
+    "Gandew Mountain", "Waterfall City", "Green Sea", "Fastwater Lighthouse", "Black Castle", "Black Sapphire Tree",
+    "Sweetlake", "Endlessfog", "Endlessboil", "Goodbye Cliff", "Cliffbay", "Buhraies Plains", "Whiteland", "Woodland",
+    "Flatland", "Newland", "Lakeeye", "Grand Hall", "Tastyleaf", "Greenbread", "Purplebread", "Homeegg", "Time Keeper",
+    "Time Quicken", "Fire Create", "Storm Create", "Ice Create", "Water Create", "Body Heal", "Gravity Down",
+    "Slime Skin", "Water Breath", "Mind Enabler", "Transmute", "Entangle", "Shapeshifter", "Harry",
+    "Kaiana", "Laura", "Sora", "Hiromi", "Ryo", "Uncle Alford", "Adrian", "White Roundies",
+    "Walking Flathead", "Sweet Sting", "Moist Breath", "Four Kingdoms", "Prosperity Treaty",
+    "Greed Period", "Monnolow", "Sunnohigh"
+  ],
+  "deovandski": [
+    "Wizard Deo Solutions", "Gassy Donkey", "Superb Hawk", "Sinoi the Fisherman", "Balls farm", "Paper plane",
+    "Whack a Miku", "Hatsune Miku", "Peeta", "Huehuehue", "Lifemaxxing", "AuDHD", "Kanban board", "Stats for nerds",
+    "Vraki mode", "Perfect egg", "Dino Ambush", "Ice fishing", "Saturday Night Fever", "KitKot", "Lake of the Woods",
+    "Red Letter Media", "Best of the Worst", "Mentour Pilot", "Churrasco", "Chimarrão", "Biomarker Lab", "Board Games",
+    "Camping", "Cycling", "Hearth", "Front Row", "Explorer", "Philosophy", "Multilingual", "Photographer", "Traveler",
+    "Influencer", "Life hacks", "Pixel pets", "Keyboard Tester",
+    "Framework Laptop", "Shoulders I stand on"
+  ]
+}

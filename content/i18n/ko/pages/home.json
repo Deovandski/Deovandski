@@ -487,6 +487,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder TV show 32 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">순위 32: </span> 임시 TV 프로그램 32"
  },
+ "091d7d54d819": {
+  "en": "Type: {word}",
+  "t": "입력: {word}"
+ },
  "09284e3db63b": {
   "en": "Deyr fé, deyja frændr, deyr sjalfr it sama;<br>en orðstírr deyr aldregi, hveim er sér góðan getr.",
   "t": "Deyr fé, deyja frændr, deyr sjalfr it sama;<br>en orðstírr deyr aldregi, hveim er sér góðan getr."
@@ -1010,6 +1014,10 @@
  "148bcf6b6644": {
   "en": "Deo's old TikTok profile, @deovandski: 732 followers, 118.5K likes, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, above a grid of video thumbnails",
   "t": "Deo의 옛 TikTok 프로필 @deovandski: 팔로워 732명, 좋아요 11.85만 개, 자기소개 \"Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev\", 그 아래 영상 썸네일 격자"
+ },
+ "149b8a51f5ba": {
+  "en": "&gt; Change length",
+  "t": "&gt; 길이 바꾸기"
  },
  "149d7ab31b5c": {
   "en": "Go!",
@@ -1619,6 +1627,10 @@
   "en": "You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it's still in the air) and take it down before you run dry.",
   "t": "네가 장애물이야. 공룡이 달려. 넌 공룡에게 물건을 던져. 지금부터 매초 마나가 쌓여. 던질 타이밍을 맞춰서(아직 공중에 있을 때 맞혀) 마나가 바닥나기 전에 쓰러뜨려."
  },
+ "22c28dae3b22": {
+  "en": "Fastest word: {word} ({ms} ms)",
+  "t": "가장 빨리 친 단어: {word} ({ms} ms)"
+ },
  "22db4557409d": {
   "en": " Xbox + PlayStation  ·  estimated ",
   "t": "Xbox + PlayStation  ·  추정"
@@ -1986,6 +1998,14 @@
  "29990da75615": {
   "en": " <span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #3: </span>Shisa Kanko <span lang=\"ja\" translate=\"no\" data-astro-cid-xtzphevd=\"\">(指差喚呼)</span> ",
   "t": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">라이프핵 #3: </span>시사칸코 <span lang=\"ja\" translate=\"no\" data-astro-cid-xtzphevd=\"\">(指差喚呼)</span>"
+ },
+ "29aa635ef1ef": {
+  "en": "The first project I built with Claude Code, to learn it and brush up on React.js: a keyboard tester in Miku colours. Press every key until the whole board glows teal, watch a piano-roll of your keystrokes, and check for double presses and how many keys your board takes at once. In Chrome it also reads the OS layout and the keyboard’s USB details. It grew into the Type like a hacker game behind ▶ Play.",
+  "t": "Claude Code로 만든 첫 프로젝트야. Claude Code를 배우고 React.js 실력도 다시 다지려고 만들었지: 미쿠 색상의 키보드 테스터. 키보드 전체가 청록색으로 빛날 때까지 모든 키를 누르고, 키 입력 피아노 롤을 보고, 두 번 눌림과 동시에 몇 개의 키를 인식하는지 확인할 수 있어. Chrome에서는 OS 자판 배열과 키보드의 USB 정보도 읽어. 이게 ▶ Play의 '해커처럼 타이핑' 게임으로 자랐어."
+ },
+ "29d99644fa2f": {
+  "en": "Best: {n} WPM",
+  "t": "최고: {n} WPM"
  },
  "29e6444c3c62": {
   "en": "Brooks &amp; Dunn",
@@ -2818,6 +2838,10 @@
  "3aa7e2bfd3d3": {
   "en": "One square per day, one row per year. The brighter the square, the higher the number. A colored edge marks each exercise day. Faded squares are days outside your filters.",
   "t": "하루 한 칸, 해마다 한 줄. 칸이 밝을수록 숫자가 커요. 색 테두리는 운동한 날이에요. 흐린 칸은 필터 밖의 날이에요."
+ },
+ "3aabbac79453": {
+  "en": "Rank: elite hacker.",
+  "t": "등급: 엘리트 해커."
  },
  "3aaff43b4038": {
   "en": " UH ",
@@ -3771,6 +3795,10 @@
   "en": "Sleepy",
   "t": "졸려"
  },
+ "4f79714c2761": {
+  "en": "Rank: grandma mode.",
+  "t": "등급: 할머니 모드."
+ },
  "4f804d1ee952": {
   "en": "Wing and the morning sky",
   "t": "날개와 아침 하늘"
@@ -4178,6 +4206,10 @@
  "5656b9b79b03": {
   "en": "Wednesday",
   "t": "수요일"
+ },
+ "565dab178b84": {
+  "en": "A typing game in a terminal: type each word as it shows up.",
+  "t": "터미널 타이핑 게임: 나오는 단어를 쳐 봐."
  },
  "5675306240db": {
   "en": "The Icelandic compass symbol, associated with guidance and finding one's way. I intentionally placed its center point over a single long white hair that I consider mystical.",
@@ -5155,6 +5187,10 @@
   "en": "My top 39 TV shows. Anime gets its own tab because of how much it means to me.",
   "t": "내가 가장 좋아하는 TV 시리즈 39편. 애니메이션은 내게 의미가 커서 따로 탭이 있어."
  },
+ "69a0fbf3e13c": {
+  "en": "ACCESS GRANTED",
+  "t": "접근 허가"
+ },
  "69c642153907": {
   "en": "Fukuoka has more yatai, open-air food stalls, than the rest of Japan combined: about a hundred pop up every night and vanish before morning.",
   "t": "후쿠오카에는 일본의 나머지 지역을 다 합친 것보다 야타이(포장마차)가 더 많아: 매일 밤 약 100곳이 나타났다가 아침 전에 사라져."
@@ -5283,6 +5319,10 @@
   "en": "Vraki<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (written in Vraki)</span>",
   "t": "브라키<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (브라키 문자로 표기)</span>"
  },
+ "6c846bf839ce": {
+  "en": "Tap here to bring up your keyboard. Esc stops.",
+  "t": "여기를 탭하면 키보드가 나와. Esc로 멈춰."
+ },
  "6c9a005a2b28": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10"
@@ -5379,6 +5419,10 @@
   "en": "MB",
   "t": "MB"
  },
+ "6e9803b365fa": {
+  "en": "&gt; Again",
+  "t": "&gt; 다시"
+ },
  "6edd44939f5a": {
   "en": "Where was this photo taken?",
   "t": "이 사진은 어디서 찍었을까?"
@@ -5410,6 +5454,10 @@
  "6f683304f3df": {
   "en": "Success Kid",
   "t": "석세스 키드"
+ },
+ "6fabf877a966": {
+  "en": "Hack the terminal: type each word as it shows up, as fast and clean as you can. Words come from this site and #HusbandOutWorld.",
+  "t": "터미널을 해킹해 봐: 단어가 나오면 최대한 빠르고 정확하게 쳐. 단어는 이 사이트와 #HusbandOutWorld에서 가져왔어."
  },
  "6ff33102b1c6": {
   "en": "Wishlist",
@@ -5626,6 +5674,10 @@
  "740587c66df0": {
   "en": "If thou art a <strong>Cardinal of the Touch</strong>, thou shalt know when the meat is done by touch alone. Otherwise, use the thermometer.",
   "t": "네가 <strong>손끝의 추기경</strong>이라면, 오직 손끝만으로 고기가 다 익은 때를 알리라. 그렇지 않다면 온도계를 쓰라."
+ },
+ "7451b60c1e24": {
+  "en": "Type like a hacker",
+  "t": "해커처럼 타이핑"
  },
  "747e4b5cb273": {
   "en": " Pixel 8 Pro tech specs ",
@@ -6222,6 +6274,10 @@
  "80c9de545946": {
   "en": "Do Better!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (written in Vraki)</span>",
   "t": "Do Better!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (브라키 문자로 표기)</span>"
+ },
+ "80cca7aca48a": {
+  "en": "Type like a hacker: turn your phone sideways",
+  "t": "해커처럼 타이핑: 휴대폰을 가로로 돌려 줘"
  },
  "80cdcf834adc": {
   "en": "Enlarge: Extra-crunchy breaded fillet",
@@ -7187,6 +7243,10 @@
   "en": " Survival &amp; crafting ",
   "t": "생존 &amp; 제작"
  },
+ "966e68d10967": {
+  "en": "Back to Developer",
+  "t": "개발자로 돌아가기"
+ },
  "967cc1c07fba": {
   "en": " <span class=\"shelf__dot\" style=\"background: #d55181\" data-astro-cid-nqpad2wp=\"\"></span> Idle &amp; clickers: 19,668 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #d55181\" data-astro-cid-nqpad2wp=\"\"></span> 방치형 &amp; 클리커: 19,668 시간"
@@ -7326,6 +7386,10 @@
  "9894f4e31fa0": {
   "en": "Enlarge: Cruise ships on the horizon",
   "t": "확대: 수평선의 크루즈선"
+ },
+ "98994d18a884": {
+  "en": "Deo Keyboard Tester: a full-size keyboard on screen in teal, silver and pink, with the keys pressed so far glowing teal, a keystroke roll and a progress bar",
+  "t": "Deo Keyboard Tester: 화면 속 풀사이즈 키보드. 청록색, 은색, 분홍색이고, 지금까지 누른 키가 청록색으로 빛나며 키 입력 롤과 진행 막대가 있다"
  },
  "989ad0d2851a": {
   "en": "Ursu Sintasus in Spore: a cream-white creature with moose antlers, big orange eyes, a wide smile and black-striped arms and legs.",
@@ -7538,6 +7602,10 @@
  "9db746ec5820": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#16: </span>Best of the Worst: Jack-O, Rock n' Roll Nightmare, and Shark Exorcist",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#16: </span>Best of the Worst: Jack-O, Rock n' Roll Nightmare, and Shark Exorcist"
+ },
+ "9dbda63d31a6": {
+  "en": "New best for {len} words!",
+  "t": "{len}단어 최고 기록 경신!"
  },
  "9dbfccdd9baa": {
   "en": "🔥 {n}-post streak! Don't break it!",
@@ -8539,6 +8607,10 @@
   "en": "South America",
   "t": "남아메리카"
  },
+ "b204db65193a": {
+  "en": "Word {n} of {total}: {word}",
+  "t": "단어 {n}/{total}: {word}"
+ },
  "b20c3b6f0b9d": {
   "en": "More of my story in the light novel afterwords at husbandoutworld.com.",
   "t": "내 이야기는 husbandoutworld.com의 라이트노벨 후기에 더 있어."
@@ -8999,6 +9071,10 @@
   "en": "Next",
   "t": "다음"
  },
+ "bca0792b6f4f": {
+  "en": "Typos: {n}",
+  "t": "오타: {n}"
+ },
  "bca97bae09e1": {
   "en": " Xbox  ·  estimated ",
   "t": "Xbox  ·  추정"
@@ -9014,6 +9090,10 @@
  "bcf9f12dccef": {
   "en": " Days of my life ",
   "t": "내 인생의 날들"
+ },
+ "bd1693af5c1a": {
+  "en": "&gt; Start",
+  "t": "&gt; 시작"
  },
  "bd234a44fc67": {
   "en": "Tap!",
@@ -9098,6 +9178,10 @@
  "bef1f4c46c04": {
   "en": "Enlarge: Ancient stupa",
   "t": "확대: 오래된 불탑"
+ },
+ "bf283b5225d9": {
+  "en": "How many words?",
+  "t": "몇 단어로 할래?"
  },
  "bf301c3fb31a": {
   "en": " 570 h ",
@@ -9230,6 +9314,10 @@
  "c169b50f6151": {
   "en": " D · Seasons ",
   "t": "D · 계절"
+ },
+ "c18e26cf2987": {
+  "en": "{wpm} WPM, {acc}% accuracy, {time} seconds.",
+  "t": "{wpm} WPM, 정확도 {acc}%, {time}초."
  },
  "c1947f39235d": {
   "en": "Camera settings",
@@ -9486,6 +9574,10 @@
  "c7c4bc97cb6b": {
   "en": "Solen Zara",
   "t": "Solen Zara"
+ },
+ "c86a7f08f305": {
+  "en": "Rank: script kiddie no more.",
+  "t": "등급: 이제 스크립트 키디는 아님."
  },
  "c886f4fa5cd8": {
   "en": "Praise the source of the beef thou art eating. Thank the soul that was given for thy enjoyment and for thy nourishment.",
@@ -10306,6 +10398,10 @@
  "d874fc40c2c3": {
   "en": " HO ",
   "t": "HO"
+ },
+ "d87d4a84afb2": {
+  "en": "Type each word as it shows up, as fast and as clean as you can. The next word only appears once this one is right. Case and accents don't count.",
+  "t": "단어가 나오면 최대한 빠르고 정확하게 쳐. 지금 단어를 맞게 쳐야 다음 단어가 나와. 대소문자와 악센트는 상관없어."
  },
  "d8a609a8996e": {
   "en": "Shoutout to Unlimited Blade Works, and especially Heaven's Feel. Grounded world rules, and each branch of the story is truly unique.",
@@ -11335,6 +11431,10 @@
   "en": "Enlarge: Steam plume over the snowy fields",
   "t": "확대: 눈 덮인 들판 위의 증기 기둥"
  },
+ "f11ba0114af7": {
+  "en": "Best for {len} words: {wpm} WPM, {acc}%",
+  "t": "{len}단어 최고 기록: {wpm} WPM, {acc}%"
+ },
  "f15dcab95fa8": {
   "en": "Dino Ambush: turn your phone sideways",
   "t": "공룡 매복: 휴대폰을 가로로 돌려 줘"
@@ -11791,6 +11891,10 @@
   "en": "32 h",
   "t": "32 시간"
  },
+ "fb8bbc367e08": {
+  "en": " Deo Keyboard Tester <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">October 2026 · my first Claude Code project</span> ",
+  "t": "Deo Keyboard Tester <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">2026년 10월 · 내 첫 Claude Code 프로젝트</span>"
+ },
  "fb9def26ced0": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">🍖</span> Feed ",
   "t": "<span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">🍖</span> 밥 주기"
@@ -11890,6 +11994,10 @@
  "fdee7e9f221d": {
   "en": "Drum kit",
   "t": "드럼 세트"
+ },
+ "fe633f3fa349": {
+  "en": "Rank: hunt and peck.",
+  "t": "등급: 독수리 타법."
  },
  "fe70fc1809e8": {
   "en": "Peeta watching the big screen",

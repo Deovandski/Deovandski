@@ -487,6 +487,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 32: </span> Placeholder TV show 32 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Peringkat 32: </span> Acara TV sementara 32"
  },
+ "091d7d54d819": {
+  "en": "Type: {word}",
+  "t": "Ketik: {word}"
+ },
  "09284e3db63b": {
   "en": "Deyr fé, deyja frændr, deyr sjalfr it sama;<br>en orðstírr deyr aldregi, hveim er sér góðan getr.",
   "t": "Deyr fé, deyja frændr, deyr sjalfr it sama;<br>en orðstírr deyr aldregi, hveim er sér góðan getr."
@@ -1010,6 +1014,10 @@
  "148bcf6b6644": {
   "en": "Deo's old TikTok profile, @deovandski: 732 followers, 118.5K likes, bio “Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev”, above a grid of video thumbnails",
   "t": "Profil TikTok lama Deo, @deovandski: 732 pengikut, 118,5 rb suka, bio \"Author of Dark Fantasy Ecchi Isekai @husbandoutthisworld and x++ dev\", di atas kisi thumbnail video"
+ },
+ "149b8a51f5ba": {
+  "en": "&gt; Change length",
+  "t": "&gt; Ganti panjang"
  },
  "149d7ab31b5c": {
   "en": "Go!",
@@ -1619,6 +1627,10 @@
   "en": "You are the obstacles. The dino runs. You throw things at it. Mana builds every second from now; time your throws (catch it while it's still in the air) and take it down before you run dry.",
   "t": "Kamulah rintangannya. Dino berlari. Kamu melempar benda ke arahnya. Mana terkumpul setiap detik mulai sekarang; atur waktu lemparanmu (tangkap dia saat masih di udara) dan jatuhkan dia sebelum manamu habis."
  },
+ "22c28dae3b22": {
+  "en": "Fastest word: {word} ({ms} ms)",
+  "t": "Kata tercepat: {word} ({ms} ms)"
+ },
  "22db4557409d": {
   "en": " Xbox + PlayStation  ·  estimated ",
   "t": "Xbox + PlayStation  ·  perkiraan"
@@ -1986,6 +1998,14 @@
  "29990da75615": {
   "en": " <span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Life hack #3: </span>Shisa Kanko <span lang=\"ja\" translate=\"no\" data-astro-cid-xtzphevd=\"\">(指差喚呼)</span> ",
   "t": "<span class=\"sr-only\" data-astro-cid-xtzphevd=\"\">Trik hidup #3: </span>Shisa Kanko <span lang=\"ja\" translate=\"no\" data-astro-cid-xtzphevd=\"\">(指差喚呼)</span>"
+ },
+ "29aa635ef1ef": {
+  "en": "The first project I built with Claude Code, to learn it and brush up on React.js: a keyboard tester in Miku colours. Press every key until the whole board glows teal, watch a piano-roll of your keystrokes, and check for double presses and how many keys your board takes at once. In Chrome it also reads the OS layout and the keyboard’s USB details. It grew into the Type like a hacker game behind ▶ Play.",
+  "t": "Proyek pertama yang kubuat dengan Claude Code, untuk mempelajarinya sekaligus menyegarkan React.js-ku: penguji keyboard dengan warna Miku. Tekan setiap tombol sampai seluruh keyboard menyala teal, lihat piano-roll ketukanmu, dan cek tekanan ganda serta berapa banyak tombol yang bisa diterima keyboard sekaligus. Di Chrome, ia juga membaca tata letak sistem dan info USB keyboard. Proyek ini tumbuh jadi gim Mengetik ala hacker di ▶ Play."
+ },
+ "29d99644fa2f": {
+  "en": "Best: {n} WPM",
+  "t": "Terbaik: {n} WPM"
  },
  "29e6444c3c62": {
   "en": "Brooks &amp; Dunn",
@@ -2818,6 +2838,10 @@
  "3aa7e2bfd3d3": {
   "en": "One square per day, one row per year. The brighter the square, the higher the number. A colored edge marks each exercise day. Faded squares are days outside your filters.",
   "t": "Satu kotak per hari, satu baris per tahun. Makin terang kotaknya, makin tinggi angkanya. Tepi berwarna menandai setiap hari olahraga. Kotak pudar adalah hari di luar filtermu."
+ },
+ "3aabbac79453": {
+  "en": "Rank: elite hacker.",
+  "t": "Peringkat: hacker elite."
  },
  "3aaff43b4038": {
   "en": " UH ",
@@ -3771,6 +3795,10 @@
   "en": "Sleepy",
   "t": "Ngantuk"
  },
+ "4f79714c2761": {
+  "en": "Rank: grandma mode.",
+  "t": "Peringkat: mode nenek."
+ },
  "4f804d1ee952": {
   "en": "Wing and the morning sky",
   "t": "Sayap dan langit pagi"
@@ -4178,6 +4206,10 @@
  "5656b9b79b03": {
   "en": "Wednesday",
   "t": "Rabu"
+ },
+ "565dab178b84": {
+  "en": "A typing game in a terminal: type each word as it shows up.",
+  "t": "Gim mengetik di terminal: ketik setiap kata begitu muncul."
  },
  "5675306240db": {
   "en": "The Icelandic compass symbol, associated with guidance and finding one's way. I intentionally placed its center point over a single long white hair that I consider mystical.",
@@ -5155,6 +5187,10 @@
   "en": "My top 39 TV shows. Anime gets its own tab because of how much it means to me.",
   "t": "39 acara TV favoritku. Anime punya tabnya sendiri karena begitu berarti bagiku."
  },
+ "69a0fbf3e13c": {
+  "en": "ACCESS GRANTED",
+  "t": "AKSES DIBERIKAN"
+ },
  "69c642153907": {
   "en": "Fukuoka has more yatai, open-air food stalls, than the rest of Japan combined: about a hundred pop up every night and vanish before morning.",
   "t": "Fukuoka punya lebih banyak yatai, kios makanan terbuka, daripada seluruh Jepang lainnya digabungkan: sekitar seratus muncul setiap malam dan menghilang sebelum pagi."
@@ -5283,6 +5319,10 @@
   "en": "Vraki<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (written in Vraki)</span>",
   "t": "Vraki<span class=\"sr-only\" data-astro-cid-eh4ni7bj=\"\"> (ditulis dalam Vraki)</span>"
  },
+ "6c846bf839ce": {
+  "en": "Tap here to bring up your keyboard. Esc stops.",
+  "t": "Ketuk di sini untuk memunculkan keyboard. Esc untuk berhenti."
+ },
  "6c9a005a2b28": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#4: </span>Best of the Worst: Plinketto #10"
@@ -5379,6 +5419,10 @@
   "en": "MB",
   "t": "MB"
  },
+ "6e9803b365fa": {
+  "en": "&gt; Again",
+  "t": "&gt; Lagi"
+ },
  "6edd44939f5a": {
   "en": "Where was this photo taken?",
   "t": "Di mana foto ini diambil?"
@@ -5410,6 +5454,10 @@
  "6f683304f3df": {
   "en": "Success Kid",
   "t": "Success Kid"
+ },
+ "6fabf877a966": {
+  "en": "Hack the terminal: type each word as it shows up, as fast and clean as you can. Words come from this site and #HusbandOutWorld.",
+  "t": "Retas terminalnya: ketik setiap kata begitu muncul, secepat dan serapi mungkin. Kata-katanya dari situs ini dan #HusbandOutWorld."
  },
  "6ff33102b1c6": {
   "en": "Wishlist",
@@ -5626,6 +5674,10 @@
  "740587c66df0": {
   "en": "If thou art a <strong>Cardinal of the Touch</strong>, thou shalt know when the meat is done by touch alone. Otherwise, use the thermometer.",
   "t": "Kalau kau seorang <strong>Kardinal Sentuhan</strong>, kau akan tahu kapan daging matang hanya dengan sentuhan. Kalau tidak, pakai termometer."
+ },
+ "7451b60c1e24": {
+  "en": "Type like a hacker",
+  "t": "Mengetik ala hacker"
  },
  "747e4b5cb273": {
   "en": " Pixel 8 Pro tech specs ",
@@ -6222,6 +6274,10 @@
  "80c9de545946": {
   "en": "Do Better!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (written in Vraki)</span>",
   "t": "Do Better!<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ditulis dalam Vraki)</span>"
+ },
+ "80cca7aca48a": {
+  "en": "Type like a hacker: turn your phone sideways",
+  "t": "Mengetik ala hacker: putar ponselmu ke posisi menyamping"
  },
  "80cdcf834adc": {
   "en": "Enlarge: Extra-crunchy breaded fillet",
@@ -7187,6 +7243,10 @@
   "en": " Survival &amp; crafting ",
   "t": "Bertahan hidup &amp; crafting"
  },
+ "966e68d10967": {
+  "en": "Back to Developer",
+  "t": "Kembali ke Pengembang"
+ },
  "967cc1c07fba": {
   "en": " <span class=\"shelf__dot\" style=\"background: #d55181\" data-astro-cid-nqpad2wp=\"\"></span> Idle &amp; clickers: 19,668 h ",
   "t": "<span class=\"shelf__dot\" style=\"background: #d55181\" data-astro-cid-nqpad2wp=\"\"></span> Idle &amp; clicker: 19,668 h"
@@ -7326,6 +7386,10 @@
  "9894f4e31fa0": {
   "en": "Enlarge: Cruise ships on the horizon",
   "t": "Perbesar: Kapal pesiar di cakrawala"
+ },
+ "98994d18a884": {
+  "en": "Deo Keyboard Tester: a full-size keyboard on screen in teal, silver and pink, with the keys pressed so far glowing teal, a keystroke roll and a progress bar",
+  "t": "Deo Keyboard Tester: keyboard ukuran penuh di layar berwarna teal, perak, dan merah muda, tombol yang sudah ditekan menyala teal, dengan gulungan ketukan dan bilah kemajuan"
  },
  "989ad0d2851a": {
   "en": "Ursu Sintasus in Spore: a cream-white creature with moose antlers, big orange eyes, a wide smile and black-striped arms and legs.",
@@ -7538,6 +7602,10 @@
  "9db746ec5820": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#16: </span>Best of the Worst: Jack-O, Rock n' Roll Nightmare, and Shark Exorcist",
   "t": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#16: </span>Best of the Worst: Jack-O, Rock n' Roll Nightmare, and Shark Exorcist"
+ },
+ "9dbda63d31a6": {
+  "en": "New best for {len} words!",
+  "t": "Rekor baru untuk {len} kata!"
  },
  "9dbfccdd9baa": {
   "en": "🔥 {n}-post streak! Don't break it!",
@@ -8539,6 +8607,10 @@
   "en": "South America",
   "t": "Amerika Selatan"
  },
+ "b204db65193a": {
+  "en": "Word {n} of {total}: {word}",
+  "t": "Kata {n} dari {total}: {word}"
+ },
  "b20c3b6f0b9d": {
   "en": "More of my story in the light novel afterwords at husbandoutworld.com.",
   "t": "Lebih banyak kisahku di kata penutup light novel di husbandoutworld.com."
@@ -8999,6 +9071,10 @@
   "en": "Next",
   "t": "Berikutnya"
  },
+ "bca0792b6f4f": {
+  "en": "Typos: {n}",
+  "t": "Salah ketik: {n}"
+ },
  "bca97bae09e1": {
   "en": " Xbox  ·  estimated ",
   "t": "Xbox  ·  perkiraan"
@@ -9014,6 +9090,10 @@
  "bcf9f12dccef": {
   "en": " Days of my life ",
   "t": "Hari-hari hidupku"
+ },
+ "bd1693af5c1a": {
+  "en": "&gt; Start",
+  "t": "&gt; Mulai"
  },
  "bd234a44fc67": {
   "en": "Tap!",
@@ -9098,6 +9178,10 @@
  "bef1f4c46c04": {
   "en": "Enlarge: Ancient stupa",
   "t": "Perbesar: Stupa kuno"
+ },
+ "bf283b5225d9": {
+  "en": "How many words?",
+  "t": "Berapa kata?"
  },
  "bf301c3fb31a": {
   "en": " 570 h ",
@@ -9230,6 +9314,10 @@
  "c169b50f6151": {
   "en": " D · Seasons ",
   "t": "D · Musim"
+ },
+ "c18e26cf2987": {
+  "en": "{wpm} WPM, {acc}% accuracy, {time} seconds.",
+  "t": "{wpm} WPM, akurasi {acc}%, {time} detik."
  },
  "c1947f39235d": {
   "en": "Camera settings",
@@ -9486,6 +9574,10 @@
  "c7c4bc97cb6b": {
   "en": "Solen Zara",
   "t": "Solen Zara"
+ },
+ "c86a7f08f305": {
+  "en": "Rank: script kiddie no more.",
+  "t": "Peringkat: bukan script kiddie lagi."
  },
  "c886f4fa5cd8": {
   "en": "Praise the source of the beef thou art eating. Thank the soul that was given for thy enjoyment and for thy nourishment.",
@@ -10306,6 +10398,10 @@
  "d874fc40c2c3": {
   "en": " HO ",
   "t": "HO"
+ },
+ "d87d4a84afb2": {
+  "en": "Type each word as it shows up, as fast and as clean as you can. The next word only appears once this one is right. Case and accents don't count.",
+  "t": "Ketik setiap kata begitu muncul, secepat dan serapi mungkin. Kata berikutnya baru muncul kalau yang ini sudah benar. Huruf besar dan aksen tidak dihitung."
  },
  "d8a609a8996e": {
   "en": "Shoutout to Unlimited Blade Works, and especially Heaven's Feel. Grounded world rules, and each branch of the story is truly unique.",
@@ -11335,6 +11431,10 @@
   "en": "Enlarge: Steam plume over the snowy fields",
   "t": "Perbesar: Kepulan uap di atas ladang bersalju"
  },
+ "f11ba0114af7": {
+  "en": "Best for {len} words: {wpm} WPM, {acc}%",
+  "t": "Terbaik untuk {len} kata: {wpm} WPM, {acc}%"
+ },
  "f15dcab95fa8": {
   "en": "Dino Ambush: turn your phone sideways",
   "t": "Dino Ambush: putar ponselmu ke posisi menyamping"
@@ -11791,6 +11891,10 @@
   "en": "32 h",
   "t": "32 h"
  },
+ "fb8bbc367e08": {
+  "en": " Deo Keyboard Tester <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">October 2026 · my first Claude Code project</span> ",
+  "t": "Deo Keyboard Tester <span class=\"project-cards__date\" data-astro-cid-kzrzjzyp=\"\">Oktober 2026 · proyek Claude Code pertamaku</span>"
+ },
  "fb9def26ced0": {
   "en": " <span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">🍖</span> Feed ",
   "t": "<span aria-hidden=\"true\" data-astro-cid-imcujtne=\"\">🍖</span> Beri makan"
@@ -11890,6 +11994,10 @@
  "fdee7e9f221d": {
   "en": "Drum kit",
   "t": "Drum kit"
+ },
+ "fe633f3fa349": {
+  "en": "Rank: hunt and peck.",
+  "t": "Peringkat: mengetik sebelas jari."
  },
  "fe70fc1809e8": {
   "en": "Peeta watching the big screen",
