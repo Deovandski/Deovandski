@@ -40,6 +40,56 @@ const TARGET = '2076-03-09T03:39:39-05:00';
   .death :global(.help p) { margin: 0; }
   /* A highlighted line in the text (<mark> in content/death.md): teal like the rest of the site. */
   .death :global(mark) { background: var(--teal); color: var(--night); padding: 0.05em 0.3em; border-radius: 4px; font-weight: 700; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  /* The funeral songs (content/death.md): three cards, each one a link to the song. */
+  .death :global(.songs) {
+    list-style: none;
+    margin: 1rem 0 1.5rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 0.75rem;
+  }
+  .death :global(.song) {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    height: 100%;
+    padding: 1rem 1rem 0.9rem;
+    padding-inline-start: 3.4rem;
+    border-radius: 14px;
+    border: 1px solid rgba(190, 200, 209, 0.16);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text);
+    text-decoration: none;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .death :global(.song:hover),
+  .death :global(.song:focus-visible) {
+    border-color: var(--teal);
+    background: rgba(57, 197, 187, 0.08);
+  }
+  .death :global(.song:focus-visible) { outline: 2px solid var(--teal); outline-offset: 2px; }
+  .death :global(.song__n) {
+    position: absolute;
+    inset-inline-start: 1rem;
+    top: 1rem;
+    display: grid;
+    place-items: center;
+    width: 1.8rem;
+    height: 1.8rem;
+    border-radius: 50%;
+    background: var(--pink, #e12885);
+    color: #fff;
+    font-weight: 800;
+    font-size: 0.9em;
+  }
+  .death :global(.song__title) { font-weight: 800; font-size: var(--step-1); line-height: 1.25; }
+  .death :global(.song__artist) { color: var(--muted); }
+  .death :global(.song__go) { margin-top: auto; padding-top: 0.5rem; color: var(--teal); font-weight: 700; font-size: var(--step--1); }
+  @media (prefers-reduced-motion: reduce) {
+    .death :global(.song) { transition: none; }
+  }
   .death :global(.verse) {
     margin: 3rem 0 0;
     padding-top: 1.75rem;

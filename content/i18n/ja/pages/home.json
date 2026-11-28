@@ -31,6 +31,10 @@
   "en": "Enlarge: Inside the cozy ice castle",
   "t": "拡大: 居心地のいいアイスキャッスルの中"
  },
+ "00ee55d18fda": {
+  "en": " Philadelphia Orchestra: The Four Seasons ",
+  "t": "フィラデルフィア管弦楽団：四季"
+ },
  "00f03137e155": {
   "en": "Easy",
   "t": "イージー"
@@ -263,13 +267,13 @@
   "en": "The algorithm",
   "t": "アルゴリズム"
  },
- "05336798f151": {
-  "en": "Left wrist, written in <a href=\"https://deovandski.github.io/vraki-windows/\">Vraki</a>. It says exactly that because it condenses the four runes above into a single goal: be true to myself. That means knowing myself, my inner structure, and my moral compass. This is my autistic side.",
-  "t": "左手首、<a href=\"https://deovandski.github.io/vraki-windows/\">ヴラキ文字</a>で書いてある。まさにこの言葉なのは、上の四つのルーンを一つの目標に凝縮しているからだ：自分に正直であること。つまり、自分自身を、自分の内側の構造と道徳の羅針盤を知ること。これは俺の自閉症の側面だ。"
- },
  "053aa1d851d8": {
   "en": "Português",
   "t": "Português"
+ },
+ "0556db6ebdc1": {
+  "en": "Having these guys on in the background while I code is rather soothing. A strange thing for my autism to get hooked on, but it clearly works. Same thing with the Skyrim soundtrack and rain in the background whenever I focus on #HusbandOutWorld stuff.",
+  "t": "コーディング中にこいつらを流しておくと、なかなか癒される。俺の自閉症の脳がハマるにはおかしなものだけど、明らかに効いている。#HusbandOutWorld の作業に集中するときに、スカイリムのサントラと雨音を流すのと同じだ。"
  },
  "05a3b9fa04c0": {
   "en": "DM",
@@ -354,6 +358,10 @@
  "068fc996c32e": {
   "en": "Quiet side street",
   "t": "静かな裏通り"
+ },
+ "06990c7d1288": {
+  "en": " Caleb Hammer on YouTube ",
+  "t": "YouTube の Caleb Hammer"
  },
  "0699138fe5cc": {
   "en": "Click or drag to draw. Right-click erases.",
@@ -574,6 +582,10 @@
  "0b7f98dc29c5": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 7: </span> Placeholder TV show 7 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 7: </span> 仮のドラマ 7"
+ },
+ "0b880ef9b425": {
+  "en": "From my afterwords",
+  "t": "俺のあとがきから"
  },
  "0b9d2b2362bc": {
   "en": "Blog",
@@ -1243,6 +1255,10 @@
   "en": "Enlarge: Licensed to drive",
   "t": "拡大: 運転免許取得"
  },
+ "1a5f6e2dde4b": {
+  "en": "We have the chimarrão ritual. In the morning, we gather for it to discuss matters, sync up and make sure we're all on the same page. We also analyze past events and call each other out, so there's no rumination or resentment, only a chance for growth.",
+  "t": "うちにはシマハオン（chimarrão）の儀式がある。毎朝それを囲んで集まり、いろいろ話し合い、足並みをそろえ、全員が同じ認識でいることを確かめる。過去の出来事も分析して、互いにはっきり指摘し合う。だから思い悩むことも恨みもなく、あるのは成長のチャンスだけだ。"
+ },
  "1a6866c60e77": {
   "en": "A touch-first pixel-art fishing game in the world of Vraki. Free, no ads, open source.",
   "t": "ヴラキの世界を舞台にした、タッチ操作優先のピクセルアート釣りゲーム。無料、広告なし、オープンソース。"
@@ -1278,6 +1294,10 @@
  "1ba5fe038d58": {
   "en": "<strong>Ren Riley</strong>, <em>Wavy Thoughts</em> (2024), “I get tattoos to remind me that my body exists”: an AuDHD writer on tattoos as a way to get to know a body they had long felt disconnected from, and on the needle as a grounding practice. <a href=\"https://buttondown.com/RenRiley/archive/i-get-tattoos-to-remind-me-that-my/\">Article</a>",
   "t": "<strong>Ren Riley</strong>, <em>Wavy Thoughts</em> (2024), “I get tattoos to remind me that my body exists”：AuDHD の書き手が、長いあいだ切り離されていると感じていた自分の体を知る方法としてのタトゥーと、グラウンディングの習慣としての針について。 <a href=\"https://buttondown.com/RenRiley/archive/i-get-tattoos-to-remind-me-that-my/\">記事</a>"
+ },
+ "1bb0b72fe010": {
+  "en": " The source code of this site ",
+  "t": "このサイトのソースコード"
  },
  "1bcb6325e25c": {
   "en": "Aim at Deo again",
@@ -1386,6 +1406,10 @@
  "1eab2e778967": {
   "en": "Mana",
   "t": "マナ"
+ },
+ "1ec2fe9bd235": {
+  "en": "A private pilot license is still in my queue! In the meantime, I want to build a home cockpit simulator once I buy a house. In Singapore, at Flight Experience, I got to fly a full-scale replica of a Boeing 737-800NG cockpit, and it became a core memory. It took me back to my early teens, when I rode in the cockpit jump seat of an Airbus A320-233 taking off from Santos Dumont Airport (SDU) in Rio de Janeiro, Brazil.",
+  "t": "自家用操縦士免許はまだ俺のキューに入っている！ それまでの間、家を買ったら自宅にコックピットシミュレーターを作りたい。シンガポールのFlight Experienceで、ボーイング 737-800NG のコックピットの実物大レプリカを操縦させてもらって、それがコアメモリーになった。十代前半の頃、ブラジル・リオデジャネイロのサントス・ドゥモン空港（SDU）から離陸するエアバス A320-233 のコックピットのジャンプシートに座ったときに引き戻してくれたんだ。"
  },
  "1ece8a2f722b": {
   "en": "Men my age",
@@ -1719,10 +1743,6 @@
   "en": "Enlarge: Two whole grilled fish",
   "t": "拡大: 丸ごと焼いた魚 2 尾"
  },
- "2509194f26a2": {
-  "en": "<a href=\"https://www.youtube.com/watch?v=xB9U3m1Z4wU&t=884s\"><span lang=\"ja\">死のアリア</span> (Shi no Aria)</a> - Opera THE END",
-  "t": "<a href=\"https://www.youtube.com/watch?v=xB9U3m1Z4wU&t=884s\"><span lang=\"ja\">死のアリア</span> (Shi no Aria)</a> - Opera THE END"
- },
  "25141bd9981f": {
   "en": "Ecchi in the shape of an anime. I absolutely loved the creativity in pushing the envelope as far as possible! Yami is my favorite girl, even though IRL that type of girl tends to be toxic as fuck. Avoidant girls, especially fearful avoidants, are complete energy vampires.",
   "t": "アニメの形をしたエッチ。限界まで攻める創造力が最高に好きだ！ ヤミは一番好きな子だけど、現実ではああいうタイプの女の子はめちゃくちゃ有害になりがちだ。回避型の女の子、特に恐れ・回避型は、完全なエネルギーヴァンパイアだ。"
@@ -1835,10 +1855,6 @@
   "en": " 10 aquamarines → 1 sapphire ",
   "t": "アクアマリン 10 → サファイア 1"
  },
- "26f7b1dab8e9": {
-  "en": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna",
-  "t": "<a href=\"https://www.youtube.com/watch?v=FnkTuHP9q3o\">Helvegen</a> - Wardruna"
- },
  "2707ee77b188": {
   "en": "Fog and smoke: 6 photos",
   "t": "霧と煙：6 枚"
@@ -1922,10 +1938,6 @@
  "288e674ac350": {
   "en": " Xbox ",
   "t": "Xbox"
- },
- "28e5dcf1f691": {
-  "en": "Then, the water. Our artist cannot pass a wet surface without interrogating it. <em>Rainy night neon reflections</em> and <em>Raindrops on the window</em> converse across the years with <a href=\"https://en.wikipedia.org/wiki/Saul_Leiter\">Saul Leiter</a>, poet of the rain-streaked pane, who likewise understood that the most honest view of a city is the one slightly obscured.",
-  "t": "次に、水。我らが芸術家は、濡れた表面を問いたださずに通り過ぎることができない。<em>雨の夜、ネオンの映り込み</em>と<em>窓の雨粒</em>は、時を超えて<a href=\"https://en.wikipedia.org/wiki/Saul_Leiter\">Saul Leiter</a>と語り合う。雨に濡れた窓ガラスの詩人である彼もまた、都市をもっとも正直に見る眺めとは、少しだけ曇った眺めであることを理解していた。"
  },
  "28e75153a2a3": {
   "en": " <strong data-astro-cid-y6i3m4dy=\"\">570 h</strong>  ·  4 games  ·   <span class=\"hbc__on\" data-astro-cid-y6i3m4dy=\"\">2% of my hours</span> <span class=\"hbc__off\" data-astro-cid-y6i3m4dy=\"\">4% of my hours</span>  ",
@@ -2098,10 +2110,6 @@
  "2d4daa0f09e7": {
   "en": "Each planet is a category, sized by its hours. Press one to fly in.",
   "t": "惑星ひとつがカテゴリーで、大きさがプレイ時間です。押すと近づきます。"
- },
- "2d55e3ee144b": {
-  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. Going with the flow is very ADHD of me: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC7543022/\">adults with ADHD tend to prefer the loose, unstructured side of creativity</a>. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
-  "t": "母と同じで、俺はレシピを見ないし、何も書き留めない。流れに任せるのは、いかにも ADHD な俺らしい。<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC7543022/\">ADHD の大人は、創造性のゆるくて型にはまらない側を好む傾向がある</a>。でも写真は撮る。すごくうまくできたら、あとで再現できるようにね！おかげで毎回の食事が特別になると思う！<a href=\"#churrasco\">シュハスコ</a>は一つの面に値する！どんな食べ物も大好きだけど、線引きはある。たとえば臭豆腐はどうしても食べられない。"
  },
  "2d5647a3618b": {
   "en": "Spain makes more olive oil than any other country in the world.",
@@ -2775,6 +2783,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 2: </span> Placeholder TV show 2 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 2: </span> 仮のドラマ 2"
  },
+ "3a1d2391f3d2": {
+  "en": "The tools",
+  "t": "道具"
+ },
  "3a24f7d4c211": {
   "en": "Saved in this browser only.",
   "t": "このブラウザにだけ保存されます。"
@@ -2983,6 +2995,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 39: </span> Placeholder TV show 39 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 39: </span> 仮のドラマ 39"
  },
+ "3e592955c592": {
+  "en": " FL Studio ",
+  "t": "FL Studio"
+ },
  "3e5af99baac0": {
   "en": "14 h",
   "t": "14 時間"
@@ -3059,6 +3075,10 @@
   "en": "+ 6 more games",
   "t": "+ ほか6本"
  },
+ "3ff715fb51cb": {
+  "en": "▶ Listen on YouTube",
+  "t": "▶ YouTube で聴く"
+ },
  "3ffa50fa96b3": {
   "en": " Flight Experience Singapore ",
   "t": "Flight Experience Singapore"
@@ -3098,6 +3118,10 @@
  "40cd7fa70431": {
   "en": " Google Maps ",
   "t": "Google Maps"
+ },
+ "40f0f912608e": {
+  "en": "\nI've always been fascinated by creating music. But not only am I tone deaf, I also struggle with reading sheet music,\n          and even with something as simple as FL Studio and\n          VirtualDJ. I remember messing with them a lot, but never making progress, or\n          just making utter terrible shit. All I've been able to do by myself is fade songs in and out, fix their EQ and such in\n          Audacity. Never true music creation.\n",
+  "t": "俺はずっと音楽を作ることに魅了されてきた。でも音痴なだけじゃなく、楽譜を読むのも苦手で、FL StudioやVirtualDJみたいな簡単なものですら苦戦する。いろいろいじったのは覚えているけど、ちっとも上達しなかったか、ひどいクソみたいなものしか作れなかった。自分でできたのは、Audacityで曲をフェードイン・フェードアウトさせたり、EQ を直したりする程度だ。本当の意味での作曲は一度もない。"
  },
  "40f6fcda8a97": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 9: </span> Placeholder movie 9 ",
@@ -3291,6 +3315,10 @@
   "en": "Deo in 2026 running a race with both arms raised",
   "t": "2026 年の Deo。両腕を上げてレースを走っている"
  },
+ "464f9f06d6eb": {
+  "en": "\nAnd as to why? Read my #HusbandOutWorld Vol 4 afterword.\n",
+  "t": "理由は？ 俺の#HusbandOutWorld 第 4 巻のあとがきを読んでくれ。"
+ },
  "467918b8adcb": {
   "en": "Ursu Sintasus",
   "t": "ウルス・シンタサス"
@@ -3407,6 +3435,10 @@
   "en": "District of Columbia",
   "t": "コロンビア特別区"
  },
+ "4921cd1452a9": {
+  "en": "Left wrist, written in Vraki. It says exactly that because it condenses the four runes above into a single goal: be true to myself. That means knowing myself, my inner structure, and my moral compass. This is my autistic side.",
+  "t": "左手首、ヴラキ文字で書いてある。まさにこの言葉なのは、上の四つのルーンを一つの目標に凝縮しているからだ：自分に正直であること。つまり、自分自身を、自分の内側の構造と道徳の羅針盤を知ること。これは俺の自閉症の側面だ。"
+ },
  "4923ba32fe94": {
   "en": "For historical purposes, here’s a screenshot of what it looked like:",
   "t": "記録のために、どんな見た目だったかのスクリーンショットを載せておく："
@@ -3430,10 +3462,6 @@
  "4a0f7d45e873": {
   "en": "Posing with the DIVA!",
   "t": "歌姫とポーズ！"
- },
- "4a230679bf2e": {
-  "en": "More of my story in the light novel afterwords at <a href=\"https://www.husbandoutworld.com/\" data-astro-cid-raeu6x2e=\"\">husbandoutworld.com</a>.",
-  "t": "俺の話の続きは、<a href=\"https://www.husbandoutworld.com/\" data-astro-cid-raeu6x2e=\"\">husbandoutworld.com</a>のライトノベルのあとがきで。"
  },
  "4a2ded82016c": {
   "en": "Planted {crop}.",
@@ -3466,6 +3494,10 @@
  "4ad51e59a5be": {
   "en": " Fine line ",
   "t": "細線"
+ },
+ "4aeac6d7b271": {
+  "en": "Want a taste of the treadmill? Post away. Each post costs one energy bar, and one bar refills every second. Open Links to see, under “Under the hood”, which trick is working on you as it happens.",
+  "t": "ソーシャルの踏み車を味わいたい？どんどん投稿しよう。投稿ごとにエネルギーバーが 1 本減り、1 秒ごとに 1 本回復する。リンクを開けば、「Under the hood」の中で、今どのトリックが自分に効いているかリアルタイムで見られる。"
  },
  "4b0bb2c7cd3a": {
   "en": "Enlarge: Broccoli and chicken, robe on",
@@ -3795,10 +3827,6 @@
   "en": "The story development, the world lore and the characters themselves are really well done! That ending was unique; I still remember pieces of it.",
   "t": "ストーリーの展開も、世界観も、キャラクター自体も本当によくできている！ あの結末は独特で、今でもところどころ覚えている。"
  },
- "5076856fe34c": {
-  "en": "I’ve fished in 3 countries so far: Brazil, the United States and Malaysia. So many more countries to fish, so little time huehue. I’ve been to Thailand multiple times, but I haven’t hit up <a href=\"https://www.phuket-monster-fishing-park.com/\">Monster Fishing Park in Phuket</a> yet! Meanwhile, back closer to home, <a href=\"https://lakeofthewoodsmn.com/\">Lake of the Woods</a> is nice, and deep-fried walleye makes me salivate just thinking about it… And I also want to eat freshly caught, grilled grouper in Langkawi! That floating restaurant was downright one of the best life experiences I’ve had, gastronomically speaking.",
-  "t": "これまで釣りをした国は3か国：ブラジル、アメリカ、マレーシア。釣りたい国は山ほどあるのに、時間が足りない huehue。タイには何度も行ったけど、<a href=\"https://www.phuket-monster-fishing-park.com/\">プーケットの Monster Fishing Park</a> にはまだ行けていない！ 一方、地元に近いところでは <a href=\"https://lakeofthewoodsmn.com/\">レイク・オブ・ザ・ウッズ</a> がいいし、ウォールアイの唐揚げは考えただけでよだれが出る… それに、ランカウイで釣れたての焼いたハタも食べたい！ あの水上レストランは、食の面で言えば間違いなく人生最高の体験のひとつだった。"
- },
  "5088ebe3cd7c": {
   "en": "More mango!",
   "t": "マンゴーもっと！"
@@ -3902,6 +3930,10 @@
  "520e20d140b5": {
   "en": "After exercise",
   "t": "運動のあと"
+ },
+ "521c2b7edcb0": {
+  "en": "Then, as I wrote in my Vol. 3 afterword, someone became the catalyst for a quantum leap. Hypervigilance, mental abuse, misery, a pile of unresolved crap, and a major crack in my masking overloaded my OS until it hit a kernel panic: my nervous system was frying from the inside out. But this time, I didn’t even think of the same “solution” as in 2016. I had collected enough experience and self-understanding to see it: I’m not just ADHD, or anxious, or GAD, as I wrote in my Vol. 1 afterword. It had fucking finally clicked! I’m full-blown AuDHD, and I was in the middle of my true unmasking, after my soul had been drained of all empathy, love, and care, to the point that I questioned who I even was. I took the opportunity life handed me and turned it into massive growth, knowledge, and a healthier way of living, both mentally and physically.",
+  "t": "そして、俺が第 3 巻のあとがきに書いたように、ある人物が量子的飛躍のきっかけになった。過剰な警戒、精神的な虐待、苦しみ、未解決のクソの山、そしてマスクに入った大きなひびが、カーネルパニックを起こすまで俺の OS を過負荷にした：神経系が内側から焼き切れていた。でも今回は、2016 年と同じ「解決策」なんて考えもしなかった。それを見抜くだけの経験と自己理解を積んでいたんだ：俺はただの ADHD でも、不安症でも、GAD でもない。第 1 巻のあとがきにそう書いたけどな。クソ、ついにピンと来た！ 俺は正真正銘の AuDHD で、本当のアンマスキングの真っ只中にいた。魂から共感も愛も思いやりも吸い尽くされて、自分が誰なのかさえ疑うほどになったあとでね。人生が差し出してくれたチャンスをつかんで、それを大きな成長と、知識と、心身ともにもっと健康な生き方に変えた。"
  },
  "521cb68c2c31": {
   "en": "Ceará",
@@ -4355,6 +4387,10 @@
   "en": "Kyaa~! (⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)",
   "t": "きゃ〜！(⁄ ⁄&gt;⁄ ▽ ⁄&lt;⁄ ⁄)"
  },
+ "5a5a6662cd93": {
+  "en": " <strong data-astro-cid-56nuw6qz=\"\">Diminishing returns</strong>: Repeat yourself and each post pays less, then starts to cost you followers. The treadmill speeds up. <small data-astro-cid-56nuw6qz=\"\">Hedonic adaptation / audience fatigue</small> ",
+  "t": "<strong data-astro-cid-56nuw6qz=\"\">収穫逓減</strong>：同じことを繰り返すと投稿ごとの見返りが減り、やがてフォロワーを失い始める。ランニングマシンが速くなる。 <small data-astro-cid-56nuw6qz=\"\">快楽順応 / 視聴者の飽き</small>"
+ },
  "5a5ea639ef03": {
   "en": "Change the lights",
   "t": "ライトを変える"
@@ -4483,6 +4519,10 @@
   "en": "Enlarge: Eat sleep poop repeat",
   "t": "拡大: 食う寝るうんこ、繰り返し"
  },
+ "5ca2369168f0": {
+  "en": " The light novel afterwords ",
+  "t": "ライトノベルのあとがき"
+ },
  "5ca773da3c36": {
   "en": "Gealdýr",
   "t": "Gealdýr"
@@ -4522,6 +4562,10 @@
  "5d1433199c00": {
   "en": " 1,590 h ",
   "t": "1,590 時間"
+ },
+ "5d20d0fee3b9": {
+  "en": "References",
+  "t": "参考文献"
  },
  "5d52c8bbc796": {
   "en": "Circa 2013",
@@ -4939,10 +4983,6 @@
   "en": "+ 5 more games",
   "t": "+ ほか5本"
  },
- "66661ef2f100": {
-  "en": "One does not simply <em>look</em> at these photographs; one is, rather, gently but insistently looked back at by them. Here is an artist who arrived at the medium not through the cloistered halls of the academy but by the far nobler road of trial and error (failing, learning, failing anew), a pedagogy he shares, one notes with no small delight, with <a href=\"https://en.wikipedia.org/wiki/Peter_Lik\">Peter Lik</a>, that self-taught Australian colossus of the supersaturated panorama.",
-  "t": "これらの写真は、ただ<em>見る</em>ものではない。むしろ、こちらが写真のほうから、やさしく、しかし執拗に見つめ返されるのである。ここにいるのは、アカデミーの閉ざされた回廊ではなく、試行錯誤（失敗し、学び、また失敗する）という遥かに高貴な道を通ってこの媒体に辿り着いた芸術家だ。その教育法を、彼は、少なからぬ喜びとともに付記するが、<a href=\"https://en.wikipedia.org/wiki/Peter_Lik\">Peter Lik</a>、すなわち独学で鳴らした、超彩度パノラマのオーストラリアの巨人と分かち合っている。"
- },
  "666c786e8bca": {
   "en": "São Paulo",
   "t": "São Paulo"
@@ -5135,6 +5175,10 @@
   "en": "PickCrafter",
   "t": "PickCrafter"
  },
+ "6a07e0d2b1cc": {
+  "en": "I still love aviation, though. The complexity of a cockpit and the endless systems to hyperfocus on keep pulling me back. That’s why I love Mentour Pilot’s videos: he gets deep into the weeds of airplane components while breaking down accident investigations.",
+  "t": "それでも航空はやっぱり好きだ。コックピットの複雑さと、過集中できる無限のシステムが、俺を引き戻し続ける。だから Mentour Pilot の動画が好きなんだ。事故調査を解説しながら、飛行機の部品の細部まで深く掘り下げてくれる。"
+ },
  "6a21b899e80b": {
   "en": "Amethyst Grapes",
   "t": "アメジストグレープ"
@@ -5154,6 +5198,10 @@
  "6a45cf752d96": {
   "en": " <span class=\"step__num\" data-astro-cid-uswg2a56=\"\">VI.</span> The Farofa ",
   "t": "<span class=\"step__num\" data-astro-cid-uswg2a56=\"\">VI.</span> ファロファ"
+ },
+ "6a5e18a39fc7": {
+  "en": " Chimarrão (mate) ",
+  "t": "シマハオン（マテ茶）"
  },
  "6a63f1e0f516": {
   "en": "Take care of Peeta",
@@ -5646,6 +5694,10 @@
  "75e734d05411": {
   "en": " KS ",
   "t": "KS"
+ },
+ "75eb2ce6da3d": {
+  "en": " OneCalendar ",
+  "t": "OneCalendar"
  },
  "76031ddf9245": {
   "en": "Thursday",
@@ -6223,10 +6275,6 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Placeholder TV show 17 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 17: </span> 仮のドラマ 17"
  },
- "8218b5310d18": {
-  "en": "Want a taste of the treadmill? Post away. Each post costs one energy bar, and one bar refills every second. Open “Under the hood” to see which trick is working on you as it happens.",
-  "t": "ランニングマシンの味見をしてみる？ どんどん投稿しよう。投稿 1 回でエネルギーバーを 1 本使い、1 秒ごとに 1 本回復する。「仕組みの裏側」を開けば、どのトリックが今まさにあなたに効いているかがわかる。"
- },
  "8228957ae344": {
   "en": "Tropico 4",
   "t": "Tropico 4"
@@ -6334,10 +6382,6 @@
  "84a3c090faa5": {
   "en": "Searing the beef",
   "t": "牛肉を焼く"
- },
- "84aebbb15ac4": {
-  "en": "Right wrist, written in <a href=\"https://deovandski.github.io/vraki-windows/\">Vraki</a>. This side ties to my ambition, collaboration, and community: striving to learn and always growing. This is my ADHD side to the core.",
-  "t": "右手首、<a href=\"https://deovandski.github.io/vraki-windows/\">ヴラキ文字</a>で書いてある。こちら側は俺の野心、コラボレーション、コミュニティと結びついている：学ぼうと努力し、常に成長すること。これは芯の芯まで俺の ADHD の側面だ。"
  },
  "84e50cfe5188": {
   "en": "Seasons: 8 photos",
@@ -6595,13 +6639,13 @@
   "en": "Trending",
   "t": "トレンド"
  },
+ "8a28a9bd938a": {
+  "en": " <strong data-astro-cid-56nuw6qz=\"\">The algorithm</strong>: One kind of post secretly pays better, and it changes without warning, so you keep trying everything. <small data-astro-cid-56nuw6qz=\"\">Same variable-reward idea, applied to what to post</small> ",
+  "t": "<strong data-astro-cid-56nuw6qz=\"\">アルゴリズム</strong>：ある種類の投稿がこっそり高く報われ、それが予告なしに変わる。だから全部試し続けてしまう。 <small data-astro-cid-56nuw6qz=\"\">同じ変動報酬の考え方を、何を投稿するかに当てはめたもの</small>"
+ },
  "8a537effbf60": {
   "en": "59 h",
   "t": "59 時間"
- },
- "8a9b327bd9ed": {
-  "en": "<a href=\"https://www.youtube.com/@calebhammer\">Caleb Hammer</a> would be proud that most of my meals come from my own kitchen, if we zoom into the financial aspect of it, but for me, it’s about making home feel like home.",
-  "t": "お金の面から見れば、俺の食事のほとんどが自分のキッチンから出てくることを <a href=\"https://www.youtube.com/@calebhammer\">Caleb Hammer</a> は誇りに思うだろう。でも俺にとっては、家を家らしく感じさせることが大事なんだ。"
  },
  "8ab725154ab3": {
   "en": "2016 nearly took everything I had worked so hard for, all because of someone else’s screw-up. It felt like being a kid building a sandcastle while some asshole walks by and kicks it, then watching everything you built turn to nothing. It sucked. It nearly drove me to end it all (as I talk about on the <a href=\"#death\">Death tab</a>). Yet I survived the worst, pulled myself out of the misery, and rebuilt.",
@@ -6987,10 +7031,6 @@
   "en": "The later seasons kind of derailed it, but that first season got me hooked, and I binge-watched it in one sitting. The MC's progression and changing persona is something I took notes on, and you can see it in Harry and other characters.",
   "t": "後のシーズンはちょっと脱線したけど、第 1 シーズンにハマって、一気に見た。主人公の成長と変わっていく人格は俺がメモを取ったもので、ハリーやほかのキャラクターにそれが表れている。"
  },
- "92b155c6c345": {
-  "en": "\nIf it's tied to a date, it goes on the calendar. <a href=\"https://www.onecalendar.nl/\" data-astro-cid-xtzphevd=\"\">OneCalendar</a> merges my 5+\n        calendars into one master calendar, shown as a widget front and center on my phone. As soon as I wake up, I have a rough\n        idea of how the day will go, and I plan around the hard commitments.\n",
-  "t": "日付に結びつくなら、カレンダーに入れる。<a href=\"https://www.onecalendar.nl/\" data-astro-cid-xtzphevd=\"\">OneCalendar</a>が俺の 5 つ以上のカレンダーを一つのマスターカレンダーにまとめて、スマホのど真ん中にウィジェットで表示してくれる。起きた瞬間に一日の流れがだいたいわかるから、動かせない予定を軸に計画できる。"
- },
  "92bf22c6b6a7": {
   "en": "Yamete kudasai~ (〃ω〃)",
   "t": "やめてください〜 (〃ω〃)"
@@ -7014,10 +7054,6 @@
  "935d45974f78": {
   "en": "100 h",
   "t": "100 時間"
- },
- "937cfa1ddae8": {
-  "en": "I still love aviation, though. The complexity of a cockpit and the endless systems to hyperfocus on keep pulling me back. That’s why I love <a href=\"https://www.youtube.com/playlist?list=PLiNyr6QSO28P2bKMcv2O_lK83jsR0A9-W\">Mentour Pilot’s videos</a>: he gets deep into the weeds of airplane components while breaking down accident investigations.",
-  "t": "それでも航空はやっぱり好きだ。コックピットの複雑さと、過集中できる無限のシステムが、俺を引き戻し続ける。だから <a href=\"https://www.youtube.com/playlist?list=PLiNyr6QSO28P2bKMcv2O_lK83jsR0A9-W\">Mentour Pilot の動画</a>が好きなんだ。事故調査を解説しながら、飛行機の部品の細部まで深く掘り下げてくれる。"
  },
  "9384a918b850": {
   "en": "Or grow a spine and just reach out to me: see the <a href=\"/contact/\">Contact</a> page.",
@@ -7199,6 +7235,10 @@
   "en": "Years",
   "t": "年"
  },
+ "9710012b4e98": {
+  "en": "You don't have to trust me, you can check the source code yourself.",
+  "t": "俺を信じる必要はない。ソースコードを自分で確認できる。"
+ },
  "9711c95d99b1": {
   "en": "Low tide silver light",
   "t": "干潮、銀色の光"
@@ -7246,6 +7286,10 @@
  "98125dc77105": {
   "en": "Texas",
   "t": "テキサス州"
+ },
+ "982378c12df4": {
+  "en": " VirtualDJ ",
+  "t": "VirtualDJ"
  },
  "9833983de715": {
   "en": "Tap each time a big bubble pops, not the small ones.",
@@ -7394,10 +7438,6 @@
  "9b3cbed5c490": {
   "en": "Zoom",
   "t": "ズーム"
- },
- "9b596bacf45e": {
-  "en": "You don't have to trust me, you can check <a href=\"https://github.com/Deovandski/Deovandski\" data-astro-cid-somgw2vn=\"\">the source code</a> yourself.",
-  "t": "俺を信じる必要はない。<a href=\"https://github.com/Deovandski/Deovandski\" data-astro-cid-somgw2vn=\"\">ソースコード</a>を自分で確認できる。"
  },
  "9bb732a1e053": {
   "en": "Glad I don't pay rent",
@@ -7579,6 +7619,10 @@
   "en": " BG ",
   "t": "背景"
  },
+ "9f7ac5586705": {
+  "en": " #HusbandOutWorld Vol 4 afterword ",
+  "t": "#HusbandOutWorld 第 4 巻のあとがき"
+ },
  "9f8030cb22e8": {
   "en": "The algorithm has left you on read.",
   "t": "アルゴリズムに既読スルーされた。"
@@ -7690,6 +7734,10 @@
  "a136fd1bab04": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 27: </span> Placeholder movie 27 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 27: </span> 仮の映画 27"
+ },
+ "a14c91e0d2b4": {
+  "en": "Like my mom, I don’t follow recipes and I don’t write stuff down. Going with the flow is very ADHD of me: adults with ADHD tend to prefer the loose, unstructured side of creativity. I do take pictures though so that I can try to replicate later if it turned out real good! Makes every meal special I’d say! <a href=\"#churrasco\">Churrasco</a> warrants a facet of its own! I love food of all shapes and kinds, although I do draw some lines including being unable to eat stinky tofu.",
+  "t": "母と同じで、俺はレシピを見ないし、何も書き留めない。流れに任せるのは、いかにも ADHD な俺らしい。ADHD の大人は、創造性のゆるくて型にはまらない側を好む傾向がある。でも写真は撮る。すごくうまくできたら、あとで再現できるようにね！おかげで毎回の食事が特別になると思う！<a href=\"#churrasco\">シュハスコ</a>は一つの面に値する！どんな食べ物も大好きだけど、線引きはある。たとえば臭豆腐はどうしても食べられない。"
  },
  "a157d38de121": {
   "en": "Enlarge: Moar sleep",
@@ -8175,10 +8223,6 @@
   "en": "Bishops of the Thermometer",
   "t": "温度計の司教"
  },
- "ab9e91238e09": {
-  "en": "Having these guys on in the background while I code is rather soothing. A strange thing for my autism to get hooked on, but it clearly works. Same thing with the Skyrim soundtrack and rain in the background whenever I focus on <a href=\"https://www.husbandoutworld.com/\">#HusbandOutWorld</a> stuff.",
-  "t": "コーディング中にこいつらを流しておくと、なかなか癒される。俺の自閉症の脳がハマるにはおかしなものだけど、明らかに効いている。<a href=\"https://www.husbandoutworld.com/\">#HusbandOutWorld</a> の作業に集中するときに、スカイリムのサントラと雨音を流すのと同じだ。"
- },
  "abc4c339d728": {
   "en": "It wilted. You got {what}. Fertilizer, at least.",
   "t": "枯れた。{what} を得た。少なくとも肥料。"
@@ -8234,6 +8278,10 @@
  "acfea170ad4f": {
   "en": "Clingy",
   "t": "甘えんぼ"
+ },
+ "ad4e4c6582e6": {
+  "en": " <strong data-astro-cid-56nuw6qz=\"\">Variable rewards</strong>: Results are random: usually small, sometimes nothing, rarely huge. Unpredictable rewards are the hardest habit to quit (a variable-ratio schedule). <small data-astro-cid-56nuw6qz=\"\">Ferster &amp; Skinner, Schedules of Reinforcement (1957)</small> ",
+  "t": "<strong data-astro-cid-56nuw6qz=\"\">変動報酬</strong>：結果はランダム：たいてい小さく、ときどきゼロ、まれに巨大。予測できない報酬は、最もやめにくい習慣になる（変動比率スケジュール）。 <small data-astro-cid-56nuw6qz=\"\">Ferster &amp; Skinner, Schedules of Reinforcement (1957)</small>"
  },
  "ad5fb3b6084b": {
   "en": " Bars ",
@@ -8491,6 +8539,10 @@
   "en": "South America",
   "t": "南アメリカ"
  },
+ "b20c3b6f0b9d": {
+  "en": "More of my story in the light novel afterwords at husbandoutworld.com.",
+  "t": "俺の話の続きは、husbandoutworld.comのライトノベルのあとがきで。"
+ },
  "b211130bc78f": {
   "en": "Raindrops on the window",
   "t": "窓の雨粒"
@@ -8655,6 +8707,10 @@
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 1: </span> Sword Art Online ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 1: </span> ソードアート・オンライン"
  },
+ "b6288f904ac9": {
+  "en": " Sensory hypersensitivity in adult ADHD ",
+  "t": "大人の ADHD の感覚過敏"
+ },
  "b62a3583dfbf": {
   "en": "Boil the water",
   "t": "お湯を沸かす"
@@ -8811,10 +8867,6 @@
   "en": "Back to Painting",
   "t": "絵画に戻る"
  },
- "b9a0df6e851a": {
-  "en": "Cooking sits under Hearth because cooking at home is an essential piece that makes home, homie. Except deep fried stuff! I don’t do that at home, as I have a sensitive nose. That’s the AuDHD in me: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4407326/\">autistic adults pick up smells more easily</a>, and <a href=\"https://pubmed.ncbi.nlm.nih.gov/28371743/\">sensory hypersensitivity is a core part of adult ADHD too</a>.",
-  "t": "料理が「我が家」の下にあるのは、家で料理することこそが家を家らしくする大事な要素だから。ただし揚げ物は別！俺は鼻が敏感だから、家では揚げ物をしない。これは俺の AuDHD のせい：<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC4407326/\">自閉スペクトラムの大人はにおいをより感じ取りやすく</a>、<a href=\"https://pubmed.ncbi.nlm.nih.gov/28371743/\">感覚過敏は大人の ADHD の中心的な特徴でもある</a>。"
- },
  "b9a2ffa6496c": {
   "en": "Let's go",
   "t": "行こう"
@@ -8898,6 +8950,10 @@
  "bb78e60fc990": {
   "en": "56 h",
   "t": "56 時間"
+ },
+ "bb940971b8dd": {
+  "en": " Vol. 3 afterword ",
+  "t": "第 3 巻のあとがき"
  },
  "bbc97dc5386e": {
   "en": "it climbed too steeply and stalled",
@@ -8995,6 +9051,10 @@
   "en": "Happy",
   "t": "ごきげん"
  },
+ "be601df25eea": {
+  "en": "Research",
+  "t": "研究"
+ },
  "be60b2fd09b2": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 18: </span> Placeholder TV show 18 ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 18: </span> 仮のドラマ 18"
@@ -9058,10 +9118,6 @@
  "bfa28522fcb3": {
   "en": "Hamilton",
   "t": "Hamilton"
- },
- "bfc01dde997f": {
-  "en": "<a href=\"https://www.youtube.com/watch?v=4Iuc0Eaw7Rs\">Helvegen II</a> - Wardruna",
-  "t": "<a href=\"https://www.youtube.com/watch?v=4Iuc0Eaw7Rs\">Helvegen II</a> - Wardruna"
  },
  "bfc1086b2a80": {
   "en": "Enlarge: Lil princess",
@@ -9295,6 +9351,10 @@
   "en": "Rauw Alejandro",
   "t": "Rauw Alejandro"
  },
+ "c525db9e7985": {
+  "en": "I’ve fished in 3 countries so far: Brazil, the United States and Malaysia. So many more countries to fish, so little time huehue. I’ve been to Thailand multiple times, but I haven’t hit up Monster Fishing Park in Phuket yet! Meanwhile, back closer to home, Lake of the Woods is nice, and deep-fried walleye makes me salivate just thinking about it… And I also want to eat freshly caught, grilled grouper in Langkawi! That floating restaurant was downright one of the best life experiences I’ve had, gastronomically speaking.",
+  "t": "これまで釣りをした国は3か国：ブラジル、アメリカ、マレーシア。釣りたい国は山ほどあるのに、時間が足りない huehue。タイには何度も行ったけど、プーケットの Monster Fishing Park にはまだ行けていない！ 一方、地元に近いところでは レイク・オブ・ザ・ウッズ がいいし、ウォールアイの唐揚げは考えただけでよだれが出る… それに、ランカウイで釣れたての焼いたハタも食べたい！ あの水上レストランは、食の面で言えば間違いなく人生最高の体験のひとつだった。"
+ },
  "c5352fbe59ff": {
   "en": "Next routine",
   "t": "次のルーチン"
@@ -9334,10 +9394,6 @@
  "c5cf0566a7a8": {
   "en": "Board game nights are on their way.",
   "t": "ボードゲームの夜は準備中。"
- },
- "c5d40b2b76f6": {
-  "en": "\nI've always been fascinated by creating music. But not only am I tone deaf, I also struggle with reading sheet music,\n          and even with something as simple as <a href=\"https://www.image-line.com/fl-studio/\" data-astro-cid-j7pv25f6=\"\">FL Studio</a> and\n<a href=\"https://www.virtualdj.com/\" data-astro-cid-j7pv25f6=\"\">VirtualDJ</a>. I remember messing with them a lot, but never making progress, or\n          just making utter terrible shit. All I've been able to do by myself is fade songs in and out, fix their EQ and such in\n<a href=\"https://www.audacityteam.org/\" data-astro-cid-j7pv25f6=\"\">Audacity</a>. Never true music creation.\n",
-  "t": "俺はずっと音楽を作ることに魅了されてきた。でも音痴なだけじゃなく、楽譜を読むのも苦手で、<a href=\"https://www.image-line.com/fl-studio/\" data-astro-cid-j7pv25f6=\"\">FL Studio</a>や<a href=\"https://www.virtualdj.com/\" data-astro-cid-j7pv25f6=\"\">VirtualDJ</a>みたいな簡単なものですら苦戦する。いろいろいじったのは覚えているけど、ちっとも上達しなかったか、ひどいクソみたいなものしか作れなかった。自分でできたのは、<a href=\"https://www.audacityteam.org/\" data-astro-cid-j7pv25f6=\"\">Audacity</a>で曲をフェードイン・フェードアウトさせたり、EQ を直したりする程度だ。本当の意味での作曲は一度もない。"
  },
  "c6129321a1a0": {
   "en": "clearly related",
@@ -9595,10 +9651,6 @@
   "en": "Hold, and let go gently in the zone.",
   "t": "長押しして、ゾーンでそっと離す。"
  },
- "cbe35333fcf5": {
-  "en": "\nAnd as to why? Read my <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld Vol 4 afterword</a>.\n",
-  "t": "理由は？ 俺の<a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027\" data-astro-cid-j7pv25f6=\"\">#HusbandOutWorld 第 4 巻のあとがき</a>を読んでくれ。"
- },
  "cc463043bf6a": {
   "en": "Roll all",
   "t": "全部振る"
@@ -9710,6 +9762,10 @@
  "ce78c010a8ad": {
   "en": "Places by region",
   "t": "地域別の場所"
+ },
+ "ce7f666a7fdc": {
+  "en": " Audacity ",
+  "t": "Audacity"
  },
  "ceb6d5bdca61": {
   "en": " Roguelites ",
@@ -9919,6 +9975,14 @@
   "en": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>",
   "t": "Othala<span class=\"sr-only\" data-astro-cid-nf35xw4x=\"\"> (ᛟ)</span>"
  },
+ "d2292da71e15": {
+  "en": " <strong data-astro-cid-56nuw6qz=\"\">Near miss</strong>: \"Almost went viral!\" is still a loss, and it feels worse than a plain miss, yet it makes people want to keep playing. Persistence peaks when about 30% of the losses are near misses. <small data-astro-cid-56nuw6qz=\"\">Clark et al., Neuron 61:481–490 (2009), and the studies it cites</small> ",
+  "t": "<strong data-astro-cid-56nuw6qz=\"\">ニアミス</strong>：「バズりかけた！」はやっぱり負けで、普通の負けよりもっと悔しい。なのに、もっと続けたくなる。負けのうち約 30% がニアミスのとき、粘り強さは最大になる。 <small data-astro-cid-56nuw6qz=\"\">Clark et al., Neuron 61:481–490 (2009), and the studies it cites</small>"
+ },
+ "d2322d881706": {
+  "en": " Vol. 1 afterword ",
+  "t": "第 1 巻のあとがき"
+ },
  "d26fc1a425f0": {
   "en": "Spirit City: Lofi Sessions",
   "t": "Spirit City: Lofi Sessions"
@@ -9979,6 +10043,10 @@
   "en": "Cirque du Soleil O",
   "t": "Cirque du Soleil O"
  },
+ "d374be89d59e": {
+  "en": " <strong data-astro-cid-56nuw6qz=\"\">Energy timers</strong>: A meter that refills over time makes you wait, then binge, and keeps you coming back. <small data-astro-cid-56nuw6qz=\"\">Common free-to-play design</small> ",
+  "t": "<strong data-astro-cid-56nuw6qz=\"\">エネルギータイマー</strong>：時間で回復するメーターが、あなたを待たせ、それからまとめてプレイさせ、何度も戻ってこさせる。 <small data-astro-cid-56nuw6qz=\"\">基本無料ゲームによくある設計</small>"
+ },
  "d38a691b674d": {
   "en": "1 year and 257 days",
   "t": "1年257日"
@@ -10014,6 +10082,10 @@
  "d3c3cff3fcea": {
   "en": "Almost went viral! 97% to the For You page.",
   "t": "ほぼバイラル！For You ページまで 97%。"
+ },
+ "d3e5214e7928": {
+  "en": " #HusbandOutWorld ",
+  "t": "#HusbandOutWorld"
  },
  "d3f579415886": {
   "en": "Whack the Miku (top right, key 2)",
@@ -10130,10 +10202,6 @@
  "d6c30a192b3e": {
   "en": "ARK: Survival Evolved",
   "t": "ARK: Survival Evolved"
- },
- "d6e513cf59dd": {
-  "en": "Then, as I wrote in my <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-3-afterword-2026\">Vol. 3 afterword</a>, someone became the catalyst for a quantum leap. Hypervigilance, mental abuse, misery, a pile of unresolved crap, and a major crack in my masking overloaded my OS until it hit a kernel panic: my nervous system was frying from the inside out. But this time, I didn’t even think of the same “solution” as in 2016. I had collected enough experience and self-understanding to see it: I’m not just ADHD, or anxious, or GAD, as I wrote in my <a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-1-afterword-2022\">Vol. 1 afterword</a>. It had fucking finally clicked! I’m full-blown AuDHD, and I was in the middle of my true unmasking, after my soul had been drained of all empathy, love, and care, to the point that I questioned who I even was. I took the opportunity life handed me and turned it into massive growth, knowledge, and a healthier way of living, both mentally and physically.",
-  "t": "そして、俺が<a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-3-afterword-2026\">第 3 巻のあとがき</a>に書いたように、ある人物が量子的飛躍のきっかけになった。過剰な警戒、精神的な虐待、苦しみ、未解決のクソの山、そしてマスクに入った大きなひびが、カーネルパニックを起こすまで俺の OS を過負荷にした：神経系が内側から焼き切れていた。でも今回は、2016 年と同じ「解決策」なんて考えもしなかった。それを見抜くだけの経験と自己理解を積んでいたんだ：俺はただの ADHD でも、不安症でも、GAD でもない。<a href=\"https://www.husbandoutworld.com/about/afterwords/#vol-1-afterword-2022\">第 1 巻のあとがき</a>にそう書いたけどな。クソ、ついにピンと来た！ 俺は正真正銘の AuDHD で、本当のアンマスキングの真っ只中にいた。魂から共感も愛も思いやりも吸い尽くされて、自分が誰なのかさえ疑うほどになったあとでね。人生が差し出してくれたチャンスをつかんで、それを大きな成長と、知識と、心身ともにもっと健康な生き方に変えた。"
  },
  "d6fbd8d27ba3": {
   "en": "A photo shoot through a camera: chibi pixel Deo in his yellow king's robes holds the pose you pick, in front of the background you pick.",
@@ -10319,6 +10387,10 @@
   "en": "Enlarge: Captain Bidu: Bidu wearing a blue military officer cap with a gold winged badge",
   "t": "拡大: キャプテン Bidu：金の翼のバッジが付いた青い軍の士官帽をかぶった Bidu"
  },
+ "d9caf8c06466": {
+  "en": " <strong data-astro-cid-56nuw6qz=\"\">Notification drip</strong>: Likes trickle in a few at a time after you post, so you keep checking. <small data-astro-cid-56nuw6qz=\"\">Schüll, Addiction by Design (2012), on how slot machines are tuned</small> ",
+  "t": "<strong data-astro-cid-56nuw6qz=\"\">通知の小出し</strong>：投稿のあと、「いいね」が少しずつ届くから、つい何度も確認してしまう。 <small data-astro-cid-56nuw6qz=\"\">Schüll, Addiction by Design (2012), on how slot machines are tuned</small>"
+ },
  "d9defa2c4cc3": {
   "en": "loosely related",
   "t": "ゆるい関係"
@@ -10366,6 +10438,10 @@
  "da7af1ccc734": {
   "en": "Enlarge: Painting or drawing, 02/01/2013",
   "t": "拡大: 絵画またはスケッチ, 2013年2月1日"
+ },
+ "daa7a1e2a7de": {
+  "en": "One does not simply <em>look</em> at these photographs; one is, rather, gently but insistently looked back at by them. Here is an artist who arrived at the medium not through the cloistered halls of the academy but by the far nobler road of trial and error (failing, learning, failing anew), a pedagogy he shares, one notes with no small delight, with Peter Lik, that self-taught Australian colossus of the supersaturated panorama.",
+  "t": "これらの写真は、ただ<em>見る</em>ものではない。むしろ、こちらが写真のほうから、やさしく、しかし執拗に見つめ返されるのである。ここにいるのは、アカデミーの閉ざされた回廊ではなく、試行錯誤（失敗し、学び、また失敗する）という遥かに高貴な道を通ってこの媒体に辿り着いた芸術家だ。その教育法を、彼は、少なからぬ喜びとともに付記するが、Peter Lik、すなわち独学で鳴らした、超彩度パノラマのオーストラリアの巨人と分かち合っている。"
  },
  "dac005fa77db": {
   "en": "Philadelphia Orchestra",
@@ -10483,6 +10559,10 @@
   "en": " Gemini ",
   "t": "Gemini"
  },
+ "ddd584657c96": {
+  "en": " <strong data-astro-cid-56nuw6qz=\"\">Streaks and loss aversion</strong>: A streak you could lose feels worse than one you never had. Losing hurts about twice as much as winning feels good. <small data-astro-cid-56nuw6qz=\"\">Kahneman &amp; Tversky, Prospect Theory (1979)</small> ",
+  "t": "<strong data-astro-cid-56nuw6qz=\"\">連続記録と損失回避</strong>：失うかもしれない連続記録は、最初から持っていない記録よりつらい。失う痛みは、得る喜びの約 2 倍だ。 <small data-astro-cid-56nuw6qz=\"\">Kahneman &amp; Tversky, Prospect Theory (1979)</small>"
+ },
  "ddd902407758": {
   "en": "Tattoo on my left forearm",
   "t": "俺の左前腕のタトゥー"
@@ -10542,6 +10622,10 @@
  "deabcf59fc55": {
   "en": "Get thyself churrasco salt: iodized, in big rocky chunks, and imported from Brazil if thou canst. Heathens have tried to cheap out with Himalayan salt and paid the price with a ruined steak.",
   "t": "汝、シュハスコ用の塩を手に入れよ：ヨウ素入りの、大粒のゴツゴツした塩を。叶うならブラジルからの輸入品を。異教徒どもはヒマラヤ岩塩で安く済ませようとし、台無しになったステーキでその代償を払った。"
+ },
+ "deaef45afca8": {
+  "en": "Right wrist, written in Vraki. This side ties to my ambition, collaboration, and community: striving to learn and always growing. This is my ADHD side to the core.",
+  "t": "右手首、ヴラキ文字で書いてある。こちら側は俺の野心、コラボレーション、コミュニティと結びついている：学ぼうと努力し、常に成長すること。これは芯の芯まで俺の ADHD の側面だ。"
  },
  "dec492e278f3": {
   "en": "Ara ara~ (◕‿◕✿)",
@@ -10627,6 +10711,10 @@
   "en": "The doujinshi is writing itself ( ͡ʘ ͜ʖ ͡ʘ)",
   "t": "同人誌が勝手に描き上がっていく ( ͡ʘ ͜ʖ ͡ʘ)"
  },
+ "e0a2e5ac722a": {
+  "en": " <strong data-astro-cid-56nuw6qz=\"\">Reward learning</strong>: People post more right after a batch of likes, spacing posts to chase the best rate of likes, like an animal in a Skinner box. <small data-astro-cid-56nuw6qz=\"\">Lindström et al., Nature Communications 12:1311 (2021)</small> ",
+  "t": "<strong data-astro-cid-56nuw6qz=\"\">報酬学習</strong>：人は「いいね」がまとめて来た直後にもっと投稿し、最も「いいね」率が高くなるよう投稿の間隔を調整する。スキナー箱の動物みたいに。 <small data-astro-cid-56nuw6qz=\"\">Lindström et al., Nature Communications 12:1311 (2021)</small>"
+ },
  "e0cfa25651b0": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 4: </span> Shingeki no Kyojin (Attack on Titan) ",
   "t": "<span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">順位 4: </span> 進撃の巨人"
@@ -10642,6 +10730,10 @@
  "e137f1441633": {
   "en": "Captain Bidu",
   "t": "キャプテン Bidu"
+ },
+ "e13c48c66d82": {
+  "en": "Cooking sits under Hearth because cooking at home is an essential piece that makes home, homie. Except deep fried stuff! I don’t do that at home, as I have a sensitive nose. That’s the AuDHD in me: autistic adults pick up smells more easily, and sensory hypersensitivity is a core part of adult ADHD too.",
+  "t": "料理が「我が家」の下にあるのは、家で料理することこそが家を家らしくする大事な要素だから。ただし揚げ物は別！俺は鼻が敏感だから、家では揚げ物をしない。これは俺の AuDHD のせい：自閉スペクトラムの大人はにおいをより感じ取りやすく、感覚過敏は大人の ADHD の中心的な特徴でもある。"
  },
  "e149ea488736": {
   "en": "Bidu",
@@ -10662,6 +10754,10 @@
  "e181aa4b4b28": {
   "en": "Point the camera at me, tell me how to pose, and take the shot.",
   "t": "俺にカメラを向けて、ポーズを指示して、シャッターを切ってくれ。"
+ },
+ "e18c85dbd552": {
+  "en": "Then, the water. Our artist cannot pass a wet surface without interrogating it. <em>Rainy night neon reflections</em> and <em>Raindrops on the window</em> converse across the years with Saul Leiter, poet of the rain-streaked pane, who likewise understood that the most honest view of a city is the one slightly obscured.",
+  "t": "次に、水。我らが芸術家は、濡れた表面を問いたださずに通り過ぎることができない。<em>雨の夜、ネオンの映り込み</em>と<em>窓の雨粒</em>は、時を超えてSaul Leiterと語り合う。雨に濡れた窓ガラスの詩人である彼もまた、都市をもっとも正直に見る眺めとは、少しだけ曇った眺めであることを理解していた。"
  },
  "e1914e257b6d": {
   "en": "Tattoo on my right forearm",
@@ -10863,6 +10959,10 @@
   "en": "WC",
   "t": "WC"
  },
+ "e6c028d981bf": {
+  "en": "Next: {step}. {hint} Press Go! when you’re ready.",
+  "t": "次：{step}。{hint} 準備ができたら「Go!」を押そう。"
+ },
  "e6ca57202c6e": {
   "en": "Repo",
   "t": "リポジトリ"
@@ -10903,10 +11003,6 @@
   "en": "\nGitHub only has a fraction of all the code I developed in my developer career, but there's enough out there for y'all\n          to have fun and see my growth, and ambitions.\n",
   "t": "GitHub にあるのは、俺が開発者としてのキャリアで書いてきたコードのほんの一部だ。でも、みんなが楽しめて、俺の成長と野心が見えるくらいには置いてある。"
  },
- "e7928e2438db": {
-  "en": "A private pilot license is still in my queue! In the meantime, I want to build a home cockpit simulator once I buy a house. In Singapore, at <a href=\"https://flightexperience.com.sg/\">Flight Experience</a>, I got to fly a full-scale replica of a Boeing 737-800NG cockpit, and it became a core memory. It took me back to my early teens, when I rode in the cockpit jump seat of an Airbus A320-233 taking off from Santos Dumont Airport (SDU) in Rio de Janeiro, Brazil.",
-  "t": "自家用操縦士免許はまだ俺のキューに入っている！ それまでの間、家を買ったら自宅にコックピットシミュレーターを作りたい。シンガポールの<a href=\"https://flightexperience.com.sg/\">Flight Experience</a>で、ボーイング 737-800NG のコックピットの実物大レプリカを操縦させてもらって、それがコアメモリーになった。十代前半の頃、ブラジル・リオデジャネイロのサントス・ドゥモン空港（SDU）から離陸するエアバス A320-233 のコックピットのジャンプシートに座ったときに引き戻してくれたんだ。"
- },
  "e7a4615cfb4e": {
   "en": "Enlarge: Wet streets",
   "t": "拡大: 濡れた街路"
@@ -10922,10 +11018,6 @@
  "e7d965113795": {
   "en": "Kilograms of beef grilled: 295",
   "t": "焼いた牛肉のキロ数：295"
- },
- "e7e43b45cffa": {
-  "en": "We have the <a href=\"https://en.wikipedia.org/wiki/Mate_%28drink%29\">chimarrão</a> ritual. In the morning, we gather for it to discuss matters, sync up and make sure we're all on the same page. We also analyze past events and call each other out, so there's no rumination or resentment, only a chance for growth.",
-  "t": "うちには<a href=\"https://en.wikipedia.org/wiki/Mate_%28drink%29\">シマハオン（chimarrão）</a>の儀式がある。毎朝それを囲んで集まり、いろいろ話し合い、足並みをそろえ、全員が同じ認識でいることを確かめる。過去の出来事も分析して、互いにはっきり指摘し合う。だから思い悩むことも恨みもなく、あるのは成長のチャンスだけだ。"
  },
  "e803ce653782": {
   "en": "<span class=\"sr-only\" data-astro-cid-j7pv25f6=\"\">#34: </span>Best of the Worst: Christmas 2021",
@@ -10954,6 +11046,10 @@
  "e833fd1b3e85": {
   "en": "Enlarge: Painting or drawing, 04/02/2013",
   "t": "拡大: 絵画またはスケッチ, 2013年4月2日"
+ },
+ "e89683e97d8e": {
+  "en": "Caleb Hammer would be proud that most of my meals come from my own kitchen, if we zoom into the financial aspect of it, but for me, it’s about making home feel like home.",
+  "t": "お金の面から見れば、俺の食事のほとんどが自分のキッチンから出てくることを Caleb Hammer は誇りに思うだろう。でも俺にとっては、家を家らしく感じさせることが大事なんだ。"
  },
  "e8d6b1405610": {
   "en": "Enlarge: Blue flames on the Fourth of July",
@@ -11211,6 +11307,10 @@
   "en": "Godrays at the concert",
   "t": "コンサートの光芒"
  },
+ "f0b28bfcc60a": {
+  "en": " Autistic adults and smell ",
+  "t": "自閉スペクトラムの大人と嗅覚"
+ },
  "f0b89ee9977f": {
   "en": " P2 ",
   "t": "P2"
@@ -11439,6 +11539,10 @@
   "en": "Magical Mirai (2024)",
   "t": "Magical Mirai (2024)"
  },
+ "f5e6ac52c2d8": {
+  "en": " Songkick ",
+  "t": "Songkick"
+ },
  "f6019c99fe9d": {
   "en": "<strong>Mirko Uljarević and colleagues</strong>, <em>Autism</em> (2022): of 237 autistic kids and teens, 75% had at least one special interest, and vehicles and transportation were among the common ones. <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9126999/\">Paper</a>",
   "t": "<strong>Mirko Uljarević ら</strong>, <em>Autism</em> (2022)：自閉症の子どもと十代237人のうち75%に少なくとも一つの特別な興味があり、乗り物や交通はよくあるものの一つだった。<a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC9126999/\">論文</a>"
@@ -11606,6 +11710,10 @@
  "f965bb0ee45e": {
   "en": "This was made by my social influencer facet, but it’s something all my sides treasure: having fun!",
   "t": "これは俺のインフルエンサーの面が作ったものだけど、俺のどの面も大事にしていること、それは楽しむこと！"
+ },
+ "f96bdac6d227": {
+  "en": " ADHD and loose, unstructured creativity ",
+  "t": "ADHD とゆるく型にはまらない創造性"
  },
  "f96e7bc80d25": {
   "en": "Fertilize a plot that has something growing.",
@@ -11874,6 +11982,10 @@
  "ffe8eb5ee020": {
   "en": "Seasoned and ready",
   "t": "味付け完了"
+ },
+ "ffead52611b3": {
+  "en": "\nIf it's tied to a date, it goes on the calendar. OneCalendar merges my 5+\n        calendars into one master calendar, shown as a widget front and center on my phone. As soon as I wake up, I have a rough\n        idea of how the day will go, and I plan around the hard commitments.\n",
+  "t": "日付に結びつくなら、カレンダーに入れる。OneCalendarが俺の 5 つ以上のカレンダーを一つのマスターカレンダーにまとめて、スマホのど真ん中にウィジェットで表示してくれる。起きた瞬間に一日の流れがだいたいわかるから、動かせない予定を軸に計画できる。"
  },
  "fff1a581dffd": {
   "en": "You cooked them right.",

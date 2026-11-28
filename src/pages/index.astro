@@ -32,6 +32,7 @@ import CartridgeShelf from '../components/reusable/CartridgeShelf.astro';
 import LinksMenu from '../components/reusable/LinksMenu.astro';
 import Breadcrumb from '../components/reusable/Breadcrumb.astro';
 import SourceList from '../components/reusable/SourceList.astro';
+import KitKotHood from '../components/reusable/KitKotHood.astro';
 import ProjectCards from '../components/reusable/ProjectCards.astro';
 import shotSuperbHawk from '../assets/developer/superb-hawk.png';
 import shotGassyDonkey from '../assets/developer/gassy-donkey.png';
@@ -153,6 +154,12 @@ const devHistoryLinks: LinkItem[] = [
 ];
 
 const musicianLinks: LinkItem[] = [{ href: 'https://suno.com/@deovandski', label: 'My Suno songs' }];
+// The tools from the Musician story (#328).
+const musicianTools: LinkItem[] = [
+  { href: 'https://www.image-line.com/fl-studio/', label: 'FL Studio' },
+  { href: 'https://www.virtualdj.com/', label: 'VirtualDJ' },
+  { href: 'https://www.audacityteam.org/', label: 'Audacity' },
+];
 
 // Author tab's Links box: the main links, then "Vraki Related".
 const authorLinks: LinkItem[] = [
@@ -187,6 +194,30 @@ const dndLinks: LinkItem[] = [{ href: 'https://deovandski.github.io/Vraki-West-M
 const lustLinks: LinkItem[] = [
   { href: 'https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027', label: 'Read my Vol 4 afterword' },
   { href: 'https://www.husbandoutworld.com/blog/', label: '#HusbandOutWorld Blog' },
+  { href: 'https://github.com/Deovandski/Deovandski', label: 'The source code of this site' },
+];
+
+// Links that used to sit in a tab's text (#328): the text keeps the words, the Links box keeps the link.
+const cookingLinks: LinkItem[] = [{ href: 'https://www.youtube.com/@calebhammer', label: 'Caleb Hammer on YouTube' }];
+const cookingResearch: LinkItem[] = [
+  { href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC7543022/', label: 'ADHD and loose, unstructured creativity' },
+  { href: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC4407326/', label: 'Autistic adults and smell' },
+  { href: 'https://pubmed.ncbi.nlm.nih.gov/28371743/', label: 'Sensory hypersensitivity in adult ADHD' },
+];
+const familyLinks: LinkItem[] = [{ href: 'https://en.wikipedia.org/wiki/Mate_%28drink%29', label: 'Chimarrão (mate)' }];
+const concertLinks: LinkItem[] = [
+  { href: 'https://www.songkick.com/home', label: 'Songkick' },
+  { href: 'https://philorch.ensembleartsphilly.org/tickets-and-events/2025-26-season/the-four-seasons', label: 'Philadelphia Orchestra: The Four Seasons' },
+];
+const pmLinks: LinkItem[] = [{ href: 'https://www.onecalendar.nl/', label: 'OneCalendar' }];
+const gymLinks: LinkItem[] = [
+  { href: 'https://www.husbandoutworld.com/about/afterwords/#vol-3-afterword-2026', label: 'Vol. 3 afterword' },
+  { href: 'https://www.husbandoutworld.com/about/afterwords/#vol-1-afterword-2022', label: 'Vol. 1 afterword' },
+];
+const mentorLinks: LinkItem[] = [{ href: 'https://www.husbandoutworld.com/about/afterwords/', label: 'The light novel afterwords' }];
+const botwLinks: LinkItem[] = [
+  { href: 'https://www.youtube.com/@RedLetterMedia', label: 'Red Letter Media on YouTube' },
+  { href: 'https://www.husbandoutworld.com/', label: '#HusbandOutWorld' },
 ];
 
 // PM tab: my public GitHub Projects boards (https://github.com/Deovandski?tab=projects).
@@ -245,6 +276,7 @@ const influencerLinks: LinkItem[] = [
   { href: MAL, label: 'MyAnimeList' },
   { href: 'https://www.linkedin.com/in/deovandski', label: 'LinkedIn' },
 ];
+const influencerRefs: LinkItem[] = [{ href: 'https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027', label: '#HusbandOutWorld Vol 4 afterword' }];
 
 // Every facet (a tab of content), A to Z. Where each one sits in the tree is decided by `branches` below.
 // A facet can have sub-tabs (`subs`, the tree's third level, #296): 2 to 6, shown A to Z under it. Each has a `hash`, the
@@ -622,6 +654,7 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-pm" aria-labelledby="tab-pm" tabindex="0" hidden>
+      <LinksMenu id="pm-links" toggle="external" items={[{ links: pmLinks }]} />
       <div id="pm-pm" role="region" aria-labelledby="sub-pm-pm" data-sub-panel>
       <div class="story">
         <p>
@@ -686,6 +719,7 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-family" aria-labelledby="tab-family" tabindex="0" hidden>
+      <LinksMenu id="family-links" toggle="external" items={[{ links: familyLinks }]} />
       <div class="story">
         <FamilyFacet />
       </div>
@@ -713,22 +747,26 @@ const nf = new Intl.NumberFormat('en-US');
 
     <section class="panel" role="region" id="panel-mentor" aria-labelledby="tab-mentor" tabindex="0" hidden>
       <GimmickPlay tab="mentor" />
-      <LinksMenu id="mentor-links" toggle="external"><SourceList title="Shoulders I stand on"><MentorSources /></SourceList></LinksMenu>
+      <LinksMenu id="mentor-links" toggle="external" items={[{ links: mentorLinks }]}><SourceList title="Shoulders I stand on"><MentorSources /></SourceList></LinksMenu>
       <MentorFacet />
     </section>
 
     <section class="panel" role="region" id="panel-influencer" aria-labelledby="tab-influencer" tabindex="0" hidden>
       <GimmickPlay tab="influencer">
-        <p slot="intro">Want a taste of the treadmill? Post away. Each post costs one energy bar, and one bar refills every second. Open “Under the hood” to see which trick is working on you as it happens.</p>
+        <p slot="intro">Want a taste of the treadmill? Post away. Each post costs one energy bar, and one bar refills every second. Open Links to see, under “Under the hood”, which trick is working on you as it happens.</p>
       </GimmickPlay>
-      <LinksMenu id="influencer-links" toggle="external" items={[{ links: influencerLinks }]} />
+      <LinksMenu
+        id="influencer-links"
+        toggle="external"
+        items={[{ links: influencerLinks }, { separator: 'References' }, { style: 'secondary', links: influencerRefs }]}
+      ><KitKotHood id="kitkot-hood" /></LinksMenu>
       <div class="story">
       <p>
         I was very active back in the day, getting ~15 million views… Focus on <em>was</em>, for there’s nothing left of it.
         Only an empty YT, my Steam and MyAnimeList profiles, and my LinkedIn, which remains active.
       </p>
       <p>
-        And as to why? Read my <a href="https://www.husbandoutworld.com/about/afterwords/#vol-4-afterword-2027">#HusbandOutWorld Vol 4 afterword</a>.
+        And as to why? Read my #HusbandOutWorld Vol 4 afterword.
       </p>
       <p class="influencer-q">But wait… why build this website, then? Doesn’t that go against what you wrote in Vol 4?</p>
       <p>
@@ -849,7 +887,7 @@ const nf = new Intl.NumberFormat('en-US');
 
     <section class="panel" role="region" id="panel-botw" aria-labelledby="tab-botw" tabindex="0" hidden>
       <GimmickPlay tab="botw" />
-      <LinksMenu id="botw-links" toggle="external" items={[{ links: [{ href: 'https://www.youtube.com/@RedLetterMedia', label: 'Red Letter Media on YouTube' }] }]} />
+      <LinksMenu id="botw-links" toggle="external" items={[{ links: botwLinks }]} />
       <div class="botw-intro">{botw.intro.map((para) => <p class="ranking-lede" set:html={linkify(para)} />)}</div>
       {
         botw.episodes.length === 0 ? (
@@ -909,6 +947,7 @@ const nf = new Intl.NumberFormat('en-US');
     </section>
 
     <section class="panel" role="region" id="panel-gym" aria-labelledby="tab-gym" tabindex="0" hidden>
+      <LinksMenu id="gym-links" toggle="external" items={[{ separator: 'From my afterwords' }, { links: gymLinks }]} />
       <GymFacet />
     </section>
 
@@ -940,6 +979,11 @@ const nf = new Intl.NumberFormat('en-US');
       <GimmickPlay tab="cooking">
         <p slot="intro">Pick an egg and cook it step by step: tap on the beat, stop the swing, mind the heat. Too many misses and it all goes up in smoke.</p>
       </GimmickPlay>
+      <LinksMenu
+        id="cooking-links"
+        toggle="external"
+        items={[{ links: cookingLinks }, { separator: 'Research' }, { style: 'secondary', links: cookingResearch }]}
+      />
       <div class="story">
         <CookingStory />
       </div>
@@ -948,14 +992,18 @@ const nf = new Intl.NumberFormat('en-US');
 
     <section class="panel" role="region" id="panel-musician" aria-labelledby="tab-musician" tabindex="0" hidden>
       <GimmickPlay tab="musician" />
-      <LinksMenu id="musician-links" toggle="external" items={[{ links: musicianLinks }]} />
+      <LinksMenu
+        id="musician-links"
+        toggle="external"
+        items={[{ links: musicianLinks }, { separator: 'The tools' }, { style: 'secondary', links: musicianTools }]}
+      />
       <div class="story">
         <p>
           I've always been fascinated by creating music. But not only am I tone deaf, I also struggle with reading sheet music,
-          and even with something as simple as <a href="https://www.image-line.com/fl-studio/">FL Studio</a> and
-          <a href="https://www.virtualdj.com/">VirtualDJ</a>. I remember messing with them a lot, but never making progress, or
+          and even with something as simple as FL Studio and
+          VirtualDJ. I remember messing with them a lot, but never making progress, or
           just making utter terrible shit. All I've been able to do by myself is fade songs in and out, fix their EQ and such in
-          <a href="https://www.audacityteam.org/">Audacity</a>. Never true music creation.
+          Audacity. Never true music creation.
         </p>
         <p>
           I can keep a beat, though, which is why I want to get into drumming one day! Why not now? Because of priorities, and
@@ -990,6 +1038,7 @@ const nf = new Intl.NumberFormat('en-US');
       <GimmickPlay tab="concert">
         <p slot="intro">Saturday Night Fever, King of Hues edition.</p>
       </GimmickPlay>
+      <LinksMenu id="concert-links" toggle="external" items={[{ links: concertLinks }]} />
       <div id="concert-seen" role="region" aria-labelledby="sub-concert-seen" data-sub-panel>
         <Sections data={concerts} id="concert" layout="cards" sortAlpha avatarsDir="content/concerts/bands" photoAlt={(t) => `At ${t}`} />
       </div>

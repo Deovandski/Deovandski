@@ -10,9 +10,12 @@ This is roughly how much time I have left. I'm striving to make the most of ever
 
 When my time comes, my funeral shall play 3 songs:
 
-1. [<span lang="ja">死のアリア</span> (Shi no Aria)](https://www.youtube.com/watch?v=xB9U3m1Z4wU&t=884s) - Opera THE END
-2. [Helvegen](https://www.youtube.com/watch?v=FnkTuHP9q3o) - Wardruna
-3. [Helvegen II](https://www.youtube.com/watch?v=4Iuc0Eaw7Rs) - Wardruna
+<!-- The funeral songs, as cards (#328): one <li> each; the card is the link. -->
+<ol class="songs">
+<li><a class="song" href="https://www.youtube.com/watch?v=xB9U3m1Z4wU&amp;t=884s"><span class="song__n" aria-hidden="true">1</span><span class="song__title" translate="no"><span lang="ja">死のアリア</span> (Shi no Aria)</span><span class="song__artist" translate="no">Opera THE END</span><span class="song__go">▶ Listen on YouTube</span></a></li>
+<li><a class="song" href="https://www.youtube.com/watch?v=FnkTuHP9q3o"><span class="song__n" aria-hidden="true">2</span><span class="song__title" translate="no">Helvegen</span><span class="song__artist" translate="no">Wardruna</span><span class="song__go">▶ Listen on YouTube</span></a></li>
+<li><a class="song" href="https://www.youtube.com/watch?v=4Iuc0Eaw7Rs"><span class="song__n" aria-hidden="true">3</span><span class="song__title" translate="no">Helvegen II</span><span class="song__artist" translate="no">Wardruna</span><span class="song__go">▶ Listen on YouTube</span></a></li>
+</ol>
 
 ## Take care of your mind
 

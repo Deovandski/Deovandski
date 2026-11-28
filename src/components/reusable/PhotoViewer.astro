@@ -168,9 +168,10 @@ const { label = 'Photo' } = Astro.props;
         const d = el.dataset;
         return { el, full: d.full!, alt: d.alt ?? '', date: d.date, dateLabel: d.dateLabel, caption: d.caption };
       }
-      if (el instanceof HTMLAnchorElement) {
+      // A link: an HTML <a>, or an SVG <a> (like the Gym timeline's photo pins, #328), whose .href isn't a string.
+      if (el.matches('a')) {
         const img = el.querySelector('img');
-        const full = el.href;
+        const full = new URL(el.getAttribute('href') ?? '', location.href).href;
         return { el, full, alt: img?.alt || el.getAttribute('aria-label') || el.textContent?.trim() || '', date: el.dataset.date ?? img?.dataset.date ?? fileDate(full), dateLabel: el.dataset.dateLabel };
       }
       const img = el as HTMLImageElement;

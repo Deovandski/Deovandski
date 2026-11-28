@@ -1,0 +1,83 @@
+---
+/**
+ * KitKotHood: KitKot's "Under the hood" list (the tricks a social media app plays on you, with sources), placed
+ * somewhere else on the page, like a tab's Links box (#328). Give it an id and pass the same id to KitKot's `hood`
+ * prop: while you play, each trick lights up here as it fires. Laid out like SourceList (in this folder), so it sits
+ * well next to a reading list.
+ *
+ *   <KitKotHood id="kitkot-hood" />
+ *   <KitKot name="…" handle="…" hood="kitkot-hood" />
+ *
+ * Props:
+ *   id     the id KitKot's `hood` prop points at. Required.
+ *   title  the heading above the list. Default "Under the hood: how it hooks you".
+ *   level  that heading's level for screen readers (2 to 6). Default 4.
+ *
+ * Theme with the same custom properties as SourceList (--sources-title, --sources-text, --sources-name,
+ * --sources-line) plus --kk-accent (the lit-up trick, default #fe2c55). Reusable on purpose: imports only
+ * kitkot/tricks.ts (one source with KitKot), no script. Reduced motion: the highlight appears without fading.
+ */
+import { KITKOT_TRICKS } from './kitkot/tricks';
+interface Props {
+  id: string;
+  title?: string;
+  level?: 2 | 3 | 4 | 5 | 6;
+}
+const { id, title = 'Under the hood: how it hooks you', level = 4 } = Astro.props;
+---
+
+<div class="kitkot-hood" id={id}>
+  <p class="kitkot-hood__title" role="heading" aria-level={level}>{title}</p>
+  <ul>
+    {
+      KITKOT_TRICKS.map((t) => (
+        <li data-trick={t.id}>
+          <strong>{t.name}</strong>: {t.text} <small>{t.source}</small>
+        </li>
+      ))
+    }
+  </ul>
+</div>
+
+<style>
+  .kitkot-hood {
+    color: var(--sources-text, #9aa8bb);
+  }
+  .kitkot-hood__title {
+    margin: 0 0 0.5rem;
+    font-weight: 800;
+    color: var(--sources-title, #c0c8d1);
+  }
+  .kitkot-hood ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .kitkot-hood li {
+    padding: 0.55rem 0.5rem;
+    border-bottom: 1px solid var(--sources-line, rgba(190, 200, 209, 0.12));
+    border-radius: 8px;
+    font-size: 0.89em;
+    line-height: 1.5;
+    transition: background 0.3s;
+  }
+  .kitkot-hood li:last-child {
+    border-bottom: 0;
+  }
+  .kitkot-hood strong {
+    color: var(--sources-name, #e6edf3);
+  }
+  .kitkot-hood small {
+    display: block;
+    opacity: 0.7;
+  }
+  /* KitKot adds is-firing while a trick fires. */
+  .kitkot-hood li:global(.is-firing) {
+    background: color-mix(in srgb, var(--kk-accent, #fe2c55) 16%, transparent);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .kitkot-hood li {
+      transition: none;
+    }
+  }
+</style>
