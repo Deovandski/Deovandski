@@ -19,6 +19,8 @@
  *   seconds    length of a round. Default 30.
  *   bonusDays  dates ("MM-DD") when every whack counts double. Default none.
  *   spriteAlt  text for screen readers when it pops up. Default "<name> popped up".
+ *   saveKey    local storage key for the best score ('' saves nothing). Default 'whack-a-mole'. Only the number is
+ *              kept, in this browser; it's never sent anywhere.
  *
  * Theming (CSS custom properties): --wam-accent (default #39c5bb), --wam-pop (#e12885),
  * --wam-size (default clamp(70px, 14vw, 130px)), --wam-bg, --wam-text. The pop-ups move to <body>,
@@ -37,6 +39,7 @@ interface Props {
   seconds?: number;
   bonusDays?: string[];
   spriteAlt?: string;
+  saveKey?: string;
   class?: string;
 }
 const {
@@ -46,6 +49,7 @@ const {
   seconds = 30,
   bonusDays = [],
   spriteAlt,
+  saveKey = 'whack-a-mole',
   class: className,
 } = Astro.props;
 const corners = [
@@ -70,6 +74,9 @@ const strings: Record<string, string> = {
   timeOne: 'Time! You whacked {hits} {name} and missed {misses}. {verdict}',
   bonus: 'Bonus day! Every {name} counts double. Go!',
   go: 'Go!',
+  best: 'Best: {n}',
+  newBest: 'New best!',
+  summary: 'Best score: {n}',
 };
 ---
 
@@ -78,6 +85,7 @@ const strings: Record<string, string> = {
   data-name={name}
   data-seconds={seconds}
   data-bonus={bonusDays.join(',')}
+  data-save={saveKey}
 >
   <div class="wam__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <div class="wam__card">
@@ -237,6 +245,19 @@ const strings: Record<string, string> = {
     pops.forEach((p) => layer.appendChild(p));
     document.body.appendChild(layer);
 
+    // The best score, kept in this browser only (never sent anywhere).
+    const saveKey = game.dataset.save ?? '';
+    const readBest = () => {
+      try {
+        return saveKey ? Number(JSON.parse(localStorage.getItem(saveKey) || '{}').best) || 0 : 0;
+      } catch {
+        return 0;
+      }
+    };
+    let best = readBest();
+    const showScore = (n: number) => (scoreEl.textContent = best ? `${msg('score', { n })} · ${msg('best', { n: best })}` : msg('score', { n }));
+    if (best) scoreEl.textContent = msg('best', { n: best });
+
     let score = 0;
     let misses = 0;
     let endsAt = 0;
@@ -297,7 +318,7 @@ const strings: Record<string, string> = {
       window.clearTimeout(timers.get(p));
       timers.delete(p);
       window.setTimeout(() => hide(p), reduced ? 150 : 260);
-      scoreEl.textContent = msg('score', { n: score });
+      showScore(score);
     }
 
     function tick() {
@@ -317,8 +338,18 @@ const strings: Record<string, string> = {
       start.disabled = false;
       start.textContent = msg('again');
       const verdict = msg(score >= 25 ? 'legendary' : score >= 15 ? 'nice' : score >= 6 ? 'notBad' : 'gotAway');
-      status.textContent = msg(score === 1 ? 'timeOne' : 'time', { hits: score, name, names: msg('names', { name }), misses, verdict });
-      scoreEl.textContent = msg('score', { n: score });
+      let line = msg(score === 1 ? 'timeOne' : 'time', { hits: score, name, names: msg('names', { name }), misses, verdict });
+      if (score > best) {
+        best = score;
+        line += ` ${msg('newBest')}`;
+        try {
+          if (saveKey) localStorage.setItem(saveKey, JSON.stringify({ best }));
+        } catch {
+          /* private mode or storage blocked: the score just isn't kept */
+        }
+      }
+      status.textContent = line;
+      showScore(score);
     }
 
     start.addEventListener('click', () => {
@@ -328,7 +359,7 @@ const strings: Record<string, string> = {
       misses = 0;
       endsAt = performance.now() + seconds * 1000;
       start.disabled = true;
-      scoreEl.textContent = msg('score', { n: 0 });
+      showScore(0);
       status.textContent = points() > 1 ? msg('bonus', { name }) : msg('go');
       tick();
       spawnTimer = window.setTimeout(popUp, 600);

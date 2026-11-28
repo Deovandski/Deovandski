@@ -84,8 +84,8 @@ const trip = id === 'where-was-deo' ? await travelQuiz() : null;
   )
 }
 {id === 'dice-tray' && <DiceTray label="Roll the dice" />}
-{id === 'dino-ambush' && <DinoAmbush />}
-{id === 'ice-fishing' && <IceFlasher depth={28} />}
+{id === 'dino-ambush' && <DinoAmbush saveKey="dino-ambush" />}
+{id === 'ice-fishing' && <IceFlasher depth={28} saveKey="ice-fishing" />}
 {id === 'drum-kit' && <DrumKit label="Virtual drum kit" />}
 {id === 'ecchi-meter' && <FireMeter stages={ecchi.stages} label={ecchi.label} button="Pump the bellows" />}
 {id === 'kitkot' && <KitKot name="Deovandski Skibinski Junior" handle="deovandski" bio="Author, x++ dev, chasing the algorithm" />}
@@ -104,7 +104,7 @@ const trip = id === 'where-was-deo' ? await travelQuiz() : null;
 }
 {
   id === 'saturday-night-fever' && (
-    <StageDancer label="Chibi pixel Deo in his yellow king&apos;s robes and crown hat, dancing the Saturday Night Fever disco point under flashing stage lights." />
+    <StageDancer saveKey="saturday-night-fever" label="Chibi pixel Deo in his yellow king&apos;s robes and crown hat, dancing the Saturday Night Fever disco point under flashing stage lights." />
   )
 }
 {id === 'tattoo-skin' && <DrawingPad label="Practice skin. Draw a tattoo on it with the tattoo pen." />}
@@ -126,6 +126,7 @@ const trip = id === 'where-was-deo' ? await travelQuiz() : null;
       facts={trip.facts}
       chatter={trip.chatter}
       helperLabel="Ask Deo for a freebie: he narrows it down to two (once per game)"
+      saveKey="where-was-deo"
       text={{
         alt: 'Photo {n}, from one of Deo’s trips: where was it taken?',
         hello: 'Psst! Stuck? Press me once for a freebie.',
@@ -141,7 +142,7 @@ const trip = id === 'where-was-deo' ? await travelQuiz() : null;
 }
 {
   id === 'whack-a-miku' && (
-    <WhackAMole sprite={whackSprite} name="Miku" title="Whack-a-Miku" bonusDays={['03-09', '08-31']} spriteAlt="A pixel Miku popped up" />
+    <WhackAMole sprite={whackSprite} name="Miku" title="Whack-a-Miku" bonusDays={['03-09', '08-31']} spriteAlt="A pixel Miku popped up" saveKey="whack-a-miku" />
   )
 }
 

@@ -17,4 +17,9 @@ export const SAVES: SaveInfo[] = [
   { key: 'balls-farm', label: 'Balls farm', holds: 'the whole farm' },
   { key: 'pixel-pet:', label: 'Pixel pets', holds: 'each pet, one key per pet', prefix: true },
   { key: 'perfect-egg', label: 'Perfect egg', holds: 'best rating per egg, sound on or off' },
+  { key: 'whack-a-miku', label: 'Whack-a-Miku', holds: 'best score' },
+  { key: 'where-was-deo', label: 'Where was Deo?', holds: 'best score' },
+  { key: 'ice-fishing', label: 'Ice fishing', holds: 'fish caught, the biggest, sound and reverse scroll' },
+  { key: 'saturday-night-fever', label: 'Night Fever', holds: 'best on-beat streak per routine, music on or off' },
+  { key: 'dino-ambush', label: 'Dino Ambush', holds: 'rounds won and lost' },
 ];

@@ -468,6 +468,7 @@ import StageDancer from './reusable/StageDancer.astro';
 |---|---|---|
 | `outfit` | yellow king's robes, blue pattern, black-and-gold crown hat | Colours: `{ hat, hatTrim, skin, beard, robe, pattern, hem, boots }`. |
 | `label` | (describes the scene) | What's on screen, for screen readers. |
+| `saveKey` | `'stage-dancer'` | Local storage key (`''` saves nothing): the best on-beat streak per routine (shown under the stage with the current streak) and the music button. |
 | `class` | none | Extra class. |
 
 A chibi pixel character drawn in code, dancing a 12-beat disco routine (the Saturday Night Fever point up
@@ -859,6 +860,7 @@ import IceFlasher from './reusable/IceFlasher.astro';
 | Prop | Default | |
 |---|---|---|
 | `depth` | `28` | How deep the hole is, in feet (where the bottom shows). |
+| `saveKey` | `'ice-flasher'` | Local storage key (`''` saves nothing): fish caught in all, the biggest (shown in the bar), and the Sound and Reverse scroll buttons. |
 | `class` | none | Extra class. |
 
 Ice fishing with a flasher, based on the Vexilar FL-18. The dial is the flasher's LED wheel: 0 at 12 o'clock, depth
@@ -900,6 +902,7 @@ import DinoAmbush from './reusable/DinoAmbush.astro';
 | `maxMana` | `10` | Mana that can be held at once. |
 | `win` | `"Winner Winner Chicken Dinner"` | Title when the dino goes down. |
 | `lose` | `"You fucking loser!"` | Title when the mana runs out. |
+| `saveKey` | `'dino-ambush'` | Local storage key for rounds won and lost (`''` saves nothing), shown under the result. |
 | `class` | none | Extra class. |
 
 The endless-runner dino, reversed: the dino runs and dodges on its own (jumps ground obstacles, ducks
@@ -1004,6 +1007,7 @@ import sprite from '../../assets/whack-a-miku/whack-a-miku.png';
 | `seconds` | `30` | Length of a round. |
 | `bonusDays` | `[]` | Dates (`"MM-DD"`) when every whack counts double. |
 | `spriteAlt` | `"<name> popped up"` | Text for screen readers when it pops up. |
+| `saveKey` | `'whack-a-mole'` | Local storage key for the best score (`''` saves nothing). The score line shows the best, and a round that beats it says "New best!". |
 | `class` | none | Extra class. |
 
 Press Start: the character pops up in the corners of the screen, staying about 1.4 s at first and 0.6 s by
@@ -1241,6 +1245,7 @@ so the site's translations reach it.
 | `chatter` | none | Lines the helper says now and then. |
 | `helperLabel` | `"Ask for a hint (one per game)"` | The helper button's name for screen readers. |
 | `text` | | Replace any of the game's words (`question`, `right`, `wrong`, `freebie`, `endTop`…; see the `T` list in the file). |
+| `saveKey` | `'photo-quiz'` | Local storage key for the best score (`''` saves nothing), shown as a Best row on the score card. |
 
 While the helper talks, the slot's first element gets `data-awake="true"`. Theme with `--quiz-accent`, `--quiz-good`,
 `--quiz-bad`, `--quiz-text`, `--quiz-muted` and `--quiz-card`.

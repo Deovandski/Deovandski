@@ -26,6 +26,8 @@
  *   outfit  colours: { hat, hatTrim, skin, beard, robe, pattern, hem, boots }. Defaults: the yellow
  *           king's robes with blue patterns and a black-and-gold crown hat.
  *   label   what's on screen, for screen readers.
+ *   saveKey local storage key ('' saves nothing). Default 'stage-dancer'. Keeps, in this browser only and never sent:
+ *           the best on-beat streak for each routine and whether the music is on.
  *
  * Theming (CSS custom properties): --dancer-accent (default #39c5bb).
  *
@@ -48,11 +50,13 @@ import { DEFAULT_COLORS } from './pixel-deo/sprite';
 interface Props {
   outfit?: Partial<Record<'hat' | 'hatTrim' | 'skin' | 'beard' | 'robe' | 'pattern' | 'hem' | 'boots', string>>;
   label?: string;
+  saveKey?: string;
   class?: string;
 }
 const {
   outfit = {},
   label = 'A chibi pixel character in yellow king’s robes and a crown hat, dancing the Saturday Night Fever disco point under stage lights.',
+  saveKey = 'stage-dancer',
   class: className,
 } = Astro.props;
 // The routines: their names, difficulty and tempo (one pose per beat). The script keeps the moves, the music and how
@@ -73,10 +77,14 @@ const strings: Record<string, string> = {
   offBeat: 'Off beat',
   fever: 'FEVER!',
   feverLive: 'FEVER! The whole floor lights up.',
+  streak: 'Streak: {n}',
+  bestStreak: 'Best streak: {n}',
+  newBest: 'New best streak: {n} on the beat!',
+  summary: 'Best streak: {n}',
 };
 ---
 
-<div class:list={['stage-dancer', className]} data-colors={JSON.stringify(colors)} data-bpms={JSON.stringify(routines.map((r) => r.bpm))}>
+<div class:list={['stage-dancer', className]} data-colors={JSON.stringify(colors)} data-bpms={JSON.stringify(routines.map((r) => r.bpm))} data-save={saveKey}>
   <div class="stage-dancer__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <div class="stage-dancer__layout">
   <div class="stage-dancer__side">
@@ -103,6 +111,7 @@ const strings: Record<string, string> = {
     <p class="stage-dancer__hint" aria-hidden="true">Tap the stage on the beat</p>
   </div>
   <p class="stage-dancer__status" aria-live="polite"></p>
+  <p class="stage-dancer__streak" aria-hidden="true"></p>
   </div>
   </div>
 </div>
@@ -217,6 +226,13 @@ const strings: Record<string, string> = {
     margin: 0.35rem 0 0;
     font-weight: 700;
     color: var(--_accent);
+  }
+  .stage-dancer__streak {
+    min-height: 1.3em;
+    margin: 0.15rem 0 0;
+    font-size: 0.9em;
+    font-variant-numeric: tabular-nums;
+    color: rgba(255, 255, 255, 0.75);
   }
   .stage-dancer__canvas:focus-visible {
     outline: 2px solid #fff;
@@ -382,6 +398,36 @@ const strings: Record<string, string> = {
     let feverUntil = -1; // the beat FEVER! lasts until
     let lastBeat = -1;
     let flash: { text: string; until: number } | null = null;
+    // The best on-beat streak per routine and the music button, kept in this browser only (never sent anywhere).
+    const saveKey = root.dataset.save ?? '';
+    type Save = { best: Record<string, number>; music?: boolean };
+    let save: Save = { best: {} };
+    try {
+      if (saveKey) save = { ...save, ...JSON.parse(localStorage.getItem(saveKey) || '{}') };
+    } catch {
+      /* private mode: nothing is kept */
+    }
+    const store = () => {
+      try {
+        if (saveKey) localStorage.setItem(saveKey, JSON.stringify(save));
+      } catch {
+        /* storage blocked */
+      }
+    };
+    const streakEl = root.querySelector<HTMLElement>('.stage-dancer__streak')!;
+    let streak = 0;
+    let beatBest = false; // this streak has passed the routine's best
+    const showStreak = () => {
+      const best = save.best[routine] ?? 0;
+      streakEl.textContent = [streak ? msg('streak', { n: streak }) : '', best ? msg('bestStreak', { n: best }) : ''].filter(Boolean).join(' · ');
+    };
+    // A streak ends on an off-beat tap or a new routine; a new best is saved as it grows and announced when it ends.
+    const endStreak = () => {
+      if (beatBest) status.textContent = msg('newBest', { n: save.best[routine] });
+      streak = 0;
+      beatBest = false;
+      showStreak();
+    };
     // On screen? A closed <details> (a FastTab) keeps its content laid out in Chrome (content-visibility),
     // so offsetParent alone isn't enough; checkVisibility() sees through that.
     const visible = () => (typeof root.checkVisibility === 'function' ? root.checkVisibility() : !!root.offsetParent);
@@ -591,6 +637,14 @@ const strings: Record<string, string> = {
       const onBeat = phase < level.window || phase > 1 - level.window;
       flash = { text: msg(onBeat ? 'onBeat' : 'offBeat'), until: performance.now() + 400 };
       setFever(fever + (onBeat ? level.hit : -level.miss));
+      if (!onBeat) return endStreak();
+      streak++;
+      if (streak > (save.best[routine] ?? 0)) {
+        save.best[routine] = streak;
+        beatBest = true;
+        store();
+      }
+      showStreak();
     }
     canvas.addEventListener('pointerdown', tap);
     canvas.addEventListener('keydown', (e) => {
@@ -697,11 +751,23 @@ const strings: Record<string, string> = {
         document.addEventListener('keydown', unlock, { once: true });
       }
     }
-    musicBtn.addEventListener('arcade:press', (e) => setMusic((e as CustomEvent<{ pressed: boolean }>).detail.pressed));
+    musicBtn.addEventListener('arcade:press', (e) => {
+      const on = (e as CustomEvent<{ pressed: boolean }>).detail.pressed;
+      setMusic(on);
+      save.music = on;
+      store();
+    });
+    // Music was turned off on an earlier visit: keep it off.
+    if (save.music === false) {
+      music.on = false;
+      musicBtn.setAttribute('aria-pressed', 'false');
+    }
 
     // Picking a routine on the plate: its moves, tempo, music and difficulty start together on beat one.
     root.addEventListener('reel:change', (e) => {
+      endStreak();
       routine = Number((e as CustomEvent<{ index: number }>).detail.index) || 0;
+      showStreak();
       beat = 60000 / (tempos[routine] || 110);
       start = performance.now();
       pausedAt = start;
