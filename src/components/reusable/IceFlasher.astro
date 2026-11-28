@@ -28,6 +28,8 @@
  *
  * Props:
  *   depth   how deep the hole is, in feet (the bottom). Default 28.
+ *   saveKey local storage key ('' saves nothing). Default 'ice-flasher'. Keeps, in this browser only and never sent:
+ *           fish caught in all, the biggest one, and the Sound and Reverse scroll buttons.
  *
  * Reverse scroll flips the mouse wheel, for natural scrolling. You get 1.3 s to set the hook (BITE_WINDOW).
  *
@@ -48,10 +50,11 @@
  */
 interface Props {
   depth?: number;
+  saveKey?: string;
   class?: string;
 }
 import SegmentMeter from './SegmentMeter.astro';
-const { depth = 28, class: className } = Astro.props;
+const { depth = 28, saveKey = 'ice-flasher', class: className } = Astro.props;
 // The line-strain gauge, bottom to top: slack (red, the fish can shake the hook) through yellow to the green
 // middle, then yellow into red at the top (the line breaks).
 const strain = ['#f43f5e', '#f43f5e', '#facc15', '#facc15', '#4ade80', '#4ade80', '#4ade80', '#4ade80', '#4ade80', '#facc15', '#facc15', '#f43f5e', '#f43f5e'];
@@ -99,10 +102,13 @@ const strings: Record<string, string> = {
   shook: 'It shook the hook.',
   landed: 'Caught: {fish}, {len} in ({cm} cm)!',
   logEntry: '{fish}, {len} in ({cm} cm)',
+  biggest: 'Biggest: {fish}, {len} in',
+  newBiggest: 'Your biggest yet!',
+  summary: '{n} fish caught',
 };
 ---
 
-<div class:list={['ice-flasher', className]} data-depth={depth}>
+<div class:list={['ice-flasher', className]} data-depth={depth} data-save={saveKey}>
   <div class="ice-flasher__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <div
     class="ice-flasher__stage"
@@ -147,6 +153,7 @@ const strings: Record<string, string> = {
   <div class="ice-flasher__bar">
     <span class="ice-flasher__jig" aria-hidden="true"></span>
     <span class="ice-flasher__count" aria-hidden="true"></span>
+    <span class="ice-flasher__biggest" hidden></span>
     <button type="button" class="ice-flasher__flip" aria-pressed="false">⇅ Reverse scroll</button>
     <button type="button" class="ice-flasher__mute" aria-pressed="false"></button>
   </div>
@@ -531,6 +538,27 @@ const strings: Record<string, string> = {
     let catches = 0;
     let muted = false;
     let flipped = false; // reverse the mouse wheel (for natural scrolling on a Mac trackpad)
+    // Kept in this browser only (never sent anywhere): fish caught in all, the biggest, and the two buttons.
+    const saveKey = root.dataset.save ?? '';
+    type Save = { total: number; biggest?: { kind: string; len: number }; muted?: boolean; flipped?: boolean };
+    let save: Save = { total: 0 };
+    try {
+      if (saveKey) save = { ...save, ...JSON.parse(localStorage.getItem(saveKey) || '{}') };
+    } catch {
+      /* private mode: nothing is kept */
+    }
+    const store = () => {
+      try {
+        if (saveKey) localStorage.setItem(saveKey, JSON.stringify(save));
+      } catch {
+        /* storage blocked */
+      }
+    };
+    const biggestEl = root.querySelector<HTMLElement>('.ice-flasher__biggest')!;
+    const showBiggest = () => {
+      biggestEl.hidden = !save.biggest;
+      if (save.biggest) biggestEl.textContent = msg('biggest', { fish: msg(save.biggest.kind), len: num(save.biggest.len) });
+    };
     let now = 0; // game clock, seconds
     const moves: { t: number; dy: number }[] = []; // recent jig moves (+ is down)
     const ups: { t: number; px: number }[] = []; // recent upward flick input, for the hookset
@@ -711,6 +739,10 @@ const strings: Record<string, string> = {
     }
     function setMuted(m: boolean) {
       muted = m;
+      if (save.muted !== m) {
+        save.muted = m;
+        store();
+      }
       muteBtn.setAttribute('aria-pressed', String(m));
       muteBtn.textContent = msg(m ? 'soundOff' : 'soundOn');
       if (master && snd.ctx) master.gain.setTargetAtTime(m ? 0 : 0.6, snd.ctx.currentTime, 0.05);
@@ -718,6 +750,8 @@ const strings: Record<string, string> = {
     flipBtn.addEventListener('click', () => {
       flipped = !flipped;
       flipBtn.setAttribute('aria-pressed', String(flipped));
+      save.flipped = flipped;
+      store();
     });
     muteBtn.addEventListener('click', () => {
       snd.get();
@@ -954,7 +988,13 @@ const strings: Record<string, string> = {
       const cm = Math.round(len * 2.54);
       const name = msg(f.kind);
       catches++;
+      save.total = (save.total || 0) + 1;
+      const isBiggest = !save.biggest || len > save.biggest.len;
+      if (isBiggest) save.biggest = { kind: f.kind, len };
+      store();
+      showBiggest();
       say('landed', { fish: name, len: num(len), cm: num(cm) }, true);
+      if (isBiggest && save.total > 1) status.textContent += ` ${msg('newBiggest')}`;
       const li = document.createElement('li');
       li.textContent = `🐟 ${msg('logEntry', { fish: name, len: num(len), cm: num(cm) })}`;
       logEl.prepend(li);
@@ -1692,7 +1732,10 @@ const strings: Record<string, string> = {
     }).observe(stage);
 
     countEl.textContent = msg('caught', { n: num(0) });
-    setMuted(false);
+    flipped = !!save.flipped;
+    flipBtn.setAttribute('aria-pressed', String(flipped));
+    setMuted(!!save.muted);
+    showBiggest();
     renderKnobs();
     say('hintOff');
     size();

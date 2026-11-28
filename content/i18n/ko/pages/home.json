@@ -1367,6 +1367,10 @@
   "en": "Enlarge: Painting or drawing, 01/15/2013",
   "t": "확대: 그림 또는 스케치, 2013년 1월 15일"
  },
+ "1e2485a2eb29": {
+  "en": "Best streak: {n}",
+  "t": "최고 연속: {n}"
+ },
  "1e69f9e7e667": {
   "en": "📉 -{n} followers. \"Not this again…\"",
   "t": "📉 -{n} 팔로워. \"또야…\""
@@ -2503,6 +2507,10 @@
   "en": "It's running! Ease off.",
   "t": "차고 나간다! 풀어 줘!"
  },
+ "35c4a7064a7a": {
+  "en": "Streak: {n}",
+  "t": "연속: {n}"
+ },
  "35c7f0acf757": {
   "en": "Yolk on the ceiling. One more try?",
   "t": "노른자가 천장에. 한 번 더?"
@@ -2886,6 +2894,10 @@
  "3c410c8aa810": {
   "en": "Shutter −",
   "t": "셔터 −"
+ },
+ "3c87dea1596c": {
+  "en": "Dinos taken down: {won} · Dinos that got away: {lost}",
+  "t": "쓰러뜨린 공룡: {won} · 도망친 공룡: {lost}"
  },
  "3c8ce3ab75a0": {
   "en": "Enlarge: Smol",
@@ -4026,6 +4038,10 @@
  "54b75a6c3b9d": {
   "en": " Steam + Xbox + PC  ·  estimated ",
   "t": "Steam + Xbox + PC  ·  추정"
+ },
+ "54cdd8cd260c": {
+  "en": "New best streak: {n} on the beat!",
+  "t": "최고 연속 기록: 박자에 맞춰 {n}번!"
  },
  "54f1730a3d5e": {
   "en": "The Gassy Donkey website: a farting donkey runner, started in 2016 and finished in 2026",
@@ -6078,6 +6094,10 @@
  "7ec79775c355": {
   "en": "Every wrong answer is just a trip you still have to take.",
   "t": "틀린 답 하나하나는 아직 안 간 여행 하나일 뿐이야."
+ },
+ "7ecff6063184": {
+  "en": "Dinos taken down: {n}",
+  "t": "쓰러뜨린 공룡: {n}"
  },
  "7ed97d0b96e7": {
   "en": " <span class=\"sr-only\" data-astro-cid-dxfw2qho=\"\">Rank 17: </span> Monogatari ",
@@ -9331,6 +9351,10 @@
   "en": "M",
   "t": "M"
  },
+ "c63e46780f3b": {
+  "en": "Your biggest yet!",
+  "t": "지금까지 가장 커!"
+ },
  "c640067d579c": {
   "en": "Tools I use for travels",
   "t": "여행할 때 쓰는 도구"
@@ -9726,6 +9750,10 @@
  "cf7bd460f4f0": {
   "en": "Cult of the Lamb",
   "t": "Cult of the Lamb"
+ },
+ "cf84d0119bf9": {
+  "en": "Best: {n}",
+  "t": "최고: {n}"
  },
  "cf93b2a95f0d": {
   "en": "No bottom on this range: turn the Range up.",
@@ -11175,6 +11203,10 @@
   "en": "ISO −",
   "t": "ISO −"
  },
+ "f0a25633d13f": {
+  "en": "Best score: {n}",
+  "t": "최고 점수: {n}"
+ },
  "f0b025216c14": {
   "en": "Godrays at the concert",
   "t": "콘서트의 빛내림"
@@ -11270,6 +11302,10 @@
  "f281a799c9fd": {
   "en": "r = {r} · {n} days · {strength}",
   "t": "r = {r} · {n}일 · {strength}"
+ },
+ "f29298d7fce1": {
+  "en": "{n} fish caught",
+  "t": "잡은 물고기 {n}마리"
  },
  "f2a63e1c444a": {
   "en": "Photogenic",
@@ -11790,6 +11826,10 @@
  "ff1ee226e141": {
   "en": " That's farther than Fargo, ND to Sioux Falls (230 mi as the crow flies).  Next stop: Chicago, 18 mi to go. ",
   "t": "파고(노스다코타)에서 수폴스까지(직선거리 230 mi)보다 멀다. 다음 목적지: 시카고, 18 mi 남았다."
+ },
+ "ff234b5f03c4": {
+  "en": "Biggest: {fish}, {len} in",
+  "t": "가장 큰 물고기: {fish}, {len}인치"
  },
  "ff3ea3bec182": {
   "en": "Malaysia",

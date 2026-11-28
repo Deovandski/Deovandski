@@ -19,6 +19,8 @@
  *   maxMana  how much mana can be held at once. Default 10.
  *   win      title when the dino goes down. Default "Winner Winner Chicken Dinner".
  *   lose     title when the mana runs out. Default "You fucking loser!".
+ *   saveKey  local storage key for how many rounds you've won and lost ('' saves nothing). Default 'dino-ambush'.
+ *            Only the two numbers are kept, in this browser; they're never sent anywhere.
  *
  * Theming (CSS custom properties): --dino-color (the dino, default green #4f8a3c), --dino-accent
  * (#39c5bb), --dino-ink (ground and text, #535353), --dino-bg (#f7f7f7).
@@ -35,9 +37,10 @@ interface Props {
   maxMana?: number;
   win?: string;
   lose?: string;
+  saveKey?: string;
   class?: string;
 }
-const { pool = 30, maxMana = 10, win = 'Winner Winner Chicken Dinner', lose = 'You fucking loser!', class: className } = Astro.props;
+const { pool = 30, maxMana = 10, win = 'Winner Winner Chicken Dinner', lose = 'You fucking loser!', saveKey = 'dino-ambush', class: className } = Astro.props;
 const skills = [
   { id: 'cactus', label: 'Cactus', icon: '🌵', cost: 2, key: '1' },
   { id: 'bird', label: 'Bird', icon: '🐦', cost: 3, key: '2' },
@@ -59,15 +62,18 @@ const strings: Record<string, string> = {
   lostLive: `${lose} The dino survived and flips you off.`,
   dodged: 'The dino dodged it.',
   building: 'Mana is building. Throw something at the dino!',
+  tally: 'Dinos taken down: {won} · Dinos that got away: {lost}',
+  summary: 'Dinos taken down: {n}',
 };
 ---
 
-<div class:list={['dino-ambush', className]} data-pool={pool} data-max={maxMana}>
+<div class:list={['dino-ambush', className]} data-pool={pool} data-max={maxMana} data-save={saveKey}>
   <div class="dino-ambush__strings" hidden data-llms-skip>{Object.entries(strings).map(([k, v]) => <span data-k={k}>{v}</span>)}</div>
   <div class="dino-ambush__stage">
     <canvas class="dino-ambush__canvas" role="img" aria-label="A pixel dinosaur running along the ground. Throw obstacles at it."></canvas>
     <div class="dino-ambush__result" hidden>
       <p class="dino-ambush__title"></p>
+      <p class="dino-ambush__tally"></p>
       <button type="button" class="dino-ambush__again">Play again</button>
     </div>
   </div>
@@ -133,6 +139,12 @@ const strings: Record<string, string> = {
     font-size: clamp(1.05rem, 3.2vw, 1.6rem);
     letter-spacing: 0.04em;
     text-transform: uppercase;
+  }
+  .dino-ambush__tally {
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    font-weight: 700;
+    font-size: 0.85rem;
   }
   .dino-ambush__again {
     position: absolute;
@@ -440,8 +452,23 @@ const strings: Record<string, string> = {
       return dx < o.x + o.w - pad && dx + dw > o.x + pad && dy0 < oy1 - pad && dy0 + dh > oy0 + pad;
     }
 
+    // Rounds won and lost, kept in this browser only (never sent anywhere).
+    const saveKey = root.dataset.save ?? '';
+    function tally(kind: 'won' | 'lost') {
+      let rec = { won: 0, lost: 0 };
+      try {
+        if (saveKey) rec = { ...rec, ...JSON.parse(localStorage.getItem(saveKey) || '{}') };
+        rec[kind]++;
+        if (saveKey) localStorage.setItem(saveKey, JSON.stringify(rec));
+      } catch {
+        /* private mode: nothing is kept */
+      }
+      root.querySelector<HTMLElement>('.dino-ambush__tally')!.textContent = saveKey ? msg('tally', { won: rec.won, lost: rec.lost }) : '';
+    }
+
     function finish(kind: 'won' | 'lost') {
       state = kind;
+      tally(kind);
       title.textContent = msg(kind === 'won' ? 'win' : 'lose');
       result.hidden = false;
       live.textContent = msg(kind === 'won' ? 'wonLive' : 'lostLive');

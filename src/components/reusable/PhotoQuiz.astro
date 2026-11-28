@@ -28,6 +28,8 @@
  *   chatter      things the helper says now and then while you think.
  *   helperLabel  the helper button's name for screen readers.
  *   text         replace any of the game's words (see the `T` list below for the keys and their {slots}).
+ *   saveKey      local storage key for the best score ('' saves nothing). Default 'photo-quiz'. Only the score is kept,
+ *                in this browser; it's never sent anywhere.
  *
  * Slot `helper`: what sits under the score (PixelHammock, a picture…). While the helper talks, its first element gets
  * `data-awake="true"` (PixelHammock opens its eyes).
@@ -54,6 +56,7 @@ interface Props {
   chatter?: string[];
   helperLabel?: string;
   text?: Partial<Record<keyof typeof T, string>>;
+  saveKey?: string;
   class?: string;
 }
 const T = {
@@ -81,6 +84,10 @@ const T = {
   freebieWait: 'Ask me while a photo is up!',
   fact: 'Fun fact: {fact}',
   empty: 'No photos yet.',
+  best: 'Best',
+  bestOf: '{n} of {total}',
+  newBest: 'New best!',
+  summary: 'Best score: {n}',
 };
 const {
   questions,
@@ -91,6 +98,7 @@ const {
   chatter = [],
   helperLabel = 'Ask for a hint (one per game)',
   text = {},
+  saveKey = 'photo-quiz',
   class: className,
 } = Astro.props;
 const words = { ...T, ...text };
@@ -105,7 +113,7 @@ const config = {
 };
 ---
 
-<div class:list={['photo-quiz', className]} data-photo-quiz data-config={JSON.stringify(config)}>
+<div class:list={['photo-quiz', className]} data-photo-quiz data-config={JSON.stringify(config)} data-save={saveKey}>
   <div class="photo-quiz__strings" hidden data-llms-skip>
     {Object.entries(words).map(([k, v]) => <span data-k={k}>{v}</span>)}
     {answers.map((a) => <span data-k={`n:${a.key}`}>{a.name}</span>)}
@@ -132,6 +140,7 @@ const config = {
     <dl class="photo-quiz__card">
       <div><dt class="photo-quiz__round"></dt></div>
       <div><dt>{words.score}</dt><dd class="photo-quiz__score">0</dd></div>
+      <div data-best-row hidden><dt>{words.best}</dt><dd class="photo-quiz__best"></dd></div>
       <div><dt>{words.hint}</dt><dd class="photo-quiz__hint">{words.hintLeft}</dd></div>
     </dl>
     <div class="photo-quiz__helper-wrap">
@@ -209,6 +218,7 @@ const config = {
   .photo-quiz__next[hidden],
   .photo-quiz__end[hidden] { display: none; }
   .photo-quiz__end { margin-top: 0.75rem; text-align: center; }
+  .photo-quiz__card [hidden] { display: none; }
   .photo-quiz__end-score { font-size: 1.4em; font-weight: 800; margin: 0; }
   .photo-quiz__end-line { margin: 0.25rem 0 0; color: var(--_muted); }
   .photo-quiz__empty { color: var(--_muted); }
@@ -317,6 +327,24 @@ const config = {
     const bubble = $<HTMLElement>('.photo-quiz__bubble');
     const helper = $<HTMLButtonElement>('.photo-quiz__helper');
     const face = () => helper.querySelector<HTMLElement>(':scope > *');
+
+    // The best score, kept in this browser only (never sent anywhere).
+    const saveKey = root.dataset.save ?? '';
+    let best = 0;
+    let bestTotal = cfg.rounds;
+    try {
+      const saved = saveKey ? JSON.parse(localStorage.getItem(saveKey) || '{}') : {};
+      best = Number(saved.best) || 0;
+      bestTotal = Number(saved.total) || bestTotal;
+    } catch {
+      /* private mode: no best score */
+    }
+    const showBest = () => {
+      const row = $<HTMLElement>('[data-best-row]');
+      row.hidden = !best;
+      $<HTMLElement>('.photo-quiz__best').textContent = msg('bestOf', { n: best, total: bestTotal });
+    };
+    showBest();
 
     let game: { src: string; answer: string }[] = [];
     let i = 0, score = 0, freebie = true, answered = false;
@@ -427,7 +455,19 @@ const config = {
       const total = game.length;
       $<HTMLElement>('.photo-quiz__end-score').textContent = msg('end', { score, total });
       const r = score / total;
-      $<HTMLElement>('.photo-quiz__end-line').textContent = msg(r === 1 ? 'endTop' : r >= 0.7 ? 'endHigh' : r >= 0.4 ? 'endMid' : 'endLow');
+      let line = msg(r === 1 ? 'endTop' : r >= 0.7 ? 'endHigh' : r >= 0.4 ? 'endMid' : 'endLow');
+      if (score > best) {
+        best = score;
+        bestTotal = total;
+        line += ` ${msg('newBest')}`;
+        try {
+          if (saveKey) localStorage.setItem(saveKey, JSON.stringify({ best, total }));
+        } catch {
+          /* storage blocked: the score just isn't kept */
+        }
+        showBest();
+      }
+      $<HTMLElement>('.photo-quiz__end-line').textContent = line;
       end.hidden = false;
       next.textContent = msg('again');
       next.hidden = false;

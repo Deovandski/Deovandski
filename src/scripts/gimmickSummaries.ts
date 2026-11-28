@@ -13,6 +13,16 @@ const read = (key: string): string | null => {
 const word = (el: HTMLElement, key: string, fallback: string, n: string | number) =>
   (el.querySelector(`[data-k="${key}"]`)?.textContent ?? fallback).replace('{n}', String(n));
 
+// A game that saves JSON: one number from it, shown with the game's own "summary" words. Nothing when it's 0.
+const fromSave = (el: HTMLElement, key: string, pick: (save: Record<string, unknown>) => unknown) => {
+  try {
+    const n = Number(pick(JSON.parse(read(key) ?? '{}')));
+    return n > 0 ? word(el, 'summary', '{n}', n) : null;
+  } catch {
+    return null;
+  }
+};
+
 const live: Record<string, (el: HTMLElement) => string | null> = {
   'paper-plane': (el) => {
     const best = Number(read('paper-plane-best'));
@@ -26,6 +36,11 @@ const live: Record<string, (el: HTMLElement) => string | null> = {
       return null;
     }
   },
+  'whack-a-miku': (el) => fromSave(el, 'whack-a-miku', (s) => s.best),
+  'where-was-deo': (el) => fromSave(el, 'where-was-deo', (s) => s.best),
+  'ice-fishing': (el) => fromSave(el, 'ice-fishing', (s) => s.total),
+  'saturday-night-fever': (el) => fromSave(el, 'saturday-night-fever', (s) => Math.max(0, ...Object.values((s.best ?? {}) as Record<string, number>).map(Number))),
+  'dino-ambush': (el) => fromSave(el, 'dino-ambush', (s) => s.won),
   'balls-farm': (el) => {
     try {
       const farm = JSON.parse(read('balls-farm') ?? 'null');

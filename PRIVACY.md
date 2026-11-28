@@ -7,9 +7,18 @@ keeps, it keeps in your own browser, and clearing the site's data removes all of
 storage, under `deovandski-site`, so they stick between visits.
 
 **Games.** Games behind ▶ Play keep what's worth keeping (high scores, progress, their own settings) in local storage,
-in this browser only: never in a cookie, never sent anywhere. Today that's the paper plane's best distance
-(`paper-plane-best`), the Balls farm (`balls-farm`), the pixel pets (`pixel-pet:<name>`) and Cook the perfect egg's best
-rating per egg and its sound setting (`perfect-egg`). Stats for nerds (Settings › DEBUG, `/debug/`) lists every one of
+in this browser only: never in a cookie, never sent anywhere. Today that's:
+- the paper plane's best distance (`paper-plane-best`);
+- the Balls farm (`balls-farm`);
+- the pixel pets (`pixel-pet:<name>`);
+- Cook the perfect egg's best rating per egg and its sound setting (`perfect-egg`);
+- Whack-a-Miku's best score (`whack-a-miku`);
+- Where in the World Was Deo?'s best score (`where-was-deo`);
+- Ice fishing's count of fish caught, the biggest one, and its Sound and Reverse scroll buttons (`ice-fishing`);
+- Saturday Night Fever's best on-beat streak per routine and its music button (`saturday-night-fever`);
+- Dino Ambush's rounds won and lost (`dino-ambush`).
+
+Stats for nerds (Settings › DEBUG, `/debug/`) lists every one of
 them, with what this browser holds for each.
 
 **Where you came from.** A link with `?src=…` (like `?src=LinkedIn`) is remembered for the visit in session storage
